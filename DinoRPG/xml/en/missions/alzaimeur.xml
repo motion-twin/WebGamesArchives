@@ -1,0 +1,89 @@
+﻿<missions>
+
+	<!-- ***************************************************************************** -->
+	<!-- Al Zaimeur missions ----->
+
+	<m group="alzaim" id="fiesta" name="Al's Party" limit="10">
+		<begin>I'd really like to organise a big party in Dinotown to celebrate my homecoming. I've got most of it under control, but I still need you to do me a couple of favours. You'll need to be quick though as the party's going to start soon! Come and see me again if you need any help.</begin>
+		<goto v="marche"/>
+		<talk v="Isabella" gfx="isabella"> Do I want to come to a party with you? Mmmmmm ....... Yes! Of course! I just need to find a new dress to wear.</talk>
+		<goto v="dnv"/>
+		<talk v="Anna Tomie" gfx="infirmiere" background="1">You want to invite me to a party? But what will happen to my dear Dinoz whilst I'm away? Although I don't live very far away, I could just say I'm going home! I accept your invitation!</talk>
+		<goto v="fosslv"/>
+		<talk v="Soft Shaman" gfx="shaman">Yo! A party isn't a party without the Shaman! Can I bring some friends? Don't worry, they're cool. Yeahhhh! I can't wait, I'll see you there. Later dude.........</talk>
+		<goto v="vener"/>
+		<talk v="Miss Bao" gfx="baobabe">I'm so happy to see you again my young Dinoz master! A party you say? It's so cute of you to think of me, it's been years since I've been dancing.</talk>
+		<goto v="gorges"/>
+		<talk v="Popotholeler" gfx="spelele">Hello! A party in Dinotown? Yeah good idea. Walking into town would warm me up a bit and I could even get my tutor to help me with my report at the University.</talk>
+		<goto v="auree"/>
+		<talk v="Nicolas Mulot" gfx="hulot">To leave this mysterious land to meet the readers of Hellno magazine ... To leave Mother Nature for a developed land and celebrate joy and love, Emotional Scene! I'll be there.........</talk>
+		<goto v="camp"/>
+		<talk v="Dian Korgsey" gfx="dian">Leave my dear Korgons? Leave the camp? I'm not sure if I can do that ... Who will help lost tourists? Who will warn them of the dangers that lie ahead? It's not going to be very pleasant for them.</talk>
+		<end>You're the best! Loads of people are going to be at the party and you've even managed to invite some pretty girls. Here, you deserve a nice reward.
+		</end>
+		<xp v="80"/>
+		<gold v="3000"/>
+	</m>
+ 
+	<m  group="alzaim" id="mcrame" name="Merguez or Nothing" limit="10" cond="mission(fiesta)">
+		<begin>The guests are travelling a long way to come to the party so they'll need to have a really good meal to be in top form. Unfortunately I haven't got anything for them to eat. Do you think you could go and get some food for tonight?</begin>
+		<goto v="rashpk"/>
+		<talk v="Merguez Seller" gfx="merguez">I'd love to give you some burnt merguez, but this time I need YOU to do ME a favour! Help me get rid of the crooks who keep pinching my sausage!</talk>
+		<action v="Merguez Thief">
+			You see a thief trying to steal a merguez!
+		</action>
+		<actfight act="Fight!" monsters="vol1:vol1:vol1">
+		</actfight>
+		<action v="Merguez Thieves">
+			Oh no! One of the thieves has alerted the other members of the gang!
+		</action>
+		<actfight act="Fight!" monsters="vol1:vol1:vol1:vol1:vol1:vol1:vol1">
+		</actfight>
+		<talk v="Merguez Seller" gfx="merguez">Thanks a lot! Here, take these...........there's enough merguez there for a whole month!</talk>
+		<end>Fantastic, they're in for a real treat! These burnt merguez will make everyone very thirsty, but that's just what we want! Haha! Here, take your reward.</end>
+		<xp v="40"/>
+		<gold v="1000"/>
+	</m>
+
+	<m  group="alzaim" id="alcool" name="Al Cool" limit="10" cond="mission(fiesta)">
+		<begin>Arrrgghh! I'm still hungover from my party last night and haven't had time to get the drinks! Do you think you could take care of it for me?</begin>
+		<goto v="fountj"/>
+		<action v="Fetch Water">
+			You fetch some water from the Fountain of Youth just to make Grandpa Joe happy.
+		</action>
+		<goto v="fosslv"/>
+		<talk v="Soft Shaman" gfx="shaman">Yo! Lava Syrup? Yeah, I've got some. I'll give you some in exchange for 3 sharpened flints and a lighter for my pipe. I can't smoke it otherwise!</talk>
+		<useingr v="art" n="3"/>
+		<action v="Collect Lava Syrup">
+			The Shaman has given you some Lava Syrup. All you need now is some ice to make the perfect cocktail!
+		</action>
+		<goto v="gorges" hide="1" />
+		<talk v="Popotholeler" gfx="spelele">
+			Hey! I hear you're looking for something cool to liven up your drinks? Have you thought about getting some ice cubes? All you need to do is to bend down to find some, but I advise you to take big blocks otherwise they'll melt quickly. You'll need to dig to find the biggest blocks, you've got a shovel haven't you?</talk>
+		<dig>
+			You've found a great big block of ice, it seems you'll be the one making the cocktails tonight!
+		</dig>
+		<end>Perfect! Now we have everything we need for a great party. Your reward is well-deserved.</end>
+		<xp v="40"/>
+		<gold v="1000"/>
+	</m>
+
+	<m group="alzaim" id="minuit" name="Licence To Party" limit="10" cond="mission(mcrame)+mission(alcool)">
+		<begin>You must survive Al's party......</begin>
+		<action v="Party Time" wait="1">
+			The party is in full swing, you try to leave discretely but Al grabs you and makes you dance all night.......
+		</action>
+		<end>You've had a really good time at the party. It was a great success, so you deserve a big reward.</end>
+		<xp v="20"/>
+	</m>
+
+	<m group="alzaim" id="magne" name="Magnetic Excess" limit="10" cond="mission(minuit)">
+		<begin>During the party, Al moved around so much he attracted all the Rapacarapaces from the Magnetic Steppes to the village. Hurry! Go and defeat them all to protect the villagers.</begin>
+		<goto v="dnv"/>
+		<actfight act="Kill The Rapacarapaces" monsters="rapac2:rapac2"/>
+		<end>Well done! You've saved the village, it's a good job too! Those monsters were very powerful!</end>
+		<xp v="100"/>
+		<gold v="1000"/>
+	</m>
+	
+</missions>

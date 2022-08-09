@@ -1,0 +1,180 @@
+<d place="aphall" name="Maître Enguerrand" gfx="approf">
+
+<a id="exit">A  plus tard.</a>
+
+<phase id="begin" next="quest:noquest:noap:don:exit">
+Envie d'oeuvrer pour la gloire et la puissance de la famille Audepint, alchimiste ?
+</phase>
+
+<a id="quest" cond="sch(ap)+grade(ap,3)">Oh oui alors.</a>
+<a id="noquest" cond="sch(ap)+!grade(ap,3)">Oh oui alors.</a>
+<a id="noap" cond="!sch(ap)">Euh ben... je suis pas de votre école, moi.</a>
+
+<phase id="quest" quest="schap" frame="happy">
+Tant d'enthousiasme fait plaisir à voir.
+</phase>
+
+<phase id="noquest" frame="happy">
+Bien. Mais tu sembles un peu jeune pour les tâches que j'ai à confier. Va plutôt voir le {Major Domou} au {Faubourg Audepint} pour l'instant. Je ne m'occupe que des étudiants de niveau 3 ou supérieur.
+</phase>
+
+<phase id="noap">
+%f_happy%Mmmmh ?... Ah effectivement. | %f_angry% Dans ce cas il serait de bon ton de disparaître de ma vue. 
+</phase>
+
+<!-- ######### -->
+
+<a id="don">J'apporte des éléments pour Audepint.</a>
+
+<phase id="don" next="da:db:dc:dd:de:exit">
+Tu peux donner certains éléments contre de la réputation envers Audepint.
+</phase>
+
+<a id="da" cond="sch(ap)">Je veux donner des Slamines pour 1 point de réputation. </a>
+<a id="db">Je veux donner des Cyclonites pour 2 points de réputation.</a>
+<a id="dc">Je veux donner des Pépites pour 3 points de réputation.</a>
+<a id="dd">Je veux donner des Coeurs de Vortex pour 5 points de réputation.</a>
+<a id="de">Je veux donner des Chroniums pour 60 points de réputation.</a>
+
+<a id="back">J'ai changé d'avis.</a>
+
+<phase id="back" frame="angry" next="don:exit">
+Que veux-tu faire alors ? 
+</phase>
+
+<!-- #### -->
+<phase id="da" frame="happy" next="daa:ndaa:dab:ndab:back:exit">
+Chaque Slamine te fait gagner 1 point envers l'école. Combien en donnes-tu ? 
+</phase>
+
+<a id="daa" cond="hasobject(Elt(25):1)">Voilà 1 Slamine.</a>
+<a id="dab"  cond="hasobject(Elt(25):5)">Voilà 5 Slamines.</a>
+<a id="ndaa"  cond="!hasobject(Elt(25):1)">Voilà 1 Slamine.</a>
+<a id="ndab"  cond="!hasobject(Elt(25):5)">Voilà 5 Slamines.</a>
+
+
+<phase id="daa" dtake="Elt(25):1" dreput="ap:1" next="da:back:exit">
+Merci beaucoup. Voici 1 point de réputation.
+</phase>
+
+<phase id="dab" dtake="Elt(25):5" dreput="ap:5" next="da:back:exit">
+Merci beaucoup. Je te donne 5 points.
+</phase>
+
+
+<phase id="ndaa" frame="angry" next="back:exit">
+Tu n'as pas ce qu'il faut.
+</phase>
+
+<phase id="ndab" frame="angry" next="back:exit">
+Tu n'as pas ce qu'il faut...
+</phase>
+
+
+<!-- #### -->
+<phase id="db" frame="happy" next="dba:ndba:dbb:ndbb:back:exit">
+Chaque Cyclonite te fait gagner 2 points de réputation envers l'école. Combien en donnes-tu ? 
+</phase>
+
+<a id="dba" cond="hasobject(Elt(26):1)">Voilà 1 Cyclonite.</a>
+<a id="dbb"  cond="hasobject(Elt(26):5)">Voilà 5 Cyclonites.</a>
+<a id="ndba"  cond="!hasobject(Elt(26):1)">Voilà 1 Cyclonite.</a>
+<a id="ndbb"  cond="!hasobject(Elt(26):5)">Voilà 5 Cyclonites.</a>
+
+
+<phase id="dba" dtake="Elt(26):1" dreput="ap:2" next="db:back:exit">
+Merci beaucoup. Tu gagnes 2 points.
+</phase>
+
+<phase id="dbb" dtake="Elt(26):5" dreput="ap:10" next="db:back:exit">
+Merci beaucoup. Tu gagnes 10 points.
+</phase>
+
+
+<phase id="ndba" frame="angry" next="back:exit">
+Tu n'as pas ce qu'il faut.
+</phase>
+
+<phase id="ndbb" frame="angry" next="back:exit">
+Tu n'as pas ce qu'il faut...
+</phase>
+
+
+<!-- #### -->
+<phase id="dc" frame="happy" next="dca:ndca:dcb:ndcb:back:exit">
+Chaque pépite d'or te fait gagner 3 points envers l'école. Combien en donnes-tu ? 
+</phase>
+
+<a id="dca" cond="hasobject(Elt(11):1)">Voilà 1 Pépite.</a>
+<a id="dcb"  cond="hasobject(Elt(11):5)">Voilà 5 Pépites.</a>
+<a id="ndca"  cond="!hasobject(Elt(11):1)">Voilà 1 Pépite.</a>
+<a id="ndcb"  cond="!hasobject(Elt(11):5)">Voilà 5 Pépites.</a>
+
+
+<phase id="dca" dtake="Elt(11):1" dreput="ap:3" next="dc:back:exit">
+Merci beaucoup. Tu gagnes 3 points.
+</phase>
+
+<phase id="dcb" dtake="Elt(11):5" dreput="ap:15" next="dc:back:exit">
+Merci beaucoup. Tu gagnes 15 points.
+</phase>
+
+
+<phase id="ndca" frame="angry" next="back:exit">
+Tu n'as pas ce qu'il faut.
+</phase>
+
+<phase id="ndcb" frame="angry" next="back:exit">
+Tu n'as pas ce qu'il faut...
+</phase>
+
+<!-- #### -->
+<phase id="dd" frame="happy" next="dda:ndda:ddb:nddb:back:exit">
+Chaque Coeur de vortex te fait gagner 5 points de réputation envers l'école. Combien en donnes-tu ? 
+</phase>
+
+<a id="dda" cond="hasobject(Elt(27):1)">Voilà 1 Coeur de vortex.</a>
+<a id="ddb"  cond="hasobject(Elt(27):5)">Voilà 5 Coeurs de vortex.</a>
+<a id="ndda"  cond="!hasobject(Elt(27):1)">Voilà 1 Coeur de vortex.</a>
+<a id="nddb"  cond="!hasobject(Elt(27):5)">Voilà 5 Coeurs de vortex.</a>
+
+
+<phase id="dda" dtake="Elt(27):1" dreput="ap:5" next="dd:back:exit">
+Merci beaucoup. Voilà 5 points.
+</phase>
+
+<phase id="ddb" dtake="Elt(27):5" dreput="ap:25" next="dd:back:exit">
+Merci beaucoup. Tu gagnes 25 points.
+</phase>
+
+
+<phase id="ndda" frame="angry" next="back:exit">
+Tu n'as pas ce qu'il faut.
+</phase>
+
+<phase id="nddb" frame="angry" next="back:exit">
+Tu n'as pas ce qu'il faut...
+</phase>
+
+
+
+<!-- #### -->
+<phase id="de" frame="happy" next="dea:ndea:back:exit">
+Chaque Chronium te fait gagner 60 points de réputation envers l'école.
+</phase>
+
+<a id="dea" cond="hasobject(Elt(28):1)">Voilà 1 Chronium.</a>
+<a id="ndea"  cond="!hasobject(Elt(28):1)">Voilà 1 Chronium.</a>
+
+
+<phase id="dea" dtake="Elt(28):1" dreput="ap:60" next="de:back:exit">
+Merci beaucoup. Tu gagnes 60 points de réputation.
+</phase>
+
+
+<phase id="ndea" frame="angry" next="back:exit">
+Tu n'as pas ce qu'il faut.
+</phase>
+
+
+</d>

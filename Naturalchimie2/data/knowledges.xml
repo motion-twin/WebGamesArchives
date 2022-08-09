@@ -1,0 +1,244 @@
+<knowledge>
+
+
+<k id="jk" place="0,0" name="Recours en grâce" points="1" >
+<desc>
+Votre classe peut acheter un second joker.
+</desc>
+</k>
+
+<k id="exch"  place="1,0" name="Voie de la sagesse" points="2" >
+<values>2,1</values>
+<comp>rouage%rouages</comp>
+<desc>
+Une fois par objectif, vous pouvez échanger ::X:: ::COMP:: contre un point de savoir.
+</desc>
+</k>
+
+<k id="easy" place="2,0" name="Trop facile ! " points="3" >
+<values>33,66,100</values>
+<desc>
+Les demandes de potions ont ::X::% de chance d'être remplacées par un élément de rang 5 à 9 (feuille menthol à oxyde).
+</desc>
+</k>
+
+<k id="thumb" place="3,0" name="Coup de pouce" points="5" >
+<values>3,6,9,12,15</values>
+<desc>
+La taille des objectifs demandés à la classe est réduite de ::X::%.
+</desc>
+</k>
+
+<k id="pa" place="4,0" name="Ravitaillement" points="3" >
+<values>1,2,3</values>
+<comp>potion%potions%potions</comp>
+<desc>
+Chaque objectif rempli fait gagner ::X:: ::COMP:: de vigueur à chaque alchimiste de la classe.
+</desc>
+</k>
+
+<!-- #### LINE 2  -->
+
+<k id="gugive" place="0,1" name="Force de persuasion" points="5"  pre="jk" >
+<values pmv="1">25,21,17,13,10</values>
+<desc>
+Vous pouvez diviser par 2 le nombre d'un ingrédient demandé contre ::X:: points de réputation Guilde.
+</desc>
+</k>
+
+<k id="focus" place="1,1" name="Concentration" points="5" pre="exch" >
+<values>10,20,30,40,50</values>
+<desc>
+::X::% de chance de gagner un élément supplémentaire à chaque partie.
+</desc>
+</k>
+
+<k id="lump" place="2,1" name="Grumeaux alchimiques" points="3">
+<values>10,20,30</values>
+<desc>
+A chaque recette effectuée, ::X::% de chance de récupérer un élément dépensé de plus haut niveau.
+</desc>
+</k>
+
+<k id="crash"  place="3,1" name="Déflation élémentaire" points="5" >
+<values>20,40,60,80,100</values>
+<desc>
+A chaque nouvel objectif, ::X::% de chance qu'un élément requis de plus haut niveau soit remplacé par un élément de rang inférieur.
+</desc>
+</k>
+
+
+<k id="negoc"  place="4,1" name="Négociations" points="3" pre="pa" >
+<values pmv="1">400,700,1000</values>
+<desc>
+Le prix d'achat d'un joker est réduit de ::X:: kubors.
+</desc>
+</k>
+
+
+
+
+<!-- ### SCHOOl 1 -->
+<k id="shine" place="5,1" name="Ca brille c'est pareil" points="1" school="ap" >
+<desc>
+Vous pouvez donner une pépite d'or à la place d'un élément de même niveau.
+</desc>
+</k>
+
+<k id="press" place="5,1" name="Sous pression" points="1" school="gm" >
+<desc>
+Vous pouvez donner une bière Geminish Regular à la place d'un élément de rang 10 (couivre ou équivalent).
+</desc>
+</k>
+
+<k id="random" place="5,1" name="Essayons ça..." points="1" school="jz" >
+<desc>
+Donner un objet magique remplace des éléments requis au hasard.
+</desc>
+</k>
+
+<k id="vigor" place="5,1" name="Don vigoureux" points="1" school="sk" >
+<desc>
+Vous pouvez donner une potion de vigueur pour remplacer deux élements de rang 1 à 8 alchimiques (potion verte à Flaum).
+</desc>
+</k>
+
+
+<!-- ### -->
+
+<!-- ### SCHOOl 3 -->
+<k id="bakch" place="6,1" name="Bakchich" points="3" school="ap" >
+<values>2000,1450,900</values>
+<desc>
+Donner ::X:: kubors remplace le don d'un élément de plus haut niveau.
+</desc>
+</k>
+
+<k id="hungry" place="6,1" name="Gourmandise" points="3" school="gm" >
+<values>1,2,3</values>
+<comp>élément%éléments%éléments</comp>
+<desc>
+Vous pouvez donner un pétale chocolaté à la place de ::X:: ::COMP:: de rang 11 ou 12 (mercurule / pépite d'or et équivalents).
+</desc>
+</k>
+
+<k id="catz" place="6,1" name="Hi can doo it, lit me tryz !" points="3" school="jz" >
+<values>10,11,12</values>
+<comp>couivre%mercurule%pépite d'or</comp>
+<desc>
+Donner un Catz remplace un élément de rang ::X:: (::COMP:: ou équivalent).
+</desc>
+</k>
+
+
+<k id="hot" place="6,1" name="Chaud devant" points="3" school="sk" >
+<values>10,11,12</values>
+<comp>à l'étincelle incluse%à la pyropâte incluse%au magma inclus</comp>
+<desc>
+Vous pouvez donner des éléments du feu à la place d'éléments de l'eau de même niveau, de la charbonide  ::COMP::.
+</desc>
+</k>
+
+<!-- ### -->
+
+<!-- ### LINE 3 -->
+<k id="secret" place="0,2" name="Arrangements secrets" points="2"  pre="gugive">
+<values>10,7</values>
+<desc>
+A la fin de la lutte, la classe gagne 1 rouage supplémentaire par tranche de ::X:: rouages en stock. 
+</desc>
+</k>
+
+<k id="cancel" place="1,2" name="Régression" points="1" >
+<values>1</values>
+<comp>rouage</comp>
+<desc>
+Une demande d'objet magique peut être supprimée contre ::X:: ::COMP::.
+</desc>
+</k>
+
+<k id="tp" place="2,2" name="Téléportation" points="5" >
+<values>2,5,10,15,20</values>
+<desc>
+Chaque jour, la classe dispose de ::X:: téléporteurs vers le puits élémentaire.
+</desc>
+</k>
+
+<k id="bonus" place="3,2" name="Prime spéciale" points="1" >
+<desc>
+Les quêtes journalières de votre école vous font gagner 1 élément demandé dans votre objectif, de rang 11 maximum.
+</desc>
+</k>
+
+<k id="wheel" place="4,2" name="Stage pratique" points="3" >
+<values>5,4,3</values>
+<desc>
+Vous gagnez un rouage supplémentaire tous les ::X:: points de savoir acquis.
+</desc>
+</k>
+
+<k id="scgive" place="5,2" name="Electron libre" points="3" pre="shine,press,random,vigor" >
+<values pmv="1">80,50,30</values>
+<desc>
+Vous pouvez supprimer un type d'ingrédients demandé contre ::X:: points de réputation de l'école.
+</desc>
+</k>
+
+<k id="spy" place="6,2" name=" Espionnage" points="1" pre="bakch,hungry,catz,hot" >
+<desc>
+Au premier point dépensé, ce savoir devient un des savoirs exclusifs d'une autre école.
+</desc>
+</k>
+
+
+
+<!-- ### LINE 4 -->
+
+<k id="corrup" place="1,3" name="Nerfs d'acier" points="3" pre="cancel" >
+<values>1,2,3</values>
+<comp>rouage%rouages%rouages</comp>
+<desc>
+A la fin de la compétition, chaque joker disponible se transforme en ::X:: ::COMP::.
+</desc>
+</k>
+
+
+<!-- ### SCHOOL END -->
+<k id="bours" place="3,3" name="Boursicoti" points="1" school="ap" pre="bonus" >
+<values pmv="1">1900</values>
+<desc>
+Une fois par objectif, vous pouvez dépenser ::X:: kubors de la classe pour recevoir un rouage supplémentaire.
+</desc>
+</k>
+
+<k id="actpl" place="3,3" name="Trip menthol" points="1" school="gm" pre="bonus" >
+<desc>
+Une fois par objectif, vous pouvez dépenser un rouage pour que la classe dispose d'autant d'actions "doubler mes éléments" sur une partie au choix que de membres. (disponibles jusqu'à la fin de la lutte)
+</desc>
+</k>
+
+<k id="actrec" place="3,3" name="Dollyxomatic" points="1" school="jz" pre="bonus" >
+<desc>
+Une fois par objectif, vous pouvez dépenser un rouage pour que la classe dispose d'autant d'actions "doubler mon dernier résultat de recette élémentaire ou de combat alchimique" que de membres (disponibles jusqu'à la fin de la lutte)
+</desc>
+</k>
+
+<k id="score" place="3,3" name="Aurificateur amélioré" points="1" school="sk" pre="bonus" >
+<desc>
+Battre le score de votre aurificateur vous fait gagner de 1 à 3 éléments supplémentaires choisis dans l'objectif actuel (éléments restants à rendre et présents sur le lieu de la partie).
+</desc>
+</k>
+<!-- ### -->
+
+<k id="pride" place="5,3" name="Fierté de l'école" points="3" pre="scgive" >
+<values>5,10,15</values>
+<desc>
+Chaque nouvel objectif accompli fait gagner ::X:: point de réputation de l'école à tous les alchimistes de la classe.
+</desc>
+</k>
+
+
+</knowledge>
+
+
+

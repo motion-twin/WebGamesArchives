@@ -1,0 +1,49 @@
+﻿<!-- ***************************************************************************** -->
+<!-- Nox, Dorogon, habitant de la cité Dorogon ----->
+
+<d place="ville2" name="Nox" gfx="nox" cond="scenario(nimba2,50-)">
+	<phase id="begin" next="ramolo" fast="1" frame="stop">
+		Un Dorogon imposant vous fait face.
+		Plus grand, plus fort que les autres habitants, il vous toise introspectivement.
+	</phase>
+	
+	<a id="ramolo">Bonjour Maître Dorogon.</a>
+	
+	<phase id="ramolo" next="ok:baston">
+		[Je suis toujours à la recherche d'un combattant d'élite pour tester ma force.]
+		[Nous nous devons d'être les plus puissants de ce monde, l'invasion de Caushemesh arrivera tôt ou tard, il faut être prêt !]
+		[Pistache, si tu ne fais pas d'effort, tu seras faible toute ta vie.
+		Il faut être fort, si tu veux un jour surpasser ton père et devenir un Archidorogon digne de ce nom !]
+	</phase>
+	
+	<a id="ok">(Pistache, Archidorogon ? haha...)</a>
+	
+	<phase id="ok" frame="stop" fast="1">
+		Vous vous éloignez, ce Dorogon à la différence des autres est plus agressif.
+		Mieux vaut ne pas lui chercher des histoires.
+	</phase>
+	
+	<a id="baston" cond="scenario(nimba2,31)">Je peux essayer de tester votre force !</a>
+	
+	<phase id="baston" next="bravo" give="ptsage" scenario="nimba2:32" fightgroup="dorou">
+		[Félicitation, tu as réussi à me mettre un genou à terre.]
+		[Peut-être que vous autres, habitant de la surface pourriez résister quelques temps contre les hordes Caushemeshennes.
+		Heureusement, nous ne tarderons pas à arriver pour vous débarrasser de cette engeance.]
+		[Dans tous les cas, tu as bien mérité un point de sagesse.]
+	</phase>
+	
+	<a id="bravo">Merci beaucoup !</a>
+	
+	<phase id="bravo" frame="stop" fast="1">
+		Vous vous éloignez du Dorogon, visiblement il ne porte par les Caushemeshens dans son coeur.
+		La situation est elle aussi critique qu'elle en a l'air ?
+		Vous avez maintenant 3 points de sagesse, il ne vous en manque que 2 !
+	</phase>
+</d>
+
+<d place="ville2" name="Nox" gfx="nox" cond="scenario(nimba2,51+)">
+	<phase id="begin" fast="1" frame="stop">
+		Bonjour Maître Dinoz.
+		Je suis le nouveau garde du corps de l'Archidorogon Pistache, même si mon rôle consiste principalement à le protéger de lui même...
+	</phase>
+</d>

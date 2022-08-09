@@ -1,0 +1,125 @@
+﻿<missions>
+
+	<!-- ***************************************************************************** -->
+	<!-- BAO BOB , rallies ----->
+
+	<m group="bob" id="kilpir" name="Birthday Present" limit="15">
+		<begin>It's Sophie from Waikiki Island's birthday soon. Her favorite meal is made from Pirhanoz found in the Sticky Swamp. Can you take her a few Pirhanoz for me? </begin>
+		<goto v="marais"/>
+		<kill v="pira" n="6"/>
+		<goto v="ilewkk"/>
+		<talk v="Sophie">Oh! You're so kind! Thank you for bringing me these delicious Piranhoz for my birthday! Give Mister Bao a kiss from me!</talk>
+		<end>I like giving presents ... here, take this as a reward.</end>
+		<xp v="30"/>
+	</m>
+
+	<m group="bob" id="troc" name="Barter in the Atlanteid Islands" limit="30">
+		<begin>Bartering is common in the Islands. You can exchange goods for an item you desire. I'd like to exchange a banana for a coat rack. Do you think you can do that for me? </begin>
+		<goto v="corail" hide="1"/>
+		<talk v="A Merchant">This banana looks delicious! I'll give you my kite in exchange!</talk>
+		<goto v="ilewkk" hide="1"/>
+		<talk v="A Lover">Pfff ... I'm on my way to the Fountain of Youth, if you would like, I'll give you this brand new engagement ring in exchange for your kite.</talk>
+		<goto v="chutes" hide="1"/>
+		<talk v="A jeweller">What! I can't believe it! This ring is part of an ancient royal collection! I'll give you the most valuable thing I own in exchange for the ring, my villa on Totem Island! Take the keys, you can't refuse!</talk>
+		<goto v="marais" hide="1"/>
+		<talk v="A Stuck Tourist">I am sick of this sss...swamp!!!!! This is the third time our Motor-Home has got stuck in the mud. What a stupid idea to go on vacation IN A SWAMP! What? A villa on Totem Island? Of course I'll exchange it for my Motor-Home!</talk>
+		<goto v="corail" hide="1"/>
+		<talk v="An Enthusiastic Artist">Fantastic! I'm so happy! Look at these faces! It's a work of art! What? how can it be trashy? You don't even understand art! My work is easily worth the same as a motor-home. I'll exchange with you!</talk>
+		<goto v="baobob" hide="1"/>
+		<talk v="An Old Woman">I heard you're looking for a coat rack. I'll trade it for whatever you have ... wait, what is that? "Faces"? It looks like nothing. . . it can't be worth much. Besides, I've never heard of "Picassi". Don't worry, you can still have the coat rack in exchange.</talk>
+		<end>You found my coat rack? I hope this little journey has shown you that most valuable treasures have to be earned!</end>
+		<xp v="100"/>
+		<gold v="2000"/>
+	</m>
+
+	<m group="bob" id="kilksk" name="Kazkadine Hunt" limit="10" cond="mission(kilpir)+canfight(kazka)">
+		<begin>I just received an emergency call from the Underwater Dome. The Atalants are extremely worried about the number of invading Kazkadines. Can you take your Dinoz there to clean it up? Make sure you don't get electrocuted.</begin>
+		<goto v="dome"/>
+		<kill v="kazka" n="6"/>
+		<end>Well Done! You successfully sealed the Kazkadine leak in the Underwater Dome!</end>
+		<xp v="30"/>
+		<gold v="2000"/>
+	</m>
+
+	<m group="bob" id="kilang" name="Eeloz With Vinegar" limit="12" cond="mission(kilksk)+canfight(anguil)">
+		<begin>Do you know the traditional dish: Eeloz with vinegar? It's delicious! Can you get some fresh Eeloz and vinegar and take them to my friend at Frish Port? It's a present!</begin>
+		<kill v="anguil" n="10" zone="2"/>
+		<goto v="dnv" hide="1"/>
+		<talk v="Wine Merchant">Umm? You're here on behalf of Mr Bao, looking for vinegar? Here, I have this old Chateau BrutForce which is perfect for cooking with.</talk>
+		<goto v="port"/>
+		<talk v="Fisherman">Are you looking for Mr Bao's friend? I think he went to visit Miss Squyd in Dinotown.</talk>
+		<goto v="dnv"/>
+		<talk v="Madam Squyd">Ooooh the cute little Dinoz!!! What? You're looking for Mr Bao's friend? He went to see old Grandpa Joe, they had important things to talk about!</talk>
+		<goto v="papy"/>
+		<talk v="Adam Nature">Yum! Eeloz with vinegar!! I love this dish! Sorry I didn't wait for you at Frish Port. I'll tell Bob to give you a reward!</talk>
+		<end>You're walking around during a mission? Adam told me everything. Here, take this, it's for you.</end>
+		<xp v="50"/>
+		<gold v="5000"/>
+	</m>
+
+	<m group="bob" id="bigpch" name="The Huge Hunt" limit="10" cond="mission(kilksk)">
+		<begin>I'm a bit embarrassed. I promised the Underwater Dome Archsage that I would exterminate 150 Atlanteid Island monsters in ten days. Unfortunately I've broken my arm and can't really move. Can you kill thirty monsters for me? I'll take care of the others!</begin>
+		<kill n="30" zone="2"/>
+		<end>Fantastic! I can now exterminate the others on my own using my feet, thanks for your help.</end>
+		<xp v="150"/>
+		<gold v="1500"/>
+	</m>
+
+	<m group="bob" id="rally1" name="The Sardine Rally" limit="10">
+		<begin>Take part in the Sardine Rally! Go to Frish Port as fast as possible!</begin>
+		<goto v="port"/>
+		<action v="Rally Checkpoint">You pass the finish line, now return to Mr Bao Bob!</action>
+		<end>Congratulations for finishing the Rally. Here's your prize.</end>
+		<xp v="10"/>
+	</m>
+
+	<m group="bob" id="rally2" name="The Fishes Rally" limit="10" cond="mission(rally1)">
+		<begin>Take part in the Fishes Rally! Go to Frish Port as quickly as possible!</begin>
+		<goto v="port"/>
+		<action v="Rally Checkpoint">You pass the first Rally checkpoint, now you have to go to the University!</action>
+		<goto v="univ"/>
+		<action v="Rally Checkpoint">You pass the second checkpoint, now return to Mr Bao Bob!</action>
+		<end>Congratulations for finishing the Rally. Here's your prize.</end>
+		<xp v="20"/>
+	</m>
+
+	<m group="bob" id="rally3" name="The Sharks Rally" limit="10" cond="mission(rally2)+fx(matesc)">
+		<begin>Take part in the Sharks Rally! Go to the Coral Mines as quickly as possible!</begin>
+		<goto v="corail"/>
+		<action v="Rally Checkpoint">You pass the first Rally checkpoint, now you have to go to BrutForce!</action>
+		<goto v="frcbrt"/>
+		<action v="Rally Checkpoint">You pass the second Rally checkpoint, now you have to go to the Basalt Slopes!</action>
+		<goto v="bslt"/>
+		<action v="Rally Checkpoint">You pass the third checkpoint, now return to Mr Bao Bob!</action>
+		<end>Congratulations for finishing the Rally. Here's your prize.</end>
+		<xp v="30"/>
+	</m>
+
+	<m group="bob" id="rally4" name="The Whales Rally" limit="10" cond="mission(rally3)+fx(matesc)">
+		<begin>Take part in the Whales Rally! Go to Lavapit and return as quickly as possible!</begin>
+		<goto v="fosslv"/>
+		<action v="Rally Checkpoint">You pass the Rally checkpoint, now return to Mr Bao Bob as soon as possible!</action>
+		<end>Congratulations for finishing the Rally. Here's your prize.</end>
+		<xp v="40"/>
+	</m>
+
+	<m group="bob" id="tour" name="The Dinoland Tour" limit="10" cond="mission(rally4)+fx(palmes)">
+		<begin>The DinoLand Tour is the most famous race in all of DinoLand! Race round Dinoland in less than ten days! The first checkpoint is on Waikiki Island.</begin>
+		<goto v="ilewkk"/>
+		<action v="Tour Checkpoint">Congratulations for passing the first checkpoint of the Dinoland Tour. The next checkpoint is located in BrutForce. Good luck!</action>
+		<goto v="frcbrt"/>
+		<action v="Tour Checkpoint">Congratulations for passing the second checkpoint of the Dinoland Tour. The next checkpoint is in the Precipitous Hills. Good luck up there!</action>
+		<goto v="colesc"/>
+		<action v="Tour Checkpoint">Congratulations for passing the third checkpoint of the Dinoland Tour. The next checkpoint is in Lavapit. Good luck climbing the Big All-Hot!</action>
+		<goto v="fosslv"/>
+		<action v="Tour Checkpoint">Congratulations for passing the fourth checkpoint of the Dinoland Tour. The next checkpoint is in the Korgons' Camp in Grumhel Forest. Avoid being slowed down by the monsters!</action>
+		<goto v="camp"/>
+		<action v="Tour Checkpoint">Congratulations for passing the fifth checkpoint of the Dinoland Tour. The next checkpoint is in Forest Threshold! Be careful! don't get lost on the Dark Path....</action>
+		<goto v="auree"/>
+		<action v="Tour Checkpoint">Congratulations for passing the sixth checkpoint of the Dinoland Tour! Now return to Bao Bob to win the Tour!</action>
+		<end>Bravo! That was a great performance. Here, take this, it's a reward for your success!</end>
+		<xp v="100"/>
+		<collec v="tour"/>
+	</m>
+
+</missions>

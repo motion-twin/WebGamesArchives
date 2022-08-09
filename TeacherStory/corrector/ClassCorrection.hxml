@@ -1,0 +1,31 @@
+-cp src
+-swf swf/corrector.swf
+-swf-header 644:800:30:FFFFFF
+-swf-lib obj\ClassCorrectionResources.swf
+--flash-strict
+-swf-version 10
+-main Main
+-resource fr/locale.txt@locale.fr
+-resource fr/docs.txt@docs.fr
+-resource fr/swaps.txt@swaps.fr
+-resource fr/notes.txt@notes.fr
+-resource fr/names.txt@names.fr
+-resource fr/vip.txt@vip.fr
+-resource fr/globalComments.txt@globalComments.fr
+-resource es/locale.txt@locale.es
+-resource es/docs.txt@docs.es
+-resource es/swaps.txt@swaps.es
+-resource es/notes.txt@notes.es
+-resource es/names.txt@names.es
+-resource es/vip.txt@vip.es
+-resource es/globalComments.txt@globalComments.es
+-resource en/locale.txt@locale.en
+-resource en/docs.txt@docs.en
+-resource en/swaps.txt@swaps.en
+-resource en/notes.txt@notes.en
+-resource en/names.txt@names.en
+-resource en/vip.txt@vip.en
+-resource en/globalComments.txt@globalComments.en
+-swf-lib swf/copie.swf
+-cmd "obfu9 swf/corrector.swf -o swf/corrector.swf"
+-cmd "cp swf/corrector.swf ../www/swf/"

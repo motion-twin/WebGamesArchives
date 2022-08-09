@@ -1,0 +1,146 @@
+<d place="chouet" name="Le colis d'Altus " gfx="guchxemp" auto="0">
+
+<phase id="begin" next="a:b:c:d:e:f:g:h">
+Vous venez récupérer un colis ? Vous avez le numéro ? 
+</phase>
+
+<a id="a">Oui, c'est C6478-97SD.</a>
+<a id="b">Je crois que c'est R9843-12ZS.</a>
+<a id="c">Z9497-28ZR, sûr et certain.</a>
+<a id="d">C'est H7894-43SD.</a>
+<a id="e">Euh... A7644-32FC.</a>
+<a id="f">J'appelle un ami.</a>
+<a id="g">Je demande l'avis du public.</a>
+<a id="h">50/50 !</a>
+
+<a id="exit">Zut. Raté.</a>
+
+<phase id="a" next="exit">
+Aloooors... C6478-97SD. %angry% Non. J'ai rien à ce numéro. 
+</phase>
+
+<phase id="b" frame="happy" next="bb:n">
+R9843-12ZS ? C'est votre dernier mot ? 
+</phase>
+
+<a id="n">Non.</a>
+
+<phase id="n" next="a:b:c:d:e:f:g:h">
+Ouh, quel suspens.
+</phase>
+
+<a id="bb">Oui, c'est mon dernier mot.</a>
+
+<phase id="bb" frame="angry" next="exit">
+Eh bien non, c'est pas ça.
+</phase>
+
+
+<phase id="c" next="exit">
+Z949-26ZR... Z9497-27ZR... Z9497-28ZR. Non je n'ai pas ça.
+</phase>
+
+<!-- ################ -->
+
+<phase id="d" frame="happy" next="tot">
+Ah ! Le * H7894-43SD ! C'est pas trop tôt !
+Dites donc, ça fait quand même 11 mois qu'il est là, ce colis. On a failli vous faire payer des frais de gardiennage ! 
+</phase>
+
+<a id="tot">Euh... Moi je viens juste le chercher, hein.</a>
+
+<phase id="tot" next="argl:imp">
+Oui, bon. Passons. C'est un colis en contre-remboursement, ça fait {50 kubors} tout rond, s'il-vous-plait. 
+</phase>
+
+<a id="argl" cond="hasgold(100)">Argl... 50 ? Mais vous êtes dingue !</a>
+<a id="imp" cond="!hasgold(100)">Quoi * ! ? 50 kubors ! Mais j'ai pas 50 kubors, moi ! </a>
+
+<phase id="imp" frame="angry" >
+Dans ce cas je ne peux pas vous donner ce colis. 
+Au revoir.
+</phase>
+
+<phase id="argl" gold="-50" next="grum">
+Je n'y peux rien. Le contenu doit être payé en contre-remboursement, débrouillez-vous avec la personne qui a demandé ce paquet. 
+</phase>
+
+<a id="grum">Grrrr. Voilà vos 50 kubors. Je le prends....</a>
+
+<phase id="grum" frame="happy" >
+Merci beaucoup. Ca nous débarrasse. 
+Bonne journée ! 
+</phase>
+
+
+<!-- ################ -->
+
+
+<phase id="e" next="exit">
+A7644-32FC... Il a déjà été pris ce matin. Désolé.
+</phase>
+
+<phase id="f" next="allo">
+Soit. Ca sonne... 
+{(tut)}... 
+{(tut)}...
+{(tut)}...
+</phase>
+
+<phase id="allo" off="1" next="altus">
+...Allo ? 
+</phase>
+
+<phase id="altus" frame="happy" next="ecoute">
+Monsieur Altus ? Bonjour ! 
+Vous êtes en direct du siège Chouettex. J'ai ici une personne qui a besoin d'aide pour un numéro de colis. Il a besoin de vous !
+</phase>
+
+<phase id="ecoute" next="vous" off="1">
+Ah oui. Allons-y, j'écoute la question.
+</phase>
+
+<phase id="vous" next="tout:vite">
+C'est à vous ! Lisez-lui les questions. Vous avez 30 secondes. 
+</phase>
+
+<a id="tout">Allo Altus ? Les numéros sont : Petit a : {C6478-97SD}. Petit b : {R9843-12ZS}. Petit c : {Z9497-28ZR}. Petit d : {H7894-43SD} ou petit e : {A7644-32FC}.</a>
+<a id="vite">Altus, c'est quoi le numéro de colis, déjà ? </a>
+
+<phase id="vite" off="1" next="merci">
+C'est H7894-43SD. Tu disais que c'était facile à retenir ! 
+</phase>
+
+<phase id="tout" off="1" next="merci">
+Je connais la réponse. C'est le petit d. 
+</phase>
+
+<phase id="merci" frame="happy" next="a:b:c:d:e">
+Merci Altus. Et bien le bonjour chez vous. 
+Et nous nous tournons dès à présent vers notre candidat !
+Alors... votre réponse ? 
+</phase>
+
+<!-- ############# -->
+
+<phase id="g" frame="happy" next="avis">
+Ah ! L'avis du public. Allons-y. 
+Public ! ...donnez-nous vos choix ! 
+</phase>
+
+<phase id="avis" next="choix">
+C6478-97SD : [32]. R9843-12ZS : [12]. Z9497-28ZR : [15]. H7894-43SD : [39]. A7644-32FC : [2]
+</phase>
+
+<phase id="choix" next="a:b:c:d:e">
+Oh oooh. Des avis relativement nets, mais il reste un doute. Alors ? Allez-vous suivre l'avis du public ? 
+</phase>
+
+<!-- ############# -->
+
+<phase id="h" frame="happy" next="c:d">
+Le 50/50 ! | Ordinateur, retirez 3 mauvaises réponses ! 
+</phase>
+
+	
+</d>

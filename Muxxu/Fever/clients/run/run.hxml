@@ -1,0 +1,24 @@
+-cp src
+-cp ../games
+-cp ../com
+-cp ../gfx
+-cp ../../tpl/fr
+-cp ../../../base/com
+-cp ../../../../../bumdum/old_lib
+-swf swf/game.swf
+-swf-version 9
+-swf-header 400:436:40:FFFFFF
+-swf-lib obj\runResources.swf
+--flash-strict
+-main Main
+-lib format
+-lib physaxe
+-D dev
+-D en
+-D dm_obfu
+-swf-lib ../gfx/bumdum.swf
+-swf-lib ../gfx/bumdum2.swf
+-swf-lib ../gfx/white.swf
+-swf-lib ../gfx/hiko.swf
+-swf-lib ../gfx/com.swf
+-cmd "obfu9 swf\game.swf -o swf\game.swf -fake -config obfu.txt"

@@ -1,0 +1,65 @@
+﻿<missions>
+
+	<!-- ***************************************************************************** -->
+	<!-- DIAN KORGSEY, aider les korgons ! ----->
+
+	<m group="dian" id="kswim" name="Comme un Korgon dans l'eau" limit="15">
+		<begin>La Jungle de Grumhel est un endroit fascinant ! Tenez, prenez les korgons par exemple. Ils se sont adaptés à merveille à leur environnement ! Saviez-vous qu'ils fabriquaient leur propres palmes afin de pouvoir traverser sans encombre le fleuve Jumin ? Non ? Tenez, je veux bien vous en offrir une paire si vous me ramenez quelques fournitures de première nécessité...</begin>
+		<action v="Examiner la liste de fournitures">La liste de Dian Korgsey indique qu'elle a tout d'abord besoin de certains outils que l'on trouve aux Forges du Grand Tout-Chaud.</action>
+		<goto v="forges"/>
+		<action v="Prendre des Outils">Vous récupérez une Trousse à Outils. La suite de la liste indique "Branches de la forêt du volcan"...</action>
+		<goto v="rashpk" hide="1"/>
+		<action v="Couper du bois">Vous récupérez quelques branches calcinées. La liste de fournitures se termine sur "un grigri"...</action>
+		<goto v="fosslv" hide="1"/>
+		<action v="Demander un grigri">Le Shaman vous adresse un large sourire et vous tend un de ses grigris porte-bonheur. Merci !</action>
+		<end>Voilà tout ce qu'il me fallait ! C'est parfait. Voici les Palmes des Korgons, comme convenu !</end>
+		<fx v="palmes"/>
+		<xp v="20"/>
+	</m>
+
+	<m group="dian" id="rivals" name="Korgons du nord, Korgons du sud" limit="15" cond="mission(kswim)">
+		<begin>Si les Korgons de cette partie de la Jungle de Grumhel sont quasiment sociables, il en existe au Sud, sur les bords du Chemin Glauque qui sont autrement moins gentils. Je pense que si tu m'apportais une preuve de victoire sur ceux du Sud, les korgons d'ici nous apprécieraient beaucoup plus !</begin>
+		<goto v="chemin"/>
+		<kill v="korgon" n="10" name="Korgons du sud"/>
+		<action v="Trouver un trophée">Vous récupérez quelques Griffes de Korgons pour servir de trophée pour les korgons du nord...</action>
+		<end>Ah, bonne idée les griffes ! Les korgons ici ont l'air d'apprécier... Tiens, voila pour ta peine.</end>
+		<gold v="2000"/>
+		<xp v="40"/>
+	</m>
+
+	<m group="dian" id="kfood" name="Steak de bois" limit="15" cond="mission(kswim)">
+		<begin>Il existe quelque part dans Grumhel une espèce rare d'arbre que les Korgons adorent : le Fikoïa Cendré ! J'ignore où on peut en trouver, mais je te payerai bien si tu m'en apportes !</begin>
+		<goto v="garde" hide="1"/>
+		<action v="Arbre étrange">Vous remarquez un drôle d'arbre aux feuilles grises et qui sent le tabac froid... Sûrement un Fikoïa Cendré ! Mais tandis que vous vous apprêtez à en prendre quelques branches, des bruits se font entendre dans les fourrés...</action>
+		<kill n="6"/>
+		<action v="Prendre quelques branches">Mieux vaut ne pas trop tarder par ici: vous préparez un gros fagot de bois et vous vous éloignez des fourrés...</action>
+		<end>Ils vont se régaler avec ça, merci bien !</end>
+		<gold v="2000"/>
+		<xp v="40"/>
+	</m>
+
+	<m group="dian" id="poison" name="Rivalités korgons" cond="mission(kfood)+mission(rivals)" limit="20">
+		<begin>Le Fikoïa Cendré que vous avez découvert va rapidement devenir un point stratégique pour les korgons du sud... Il faut réagir vite ! Nous allons "piéger" quelques branches de cet arbre pour les dissuader de le manger... Evidemment, nous, nous saurons quelles branches ne pas toucher... Hi hi hi.</begin>
+		<goto v="collin"/>
+		<action v="Récupérer de la sève">Vous récupérez de la Suintante Mordicus, une sève d'arbre au goût innommable. Le piège idéal pour ce travail.</action>
+		<goto v="garde"/>
+		<action v="Piéger le Fikoïa">Ca alors ! Le Fikoïa a disparu ! Les korgons du sud sont probablement passés avant vous...</action>
+		<goto v="jungle" hide="1"/>
+		<action v="Embuscade">Tandis que vous avancez dans la Jungle Sauvage, un groupe de Korgons surgit tout autour de vous ! Il va falloir s'en débarrasser pour continuer...</action>
+		<kill v="korgon" n="3" name="Korgons embusqués"/>
+		<goto v="fleuve" hide="1"/>
+		<action v="Traces au sol">De larges traces dans le sol indiquent clairement qu'on a trainé quelque chose de très lourd depuis le Fleuve Jumin... Les traces continuent vers le sud.</action>
+		<goto v="chemin" hide="1"/>
+		<action v="Traces au sol">La piste s'arrête ici... Mais à en juger par les grognements dans les buissons, on vous attendait de pied ferme !</action>
+		<kill v="korgon:ronciv" n="8" name="Korgons ou alliés"/>
+		<action v="Fikoïa Cendré">Le Fikoïa est dissimulé sous une pile de feuilles de bananiers. Il va falloir le trainer jusqu'au camp...</action>
+		<goto v="fleuve"/>
+		<talk v="Dian Korgsey">Ah vous voila ! Quel dommage qu'ils aient coupé ce Fikoïa Cendré... C'est bien un travail de korgon sudiste ça... Bon, impossible de remonter la rivière avec. Cachez-le ici, ça fera l'affaire. On se retrouve au Camp.</talk>
+		<action v="Cacher le Fikoïa">Vous dissimulez à votre tour l'arbre sous quelques feuilles de bananiers.</action>
+		<end>C'est bien triste pour ce specimen de Fikoïa, ils sont si rares ! Merci pour toute votre aide, on ne vous oubliera pas...</end>
+		<gold v="3500"/>
+		<item v="hotpan"/>
+		<xp v="100"/>
+	</m>
+
+</missions>

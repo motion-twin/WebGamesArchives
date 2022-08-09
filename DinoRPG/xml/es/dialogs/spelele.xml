@@ -1,0 +1,100 @@
+﻿<d place="gorges" name="Pelele-ólogo" gfx="spelele" cond="!fx(fspele)">
+
+	<phase id="begin" next="talk" fast="1">
+		Hace poco un terremoto creó una fisura en un muro de las Gargantas. De ella se escapa un aire glacial. Ves que hay un hombre raro inspeccionando los alrededores.
+	</phase>
+
+	<a id="talk">Hablar con él</a>
+
+	<phase id="talk" next="gla:bye">
+		¡¡¡Ffiiuuu!!! ¿Has visto esa fisura? ¡Da paso a una gigantesca caverna en la cual reina un frío glacial!
+		¡Cuidado! Si tu Dino entra allí, ¡será congelado!
+	</phase>
+
+	<a id="gla">Ya, ya, ya...</a>
+	<a id="bye">Despedirse.</a>
+
+	<phase id="gla" next="ok:bye">
+		¡¡Que sí!! Hace un frío que pela.... según mis estudios termodinámicos, las corrientes de magma caliente del Gran Señor-Todo-Quema absorben el calor de las rocas altamente conductoras y crean en el subsuelo un enfriamiento por convección. ¡Un auténtico frigorífico natural!
+	</phase>
+
+	<a id="ok">Es... apasionante.</a>
+
+	<phase id="ok" next="ok2:bye">
+		¡¿A que sí?! Soy un gran explorador de las cavernas y otros subterráneos extraños. Es mi profesión, ¡soy Pelele-ólogo! Obtuve mi diploma en la Universidad de Dinovilla, ¡rama naturalgoritmia!
+	</phase>
+
+	<a id="ok2">Es... genial.</a>
+
+	<phase id="ok2" next="ok3:bye">
+		¡Te lo digo yo! He corrido hasta aquí en cuanto supe lo del terremoto, y encima he sido el primero en descubrir esta gruta. Le he puesto un nombre: La Gruta del Cero Relativo. ¿Te gusta?
+	</phase>
+
+	<a id="ok3">Mmm sí, es... magnífico.</a>
+
+	<phase id="ok3" next="congel:bye">
+		¡Claro que sí! Bueno, como eres simpático, te voy a dar una PISTA. Si metes a tu Dino en la Gruta del Cero Relativo, será congelado...
+	</phase>
+
+	<a id="congel">¿Congelado?</a>
+
+	<phase id="congel" next="congel2:bye">
+		¡Sí! ¡Con-ge-la-do! ¡Lo bueno es que la temperatura es tan baja que no morirá! No podrás usar más este Dino, pero no contará más en el límite de posesión de Dinos, lo que te permitirá tener MÁS Dinos. Aunque tendrás que tener en cuenta sus efectos secundarios...
+	</phase>
+
+	<a id="congel2">¿¿¿Efectos secundarios???</a>
+
+	<phase id="congel2" next="again:thanks">
+		Sí, en el momento en que tu Dino es congelado, ya no cuenta en el LÍMITE, pero no puedes descongelarlo hasta que estés de nuevo bajo el LÍMITE, lo que quiere decir que tendrás que congelar a otro Dino para reemplazarlo... Y además, congelar un Dino lleva todo un día, por lo que hace falta un poco de paciencia... ¿Lo entiendes?
+	</phase>
+
+	<a id="again" target="congel">No, ¡no entiendo nada!</a>
+	<a id="thanks">Sí, ¡gracias!</a>
+
+	<phase id="thanks" effect="fspele">
+		¡De nada! ¡No dudes en llamarme un día si necesitas ayuda par explorar un subterráneo misterioso!
+	</phase>
+
+	<phase id="bye">
+		¡Chao! ¡No te acerques demasiado a la fisura!
+	</phase>
+
+</d>
+
+<d place="gorges" name="Pelele-ólogo" gfx="spelele" cond="scenario(magnet,8)+fx(fspele)+!fx(ice)">
+
+	<phase id="begin" next="talk">
+		¡Ah! ¡Hola! Qué frío hace por aquí, ¿no te parece?
+	</phase>
+
+	<a id="talk">Glaglaglagla...</a>
+
+	<phase id="talk" next="next">
+		Acabo de pasar un tiempo explorando la Gruta del Cero Relativo... ¿sabías que el hielo que la compone es extraordinario? Está compuesta de un 3% de Mazote Sólido, un ingrediente rarísimo que se conserva a una temperatura estable...
+	</phase>
+
+	<a id="next">¿Mazote?</a>
+
+	<phase id="next" next="prof">
+		Es lo que permite al hielo no descongelarse, incluso cuando en verano el flujo de magma ralentiza el ciclo de enfriamiento de la gruta. Claro está, el Mazote Sólido es totalmente contrario a todas las leyes conocidas de la termodinámica, pero a pesar de ello existe... Es la nueva gran comida de coco para los profesores de la Universidad.
+	</phase>
+
+	<a id="prof">Pues no me extraña...</a>
+
+	<phase id="prof" next="theo">
+		¡Sí! Algunos como el famoso profesor Eugenio han publicado algunas teorías. La teoría del profesor Eugenio es un poco complicada pues para que sea cierta el Universo tendría que estar compuesto de 4,24 dimensiones: 3 para el normal y 1,24 para el Mazote Sólido.
+	</phase>
+
+	<a id="theo">Vaya, vaya...</a>
+
+	<phase id="theo" next="ok">
+		Sí, pero esta teoría tiene aplicaciones muy interesantes, como el hecho de poder prever la temperatura de ebullición de un Arquelión. Su principal defecto es que también prevé la existencia de un Mundo Sombra paralelo a Dinoland... La comunidad científica piensa que el profesor Eugenio se equivoca, pues un lugar así no puede existir... Es totalmente imposible según la tesis del Doctor Stanstein.
+	</phase>
+
+	<a id="ok">... ya veo.</a>
+
+	<phase id="ok" effect="ice">
+		Bueno, el caso es que este hielo es genial. Ten, toma un trocito. ¡Guárdalo para refrescarte cuando tengas calor!
+	</phase>
+
+</d>

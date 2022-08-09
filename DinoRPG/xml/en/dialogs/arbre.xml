@@ -1,0 +1,27 @@
+﻿<!-- Forest Warden-->
+
+<d place="garde" name="Forest Warden" gfx="arbre">
+
+	<phase id="begin" next="missions:shake" fast="1">
+		You're standing in front of an enormous tree. It's extremely old but very wise.
+		Slowly but surely, the trees' leaves start to rustle and move in your direction.
+	</phase>
+
+	<a id="missions" cond="fx(grdmis)">Check missions list</a>
+	<a id="shake" cond="!fx(grdmis)">Shake the tree</a>
+
+	<phase id="shake" next="item" fast="1">
+		While shaking the tree, you hear a strange growl coming from inside the bark!
+		Something falls suddenly from the leaves and hits you on your head....Plunk!
+	</phase>
+
+	<a id="item">Ouch! What was that?</a>
+
+	<phase id="item" next="missions" fast="1" effect="grdmis">
+		It's a big hazelnut wrapped inside a scroll. To your surprise, you
+		find that something written on the scroll!
+	</phase>
+
+	<phase id="missions" missions="arbre"></phase>
+
+</d>

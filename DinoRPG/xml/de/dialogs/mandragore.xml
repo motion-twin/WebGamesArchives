@@ -1,0 +1,144 @@
+﻿<!-- Mandragore, une fois Nimbao2 terminée-->
+<!--On retrouve Mandragore en train de siroter son cocktail sur la plage de sa villa, visiblement, ça ne l'intéresse pas...
+-On peut lui demander s'il a toujours l'orbe noire du donjon des steppes, il répond qu'il s'en sert de boule de bowling, et qu'il est impossible qu'il s'en sépare (peut être un jour).
+-Mandragore nous apprend un peu le background des gardiens. Il avait été nommé gardien au moment de l'apparition du monde sombre,
+-->
+	
+	
+<d place="villa" gfx="mandragore" name="Mandragore" frame="glou" cond="scenario(nimba2,51+)+!(scenario(caush,33+)+scenario(caush,42-))">
+	<phase id="begin" fast="1" next="forme:orbe:caush:gardien:merci:quetza:sofia">
+		Mandragore ist wieder zurück zu Hause...
+		Ganz entspannt hat er es sich in einem Sessel gemütlich gemacht und nippt an einem Cocktail nach eigenem Rezept...
+	</phase>
+	<a id="forme">He, was gibt's Neues?</a>
+	<a id="orbe">Hast du den dunklen Orb noch?</a> <!-- si possible mettre condition avoir fini cavmagnet -->
+	<a id="caush">Was weißt du über Caushemesh?</a>
+	<a id="gardien">Wer sind die Wächter?</a>
+	<a id="merci" cond="scenario(nimba2,51)">Danke für alles!</a>
+	<a id="quetza" cond="collec(quetzu)">Einzigartige Fähigkeiten?</a>	
+	<a id="sofia" cond="scenario(caush,43+)">Eine eheähnliche Partnerschaft also??</a>
+	
+	<phase id="forme" next="orbe:caush:gardien:merci" frame="bla">
+		Mir geht's gut, danke der Nachfrage. Ich habe mich schön entspannt. ...bis du hier aufgetaucht bist.
+	</phase>
+	
+	<phase id="orbe" next="morceaux:forme:caush:gardien:merci" frame="bla">
+		[Diesen schwarzen Orb, den ich in den Magnetischen Höhlen gefunden habe?]
+		[Den benutze ich als Bowlingkugel. Ich will mich einfach nicht davon trennen.]
+		[Was würdest du schon damit anstellen? Du hast gerade mal einen Bruchteil der Monster gesehen, die sich in dunklen Welt herumtreiben.
+		An dem Tag, an dem du entspannt durch Caushemesh schlenderst... Dann werde ich dir den Orb leihen...]
+		
+		[Yeah, das wird eine bemerkenswerte Bowlingpartie werden!]
+	</phase>
+	
+	<a id="morceaux" cond="fx(morsso)">Ein Bruchstück der dunkeln Welt?</a>
+	
+	<phase id="morceaux" next="forme:caush:gardien:merci" frame="bla">
+		[Fragst du mich ernsthaft, wie Gegenstände aus der dunklen Welt in unser Reich gelangen können?]
+		[Schau, es ist doch offensichtlich. Wenn du mit einer Kugel Bowling spielen willst, müssen Löcher darin sein...]
+		[Anderseits, du dürftest Probleme haben, sie zu finden. Ich habe die drei Bruchstücke nämlich vor einiger Zeit in den Müll geworfen...]
+	</phase>
+	
+	<phase id="caush" next="forme:caush:gardien:merci" frame="bla">
+		[Ich bin einige Male dort gewesen. Man kann sagen, dass ich dort einige einflußreiche Leute kenne...
+		Ich will nicht darüber sprechen. Ich könnte sonst eines Tages Ärger deswegen bekommen...]
+		[Falls du jedoch irgendwann einmal dorthin kommen solltest, wärst du sicher überrascht, was dort alles vor sich geht.]
+		
+		[Es ist jedenfalls nicht mein Problem. Entschuldige mich, ich werde jetzt meinen Mittagschlaf fortsetzen!]
+	</phase>
+	
+	<phase id="gardien" next="sombre" frame="bla">
+		[Ha, die Wächter...]
+		[Diese Geschichte ist wirklich alt...]
+		[Sie trug such vor etwa 100 Jahren zu. Damals war ich noch ein Jungspund...
+		Eines Tages gab es einen Zwischenfall, der Dinoland regelrecht in seinen Grundfesten erschütterte.]
+		_(Das bleibt unter uns. Aber der Ursprung war Caushemesh... Nochmal zum Mitschreiben, das hast du nicht von mir, klar?!)_
+		
+		[Dieses besondere Ereignis veränderte das Antlitz von Caushemesh.
+		Aber angesichts der Tatsache, dass niemand sein vorheriges Aussehen kannte, ist das auch nicht weiter schlimm...]
+	</phase>
+	
+	<a id="sombre">Die dunkle Welt?</a>
+	<phase id="sombre" next="super" frame="bla">
+		[Genau, durch diesen Zwischenfall öffnete sich eine Art Tor aus einer Parallelwelt, die wir als die dunkle Welt kennen, zu unserer eigenen Welt...
+		Als das geschah, gab es eine gewaltige Invasion von Monstern und dunklen Dinoz...]
+		[Sobald diese Invasion zurückgeschlagen war, ernannten die verschiedenen Könige und der Erzdorogon die Wächter. 
+		...Leute, die willig und fähig waren, jeden Invasionsversuch aus der dunklen Welt zurückzuschlagen.]
+		[Noch heute gibt es fünf Wächter, die pausenlos über die Sicherheit von Dinoland wachen.]
+	</phase>
+	<a id="super">Ich kenne einen von ihnen!</a>
+	
+	<phase id="super" next="vous" frame="bla">
+		[Eigentlich kennst du sogar zwei von ihnen!]
+		[Bao ist der aktuelle Wächter der Inselzone. Es gibt dort einen ziemlich großen Spalt. Nicht der größte, aber groß genug, dass ein Wächter die ganze Zeit darüber wachen sollte...]
+		[Der zweite Wächter war Grizorg. Nimbao macht sich nicht wirklich Sorgen wegen der dunklen Welt. Deswegen hat der Erzdorogon die Aufgabe auch weitergegeben.]
+		[Ich bin überzeugt, dass Pistazie ein hervorragender Wächter sein wird. Oder zumindest ein Wächter, der nichts Schlimmes anrichtet!]
+	</phase>
+	
+	<a id="vous">Warst du nicht auch ein Wächter?</a>
+	
+	<phase id="vous" next="autre" frame="bla">
+		Richtig. Lange bevor Bao geboren wurde, wurde ich als Wächter über die Inseln eingesetzt. Glücklicherweise war mein Schüler verrückt genug, diese Aufgabe zu übernehmen...
+		Hehehe...
+	</phase>
+	
+	<a id="autre">Und die anderen Wächter?</a>
+	
+	<phase id="autre" next="forme:caush:orbe:merci" frame="bla">
+		[Nun, es gibt einen Wächter in Caushemesh. Vermutlich ist er der stärkste von uns allen. Der Spalt bei Caushemesh ist nämlich der größte...
+		Die anderen beiden Wächter kenne ich nicht. Man sagt, dass sich einer von ihnen in der dunklen Welt verirrt hat...]
+		[Ehrlich gesagt, ich bin kein bisschen beunruhigt.
+		Ich bleibe lieber hier, ruhe mich aus und nippe an meinen Cocktails.]
+	</phase>
+	
+	<phase id="merci" next="go" collection="quetzu" scenario="nimba2:52" frame="bla">
+		[Mach dir keine Sorgen, das ist normal. Diese ganze Geschichte begann vor langer, langer Zeit.]
+		[Ach, nebenbei... Ich habe ein Geschenk für dich. Lucette kennst du ja schon, nicht wahr? Mein Dinoz ist ein Quetzu, diese Rasse stammt von Nimbao.
+		Ich habe einige Eier aus dem Dinoz-Geschäft bei mir. Mit der Auszeichnung, die ich dir geben werde und *etwas Geduld* wirst du dir einen Quetzu kaufen können! Ich konnte nur fünf Eier ergattern. Also wähle mit Bedacht, ehe du dich für eines entscheidest.]
+		
+		[Ich wünsch dir weiterhin viel Glück auf deinen Abenteuern! Schau ruhig mal wieder vorbei, wenn du in der Nähe bist. Ich habe vielleicht einige Ratschläge für dich.
+		Bis später!]
+	</phase>
+	<a id="go">Wir sehen uns!</a>
+	<phase id="go" fast="1" frame="glou">
+		Es ist Zeit für ein neues Abenteuer... Was ist dein nächstes Ziel? Caushemesh? Die dunkle Welt?
+		Die Zukunft wird es zeigen!
+	</phase>
+	
+	<phase id="quetza" next="comp" frame="bla">
+		[Die Quetzu sind eine sagenumwobene Rasse. Ihre einzigartigen Feuer- und Wasserfähigkeiten fallen sofort ins Auge. Doch sie haben noch eine ganz besondere Fähigkeit, die dich interessieren wird...]
+		[Jeder Dinoz hat ein verborgenes Potential: In Momenten großer Gefahr können sie einen Gott beschwören.
+		Die heutigen Dinoz haben diese Fähigkeit leider verloren. Doch vielleicht werden sie ja eines Tages einen Weg finden, wie man diese Fähigkeit wiedererweckt.]
+ 	</phase>
+	<a id="comp" >Und die Quetzu?</a>
+	<phase id="comp" next="trouve" frame="bla">
+		[Die Quetzu haben die Fähigkeiten ihrer Vorfahren nicht vergessen und können sie rufen, wenn es nötig ist!
+		Du musst dazu nur die Fähigkeit *Beschwörung* in ihrem Fähigkeiten-Baum finden.]
+		[Hast du erst einmal einen Pakt mit Quetzalcoat, dem mächtigen Vorfahren des Quetzu, geschlossen, kannst du das Schlachtfelt mit einem gewaltigen Sturm verwüsten.]
+		[Viel Glück beim Finden der Fähigkeit!]
+	</phase>
+	<a id="trouve" >Noch während wir sprechen, kremple ich mir meine Ärmel hoch!</a>
+	<phase id="trouve" fast="1" frame="glou"> 
+		Und wieder brichst du auf zu neuen Abenteuern. Wird es dir gelingen, alle Geheimnisse der Quetzu aufzudecken?
+	</phase>
+
+	<!-- todo -->
+	<phase id="sofia" next="vie">
+		[Haaaa, si tu savais...]
+		[Tous les jours, c'est une expérience nouvelle, une aventure au quotidien directement chez soi...]
+		[Faut dire, je dois rattraper les 50 années de retard que j'ai accumulé depuis le temps...]
+		[Mais il y a des bons côtés aussi !]
+	</phase>
+	<a id="vie">Comme quoi ?</a>
+	<phase id="vie" next="parti" gfx="sofia" name="Sofia" frame="plage" background="2">
+		[Mandrachou !]
+		[Apporte moi un autre verre s'il te plaît.]
+		[...]
+		[VITE !]
+	</phase>
+	<a id="parti">...</a>
+	<phase id="parti" fast="1">
+		Mandragore n'a pas eu le temps de vous répondre, il se dépêche de remplir sa tâche avec application.
+		Laissons ce petit couple vaquer à ses occupations et éloignons nous discrètement.
+	</phase>	
+</d>

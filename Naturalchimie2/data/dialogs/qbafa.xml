@@ -1,0 +1,20 @@
+<d place="gubafa" name="Monsieur 25-678-9" gfx="gubafaa" cond="grade(,4)">
+
+<phase id="begin" next="work:workb:exit">
+Au suivant !
+</phase>
+
+<a id="work" cond="!quest(bafae)">Vous avez du travail pour un étudiant alchimiste ? </a>
+<a id="workb" cond="quest(bafae)">Vous avez du travail pour un étudiant alchimiste ? </a>
+<a id="exit">Je me suis trompé.</a>
+
+
+<phase id="work" quest="bafa">
+%happy%Mmmmh... voyons voir. | Ah ! Le bureau de validation des objets magiques a plein de requêtes urgentes, ça me semble parfait ! 
+</phase>
+
+<phase id="workb" quest="bafa">
+Oui j'ai besoin de toi. Viens voir par ici.
+</phase>
+
+</d>

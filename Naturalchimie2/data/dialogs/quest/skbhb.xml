@@ -1,0 +1,29 @@
+<d place="skoasi" name="Goûter l'eau" gfx="skprofb" auto="0">
+
+<phase id="begin" frame="angry" next="todo">
+Alors ? 
+</phase>
+
+<a id="todo">Il y a un goût... mais je ne sais pas trop de quoi. Ca sent un truc...</a>
+
+<phase id="todo" frame="normal" next="crea">
+Voyons... Sluurp. | | | %happy% Y'a oui, ça sent un truc. | Ca me dit quelque chose. Un truc qu'on sent souvent...
+</phase>
+
+<a id="crea">J'ai l'impression que ça sent les kubors.</a>
+
+<phase id="crea" frame="angry" next="epil">
+Mais non le kubor n'a pas d'odeur, c'est connu. | C'est bizarre, le goût pourrait aller mais je le sens pas. Impossible de mettre un nom sur ce que ça sent. 
+</phase>
+
+<a id="epil">On fait quoi, alors ? </a>
+
+<phase id="epil" frame="normal" next="com">
+Je me dis que ça pourrait aller comme ça mais... | Dans le doute, on va faire analyser cette eau pour savoir ce qu'elle sent. Comme ça pas de surprises.
+</phase>
+
+<phase id="com" qgive="QuestObj(liquid):1" frame="happy">
+Le B.A.F.A. possède un service d'analyses. Va là-bas avec un peu d'eau, ils devraient pouvoir nous dire ce que c'est que cette drôle d'odeur.
+</phase>
+
+</d>

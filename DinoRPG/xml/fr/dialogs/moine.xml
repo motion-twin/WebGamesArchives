@@ -1,0 +1,101 @@
+﻿<!-- QUETE DE LA PERLE : perle de la fontaine de jouvence -->
+<!-- 	+ révélation de l'utilisation du Gant			  -->
+
+<d place="chutes" name="Maître Hydargol" gfx="hydargol" cond="admin()|fx(bouee)">
+
+	<phase id="begin" next="talk" fast="1">
+		Les Chutes Mutantes sont l'un des Grands Lieux de méditation des moines Zenzen. C'est pour cette
+		raison qu'on en trouve souvent dans le coin. En s'installant sur de grandes feuilles de nénuphars,
+		ils essaient de méditer le plus longtemps... sans pour autant se faire entraîner par le courant !
+		De nombreux moines s'étant un peu assoupis se sont offert une descente des chutes : en tout
+		cas, personne ne les a jamais revus.
+	</phase>
+
+	<a id="talk">Parler à Maître Hydargol</a>
+
+	<phase id="talk" next="hello:help:give:act">
+		.........bon.jour......
+	</phase>
+
+	<a id="hello" target="talk">Bonjour !</a>
+	<a id="help" cond="!fx(nenuph)+!collec(perle)">Puis-je vous être utile ?</a>
+	<a id="give" cond="fx(nenuph)+!fx(chutes)">Donner les feuilles de Nénuphar</a>
+	<a id="act" cond="collec(perle)">Alors quoi de neuf ?</a>
+
+	<phase id="help" next="get">
+		....Ah ? Euh... oui... peux-tu... m'apporter...Zzzz... zzz...
+	</phase>
+
+	<a id="get">Vous apporter... ?</a>
+
+	<phase id="get" next="where">
+		...Ah ? Euh... oui... m'apporter... une feuille... de nénuphar...
+	</phase>
+
+	<a id="where">Et où je vais trouver cela ?</a>
+
+	<phase id="where" effect="zenbro">
+		...trouve... mon... apprenti padamoine... Zzz... zzz...
+	</phase>
+
+	<phase id="give" noeffect="nenuph" collection="perle">
+		...merci.... je vais pouvoir.... enfin... méditer sur... les Chutes !!!!
+		Je t'offre cette Perle en récompense... elle rejoindra ta Collection d'objets !
+	</phase>
+
+	<phase id="act" next="gant">
+		Youhouhhh !!! C'est génial ! Regarde... je flotte !
+	</phase>
+
+	<a id="gant" cond="fx(gant)+!fx(chutes)">Montrer le Gant des Zors</a>
+
+	<phase id="gant" next="why">
+		Oooh !!! C'est un Gant des Zors que tu as là ? GENIAL !!!
+	</phase>
+
+	<a id="why">Ah ? Pourquoi ?</a>
+
+	<phase id="why" next="super">
+		Je vais t'expliquer... Le Gant des Zors a le pouvoir d'annuler le courant des Chutes,
+		autour de toi. Ainsi, à l'aide d'une feuille de nénuphar, on peut contourner les Chutes et
+		accéder à la Forêt de Grumhel qui se trouve au-delà.
+	</phase>
+
+	<a id="super">Super !</a>
+
+	<phase id="super" next="ok:no">
+		Bon, si tu me promets de me laisser utiliser ton Gant de temps en temps, je te prête les feuilles
+		de nénuphar qui te permettront de passer les Chutes... marché conclu ?
+	</phase>
+
+	<a id="ok">Ok</a>
+	<a id="no" target="why">Pas question</a>
+
+	<phase id="ok" effect="nenuph:chutes">
+		Voilà, tu as les feuilles de nénuphar... Tu vas désormais pouvoir passer les Chutes, bon courage
+		pour la suite de ton aventure ! Et fait attention, la Forêt au delà est très dangereuse !
+	</phase>
+
+</d>
+
+<!-- APPRENTIS -->
+
+<d cond="fx(zenbro)" place="port" name="Apprenti padamoine" gfx="bemol">
+
+	<phase id="begin" next="help">
+		Bonjour, heu... je suis Bémol, le padamoine de Maître Hydargol. Et heu... je dois lui amener ces feuilles de nénuphar. Le problème c'est que, heu... je viens de me rendre compte que j'avais le mal de mer... pourtant je dois me rendre sur les Iles Altantéinées ! Qu'est-ce que je vais bien pouvoir faire ???
+	</phase>
+
+	<a id="help">Je dois justement y aller aussi. Je peux lui app...</a>
+
+	<phase id="help" next="get">
+		C'est vrai, vous acceptez de m'aider ?? Merci beaucoup !
+	</phase>
+
+	<a id="get">Heu... De rien</a>
+
+	<phase id="get" noeffect="zenbro" effect="nenuph">
+		Vous avez l'air digne de confiance. Tenez, je vous confie ces feuilles de nénuphar, et que la Sainte Force soit avec vous !
+	</phase>
+
+</d>

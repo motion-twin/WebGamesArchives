@@ -1,0 +1,84 @@
+﻿<d place="fosslv" name="Meister der Elemente" gfx="elmaster" cond="active(elmaster)+((mission(pigeon)+mission(ritual)+mission(shipmt))|admin())">
+
+  <phase id="begin" fast="1" next="talk:talk2:talk3">Du hast auf deinem Pfad zum Dinozmeister schon oft vom Meister der Elemente gehört. Es handelt sich um einen weithin respektierten Meister, der über großes Wissen über das Wesen und den Umgang mit den Elementen besitzt.
+	Zahlreiche junge Dinozmeister suchen seinen Rat auf, um sich fortzubilden. Er ist jedoch dafür bekannt, spröde und nicht leicht zugänglich zu sein...
+  </phase>
+
+  <a id="talk" cond="!mission(elma)">Mit dem Meister der Elemente
+  reden.</a>
+  <a id="talk2" cond="mission(elma)+!mission(elma5)">Mit dem Meister der
+  Elemente reden.</a>
+  <a id="talk3" cond="mission(elma5)">Mit dem Meister der Elemente
+  reden.</a>
+
+  <phase id="talk" next="ask"> Hä? Na sieh mal an, noch so ein Einfalts....pinsel, der hier auf....kreuzt, damit ich ihm
+	helfe. So langsam habe ich die N....Na...was will er denn?
+  </phase>
+
+  <a id="ask">Ich möchte etwas bei dir lernen!</a>
+
+  <phase id="ask" next="ask2"> Na dann wollen wir mal sehen... Er möchte hinzulernen, ohne sich allzusehr anstrengen zu müssen. Er möchte Wunder vollbringen, ohne den kleinen Finger zu rühren. Wenn er meinen Rat hören möchte, hier ist er: Beweg deinen A.....rm!!!
+  </phase>
+
+  <a id="ask2">Und das ist alles?</a>
+
+  <phase id="ask2" next="miss">...und er lässt nicht locker... Lass uns mal sehen... Wenn er wirklich etwas lernen will, wird er mir zuerst zu Diensten stehen müssen. Anschließend werden wir ja sehen, ob er unserer Ratschläge würdig ist!</phase>
+
+  <a id="miss">Missionsliste</a>
+
+  <phase id="miss" missions="elmaster">
+	</phase>
+
+  <phase id="talk2" next="miss:maudit">Nun gut, dann wollen wir mal sehen, wie er sich so anstellt... Ich befürchte jedoch, dass man mit ihm nicht viel anfangen kann...</phase>
+
+  <phase id="talk3" next="maudit:sphere">Seine Ausbildung ist zu Ende... Ich bin nicht der Typ, der Komplimente macht, aber die Mehrzahl der Dinoz hält nicht bis zum Ende durch. Also... das ist nicht schlecht.</phase>
+
+  <a id="maudit" cond="fx(maudit)">Auf mir liegt ein Fluch...</a>
+  <a id="sphere">Bekomme ich eine Belohnung?</a>
+
+  <phase id="maudit" next="maudit2">Wie bitte? Ein Fluch? Sage er mir nicht, dass er auch noch mit meinem Zauberstab aus dem Wald der Verdamnis in Berührung gekommen ist??? Ich hatte ihm doch gesagt, ihn auf keinen Fall anzufassen!! </phase>
+
+  <a id="maudit2">....</a>
+
+  <phase id="maudit2" next="maudit3">Und natürlich, jetzt, nachdem er es vers...emmelt hat, möchte er, dass ich ihm helfe. Als ob ich nichts besseres zu tun hätte! Was soll`s... Was geschehen ist, ist geschehen... Um den Fluch aufzuheben, muss die Dämonensalbe angewendet werden. Das einzige Problem ist, dass das letzte Geschäft, das sie verkaufte, pleite gegangen ist...</phase>
+
+  <a id="maudit3">....</a>
+
+  <phase id="maudit3" next="maudit4">Ich habe jedoch gehört, dass es ein verstecktes Geschäft geben soll, das Gegenstände verkauft, die anderswo praktisch nicht zu finden sind. Das merkt man zwar am Preis, aber angesichts der Umstände, glaube ich nicht, dass er die Wahl hat...</phase>
+
+  <a id="maudit4">....</a>
+
+  <phase id="maudit4">Den letzten Gerüchten zufolge, soll das Geschäft den Verfluchten in den Aschpuckruinen erscheinen.</phase>
+
+  <phase id="sphere" next="sphere2">Er möchte eine Belohnung?!? Was soll das heißen?... Es stimmt, dass er während seiner Unterweisung in die fünf Elemente ein gewisses Durchhaltevermögen an den Tag gelegt hat... Ein Durchhaltevermögen, das eng an Dummheit grenzte, aber nun gut, warum auch nicht...</phase>
+
+  <a id="sphere2">...</a>
+
+  <phase id="sphere2" next="sphere3">Als Lehrer hoffe ich, dass er zumindest etwas während dieser Zeit gelernt hat und dass er den Leuten dankbar sein wird, die so viel Zeit verschwendet haben, ihm diese Selbstverständlichkeiten einzutrichtern. Insbesondere mir!</phase>
+
+  <a id="sphere3">Habt Dank, Meister.</a>
+
+  <phase id="sphere3" next="sphere4">Ah! Na wenigstens ist er höflich! Das ist ein Charakterzug, der heutzutage zusehends verloren geht... Als Gegenzug für seine Mühe werde ich ihm eine schöne Belohung geben. Weiß er denn wenigstens was eine Elementarsphäre ist?</phase>
+
+  <a id="sphere4">Eine was?</a>
+
+  <phase id="sphere4" next="sphere5">Das dachte ich mir... Manchmal frage ich mich, warum ich immerzu das gleiche erklären muss... Nun denn, eine Elementarsphäre ist ein magischer Gegenstand, der mit der Kraft eines Elements aufgeladen ist.</phase>
+
+  <a id="sphere5">...</a>
+
+  <phase id="sphere5" next="sphere6">Es gibt fünf verschiedene Arten von Sphären, eine für jedes Element. Sobald ein Dinoz eine Sphäre aufnimmt, lernt er sofort eine neue, dem Element zugeordnete Fähigkeit... Eine Sphäre ist also ein ziemlich mächtiger Gegenstand...</phase>
+
+  <a id="sphere6">...</a>
+
+  <phase id="sphere6" next="again:sphere7:already">Aber das ist nicht alles! Indem er mehrere Sphären des gleichen Elements anhäuft, kann dein Dinoz noch mächtigere Fähigkeiten erlernen! Es gibt drei Sphärenlevel pro Element, was wiederum insgesamt 15 sphärische Fähigkeiten ergibt... Hat er auch alles verstanden, was ich ihm soeben gesagt habe?</phase>
+
+  <a id="again" target="sphere4">Äh, bitte alles nochmal wiederholen.</a>
+  <a id="sphere7" cond="fx(sphere)">Ich habe alles verstanden.</a>
+  <a id="already" cond="!fx(sphere)" target="end">Ich habe alles verstanden.</a>
+
+  <phase id="sphere7" next="end" rnditem="spher1:spher2:spher3:spher4:spher5" noeffect="sphere">Wir werden ja sehen... Ich übergebe ihm nun eine meiner Sphären! Pass auf, mein Sphärenkoffer ist nicht sehr gut aufgeräumt. Ich weiß nie, welche Sphäre ich hervorkrame...</phase>
+
+  <a id="end">Super!</a>
+
+  <phase id="end">Dein Dinoz sollte sich gut überlegen, ehe er eine Sphäre gebraucht, denn sie ist sehr kostbar. Zahlreiche Dinozmeister würden sicher ein kleines Vermögen ausgeben, um eine davon zu bekommen. Das ist auch der Grund, warum hin und wieder welche auf dem Marktplatz verkauft werden! </phase>
+</d>

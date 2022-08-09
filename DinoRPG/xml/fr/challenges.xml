@@ -1,0 +1,81 @@
+<challenges>
+
+	<c id="victoire_totale"	enemy="1" dead="1">
+		<text>Remportez la victoire en anéantissant votre adversaire avant la fin du temps imparti, ne lui laissez aucune chance !</text>
+		<check result="1" dead="1" />
+		<check result="0" dead="0" />
+	</c>
+	<c id="no_poison" poison="1" inv="1">
+		<text>Remportez la victoire sans vous faire empoisonner.</text>
+		<check result="1" dead="0" startLife="100" lostLife="9" poison="0" />
+		<check result="0" dead="0" startLife="100" lostLife="80" poison="1" />
+	</c>
+	<c id="counter" counters="1:2:3">
+		<text>Remportez la victoire en réalisant ::counters:: contre-attaque(s) ou plus.</text>
+		<check result="1" dead="0" counters="10" />
+		<check result="1" dead="0" counters="3"  />
+		<check result="0" dead="0" counters="0"  />
+	</c>
+	<c id="esquives" esquives="1:2:3">
+		<text>Remportez la victoire en réalisant au minimum ::esquives:: esquive(s).</text>
+		<check result="1" esquives="3" />
+		<check result="0" esquives="0" />
+	</c>
+	<c id="assault" assaults="2:5:8:10">
+		<text>Remportez la victoire en réalisant au minimum ::assaults:: assauts.</text>
+		<check result="1" dead="0" assaults="11" />
+		<check result="0" dead="0" assaults="1"  />
+	</c>
+	<c id="lost" inv="1" lostLife="10:25:50:80">
+		<text>Remportez la victoire en encaissant au maximum ::lostLife:: points de vie .</text>
+		<check result="1"  lostLife="10"  />
+		<check result="0"  lostLife="90" />
+	</c>
+	<c id="group" groupAttacks="2:3:4">
+		<text>Remportez la victoire en réalisant au minimum ::groupAttacks:: attaques de groupe.</text>
+		<check result="1" groupAttacks="4" />
+		<check result="0" groupAttacks="1" />
+	</c>
+	
+	<c id="attaque_enemy" enemy="1" inv="1" attacks="2:5:8:10">
+		<text>Remportez la victoire en subissant au maximum ::attacks:: attaques de votre adversaire.</text>
+		<check result="1" attacks="2" />
+		<check result="0" attacks="11" />
+	</c>
+	
+	<c id="lost_enemy" 	enemy="1" inv="1" lostLife="30:40:50:60:70:80:90:100">
+		<text>Remportez la victoire en faisant perdre pas plus de ::lostLife:: points de vie à votre adversaire.</text>
+		<check result="1" lostLife="30" />
+		<check result="0" lostLife="101" />
+	</c>
+	
+	<c id="group_enemy" enemy="1" inv="1" groupAttacks="2:3:4">
+		<text>Remportez la victoire en subissant au maximum ::groupAttacks:: attaques de groupe.</text>
+		<check result="1" groupAttacks="0"  />
+		<check result="1" groupAttacks="2"  />
+		<check result="0" groupAttacks="5"  />
+	</c>
+	
+	<c id="poison_enemy" enemy="1" poison="1">
+		<text>Remportez la victoire en empoisonnant votre adversaire durant le combat.</text>
+		<check result="1" dead="0"  poison="1" />
+		<check result="0" dead="0"  poison="0" />
+	</c>
+	
+	<c id="assault_percent" percent="1" assaults="10:20:30:40:50">
+		<text>Remportez la victoire en réalisant au moins ::assaults::% d'assauts parmis l'ensemble de vos attaques.</text>
+		<check result="1" assaults="55" attacks="100" />
+		<check result="0" assaults="1"  attacks="100" />
+	</c>
+	<c id="lost_percent" percent="1" inv="1" lostLife="5:10:20:30:40">
+		<text>Remportez la victoire en encaissant tout au plus ::lostLife::% de points de vie.</text>
+		<check result="1" startLife="100" lostLife="4"  />
+		<check result="0" startLife="100" lostLife="90" />
+	</c>
+	<c id="lost_enemy_percent" enemy="1" percent="1" lostLife="10:20:30:40:50">
+		<text>Remportez la victoire en faisant perdre au moins ::lostLife::% de points de vie à votre adversaire.</text>
+		<check result="1"  startLife="100" lostLife="60" />
+		<check result="0"  startLife="100" lostLife="9"  />
+	</c>
+
+</challenges>

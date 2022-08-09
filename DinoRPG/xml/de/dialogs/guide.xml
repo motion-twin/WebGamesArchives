@@ -1,0 +1,126 @@
+﻿<d place="dnv" name="Guide Michel" gfx="michel">
+	
+  <phase id="begin" fast="1" next="p1:p2:p3:p4:p5:p6:p7:p8:p9:p10:p11:p12:p13"> Michel erzählt, dass er vom Königreich Dinoville eingestellt wurde, um die jungen Dinozmeister bei ihren Abenteuern anzuleiten. Aber man weiß nicht so genau, ob das wahr ist, oder ob er einfach gern den Leuten hilft, die ihn aufsuchen... Jedenfalls kann man seinen Ratschlägen trauen!</phase>
+
+	<a id="p1" cond="!level(5)+!scenario(intro,0)">Mit Michel reden.</a>
+  <a id="p2" cond="level(5)+!(fx(bouee)|fx(matesc))">Mit Michel reden.</a>
+  <a id="p3" cond="fx(bouee)+!fx(matesc)">Mit Michel reden.</a>
+  <a id="p4" cond="fx(matesc)+!fx(bouee)">Mit Michel reden.</a>
+  <a id="p5" cond="fx(matesc)+fx(bouee)+!fx(plaza)">Mit Michel reden.</a>
+  <a id="p6" cond="fx(plaza)+!fx(rasca)">Mit Michel reden.</a>
+  <a id="p7" cond="fx(plaza)+fx(rasca)+!fx(gant)">Mit Michel reden.</a>
+  <a id="p8" cond="fx(plaza)+fx(gant)+!fx(chutes)">Mit Michel reden.</a>
+  <a id="p9" cond="fx(plaza)+fx(chutes)+!fx(palmes)">Mit Michel reden.</a>
+  <a id="p10" cond="fx(plaza)+fx(palmes)+!fx(sylkey)">Mit Michel reden.</a>
+  <a id="p11" cond="fx(plaza)+fx(sylkey)+!collec(magnet)">Mit Michel reden.</a>
+  <a id="p12" cond="fx(plaza)+fx(sylkey)+collec(magnet)">Mit Michel reden.</a>
+  <a id="p13" cond="!scenario(intro,0)">Ich weiß nicht, was ich machen soll!</a>
+
+  <phase id="p13" >
+	Hallo Dinozmeister! Sieht so aus, als ob du nicht mehr weiter wüsstest?
+	Was hältst du von der Idee, im Forum mal nach Hilfe zu fragen?
+	Hunderte Dinozmeister waren schon vor dir hier. Ihre Erfahrung kann dir von Nutzen sein. Eines Tages wirst du auch mal in die Lage kommen, anderen mit deinem Wissen zu helfen!
+</phase>
+  
+  <phase id="p1" next="p1b">Hallo Dinozmeister! Oh, ich sehe, dass dein Dinoz
+  noch ganz jung ist...Das Beste wäre im Moment, in den Nordosten zu gehen und mit Papy Joe zu reden, damit er dir ein paar Missionen gibt und du so du etwas Erfahrung sammeln kannst....</phase>
+
+  <a id="p1b">(weiter)</a>
+
+  <phase id="p1b">Diese Missionen werden dir erlauben das Königreich von
+  Dinoville zu erforschen. Im Anschluss daran wirst du dann aber Zugang zu
+  zahlreichen anderen Welten erhalten... Such mich wieder auf, sobald dein
+  Dinoz Level 5 erreicht hat. Ich werde dir dann mehr erzählen!</phase>
+
+  <phase id="p2" next="p2b">Glückwunsch! Dein Dinoz hat Level 5 erreicht! Du
+  solltest mit Professor Eugen an der Universität sprechen. Er wird eine
+  Herausforderung für dich haben.... Aber pass gut auf, denn es ist ziemlich
+  gefährlich.... Wenn dein Dinoz nicht topfit ist, rate ich dir zu warten
+  bevor du diese Herausforderung annimmst!</phase>
+
+  <a id="p2b">(weiter)</a>
+
+  <phase id="p2b">Komm wieder zu mir zurück, sobald Du einmal gesiegt und du
+  eine der beiden Belohnungen von Professeur Eugen erhalten hast, dann sage ich
+  dir, wie du sie gebrauchen kannst... Viel Glück!</phase>
+
+  <phase id="p3" next="p3b">Oh, bravo! Dein Dinoz hat den Schwimmreifen erhalten... Dieser Gegenstand wird dir Zutritt zu den Atlantinischen Inseln verschaffen! Du kannst ihn ganz einfach einsetzen: Geh in den Predigerhafen im Süden. Sobald du dich weiterbewegen willst, wird dein Dinoz den Schwimmreifen anziehen und bis zu den Atlantinischen Inseln schwimmen. </phase>
+
+  <a id="p3b">(weiter)</a>
+
+  <phase id="p3b"> Du wirst sehen, wie wunderschön die Inseln sind. Es gilt, eine neue Welt zu entdecken! Aber vergiss nicht zu
+  Professor Eugen an die Universität zurückzukehren, sobald dein Dinoz Level 7
+  erreicht hat. Er wird eine neue Herausforderung für dich haben...</phase>
+
+  <phase id="p4">Oh, bravo! Dein Dinoz hat die Kletterausrüstung erhalten... Dieser Gegenstand wird es dir ermöglichen, zur Großen Dauerhitze zu gelangen. Du kannst sie ganz einfach gebrauchen: Gehe zu den Steilen Hügeln in den Norden und sobald du dich weiterbewegen willst, wird dein Dinoz in der Lage sein, bis zur Großen Dauerhitze zu klettern.</phase>
+
+  <phase id="p4b">Du wirst sehen, die Große Dauerhitze ist....heiß. Eine neue
+  Welt wartet darauf, von Dir entdeckt zu werden! Aber vergiss nicht zu
+  Professor Eugen an die Universität zurückzukehren, sobald dein Dinoz Level 7
+  erreicht hat. Eine neue Herausforderung wird dort auf dich
+  warten...</phase>
+
+  <phase id="p5" next="p5n:p5y">Oh! Wie ich sehe besitzt dein Dinoz bereits
+  den Schwimmreifen und die Kletterausrüstung.... Mit diesen Gegenständen ist
+  es dir möglich, vom Predigerhafen aus auf die Atlantinischen Inseln zu gehen
+  und von den Steilen Hügeln zur Großen Dauerhitze zu gelangen. Hast Du
+  diese beiden neuen Welten schon besucht?</phase>
+
+  <a id="p5n">Nein, noch nicht.</a>
+  <a id="p5y">Ja, ich habe schon eine Rundreise gemacht.</a>
+
+  <phase id="p5n">Wirklich? Du weißt nicht, was dir entgeht...Versuch vom
+  Predigerhafen aus zu schwimmen oder von den Steilen Hügeln aus zur klettern,
+  um dich an diese neuen Orte zu begeben. Du wirst dort zahlreiche Missionen
+  für deinen Dinoz finden!</phase>
+
+  <phase id="p5y" next="secret">Wirklich? Ich erkenne in dir die Seele eines
+  Großen Abenteurers! Aber es gibt noch zahlreiche Geheimnisse, die du noch
+  nicht kennst...</phase>
+
+  <a id="secret">Aha, und was zum Beispiel?</a>
+
+  <phase id="secret" next="secret2">Lass mich mal nachdenken....Wusstest Du
+  zum Beispiel, dass du, wenn du durch die Gassen der Altstadt in Dinoville gehst, Zugang zur zweiten Hälfte des Königreichs erhältst?
+  Es handelt sich um ein Stadtviertel, das bisher kaum bewohnt ist, aber das
+  sich in letzter Zeit bestens entwickelt...es heißt Dinoplaza!</phase>
+
+  <a id="secret2">Woaahh!</a>
+
+  <phase id="secret2" effect="plaza">Ich hatte dir ja gesagt, dass es noch
+  viele Dinge zu entdecken gibt! Sieh dich mal ein wenig in Dinoplaza um und
+  komm mich später wieder besuchen wenn du Zeit hast!</phase>
+
+  <phase id="p6">Langweilst Du dich schon? In diesem Fall rate ich dir auf die
+  Rascanphanderjagd zu gehen. Dazu wirst du auf den Atlantinischen
+  Inseln Hinweise finden. Dies wird dir ermöglichen, den Unterwasserdom aufzusuchen, wo
+  dich das nächste Rätsel erwartet!</phase>
+
+  <phase id="p7">Herzlichen Glückwunsch dafür, dass du den Rascanphander getötet
+  hast! Um die Mutierenden Sturzfluten durchqueren zu können, wirst du einen
+  speziellen Gegenstand erhalten müssen. Es kann gut sein, dass dir der
+  Altweise vom Unterwasserdom mehr darüber erzählen kann...</phase>
+
+  <phase id="p8">Oh, du hast den Zorhandschuh erhalten! Glückwunsch!
+  Allerdings fehl dir noch etwas um die Mutierenden Sturzfluten durchqueren zu
+  können. Ein ZenZen Mönch könnte dir nützlich sein, wenn ich mich recht
+  erinnere.</phase>
+
+  <phase id="p9">Du kannst ab sofort den Grumhel-Wald betreten. Ich hoffe, dass
+  du dort zahlreiche Abenteuer erleben wirst. Schau etwas später noch einmal bei mir vorbei, sobald du den Gegenstand von den Korgonen erhalten hast.</phase>
+
+  <phase id="p10">Mit den korgonesischen Flossen wirst Du in der Lage sein,
+  Bao Bobs Aufgaben zu bewältigen. Ich rate dir gut vorbereitet zu sein, denn
+  das wird kein Kinderspiel!</phase>
+
+  <phase id="p11">Jetzt, da du den Schlüssel zur Schwarzwaldtür erhalten
+  hast, wirst du nun endlich die Magnetischen Steppen betreten können!
+  Zahlreiche Gefahren warten dort auf dich, ich hoffe dass du dort überleben
+  wirst...</phase>
+
+  <phase id="p12">Du gehörst ab sofort zu den Großen Abenteurern. Es gibt
+  bestimmt noch zahlreiche versteckte Geheimnisse im Dinoland, aber ich kann
+  dir im Moment keinen Ratschlag mehr geben. Such mich bei Gelegenheit wieder
+  auf. Es ist gut möglich, dass ich dann neue Informationen für
+  dich habe. </phase>
+</d>

@@ -1,0 +1,203 @@
+﻿µ<d place="fountj" name="Etre Etrange" gfx="alien" cond="scenario(star,0)+(admin()|time(30))+active(starquest)">
+
+	<phase id="begin" next="yes:no">
+		. . . . . moi . . . perdu . . . . . sans puissance . . étoiles . . . . jamais . . . . pouvoir rentrer maison . . . . aider moi ?
+	</phase>
+
+	<a id="yes">Euh... oui ?</a>
+	<a id="no">Pas question</a>
+
+	<phase id="no" fast="1">
+		Effectivement, il vaut mieux éviter de s'attirer des problèmes avec des gens bizarres !
+	</phase>
+
+	<phase id="yes" next="nothing">
+		. . . . . Thank you . . . . very . . . Bziiiiiiiiiiiiiiiiiiit ! Ah ! Voilà ! Mon traducteur simultané est réparé !
+		Heureusement que j'avais emmené des batteries à la fraise de rechange ! Merci, très cher ami, merci de votre aide si aimablement
+		proposée...
+	</phase>
+
+	<a id="nothing">De rien...</a>
+
+	<phase id="nothing" next="dom">
+		C'est tout à votre honneur du poil ! Comme j'essayais de vous le dire à l'instant, j'ai un petit problème technicologique.
+		Mon (SiAvUaEs) est cassé comme une noisette, et je ne peux donc pas rentrer chez moi, sur (PuOsEniLa) !
+	</phase>
+
+	<a id="dom">Effectivement, quel dommage !</a>
+
+	<phase id="dom" next="star">
+		Voilà, j'aurais donc besoin de votre gentille aide pour pouvoir retrouver pour moi des crystaux de (TcEtCiNo)...
+		Voyons voir... dans votre langage, cela devrait ressembler à des étoiles brillantes, avec l'air très appétissant !
+	</phase>
+
+	<a id="star">Des étoiles ?</a>
+
+	<phase id="star" next="how">
+		Oui, tout à fait ! Si vous m'en ramenez exactement sept d'entre elles, je pourrais reprendre ma traversée, et je serais même
+		prèt à vous récompenser avec un (CiLoJuAeDa) de chez moi !
+	</phase>
+
+	<a id="how">Et comment trouver ces étoiles ?</a>
+
+	<phase id="how" next="ah">
+		C'est relativement simple. Il va falloir vous résoudre un certain nombre de spectaculaires divinations, qui sont inscrites
+		dans le Guide du Touriste Eclectik. A chaque fois je vous lirai le passage, ensuite à vous de vous débrouissailler ! Ah !
+	</phase>
+
+	<a id="ah">"Ah" ?</a>
+
+	<phase id="ah" scenario="star:1">
+		Oui, donc, voilà ! Je vais chercher le Guide du Touriste, ne quittez pas je reviens dans un instant...
+	</phase>
+
+</d>
+
+<d place="fountj" name="Etre Etrange" gfx="alien" cond="scenario(star,1)">
+
+	<phase id="begin" next="et">
+		Le Guide a dit : "Un mégaloup t'attends dans la capitale !"
+	</phase>
+
+	<a id="et">Et ?</a>
+
+	<phase id="et">
+		Et ? C'est tout ! Il va falloir vous débroussailler tout seul maintenant, désolé d'être aussi éclectique !
+	</phase>
+
+</d>
+
+<d place="fountj" name="Etre Etrange" gfx="alien" cond="scenario(star,2+)+!scenario(star,8+)">
+
+	<phase id="begin" next="star2:star3:star4:star5:star6:star7">
+		Ah ! Je vois que tu avances dans ta quête ! Voyons voir ce que le Guide du Touriste nous raconte ensuite....
+	</phase>
+
+	<a id="star2" cond="scenario(star,2)">Ecouter</a>
+	<a id="star3" cond="scenario(star,3)">Ecouter</a>
+	<a id="star4" cond="scenario(star,4)">Ecouter</a>
+	<a id="star5" cond="scenario(star,5)">Ecouter</a>
+	<a id="star6" cond="scenario(star,6)">Ecouter</a>
+	<a id="star7" cond="scenario(star,7)">Ecouter</a>
+
+	<phase id="star2" next="end">
+		Je lis dans le Guide : "le graisseux enthousiaste appréciera un nuage transporté"... ça te dit quelque chose ?
+	</phase>
+
+	<phase id="star3" next="end">
+		Guide du Touriste, page 879 alinéa b : "quand on est englué jusqu'au cou, rien ne vaut un bon gâteau". C'est clair, non ?
+	</phase>
+
+	<phase id="star4" next="end">
+		Je cite : "L'appel au trou sombre te servira" ... tu as une idée ??
+	</phase>
+
+	<phase id="star5" next="end">
+		C'est écrit tout petit, je vais essayer de bien lire les mots : "Les vieux os apprécient parait-il la vue d'un ... capsicum" , oui... ça doit être ça... (enfin je pense)
+	</phase>
+
+	<phase id="star6" next="end">
+		Uhm... Annexe B du Guide du Touriste : "Visite l'homme-dieu quand il sera midi à Pek-1". Tout un programme...
+	</phase>
+
+	<phase id="star7" next="end">
+		C'est la dernière étoile qui manque ! Le Guide raconte "au pays de Saru tu reviendras de parmi les morts sans artifice". Courage !
+	</phase>
+
+	<a id="end">...</a>
+
+	<phase id="end">
+		Votre langage local est tout de même bizarre... en tout cas, moi, je n'y comprends rien !
+	</phase>
+
+</d>
+
+<d place="fountj" name="Etre Etrange" gfx="alien" cond="scenario(star,8)">
+
+	<phase id="begin" next="ok">
+		.... Ouiiiiii !!! Merci ! merci ! merci ! Grâce à toi je vais enfin pouvoir retourner sur (PuOsEniLa) !
+		Il ne me reste que peu de temps tant que les astres sont dans l'alignement de Rochechouart...
+	</phase>
+
+	<a id="ok">...</a>
+
+	<phase id="ok" next="give">
+		Pourrais-tu me donner les étoiles, je te donnerai - comme promis - un (CiLoJuAeDa) en échange
+		ainsi qu'une babiole que j'ai trouvé dans ton monde !
+	</phase>
+
+	<a id="give">Donner les 7 Etoiles</a>
+
+	<phase id="give" use="star:7" collection="plume" give="cgold:1" fast="1" scenario="star:9">
+		L'Etre Etrange court dans une sorte petite maison, puis un grand éclair se produit et la maison disparait, il
+		ne reste plus que des traces de brulé au sol et une colonne de fumée qui s'élève très haut dans le ciel... Il vous a
+		laissé un "Napodino d'Or" ainsi qu'un étrange objet de collection...
+	</phase>
+
+
+</d>
+
+<d place="rashpk" name="Vendeur de Merguez (quête)" gfx="merguez" cond="scenario(star,2)+equip(burger)">
+
+	<phase id="begin" next="ok">
+		Ohhh je vois que ton Dinoz transporte un nuage burger ! Savais-tu que cela était très mauvais pour la
+		santé ? A moins que tu ne veuilles que ton Dinoz ne devienne aussi gros qu'un Sumo ?!?
+	</phase>
+
+	<a id="ok">...</a>
+
+	<phase id="ok" next="star">
+		Enlève-moi ce vilain Burger et viens plutôt goûter mes merguez à la place ! Tiens, je te donne en
+		cadeau de fidélité ce truc que j'ai trouvé par terre !
+	</phase>
+
+	<a id="star">Ah ?</a>
+
+	<phase id="star" fast="1" give="star" scenario="star:3">
+		Chouette ! Le vendeur de merguez vous a confié l'une des sept étoiles magiques !
+	</phase>
+
+</d>
+
+<d place="skull" name="Skully (quête)" gfx="skully" cond="scenario(star,5)+equip(ppoiv)">
+
+	<phase id="begin" next="ok">
+		Oh oh oh oh oh oh oh oh oh oh oh oh oh oh !! Mais que vois-je là !!! N'est-ce pas un
+		magnifique exemplaire de "Capsicum annuum" ! Quelle couleur, quelle odeur, c'est ma-gni-fi-que !
+	</phase>
+
+	<a id="ok">...</a>
+
+	<phase id="ok" next="star">
+		Je te remercie vraiment ! oh oh oh ! En échange pour m'avoir offert cette vision splendide, je vais
+		te donner un truc que j'ai trouvé en cherchant un os que j'avais perdu ! Tiens !
+	</phase>
+
+	<a id="star">Ah ?</a>
+
+	<phase id="star" fast="1" give="star" scenario="star:6">
+		Félicitations ! Grâce à Skully, vous avez récupéré la 5ème étoile magique ! Plus que deux !
+	</phase>
+
+</d>
+
+<d place="baobob" name="Bao Bob (quête)" gfx="baobob" cond="scenario(star,6)+(admin()|hour(5)|hour(6)|hour(7))">
+
+	<phase id="begin" next="ok">
+		Que viens-tu faire à cette heure si matinale chez moi ?
+	</phase>
+
+	<a id="ok">Je cherche...</a>
+
+	<phase id="ok" next="star">
+		Ah ! Oui, je suis encore dans les vappes, je n'avais pas réalisé. Tiens, je l'avais gardé pour toi,
+		j'espère en tout cas qu'elle ne t'attirera pas trop d'ennuis...
+	</phase>
+
+	<a id="star">???</a>
+
+	<phase id="star" fast="1" give="star" scenario="star:7">
+		Sur ces mots étranges, Bao Bob vous confie la 6ème étoile magique ! Plus qu'une dernière !!!
+	</phase>
+
+</d>

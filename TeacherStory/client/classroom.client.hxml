@@ -1,0 +1,20 @@
+-cp src
+-cp ../com
+-cp ../lang/fr/tpl
+-cp ../../twinBase/base
+-swf swf/client.swf
+-swf-header 680:390:30:FFFFFF
+-swf-lib obj\classroom.clientResources.swf
+--flash-strict
+-swf-version 11.2
+-main Main
+-swf-lib swf/_gfx.swf
+-lib format
+-D spriteParticles
+-cmd "obfu9 swf/client.swf -o swf/client.swf -fake"
+-cmd "cp swf/client.swf ../www/swf/client.fr.swf"
+-D advanced-telemetry
+-D debugProtocol
+-resource homeCustomizer.xml@xml_customizer
+-resource ../../lang/fr/tpl/clientTexts.xml@texts
+-resource ../../lang/fr/tpl/clientRandomTexts.xml@random

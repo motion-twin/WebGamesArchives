@@ -1,0 +1,52 @@
+﻿<d place="camp" name="Dian Korgsey" gfx="dian">
+  <phase id="begin" next="korgons:nothing:missions">Sei gegrüßt, Züchter… Gib
+  keinen Laut von dir. Du darfst auf keinen Fall die Korgonen stören!</phase>
+
+  <a id="korgons">Die Korgonen?</a>
+
+  <a id="nothing">Oh Verzeihung, ich gehe wieder...</a>
+
+  <phase id="korgons" next="why:wood:tame:interest:missions">Ja, das sind die
+  kleinen Kreaturen, die sich hier niedergelassen haben. Das sind richtige
+  kleine Giftzwerge, wenn man nicht aufpasst! Gleich vorweg: Schau ihnen ja
+  nicht in die Augen...und wenn sich einer von ihnen allzu sehr nähert, kannst
+  du versuchen, ihm ein Stück Holz zum Knabbern zu geben.</phase>
+
+  <a id="why">Man darf sie nicht anschauen?</a>
+  <a id="wood">Sie essen Holz?</a>
+  <a id="tame">Und es hat noch nie jemand einen dressiert?</a>
+
+  <a id="interest" cond="fx(qwhy)+fx(qwood)+fx(qtame)+!fx(dian)">Das ist ja
+  alles wirklich spannend!</a>
+
+  <phase id="why" next="wood:tame:interest:missions" effect="qwood">Sie
+  könnten das als eine Herausforderung auffassen! Und dann... das können Sie
+  sich ja vorstellen, was passieren würde, wenn alle Korgonen aus dem Lager
+  sich einbildeten, dass Sie ein Feind sind... Die Letzten, die es
+  versucht haben, wurden noch am selben Abend als Abendbrot
+  serviert.</phase>
+
+  <phase id="wood" next="why:tame:interest:missions" effect="qwhy">Sie lieben
+  das! Das ist nebenbei bemerkt auch der Grund, warum sie sich im
+  Grumhel-Urwald angesiedelt haben. Faszinierend, nicht wahr? Für uns jedoch
+  bedauerlich ist, dass sie im Stande sind, alles und jeden zu essen,
+  einschließlich unvorsichtiger Reisender. </phase>
+
+  <phase id="tame" next="wood:why:interest:missions" effect="qtame">Ich denke, dass die Korgonen vor sehr langer Zeit domestiziert gewesen sind. Wahrscheinlich war das lange vor dem Untergang der Jazzinsel....Heute sind sie jedoch wieder total verwildert. Es gibt keine Möglichkeit sich ihnen zu nähern, ohne dabei zu riskieren, einen Arm zu verlieren. Einige Züchter haben sich auch mit ihnen angelegt, aber niemand hat bisher je etwas besseres von ihnen erhalten als einen großen Biss.</phase>
+
+  <phase id="interest" next="service">Nicht wahr?! Es macht mich glücklich zu
+  sehen, dass diese liebenswürdigen Korgonen Ihnen so sehr gefallen! Wenn Sie
+  daran Interesse haben: Könnten Sie mir vielleicht im Camp ein paar Gefallen
+  erweisen? </phase>
+
+  <a id="service">Ja, sehr gerne!</a>
+
+  <phase id="service" next="missions" effect="dian">Perfekt! Das ist alles, was
+  ich brauche...</phase>
+
+  <phase id="nothing">Geht in Ordnung, gute Reise!</phase>
+
+  <a id="missions" cond="fx(dian)">Auf der Missionsliste nachsehen.</a>
+  <phase id="missions" missions="dian"></phase>
+  
+</d>

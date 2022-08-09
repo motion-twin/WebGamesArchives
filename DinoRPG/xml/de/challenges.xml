@@ -1,0 +1,82 @@
+<challenges>
+
+	<c id="victoire_totale"	enemy="1" dead="1">
+		<text>Gewinne den Kampf, indem du deinen Gegner vor Ablauf der Zeit vernichtest. Lass ihm keine Chance!</text>
+		<check result="1" dead="1" />
+		<check result="0" dead="0" />
+	</c>
+	<c id="no_poison" poison="1" inv="1">
+		<text>Gewinne den Kampf, ohne dabei vergiftet zu werden.</text>
+		<check result="1" dead="0" startLife="100" lostLife="9" poison="0" />
+		<check result="0" dead="0" startLife="100" lostLife="80" poison="1" />
+	</c>
+	<c id="counter" counters="1:2:3">
+		<text>Gewinne den Kampf mit mindestens ::counters:: Konterangriffen.</text>
+		<check result="1" dead="0" counters="10" />
+		<check result="1" dead="0" counters="3"  />
+		<check result="0" dead="0" counters="0"  />
+	</c>
+	<c id="esquives" esquives="1:2:3">
+		<text>Gewinne den Kampf mit mindestens ::esquives:: Ausweichmanöver(n).</text>
+		<check result="1" esquives="3" />
+		<check result="0" esquives="0" />
+	</c>
+	<c id="assault" assaults="2:5:8:10">
+		<text>Gewinne den Kampf mit ::assaults:: oder mehr Angriffen.</text>
+		<check result="1" dead="0" assaults="11" />
+		<check result="0" dead="0" assaults="1"  />
+	</c>
+	<c id="lost" inv="1" lostLife="10:25:50:80">
+		<text>Gewinne den Kampf und verliere dabei höchstens ::lostLife:: Lebenspunkte.</text>
+		<check result="1"  lostLife="10"  />
+		<check result="0"  lostLife="90" />
+	</c>
+	<c id="group" groupAttacks="2:3:4">
+
+		<text>Gewinne den Kampf und führe dabei mindestens ::groupAttacks:: Gruppenangriffe durch.</text>
+		<check result="1" groupAttacks="4" />
+		<check result="0" groupAttacks="1" />
+	</c>
+	
+	<c id="attaque_enemy" enemy="1" inv="1" attacks="2:5:8:10">
+		<text>Gewinne den Kampf und stecke dabei höchstens ::attacks:: Angriffe ein.</text>
+		<check result="1" attacks="2" />
+		<check result="0" attacks="11" />
+	</c>
+	
+	<c id="lost_enemy" 	enemy="1" inv="1" lostLife="30:40:50:60:70:80:90:100">
+		<text>Gewinne den Kampf und füge deinem Gegner nicht mehr als ::lostLife:: Lebenspunkte Schaden zu.</text>
+		<check result="1" lostLife="30" />
+		<check result="0" lostLife="101" />
+	</c>
+	
+	<c id="group_enemy" enemy="1" inv="1" groupAttacks="2:3:4">
+		<text>Gewinne den Kampf und erleide dabei höchstens ::groupAttacks:: Gruppenangriffe.</text>
+		<check result="1" groupAttacks="0"  />
+		<check result="1" groupAttacks="2"  />
+		<check result="0" groupAttacks="5"  />
+	</c>
+	
+	<c id="poison_enemy" enemy="1" poison="1">
+		<text>Gewinne, indem du deinen Gegner während des Kampfes vergiftest.</text>
+		<check result="1" dead="0"  poison="1" />
+		<check result="0" dead="0"  poison="0" />
+	</c>
+	
+	<c id="assault_percent" percent="1" assaults="10:20:30:40:50">
+		<text>Gewinne den Kampf, wobei mindestens ::assaults::% deiner Angriffe Schläge sein müssen.</text>
+		<check result="1" assaults="55" attacks="100" />
+		<check result="0" assaults="1"  attacks="100" />
+	</c>
+	<c id="lost_percent" percent="1" inv="1" lostLife="5:10:20:30:40">
+		<text>Gewinne den Kampf, indem du höchstens ::lostLife::% Lebenspunkte verlierst.</text>
+		<check result="1" startLife="100" lostLife="4"  />
+		<check result="0" startLife="100" lostLife="90" />
+	</c>
+	<c id="lost_enemy_percent" enemy="1" percent="1" lostLife="10:20:30:40:50">
+		<text>Gewinne den Kampf, indem dein Gegner mindestens ::lostLife::% seiner Lebenspunkte verliert.</text>
+		<check result="1"  startLife="100" lostLife="60" />
+		<check result="0"  startLife="100" lostLife="9"  />
+	</c>
+
+</challenges>

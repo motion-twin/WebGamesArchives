@@ -1,0 +1,311 @@
+﻿<!-- ***************************************************************************** -->
+<!-- Anna tomie l'infirmière, quête de la clinique----->
+<!-- 1 -->
+<d place="dnv" name="Enfermera" gfx="infirmiere" background="1" cond="(scenario(clinik,0))+fx(plaza)+(admin()|active(clinik))" >
+	<phase id="begin" fast ="1" next="salut">
+		Te encuentras paseando por las calles de Dinovilla. Ves a una persona que te llama para que te acerques a ella...
+	</phase>
+	<a id="salut">
+		Hola señorita... (¡whaaa!).
+	</a>
+	<phase id="salut" next="aide:beat">
+		Hola Maestro de Dinitos. Me llamo Ana Tomía. Acabo de llegar a la ciudad y necesitaría tu ayuda, por favor.
+	</phase>
+	<a id="aide">
+		Claro que sí. ¿Qué puedo hacer por ti, señorita?
+	</a>
+	<a id="beat" target="quit">
+		Quedarse mirando de forma anonadada...
+	</a>
+	<phase id="aide" next="blabla:info">
+		Acabo de instalarme en Dinovilla para ejercer mi profesión. Me gustaría construir una clínica. Tengo la autorización del Rey, pero no sé dónde construirla.
+		Parece que no hay nadie que quiera vivir cerca de un lugar tan frecuentado que pueda romper la tranquilidad de la vecindad.
+	</phase>
+	<a id="blabla">
+		Sí que puede ser un problema, pero es por una buena causa.
+	</a>
+	<a id="info">
+		Tú no eres de aquí, ¿no es así?
+	</a>
+	<phase id="info" next="bref">
+		Vengo de una comarca más al norte, pero decidí partir de allí para ejercer mi profesión libremente. Que quede entre nosotros: "Ana Tomía" no es mi verdadero nombre. Lo inventé por cuestiones de marketing. Aunque no cambiemos de tema... oye... ¿me estás escuchando?
+	</phase>
+	<a id="bref" target="aide">
+		Sí, perdón... ¿qué decías?
+	</a>
+	<phase id="blabla" next="end">
+		¿Tendrías la gentileza de dar una vuelta por Dinovilla para ayudarme? Podrías preguntar a los habitantes en qué lugar, aislado y tranquilo, podría construir el edificio. Si hicieras eso por mí, serías un amor.
+	</phase>
+	<a id="end">
+		Saltaré, volaré, haré lo que sea... ¿pero por dónde empiezo?
+	</a>
+	<phase id="end" fast="1" scenario="clinik:1">
+		Ana Tomía te deja y se dirige a otra persona. Si la quieres impresionar, ¡más vale darse prisa!
+	</phase>
+	<phase id="quit">
+		Veo que no eres la persona que buscaba...
+	</phase>
+</d>
+
+<!-- 2 -->
+<d place="univ" name="Profesor Eugenio" gfx="eugene" cond="scenario(clinik,1)">
+	<inject id="prof:talk" next="avis" />
+	
+	<a id="avis" >
+		¡Estoy buscando un lugar apropiado para construir una clínica!
+	</a>
+	<phase id="avis" next="non">
+		¿Mmm? ¿Tú también te has dejado llevar por esa extraña enfermera? No eres el primero...
+		No quiero tener un vecino ruidoso, ¡es categórico! Necesitamos tranquilidad para realizar nuestras investigaciones y para estudiar correctamente.
+	</phase>
+	<a id="non" >
+		Qué lástima. Porque aquí hay sitio...
+	</a>
+	<phase id="non" next="end">
+		No insistas. Hay otros sitios en Dinovilla, así que mejor ve a buscar a otro lugar.
+	</phase>
+	<a id="end" >
+		De acuerdo. En ese caso, preguntaré a otra persona.
+	</a>
+	<phase id="end" fast="1" scenario="clinik:2">
+		Te alejas un poco contrariado. ¿Quién podría darte más información?
+	</phase>
+</d>
+<!-- 3 -->
+<d place="dnv" name="El Guía Michel" gfx="michel" cond="scenario(clinik,2)">
+	<inject id="guide:begin" next="avis" />
+	<a id="avis">
+		Preguntas dónde podría haber sitio para una clínica.
+	</a>
+	<phase id="avis" next="super">
+		¿Una clínica? Es una buena idea. No hay ningún establecimiento que dé un servicio así en Dinovilla por el momento.
+		Necesitas un lugar aislado para poder levantar un edificio así. ¿Quizás tengas suerte en la zona oeste de Dinovilla? Te aconsejo que vayas a dar una vuelta por allí.
+	</phase>
+	<a id="super" >
+		Gracias una vez más. ¡Siempre ofreces consejos útiles!
+	</a>
+	<phase id="super" fast="1" scenario="clinik:3">
+		Te alejas contento en dirección de Dinoplaza.
+	</phase>
+</d>
+
+<!-- 4 -->
+<d place="dplaza" name="Vendedor de vino" gfx="sommelier" cond="scenario(clinik,3)">
+	<phase id="begin" next="ou">
+		Hola, ¡amante de los buenos placeres de la vida!
+		Déjame guiarte con nuestra selección de mejores vinos. El Xerez Acuoso 128 es muy suculento. El Seco Rio-ojón 142 es casi único.
+		Hay que llevarse algunos antes de que... en fin, antes de que alguien que yo me sé se lo lleve todo.
+	</phase>
+	<a id="ou" >
+		De hecho, sólo estoy buscando un lugar para construir una clínica.
+	</a>
+	<phase id="ou" next="et:oue">
+		¿Una clínica?... ¿Y eso qué tiene que ver conmigo?
+		No creo que los pacientes vayan a beber vino.
+	</phase>
+	<a id="et" target="quit">
+		Parece que usas mucho espacio para producir el vino de Dinovilla. ¡Y me han dicho que está malísimo!
+	</a>
+	<a id="oue">
+		Qué va, al contrario. Una vez curados, los pacientes se precipitarán a por ti para llevarse las botellas.
+		¡Y la enfermera me ha garantizado que vendrá a echarte una mano en la tienda! (pequeña mentira...).
+	</a>
+	<phase id="oue" next="truc">
+		Ah sí, ¿y quién me dice que esta persona tiene suficientes conocimientos para vender el vino?	</phase>
+	<a id="truc">
+		De hecho. No pienso que sea indispensable que la enfermera sea una gran experta en la materia.
+	</a>
+	<phase id="truc" next="end">
+		Mmmm por qué no. Podría sacrificar una parte de las viñas de Dinovilla. No sería una gran pérdida. Buaaa, buaa... ejem, no he dicho nada.
+	</phase>
+	<a id="end">
+		No sé si te he entendido plenamente, ¡pero da igual! ¡son buenas noticias!
+	</a>
+	<phase id="end" fast="1" scenario="clinik:4">
+		El vendedor de vino acepta cederte una parte de sus viñas para construir la clínica.
+	</phase>
+	<phase id="quit">
+		Me he equivocado respecto a ti. No tenemos los mismos valores. ¡Desaparece de mi vista!
+	</phase>
+</d>
+	
+<!-- 5 -->
+<d place="dnv" name="Ana Tomía" gfx="infirmiere" background="1" cond="scenario(clinik,4)">
+	<phase id="begin" next="suite">
+		Aja. ¡Por fin algunas novedades de mi campeón!
+	</phase>
+	<a id="suite">
+		(¿Campeón? Glup)... ¡He encontrado un lugar ideal para tu clínica!
+	</a>
+	<phase id="suite" next="vin">
+		Qué bien. ¡Dime rápido dónde se encuentra este maravilloso lugar!
+	</phase>
+	<a id="vin">
+		El vendedor de vino está dispuesto a sacrificar una parte de sus hectáreas de viñas para tu causa.
+	</a>
+	<phase id="vin" next="end:end2">
+		¿El vendedor de vino? Qué lindo es. Vamos a ver este terreno. Habrá que darle las gracias al vendedor como se las merece.
+	</phase>
+	<a id="end" target="end">
+		¡Pero si soy yo quien ha hecho todo el trabajo!
+	</a>
+	<a id="end2" target="end">
+		Sí, es gracias a él que vamos a construir una super clínica.
+	</a>
+	<phase id="end" fast="1" scenario="clinik:5">
+		Ana Tomía ya se ha ido sin esperarte.
+	</phase>
+</d>
+
+<!-- 6 -->
+<d place="clinik" name="Ana Tomía" gfx="infirmiere" background="2" cond="scenario(clinik,5)">
+	<phase id="begin" next="cool">
+		Sí que es verdad que este lugar es conveniente para construir la clínica. Aunque ahora hay que encontrar la mano de obra...
+	</phase>
+	<a id="cool">
+		¿Ah, sí?
+	</a>
+	<phase id="cool" next="snif">
+		No soy más que una pobre y débil enfermera. ¿Pensabas dejarme construir la clínica sola con mis propias manos, tan delicadas?
+	</phase>
+	<a id="snif">
+		¿Pero cómo lo hacemos? ¡Es imposible construir una clínica entre dos!
+	</a>
+	<phase id="snif" next="dinoz">
+		Tendrás que pedir ayuda a tus amigos. Visto lo fuerte que eres... ¡seguro que perteneces a un clan!
+	</phase>
+	<a id="dinoz">
+		¿Y a cuántos Dinos tendría que reunir?
+	</a>
+	<phase id="dinoz" next="voir">
+		Cuantos quieras, pero cuanto más numerosos seáis, más rápido irá todo. Lo ideal sería pertenecer a un clan con el máximo posible de maestros de Dinos.
+	</phase>
+	<a id="voir">
+		Veré lo que puedo hacer.
+	</a>
+	<phase id="voir" next="merci">
+		Gracias. ¡Sabía que podría contar con alguien tan generoso como tú!
+	</phase>
+	<a id="merci">
+		¡Volveré con más Dinos!
+	</a>
+	<phase id="merci" fast="1" scenario="clinik:6">
+		Tienes que encontrar el numéro máximo posible de Dinos con tu clan para poder construir la clínica lo más rápido posible.
+	</phase>
+</d>
+
+<!-- 7 -->
+<d place="clinik" name="Ana Tomía" gfx="infirmiere" background="2" cond="clanact(hopita)+scenario(clinik,6)">
+	<phase id="begin" next="ok">
+		¿Cómo? ¿Ya has terminado? ¡Quiero verla, por favor!
+	</phase>
+	<a id="ok">
+		De acuerdo. Uno, dos, tres... ¡tataaaaa!
+	</a>
+	<phase id="ok" fast="1"  scenario="clinik:7">
+		Desvelas a Ana el resultado de tus horas de intenso trabajo. ¡Tu espíritu de equipo ha triunfado!
+	</phase>
+</d>
+
+<!-- 8 -->
+<d place="clinik" name="Ana Tomía" gfx="infirmiere" background="3" cond="clanact(hopita)+scenario(clinik,7)">
+	<phase id="begin" next="ok">
+		Estupendo. ¡Tú y tus amigos habéis construido una clínica magnífica! Bueno, se han visto mejores, pero la hemos construido con lo que hemos podido...
+	</phase>
+	<a id="ok">
+		¿Cómo? Pero si lo he dado todo de mí...
+	</a>
+	<phase id="ok" next="merci">
+		Venga, nadie puede decir que yo sea una ingrata. Ven a verme de vez en cuando. Te ofreceré servicios hospitalarios gratuitamente.
+	</phase>
+	<a id="merci">
+		¡Muchas gracias señorita!
+	</a>
+	<phase id="merci" scenario="clinik:8">
+		En realidad es "Señora". Lo siento, pequeñín.
+	</phase>
+</d>
+
+<!-- 9 -->
+<d place="clinik" name="Ana Tomía" gfx="infirmiere" background="3" cond="!clanact(hopita)+scenario(clinik,8+)">
+	<phase id="begin" next="end" scenario="clinik:6">
+		Señor Maestro de Dinitos. ¿No ibas a ayudarme a construir la clínica?
+		Parece que tu nuevo clan no tiene acceso a este lugar. Por favor construye primero la clínica para que pueda curar a tus Dinos.
+	</phase>
+	<a id="end">
+		Pero...
+	</a>
+	<phase id="end">
+		Venga, ¡a trabajar!
+	</phase>
+</d>
+
+<!-- 10 -->
+<d place="clinik" name="Ana Tomía" gfx="infirmiere" background="3" cond="clanact(hopita)+scenario(clinik,8+)">
+	<phase id="begin" next="offre:offre2:offre3:liste:ope">
+		Hola Maestro de Dinos. Puedo curar a uno de tus Dinitos. Tan solo necesito una hora. Ven después para recogerlo. Hay mucha afluencia, ¡así que tan sólo podré curar un Dinito por día!
+	</phase>
+	
+	<a id="offre" target="soinok" cond="scenario(clinik,8)">
+		Decides curar a tu Dino (¡el pobre está que no puede más!).
+	</a>
+	
+	<a id="offre2" target="soinok2" cond="swait(clinik,20)+scenario(clinik,9)">
+		Decides curar a tu Dino (¡el pobre está que no puede más!).
+	</a>
+	
+	<a id="offre3" target="soinko" cond="!swait(clinik,20)+scenario(clinik,9)">
+		Decides curar a tu Dino (¡el pobre está que no puede más!).
+	</a>
+	
+	<a id="liste">
+		¿Puedo ayudarte de nuevo?
+	</a>
+
+	<a id="ope" cond="uvar(elites,1+)+uvar(surge,1+)">Quisiera que uno de mis Dinos reciba una operación de cirugía estética.</a>
+	
+	<phase id="soinok"  status="soin" scenario="clinik:9" >
+		Muy bien. Regresa dentro de una hora. ¡Estará como nuevo!
+	</phase>
+	
+	<phase id="soinok2" scenario="clinik:8" next="offre">
+		¿Qué tal? ¿La espera ha resultado larga?
+	</phase>
+	
+	<phase id="soinko" >
+		Lo siento pero sólo puedo curarte un Dinito al día. Regresa más tarde, por favor.
+	</phase>
+	
+	<phase id="liste" next="go:quit">
+		Tengo una listita de misiones para ti. ¡Estoy segura de que te encantará realizarla por mí!
+	</phase>
+	<a id="go">
+		De acuerdo, ¡me ocupo enseguida!
+	</a>
+	<a id="quit">
+		No, debo resistir. ¡La mejor opción es huir!
+	</a>
+	<phase id="quit" fast="1" frame="stop">
+		¡Huyes jurándote a ti mismo que nunca más te dejarás llevar por sus encantos!
+	</phase>
+	<phase id="go"  missions="infirmiere">
+	</phase>
+	
+	<!--Opération chirurgicale -->
+	<phase id="ope" next="oui:non">
+		¿Estás seguro? ¡La operación es irreversible y solo puede realizarse 1 vez al mes!
+		Toma en cuenta que el cirujano puede haber bebido demasiadas pociones de angel la noche anterior.
+	</phase>
+	
+	<a id="oui">¡Sí, estoy seguro, mi Dino ya no da miedo en los campos de batalla!</a>
+	<a id="non">Creo que mejor no, ¡mi Dino puede tener mala pinta pero lo quiero tal como es!</a>
+	
+	<phase id="oui" url="/dino/::did::/surgery">
+		Por aquí por favor, vamos a hacer lo que podamos, ¡en 1 hora tendrá un nuevo rostro!
+	</phase>
+	
+	<phase id="non">
+		Tu Dino te mira con ternura. Pero qué pasaría si... El destino lo dirá.
+	</phase>
+</d>
+

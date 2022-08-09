@@ -1,0 +1,44 @@
+﻿<!--  QUETE DE L'ARCHISAGE : trouver les 3 ingrédients avec la pelle => gant des zors -->
+
+<d place="dome" name="ArchiSage" gfx="archis" cond="!fx(gant)">
+
+	<phase id="begin" next="enigm" fast="1">
+		Au centre du Dôme se trouve la résidence de l'Archisage. Il s'agit d'un titre honorifique donné à un
+		Archimage devenu trop vieux pour pouvoir utiliser ses pouvoirs magiques. Il n'en reste pas moins
+		un personnage doué d'une très grande connaissance, même si ses propos peuvent parfois sembler confus.
+	</phase>
+
+	<a id="enigm">Heu... Y'a quelqu'un ?</a>
+
+	<phase id="enigm" next="next">
+		Bonjour bonjour bonjour ! Que viens-tu chercher ici ? Tu cherches quelque chose ? Puis-je t'aider ?
+	</phase>
+
+	<a id="next">Je voudrais savoir...</a>
+
+	<phase id="next" next="tresor">
+		Ah ! Ne dis rien ! Je sais, je suis sûr, certain, tout à fait ! Tu cherches un GRAND TRESOR !
+	</phase>
+
+	<a id="tresor">(Un trésor ?!?) Oui c'est ça !</a>
+
+	<phase id="tresor" next="quoi">
+		Alors écoute, voilà je vais te dire. Ecoute-moi. Oui. Je vais te raconter. Si tu me rapportes. Oui tout cela.
+		Tu veux savoir quoi ? et surtout quoi n'est pas !
+	</phase>
+
+	<a id="quoi">... Quoi ?</a>
+
+	<phase id="quoi" next="show">
+		Alors écoute. Mon premier est collant, mon deuxième basaltique, mon troisième est de l'eau pure. Il te faudra
+		un outil, ça oui. Un outil pour trouver tout cela. Reviens me voir et je t'apprendrai le trésor, mais
+		attention au danger ! F-O-E !
+	</phase>
+
+	<a id="show" cond="fx(marais)+fx(wpure)+fx(basalt)">Montrer les ingrédients</a>
+
+	<phase id="show" fight="eearth" noeffect="marais:wpure:basalt" effect="gant">
+		Oh ! Bravo ! Bravo ! Merci pour tout ça, et surtout bravo ! Voilà, c'est fait, ton Dinoz a un GRAND TRESOR !
+	</phase>
+
+</d>

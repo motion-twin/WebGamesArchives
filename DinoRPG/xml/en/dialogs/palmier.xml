@@ -1,0 +1,51 @@
+<!-- ***************************************************************************** -->
+<!-- Saul, Nimbao l'île volante ----->
+	
+<d place="icite" name="Palmier" gfx="palmier" cond="!curmission(sos2)+scenario(nimba2,50-)">
+	<phase id="begin" next="non:mot" dialect="arbori">
+		Grrr, I've had enough!
+		[This collar stops us doing what we want.]
+		[These guys don't even do anything about it either, these Dorogons who think they're our masters!
+		And on this island, nothing ever changes... It sucks!]
+	</phase>
+	
+	<a id="non" cond="!uvar(dicarb)">?</a>
+	<a id="mot" cond="scenario(nimbao,34)">vcbdr QpObmc ?</a>
+	
+	<phase id="non" frame="stop" fast="1">
+		You get as far away from him as possible, he seems furious but you don't know why...
+	</phase>
+	
+	<phase id="oui" next="clair" dialect="arbori">
+		I want to exlpore this world!
+		I can see that there is something below us!
+	</phase>
+	<a id="clair">
+		There are lots of places to go!
+	</a>
+	<phase id="clair" next="go" dialect="arbori">
+		One day I'll get off this wretched island, and I'll explore the whole world!
+		I'll be the greatest adventurer of all-time!
+	</phase>
+	
+	<a id="go">
+		Good luck with that!
+	</a>
+	<phase id="go" fast="1" frame="stop">
+		Despite your encouragement, Palmier still seems angry,
+		Could this be what they call the rebellious years?
+	</phase>
+	<phase id="mot" fast="1" frame="stop">
+		He understood what you said, but he doesn't know what to say...
+		Clearly this word hasn't had any real effect on him.
+	</phase>
+</d>
+
+<d place="icite" name="Palmier" gfx="palmier" frame="happy" cond="!curmission(sos2)+scenario(nimba2,51+)">
+	<phase id="begin">
+		Grrr, I've had enough - it's all getting too much for me!
+		[It's a nice idea, being able to say we are free, but if you can't leave the island without your parents until you're 18, what's the point?]
+		[...Take it to the streets, brothers!]
+	</phase>
+</d>
+	

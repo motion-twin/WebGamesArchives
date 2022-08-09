@@ -1,0 +1,157 @@
+﻿<!-- Gulom, survivant du monde sombre -->
+	
+<!---on rencontre un échappé du monde sombre, qui est tombé dans les chutes il y a bien longtemps,
+il était l'assistant du gardien disparu qui était parti combattre la source des ténèbres.
+Il est resté trop longtemps dans le monde sombre, sa peau et ses yeux ne peuvent plus supporter le soleil, 
+il est condamné à vivre dans le monde sombre. 
+
+Il demande au joueur de lui rapporter des ingrédients pour pouvoir survivre.
+Une fois les objets donnés, il propose aux joueurs de retourner dans le monde sombre grâce à un fragment de l'orbe sombre 
+qu'il a obtenu de la part du gardien qu'il assistait, celui-ci avait trouvé ces fragment par hasard un jour ou il fouillait 
+les poubelles en quête de nourriture. 
+
+Le joueur bat une version amélioré du gardien de la tour et obtient le droit d'y retourner quand il veut.
+-->
+
+<d place="chutes" gfx="survivor" name="Gulom" cond="active(gulom)+(admin()|fx(bouee))">
+	<phase id="begin" fast="1" frame="ombrestop" background="2" next="rescape:soin">
+		Ein fremder Mann blickt völlig verstört in alle Richtungen. Er versteckt sich unter dem Laub des größten Baumes, 
+		so als würde er sich vor den Sonnenstrahlen verstecken wollen. Sein Blick ist ausdruckslos, obwohl seine Augen 
+		weit offen sind. Er scheint dich kaum zu erkennen.
+	</phase>
+	
+	<a id="rescape" cond="!tag(soin)">He, Sie da? Hallo... Nein, hier drüben!</a>
+	<a id="soin" cond="tag(soin)" target="vavient">Ihr kehrt in die dunkle Welt zurück?</a>
+	
+	<phase id="rescape" next="soleil" frame="ombre" background="2">
+		Geuuuuuuh....
+		Guuuteeeen Taaagggg... Tut mir leid, ich fühle mich nicht besonders. Diese Sonne macht mir schwer zu schaffen.
+	</phase>
+	<a id="soleil">Aber hier scheint doch immer die Sonne... !</a>
+	<phase id="soleil" next="aide" frame="ombre" background="2">
+		Ha, stellt euch nur vor, ich stamme nicht von hier. Wenn man zu lange in der dunklen Welt verweilt, verliert man schnell die Orientierung.
+	</phase>
+	<a id="aide">Woher kommt ihr denn?</a>
+	<phase id="aide" next="clef:noclef" frame="ombre" background="2">
+		Ihr, die ihr an der Oberfläche lebt, kennt dieses Problem nicht. Und das ist zweifellos auch besser für euch.
+	</phase>
+	
+	<a id="clef" cond="fx(sylkey)">Ihr sprecht von der dunklen Welt?</a>
+	<a id="noclef">Kann ich euch irgendwie helfen?</a> 
+	
+	<phase id="noclef" next="out:clef" frame="ombre" background="2">
+		Ich danke euch. Aber ich will keine unschuldigen Personen mit meinen Problemen belasten...
+		Das Gleichgewicht ist sehr vage... Die Lage kann ganz schnell außer Kontrolle geraten...
+	</phase>
+	<a id="out">Wie ihr wollt. Auf Wiedersehen...</a>
+	<phase id="out" fast="1" frame="ombrestop" background="2">
+		Du gehst wieder deiner Wege. Worauf er nur wartet... ?
+	</phase>
+	
+	<phase id="clef" next="quefaire" frame="ombre" background="2">
+		[Ihr kennt also die schreckliche dunkle Welt? Dann seid ihr vielleicht der, den ich suche...]
+		[Ich habe die Spur meines Begleiters verloren. Vor vielen Jahren bin ich mit meinem Meister zu den Tiefen der dunklen Welt 
+		aufgebrochen, um dieses verderbte Land ein für allemal zu versiegeln.]
+		[Wir hatten ja keine Ahnung, wie riesig diese Welt ist. Wir verirrten uns und letzlich 
+		verlor ich meinen Meister aus den Augen. Das liegt nun schon über 10 Jahre zurück...]
+		[Schließlich fand ich einen Weg aus diesem Labyrinth. Aber leider kann ich nicht mehr an der Oberfläche leben. 
+		Nach all der Zeit in der Finsternis und den Schatten der dunklen Welt sind meine Augen zu empfindlich geworden...]
+	</phase>
+	<a id="quefaire">Ihr seht wirklich mitgenommen aus!</a>
+	<phase id="quefaire" next="soigne:nomed" frame="ombre" background="2">
+		[Da habt ihr wohl recht. Ich glaube nicht, dass ich es hier noch viel länger aushalten kann. Ich muss in die dunkle Welt zurückkehren.]
+		[Könntet ihr mir ein Elixier von Nimbao besorgen? Das ist das einzige Heilmittel, das bei einem so langen Aufenthalt in der dunklen Welt wie dem meinen hilft.]
+	</phase>
+	
+	<a id="soigne" cond="hasobject(remed2)">Du kannst dieses hier haben.</a>
+	<a id="nomed" cond="!hasobject(remed2)">Tut mir leid, aber ich besitze so etwas nicht.</a>
+	
+	<phase id="nomed" fast="1" frame="ombrestop" background="2"> 
+		Gulom dreht sich langsam weg. Er scheint wirklich müde zu sein und ist einem Sonnenstich nahe. ...geschwächt verkriecht er sich wieder im Schatten.
+	</phase>
+	
+	<phase id="soigne" next="vavient" use="remed2" tag="soin" nocheck="1" frame="ombre" background="2">
+		[Habt 1000 Dank! Es geht mir schon viel besser!]
+		[Dank dir kann ich in die dunkle Welt zurückkehren.
+		Ich muss den Auftrag ausführen, den mir mein Meister gab. Ich muss ihn finden und helfen, Dinoland von diesem Wahnsinn zu befreien.]
+	</phase>
+	
+	<a id="vavient">Und wie willst du das machen? Die dunkle Welt betreten und zurückzukommen?</a>
+	
+	<phase id="vavient" next="super" frame="ombre" background="2">
+		[Ich besitze ein Fragment eines dunklen Orb. Mein Meister gab es mir. Dieses mächtige Artefakt kann eine kleine Pforte zur anderen Welt öffnen.]
+		[Es gibt nur 3 solcher Fragmente auf der ganzen Welt. Und der Orb ist weit entfernt sicher vor neugierigen Augen versteckt...]
+		[Mein Meister hatte großes Glück, diese Stücke zu finden. Er fand sie nach einer langen Phase intensiven Schweigens auf der Suche nach Nahrung.]
+		[Ich bin wahrhaft gesegnet, der Schüler eines so großen Eremiten zu sein. Jemand, der eins ist mit der Natur und dabei auch noch Beute aufspüren kann...]
+	</phase>
+	
+	<a id="super">Wirst du das alleine schaffen?</a>
+	<phase id="super" next="warpzone" frame="ombre" background="2">
+		Du bist bereits in der dunklen Welt gewesen. Du kannst darum mit mir kommen, wenn du willst.
+	</phase>
+	
+	<a id="warpzone">Ich komme mit dir!</a>
+	
+	<phase id="warpzone" fast="1" moveAll="dkchut" frame="ombrestop" background="2">
+		Gulom benutzt sein Fragment und öffnet eine Pforte am Fuße des Wasserfalls. Sie ist sehr schmal, nicht jeder würde hindurchpassen.
+		Er dreht sich zu dir und holt ein weiteres Fragment hervor. Im selben Moment reagieren die Fragmente aufeinander.
+		Die Pforte öffnet sich noch ein Stück weiter. Du musst nur noch hindurchgehen!
+	</phase>
+</d>
+
+<d place="dkchut" gfx="survivor" name="Gulom" cond="active(gulom)+!mission(lumi)+fx(sylkey)">
+	<phase id="begin" next="missions:natal" frame="blabla" background="1">
+		[Ich nehme an, du kennst diesen Ort bereits. Pass auf, dass du nicht verloren gehst.
+		Ein Schritt in die falsche Richtung wäre fatal!]
+	</phase>
+	
+	<a id="missions">Auf der Missionsliste nachsehen</a>
+	<a id="natal">Du siehst bereits ruhiger aus.</a>
+	
+	<phase id="missions" missions="gullom"></phase>
+	<phase id="natal" next="but" frame="blabla" background="1">
+		[Es bricht mir das Herz... Ich gebe zu, dass ich mich an diesem abgelegenen Ort wie zu Hause fühle.
+		Ich kann im Dunkeln perfekt sehen.]
+		_(Nimm deinen Finger wieder aus der Nase!)_
+	</phase>
+	<a id="but">Argh...</a>
+	<phase id="but" fast="1" frame="stop">
+		Gulom beginnt damit, sich ein Lager einzurichten. Der schreckliche Lärm rundherum scheint ihn nicht im geringsten zu stören.
+	</phase>
+</d>
+
+<d place="dkchut" gfx="survivor" name="Gulom" cond="active(gulom)+mission(lumi)+fx(sylkey)">
+	<phase id="begin" fast="1" next="missions:mieux" frame="blabla" background="1">
+		Duch die verstreut aufgestellten Feuer kannst du ein klein wenig von der dunklen Welt um dich herum erfassen. 
+		Doch die Schatten hier sind dichter und dunkler als irgendwo sonst.
+	</phase>
+	
+	<a id="missions">Auf der Missionsliste nachsehen</a>
+	<a id="mieux">Wir können schon etwas mehr sehen!</a>
+	
+	<phase id="missions" missions="gullom"></phase>
+	
+	<phase id="mieux" next="sortie" frame="blabla" background="1">
+		[Die dunkle Welt hat ein weiteres Geheimnis enthüllt! Hast du das bemerkt? Die Schatten haben sich zwar etwas zurückgezogen, aber sie verschwinden nicht. 
+		Im Gegenteil, sie werden noch schwärzer und intensiver.]
+		[Das verheißt nichts Gutes...]
+	</phase>
+	<a id="sortie">Was sollen wir jetzt machen?</a>
+	<phase id="sortie" next="finish:fragment" frame="blabla" background="1">
+		[Ich werde aufbrechen und meinen Meister suchen.]
+		[Obwohl er einer der Ausgewählten ist, die den Titel eines Wächters tragen, nahm er die Reise zur dunklen Welt doch ganz alleine auf sich, um dem Bösen Einhalt zu gebieten, das hier im Dunkel lauert.]
+		[Als herumreisender und als Eremit lebender Mönch, opferte er alles für diese Mission. Allerdings neigt er zur Vergesslichkeit. Er vergisst selbst die einfachsten Dinge wie Esen und Trinken... Hoffentlich finde ich ihn noch rechtzeitig.
+		Nachdem ich ihn das letzte Mal für einige Monate verließ, war er nur noch Haut und Knochen!]
+	</phase>
+	
+	<a id="finish">Ich werde zur Oberfläche zurückkehren!</a>
+	<a id="fragment" cond="!fx(morsso)">Wie kann ich zurückkehren und dir helfen?</a>
+	
+	<phase id="fragment" next="sortie" effect="morsso" frame="blabla" background="1">
+		[Ich brauche dieses Fragment nicht mehr. Bitte, nimm du es. Deine Dinoz können nun immer wenn sie wollen in die dunkle Welt kommen.]
+		[Sei vorsichtig wenn du zurückkehrst. Ich bin vielleicht nicht mehr da, um dir zu helfen!]
+	</phase>
+	<phase id="finish" fast="1" frame="stop" background="1">
+		Es ist Zeit, zur Oberfläche zurückzukehren. Die dunkle Welt scheint im Moment stabil zu sein. Aber eines Tages wirst du diese unbekannte Welt genauer untersuchen müssen.
+	</phase>
+</d>

@@ -1,0 +1,96 @@
+﻿<missions>
+
+	<!-- ***************************************************************************** -->
+	<!-- NICOLAS MULOT ----->
+
+	<m group="hulot" id="seqact" name="El camino del gran peligro" limit="10" cond="!mission(toxic)|mission(hucure)">
+		<begin>Para penetrar en la jungla, hay que sobrepasar en primer lugar un lugar llamado el Camino Tenebroso... Es una ruta peligrosa que va hacia el norte. ¿Podrías hacer un poco de limpieza para mí?</begin>
+		<goto v="chemin"/>
+		<kill n="6"/>
+		<end>Ya no se oyen más rugidos por allí... ¡es buena señal!</end>
+		<gold v="1500"/>
+		<xp v="40"/>
+	</m>
+
+	<m group="hulot" id="toxic" name="Alergias" limit="15">
+		<begin>Desafortunadamente, tengo alergia a algunas plantas de la Jungla... El problema es que por el momento ignoro cuáles son. ¿Podrías encontrarme plantas sospechosas para que podamos hacer algunas pruebas?</begin>
+		<goto v="chemin"/>
+		<action v="Figonicia Forúncula">Coges una flor hinchada y pegajosa...</action>
+		<goto v="collin"/>
+		<action v="Purulenta Negra">La Purulenta desprende una pequeña nube de polen maloliente muy sospechoso.</action>
+		<goto v="fleuve"/>
+		<action v="Viscosa de Barro">Encuentras una especie de gran nenúfar verdoso flotando sobre agua estancada.</action>
+		<goto v="auree"/>
+		<end>Esto servirá... Voy a intentar encontrar cuál de estas plantas provocan una alergia en mí... Ten, gracias por la ayuda.</end>
+		<gold v="1500"/>
+		<xp v="20"/>
+	</m>
+
+	<m group="hulot" id="map" name="Cartografía" limit="20" cond="!mission(toxic)|mission(hucure)">
+		<begin>Un buen mapa siempre es útil, eso dicen. Lo que ocurre es que no hay para la Jungla de Grumhel. ¿Podrías ir al norte y tomar algunas notas para mí? Hay colinas en el este donde podrías tener una buena vista.</begin>
+		<goto v="collin" title="Encontrar un punto elevado"/>
+		<action v="Dibujar un mapa">Te instalas en lo alto de un tocón de un viejo árbol talado para dibujar un mapa de los alrededores... De repente, ¡un Ratón-Fiera proveniente de la nada se lanza a tu cuaderno y le da un mordisco! En un movimiento de alas, se aleja y se posa sobre una rama bien alta...</action>
+		<action v="Atrapar el Ratón-Fiera">Estás casi seguro de que le has oído una risotada sarcástica... coges una rama y la sacudes para intentar hacerle caer, pero sale volando y se dirige hacia la jungla.</action>
+		<goto v="chemin" title="Encontrar el Ratón-Fiera"/>
+		<action v="Ratón-Fiera">La vil y fea bestia se eleva hasta la cima de un enorme árbol. Te mira impasible.</action>
+		<action v="Tirarle una piedra">¡Das en el blanco! El Ratón-Fiera grita y deja caer tu cuaderno al pie del árbol. Irritado, se posa justo a tu lado y te echa una mirada desafiante...</action>
+		<kill v="bat" n="1" name="Ratón-fiera traviesa"/>
+		<action v="Coger el cuaderno">Consigues recuperar finalmente tu cuaderno.</action>
+		<goto v="collin" title="Volver a las Colinas Encantadas"/>
+		<action v="Dibujar el mapa">Terminas tu mapa, bien en guardia por si acaso......</action>
+		<end>¡No parece del todo mal! Voy a estudiarlo con detenimiento para preparar mi expedición extrema.</end>
+		<gold v="2500"/>
+		<xp v="60"/>
+	</m>
+
+	<m group="hulot" id="hucure" name="Remedio" limit="25" cond="mission(toxic)">
+		<begin>Ef muy amable por tu parte. Creo que lof Monjef de la Ifla de laf Caídaf Mutantef podrían ayudarme... coge laf plantaf que me haf traido y ve a verlof de mi parte... ... Snif...</begin>
+		<goto v="auree"/>
+		<action v="Coger las plantas">Coges las plantas tóxicas de Nicolás Mulot. Se diría que intentó hacer una infusión con ellas....</action>
+		<goto v="chutes"/>
+		<talk v="Monje médico">¿Le habías dado la Figonicia Forúncula? ¿y también la Purulenta Negra? ¡¡Una Viscosa de Barro!! ay, ay, ay... ¡más vale no perder más tiempo! Tráeme un poco de polvo de coral para empezar.</talk>
+		<goto v="corail"/>
+		<action v="Trozo de coral">Coges un trozo de coral roto: ¡debería servir!</action>
+		<goto v="chutes" title="Darle el coral al monje"/>
+		<talk v="Monje médico">Bien. Ahora tráeme algunos colmillos de korgones del Camino Tenebroso y un par de ratones-fiera del norte.</talk>
+		<goto v="chemin"/>
+		<kill v="korgon" n="4"/>
+		<action v="Coger colmillos">Coges algunos colmillos de korgones.</action>
+		<goto v="fleuve"/>
+		<kill v="bat" n="5"/>
+		<action v="Coger alas">Coges una bonita colección de alas de ratones-fiera...</action>
+		<goto v="chutes" title="Llevar los ingredientes a las Caídas"/>
+		<talk v="Monje Médico">¡Perfecto! Voy a poder prepararme un delicioso cocido... ¿Perdón? ¿Venías a por el remedio? Ah sí, es verdad. Ya tenía una caja llena, a decir verdad. Sírvete. ¿Quieres un poco de cocido?</talk>
+		<action v="Caja de remedios">Te llevas 3 ó 4 botes de antídoto para Nicolás Mulot, nunca se sabe...</action>
+		<end>¡Glup, glup! Graciaf... efperemof que funcione... llévate efta poción en señal de mi eterna gratitud..</end>
+		<item v="angel"/>
+		<xp v="60"/>
+	</m>
+
+	<m group="hulot" id="bckpck" name="Kit de aventurero" limit="20" cond="mission(hucure)+mission(map)">
+		<begin>Antes de enfrentarme a mi viaje increíble por tierras desconocidas, necesitaría algo primordial. Una buena mochila. Perdí la mía rodeando las Caídas Mutantes... ¿Podrías encontrármela?</begin>
+		<goto v="chutes"/>
+		<talk v="Pescador extremo">¿Una mochila, dices? No, no creo haber pescado eso. Tendrías que ver si no se la ha llevado la corriente hacia el pantano.</talk>
+		<goto v="marais"/>
+		<talk v="Recolector de algas">Ah sí, ¡¡me acuerdo!! Una bonita mochila, pegada a un barrizal del pantano. Se la di a mi primo, el de la mina, ¡para llevar el material es muy práctico! ¡Adeu!</talk>
+		<goto v="corail"/>
+		<action v="Preguntar a los mineros">Preguntas a varios mineros y te señalan a uno de ellos...</action>
+		<talk v="Minero en su descanso">Sí. Veo de lo que hablas. Pero ya no tengo la mochila. (Escupe) Sí. El pedazo de tela no aguantó ni dos días. Se lo envié a mi primo del Puerto de Santa Moría. Sí, seguro que podría sacarle provecho, me dije. - Vuelve a escupir. - </talk>
+		<goto v="port"/>
+		<talk v="Pescador ocupado">¿La mochila? Sí, sigo teniéndola. Pero no está en muy buen estado. Ten, si quieres te la puedo arreglar. Además no me sirve de mucho aquí... Para arreglarla necesitaré aguja e hilo. Creo que podrás comprarlos en Dinovilla.</talk>
+		<goto v="dnv"/>
+		<action v="Encontrar hilo">Das una vuelta rápida en el mercado para encontrar material de costura. Finalmente encuentras la tienda de un costurero...</action>
+		<talk v="Costurero">Hola querido Maestro de Dinos, ¡bienvenido a mi tienda! ¿Aguja e hilo? Sí que vendo pero... te lo doy gratis si me ayudas con una cosa. Mi casa está cerca de la fuente y no pasa una noche sin que sea atacada por esos monstruos llamados Cocdurs. Ayúdame y el material es tuyo.</talk>
+		<goto v="fountj"/>
+		<kill v="coq" n="2" name="Cocduros enrabiados"/>
+		<goto v="dnv" title="Hacer un informe a Dinovilla" />
+		<talk v="Costurero">¡Mil gracias por tu intervención! Ten, como prometí...</talk>
+		<goto v="port"/>
+		<talk v="Pescador ocupado">Ah, es justo lo que necesitaba para reparar tu mochila. [Trabaja durante una hora] ¡Ya está! Tiene que resistir una buena temporada yo diría.</talk>
+		<end>Eh te vas a reír pero... fíjate que he recibido una mochila nueva gracias a la garantía. Vamos a hacer una cosa: me quedo con mi mochila vieja y tú te quedas con la nueva. ¿Te vale?</end>
+		<fx v="bckpck"/>
+		<xp v="40"/>
+	</m>
+
+
+</missions>

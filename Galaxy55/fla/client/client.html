@@ -1,0 +1,147 @@
+<html>
+
+<body bgcolor="EEEEEE">
+
+	<style type="text/css">
+	h2 {
+		margin-top : 0px;
+	}
+	ul {
+		margin : 0;
+		padding : 0;
+	}
+	li {
+		margin : 0;
+		padding : 0;
+		margin-bottom : 10px;
+		list-style : none;
+	}
+	input.field, select {
+		width : 100px;
+		float : right;
+	}
+	</style>
+
+<center><h1><a href="">Galaxy55</a></h1></center>
+
+<script type="text/javascript">
+	function command(cmd,p) {
+		window.document["client"].onCmd(cmd,p);
+	}
+	function init(bl, cur, mode, seed, size) {
+		var html = '';
+		var b = bl.split(":");
+		var i = 0;
+		while( i < b.length ) {
+			html += '<option value=\''+i+'\''+(i == cur ? ' selected':'')+'>'+b[i]+'</option>';
+			i++;
+		}
+		document.getElementById('biomes').innerHTML = html;
+		document.getElementById('mode').value = mode;
+		document.getElementById('seed').value = seed;
+		document.getElementById('size').value = size;
+	}
+	function init2(inv) {
+		document.getElementById('dam').checked = inv;
+	}
+</script>
+
+<div style="float:right; padding : 10px; width : 180px">
+	<h2>DEBUG</h2>
+<ul>
+<li>
+	<input type="submit" value="Clear Local Changes" onclick="command('clear')"/>
+</li>
+<li>
+	<input type="submit" value="Next Detail" onclick="command('nextDet')"/>
+</li>
+<li>
+	<input type="submit" value="Random Start Place" onclick="command('start')"/>
+</li>
+<li>
+	<input type="submit" value="Mining power" onclick="command('power')"/>
+</li>
+<li>
+	Inventory <input type="submit" value=" &lt;&lt; " onclick="command('inv',-1)"/> <input type="submit" value=" &gt;&gt; " onclick="command('inv',1)"/>
+</li>
+<li>
+	<input type="submit" value="Lower Fog" onclick="command('fog')"/>
+</li>
+<li>
+	<input type="submit" value="Hide Rock" onclick="command('hide',0)"/> <input type="submit" value="Soil" onclick="command('hide',1)"/>
+</li>
+<li>
+	<input type="submit" value="Rebuild Timing" onclick="command('rebuild')"/>
+</li>
+<li>
+	<input type="submit" value="Count Blocks" onclick="command('count')"/>
+</li>
+<li>
+	<input type="submit" value="Clone Hero" onclick="command('clone')"/>
+</li>
+<li>
+	Biome <select id="biomes" onchange="command('biome',this.value); document.location = ''"></select>
+</li>
+<li>
+	Mode <select id="mode" onchange="command('mode',this.value); document.location = ''"><option value="0">Planet</option><option value="1">EditShip</option></select>
+</li>
+<li>
+	Seed <input class="field" id="seed" onchange="command('seed',this.value); document.location = ''"/>
+</li>
+<li>
+	Size <input class="field" id="size" onchange="command('size',this.value); document.location = ''"/>
+</li>
+<li>
+	<label><input type="checkbox" id="dam" onchange="command('dam',this.checked)"/> Invincible</label>
+</li>
+</ul>
+
+</div>
+
+<div style="padding:30px">
+
+<object
+  classid="clsid:d27cdb6e-ae6d-11cf-96b8-444553540000"
+  codebase="http://fpdownload.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=8,0,0,0"
+  width="800"
+  height="600"
+  id="client"
+>
+    <param name="movie" value="../../www/swf/client.swf"/>
+    <param name="bgcolor" value="000000"/>
+    <param name="scale" value="noscale"/>
+    <param name="salign" value="lt"/>
+    <param name="menu" value="false"/>
+    <param name="quality" value="high"/>
+    <param name="allowScriptAccess" value="always"/>
+	<param name="wmode" value="direct"/>
+	<param name="allowFullScreen" value="true"/>
+	<param name="flashVars" value="data=i654&k="/>
+	<param name="allowFullScreenInteractive" value="true"/>
+    <embed
+     src="../../www/swf/client.swf"
+	 flashVars="data=i654&k="
+      width="800"
+      height="600"
+      bgcolor="000000"
+      name="client"
+      scale="noscale"
+      salign="lt"
+      menu="false"
+      quality="high"
+      swLiveConnect="true"
+      allowScriptAccess="always"
+	  allowFullScreen="true"
+	  allowFullScreenInteractive="true"
+	  wmode="direct"
+      type="application/x-shockwave-flash"
+      pluginspage="http://www.macromedia.com/go/getflashplayer"
+    />
+</object>
+
+<textarea id="log" style="width:600px;height:100px" onclick="this.select()"></textarea>
+
+</div>
+
+</body>
+</html>

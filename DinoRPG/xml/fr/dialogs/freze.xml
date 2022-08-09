@@ -1,0 +1,104 @@
+﻿<!-- ***************************************************************************** -->
+<!-- Freze, femme Dorogon, habitante de la cité Dorogon ----->
+
+<d place="ville1" name="Freze" gfx="freze" cond="scenario(nimba2,50-)">
+	<phase id="begin" fast="1" next="mlle:mlle2" frame="stop">
+		Une femme Dorogon vous fait face, elle est très élégante et semble très raffinée.
+		Il va être difficile de l'aborder comme si de rien n'était.
+	</phase>
+	<a id="mlle" cond="scenario(nimba2,30-)">Enchanté Mademoiselle.</a>
+	<a id="mlle2" cond="scenario(nimba2,32+)">Bonjour Mademoiselle.</a>
+	
+	<phase id="mlle" frame="blabla" next="ouech:gift">
+		[Enchanté, jeune éleveur d'animaux domesticables.]
+		[Il devient rare de croiser des étrangers au sein de notre belle cité, je vois que Monseigneur Pistache vous accompagne.]
+		[Je suis soulagée de l'apprendre, j'aurai eu horreur de devoir vous dénoncer aux gardes de la ville.]
+	</phase>
+	<phase id="mlle2" frame="blabla" next="ouech:gift2">
+		[Bonjour, jeune éleveur d'animaux domesticables.]
+		[Il devient rare de croiser des étrangers au sein de notre belle cité, je vois que Monseigneur Pistache vous accompagne.]
+		[Faîtes une agréable visite dans notre magnifique cité, et enivrez vous de la pureté de l'air qui traversent les rues.
+		Que votre voyage soit le plus apaisant possible.]
+	</phase>
+	
+	<a id="ouech">Merci bien, au plaisir de vous revoir.</a>
+	<a id="gift" cond="scenario(nimba2,29)">Se pourrait-il qu'une chose vous fasse plaisir ?</a>
+	<a id="gift2" cond="scenario(nimba2,32)">Vous avez besoin de moi ?</a>
+	
+	<phase id="gift" next="nogot:got">
+		[Un cadeau ?]
+		[Quelle idée merveilleuse, il y a longtemps que l'on ne m'en avait pas donné un.
+		Si je devais choisir une petite attention, je choisirai volontièrement une corne de chocolat !
+		Mais je n'aime que le chocolat de grande qualité et l'originalité de la présentation compte beaucoup pour moi.]
+	</phase>
+	
+	<phase id="gift2" next="parfum">
+		Et bien, vous voyez, il y a ce Dorogon, mais il ne fait absolument pas attention à moi...
+		J'aimerais attirer son regard, mais je ne trouve pas le moyen...
+	</phase>
+	
+	<a id="nogot" cond="!hasingr(chas1)">Je vous apporte ça immédiatement !</a>
+	
+	<phase id="nogot" fast="1" frame="stop">
+		Ces yeux brille de mille feux en pensant à cette gourmandise.
+		N'allez surtout pas la décevoir, vous pourriez le regretter.
+	</phase>
+	
+	<a id="got" cond="hasingr(chas1)">J'ai du chocolat !</a>
+	
+	<phase id="got" next="tx" useingr="chas1" scenario="nimba2:30" give="ptsage">
+		[Je vous remercie mon jeune ami, il y a fort longtemps que je n'avais goûté cette flaveur.]
+		[Vous avez de la chance habitant de la surface de pouvoir profiter de tous les bienfaits de la nature à votre disposition.
+		Je suis parfois un peu jalouse de votre liberté.]
+		[Pour vous remercier, je vous donne un point de sagesse !]
+	</phase>
+
+	<phase id="ouech" fast="1" frame="stop">
+		Vous vous éloignez de Freze, un mot de travers aurait pu vous coûter la vie,
+		n'oublions pas que c'est une Dorogon...!
+	</phase>
+	
+	<a id="tx">Merci bien gente dame !</a>
+	
+	<phase id="tx" frame="stop" fast="1">
+		Votre premier point de sagesse vous revient de droit !
+		Plus que quatre restants pour rencontrer l'Archidorogon.
+	</phase>
+	
+	<a id="parfum">Si vous portiez un parfum qui lui plaisait ?</a>
+	
+	<phase id="parfum" next="noget2:get2">
+		Excellente idée, en mélangeant les effluves que j'ai en réserve avec une énergie eau,
+		Je devrais pouvoir concocter une fragrance qui devrait enivrer n'importe quel Dorogon !
+	</phase>
+	
+	<a id="noget2" cond="!hasingr(eneau)">Je vais vous chercher une énergie eau tout de suite !</a>
+	<a id="get2" cond="hasingr(eneau)">J'ai une énergie eau !</a>
+	
+	<phase id="noget2" fast="1" frame="stop">
+		Freze attend avec impatience son énergie eau.
+		Est il aussi facile d'attirer l'attention sur soi ?
+		Ce n'est pas vraiment votre problème.
+	</phase>
+	
+	<phase id="get2" next="tx2" useingr="eneau" scenario="nimba2:33" give="ptsage">
+		[Je vous remercie mon jeune ami, grâce à vous, je devrais attirer son attention sans problème, lui qui ne parle que de Caushemesh,
+		je devrais pouvoir lui faire changer de pensée.]
+		[Pour vous remercier, je vous donne un nouveau point de sagesse !]
+	</phase>
+	
+	<a id="tx2">Merci ! (Pauvre Paum, il a un concurrent de taille.)</a>
+	
+	<phase id="tx2" frame="stop" fast="1">
+		Votre quatrième point de sagesse vous revient de droit !
+		Qui pourrait vous procurer le dernier point manquant ?
+	</phase>
+</d>
+
+
+<d place="ville1" name="Freze" gfx="freze" cond="scenario(nimba2,51+)">
+	<phase id="begin" fast="1" frame="stop">
+		Bonjour bel aventurier, comment allez-vous ?
+		Ne trouvez-vous pas que la vie est douce sur notre belle île ?
+	</phase>
+</d>

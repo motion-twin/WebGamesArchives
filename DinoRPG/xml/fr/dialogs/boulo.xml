@@ -1,0 +1,65 @@
+<!-- ***************************************************************************** -->
+<!-- Boulo, Nimbao l'île volante ----->
+	
+<d place="ipont" name="Soldat de Grizorg" gfx="boulo" cond="scenario(nimba2,50-)">
+	<phase id="begin" next="non:non2:oui:mot" dialect="arbori">
+		Bonjour à vous,
+		[Je m'appelle Boulo, pas facile de porter ce nom quand on passe sa vie à travailler !]
+		[Je suis de garde depuis 10 ans, je commence à trouver le temps un peu long...
+		J'espère que j'aurai bientôt un jour de congé !]
+		Tout ça pour dire qu'étant le garde du pont, je dois empêcher quiconque de passer !
+	</phase>
+	
+	<a id="non" cond="scenario(nimbao,24)">Je ne comprends pas...</a>
+	<a id="non2" cond="scenario(nimbao,25+)">?</a>
+	<a id="oui" cond="uvar(dicarb)">Vous n'avez laissé passer personne ?</a>
+	<a id="mot" cond="scenario(nimbao,34)"> vcbdr QpObmc ?</a>
+	
+	<phase id="oui" dialect="arbori">
+		Depuis que Mandragore est revenu sur l'île, tout le monde est sur le qui-vive, un couvre-feu est en place.
+		Il est interdit de se déplacer sans autorisation. Enfin pour ce que ça change pour moi, je dois toujours monter la garde.
+		Je m'ennuie, si seulement j'avais une occupation...
+	</phase>
+	
+	<phase id="non" fast="1" frame="stop" scenario="nimbao:25">
+		Vous vous éloignez, visiblement ce garde ne tient pas à vous arrêter.
+		Mais il vous empêche cependant de continuer votre chemin...
+	</phase>
+	
+	<phase id="non2" fast="1" frame="stop">
+		Vous vous éloignez, visiblement ce garde ne tient pas à vous arrêter.
+		Mais il vous empêche cependant de continuer votre chemin...
+	</phase>
+	
+	<phase id="mot" fast="1" frame="stop">
+		Il a compris ce que vous avez dit, mais ne sais quoi vous répondre...
+		Visiblement, ce mot n'éveille rien en lui.
+	</phase>
+</d>
+
+<d place="icite" name="Soldat de Grizorg" gfx="boulo" cond="scenario(nimbao,28+)+scenario(nimbao,32-)">
+	<phase id="begin" next="non" dialect="arbori">
+		Bonjour à vous,
+		[Je m'appelle Boulo, pas facile de porter ce nom quand on passe sa vie à travailler !]
+		[Je suis de garde depuis 10 ans, je commence à trouver le temps un peu long...
+		J'espère que j'aurai bientôt un jour de congé !]
+		Tout ça pour dire qu'étant le garde du pont, je dois empêcher quiconque de passer !
+	</phase>
+	
+	<a id="non" >Je ne peux donc plus passer...</a>
+
+	<phase id="non" fast="1" frame="stop">
+		Vous vous éloignez, visiblement ce garde ne tient pas à vous arrêter.
+		Mais il vous empêche cependant de continuer votre chemin...
+	</phase>
+</d>
+
+<d place="ipont" name="Boulo" gfx="boulo" frame="happy" cond="scenario(nimba2,51+)">
+	<phase id="begin">
+		Bonjour à vous,
+		[Je m'appelle Boulo, pas facile de porter ce nom, mais le travail c'est la santé !]
+		[J'ai été de garde près de 10 ans, maintenant je suis officier d'accueil des touristes venant visiter notre belle île.
+		Parfois, ils font même des photos avec moi !]
+	</phase>
+</d>
+	

@@ -1,0 +1,96 @@
+<d place="sktupu" name="Discuter de l'accord avec Melchior" gfx="skmelch" auto="0">
+
+<a id="exit">Au revoir...</a>
+
+<a id="begin">Je peux vous parler ?</a>
+
+<phase id="begin" frame="normal" next="voila">
+Evidemment. | Melchior Inc, l'import export toujours à l'écoute !
+</phase>
+
+<a id="voila">c'est à propos de la commande de Shang-Kah pour leur circuit de chauffage...</a>
+
+
+<phase id="voila" frame="happy" next="oh">
+ Quel est le problème ? | C'est vrai, nous fournissons du métal à l'école pour des tubes du circuit de chauffage, mais c'est une bonne transaction. | Il n'y a jamais eu de problèmes avec Shang-Kah.
+</phase>
+
+<a id="oh">Oui le métal n'est pas vraiment le problème, c'est juste que... </a>
+
+<phase id="oh" frame="normal" next="lap:rach:vor">
+Que quoi ? | J'ai un peu de mal à suivre, là. 
+</phase>
+
+<a id="rach">Allez ! Je vous rachète le métal destiné à Shang-Kah pour le double du prix ! </a>
+<a id="vor">C'est pour une résidence au centre de la capitale, le projet est bizarre.</a>
+<a id="lap">Ils vont détruire la chambre du Chambelland Lapin, c'est scandaleux ! </a>
+
+
+
+<!-- ############## -->
+
+
+<phase id="rach" frame="happy" next="gloups">
+Le double ? * Tu rachètes 3000 tonnes de métal alchimique premier choix au double du prix ? 
+</phase>
+
+<a id="gloups">3... 3000 tonnes ? Euh je... je...</a>
+
+<phase id="gloups" frame="normal" next="exit">
+Mmh, c'est bien ce que je pensais... | Laisse faire les grandes personnes, merci.
+</phase>
+
+<!-- ############## -->
+
+
+<phase id="lap" frame="normal" next="vrai">
+Ah mon dieu, c'est horrible. On ne peut pas laisser faire ça.
+</phase>
+
+<a id="vrai">C'est formidable ! Vous le pensez vraiment ? </a>
+
+<phase id="vrai" frame="normal" next="exit">
+Sincèrement, %happy% non. | | Allez, au revoir.
+</phase>
+
+<!-- ############## -->
+
+<phase id="vor" frame="happy" next="vorb">
+Une résidence ? | Ca peut m'intéresser, je cherche un pied à terre à la capitale. C'est quoi comme résidence ? 
+</phase>
+
+<a id="vorb">C'est la résidence [Château Vorace]. Plein centre, sauna, terrain de croquet, finitions luxe.</a>
+
+<phase id="vorb" frame="normal" next="hek">
+Ca a l'air pas mal ! | Tu as l'adress... | Attends %angry%. Tu as bien dit {Vorace} ? | Comme {Hektor Vorace} ? 
+</phase>
+
+<a id="hek">Oui oui, Hektor Vorace. C'est lui le promoteur immobilier. </a>
+
+<phase id="hek" frame="angry" next="roh">
+Ah ! Hektor Vorace ! * Ce monstre me piquait mes frites à la cantine quand j'étais petit ! | Pas question que Melchior Inc participe à la construction de cette résidence ! 
+</phase>
+
+<a id="roh">Roooh, quel ignoble individu ! </a>
+
+<phase id="roh" frame="angry" next="met">
+Un monstre ! C'est un monstre ! | | Bon. | Ca t'intéresse, du métal ? %happy% Je casse mon contrat avec Shang-kah pour cause de promoteur vicieux caché. 
+</phase>
+
+<a id="met">Mais j'ai pas de quoi vous racheter des milliers de tonnes de métal, moi ! </a>
+
+<phase id="met" frame="happy" next="quoi">
+Je te propose un deal : J'ai une autre commande dont il me manque les ingrédients. Si tu me les ramènes, je te les échange contre mon métal. Tout le monde sera gagnant. 
+</phase>
+
+<a id="quoi">Mais j'en ferais quoi de tout ce métal, moi ? </a>
+
+<phase id="quoi" frame="normal">
+Je ne sais pas. | Revend-le à la Guilde !  c'est bien elle qui t'envoie, non ? En tout cas il faut m'en débarrasser, sinon je serai obligé d'honorer la commande de Shang-Kah pour la santé de l'entreprise ! 
+</phase>
+
+
+
+
+
+</d>

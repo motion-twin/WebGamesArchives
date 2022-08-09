@@ -1,0 +1,71 @@
+﻿<missions>
+
+	<!-- ***************************************************************************** -->
+	<!-- Anna Tomie, Die Krankenschwester aus dem Caushemesh ----->
+
+	<m group="infirmiere" id="ingr1" name="Erstes Rezept">
+		<begin>Die Klinik benötigt ein paar Zutaten, um Medikamente herstellen zu können. Könntest du mir bitte 10 Blätter der Pelinae besorgen. Wir könnten damit die medizinische Versorgung unserer Patienten verbessern.</begin>
+		<goto v="clinik"/>
+		<useingr v="fruitc" n="10"/>
+		<end>Vielen Dank, mein Süßer. Ich wusst doch, dass ich auf dich zählen kann!</end>
+		<xp v="10"/>
+	</m>
+	<m group="infirmiere" id="ingr2" name="Steinpilzextrakte">
+		<begin>Die Klinik benötigt mal wieder ein paar Zutaten. Einige unserer Patienten benötigen ein spezielles Medikament, das aus dem Phallistischen Steinpilz hergestellt wird. Könntest du uns bitte 5 Phallistische weißfarbene Steinpilze besorgen?</begin>
+		<goto v="clinik"/>
+		<useingr v="fruitu" n="5"/>
+		<end>Vielen Dank, mein Süßer. Ich wusst doch, dass ich auf dich zählen kann!</end>
+		<xp v="20"/>
+	</m>
+	<m group="infirmiere" id="ingr3" name="Exotische Phytotherapie">
+		<begin>Die Klinik benötigt für ihre Medikament ein paar exotische Pflanzen. Wärst du so lieb mir 1 Wunderliche Orchidee zu bringen?</begin>
+		<goto v="clinik"/>
+		<useingr v="fruit1" n="1"/>
+		<end>Danke, mein Süßer. Danke deiner großzügigen Hilfe können wir ab sofort so ziemlich alle bekannten Krankheiten im Dinoland heilen!</end>
+		<xp v="30"/>
+		<gold v="500"/>
+	</m>
+	<m group="infirmiere" id="kill1" name="Widerspenstige Nachbarn" cond="mission(ingr1)+mission(ingr2)+mission(ingr3)+canfight(gropi)">
+		<begin>
+			Der Bau unserer Klinik hat einige schlummernde Monster in der Umgebung geweckt. Wir müssen jeden Tag ihre Angriffe abwehren. Die medizinische Versorgung unserer Patienten leidet zur Zeit erheblich. Könntest du ein wenig für Ordnung sorgen?
+		</begin>
+		<kill v="gropi" monsters="gropi:gropi:gropi" n="10" zone="6"/>
+		<end>
+			Sehr gut! Die Monsterfrequenz in der unmittelbaren Umgebung des Krankenhauses hat abgenommen. Wir können uns jetzt wieder voll und ganz um unsere Patienten kümmern!
+		</end>
+		<xp v="10"/>
+		<gold v="500"/>
+	</m>
+	<m group="infirmiere" id="kill2" name="Die Monsterinvasion" cond="mission(kill1)+canfight(coq)">
+		<begin>
+			Nicht lang nach deiner letzten Aufräumaktion sind wieder Monster in der Umgebung aufgetaucht. Die Biester gehen uns gewaltig auf den Geist. Jedenfalls müssen die wieder von hier verschwinden, sonst sehe ich für unsere Patienten schwarz!
+		</begin>
+		<kill v="coq" monsters="coq:coq" n="10" zone="6"/>
+		<end>
+			Bravo, du bist ein richtiger Champion! Schon als ich dich das erste Mal gesehen habe, wusste ich, dass du der Richtige bist!
+		</end>
+		<xp v="10"/>
+		<gold v="600"/>
+	</m>
+	<m group="infirmiere" id="bless1" name="Erste Hilfe" cond="mission(kill2)">
+		<begin>
+			Nachdem unser Krankenhaus der Monsterplage Herr geworden ist, müssen wir nun ein paar Kun...äh... Patienten finden. Ich habe gehört, dass es einen Ort gibt, an dem Dinoz gegeneinander kämpfen können. Ich bin mir sicher, dass du dort einen verletzten Dinoz findest, den du hier einliefern kannst!
+		</begin>
+		<goto v="dome" hide="1"/>
+		<talk v="Teilnehmer">Hallo Kollege! Mein Dinoz wurde beim letzten Kampf ziemlich fertig gemacht und ich bin selbst fix und foxi. Weißt du vielleicht, wo ich ihn heilen lassen könnte? Ich wäre dir unendlich dankbar!</talk>		
+		<goto v="clinik"/>
+		<end>Bravo, du bist ein richtiger Champion! Du hast mir einen Dinoz gebracht, der meine Hilfe wirklich nötig hatte!</end>
+		<xp v="20"/>
+		<gold v="500"/>
+	</m>
+	<m group="infirmiere" id="bless2" name="Sei nicht zu neugierig!" cond="mission(bless1)">
+		<begin>Die Pflege kranker Dinoz ist ja ganz nett... aber wir brauchen hier auch mal ein paar Menschen! Mir ist zu Ohren gekommen, dass auf der Großen Dauerhitze viele Touristen wandern und dass sie sich dort oben oft verletzen würden... Möchtest du da oben mal 'ne kleine Runde drehen und Ausschau halten, ob jemand ärztliche Hilfe braucht? Wir könnten bestimmt gut verdien.... äh.. ich meine natürlich: "Wir könnten uns damit bestimmt verdient machen!".</begin>
+		<goto v="vener"/>
+		<talk v="Versengter Tourist" gfx="tourist_grill" background="1">HUST, HUST.... KEUCH! Grüß Sie, könnte ich vielleicht ein Foto von Ihnen und ihren Dinoz machen? ... Entschuldigung? Ob ich medizinische Hilfe brauche?! HUST HUST, na ja, hätte nichts dagegen einem Arzt zu begegnen. Dieser ehrwürdige Drache war mit meinem Foto nicht so gaaanz einverstanden. Das war ganz schön knapp! Wenigstens ist meine Fotokamera noch ganz....</talk>	
+		<goto v="clinik"/>
+		<talk v="Versengter Tourist" gfx="tourist_grill" background="2">Vielen Dank, dass du mich bis hier her begleitet hast. Die Krankenschwestern sind hier wirklich hübsch. Ich spüre, dass es mir hier gut gehen wird...</talk>	
+		<end>Vielen Dank für den Touristen! Die Klinik läuft jetzt dank deiner Hilfe auf Hochtouren. Ein goldene Zukunft steht uns bevor! Vielleicht müssen wir sie eines Tages ausbauen... Ich hoffe, dass ich dann wieder auf dich zählen kann!</end>
+		<xp v="20"/>
+		<gold v="500"/>
+	</m>
+</missions>

@@ -1,0 +1,54 @@
+<!-- ***************************************************************************** -->
+<!-- Saul, Nimbao l'île volante ----->
+	
+<d place="ilac" name="Saul" gfx="saul" cond="scenario(nimba2,50-)">
+	<phase id="begin" next="quoi:seul:mot" dialect="arbori" >
+		Greetings, traveller.
+		I beg you, please leave me alone,
+		I am mourning the loss of my brother.
+	</phase>
+	
+	<a id="quoi" cond="!uvar(dicarb)"> I don't understand...</a>
+	<a id="seul" cond="uvar(dicarb)"> What happened to him?</a>
+	<a id="mot" cond="scenario(nimbao,34)"> vcbdr QpObmc?</a>
+	
+	<phase id="seul" frame="cry" dialect="arboris" >
+		Grizorg's soldiers imprisoned him for stealing from the Dorogons' gardens.
+		He knew it was forbidden to do that kind of thing...
+		I miss him so much... I'll probably never see him again.
+	</phase>
+	
+	<phase id="quoi" frame="cry" fast="1" >
+		You leave the young girl alone. You didn't understand a single word she said
+		...but she was clearly very upset.
+	</phase>
+	<phase id="mot" fast="1" frame="stop">
+		She understood what you said, but she doesn't know what to say...
+		Clearly this word hasn't had any real effect on her.
+	</phase>
+	
+</d>
+	
+<d place="ilac" name="Saul" gfx="saul" frame="blabla2" cond="scenario(nimba2,51+)">
+	<phase id="begin" next="seul2">
+		Greetings, traveller.
+		I beg you, please leave me alone,
+		I am mourning the loss of my brother.
+	</phase>
+	
+	<a id="seul2"> Where is he?</a>
+	
+	<phase id="seul2" frame="blabla2" next="libere">
+		He is still imprisoned for stealing from the Dorogons' gardens.
+		I hope above all that he is freed one day, but as long as the Dorogons remain in charge of Piranese... 
+		I miss him so much...
+	</phase>
+	
+	<a id="libere">There must be a way to get him out!</a>
+	
+	<phase id="libere" frame="cry2" fast="1">
+		Saul is clearly not listening to you any more, she is busy pining for her brother.
+		How can you help her to deal with her distress...
+	</phase>
+	
+</d>	

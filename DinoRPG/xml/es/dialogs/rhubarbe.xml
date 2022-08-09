@@ -1,0 +1,119 @@
+<!-- Quête du médaillon à trois yeux -->
+
+<d place="temple" name="..." gfx="rhubarbe" frame="vide" cond="scenario(fmedal,14)">
+	<phase id="begin" next="ohe">
+		El interior del templo parece desierto.
+		Solo unas flamas inmortales animan el lugar.
+		De pronto se oye una voz proveniente de una extraña roca.
+	</phase>
+
+	<a id="ohe">¿Quién me habla?</a>
+
+	<phase id="ohe" next="lvl:nolvl">
+		[¿Quiééén osa perturbaaaar mi sueeeño eteeeerno?]
+	</phase>
+
+	<a id="nolvl" cond="!level(51)">¡Soy yo!</a>
+	<a id="lvl" cond="level(51)">Ehh... ¿Yo, tal vez?</a>
+
+	<phase id="nolvl">
+		[No eres digno de estar en mi presencia.
+		Vuelve cuando uno de tus Dinos haya alcanzado su máximo potencial...]
+	</phase>
+
+	<phase id="lvl" next="yo">
+		[Bien, acércate por aquí...]
+		[No tengas miedo...]
+	</phase>
+
+	<a id="yo">¿Eres el sabio Rhubarbapapa?</a>
+
+	<phase id="yo" name="El Sabio Rhubarbapapa" next="limite" frame="blabla">
+		[...]
+		[Y tú, ¿quién eres?]
+		[...]
+		[... Hum, veo que has logrado muchas cosas, que has recorrido muchos lugares.]
+		[Tus Dinos son poderosos pero aún no han alcanzado todo su potencial...]
+		[Supongo que vienes para llegar a ese límite...]
+	</phase>
+
+	<a id="limite">¡Quiero ser aún más poderoso!</a>
+
+	<phase id="limite" next="fight:nofight" frame="blabla">
+		[No lo dudo, no eres el primero en venir para eso.]
+		[Te puedo hacer más fuerte.]
+		[Primero muéstrame si lo mereces.]
+		[¿Tienes el suficiente poder para vencerme?]
+	</phase>
+
+	<a id="fight">¡Sí!</a>
+	<a id="nofight">No lo creo.</a>
+
+	<phase id="nofight" frame="blabla">
+		[Vuelve cuando estés listo.]
+	</phase>
+
+	<phase id="fight" fightgroup="rhubar" frame="blabla" scenario="fmedal:15">
+		[Bien... has probado tu valor.]
+		[La iniciación puede comenzar...]
+	</phase>
+</d>
+
+<d place="temple" name="El Sabio Rhubarbapapa" gfx="rhubarbe" frame="stop" cond="scenario(fmedal,15)+!mission(rhuba)">
+	<phase id="begin" next="yo">
+		Un esqueleto de dorogón se impone ante ti.
+		Habitado aún por un espíritu, sus ojos te observan con atención.
+	</phase>
+	<a id="yo">¿Sabio Rhubarbapapa?</a>
+	<phase id="yo" next="mission" frame="blabla">
+		[Si quieres romper los límites de tus Dinos, deberás recibir mi iniciación.]
+		[¿Estás listo?]
+	</phase>
+	<a id="mission">Acceder a las misiones</a>
+	<phase id="mission" missions="rhubar"></phase>
+</d>
+
+<d place="temple" name="El Sabio Rhubarbapapa" frame="blabla" gfx="rhubarbe" cond="mission(rhuba)+!fx(lvlup2)">
+	<phase id="begin" next="oui:non:notyet">
+		[Tu Dino ha terminado su iniciación. Hiciste bien el llevarlo por este camino.]
+		[Ahora voy a subir su límite de evolución.]
+	</phase>
+	<a id="oui" cond="level(60)">¡Mi Dino está listo!</a>
+	<a id="non">Espera un poco, por favor.</a>
+	<a id="notyet" cond="!level(60)">¡Mi Dino está listo!</a>
+
+	<phase id="non">
+		[Está bien, vuelve cuando estés seguro.]
+	</phase>
+	<phase id="oui" next="up">
+		[¡Que así sea!]
+		[Que tu Dino revele su mayor potencial. ¡Que se rompa el límite impuesto!]
+	</phase>
+	<a id="up">¡Vamos!</a>
+	<phase id="up" effect="lvlup2" frame="stop" next="off">
+		_(El espíritu del sabio ingresa en el cuerpo del Dino y aparece un trueno...)_
+		_(Tu Dino ha sido liberado, un aura emana de él, sus límites han sido quebrados, ¿cómo va a evolucionar?)_
+	</phase>
+	<a id="off">Increíble</a>
+	<phase id="off">
+		[Tu Dino puede ir desde hoy más allá de sus capacidades, úsalos con sabiduría.
+		Y no te dejes llevar por la soberbia, ayuda a los jóvenes maestros.]
+	</phase>
+	<phase id="notyet">
+		[Desgraciadamente, tus Dinos no tienen aún la fuerza necesaria para que su segundo límite sea quebrado.]
+		[¡Vuelve cuando haya alcanzado su nivel máximo!]
+	</phase>
+</d>
+
+<d place="temple" name="El sabio Rhubarbapapa" frame="stop" gfx="rhubarbe" cond="fx(lvlup2)">
+	<phase id="begin" next="yo">
+		Un esqueleto de dorogón se impone ante ti.
+		Habitado aún por un espíritu, sus ojos te observan con atención.
+	</phase>
+	<a id="yo">¿Sabio Rhubarbapapa?</a>
+	<phase id="yo" frame="blabla">
+		[Ya no puedo ayudarte.]
+		[Vuelve con un Dino que aún no haya desbloqueado su nuevo límite.]
+	</phase>
+</d>
+

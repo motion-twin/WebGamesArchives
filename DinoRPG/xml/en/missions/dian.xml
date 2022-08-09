@@ -1,0 +1,65 @@
+﻿<missions>
+
+	<!-- ***************************************************************************** -->
+	<!-- DIAN KORGSEY, help the korgons! ----->
+
+	<m group="dian" id="kswim" name="Like a Korgon To Water" limit="15">
+		<begin>The Grumhel Jungle is a fascinating place! Just take a look at the Korgons. They've perfectly adapted to their environment! Did you know that they make their own fins which they use to cross the Jumin River? No? I'll give you this pair if you agree to bring me some much-needed supplies....</begin>
+		<action v="Check supply list">Dian Korgsey's list shows that she really needs some tools. You can find them at the forges of the Big All-Hot.</action>
+		<goto v="forges"/>
+		<action v="Pick up the tools">You pick up a pouch of tools. "Branches from the Ashpouk Ruins" are also on the list.</action>
+		<goto v="rashpk" hide="1"/>
+		<action v="Cut down branches">You pick up a few charred branches. Last on the list is "a charm".</action>
+		<goto v="fosslv" hide="1"/>
+		<action v="Ask the Shaman for a charm">The Shaman grins and gives you one of his lucky charms. Thanks!</action>
+		<end>Perfect! I've got everything I need! Here, take these Korgon fins as promised!</end>
+		<fx v="palmes"/>
+		<xp v="20"/>
+	</m>
+
+	<m group="dian" id="rivals" name="Northern Korgons, Southern Korgons" limit="15" cond="mission(kswim)">
+		<begin>The Korgons found in this part of Grumhel Jungle are quite friendly. Southern Korgons from the Sinister Path are far less friendly. If you bring me proof of victory against the Southern Korgons, the Northern Korgons will like us a lot more!</begin>
+		<goto v="chemin"/>
+		<kill v="korgon" n="10" name="Southern Korgons"/>
+		<action v="Find a trophy">You pick up a few Korgon claws to use as a trophy for the Northern Korgons....</action>
+		<end>Ah! Good idea, Korgon Claws! the Northern Korgons seem to like it ... here, take this for your trouble.</end>
+		<gold v="2000"/>
+		<xp v="40"/>
+	</m>
+
+	<m group="dian" id="kfood" name="Wood Steak" limit="15" cond="mission(kswim)">
+		<begin>The Ashy Fikoia is a very rare tree that grows somewhere in Grumhel Forest, the Korgons love it! I don't know where to find it, but I'll pay you well if you bring me some branches!</begin>
+		<goto v="garde" hide="1"/>
+		<action v="Strange Tree">You notice an odd-looking tree with grey leaves which smells like stale tobacco ... this must be The Ashy Fikoia! But wait! while you're preparing to take a few branches, you hear noises coming from the undergrowth....</action>
+		<kill n="6"/>
+		<action v="Cut Down A Few Branches">Better to not stay here for too long: you cut down a few branches and quickly move away from the tree.</action>
+		<end>The Korgons will love that, thanks a lot!</end>
+		<gold v="2000"/>
+		<xp v="40"/>
+	</m>
+
+	<m group="dian" id="poison" name="Korgon Rivalry" cond="mission(kfood)+mission(rivals)" limit="20">
+		<begin>The Ashy Fikoia you found will quickly become a strategic point for the Southern Korgons ... We have to react quickly! We will "booby-trap" some of the trees' branches in order to stop them from eating it ... we'll be the only ones who know which branches are dangerous ... ha ha!</begin>
+		<goto v="collin"/>
+		<action v="Pick Up The Sap">You pick up some Oozing Mordicus, tree sap with a disgusting taste. This will be ideal for our trap.</action>
+		<goto v="garde"/>
+		<action v="Entrap The Fikoia">Noooo! The Fikoia has disappeared! The Southern Korgons must have got here before us!</action>
+		<goto v="jungle" hide="1"/>
+		<action v="Ambush">While travelling in the Wild Jungle, a group of Korgons ambushes you! You've got to get rid of them to continue....</action>
+		<kill v="korgon" n="3" name="Covert Korgons"/>
+		<goto v="fleuve" hide="1"/>
+		<action v="Tracks On The Ground">The large tracks on the ground indicate that something very heavy has passed this way from Jumin River ... the tracks lead towards the south</action>
+		<goto v="chemin" hide="1"/>
+		<action v="Tracks On The Ground">The tracks end here ... judging by the growls coming from the bushes, someone or something has been waiting for you to arrive!</action>
+		<kill v="korgon:ronciv" n="8" name="Korgons or allies"/>
+		<action v="Ashy Fikoia">The Ashy Fikoia is hidden under a pile of banana tree leaves. You'll have to drag it back to camp....</action>
+		<goto v="fleuve"/>
+		<talk v="Dian Korgsey">Here you are! It's a shame that they cut down The Ashy Fikoia ... it seems like the work of the Southern Korgons, without doubt ... well, we can't travel up river with it. Hide it here, it'll be safe enough. We'll meet up again at the camp.</talk>
+		<action v="Hide The Fikoia">You hide the tree under some banana tree leaves.</action>
+		<end>Thanks for all your help, we won't forget it!</end>
+		<gold v="3500"/>
+		<item v="hotpan"/>
+		<xp v="100"/>
+	</m>
+
+</missions>

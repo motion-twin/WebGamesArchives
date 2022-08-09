@@ -1,0 +1,19 @@
+#changer ici...
+-resource lang.fr.xml@xml_lang
+
+-swf swf/_code.swf
+-swf-lib swf/_gfx.swf
+-swf-version 8
+
+--flash-strict
+--no-traces
+
+-cp src
+-cp ../../website/src/com
+-main Boot
+
+-D mt_prot_encode
+-D swf-mark
+-cmd swfmake
+
+-cmd cp swf/explo.swf swf/explo.fr.swf

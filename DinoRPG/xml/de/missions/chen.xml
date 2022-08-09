@@ -1,0 +1,500 @@
+﻿<!-- ***************************************************************************** -->
+<!-- Chen, l'herboriste, ancienne gardienne du Vénérable ----->
+		
+<missions>
+	
+	<m group="chen" id="sos" name="S.O.S">
+		
+		<begin>
+			Truppen unter dem Kommando von Grizorg haben Etre gefangen genommen. Er wollte alleine zum Labor des Erzdorogon aufbrechen.
+			Jemand muss etwas unternehmen, ehe er in das Gefängnis von Piranese geworfen wird. Diesen grausamen Ort, wo alle Arborianer landen, die sich nicht an die Gesetze der Dorogon halten.
+		</begin>
+		<goto v="ihaut"/>
+		<action v="Zu spät?">
+			[Du siehst dich überall um, aber Etre ist nirgendwo zu sehen... Die einzige Spur von ihm sind Haarbüschel auf dem Boden.
+			Die Wachen haben bereits Hand an ihn gelegt. Und wie es scheint, war bei ihrem Auftrag von Freundlichkeit keine Rede.]
+			[Du kannst dich unmöglich in Ruhe umsehen. Es sind noch zu viele Soldaten in der Nähe.]
+		</action>
+		<actfight act="Verteidige dich" monsters="cyclo2:cyclo:cyclo"/>
+		<talk v="Soldat von Grizorg" gfx="boulo" background="2" dialect="arbori">
+			[Hör auf, uns zu schlagen. Wir haben dir nichts getan - wir führen nur Aufträge aus.]
+			[Es ist verboten, hierherzukommen. Der Erzdorogon Grizorg höchstpersönlich hat dieses Labor geschlossen.]
+			[Nichts gegen dich, aber wir wollen nicht in *Piranese* landen. Ich habe Frau und Kinder, die auf meinen schmalen Sold angewiesen sind!]
+		</talk>
+			<!-- BRANCH DICO -->
+		<branch v="dico_ok" cond="uvar(dicarb)"/>
+		<branch v="dico_ko" cond="!uvar(dicarb)"/>
+		
+		<label v="dico_ko"/>
+			<action v="Zeig ihm die Haarbüschel">
+				[Ihr versteht kein Wort von dem was ich sage, nicht wahr?]
+				[Du hast eine Idee. Anstatt deine Zeit mit Reden zu verschwenden, zeigst du ihm die auf dem Boden herumliegenden Haarbüschel von Etre...]
+				[Er scheint jetzt zu verstehen, wo du herkommst.]
+			</action>
+			<talk v="Soldat von Grizorg" gfx="boulo" background="2" dialect="arbori">
+				[Du willst wissen, wo der Arborianer hingebracht wurde. Wir haben aber nur Order erhalten, hierzubleiben. ]
+				[Die Dorogons haben ihn mitgenommen. Wenn du keinem was erzählst, verraten wir dir, in welche Richtung sie gegangen sind.]
+				[Einer der Dorogons war so durstig. Er meinte, sie würden an den Wasserfällen anhalten.]
+			</talk>
+			<action v="Welche Richtung?">
+				Sein Finger scheint auf die Seen der Insel zu zeigen. Doch bei dem eindrucksvollen Panorama, dass sich dir bietet, kannst du keinen genauen Ort ausmachen.
+			</action>
+			<goto v="ilac" hide="1"/>
+			<branch v="tothelac"/>
+		
+		<label v="dico_ok"/>
+			<action v="Schüttle ihn ein bisschen">
+				Angesichts deiner schlagkräftigen Argumente, scheint der Soldat gleich viel zahmer und auskunftsfreudiger zu sein.
+			</action>
+			<talk v="Soldat von Grizorg" gfx="boulo" background="2"  dialect="arbori">
+				[Du willst wissen, wo der Arborianer hingebracht wurde. Wir haben aber nur Order erhalten, hierzubleiben.
+				Die Dorogons haben ihn mitgenommen. Wenn du keinem was erzählst, verraten wir dir, in welche Richtung sie gegangen sind.]
+				[Einer der Dorogons war so durstig. Er meinte, sie würden am Himmlischen See anhalten.]
+			</talk>
+			<goto v="ilac" hide="1"/>
+			
+		<label v="tothelac"/>
+			<action v="Zu spät?">
+				Du siehst dich überall um, aber Etre ist nirgendwo zu sehen... Du siehst wie die Dorogons nicht weit entfernt ein Bad nehmen. Einer von ihnen scheint den armen Saul schlecht zu behandeln.
+			</action>
+			<kill v="doro" n="3"></kill>
+			
+			<talk v="Saul" gfx="saul" dialect="arbori">
+				[Ich danke dir von Herzen, junger Reisender. Ich habe wirklich versucht, so ein Problem zu vermeiden.]
+				[Ich hatte mich einige Minuten versteckt, aber schließlich haben sie mich doch gefunden. Die Dorogons mögen es nicht, wenn man sich ohne Genehmigung zu weit von der Stadt aufhält. Ich hasse die Dorogons!]
+			</talk>
+
+		<branch v="dico_ok2" cond="uvar(dicarb)"/>
+		<branch v="dico_ko2" cond="!uvar(dicarb)"/>
+			
+		<label v="dico_ko2"/>
+			<goto v="ilac"/>
+			<action v="Wohin haben sie Etre gebracht??">
+				Du zeigst ihr die Haarbüschel. Sie versteht sofort und zeigt in die Richtung, in der die Stadt der Arborianer liegt.
+			</action>
+			<goto v="icite"></goto>
+			<actfight act="Wachen fragen" monsters="cyclo2:cyclo2"/>
+			<goto v="icite"></goto>
+			<action v="Richtung">
+				Der Soldat zeigt auf einen Punkt im Osten der Stadt. Er erklärt dir, dass du die Stadt über den Westflügel des Drachen umgehen kannst.
+			</action>
+			<goto v="prison"/>
+			<branch v="prison"/>
+			
+		<label v="dico_ok2"/>
+			<goto v="ilac"/>
+			<action v="Erklärung">
+				Du fragst Saul, warum sie die Dorogons so sehr hasst...
+			</action>
+			<goto v="ilac"/>
+			<talk v="Saul" gfx="saul" dialect="arbori">
+				Sie haben meinen Bruder eingesperrt. Er sollte ein Gladiator werden. Er floh, aber sie haben ihn irgendwie geschnappt und ihn in *Piranese* eingekerkert.
+			</talk>
+			<goto v="ilac"/>
+			<action v="Wo haben sie Etre hingebracht?">
+				Du willst von Saul wissen, wohin sie Etre gebracht haben...
+				Sie sagt dir, dass sie ihn direkt ins Gefängnis gesteckt haben. Und dass du in den Westen der Insel gehen musst, falls du zum Gefängnis gelangen willst, ohne den Verdacht der Wachen zu erregen.
+			</action>
+			<goto v="prison"/>
+				
+		<label v="prison"/>
+			<action v="Etre retten">
+				Schnell! Ehe die Dorogons ihn noch tiefer in das Gefängnis stecken - du musst ihn retten!
+			</action>
+			<kill v="doro" n="3"/>
+			<actfight act="interception" monsters="dorolu:doro2"/>
+			<talk v="Etre" gfx="etre" dialect="arbori" background="2">
+				Hab Dank, Reisender. Du musst so schnell wie möglich von hier verschwinden. Sonst kommen wir in große Schwierigkeiten!
+			</talk>
+			<goto v="icite"/>
+			<talk v="Chen" gfx="chen">
+				Gute Arbeit! Etre wird sich eine Weile versteckt halten.
+				Dank dir ist er dem Gefängnis erst einmal entkommen. Ach wenn du doch nur früher auf die Insel gekommen wärst... Du hättest so viele unserer Leute retten können.
+			</talk>
+		<end>
+			Gratulation. Dank dir, ist Etre knapp einem traurigen Schicksal in diesem furchtbaren Gefängnis entkommen. Er wird sich eine Weile verstecken müssen, um nicht wieder geschnappt zu werden.
+			Leider erleben alle Arborianer gerade ähnliche Schwierigkeiten. Irgendwer muss ihnen doch helfen können?
+		</end>
+		<xp v="80"/>
+	</m>
+
+	<m group="chen" id="tombo" name="Das Grab des Erzdorogon" cond="mission(sos)">
+		<begin>
+			Hallo Reisender. Ich würde gerne einen Blumenstrauß am Grab unseres vielgeliebten Ex-Erzdorogon niederlegen.
+			Leider wissen nur die Dorogons wo sich diese Grab befindet... Kannst du mir vielleicht helfen?
+		</begin>
+		<goto v="vener"/>
+		<talk v="Der Ehrwürdige" gfx="dorogon">
+			[Du suchst das Grab meines Großvaters?]
+			[Ich kann dir leider nicht helfen. Ich habe Nimbao in dem Moment verlassen, als mich die traurige Nachricht seines Todes erreichte.
+			Ich verstehe immer noch nicht, warum er uns so früh verließ. Er war nicht mal 1000 Jahre alt...]
+			[Du solltest sein Grab allerdings leicht finden können. Die mächtigsten Dorogons umgibt eine außergewöhnliche Aura der Macht. Und zwar auch nach ihrem Übergang in die andere Welt.
+			Halte überall die Augen nach ungewöhnlichen Dingen in Flora und Fauna auf. Ich bin sicher, dass du etwas finden wirst.]
+		</talk>
+		<goto v="garde" hide="1" />
+		<action v="Untersuchen">
+			[Du siehst dich rings um den Waldwächter um. Dieser Baum stellt alle anderen Bäume im Grumhel-Wald sprichwörtlich in den Schatten. Gut möglich, dass der ehemalige Erzdorogon etwas dammit zu tun hat.]
+			[Während du suchst, wirst du von einigen Korgonen gepiesackt und in die Seite gezwickt. Du musst aufpassen, dass du dich nicht weiter beugst und so weitere Angriffsflächen bietest.]
+		</action>
+		<kill v="korgon" n="8" name="Hungrige Korgonen"/>
+		<goto v="garde"/>
+		<action v="Pergamentrolle">			
+			Am Ende des Kampfes fällt eine Pergamentrolle aus der Krone des Waldwächters. Du hebst sie auf und liest laut...
+		</action>
+		<goto v="garde"/>
+		<talk v="Pergamentrolle" gfx="arbre">
+			Ich mag es nicht, wenn du mir unter meine Wurzeln schaust. Bitte störe die sterblichen Überreste des Großen Erzdorogon nicht weiter.
+		</talk>
+		<goto v="garde"/>
+		<action v="Blumenstrauß ablegen">
+			Du legst das Geschenk von Chen zu Füßen des Waldwächters. Eine weitere Pergamentrolle fällt herab.
+		</action>
+		<goto v="garde"/>
+		<talk v="Pergamentrolle" gfx="arbre">
+			[Ich sehe, dass du Respekt vor der Vergangenheit hast. Der Erzdorogon wurde unter meinen Wurzeln verbrannt. Zu jener Zeit war ich bereits über hundert Jahre alt und noch nicht der größte Baum im Wald.]
+			[Doch dank seiner ungeheuren Energie konnte ich zu meiner heutigen Größe heranwachsen und die Rolle des Waldwächters übernehmen.
+			Er verlieh mir die besondere Aufgabe, über die Tür zu den Steppen zu wachen, dem einzigen Pfad zu den entfernten Ebenen von Caushemesh.]
+			[Wie du sicher bemerkt hast, habe ich diese Verantwortung seitdem inne.
+			Danke, dass du ihm an seinem Grab Ehre erwiesen hast.]
+		</talk>
+		<goto v="icite"/>
+		<talk v="Chen" gfx="chen">
+			[Es ist dir also gelungen, das Grab des Erzdorogon zu finden. Danke, dass du diese Aufgabe angenommen hast.]
+			[Damals, als ich nicht mehr als der jüngste Diener in den Diensten seines jungen Sohnes war, gab mir der Erzdorogon einen Talisman, der Glück bringen sollte.
+			Wie sich leider heraustellte, hätte er selber ihn wohl besser gebraucht.]
+		</talk>
+		<end>
+			Ich danke dir, Reisender, dass du hast das Grab des Erzdorogon gefunden hast.
+			Seit seinem Verschwinden hatte ich keine Möglichkeit, selber nach ihm zu suchen. Dank dir, kann ich nun meine Gedanken mit ihm teilen.
+		</end>
+		<xp v="50"/>
+	</m>
+		
+	<m group="chen" id="color" name="Zutatenjagd" cond="mission(tombo)">
+		<begin>
+			Hallo Reisender. Ich suche nach Zutanten für meine Tränke. Seit wir gezwungen sind, diese Halsbänder zu tragen, können wir uns nicht mehr frei bewegen, ohne die ganze Zeit von den Dorogons überwacht zu werden.
+			Könntest du mir bitte einige Zutaten von der Oberfläche bringen?
+		</begin>
+		<goto v="icite"/>
+		<useingr v="fruitc" n="1"/>
+		<goto v="icite"/>
+		<useingr v="fruitu" n="1"/>
+		<goto v="icite"/>
+		<useingr v="fruit1" n="1"/>
+		<goto v="icite"/>
+		<useingr v="fruit2" n="1"/>
+		<goto v="icite"/>
+		<useingr v="fruit3" n="1"/>
+		<goto v="icite"/>
+		<useingr v="fruit4" n="1"/>
+		<goto v="icite"/>
+		<talk v="Chen" gfx="chen">
+			Um das alles zu vermischen, brauche ich etwas Schnee. So reinen Schnee wir nur irgend möglich!
+		</talk>
+		<goto v="ihaut"/>
+		<dig>
+			Du erhältst eine kleine Menge göttlichen Schnees vom Gipfel!
+		</dig>
+		<end>
+			Ich danke dir vielmals, Reisender. Dank dir kann ich nun Heilmittel für alle Stadtbewohner herstellen!
+		</end>
+		<gold v="10000"/>
+		<item v="remed2"/>
+	</m>
+
+	<m group="chen" id="dear" name="Brief an die Kinder" cond="mission(color)">
+		<begin>
+			Hallo Reisender. Ich habe eine Bitte an dich. Du kannst dich freier fortbewegen als der Rest von uns. Würdest du bitte diesen Brief den Kindern bringen, die im Exil an der Oberfläche leben?
+		</begin>
+		<goto v="vener"/>
+		<talk v="Bao Babe" gfx="baobabe">
+			Hallo Dinozmeister, hast du da etwa einen Brief für mich?
+			Von Chen? Wunderbar! Was für eine angenehme Überraschung. Wir haben uns seit langer Zeit nicht mehr gesehen.
+		</talk>
+		<action v="Warten">
+			Du lässt Fräulein Bao in Ruhe den Brief lesen. Sie scheint von seinem Inhalt sehr gerührt zu sein.
+		</action>
+		<talk v="Bao Babe" gfx="baobabe">
+			Danke, dass du dir die Zeit genommen hast, uns diesen Brief zu bringen. Wir denken oft an sie. Ich hoffe wirklich, dass wir eines Tage wieder vereint sein werden.
+			Würdest du ihm bitte ebenso einen Brief von mir bringen?
+		</talk>
+		<goto v="baobob"/>
+		<talk v="Bao Bob" gfx="baobob">
+			Hallo Dinozmeister, was gibt's Neues in Nimbao?
+			Vielen Dank. Entschuldige, ich werde diesen Brief später lesen.
+		</talk>
+		<action wait="1" v="Warten">
+			Du suchst dir einen bequemen Platz im warmen Sand und entspannst dich. Du schaust den Wellen zu, während Bao den Brief liest...
+			Soviel ist sicher, er lässt sich wirklich Zeit... Rzzzzz....zzzzz....Pops......zzzzzz.
+		</action>
+		<talk v="Bao Bob" gfx="baobob">
+			_(Bao kehrt zurück, das Auge irgendwie gerötet...)_
+			[Dinozmeister, bist du noch da?]
+			[Entschuldige, dass es so lange gedauert hat. Ich hatte noch meditiert, ehe ich den Brief las.]
+			[Wir sind dir unendlich dankbar, dass du uns diesen Brief gebracht hast. Ich hoffe, schon bald weitere Neuigkeiten zu erhalten.
+			Eines Tages werden wir uns wiedersehen, das schwöre ich. Nimm bitte diesen Zettel und gib ihn Chen, wenn du ihn das nächste Mal siehst.]
+		</talk>
+		<goto v="icite"/>
+		<talk v="Chen" gfx="chen">
+			So, den beiden geht es also gut. Ich bin so glücklich, dass meinen beiden Kinden gut geht.
+			Es quält mich, sie nicht in meiner Nähe zu haben. Doch es ist nur zu ihrer eigenen Sicherheit, dass sie auf der Oberfläche bleiben.
+		</talk>
+		<end>
+			Danke, dass du meinen Kindern meine Nachricht gebracht hast.
+			Ich hoffe, dass wir uns eines Tages und in besseren Zeiten wiedersehen werden.
+		</end>
+		<xp v="50"/>
+		<gold v="2000"/>
+	</m>
+	
+	<m group="chen" id="morgu" name="Morg aufspüren" cond="mission(dear)">
+		<begin>
+			Einige Arborianer berichten, sie hätten Morg in dieser Gegend gesehen... Trotz der Niederlage gegen dich, scheint er immer noch hinter dir her zu sein.
+			Dieser Dorogon ist komplett außer Kontrolle. Kannst du ihm nicht einfach klarmachen, dass er nicht in Nimbao willkommen ist?
+		</begin>
+		<goto v="iporte"/>
+		<action v="Die Zeichen sehen">
+			Aufforderung zum Duell: Ich, Morg, Anführer der Miliz seiner Exzellenz dem Erzdorogon Grizorg, fordere den Dinozmeister, der die Frechheit hatte, meine Autorität in Frage zu stellen, hiermit formell zum Duell heraus.
+			Finde dich auf dem Gipfel des Everwest ein, damit wir unsere Differenzen ein für alle Mal klären können!
+		</action>
+		<goto v="ihaut"/>
+		<action v="die Falle">
+			Vorsicht! Bei Morg und seinen Spießgesellen muss man immer auf der Hut sein. Er wird immer von seiner persönlichen Leibgarde begleitet.
+		</action>
+		<actfight act="Angreifen" monsters="dorolu:doro:doro"/>
+		<talk v="Morg" gfx="morg" background="2">
+			Hyahahahaha... Haben dich diese Häppchen hungrig gemacht? Gut. Denn jetzt kommt der Hauptgang!
+		</talk>
+		<actfight act="Angreifen" monsters="morgu">			
+			<lost>Hyahahahaha, ich hab's dir doch gesagt. Ich bin viel stärker als du!</lost>
+		</actfight>
+		<talk v="Morg" gfx="morg" background="2" frame="hurt">
+			Uff... Wir werden uns wiedersehenn. Wir sind noch lange nicht fertig miteinander.
+		</talk>
+		<end>
+			OK. Es ist offensichtlich, dass Morg unsterblich ist. Wie werden wir diesen Dorogon nur los...
+			Zumindest wird er uns erstmal eine Weile in Ruhe lassen.
+		</end>
+		<xp v="60"/>
+		<gold v="1500"/>
+	</m>
+		
+	
+<!-- ***************************************************************************** -->
+<!-- Chen, l'herboriste, ancienne gardienne du Vénérable, Changement après défaite de Grizorg ----->
+		
+
+	<m group="chen2" id="sos2" name="S.O.S">
+		
+		<begin>
+			Truppen unter dem Kommando von Grizorg haben Palmier gefangen genommen. Er wollte alleine zum Labor des Erzdorogon aufbrechen.
+			Jemand muss etwas unternehmen, ehe er in das Gefängnis von Piranese geworfen wird. Diesem grausamen Ort, wo alle Arborianer landen, die sich nicht an die Gesetze der Dorogon halten.
+		</begin>
+		<goto v="ihaut"/>
+		<action v="Zu spät?">
+			[Du siehst dich überall um, aber Palmier ist nirgendwo zu sehen... Die einzige Spur von ihm sind Haarbüschel auf dem Boden.
+			Die Wachen haben bereits Hand an ihn gelegt. Und wie es scheint, war bei ihrem Auftrag von Freundlichkeit keine Rede.]
+			[Du kannst dich unmöglich in Ruhe umsehen. Es sind noch zu viele Soldaten in der Nähe.]
+		</action>
+		<actfight act="Verteidige dich" monsters="doro:doro:cyclo2">
+		</actfight>
+			<action v="Den Soldaten ein wenig durchschütteln">
+				Angesichts deiner schlagkräftigen Argumente, scheint der Soldat gleich viel zahmer und auskunftsfreudiger zu sein.
+			</action>
+			<talk v="Soldat von Grizorg" gfx="boulo" background="2"  dialect="arbori">
+				[Du willst wissen, wo der Arborianer hingebracht wurde? Wir haben aber nur Order erhalten, hierzubleiben.]
+				[Sie sprachen davon, ihn direkt nach Piranese zu bringen.]
+			</talk>
+			<goto v="prison"/>
+			<action v="Palmier retten">
+				Schnell! Ehe die Dorogons ihn noch tiefer in das Gefängnis stecken - du musst ihn retten!
+			</action>
+			<kill v="doro" n="3"/>
+			<actfight act="Ausbrechen" monsters="dorolu:doro2"/>
+			<talk v="Palmier" gfx="palmier" dialect="arbori" background="2">
+				Danke vielmals. Aber ich brauche deine Hilfe nicht...
+			</talk>
+			<goto v="icite"/>
+			<talk v="Chen" gfx="chen">
+				Gut gemacht. Dank dir bleibt ihm das Gefängnis vorerst erspart.
+			</talk>
+		<end>
+			Gratulation. Dank dir ist Palmier knapp einem traurigen Schicksal in diesem furchtbaren Gefängnis entkommen.
+		</end>
+		<xp v="80"/>
+	</m>
+
+	<m group="chen2" id="tombo2" name="Das Grab des Erzdorogon" cond="mission(sos2)">
+		<begin>
+			Hallo Reisender. Ich würde gerne einen Blumenstrauß am Grab unseres vielgeliebten Ex-Erzdorogon niederlegen.
+			Leider wissen nur die Dorogons wo sich diese Grab befindet... Kannst du mir vielleicht helfen?
+		</begin>
+		<goto v="vener"/>
+		<talk v="Der Ehrwürdige" gfx="dorogon">
+			[Du suchst das Grab meines Großvaters?]
+			[Ich kann dir leider nicht helfen. Ich habe Nimbao in dem Moment verlassen, als mich die traurige Nachricht seines Todes erreichte.]			
+			[Du solltest sein Grab allerdings leicht finden können. Die mächtigsten Dorogons umgibt eine außergewöhnliche Aura der Macht. Und zwar auch nach ihrem Übergang in die andere Welt.
+			Halte überall die Augen nach ungewöhnlichen Dingen in Flora und Fauna auf. Ich bin sicher, dass du etwas finden wirst.]
+		</talk>
+		<goto v="garde" hide="1" />
+		<action v="Untersuchen">
+			[Du siehst dich rings um den Waldwächter um. Dieser Baum stellt alle anderen Bäume im Grumhel-Wald sprichwörtlich in den Schatten. Gut möglich, dass der ehemalige Erzdorogon etwas dammit zu tun hat.]
+			[Während du suchst, wirst du von einigen Korgonen gepiesackt und in die Seite gezwickt. Du musst aufpassen, dass du dich nicht weiter beugst und so weitere Angriffsflächen bietest.]
+		</action>
+		<kill v="korgon" n="8" name="Hungrige Korgonen"/>
+		<goto v="garde"/>
+		<action v="Pergamentrolle">
+			Am Ende des Kampfes fällt eine Pergamentrolle aus der Krone des Waldwächters. Du hebst sie auf und liest laut...
+		</action>
+		<goto v="garde"/>
+		<talk v="Pergamentrolle" gfx="arbre">
+			Ich mag es nicht, wenn du mir unter meine Wurzeln schaust. Bitte störe die sterblichen Überreste des Großen Erzdorogon nicht weiter.
+		</talk>
+		<goto v="garde"/>
+		<action v="Blumenstrauß ablegen">
+			Du legst das Geschenk von Chen zu Füßen des Waldwächters. Eine weitere Pergamentrolle fällt herab.
+		</action>
+		<goto v="garde"/>
+		<talk v="Pergamentrolle" gfx="arbre">
+			[Ich sehe, dass du Respekt vor der Vergangenheit hast. Der Erzdorogon wurde unter meinen Wurzeln verbrannt. Zu jener Zeit war ich bereits über hundert Jahre alt und noch nicht der größte Baum im Wald.]
+			[Doch dank seiner ungeheuren Energie konnte ich zu meiner heutigen Größe heranwachsen und die Rolle des Waldwächters übernehmen.
+			Er verlieh mir die besondere Aufgabe, über die Tür zu den Steppen zu wachen, dem einzigen Pfad zu den entfernten Ebenen von Caushemesh.]
+			[Wie du sicher bemerkt hast, habe ich diese Verantwortung seitdem inne.
+			Danke, dass du ihm an seinem Grab Ehre erwiesen hast.]
+		</talk>
+		<goto v="icite"/>
+		<talk v="Chen" gfx="chen">
+			[Es ist dir also gelungen, das Grab des Erzdorogon zu finden. Danke, dass du diese Aufgabe angenommen hast.]
+			[Damals, als ich nicht mehr als der jüngste Diener in den Diensten seines jungen Sohnes war, gab mir der Erzdorogon einen Talisman, der Glück bringen sollte.
+			Wie sich leider heraustellte, hätte er selber ihn wohl besser gebraucht.]
+		</talk>
+		<end>
+			Ich danke dir, Reisender, dass du hast das Grab des Erzdorogon gefunden hast.
+			Seit seinem Verschwinden hatte ich keine Möglichkeit, selber nach ihm zu suchen. Dank dir, kann ich nun meine Gedanken mit ihm teilen.
+		</end>
+		<xp v="50"/>
+	</m>
+		
+	<m group="chen2" id="color2" name="Zutatenjagd" cond="mission(tombo2)">
+		<begin>
+			Hallo Reisender. Ich suche nach Zutanten für meine Tränke. Seit wir gezwungen sind, diese Halsbänder zu tragen, können wir uns nicht mehr frei bewegen, ohne die ganze Zeit von den Dorogons überwacht zu werden.
+			Könntest du mir bitte einige Zutaten von der Oberfläche bringen?
+		</begin>
+		<goto v="icite"/>
+		<useingr v="fruitc" n="1"/>
+		<goto v="icite"/>
+		<useingr v="fruitu" n="1"/>
+		<goto v="icite"/>
+		<useingr v="fruit1" n="1"/>
+		<goto v="icite"/>
+		<useingr v="fruit2" n="1"/>
+		<goto v="icite"/>
+		<useingr v="fruit3" n="1"/>
+		<goto v="icite"/>
+		<useingr v="fruit4" n="1"/>
+		<goto v="icite"/>
+		<talk v="Chen" gfx="chen">
+			Um das alles zu vermischen, brauche ich etwas Schnee. So reinen Schnee wir nur irgend möglich!
+		</talk>
+		<goto v="ihaut"/>
+		<dig>
+			Du erhältst eine kleine Menge göttlichen Schnees vom Gipfel!
+		</dig>
+		<end>
+			Ich danke dir vielmals, Reisender. Dank dir kann ich nun Heilmittel für alle Stadtbewohner herstellen!
+		</end>
+		<gold v="10000"/>
+		<item v="remed2"/>
+	</m>
+
+	<m group="chen2" id="dear2" name="Die Kinder besuchen" cond="mission(color2)">
+		<begin>
+			Wir haben endgültig unsere Fesseln abgelegt. Ich werde nun zur Oberfläche gehen und meine Kinder besuchen. Kannst du mich bitte begleiten?
+			Wir sind Grizorg zwar los. Aber das Reisen in diesen Gegenden ist noch nicht sicherer geworden.
+		</begin>
+		<goto v="vener"/>
+		<talk v="Chen" gfx="chen" background="3">
+			Endlich kann ich meinen Schatz wiedersehen!
+			Ich kann dir nicht genug danken!
+		</talk>
+		<goto v="vener"/>
+		<action v="Warten">
+			Du überlässt Fräulein Bao und Chen sich selbst. Sie scheinen den Tränen nahe zu sein.
+		</action>
+		<talk v="Fräulein Bao" gfx="baobabe">
+			Danke, dass du unsere Mutter zurückgebracht hast. Ich habe sie viel zu lange nicht mehr gesehen.
+		</talk>
+		<goto v="vener"/>
+		<talk v="Chen" gfx="chen" background="3">
+			Mein kleiner Dorogon, wie geht es dir?
+			Du siehst aus, als hättest du alles Mögliche in dich reingestopft, seitdem ich dich das letzte Mal gesehen habe.
+			Du solltest mehr darauf achten, was du isst. Du bist doch schließlich kein Müllschlucker, oder?
+			Abgesehen davon ist es eine Freude, dich so gesund vor mir zu sehen. Ich werde wiederkommen so oft ich nur kann.
+		</talk>
+		<talk v="Der Ehrwürdige" gfx="dorogon" background="3">
+			_(Der Ehwürdige versucht, sich zu verstecken. Er ist es nicht gewohnt, ausgeschimpft zu werden...)_
+		</talk>
+		<goto v="baobob"/>
+		<talk v="Chen" gfx="chen" background="2">
+			Ich bin froh, dass es ihm so gut geht!
+			Dieser stolze Arborianer, den wir nach unserer Insel benannt haben.
+		</talk>
+		<talk v="Bao Bob" gfx="baobob">
+			Mutter!
+			Ich bin so froh, dich zu sehen. Komm rein, ich zeige dir mein Haus.
+			_(Bao dreht sich zu dir.)_
+			Könntest du einen Augenblick hier warten? Wir haben so vieles zu besprechen... Du verstehst das doch sicher.
+		</talk>
+		<action wait="1" v="Warten">
+			Du suchst dir einen bequemen Platz im warmen Sand und entspannst dich. Du schaust den Wellen zu, während Bao seiner Mutter sein Haus zeigt...
+			Soviel ist sicher, sie lassen sich wirklich Zeit... Rzzzzz....zzzzz....Pops......zzzzzz.
+		</action>
+		<talk v="Bao Bob" gfx="baobob">
+			_(Bao kehrt zurück, das Auge irgendwie gerötet...)_
+			Dinozmeister, bist du noch da?
+			Entschuldige, dass es so lange gedauert hat. Wir hatten ein langes und gutes Gespräch. Leider heißt es für heute schon wieder Abschied nehmen.
+			Meine Mutter muss schon wieder zurück, die Anderen brauchen sie. Dank dir können wir uns nun aber so oft wiedersehen wie wir wollen.
+		</talk>
+		<goto v="icite"/>
+		<talk v="Chen" gfx="chen">
+			Danke, dass du mich auf die Oberfläche begleitet hast. Diese Reise hat mir so viel bedeutet! Ich kann nun allen Leuten erzählen, was ich hier gesehen und was mir meine Kinder berichtet haben.
+		</talk>
+		<end>
+			Du bist etwas ganz besonderes! Dank dir kann ich jederzeit und ohne Angst zu haben meine Kinder besuchen. Möge der Geist des alten Großen Erzdorogon ewig über dich wachen.
+		</end>
+		<xp v="50"/>
+		<gold v="2000"/>
+	</m>
+	
+	
+	<m group="chen2" id="dorou" name="Morg aufspüren" cond="mission(dear2)" >
+		<begin>
+			Seit du Morg besiegt hast, wollen dich zahlreiche Dorogons zum Kampf herausfordern. Einige, um ihren Mut zu beweisen. Andere, um ihren Anführer zu rächen.
+			Kannst du ihnen das nicht ein für alle Male austreiben?
+		</begin>
+		<goto v="iporte"/>
+		<action v="Lies die Zeichen">
+			Aufforderung zum Duell: Der Dinozmeister, der unseren Anführer Morg besiegt hat, möge sich am Gipfel des Everwest einfinden, damit er dasselbe Schicksal erleidet wie unser Meister.
+		</action>
+		<goto v="ihaut"/>
+		<action v="die Falle">
+			Vorsicht! Bei Morg und seinen Spießgesellen muss man immer auf der Hut sein. Ganz sicher wird dich ein Willkommenskommitee erwarten.
+		</action>
+		<actfight act="Angreifen" monsters="dorolu:doro:doro"/>
+		<action v="Duell??">
+			Endlich zeigt sich der Anführer der Dorogons persönlich! Du musst ihn besiegen, damit dieses Duell endlich ein Ende hat.
+		</action>
+		<actfight act="Angreifen" monsters="dorou">
+			<begin m="dorou">Du also hast Morg besiegt? Mach dich auf was gefasst! - Ich werde dir zeigen, dass ich nicht umsonst der Anführer von Grizorgs Truppen bin!</begin>
+			<win>Gratuliere!... Ich gebe zu... uff... du hast mich besiegt. Du hast in Zukunft nichts mehr von mir zu befürchten.</win>
+			<lost>Hahaha. Ich hab's dir ja gleich gesagt. Ich bin stärker als Morg!</lost>
+		</actfight>
+		<end>
+			Selbst nach Grizorgs Niederlage und nachdem wieder Frieden herrscht, klammern sich noch viele Dorogons an ihre alte Macht.
+			Dank dir können wir sie nun endgültig loswerden.
+		</end>
+		<xp v="60"/>
+		<gold v="1500"/>
+	</m>
+	
+</missions>

@@ -1,0 +1,59 @@
+﻿<d place="marche" name="Isabella" gfx="isabella">
+
+	<phase id="begin" next="intro:no:twin">
+		¡Oye tú! ¿Cómo te va?
+	</phase>
+
+	<a id="intro" cond="!active(twinoid)" >¡Hola! Bien, gracias.</a>
+	<a id="no">Lo siento, mi Dino está muy ansioso por jugar, debo irme.</a>
+	<a id="twin" cond="active(twinoid)" >¿Eres tú quien me puede decir como ganar oro invitando amigos al juego?</a>
+	
+
+	<phase id="no" fast="1" frame="stop">
+		La chica se va, parece que hay otros Maestros queriendo hablar con ella.
+	</phase>
+	
+	<phase id="twin">
+		[Sí, ¿cómo lo supiste? ]
+		[Desgraciadamente el sistema de invitaciones no está disponible por ahora.
+		¡Pero volverá pronto!]
+ 	</phase>
+
+	<phase id="intro" next="start:no">
+		¡Oye, conozco una manera de ganar muchas monedas de oro!
+		¿Conoces nuestro sistema *Invita y Gana*? ¡Es una manera muy fácil de hacerte rico!
+	</phase>
+
+	<a id="start">Ah, ¿y qué es lo que hay que hacer?</a>
+
+	<phase id="start" next="tix:win:how:no">
+		El principio es muy simple: le pides a tus amigos que vengan a inscribirse a DinoRPG y, por cada uno de tus amigos inscritos, ganas un *Ticket Amigo* que va directamente a tu Inventario.
+		¡Los tickets te permiten ganar numerosos tesoros!
+	</phase>
+
+	<a id="tix">¿Tickets Amigo?</a>
+	<a id="win">¿Y qué se gana?</a>
+	<a id="how">¿Cómo lo hago?</a>
+
+	<phase id="tix" next="win:how:no">
+		Sí, una vez que obtienes un Ticket Amigo puedes ir a la Plaza del Mercado para utilizarlo.
+		¡Podrás *rascar* una casilla por cada Ticket y encontrar un gran *Tesoro*!
+	</phase>
+
+	<phase id="win" next="tix:how:no">
+		La mayoría de los Tickets te darán piezas de oro, pero se cuenta que existe la posibilidad
+		de encontrar un *Huevo de Dino* extremadamente raro y sobre todo muy poderoso. Es muy buscado
+		por todos los Maestros Dinos...
+	</phase>
+
+	<phase id="how" next="out:tix:win:no">
+		Para recomendar, es suficiente con leer el *Manual del Amigo* que he redactado. Encontrarás toda la información
+		que necesites.
+	</phase>
+
+	<a id="out">Gracias, ¡echaré un buen vistazo ahora mismo!</a>
+
+	<phase id="out" url="/user/parrain">
+	</phase>
+
+</d>

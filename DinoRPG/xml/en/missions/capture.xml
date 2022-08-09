@@ -1,0 +1,132 @@
+﻿<missions>
+
+	<m group="capture" id="mcapt1" name="Warrior Training">
+		<begin>
+			We'll start by building up your muscles! You can't spend all day playing World-of-Dinoz! Look at how small biceps your biceps are they're outrageous for someone who calls himself a man! A small fighter's journey should already teach you a lesson!
+		</begin>
+		<goto v="mport"/>
+		<actfight act="Do 100 Push-Ups!">
+			<begin>While doing your third push-up monsters attack you!</begin>
+		</actfight>
+		<goto v="mfpalc"/>
+		<action v="Run 30 times around the Palace!">
+			After your 5th run around the Palace, intrigued monsters arrive to watch you and make nasty comments about your speed...
+		</action>
+		<actfight act="Attack Them!">
+			<win>This time, the monsters won't laugh any more...</win>
+		</actfight>
+		<goto v="mcuzco"/>
+		<action v="Lift 50 large stones">
+			The stones here are very large, you would prefer to choose smaller stones which require less effort... but you feel like you're being watched...
+		</action>
+		<actfight act="Look around you!" monsters="mugard:mugard:mugard:mugard">
+			<begin>You come face to face with a ward of Vegetox who have been spying on you !</begin>
+			<win>It seems the group has been sent here by Sergeant Pepper... They tell you the next task on your journey...</win>
+		</actfight>
+		<goto v="mcelit"/>
+		<action v="Do 100 Push-Ups!">
+			You get to 10, but decide that you'll stop for today, you've had a very busy day!
+		</action>
+		<end>
+			You find my training too difficult ! Oh today's youth, you've got no work ethic! I'll tell you now, the next few tasks will be even more difficult, You're going to SUFFER!
+		</end>
+		<xp v="40"/>
+	</m>
+
+	<m group="capture" id="mcapt2" name="Mine Field" cond="mission(mcapt1)">
+		<begin>
+			Now that you've finished your WARM-UP, we are going to get SERIOUS! Someone has told me that Anti-Personnel mines have been buried by the Frutox outpost. Go and make sure that the area is safe for civilians !
+		</begin>
+		<goto v="mfoutp"/>
+		<talk v="Defuse">
+			Boss! We've found 5 mines buried near the Camp! This must be the work of the Vegetox Boss! We need a mine detector to find the exact location of the mines!
+		</talk>
+		<use v="danger" n="1"/>
+		<actfight act="Defuse" monsters="minim2:minim2:minim2:minim2:minim2:minim2:minim2:minim2">
+			<begin>The Minimouks have made their nest amongst the mines!</begin>
+		</actfight>
+		<action v="Defuse">
+			Defusing the mines is going to be more difficult than expected. In order to neutralise the mines, you need a lighter to destroy the trigger mechanism without risk of explosions.
+		</action>
+		<use v="zippo" n="1"/>
+		<action v="Defuse">
+			You have succedeed in defusing the anti-personal mines! Thankfully, explosions have been avoided!
+		</action>
+		<end>
+			Be careful rookie! By doing this, it will be easier to defuse the mines and improve your skills? But this doesn't make you a SOLDIER!
+		</end>
+		<xp v="50"/>
+	</m>
+
+	<m group="capture" id="mcapt3" name="Mouktization" cond="mission(mcapt2)">
+		<begin>
+			Come here rookie! Although we have soldiers, we're now at peace and we must help the civilians! The dirty Mouktiz have crossed the sea on their raft and begun to settle in the Dinoville kingdom. Find them and exterminate their nests before they invade the continent	!
+		</begin>
+		<goto v="frcbrt" hide="1"/>
+		<actfight act="Kill the Mouktiz" monsters="mosqui:mosqui"/>
+		<goto v="univ" hide="1"/>
+		<actfight act="Kill the Mouktiz" monsters="mosqui"/>
+		<goto v="colesc" hide="1"/>
+		<actfight act="Kill the Mouktiz" monsters="mosqui:mosqui"/>
+		<goto v="marche" hide="1"/>
+		<actfight act="Kill the Mouktiz" monsters="mosqui:mosqui:mosqui:mosqui"/>
+		<goto v="dplaza" hide="1"/>
+		<actfight act="Kill the Mouktiz" monsters="mosqui"/>
+		<end>
+			Well done rookie, I'm beginning to think that you're a gifted fighter after all!
+		</end>
+		<gold v="3000"/>
+	</m>
+
+	<m group="capture" id="mcapt4" name="Initiation" cond="mission(mcapt3)">
+		<begin>
+			We should start to train you how to CAPTURE monsters rookie? We must start with the basics !
+		</begin>
+		<goto v="mvoutp"/>
+		<talk v="Sergeant's Instructions">
+			First of all, CAPTURE allows your Dinoz to catch MONSTERS. This doesn't work with all monsters but the majority of them! Once a MONSTER has been captured, it will stay with your Dinoz during the FIGHTS until the MONSTER is dead. Monsters cannot be healed outside of a FIGHT, this means that often they die very quickly, don't become too attached to them!
+		</talk>
+		<talk v="Sergeant's Instructions">
+			Oh! I forgot to mention: only a maximim of three monsters can help each of your Dinoz. If one of your Dinoz has more than 3 living MONSTERS, those that help your Dinoz during a fight will be chosen at random!
+		</talk>
+		<talk v="Sergeant's Instructions">
+			We'll begin with something simple: try to capture a GOUPIGNON in DinoTown and a PIRHANOZ at the Sticky Swamp!
+		</talk>
+		<goto v="dnv"/>
+		<actfight act="Capture a Goupignon" monsters="goupi">
+			<begin m="goupi">Help!!</begin>
+			<win>Your Dinoz hasn't captured this poor Goupignon...</win>
+		</actfight>
+		<goto v="marais"/>
+		<actfight act="Capture a Pirhanoz" monsters="pira:pira:pira:pira">
+			<begin m="pira">Oh no!!</begin>
+			<win>Apparently no Pirhanoz wants to be captured by your Dinoz.</win>
+		</actfight>
+		<goto v="mvoutp"/>
+		<talk v="Sergeant's Instructions">
+			Well done! Your training has been a failure! this rookie seems incapable of capturing even the weakest Dinoz! Normally, if you had followed my instructions, this wouldn't have happened... unless of course you neglected your physical preparation?!
+		</talk>
+		<end>
+			No reward for slackers! I don't have anything else to say!
+		</end>
+		<gold v="0"/>
+	</m>
+
+	<m group="capture" id="mcapt5" name="Capturer's Glove" cond="mission(mcapt4)+scenario(monisl,18)">
+		<begin>
+			Ah! Hello again rookie! Watch out! The Great Antraxov has asked me to put you to the test before giving you the Capturer's Glove! Just to let you know, this mission isn't for wimps!
+		</begin>
+		<goto v="mvoutp"/>
+		<talk v="Sergeant's Instructions">
+			A horde of injured demons have assembled at CUZCOUS! You can't let them congregate! Go and deal with them! I advise you to go in a group, you'll be much safer!
+		</talk>
+		<goto v="mcuzco"/>
+		<actfight act="Demyon Horde" monsters="singm2:singm2:singm2:singm2:singm2"/>
+		<end>
+			Well done! You fought a good fight rookie! Take this Capturer's Glove, your Dinoz will now be able to capture monsters. Good luck in your adventures!
+		</end>
+		<fx v="mcapt"/>
+		<xp v="100"/>
+	</m>
+
+</missions>

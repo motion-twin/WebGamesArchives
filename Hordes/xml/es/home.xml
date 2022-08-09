@@ -1,0 +1,52 @@
+<ups>
+<!--	<up key="" name="" def="" cap="" lock="" invisible="" parent="" desc="" pa=""/>-->
+	<u key="trunk" name="Compartimentos" desc="Agrega un espacio en tu baúl personal." icon="item_bag" cap="1" pa="2">
+		<l cap="1" pa="2" />
+		<l cap="1" pa="2" />
+		<l cap="1" pa="3" />
+		<l cap="1" pa="4" />
+		<l cap="1" pa="6" />
+		<l cap="1" pa="6" />
+		<l cap="1" pa="6" />
+		<l cap="1" pa="6" />
+		<l cap="1" pa="6" />
+		<l cap="1" pa="6" />
+		<l cap="1" pa="6" />
+		<l cap="1" pa="6" />
+	</u>
+
+	<u key="lock" name="Cerrojo" desc="Este sistema rudimentario pero eficaz impedirá que te roben un objeto." icon="item_lock" lock="1" pa="6" reqs="chain:1"/>
+	<u key="alarm" name="Alarma rudimentaria" desc="Es un sistema muy simple: chatarra y latas unidas por un hilo, pero su eficacia despertando a los demás durante un intento de robo es indiscutible..." icon="status_terror" alarm="1" pa="4" reqs="metal:1" />
+	<u key="hide" name="Gran cortina" desc="Un viejo pedazo de tela manchada. Nada más práctico para ocultar tus objetos de las miradas entrometidas de tus vecinos." icon="small_stealthy" hide="1" pa="4" />
+	<u key="cook" name="Cocina" desc="La cocina está equipada con lo más mínimo para preparar raciones de calidad (cada nivel aumenta en 33% las posibilidades de obtener un buen platillo)." icon="item_machine_2" pa="6" actName="Cocinar" limit="1">
+		<l pa="3" reqs="sKnife:1" limit="1"/>
+		<l pa="4" reqs="machine_2:1" limit="2"/>
+		<l pa="4" reqs="machine_3:1"  limit="3" desc="Esta última mejora de la Cocina te permite utilizarla 3 veces por día en vez de las 2 de costumbre."/>
+	</u>
+
+	<u key="nap" name="Rincón para siesta" desc="Solo se trata de un hoyo en el suelo cubierto por cartones, pero es muy útil para echarse una siestecilla cuando es necesario (cada nivel aumenta en 33% las posibilidades de dormir bien)." icon="status_tired" pa="6" actName="Echarse una siesta">
+		<l pa="3" reqs="wood:1"/>
+		<l pa="4" reqs="bed:1"/>
+	</u>
+
+	<u key="labo" name="Sótano laboratorio" desc="Un minúsculo agujero que apesta a gato muerto en medio de tu 'sala', pero donde puedes llevar a cabo tus experimentos científicos (cada nivel aumenta en 25% las posibilidades de obtener una buena sustancia estimulante)..." icon="item_drug" pa="6" reqs="machine_1:1" actName="Preparar un estimulante">
+		<l pa="4" reqs="electro:1"/>
+		<l pa="4" reqs="tube:1"/>
+		<l pa="6" reqs="engine:1" limit="4" desc="Esta úlima mejora aumenta en +25% las probabilidades de obtener un estimulante y permite utilizar el laboratorio 3 veces más."/>
+	</u>
+
+	<u key="iron" name="Refuerzos" desc="Un poco de bricolaje con lo que tienes a la mano y aumentamos su duración de vida... un poco al menos (cada nivel agrega 1 pt de defensa)." icon="item_fence" def="1" pa="3">
+		<l def="1" pa="3" reqs="fence:1" />
+		<l def="1" pa="3" reqs="fence:1" />
+		<l def="1" pa="3" reqs="fence:1" />
+		<l def="1" pa="6" reqs="fence:1" />
+		<l def="1" pa="6" reqs="fence:1" />
+		<l def="2" pa="6" reqs="fence:1;metal:1" />
+		<l def="2" pa="6" reqs="fence:1;metal:1" />
+		<l def="2" pa="6" reqs="fence:1;metal:1" />
+		<l def="2" pa="6" reqs="fence:1;metal:1" />
+	</u>
+
+	<u key="barrer" name="Valla" desc="Cuando los muros no bastan, una valla no está de más. Una defensa indispensable." icon="item_wood_plate" pa="3" def="3" reqs="mbeam:1;chain:1"/>
+
+</ups>

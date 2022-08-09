@@ -1,0 +1,921 @@
+﻿<!-- PAPIE JOE -->
+
+<d place="papy" name="Papy Jose" gfx="papy">
+
+	<phase id="begin" next="missions">
+		Hola chico, te esperaba. Tengo algunas misiones para ti. Ten, aquí tienes la lista.
+	</phase>
+
+	<a id="missions">Consultar la lista de Misiones</a>
+
+	<phase id="missions" missions="papy"></phase>
+
+</d>
+
+<!-- SCENARIO JOUJOU -->
+
+<d place="papy" name="Papy Joe" gfx="papy" cond="scenario(joujou,0)+mission(magne)+(active(jouetperdu)|admin())" >
+	<inject id="papy:begin" next="jouetPerdu" />
+
+	<a id="jouetPerdu">
+		¡Pareces cansado!
+	</a>
+
+	<phase id="jouetPerdu" next="questionok:questionko">
+		Así es, joven, estoy agotado. A Al le ha dado por ponerse a buscar sus juguetes de infancia, y ya hace varios días que buscamos sin descanso.
+		Lo había olvidado totalmente, pero hace años hice un pequeño rastro y vendí muchos objetos. ¿Quizás tengas tiempo para ayudarnos?
+	</phase>
+
+	<a id="questionko">
+		Uy, uy, me viene fatal. Tengo clases de salsa en 30 minutos.
+	</a>
+	<a id="questionok">
+		Siempre me ha gustado partir a la búsqueda de objetos perdidos.
+	</a>
+
+	<phase id="questionok" next="gameboy:feminin">
+		Estupendo. Pienso que lo mejor es que empecemos por la GameBoy. Eso le tranquilizará por una semana.
+	</phase>
+
+	<phase id="questionko" fast="1">
+		Te marchas dando saltitos:
+		Izquierda-derecha-izquierda-pausa y derecha-izquierda-derecha-pausa... ¡y terminas con un maravilloso paso de 180º!
+		Al fin estás listo para tu curso, pero te sientes ridículo con tanto saltito, pasito para adelante y pasito para atrás...
+	</phase>
+
+	<a id="gameboy">
+		Claro que te ayudaré. Ahora mismo empiezo.
+	</a>
+
+	<a id="feminin">
+		Ejem... esto... ¿qué es una Game Boy?
+	</a>
+
+	<phase id="feminin" next="mouais">
+		¿No lo sabes? ¡Es un emisor de ondas diseñado para manipular a las masas y extenderse por todo el mundo!
+	</phase>
+
+	<a id="mouais">
+		Ah, sí. Eso. Es verdad. Creo que ya sé a qué te refieres...
+	</a>
+
+	<phase id="mouais" next="gameboy">
+		¿Entonces nos ayudarás?
+	</phase>
+
+	<phase id="gameboy" scenario="joujou:1">
+		(Suspiro...)
+		[Ponte de acuerdo con Al, ¿de acuerdo?
+		Para encontrar la Game Boy, busca a un joven que pueda habérsela quedado.]
+		[Buena suerte.]
+	</phase>
+</d>
+
+<d place="baobob" name="Fan de Bao" gfx="baofan" cond="scenario(joujou,1)">
+	<inject id="wcharm:begin" next="gameboy1" />
+	<a id="gameboy1">
+		¿Sabes dónde podría encontrar una vieja Game Boy?
+	</a>
+	<phase id="gameboy1" scenario="joujou:2">
+		Hum ... no, lo siento. Ya sabes que mi único héroe es el señor Bao.
+		Me entreno durante todo el día y no tengo tiempo para esas cosas de niños.
+	</phase>
+</d>
+
+<d place="baobob" name="Señor Bao Bob" gfx="baobob" cond="scenario(joujou,2)">
+	<inject id="bob:begin" next="gameboy" />
+	<a id="gameboy">
+		¿Te suena de algo haber visto o oído hablar de una Game Boy?
+	</a>
+	<phase id="gameboy" next="ahbon">
+		[Ah. Ni me hables de eso, Maestro de Dinos. Esa máquina echa a perder a todos mis jóvenes discípulos.
+		¿Te das cuenta de lo que se exige a los jóvenes, hoy en día? Trabajar duro para convertirse en un gran maestro de renombre, o
+		pasar a ser un super héroe a través de esta cajita con imágenes....]
+		[En fin. Respondo a tu pregunta: sí, conozco muy bien esta máquina. Habla con mi joven discípulo. Posee una de esas.]
+	</phase>
+	<a id="ahbon">
+		¿Ah, sí? Pues me dijo que con el entrenamiento no tiene tiempo para esas cosas.
+	</a>
+	<phase id="ahbon" scenario="joujou:3">
+		¡Ja, ja, ja! ¡¿Su entrenamiento?! Si consigues que se deshaga de esa máquina, te lo agradeceré.
+		Seguro que en mis tiempos de entrenamiento en el que yo mismo era discípulo, mi maestro no habría aceptado eso... hoy en día nadie hace esfuerzos.
+	</phase>
+</d>
+
+<d place="baobob" name="Fan de Bao" gfx="baofan" cond="scenario(joujou,3)">
+	<inject id="wcharm:begin" next="gameboy2" />
+	<a id="gameboy2">
+		Ya, ya... ¿entonces juegas a la Game Boy en vez de entrenarte?
+	</a>
+	<phase id="gameboy2" next="gameboy2_1:gameboy2_2">
+		¿Qué? Pero... qué va, para nada. Solo la guardo... como recuerdo. Es un bello objeto, ¿no lo ves?
+		La gané en un combate en el que me enfrenté a 25 MONSTRUOS y salvé la vida de 12 PERSONAS.
+		Uno de los rescatados me la dio como muestra de gratitud y de admiración por mi talento.
+	</phase>
+	<a id="gameboy2_1" target="end_rien">
+		¡Waah! Impresionante. Entiendo que quieras guardarla. Al puede ir olvidándose.
+	</a>
+	<a id="gameboy2_2">
+		¿Cómo? Pensaba que era Don Bao quien había salvado a esa gente.
+	</a>
+	<phase id="end_rien" fast="1">
+		Te vas sin la consola.
+		¿En qué otro lugar podrías encontrar una Game Boy?
+		Habrá que insistir...
+	</phase>
+	<phase id="gameboy2_2" next="gameboy2_3">
+		Ah... esto.. ¿ya habías oído hablar de esta historia?
+	</phase>
+	<a id="gameboy2_3">
+		Sí, lo leí en el Diario Dino la última vez en casa de Papy Jose.
+	</a>
+	<phase id="gameboy2_3" next="gameboy2_4">
+		(¡Mala suerte!)
+		Pffff, es que, me gustaría quedármela. Me lo paso muy bien jugando a la consola.
+	</phase>
+	<a id="gameboy2_4">
+		Lo entiendo. ¿Quizás podríamos hacer un intercambio con otra cosa que te interese más?
+	</a>
+	<phase id="gameboy2_4" next="gameboy2_5">
+		Ppssí... quizás. Pero tendría que ser un objeto aún más importante (y no estoy seguro de que encuentres algo, ji, ji).
+	</phase>
+	<a id="gameboy2_5">
+		De acuerdo. Voy a ver si encuentro algo.
+	</a>
+	<phase id="gameboy2_5" fast="1" scenario="joujou:4">
+		Te marchas a la búsqueda de un objeto valioso para hacer el intercambio...
+	</phase>
+</d>
+
+
+<d place="vener" name="Señorita Bao" gfx="baobabe" cond="scenario(joujou,4)" >
+	<phase id="begin" next="fanbao">
+		Hola, joven Maestro. ¿Buscas un objeto personal de Bao?
+		¿Puedo saber por qué buscas un objeto así?
+	</phase>
+	<a id="fanbao">
+		Para hacerle un favor a un amigo. Necesito un objeto que solo el Fan de Don Bao Bob tiene.
+	</a>
+	<phase id="fanbao" next="mince:photo">
+		Ajá, entiendo. Necesitas un objeto de valor para él, y no hay nada más importante que un objeto personal de su héroe.
+		Lo siento pero no tengo nada que ofrecerte...
+	</phase>
+	<a id="mince">
+		Vaya... ¡gracias de todos modos!
+	</a>
+	<a id="photo">
+		Mmmmm... ¿y si hiciéramos una foto de ti?
+	</a>
+	<phase id="mince" fast="1">
+		Te marchas con las manos vacías. ¿Qué tipo de objeto podría ser más importante para el joven alumno que un objeto personal de su héroe?
+	</phase>
+	<phase id="photo" next="fan:belle">
+		¿Una foto mía? ¿Y por qué podría interesarle eso?
+	</phase>
+	<a id="belle">
+		¡Porque eres bonita!
+	</a>
+	<a id="fan">
+		Los fans aceptan lo que sea con tal de que tenga algo que ver con su ídolo.
+	</a>
+	<phase id="fan">
+		...
+		No, lo siento. ¡No puedo hacer nada por ti!
+	</phase>
+	<phase id="belle" next="allons">
+		Oh, ¡eres adorable!
+		Escúchame bien. Una vez un turista vino a hacerle una foto al Venerable pero se tostó antes de poder hacer su foto.
+		¿Quizás podamos pedirle que haga la foto?
+	</phase>
+	<a id="allons">
+		¡Allá voy!
+	</a>
+	<phase id="allons" gfx="tourist_grill" name="Turista chamuscado" next="demande">
+		¿Qué? ¿Cómo? No, no. Dejadme tranquilo tú y tu amiguito que escupe fuego a los turistas inocentes.
+		¡¡Socorro!!
+	</phase>
+	<a id="demande">
+		No, no. ¡No queremos hacerte daño! Sólo queremos hacerle una foto a la Señorita Bao.
+	</a>
+	<phase id="demande" next="demande2">
+		No tengas miedo, no queremos hacerte daño. Por última vez, fue un accidente. ¡El Venerable estaba resfriado!
+	</phase>
+	<a id="demande2">
+		¡Parad de correr así (esto cansa...)!
+	</a>
+	<phase id="demande2" gfx="tourist_grill" name="Turista chamuscado" next="ramasser">
+		Deja de seguirme. ¿Queréis una foto? Toma, *CLIC*. Cogedla y marchaos....
+		¡¡¡Aaaaahhhhhhh.....!!!
+	</phase>
+	<a id="ramasser">
+		Coger la foto.
+	</a>
+	<phase id="ramasser" popup="1" next="merci">
+		El turista ha tomado la foto y la ha tirado al suelo.
+		@/img/icons/fx_baobabetof.gif@
+		No parece muy bien encuadrada, pero debería satisfacer a un auténtico fan.
+	</phase>
+	<a id="merci"></a>
+	<phase id="merci" fast="1" scenario="joujou:5">
+		La Señorita Bao está decepcionada por la foto. Te da las gracias y te diriges a ver al joven alumno. ¡Esperemos que esto le convenza!
+	</phase>
+</d>
+
+
+<d place="baobob" name="Fan de Bao" gfx="baofan" cond="scenario(joujou,5)">
+	<inject id="wcharm:begin" next="gameboy3" />
+	<a id="gameboy3">
+		¡Tengo una oferta que proponerte! (Enseñarle la foto).
+	</a>
+	<phase id="gameboy3" next="gameboy3_1">
+		Pero... ¡es la hermana del Don Bao! ¡Genial! ¡No había conseguido hacerle una foto de tan cerca!
+		¡Ah! Es muy bonita, me gustaría casarme con ella. ¡Además así sería de la familia de Don Bao Bob!
+	</phase>
+	<a id="gameboy3_1">
+		...
+	</a>
+	<phase id="gameboy3_1" next="gameboy3_2" scenario="joujou:6">
+		Toma, aquí tienes mi Game Boy. ¡Me encanta esta foto! ¡Para la colección!
+	</phase>
+	<a id="gameboy3_2">
+		Darle la foto y coger la consola.
+	</a>
+	<phase id="gameboy3_2" popup="1">
+		Obtienes la Game Boy @/img/icons/fx_gameboy.gif@ que perteneció a Al durante su juventud.
+	</phase>
+</d>
+
+<d place="papy" name="Papy Joe" gfx="papy" cond="scenario(joujou,6)">
+	<inject id="papy:begin" next="merci"/>
+	<a id="merci">
+		Darle la Game Boy.
+	</a>
+	<phase id="merci" next="tickets">
+		¡Eres genial! ¿Cómo lo has hecho? No, guarda tus secretos. ¡Gracias, Al se pondrá super contento!
+	</phase>
+	<a id="tickets">
+		De nada. ¡No ha sido fácil!
+	</a>
+	<phase id="tickets" next="cadeau:jouer" give="tictac:3" scenario="joujou:7">
+		Seguro que no.
+		Ten, aquí tienes un regalo para agradecerte por tu ayuda. Vuelve más tarde, tenemos mas objetos que encontrar.
+	</phase>
+	<a id="cadeau">
+		De acuerdo.
+	</a>
+	<a id="jouer" target="cadeau">
+		Eh, ¡espera! ¡quiero jugar!
+	</a>
+	<phase id="cadeau" popup="1">
+		Papy Jose te da 3 Tickets taque: @/img/icons/fx_tictac.gif@. Estos tickets te permiten excavar en su jardín para encontrar tesoros enterrados...
+	</phase>
+</d>
+
+<d place="papy" name="Al Zeimuera" gfx="al_zaimeur" background="2" cond="scenario(joujou,7)+(admin()|swait(joujou,24))">
+	<inject id="alzaimeur__19:begin" next="hochet"/>
+
+	<a id="hochet">
+		¿De nuevo tras la búsqueda de un objeto antiguo?
+	</a>
+
+	<phase id="hochet" next="hochet_1:hochet_2" >
+		Sí. Estoy buscando mi sonajero de madera. Lo usaba cuando era un bebé... pero en realidad es mi amuleto. Si no tienes tu curso de salsa hoy... ¿podrías ayudarnos?
+		Pregunta a Papy Jose, creo que podrá darte información.
+	</phase>
+	<a id="hochet_1">
+		Sí, por qué no. Voy a verlo.
+	</a>
+	<a id="hochet_2" target="bye">
+		Ah, lo haría encantado, pero las historias de bebés me dan miedo...
+	</a>
+	<phase id="bye" fast="1" frame="stop">
+		Te vas de manera un poco cobarde...
+		¡Habrá que encontrar una excusa mejor la próxima vez!
+	</phase>
+
+	<phase id="hochet_1" gfx="papy" name="Papy Joe" next="hochet_3">
+		Recuerdo que se lo llevó una chica joven. Pero no era para un bebé, no. Era para un cachorro de Korgon, creo.
+		No sé qué ha sido de esta chica desde entonces. Si la encuentras, quizás pueda ayudarte.
+	</phase>
+	<a id="hochet_3">
+		Creo que sé dónde ir.
+	</a>
+	<phase id="hochet_3" scenario="joujou:8">
+		Muy bien entonces, ¡buena suerte y gracias de nuevo!
+	</phase>
+</d>
+
+<d place="camp" name="Dian Korgsey" gfx="dian" cond="scenario(joujou,8)">
+	<inject id="dian:begin" next="hochet_4" />
+	<a id="hochet_4">
+		¿Cómo domesticaste a tus korgones?
+	</a>
+	<phase id="hochet_4" next="hochet_5">
+		[Ajá, es una pregunta interesante. Nunca antes me habían preguntado esto.]
+		[El origen de todo está en mi infancia. En aquel entonces recogí un bebé korgón abandonado por su familia.
+		Lo alimenté con un biberón durante los primeros años y pronto pasó a ser muy vivo y agitado.]
+		[Entonces encontré un antiguo sonajero para niños y por una razón que desconozco, el ruidito enseguida le calmó.
+		Desde entonces es la técnica que utilizo para domesticar a los korgones.]
+	</phase>
+	<a id="hochet_5">
+		¿Este sonajero es el único que tienes?
+	</a>
+	<phase id="hochet_5" next="hochet_6">
+		Por supuesto que no. Tengo muchos en el almacén del campamento, nunca se sabe. Desde los primeros meses comenzaron a devorarlos.
+		Estos nuevos modelos que utilizo no resisten bien. Algunos mordiscos y enseguida se los tragan.
+		Sin embargo, ese viejo sonajero, aunque está bien usado y dañado, nunca terminó en la barriga de un korgón.
+	</phase>
+	<a id="hochet_6">
+		Entonces, ¿sigues teniendo el sonajero? ¿Me lo puedes prestar?
+	</a>
+	<phase id="hochet_6" next="hochet_7" scenario="joujou:9">
+		Mmmm, por qué no, pero te advierto de que se encuentra en un estado lamentable. Si no es para un bebé, ¡entonces te lo puedes llevar!
+		Qué idea tan rara de querer llevarse un objeto así...
+	</phase>
+	<a id="hochet_7">Es una larga historia, pero créeme, ¡me será muy útil! ¡Gracias!</a>
+	<phase id="hochet_7" popup="1">
+		Te marchas con este trozo de madera mordisqueado, @/img/icons/fx_hochet.gif@. Veremos si es lo que se esperaba Al...
+	</phase>
+</d>
+
+
+<d place="papy" name="Al Zeimuera" gfx="al_zaimeur" background="2" cond="scenario(joujou,9)">
+	<inject id="alzaimeur__19:begin" next="hochet_9" />
+	<a id="hochet_9">
+		Enseñarle el sonajero.
+	</a>
+	<phase id="hochet_9" next="hochet_10">
+		¡¡¡OHHHHH!!!
+		¡Mi sonajero! Es un milagro. ¿Quién habría pensado que era posible encontrarlo?
+		Qué felicidad encontrar mis objetos de infancia. Mil gracias, amigo.
+	</phase>
+	<a id="hochet_10">
+		Continuar.
+	</a>
+	<phase id="hochet_10" gfx="papy" name="Papy Joe" next="hochet_11" give="tictac:1" scenario="joujou:10">
+		¿Eso es el sonajero? Tengo que ponerme las gafas.
+		Para agradecerte, te doy un Ticket Taque. Espero que esto te permita encontrar lo que quieres en el jardín.
+		Vamos a ver qué nos falta. Ven más tarde, ¡seguro que necesitaremos tu ayuda!
+	</phase>
+	<a id="hochet_11">
+		¡Gracias!
+	</a>
+	<phase id="hochet_11" popup="1" >
+		Papy Jose te ha dado 1 Ticket taque, @/img/icons/fx_tictac.gif@. Este ticket permite excavar en su jardín para buscar tesoros enterrados.
+	</phase>
+</d>
+
+<d place="papy" name="Papy Jose" gfx="papy" cond="scenario(joujou,10)+(admin()|swait(joujou,24))" >
+	<inject id="papy:begin" next="robot" />
+
+	<a id="robot">
+		¿Qué puedo hacer por ti?
+	</a>
+
+	<phase id="robot" next="anorak">
+		Gracias, ya sabes que sigo buscando los juguetes de infancia de mi hijo.
+		Desde que le dije que nos ayudarías, se ha vuelto loco para que le encontremos una de sus figuritas...
+		No sé de cuál me habla, porque le regalé muchas. Eso me enseñará a no mimarle más.
+	</phase>
+
+	<a id="anorak">
+		Pedir información a Al.
+	</a>
+
+	<phase id="anorak" next="go" gfx="al_zaimeur" name="Al Zeimuera"  background="2">
+		¡Quiero mi super robot destructor Anorak!
+		Con su fulguro-pie, ¡destruía a todos los malos de Caushemesh!
+		Estoy seguro de que lo perdí en algún lugar. Debe de estar enterrado, ¡seguro!
+		Aunque este juguete lo llevé conmigo a todas partes, así que no puedo decirte un lugar exacto donde buscarlo...
+		Si lo encuentras, ¡estaré muy contento!
+	</phase>
+
+	<a id="go">
+		¡No tengo otra opción!
+	</a>
+
+	<phase id="go" fast="1" gfx="al_zaimeur" name="Al Zeimuera" background="2" frame="stop" scenario="joujou:11">
+		Te alejas a la búsqueda del robot... buena suerte.
+	</phase>
+</d>
+
+<d place="papy" name="Papy Jose" gfx="papy" cond="scenario(joujou,12)">
+
+	<inject id="papy:begin" next="trouve" />
+
+	<a id="trouve">
+		¡Aquí lo tengo!
+	</a>
+
+	<phase id="trouve" next="youpi">
+		Muy bien. Encontraste la figurita de Al...
+		Que quede entre nosotros. Se está volviendo insoportable. Me pregunto si buscar este objeto era realmente una buena idea.
+	</phase>
+
+	<a id="youpi">
+		...
+	</a>
+
+	<phase id="youpi" next="end" give="tictac:2" scenario="joujou:13">
+		Sea lo que sea, ¡te mereces una muestra de agradecimiento por tu esfuerzo!
+		Aquí tienes 2 tickets taque para excavar en mi jardín.
+	</phase>
+
+	<a id="end">
+		¡Muchas gracias!
+	</a>
+
+	<phase id="end" popup="1" >
+		Papy Jose te ofrece 2 Tickets taque: @/img/icons/fx_tictac.gif@. Este ticket permite excavar en su jardín para buscar tesoros enterrados.
+	</phase>
+</d>
+
+
+<d place="papy" name="Papy Jose" gfx="papy" cond="scenario(joujou,13)+(admin()|swait(joujou,24))">
+	<inject id="papy:begin" next="walk"/>
+
+	<a id="walk">
+		¿Buscas algo?
+	</a>
+	<phase id="walk" next="end">
+		Sí, busco el antiguo walkman de mi hijo.
+		Se lo ofrecí para el viaje a las Estepas. ¿Me puedes ayudar?
+	</phase>
+	<a id="end">
+		Claro, sin problema.
+	</a>
+	<phase id="end" fast="1" scenario="joujou:15">
+		Te marchas en busca de un walkman (¿pero este objeto existe todavía?).
+	</phase>
+</d>
+
+<d place="scaush" name="Jerónimo K." gfx="trader" cond="scenario(joujou,15)">
+
+	<phase id="begin" next="affaire">
+		Déjame... quiero morir...
+	</phase>
+
+	<a id="affaire">
+		Vale, te dejo.
+	</a>
+
+	<phase id="affaire" next="troc">
+		Espera, tampoco te vayas así. No es porque esté aquí aislado que no tenga nada que ofrecerte.
+	</phase>
+
+	<a id="troc">
+		¿Ofrecer qué?
+	</a>
+	<phase id="troc" next="use1:use2:use3">
+		Te propongo un intercambio. Te ofrezco un objeto antiguo que encontré curioseando por las Estepas (sí, no tenía nada mejor que hacer).
+		Es un objeto taaaaaan exclusivo, que no podría separarme de él... ¡a menos que seas persuasivo!
+	</phase>
+
+	<a id="use1">
+		Ofrecer 100 monedas de oro.
+	</a>
+
+	<a id="use2">
+		Ofrecer 1.000 monedas de oro.
+	</a>
+
+	<a id="use3">
+		Ofrecer 100.000 monedas de oro.
+	</a>
+
+	<phase id="use1">
+		No me estás tomando en serio, parece ser. Peor para ti. ¡Otro maestro será más listo que tú!
+	</phase>
+
+	<phase id="use2" next="end" usegold="1000" scenario="joujou:16">
+		Es una oferta interesante. Estoy dudando...
+		Bueno, de acuerdo, estoy demasiado perturbado. ¡Acepto!
+	</phase>
+
+	<phase id="use3">
+		Hum, ¡eres generoso!
+		Veo que deseas este objeto, pero no confío en ti. ¿Por qué ofrecer tanto dinero? ¡Seguro que es dinero negro!
+		Vete de aquí y búscate a otros que hagan trapicheos de tu estilo, uno de esos me cruzo yo todas las mañana delante de mi espejo.
+	</phase>
+
+	<a id="end">
+		Dar 1.000 monedas de oro.
+	</a>
+
+	<phase id="end" popup="1">
+		Jerómino K. te ofrece el objeto antiguo @/img/icons/fx_walk.gif@. Parece un viejo walkman roto.
+	</phase>
+</d>
+
+
+<d place="papy" name="Al Zeimuera" gfx="al_zaimeur" background="2" cond="scenario(joujou,16)">
+
+	<inject id="alzaimeur__19:begin" next="hi" />
+
+	<a id="hi">¡Hola!</a>
+
+	<phase id="hi" next="walk">
+		Hola chico, te esperaba.
+	</phase>
+
+	<a id="walk">
+		¿Te crees Papy Jose?
+	</a>
+
+	<phase id="walk" next="joie">
+		Ah, perdón, intento hacerme el sabio. ¡Así me entreno para hablar como mi padre!
+		¿Qué te trae por aquí?
+	</phase>
+
+	<a id="joie">
+		¡He encontrado tu walkman!
+	</a>
+
+	<phase id="joie" next="bof">
+		¿Cómo, mi walkman?
+		¿Mi viejo walkman que perdí hace lo menos 5 años?
+		¿Ese tan usado que el cassette se quedó atascado en el interior?
+		¿Ese que funciona solo si se le deja el dedo puesto en el play?
+		... mmmm, la verdad, no lo necesito.
+	</phase>
+
+	<a id="bof">
+		Vaya, con todo lo que me he esforzado.
+	</a>
+
+	<phase id="bof" next="end" scenario="joujou:17" give="tictac:1">
+		Mira, te lo cambio por un ticket de mi padre. ¡Se lo cogí mientras dormía!
+		Ja, ja. ¿Sabías que cada vez hay más gente que viene a excavar a su jardín? ¡Esto parece el paraíso de los topos!
+	</phase>
+
+	<a id="end">
+		Ups, lo siento. Es un poco culpa mía.
+	</a>
+	<phase id="end" popup="1">
+		Al te ofrece 1 Ticket taque: @/img/icons/fx_tictac.gif@. Este ticket permite excavar en su jardín para buscar tesoros enterrados.
+	</phase>
+</d>
+
+
+<d place="papy" name="Al Zeimuera" gfx="al_zaimeur" background="2" cond="scenario(joujou,17)+(swait(joujou,24)|admin())">
+	<inject id="alzaimeur__19:begin" next="pink"/>
+
+	<a id="pink">
+		¿Ya tienes todos tus juguetes?
+	</a>
+
+	<phase id="pink" next="honte">
+		En realidad, todavía me falta una cosa. Pero me da vergüenza decir el qué.
+	</phase>
+
+	<a id="honte">
+		¿Pero cómo hago entonces para encontrarlo?
+	</a>
+
+	<phase id="honte" next="end">
+		Todo lo que te puedo decir es que es rosa y que me siento muy atado a este objeto. Creo que lo perdí al comienzo de mis aventuras.
+	</phase>
+
+	<a id="end">
+		Esto es misión imposible.
+	</a>
+
+	<phase id="end" fast="1" frame="stop" scenario="joujou:18" >
+		Te alejas triste... No sabes ni lo que buscas.
+	</phase>
+</d>
+
+<d place="svillg" name="Oficina de investigaciones" gfx="hogan" cond="scenario(joujou,18)">
+	<inject id="dquest:begin" next="rose"/>
+
+	<a id="rose">
+		¿Qué es eso rosa detrás de ti?
+	</a>
+
+	<phase id="rose" next="grill">
+		Ñiaa, ñiaaa. ¡No sé de qué me hablas!
+	</phase>
+
+	<a id="grill">
+		¡Pues de ese osito de la estantería!
+	</a>
+
+	<phase id="grill" next="vu">
+		Ñiiiaaaa, ñiaaaa... ¿lo has visto?
+	</phase>
+
+	<a id="vu">
+		Claro, ¡no veo más que eso!
+	</a>
+
+	<phase id="vu" next="end" scenario="joujou:19">
+		Ñia, ñia... cof, cof. Hum. Supongo que ya es tarde y no puedo esconder nada...
+		Te lo doy. Pero... ¡como se lo digas a alguien, daré una orden de búsqueda y captura contra ti!
+	</phase>
+	<a id="end">
+		¡Guardaré el secreto hasta la tumba!
+	</a>
+	<phase id="end" popup="1">
+		Recibes un osito rosa de peluche @/img/icons/fx_ours.gif@. ¿Será esto el objeto misterioso de Al?
+	</phase>
+</d>
+
+<d place="papy" name="Al Zeimuera" gfx="al_zaimeur" background="2" cond="scenario(joujou,19)">
+	<inject id="alzaimeur__19:begin" next="ours"/>
+
+	<a id="ours">
+		Enseñarle el peluche a Al.
+	</a>
+
+	<phase id="ours" next="tx">
+		Ah, ¡mi oso de peluche! Mi fiel compañero de viaje, ¡mi amigo de toda la vida!
+		Tu pelaje sigue tan rosa como lo fue siempre... ¡ahí radica todo tu encanto!
+	</phase>
+
+	<a id="tx">
+		Continuar.
+	</a>
+
+	<phase id="tx" next="suite">
+		Gracias por haberlo conseguido, ¡a pesar de la poca información que te di!
+		Ve a ver a Papy Jose. ¡Te dará una recompensa!
+	</phase>
+
+	<a id="suite">
+		Ir a ver a Papy Jose.
+	</a>
+
+	<phase id="suite" gfx="papy" name="Papy Jose" next="end" scenario="joujou:20" give="tictac:2">
+		Has encontrado el último de los objetos perdidos de mi hijo. Muchas gracias. Así se quedará tranquilo. Al menos hasta el próximo capricho...
+		Aquí tienes 2 tickets taque. ¡Seguro que algo bueno te saldrá!
+	</phase>
+
+	<a id="end">
+		Se puede decir que los merezco...
+	</a>
+
+	<phase id="end" popup="1">
+		Papy Jose te ofrece los 2 tickets taque: @/img/icons/fx_tictac.gif@. Estos tickets permiten excavar en su jardín para buscar tesoros enterrados.
+	</phase>
+</d>
+
+
+<d place="papy" name="Al Zeimuera" gfx="al_zaimeur" background="2" cond="scenario(joujou,20)+(swait(joujou,24)|admin())">
+	<inject id="alzaimeur__19:begin" next="diplome"/>
+	<a id="diplome">
+		¿Qué puedo hacer por ti?
+	</a>
+	<phase id="diplome" next="diplome_1:diplome_2">
+		No, ya nos has ayudado bastante. Estoy mucho mejor, gracias a estos recuerdos de infancia. Por cierto a Papy Jose le gustaría recuperar mi diploma universitario.
+		Si tienes un ratito quizás puedas ir a buscarlo.
+	</phase>
+	<a id="diplome_1">
+		No me gusta ir a la universidad, todavía no he entendido el interés.
+	</a>
+	<a id="diplome_2">
+		Bueno, está aquí cerca. Voy a pasarme.
+	</a>
+	<phase id="diplome_1" fast="1">
+		Te alejas tranquilamente. Tampoco te pierdes nada. Mejor luchar contra un coqdur u otros monstruos que charlar con esos intelectuales de camisa blanca que hablan tan raro...
+	</phase>
+
+	<phase id="diplome_2" fast="1" scenario="joujou:21" frame="stop">
+		Te diriges a la Universidad para buscar el diploma. ¿Pero un diploma de qué en realidad?
+	</phase>
+</d>
+
+
+<d place="univ" name="Profesor Eugenio" gfx="eugene" cond="scenario(joujou,21)|scenario(joujou,22)">
+	<inject id="prof:begin" next="diplome:diplome1:diplome2"/>
+
+	<a id="diplome" cond="scenario(joujou,21)">
+		¿No tendrías el diploma de Al Zeimuera?
+	</a>
+
+	<a id="diplome1" cond="scenario(joujou,22)+(swait(joujou,20)|admin())">
+		¿Puedo intentarlo de nuevo?
+	</a>
+
+	<a id="diplome2" cond="scenario(joujou,22)+!swait(joujou,20)">
+		¿Puedo intentarlo de nuevo?
+	</a>
+
+	<phase id="diplome1" scenario="joujou:21" next="diplome_10" >
+		Vienes a probar tu suerte, ¡eres valiente!
+		Concéntrate. No es nada complicado.
+	</phase>
+
+	<phase id="diplome2">
+		Vienes a probar tu suerte, ¡eres valiente!
+		Lo siento, debes esperar un poco. Aprovecha para pensar en el enunciado. Estoy seguro de que puedes lograrlo.
+	</phase>
+
+	<phase id="diplome" next="diplome_1">
+		Déjame reflexionar, Al Zeimuera... Al Zeimuera. Me suena... ¡Ah, sí! Un alumno modelo, primero de su clase, siempre muy curioso en todo, apasionado de la dinozótica, ¡un genio!
+	</phase>
+
+	<a id="diplome_1">
+		Hmmm, ¿estás seguro? Al Zeimuera, ¿el hijo de Papy Jose?
+	</a>
+
+	<phase id="diplome_1" next="diplome_3">
+		Humm...  ¿Ah?  Ah, sí. Me equivocaba.
+		Puf, ya recuerdo. Se trataba de un alumno ruidoso, agitador, etc.
+		Pero una vez, en un examen, una copia de un examen del año siguiente se coló entre las copias normales. Fue a él a quien le tocó esa copia del año siguiente.
+	</phase>
+
+	<a id="diplome_3" >
+		¡Vaya! Entonces suspendió.
+	</a>
+
+	<phase id="diplome_3" next="diplome_4">
+		Ahí es donde llegan las complicaciones.
+		Algo que parecía imposible, sucedió: aprobó el examen, incluso con una mención especial. Un auténtico milagro.
+		Fue gracias a este error y su buena suerte que se convirtió en el diplomado más joven de la historia de la Universidad.
+		El verano siguiente, Al desapareció...
+	</phase>
+
+	<a id="diplome_4">
+		Parece que quiso esconderse, entonces.
+	</a>
+
+	<phase id="diplome_4" next="diplome_5">
+		De todos modos, nadie en la Universidad creyó que pudiera aprobar el examen. Siguen las dudas sobre la credibilidad de su aprobado.
+		Por eso hemos convenido un procedimiento para que pueda recuperar su diploma.
+	</phase>
+
+	<a id="diplome_5">
+		¿Un procedimiento?
+	</a>
+
+	<phase id="diplome_5" next="diplome_6">
+		Así es. Una pregunta que solo una persona diplomada podría responder.
+		Si responde correctamente, significa que no ha hecho trampa y que realmente mereció su diploma.
+	</phase>
+
+	<a id="diplome_6">
+		Está bien. Pero soy yo quien estoy buscando su diploma, no él, para hacerle un favor.
+	</a>
+
+	<phase id="diplome_6" next="diplome_7:diplome_8:diplome_9">
+		Ya veo.
+		Pues hagamos lo siguiente: tenemos que pasar el procedimiento para tener acceso al documento. Si Al te envía, es que confía en ti.
+		Por ello es suficiente con que respondas correctamente a esta pregunta.
+	</phase>
+
+	<a id="diplome_7">
+		No tengo ganas de jugar a las adivinanzas contigo.
+	</a>
+
+	<a id="diplome_8">
+		¿Y si me equivoco?
+	</a>
+
+	<a id="diplome_9" target="diplome_10">
+		Venga, ¡dime la pregunta! ¡Estoy listo!
+	</a>
+
+	<phase id="diplome_7" next="diplome_7:diplome_9">
+		Sí, entiendo. Pero no tengo otra opción. Tenemos que pasar el procedimiento para poder darte el diploma. ¿Vamos allá?
+	</phase>
+
+	<phase id="diplome_8" next="diplome_7:diplome_9">
+		El procidimiento exige que el acceso esté bloqueado durante 24h.
+		Una sola respuesta es posible.
+		Al principio pensamos en meter a la persona en la cárcel como castigo a una respuesta errónea, pero el Rey de Dinovilla alegó en contra.
+	</phase>
+
+	<a id="diplome_10" >
+		De todos modos, no tengo otra opción...
+	</a>
+
+	<phase id="diplome_10" next="diplome_10_suite">
+		Aquí tienes:
+		[Dos Maestros de Dinos se enfrentan en un Torneo. Hace mucho que no han tenido ocasión de enfrentarse.
+		Uno anuncia a su adversario que tiene 3 Dinos.
+		Curioso, el otro le pregunta sus edades, para estimar su fuerza.]
+		[El primer Maestro le responde:]
+
+		*Si multiplicamos sus 3 edades, obtenemos 36...*
+
+		[El otro, perplejo, responde:]
+		*No puedo determinar sus edades con tan poca información.*
+
+	</phase>
+
+	<a id="diplome_10_suite">
+		Continuación.
+	</a>
+	<phase id="diplome_10_suite" next="diplome_11:diplome_12:diplome_13:diplome_14:diplome_15:diplome_16:diplome_17:diplome_18:diplome_19:diplome_20:diplome_21:diplome_22:diplome_23:diplome_24" >
+
+		[Entonces, el maestro de Dino le dice:]
+		*La suma de sus edades es igual al número de participante de tu Dino más fuerte.*
+
+		[El otro le mira y dice:]
+		*No, ¡sigo sin poder determinar sus edades!*
+
+		[El Maestro mira a su amigo a los ojos y dice:]
+		*¡¡A mi Dino más viejo no le quedan dientes...!!*
+
+		[La cara de su adversario se ensombrece y dice:]
+		*¡Ya sé! ... ¡El combate va a ser duro!*
+
+		[¿Cuál es la edad de sus 3 Dinos?]
+	</phase>
+
+	<a id="diplome_11" target="youfail">
+		¡¡Son 3!!
+	</a>
+	<a id="diplome_12" target="diplome_10">
+		¿Puedes repetir la pregunta?
+	</a>
+	<a id="diplome_13" target="youfail">
+		Heu... 1 año. 1 año y 36 años.
+	</a>
+	<a id="diplome_14" target="youfail">
+		Heu... 1 año,  2 años y 18 años.
+	</a>
+	<a id="diplome_15" target="youfail">
+		¡Estefanía de Mónaco!
+	</a>
+	<a id="diplome_16" target="youfail">
+		Heu... 1 año, 6 años y  6 años.
+	</a>
+	<a id="diplome_17" target="youfail">
+		¡Blanco! (Ay no, es la respuesta a otro enigma...)
+	</a>
+	<a id="diplome_18" target="success">
+		Heu... 2 años, 2 años y  9 años.
+	</a>
+	<a id="diplome_19" target="youfail">
+		Da igual, ¡de todos modos se lo va a cargar!
+	</a>
+	<a id="diplome_20" target="youfail">
+		Heu... 2 años, 3 años y 6 años.
+	</a>
+	<a id="diplome_21" target="youfail">
+		¡Ya sé! 1 año, 3 años y 12 años.
+	</a>
+	<a id="diplome_22" target="youfail">
+		Heu... 1 año, 4 años y 9 años.
+	</a>
+	<a id="diplome_23" target="youfail">
+		Yo diría: 3 años, 3 años y 4 años.
+	</a>
+	<a id="diplome_24" target="youfail">
+		¡Elefante!
+	</a>
+
+	<phase id="youfail" scenario="joujou:22">
+		Veamos...
+		Es un hecho que no eres un verdadero científico. Quizás deberías plantearte sacar tu calculadora y quitarle un poco el polvo.
+		¡Vuelve mañana!
+	</phase>
+
+	<phase id="success" next="success2" scenario="joujou:23">
+		¡Enhorabuena!
+		Hacía años que este enigma esperaba su respuesta en nuestra universidad.
+		Ya puedes llevarte el diploma. Envíale saludos a Al de mi parte.
+	</phase>
+
+	<a  id="success2">
+		Muy bien, ¡gracias!
+	</a>
+
+	<phase id="success2" popup="1">
+		Obtienes el diploma universitario de Al: @/img/icons/fx_plome.gif@
+		¡Ve a llevárselo!
+	</phase>
+</d>
+
+<d place="papy" name="Al Zeimuera" gfx="al_zaimeur" background="2" cond="scenario(joujou,23)">
+	<inject id="alzaimeur__19:begin" next="diplome"/>
+	<a id="diplome">
+		(Darle el diploma)
+	</a>
+	<phase id="diplome" next="diplome_2">
+		¡Estupendo!
+		Mi diploma. Qué bonito es, ¿no te parece?
+	</phase>
+	<a id="diplome_2">
+		Sí, sí que lo es...
+	</a>
+	<phase id="diplome_2" gfx="papy" name="Papy Jose" next="diplome_3" give="tictac:3" scenario="joujou:24">
+		Qué alegría ver el diploma de mi hijo. ¡Qué orgulloso estoy!
+		¿Te das cuenta? Es el diplomado más joven de la Universidad de Dinovilla.]
+
+		[De nuevo tu ayuda ha sido indispensable. Te doy 3 Tickets Taque, espero que tengas suerte.]
+	</phase>
+	<a id="diplome_3">
+		¡Muchas gracias!
+	</a>
+	<phase id="diplome_3" next="end" frame="stop">
+		Obtienes 3 Tickets taque: @/img/icons/fx_tictac.gif@. Estos tickets permiten excavar en su jardín para buscar tesoros enterrados.
+	</phase>
+	<a id="end">
+		¿y ahora?
+	</a>
+	<phase id="end" gfx="papy" name="Papy Jose" >
+		Se acabó. ¡Hemos reunido los objetos de Al! Pasa a vernos cuando quieras, ¡eres bienvenido!
+	</phase>
+</d>

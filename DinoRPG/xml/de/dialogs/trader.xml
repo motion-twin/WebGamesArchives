@@ -1,0 +1,135 @@
+﻿<d place="scaush" name="Jérôme K." gfx="trader" cond="!hasobject(bamboo)+!uvar(tradok)">
+
+	<phase id="begin" next="ask">
+		Lass mich...ich will sterben...
+	</phase>
+
+	<a id="ask">Der sieht nicht gut aus...</a>
+
+	<phase id="ask" next="ask2">
+		Das kannst du laut sagen...Ich hatte alles! Alles! Alles: Reichtum, Frauen, ich war berühmt...Die ganze Welt lag mir zu Füßen...
+	</phase>
+
+	<a id="ask2">Und was ist passiert?</a>
+
+	<phase id="ask2" next="ask3">
+		Pfff...ich will lieber nicht mehr daran denken...aber ich werd`s dir sagen...Ich habe alles verloren...an der Warp Street...
+	</phase>
+
+	<a id="ask3">Warp Street???</a>
+
+	<phase id="ask3" next="deriv">
+		Ja...Vielleicht weißt du es nicht, aber die Warp Street ist eine kleine Straße in Dinoville...Das ist ein Markt, der den Eliten vorbehalten ist. Man kann dort Verkappte Produkte kaufen!
+	</phase>
+
+	<a id="deriv">Was für Dinger?!</a>
+
+	<phase id="deriv" next="deriv2">
+		Verkappte Produkte! Schau her: Wenn der Kurs für Santaz steigt, sinkt das daran gekoppelte Verkappte Produkt. Außer natürlich, wenn der Kurs für Feross auch steigt, was wiederum vom Preis des Amnesischen Reis' vom Vormonat abhängt...Um's kurz zu machen: Mit den Verkappten Produkten kannst du innerhalb kürzester Zeit einen Haufen Kohle machen!
+	</phase>
+
+	<a id="deriv2">So wie Sie?</a>
+
+	<phase id="deriv2" next="ask4">
+		Ja, richtig! Na ja, bis vor ein paar Tagen...
+	</phase>
+
+	<a id="ask4">Was ist geschehen?</a>
+
+	<phase id="ask4" next="ask5">
+		Ganz einfach...ich habe nicht mit der Möbelkrise gerechnet...
+	</phase>
+
+	<a id="ask5">Sie meinen die Immobilienkrise, nicht wahr?</a>
+
+	<phase id="ask5" next="ask6">
+		Nein! Das hat überhaupt nichts damit zu tun! Immobilien, das sind Gebäude...Das läuft im Moment sehr gut, mit all den Schlössern, die für den Klankrieg gebaut werden müssen! Da gibt's welche, die in ein paar Tagen ein Vermögen anhäufen!
+	</phase>
+
+	<a id="ask6">Die Möbelkrise also...</a>
+
+	<phase id="ask6" next="ask7">
+		Ja. Möbel waren früher die Zukunft! Jeder wollte seinen Schreibtisch aus Grumhelholz haben! Aber jetzt, mit der Klimaerwärmung und all dem, die Gorilloz-Guerilla, die die Baumfäller angreifen...kurzum, der Markt ist zusammengebrochen, mein Ruin...
+	</phase>
+
+	<a id="ask7">Wie viel haben Sie verloren?</a>
+
+	<phase id="ask7" next="ask8">
+		Wie viel? Äh...so um die 4 Milliarden Goldmünzen...
+	</phase>
+
+	<a id="ask8">WIEVIEL???</a>
+
+	<phase id="ask8" next="ask9">
+		So ich's dir doch sage: Vier Milliarden...Ja, ich weiß, das hört sich enorm viel an für jemanden, der nicht so wie ich der Elite angehört, aber glaube mir, heutzutage hast du mit vier Milliarden gar nichts mehr...
+	</phase>
+
+	<a id="ask9">Ja, aber trotzdem...</a>
+
+	<phase id="ask9" next="ask10">
+		Nun gut...das Schlimmste ist überstanden, ich werde wieder hochkommen. Das ist hunderprozentig sicher! Ich habe DAT Ding gefunden! Ein Wahnsinnsding mit dem man endlos Kohle machen kann! Aber dafür brauche ich einen Partner...hast du Lust?
+	</phase>
+
+	<a id="ask10">Äh...ich?</a>
+
+	<phase id="ask10" next="ask11">
+		Ja, du! Du siehst nach einem eher guten Dinozmeister aus, ziemlich erfahren würde ich sagen. Also schau, ich schlag dir einen Deal vor: Du kümmerst dich um die Logistik und ich mich um den Verkauf. Gemeinsam wird es uns gelingen Millionen zu scheffeln...und wer will das nicht, nicht wahr?
+	</phase>
+
+	<a id="ask11">Was muss ich dafür tun?</a>
+
+	<phase id="ask11" next="yes:no">
+		Das ist ganz einfach, hier ist der Plan: Du bringst mir 100 Samen der Verschlingerin. Diese Samen findest du in den Steppen. Ich brauche mindestens 100. Die gibts du mir. Als Gegenleistung gebe ich dir was Ultraseltenes, das ich gefunden habe. Dann gibst du mir ein paar Tage, um alles an der Warp Street zu verkaufen und wir teilen den Gewinn. Was hältst du davon?
+	</phase>
+
+	<a id="yes">Ok!</a>
+	<a id="no">Kommt nicht in Frage.</a>
+
+	<phase id="no">
+		Ok, wie du willst, dein Pech!
+	</phase>
+
+	<phase id="yes" next="ok">
+		Super! Also, wir machen es so: Du sammelst die 100 Samen und dann kommst du zurück! Ich warte auf dich, ok?
+	</phase>
+
+	<a id="ok">Ok!</a>
+
+	<phase id="ok" useingr="dgrain:100" effect="trader" give="bamboo" nocheck="1">
+		Genial!! Du bist fantastisch! Hier, ich überlasse dir meinen seltenen Gegenstand. Wir treffen uns später wieder in Dinoville. In der
+	Zwischenzeit verkaufe ich den ganzen Vorrat!
+	</phase>
+
+</d>
+
+<d place="dnv" name="Jasper K." gfx="trader2" cond="fx(trader)+!uvar(tradok)">
+
+	<phase id="begin" next="ask">
+		Lass mich...ich will sterben...
+	</phase>
+
+	<a id="ask">Schon wieder?? Was ist denn jetzt passiert???</a>
+
+	<phase id="ask" next="ask2">
+		Es lief alles gut...am Anfang...die Samen gingen zu astronomischen Preisen weg. Jeder wollte welche haben und wir haben viel Geld verdient!
+	</phase>
+
+	<a id="ask2">Und dann???</a>
+
+	<phase id="ask2" next="ask3">
+		Dann war es der Horror...Konkurrenten haben das Gerücht gestreut, dass unsere Samen Xylophon enthalten würden. Das ist ein gefährlicher Stoff, der sonderbare Geräusche im Magen verursacht, wenn man ihn schluckt...Panik brach auf dem Markt aus. Ich musste alles zu Schleuderpreisen verkaufen, um die Verluste zu minimieren...
+	</phase>
+
+	<a id="ask3">Was ist mit meinem Anteil?</a>
+
+	<phase id="ask3" next="ask4">
+		Hier...das ist dein Anteil...das ist alles, was ich beim Crash retten konnte...800 Schatzgutscheine...
+	</phase>
+
+	<a id="ask4">Das ist alles?!</a>
+
+	<phase id="ask4" give="tix:800" noeffect="trader" uvar="tradok:1" nocheck="1">
+		Ja...du kannst den seltenen Gegenstand, den ich dir gegeben habe, behalten...Aber mach dir um mich keine Gedanken! Ich werde was Neues finden und beim nächsten Mal wird es ein todsicheres Geschäft!!!  
+	</phase>
+
+</d>

@@ -1,0 +1,54 @@
+<!-- ***************************************************************************** -->
+<!-- Saul, Nimbao l'île volante ----->
+	
+<d place="icite" name="Palmier" gfx="palmier" cond="!curmission(sos2)+scenario(nimba2,50-)">
+	<phase id="begin" next="non:mot" dialect="arbori">
+		Grrr, ich habe es satt!
+		Dieses Halsband hindert uns daran, zu tun und zu lassen was wir wollen.
+		Und diese Typen tun nichts dagegen. Diese Dorogons... Glauben, sie wären unsere Meister! Ha!
+		Und diese Insel. Es ist immer dasselbe... Mist!
+	</phase>
+	
+	<a id="non" cond="!uvar(dicarb)">?</a>
+	<a id="mot" cond="scenario(nimbao,34)">vcbdr QpObmc?</a>
+	
+	<phase id="non" frame="stop" fast="1">
+		Du gehst wieder deiner Wege. Palmier scheint wütend zu sein, aber du weißt nicht warum...
+	</phase>
+	
+	<phase id="oui" next="clair" dialect="arbori">
+		Ich will die Welt entdecken!
+		Ich habe genau gesehen, dass da unten etwas ist!
+	</phase>
+	
+	<a id="clair">
+		Die Welt ist voller Orte, die nur entdeckt werden wollen!
+	</a>
+	
+	<phase id="clair" next="go" dialect="arbori">
+		Eines Tages werde ich diese verfluchte Insel verlassen und die ganze Welt entdecken!
+		Eines Tages werde ich der größte Abenteurer aller Zeiten sein!
+	</phase>
+	
+	<a id="go">
+		Viele Glück!
+	</a>
+	
+	<phase id="go" fast="1" frame="stop">
+		Trotz deiner Aufmunterung scheint Palmier noch immer wütend zu sein.
+		Ist es das, was man *rebellisches Alter* nennt?
+	</phase>
+	
+	<phase id="mot" fast="1" frame="stop">
+		Er hat verstanden, was du gesagt hast. Aber er weiß nicht, was er antworten soll...
+		Offensichtlich hat dieses Wort keinerlei Bedeutung für ihn.
+	</phase>
+</d>
+	
+<d place="icite" name="Palmier" gfx="palmier" frame="happy" cond="!curmission(sos2)+scenario(nimba2,51+)">
+	<phase id="begin">
+		Grrr, ich habe es so satt!
+		[Du hast leicht reden. Von wegen, dass wir frei sind. Wir würdest du denken, wenn du diese Insel erst mit 18 Jahren ohne Eltern verlassen darfst?]
+		[...die Straße gehört uns!]
+	</phase>
+</d>

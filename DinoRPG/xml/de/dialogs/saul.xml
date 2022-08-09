@@ -1,0 +1,55 @@
+<!-- ***************************************************************************** -->
+<!-- Saul, Nimbao l'île volante ----->
+	
+<d place="ilac" name="Saul" gfx="saul" cond="scenario(nimba2,50-)">
+	<phase id="begin" next="quoi:seul:mot" dialect="arbori" >
+		Guten Tag, Reisender.
+		Ich bitte dich, lasse mich in Ruhe.
+		Ich bin in Trauer, denn mein Bruder ist fort.
+	</phase>
+	
+	<a id="quoi" cond="!uvar(dicarb)"> Ich verstehe nicht...</a>
+	<a id="seul" cond="uvar(dicarb)"> Was ist ihm zugestoßen?</a>
+	<a id="mot" cond="scenario(nimbao,34)"> vcbdr QpObmc?</a>
+	
+	<phase id="seul" frame="cry" dialect="arboris" >
+		Die Soldaten von Grizorg haben ihn ins Gefängnis gesteckt. ...wegen Diebstahls in den Gärten der Dorogons.
+		Dabei wusste er doch, dass so etwas verboten ist...
+		Er fehlt mir so sehr... Ich werde ihn mit Sicherheit niemals wiedersehen.
+	</phase>
+	
+	<phase id="quoi" frame="cry" fast="1" >
+		Du lässt dieses junge Mädchen wieder allein. Du hast keines ihrer Worte verstanden.
+		Aber sie scheint offenbar sehr traurig zu sein.
+	</phase>
+	
+	<phase id="mot" fast="1" frame="stop">
+		Du lässt dieses junge Mädchen wieder allein. Du hast keines ihrer Worte verstanden.
+		Aber sie scheint offenbar sehr traurig zu sein.
+	</phase>
+</d>
+
+	
+<d place="ilac" name="Saul" gfx="saul" frame="blabla2" cond="scenario(nimba2,51+)">
+	<phase id="begin" next="seul2">
+		Guten Tag, Reisender.
+		Ich bitte dich, lasse mich in Ruhe.
+		Ich bin in Trauer, denn mein Bruder ist nicht mehr da.
+	</phase>
+	
+	<a id="seul2"> Wo ist er?</a>
+	
+	<phase id="seul2" frame="blabla2" next="libere">
+		Er wurde ins Gefängnis gesteckt... Für immer. Wegen eines Diebstahls in den Gärten der Dorogons.
+		Ich wünsche mir so sehr, dass er eines Tages wieder freigelassen wird. Aber so lange die Dorogons die Meister von Priranese sind...
+		Ach, er fehlt mir so sehr...
+	</phase>
+	
+	<a id="libere">Man muss man ihn doch befreien können!</a>
+	
+	<phase id="libere" frame="cry2" fast="1">
+		Saul hört dir schon nicht mehr zu. Sie ist schon ganz erschöpft vor Trauer um ihren Bruder.
+		Wenn du ihr doch nur irgendwie helfen könntest...
+	</phase>
+	
+</d>

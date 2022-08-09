@@ -1,0 +1,42 @@
+<!-- ***************************************************************************** -->
+<!-- Saul, Nimbao l'île volante ----->
+	
+<d place="icite" name="Etre" gfx="etre" cond="!curmission(sos)+scenario(nimba2,50-)">
+	<phase id="begin" next="non:oui:mot" dialect="arbori">
+		Greetings, traveller.
+		What can I do for you?
+	</phase>
+	
+	<a id="non" cond="!uvar(dicarb)"> I don't understand...</a>
+	<a id="oui" cond="uvar(dicarb)"> You seem tired.</a>
+	<a id="mot" cond="scenario(nimbao,34)"> vcbdr QpObmc?</a>
+	
+	<phase id="non" frame="stop" fast="1">
+		You head off, disappointed. This language is impossible to understand...
+	</phase>
+	
+	<phase id="oui" dialect="arbori">
+		[I am in the service of our masters. In the spirit of self-indulgence, they turned me into a gladiator. I entertain them by fighting my fellow man.]
+		[I had to retire a short time ago because of my injuries, I've no longer got what it takes...
+		I'd like to be useful again, but nobody wants me...]
+	</phase>
+	<phase id="mot" fast="1" frame="stop" >
+		He understood what you said, but he doesn't know what to say...
+		Clearly this word hasn't had any real effect on him.
+	</phase>
+</d>
+	
+<d place="icite" name="Etre" gfx="etre" frame="happy" cond="!curmission(sos)+scenario(nimba2,51+)" >
+	<phase id="begin" next="oui2">
+		Greetings, traveller.
+		What can I do for you?
+	</phase>
+	
+	<a id="oui2"> You seem in good form.</a>
+	
+	<phase id="oui2">
+		[Well yes, beforehand my role was to entertain by fighting, but now I'm in charge of educating young Dorogons and Arborians.
+		I teach them the Art of War and poetry.]
+		[It's turned me into something of a celebrity in my town, I'm ever so grateful to the new ArchDorogon for giving me this opportunity.]
+	</phase>
+</d>

@@ -1,0 +1,112 @@
+﻿<missions>
+
+	<!-- ***************************************************************************** -->
+	<!-- Al Zaimeur missions ----->
+
+	<m group="alzaim" id="fiesta" name="La fiesta de Al" limit="10">
+		<begin>Me gustaría organizar un encuentro para festejar mi regreso. Me he ocupado de casi todo. Sólo falta un par de detalles. Habrá que actuar con rapidez porque la fiesta empieza pronto. Si quieres saber más, me puedes preguntar aquí.</begin>
+		<goto v="marche"/>
+		<talk v="Isabella" gfx="isabella">¿Si acepto acompañarte a una fiesta? Esto... ¡claro que sí! Solo necesito buscarme algo que ponerme para la fiesta.</talk>
+		<goto v="dnv"/>
+		<talk v="AnA Tomía" gfx="infirmiere" background="1">¿Me quieres invitar a una fiesta? Pero qué será de mis queridos dinitos cuando no esté? Aunque tampoco queda lejos... y puedo decir que estoy ocupada con una visita a domicilio. De acuerdo, ¡acepto!</talk>
+		<goto v="fosslv"/>
+		<talk v="Chamán Lacio" gfx="shaman">Hey colega, ¡una fiestaza sin mí, el ssshamán blandengue, no es fiestaza! ¿Puedo invitar a unos amigos? Son de buena onda.
+			Heeey, cool. Nos vemos allí, colega.</talk>
+		<goto v="vener"/>
+		<talk v="Señorita Bao" gfx="baobabe">Mi querido maestro de Dinos, me alegro de verte. ¿Una fiesta, dices? Qué detalle el haber pensado en mí. Hacía tanto tiempo que no tenía la ocasión de bailar... Cuento contigo para ser mi acompañante.</talk>
+		<goto v="gorges"/>
+		<talk v="Pelele-ólogo" gfx="spelele">Hola. ¿Una fiesta en Dinovilla? Buena idea... iré encantado. Así me calentaré un poco al desplazarme hasta la ciudad. También aprovecharé para realizar un informe sobre mis investigaciones para mi tutor de la universidad.</talk>
+		<goto v="auree"/>
+		<talk v="Nicolás Mulot" gfx="hulot">Abandonar esta tierra de misterios para encontrarme con mi público de la revista Ouïaïa... Abandonar a la Madre Naturaleza para encontrarme con una civilización madura y así celebrar el amor y la alegría... ¡secuencia Emoción! Te acompañaré encantado.</talk>
+		<goto v="camp"/>
+		<talk v="Dian Korgsey" gfx="dian">¿Quieres que deje a mis korgones queridos y al campamento? No sé si seré capaz. ¿Quién guiará a los turistas perdidos? Aunque bien es cierto que hay pocos turistas en este momento. Prefieren ir a las islas últimamente. ¡Acepto tu invitación!</talk>
+		<end>
+			Eres genial. Seguro que habrá mucha gente. Además has invitado a chicas guapas. ¡Toma esto! Te mereces una bonita recompensa.
+		</end>
+		<xp v="80"/>
+		<gold v="3000"/>
+	</m>
+ 
+	<m  group="alzaim" id="mcrame" name="Salchichas o nada" limit="10" cond="mission(fiesta)">
+		<begin>
+			Hay invitados que vienen desde muy lejos. Habrá que prever una buena comida para que puedan mantenerse en pie durante toda la fiesta. No he previsto nada para comer. ¿Te puedes encargar de ello? Puedes venir a hablarlo conmigo cuando quieras.
+		</begin>
+		<goto v="rashpk"/>
+		<talk v="Vendedor de salchichas" gfx="merguez">
+			Me gustaría darte algunas salchichas quemadas, pero esta vez tendrás que hacerme un favor primero. ¡Deshazte de estos bribones que no paran de robarme las salchichas!
+		</talk>
+		<action v="Ladrones de salchichas">
+			¡Ves a unos ladrones saqueando el puesto de salchichas!
+		</action>
+		<actfight act="Atacarles" monsters="vol1:vol1:vol1">
+		</actfight>
+		<action v="Ladrones de salchichas">
+			Qué lástima, los ladrones han alertado a los otros miembros de su banda...
+		</action>
+		<actfight act="Echarles de aquí" monsters="vol1:vol1:vol1:vol1:vol1:vol1:vol1">
+		</actfight>
+		<talk v="Vendedor de salchichas" gfx="merguez">
+			Gracias. No creo que vuelvan por un tiempo, esos pillos. Ten, ¡aquí tienes salchichas para un mes!
+		</talk>
+		<end>
+			Estupendo, los invitados van a estar muy contentos. Aunque estas salchichas quemadas van a dar sed. Toma, acepta esto.
+		</end>
+		<xp v="40"/>
+		<gold v="1000"/>
+	</m>
+
+	<m  group="alzaim" id="alcool" name="Al cool" limit="10" cond="mission(fiesta)">
+		<begin>
+			Todavía no me he recuperado de la última fiesta y no he tenido el tiempo para ir a buscar las bebidas. ¿Podrías encargarte de ello?
+			Puedes venir de nuevo si tienes preguntas.
+		</begin>
+		<goto v="fountj"/>
+		<action v="Tomar agua">
+			Te llevas contigo un poco de agua de la Fuente de la Juventud para complacer a Papy Jose.
+		</action>
+		<goto v="fosslv"/>
+		<talk v="Chamán Lacio" gfx="shaman">Hey, ¿sirope de lava? Claro que tengo. Te daré si a cambio me das tres sílex y algo con que encender mi pipa, que no veas lo complicado que está últimamente...
+		</talk>
+		<useingr v="art" n="3"/>
+		<action v="llevarse el sirope de lava">
+			El Chamán te da las gracias y te da el sirope de lava. ¡Ya no queda más que un pequeño detalle final para preparar la fiesta perfecta!
+		</action>
+		<goto v="gorges" hide="1" />
+		<talk v="Pelele-ólogo" gfx="spelele">
+			Hola. ¿Quieres algo para alegrar las bebidas? ¿Has pensado en comprar hielo? El hielo es fundamental. Te aconsejo que busques hielo por bloques para evitar que se fundan demasiado rápido. La mejor técnica para encontrar es excavar. ¿Tienes una pala, no es así?</talk>
+		<dig>
+			Has conseguido un magnífico bloque de hielo. ¡Los coctails van a ser un éxito!
+		</dig>
+		<end>
+			Perfecto. Ya lo tenemos todo para una fiesta que hará historia. Te mereces una recompensa, ¡amigo!
+		</end>
+		<xp v="40"/>
+		<gold v="1000"/>
+	</m>
+
+	<m group="alzaim" id="minuit" name="Permiso de medianoche" limit="10" cond="mission(mcrame)+mission(alcool)">
+		<begin>Tienes que sobrevivir a la fiesta de Al...</begin>
+		<action v="Hora de la fiesta" wait="1">
+			La fiesta ya está en su máxima plenitud. Aprovechas para escaparte discretamente pero Al te atrapa y te obliga a bailar toda la noche...
+		</action>
+		<end>
+			Has sobrevivido a esta gran fiesta. Ha sido un éxito, ¡menuda experiencia!
+		</end>
+		<xp v="20"/>
+	</m>
+
+	<m group="alzaim" id="magne" name="Exceso de magnetismo" limit="10" cond="mission(minuit)">
+		<begin>
+			Durante la noche, Al se ha movido tanto que ha alborotado los Caparrapaces de las Estepas hasta la ciudad.
+			¡Hay que proteger a los habitantes antes de que sea demasiado tarde!
+		</begin>
+		<goto v="dnv"/>
+		<actfight act="Eliminar a los Caparrapaces" monsters="rapac2:rapac2"/>
+		<end>
+			¡Muy bien! Has salvado el pueblo. Estos monstruos eran muy potentes.
+		</end>
+		<xp v="100"/>
+		<gold v="1000"/>
+	</m>
+	
+</missions>

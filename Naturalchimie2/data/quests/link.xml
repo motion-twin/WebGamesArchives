@@ -1,0 +1,93 @@
+<quests>
+
+<q from="link" id="balaa" name="Une promenade en forêt">
+	<begin>Premier élément indispensable : un manche à balai en bois massif ! Palsembleu ! Tu devrais trouver ça en faisant une alchimie dans une bonne vieille forêt ancestrale !</begin>
+	<collect o="QuestObj(wood):1" zone="gmoree" title="Se rendre à l'orée du bois pour trouver une branche qui fasse l'affaire. Quand tu auras trouvé la branche dans ton alchimie, fais une transmutation à côté d'elle pour la récupérer.">
+		<playMod artft="QuestObj(wood):25" />
+	</collect>
+	<end>Du bois antidérapant naturel ! Je pouvais pas rêver mieux, crénom de saperlotte !</end>
+	<xp v ="11" />
+	<gold v="52" />
+	<reput s="ap" v="5" />
+</q>
+
+<q from="link" id="balab" name="Des poils premier choix" cond="quest(balaa)">
+	<begin>Ensuite, il nous faut des poils de wombat pour faire le balai... On en trouve pas loin, sur la plaine de l'armée. C'est à l'Ouest du manoir Audepint. Il faudra ensuite aller au manoir pour les faire traiter.</begin>
+	<collect o="QuestObj(wombatBeard):35" zone="aparmy" title="Ramasser 35 touffes de poils de wombat sur la plaine de l'armée du manoir.">
+		<playMod artft="Elts(2,QuestObj(wombatBeard)):500;QuestObj(wombatBeard):100" />
+	</collect>
+	<talk did="balaba" title="Aller au manoir Audepint pour que les poils soient traités à la solution dégivrante." />
+	<end>Des poils super souples pour un balayage du feu de dieu, c'est moi qui te le dit ! </end>
+	<xp v ="12" />
+	<gold v="40" />
+	<reput s="ap" v="9" />
+</q>
+
+<q from="link" id="balac" name="Un balai trop fort !"  cond="quest(balab)">
+	<begin>La liste indique ensuite... 3 amulettes de puissance... Foutrebleu ! 3 amulettes de puissance ? Pour un balai ? </begin>
+	<talk did="balaca" />
+	<collect o="QuestObj(amu0):1" zone="stimpk" title="En tant qu'élu porteur du balai magique, aller récupérer l'amulette de la force au palais de Stime Pounk.">
+		<playMod>
+			<startGrid g="Block(3):0:0;Block(4):1:0;QuestObj(amu0):2:0;Block(4):3:0;Block(3):4:0;Block(4):5:0;Block(4):0:1;Block(4):1:1;Block(4):2:1;Block(4):3:1;Block(4):4:1;Block(4):5:1;Block(4):0:2;Block(4):1:2;Block(4):2:2;Block(4):3:2;Block(4):4:2;Block(3):5:2;Block(3):0:3;Block(4):1:3;Block(4):2:3;Block(4):3:3;Block(4):4:3;Block(4):5:3;Block(3):3:4;Block(3):2:4" />
+		</playMod>
+	</collect>
+	<end>Saperlotte, tu as l'amulette ! C'est donc pas des idioties ! </end>
+	<xp v ="10" />
+	<gold v="46" />
+	<reput s="ap" v="10" />	
+</q>
+
+<q from="link" id="balad" name="Un balai trop intelligent !"  cond="quest(balac)">
+	<begin>Bon ben passons à la 2e amulette... L'amulette de la sagesse au bourg de Tirésias ! Mordiou, c'est pas la porte à côté, ça. </begin>
+	<collect o="QuestObj(amu1):1" zone="jztire" title="En tant qu'élu porteur du balai magique, aller récupérer l'amulette de la sagesse à Tirésias.">
+		<playMod artft="Elts(2,Block(1)):1200;Elts(2,Block(2)):1000">
+			<startGrid g="QuestObj(amu1):0:0;Block(4):1:0;Block(4):2:0;Block(3):3:0;Block(4):4:0;Block(4):5:0;Block(4):0:1;Block(4):1:1;Block(4):2:1;Block(4):3:1;Block(4):4:1;Block(4):0:2;Block(3):1:2;Block(4):2:2;Block(2):3:2;Block(4):1:3;Block(3):1:4;Block(3):0:3;Block(4):2:3" />
+		</playMod>
+	</collect>
+	<end>Bravo, plus qu'une et tu seras à même de sauver le monde de la lumière. Euh.... Mais qu'est-ce que je raconte moi, sapristi de créboudiou ? </end>
+	<xp v ="10" />
+	<gold v="60" />
+	<reput s="ap" v="9" />
+</q>
+
+<q from="link" id="balae" name="Un balai trop agile !"  cond="quest(balad)">
+	<begin>Plus qu'une amulette ! Celle de l'agilité qui est... ah ben bonté divine ! Qui est ici même, dis donc.</begin>
+	<collect o="QuestObj(amu2):1" zone="scroad" title="En tant qu'élu porteur du balai magique, aller récupérer l'amulette de l'agilité à la route scintillante. Attention, l'élu ne peut pas utiliser ses objets magiques personnels.">
+		<playMod  artft="Elts(2,null):4500;Elts(2,Neutral):500;Dynamit(0):30;Dynamit(1):15;Alchimoth:10;Elts(2,Block(1)):1800;Elts(2,Block(2)):1500;Elts(2,Block(3)):700" replace="1" obj="0">
+			<startGrid g="Block(1):0:0;Block(2):0:1;Block(2):0:2;Block(4):0:3;Block(1):0:4;Block(4):1:0;Block(4):2:0;Block(4):3:0;Block(3):4:0;Block(4):5:0;Block(4):1:1;Block(4):2:1;QuestObj(amu2):3:1;Block(4):4:1;Block(4):5:1;Block(4):1:2;Block(4):2:2;Block(4):3:2;Block(3):4:2;Block(4):5:2;Block(4):1:3;Block(4):2:3;Block(4):3:3;Block(3):4:3;Block(4):5:3;Block(4):1:4;Block(3):2:4;Block(4):3:4;Block(3):4:4;Block(4):5:4" />
+		</playMod>
+	</collect>
+	<end>Saperlipopette de calembredaine, je savais que je pouvais compter sur toi. On a presque tout pour mon nouveau balai !</end>
+	<xp v ="10" />
+	<gold v="70" />
+	<reput s="ap" v="12" />
+</q>
+
+
+<q from="link" id="balaf" name="Option exclusive ! "  cond="quest(balae)">
+	<begin>On a terminé !... Ah non attention, il y a encore une étape sur le parchemin de montage. Alors... gnagnagna série limitée... gnagnagna option exclusive...</begin>
+	<talk did="balafa" />
+	<talk did="balafb" title="Aller chercher un ocarina à Vostok." step="1"/>
+	<use o="Elt(1):60" zone="apvos" action="Acheter un ocarina" text="Tu as l'ocarina ! Il est temps de le ramener à Link."  title="Acheter un ocarina à Vostok pour 60 potions jaunes" />
+	<end>Ca y est,  on a tout ! Je vais bientôt avoir mon balai !</end>
+	<xp v ="12" />
+	<gold v="135" />
+	<reput s="ap" v="12" />
+	
+</q>
+
+<q from="link" id="balag" name="Balai prêt à l'emploi"  cond="quest(balaf)" >
+	<begin qgive="QuestObj(wood):1;QuestObj(wombatBeard):1;QuestObj(amu0):1;QuestObj(amu1):1;QuestObj(amu2):1;QuestObj(ocarina):1">Plus qu'à assembler le balai. Tiens, je te donne les morceaux et la recette qui est livrée avec le mode d'emploi. Plus qu'à aller faire ça à la salle des chaudrons ! </begin>
+	<cauldron r="balai" qty="1" collect="1" drop="1" add="1" title="Créer le balai à la salle des chaudrons en suivant la recette ajoutée au grimoire." />
+	<use qo="QuestObj(ocarina):1" zone="scroad" action="Fixer l'ocarina" text="Il y a une encoche au bout du manche pour fixer l'ocarina au balai. C'est drôlement bien pensé :pas besoin d'outils !" title="Retourner à la route scintillante et fixer l'ocarina pour terminer le balai niveau 2." />
+	<use qo="QuestObj(broom2):1" zone="scroad" action="Donner le balai" text="Créfieu de bonsoir ! Qu'il est beau ! Qu'il a l'air efficace ! Je vais pouvoir nettoyer la route à qui mieux-mieux, maintenant !" title="Donner le balai niveau 2 à Link." />
+	<end>Merci ! Grâce à toi je vais garder mon poste. En plus j'ai sûrement le balai le plus puissant du royaume, je vais faire des jaloux !</end>
+	<xp v ="18" />
+	<gold v="341" />
+	<randomrecipe v="180:70" />
+	<reput s="ap" v="15" />
+</q>
+
+
+
+</quests>

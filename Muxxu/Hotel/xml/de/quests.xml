@@ -1,0 +1,257 @@
+<quests>
+	<!-- ATTENTION : en cas de décalage, penser à vérifier les appels à reachedQuest() partout dans le code ! -->
+	
+	<!-- 0 -->
+	<q>
+		<d>Zeige einem Gast sein Zimmer. Klicke auf den Gast und dann auf das Zimmer, das du für ihn ausgewählt hast.</d>
+		<g id="AddClient"/>
+		<r id="Money(50)"/>
+		<r id="Client"/>
+	</q>
+	
+	<q step="beginning">
+		<d>Wähle nun mit Bedacht den nächsten Gast aus. Berücksichtige alle seine Vorlieben und Abneigungen. Das Profil eines Gastes wird am rechten Bildrand angezeigt, wenn du die Maus über ihn bewegst.</d>
+		<g id="AddClient"/>
+		<r id="Item(stink_bomb)"/>
+		<r id="Item(radiator)"/>
+	</q>
+
+	<q>
+		<d>Statte ein Zimmer mit Gegenständen aus deinem Inventar aus, die ihre Bewohner glücklich machen! (Menü über deinem Hotel)</d>
+		<g id="InstallItem"/>
+		<g id="InstallItem"/>
+		<r id="Item(randpaintwarm)"/>
+		<r id="Item(randtexture)"/>
+	</q>
+
+	<q>
+		<d>Gestalte eine Etage deines Hotels mit Gegenständen aus deinem Inventar um (Menü über deinem Hotel).</d>
+		<g id="ChangeDeco"/>
+		<g id="ChangeDeco"/>
+		<r id="Money(100)"/>
+	</q>
+
+	<q>
+		<d>Gehe ins Geschäft und rekrutiere einen weiteren Angestellten.</d>
+		<g id="BuyStaff"/>
+	</q>
+	
+	<!-- 5 -->
+
+	<q>
+		<d>Schicke einen Angestellten zur Rezeption, damit er die Wartezeit bis zum nächsten Gast verkürzt. </d>
+		<g id="StaffLobby"/>
+	</q>
+	
+
+	<q step="rename">
+		<d>Gib deinem Hotel eine persönliche Note: Gehe ins Büro und ändere den Namen deines Hotels.</d>
+		<g id="Rename"/>
+		<r id="Money(300)"/>
+	</q>
+
+	<q step="expand">
+		<d>Baue dein Hotel aus: Klicke auf den Punkt "Ausbauen" oben links.</d>
+		<g id="ExtendAny"/>
+	</q>
+
+	<q>
+		<d>Baue ein neues Zimmer. Klicke dazu auf die leere Wand deines gerade gebauten Anbaus und wähle den Punkt "Zimmer" aus.</d>
+		<g id="BuildRoom"/>
+		<r id="Client"/>
+		<r id="Client"/>
+		<r id="Item(Present)"/>
+	</q>
+
+	<q>
+		<d>Warte bis die Bauarbeiten abgeschlossen sind. Du findest diesen Zeitpunkt heraus, indem du die Maus über die Baustelle bewegst. Normalerweise sollte es nur einige Minuten dauern.</d>
+		<g id="EndConstruction"/>
+		<r id="Item(RandDeco)"/>
+	</q>
+	
+	<!-- 10 -->
+
+	<q>
+		<d>Wähle Dekorationsgegenstände aus deinem Inventar aus und füge sie zu dem Hotel hinzu. Klicke dazu auf den Punkt "Einrichtung ändern" oben links.</d>
+		<g id="PlaceDeco"/>
+		<r id="Client"/>
+		<r id="Research"/>
+	</q>
+	
+	<q>
+		<d>Gehe ins Labor und setze deinen "Forschungspunkt" ein.</d>
+		<g id="UseResearch"/>
+		<r id="Item(RandDeco)"/>
+		<r id="Item(RandDeco)"/>
+		<r id="Item(RandPaint)"/>
+		<r id="Money(25)"/>
+	</q>
+
+	<q step="night">
+		<d>Nacht verbracht: deine Gäste zahlen jeden Tag um Mitternacht (Serverzeit). Ihre Zahlung richtet sich nach ihrer Zufriedenheit. Nach der letzten verbrachten Nacht verlassen sie um 10:00 Uhr das Hotel.</d>
+		<g id="Midnight"/>
+		<r id="Item(Repair)"/>
+		<r id="Item(RandPaint)"/>
+		<r id="Item(RandPaint)"/>
+		<r id="Money(300)"/>
+		<r id="Research"/>
+	</q>
+
+	<q>
+		<d>Geh ins Labor und setze deinen zweiten "Forschungspunkt" ein.</d>
+		<g id="UseResearch"/>
+	</q>
+
+		
+	<q>
+		<d>Stell 5 Gäste zufrieden (mindestens 8 Zufriedenheitspunkte zum Abreisetag).</d>
+		<g id="Satisfy(8)"/>
+		<g id="Satisfy(8)"/>
+		<g id="Satisfy(8)"/>
+		<g id="Satisfy(8)"/>
+		<g id="Satisfy(8)"/>
+		<g id="RoomLevel(2)"/>
+		<r id="Item(RandDeco)"/>
+		<r id="Item(RandDeco)"/>
+		<r id="Research"/>
+	</q>
+	
+	<!-- 15 -->
+	
+	<q>
+		<d>Eigne dir zurückgelassene Gegenstände an (hat da jemand was von "Stehlen" gesagt?).</d>
+		<g id="PickItem"/>
+		<g id="PickItem"/>
+		<g id="PickItem"/>
+		<g id="PickItem"/>
+		<g id="PickItem"/>
+		<r id="Item(RandDeco)"/>
+		<r id="Item(RandDeco)"/>
+		<r id="Item(RandPaint)"/>
+		<r id="Item(RandPaint)"/>
+		<r id="Research"/>
+	</q>
+	
+	<q>
+		<d>Erwirb 3 Forschungspunkte (dafür musst du das "Institut der Freude" bauen).</d>
+		<g id="DropResearch"/>
+		<g id="DropResearch"/>
+		<g id="DropResearch"/>
+		<r id="Item(RandDeco)"/>
+		<r id="Item(RandDeco)"/>
+		<r id="Money(100)"/>
+	</q>
+	
+	<q>
+		<d>Stell 5 Gäste komplett zufrieden (10 Zufriedenheitspunkte zum Abreisetag).</d>
+		<g id="SatisfyMax"/>
+		<g id="SatisfyMax"/>
+		<g id="SatisfyMax"/>
+		<g id="SatisfyMax"/>
+		<g id="SatisfyMax"/>
+		<r id="Item(RandDeco)"/>
+		<r id="Item(RandDeco)"/>
+		<r id="Item(RandDeco)"/>
+		<r id="Money(100)"/>
+		<r id="Research"/>
+	</q>
+	
+	<q>
+		<d>Verbessere deine Zimmer.</d>
+		<g id="RoomLevel(2)"/>
+		<g id="RoomLevel(2)"/>
+		<g id="RoomLevel(2)"/>
+		<g id="RoomLevel(2)"/>
+		<r id="Item(Mattress)"/>
+		<r id="Item(Mattress)"/>
+		<r id="Item(RandDeco)"/>
+		<r id="Item(RandDeco)"/>
+	</q>
+
+	
+	<!-- Quêtes répétables -->
+	
+	<q repeatable="1">
+		<d>Investiere in Forschung.</d>
+		<g id="PickItem"/>
+		<g id="PickItem"/>
+		<g id="Satisfy(8)"/>
+		<g id="Satisfy(8)"/>
+		<g id="Satisfy(8)"/>
+		<g id="Midnight"/>
+		<g id="Midnight"/>
+		<g id="DropResearch"/>
+		<g id="DropResearch"/>
+		<r id="Fame"/>
+	</q>
+	
+	<q repeatable="1">
+		<d>Mache deine Gäste glücklich.</d>
+		<g id="SatisfyMax"/>
+		<g id="SatisfyMax"/>
+		<g id="SatisfyMax"/>
+		<g id="SatisfyMax"/>
+		<g id="SatisfyMax"/>
+		<g id="InstallItem"/>
+		<g id="InstallItem"/>
+		<g id="InstallItem"/>
+		<g id="Service"/>
+		<g id="Service"/>
+		<g id="Service"/>
+		<g id="Service"/>
+		<g id="PickItem"/>
+		<r id="Fame"/>
+	</q>
+	
+	<q repeatable="1">
+		<d>Eigne dir zurückgelassene Gegenstände an.</d>
+		<g id="Midnight"/>
+		<g id="Midnight"/>
+		<g id="Midnight"/>
+		<g id="Satisfy(8)"/>
+		<g id="Satisfy(8)"/>
+		<g id="Satisfy(8)"/>
+		<g id="PickItem"/>
+		<g id="PickItem"/>
+		<g id="PickItem"/>
+		<g id="PickItem"/>
+		<g id="PickItem"/>
+		<g id="PickItem"/>
+		<r id="Fame"/>
+	</q>
+	
+	<q repeatable="1">
+		<d>Stehe deinen Gästen jederzeit zur Verfügung.</d>
+		<g id="Service"/>
+		<g id="Service"/>
+		<g id="Service"/>
+		<g id="Service"/>
+		<g id="Service"/>
+		<g id="Service"/>
+		<g id="Service"/>
+		<g id="Service"/>
+		<g id="Service"/>
+		<g id="Service"/>
+		<g id="SatisfyMax"/>
+		<g id="SatisfyMax"/>
+		<r id="Fame"/>
+	</q>
+	
+	<q repeatable="1">
+		<d>Baue dein Hotel aus.</d>
+		<g id="PickItem"/>
+		<g id="PickItem"/>
+		<g id="SatisfyMax"/>
+		<g id="SatisfyMax"/>
+		<g id="InstallItem"/>
+		<g id="InstallItem"/>
+		<g id="BuildRoom"/>
+		<g id="BuildRoom"/>
+		<g id="Midnight"/>
+		<g id="Midnight"/>
+		<g id="Midnight"/>
+		<g id="DropResearch"/>
+		<r id="Fame"/>
+	</q>
+
+</quests>

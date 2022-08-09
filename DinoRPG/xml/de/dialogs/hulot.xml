@@ -1,0 +1,61 @@
+﻿
+<d place="auree" name="Heinz Fielmann" gfx="hulot">
+	
+  <phase id="begin" next="welcome:sick:sickstatus" fast="1">Ein Mann in Safarikleidung steht am Waldrand des Grumhel-Dschungels. Er scheint auf etwas zu warten...</phase>
+
+  <a id="welcome" cond="!mission(toxic)|mission(hucure)">Ihn ansprechen.</a>
+  <a id="sick" cond="!curmission(hucure)+mission(toxic)+!mission(hucure)">Ihn ansprechen.</a>
+  <a id="sickstatus" cond="curmission(hucure)">Ihn ansprechen.</a>
+
+  <phase id="welcome" next="who:better:missions">Der Grumhel-Dschungel! Dieses wilde und unberührte Gebiet, das durch seine gefährliche Fauna vor jeglichem Angriff von außerhalb geschützt ist, ist bis heute ein mysteriöses und kontrastreiches Land geblieben, welches jedes Jahr zahlreiche Entdecker anlockt. "Nervenkitzel"-Sequenz. „Auf Entdeckungsreise in einer Wilden Welt“. Das ist heute, das werden Sie heute mit mir erleben!
+  </phase>
+
+  <a id="who" cond="!mission(hucure)">Aber...Wer sind Sie?</a>
+  <a id="better" cond="mission(hucure)">Es scheint Ihnen nun viel besser zu gehen...</a>
+  <a cond="fx(humiss)+(!mission(toxic)|mission(hucure))" id="missions">Auf der Missionsliste nachsehen.</a>
+
+  <phase id="who" next="role">Heinz Fielmann, Journalist und Dokumentarfilmer der Sendung "Expeditionen ins Dinoreich", sowie großer Liebhaber des Dinolandes.</phase>
+
+  <a id="role">Ist das nicht ein bisschen gefährlich für einen Journalisten hier?</a>
+
+  <phase id="role" next="flora:fauna:myst:missions">Nicht für einen Extremjournalisten wie mich. Hier gibt es alles, wonach ich suche: Eine unerforschte Welt, eine vielfältige Flora und Fauna, sowie viele atemberaubende Dinge, die es mit jedem Schritt neu zu entdecken gilt!</phase>
+
+  <a id="myst">Welche Art von Geheimnissen gibt es hier?</a>
+  <a id="fauna">Erzählen Sie mir doch bitte von den Tieren des Dschungels...</a>
+  <a id="flora">Gibt es hier schöne Pflanzen?</a>
+  <a id="fear" cond="!fx(humiss)">Ah...Wollen Sie damit sagen, dass Sie sich nicht trauen, selbst nachzusehen?</a>
+
+  <phase id="myst" next="fear:flora:fauna:missions">Ich weiß es ja noch nicht... Aber...Ich bin davon überzeugt, dass sich atemberaubende Dinge in diesem Dschungel verbergen! Man muss nur den Mut haben sich hineinzuwagen... Sequenz "Mordsangst".</phase>
+
+  <phase id="flora" next="whynot:fauna:myst:missions">Diese tausendjährigen Bäume verbergen ihre schönsten Schmuckstücke vor den Augen der Menschen! Aber wer richtig zu sehen vermag, der wird eine wahre Sinnenfreude erleben! Exotische Gerüche, farbenfrohe Blumen, üppige Vegetation...Der Grumhel-Dschungel, "Ein Abenteuer im Herzen von Mutter Natur". Sequenz "Erforschung"!</phase>
+
+  <a id="whynot">Warum gehen Sie dann nicht in den Dschungel?</a>
+
+  <phase id="whynot" next="fear:other:missions">Sagen wir mal so, es gibt da auch einige nicht sehr einladende Pflanzen...Wie zum Beispiel die "Schwarze Virulente Toxicae" oder die "Riesige Saeva", die auch als "Leberfresserin" bekannt ist...</phase>
+
+  <phase id="fauna" next="flora:myst:missions">Neben den Brombeerstrauchfressern, den Korgonen und den Raubtierfledermäusen, birgt der Grumhel-Dschungel noch andere Gefahren, die deine Vorstellungskraft übersteigen! Dieser Teil des Dinolandes, der zugleich feindliches als auch gelobtes Land ist, lässt sich nicht so leicht zähmen...</phase>
+
+  <phase id="fear" next="explore:other">Äh, wie soll ich sagen...Es ist...sagen wir, ein vorübergehendes technisches Problem. Ich denke, dass es klüger wäre, zuerst eine Aufklärungsmission vorzubereiten, bevor wir uns Hals über Kopf ins Abenteuer stürzen. Ist doch selbstverständlich!</phase>
+
+  <a id="explore">Wenn Sie möchten kann ich Ihnen helfen.</a>
+  <a id="other">Ich habe noch weitere Fragen...</a>
+
+  <phase id="explore" next="missions" effect="humiss">Das ist eine hervorragende Idee! Man muss wirklich sagen, dass hier nicht viele Leute vorbeikommen...Ein bisschen Hilfe wäre mir sehr recht...Sequenz "Action".
+  </phase>
+
+  <phase id="other" next="flora:fauna:myst:missions">Wagst du es, in die unergründlichen Geheimnisse des Grumhel-Dschungels einzutauchen?</phase>
+
+  <phase id="sick" next="problem" fast="1">Als Heinz Fielmann sich umdreht, um dir zu antworten, stellst du mit Entsetzen fest, dass sein Gesicht ganz aufgebläht und über und über von Warzen und Pusteln übersät ist!</phase>
+
+  <a id="problem">Oha! Was ist denn mit Ihnen los?!</a>
+
+  <phase id="problem" next="curesearch">Äh...Guden Dag. Nehmen Sie mir es nift übl, aber If glaube, dass die Flanzen, die Sie mir gebraft haben...wie foll if sagen...äh..tokfisch waren...Ich glaube, dass meine Flanzenallergie foll ausgebrochen ist...Gönnten Sie mir fielleicht helfen eine Gegengift su finden?...</phase>
+
+  <a id="curesearch">Lassen sie mich mal nachsehen...</a>
+
+  <phase id="curesearch" missions="hulot"></phase>
+  <phase id="missions" missions="hulot"></phase>
+  <phase id="sickstatus" next="curesearch">Haben Fie also ein Gegemiddel gefunden?</phase>
+
+  <phase id="better" next="flora:fauna:myst:missions">Das Gegenmittel, das Sie mir gebracht haben war äußerst wirksam! </phase>
+</d>

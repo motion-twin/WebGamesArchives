@@ -1,0 +1,189 @@
+<d place="gmsch" name="Chef Haggis" gfx="gmchoc">
+
+<a id="exit">A plus tard.</a>
+
+<phase id="begin" next="quest:noquest:prof:don:exit">
+Oh oh,  tu viens voir le brave chef Haggis. Qu'est-ce que je peux faire pour toi ? 
+</phase>
+
+<a id="quest" cond="sch(gm)+grade(gm,3)">Besoin d'un coup de main ? </a>
+<a id="noquest" cond="!sch(gm)|!grade(,3)">Besoin d'un coup de main ? </a>
+<a id="prof" >Chef Haggis ? Vous n'êtes pas un professeur de Gemini ? </a>
+
+<phase id="quest" quest="schgmb" frame="happy">
+Oh oh oui, toujours ! 
+</phase>
+
+<phase id="noquest" frame="angry">
+Evidemment, j'ai toujours besoin d'un coup de main. Mais je préfère m'appuyer sur quelqu'un d'un peu expérimenté, reviens me voir un peu plus tard. 
+</phase>
+
+<phase id="prof" frame="happy" next="eat">
+Bien sûr que si. Sinon je ne serais pas ici. Ma spécialité c'est l'alchimie culinaire, c'est pour ça qu'on m'appelle Chef Haggis. Et j'ai un grand projet ! 
+</phase>
+
+<a id="eat">Un projet qui se mange ? </a>
+
+<phase id="eat" frame="angry">
+Oh oh oui. D'ailleurs j'aurais besoin d'aide pour le finaliser. Je cherche un étudiant Gemini un peu débrouillard.
+</phase>
+
+
+
+<!-- ######### -->
+
+<a id="don">J'apporte des éléments pour Gemini.</a>
+
+<phase id="don" next="da:db:dc:dd:de:exit">
+Oh oh. | Tu peux donner certains éléments contre de la réputation envers Gemini.
+</phase>
+
+<a id="da" cond="sch(gm)">Je veux donner des Géoles pour 1 point de réputation. </a>
+<a id="db">Je veux donner des Ancestrasses pour 2 points de réputation.</a>
+<a id="dc">Je veux donner des Pépites pour 3 points de réputation.</a>
+<a id="dd">Je veux donner des Primoterres pour 5 points de réputation.</a>
+<a id="de">Je veux donner des Chroniums pour 60 points de réputation.</a>
+
+<a id="back">J'ai changé d'avis.</a>
+
+<phase id="back" frame="angry" next="don:exit">
+Alors, tu veux donner quoi ? 
+</phase>
+
+<!-- #### -->
+<phase id="da" frame="happy" next="daa:ndaa:dab:ndab:back:exit">
+Chaque Géole te fait gagner 1 point envers l'école. Tu en as combien ? 
+</phase>
+
+<a id="daa" cond="hasobject(Elt(21):1)">Voilà 1 Géole.</a>
+<a id="dab"  cond="hasobject(Elt(21):5)">Voilà 5 Géoles.</a>
+<a id="ndaa"  cond="!hasobject(Elt(21):1)">Voilà 1 Géole.</a>
+<a id="ndab"  cond="!hasobject(Elt(21):5)">Voilà 5 Géoles.</a>
+
+
+<phase id="daa" dtake="Elt(21):1" dreput="gm:1" next="da:back:exit">
+Merci bien. Voici 1 point de réputation.
+</phase>
+
+<phase id="dab" dtake="Elt(21):5" dreput="gm:5" next="da:back:exit">
+Merci bien. Je te donne 5 points.
+</phase>
+
+
+<phase id="ndaa" frame="angry" next="back:exit">
+Tu n'as pas ce qu'il faut, on dirait.
+</phase>
+
+<phase id="ndab" frame="angry" next="back:exit">
+Tu n'as pas ce qu'il faut, on dirait.
+</phase>
+
+
+<!-- #### -->
+<phase id="db" frame="happy" next="dba:ndba:dbb:ndbb:back:exit">
+Chaque Ancestrasse fait gagner 2 points de réputation envers l'école. Combien tu en donnes ? 
+</phase>
+
+<a id="dba" cond="hasobject(Elt(22):1)">Voilà 1 Ancestrasse.</a>
+<a id="dbb"  cond="hasobject(Elt(22):5)">Voilà 5 Ancestrasses.</a>
+<a id="ndba"  cond="!hasobject(Elt(22):1)">Voilà 1 Ancestrasse.</a>
+<a id="ndbb"  cond="!hasobject(Elt(22):5)">Voilà 5 Ancestrasses.</a>
+
+
+<phase id="dba" dtake="Elt(22):1" dreput="gm:2" next="db:back:exit">
+Merci bien. Tu gagnes 2 points.
+</phase>
+
+<phase id="dbb" dtake="Elt(22):5" dreput="gm:10" next="db:back:exit">
+Merci bien. Tu gagnes 10 points.
+</phase>
+
+
+<phase id="ndba" frame="angry" next="back:exit">
+Tu n'as pas ce qu'il faut.
+</phase>
+
+<phase id="ndbb" frame="angry" next="back:exit">
+Tu n'as pas ce qu'il faut...
+</phase>
+
+
+<!-- #### -->
+<phase id="dc" frame="happy" next="dca:ndca:dcb:ndcb:back:exit">
+Chaque Pépite d'or te fait gagner 3 points envers l'école. Tu en as combien ? 
+</phase>
+
+<a id="dca" cond="hasobject(Elt(11):1)">Voilà 1 Pépite.</a>
+<a id="dcb"  cond="hasobject(Elt(11):5)">Voilà 5 Pépites.</a>
+<a id="ndca"  cond="!hasobject(Elt(11):1)">Voilà 1 Pépite.</a>
+<a id="ndcb"  cond="!hasobject(Elt(11):5)">Voilà 5 Pépites.</a>
+
+
+<phase id="dca" dtake="Elt(11):1" dreput="gm:3" next="dc:back:exit">
+Merci bien. Tu gagnes 3 points.
+</phase>
+
+<phase id="dcb" dtake="Elt(11):5" dreput="gm:15" next="dc:back:exit">
+Merci. Tu gagnes 15 points.
+</phase>
+
+
+<phase id="ndca" frame="angry" next="back:exit">
+Tu n'as pas ce qu'il faut.
+</phase>
+
+<phase id="ndcb" frame="angry" next="back:exit">
+Tu n'as pas ce qu'il faut...
+</phase>
+
+<!-- #### -->
+<phase id="dd" frame="happy" next="dda:ndda:ddb:nddb:back:exit">
+Chaque Primoterre te fait gagner 5 points de réputation envers l'école.
+</phase>
+
+<a id="dda" cond="hasobject(Elt(23):1)">Voilà 1 Primoterre.</a>
+<a id="ddb"  cond="hasobject(Elt(23):5)">Voilà 5 Primoterres.</a>
+<a id="ndda"  cond="!hasobject(Elt(23):1)">Voilà 1 Primoterre.</a>
+<a id="nddb"  cond="!hasobject(Elt(23):5)">Voilà 5 Primoterres.</a>
+
+
+<phase id="dda" dtake="Elt(23):1" dreput="gm:5" next="dd:back:exit">
+Merci bien. Voilà 5 points.
+</phase>
+
+<phase id="ddb" dtake="Elt(23):5" dreput="gm:25" next="dd:back:exit">
+Merci bien. Tu gagnes 25 points.
+</phase>
+
+
+<phase id="ndda" frame="angry" next="back:exit">
+Tu n'as pas ce qu'il faut.
+</phase>
+
+<phase id="nddb" frame="angry" next="back:exit">
+Tu n'as pas ce qu'il faut...
+</phase>
+
+
+
+<!-- #### -->
+<phase id="de" frame="happy" next="dea:ndea:back:exit">
+Chaque Chronium te fait gagner 60 points de réputation envers l'école.
+</phase>
+
+<a id="dea" cond="hasobject(Elt(28):1)">Voilà 1 Chronium.</a>
+<a id="ndea"  cond="!hasobject(Elt(28):1)">Voilà 1 Chronium.</a>
+
+
+<phase id="dea" dtake="Elt(28):1" dreput="gm:60" next="de:back:exit">
+Merci beaucoup. Tu gagnes 60 points de réputation.
+</phase>
+
+
+<phase id="ndea" frame="angry" next="back:exit">
+Tu n'as pas ce qu'il faut.
+</phase>
+
+
+
+</d>

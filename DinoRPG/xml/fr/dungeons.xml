@@ -1,0 +1,288 @@
+﻿<dungeons>
+
+	<!-- Money distributed = 1000~1500 per monster -->
+
+	<d id="stepp" name="Les Cavernes Magnétiques" gold="150000" monsters="worm2:worm:scorp:cactus:brig1:brig2:brig3" cond="active(cavmagnet)">
+
+		<enter place="spylon">
+			Alors que s'estompent les claquements des éclairs se propageant sur les Pylônes, vous pénétrez dans les Cavernes Magnétiques, un lieu étrange et donc sûrement dangereux...
+		</enter>
+
+		<exit place="spylon">
+			La lumière du jour vous ébloui après ces heures passés sous terre... Vous n'avez peut-être pas trouvé ce que vous veniez y chercher, mais vous en avez au moins appris plus sur ce mystérieux Mandragore...
+		</exit>
+
+		<!---------------------------- désert 100x100x1 ---------------------------------------------->
+
+		<stage skin="desert">
+
+			<scenario icon="scroll" micon="misc">
+				Journal de Mandragore, page 1 : "Cela fait maintenant plusieurs années que je recherche l'entrée des Cavernes Magnétiques. On dit qu'elles renferment le secret d'un Monde parallèle au notre. En tant qu'aventurier ayant exploré les moindres recoins de Dinoland, c'est ma seule chance de découvrir de nouveaux endroits..."
+			</scenario>
+
+			<scenario obj="hotpan" count="6">
+				Journal de Mandragore, page 2 : "Décidement, les monstres de cette caverne sont bien faibles... Je n'avais pas besoin d'apporter toutes ces provisions, je vais donc en laisser quelques unes ici, cela fera d'autant moins à porter !". Vous trouvez 6 Pains Chaud !
+			</scenario>
+
+		</stage>
+
+
+		<!---------------------------- caverne 100x100x1 ---------------------------------------------->
+
+		<stage skin="cavern3">
+
+			<scenario obj="irma" count="10">
+				Vous trouvez un petit coffre contenant 10 Potions d'Irma ! Mais avez-vous vraiment envie de vous enfoncer plus profondément dans les profondeurs de ces cavernes ?
+			</scenario>
+
+			<scenario obj="irma" count="10">
+				Vous trouvez un petit coffre contenant 10 Potions d'Irma ! Chouette, mais vous auriez peut-être préféré de quoi soigner vos Dinoz ?
+			</scenario>
+
+			<scenario icon="skel">
+				Vous trouvez des ossements qui semblent être ceux d'un aventurier... Vous n'êtes apparemment pas le premier à vous aventurer ici, mais à votre connaissance personne ne s'est jamais vanté d'en être sorti...
+			</scenario>
+
+			<scenario icon="scroll" micon="misc">
+				Journal de Mandragore, page 3 : "Encore une impasse... Je me demande si ces souterrains ont vraiment été creusés par l'homme, ou simplement utilisés comme cachette... En tout cas c'est un vrai labyrinthe, et d'après les informations que m'a donné l'Archidorogon il s'enfonce encore sur de nombreux étages..."
+			</scenario>
+
+		</stage>
+
+		<!---------------------------- crypte 50x50x4 ---------------------------------------------->
+
+		<stage skin="ruin4">
+
+			<scenario icon="scroll" micon="misc">
+				Journal de Mandragore, page 4 : "Il semble que je m'approche de plus en plus de mon but... L'architecture de cette crypte ressemble beaucoup aux descriptions que j'ai pu recueillir sur l'Ile volante des Dorogons... L'Orbe Sombre ne doit pas se trouver très loin..."
+			</scenario>
+
+			<scenario obj="irma" count="10">
+				Vous trouvez un petit coffre contenant 10 Potions d'Irma ! De quoi continuer à explorer cette crypte !
+			</scenario>
+
+			<scenario obj="irma" count="10" icon="skel">
+				Cet aventurier avait apparemment été trop optimiste... Il avait fait le plein de potions d'Irma, mais avait sous-estimé les potions de soin ! Vous retrouvez 10 Potions d'Irma parmi les os... en espérant ne pas finir comme lui.
+			</scenario>
+
+		</stage>
+
+		<!---------------------------- crype finale 30x30x1 ---------------------------------------------->
+
+		<stage skin="ruin4">
+
+			<scenario icon="scroll" micon="misc">
+				Journal de Mandragore, page 5 : "Ce que je cherche se trouve à ce niveau, il ne faut pas que je sorte sans avoir récupéré l'Orbe !"
+			</scenario>
+
+			<scenario obj="feregg" icon="chest" micon="misc">
+				Journal de Mandragore, page 6 : "La voilà ! Je suis certain que c'est elle ! Si les écrits des Anciens se révèlent exact, alors cette Orbe Sombre m'ouvrira l'accès à un Monde parallèle ! Tout au long de mon exploration, j'ai laissé derrière moi des pages de mon journal pour qu'un jour d'autres aventuriers puissent suivre mes traces : je vais au moins leur laisser cet Oeuf de Dinoz rare pour qu'ils ne repartent pas sans rien...". Vous obtenez un Oeuf de Feross !!!
+			</scenario>
+
+		</stage>
+
+	</d>
+
+	<!-- ********************************************************************************************************* -->
+
+	<d id="katak" name="Les Katatombes" monsters="goupi:wolf:gluon:gvert:coq:piraos" gold="20000" cond="active(katatombs)">
+
+		<enter place="skull">
+			En vous promenant dans le cimetière, vous remarquez une tombe qui semble ouverte. Vous suivez un escalier qui s'enfonce sous terre, dans ce qui semble être d'anciennes Katatombes...
+		</enter>
+
+		<exit place="skull">
+			Vous ressortez des Katatombes... on ne peut pas dire que le cimetière est particulièrement agréable, mais au moins vous sentez un léger souffle d'air ce qui change de la puanteur des souterrains.
+		</exit>
+
+		<stage skin="sewer">
+
+			<scenario icon="scroll" micon="misc">
+				Note de Mandragore : j'ai laissé le Parchemin du Démon dans ces Katatombes après en avoir fait une copie. J'espère que les Maîtres Dinoz qui le trouveront ne s'en serviront pas avec de mauvaises intentions, car les Dinoz-Démons sont tout de même très puissants...
+			</scenario>
+
+			<scenario obj="cgold">
+				Vous ouvrer un coffre apparemment abandonné depuis des centaines d'années. Il est vide, mais, intrigué, vous découvrez un double-fond dans lequel se trouvait bien caché un Napodino d'Or !
+			</scenario>
+
+			<scenario obj="irma" count="3">
+				Vous trouvez 3 Potions d'Irma dans un petit coffre, c'est toujours ça de gagné !
+			</scenario>
+
+			<scenario collec="demon" icon="scroll" micon="misc">
+				Vous trouvez le Parchemin du Démon. Il indique l'emplacement d'une étrange boutique de Dinoz, nommée la Boutique Démoniaque, qui se situerai quelquepart à la surface du Cimetière du Crépuscule. Il va d'abord vous falloir sortir des Katatombes...
+			</scenario>
+
+		</stage>
+
+	</d>
+
+	<!-- ********************************************************************************************************* -->
+
+	<d id="mbegin" name="Les égouts du Port Monstreux" cond="mission(mbegin)" monsters="minimo:mosqui" gold="8000">
+		<enter place="mport">
+			Suivant les indications de l'Homme Louche, vous parvenez à rentrer dans les égouts du Port Monstreux. L'endroit est sombre et humide... et surement rempli de nombreux dangers !
+		</enter>
+
+		<stage skin="sewer2">
+
+			<scenario icon="scroll" micon="misc">
+				D'anciens documents d'archéologie vous indiquent qu'il semble exister un mystérieux trésor sur l'Ile des Monstres...
+			</scenario>
+
+		</stage>
+
+
+		<exit place="mfoutp">
+			Vous êtes enfin sorti de cet endroit lugubre ! Comme c'est agréable de revoir enfin la lumière du jour !
+		</exit>
+	</d>
+
+	<!-- ********************************************************************************************************* -->
+
+	<d id="mquetz" name="Le Temple de Quetzaco" cond="scenario(monisl,4+)" monsters="minimo:mosqui:mantoo:ffrutx" gold="40000">
+
+		<enter place="mforst">
+			Vous entrez dans le Temple de Quetzaco... en espérant pouvoir en ressortir un jour !
+		</enter>
+
+		<stage skin="tomb">
+
+			<scenario monsters="singmu">
+				Vous rencontrez un bien étrange animal... Peut-être que le tuer vous permettra d'ouvrir un passage ?
+			</scenario>
+
+			<scenario monsters="singmu"/>
+			<scenario monsters="singmu"/>
+			<scenario monsters="singmu"/>
+
+			<scenario icon="scroll" micon="misc" reload="1">
+				Vous trouvez un parchemin très ancien couvert d'illustrations antiques. Il semble que les monstres comme celui que vous avez rencontré soient les gardiens de ce Temple. Trois nouveaux gardiens doivent être tués avant de pouvoir progresser plus en avant dans le Temple...
+			</scenario>
+
+			<scenario block="1:2:3">
+				Vous entendez un bruit qui semble venir de la partie Ouest des ruines... Un nouveau passage se serait-il ouvert ?
+			</scenario>
+
+			<scenario monsters="singmu:singmu:singmu"/>
+			<scenario monsters="singmu:singmu:singmu"/>
+			<scenario block="6:7">
+				Vous entendez un bruit qui semble venir de la partie Ouest des ruines... Un nouveau passage se serait-il ouvert ?
+			</scenario>
+
+			<scenario obj="surviv">
+				Dans un petit coffre vous trouvez un objet inconnu mais assez sympatique : une Ration de Survie !
+			</scenario>
+
+			<scenario icon="scroll" micon="misc">
+				Note de Mandragore : "C'est Grizorg qui a trouvé en premier les informations sur l'Ile Secrète des Monstres, et maintenant c'est moi qui doit tout explorer tout seul ! Et dire que cet imbécile est sur le point d'être nommé Archidorogon sur l'Ile de ses ancêtres... J'aurais bien aimé y être à cette cérémonie, on y mange bien et on a une superbe vue depuis là-haut !"
+			</scenario>
+
+			<scenario block="0">
+				Vous entendez un bruit : un passage s'est peut-être ouvert ?
+			</scenario>
+
+			<scenario block="4">
+				Vous entendez un bruit : un passage s'est peut-être ouvert ?
+			</scenario>
+
+			<scenario obj="irma" count="10">
+				Dans un petit coffre vous trouvez 10 Potion d'Irma, ainsi qu'un petit schema du Temple : dans la partie Nord où vous êtes actuellement se trouve une clé permettant d'accéder à la partie Sud du Temple, qui protège l'accés à la capitale de Cuzcous.
+			</scenario>
+
+		</stage>
+
+		<exit place="mcuzco">
+			Vous débouchez dans de vastes ruines à ciel ouvert qui semblent ne pas avoir été visitées depuis des siècles...
+		</exit>
+	</d>
+
+	<!-- ********************************************************************************************************* -->
+
+	<d id="mcuzco" name="Ruines de Cuzcous" cond="scenario(monisl,5+)" monsters="minimo:mosqui:mantoo:ffrutx:singmu" gold="120000">
+
+		<enter place="mcuzco">
+			Vous entrez dans les ruines de l'ancienne capitale de l'Empire des Monstres : la puissante Cuzcous !
+		</enter>
+
+		<stage skin="cuzco">
+
+			<scenario icon="scroll" micon="misc">
+				Histoire de Cuzcous, Chapitre 1 : la puissante Cuzcous a été fondée en l'An 1 de l'Empire. Après une conquête rapide de l'île-mère, l'Empire de Cuzcous s'est aussi établi sur le continent, où résident d'étranges singes qui se font appeller "Humains".
+			</scenario>
+
+			<scenario icon="scroll" micon="misc">
+				Histoire de Cuzcous, Chapitre 2 : la superiorité des armées de Cuzcous est telle que désormais la quasi totalité du continent est sous notre domination. Les premiers Empereurs de Cuzcous ont été nommés. Conformément à notre Loi, il s'agit d'un Frutox et d'un Végétox qui prennent ensemble toutes les décisions.
+			</scenario>
+
+			<scenario icon="scroll" micon="misc">
+				Histoire de Cuzcous, Chapitre 3 : grâce à la Pax Cuzcoussienne, le contrôle du commerce a permi à l'Empire d'accumuler de grandes richesses. Les Empereurs Cuzcous IV ont embellis la capitale qui est devenue la plus belle ville du monde, loin devant les cités primitives du continent.
+			</scenario>
+
+			<scenario icon="scroll" micon="misc">
+				Histoire de Cuzcous, Chapitre 4 : les Empereurs Cuzcous IX ont proclamé la lutte contre les Demyon, ces monstrosités nées d'amours interdits entre Cuzcoussiens et Humains. Les prêtres du Dieu Quetzaco ont approuvé cette décision, eux qui luttent depuis longtemps contre ce vice.
+			</scenario>
+
+			<scenario icon="scroll" micon="misc">
+				Histoire de Cuzcous, Chapitre 5 : une maladie contagieuse et mortelle est apparue, on dit qu'elle est propagée par les derniers Demyom survivants. L'Empire est durement affaibli, et nous devons déserter la capitale et nous réfugier dans la Forêt. Les rumeurs rapportent que les Humains du continent se seraient révoltés : l'Empire vivrait-il ses derniers jours ?
+			</scenario>
+
+		</stage>
+
+		<stage skin="crypt2">
+
+			<scenario obj="irma" count="24">
+				Bien rangées dans leur coffre, une double-caisse de 24 Potions d'Irmas semblaient attendre que vous les décrouvriez. Chouette !
+			</scenario>
+
+			<scenario obj="hotpan" count="5">
+				Ah ! Cinq bons pains chaud, quoiqu'un peu durs, voilà de quoi pouvoir poursuivre l'aventure encore plus loin !
+			</scenario>
+
+		</stage>
+
+		<stage skin="crypt2">
+
+			<scenario monsters="cuzbos"/>
+
+			<scenario icon="chest" micon="misc" reload="1">
+				Vous trouvez une vieille tablette gravée sur laquelle sont representés les emblêmes de Cuzcous.
+			</scenario>
+
+			<scenario block="1">
+				Un glissement s'est produit, comme si un passage s'ouvrait. Vous sentez un courant d'air frais, serait-ce la enfin la sortie ?
+			</scenario>
+
+		</stage>
+
+		<exit place="mcuzco">
+			Cela vous fait plaisir de ressortir enfin de cet endroit. Mais de quelle malédiction le Gardien parlait-il exactement ?
+		</exit>
+
+	</d>
+	
+	<!--NEW DONGEON SMOGQUEST -->
+	
+	<d id="labo" name="Laboratoire corrompu" cond="scenario(smog,26+)" monsters="darkii:stroa:sangsa:sangs2" gold="10000">
+		<enter place="labo2">
+			La laboratoire grouille de matière sombre. Des monstres puissants rodent dans ces lieux. Bon courage !
+		</enter>
+		<stage skin="labo">
+			<scenario obj="irma" count="5">
+				Dans un petit coffre vous trouvez 5 Potion d'Irma.
+			</scenario>
+			
+			<scenario obj="hotpan" count="5">
+				Ah ! Cinq bons pains chaud, quoiqu'un peu durs, voilà de quoi pouvoir poursuivre l'aventure ... enfin, peut être.
+			</scenario>
+			
+		</stage>
+		<exit place="labo3">
+			Vous êtes arrivé dans les tréfonds du laboratoire sous-marin.
+			Vous trouvez un ascenseur capable de vous ramener à la surface !
+			Pratique !
+		</exit>
+	</d>
+	
+	
+</dungeons>

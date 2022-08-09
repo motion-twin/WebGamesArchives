@@ -1,0 +1,134 @@
+<quests>
+
+<q from="schjz" id="jza" name="Enchanté, vraiment" cond="grade(jz,3)">
+<begin>Bon. Encore un étudiant qu'il faut prendre par la main... On va voir ce qu'il a dans le bide, celui-là.</begin>
+<talk did="jzaa" />
+<score ratio="1.5" zone="jzboy" title="Faire le score suivant au Boyau central pour prouver au mentor Mortgage qu'on est pas une chochotte et qu'il ne faut pas nous balancer dans les catacombes." />
+<end>Humph... Ok il va falloir s'occuper un peu de toi alors...</end>
+<xp v ="12" />
+<gold v="125" />
+<reput s="jz" v="8" />
+</q>
+
+
+<q from="schjz" id="jzb" name="Un test fracassant" cond="quest(jza)">
+<begin>Je viens de faire une découverte étonnante sur la pyrite. Tu vas m'aider à étudier tout ça...</begin>
+<talk did="jzba" />
+<collect o="CountBlock(1):12" title="Détruire 12 étranges blocs de pyrite pour ramener les fragments au mentor Morgage. Un étrange bloc de pyrite peut être créé en associant 1 potion verte, une jaune, une orange et une potion vide.">
+	<playMod fuo="Empty;Empty;Empty;Empty"  />
+</collect>
+<end>Bien. Donne-moi ces fragments maintenant. Et j'espère pour toi que je vais y découvrir des choses TRES intéressantes...</end>
+<xp v ="14" />
+<gold v="138" />
+<reput s="jz" v="10" />
+</q>
+
+
+<q from="schjz" id="jzc" name="Un Catz ou la vie" cond="quest(jzb)">
+<begin>Un Catz ! Il me faut un Catz ! C'est pour tester la résistance de ma pyrite révolutionnaire ! </begin>
+<talk did="jzca" />
+<talk did="jzcb" title="Trouver quelqu'un qui saurait où trouver un Catz. Qui sait plein de trucs dans le coin, déjà ? " step="1" />
+<collect o="Catz:1" zone="jzzig" title="Trouver 1 Catz à la Ziggourat d'or, pendant une alchimie. Attention, les individus esseulés ont tendance à se montrer timides.">
+	<playMod artft="Catz:20" />
+</collect>
+<end>Bonne nouvelle, c'est du solide cette pyrite : Catz 0 - Pyrite 1.</end>
+<xp v ="10" />
+<gold v="84" />
+<randomrecipe v="300:240" />
+<reput s="jz" v="9" />
+</q>
+
+
+<q from="schjz" id="jzd" name="Ultimatum poilu" cond="quest(jzc)">
+<begin>La société géminite de protection du vivant machin chose cromignon nous a contacté. C'est écrit : "Halte au massacre des Catz gnagnagna... ultimatum... alchimie responsable". Hum... On dirait que je vais devoir faire mes recherches sur des membres de la société de protection, dorénavant...</begin>
+<talk did="jzda" />
+<create o="Elt(16):6;Elt(9):6" title="Récupérer 6 Charbonides et 6 Couivres pour construire des cages à Catz. Chaque élément présent à la fin d'une partie sera collecté. " />
+<use qo="Elt(16):6;Elt(9):6" nolist="1" zone="apvos" qgive="QuestObj(cage):6" action="Donner le métal" text="6 Cages pour piéger des Catz ? D'accord, ça fera... Hein ? C'est pour le mentor Mortgage ? ! Ah euh c'est... C'est gratuit. Oui oui oui. Cadeau pour le mentor Mortgage ! Tu lui diras que les forges de Vostok aiment beaucoup le mentor Mortgage ! " title="Apporter le métal récolté aux forges de Vostok, à Kringdam, pour qu'ils fabriquent les cages." />
+<use qo="QuestObj(cage):2" nolist="1" zone="jzzig" action="Poser les pièges" text="Hop, deux pièges prêts à accueillir un Catz chacun." title="Déposer 2 cages à Catz à la Ziggourat d'or." />
+<use qo="QuestObj(cage):2" nolist="1" zone="jzclai" action="Poser les pièges" text="Les cages sont posées. Plus qu'à attendre." title="Déposer 2 cages à Catz à la clairière X." />
+<use qo="QuestObj(cage):2" nolist="1" zone="jztire" action="Poser les pièges" text="Une bonne chose de faite." title="Déposer 2 cages à Catz au bourg de Tirésias." />
+<end>Bien. Dès qu'on aura piégé assez de Catz, on les enverra par Chouettex au siège de cette société de protection... Ils vont comprendre que tout ce qui est poilu n'est pas forcément..." cromignon". Ah ah.</end>
+<xp v ="13" />
+<gold v="103" />
+<reput s="jz" v="10" />
+</q>
+
+
+<q from="schjz" id="jze" name="Une tête de porte-bonheur" hideCond="quest(jzd)">
+<begin>Bien sûr, en tant qu'alchimiste jeezariste, tu est déjà très fort en transmutations cosmétiques... Comment ça "non"  ? !</begin>
+<talk did="jzea" />
+<talk did="jzeb" title="Se rendre à la salle des chaudrons pour atteindre le rang 2 Pas très doué en transmutation cosmétique, puis retourner au Boyau central voir le mentor Mortgage." />
+<end>Ah. Voilà une belle tête de jeezariste ! Enfin... Une tête de Jeezartiste, en tout cas.</end>
+<xp v ="18" />
+<gold v="400" />
+<reput s="jz" v="10" />
+</q>
+
+
+<q from="schjz" id="jzf" name="Abyssonne le glas" hideCond="quest(jze)">
+<begin>Toi là ! J'ai besoin d'une Abyssonne ! Va me chercher ça vite fait ! </begin>
+<talk did="jzfa" />
+<cauldron r="qeaub" collect="1" add="1" drop="1" title="Créer une Abyssonne à l'aide de la recette Wannabyssoon." />
+<end>Quoi ? C'est pour quoi ? Ah oui, une abyssonne... Oui bon, entre temps j'ai trouvé autre chose pour la remplacer, tu peux la garder.</end>
+<xp v ="14" />
+<item v="Elt(15):1" />
+<reput s="jz" v="11" />
+</q>
+
+
+<q from="schjz" id="jzg" name="Deal polarisé" hideCond="quest(jze)">
+<begin>Kringdam ! Son climat vivifiant ! Ses points de vue à couper  de souffle ! Je suis sûr que tu as envie d'y faire un tour ! </begin>
+<talk did="jzga" />
+<talk did="jzgb" title="Monter votre réputation envers Audepint pour accéder à la plaine de l'armée, à Kringdam. Une fois là-bas, faire l'échange pour le mentor." />
+<end>Ah ah ah, 200 bombes polarisées ! Les autres mentors vont être jaloux. Et ils peuvent se brosser pour que je leur en prête ! </end>
+<xp v ="13" />
+<gold v="164" />
+<reput s="jz" v="14" />
+</q>
+
+
+<q from="schjz" id="jzh" name="La tranquilité d'abord" hideCond="quest(jzf)+quest(jzg)">
+<begin>Raaah ! J'en peux plus de ces sales fouineurs ! Qu'ils disparaissent ! Tous ! ! !</begin>
+<talk did="jzha" />
+<talk did="jzhb"  title="Aller voir les archéologues dans la clairière à l'Ouest du Boyau." />
+<talk did="jzhc"  title="Faire son rapport au mentor Oxyss Mortgage." />
+<create o="Elt(11):1" title="Créer 1 Pépite d'or. Elle doit être présente en jeu à la fin de l'alchimie pour être créée." />
+<talk did="jzhd"  title="Apporter la Pépite au mentor Mortgage." />
+<cauldron r="qtrap" collect="1" add="1" drop="1" title="Créer une Pépite d'or hypnotisante avec la recette Zangraguette." />
+<use qo="QuestObj(goldTrap):1" zone="jzclai" action="Cacher la Pépite piégée" text="Placée dans un buisson en lisière de clairière, le soleil tombe pile dessus et fais briller la Pépite ! Placement tip top !" title="Cacher la Pépite d'or hypnotisante dans les fourrés de la clairière." />
+<talk did="jzhe"  title="Attirer l'attention de l'archéologue" />
+<end>Allez hop aux catacombes la petite brossette ! Et bon débarras ! </end>
+<xp v ="18" />
+<gold v="95" />
+<randomrecipe v="280:210" />
+<reput s="jz" v="12" />
+</q>
+
+
+
+<!-- ###### GEN QUESTS #######-->
+
+<q from="schjz" id="rcatz" race="jz" name="Catz Express" repeat="1" cond="quest(jzc)">
+<begin>Un Catz ! Il me faut un Catz ! File à la Ziggourat d'or, je suis à court de Catz pour mes expériences ! </begin>
+<collect o="Catz:1" zone="jzzig" title="Trouver 1 Catz à la Ziggourat d'or, pendant une alchimie. Attention, les individus esseulés ont tendance à se montrer timides.">
+	<playMod artft="Catz:20" />
+</collect>
+<end>Ah pas trop tôt. Et hop, dans le bocal !</end>
+<xp v ="6" />
+<gold v="120" />
+<reput s="jz" v="12" />
+</q>
+
+
+<q from="schjz" id="rdjza" race="jz" name="" rand="1" repeat="1" hideCond="quest(rcatz)">
+</q>
+
+<q from="schjz" id="rdjzb" race="jz" name="" rand="1" repeat="1" hideCond="sch(jz)+grade(jz,6)">
+</q>
+
+<q from="schjz" id="rdjzc" race="jz" name="" rand="1" repeat="1" hideCond="sch(jz)+grade(jz,10)">
+</q>
+
+
+</quests>
+

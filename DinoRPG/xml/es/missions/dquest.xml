@@ -1,0 +1,232 @@
+﻿<missions>
+
+	<!-- ***************************************************************************** -->
+	<!-- éclaireur rogue ----->
+
+	<m group="dquest" id="dexplo" name="Despejar el camino" limit="35">
+		<begin>«SE BUSCA: mercenario chico o chica para explorar el desierto y asegurar los caminos. Abstenerse candidatos poco motivados.»</begin>
+		<goto v="scross"/>
+		<action v="Tomar notas">Empiezas a escribir tu informe.</action>
+		<goto v="scanyo"/>
+		<action v="Tomar notas">Añades los detalles de esta etapa a tu informe. Por el momento todo parece en calma...</action>
+		<action v="Trepar el muro">Con un gran esfuerzo, consigues subir hasta el altiplano de Tulaho. ¡La vista es magnífica!</action>
+		<actfight act="Tomar más notas" bg="m_step_cliff" monsters="brig1:brig1:brig1">
+			<begin>Mientras te instalas para tomar más notas desde esta posición estratégica, una banda de ladrones te hacen una emboscada y se lanza sobre ti.</begin>
+			<win>Uf, ¡ha estado cerca! Hay que señalar su presencia al Puesto Avanzado...</win>
+		</actfight>
+		<end>A medida que expones tu informe, una inquietud creciente se aprecia en los mercaderes que te escuchan. Varios de ellos se disponen a escribir nuevos anuncios en el tablón.</end>
+		<xp v="70"/>
+		<gold v="1500"/>
+	</m>
+
+	<m group="dquest" id="dcarav" name="La caravana occidental" limit="35" cond="mission(dexplo)">
+		<begin>«Asociación de Mercaderes busca transportista cualificado para un reparto rutinario. Diríjase al intendente Sulef Moisa. Ladrones del desierto abstenerse.»</begin>
+		<talk v="Intendente Sulef Moisa">Orden de misión 51... Ok. Ve a coger las cajas con el material en la Frontera Crepitante. Está en el sur. ¡Siguiente!</talk>
+		<goto v="senter"/>
+		<talk v="Portador">Aquí tienes las cajas. Qué raro, diría que he oído algo en el interior... Llévalos a los Pilares de Magnetita, justo al norte.</talk>
+		<action v="Cajas de reparto">Recoges 4 cajas pequeñas.</action>
+		<goto v="sking"/>
+		<action v="Hacer una pausa">Qué pesadas son estas cajas... ¡uf!</action>
+		<goto v="spylon"/>
+		<talk v="Servicio de reparto">Ah, ¡perfecto! Pero tan sólo necesito una caja. Envía las otras a mi colega de Tutumba. Ve por el lago, es menos peligroso.</talk>
+		<goto v="slake"/>
+		<action v="Hacer una pausa">¡El peso de las cajas se vuelve cada vez más difícil! Haces una pequeña pausa para recuperar el aliento.</action>
+		<actfight act="Ruido sospechoso" bg="st_syphon" monsters="korgon:korgon:korgon:korgon:korgon:korgon">
+			<begin>Las cajas se rompen repentina y estrepitosamente. ¡Una marea de Korgones muy enfadados salen de las cajas gritando!</begin>
+			<win>Parece ser que este reparto escondía un tráfico de Korgones... Tendrás que decírselo al Intendente.</win>
+			<lost>Los Korgones se han escapado. Habrá que encontrarlos de nuevo...</lost>
+		</actfight>
+		<goto v="svillg"/>
+		<talk v="Intendente Sulef Moisa">¿Korgones dices? Hmmm... vale, haré todo lo necesario. Ve a buscar tu paga ahora.</talk>
+		<end>Firmas tu informe de misión para llevarte tu prima.</end>
+		<xp v="100"/>
+		<gold v="3000"/>
+	</m>
+
+	<m group="dquest" id="scorp1" name="Dardo de Scorpwink" limit="35" cond="mission(dexplo)">
+		<begin>«Boticario sin escrúpulos busca Dardo de Scorpwink en buen estado para experimentos sospechosos. Un buen conocimiento en veneno es apreciado para el puesto.»</begin>
+		<talk v="Intendente Sulef Moisa">¿Dardos? ¿Otra vez? Deberías ir hacia la Devorosa del Este. Hay Scorpwinks en las rocas de por allí.</talk>
+		<goto v="stowr1"/>
+		<actfight act="Buscar un Scorpwink" bg="st_devor" monsters="scorp">
+			<begin>No pasa mucho tiempo hasta que te cruzas con un Scorpwink...</begin>
+			<win>Desafortunadamente, el Dardo de este Scorpwink no ha soportado el golpe del combate. Habrá que encontrar otro en mejor estado...</win>
+		</actfight>
+		<actfight act="Buscar más lejos" bg="st_canyon" monsters="scorp:worm">
+			<begin>Al fin te las arreglas para subir el montón de rocas... ¡sin embargo caes de bruces frente a un Scorpwink en pleno combate contra un Longbrik! ¡Se vuelven hacia ti y te atacan!</begin>
+		</actfight>
+		<action v="Recuperar el Dardo">Recoges un Dardo de Scorpwink.</action>
+		<end>Le das el dardo al Intendente. Se encargará de llevárselo al boticario.</end>
+		<xp v="80"/>
+		<gold v="2000"/>
+		<item v="antip" n="2"/>
+	</m>
+
+	<m group="dquest" id="brig1" name="Asegurar la encrucijada" limit="35" cond="mission(dexplo)">
+		<begin>«¡El Consorcio de Mafiosos Asociados ofrece un puesto! Si eres joven, estás en buena salud y te gustan los encuentros enriquecedores, esta oportunidad es para ti. Dirígete a Ali Labah, el explorador.»</begin>
+		<goto v="sking"/>
+		<talk v="Explorador Ali Labah">¿Eres tú al que envían para hacer la limpieza? Conque eso es lo que hay... Bueno. Tienes que limpiar los alrededores de la Encrucijada de los Nómada. Sigue el camino hacia el sur. Cuando te ataquen, eso querrá decir que ya has llegado.</talk>
+		<goto v="scross"/>
+		<kill v="brig1:brig2:brig3" name="Bandas a eliminar" n="15"/>
+		<end>El Consorcio sabe reconocer a sus aliados. Ten, ¡por tu logro!</end>
+		<xp v="80"/>
+		<gold v="3000"/>
+	</m>
+
+	<m group="dquest" id="kitchn" name="El ladrón goloso" limit="35" cond="mission(dexplo)">
+		<begin>«Se busca Dino rápido para un pequeño trabajo en la Ciudadela. Contactar con la cocinera Malika Ramhel.»</begin>
+		<goto v="sking"/>
+		<talk v="Guarda en facción">Malika se encuentra en la cocina del palacio al fondo a la izquierda.</talk>
+		<talk v="Malika Ramhel">¡Gracias por haber respondido a mi anuncio! Desde hace varios días, un pequeño travieso se divierte robándome nuestro almacén de comida... ¡Hay que arreglar el problema lo más rápido posible!</talk>
+		<actfight act="Ir al almacén" bg="m_step_kitchen" monsters="">
+			<begin>No hay nadie aquí. Decides esconder a tu Dino en la oscuridad...</begin>
+		</actfight>
+		<actfight act="Esperar en las sombras" bg="m_step_kitchen" monsters="thief">
+			<begin>Tras varios minutos, oyes unos pasos acercarse... ¡Se trata de un Scorpwink! ¡Lleva comida en sus pinzas!</begin>
+			<win>El Scorpwink ha huido en los laberintos de la Ciudadela!</win>
+		</actfight>
+		<actfight act="Perseguir el scorpwink" bg="m_step_wcavern" monsters="thief2:brig1:brig1:brig3:brig2:brig3">
+			<begin m="brig2">¿Por qué vuelves sin nada? ... Eh... ¡Mira allí! ¡Un intruso!</begin>
+		</actfight>
+		<talk v="Malika Ramhel">Vaya, vaya. Ya nada es lo de antes. Entran, salen, gritan, aquí la gente hace lo que quiere. Bueno, gracias de todos modos. Tu paga te espera en el puesto avanzado Rokky.</talk>
+		<end>Un agente de la Oficina de Servicios te espera con una sonrisa y te da tu prima por este trabajo.</end>
+		<xp v="80"/>
+		<gold v="2500"/>
+		<item v="ration" n="3"/>
+	</m>
+
+	<m group="dquest" id="worms" name="Vermifuga" limit="35" cond="mission(dexplo)">
+		<begin>«La empresa Caravías del Este busca un agente para el mantenimiento de la vía pública. Contacta con el contramaestre Fadua Al-Hepluvit en la obra de la Frontera Crepitante para más información.»</begin>
+		<goto v="senter"/>
+		<talk v="Contramaestre Fadua Al-Hepluvit">¡Eh tú! ¿Qué haces sin casco de protección en mi obra?</talk>
+		<action v="Coger un casco">Te pones un casco de obra.</action>
+		<talk v="Contramaestre Fadua Al-Hepluvit">¿Eres tú el agente de mantenimiento? Bien. Tenemos problemas en la vía que atraviesa los Pilares de Magnetita, en el norte. Ataques de Longbriks. ¿Querrías hacernos un favor? Ve a hacer un poco de limpieza por ahí.</talk>
+		<goto v="spylon"/>
+		<talk v="Obrero de Caravías">Ah, ¡por fin un poco de ayuda! Hemos sufrido otro ataque de Longbriks esta misma mañana. ¡Nos impide avanzar las obras! Y aún peor, pues destruyen las carreteras que construimos con los agujeros que dejan detás de ellos...</talk>
+		<kill v="worm" n="5"/>
+		<talk v="Obrero de Caravías">Gracias por la ayuda. Pero... ¡¿Qué es ese ruido?! ¡Mira! ¡Hay un agujero enorme en el suelo!</talk>
+		<actfight act="Saltar al agujero" bg="m_step_hole" monsters="wormom" allies="buildr">
+			<begin m="buildr">¡Argh! ¡Una Matriarca Longbrik!</begin>
+		</actfight>
+		<talk v="Obrero de Caravías">Creía que dejaríamos nuestras vidas... Gracias por tu ayuda, ¡la empresa Caravías te recompensará! ¡hasta pronto!</talk>
+		<goto v="senter" title="Volver a ver a Fadua Al-Hepluvit"/>
+		<talk v="Contramaestre Fadua Al-Hepluvit">Una Matriarca... No es buena señal. Espero que tu intervención calmará un poco las cosas. ¡Gracias por el favor que nos has hecho!</talk>
+		<end>La empresa Caravías del Este te agradece por tu intervención en nuestras obras. ¡Te deseo lo mejor en tu viaje sobre nuestras carreteras!</end>
+		<xp v="100"/>
+		<gold v="2500"/>
+		<item v="monoch"/>
+	</m>
+
+	<m group="dquest" id="brig2" name="Se busca: Sahalami el Cortador" limit="35" cond="mission(dexplo)">
+		<begin>«SE BUSCA: Sahalami llamado "el Cortador sin piedad". Individuo MUY peligroso culpable de numerosos actos de piratería. No hay ninguna pista sobre su escondite. Se ofrece fuerte recompensa. Dinos débiles abstenerse.»</begin>
+		<goto v="slake" hide="1" title="Encontrar la pista de Sahalami"/>
+		<action v="Caravana atacada">Encuentras los restos de una caravana que parece que ha sido atacada recientemente...</action>
+		<goto v="stowr3" hide="1" title="Encontrar los pilares cerca del Sifón"/>
+		<action v="Montaña de cajas">Observas varios objetos amontonados en la entrada de una oscura caverna. Parecen robados. ... Quizás los culpables se escondan en el interior.</action>
+		<actfight act="Entrar en la guarida" bg="m_step_cave1" monsters="brig2:brig1">
+			<begin m="brig2">¡Intruso! ¡ALEEEEEEERTA!</begin>
+			<win>Has eliminado la patrulla de la entrada.</win>
+		</actfight>
+		<actfight act="Explorar la guarida" bg="m_step_cave2" monsters="brig1:brig1:salami">
+			<begin m="salami">Ja, ja... Mira quién nos ha seguido hasta aquí... ¡cogedle!</begin>
+			<win>¡Has vencido a Sahalami el Cortador!</win>
+		</actfight>
+		<action v="Colgante extraño">Sahalami llevaba un colgante en forma de Cuchillo de cocina. Extraño...</action>
+		<end>Sahalami ya no aterrorizará a nadie nunca más. Lo único que queda es averiguar el misterio de este colgante...</end>
+		<xp v="80"/>
+		<gold v="2500"/>
+		<item v="hotpan"/>
+	</m>
+
+	<m group="dquest" id="hunt1" name="Se busca: Tripú el blandengue" limit="35" cond="mission(penden)">
+		<begin>«SE BUSCA: Tripú, el saqueador blandengue de las noches sin luna. Los últimos informes constatan un ataque en la Devorosa del norte. Es una misión muy peligrosa. Se prevé una bella recompensa.»</begin>
+		<goto v="stowr2" hide="1"/>
+		<action v="Esperar un ataque">Te instalas en el pie de la devorosa para esperar un eventual ataque...</action>
+		<action v="Esperar...">Tras un largo rato... nada ocurre.</action>
+		<talk v="Mercader de paso">¿Buscas a Tripú? Ah no, hoy no lo hemos visto. ¡Y bien contento que estoy!</talk>
+		<action v="Esperar un poco más...">Das vueltas en redondo, sigue sin ocurrir nada...</action>
+		<action v="Persistir en la espera">Pasan largas horas. No ocurre nada.</action>
+		<talk v="Un aventurero que pasa por aquí">¿Tripú?... Nunca había oído hablar de él, lo siento. ¡Hasta pronto!</talk>
+		<action v="Seguir dando vueltas">No puedes más con el cansancio. Ya no sabes qué hacer...</action>
+		<actfight act="Esperar un poco más..." bg="m_step_fog" monsters="brig1:brig2:brig1:tripo2">
+			<begin m="tripo2">Venga chicos, robadme ese muñeco de ahí.</begin>
+			<win>Ves al fin a Tripú, escondido tras sus hombres a pocos pasos de ti...</win>
+		</actfight>
+		<talk v="Tripú">¡No pesas lo suficiente! ¡Márchate!</talk>
+		<actfight act="Hombres" bg="m_step_fog" monsters="brig1:brig1:brig1:tripo2">
+			<begin m="tripo2">¡No debe pasar!</begin>
+		</actfight>
+		<actfight act="¡Ir a por Tripú!" bg="m_step_fog" monsters="brig1:brig1:brig1:tripou">
+			<begin m="tripou">Eres valiente, pero eso no te servirá... ¡acabemos con él!</begin>
+			<win>¡Has vencido a Tripú el saqueador blandengue de las noches sin luna!</win>
+		</actfight>
+		<action v="Colgante en forma de Cuchillo">Tripú llevaba un colgante en forma de cuchillo. Bueno, otra cosa más ya está hecha.</action>
+		<end>¡Has conseguido vencer a Tripú! ¡Enhorabuena!</end>
+		<gold v="3000"/>
+		<xp v="90"/>
+	</m>
+
+	<m group="dquest" id="hunt2" name="Se busca: Bukané el inmatable" limit="35" cond="mission(penden)">
+		<begin>«SE BUSCA: Bukané, el inmatable torturador de los abismos insondables. Se encuentra en su guarida en el Extremo Occidente, ¡es una misión altamente peligrosa!»</begin>
+		<goto v="sband2"/>
+		<actfight act="Encontrar a Bukané" bg="m_step_cave2" monsters="coward">
+			<begin m="coward">¡Aaah! ¡Yo no soy Bukané! ¡Que yo no soy, te digo! Si buscas a Bukané, se fue con la banda a la Ciudadela... Piedad, ¡déjame partir!</begin>
+			<win>Hmmm... Este ladroncillo ha hablado de la Ciudadela... Iré a echar un vistazo por allí.</win>
+		</actfight>
+		<goto v="sking"/>
+		<talk v="Guardia de facción">¿Bukané? ¿Aquí? No, eso es imposible. Ve a mirar si de verdad crees que está ahí dentro.</talk>
+		<actfight act="Registrar la entrada" bg="m_step_citadel1" monsters="">
+			<begin>Se diría que no hay nadie en la ciudadela...</begin>
+		</actfight>
+		<actfight act="Subir al tejado" bg="m_step_citadel2" monsters="">
+			<begin>¡Bonita vista! Pero Bukané no está por aquí tampoco... Continuemos registrando la Ciudadela.</begin>
+		</actfight>
+		<talk v="Guardia de facción">¿Lo has encontrado? Te queda el sótano, pero vamos, que allí no va nadie nunca.</talk>
+		<actfight act="Bajar al sótano" bg="m_step_citadel3" monsters="boukan:brig2:brig2:brig1:brig1">
+			<begin m="boukan">Ssss, alguien viene... ¡Oh, nos han pillado! ¡No les dejemos huir!</begin>
+			<win>¡Has vencido a Bukané y sus hombres!</win>
+		</actfight>
+		<action v="Colgante en forma de Cuchillo">Bukané llevaba un colgante como los de antes. Un jefe de menos.</action>
+		<talk v="Guardia de facción">Fíjate... Bukané.. en nuestra propia casa... ¡Menos mal que estabas aquí!</talk>
+		<end>Has desbaratado los planes de Bukané. Todo apunta a que quería atacar la Ciudadela desde su punto débil...</end>
+		<gold v="3500"/>
+		<xp v="90"/>
+	</m>
+
+	<m group="dquest" id="hunt3" name="Se busca: Cervelah el envenenador" limit="35" cond="mission(penden)">
+		<begin>«SE BUSCA: Cervelah, el envenenador verdoso. Alto, moreno, con capucha y siempre acompañado de su fiel scorpwink. Individuo extremadamente hostil. El Consorcio de los Pillos Asociados ofrece una gran recompensa. Contacte con Abul Tonhor, mercader en los Pilares de Magnetita.»</begin>
+		<goto v="spylon" hide="1"/>
+		<talk v="Abul Tonhor">¿Cervelah? Sí que lo conozco. Su horrible scorpwink me hizo una picadura cuando intentaron robarme... estuve malo durante varias semanas. He oído que su banda se escondía en el sur...</talk>
+		<goto v="slake" hide="1" title="Encontrar a los agresores de Abul Tonhor"/>
+		<action v="Ruidos detrás de las rocas">Avanzas prudentemente hasta el lugar de donde provienen los ruidos y descubres un pequeño grupo de ladronzuelos jugueteando en la orilla del lago de arena-magnetita... ¡Aprovechemos el momento!</action>
+		<actfight act="Atacar el campamento" bg="m_step_lake" monsters="brig3:brig3:brig2:brig3:brig2">
+			<begin m="brig3">¡Cielos!</begin>
+			<win>Ninguna pista de Cervelah... Tiene que estar por aquí...</win>
+		</actfight>
+		<actfight act="Dar la vuelta al Sifón" bg="st_syphon" monsters="coward:brig1">
+			<begin m="coward">Retén a ese Dino, ¡voy a prevenir a Cervelah!</begin>
+			<win>Hay que encontrar a ese bribón, ¡a cualquier precio!</win>
+		</actfight>
+		<action v="Buscar al fugitivo">Nadie. Sin embargo hay rastros en el suelo que van hacia la planicie de Tulaho...</action>
+		<goto v="scanyo" hide="1" title="Ir a ver dónde está el fugitivo"/>
+		<actfight act="Trepar" bg="m_step_cliff" monsters="cowar2:cervel:pikouz">
+			<begin m="cowar2">¡Jefe! ¡Jefe! ¡Ahí está! Nos ha encontrado... ¡matémoslo!</begin>
+			<win>¡Menudo combate! Has vencido a Cervelah el envenenador y a su fiel Pikuz.</win>
+		</actfight>
+		<action v="Colgante en forma de Cuchillo">Cervelah llevaba un colgante con forma de cuchillo...</action>
+		<end>El Consorcio de los Pillos Asociados te agradece tu preciada ayuda. Toma una bonita prima por tu eficacidad.</end>
+		<gold v="3500"/>
+		<xp v="90"/>
+		<item v="antip" n="2"/>
+	</m>
+
+	<m group="dquest" id="penden" name="Un collar misterioso" limit="35" cond="mission(brig2)">
+		<begin>El colgante en forma de cuchillo encontrado en Sahalami es bien extraño... Deberías seguir investigando.</begin>
+		<talk v="Intendente Sulef Moisa">Este colgante no me dice nada. Lo siento.</talk>
+		<goto v="sking" hide="1"/>
+		<talk v="Explorador Ali Labah">Es muy interesante... He visto a algunos jefes de expediciones llevar este colgante. ¡Parece que los ladrones se han asociado! Aquí tienes la lista de los jefes en cuestión.</talk>
+		<action v="Coger la lista">Obtienes los nombres de varios jefes de bandas de ladrones. ¡Probablemente estén ligados a esta asociación de ladrones!</action>
+		<end>Has obtenido la información que necesitabas.</end>
+		<xp v="90"/>
+	</m>
+
+</missions>

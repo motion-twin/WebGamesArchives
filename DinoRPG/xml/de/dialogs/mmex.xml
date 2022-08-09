@@ -1,0 +1,56 @@
+﻿<d place="frcbrt" name="Madame X" gfx="mmex" cond="active(mmex)+(admin()|(mission(fish)+mission(dog)))">
+
+  <phase id="begin" fast="1" next="talk">Als du bei Rohkraft vorbeischaust, triffst du eine Frau, die scheinbar auf dich wartet.</phase>
+
+  <a id="talk">Mit ihr sprechen.</a>
+
+  <phase id="talk" next="talk2">Na sieh mal an, ist dies also dieser junge Zuchtmeister, von dem ich soviel reden hab hören? Es scheint, dass Papy Joe viel Gutes über dich erzählt, so eifrig bemühst du dich seine Missionen zu erfüllen.</phase>
+
+  <a id="talk2">...</a>
+
+  <phase id="talk2" next="missions:question">Da du vertrauenswürdig aussiehst, würde ich dir auch gerne ein paar Missionen geben. Es steht dir frei, sie anzunehmen oder nicht!
+</phase>
+
+  <a id="missions">Missionsliste</a>
+  <a id="question">Aber wer sind Sie?</a>
+
+  <phase id="question" next="question2">Wer ich bin?!? Oh oh oh! Verzeih mir,
+  mein junger Freund, ich hatte komplett vergessen mich vorzustellen! Ich
+  bin... .... ....</phase>
+
+  <a id="question2">Sie sind?</a>
+
+  <phase id="question2" next="double">....Verzeihung...Ich entschuldige mich. Mir ist soeben wieder eingefallen, dass ich dir nicht verraten kann, wer ich bin, denn das kann großen Ärger verursachen! Aber da das trotz alledem sehr unhöflich ist, werde ich dir was Interessantes verraten...</phase>
+
+  <a id="double">Huch?</a>
+
+  <phase id="double" next="double2">Mal gucken....Ich nehme an, dass du bisher gelernt hast, dass jede Fähigkeit einem einzigen der fünf möglichen Elemente entspricht? Zum Beispiel: Wut entspricht dem Element Feuer und Wahrnehmung entspricht dem Element Wasser.</phase>
+
+  <a id="double2">Ja!</a>
+
+  <phase id="double2" next="double3">Nun ja....das ist falsch! Es gibt spezielle Fähigkeiten, die nicht nur mit einem Element gepaart sind, sondern mit ZWEIEN! Man nennt sie die Doppel-Fähigkeiten. Eine Doppel-Fähigkeit kann man nur auf Grundlage eines der beiden Elemente erlernen, aus denen sie sich zusammensetzt. Dazu musst du aber vorher je eine Fähigkeit des jeweiligen Elements beherrschen.</phase>
+
+  <a id="double3">!!!</a>
+
+  <phase id="double3" next="learn:already">Ich verstehe deine Überraschung durchaus, denn es handelt sich um ein gut gehütetes Geheimnis. Um diese Fähigkeiten lernen zu können ist es nichtsdestotrotz nötig, die Doppel-Fähigkeit zu beherrschen. Das ist eine geheime Fähigkeit, die nur die Drach...aber ich habe dir schon zu viel gesagt!</phase>
+
+  <a id="learn" cond="!skill(multi)">Wie kann ich sie erlernen?</a>
+  <a id="already" cond="skill(multi)">Wie kann ich sie erlernen?</a>
+
+  <phase id="learn" next="learn1:learn2:learn3:learn4:learn5:no">Ach, das ist eher einfach. Schau her, ich muss nur "das" machen und...</phase>
+  <a id="learn1" target="dolearn" cond="(skill(waikk)+skill(cocon))|(skill(combus)+skill(zero))">Und?</a>
+  <a id="learn2" target="dolearn" cond="(skill(kamikz)+skill(kaos))|(skill(venge)+skill(talona))">Ah??</a>
+  <a id="learn3" target="dolearn" cond="(skill(resmag)+skill(clone))|(skill(etatpr)+skill(gaia))">Häh???</a>
+  <a id="learn4" target="dolearn" cond="(skill(instin)+skill(paumej))|(skill(marecg)+skill(foudre))">Oh!</a>
+  <a id="learn5" target="dolearn" cond="(skill(sappe)+skill(formev))|(skill(adrena)+skill(elasti))">Was...</a>
+  <a id="no">(aua)</a>
+
+  <phase id="dolearn" skill="multi">Woah! Es hat funktioniert! Siehst du, wie einfach es war? Dein Dinoz beherrscht nun die Doppel-Fähigkeit, herzlichen Glückwunsch!</phase>
+
+  <phase id="no">Nein...es funktioniert nicht....wenn es dich kribbelt, wenn ich "das" mache oder wenn dein Dinoz die Fähigkeiten noch nicht erlernt hat, die dir erlauben, die Doppel-Fähigkeit zu beherrschen, dann wird es nicht	klappen. Besuch mich später wieder, damit wir es noch einmal versuchen können.</phase>
+
+  <phase id="already">Meinst du?.... Mir scheint, dass du es schon gelernt hast! Ha ha ha!</phase>
+
+  <phase id="missions" missions="mmex"></phase>
+
+</d>

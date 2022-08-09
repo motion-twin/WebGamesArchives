@@ -1,0 +1,133 @@
+﻿<d place="vener" name="El Venerable" gfx="dorogon" cond="!(scenario(nimbao,14+)+scenario(nimbao,41-))"> 
+
+	<phase id="begin" next="moi:moi2:bye">
+		¡¡¡¡GWWWWWWWWAAAAAAARGGGGGGGHHHHHH!!!! ¿¿¿¿Quién ooooooosa venir a molestarrrrrrrme durante mi sieeeeeeeestaaaaa????
+	</phase>
+
+	<a id="moi" cond="!fx(vmem)">Esto... Yo.</a>
+	<a id="moi2" cond="fx(vmem)">Esto... Un servidor.</a>
+	<a id="bye">Irse discretamente.</a>
+
+	<phase id="bye" fast="1">
+		Llevas razón. A veces en la vida más vale dejar el orgullo de lado y retirarse rápidamente de forma 
+		estratégica, si es posible sin ser visto...
+	</phase>
+
+	<phase id="moi" next="perdu:chasse:deal:korgon:auto">
+		¿¿UUUHMMMM?? ¿¿¿Qué quieres de mí??? Más vale tener una buena razón, o si no, ¡¡¡ASARÉ VIVO a tu Dino para el desayuno!!!
+	</phase>
+
+	<a id="perdu" target="fight">Me perdí viniendo para acá y...</a>
+	<a id="chasse" target="fight">Soy un Gran Cazador de Dorogon, ¡y vengo a desafiarte!</a>
+	<a id="deal" target="fight">¡Tengo un negocio que proponerte!</a>
+	<a id="korgon">Pues nada, me puse a perseguir un korgón y...</a>
+	<a id="auto" target="fight">¿Te puedo pedir un autógrafo?</a>
+
+	<phase id="korgon" next="next0:next1">
+		¿¿¿UHHMM??? un KORGÓN, ¿¿¿dices??? ¿Dónde, dónde? ¡¡Me has dado hambre!!
+	</phase>
+
+	<a id="next0" target="fight">Ya lo atrapé.</a>
+	<a id="next1">Se me escapó.</a>
+
+	<phase id="next1" next="next2" effect="vmem">
+		¡¡OOhhh!! ¡¡Qué lástima!! ¡Tienes que sentirte muy MOLESTO entonces! ¡Lo entiendo, lo entiendo!
+		En mi juventud se me escapaban a menudo. Ahora los QUEMO directamente, ¡así no tienen tiempo para huir!
+	</phase>
+
+	<a id="next2" target="question">No es mala idea...</a>
+
+	<phase id="fight" fight="vener" collection="vener" effect="vmem:vkill">	
+		¡¡¡GROOOOAAARRH!!! ¡Te las has arreglado bien por esta VEZ! ¡PERO volveremos a VERNOS!
+	</phase>
+
+	<phase id="moi2" next="question">
+		¿UHMMMM? Ah sí, me acuerdo de tu Dino. ¿Qué quieres ahora?
+	</phase>
+
+	<a id="question">Esto...</a>
+
+		<phase id="question" next="force:fight:fight2">
+		Oye tú, comedor de Korgon, ¿puedo QUEMAR algo para ti? O si no, cualquier cosa eh, sin problemas. 
+		¡¡¡Tampoco me pidas demasiado, que te CORTO en trocitos para mi DESAYUNO!!!
+	</phase>
+
+	<a id="force">¡Me gustaría que mi Dino fuera más fuerte!</a>
+		<a id="fight" cond="!fx(vkill)">¡Voy a APLASTARTE!</a>
+	<a id="fight2" cond="fx(vkill)">¡Voy a APLASTARTE!</a>	
+
+	<phase id="force" effect="fflag">
+		¿¿¿UHHMM??? ¿Más FUERTE dices? BUENO... entonces sigue mi consejo: ve a ver al CHAMÁN de Fosalava,
+		¡te ayudará a QUEMAR a tus enemigos!
+	</phase>
+
+	<phase id="fight2">
+		UHMM... tengo HAMBRECILLA... ¿¿¿qué dirías si lo dejamos para un poco más tarde???
+	</phase>
+
+</d>
+
+<d place="vener" name="El Venerable" gfx="dorogon" cond="scenario(nimbao,14+)+scenario(nimbao,41-)"> 
+	<phase id="begin" frame="hurt" next="ok:ko:ko2:force2">
+		GRRrrrr....Grouph...Buarkkk... Sigo esperando tu ayuda.
+		Cuento contigo.
+	</phase>
+	<a id="ok">¡Puedes contar conmigo!</a>	
+	<a id="ko" cond="!fx(vmem)+!friend(mandr2)">Quiero entrenarme.</a>
+	<a id="ko2" cond="fx(vmem)+!friend(mandr2)">Quiero entrenarme.</a>
+	<a id="force2">¡Me gustaría que mi Dino sea más fuerte!</a>
+	
+	<phase id="ok" fast="1" frame="hurt">
+		Te marchas decidido a salvar al Venerable.
+	</phase>
+	<phase id="ko" frame="hurt" next="comb">
+		Muy bien, ¡prepárate!
+	</phase>
+	<a id="comb" cond="!fx(vkill)">¡Allá vamos!</a>
+
+	<phase id="force2" effect="fflag" frame="hurt">
+		¿¿¿UHHMM??? ¿Más FUERTE dices? BUENO... sigue mi consejo: ve a ver al SHAMAN de Fosalava, ¡te ayudará a TOSTAR tus enemigos!
+	</phase>	
+	<phase id="comb" fight="vener" collection="vener" effect="vmem:vkill" frame="hurt">
+		Bien jugado. Estás listo para ir a desafiar los dorogones de Nimbao.
+	</phase>
+	
+	<phase id="ko2" frame="hurt">
+		Ya estás listo para ir a desafiar a los dorogones de Nimbao. ¡Buena suerte!
+	</phase>
+</d>
+
+<d place="dnv" name="Soldado herido" gfx="soldat" cond="fx(vmem)+!fx(ccard)">
+
+	<phase id="begin" fast="1" next="talk">
+		En el borde de una calle, encuentras un Soldado Herido. No parece que esté muy bien, pero sigue consciente.
+	</phase>
+
+	<a id="talk">Hablar con él.</a>
+
+	<phase id="talk" next="give:no">
+		¡................ quero.. pan.... por fa.... vor....!
+	</phase>
+
+	<a id="give">Darle un Pan Caliente al Soldado.</a>
+	<a id="no">No darle nada.</a>
+
+	<phase id="no" fast="1">
+		Te alejas. Después de todo, ¡es peligroso ayudar a un desconocido herido!
+	</phase>
+
+	<phase id="give" next="derien">
+		..... ñam.... glup... ñam... ¡¡¡GRACHIAS!!! ¡¡¡ECHTOY MUCHO MEJOR!!! ¡¡¡ERES MI CHALVADOR!!!
+	</phase>
+
+	<a id="derien">Esto... de nada, ya nos veremos.</a>
+
+	<phase id="derien" effect="ccard" use="hotpan">
+		¡¡¡ECHPERA!!! ¡¡¡TE VOY A RECOMPENSAR!!! Sabes, no me encontraba en echte estado por casualidad...
+		Estuve participando en un entrenamiento echpecial en las Cavernas de Fosalava. Fue muy duro y además
+		cuechta dinero. Sin embargo, ¡¡gracias a ello pude hacerme fuerte!! Coge echta Tarjeta de Miembro para
+		tu Dino, yo ya no la necechito...
+	</phase>
+
+</d>
+

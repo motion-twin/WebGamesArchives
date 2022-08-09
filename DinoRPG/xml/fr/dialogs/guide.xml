@@ -1,0 +1,138 @@
+﻿<d place="dnv" name="Leguide Michel" gfx="michel">
+
+	<phase id="begin" fast="1" next="p1:p2:p3:p4:p5:p6:p7:p8:p9:p10:p11:p12:p13">
+		Michel raconte qu'il a été embauché par le Royaume de Dinoville pour guider les jeunes Maîtres Dinoz
+		dans leurs aventures, mais on ne sait pas trop si c'est vrai ou s'il aime juste aider les gens
+		qui viennent le voir... En tout cas, on peut se fier à ses conseils !
+	</phase>
+
+	<a id="p1" cond="!level(5)+!scenario(intro,0)">Parler avec Michel</a>
+	<a id="p2" cond="level(5)+!(fx(bouee)|fx(matesc))">Parler avec Michel</a>
+	<a id="p3" cond="fx(bouee)+!fx(matesc)">Parler avec Michel</a>
+	<a id="p4" cond="fx(matesc)+!fx(bouee)">Parler avec Michel</a>
+	<a id="p5" cond="fx(matesc)+fx(bouee)+!fx(plaza)">Parler avec Michel</a>
+	<a id="p6" cond="fx(plaza)+!fx(rasca)">Parler avec Michel</a>
+	<a id="p7" cond="fx(plaza)+fx(rasca)+!fx(gant)">Parler avec Michel</a>
+	<a id="p8" cond="fx(plaza)+fx(gant)+!fx(chutes)">Parler avec Michel</a>
+	<a id="p9" cond="fx(plaza)+fx(chutes)+!fx(palmes)">Parler avec Michel</a>
+	<a id="p10" cond="fx(plaza)+fx(palmes)+!fx(sylkey)">Parler avec Michel</a>
+	<a id="p11" cond="fx(plaza)+fx(sylkey)+!collec(magnet)">Parler avec Michel</a>
+	<a id="p12" cond="fx(plaza)+fx(sylkey)+collec(magnet)">Parler avec Michel</a>
+	<a id="p13" cond="!scenario(intro,0)">Je ne sais plus quoi faire !</a>
+
+	<phase id="p13" >
+		Bonjour Maitre-Dinoz ! Oulala, on est perdu ?
+		Et si tu allais voir le forum pour demander de l'aide ?
+		Des centaines de maîtres Dinoz sont passés avant toi, leur expérience te sera fortement utile. D'ailleurs un jour ce sera à ton tour de partager ta grande connaissance de l'Univers DinoRPG !
+	</phase>
+	
+	
+	<phase id="p1" next="p1b">
+		Bonjour Maitre-Dinoz ! Oooh : je vois que ton Dinoz est encore jeune... Le mieux pour l'instant, c'est
+		de te rendre au Nord-Est et d'aller parler à Papy Joe pour obtenir quelques missions et gagner de
+		l'experience...
+	</phase>
+
+	<a id="p1b">(suite)</a>
+
+	<phase id="p1b">
+		Ces missions te permettront de découvrir le Royaume de Dinoville, mais de nombreux autres mondes
+		te seront ensuite accessibles... Reviens me voir dès que ton Dinoz aura atteint le Niveau 5 et je
+		t'en dirai plus à ce moment !
+	</phase>
+
+	<phase id="p2" next="p2b">
+		Félicitations ! Ton Dinoz a atteint le Niveau 5 ! Tu devrais aller parler au Professeur
+		Eugène à l'Université, il te proposera un défi... Mais fait bien attention, c'est assez dangereux...
+		Si ton Dinoz n'est pas en pleine forme, je te conseille d'attendre un peu avant de relever ce
+		défi !
+	</phase>
+
+	<a id="p2b">(suite)</a>
+
+	<phase id="p2b">
+		Une fois que tu auras remporté une victoire et obtenu l'une des deux récompenses du Professeur Eugène,
+		reviens me voir pour que je t'explique comment t'en servir... Bonne chance !
+	</phase>
+
+	<phase id="p3" next="p3b">
+		Oh ! Bravo ! Ton Dinoz a obtenu la Bouée... C'est un objet qui va te permettre d'accéder aux Iles Atlantéinées !
+		Pour t'en servir c'est très simple : rends toi au Port de Prêche au sud, et au moment de se déplacer ton Dinoz
+		pourra nager jusqu'aux Iles Atlantéinées.
+	</phase>
+
+	<a id="p3b">(suite)</a>
+
+	<phase id="p3b">
+		Tu verras, les Iles sont magnifiques, c'est un nouveau monde à découvrir ! Mais n'oublie pas, quand ton Dinoz aura
+		atteint le Niveau 7, de retourner voir le Professeur Eugène à l'Université pour un deuxième défi...
+	</phase>
+
+	<phase id="p4">
+		Oh ! Bravo ! Ton Dinoz a obtenu le Matériel d'Escalade... C'est un objet qui va te permettre d'accéder
+		au Grand Tout Chaud ! Pour t'en servir c'est très simple : rends toi aux Collines Escarpées au nord, et
+		au moment de se déplacer, ton Dinoz pourra escalader jusqu'au Grand Tout Chaud.
+	</phase>
+
+	<phase id="p4b">
+		Tu verras, le Grand Tout Chaud est... chaleureux, c'est un nouveau monde à découvrir !
+		Mais n'oublie pas, quand ton Dinoz aura atteint le Niveau 7, de retourner voir le Professeur Eugène
+		à l'Université pour un deuxième défi...
+	</phase>
+
+	<phase id="p5" next="p5n:p5y">
+		Oh ! Je vois que ton Dinoz possède déjà la Bouée et le Materiel d'Escalade. Ces deux objets te permettent d'accéder aux Iles Atlantéinées à partir du Port de Prêche et au Grand Tout Chaud à partir des Collines Escarpées. As-tu visité ces deux nouveaux mondes ?
+	</phase>
+
+	<a id="p5n">Non, pas encore</a>
+	<a id="p5y">Oui j'en ai déjà fait le tour</a>
+
+	<phase id="p5n">
+		Vraiment ? Tu ne sais pas ce que tu perds... Essaye de nager à partir du Port de Prêche ou d'Escalader à partir des Collines Escarpées pour pouvoir te rendre dans ces nouveaux endroits : tu pourras y trouver de nombreuses missions pour ton Dinoz !
+	</phase>
+
+	<phase id="p5y" next="secret">
+		Vraiment ? Je reconnais en toi l'âme des Grands Aventuriers ! Mais il existe à mon avis de nombreux secrets que tu ne connais pas encore...
+	</phase>
+
+	<a id="secret">Ah ? Et quoi par exemple ?</a>
+
+	<phase id="secret" next="secret2">
+		Voyons voir... Savais-tu par exemple qu'en passant par les petites rues du quartier antique de Dinoville, on peut accéder à la seconde partie du Royaume ? Il s'agit d'un quartier encore peu habité, mais en plein développement ces derniers temps... Dinoplaza !
+	</phase>
+
+	<a id="secret2">Woaahh !</a>
+
+	<phase id="secret2" effect="plaza">
+		Je t'avais bien dit qu'il te restait plein de choses à découvrir ! Va visiter Dinoplaza, et reviens me voir plus tard quand tu auras le temps !
+	</phase>
+
+	<phase id="p6">
+		Tu commences à t'ennuyer ? Dans ce cas, je te conseille d'aller à la chasse au Rascaphandre. Tu trouveras des indices dans les Iles Atlantéinées, et cela te permettra d'accéder au Dôme Soulaflotte, ou la prochaine énigme t'attend !
+	</phase>
+
+	<phase id="p7">
+		Félicitations pour avoir tué le Rascaphandre ! Pour pouvoir traversé les Chutes Mutantes, il te faudra obtenir un objet particulier. Peut-être que l'ArchiSage du Dôme Soulaflotte pourra t'en dire plus à ce sujet...
+	</phase>
+
+	<phase id="p8">
+		Oh ! Tu as obtenu le Gant des Zors ! Félicitations ! Mais il te manque encore quelque chose pour pouvoir traverser les Chutes Mutantes. Un Moine ZenZen pourrait t'être utile si je me rappelle bien.
+	</phase>
+
+	<phase id="p9">
+		Tu peux désormais accéder à la Forêt de Grumhel. J'espère que tu y vivras de nombreuses aventures. Reviens me voir un peu plus tard quand tu auras obtenu l'objet des Korgons.
+	</phase>
+
+	<phase id="p10">
+		Les palmes Korgons vont te permettre de relever le défi de Bao Bob. Mais je te conseille d'être bien préparé car ça ne sera pas du gâteau !
+	</phase>
+
+	<phase id="p11">
+		Maintenant que tu as obtenu la clé de la porte de Sylvenoire, tu vas enfin pouvoir accéder aux Steppes Magnétiques ! De nombreux dangers t'y attendent, j'espère que tu y survivras...
+	</phase>
+
+	<phase id="p12">
+		Tu fais désormais parti des Grands Aventuriers. Il existe sûrement encore de nombreux secrets cachés de Dinoland, mais je n'ai plus rien à te conseiller pour l'instant. Reviens me voir à l'occasion, peut-être que j'aurai de nouvelles informations à ce moment-là !
+	</phase>
+	
+</d>

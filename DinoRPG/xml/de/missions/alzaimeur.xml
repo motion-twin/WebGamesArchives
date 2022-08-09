@@ -1,0 +1,88 @@
+﻿<missions>
+
+	<!-- ***************************************************************************** -->
+	<!-- Al Zaimeur missions ----->
+
+	<m group="alzaim" id="fiesta" name="Al's Party" limit="10">
+		<begin>Ich möchte gerne eine Party in Dinotown veranstalten. Ich habe alles im Griff, aber ich möchte, dass du mir bei ein Paar Kleinigkeiten hilfst. Es wäre super, wenn du dich beeilen könntest, da die Party bald beginnt. Komm zurück zu mir, falls du die Hilfe brauchen solltest.</begin>
+		<goto v="marche"/>
+		<talk v="Isabella" gfx="isabella"> Ob ich mit dir auf eine Party kommen will? Mmmhhh ....... Ja! Na klar! Ich muss nur noch ein neues Kleid finden.</talk>
+		<goto v="dnv"/>
+		<talk v="Anna Tomie" gfx="infirmiere" background="1">Du willst mich auf eine Party einladen? Aber was wird mit meinen Dinoz sein solange ich weg bin? Obwohl.. ich wohne nicht weit weg, ich könnte jederzeit sagen, dass ich heim gehe! Ich nehme deine Einladung an.</talk>		<goto v="fosslv"/>
+		<talk v="Soft Shaman" gfx="shaman">Yo! Eine Party ohne den Schamanen ist doch keine Party! Kann ich noch'n paar Leute mitbringen? Keine Angst Alter, die sind total cool. Yeahhhh! Ich halt's kaum aus, sehn' uns später. Hau rein Kumpel.......</talk>
+		<goto v="vener"/>
+		<talk v="Miss Bao" gfx="baobabe">Ich bin so froh dich wieder zu sehen mein junger Dinozmeister! Eine Party sagst du?! So süß von dir, dass du an mich denkst! Es ist Jahre her, seitdem ich das letzte Mal getanzt habe.</talk>
+		<goto v="gorges"/>
+		<talk v="Popotholeler" gfx="spelele">Hallo! Eine Party in Dinoville? Ja, gute Idee. Wenn ich in die Stadt gehe wärmt mich das bestimmt ein wenig auf. Außerdem könnte mir mein Tutor bei dem Bericht für die Universität helfen.</talk>
+		<goto v="auree"/>
+		<talk v="Nicolas Mulot" gfx="hulot">Dieses mysteriöse Land verlassen um die Leser vom Hellno Magazin zu treffen... Mutter Natur verlassen für ein erkundetes Land. Mal richtig feiern. Hört sich gut an! Ich werde da sein.....</talk>
+		<goto v="camp"/>
+		<talk v="Dian Korgsey" gfx="dian">Meine geliebten Korgonen alleine lassen? Das Camp verlassen? Ich weiß nicht ob ich das tun kann... Wer soll den verschollenen Touristen helfen? Wer warnt sie vor den Gefahren die vor ihnen liegen? Das wird nicht angenehm für sie sein..</talk>
+		<end>Du bist der Beste! Es werden eine Menge Leute auf der Party sein und du hast es sogar geschafft ein paar schöne Frauen einzuladen! Hier, du hast dir eine Belohnung verdient.
+		</end>
+		<xp v="80"/>
+		<gold v="3000"/>
+	</m>
+ 
+	<m  group="alzaim" id="mcrame" name="Merguez or Nothing" limit="10" cond="mission(fiesta)">
+		<begin>Die Gäste werden weite Reisen hinter sich haben, sie werden ein Festmahl brauchen um in Topform zu sein. Leider habe ich nichts für sie zu essen. Denkst du, dass du auch das Essen besorgen kannst?</begin>
+		<goto v="rashpk"/>
+		<talk v="Merguez Seller" gfx="merguez">Ich würde dir gerne ein paar von den Goblinwürsten geben, aber dieses Mal musst DU MIR einen Gefallen tun! Hilf mir die Gauner loszuwerden. Sie wollen meine Würstchen klauen!</talk>
+		<action v="Merguez Thief">
+			Du siehst einen Dieb der eine Goblinwurst klauen will!
+		</action>
+		<actfight act="Fight!" monsters="vol1:vol1:vol1">
+		</actfight>
+		<action v="Merguez Thieves">
+			Oh nein, einer der Diebe hat die anderen Mitglieder der Gang alarmiert!
+		</action>
+		<actfight act="Fight!" monsters="vol1:vol1:vol1:vol1:vol1:vol1:vol1">
+		</actfight>
+		<talk v="Merguez Seller" gfx="merguez">Danke sehr! Hier, nimm........ es sind genug Würstchen für einen ganzen Monat!</talk>
+		<end>Ausgezeichnet, die Würstchen sind ein echter Leckerbissen! Aber sie werden alle total durstig machen, aber genau das ist was wir wollen! Hier, nimm deine Belohnung.</end>
+		<xp v="40"/>
+		<gold v="1000"/>
+	</m>
+
+	<m  group="alzaim" id="alcool" name="Al Cool" limit="10" cond="mission(fiesta)">
+		<begin>Aaach Mist! Ich hab immer noch einen Kater von meiner Party gestern Nacht und hatte deshalb keine Zeit die Getränke zu holen! Kannst du das für mich übernehmen?</begin>
+		<goto v="fountj"/>
+		<action v="Fetch Water">
+			Du holst ein wenig Wasser vom Jungbrunnen, nur um Papy Joe glücklich zu machen.
+		</action>
+		<goto v="fosslv"/>
+		<talk v="Soft Shaman" gfx="shaman">Yo! Lava Sirup? Klar hab ich davon was. Ich geb dir was wenn du mir dafür drei geschliffene Silex und ein Feuerzeug für meine Pfeife besorgst. Ansonsten kann ich das Teil ja nicht rauchen!</talk>
+		<useingr v="art" n="3"/>
+		<action v="Collect Lava Syrup">
+			Der Schamane hat dir das Lava Sirup gegeben. Jetzt brauchst du nur noch ein wenig Eis für die perfekten Cocktails!
+		</action>
+		<goto v="gorges" hide="1" />
+		<talk v="Popotholeler" gfx="spelele">
+			Hey! Ich hab gehört, dass du etwas Kühles suchst um deinen Getränken den letzten Schliff zu verpassen? Hast du drüber nachgedacht ein paar Eiswürfel zu holen? Du musst dich nur hinknien um welche zu holen, aber ich empfehle dir große Eiswürfel zu nehmen, ansonsten schmelzen sie zu schnell. Du wirst ein wenig graben müssen um die Größten zu finden, du hast doch eine Schaufel oder?!</talk>
+		<dig>
+			Du hast einen riesigen Eiswürfel gefunden. Es scheint so als ob du die Cocktails heute machen wirst!
+		</dig>
+		<end>Perfekt! Jetzt haben wir alles um eine riesige Party zu schmeißen. Deine Belohnung hast du dir redlich verdient!</end>
+		<xp v="40"/>
+		<gold v="1000"/>
+	</m>
+
+	<m group="alzaim" id="minuit" name="Licence To Party" limit="10" cond="mission(mcrame)+mission(alcool)">
+		<begin>Du musst Al's Party überleben......</begin>
+		<action v="Party Time" wait="1">
+			Die Party ist in vollem Gange. Du versuchst heimlich zu verschwinden, aber Al schnappt dich und zwingt dich die ganze Nacht zu tanzen.......
+		</action>
+		<end>Du hattest eine wirklich gute Zeit auf der Party. Sie war ein voller Erfolg, somit hast du dir eine dicke Belohnung verdient.</end>
+		<xp v="20"/>
+	</m>
+
+	<m group="alzaim" id="magne" name="Magnetischer Exzess" limit="10" cond="mission(minuit)">
+		<begin>Während der Party hat Al so sehr getanzt, dass er alle Papagaragaks von den Magnetischen Steppen angelockt hat. Schnell, besiege sie um die Bewohner zu beschützen!</begin>
+		<goto v="dnv"/>
+		<actfight act="Kill The Rapacarapaces" monsters="rapac2:rapac2"/>
+		<end>Gut gemacht! Du hast die Stadt gerettet, was nicht einfach war, denn diese Monster waren sehr stark!</end>
+		<xp v="100"/>
+		<gold v="1000"/>
+	</m>
+	
+</missions>

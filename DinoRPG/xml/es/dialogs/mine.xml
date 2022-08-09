@@ -1,0 +1,86 @@
+﻿<!-- QUETE DU MINEUR : pelle utilisable une fois et réparable -->
+
+<d place="corail" name="Minero Coraliano" gfx="mineur" cond="fx(bouee)">
+
+	<phase id="begin" next="yes:nothing:repair:nothing2:repair2:give:no">
+		¡Pinc! ¡Pinc! ¡Pinc! Pffff este coral está más duro que el cemento, ¿sabías eso?
+	</phase>
+
+	<a id="yes" cond="!fx(pelle)+!fx(brkpel)+!fx(pelle2)+!fx(brkpe2)">Sí</a>
+	<a id="nothing" cond="fx(pelle)">Sí</a>
+	<a id="repair" cond="fx(brkpel)">Sí</a>
+	<a id="nothing2" cond="fx(pelle2)">Sí</a>
+	<a id="repair2" cond="fx(brkpe2)">Sí</a>
+	<a id="give" cond="scenario(magnet,8)+!fx(corail)">¡Genial!</a>
+	<a id="no">No</a>
+
+	<phase id="yes" next="thanks" effect="pelle">
+		Ah, ¿ya lo sabías? Ten, te presto una vieja pala para que tú también puedas excavar.
+		Está en muy mal estado, ¡se romperá si la usas! Pero se trata de mi gran pala de la buena suerte. Con ella
+		podrás encontrar los tesoros más grandes de Dinoland. Bueno, ¿qué se dice?
+	</phase>
+
+	<phase id="nothing" next="thanks">
+		Entonces, ¿te gusta mi pala? ¿Qué se dice?
+	</phase>
+
+	<phase id="repair" next="thanks" effect="pelle" noeffect="brkpel">
+		Ah, ¿eres tú? ¿Entonces rompiste mi pala? No te muevas... ¡Mira! ¡Ya te la he arreglado!... ¿No olvidas algo?
+	</phase>
+
+	<phase id="nothing2" next="thanks">
+		Entonces, ¿te gusta mi pala con mango ergonómico? ¿Qué dices...?
+	</phase>
+
+	<phase id="repair2" next="thanks" effect="pelle2" noeffect="brkpe2">
+		Ah, ¿eres tú? ¿Entonces rompiste mi pala? No te muevas... ¡Mira! ¡Ya te la he arreglado!... ¿No olvidas algo?
+	</phase>
+	
+	<a id="thanks">¡Gracias!</a>
+
+	<phase id="thanks">
+		¡Qué simpático eres! Vuelve cuando se rompa la pala, te la arreglaré.
+	</phase>
+
+	<phase id="no" next="next">
+		Pfff, pues sí que es duro de excavar. Es por eso que hacen falta tíos grandes y fuertes como yo para cumplir con esta profesión.
+	</phase>
+
+	<a id="next">Pues sí...</a>
+
+	<phase id="next" next="next2">
+		Sí, ¡por supuesto que sí! ¡Mira mis músculos! Estoy nominado en los Corales Awards, este año en la categoría "Minero de brazos fuertes".
+	</phase>
+
+	<a id="next2">¿De verdad...?</a>
+
+	<phase id="next2" next="next3">
+		Claro, ¡te lo digo yo! Pero todavía tengo que trabajar muy duro si quiero ser como mi ídolo...
+	</phase>
+
+	<a id="next3">...</a>
+
+	<phase id="next3" next="qui">
+		¡¿Y entonces?! ¿No me preguntas por mi ídolo?
+	</phase>
+
+	<a id="qui">(suspiro)... ¿y quién es tu ídolo?</a>
+
+	<phase id="qui" next="ok">
+		¿Pues quién si no? ¡Sylverter Staline por supuesto! Tres veces ganador de los Corales Awards, en las categorías
+		"Músculos Definitivos" y "Réplica que mata". Es un tío super guay, ¡siempre consigue eliminar a sus oponentes!
+	</phase>
+
+	<a id="ok">¡Pues entonces sí que es fuerte!</a>
+
+	<phase id="ok">
+		Sí, es el más fuerte. ¡Aquellos buenos tiempos! Podría hablar de eso durante horas...
+		Pero bueno, tengo que dejarte. ¡A trabajar! ¡Pinc! ¡Pinc! ¡Pinc!
+	</phase>
+
+	<phase id="give" effect="corail">
+		¡Ajá! Veo que a ti también te gusta el Coral duro como el cemento. Ten, aquí tienes una muestra. ¡Lo rompí
+		hace un momento!
+	</phase>
+
+</d>

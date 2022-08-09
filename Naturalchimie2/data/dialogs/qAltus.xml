@@ -1,0 +1,86 @@
+<d place="grenie" name="Altus l'alchimiste" gfx="gualtus">
+
+<phase id="begin" next="quest:green:quoi:exit">
+Oui ? Qu'est-ce que tu veux ?
+</phase>
+
+<a id="quest">Je viens voir ce qu'il me reste à faire.</a>
+<a id="quoi" cond="quest(bours)">Qu'est-ce que vous faites dans ce vieux grenier, au fait ? </a>
+<a id="green" cond="quest(bours)">J'ai une question :  c'est quoi ce bouton vert à droite qui me suit partout ?  </a>
+<a id="exit">Rien, je me suis trompé.</a>
+
+<phase id="quest" quest="altus">
+%happy%Tiens, la liste est là. 
+</phase>
+
+<phase id="quoi" next="odeur">
+%happy%C'est simple. Je profite de ma retraite bien méritée pour m'adonner %happy%à ma plus grande passion ! Les alchimites ! 
+</phase>
+
+<a id="odeur">Les alchimites ? Vos passions, c'est pas les vieux greniers et les odeurs corporelles agressives ?</a>
+
+<phase id="odeur" next="qui">
+Sniff sniffff... tu trouves que ça sent un peu fort, ici ? 
+Hum, c'est vrai que j'aère pas souvent. Mais si j'ouvrais les fenêtres elles s'en iraient toutes ! %angry%* TOUTES ! 
+</phase>
+
+<a id="qui">Non mais attendez là. C'est quoi des alchimites d'abord ? </a>
+
+<phase id="qui" next="ok">
+Oula... Il est temps de s'intéresser un peu au monde qui t'entoure si tu veux devenir alchimiste, hein.
+Tu vois les lueurs vertes tout autour de nous ? Eh bien ce sont des alchimites. C'est une variété de mite spéciale qui se nourrit exclusivement d'éléments alchimiques. 
+C'est un petit insecte très intéressant. 
+</phase>
+
+<a id="ok">Ah d'accord. Je croyais que c'était des petits spots lumineux pour faire joli.</a>
+
+<phase id="ok" next="fini">
+Non, il s'agit de mon sujet d'étude scientifique ! Je prépare une thèse révolutionnaire sur ces petites bêtes. %happy%De quoi ridiculiser tous les pseudo-savants de la guilde ! 
+Ces guignols qui croient que seuls les pépites d'or sont dignes d'intérêt ! 
+</phase>
+
+<a id="fini">C'est super. Et vous bossez là-dessus depuis longtemps ?</a>
+
+<phase id="fini" next="mmh">
+%angry%Ca va faire 30 ans. Mais l'aboutissement est proche ! Bientôt je présenterai mes travaux et les autres alchimistes me baiseront les pieds ! ! ! 
+</phase>
+
+<a id="mmh">Mmh, ça fait rêver. Vous me préviendrez quand vous aurez fini ? Je ne voudrais pas rater ça.</a>
+
+<phase id="mmh" next="begin">
+Cela va de soi. Tout le royaume viendra voir la grande victoire de la science entomologique. 
+%happy%En tout cas, n'hésite pas à revenir me voir plus tard si tu as des questions sur les alchimites.
+</phase>
+
+
+<!-- ############ -->
+<phase id="green" frame="happy" next="triche">
+Ah, le bouton vert ! | C'est le [super système ultime d'aide aux alchimistes]. Ca indique la prochaine étape pour avancer tes quêtes ou en trouver une nouvelle. 
+</phase>
+
+<a id="triche">Mais on a même plus besoin de réfléchir avec un truc pareil, c'est plus du jeu ! </a>
+
+<phase id="triche" next="vrai:unab">
+Depuis quand les alchimistes réfléchissent ? | Moi en tout cas, jamais ! | Le bouton vert et le trajet indiqué sur la carte, tu peux les désactiver si tu veux... Mais quand tu auras mon âge tu ne pourras plus t'en passer, tu verras. 
+</phase>
+
+<a id="unab">Ah oui j'aimerais bien désactiver ce truc. On fait comment ? </a>
+<a id="vrai">Mmmh, c'est vrai. Ca va m'habituer pour quand je serai vieux. </a>
+
+<phase id="unab" frame="happy" url="/user/account">
+Va sur ta [page personnelle] et clique sur le bouton [paramètres compte], tu pourras désactiver plein de trucs. | Tiens je suis sympa, je t'envoie directement sur la bonne page. | Hop !
+</phase>
+
+<phase id="vrai" frame="happy">
+Tu verras : IN | DIS | PEN | SABLE ! 
+</phase>
+
+
+
+
+
+
+
+
+	
+</d>

@@ -1,0 +1,26 @@
+-cp client/src
+-cp com
+-cp ../base/com
+-cp tpl/fr
+-swf client/swf/_code.swf
+-swf-header 600:400:30:FFFFFF
+--flash-strict
+-swf-version 8
+-D swf-mark
+-D mt_prot_encode
+-main Boot
+-swf-version 8
+-resource xml/sysPatterns.xml@xml_sysPatterns
+-resource xml/lang.client.fr.xml@xml_lang_fr
+-resource xml/fsNames.fr.xml@xml_fsNames_fr
+-resource xml/names.fr.xml@xml_names_fr
+-resource xml/tutorials.fr.xml@xml_tutorials_fr
+-resource xml/texts.fr.xml@xml_texts_fr
+-resource xml/lang.client.en.xml@xml_lang_en
+-resource xml/fsNames.en.xml@xml_fsNames_en
+-resource xml/names.en.xml@xml_names_en
+-resource xml/tutorials.en.xml@xml_tutorials_en
+-resource xml/texts.en.xml@xml_texts_en
+-resource xml/_crypt.xml@soundData
+-cmd "swfmake -f client/swfmake.xml"
+-cmd "copy client\swf\client.swf www\swf\ /Y"

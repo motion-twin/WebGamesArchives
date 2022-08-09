@@ -1,0 +1,138 @@
+﻿<d place="dnv" name="Michael The Guide" gfx="michel">
+
+	<phase id="begin" fast="1" next="p1:p2:p3:p4:p5:p6:p7:p8:p9:p10:p11:p12:p13">
+		Michael claims he has been hired by the Dinotown Kingdom to guide young Dinoz Masters
+		through their adventures, but the word on the street is that he just likes helping and was never officially hired by anyone.
+		Whatever the truth is, you can rest assured that you can always trust his advice.
+	</phase>
+
+	<a id="p1" cond="!level(5)+!scenario(intro,0)">Speak with Michael</a>
+	<a id="p2" cond="level(5)+!(fx(bouee)|fx(matesc))">Speak with Michael</a>
+	<a id="p3" cond="fx(bouee)+!fx(matesc)">Speak with Michael</a>
+	<a id="p4" cond="fx(matesc)+!fx(bouee)">Speak with Michael</a>
+	<a id="p5" cond="fx(matesc)+fx(bouee)+!fx(plaza)">Speak with Michael</a>
+	<a id="p6" cond="fx(plaza)+!fx(rasca)">Speak with Michael</a>
+	<a id="p7" cond="fx(plaza)+fx(rasca)+!fx(gant)">Speak with Michael</a>
+	<a id="p8" cond="fx(plaza)+fx(gant)+!fx(chutes)">Speak with Michael</a>
+	<a id="p9" cond="fx(plaza)+fx(chutes)+!fx(palmes)">Speak with Michael</a>
+	<a id="p10" cond="fx(plaza)+fx(palmes)+!fx(sylkey)">Speak with Michael</a>
+	<a id="p11" cond="fx(plaza)+fx(sylkey)+!collec(magnet)">Speak with Michael</a>
+	<a id="p12" cond="fx(plaza)+fx(sylkey)+collec(magnet)">Speak with Michael</a>
+	<a id="p13" cond="!scenario(intro,0)">I don't know what to do anymore!</a>
+	
+	<phase id="p13" >
+		Hello Dinoz Master! Oh dear, are we lost?
+		Have you tried going to the forum for help?
+		Hundreds of Dinoz Masters have come before you, you should try to benefit from their experience. One day, it will be your turn to share your knowledge of the DinoRPG universe with others !
+	</phase>	
+	
+	<phase id="p1" next="p1b">
+		Hello Dinoz Master! It seems that your Dinoz is still young .... your best plan
+		would be to journey to the North-East. Find Grandpa Joe, he'll send you on missions which will gain valuable experience for your Dinoz....
+	</phase>
+
+	<a id="p1b">Missions?</a>
+
+	<phase id="p1b">
+		The missions will also help you to explore the Dinotown Kingdom. There are other regions of Dinoland to explore
+		but we'll deal with that another time. Come back to me when your Dinoz has reached level 5 and
+		I'll explain further!
+	</phase>
+
+	<phase id="p2" next="p2b">
+		Congratulations! By reaching Level 5 your Dinoz has shown how experienced he has become!
+		If you speak to Professor Eugene at the University, he'll offer you two challenges.
+		But be careful. These challenges are quite dangerous. If your Dinoz is not very strong
+		I would wait a while before taking these tests!
+	</phase>
+
+	<a id="p2b">Ok, and then what?</a>
+
+	<phase id="p2b">
+		Once you've earned a reward from Professor Eugene, return here and I'll explain how to use it. Good luck!
+	</phase>
+
+	<phase id="p3" next="p3b">
+		Congratulations! Your Dinoz has obtained the Buoy ... It will enable you to access the Atlanteid Islands!
+		In order to use it go to the Frish Port, which is located to the south, your Dinoz will then be able to swim to the Atlanteid Islands.
+	</phase>
+
+	<a id="p3b">Why am I going to the islands?</a>
+
+	<phase id="p3b">
+		The Islands are beautiful, you'll see for yourself. But there's more than that: the islands are a great place to get experience. Oh! Don't forget, when your Dinoz
+		reaches Level 7, return to the University and Professor Eugene will send you on a second challenge....
+	</phase>
+
+	<phase id="p4">
+		Congratulations! Your Dinoz has obtained the Climbing Gear ... This will enable you to access
+		the Big All-Hot! To use it, it's really easy: travel north to the Precipitous Hills,
+		where your Dinoz will be able to climb up to the Big All-Hot.
+	</phase>
+
+	<phase id="p4b">
+		Although it has a fearful name, the Big All-Hot is actually rather.......welcoming!
+		But don't forget, once your Dinoz reaches the Level 7, return to
+		the University and Professor Eugene will send you on a second challenge.
+	</phase>
+
+	<phase id="p5" next="p5n:p5y">
+		I see that your Dinoz is already in possession of the Buoy and the Climbing Gear. These two objects will allow you to access the Atlanteid Islands
+		and the Big All-Hot. Have you visited these two new areas yet?
+	</phase>
+
+	<a id="p5n">No, not yet</a>
+	<a id="p5y">Yes, I've been to both</a>
+
+	<phase id="p5n">
+		Really? You don't know what your missing ... swim to the Atlanteid islands from the Frish Port or climb from the Precipitous Hills to the Big All-Hot.
+		You must go, you'll be able to carry out loads of new missions!
+	</phase>
+
+	<phase id="p5y" next="secret">
+		Really? It seems you have the same spirit as the Grand Adventurer! But I still think there are many secrets which you are still yet to uncover.
+	</phase>
+
+	<a id="secret">Oh yeah? Like what?</a>
+
+	<phase id="secret" next="secret2">
+		Let me see ... Ah! Here's a good example. Did you know that by passing through the little, winding streets of Dinotown's antique market, you can access another part of the kingdom?
+		It's not fully developed yet, so not many people live there. It's called Dinoplaza!
+	</phase>
+
+	<a id="secret2">Wow! You're right I never knew that!</a>
+
+	<phase id="secret2" effect="plaza">
+		I told you there were still a lot of things to discover! Go and visit Dinoplaza! Come back here when you have time!
+	</phase>
+
+	<phase id="p6">
+		Are you bored? Don't worry, I've got a great idea. Go and hunt the Scorpscuba. You'll find clues on how to find it on the Atlanteid Islands.
+		Then you'll gain access to the Underwater Dome where the next mystery awaits you!
+	</phase>
+
+	<phase id="p7">
+		Congratulations! You killed the Scorpscuba! In order to pass through the Mutant Falls, it seems you need a particular item. Maybe the Archsage of the Underwater Dome will be able to tell you more....
+	</phase>
+
+	<phase id="p8">
+		Congratulatiosn! You've found the Zors Glove! Unfortunately it still seems you're missing something in order to pass through the Mutant Falls. Maybe a ZenZen Monk will be able to help you.
+	</phase>
+
+	<phase id="p9">
+		You can now access Grumhel Forest. I hope you carry on your adventures there. Come back to me once you've found the Korgons item.
+	</phase>
+
+	<phase id="p10">
+		The Korgon fins allow you to undertake Bao Bob's challenge. Make sure you prepare well, the mission won't be easy!
+	</phase>
+
+	<phase id="p11">
+		Now that you've obtained the key to the Blacksilva door. You'll finally be able to access the Magnetic Steppes! Many dangers are waiting for you there, I hope you survive them all....
+	</phase>
+
+	<phase id="p12">
+		You are now one of the Grand Adventurers. There still are many secrets hidden throughout Dinoland, but unfortunately I have no more advice for you at this point in time. Come back to me soon, maybe I'll have more information for you!
+	</phase>
+
+</d>

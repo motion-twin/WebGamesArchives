@@ -1,0 +1,44 @@
+<!-- ***************************************************************************** -->
+<!-- Saul, Nimbao l'île volante ----->
+	
+<d place="icite" name="Ser" gfx="etre" cond="!curmission(sos)+scenario(nimba2,50-)">
+	<phase id="begin" next="non:oui:mot" dialect="arbori">
+		Hola viajero.
+		¿Qué puedo hacer por ti?
+	</phase>
+	
+	<a id="non" cond="!uvar(dicarb)"> No entiendo nada.</a>
+	<a id="oui" cond="uvar(dicarb)"> Pareces cansado.</a>
+	<a id="mot" cond="scenario(nimbao,34)"> ¿vcbdr QpObmc?</a>
+	
+	<phase id="non" frame="stop" fast="1">
+		Te marchas pues no entiendes ni una palabra de ese lenguaje indecifrable...
+	</phase>
+	
+	<phase id="oui" dialect="arbori">
+		[Estoy al servicio de mis maestros. Ellos hicieron de mí un gran gladiador.
+		Mi función consistía en entretenerlos al luchar contra mis congéneres.]
+		[Tendría que jubilarme debido a mis heridas. Ya no soy capaz de hacer nada más...
+		Me gustaría hacer algo útil... ya nadie quiere nada de mí...]
+	</phase>
+	<phase id="mot" fast="1" frame="stop" >
+		Ha entendido lo que dices, pero no sabe qué responderte...
+		Viendo su rostro, esa palabra no le trae nada a la mente.
+	</phase>
+</d>
+
+<d place="icite" name="Ser" gfx="etre" frame="happy" cond="!curmission(sos)+scenario(nimba2,51+)" >
+	<phase id="begin" next="oui2">
+		Hola viajero.
+		¿Qué puedo hacer por ti?
+	</phase>
+	
+	<a id="oui2"> Se te ve con mucha energía.</a>
+	
+	<phase id="oui2">
+		[En otras épocas me dedicaba a arrancar aplausos con mis combates, hoy me han asignado la educación de nuestros jóvenes arboris y dorogones.
+		Les enseño el arte de la guerra y de la poesía.]
+		[Eso hace de mí alguien importante en nuestra ciudad, estoy muy agradecido a vuestro nuevo ArchiDorogón por haberme dado esta oportunidad.]
+	</phase>
+</d>
+	

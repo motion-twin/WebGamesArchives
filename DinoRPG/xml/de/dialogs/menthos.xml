@@ -1,0 +1,48 @@
+<!-- dialogue menthos fin de nimbao 2 -->
+
+	
+<d place="observ" gfx="sage_mentos" name="Weiser Menthos" cond="scenario(nimba2,51+)">
+	<phase id="begin" next="sage">
+		Ich bin hin und hergerissen zwischen meiner Funktion als Ratgeber und meiner Arbeit hier. Glücklischerweis kenne ich einen schnellen Weg von hier zum Palast.
+		Seitdem alle Grenzen eingerissen wurden, ist es viel einfacher, in Nimbao herumzureisen...
+	</phase>
+
+	<a id="sage">repektvoll verbeugen</a>
+	
+	<phase id="sage" gfx="sage_mentos" name="Weiser Menthos" background="1" next="ques3:ques4">
+		Guten Tag, junger Dinozmeister.
+		Stell mir ruhig jede Frage, die dir in den Sinn kommt.
+	</phase>
+
+	<a id="ques3">Es gibt wahrlich viele Bücher hier!</a>
+	<a id="ques4">Kannst du mir die wahre Geschichte von Dinoland erzählen?</a>
+	
+	<phase id="ques3" next="ques3:ques4:merc"  gfx="sage_mentos" name="Weiser Menthos" background="1">
+		[Das Observatorium dient uns Dorogons als Bibliothek. Seit dem Anbeginn der Zeit haben wir alles aufgeschrieben, was sich auf der Oberfläche ereignet. Und seit der Abspaltung, alles was sich auf der Insel im Himmel und auf der Oberfläche ereignete.]
+		[Wusstest zu zum Beispiel, dass Nimbao nichts anderes ist als der Gipfel der Großen Dauerhitze? Er wurde vor vielen tausend Jahren in den Himmel geschleudert. Lange vor dem Untergang der Jazz-Insel.]
+		[Die Insel schwebt wegen der Beschaffenheit des Gesteins, das den Boden von Nimbao bildet. Wir haben seitdem einen fantastischen Blick auf das Geschehen auf der Oberfläche gehabt, das sich ohne unsere Hilfe recht chaotisch entwickelt hat.]
+	</phase>
+	
+	<phase id="ques4" next="ques3:ques4:merc"  gfx="sage_mentos" name="Weiser Menthos" background="1">
+		[Mit der Zeit haben wir den Menschen viele grundlegende Dinge wie das Feuer und eine Reihe anderer nützlicher Tricks beigebracht. Wir lehrten sie, wilde Dinoz zu trainieren und sie zu studieren. Seitdem leben diese Kreature mit euch in Harmonie.]
+		[Die ganze Geschichte steht in den Büchern hier im Obersavatorium. Unglücklicherweise sind sie in der alten Sprache der Dorogon verfasst, die nur noch die weisesten Dorogons beherrschen.]
+		[Ich übersetze sie Seite für Seite weiter, sodass künftige Generationen die Geschichte von Dinoland kennenlernen können.]
+	</phase>
+	
+	<a id="merc">Danke für all die Informationen.</a>
+	
+	<phase id="merc" fast="1" frame="stop">
+		Der weise Menthos widmet sich wieder seiner Arbeit, die ihm augenscheinlich großen Spaß macht.
+	</phase>
+</d>
+
+<d place="palais" gfx="sage_mentos" name="Weiser Menthos" background="2" cond="scenario(nimba2,51+)">
+	<phase id="begin">
+		[Mandragore hat den Posten des Erzdorogon abgelehnt. Du findest ihn bei sich zu Hause, er erwähnte eine Belohnung.]
+		[Ich werde bei Meister Pistazie bleiben. Nun, da ihn der Rat der Dorogon zum Erzdorogon ernannt hat, wird er all unsere Weisheit brauchen, 
+		um seine Aufgaben erfolgreich zu bewältigen. Ich glaube an ihn, alles wird gut werden!]
+	</phase>
+</d>
+
+
+

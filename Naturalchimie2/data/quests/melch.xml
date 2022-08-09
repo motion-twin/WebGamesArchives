@@ -1,0 +1,54 @@
+<quests>
+
+<q from="melch" id="melcha" name="Préparation de commande">
+	<begin>Tu veux être un de mes alchimistes intérimaires ? C'est un travail passionnant et bien rémunéré, foi de Melchior Inc. ! </begin>
+	<talk did="melchaa" />
+	<create o="Elt(7):8;Elt(9):2" zone="chouet" title="Créer 8 Flaums et 2 Couivres chez Chouettex. Chaque élément présent à la fin d'une partie sera collecté. " />
+	<use qo="Elt(7):8;Elt(9):2" zone="skmedi" action="Donner les éléments" text="Ah tu m'apportes ma commande de chez Melchior Inc. ? Merci. Les éléments ont l'air en bon état, pas de problème." title="Apporter les éléments récoltés à la Super Supérette de la Médina, à l'Ouest." />  
+	<end>Donne-moi le bon de livraison pour la compta. Ta première mission s'est parfaitement déroulée, on dirait. Bon travail !</end>
+	<xp v ="8" />
+	<gold v="85" />
+	<reput s="sk" v="6" />
+</q>
+
+<q from="melch" id="melchb" name="Chauffe, Melchior" cond="quest(melcha)">
+	<begin>Ah, je viens de recevoir ma commande mensuelle de Kringdam ! Si tu as envie de voir du pays c'est le travail idéal : Il faut apporter des charbonides au Faubourg pour alimenter la chaudière centrale du village. Tant que tu seras là-bas, récupère une commande facile : il faut prendre 10 blocs de Pyrite au Faubourg et les livrer au B.A.F.A.</begin>
+	<create o="Elt(16):16" title="Créer 16 Charbonides. Chaque élément présent à la fin d'une partie sera collecté. " />
+	<use qo="Elt(16):16" qgive="CountBlock(1):10" zone="apfbg" action="Donner les Charbonides" text="Tu apportes le stock de Charbonides ? Super, on va pouvoir relancer la chaudière du village. Ah attends, si tu travailles pour Melchior Inc. j'ai ça pour toi : 10 blocs de pyrite à livrer au B.A.F.A. Tu sais, c'est le bâtiment administratif en dessous de la capitale." title="Se rendre au Faubourg Audepint à l'Est du Royaume pour livrer les Charbonides. En profiter pour prendre la Pyrite." />  
+	<use qo="CountBlock(1):10" zone="gubafa" action="Donner les Pyrites" text="10 Pyrites du Faubourg Audepint ? Mmmmh... Ah oui, c'est pour l'homologation mensuelle du label 'Pyrite de Kringdam, appellation d'origine contrôlée'. Pose ça là. " title="Se rendre au B.A.F.A. pour livrer les blocs de pyrite." />  
+	<end>Excellent. Tu es un intérimaire consciencieux et efficace, dis donc.</end>
+	<xp v ="10" />
+	<gold v="96" />
+	<reput s="sk" v="7" />
+</q>
+
+
+<q from="melch" id="melchc" name="Protection corporelle" cond="quest(melcha)">
+	<begin>Tu tombes bien, j'aurais besoin en urgence d'une protection corporelle efficace.</begin>
+	<talk did="melchca" />
+	<talk did="melchcb" step="1" title="Se rendre à l'Orée du bois, au nord du royaume, pour rencontrer le Chef Haggis." />
+	<collect o="CountBlock(1):80" zone="apfbg" title="Récupérer 80 blocs de pyrite pendant ses alchimies au Faubourg Audepint.">
+		<playMod replace="1" artft="Elts(2,null):1000;Elts(2,CountBlock(1)):1300;Elts(2,CountBlock(2)):1700;Elts(2,CountBlock(3)):1000;Dynamit(0):45;Dynamit(1):30;Alchimoth:10" />
+	</collect>
+	<use qo="CountBlock(1):80" qgive="QuestObj(gras):5" zone="gmoree" action="Donner les Pyrites" text="Oh oh oh, très bien. Melchior Inc. peut être fier de son intérimaire. Attends 2 minutes que j'applique mon procédé secret... ggggnnn ah ! Voilà. Cinq blocs de gras tout neuf, top qualité ! " title="Apporter les blocs de pyrite au Chef Haggis, à l'orée du bois." />  
+	<end>Alors, le Chef Haggis a pû résoudre notre problème ? Oui ? Excellent ! C'est la première fois que je suis vraiment heureux devant 5 blocs de gras.</end>
+	<xp v ="11" />
+	<gold v="115" />
+	<reput s="sk" v="9" />
+</q>
+
+
+<q from="melch" id="melchd" name="Indice 40, ne colle pas aux doigts" cond="quest(melchc)">
+	<begin>Plus qu'à faire la recette de la crème solaire et fini la peau qui pèle ! </begin>
+	<talk did="melchda" />
+	<cauldron r="qcutan" collect="1" add="1" drop="1" title="Créer un flacon de crème solaire. Les Valvéoles demandées par la recette peuvent être trouvées en jouant à l'école Gémini au nord, ou au Boyau central chez Jeezara." />
+	<end>Je vais me badigeonner tout de suite ! J'espère qu'elle va être vraiment super efficace, ça me permettra de quitter un peu mon parasol.</end>
+	<xp v ="10" />
+	<gold v="150" />
+	<randomrecipe v="300:250" />
+	<reput s="sk" v="8" />
+</q>
+
+
+
+</quests>

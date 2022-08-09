@@ -1,0 +1,184 @@
+<d place="skobs" name="Arun & Daworld" gfx="skdaft">
+
+<a id="exit">Au revoir.</a>
+
+<phase id="begin" next="beginb">
+Frère, il semble que nous ayons un visiteur ! 
+</phase>
+
+<phase id="beginb" frame="happy" next="beginc">
+Il semblerait oui. | Bonjour, visiteur. 
+</phase>
+
+<phase id="beginc" frame="happy2" next="obs:who:rules:exit">
+Que viens-tu faire au magnifiscent grandiloquent époustouflant observatoire d'Arun Daworld ? 
+</phase>
+
+<a id="obs">Je... Je suis où là ? </a>
+<a id="who">Qui-êtes vous ? </a>
+<a id="rules">C'est moi ou l'alchimie est un peu bizarre, chez vous ? </a>
+
+<!-- ############# -->
+<phase id="obs" frame="happy" next="obsb">
+Tu es à l'observatoire d'Arun Daworld ! Le plus perfectionné du Royaume ! | C'est ici que sans relâche, nous apprivoisons le cosmos. | Tu es d'accord, frère ? 
+</phase>
+
+<phase id="obsb" frame="happy2" next="util">
+Tout à fait, frère. | Nous apprivoisons le cosmos. | Sans relâche aucune. 
+</phase>
+
+<a id="util">Et ça sert à quoi d'apprivoiser le cosmos ? Vous pourriez faire de l'alchimie comme tout le monde, non ? </a>
+
+<phase id="util" frame="normal"  next="utilb">
+Oh oh oh. | Frère, notre visiteur est bien ignorant. 
+</phase>
+
+<phase id="utilb" frame="happy" next="utilc">
+Oui frère. | Bien, bien ignorant. | Crois-tu que notre statut d'astronome nous interdise l'alchimie ? Tout est lié en ce monde, visiteur ! 
+</phase>
+
+<phase id="utilc" frame="happy2" next="ah:boss">
+Tout à fait. Tout est lié. | L'astronomie et l'alchimie plus que tout autre chose, d'ailleurs. 
+</phase>
+
+<a id="ah">Ah bon. </a>
+<a id="boss">Vous travaillez pour qui, alors ? </a>
+
+<phase id="ah" next="who:rules:exit">
+Ben oui. 
+</phase>
+
+<phase id="boss" frame="normal" next="tres">
+Nos recherches sont destinées à l'école Shang-Kah. | Cette école a toujours été très intéressée par nos études... N'est-ce pas, frère ? 
+</phase>
+
+<phase id="tres" frame="happy" next="ahr">
+Ooooh oui. | Très intéressée, très intéressée. Shang-Kah est notre commanditaire et mécène le plus... généreux. 
+</phase>
+
+<a id="ahr">Oui bon ! Bref ! | C'est quoi vos études ? ! | Je veux savoir ! </a>
+
+<phase id="ahr" frame="normal" next="ahrb">
+Il veut savoir, frère. 
+</phase>
+
+<phase id="ahrb" frame="happy" next="ahrc">
+Je vois bien, frère. | Pouvons-nous lui parler de nos travaux ? 
+</phase>
+
+<phase id="ahrc" frame="happy2" next="grnx">
+Il est arrivé jusqu'à nous, frère. | On peut supposer qu'il pourra comprendre....
+</phase>
+
+<a id="grnx"> *Ahr GrnxFruxnn ! ! ! </a>
+
+<phase id="grnx" frame="normal" next="vent">
+Mon frère et moi étudions les vents stellaires. | Les vents venus de l'espace, tellement puissants qu'ils parviennent jusqu'à nous !
+</phase>
+
+<phase id="vent" frame="happy" next="sk">
+Les vents stellaires ont un impact direct sur l'alchimie de notre Royaume ! Nos études le prouvent ! | Bientôt, nous pourrons contrôler l'alchimie comme bon nous semble !
+</phase>
+
+<a id="sk">Vous voulez dire que Shang-Kah pourra contrôler l'alchimie comme bon lui semble ? </a>
+
+<phase id="sk" frame="happy2" next="who:rules:exit">
+Mmmh... | Oui, c'est un peu ça. 
+</phase>
+
+
+
+
+<!-- ############# -->
+<phase id="who" frame="normal" next="da">
+Je suis [Arun].
+</phase>
+
+<phase id="da" frame="happy" next="nous">
+Et moi, je suis [Daworld].
+</phase>
+
+<phase id="nous" frame="happy2" next="cost">
+Nous sommes les maîtres de l'observatoire du désert Arun Daworld ! 
+</phase>
+
+<a id="cost">C'est marrrant vos costumes. </a>
+
+<phase id="cost" frame="normal" next="hard">
+Il s'agit de costumes spéciaux de notre invention. N'est-ce pas, frère ? 
+</phase>
+
+<phase id="hard" frame="happy" next="bet">
+Exactement, frère. | Ces costumes nous permettent de travailler plus dur. 
+</phase>
+
+<phase id="bet" frame="happy2" next="fast">
+Et mieux, frère. 
+</phase>
+
+<phase id="fast" frame="normal" next="strong">
+Plus vite, aussi.
+</phase>
+
+<phase id="strong" frame="happy" next="ouib">
+Et plus fort, frère.
+</phase>
+
+<a id="ouib">Hum. Vous m'en prêtez un ? </a>
+
+<phase id="ouib" frame="normal" next="obs:rules:exit">
+Ah non. | On ne prête pas nos affaires. 
+</phase>
+
+
+
+<!-- ############# -->
+<phase id="rules" frame="happy" next="vv">
+Il s'agit des vents stellaires. Ils perturbent l'alchimie de l'observatoire. 
+</phase>
+
+<phase id="vv" frame="happy" next="sauf">
+C'est ça, frère. | Nous sommes à l'endroit exact où les vents stellaires convergent sur notre royaume. Le meilleur emplacement pour notre observatoire ! Sauf que...
+</phase>
+
+<a id="sauf">Sauf que... ?</a>
+
+<phase id="sauf" frame="happy2" next="res">
+Sauf que cela perturbe tout ! | L'alchimie est difficile en ce lieu car les vents stellaires changent tout le temps. Et c'est eux qui définissent où va atterrir ton élément transmuté !
+</phase>
+
+<a id="res">Ah d'accord, c'est ça le truc bizarre.</a>
+
+<phase id="res" frame="normal" next="casq">
+Nos études de ces vents nous ont permis de faire deux choses : 
+</phase>
+
+<phase id="casq" frame="normal" next="rose">
+La première c'est de toujours porter un casque, car l'alchimie fait vite mal à la tête, ici. 
+</phase>
+
+<phase id="rose" frame="happy" next="ru">
+Et la seconde, c'est d'utiliser une {rose des vents stellaires}. | Tu l'as vue si tu as fait une alchimie ici.
+</phase>
+
+<phase id="ru" frame="happy" next="oeil">
+La rose des vents donne à tout moment le sens des vents stellaires. | Elle t'indique où va aller ton nouvel élément. 
+</phase>
+
+<phase id="oeil" frame="happy2" next="pq">
+Garde toujours un oeil sur elle ! 
+</phase>
+
+<a id="pq">Mais pourquoi faire une alchimie ici si c'est beaucoup plus dur qu'ailleurs ? </a>
+
+<phase id="pq" frame="normal" next="xp">
+Il y a le challenge, évidemment. L'observatoire est prisé de l'élite des alchimistes. | Et puis...
+</phase>
+
+<a id="xp">Et puis quoi ? </a>
+
+<phase id="xp" frame="happy" next="exit">
+Ici, chaque alchimie fait gagner {50 pour cent d'expérience supplémentaire} par rapport au reste du royaume.
+</phase>
+
+</d>

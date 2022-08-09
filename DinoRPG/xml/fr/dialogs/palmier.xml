@@ -1,0 +1,54 @@
+<!-- ***************************************************************************** -->
+<!-- Saul, Nimbao l'île volante ----->
+	
+<d place="icite" name="Palmier" gfx="palmier" cond="!curmission(sos2)+scenario(nimba2,50-)">
+	<phase id="begin" next="non:mot" dialect="arbori">
+		Grrr, J'en ai marre, tout m'énerve !
+		[Ce collier qui nous empêche de faire ce que l'on veut.]
+		[Ces gens qui ne font rien pour que ça change, les Dorogons qui se croient nos maîtres !
+		Et cette île, c'est toujours la même chose... C'est nul !]
+	</phase>
+	
+	<a id="non" cond="!uvar(dicarb)">?</a>
+	<a id="mot" cond="scenario(nimbao,34)">vcbdr QpObmc ?</a>
+	
+	<phase id="non" frame="stop" fast="1">
+		Vous partez loin de lui, il semble en colère mais vous ne savez pas pourquoi...
+	</phase>
+	
+	<phase id="oui" next="clair" dialect="arbori">
+		je veux explorer le monde moi !
+		Je le vois bien qu'il y a quelque chose en dessous !
+	</phase>
+	
+	<a id="clair">
+		Il y a plein d'endroit où aller !
+	</a>
+	
+	<phase id="clair" next="go" dialect="arbori">
+		Un jour, je partirai de cette île maudite, et j'explorerai le monde entier !
+		Je serai le plus grand aventurier de tous les temps !
+	</phase>
+	
+	<a id="go">
+		Bon courage !
+	</a>
+	
+	<phase id="go" fast="1" frame="stop">
+		Malgré vos encouragements, Palmier paraît encore en colère,
+		Serait-ce ce que l'on appelle l'âge rebelle ?
+	</phase>
+	
+	<phase id="mot" fast="1" frame="stop">
+		Il a compris ce que vous avez dit, mais ne sait quoi vous répondre...
+		Visiblement, ce mot n'éveille rien en lui.
+	</phase>
+</d>
+	
+<d place="icite" name="Palmier" gfx="palmier" frame="happy" cond="!curmission(sos2)+scenario(nimba2,51+)">
+	<phase id="begin">
+		Grrr, J'en ai marre, tout m'énerve !
+		[C'est gentil de dire que nous sommes libres, mais si on peut pas voyager hors de l'île avant la majorité sans les parents, à quoi ça sert !]
+		[...La rue, la rue, la rue nous appartient !]
+	</phase>
+</d>

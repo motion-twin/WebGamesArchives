@@ -1,0 +1,10 @@
+# SWF
+-swf ./swf/pnjViewer.swf
+-main PnjViewer
+-cp ./
+-cp ../../../website/src/com/
+-cp ../lib/
+--flash-strict
+-D swf-mark
+-cmd %SWFMAKE% -f make_pnj.xml
+-cmd copy swf\pnjViewer.swf ..\..\..\website\www\swf\pnjViewer.swf

@@ -1,0 +1,1278 @@
+<!-- ***************************************************************************** -->
+<!-- Caushemesh (Condition d'accès : Avoir terminé le scénario des steppes) --->
+
+<!-- Partie 0 La brume d'éher -->
+
+<d place="sking" name="Rey de los Rokkys" gfx="rocking" cond="scenario(magnet,13)+scenario(caush,0)+scenario(intro,6)+(admin()|active(caush))">
+	<phase id="begin" next="quest:noquest">
+		[¡Qué tal, amigo mío! ]
+		[Hmm... ¿Has notado esa espesa bruma proveniente de los confines de las estepas?]
+		[Eso me tiene muy preocupado. Nunca antes la bruma había tenido semejantes proporciones.]
+		[Es muy raro. Por favor, investiga eso de inmediato.]
+	</phase>
+	<a id="quest">Voy ahora mismo.</a>
+	<a id="noquest">Estoy muy ocupado en este momento.</a>
+
+	<phase id="noquest" fast="1">
+		Lo que suceda en las estepas te tiene sin cuidado, después de todo, una simple bruma no podría ser tan peligrosa.
+	</phase>
+	<phase id="quest" fast="1" scenario="caush:1">
+		Caminas en dirección a los confines de las estepas, te da mucha curiosidad saber lo que sucede allá...
+	</phase>
+</d>
+
+<d place="scaush" name="..." gfx="rodeur3" background="6" frame="gone" cond="scenario(caush,1)">
+	<phase id="begin" next="zarbe">
+		Te encuentras con una bruma opaca.
+		No la habias visto la última vez que estuviste por aquí...
+		Aquí hay gato encerrado...
+	</phase>
+	<a id="zarbe">Debo seguir investigando.</a>
+	<phase id="zarbe" fast="1" scenario="caush:2">
+		Esta bruma es misteriosa, ya que estás aquí será mejor investigar a fondo.
+		Quizás las personas que viven por el lugar tengan alguna información.
+	</phase>
+</d>
+
+<d place="scampw" name="Capitán" gfx="wteamc" cond="scenario(caush,2)">
+	<phase id="begin" next="info" fast="1">
+		El capitán del Equipo-W observa la bruma desde lejos.
+		Se le ve preocupado, dando vueltas en círculos y murmurando a solas.
+	</phase>
+	<a id="info">¿Es esa bruma lo que te preocupa tanto?</a>
+	<phase id="info" next="plus">
+		[Hola Maestro de Dinos.]
+		[No solo me preocupa, sino que ella anuncia acontecimientos terribles en un futuro no muy lejano.]
+	</phase>
+	<a id="plus">¿Qué sabes acerca de esa bruma?</a>
+	<phase id="plus" next="retour">
+		[Siempre ha estado presente en las fronteras de las estepas, cubría Caushemesh para ocultar su faz a los habitantes de Dinoland.]
+		[Recientemente, su densidad ha aumentado y ha comenzado a cubrir poco a poco el resto de las estepas.]
+		[Si sigue así, se convertirá en una espesa nube que cubrirá todo, no veremos la luz del día y... será el fin.]
+	</phase>
+	<a id="retour">¡El fin de Dinoland!</a>
+	<phase id="retour" scenario="caush:3">
+		[Exactamente, después de las estepas, la jungla, después las islas, hasta llegar a Dinovilla...]
+		[Hay que hacer algo para evitar este cataclismo, nuestro frágil mundo no debe sufrir un desastre tan violento.]
+		[Debes hablar con el Rey, ¡dile que todos los habitantes de Dinoland deben movilizarse ante esta amenaza!]
+	</phase>
+</d>
+
+<d place="sking" name="Rey de los Rokkys" gfx="rocking" cond="scenario(caush,3)">
+	<phase id="begin" next="joke" fast="1">
+		Le cuentas al Rey lo que averiguaste sobre la misteriosa bruma.
+		Él, afligido, se golpea la frente con el puño...
+	</phase>
+	<a id="joke">¡Vaya, qué cabeza dura!</a>
+	<phase id="joke" next="action">
+		[¡Eso es muy grave Maestro de Dinos!]
+		[Imagino que habrás encontrado una manera de salvar a nuestro mundo...]
+	</phase>
+	<a id="action">¡Ejemm! No, todavía no... Lo siento.</a>
+	<phase id="action" next="broc">
+		[Todo esto se me escapa de las manos.
+		Nada en las antiguas escrituras nos había preparado para algo así.]
+		[No tengo manera de actuar, no lo resolveremos con un ejército, ni con todo el oro de Dinoland.]
+	</phase>
+	<a id="broc">¿Quién podrá ayudarnos?</a>
+	<phase id="broc" fast="1" scenario="caush:4">
+		Necesitamos una solución y rápido.
+		Desconcertado, sales de la ciudadela.
+	</phase>
+</d>
+
+<d place="baobob" name="Don Bao Bob" gfx="baobob" cond="scenario(caush,4)">
+	<inject id="bob:begin" next="rien" />
+	<a id="rien">¡Bao! ¡La situación es crítica!</a>
+	<phase id="rien" next="qui">
+		[Desgraciadamente no puedo ayudarte.]
+		[No puedo luchar contra todas las amenazas de Dinoland, y tengo mucho que hacer en el Mundo Sombra.]
+		[Felizmente, conozco a un Maestro de Dinos que siempre ha dado muestras de coraje y sabiduría en estos casos.]
+	</phase>
+	<a id="qui">¿De veras? ¡Dime, quién!</a>
+	<phase id="qui">
+		[...]
+		[Pues, tú, joven guerrero.]
+		[Estoy seguro que hallarás la manera de salvar a tu pueblo.]
+	</phase>
+</d>
+
+<d place="papy" name="Papy Jose" gfx="papy" cond="scenario(caush,4)">
+	<inject id="papy:begin" next="rien" />
+	<a id="rien">¡Papy Jose! ¡La situación es crítica!</a>
+	<phase id="rien">
+		[¡Lo sabía!]
+		[Era esa humedad lo que estaba empeorando mi reumatismo.]
+		[Pero creo que no puedo ayudarte muchacho.]
+		[Tal vez si dominas esa nueva magia de la que todos hablan...]
+		[¡Ante la naturaleza nada podemos!]
+	</phase>
+</d>
+
+<d place="chbroc" name="Broc" gfx="broc" background="5" cond="scenario(caush,4)+hourrand(24,4+)">
+	<inject id="broc__2:begin" next="id" />
+	<inject id="broc__11:begin" next="id" />
+
+	<a id="id">¡Broc! ¡La situación es crítica!</a>
+	<phase id="id" next="mais">
+		[¡Hoooola! ¿Qué sucede?]
+		[¿Que una bruma cubre las estepas, dices?]
+		[Es curioso, justamente había inventado una máquina para crear nubes que llueven sobre mi huertita.
+		Te explico cómo funciona...]
+	</phase>
+	<a id="mais">¡No hay tiempo para eso!</a>
+	<phase id="mais" next="doute">
+		[¡Pero mira!, giras esa manivela, y ¡puf! una nube sale de ella.]
+		[¿Qué te parece?]
+	</phase>
+	<a id="doute">¡Broc! ¿Todo esto no será culpa tuya?</a>
+	<phase id="doute" next="engin">
+		[...]
+		[Jaja, ¿qué dices muchacho? ¡en absoluto!]
+		[Realmente crees que yo..., bueno..., quizás si la máquina se haya vuelto loca en mi ausencia... Hmmm...]
+		[En fin, ¿dices que esa bruma podría cubrir todo Dinoland?
+		¡Eso es gravísimo! Se me ocurre algo: ¡yo puedo invertir el mecanismo de mi máquina para que absorba esa bruma!
+		¡Tenemos que ponerla en marcha allá mismo!]
+		[Necesitaremos ayuda, mucha gente, para lograr bombear toda esa masa de aire y vapor.]
+	</phase>
+	<a id="engin">¡Pues, vamos!</a>
+	<phase id="engin" next="fin">
+		[¡Yo te sigo!]
+		(...Mi querida maquinilla, te habrás portado bien, ¿verdad?, no sería la primera vez que...)
+	</phase>
+	<a id="fin">¿Dijiste algo?</a>
+	<phase id="fin" fast="1" scenario="caush:5" frame="stop">
+		Broc camina detrás de ti, llevando la máquina entre sus brazos. Bastará con llegar a las estepas, hacerle un pequeño ajuste y activarla.
+	</phase>
+</d>
+
+<d place="scaush" name="Broc" gfx="broc" background="8" cond="scenario(caush,5)+!clanact(pompe)">
+	<phase id="begin">
+		[Ya llegamos.]
+		[Déjame instalar mi máquina,
+		mientras tanto, pide ayuda a tus amigos y a los miembros de tu clan.
+		¡Necesitaremos brazos fuertes para bombear toda esa bruma!]
+	</phase>
+</d>
+
+<d place="scaush" name="Broc" gfx="broc" background="8" cond="scenario(caush,5)+clanact(pompe)">
+	<phase id="begin" next="ombre">
+		[¡Enhorabuena!]
+		[Al fin podemos respirar tranquilos, la bruma se desvaneció.]
+		[Ahora puedes incluso ir más allá de las estepas.]
+	</phase>
+	<a id="ombre">¡Genial!</a>
+	<phase id="ombre" fast="1" scenario="caush:6" frame="stop">
+		Mientras os felicitáis, ves una sombra que desplaza sobre las dunas.
+		Esa silueta te parece conocida...
+	</phase>
+</d>
+
+<d place="sking" name="Rey de los Rokkys" gfx="rocking" cond="scenario(caush,6)+scenario(caush,7)+scenario(caush,8)">
+	<phase id="begin">
+		[Gracias a ti, amigo mío.]
+		[Has salvado a las estepas de un peligro mortal.
+		No olvidemos que hay que llegar a la raíz de esa amenaza.
+		De todos modos, todo Dinoland te agradece por tu valentía y tu astucia.]
+	</phase>
+</d>
+
+<!-- Partie 1 Les portes de Caushemesh -->
+
+<d place="sporte" name="Merodeador Extraño" gfx="rodeur3" frame="wrap" cond="scenario(caush,6)">
+	<phase id="begin" fast="1" next="rod:ouch">
+		El Merodeador Extraño se encuentra frente a un inmenso edificio. Una inmensa y antiguísima puerta se impone ante él.
+		Remueve todo y vocifera levantando una gran cantidad de arena...
+		A pesar de sus gritos, solo el aire y la arena se mueven, pero la puerta, permanece firme y cerrada.
+	</phase>
+	<a id="rod" cond="!tag(baston)">(Observar al Merodeador...)</a>
+	<phase id="rod" next="infos">
+		[Esa bruma proveniente de Caushemesh es la señal que esperaba para entrar, ¡estoy seguro!]
+		[Llevo mucho tiempo esperando, ¡y ahora la maldita puerta está cerrada!]
+	</phase>
+	<a id="infos">(Seguir observándole...)</a>
+	<phase id="infos" next="but">
+		[Grrr...]
+		[¡Pero quien fue el idiota que la cerró, debo presentar mis informes a mis amos!]
+		[...]
+		[Ya han pasado 50 años desde que me fui, espero que no me castiguen por no llegar a tiempo con mis investigaciones sobre Dinoland. Pfff...]
+	</phase>
+	<a id="but">Eehhh... </a>
+	<phase id="but" next="eclat:noeclat">
+		[Me gustaría darme un baño, mis calcetines están llenos de agujeros... y mi capa solo sirve para esconder mi pestilencia...]
+		[Snif...]
+		[Si tan solo tuviera una magnetita en mis manos, podría abrir esta maldita puerta... ¡Buaaah!]
+	</phase>
+	<a id="eclat">Mostrarle tu esquirla de magnetita</a>
+	<a id="noeclat">Dejarle solo con sus problemas</a>
+
+	<phase id="noeclat">
+		Es mejor dejarle solo, quién sabe lo que esté tramando...
+	</phase>
+	<phase id="eclat" next="close">
+		[¿Quién está ahi?]
+		[¿Otra vez tú? Me has seguido hasta las puertas de Caushemesh. No quieres que presente mi informe, ¿verdad?]
+		[De todos modos es imposible abrir esta puerta...]
+		[Espera, ¿qué tienes en la mano?]
+	</phase>
+	<a id="close">La esquirla de magnetita.</a>
+	<phase id="close" next="baston">
+		[¿La misma de la que quise apoderarme?]
+		[Si hubiera sabido que el Rey Rokky se la daría al primer tonto en pasar, se la habría pedido amablemente en lugar de destrozar todo...]
+		[Al grano... ¡DÁMELA, AHORA!]
+	</phase>
+	<a id="baston">¡Ni en tus sueños!</a>
+	<phase id="baston" next="ouch" fightgroup="rodeur:darki1:darki4" tag="baston">
+		[Auch... Ay...]
+		[Grrr... Se nota que has ganado fuerza desde la última vez que nos vimos...]
+		[Basta, me rindo, no tengo otra opción...]
+	</phase>
+	<a id="ouch" cond="tag(baston)">Haces bien, soy invencible.</a>
+
+	<phase id="ouch" scenario="caush:7">
+		[Veremos si sigues diciendo eso cuando te enfrentes a los poderosos amos de Caushemesh...]
+		[¡Sufrirás!, jinjinjinnn...]
+	</phase>
+</d>
+
+<d place="sporte" name="Merodeador Extraño" gfx="rodeur3" frame="wrap" cond="scenario(caush,7)">
+	<phase id="begin" next="open:nopen">
+		[Hmmm. ¿De verdad no te gustaría usar tu esquirla de magnetita para abrir la puerta?]
+	</phase>
+	<a id="open">Y si acepto, ¿qué pasará?</a>
+	<a id="nopen">¡De ninguna manera!</a>
+
+	<phase id="open" next="hum">
+		[Nada extraordinario, solo liberarás el poder de Caushemesh sobre las pobres tierras indefensas de Dinoland.]
+		[Pero no te preocupes, cerraré la puerta detrás de mí. La invasión comenzará solo cuando haya presentado mi informe.]
+		[Como ves, ¡YO soy alguien importante!]
+	</phase>
+
+	<phase id="nopen" next="mefie">
+		[Veo que no quieres cooperar...]
+		[En ese caso...]
+	</phase>
+
+	<a id="mefie" target="tik">¿Con qué truco me vas a salir ahora, eh?</a>
+	<a id="hum" target="tik">Bueno, en general, no es bueno abrir una puerta desconocida...</a>
+
+	<phase id="tik" next="creuse">
+		[Bueno, tú te lo pierdes...]
+		[...¡Oh! Se me cayó un 2do Brazalete de Tik en la arena, ¡el primero que lo encuentre se lo queda!]
+	</phase>
+	<a id="creuse">¿Un brazalete? ¿Dónde? ¡¿Dónde?!</a>
+
+	<phase id="creuse" next="vol:novol">
+		[Hay que escarbar por allá, no recuerdo exactamente dónde lo dejé caer...]
+	</phase>
+
+	<a id="vol">Buscar el brazalete</a>
+	<a id="novol">No buscar el brazalete</a>
+
+	<phase id="novol">
+		[No tengo ni un pelo de tonto, jaja, un segundo brazalete de Tik, ¿quién va a creer eso?]
+		[... ¿Y si fuera cierto?]
+	</phase>
+
+	<phase id="vol" fast="1" scenario="caush:8" rmcollection="magnet">
+		Empiezas a escarbar en la arena como un loco. Un segundo brazalete de Tik, ¡es algo valiosísimo!
+		¡Necesitarás al menos una hora para remover toda la zona!
+	</phase>
+</d>
+
+<d place="sporte" name="..." frame="gone" gfx="rodeur3" cond="scenario(caush,8)+(swait(caush,1)|admin())">
+	<phase id="begin" fast="1" next="pigeon">
+		[Has rebuscado todo lo largo y ancho del lugar, pero no has encontrado nada, ni el brazalete de Tik, ni tesoro alguno...]
+		[¡Me vieron la cara de tonto!... ¡Ese merodeador se las va a ver conmigo!]
+	</phase>
+	<a id="pigeon">¿Adónde se fue?</a>
+	<phase id="pigeon" next="note">
+		[No hay nadie...]
+		[Un momento... ¡tu esquirla de magnetita!]
+		[¡Ha desaparecido!]
+	</phase>
+	<a id="note">¡Mi magnetita!</a>
+	<phase id="note" fast="1" scenario="caush:9">
+		La pesada puerta de Caushemesh está entreabierta, una ráfaga de viento de los montes Caushemeshianos azota tu cuerpo.
+		Puedes ver al Merodeador a lo lejos. Será imposible alcanzarlo, ¡la puerta se está cerrando!
+	</phase>
+</d>
+
+<d place="sporte" name="..." frame="gone" gfx="rodeur3" cond="scenario(caush,9)">
+	<phase id="begin" fast="1" next="eclat">
+		Llegas demasiado tarde...
+		La inmensa puerta se cerró con un estruendo ensordecedor.
+		Tú te quedas sin poder hacer nada, el merodeador ha ingresado...
+	</phase>
+	<a id="eclat">¡GGGRRRRR! Sabía que no podía confiar en él...</a>
+	<phase id="eclat" next="note" collection="magnet">
+		_Una nota está tirada en el suelo que dice:_
+		[Muchas gracias Maestro de Dinos. Te lo aseguro, con tu ingenuidad, no hubieras sobrevivido mucho tiempo en mi mundo.]
+		[Vamos, sin rencores. Te devuelvo tu esquirla de magnetita, ya no me sirve de nada. Ni a ti tampoco, ¡he consumido toda su energía!]
+		[¡Jinjinjin!]
+	</phase>
+	<a id="note">¡El brillo de mi magnetita ha desaparecido!</a>
+	<phase id="note" fast="1" scenario="caush:10">
+		La esquirla ya no podrá abrir la puerta, ¿habrá una forma de recargarla?
+		Solo una persona puede ayudarme a saberlo...
+	</phase>
+</d>
+
+<d place="sking" name="Rey de los Rokkys" gfx="rocking" cond="scenario(caush,10)">
+	<phase id="begin" next="recharge">
+		[¡Querido amigo! ¿Cómo estás?]
+		[Parece que hubieras visto a un fantasma...]
+	</phase>
+	<a id="recharge">La... La magnetita ha perdido su brillo</a>
+	<phase id="recharge" next="else">
+		[¿Solo eso?]
+		[No te preocupes, ¡basta con esperar una buena centena de años para que vuelva a estar como nueva!]
+	</phase>
+	<a id="else">¿100 años?</a>
+	<phase id="else" next="ben">
+		[Vosostros los Maestros de Dinos sóis muy impacientes...]
+		[Deja que la vida te lleve, su largo camino te llevará a la sabiduría.]
+	</phase>
+	<a id="ben">Pero son 100 años...</a>
+	<phase id="ben" next="action">
+		[Basta de lamentos, mira, no está completamente descargada.]
+		[La prueba: Has podido cruzar el sifón de las estepas. Si la esquirla no te hubiese protegido, ¡no estarías vivo!]
+	</phase>
+	<a id="action">¿Hay algo que se pueda hacer?</a>
+	<phase id="action" next="baston">
+		[Hay un modo, ¿pero por qué tanto interés en ir a Caushemesh?]
+		[¿Crees tener el nivel necesario para desafiar a los monstruos de esas tierras lejanas?]
+	</phase>
+	<a id="baston">¡Haré lo que sea para llegar!</a>
+	<phase id="baston" next="go:nogo">
+		[En ese caso, déjame ponerte a prueba.]
+		[Hemos capturado a un Rokky del Mundo Sombra y necesitamos calmarlo un poco.
+		Si logras vencerlo, nos encargaremos de regargar tu magnetita.]
+	</phase>
+	<a id="go">¡Estoy listo, quiero enfrentarme a ese Rokky!</a>
+	<a id="nogo">Aún no estoy listo</a>
+
+	<phase id="nogo">
+		El Rey te deja prepararte para ese combate.
+		Tu venganza contra el Merodeador deberá esperar.
+	</phase>
+	<phase id="go" next="ouep" fightgroup="darkia" scenario="caush:11">
+		[Bravo, has vencido a tu violento adversario.]
+		[No olvides que ese Rokky no representa ni una mínima parte de lo que te espera.]
+	</phase>
+	<a id="ouep">No tengo miedo.</a>
+	<phase id="ouep">
+		[Y no lo dudo...
+		Bien, ¡pasemos a lo que nos interesa!]
+	</phase>
+</d>
+
+<d place="sking" name="Rey de los Rokkys" gfx="rocking" cond="scenario(caush,11)">
+	<phase id="begin" next="how">
+		[Debemos encontrar el modo de recargar esa esquirla de magnetita.]
+		[Va a ser muy, pero muy difícil. Y aunque la recarguemos un poco,
+		y tomando en cuenta el tamaño de la puerta de Caushemesh, habrá que reunir una gran fuerza.
+		No podrás hacerlo solo.]
+	</phase>
+	<a id="how">¿Por dónde debo empezar?</a>
+	<phase id="how" next="pylone">
+		[Primero, debes ir a los Pilares de Magnetita y colocar allí tu esquirla. Espera al menos un día para que se recargue un poco.]
+		[Enseguida, ve a las puertas de Caushemesh, usa la fuerza almacenada para desbloquear la cerradura. Necesitarás la fuerza de otros Maestros de Dinos para empujar
+		y abrir la puerta hasta que tu cuerpo logre pasar.]
+	</phase>
+	<a id="pylone">Es una tarea difícil...</a>
+	<phase id="pylone" scenario="caush:12">
+		[Ahora, adelante.]
+		[Que el valor te acompañe Maestro de Dinos.]
+	</phase>
+</d>
+
+<d place="spylon" name="..." gfx="rodeur3" frame="gone" background="2" cond="scenario(caush,12)">
+	<phase id="begin" next="syph" fast="1">
+		Has colocado la esquirla sobre un zócalo constantemente golpeado por un rayo.
+		Ahora a esperar...
+	</phase>
+	<a id="syph">Sin la esquirla, es mejor evitar el sifón...</a>
+	<phase id="syph" rmcollection="magnet" scenario="caush:13">
+		Más vale esperar pacientemente a que se recargue.
+	</phase>
+</d>
+
+<d place="spylon" name="..." gfx="rodeur3" frame="gone" background="2" cond="scenario(caush,13)+(swait(caush,24)|admin())">
+	<phase id="begin" fast="1" next="porte">
+		Le echas un ojo a tu esquirla.
+		A pesar de haber sido golpeada varias veces por el rayo, su brillo no se asemeja al de antes.
+	</phase>
+	<a id="porte">Ahora vamos a abrir esa puerta.</a>
+	<phase id="porte" collection="magnet" scenario="caush:14">
+		Ajustando fuertemente la esquirla en tus manos, esperas que esté suficientemente recargada.
+	</phase>
+</d>
+
+<d place="sporte" name="..." gfx="rodeur3" frame="gone" cond="scenario(caush,14)">
+	<phase id="begin" next="ouvre:nouvre" fast="1">
+		Llegas al fin a tu destino.
+		Nada ha cambiado desde tu última visita, las puertas siguen inmóviles, la arena transportada por el viento azota tu rostro y el de tu Dino.
+		¿Qué pasará cuando uses la magnetita?...
+	</phase>
+	<a id="ouvre">Usar la esquirla de magnetita.</a>
+	<a id="nouvre">Dejar la esquirla en tu bolsillo.</a>
+
+	<phase id="nouvre" fast="1">Quizás sea mejor esperar un poco antes de hacer alguna tontería...</phase>
+	<phase id="ouvre" next="clan" fast="1">
+		Alzas la magnetita y esta comienza a liberar su poder.
+		Un ruidoso estruendo sacude el desierto, las estructuras del edificio empiezan a temblar.
+		La puerta se abre algunos milímetros...
+	</phase>
+	<a id="clan">¡Eso es, pronto podré pasar!</a>
+	<phase id="clan" next="force" fast="1">
+		Todo se detiene de golpe, el ruido también, las puerta deja de moverse...
+		La magnetita ha agotado sus fuerzas.
+	</phase>
+	<a id="force">¿Y ahora?</a>
+	<phase id="force" fast="1" scenario="caush:15">
+		La magnetita ya no sirve de nada y ha quedado muy frágil.
+		Sería inútil volver a recargarla, y es poco probable que pueda moverla los centímetros que necesitas.
+	</phase>
+</d>
+
+<d place="sking" name="Rey de los Rokkys" gfx="rocking" cond="scenario(caush,15)">
+	<phase id="begin" next="soluce">
+		[¡Hola querido amigo!]
+		[Entonces la magnetita ha vuelto a perder su brillo...]
+	</phase>
+	<a id="soluce">¿Qué tengo que hacer para terminar de abrir esa puerta?</a>
+	<phase id="soluce" next="brute">
+		[¿Además de esperar un siglo?]
+		[No veo otra cosa... ¡La fuerza bruta!]
+		[La fuerza de varios Maestros de Dinos puede ser colosal, reúnelos y la puerta no resistirá...]
+	</phase>
+	<a id="brute">¡Por la razón o por la fuerza!</a>
+	<phase id="brute" scenario="caush:16">
+		[Reúne en el mismo lugar 14 Dinos.]
+		[Con sus fuerzas reunidas, esa puerta cederá.]
+	</phase>
+</d>
+
+<d place="sporte" name="..." gfx="rodeur3" frame="gone" cond="scenario(caush,16)">
+	<phase id="begin" next="ok:ko">
+		Manos a la obra.
+		Ahora toca reunir 14 Dinos.
+	</phase>
+	<a id="ko">Ahora no me animo, se me romperán las uñas.</a>
+	<a id="ok">¡La unión hace la fuerza!</a>
+
+	<phase id="ko" fast="1">
+		¡Convoca a tus amigos y compañeros de clan para unir fuerzas!
+	</phase>
+	<phase id="ok" url="/dino/::did::/act/union"></phase>
+</d>
+
+<d place="sporte" name="..." gfx="rodeur3" frame="gone" cond="scenario(caush,17+)">
+	<phase id="begin" fast="1">
+		La puerta se movió. Se cayó para ser más precisos, ya no será un obstáculo. Dudamos que alguien pueda volver a colocarla. La fuerza fue descomunal.
+		¿Pero qué consecuencias traerá eso?
+	</phase>
+</d>
+
+<!-- Partie 2 La visite de Caushemesh et l'arrivée au palais -->
+
+<d place="cacrop" name="Pepe Lechuga" gfx="lechton" cond="scenario(caush,16)">
+	<inject id="caushville:begin" next="ville"/>
+
+	<a id="ville">Disculpa, ¿qué pasó aquí?</a>
+	<phase id="ville" next="titan">
+		[...Shhht...¡No hagas ruido!]
+		[¿Acaso estás loco?, vas a atraer a los monstruos Colosos si sigues gritando así.]
+	</phase>
+	<a id="titan">¿Los Colosos?</a>
+	<phase id="titan" next="peur">
+		[Claro, los Colosos, ¡¿de qué mundo vienes para no saber que son los Colosos quienes imponen su ley en Caushemesh?!]
+		[Seguro que no eres de aquí, nunca te he visto en la entrega de víveres allá abajo.]
+		[Desde la catástrofe en el complejo de extracción, nadie se atreve a salir de su casa.]
+		[Estamos obligados a vivir ocultos, la vida al aire libre nos ha sido negada.]
+	</phase>
+	<a id="peur">¿Qué catástrofe?</a>
+	<phase id="peur" next="heros">
+		[¡Todos los Caushemeshianos conocen esta historia!]
+		[Hace mucho tiempo, una explosión transformó Caushemesh en esta gigantesco charco de éter,
+		No se qué experimentos realizaban nuestros amos, pero algo no salió bien...]
+		[Desde entonces, monstruos gigantes siembran el terror aquí.]
+	</phase>
+	<a id="heros">¿Y nadie se atreve a hacerles frente?</a>
+	<phase id="heros" next="door">
+		[Es el caos total, no tenemos noticias del palacio desde hace mucho tiempo.]
+		[De todos modos, la vida en Caushemesh nunca fue fácil, antes éramos oprimidos por nuestros amos, ahora que ya no están aquí, los monstruos ocupan su lugar...]
+		[No podemos huir, la puerta de Caushemesh está cerrada desde hace mucho, y no sabemos qué hay más allá...]
+	</phase>
+	<a id="door"> Eeehh... La puerta ahora está abierta.</a>
+	<phase id="door" next="tache:notache">
+		[¿La puerta fue abierta? Es increíble, ¿entonces vienes del exterior?]
+		[¡Entonces puedes ser tú quien llegó a liberarnos de esos monstruos!]
+		[Si es así, ¿puedo pedirte un favor?]
+	</phase>
+	<a id="tache">Por supuesto</a>
+	<a id="notache">Lo siento pero tengo otras cosas qué hacer</a>
+
+	<phase id="notache">
+		[Siento haberte importunado con mis historias, te deseo mucha suerte si te cruzas con uno de los Colosos.]
+	</phase>
+	<phase id="tache" next="count">
+		[Muchas gracias.]
+		[No encuentro a mi hija pequeñita, ella salió a buscar medicamentos fuera de la acrópolis hace varios días, y no ha vuelto.
+		Te lo ruego, tráemela, temo mucho por su vida.]
+	</phase>
+	<a id="count">¡Puedes contar conmigo!</a>
+	<phase id="count" fast="1" scenario="caush:17">
+		Será motivo para dar una vuelta por este mundo fascinante invadido por el caos.
+		¿Dónde puede encontrarse esa niña?...
+	</phase>
+</d>
+
+<d place="cporte" name="..." gfx="agathe" frame="hide" background="4" cond="scenario(caush,17)">
+	<phase id="begin" fast="1" next="plus">
+		Esto parece un pueblo fantasma, no hay nadie aquí...
+	</phase>
+	<a id="plus">Buscar en todos los rincones.</a>
+	<phase id="plus" fast="1">
+		Nada de nada.
+		Será mejor no perderse y toparse con uno esos Colosos antes de tiempo.
+	</phase>
+</d>
+
+<d place="ctecno" name="..." gfx="agathe" frame="hide" background="5" cond="scenario(caush,17)">
+	<phase id="begin" fast="1" next="plus">
+		Nadie en los alrededores...
+	</phase>
+	<a id="plus">Buscar por todas partes.</a>
+	<phase id="plus" fast="1">
+		Nada.
+		Aquí suceden cosas extrañas...
+	</phase>
+</d>
+
+<d place="ccrane" name="..." gfx="agathe" frame="hide" background="3" cond="scenario(caush,17)">
+	<phase id="begin" fast="1" next="plus">
+		Nada por aquí tampoco...
+	</phase>
+	<a id="plus">Seguir buscando.</a>
+	<phase id="plus" fast="1">
+		Caushemesh es más grande de lo que pensaba.
+		¡Pero qué cráneo tan grande!
+		¿Habrá existido realmente un demon de ese tamaño?
+	</phase>
+</d>
+
+<d place="cpuits" name="..." gfx="agathe" frame="hide" background="2" cond="scenario(caush,17)">
+	<phase id="begin" fast="1" next="plus">
+		[¿Y por aquí?...NADA.]
+		[...]
+	</phase>
+	<a id="plus">Intensificar la búsqueda.</a>
+	<phase id="plus" fast="1" scenario="caush:18">
+		Esta manzana es más extensa que las demás, la búsqueda va a durar más tiempo.
+		Esperemos que un monstruo no se aparezca.
+	</phase>
+</d>
+
+<d place="cpuits" name="..." gfx="agathe" frame="hide" background="2" cond="scenario(caush,18)">
+	<phase id="begin" fast="1" next="voila">
+		Abandonas tus esperanzas.
+		Sientes que no hay ni un alma en estos lugares.
+		¿Y haciendo algo de ruido?
+	</phase>
+	<a id="voila">HEY, ¿ALGUIEN ANDA AHÍ?</a>
+	<phase id="voila" next="gaaah">
+		Mientras esperas una respuesta, ¡un soplo ácido detrás de ti congela la atmósfera!
+		Una sombra amenazante se acerca a ti. Quizás hubiese sido mejor no hacer ese ruido...
+	</phase>
+	<a id="gaaah">¡HAAAAAA!</a>
+	<phase id="gaaah" fightgroup="serpe2" fast="1" next="alors" scenario="caush:19">
+		Tras un combate agotador, has repelido a esos monsturos, pero sabes que volverás a encontrarte con ellos.
+	</phase>
+	<a id="alors">Entonces "eso" es un Coloso...</a>
+	<phase id="alors" next="fille" frame="peur" name="Crousti Chocotte">
+		[Eh...]
+		[Perdona... Te he visto pelear. Eres muy fuerte y me inspiras confianza.]
+		[Estoy lejos de la acrópolis, ¿podrías llevarme allá?]
+	</phase>
+	<a id="fille">¡Pero si vine aquí para eso!</a>
+	<phase id="fille" fast="1" frame="peur" scenario="caush:19">
+		La niña está muy contenta.
+		Ahora te sigue hasta su casa.
+	</phase>
+</d>
+
+<d place="cacrop" name="Pepe Lechuga" gfx="lechton" cond="scenario(caush,19)">
+	<inject id="caushville:begin" next="merci"/>
+
+	<a id="merci">¡Misión cumplida!</a>
+	<phase id="merci" next="chut">
+		[¡Shhht!...]
+		[¿Un encuentro con un Coloso no te bastó?]
+		[Te agradezco por socorrer a mi pequeña. Por favor ya no corras peligros.]
+	</phase>
+	<a id="chut">Trataré.</a>
+	<phase id="chut" scenario="caush:20" fast="1">
+		¡Estás muy satisfecho!
+		¿Listo para continiar la aventura en Caushemesh?
+	</phase>
+</d>
+
+<!-- Dialogue avec les amazones scenario(caush:20,21&22) -->
+<!-- Dialogue avec Sofia scenario(caush:23&24) -->
+<!-- Missions des amazones -->
+
+<!-- Partie 3 Les Monstres suprêmes -->
+
+<d place="cpyra2" name="Sofía" gfx="sofia" cond="scenario(caush,25)+mission(gifta)">
+	<inject id="sofia:begin" next="mdone"/>
+	<a id="mdone">¡Señora!</a>
+	<phase id="mdone" next="story" frame="fixe">
+		[Ah, eres tú... Me has hecho varios favores...
+		Te concedo una audiencia para recompensarte.]
+		[¡Pregunta rápido lo que quieras, que quiero volver a mi siesta!]
+	</phase>
+	<a id="story">Está bien.</a>
+	<phase id="story" next="cata:colosse:sofia:brume:maitre:fin" frame="fixe">
+		[Sofía, la guardiana de fuerte carácter, está dispuesta a responder tus preguntas, aprovecha para que te revele algunos misterios de Caushemesh.]
+	</phase>
+	<a id="cata">¿Qué pasó aquí?</a>
+	<a id="colosse">¿De dónde vienen esos monstruos superpoderosos?</a>
+	<a id="sofia">¿Cómo llegaste aquí?</a>
+	<a id="brume">¿De dónde viene esa bruma?</a>
+	<a id="maitre">¿Quienes son los amos de Caushemesh?</a>
+	<a id="fin" cond="tag(qte5)">Gracias por las respuestas.</a>
+
+	<phase id="cata" next="ether" frame="fixe">
+		[Humpf, si supieras... ¡y no me mires así que no ha sido mi culpa!]
+		[Los amos de Caushemesh estaban en guerra con la isla de Nimbao.]
+		[Crearon un laboratorio secreto para dar vida a monstruos superpoderosos y así vencer a los Dorogones.]
+		[Desaparecieron con la catástrofe que abrió las puertas del Mundo Sombra.]
+	</phase>
+	<a id="ether">¿El Mundo Sombra?</a>
+	<phase id="ether" next="cata:colosse:sofia:brume:maitre:fin" frame="fixe">
+		[Esos locos quisieron explotar los recursos infinitos del Mundo Sombra creando un portal entre los dos mundos...]
+		[Como era de esperarse, sus ambiciones se volvieron contra ellos, y no pudieron controlar esa fuerza desconocida...]
+		[Una explosión sin precedentes destruyó el laboratorio, agrandó la falla del Mundo Sombra y vertieron este lago de éter sobre  Caushemesh.]
+		[Desde entonces el suelo ha engullido varias manzanas, solo pocas han sobrevivido, y ahora están suspendidas en el aire, ya que el éter modificó las propiedades del subsuelo.]
+	</phase>
+
+	<phase id="colosse" next="cata:colosse:sofia:brume:maitre:fin" frame="fixe">
+		[Los monstruos drogados por el éter, saquearon el laboratorio y se escaparon.]
+		[Hoy se pasean por todas partes, pero yo he aprendido a evitarlos. No me gusta que interrumpan cuando salgo de compras.]
+		[Desde que abriste las puertas, no me sorprendería que hayan salido de Caushemesh.]
+		[¡Qué ironía! En su locura, los amos de Caushemesh pensaron al menos en cerrar las puertas para no borrar a Dinoland del mapa.]
+	</phase>
+
+	<phase id="sofia" next="palais" frame="fixe">
+		[Después de la gran explosión, grietas de diferentes tamaños han aparecido en Dinoland.]
+		[Un consejo de viejos decrépitos ha designado arbitrariamente a poderosos personajes de Dinoland y les ha confiado la tarea de vigilar esas grietas.]
+		[Ahora que recuerdo, yo soy uno de esos guardianes...
+		Pero ya no importa, tengo otras cosas que hacer...]
+	</phase>
+	<a id="palais">¿Y este palacio?</a>
+	<phase id="palais" next="cata:colosse:sofia:brume:maitre:fin" frame="fixe">
+		[Como yo debía pasar más tiempo en Caushemesh y ya que el palacio estaba vacío, me instalé aquí.]
+		[Los antiguos amos de Caushemesh no son un obstáculo, ellos son historia...]
+	</phase>
+
+	<phase id="brume" next="cata:colosse:sofia:brume:maitre:fin" frame="fixe">
+		[La bruma que cubre las estepas proviene del Tecnódromo.]
+		[Tal vez algún espíritu retorcido se aloja allí... Como verás, Caushemesh está lleno de gente rara.]
+	</phase>
+
+	<phase id="maitre" tag="qte5" next="cata:colosse:sofia:brume:maitre:fin" frame="fixe">
+		[Son los primeros habitantes Caushemeshianos, cuando se desplomó la isla de Jazz, creyeron que el mundo se les venía encima.]
+		[Una banda de paranóicos, diría yo...]
+		[En fin, dudo que quede uno vivo, si fuese así, estarían reclamando el trono.
+		Si quieres saber más, te recomiendo ir a la fábrica de monstruos.
+		Verás que no es un lugar para ir de vacaciones...]
+	</phase>
+	<phase id="fin" next="avant" frame="nocare">
+		[Ya no tengo más que decir.]
+		[Déjame ahora, esta charla me ha agotado.]
+	</phase>
+	<a id="avant">De acuerdo.</a>
+	<phase id="avant" fast="1" scenario="caush:26" frame="nocare">
+		Si quieres saber más, encuentra a los amos de Caushemesh.
+		¡Vamos al Complejo de Extracción!...
+	</phase>
+</d>
+
+<d place="cextra" name="Viejo Moncho" gfx="master" cond="scenario(caush,26)">
+	<phase id="begin" next="brume" fast="1">
+		Una persona extraña con peinado estrafalario, se para frente a ti.
+		Te mira con ojos plácidos, sin ninguna emoción nítida en su rostro.
+		Su aspecto fuera de órbita te pone la piel de gallina. ¿Quién es ese anciano?
+	</phase>
+	<a id="brume">¿Señor?</a>
+	<phase id="brume" next="bah">
+		[Bahhhh, boooh.... bi bo buhh.]
+	</phase>
+	<a id="bah">¿Perdón?</a>
+	<phase id="bah" next="rodeur">
+		[¡BAAAhhhhh!]
+		[HAHAHAHA, paf, ¡KASH!]
+	</phase>
+	<a id="rodeur">¡Este está loco de remate!</a>
+	<phase id="rodeur" name="Merodeador Extraño" gfx="rodeur3" frame="fixe" background="4" next="arf">
+		[¡Mi amo!]
+		[¡Te encontré!]
+		[¿Qué pasó? ¿Dónde están las otras eminencias?]
+	</phase>
+	<a id="arf">...</a>
+	<phase id="arf" next="fou">
+		[¡BAAAAAHHHHH!]
+	</phase>
+	<a id="fou">...Ehh pues...</a>
+	<phase id="fou" next="ether" name="Merodeador Extraño" gfx="rodeur3" background="4" frame="susp">
+		[Ojos perdidos, totalmente incomprensible...]
+		[¡No me diga que ha estado expuesto al éter puro!]
+	</phase>
+	<a id="ether">¿Tal vez en la explosión?</a>
+	<phase id="ether" next="ben">
+		[¡PUEEERK!]
+	</phase>
+	<a id="ben">No salimos del albergue...</a>
+	<phase id="ben" next="war" name="Merodeador Extraño" gfx="rodeur3" frame="stun" background="4">
+		[Embebido para ser más exacto...]
+		[¿Y qué haces ahora?]
+		[...¿Usas la máquina de extracción para vaporizar el éter y esparcirlo en Dinoland en forma de bruma?]
+		[El mismo loco de siempre...]
+		[A propósito, dudo que eso le guste a la gente allá...]
+	</phase>
+	<a id="war">¡Hay que detenerlo!</a>
+	<phase id="war" next="fight" name="Merodeador Extraño" gfx="rodeur3" frame="stun" background="4">
+		[Bueno, ¿qué debo hacer ahora? Imagino que eres el único sobreviviente.
+		¿A quién voy a informar?...]
+		[Pero, un momento... Si no tengo a nadie a quien informar... ¡Eso quiere decir que soy libre!]
+		[Mi misión ha terminado, ¡y no tendré que trabajar!]
+		[¡Estupendo! Me regreso a Dinovilla, voy a buscarme un lugarcillo agradable para relajarme, ¡será perfecto!]
+		[¡Yajúúúú!]
+	</phase>
+	<a id="fight">Al menos alguien está contento...</a>
+	<phase id="fight" fast="1" scenario="caush:27">
+		El amo de Caushemesh vuelve a la máquina ¡y aumenta el chorro de éter!
+		¡Eso no puede continuar!
+	</phase>
+</d>
+
+<d place="cextra" name="Amo Poray" gfx="master" cond="scenario(caush,27)">
+	<phase id="begin" next="stop">
+		[¡ÑAAAÑAAÑAAAÑA!]
+		[Huhu, ¡Paaaaff!]
+		[Oh, oh paaaaaff...]
+	</phase>
+	<a id="stop">¿Qué es un paaaaf? Eh... ¡HAAAAAA!</a>
+	<phase id="stop" fast="1" fightgroup="behem2" scenario="caush:28" frame="dead">
+		Lograste sobrevivir al ataque del monstruo.
+		Por desgracia, el amo no corrió la misma suerte. Él y su máquina fueron aplastados.
+		Es triste pero ya no le harán daño a nadie...
+	</phase>
+</d>
+
+<d place="cpyra2" name="Sofia" gfx="sofia" cond="scenario(caush,28+)+scenario(caush,31-)" frame="fixe">
+	<inject id="sofia:begin" next="master:colosse"/>
+
+	<a id="master">El último amo terminó aplastado...</a>
+	<phase id="master" next="tout" frame="fixe">
+		[Jajaa, buen trabajo...]
+		[Pero no te felicito, porque dejaste huir a un Coloso...]
+		[¡Será mejor que enmiendes tu error!]
+	</phase>
+	<a id="tout">¡Pero yo ya hago todo aquí!</a>
+	<phase id="tout" tag="jump" next="colosse" frame="silence">
+		[¡SILENCIO!]
+		[Te ordeno cazar a los 3 Colosos que andan sueltos por Dinoland.]
+		[¡Ejecución!
+	</phase>
+	<a id="colosse" cond="tag(jump)">¿Dónde están los colosos?</a>
+	<phase id="colosse" next="autaf" frame="fixe">
+		[¡Ya parece que no puedes hacer nada sin mí!]
+		[El Serpether se nutre de éter, eso lo hubieras podido adivinar, entonces debe estar aún en Caushemesh.]
+		[El Behemotin acaba de huir hacia las estepas.]
+		[Y para terminar, el Archelion ha vuelto seguramente a sus orígenes, si conoces bien el mundo donde vives, sabrás a qué me refiero...]
+		[¡Ahora adelante, a cumplir tu misión!]
+		[Y déjame en paz...]
+	</phase>
+	<a id="autaf">¡De acuerdo señora!</a>
+	<phase id="autaf" fast="1" frame="fixe">
+		Partes en busca de los colosos, tendrás que armarte de paciencia y constancia.
+		Son difíciles de encontrar y nunca permanecen en un mismo lugar...
+	</phase>
+</d>
+
+<!-- Combat contre les 3 colosses scenario="caush,29,30&31) -->
+
+<d place="sking" name="Rey de los Rokkys" gfx="rocking" cond="scenario(caush,31+)+!race(rocky)">
+	<phase id="begin" next="gg:caushdone" fast="1">
+		Estás en la sala del trono del Rey de los Rokkys, y parece muy ocupado:
+		Se pasa el día apilando cubos...
+	</phase>
+	<a id="gg" cond="scenario(caush,42-)">Contarle toda la historia</a>
+	<a id="caushdone" cond="scenario(caush,43+)">¡Caushemesh está a salvo!</a>
+
+	<phase id="gg" next="paix">
+		[¡Felicitaciones amigo mío!]
+		[Gracias a ti, la paz ha vuelto a Dinoland.]
+		[Por lo que acabas de contarme, los Caushemeshianos aún necesitan de ti.]
+		[Ellos también merecen la paz.
+		¡Te lo pido, vé a ayudarles!]
+	</phase>
+	<a id="paix">Haré todo lo que pueda.</a>
+	<phase id="paix" fast="1">
+		¿Qué podemos hacer por esos pobres Caushemeshianos?
+		¿Pedirle a su guardián que haga su trabajo?
+		Por desgracia, ellos no quieren saber nada de nada...
+	</phase>
+
+	<phase id="caushdone">
+		[Felicitaciones amigo mío.]
+		[¡Tú lo resuelves todo!]
+		[Mereces tu título de Maestro.]
+		[¡Te deseo una larga y dichosa vida!]
+	</phase>
+</d>
+
+<d place="cpyra2" name="Sofía" gfx="sofia" cond="scenario(caush,31)" frame="fixe">
+	<inject id="sofia:begin" next="done"/>
+
+	<a id="done">¡Los colosos ya no existen!</a>
+	<phase id="done" next="chien" frame="fixe">
+		[Me sorprendes Maestro de Dinos.]
+		[No te imaginaba tan hábil. Serías un buen sirviente...]
+		[Me agrada que la gente haga las cosas bien.]
+	</phase>
+	<a id="chien">No gracias...</a>
+	<phase id="chien" next="job:end" frame="fixe">
+		[Ahora que la amenaza de los colosos ha sido eliminada, ¿qué te parece si me traes cosas de Dinovilla?]
+		[Ya no tengo perfumes y la comida aquí no tiene sabor.]
+	</phase>
+	<a id="job" cond="collec(quetzu)">Si, ¿por qué no?... pero ¿y el trabajo de guardián?</a>
+	<a id="end">Huyes discretamente...</a>
+
+	<phase id="end" fast="1">
+		Cogiendo tu valor con ambas manos, ¡sales del palacio como un rayo!
+		Los colosos y el éter ya no son una amenaza para Dinoland.
+		Pero Caushemesh...
+	</phase>
+	<phase id="job" next="mandra" frame="fixe">
+		[Qué pesado te pones...]
+		[No quiero este trabajo, nunca lo quise y no me interesa.]
+		[Combatir monstruos todo el santo día es muy cansado, y ya no soy un tan joven.]
+		[Todo lo que quiero es encontra a mi marido...]
+	</phase>
+	<a id="mandra">¿Estás casada?</a>
+	<phase id="mandra" next="choc" frame="fixe">
+		[...  Diablos, hablé más de la cuenta...]
+		[¡Pues sí, estoy casada pero el energúmeno de mi esposo se marchó en la noche de bodas!]
+		[Soy aventurero decía, un alma libre, ¡pero cuando le encuentre...!]
+	</phase>
+	<a id="choc">¿Quién es el dichoso aventurero? (jaja)</a>
+	<phase id="choc" next="obvious" frame="fixe">
+		[No creo que le conozcas, nunca vuelve al mismo lugar y se entretiene huyendo de mí todo el tiempo.]
+		[Soy tan desdichada sin él. ¡Para compensar mi soledad, paso mi tiempo haciendo compras!]
+	</phase>
+	<a id="obvious">Ya veo...</a>
+	<phase id="obvious" next="ouch" frame="fixe">
+		[Si llegas a traérmelo, tal vez considere retomar mi trabajo de guardián.]
+		[Te deseo buena suerte, su nombre es... Mandrágora.]
+	</phase>
+	<a id="ouch">!...</a>
+	<phase id="ouch" fast="1" scenario="caush:32" frame="fixe">
+		De todas las personas, será el más difícil de convencer...
+		Son tal para cual, ambos tienen temperamentos muy difíciles...
+	</phase>
+</d>
+
+<!-- Partie 4 Mandragore et la gardienne de Caushemesh Sofia -->
+
+<d place="villa" gfx="mandragore" name="Mandrágora" cond="scenario(caush,32)|scenario(caush,33)">
+	<inject id="mandragore:begin" next="caush:fond"/>
+
+	<a id="caush" cond="scenario(caush,32)">Vuelvo de Caushemesh.</a>
+	<phase id="caush" next="gloup">
+		[Pudiste poner los pies allí, te felicito.
+		¡No cualquiera puede hacerlo!]
+		[¿Encontraste a alguien interesante?]
+	</phase>
+	<a id="gloup">Sí a la guardiana...</a>
+	<phase id="gloup" next="letsgo">
+		_(¡Flotch! Mandrágora hace caer su vaso.)_
+		[¿Viste a So-Sofía?...]
+		[...Glup... Y... ¿Y cómo le va?]
+		[¿Te preguntó por mí?]
+	</phase>
+	<a id="letsgo">Me encargó llevarte con ella.</a>
+	<phase id="letsgo" next="bienvu">
+		[¡De ninguna manera!]
+		[No puedo atarme a una mujer, necesito libertad, recorrer el mundo...]
+		[Aunque... ya le di la vuelta al mundo... ¡Ahora necesito traquilidad!, y ella es tan malhumorada que... Tú entiendes.]
+	</phase>
+	<a id="bienvu">Es cierto...</a>
+	<phase id="bienvu" next="fight">
+		[Así que no, no iré.]
+		[¡Primero muerto!]
+	</phase>
+	<a id="fight">Si esa es la condición...</a>
+	<phase id="fight" fightgroup="mandr3" scenario="caush:33" next="fond">
+		[Está bien, está bien. Tu has ganado.]
+	</phase>
+	<a id="fond" cond="scenario(caush,33)">¡No le pusiste mucho empeño!</a>
+	<phase id="fond" next="go">
+		[JAJAJA, tienes buenos reflejos...]
+		[Has despertado recuerdos profundos en mí...]
+		[Nuestro combate me hizo pensar en mis disputas con Sofía, hacíamos temblar toda la tierra por nada...]
+		[No estábamos tan mal juntos al fin y al cabo...]
+		[Pensándolo bien, voy contigo.]
+	</phase>
+	<a id="go">¡Perfecto, vamos!</a>
+	<phase id="go" fast="1">
+		Mandrágora te acompaña, ¡camino a Caushemesh!
+	</phase>
+</d>
+
+<d place="sporte" name="Mandrágora" gfx="mandragore" background="11" frame="glou" cond="scenario(caush,33)">
+	<phase id="begin" next="paf">
+		[¡No has sido muy sutil que digamos!]
+		[¿Y cómo piensas reparar eso?]
+	</phase>
+	<a id="paf">Ah, ¿hay que repararlo?</a>
+	<phase id="paf" scenario="caush:34">
+		[Ya veremos, si nuestro encuentro se torna difícil, tú misma cerrarás para siempre las puertas de Caushemesh...]
+		[Esta mujer sí que tiene carácter, grrr...]
+	</phase>
+</d>
+
+<d place="cpyra1" name="Mandrágora" gfx="mandragore" background="10" frame="serieuxbla" cond="scenario(caush,34)">
+	<phase id="begin" next="cadeau">
+		[Espera, ¡espera un poco!]
+		[Hay algo que me preocupa...]
+		[Hace más de 50 años que no la he visto...]
+		[¡No creo que me reciba con los brazos abiertos!]
+		[...]
+		[¿Y si le llevo un regalo? ¡Esa es la solución!]
+	</phase>
+	<a id="cadeau">¿Qué tipo de regalo?</a>
+	<phase id="cadeau" frame="serieuxbla" next="idee">
+		[Pfiuu, ¿tal vez una flor de Nimbao?]
+		[¿Puedes traerme una?]
+		[...¿No quieres? Bueno, volveré a mi residencia...]
+	</phase>
+	<a id="idee">Está bien, ¡iré a buscar una!</a>
+	<phase id="idee" fast="1" scenario="caush:35" frame="glou">
+		Partes a la busca de una flor de Nimbao...
+		Quién hubiese imaginado que el futuro de Caushemesh dependería del encuentro de una vieja pareja...
+	</phase>
+</d>
+
+<d place="cpyra1" name="Mandrágora" gfx="mandragore" background="10" frame="rire" cond="scenario(caush,35)">
+	<phase id="begin" next="nofound:found" fast="1">
+		Encuentras a Mandrágora charlando con un par de amazonas, una de ellas se ríe a carcajadas y la otra parece aburrirse...
+	</phase>
+	<a id="found" cond="hasingr(fruit4)">¡Encontré una!</a>
+	<a id="nofound" cond="!hasingr(fruit4)">Busco aún.</a>
+
+	<phase id="nofound" next="moue" frame="bla">
+		[¡Vamos Maestro de Dinos, encuéntrala por mi, no me decepciones!]
+		_(Mandrágora gira hacia una de las amazonas )_
+		[Jaja, a este muchacho yo le enseñé todo lo que sabe, sin mi, no habría pasado el segundo nivel...]
+	</phase>
+	<a id="moue">¡No es cierto!</a>
+	<phase id="moue" next="resigne" frame="bla">
+		[Además es muy ocurrente como podéis ver...]
+		_(Mandragore murmura)_
+		[(¿Acaso quieres que llame a Lucrecio?)]
+	</phase>
+	<a id="resigne">Glup, eeh... él dice la verdad, era una broma...</a>
+	<phase id="resigne" next="snif" frame="bla">
+		[JAJAJAJA, ¡qué simpático!]
+		[¡Ahora vete y tráeme lo que te pedí!]
+	</phase>
+	<a id="snif">Por supuesto...</a>
+	<phase id="snif" next="tss" frame="bla">
+		[SI ¿QUIÉN?]
+	</phase>
+	<a id="tss">Sí, Maestro... Snif...</a>
+	<phase id="tss" fast="1" frame="glou">
+		Mandrágora abusa de la situación, pero no puedes reprocharle nada, siempre te ha sacado de aprietos...
+	</phase>
+
+	<phase id="found" next="motiv" frame="serieuxbla" useingr="fruit4" scenario="caush:36">
+		[¡Bravo muchacho!]
+		[Bueno, solo queda, como se dice...]
+	</phase>
+	<a id="motiv">¡Es tan emotivo!</a>
+	<phase id="motiv" fast="1"  frame="glou">
+		Mandrágora entra en el palacio, con la flor en la mano y una risa crispada en el rostro.
+		Sus pasos se hacen cada vez más lentos, la incomodidad es evidente...
+	</phase>
+</d>
+
+<d place="cpyra2" name="Sofía" gfx="sofia" frame="fixe" cond="scenario(caush,36)">
+	<phase id="begin" next="pouf">
+		[¿Qué deseas Maestro de Dinos?]
+		[¡Espero que tengas una buena razón para despertarme!]
+		[¡Nadie me saca de la cama sin pensar en las consecuencias!]
+	</phase>
+	<a id="pouf">¡Encontré a Mandrágora!</a>
+	<phase id="pouf" next="joke" name="..." gfx="mandragore" background="9" frame="parti">
+		[......]
+		[...]
+		[..]
+	</phase>
+	<a id="joke">GÜEKK ¿Dónde está?</a>
+	<phase id="joke" next="la">
+		[Mmmm... Tu chistecito no es gracioso.]
+		[¿Quieres que te castigue?]
+	</phase>
+	<a id="la">(Sacar a Mandrágora de su escondite)</a>
+	<phase id="la" next="poupougne" name="Mandrágora" gfx="mandragore" background="9" frame="serieuxbla">
+		[¿Mi cuchicuchi?]
+		[Soy yo...]
+	</phase>
+	<a id="poupougne">(¿Muchimuchi? Pfff...)</a>
+	<phase id="poupougne" next="raison" frame="happy">
+		[¿Mandrichú?]
+		[¿Eres tú?]
+	</phase>
+	<a id="raison">(Ahhh, el amor... Mandrichú, ¡JA!)</a>
+	<phase id="raison" frame="fixe" next="heure">
+		[...]
+	</phase>
+	<a id="heure">(Glups, va a llover...)</a>
+	<phase id="heure" next="dsl" frame="silence">
+		[¿Recién vuelves a casa?]
+		[¿Te perdiste en el camino?]
+		[¿Cuántos años pensabas hacerme esperar?]
+		[Esposo ingrato, canalla, ¡abandonador de hogares!]
+		_(Los vasos y jarrones son armas mortales, ¡mejor esconderse!)_
+	</phase>
+	<a id="dsl">Ayyyy...</a>
+	<phase id="dsl" next="menteur" name="Mandragore" gfx="mandragore" background="9" frame="serieuxbla">
+		[Pero... Muchimuchi, sabes que la seguridad de las islas Atlanteidas está a mi cargo.
+		¡Eso da muchísimo trabajo!]
+	</phase>
+	<a id="menteur">Buh, mentiroso, ¡le pasó el trabajo a Bao!</a>
+	<phase id="menteur" next="voyage">
+		[¡Sé muy bien que no te ocupas de eso desde hace mucho tiempo!]
+		[¡Me dejaste para irte de aventura en aventura!]
+		[¡¿Y crees que esa miserable flor va a hacer que te perdone?!]
+	</phase>
+	<a id="voyage">Emm, ¡me costó mucho conseguirla!</a>
+	<phase id="voyage" next="bon" name="Mandrágora" gfx="mandragore" background="9" frame="serieuxbla">
+		[¡Bueno, escucha, ya basta!]
+		[Estoy aquí, eso es lo principal, ¡así que deja de chillar!]
+	</phase>
+	<a id="bon">(Veamos lo que eso provoca...)</a>
+	<phase id="bon" frame="happy" next="good">
+		[...]
+		[Eres un loco, me gusta cuando te enfadas...]
+		[¡Ven ahora mismo! Y que ni se te ocurra sacar los pies del plato, ¡te estaré vigilando!]
+	</phase>
+	<a id="good">Uf, ya casi...</a>
+	<phase id="good" fast="1" scenario="caush:37">
+		Les dejas juntos, tienen muchas cosas de qué conversar...
+		Y seguramente la pelea recomenzará una y otra vez...
+		Será mejor volver mañana...
+	</phase>
+</d>
+
+<!-- Partie 5 La réconciliation -->
+
+<d place="cpyra1" name="Cassandra" gfx="cassandre" cond="(scenario(caush,37)|scenario(caush,38))+(swait(caush,24)|admin())">
+	<inject id="amazones__2:begin" next="super"/>
+
+	<a id="super">¿Qué pasó?</a>
+	<phase id="super" scenario="caush:38">
+		[Para qué te cuento. No pegué un ojo en toda la noche.]
+		[¡Tremendo jaleo!...]
+		[Y ahora hay que poner todo en orden...]
+		[¡Espero que no me salgan ojeras!]
+	</phase>
+</d>
+
+<d place="cpyra1" name="Chrysantina" gfx="chrysanthe" cond="(scenario(caush,37)|scenario(caush,38))+(swait(caush,24)|admin())">
+	<inject id="amazones:begin" next="super"/>
+
+	<a id="super">¿Qué pasó?</a>
+	<phase id="super" scenario="caush:38">
+		[Un ruido que llegó a niveles insoportables.]
+		[Ya estoy pensando en cambiar de oficio.]
+	</phase>
+</d>
+
+<d place="cpyra2" name="Mandrágora" gfx="mandragore" frame="glou" background="9" cond="scenario(caush,38)">
+	<phase id="begin" next="love" fast="1">
+		Encuentras a los dos enamorados compartiendo una copa, sentados el uno junto al otro.
+		Mandrágora parece tener chichones en la cabeza, y Sofía está toda despeinada... La noche debió ser muy agitada...
+	</phase>
+	<a id="love">¡Hola!</a>
+	<phase id="love" next="oeil">
+		[¡Hola muchacho!]
+		[¡Ni te cuento nuestra noche de locura!]
+		[No dormimos y nos acabamos hasta la última gota del bar...]
+		[¡Nos reímos mucho! Hasta me duelen las costillas.]
+	</phase>
+	<a id="oeil">Se nota...</a>
+	<phase id="oeil" next="hep">
+		[Bueno, puesto que no hay nada que beber, ¡yo me regreso a casa!]
+	</phase>
+	<a id="hep">¿Estás seguro?</a>
+	<phase id="hep" next="collier" name="Sofía" gfx="sofia" background="1" frame="fixe">
+		[¡Tú no te mueves de aquí!]
+		[Como si no me diera cuenta...]
+		[Para que dejes de decir tonterías, te voy a poner este collar.]
+		_(Sofía saca un collar de Nimbao)_
+	</phase>
+	<a id="collier">¡Eso es!</a>
+	<phase id="collier" next="chien">
+		[Ah, ¡ese collar no!]
+		[¡Socorro!]
+	</phase>
+	<a id="chien">...</a>
+	<phase id="chien" fast="1" scenario="caush:39">
+		Mandrágora está condenado a quedarse con su mujer, ¿realmente le hiciste un favor?
+	</phase>
+</d>
+
+<d place="cpyra2" name="Sofía" gfx="sofia" cond="scenario(caush,39)">
+	<inject id="sofia:begin" next="love"/>
+	<a id="love">¿Qué tal la fiesta?</a>
+	<phase id="love" next="but"  frame="fixe">
+		[Querido, ¿puedes darle una lección a ese pretencioso?]
+		[A mí me da flojera.]
+		[Y cuando hayas terminado, ¡tráeme un vaso de Manzágora!]
+	</phase>
+	<a id="but">...¿Puedo hacer otra cosa por usted, señora?</a>
+	<phase id="but" next="faille"  frame="fixe">
+		[Hmm... Estás haciendo méritos...]
+		[En realidad, caes en buena hora.]
+		[Siento ondas negativas... SÍ, más negativas que las mías...
+		que vienen desde Caushemesh.]
+		[¡Vé a averiguar y vuelve con información!]
+	</phase>
+	<a id="faille">Ahora mismo.</a>
+	<phase id="faille" next="courage" name="Mandrágora" gfx="mandragore" frame="serieuxbla" background="9" >
+		[Ten cuidado, esas ondas provienen de un ser poderosísimo.]
+		[¿No quieres que te acompañe? ¡Podrías necesitar mi ayuda!]
+	</phase>
+	<a id="courage">Sí, estaría bien.</a>
+	<phase id="courage" next="demerde"  frame="fixe">
+		[¡Tú no te mueves de aquí, he dicho!]
+		[Él es suficientemente grandecito para arreglárselas solo, y no tengo ganas de ir tan lejos.]
+	</phase>
+	<a id="demerde">¡Bueno, allá voy!</a>
+	<phase id="demerde" fast="1" scenario="caush:40" name="Mandrágora" gfx="mandragore" background="9" frame="glou">
+		Mandrágora te ve partir, con lágrimas en los ojos, le hubiera gustado divertirse como tú.
+		Ahora vamos hacia el complejo de extracción de éter...
+	</phase>
+</d>
+
+<d place="cextra" name="..." gfx="belius" frame="blabla" cond="scenario(caush,40)">
+	<phase id="begin" next="monstre" frame="stop" fast="1">
+		Un monstruo gigantesco, que parece un Polvorón infernal surge de la falla, un aura oscura rodea su cuerpo tenebroso.
+	</phase>
+	<a id="monstre">Qué aura tan poderosa...</a>
+	<phase id="monstre" next="moi">
+		[Por fin, el aire de la superficie...]
+		[Gofofofo....]
+		[Taurus tenía razón, es hora de invadir este mundo.
+		Estoy harto de nuestro mundo oscuro...]
+		[Las puertas de Caushemesh han sido abiertas, el camino a Dinoland está libre.]
+		[Gofofofo....]
+		[¿Quién anda ahí? ¿Qué clase de insecto quiere morir aplastado por mí?]
+	</phase>
+	<a id="moi">¡Estoy aquí para detenerte!</a>
+	<phase id="moi" next="baston">
+		[No puedes hacer nada contra Belius, el Polvorón infernal.]
+		[Gofofofo....]
+		[¡Tu ignorancia te costará muy cara!]
+	</phase>
+	<a id="baston">¡No conoces mi fuerza!</a>
+	<phase id="baston" next="surprise" fightgroup="belius" scenario="caush:41">
+		[Keuf...]
+		[¿Cómo un simple habitante de la superficie puede ser tan poderoso?...]
+	</phase>
+	<a id="surprise">¡Vuelve a tu infierno!</a>
+	<phase id="surprise" gfx="taurus" name="???" frame="gone" next="aide">
+		[Gufufufu...]
+		[¿Necesitas ayuda Belius?]
+	</phase>
+	<a id="aide">¡Esa voz!</a>
+	<phase id="aide" gfx="taurus" name="Taurus" frame="stop" fast="1">
+		Un segundo monstruo infernal aparece...
+		Cómo vencer a dos seres tan abominables...
+	</phase>
+</d>
+
+<d place="cextra" name="Belius" gfx="belius" frame="blabla" cond="scenario(caush,41)|scenario(caush,42)">
+	<phase id="begin" next="combat" frame="stop" fast="1">
+		Dos Dinos infernales emergen frente a ti.
+		Sus risas resuenan entre las paredes del complejo de extracción.
+	</phase>
+	<a id="combat">Esto no empieza nada bien...</a>
+	<phase id="combat" next="mandra" name="Taurus" gfx="taurus" frame="blabla">
+		[Gufufufu...]
+		[Me acuerdo de ti, estabas en las islas la última vez que estuve en la superficie...]
+		[Veo que estás solo esta vez... sin tu ángel guardián no tienes salvación...]
+		[Gufufufu...]
+	</phase>
+	<a id="mandra">Grrr... No puedo huir...</a>
+	<phase id="mandra" name="Mandrágora" gfx="mandragore" frame="serieuxbla" background="12" next="help">
+		[¿Qué pasó muchacho, ya te hiciste en los pantalones?]
+		[¡No te preocupes de esto me encargo yo!]
+	</phase>
+	<a id="help">¡Mandrágora!</a>
+	<phase id="help" name="Sofía" gfx="sofia" frame="fixe" background="3" next="petage" >
+		[Pfff, ¡temblar ante dos dinitos un poco oscuros!]
+		[Me pregunto para qué vine...]
+		[Seguramente porque las ondas negativas no me dejaban maquillarme.]
+	</phase>
+	<a id="petage">¿Sofía?</a>
+	<phase id="petage" name="Mandrágora" gfx="mandragore" frame="bla" background="12" fightgroup="tauru2:beliu2|mandra:sofia" scenario="caush:42" next="villa">
+		[¡Ya está hecho!]
+		[¿Y si volviéramos a Dinoplaza?]
+		[Tengo un almacén de bebidas por allá.]
+	</phase>
+	<a id="villa">¿Se acabó?</a>
+	<phase id="villa" name="Sofía" gfx="sofia" frame="fixe" background="3" next="heben">
+		[No es mala idea, ya me harté de este agujero.]
+		[Pasamos antes por el palacio y vamos.]
+		[Llama a tu Dino para que no tenga que caminar.]
+	</phase>
+	<a id="heben">Impresionante...</a>
+	<phase id="heben" next="gone">
+		[Erk, no cantéis victoria tan fácilmente...]
+		[La invasión de vuestro mundo no hace más que comenzar.]
+		[Somos muchos en el Mundo Sombra.]
+		[Nadie escapará a nosotros...]
+		[Gufufufu...]
+		[...]
+		[Erk....]
+		_(Belius y Taurus caen a las profundidades. ¿Estarán completamente vencidos?)_
+	</phase>
+	<a id="gone">¡Eso es terrible!</a>
+	<phase id="gone" fast="1" name="Mandrágora" gfx="mandragore" frame="parti" background="12" collection="belius" scenario="caush:43">
+		El Mundo Sombra no volverá a molestarnos por un buen tiempo.
+		¡Aprovechemos para ir en busca de nuevas aventuras!
+	</phase>
+</d>
+
+<!-- Fin de la quête -->
+
+<d place="cpyra2" name="..." gfx="sofia" frame="gone" cond="scenario(caush,44+)">
+	<phase id="begin" next="recomp">
+		El silencio reina en la sala del trono...
+		Podemos adivinar el humor de su habitante con solo ver el estado del lugar...
+	</phase>
+	<a id="recomp" cond="!collec(caush)">Veamos esa recompensa...</a>
+	<phase id="recomp" collection="caush">
+		Encuentras debajo de un montón de objetos la recompensa prometida por Sofía.
+		Al fin comprendes lo que quiso decir con encontrar el "verdadero"...
+		[Aparte de servir como antistress, este objeto parece no servir para nada...]
+	</phase>
+</d>
+
+

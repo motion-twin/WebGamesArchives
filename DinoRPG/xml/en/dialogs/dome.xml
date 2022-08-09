@@ -1,0 +1,89 @@
+﻿<!--  QUETE DE l'appeau : permet l'accés au Dome Soulaflotte -->
+
+<d place="chutes" name="Atlantean Guard" gfx="apostoph" cond="admin()|fx(bouee)">
+
+	<phase id="begin" next="rasca:thanks">
+		The Underwater Dome can only be accessed with a Scorpscuba.
+	</phase>
+
+	<a id="rasca"cond="!fx(rasca)">A what?!?</a>
+	<a id="thanks" cond="fx(rasca)">Ok, thanks!</a>
+
+	<phase id="rasca" next="where:thanks">
+		A Scorpscuba is a big fish with hollow bones that stores enough oxygen to travel to the depths
+		of the Underwater Dome. Well, it usually stores enough oxygen....
+	</phase>
+
+	<a id="where">Do you know where I can find one?</a>
+
+	<phase id="where" next="call:thanks">
+		Scorpscubas are very common here. You just have to know how to call them.
+	</phase>
+
+	<a id="call">Great! ... Hmmm ... have you got their number?</a>
+
+	<phase id="call" next="appeau:thanks">
+		Oh dear, young Dinoz Masters, when will they understand. In fact, you need a special object: a Scorpscuba caller.
+		It's a small flute that you place in the water. It simulates the wave pattern of a
+		huge malefic black shark from the pestillential abyss, the perfect meal for all Scorpscubas.
+		They dash for it and you use it to ride down to the Dome.
+	</phase>
+
+	<a id="appeau">A Caller...</a>
+
+	<phase id="appeau" next="old:thanks">
+		Yes. A Scorpscuba Caller is made from the bones of very old Scorpscuba. Of course,
+		the older scorscuba are far more bad-tempered and dangerous than younger Scorpascubas....
+	</phase>
+
+	<a id="old">Ummm...</a>
+
+	<phase id="old" next="thanks" effect="jvbz">
+		I have a friend, Joveboze, who is fisherman at Frish Port.
+		If you think you're up to it, I'll ask him to take you out to hunt an old, giant Scorpscuba so you can get yourself a quality flute.
+	</phase>
+
+	<phase id="thanks">
+		Enjoy your stay on the Atlanteid Islands.
+	</phase>
+
+</d>
+
+<d place="port" name="Joveboze" gfx="joveboze" cond="fx(jvbz)">
+
+	<phase id="begin" next="trad:sry">
+		He'a li'l boy! ya wanto kik old Scorpass?
+	</phase>
+
+	<a id="sry">... sorry?!?</a>
+	<a id="trad">Get an interpreter</a>
+
+	<phase id="trad" fast="1">
+		Nobody here seems to ever understand what Joveboze is saying. You have a feeling that it's
+		a local dialect of the Frishers, or even a language which Joveboze has created himself.
+	</phase>
+
+	<phase id="sry" next="go:trad">
+		Ifyar notrady dont'ome, elsjump inthboat, k?
+	</phase>
+
+	<a id="go">Follow Joveboze</a>
+
+	<phase id="go" next="attack:back" fast="1">
+		Joveboze takes you out to sea, it seems ships avoid this area. After a short wait, you see something in the water:
+		a huge Scorpscuba! If the Atlantean Guard was right, you're about to be attacked. What are you going to do!
+	</phase>
+
+	<a id="attack">Attack!</a>
+	<a id="back" target="attack">Step back!</a>
+
+	<phase id="attack" fight="rasca" bg="rasca" noeffect="jvbz" effect="rasca" fast="1">
+		After capturing the Scorpscuba, Joveboze takes you back to Frish Port and begins carving your flute.
+		He hasn't said anything since the Scorpscuba attack though he does occasionally look at you approvingly out of the corner of his eye.
+		After he finishes carving your flute, he gives you a firm handshake, wishes you luck on your future travels and then hands you the Scorpscuba Caller.
+	</phase>
+
+</d>
+
+
+

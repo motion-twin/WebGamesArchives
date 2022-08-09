@@ -1,0 +1,33 @@
+﻿<missions>
+
+	<m group="rodeur" id="rodriz" name="El Arroz Amnésico" limit="15">
+		<begin>
+		Necesito Arroz para recargar mi capa mágica. Parece que hay en el Pantano Pegajoso de las Islas Atlanteidas. ¿Podrías traerme lo suficiente para que pueda volverme de nuevo invisible? Rápido, ¡es urgente!
+		</begin>
+		<goto v="marais"/>
+		<action v="Buscar Arroz">
+		Tras varios intentos, encuentras un lugar del Pantano donde crece el Arroz Amnésico, una variedad muy rara de Arroz con propiedades extrañas. El problema es que hay decenas de Pirantas que protegen el acceso. ¡Tendrás que limpiar el camino!
+		</action>
+		<kill v="pira" n="30"/>
+		<action v="Recolectar Arroz">¡Enhorabuena! Obtienes Arroz Amnésico</action>
+		<end>
+		¡Ah! Uhm... Creo que entendí mal. Finalmente solo necesito un poco de energía de rayo para recargar mi capa... Quédate con el Arroz, no lo necesito.
+		</end>
+		<gold v="5000"/>
+		<item v="riz"/>
+	</m>
+
+	<m group="rodeur" id="rodlif" name="Los Dinos Sombra" limit="15" cond="mission(rodriz)">
+		<begin>
+		Tres Dinos Sombra de Caushemesh te esperan en las Caídas Mutantes. Ve a vencerlos y vuelve a verme para obtener tu recompensa... Te aconsejo que no intentes eliminarlos tú solo.
+		</begin>
+		<goto v="chutes"/>
+		<fight v="pteroz:hippo:rocky"/>
+		<end>
+		No está mal para un pequeño Dino de Dinovilla... ten, ¡toma esto para ti!
+		</end>
+		<gold v="5000"/>
+		<xp v="250"/>
+	</m>
+
+</missions>

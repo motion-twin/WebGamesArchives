@@ -1,0 +1,41 @@
+<!-- ***************************************************************************** -->
+<!-- Agathe et Lechton, habitent l'acropole de Caushemesh --->
+
+<d place="cacrop" name="Ivan Tocry" gfx="lechton" cond="scenario(caush,42-)">
+	<phase id="begin" fast="1">
+		The Acropolis is silent. The doors and windows of every room are boarded up.
+		There is a dismal atmosphere looming over the town. In spite of the emptiness you feel evil eyes watching your every move.
+		You can barely make out a man of considerable years hiding in a dark alley, afraid, he doesn't dare make a move towards you.
+	</phase>
+</d>
+
+<d place="cacrop" name="Jules Avemerite" gfx="agathe" cond="scenario(caush,19+)+scenario(caush,42-)">
+	<phase id="begin" fast="1">
+		The little girl that you saved is staying at her grand-father's side, she waves to you, but she clearly doesn't want to be seen.
+		It's going to take a little more time before you can discuss matters openly with the denizens of this town.
+	</phase>
+</d>
+
+<!-- Une fois la quête terminée, un des habitants ouvrira une boutique dans le village pour vendre de nouveaux objets. -->
+
+<d place="cacrop" name="Ivan Tocry" gfx="lechton" frame="sour" cond="scenario(caush,43+)">
+	<phase id="begin" fast="1" next="salut">
+		The Acropolis is starting to look more like it used to, the residents are starting to leave their homes, at least a little.
+		Even a whole generation who spent their lives in hiding couln't have been wiped out in this short time.
+		The old man remains guarded, and distrusting, but he waves to you nonetheless.
+	</phase>
+	<a id="salut">Are things getting better?</a>
+	<phase id="salut">
+		[Yes, we will never be able to thank you enough for what you have done for us.
+		The wounds of the past will take some time to heal, but once again we have the hope, the hope that will allow us to rebuild our country.]
+	</phase>
+</d>
+
+<d place="cacrop" name="Jules Avemerite" gfx="agathe" frame="normal" cond="scenario(caush,43+)">
+	<phase id="begin" fast="1">
+		The young girl has found her smile.
+		She is no longer paying you any attention and is now playing with the other children in the square in front of the Acropolis.
+		Danger seems so far away when you are watching a scene such as this.
+	</phase>
+</d>
+

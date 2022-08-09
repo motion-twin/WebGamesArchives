@@ -1,0 +1,27 @@
+﻿<clanactions>
+
+	<clanact id="hopita" icon="construct" confirm="true" place="clinik" label="Construir la Clínica ::progress::%" cond="scenario(clinik,6+)" give="ladrillo:1" need="600" >
+		<desc><p>Dinovilla necesita una clínica. Contribuye a su construcción con *tu clan*.</p><p>Coloca *::give::* para realizar una acción de construcción.</p> <em>¡::count:: acciones de ::total:: han sido realizadas!</em></desc>
+		<message>Gracias. Has colocado un ladrillo para la construcción del edificio. Ya sólo quedan ::missing:: que colocar.</message>
+		<finish>¡Por fin has puesto el último ladrillo para construir la clínica! ¡Es fantástico!</finish>
+	</clanact>
+
+	<clanact id="tour" icon="construct" confirm="true" place="tourbt" label="Construir la torre ::progress::%" cond="scenario(nimba2,42+)" give="action:1" need="500" >
+		<desc><p>Construye una torre para ir a Nimbao.</p><p>Será necesario dar *::give::* para realizar una acción de construcción.</p> <em>¡::count:: acciones de ::total:: han sido realizadas!</em></desc>
+		<message>Gracias, has colocado la primera piedra en la edificación, ahora sólo te quedan ::missing:: por colocar.</message>
+		<finish>¡Has terminado la construcción de esta torre colocando la última piedra! ¡Bravo, Maestro!</finish>
+	</clanact>
+	
+	<clanact id="pompe" icon="construct" confirm="true" place="scaush" label="Eliminar la bruma ::progress::%" cond="scenario(caush,5+)" give="acción:1" need="300" >
+		<desc><p>Debes absorber toda la bruma antes que se propague y cubra todas las estepas.</p><p>Esto requiere *::give::*.</p> <em>¡::count:: acciones de ::total:: han sido completadas!</em></desc>
+		<message>Gracias, nos has ayudado a salvar las estepas, solo quedan ::missing:: a extraer.</message>
+		<finish>Has terminado de eliminar la bruma, la capa de nubes ya no es una amenaza, ¡las estepas están a salvo! ¡Fantástico!</finish>
+	</clanact>
+	
+	<clanact id="labora" icon="construct" confirm="true" place="iceisl" label="Construire le laboratoire ::progress::%" cond="scenario(smog,13+)" give="action:1" need="300" >
+		<desc><p>You can help Professor Henderson sut up his laboratory right here.</p><p>You need to give him *::give::* to help out with part of the construction.</p> <em>::count:: stages of ::total:: have been completed!</em></desc>
+		<message>Thanks a lot! You've heled out with the contruction of the laboratory, there's only ::missing:: stages to go.</message>
+		<finish>You've finished contruction of the laboratory! Let the experiments begin!</finish>
+	</clanact>
+	
+</clanactions>

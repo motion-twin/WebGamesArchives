@@ -1,0 +1,47 @@
+﻿<d place="bslt" name="Strange Dinoz" gfx="pteroz" cond="!collec(pteroz)+level(8)">
+	<phase id="begin" next="fight:leave" fast="1">
+		You come across a strange and menacing Dinoz. He's staring at you intensely with his red eyes, he seems to be very angry!
+	</phase>
+	<a id="fight">Fight him!</a>
+	<a id="leave">Run away!</a>
+	<phase id="fight" fight="pteroz" collection="pteroz" fast="1">
+		You've defeated a Pteroz and earned the Pteroz Trophy. This allows you to buy a Pteroz in the Dinoz Shop. Congratulations!
+	</phase>
+	<phase id="leave">
+		Phewww! One more step and this Dinoz would have attacked you!
+	</phase>
+</d>
+
+<d place="ilewkk" name="Strange Dinoz" gfx="hippo" cond="!collec(hippo)+level(8)">
+	<phase id="begin" next="fight:leave" fast="1">
+		You come across a strange Dinoz. As it spots you, it turns and starts to run directly at you. What do you do?
+	</phase>
+	<a id="leave">Wait</a>
+	<a id="fight">Fight him</a>
+	<phase id="fight" fight="hippo" collection="hippo" fast="1">
+		You've defeated a Hippoclamp and earned the Hippoclamps Trophy. This allows you to buy a Hippoclamp in the Dinoz Shop. Congratulations!
+	</phase>
+	<phase id="leave">
+		It seems he isn't chasing you any more ... but what kind of Dinoz could it be?
+	</phase>
+</d>
+
+<d place="frcbrt" name="Strange Stone" gfx="rocky" cond="!collec(rocky)+level(13)">
+	<phase id="begin" next="touch:fight:grave:leave" fast="1">
+		A strange stone is standing in your way. It seems like a very odd location for a stone...what do you want to do?
+	</phase>
+	<a id="touch">Touch it</a>
+	<a id="fight">Try to topple it</a>
+	<a id="grave" target="fight">Engrave it</a>
+	<a id="leave">Continue on your way</a>
+	<phase id="touch" fast="1">
+		That's strange ... this stone seems to be warm. Maybe it's better to keep on going....
+	</phase>
+	<phase id="leave" fast="1">
+		You're right, it's only a rock....
+	</phase>
+	<phase id="fight" fight="rocky" collection="rocky" fast="1">
+		Oops!! It seems that this stone was in fact a Rocky, a half-animal/half-mineral Dinoz rarely found in
+		Dinoland ... By defeating it, you've earned the Rockies Trophy, which allows you to buy a Rocky in the Dinoz Shop. Congratulations!
+	</phase>
+</d>

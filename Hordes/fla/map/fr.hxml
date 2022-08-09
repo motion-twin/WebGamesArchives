@@ -1,0 +1,21 @@
+#changer ici...
+-resource lang.fr.xml@xml_lang
+
+-cp src
+-cp ../../website/src/com
+-D swf-mark
+-D mt_prot_encode
+
+--flash-strict
+--no-traces
+
+-swf-lib swf/_gfx.swf
+-swf-version 8
+-main Boot
+-swf swf/_code.swf
+
+--next
+-cmd swfmake
+
+-cmd cp swf/mapLoader.swf ../../website/www_fr/swf/
+-cmd cp swf/map.swf ../../website/www_fr/swf/map.fr.swf

@@ -1,0 +1,236 @@
+﻿<missions>
+
+	<m group="elmaster" id="elma" name="The Master's Shopping">
+		<begin>You can start doing my shopping now, that will teach you a lesson ... I need some water, embers, fish, bread and some fresh mushrooms!</begin>
+		<goto v="fountj"/>
+		<action v="Draw Some Water">You've drawn some water for the Elemental Master</action>
+		<goto v="fosslv"/>
+		<action v="Gather Hot Embers">You've gathered some hot embers for the Elemental Master</action>
+		<goto v="port"/>
+		<action v="Buy a Fish">You've bought some fresh fish for the Elemental Master. Now you only need to get some bread and mushrooms.</action>
+		<goto v="dnv"/>
+		<action v="Buy Bread">You've bought a warm bread for the Elemental Master</action>
+		<kill v="goupi:goupi2:goupi3" n="6" name="Smashrooms"/>
+		<action v="Pick Up Smashroom Pieces">You've picked up some Smashrooms pieces, yummy! The shopping list of the Elemental Master is now complete!</action>
+		<end>You've finally returned with everything!</end>
+		<xp v="20"/>
+		<gold v="500"/>
+	</m>
+
+	<m group="elmaster" id="elma1" name="Lesson 1 - Lightning" cond="mission(elma)">
+		<begin>Because you're so persistent, I'll try to teach you the basics of the easiest element to comprehend, Lightning. But looking at your level, you must go and study at the University first....</begin>
+		<goto v="univ"/>
+		<action v="Study Lightning">
+			Lightning is the easiest element to catch, but is difficult to keep. Only Dinoz with the Lightning Conductor skill can do it....
+		</action>
+		<action v="Study Lightning">
+			Most of the books on this subject were written by the Elemental Master! To understand Lightning, his advice is: "go to the peak of the Big All-Hot on a stormy day to directly experiment with it .... and survive .... or at least try to!".
+		</action>
+		<goto v="fosslv"/>
+		<actfight act="Experiment With Lightning" monsters="elhelp">
+			<win>You survived! According to the books of the Elemental Master, you now have a better understanding of lightning....</win>
+		</actfight>
+		<talk v="Elemental Master" gfx="elmaster">
+			This is the second part of the training. Go to the Swamp and kill 3 Eeloz in order to study how their skin generates electricity!
+		</talk>
+		<goto v="marais"/>
+		<kill v="anguil" n="3"/>
+		<action v="Study Eeloz Skin">
+			The Master was right! After having inspected the Eeloz skin, you can see hundreds of « Minilec »: these little bugs naturally generate Lightning energy! You now have a far better knowledge of lightning....
+		</action>
+		<end>Ah! you're back! Well, your knowledge isn't perfect, but much improved nonetheless....</end>
+		<xp v="30"/>
+		<gold v="1000"/>
+	</m>
+
+	<m group="elmaster" id="elma2" name="Lesson 2 - Fire" cond="mission(elma1)">
+		<begin>Fire .... an element which has always fascinated mankind! It's one of the simplest elements to comprehend....</begin>
+		<goto v="fosslv"/>
+		<talk v="Elemental Master" gfx="elmaster">
+			This is the best location at which to learn more about the Fire element. You must begin by killing the Venerable, after you have killed him we'll then discuss the element ....
+		</talk>
+		<goto v="vener"/>
+		<action v="Kill the Venerable">
+			Just as you were about to attack the Venerable, with death being inevitable, you receive a message from the Elemental Master asking you to return.
+		</action>
+		<goto v="fosslv"/>
+		<talk v="Elemental Master" gfx="elmaster">
+			If I asked you to jump off a cliff would you do it? Unbelievable! Don't play with fire! Talking of fire, I think cooking a Flamelet compote would be good training.
+		</talk>
+		<nogoto/>
+		<kill v="flam" n="20" zone="1"/>
+		<goto v="fosslv"/>
+		<talk v="Elemental Master" gfx="elmaster">
+			Flamelets personify the Fire element. Paradoxically, they feed on Air and have the capacity to divide themselves into other Flamelets. When you're least expecting it, Fire can do a lot of damage in battle. But if you learn how to use it, it becomes harmless. Like Flamelets....
+		</talk>
+		<talk v="Elemental Master" gfx="elmaster">
+			You shouldn't get carried away: Flamelets were only a warm up. Now you must start the real exercises ... I don't think you'll be fantastic, but you seek death at any cost....
+		</talk>
+		<talk v="Elemental Master" gfx="elmaster">
+			Now you need to go to see the Pignight Brothers at the Ashpouk Ruins. They borrowed my Super-Invulnerability-Pepper a few years ago but still haven't given it back .... crush them and bring back my Pepper as soon as possible!
+		</talk>
+		<goto v="rashpk"/>
+		<actfight act="Fight the Pignight Brothers" monsters="pign1:pign2">
+			<begin>The Pignight Brothers are softpig twins. They are particularly gifted in Fire mastery....</begin>
+			<win>You have defeated the Pignight Brothers! Their cavern is now open....</win>
+		</actfight>
+		<action v="Search the Cavern">
+			After searching for hours, you finally come across a strange-looking Pepper you've never seen before ... It gleams in the dark and seems to possess a magical power....
+		</action>
+		<end>
+			Ah! You've found Super-Invulnerability-Pepper! I'll finally be able to prepare my Super-Piperade!
+		</end>
+		<xp v="40"/>
+	</m>
+
+	<m group="elmaster" id="elma3" name="Lesson 3 - Wood" cond="mission(elma2)+level(10)">
+		<begin>Wood element. An underestimated  yet powerful element.</begin>
+		<goto v="fosslv"/>
+		<talk v="Elemental Master" gfx="elmaster">
+			Hey, wood reminds me something ... A long time ago, I went to the Monster's Secret Island.
+			Strange creatures called Vegetox gather there. They are half-animal and half-vegetable,
+			and masters of the Wood element! Maybe one day you'll be able to go there ... hold on! I haven't even given you my instructions yet, what was I thinking!
+		</talk>
+		<talk v="Elemental Master" gfx="elmaster">
+			Well, anyway! In order to learn more about the Wood element, you must go to Grumhel Forest, although it's a bit far away. It would be better to learn the basics in a place nearby.
+		</talk>
+		<talk v="Elemental Master" gfx="elmaster">
+			I heard that a mysterious group, the Korgon Avengers as they liked to be called, have succeeded in entering the Big All-Hot through the Tunnel under the Branch. Go and see what's going on and keep me informed, as I don't really want to venture there....
+		</talk>
+		<goto v="tunel"/>
+		<action v="Find Out">
+			A group of 5 Korgon Avengers was seen coming out of the Tunnel. It seems they were heading to Lavapit.
+		</action>
+		<goto v="fosslv"/>
+		<talk v="Elemental Master" gfx="elmaster">
+			What did he say? Of course I know that's where they were going! Those damned Korgons stole my Wand of Cursed-Wood. I don't know what they want to do with it, but we have to get it back as soon as possible! He has to deal with them, they fled toward the South!
+		</talk>
+		<goto v="dnv" hide="1"/>
+		<actfight act="Fight the Korgon Avengers" monsters="korven:korven:korven">
+			<begin>While you were approaching, the 5 Korgon Avengers split in two groups: two of them flee and three stay fight....</begin>
+			<win>Where did the rest of the group escape to?</win>
+		</actfight>
+		<goto v="ilewkk" hide="1"/>
+		<action v="Korgon Avengers">
+			An Island resident assures you that he saw two Korgon Avengers. It seems they were running for their life to the West, and they were carrying a strange Wooden Wand.
+		</action>
+		<goto v="marais" hide="1"/>
+		<actfight act="Fight the Korgon Avengers" monsters="korven:kvenbs">
+			<begin>You have finally caught up with the chief of the Korgon Avengers, The Masked Korgon!</begin>
+			<win>You have defeated the Korgon Avengers!!!</win>
+		</actfight>
+		<action v="Pick Up The Magic Wand">
+			This strange-looking Wand seems to possess powers that are beyond belief .... It's better to take it back to it's owner as soon as possible before it claims more victims!
+		</action>
+		<end>
+			Ah! My Wand! Well done! Those damned Korgons! If you find that you suffer from side effects, come back later....
+		</end>
+		<gold v="2000"/>
+	</m>
+
+	<m group="elmaster" id="elma4" name="Lesson 4 - Air" cond="mission(elma3)">
+		<begin>When something disappears, air takes it's place. With this element, everything is a question of density!</begin>
+		<goto v="fosslv"/>
+		<talk v="Elemental Master" gfx="elmaster">
+			The Air element is not particularly well-known in Dinotown. Due to the fact that the Big All-Hot and the Atlanteid Islands are very close by, it's much easier to study the Fire and Water elements. I had to go all the way to Caushemesh in order to complete my studies on this subject ....
+		</talk>
+		<talk v="Elemental Master" gfx="elmaster">
+			But instead of asking you to venture that far away, I'm going to ask you to do me a favour .... you must bring me the scrolls which have been found during the recent development work in Dinoplaza. I would like to study them in depth ....
+		</talk>
+		<goto v="dplaza"/>
+		<action v="Find the Scrolls">
+			A resident explains to you that these scrolls were found during the recent excavations, but only a true Master could decipher them....
+		</action>
+		<goto v="fosslv"/>
+		<actfight act="Return the Scrolls" monsters="megoup">
+			<begin>As you are about to return the scrolls to the Elemental Master, you are ambushed!</begin>
+			<win>In the confusion of battle, someone has stolen the precious scrolls!</win>
+		</actfight>
+		<talk v="Elemental Master" gfx="elmaster">
+			What?! You lost the scrolls? What incompetence! You have no idea of how precious they are! You have to find them again! The thieves can't be that far away....
+		</talk>
+		<goto v="tunel" hide="1"/>
+		<actfight act="Scroll Thieves" monsters="megoup">
+			<begin>You find an accomplice of the Scroll Thieves....</begin>
+			<win>You've recovered one page of the Scroll .... Where can the others be!</win>
+		</actfight>
+		<goto v="colesc" hide="1"/>
+		<actfight act="Scroll Thieves" monsters="darkg2">
+			<begin>You find the leader of the Scroll Thieves....</begin>
+			<win>This thief has two pages of the Scroll in his possession. You have found three out of the four pages, the last one seems to have disappeared, maybe this will be enough for the Master?</win>
+		</actfight>
+		<goto v="fosslv"/>
+		<talk v="Elemental Master" gfx="elmaster">
+			I need a few moments to study the scrolls...
+		</talk>
+		<talk v="Elemental Master" gfx="elmaster">
+			.... Well, I've finished. It's an incredible discovery: these scrolls speak of a "Dragon Island". According to legend, it is an island with large wings meaning it can change it's location!
+		</talk>
+		<talk v="Elemental Master" gfx="elmaster">
+			If these scrolls are authentic, this would mean that the Dragon Island really exists .... but there's something strange, the explanation of how to get to the island stops suddenly, it seems one page is missing....
+		</talk>
+		<talk v="Elemental Master" gfx="elmaster">
+			We won't know more for the moment as we lack the required information .... It's a pity, I'd really like to explore this mysterious new island!
+		</talk>
+		<talk v="Elemental Master" gfx="elmaster">
+			But let's return to our lesson in the Air element .... We're losing time! You must bring back 2 units of air energy as soon as possible!
+		</talk>
+		<useingr v="enair" n="2"/>
+		<talk v="Elemental Master" gfx="elmaster">
+			What? That's all? I asked you to bring back 5 units of air energy! Go and get the other 3!
+		</talk>
+		<useingr v="enair" n="3"/>
+		<end>Well, well, well, it seems you can do anything when you put your mind to it!</end>
+		<gold v="10000"/>
+	</m>
+
+	<m group="elmaster" id="elma5" name="Lesson 5 - Water" cond="mission(elma4)">
+		<begin>Our last lesson will be to study the Water element....</begin>
+		<goto v="fosslv"/>
+		<talk v="Elemental Master" gfx="elmaster">
+			I always keep the Water element until the end of the training .... to be honest, I don't like studying the Water element at all: it's cold and wet! That's why I live on the Big All-Hot....
+		</talk>
+		<talk v="Elemental Master" gfx="elmaster">
+			In spite of the fact that I have perfectly mastered the Water element, I'm not in the mood to teach you. Go to Bao who'll train you on my behalf!
+		</talk>
+		<goto v="baobob"/>
+		<talk v="Mr Bao Bob" gfx="baobob">
+			Mmmm .... So you are the student of the Elemental Master? You arrived just in time, I recently had some leaks on the Portal that I had to take care of. Now there are Monsters who have escaped to the Islands .... Can you find them all for me?
+		</talk>
+		<goto v="chutes"/>
+		<kill v="pirao2" n="1"/>
+		<goto v="marais"/>
+		<kill v="pirao2" n="1"/>
+		<goto v="corail"/>
+		<kill v="pirao2" n="1"/>
+		<goto v="ilewkk"/>
+		<kill v="pirao2" n="1"/>
+		<goto v="baobob"/>
+		<kill v="pirao2" n="1"/>
+		<talk v="Mr Bao Bob" gfx="baobob">
+			Thanks for your help, I can hardly move when the Portal is weakened. It's better for me to stay here in case a powerful monster tries to enter ....
+		</talk>
+		<talk v="Mr Bao Bob" gfx="baobob">
+			I've probably been talking too much .... Mmmmm .... Let's talk about the Water element.
+		</talk>
+		<talk v="Mr Bao Bob" gfx="baobob">
+			Water is abundant in the Atlanteid Islands, and it's a powerful element when used against Lightning. Did you know that Lightning is the principal element in the Magnetic Steppes?
+		</talk>
+		<talk v="Mr Bao Bob" gfx="baobob">
+			Mmmm .... Water is very powerful. Due to it's power, it's very popular as it grants the ability to take control of a fighter and to return him to his friends. It's not possible to master it by normal methods, but maybe one day one of your Dinoz will be able to master it?
+		</talk>
+		<talk v="Mr Bao Bob" gfx="baobob">
+			Mmmm .... That's pretty much everything I have to tell you about the Water element. I'll let the Elemental Master know that you've finished your training....
+		</talk>
+		<goto v="fosslv"/>
+		<talk v="Elemental Master" gfx="elmaster">
+			How is old Bao doing? I've only seen him a few times since he was assigned to Portal guard duty by Mandragora .... well, in any case, it seems your training is complete.
+		</talk>
+		<end>
+			That's the end of your final lesson. Come and see me for your final reward.
+		</end>
+		<xp v="20"/>
+		<fx v="sphere"/>
+	</m>
+
+</missions>

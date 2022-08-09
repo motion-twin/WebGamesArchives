@@ -1,0 +1,12 @@
+# 
+-swf ./swf/zone.swf
+-main ZoneLoader
+-cp src/
+-cp ../lib/
+-cp ../persos/src/
+-cp ../map/src
+-cp ../../../website/src/com/
+-D swf-mark
+--flash-strict
+-cmd %SWFMAKE% -f make_zone.xml
+-cmd copy swf\zone.swf ..\..\..\website\www\swf\zone.swf

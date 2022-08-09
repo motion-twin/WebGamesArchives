@@ -1,0 +1,177 @@
+﻿<!-- ***************************************************************************** -->
+<!-- Garde pour le Roi de Dinoville ----->
+<!--
+-Il y a une fuite dans les cuves de mana du château, il faut aller chercher broc pour réparer.
+Broc a besoin d’ingrédient (main mécanique) + 2 Silex Taillé pour réparer la fuite.
+-cueillir des ingrédients dans le monde sombre (retrouver gulom aux gouffres des âmes en peines qui vient de trouver un endroit où creuser) pour ramener des morceaux au roi
+-récolter du mana (?)
+-détruire du lichen
+-retrouver les coffres qui se sont fait la malle.
+-affronter des monstres sombres pour préparer la visite du roi
+-purifier un endroit du monde sombre pour la venue du roi (aller à la fontaine de jouvence avec un flacon vide donné par ?)
+-escorter le roi à la tour du monde sombre puis ressortir du monde sombre (le roi dit à la fin qu’il ira peut-être seul un jour)
+-->
+
+<missions>
+
+	<m group="roi" id="roia" name="The Exorbitant Exodus">
+		<begin>Mana causes unexpected things to happen sometimes. Mana has seeped into the castle walls as far as the treasure room thanks to an unfortunate leak.
+		All of a sudden the strongboxes are animated and belligerent, they're knocking around all over the place, but those near dinotown could hurt the locals.
+		Could you stop this nonsense and return them to the castle?</begin>
+		<goto v="dnv"/>
+		<kill n="2" v="mimic"/>
+		<goto v="papy"/>
+		<kill n="4" v="mimic"/>
+		<goto v="port"/>
+		<kill n="6" v="mimic"/>
+		<end>You successfully returned some of the castle's treasure. Thanks to you, the monthly contribution paid by the citizens of Dinotown will not be increased this year.
+		You deserve a reward.</end>
+		<xp v="50"/>
+	</m>
+	
+	<m group="roi" id="roib" name="Mana Leak" cond="mission(roia)">
+		<begin>A leak has been discovered in the mana reservoirs in the castle, we'll have to call on the mechanic from the Atlanteid Islands to repair it.
+		It was he who designed the mana storage system. Yet another imbecile...</begin>
+		<goto v="chbroc"/>
+		<talk v="Klutz" gfx="broc" background="5">The reservoirs are broken again? It's the same thing every time! I mean I'd like to repair it, but if you insist on storing too much mana, that's what you get!
+		Could you fetch me some ingredients so I can patch them up?
+		</talk>
+		<useingr v="fish" n="4"/>
+		<talk v="Klutz" gfx="broc" background="5">I bet you didn't know how to use fish to repair a mana reservoir?
+		In fact I use the mucus produced by the fish to seal the crack... and I eat the rest!
+		</talk>
+		<useingr v="enfdr" n="2"/>
+		<talk v="Klutz" gfx="broc" background="5">And that's to harden the mucus! Not just a pretty face...
+		</talk>
+		<goto v="chato"/>
+		<end>The mechanic came to repair the leak, I heard that you gave him all the materials he needed. Here is your reward, you've earned it.</end>
+		<xp v="80"/>
+	</m>
+	
+	<m group="roi" id="roic" name="Man-a-ctive Lichen" cond="mission(roib)">
+		<begin>Man-a-ctive lichen has surrounded the castle again, it's started to appear in other places around Dinoland too.
+		You must go and see the Soft Shaman again and wipe out all trace of it, we've managed to keep a route open clear of Dinoplaza, you should be able to go to Big All Hot without any dificulty.</begin>
+		<goto v="fosslv"/>
+		<talk v="Soft Shaman" gfx="shaman">
+			Is it the story about that lichen growing around the castle again?
+			Well yeah, I thought as much, I had kept enough stock aside, but you're still going to have to go and see the Venerable to shake it right up.
+			Off you go, good luck!
+		</talk>
+		<action v="Take a blue flame potion">
+			You have taken a potion containing a blue flame @/img/icons/fx_potio1.gif@, it seems this thing needs a really good shakeup!
+		</action>
+		<goto v="vener"/>
+		<actfight act="Fight the Venerable" monsters="vener4">
+			<begin m="vener4">
+				You've come to bug me about another damn potion...	I'll roast it properly this time, and you with it, one way or another you'll stop interrupting my siestas.
+			</begin>
+			<win>
+				Grumph... There you go, you've got your potion? Stop bothering me now.
+			</win>
+		</actfight>
+		<action v="Pick up the red flame potion">
+			You have taken a potion containing a red flame @/img/icons/fx_potio2.gif@, ideal for burning man-a-ctive plants!
+		</action>
+		<goto v="poste"/>
+		<talk v="Burn Lichen" gfx="garde_dnv" background="2" frame="pouf">
+			You have used some of the red potion, the lichen has been wiped out in this location.
+		</talk>
+		<talk v="Captain" gfx="garde_dnv" background="2" frame="talk">
+			Perfect. The situation has been calmed down for the time being. Two new cases of glowing lichen have been reported, so you'll need to go to Dinotown and Brutforce to fight the invasive menace.
+		</talk>
+		<goto v="dnv"/>
+		<talk v="Burn Lichen" gfx="garde_dnv" background="3" frame="pouf">
+			You have used some of the red potion, the lichen has been wiped out in this location.
+		</talk>
+		<goto v="frcbrt"/>
+		<talk v="Burn Lichen" gfx="garde_dnv" background="4" frame="pouf">
+			You have used the last of the red potion, the lichen has been wiped out in this location.
+		</talk>
+		<end>Good, the man-a-ctive lichen menace has been cntained for the moment, Here is your reward.</end>
+		<xp v="100"/>
+	</m>
+	
+	<m group="roi" id="roid" name="History of the Dark World" cond="mission(roic)">
+		<begin>The King would love to hear about your adventures in the Dark World, but he doesn't have time to listen to you all day.
+		Could you recount your journey on parchment and accompany it with an ingredient which came straight from the Dark World itslf?</begin>
+		<goto v="dkchut"/>
+		<talk v="Gulom" gfx="survivor" background="1">
+			Hey, how are you, I've not seen you around here for ages...
+			Are you looking for somewhere you can find ingredients?
+			I seem to remember seeing some unusual plants growing on that piece of land just north of here...
+		</talk>
+		<goto v="fake2"/>
+		<talk v="Gulom" gfx="survivor" background="1">
+			It's definitely here, you must be able to find an ingredient around here, and I'll dry it out for you so that you can conserve it with the chronicles of your voyage.
+		</talk>
+		<useingr v="fruita" n="1"/>
+		<talk v="Gulom" gfx="survivor" background="1">
+			Voila, the dark cutting is sufficiently dry to resist the sunlight, you'll be able to show it to the King without worrying that it's going to spontaneously evaporate.
+		</talk>
+		<end>Congratulations, I see you've got the courage to go back to the Dark World, you're maybe not as much of a lost cause as I thought you were... here is your reward.</end>
+		<xp v="100"/>
+	</m>
+
+	<m group="roi" id="roie" name="History of the Dark World 2" cond="mission(roid)">
+		<begin>His Majesty would like to visit the Dark World, but his safety is the prime concern.
+		He's heard about a will-o-the-wisp that dinoz masters have seen over there, and he can't concentrate on the affairs of the Kingdom until he's seen it.
+		Could you temporarily secure the Dark World to make it safe for the King to visit?</begin>
+		<goto v="fake2"/>
+		<kill n="4" v="feufol"/>
+		<goto v="fake"/>
+		<kill n="2" v="feufol"/>
+		<goto v="dktow"/>
+		<kill n="4" v="feufol"/>
+		<goto v="dkbao"/>
+		<kill n="6" v="feufol"/>
+		<end>OK, the Dark World should be a lot safer for a while now. Here is your reward.</end>
+		<xp v="80"/>
+	</m>
+	
+	<!-- rajouter condition sur le futur scénario monde sombre pour cette mission -->
+	<m group="roi" id="roif" name="Visit to the Dark World" cond="mission(roie)">
+		<begin>The King is determined to visit the Dark World to evaluate the menace posed to the citizens of Dinoville.
+		Could you escort him there and ensure his safe return? Obviously I'll stay by your side for the duration of the trip.</begin>
+		<goto v="dkchut"/>
+		<talk v="The King of Dinoville" gfx="roi" background="3" frame="blabla">
+			Oh, Oh, Oh, it's really pretty dark over here, let's have a closer look...
+		</talk>
+		<kill n="2" v="garouz"/>
+		<goto v="dkbao"/>
+		<talk v="The King of Dinoville" gfx="roi" background="3" frame="blabla">
+			Oh, Oh, Oh, you'd think we were at Bao's place at night...
+		</talk>
+		<kill n="10" v="piraos"/>
+		<goto v="fake"/>
+		<talk v="The King of Dinoville" gfx="roi" background="3" frame="blabla">
+			Oh, Oh, Oh, brrr, these tortured souls are frightful, is there no way to save them...
+		</talk>
+		<kill n="5" v="amanpe"/>
+		<goto v="fake2"/>
+		<talk v="The King of Dinoville" gfx="roi" background="3" frame="blabla">
+			Oh, Oh, Oh, wow - there are those will-o-the-wisp things we spoke about...
+		</talk>
+		<kill n="3" v="feufol"/>
+		<talk v="The King of Dinoville" gfx="roi" background="3" frame="blabla">
+			What is this dark tower that stands where the sticky swamp should be?
+		</talk>
+		<goto v="dktow"/>
+		<talk v="The King of Dinoville" gfx="roi" background="3" frame="blabla">
+			Interesting... Shall we go up?
+		</talk>
+		<goto v="dktow3"/>
+		<kill n="1" v="towgrd"/>
+		<goto v="dktow4"/>
+		<kill n="1" v="upgrd"/>
+		<goto v="dktowa"/>
+		<talk v="The King of Dinoville" gfx="roi" background="4" frame="blabla">
+			Have you never been up this high before?
+			This tower must get higher and higher by absorbing the darkness which surrounds it...
+			Watch out, I see something not good!
+		</talk>
+		<kill n="1" v="updwn"/>
+		<end>Finally... back in the castle. I was really worried, but I must admit that you have earned my trust. Here is your reward.</end>
+		<xp v="200"/>
+	</m>
+	
+</missions>

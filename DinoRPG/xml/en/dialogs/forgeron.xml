@@ -1,0 +1,37 @@
+﻿<d place="forges" name="Forger" gfx="damas" frame="stop" cond="active(fmedal)|admin()">
+	<phase id="begin" fast="1" next="repair:repair2:pelle:no">
+		You go into the Lavapit forges. It's every bit as hot in here as it is in the crater of Big All Hot.
+		Here nothing is created, everything is transformed, using a massive hammer!
+		
+		100 gold coins to fix that shovel of yours again, that's right, yeah?
+	</phase>
+
+	<a id="repair" cond="fx(brkpel)">Could you please repair my shovel?</a>
+	<a id="repair2" cond="fx(brkpe2)">Could you please repair my super-shovel?</a>
+	<a id="pelle" cond="fx(brkpel)+fx(brkpe2)">Could you maybe roll me one of those...</a>
+	<a id="no">Nothing really</a>
+
+	<phase id="pelle" frame="blabla">
+		[How would you feel about a shovel in the face?]
+	</phase>
+	
+	<phase id="repair" next="thanks" frame="blabla" usegold="100" effect="pelle" noeffect="brkpel">
+		[There you go, you're shovel is fixed little guy!]
+		[100 Gold coins please. Don't forget to stop at the cashdesk on your way out.]
+	</phase>
+
+	<phase id="repair2" next="thanks" frame="blabla" usegold="100" effect="pelle2" noeffect="brkpe2">
+		[Et voilà, ta pelle est réparée mon ptit gars !]
+		[100 Gold coins please. Don't forget to stop at the cashdesk on your way out.]
+	</phase>
+	
+	<a id="thanks">Of course I will ma'am!</a>
+
+	<phase id="thanks" frame="blabla">
+		Come back if you need our services again little guy!
+	</phase>
+
+	<phase id="no" frame="blabla">
+		Come back with your pockets full little guy, we're both wasting time here!]
+	</phase>
+</d>

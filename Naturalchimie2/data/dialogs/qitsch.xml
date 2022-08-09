@@ -1,0 +1,59 @@
+<d place="kirvie" name="Vous avez quitté votre école" cond="fx(qitsch)" gfx="gudkeeper" auto="1">
+
+
+<phase id="begin" next="go">
+...Voilàààà qui est faiiiit.  
+</phase>
+
+<a id="go">Oua ! Ca fait bizarre. </a>
+
+
+<phase id="go" frame="happy" noeffect="qitsch" next="ok:ou">
+Ils diiiisent tous ça... Alleeez maintenant. Tu peux rejoiiiindre une nouvelle écooooole si tu le souhaiteeees...
+</phase>
+
+<a id="ok">Ok, merci.</a>
+<a id="ou">Je les trouve où les autres écoles ? </a>
+
+<phase id="ok">
+C'est celaaaa. Au revoir.
+</phase>
+
+
+<phase id="ou" next="sk:ap:gm:jz:ok">
+Pour rejoindre une écooole, il faut juuuste se rendre dans leuuurs locaux. Il y aura quelqu'uuun pour t'inscrire gratuitemeeeent.
+</phase>
+
+
+<a id="sk">D'accord, mais chez Shang-Kah, c'est où ?</a>
+<a id="ap">Comment on va chez Audepint ?</a>
+<a id="gm">Où est l'école Gemini ?</a>
+<a id="jz">Jezaara, c'est loin ? </a>
+
+<!-- ################ -->
+
+<phase id="sk" next="ok:ou"> 
+Il faut aller à {Tupuri}, à l'oueeest. Direction Chouettex, c'est juste aprèèèès.
+</phase>
+
+<phase id="ap" next="ok:ou"> 
+Tout à l'eeest : Grande place, Guildian Expreeeeess... Puis suivre la rouuute jusqu'au {Faubouuuurg Audepint}.
+</phase>
+
+
+<phase id="gm" next="ok:ou"> 
+Il faut aller auuuu Nord. Par la Grande place, la Prairie infinie puis {l'Oréeeee du bois}.
+</phase>
+
+<phase id="jz" next="ok:ou"> 
+Tu doiiiis aller à {l'Entrée du Boyau}, au Sud. | Passe par le BAFA puis le Bourg de Tiresiaaaas.
+</phase>
+
+
+
+
+
+
+
+
+</d>

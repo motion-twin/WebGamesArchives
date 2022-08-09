@@ -1,0 +1,74 @@
+﻿<!-- ***************************************************************************** -->
+<!-- Paum, Dorogon, habitant de la cité Dorogon ----->
+
+<d place="ville1" name="Paum" gfx="paum" cond="scenario(nimba2,50-)">
+	<phase id="begin" fast="1" frame="stop" next="salut">
+		You are facing a Dorogon.
+		Even though it seems much larger than a man or someone from Arboris, it seems smaller than the average Dorogon.
+		It seems to want to talk to you.
+	</phase>
+	<a id="salut" >Good day, Master Dorogon.</a>
+	
+	<phase id="salut" next="derien:service" frame="bla"> 
+		[Good day young Dinoz master.]
+		[Its been a long time since we've seen your likes on Nimbao...]
+		[I see Monsigneur Pistachio likes to surround himself with the most astonishing creatures.]
+	</phase>
+	
+	<a id="derien">(Who is astonishing?)</a>
+	
+	<phase id="derien" frame="stop" fast="1">
+		You head away from Paum, he doesn't seem to be bothering with you any more anyway.
+		Everyone who lives in the towns nearby the city above seem to live a tranquil existence.
+	</phase>
+	
+	<a id="service" cond="scenario(nimba2,30)">can I help you there?</a>
+	
+	<phase id="service" next="nodon:don:fdon">
+		[You want to help me out?]
+		[Your servant is intriguing Pistachio, I happily accept your proposition.
+		I will give you a point of wisdom if you bring me a floral bouquet made up of ingredients from the surface. I'll certainly stand out from the crowd with a bouquet like that.]
+	</phase>
+	
+	<a id="fdon" cond="(hasingr(fruit1,1+)|hasingr(fruit3,1+))+!(hasingr(fruit1,3+)+hasingr(fruit3,3+))">Here's what you need to make a beautiful bouquet!</a>
+	<a id="don" cond="hasingr(fruit1,3+)+hasingr(fruit3,3+)">Here's what you need to make a beautiful bouquet!</a>
+	<a id="nodon" cond="!(hasingr(fruit1,3+)+hasingr(fruit3,3+))">I'll return with flowers from the surface!</a>
+	
+	<phase id="fdon">
+		[Sadiquae, Orchids, excellent thinking!]
+		[Yeah, but it's just not quite complete yet, it needs more to give it real impact!]
+		[I'm really looking forward to getting the rest!]
+	</phase>
+	
+	<phase id="don" next="trente" useingr="fruit1:3,fruit3:3" give="ptsage" scenario="nimba2:31">
+		[Sadiquae, Orchids, what a good idea, this bouquet will be awesome.]
+		[I'd be a certainty to win her heart with this bouquet if only there more Flaureolae, around thirty should do the trick!]
+		[I can't wait for you to deliver the finished bouquet!]
+	</phase>	
+	
+	<a id="trente">(30 Flaureolae....?)</a> 
+	
+	<phase id="trente" next="job">
+		[Hahaha, don't panic, I've already got all the Flaureolae I need.
+		You have earned your point of wisdom!]
+		[All I need to do now is muster up the courage and go see her!]
+	</phase>
+	
+	<phase id="nodon" frame="stop" fast="1">
+		You will need a special flower to win the trust of the Dorogon.
+	</phase>
+	
+	<a id="job">Thank you very much!</a>
+	
+	<phase id="job" frame="stop" fast="1">
+		You have earned another point of wisdom - that makes two!
+		Only three left to go!
+	</phase>
+</d>
+
+<d place="ville1" name="Paum" gfx="paum" cond="scenario(nimba2,51+)">
+	<phase id="begin" fast="1" frame="stop" >
+		What happiness... since the Arborians were liberated, and the borders were opened, the exporting of our precious resources has been hugely successful.
+		What brings you here Dinoz master?
+	</phase>
+</d>

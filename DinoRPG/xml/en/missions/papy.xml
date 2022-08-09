@@ -1,0 +1,115 @@
+<missions>
+
+	<!-- ***************************************************************************** -->
+	<!-- GRANDPA JOE, little jobs ----->
+
+	<m group="papy" id="fish" name="Fresh Fish" limit="10">
+		<begin>Madam Squyd of Dinotown needs some fresh fish for a meal she is preparing. Go and get some from the Merchant of Frish Port in the south. He's waiting for you.</begin>
+		<goto v="port"/>
+		<talk v="The Fish Merchant">Hello little one, are you here for the fish? Here you go! Take them to Dinotown before Madam Squyd's party is ruined.</talk>
+		<goto v="dnv"/>
+		<talk v="Madam Squyd">Ooooohhhh, thank you! This meal is going to be a success thanks to you! Make sure you return to Grandpa Joe to receive your reward!</talk>
+		<end>Madam Squyd is really pleased with you, here's your reward!</end>
+		<xp v="20"/>
+	</m>
+
+	<m group="papy" id="dog" name="The Lost Dog" limit="20">
+		<begin>Old Lady Ducraft has lost her poodle while visiting her son in the Precipitous Hills. Can you find it for her?</begin>
+		<goto v="colesc"/>
+		<talk v="Jessica Ducraft">Hello young man! Nioof-Nioof, my lovely little poodle has disappeared! I punished him for an accident and now I can't find him! Please help me find him, I miss him so much! I'm sure he couldn't climb these mountains with his tiny legs, he probably went to the South.</talk>
+		<goto v="port" hide="1"/>
+		<action v="Nioof-Nioof">You've found Nioof-Nioof! Take him back to Lady Ducraft!</action>
+		<goto v="colesc"/>
+		<talk v="Jessica Ducraft">My dear Nioof-Nioof!!! Please forgive me, I'm sorry for being mean! Thank you so much, young man. Return to that old fuddy-duddy Grandpa Joe to claim your reward!</talk>
+		<end>Argh ... that old hag, her time will come! This is for you.</end>
+		<xp v="15"/>
+		<item v="angel"/>
+	</m>
+	
+	<m group="papy" id="kilgou" name="The Hills' Smashrooms" limit="20" cond="mission(fish)">
+		<begin>Wolves and Smashrooms are invading the Precipitous Hills, north of Dinotown. The chief of a neighboring village is looking for someone to kill a few of them in order to scare them off and restore natural order. Do you think you are strong enough to accept this mission?</begin>
+		<goto v="colesc"/>
+		<kill v="goupi:goupi2:goupi3:wolf" n="6" name="Wolves and Smashrooms"/>
+		<end>Well done, thanks to you the Hills are peaceful once again!</end>
+		<xp v="30"/>
+		<gold v="500"/>
+	</m>
+
+	<m group="papy" id="kilwlf" name="Wolf Hunting" limit="15" cond="mission(kilgou)">
+		<begin>The peasants have been having a lot of problems with a pack of wolves attacking their goats. Can you look around and kill some of them so they'll move away?</begin>
+		<goto v="frcbrt"/>
+		<kill v="wolf" n="2"/>
+		<goto v="fountj"/>
+		<kill v="wolf" n="2"/>
+		<goto v="dnv"/>
+		<kill v="wolf" n="2"/>
+		<goto v="univ"/>
+		<kill v="wolf" n="2"/>
+		<end>Well done, with that they shouldn't harm the goats for a while!</end>
+		<xp v="30"/>
+		<gold v="2000"/>
+	</m>
+
+	<m group="papy" id="fflow" name="The Rose Bush in danger" limit="15" cond="mission(fish)">
+		<begin>Madam Squyd's favourite rose bush is in a bad state following the heat wave. Can you go to the Fountain and get some Pure Water to bring to her?</begin>
+		<goto v="fountj"/>
+		<action v="Pure Water">You get some Pure Water to water the rose bush....</action>
+		<goto v="dnv"/>
+		<talk v="Madam Squyd">Oh thanks little one! My rose bush will now regain it's beautiful colours! Return to Grandpa Joe, he'll give you your reward....</talk>
+		<end>The charming Madam Squyd sends her appreciation for your work. You deserve your reward!</end>
+		<xp v="20"/>
+	</m>
+
+	<m group="papy" id="kbook" name="The Recipe Book" limit="15" cond="mission(fflow)">
+		<begin>I've received another request from the pretty Madam Squyd. She wants to check a recipe in a book from the University. Can you take it to her?</begin>
+		<goto v="univ"/>
+		<action v="The Recipe Book">You find the recipe book, "100 Ways To Cook a Korgon", written and illustrated by One-Eyed Gorak</action>
+		<goto v="dnv"/>
+		<talk v="Madam Squyd">Thank you so much little one! I'll be experimenting with different Korgon recipes, don't hesitate to come by from time to time and try them!</talk>
+		<end>Bravo! Madam Squyd sent me a piece of grilled Korgon as a thank you. It's delicious!</end>
+		<xp v="20"/>
+	</m>
+
+	<m group="papy" id="msg" name="The Stamps" limit="30" cond="mission(kbook)">
+		<begin>I want to write a letter to someone who is close to my heart, but my stamps have been stolen by some thieving Smashrooms at the Fountain of Youth. If you kill them, I'll let you use my stamps, have we got a deal?</begin>
+		<goto v="fountj"/>
+		<kill v="goupi:goupi2:goupi3" n="15" name="Thieving Smashrooms"/>
+		<action v="Pick up the Stamps">Well done! You've found the stamps, return them to Grandpa Joe as soon as possible!</action>
+		<end>Fantastic! I can send my letter now! Here you go, take these stamps you really deserve them.</end>
+		<collec v="msg"/>
+		<xp v="20"/>
+	</m>
+
+	<m group="papy" id="lettre" name="The Confidential Letter" limit="2" cond="mission(msg)">
+		<begin>I need your help to deliver an URGENT letter to someone special in Dinotown. It's urgent, it must be delivered as soon as possible!</begin>
+		<goto v="dnv"/>
+		<talk v="Madam Squyd">Hello young Dinoz master, what have you brought me this time? What's that you've got there? A letter from Grandpa Joe? .... give him this in response!</talk>
+		<end>What's this?! A reply?! Already! GREAT! She has accepted my invitation to dinner. I'm not too old to show her what a real man is made of!</end>
+		<xp v="20"/>
+	</m>
+
+	<m group="papy" id="kilglu" name="A Strange Monster" limit="10" cond="mission(kilwlf)+canfight(gluon)">
+		<begin>A Strange monster has recently appeared in the Dinotown Kingdom. Apparently it's very tough and can take a lot of damage during a battle. Can you kill one and bring it back to me so I can study it?</begin>
+		<kill v="gluon" n="1"/>
+		<end>Thanks, it's a fantastic specimen. Here's your reward!</end>
+		<xp v="30"/>
+		<gold v="500"/>
+	</m>
+
+	<m group="papy" id="kilgnt" name="The Giants" limit="10" cond="mission(kilglu)+canfight(gvert)">
+		<begin>I'm not sure you've noticed but the Dinotown Kingdom has recently been invaded by huge Green Giants, and they don't just eat vegetables if you catch my drift! I need you to exterminate a dozen of them as quickly as possible! The order has come straight from the King, so we have to hurry! </begin>
+		<kill v="gvert" n="12" zone="0"/>
+		<end>Ooooooh! That was close! Thanks, you've really helped me out. I'll make sure to tell the King about your services while we play golf tomorrow.</end>
+		<xp v="100"/>
+		<gold v="5000"/>
+	</m>
+
+	<m group="papy" id="kilcoq" name="The Month Exploit" limit="20" cond="mission(kilgnt)+canfight(coq)">
+		<begin>I've planned another Golf party with the King next month, and he wants to hear more about your exploits .... what do you think about killing some Giant Chickens for me this time? As per usual, you will be richly rewarded!</begin>
+		<kill v="coq" n="20" zone="0"/>
+		<end>Ah! Fantastic! I'll embellish the story a bit to make it truly epic! this will surely please the King!</end>
+		<xp v="200"/>
+		<gold v="8000"/>
+	</m>
+
+</missions>

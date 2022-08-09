@@ -1,0 +1,98 @@
+﻿<d place="baobob" name="Don Bao Bob" gfx="baobob">
+	<phase id="begin" next="question:nothing">
+		Hola, hola, holita. ¿Qué deseas, Maestro de Dinos?
+	</phase>
+
+	<a id="question">Tengo una pregunta...</a>
+	<a id="nothing">Nada, gracias.</a>
+
+	<phase id="question" next="mission:quest2:quest3:quest4:no">
+		¿Una pregunta? Mmmmmm.... ¿Qué dirías de una pequeña Misión para tu Dino? Organizamos un rally con unos amigos
+		por todo Dinoland.
+	</phase>
+
+	<a id="mission">Sí, buena idea.</a>
+	<a id="no" target="nothing">No, gracias.</a>
+	<a id="quest2" cond="active(steppes)+!fx(palmes)">¿Y mi pregunta?</a>
+	<a id="quest3" cond="active(steppes)+fx(palmes)+!fx(sylkey)">¿Y mi pregunta?</a>
+	<a id="quest4" cond="scenario(magnet,8)">¿Y mi pregunta?</a>
+
+	<phase id="nothing">
+		¿Ah sí? Entonces perfecto... ¡Buen viaje!
+	</phase>
+
+	<phase id="mission" missions="bob"></phase>
+
+	<phase id="quest2">
+		Vuelve cuando hayas conseguido las Aletas de Korgones de la Jungla de Grumhel.
+		Entonces te responderé a lo que me solicites.
+	</phase>
+
+	<a id="bye" target="nothing">Me tengo que ir</a>
+
+	<phase id="quest3" next="where:bye">
+		¿Una pregunta? Mmmmm... Veo que tienes las Aletas de Korgones.
+		Eso quiere decir que quizás seas capaz de sobrevivir... "allí"... quizás...
+	</phase>
+
+	<a id="where">¿"Allí"?</a>
+
+	<phase id="where" next="where2:how:danger:bye">
+		Mmmm.... Para ir, tienes que reunir 7 Dinos. No necesariamente los tuyos, también valen los Dinos de los miembros de tu Clan.
+		Después, te enviaré... "allí".
+	</phase>
+
+	<a id="where2">¿Pero a dónde exactamente?</a>
+	<a id="how">¿Cómo lo hago exactamente?</a>
+	<a id="danger">¿Es peligroso?</a>
+
+	<phase id="where2" next="how:danger:bye">
+		Mmm.... Se trata de un lugar... ¡uich! No puedo decirte más. Pero que sepas que "allí" encontrará una llave. Sí, LA llave.
+		Para la puerta de Sylvanegra. Te permitirá continuarla, tu aventura. En fin, si sobrevives, si no, pues no.
+	</phase>
+
+	<phase id="how" next="where2:danger:concen:bye">
+		¿Que cómo hacerlo? Mmm... Escúchame. Debes reunir 7 Dinos aquí. Los tuyos o los de los miembros de tu clan.
+		Cada Dino debe concentrarse. Cuando seáis 7, entonces, solo entonces, podréis ir "allí".
+	</phase>
+
+	<phase id="danger" next="where2:how:bye">
+		¿Peligroso? Mmm... para abreviar, te diré que tienes pocas probabilidades de sobrevivir "allí"...
+		Pero quien no intenta nada no tiene nunca nada, ¿no es así?
+	</phase>
+
+	<a id="concen">¡Quiero que mi Dino se concentre!</a>
+
+	<phase id="concen" next="ok:bye">
+		Mmm... Bien... voy a hipnotizar a tu Dino. Podrá concentrarse mejor de esta manera...
+		No te preocupes, podrás en todo momento detener el proceso si así lo deseas.
+	</phase>
+
+	<a id="ok">De acuerdo.</a>
+
+	<phase id="ok" url="/dino/::did::/act/concentrate"></phase>
+
+	<phase id="quest4" next="noingr:ingr:bye">
+		¿Una pregunta? Mmmmm... vas a necesitar más ingredientes para que puedas recibir mi ayuda.
+		Bueno, eso si adivino la pregunta que querías hacerme...
+	</phase>
+
+	<a id="ingr" cond="fx(gshop)+fx(ice)+fx(corail)">¡Aquí están los ingredientes!</a>
+	<a id="noingr" cond="!(fx(gshop)+fx(ice)+fx(corail))">¡Aquí están los ingredientes!</a>
+
+	<phase id="noingr">
+		Sss Sss Sss.... El Coral que no se rompe nunca, el Hielo que no se funde nunca, y la Rama que nunca se rompe.
+		Me parece que te falta algo, querido.
+	</phase>
+
+	<phase id="ingr" noeffect="gshop:ice:corail" effect="potion" scenario="magnet:9" next="potion">
+		¡Pum pum palalam pum pum pam pum pum palalam pam! ¡Ea! Aquí tienes una magnífica Poción Anti Sehd para ti...
+	</phase>
+
+	<a id="potion">¡Eres un Apio Antique!</a>
+
+	<phase id="potion">
+		Mmmm... hasta la próxima amigo, ¡vuelve cuando quieras!
+	</phase>
+
+</d>

@@ -1,0 +1,167 @@
+<quests>
+
+
+<q from="schap" id="apb" name="Aurification : premiers pas" cond="grade(ap,3)">
+<begin>
+Tu n'ignores pas que Audepint est particulièrement réputée pour sa maîtrise de l'aurification alchimique. 
+Il est important de s'y mettre dès son plus jeune âge ! 
+La pépite d'or est la base de l'économie du royaume. L'obtenir est difficile, et c'est d'ailleurs ce qui fait sa valeur. 
+Avant de faire apparaître une pépite, on va commencer par quelque chose de plus simple. Des oxydes, par exemple. 
+</begin>
+<create o="Elt(8):5" zone="apvos" title="Aller à Vostok et créer 5 oxydes. Chaque élément présent à la fin d'une partie sera collecté. " />
+<end>Tu as réussi. C'est un bon début.</end>
+<xp v ="12" />
+<gold v="60" />
+<item v="Elt(8):1" />
+<reput s="ap" v="8" />
+</q>
+
+
+<q from="schap" id="apc" name="Aurification : un peu plus près " cond="quest(apb)">
+<begin>
+Tu as réussi à faire apparaître un oxyde, c'est déjà bien. Mais pour gagner des pépites d'or, il faut aller au bout de la chaîne alchimique ! 
+Essaie de t'en rapprocher en faisant apparaître quatre exemplaires de l'élément suivant à Vostok : le couivre. Attention, tu dois tous les créer en une seule alchimie ! 
+</begin>
+<create o="Elt(9):4" allInOne="1" zone="apvos" title="Créer 4 couivres à Vostok en une seule alchimie ! Ils doivent tous être présents en jeu à la fin de la partie pour être créés." />
+<end>
+Tu as du couivre, très bien ! On se rapproche de la pépite.
+</end>
+<xp v ="14" />
+<gold v="75" />
+<item v="Elt(9):1" />
+<reput s="ap" v="10" />
+</q>
+
+<q from="schap" id="apd" name="Aurification : toujours plus près" cond="quest(apc)">
+<begin>
+Dernière étape avant l'aurification : la mercurule ! Le 11e élément de la chaîne alchimique. 
+Si tu arrives à l'atteindre, tu seras prêt  à passer à l'aurification proprement dite. Essaie d'en faire au moins deux. Mais pas forcément dans la même alchimie.
+</begin>
+<create o="Elt(10):2" zone="apvos" title="Créer 2 mercurules à Vostok. Chaque élément présent à la fin d'une partie sera collecté. " />
+<end>
+Deux mercurules, excellent ! Tu sembles presque prêt à devenir un alchimiste digne d'Audepint.
+</end>
+<xp v ="16" />
+<gold v="55" />
+<item v="Elt(10):1" />
+<reput s="ap" v="10" />
+</q>
+
+
+<q from="schap" id="ape" name="Aurification ! " cond="quest(apd)">
+<begin>
+Moment toujours très émouvant à l'école : ta première aurification ! 
+Atteinds la pépite d'or pour devenir un vrai Audepint ! Je suis sûr que tu peux réussir.
+</begin>
+<create o="Elt(11):1" zone="apvos" title="Créer une pépite d'or pendant une alchimie à Vostok. Chaque élément présent à la fin d'une partie sera collecté. " />
+<end>
+Bravo ! tu es digne d'être un vrai Audepint !
+</end>
+<xp v ="19" />
+<gold v="105" />
+<reput s="ap" v="10" />
+</q>
+
+
+<q from="schap" id="apf" name="Et on n'oublie pas de débarrasser ! " cond="quest(ape)">
+<begin>
+Tu arrives à créer une pépite d'or, c'est fantastique... Mais ça ne sert pas à grand chose si tu ne gagnes que des potions vertes à la fin de ton alchimie !
+Ramène-moi une pépite pour me prouver que tu es capable d'en récupérer.
+</begin>
+<use o="Elt(11):1" zone="aphall" action="Donner une pépite d'or" text="Bien ! Audepint est très fière de toi." title="Ramener une pépite d'or à maître Enguerrand, peu importe le moyen de la récupérer." />
+<end>Ton premier tribu à l'école. Exceptionnellement et parce que c'est la tradition, tu peux la garder. Et tu peux dire "Merci maître", aussi.</end>
+<xp v ="16" />
+<gold v="130" />
+<item v="Elt(11):1" />
+<randomrecipe v="280:200" />
+<reput s="ap" v="12" />
+</q>
+
+<q from="schap" id="apk" name="Elementaire, mon cher Audepint" hideCond="quest(ape)">
+<begin>
+L'alchimie n'est pas une fin en soi. Un bon étudiant Audepint doit aussi être réputé pour la qualité de ses transmutations !
+</begin>
+<talk did="apka" />
+<talk did="apkb" title="Se rendre à la salle des chaudrons pour atteindre le rang 2 Pas très doué en transmutation élémentaire, puis retourner au Grand Hall pour en informer maître Enguerrand." />
+<end>Tâche de ne pas t'arrêter en si bon chemin : la guilde récompense les alchimistes doués en transmutation au palais de Stime Pounk. </end>
+<xp v ="18" />
+<gold v="400" />
+<reput s="ap" v="10" />
+</q>
+
+
+<q from="schap" id="apg" race="ap" name="Une pépite d'or par jour" hideCond="quest(apf)" repeat="1">
+<begin>
+L'aurification n'est efficace que si on la pratique tous les jours. C'est le seul moyen d'augmenter les stocks d'or de l'école.
+Tu sais ce qu'il te reste à faire.... 
+</begin>
+<create o="Elt(11):1" title="Créer une pépite d'or et la ramener à maître Enguerrand. Chaque élément présent à la fin d'une partie sera collecté. ">
+</create>
+<end>Bien. Une pépite de plus à la gloire d'Audepint.</end>
+<xp v ="7" />
+<gold v="45" />
+<reput s="ap" v="5" />
+</q>
+
+
+<!-- ############## -->
+<q from="schap" id="aph" name="Aurification tout-terrain, 1ère partie" hideCond="quest(ape)+quest(apk)">
+<begin>
+Un Audepint est capable de faire de l'or dans toutes les situations ! Il faut être le rambo de la pépite d'or. Et comme tu le sais, en fonction du lieu ou tu te trouves ton alchimie sera plus ou moins perturbée...
+Bonne nouvelle, il y a plein d'endroits perturbants autour du manoir pour s'entraîner convenablement. 
+</begin>
+<create o="Elt(11):1" zone="aparmy" title="Créer une pépite d'or sur la plaine de l'armée. Chaque élément présent à la fin d'une partie sera collecté. " />
+<end>Alors ces bombes polarisées ? Pas trop casse-pieds ? Voilà un petit souvenir...</end>
+<xp v ="12" />
+<gold v="80" />
+<item v="PolarBomb:1" />
+<reput s="ap" v="10" />
+</q>
+
+<q from="schap" id="api" name="Aurification tout-terrain, 2e partie" hideCond="quest(aph)">
+<begin>
+Plus difficile maintenant. L'alchimie est un peu perturbée au siège du Guildian Express, tu l'as peut-être déjà remarqué. 
+Je suis curieux de savoir si tu es capable de me ramener une pépite d"or de là-bas !
+</begin>
+<create o="Elt(11):1" zone="guexpr" title="Créer une pépite d'or au Guildian Express. Chaque élément présent à la fin d'une partie sera collecté. " />
+<end>Bien bien... Tu as pensé à me ramener le journal, aussi ? </end>
+<xp v ="14" />
+<gold v="110" />
+<reput s="ap" v="10" />
+</q>
+
+
+<q from="schap" id="apj" name="Aurification tout-terrain, 3e partie" hideCond="quest(api)">
+<begin>
+Dernière épreuve d'alchimie tout-terrain : ici-même ! Au manoir Audepint ! Et attention je suis là, je surveille.
+</begin>
+<create o="Elt(11):1" zone="aphall" title="Créer une pépite d'or au manoir Audepint. Chaque élément présent à la fin d'une partie sera collecté. " />
+<end>Très bien. Par contre il va falloir passer un coup de balai. Tu nous as mis de la pyrite partout !</end>
+<xp v ="22" />
+<gold v="190" />
+<randomrecipe v="290:210" />
+<reput s="ap" v="15" />
+</q>
+
+
+<!-- ############## -->
+<!-- TODO : COL DU TALWEG ACCESS-->
+
+<!-- TODO : WIND ELEMENT QUESTS-->
+
+
+
+<!-- ############## -->
+
+
+<q from="schap" id="rdapa" race="ap" name="" rand="1" repeat="1" hideCond="quest(apg)">
+</q>
+
+<q from="schap" id="rdapb" race="ap" name="" rand="1" repeat="1" hideCond="sch(ap)+grade(ap,6)">
+</q>
+
+<q from="schap" id="rdapc" race="ap" name="" rand="1" repeat="1" hideCond="sch(ap)+grade(ap,10)">
+</q>
+
+
+</quests>

@@ -1,0 +1,20 @@
+<d place="jzdoor" name="Rejoindre Jeezara" cond="sch(gu)" gfx="jzprof" auto="0">
+
+<phase id="begin" frame="angry" next="ouiok:ouino:exit">
+Toi là ! Tu es un nouveau jeezariste ? 
+</phase>
+
+<a id="ouiok" cond="reput(jz,0)">Oui, je veux devenir un alchimiste Jeezara.</a>
+<a id="ouino" cond="!reput(jz,0)">Oui, je veux devenir un alchimiste Jeezara.</a>
+<a id="exit">Non. Je me suis trompé. </a>
+
+<phase id="ouiok" url="/user/subSchool?s=jz">
+Allez ! Rentre vite ! Pas que ça à faire ! 
+</phase>
+
+<phase id="ouino" frame="angry">
+Pfff... Un moraliste comme toi ! Débarasse-moi le plancher vite fait ! | Il te faut au moins une réputation {Neutre} envers l'école pour t'inscrire.
+</phase>
+
+
+</d>

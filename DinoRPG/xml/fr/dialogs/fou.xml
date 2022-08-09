@@ -1,0 +1,75 @@
+﻿<!-- FOU DES COLLINES HANTEES -->
+
+<d place="collin" name="Homme bizarre" gfx="fou" cond="!fx(lantrn)">
+
+	<phase id="begin" next="hi:approach:ignore" fast="1">
+		Un individu bizarre maladroitement caché entre les arbres vous fixe
+		avec un regard inquiétant... Il brandit une lanterne dans votre direction.
+	</phase>
+
+	<a id="hi">Euh... Bonjour ?</a>
+	<a id="approach">Tenter de s'approcher...</a>
+	<a id="ignore">L'ignorer</a>
+	<a id="run">Partir en courant !</a>
+
+	<phase id="hi" next="approach:ignore:run" fast="1">
+		L'homme a l'air inquiet et continue à vous toiser sans rien dire...
+	</phase>
+
+
+	<phase id="approach" next="hi:ignore:run" fast="1">
+		A peine faites-vous un pas dans sa direction que l'homme bondit,
+		terrorisé, et se jette dans un fourré un peu plus loin ! Un instant plus tard,
+		sa tête émerge du feuillage et vous fixe à nouveau avec inquiétude...
+	</phase>
+
+
+	<phase id="run" fast="1">
+		Vous prenez vos jambes à votre cou !
+	</phase>
+
+	<phase id="ignore" next="intro:run" fast="1">
+		Vous tournez la tête ailleurs pour essayer de l'ignorer. Mais tandis que vous jetez
+		à nouveau un coup d'oeil dans sa direction, vous constatez avec surprise qu'il se
+		dresse face à vous droit comme un piquet !! Vous ne pouvez vous empêcher de pousser
+		un cri de surprise ! Il vous colle alors sa lanterne sous le nez et vous renifle
+		bruyamment...
+	</phase>
+
+	<a id="intro">Argh ! Vous m'avez fait peur !</a>
+
+	<phase id="intro" next="seenWhat:leave">
+		Peur ? Peur de quoi ? Les ombres ou les voix ? Vous avez peur aussi ? On a tous peur !
+		Moi je les ai vus !
+	</phase>
+
+	<a id="seenWhat">Vu quoi ?</a>
+	<a id="leave">Euh je vais vous laisser...</a>
+
+	<phase id="leave" fast="1">
+		Vous reculez lentement puis vous tournez les talons sans prendre la peine de jeter
+		un regard derrière vous...
+	</phase>
+
+	<phase id="seenWhat" next="show:run">
+		Gorgoth !! Celui qu'on appelle l'innommable mangeur de têtes de la noirceur abyssale !!
+	</phase>
+
+	<a id="show">Erk ! Il a l'air dangereux !</a>
+
+	<phase id="show" next="fight:run">
+		Il terrorise tout ce qui vit dans la Jungle de Grumhel !! Sachant que la Jungle terrorise déjà
+		tout le monde. Tenez regardez, il est juste là (il pointe du doigt la végétation épaisse et
+		noire) !
+	</phase>
+
+	<a id="fight">Attaquer Gorgoth (l'innommable mangeur de têtes de la noirceur abyssale) !</a>
+
+	<phase id="fight" fight="korgon" fast="1" effect="lantrn">
+		Alors que vous recherchez du regard l'homme bizarre, vous constatez sans grand surprise qu'il
+		a disparu... La bonne nouvelle c'est qu'il a laissé sa lanterne en prenant ses jambes à
+		son cou. Vous pourrez utiliser cette lanterne pour ne plus perdre votre chemin dans les
+		endroits obscurs.
+	</phase>
+
+</d>

@@ -1,0 +1,112 @@
+﻿<d place="forges" name="Seltsamer Herumtreiber" gfx="rodeur" cond="active(rodeur)+!mission(rodriz)+level(15)">
+
+	<phase id="begin" next="go:talk:talk2">
+		.........
+	</phase>
+
+	<a id="go">Dieser Typ sieht gefährlich aus... abhauen!</a>
+	<a id="talk" cond="!curmission(rodriz)">Mit ihm reden.</a>
+	<a id="talk2" cond="curmission(rodriz)">Mit ihm reden.</a>
+
+	<phase id="go" fast="1">
+		Uff! Es ist besser, aufzupassen, wenn man Fremden begegnet...
+	</phase>
+
+	<phase id="talk" next="go:yes">
+		Häh?!?? Was?? Du kannst mich SEHEN?!?....Grrr....
+	</phase>
+
+	<a id="yes">Äh...Ja.</a>
+
+	<phase id="yes" next="go:read">
+		Hmm...na ja...ich verstehe...dabei hat man mir doch versichert, dass dieser Umhang unsichtbar mache! Kannst du mal bitte auf der Anzeige auf meinem Rücken nachsehen? Wird da etwas angezeigt?
+	</phase>
+
+	<a id="read">Die Anzeige lesen.</a>
+
+	<phase id="read" next="go:help">
+		Was?!? "Niedriger Batte-Reis-Status"? Hhmm...der Verkäufer sprach in der Tat davon, dass irgendetwas aufgeladen werden müsse....werde ich etwa..."Reis" verwenden müssen?!? Ja, aber wo kann ich den finden?!?
+	</phase>
+
+	<a id="help">Dem armen Schlucker helfen.</a>
+
+	<phase id="help" missions="rodeur"></phase>
+
+	<phase id="talk2">
+		Schnell! Ich BRAUCHE diesen REIS!
+	</phase>
+
+</d>
+
+<!-- PART 2 -->
+
+<d place="forges" name="Seltsamer Herumtreiber" gfx="rodeur"  cond="mission(rodriz)+!mission(rodlif)+level(20)">
+
+	<phase id="begin" next="qual:qual2">
+		Mein Umhang funktioniert schon wieder nicht...so langsam habe ich die Schnauze voll...
+	</phase>
+
+	<a id="qual" cond="!curmission(rodlif)">Es handelt sich bestimmt um schlechte Qualität...</a>
+	<a id="qual2" cond="curmission(rodlif)">Es handelt sich bestimmt um schlechte Qualität...</a>
+
+	<phase id="qual2">
+		Anstatt hier solche Dummheiten von dir zu geben, tätest du besser daran, zu versuchen deine Mission zu Ende zu bringen...
+
+	</phase>
+
+	<phase id="qual" next="caush:ether">
+		WIE BITTE?!? Wie kannst du es wagen so über die großartige caushemeshennische Technologie zu reden! Hast du eine Ahnung wie viele Jahre Forschungsarbeit nötig waren, um das Ether zu beherrschen?!?
+	</phase>
+
+	<a id="caush">Caushemesh?</a>
+	<a id="ether">Ether?</a>
+
+	<phase id="caush" next="ether:next">
+		Ja! Ganz richtig, ich rede von der großen Zivilisation der Caushemesh-Berge, weit jenseits der Magnetischen Steppen. Wir sind sehr viel weiter entwickelt als die Barbaren in Dinoville...
+	</phase>
+
+	<phase id="ether" next="caush:next">
+		Nach mehreren Jahrhunderten Forschung waren die Caushemeshenier in der Lage, die Macht des Ethers zu beherrschen. Es handelt sich um eine raffinierte Mischung der Elemente Luft und Leere. Das gibt uns eine außergewöhnliche technologische Macht. Die Ingeneure aus Caushemesh sind die besten im ganzen Dinoland!
+	</phase>
+
+	<a id="next">Und...</a>
+
+	<phase id="next" next="more">
+		Deine Dinoz sind ganz schön schwach im Vergleich zu denen aus Caushemesh. Sie sind ihnen nicht gewachsen! Ha ha ha ha ha!! Trainiere deine Dinoz gut, junger Meister, denn eines Tages wirst du weitaus größeren Gefahren entgegentreten müssen!
+	</phase>
+
+	<a id="more">...</a>
+
+	<phase id="more" next="mission">
+		Aber ich habe dir schon zuviel erzählt...Was hältst du von einer kleinen Mission, um dich von der Caushemesh-Technologie zu überzeugen?
+	</phase>
+
+	<a id="mission">Eine Mission annehmen.</a>
+
+	<phase id="mission" missions="rodeur"></phase>
+
+</d>
+
+<!-- PHASE 3 -->
+
+<d place="forges" name="Seltsamer Herumtreiber" gfx="rodeur" cond="mission(rodlif)+!hasobject(regen)">
+	<phase id="begin" next="next">
+		Zu deiner Information: Die Finsteren Dinoz, denen du bisher begegnet bist, waren nur Anfänger, die wir hier in dieser Gegend des Dinolandes ausbilden lassen... Die Macht der Caushemesh-Dinoz ist weitaus größer und selbst dein Ehrwürdiger würde gegen unsere besten Dinozmeister nichts ausrichten können!
+	</phase>
+
+	<a id="next">(...)</a>
+
+	<phase id="next" give="regen" nocheck="1">
+		Na gut, ich halte mein Versprechen. Hier eine Belohnung, die dich von der Überlegenheit der Caushemesh-Technologie überzeugen wird. Ich habe nur ein Exemplar, gehe deshalb achtsam damit um... Es handelt sich um ein Tik-Armreif. Damit kannst du einen Dinoz deiner Wahl ausstatten.
+	</phase>
+</d>
+
+<!-- PHASE 4 -->
+
+<d place="dplaza" name="Strange Prowler" gfx="rodeur3" frame="fixe" background="5" cond="scenario(caush,44+)">
+	<phase id="begin" fast="1">
+		Now freed from his spying obligations, the prowler has settled down not too far from dino plaza.
+		He's relaxing in the sun, fanning his toes in the breeze...
+		Better to see him here than conjuring up some elaborate swindle...
+	</phase>	
+</d>

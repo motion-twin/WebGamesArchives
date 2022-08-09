@@ -1,0 +1,100 @@
+﻿<d place="gorges" name="Popotholeler" gfx="spelele" cond="!fx(fspele)">
+
+	<phase id="begin" next="talk" fast="1">
+		A recent earthquake has cracked the rock face. An ice-cold wind blows in your direction and you notice a strange man standing nearby, inspecting the crack.
+	</phase>
+
+	<a id="talk">Talk to the strange man</a>
+
+	<phase id="talk" next="gla:bye">
+		Pheewww!! Did you see the crack? It opens into an enormous cavern, it's ice cold inside!
+		Hey! Be careful! If your Dinoz enters the cavern he'll be frozen immediately!
+	</phase>
+
+	<a id="gla">Glaglagla!</a>
+	<a id="bye">Say goodbye</a>
+
+	<phase id="gla" next="ok:bye">
+		You see!! It's cold around .... According to my thermodynamic studies, the hot magma flows from the Big All-Hot and the heat is absorbed from the supraconductive rocks. This creates a strange cooling effect through convection. In effect, it's a natural fridge inside!
+	</phase>
+
+	<a id="ok">Fascinating!</a>
+
+	<phase id="ok" next="ok2:bye">
+		Isn't it!? I often explore the caverns and other strange underground lairs. That's my job, I'm a popotholeler! I got my degree in Speleology from Dinotown University!
+	</phase>
+
+	<a id="ok2">Impressive!</a>
+
+	<phase id="ok2" next="ok3:bye">
+		Thank you, you're very kind. I came here immediately after I heard about the earthquake. It seems I was the first person to discover this cave! I've already given it a name: The Relative Zero Cave! What do you think?
+	</phase>
+
+	<a id="ok3">What a great name</a>
+
+	<phase id="ok3" next="congel:bye">
+		Thanks! As you've been so nice to me, I'll give you a little tip. If you put your Dinoz in the Relative Zero Cave, he'll be frozen....
+	</phase>
+
+	<a id="congel">Frozen?</a>
+
+	<phase id="congel" next="congel2:bye">
+		Yup! Fro-zen! But the good thing is that the temperature is not so low that it will kill him. It will only freeze him temporarily! You won't be able to use this Dinoz anymore. But he will not count in your Dinoz LIMIT. So you can have MORE Dinoz! But you'll have to keep an eye on the side effects.
+	</phase>
+
+	<a id="congel2">Side effects?</a>
+
+	<phase id="congel2" next="again:thanks">
+		Yes, from the moment your Dinoz is frozen, he does not count towards your LIMIT. You can only defrost him if you are under the LIMIT, this means that you will have to freeze another Dinoz so that the other Dinoz can take his place ... your Dinoz will take one full day to defrost, you will need to be very patient ... do you understand?
+	</phase>
+
+	<a id="again" target="congel">Nope, I didn't understand anything!</a>
+	<a id="thanks">Yes, thanks!</a>
+
+	<phase id="thanks" effect="fspele">
+		You're welcome! Don't hesitate to call me if you need any help exploring any mysterious underground lairs!
+	</phase>
+
+	<phase id="bye">
+		Ciao! And make sure you don't come too close to this crack!
+	</phase>
+
+</d>
+
+<d place="gorges" name="Popotholeler" gfx="spelele" cond="scenario(magnet,8)+fx(fspele)+!fx(ice)">
+
+	<phase id="begin" next="talk">
+		Ah! Hello, It's you! It's very cold isn't it?
+	</phase>
+
+	<a id="talk">Glaglaglagla...</a>
+
+	<phase id="talk" next="next">
+		I just spent some time in the Relative Zero Cave ... did you know how complex the ice inside is? It's composed of 3% of Solid Nitrogenious, a rare ingredient which keeps the temperature stable....
+	</phase>
+
+	<a id="next">Nitrogenious?</a>
+
+	<phase id="next" next="prof">
+		This means that the ice doesn't defrost, even during the summer when magma flows slowly down the cave. Solid Nitrogenious goes against all the rules of thermodynamics, this is why it's so confusing for the University professors.
+	</phase>
+
+	<a id="prof">I bet it is!</a>
+
+	<phase id="prof" next="theo">
+		Yup! Some intellectuals, such as the famous Professor Eugene have put forward a theory explaining the existence of Solid Nitrogenious. It's extremely complicated as it requires one to consider that the Universe is composed of 4,24 dimensions: 3 dimensions for the normal world and 1,24 dimensions used only by the Solid Nitrogenious.
+	</phase>
+
+	<a id="theo">Woaaww...</a>
+
+	<phase id="theo" next="ok">
+		Crazy right? But this theory is very useful. It can be used to predict the boiling temperature of an Archelion. It's main flaw is that it predicts the existence of a Parallel Dark World to Dinoland ... the scientific community believes that Professor Eugene is wrong as it's simply not possible for a place such as this to exist. Well, at least according to Professor Stinstanstein's theory.
+	</phase>
+
+	<a id="ok">Interesting....</a>
+
+	<phase id="ok" effect="ice">
+		In any case, the ice here is awesome! Here, take this small piece, keep it with you to refresh yourself when you're hot!
+	</phase>
+
+</d>

@@ -1,0 +1,74 @@
+﻿<!-- ***************************************************************************** -->
+<!-- Paum, Dorogon, habitant de la cité Dorogon ----->
+
+<d place="ville1" name="Paum" gfx="paum" cond="scenario(nimba2,50-)">
+	<phase id="begin" fast="1" frame="stop" next="salut">
+		Du betrachtest einen Dorogon.
+		Obwohl viel größer als ein normaler Mensch oder ein Arborianer, wirkt er doch kleiner als ein durchschnittlicher Dorogon.
+		Er scheint mit dir reden zu wollen.
+	</phase>
+	<a id="salut" >Guten Tag, Meister Dorogon.</a>
+	
+	<phase id="salut" next="derien:service" frame="bla">
+		[Guten Tag, junger Dinozmeister.]
+		[Es ist lange her, dass wir jemanden wie euch in Nimbao gesehen haben.]
+		[Wie ich sehe, liebt es Meister Pistazie, sich mit den erstaunlichsten Kreaturen zu umgeben.]
+	</phase>
+	
+	<a id="derien">(Wer ist hier erstaunlich?)</a>
+	
+	<phase id="derien" frame="stop" fast="1">
+		Ihr entfernt euch von Paum. Er scheint euch ohnehin nicht mehr zu beachten.
+		Wie es aussieht, führt jeder Einwohner in der Nähe des Stadtzentrums ein ruhiges Leben.
+	</phase>
+	
+	<a id="service" cond="scenario(nimba2,30)">Kann ich etwas für euch tun?</a>
+	
+	<phase id="service" next="nodon:don:fdon">
+		[Du willst mir behilflich sein?]
+		[Das Angebot deines Dieners ist überaus reizvoll, Pistazie. Ich nehme seinen Vorschlag an.
+		Ich gebe dir einen Weisheitspunkt, wenn du mir Blumen von der Oberfläche für einen Blumenstrauß bringst. Damit werde ich mit Sicherheit aus der Masse der Leute herausstechen.]
+	</phase>
+	
+	<a id="fdon" cond="(hasingr(fruit1,1+)|hasingr(fruit3,1+))+!(hasingr(fruit1,3+)+hasingr(fruit3,3+))">Das hier wirst du für einen hübschen Blumenstrauß brauchen!</a>
+	<a id="don" cond="hasingr(fruit1,3+)+hasingr(fruit3,3+)">Das hier wirst du für einen hübschen Blumenstrauß brauchen!</a>
+	<a id="nodon" cond="!(hasingr(fruit1,3+)+hasingr(fruit3,3+))">Ich werde mit Blumen von der Oberfläche zurückkehren!</a>
+	
+	<phase id="fdon">
+		[Sadiquae, Orchideen, welche vorzügliche Idee!]
+		[Aber er ist noch nicht komplett. Damit er richtig Eindruck macht, fehlt noch etwas.]
+		[Ich kann es kaum erwarten, was du mir noch bringst!]
+	</phase>
+	
+	<phase id="don" next="trente" useingr="fruit1:3,fruit3:3" give="ptsage" scenario="nimba2:31">
+		[Sadiquae, Orchideen, welche vorzügliche Idee! Das wird ein prächtiger Strauß werden!]
+		[Wenn doch nur auch Flaureolae darin wären... Damit würde ich mit Sicherheit ihr Herz gewinnen! 30 Stück sollten dafür ausreichen.]
+		[Ich kann es kaum erwarten, dass du diesen Strauß fertig stellst!]
+	</phase>
+	
+	<a id="trente">(30 Flaureolae....?)</a>
+	
+	<phase id="trente" next="job">
+		[Hahaha, keine Bange. Ich habe bereits so viele Flaureolae, wie ich brauche.]
+		[Du hast dir deinen Weisheitspunkt redlich verdient!]
+		[Nun muss ich nur noch den Mut aufbringen und zu ihr gehen!]
+	</phase>
+	
+	<phase id="nodon" frame="stop" fast="1">
+		Um das Vertrauen des Dorogon zu gewinnen, musst du ihm noch eine besondere Blume besorgen.
+	</phase>
+	
+	<a id="job">Vielen Dank!</a>
+	
+	<phase id="job" frame="stop" fast="1">
+		Du hast deinen zweiten Weisheitspunkt in der Tasche!
+		Fehlen noch 3!
+	</phase>
+</d>
+
+<d place="ville1" name="Paum" gfx="paum" cond="scenario(nimba2,51+)">
+	<phase id="begin" fast="1" frame="stop" >
+		Was für eine Freude... Seit der Befreiung der Arborianer und der Öffnung unserer Grenzen, hat der Handel mit den Reichtümern unserer Welt zugenommen und viel Gutes bewirkt.
+		Was führt dich hierher, Dinozmeister?
+	</phase>
+</d>

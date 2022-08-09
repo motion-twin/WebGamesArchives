@@ -1,0 +1,579 @@
+﻿<!---- PART 1 : ARRIVEE A L'ILE ------------------------------------------------------------------------------->
+
+<d place="port" name="Jovébozé" gfx="joveboze" cond="fx(rasca)+!fx(monisl)+active(monisl)">
+
+	<phase id="begin" next="trad:sry">
+		Ol'a el chti ga ! Té vi alé surlil ?
+	</phase>
+
+	<a id="sry">... pardon ?!?</a>
+	<a id="trad">Chercher à nouveau un traducteur</a>
+
+	<phase id="trad" fast="1">
+		On vous informe que de nombreux professeurs de l'Université spécialisés en linguistique sont déjà venus étudier le "cas" Jovébozé sans jamais parvenir à comprendre ce qu'il semblait bien vouloir dire...
+	</phase>
+
+	<phase id="sry" next="give:trad">
+		Sil mdon oun Pain'cho, jva lou amné surlil kantil vou !
+	</phase>
+
+	<a id="give">... lui donner un "Pain'cho" ?</a>
+
+	<phase id="give" use="hotpan" effect="monisl" next="explain" nocheck="1">
+		Shouet ! Vienzi kan til vou !
+	</phase>
+
+	<a id="explain">???</a>
+
+	<phase id="explain" fast="1">
+		Après avoir englouti son Pain Chaud, Jovébozé vous indique sur une carte une île isolée à l'Est du Royaume de Dinoland. Elle est nommée « l'Ile des Monstres », et semble assez dangereuse d'accés. A l'aide de gestes, Jovébozé vous fait comprendre que vous pouvez désormais utiliser son bateau pour vous y rendre...
+	</phase>
+
+</d>
+
+<d place="mport" name="Garde Végétox" img="vegeguard" cond="!fx(cuzmal)">
+
+	<phase id="begin" next="where">
+		Vous venez de l'Eau-de-là ? Kssssss....
+	</phase>
+
+	<a id="where">D'où ?</a>
+
+	<phase id="where" next="ok">
+		Oui... Kssss.... cette fassson de parler est bien celle des Eaudelayens... Kssss.... Dinovil' comme vous l'appellez... Kssss...
+	</phase>
+
+	<a id="ok">Oui, puis-je passer ?</a>
+
+	<phase id="ok" effect="mgard2">
+		Ksss.... pas quessstion... Vous-autres Eaudelayens, vous avez fait alliance avec nos ennemis les Ksssss... Frutox kss... Pas quessstion de vous laisssser passsser !
+	</phase>
+
+</d>
+
+<d place="mport" name="Garde Frutox" img="frutguard" cond="!fx(cuzmal)">
+
+	<phase id="begin" next="why">
+		Vous êtes un Etrangest c'est ça ? Nous nous méfions des étrangests... Grrrrr....
+	</phase>
+
+	<a id="why">Pourquoi ?</a>
+
+	<phase id="why" effect="mgard1">
+		Oh c'est bien simple : nos ennemis jurés - les Végétox grrr... - ont pour habitude d'engager des étrangests pour venir nous espionner ! Grrrr.... L'accés à notre Royaume vous est interdit, pas question que vous veniez fouiner dans nos affaires ! Grrrr...
+	</phase>
+
+</d>
+
+<d place="mport" name="Homme Louche" gfx="filou" cond="fx(mgard1)+fx(mgard2)+!curmission(mbegin)+!mission(mbegin)">
+
+	<phase id="begin" next="listen">
+		Pssss.... pssss !!
+	</phase>
+
+	<a id="listen">S'approcher de l'homme</a>
+
+	<phase id="listen" next="yes">
+		Tu veux explorer l'Ile des Monstres, c'est ça ?
+	</phase>
+
+	<a id="yes">Oui, ça peut m'intéresser</a>
+
+	<phase id="yes" next="mission">
+		Eh eh (chouette un nouveau) ... J'ai un bon plan pour toi, mais il va d'abord falloir me rendre un service....
+	</phase>
+
+	<a id="mission">Que puis-je faire pour vous ?</a>
+
+	<phase id="mission" missions="mbegin">
+	</phase>
+
+</d>
+
+<!---- PART 2 : EXPLORATION ------------------------------------------------------------------------------->
+
+<d place="mfoutp" name="Garde Frutox" img="frutguard" cond="!fx(cuzmal)">
+
+	<phase id="begin" next="stop">
+		Halte !
+	</phase>
+
+	<a id="stop">!!!</a>
+
+	<phase id="stop" next="r1:r2:r3">
+		Grrrr.... Vous êtes un Etrangest c'est bien ça ! Que faites-vous ici ? Grrr....
+	</phase>
+
+	<a id="r1" target="no">Je fais du tourisme...</a>
+	<a id="r2" target="no">Je suis là pour affaires</a>
+	<a id="r3" target="ok">Je suis en mission top-secrète</a>
+
+	<phase id="no">
+		Vous n'avez rien à faire dans cette zone ! Grrrr... CIRCULEZ au plus vite ou nous vous mettrons en prison ! Grrr !!
+	</phase>
+
+	<phase id="ok" next="pass">
+		Grrr... Je vois... Grrr... J'en déduis donc que vous êtes employé pour espionner nos ennemis... Grrr... Bien, bien...
+	</phase>
+
+	<a id="pass">Oui c'est cela, puis-je passer chez les Végétox ?</a>
+
+	<phase id="pass">
+		Grrr... Ce n'est pas nous qui vous en empêcherons... Grrr... mais la frontière est aussi gardée par des Garrrrdes Végétox Grrr...
+	</phase>
+
+</d>
+
+<d place="mfpalc" name="Garde Frutox" img="frutguard" cond="!fx(cuzmal)">
+
+	<phase id="begin">
+		Grrrr.... Sa Seigneurie le Grotox ne recevra jamais un Etrangest sans raison valable Grrrr.... CIRCULEZ !
+	</phase>
+
+</d>
+
+<!---- PART 3 : GROTOX ------------------------------------------------------------------------------->
+
+<d place="mfpalc" name="Garde Frutox" img="frutguard" cond="fx(cuzmal)+(scenario(monisl,5)|scenario(monisl,6))">
+
+	<phase id="begin" next="yes:go">
+		Grrrrr ????? Tu veux voir le Grotox ? Tu as des informations importantes à lui donner ?
+	</phase>
+
+	<a id="yes" cond="!(scenario(monisl,6)+swait(monisl,20))">Oui c'est ça (grrr) !</a>
+	<a id="go" cond="scenario(monisl,6)+swait(monisl,20)">Oui c'est ça (grrr) !</a>
+
+	<phase id="yes" scenario="monisl:6">
+		Grrrrr.... Il y a actuellement 26 jours d'attente pour avoir un entretien avec le Grrrrotox, mais comme c'est urrrgent, l'attente est réduite à vingt heures ! Patiente jusqu'à ce moment, fidèle soldat Frutox !
+	</phase>
+
+	<phase id="go" scenario="monisl:7">
+		Entre dans le Palais Grrrr ! Le Grotox va te recevoir.......
+	</phase>
+
+</d>
+
+<d place="mfpalc" name="Grotox" img="grotox" cond="scenario(monisl,7)">
+
+	<phase id="begin" next="tablet">
+		GRRRRRRR !!!! Alors, fidèle soldat Frutox, que me vaut cette soi-disant visite urrrgente ? J'espèrrrre que tu ne me dérrranges pas pourrrr des brrroutilles ! ! !
+	</phase>
+
+	<a id="tablet">(montrer la tablette gravée)</a>
+
+	<phase id="tablet" next="euh">
+		QUOI ???? Tu aurrraaiss trrrrouvé cela dans la Forrrrêt ? Et c'est une prrreuve que ma famille rrrègnait sur Cuzcous ???? MAGNIFIQUE AH AH AH AH AH AH AH !
+	</phase>
+
+	<a id="euh">Euh... c'est à dire que...</a>
+
+	<phase id="euh" next="fight">
+		QUOI ???? La famille d'Antrrraxov était aussi de sang rrroyal ??? Il y avait deux Emperrreurrrs ??? ..........
+	</phase>
+
+	<a id="fight">???</a>
+
+	<phase id="fight" startfight="">
+	</phase>
+
+</d>
+
+<d place="mfpalc" name="Grotox" img="grotox" cond="scenario(monisl,8+)+scenario(monisl,11-)">
+
+	<phase id="begin" next="next">
+		GRRRRRRR !!! Alors comme ça tu es un Etrangest que le Garrrdien de Cuzcous a maudit ??? Je me disais aussi qu'un simple soldat ne pouvait pas êtrrree aussi forrrt !
+	</phase>
+
+	<a id="next">...</a>
+
+	<phase id="next" next="next2">
+		Apparrremment tu avais donc raison.... Les familles Rrroyales Frrrutox et Végétox se parrtageaient le pouvoir à Cuzcous... Cette tablette le prrrouve effectivement... Que fairre... Jamais Antrrraxov ne voudrrra reconnaître cela !
+	</phase>
+
+	<a id="next2">...</a>
+
+	<phase id="next2" next="how">
+		Je te prrropose la chose suivante : va voir Antrrraxov et prrropose-lui un rrrendez-vous pourr que nous arrêtions cette stupide guerrrrre qui durrre depuis trrrop longtemps !
+	</phase>
+
+	<a id="how">Mais comment y aller ?</a>
+
+	<phase id="how" scenario="monisl:9">
+		Je n'en sais rrrien : tant que nous sommes en Guerrre, il te faudrrra trrrouver un autrre chemin... Mais je te prrromet de te donner un objet qui est dans ma famille depuis bien dés années si tu rrréussis ta mission !
+	</phase>
+
+</d>
+
+<!---- PART 4 : ANTRAXOV ------------------------------------------------------------------------------->
+
+<d place="mcelit" name="Garde Végétox" img="vegeguard" cond="fx(cuzmal)+!(equip(costve)|equip(costgb))">
+
+	<phase id="begin" next="flee:fight">
+		Kssss !!! Un Frutox ???? Issssii ?? GARDES !!!
+	</phase>
+
+	<a id="flee">S'enfuir</a>
+	<a id="fight">Combattre</a>
+
+	<phase id="flee" fast="1">
+		Au vu du nombre de gardes dans le coin, vous avez bien fait de vous enfuir !
+	</phase>
+
+	<phase id="fight" fight="veginf:veginf:veginf:veginf:veginf">
+		--
+	</phase>
+
+</d>
+
+<d place="mvpalc" name="Garde Végétox" img="vegeguard" cond="scenario(monisl,10)|scenario(monisl,11)">
+
+	<phase id="begin" next="flee:come:come2" fast="1">
+		Un groupe important de gardes Végétox sont disposés à l'entrée du Palais d'Antraxov...
+	</phase>
+
+	<a id="flee">S'éloigner</a>
+	<a id="come" cond="!equip(costve)">S'approcher</a>
+	<a id="come2" cond="equip(costve)">S'approcher</a>
+
+	<phase id="flee" fast="1">
+		Vous avez sûrement eu raison de vous éloigner : si les gardes vous attrapent, ils vont vous découper en rondelles ! Mais il doit bien y avoir une façon d'approcher Antraxov...
+	</phase>
+
+	<phase id="come" fight="veginf:veginf:veginf:veginf:veginf">
+		--
+	</phase>
+
+	<phase id="come2" next="wait:go">
+		Kssss ? Tu veux voir le Chef ? Et c'est urgent ? Kssss... je vais me renseigner, un instant.......
+	</phase>
+
+	<a id="wait" cond="!(scenario(monisl,11)+swait(monisl,7))">S'approcher</a>
+	<a id="go" cond="scenario(monisl,11)+swait(monisl,7)">S'approcher</a>
+
+	<phase id="wait" scenario="monisl:11">
+		Kssss... Le Grand Antraxov est actuellement très occupé, il pourra te recevoir d'ici quelques heures, patiente un peu et reviens me voir !
+	</phase>
+
+	<phase id="go" scenario="monisl:12">
+		Ksss..... Le Grand Antraxov est prêt à te recevoir, tu peux entrer dans le Palais !
+	</phase>
+
+</d>
+
+<d place="mvpalc" name="Antraxov" img="antraxov" cond="scenario(monisl,12)">
+
+	<phase id="begin" next="ask">
+		...........
+	</phase>
+
+	<a id="ask">Vous êtes Monsieur Antraxov ?</a>
+
+	<phase id="ask" next="explain">
+		KSSSSS !!!! Bien entendu, qui veux-tu que je ssssois d'autre...... Parle ! je n'ai pas beaucoup de temps à perdre....
+	</phase>
+
+	<a id="explain">(Expliquer tout)</a>
+
+	<phase id="explain" next="euh">
+		KSSSSS... Et tu crois que je vais te croire comme çaaa ?
+	</phase>
+
+	<a id="euh">Euh.... oui ?</a>
+
+	<phase id="euh" next="how">
+		KSSSS... KSSS... KSSS... Cela ssssignifierait la fin de la guerre... Mes Ancêtres m'ont confié la resssponsssabilité de vaincre, je ne peux pas renoncer sssi facilement !
+	</phase>
+
+	<a id="how">Comment vous convaincre ?</a>
+
+	<phase id="how" next="what">
+		Ssssi tu tiens tant que ça à ccce que la guerre ssss'arrête, alors fais en sssorte que je n'aie pas le choix : apporte-moi une Dionaette !
+	</phase>
+
+	<a id="what">Une quoi ?</a>
+
+	<phase id="what" next="whatfor">
+		Une Dionaette. Il sss'agit d'une Plante Légendaire qui grandisssait jadisss sssur notre Ile, mais elle a depuis longtemps disssparu...
+	</phase>
+
+	<a id="whatfor">Et vous allez en faire quoi ?</a>
+
+	<phase id="whatfor" next="where">
+		Mon Palais est sssculpté dans le bois de la plus grande Dionaette qui ait pousssé sssur l'île. Mais il ssse fait vieux, il a déjà plusssieurs sssiècles.... J'aimerais planter une nouvelle Dionaette pour mes dessscendants...
+	</phase>
+
+	<a id="where">Et où trouver cette "Dionaette" ?</a>
+
+	<phase id="where" next="ok">
+		Elle ne poussse plusss ici depuis le Grand Cataclysssme... Des voyageurs racontent en avoir vu quelques sssurvivantes très loin à l'Ouest, au-delà la Grand Forêt, Grumhel comme vous l'appellez...
+	</phase>
+
+	<a id="ok">Ok....</a>
+
+	<phase id="ok" next="give">
+		Reviens issssi quand tu auras obtenu une Dionaette... Nous reparlerons alors de cette hissstoire de guerre....
+	</phase>
+
+	<a id="give">Donner une Dionaette</a>
+
+	<phase id="give" useingr="dgrain" scenario="monisl:13">
+		KSSSS ! KSSS ! KSSSS !!! MAIS C'EST UNE GRAINE DE DIONAETTE QUE TU AS LÀ !!!! Quelle ssssurprise, je ne pensssais pas que tu ssserais capable de m'en rapporter une... Nous allons pouvoir parler de cette guerre...
+	</phase>
+
+</d>
+
+<d place="mvpalc" name="Antraxov" img="antraxov" cond="scenario(monisl,13)">
+
+	<phase id="begin" next="thx">
+		.... Tu as tenu ta parole, j'accepte donc de rencontrer Grotox dans les ruines que tu as découvert pour que nous fasssions la paix....
+	</phase>
+
+	<a id="thx">Merci !</a>
+
+	<phase id="thx" scenario="monisl:14">
+		Cette Guerre ssstupide a assez durée.... va voir Grotox pour l'en informer, nous nous retrouverons aux Ruines....
+	</phase>
+
+</d>
+
+<!---- PART 5 : WRAP UP ------------------------------------------------------------------------------->
+
+<d place="mfpalc" name="Grotox" img="grotox" cond="scenario(monisl,14)">
+
+	<phase id="begin" next="thx">
+		Grrr..... Alorrrs comme ça Antrrraxov veut me voir dans ces rrruines. Et bien soit, je vais m'y rrrendre...
+	</phase>
+
+	<a id="thx">Merci !</a>
+
+	<phase id="thx" scenario="monisl:15">
+		Rrrejoignons-nous là-bas....
+	</phase>
+
+</d>
+
+<d place="mcuzco" name="Hindy Anne" img="indiana" cond="scenario(monisl,15)">
+
+	<phase id="begin" next="watch">
+		Oh ! C'est merveilleux ce que nous avons réussi à faire ! Je suis fière de nous, grâce à nos efforts conjugués, la Guerre de l'Ile des Monstres devrait s'arrêter aujourd'hui !
+	</phase>
+
+	<a id="watch">(regarder)</a>
+
+	<phase id="watch" startfight="">
+	</phase>
+
+</d>
+
+<d place="mfpalc" name="Grotox" img="grotox" cond="scenario(monisl,16+)+!collec(pmi)">
+
+	<phase id="begin" next="obj">
+		Ah te voilà ! J'ai quelquechose pourrr toi...
+	</phase>
+
+	<a id="obj">(chouette !)</a>
+
+	<phase id="obj" next="take">
+		Il y a bien longtemps, un voyageur du nom de Mandrrragorrre a trraverrsé notrre île.... Il nous a laissé cet objet qui devrrrait pouvoir t'aider dans tes aventurrres. Fais-en bon usage...
+	</phase>
+
+	<a id="take">Prendre l'objet</a>
+
+	<phase id="take" collection="pmi" fast="1">
+		Vous obtenez le Petit-Missionnaire-Illustré, un objet très pratique pour faire le point sur les Missions de vos Dinoz ! (il est accessible à la fin de la liste de vos Dinoz)
+	</phase>
+
+</d>
+
+<d place="mfpalc" name="Grotox" img="grotox" cond="scenario(monisl,16+)+collec(pmi)">
+
+	<phase id="begin">
+		Merci encore pourrr ton aide ! Il va maintenant falloirrr que je m'occupe de reconstruirrre notrrre Royaume !
+	</phase>
+
+</d>
+
+<d place="mvpalc" name="Antraxov" img="antraxov" cond="scenario(monisl,16)">
+
+	<phase id="begin" next="ok">
+		Ah te voilà ! J'ai une récompenssse pour toi...
+	</phase>
+
+	<a id="ok">(chouette!)</a>
+
+	<phase id="ok" next="why">
+		Comme tu le sssais sssûrement, mon peuple a toujours défendu notre Avant-Poste sssans faillir. Il sss'agit d'un lieu très important pour nous...
+	</phase>
+
+	<a id="why">Pourquoi ?</a>
+
+	<phase id="why" next="go">
+		Maintenant que la guerre est finie, le sssecret n'a plus d'importance... Nous y avons mené des recherches militaires, et nous avons réussssi a mettre au point un moyen de capturer des monssstres... Cela nécesssite beaucoup d'entraînement, mais ensssuite c'est une technique très puisssante...
+	</phase>
+
+	<a id="go">C'est génial !</a>
+
+	<phase id="go" scenario="monisl:17">
+		Oui... Ma récompenssse est de permettre à tes Dinoz de sssuivre cet entraînement... J'ai donné des ordres pour que tu puisssses te rendre à notre Avant-Poste. Bon courage !
+	</phase>
+
+</d>
+
+
+<d place="mvpalc" name="Antraxov" img="antraxov" cond="(scenario(monisl,17)+!mission(mcapt4))|scenario(monisl,18)">
+
+	<phase id="begin" next="heal1:heal2">
+		Merci beaucoup pour nous avoir aidés à sssstopper cette Guerre ! Nos efforts ssse concentrent désormais sssur le bonheur de nos deux peuples...
+	</phase>
+
+	<a id="heal1" cond="!fx(cuzmal)">De rien</a>
+
+	<phase id="heal1">
+		Si l'un de tes Dinoz est encore sssous la malédiction du Gardien de Cuzcous, n'hésite pas à me l'amener, je devrais pouvoir le sssoigner...
+	</phase>
+
+	<a id="heal2" cond="fx(cuzmal)">De rien</a>
+
+	<phase id="heal2" next="yes:no">
+		Je vois que ton Dinoz est sssous la malédiction du Gardien de Cuzcouss.... Je devrais pouvoir le sssoigner, si tu es d'accord ?
+	</phase>
+
+	<a id="yes">Oui merci</a>
+
+	<phase id="yes" noeffect="cuzmal">
+		KSSSS !!! KSSSS !!! KSSS !!!! ....... Et voilà, la malédiction a été levée....
+	</phase>
+
+	<a id="no">Non ça ira</a>
+
+	<phase id="no">
+		Kssss... Comme tu veux....
+	</phase>
+
+</d>
+
+<d place="mvoutp" name="Sergent Pepper" img="sgtpepper" cond="!(mission(mcapt1)|fx(msergt))">
+
+	<phase id="begin" next="go" fast="1">
+		Quand vous vous renseignez pour l'entraînement, on vous indique de vous adresser au Sergent-Instructeur Pepper, qui devrait se trouver dans un coin tranquille de l'Avant-Poste à cette heure de la journée.
+	</phase>
+
+	<a id="go">Aller voir le Sergent</a>
+
+	<phase id="go" next="hi">
+		... Zzzz .... zzz
+	</phase>
+
+	<a id="hi">Sergent ?</a>
+
+	<phase id="hi" next="euh">
+		OUI ! GARDE À VOUS !!!! Mais qui êtes-vous ?!? Encore un impétrant qui me dérange pendant ma méditation quotidienne ! Vous allez me faire DEUX CENT pompes, et IMMÉDIATEMENT !
+	</phase>
+
+	<a id="euh">Euh...</a>
+
+	<phase id="euh" next="yes">
+		AH ! Mais je me rappelle maintenant, vous êtes le BLEU que notre Grand Antraxov - GARDE À VOUS! - nous a demandé de coacher... Voyons voir... Monsieur LE BLEU veut apprendre la Capture des Monstres, c'est bien ça ?
+	</phase>
+
+	<a id="yes">Oui !</a>
+
+	<phase id="yes" next="yes2">
+		OUI SERGENT INSTRUCTEUR !
+	</phase>
+
+	<a id="yes2">Oui Sergent Instructeur !</a>
+
+	<phase id="yes2" next="ok">
+		Bien, je préfère ça.... Je prépare quelques affaires et nous allons passer aux choses SÉRIEUSES ! J'espère que LE BLEU n'a pas peur des coups, car mon entraînement spécial n'est pas pour les FEMMELETTES !
+	</phase>
+
+	<a id="ok">...</a>
+
+	<phase id="ok" next="yes3">
+		JE NE VOUS ENTENDS PAS, LE BLEU !!!
+	</phase>
+
+	<a id="yes3">OUI ! ... Sergent Instructeur !</a>
+
+	<phase id="yes3" effect="msergt">
+		C'est bien, c'est bien... GARDE À VOUS ! Et ne bougez pas avant mon retour !
+	</phase>
+
+</d>
+
+<d place="mvoutp" name="Sergent Pepper" img="sgtpepper" cond="(mission(mcapt1)|fx(msergt))+!mission(mcapt5)">
+
+	<phase id="begin" next="missions">
+		GARDE À VOUS ! LE BLEU, on ne traîne pas, et on écoute les instructions !
+	</phase>
+
+	<a id="missions">OUI SERGENT INSTRUCTEUR !</a>
+
+	<phase id="missions" missions="capture"></phase>
+
+</d>
+
+<d place="mvpalc" name="Antraxov" img="antraxov" cond="scenario(monisl,17)+mission(mcapt4)">
+
+	<phase id="begin" next="sorry">
+		KSSS !!! KSSS !!! Alors comme ça j'ai appris que tu avais échoué dans ton entraînement de capture des monssstress ?
+	</phase>
+
+	<a id="sorry">Désolé...</a>
+
+	<phase id="sorry" next="sorry2">
+		Le Sssergent Pepper est très ssstrict sssur la discipline, il ne sssupporte pas que l'on ne sssuive pas ssses ordres à la lettre... Tu as sssûrement dû ne pas prendre au sssérieux ssson entraînement, au moins au départ ?
+	</phase>
+
+	<a id="sorry2">Désolé...</a>
+
+	<phase id="sorry2" next="gant">
+		Heureusement, il exissste une autre sssolution que l'entraînement physique... Nous l'avons mis au point pour les débutants : il sss'agit d'un Gant de Capture qui ne nécessssite pas d'apprentissssage....
+	</phase>
+
+	<a id="gant">Un Gant de Capture ?</a>
+
+	<phase id="gant" scenario="monisl:18">
+		Oui... Comme il sss'agit d'un objet top-secret, je vais demander au Sssergent Pepper d'en confier un à ton Dinoz, mais il faudra pour ça lui rendre un petit sssservice, car il est très sssu... sssussu.... sssussssusssceptible.... Retourne le voir de ma part.
+	</phase>
+
+</d>
+
+<d place="mvoutp" name="Sergent Pepper" img="sgtpepper" cond="mission(mcapt5)">
+
+	<phase id="begin" next="hi1:hi2">
+		EH TIENS ! Salut LE BLEU ! Quoi de NEUF ?
+	</phase>
+
+	<a id="hi1" cond="fx(mcapt)">Rien de spécial</a>
+	<a id="hi2" cond="!fx(mcapt)">Rien de spécial</a>
+
+	<phase id="hi1" next="remove:no">
+		Si tu ne veux pas utiliser ton GANT DE CAPTURE pendant quelques temps, tu peux me le confier, je te le rendrai plus tard !
+	</phase>
+
+	<a id="remove">Oui, c'est sympa !</a>
+
+	<phase id="remove" noeffect="mcapt" effect="nocapt">
+		Voilà je te le garde bien au chaud ton GANT, t'inquiète pas LE BLEU !
+	</phase>
+
+	<a id="no">Non Merci</a>
+
+	<phase id="no">
+		C'est comme tu veux, LE BLEU !
+	</phase>
+
+	<phase id="hi2" next="get:no">
+		Tu veux récupérer ton GANT DE CAPTURE c'est ça, LE BLEU ?
+	</phase>
+
+	<a id="get">OUI ! SERGENT INSTRUCTEUR !</a>
+
+	<phase id="get" noeffect="nocapt" effect="mcapt">
+		AH AH ! Ça me fait PLAISIR de voir que tu n'as pas oublié les BONNES MANIÈRES ! Tiens, je te rends ton GANT DE CAPTURE... Bonne chance, LE BLEU !
+	</phase>
+
+</d>
+

@@ -1,0 +1,99 @@
+﻿<missions>
+
+	<!-- ***************************************************************************** -->
+	<!-- forest warden ----->
+
+	<m group="arbre" id="unmute" name="The Forest Warden" limit="35">
+		<begin>The scroll which has fallen on your head includes the following message: |« Find 1 measure of fresh free-flowing water, 1 measure of stagnant water, 1 measure of purified water and lastly 1 measure of boiling water. » You've barely finished reading the message before an empty small gourd falls from the tree and hits you on the head! Plunk!</begin>
+		<goto v="fleuve" hide="1"/>
+		<action v="Jumin River Water">You fill the empty gourd with a small amount of Jumin River water. You've found running water!</action>
+		<goto v="marais" hide="1"/>
+		<action v="Cloudy Water">You add a small amount of Sticky Swamp water to the half empty gourd. It smells very bad....</action>
+		<goto v="fountj" hide="1"/>
+		<action v="Refreshing Water">You add a small amount of Fountain clear water to the gourd and refresh yourself at the same time.</action>
+		<goto v="gorges" hide="1"/>
+		<action v="Boiling Water">You fill the gourd with a small amount of boiling water from the Gorges. It's hot!</action>
+		<goto v="garde"/>
+		<action v="Pour the gourd on the roots">The old tree's leaves suddenly shake in every direction and a soothing light fills the jungle all around you....</action>
+		<end>The old tree bows down to you ... he slowly shakes his leaves, some beautiful fruits then fall at your feet.</end>
+		<xp v="110"/>
+		<item v="fruit" n="3"/>
+	</m>
+
+	<m group="arbre" id="orchid" name="The Green Thumb" limit="20" cond="mission(unmute)">
+		<begin>A scroll dangles down from a branch. It reads: |« Go water the Orchid Child at the Edge of the Jungle ».| Something in the canopy throws you an empty gourd. Plunk!</begin>
+		<goto v="fleuve"/>
+		<action v="Take Water">You fill the gourd with Jumin River water.</action>
+		<goto v="auree"/>
+		<action v="Water The Orchid">You pour the contents of the gourd onto a magnificent flower, "The Orchid Child". Immediately, it lights up like a thousand fires and some beautiful dew drops form on it's graceful leaves.</action>
+		<talk v="Speaking To Orchid Child">What?! What are you looking at? You've never seen an Orchid blooming before?! You have nothing else to do? Go away, leave me alone!!</talk>
+		<end>You place the gourd at the bottom of the tree. A big fruit drops from the upper branches and falls close to you with a thud.</end>
+		<xp v="30"/>
+		<item v="fruit" n="1"/>
+	</m>
+
+	<m group="arbre" id="licens" name="Right to cut" limit="20" cond="mission(unmute)">
+		<begin>You see a scroll is attached to a root. It reads: |« Korgons and Bramble Eaters from the south are exceeding the wood cutting quota that I set in the Grumhel Jungle. Go and make sure they stick to the quota. »</begin>
+		<goto v="chemin"/>
+		<kill v="korgon:ronciv" n="8" name="Bramble Eaters or Korgons"/>
+		<end>Many fruits fall from the tree....</end>
+		<xp v="40"/>
+		<item v="fruit" n="3"/>
+	</m>
+
+	<m group="arbre" id="king" name="The King of the Jungle" limit="20" cond="mission(unmute)+mission(orchid)">
+		<begin>A message has been written on a small piece of cloth hooked on a branch: |« A few years ago we created a story about a King of the Jungle in order to keep tourists away. Go to the Haunted Hills and pretend to be the King of the Jungle by calling out.... »</begin>
+		<goto v="collin"/>
+		<action v="The King of the Jungle's Call">Your call is too weak! it wouldn't even scare a Korgon ... You need a better one!</action>
+		<goto v="auree" hide="1"/>
+		<talk v="Speaking Orchid Child">Still here are we stupid? Why are you looking at me like that, have you got a problem?</talk>
+		<action v="Pick the Orchid">Without paying attention, you uproot the orchid and take it with you. It shouts insults at you whilst using all it's strength to try and break free.</action>
+		<goto v="collin"/>
+		<action v="Plant the Orchid">You quickly replant the Orchid Child. While you are leaving, you can still can hear it screaming at you ... that should be enough to scare the tourists off!</action>
+		<end>A fruit falls near you. While you are bending over to pick it up, a big purse full of gold falls out of nowhere and hits you on the head! Plunk!</end>
+		<gold v="2500"/>
+		<xp v="35"/>
+		<item v="fruit" n="1"/>
+	</m>
+
+	<m group="arbre" id="wishes" name="Make a Wish" limit="20" cond="mission(unmute)">
+		<begin>You read a message inscribed on a branch: |« Legend says that the South Falls have magic properties ... Go and throw a coin into the Mutant Falls. Make a wish that the population of Korgons and Bramble Eaters in the jungle will decrease.»| A copper coin rolls along a branch and hits your foot.</begin>
+		<goto v="chutes"/>
+		<action v="Throw a coin">You throw a coin into the Falls and wait a few minutes ... nothing happens so you decide to grant the wish yourself.</action>
+		<goto v="auree"/>
+		<kill v="korgon:ronciv" n="2" name="Bramble Eaters or Korgons"/>
+		<goto v="chemin"/>
+		<kill v="korgon:ronciv" n="3" name="Bramble Eaters or Korgons"/>
+		<goto v="fleuve"/>
+		<kill v="korgon:ronciv" n="3" name="Bramble Eaters or Korgons"/>
+		<goto v="jungle"/>
+		<kill v="korgon:ronciv" n="6" name="Bramble Eaters or Korgons"/>
+		<end>Many fruits fall from the tree....</end>
+		<xp v="60"/>
+		<item v="fruit" n="4"/>
+	</m>
+
+	<m group="arbre" id="newplt" name="A Jack For The Forest" limit="20" cond="mission(unmute)">
+		<begin>A long piece of cloth is wrapped around the old tree, it reads: |« Our efforts to develop the forest near the Big All-Hot have recently been compromised by a huge rockfall near the Ashpouk Ruins. Take this jack and remove the plants and rocks. »| A heavy iron jack suddenly falls on the ground next to you.</begin>
+		<goto v="rashpk"/>
+		<talk v="«Green Peace» Volunteer">Hello! Are you here to help me clear the rockfall? I have a big problem at the moment ... Monsters always disturb me whilst I'm working ... Can you help me?</talk>
+		<kill n="3"/>
+		<action v="Lift up the rocks">You pick up your jack and start to clear the rockfall ... while you are working, you hear a disturbing growl behind you....</action>
+		<kill n="6"/>
+		<talk v="«Green Peace» Volunteer">No time to waste, keep clearing!</talk>
+		<action v="Lift up the rocks">Even using the jack, it still takes you hours to clear the rockfall. At the end you manage to free the trees and plants that were buried under the rocks.</action>
+		<talk v="«Green Peace» Volunteer">I will stay here to water the surviving plants. Report back to the Forest Warden for me.</talk>
+		<end>Two big fruits fall from the trees into a bush near you....</end>
+		<xp v="75"/>
+		<item v="fruit" n="2"/>
+	</m>
+
+	<m group="arbre" id="gshop" name="Monkey Money" limit="20" cond="mission(unmute)+mission(orchid)+mission(licens)+mission(king)+mission(wishes)+mission(newplt)">
+		<begin>A wooden sign and a little white iron bucket are hanging on a branch:|« Drop some gold into the bucket to get your daily ration. »</begin>
+		<action v="Inspect the bucket">You find a little branch in the bucket....</action>
+		<end>The text on the wooden sign has changed! It now reads: « Keep the blossoming branch as a proof of our gratitude. »</end>
+		<fx v="gshop"/>
+		<xp v="5"/>
+	</m>
+
+</missions>

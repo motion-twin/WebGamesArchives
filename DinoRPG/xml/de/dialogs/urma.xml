@@ -1,0 +1,90 @@
+<!-- ***************************************************************************** -->
+<!-- Urma, Vieille sorcière, soeur jumelle d'irma ----->
+
+<d place="dnv" name="Urma" gfx="irma" cond="active(urma)+uvar(paques,301+)+promo(easter)">
+	<phase id="begin" >
+		[Seid gegrüßt, Dinozmeister.]
+		[Ich bedaure, aber ich habe keine Eier mehr, die ich dir verkaufen könnte. Du hast bereits meinen gesamten Vorrat aufgekauft.]
+		[Ich hoffe, das Glück war auf deiner Seite und du hast einige nützliche Gegenstände gefunden.]
+	</phase>
+</d>
+
+<d place="dnv" name="Urma" gfx="irma" cond="active(urma)+uvar(paques,300-)+promo(easter)">
+	<phase id="begin" next="suivant:irma:oui2:oui3:non">
+		[Hallo Dinozmeister.]
+		[Du kennst sicher den Namen meiner Schwester Irma. Ich würde dich aber bitten, mich nicht mit ihr zu verwechseln!
+		Ich bin viel mächtiger als sie. Und ich werde es dir beweisen!]
+	</phase>
+
+	<a id="suivant" cond="!tag(urma)">
+		Was wirst du tun? Mich in einen Dämonen-Wanwan verwandeln?
+	</a>
+	<a id="irma" cond="!tag(urma)">
+		Du bist Irma, nicht wahr? Du stellst all diese Tränke her?
+	</a>
+	<a id="non" target="bof">
+		Nein danke.
+	</a>
+	
+	<phase id="suivant" next="oeuf">
+		So verlockend die Idee auch ist, ich muss zuerst meinen Vorrat an Eiern loswerden...
+	</phase>
+	<phase id="irma" next="popo">
+		[Humpff, ich wusste es. Diese alte Zicke muss mir immer die Schau stehlen...]
+		[Immer muss sie die erste Geige spielen.
+		Dabei hat sie nur einen schnöden Trank hergestellt. Doch ich, ich hab etwas viel Interessanteres geschaffen!]
+	</phase>
+	
+	<a id="popo">
+		Kannst du mir Tränke geben?
+	</a>
+	
+	<phase id="popo" next="bof:oeuf">
+		[Ich habe dir doch gesagt, ich bin nicht IRMA!]
+		[Willst du nicht vielleicht Eier von mir kaufen?]
+	</phase>
+	
+	<a id="bof">Nein danke, ich bevorzuge Tränke.</a>
+	<a id="oeuf">Eier?</a>
+	
+	<phase id="oeuf" next="oui:bof">
+		[Oh, ganz besondere Eier!]
+		[Ein *Ei von Urma* kann jeden Gegenstand von Dinoland enthalten!]
+		[Du kannst ein Warmes Brot darin finden... Oder einen Monochromatisch... Sogar einen Dinoz mit einer seltenen Farbe!]
+		[Du brauchst natürlich *etwas Glück*, um den Gegestand deiner Träume zu finden. *Und du musst daran denken, dass in deinem Inventar Platz ist. Ansonsten wird dein Gegenstand verloren sein*!]
+		[Ein solches Ei kostet nur *1000 Goldstücke*!]
+	</phase>
+	
+	<a id="oui" confirm="1">Ich nehme eines für 1000 Goldstücke!</a>
+	<a id="oui2" cond="tag(urma)" confirm="1">Ich möchte dir ein Ei von Madame Urma für 1000 Goldstücke abkaufen!</a>
+	<a id="oui3" cond="tag(urma)+uvar(paques,290-)" confirm="1">Ich möchte dir 10 Eier von Madame Urma für 10000 Goldstücke abkaufen!</a>
+	
+	<phase id="oui" next="bye" usegold="1000" give="paques" nocheck="1" tag="urma" gvar="paques:1" uvar="paques:1">
+		Habt Dank, Dinozmeister. Ich hoffe, dass du in diesem Ei findest, wonach du suchst.
+		Ich werde noch eine Weile hier sein. Besuche mich ruhig wieder, wenn du möchtest.
+	</phase>
+	
+	<a id="bye">
+		Bis zum nächsten Mal!
+	</a>
+	
+	<phase id="oui2" next="bye" usegold="1000" give="paques" nocheck="1" gvar="paques:1" uvar="paques:1">
+		Habt Dank, Dinozmeister. Ich hoffe, dass du in diesem Ei findest, wonach du suchst.
+		Ich werde noch eine Weile hier sein. Besuche mich ruhig wieder, wenn du möchtest.
+	</phase>
+	
+	<phase id="oui3" next="bye" usegold="10000" give="paques:10" nocheck="1" gvar="paques:10" uvar="paques:10">
+		Habt Dank, Dinozmeister. Ich hoffe, dass du in diesen Eier findest, wonach du suchst.
+		Ich werde noch eine Weile hier sein. Besuche mich ruhig wieder, wenn du möchtest.
+	</phase>
+	
+	<phase id="bye" fast="1" frame="stop">
+		Du gehst wieder deiner Wege. Die alte Urma reibt sich ihre Hände. Wirst du mit deinem Ei Glück haben?
+	</phase>
+	
+	<phase id="bof" fast="1" frame="stop">
+		Du gehst wieder deiner Wege. Die alte Urma wirkt etwas enttäuscht. Vielleicht hätte sie wie ihre Schwester Tränke verkaufen sollen...
+	</phase>
+	
+</d>
+	

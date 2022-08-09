@@ -1,0 +1,20 @@
+<d place="gucaul" name="Demander un lot" gfx="gudkeeper">
+
+<phase id="begin" next="oui:exit">
+Alors ? Tu as un {Pin's collector Chouettex} ? Tu me le donnes pour ma collection ? 
+</phase>
+
+<a id="oui" cond="hascollection(chxpin)">Oui, je l'ai.</a>
+<a id="exit">Non. Au revoir.</a>
+
+<phase id="oui" next="ok:exit">
+Oooooh. Alors tu me le donnes ? 
+</phase>
+
+<a id="ok">Ok. Tenez, le voilà.</a>
+
+<phase id="ok" nocollection="chxpin" frame="happy" qgive="QuestObj(lot)">
+Super ! Merci beaucoup ! Je vais le mettre tout de suite sous mon uniforme de Gardien ! La classe ! Attends, je te donne ton lot...
+</phase>
+
+</d>

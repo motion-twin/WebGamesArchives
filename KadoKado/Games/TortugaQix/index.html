@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+	<meta http-equiv="content-type" value="text/html; charset=utf-8"/>
+	<title>KadoKado game</title>
+	<style type="text/css">
+		body {
+		font-family: "Courier", fixed;
+		font-size: 12px;
+		color: #777;
+		}
+		h1 {
+		border-bottom: 2px solid #777;
+		}
+	</style>
+	<body onload="">
+		<h1>El Tortuga Lawnmover service</h1>
+		<object type="application/x-shockwave-flash" id="haxePath" data="../api/loader9.swf" width="300" height="320">
+			<param name="allowScriptAccess" value="always"/>
+			<param name="allowFullScreen" value="true"/>
+			<param name="scale" value="noscale"/>
+			<param name="salign" value="lt"/>
+			<param name="quality" value="high"/>
+			<param name="flashvars" value="swf=game.swf&amp;lang=fr"/>
+		</object>
+
+		<script type="text/javascript">
+			var double = false;
+			function toggleDouble() {
+			double = !double;
+			if (double)
+			document.body.className += " fullscreen";
+			else
+			document.body.className.replace("fullscreen","");
+			var fl = window.document.getElementById("haxePath");
+			var x = double ? 2 : 1;
+			fl.width = 300 * x;
+			fl.height = 320 * x;
+			fl.setDouble(double);
+            if (double)
+			    document.cookie = "double="+double+"; path=/";
+			else
+			    document.cookie = "";
+			}
+//			if (document.cookie.indexOf("double=true") != -1)
+//			    setTimeout(	toggleDouble, 500 );
+		</script>
+
+		<p>
+			<a href="#" onclick="toggleDouble(); return false;">Double</a>
+		</p>
+
+	</body>
+</html>

@@ -1,0 +1,147 @@
+<quests>
+
+<q from="schgmb" id="gmba" name="Couvrir d'eau, saler, poivrer" cond="grade(gm,3)">
+<begin>Oh oh, un étudiant débrouillard ! Toi, je sens que tu as envie de participer à mes recherches culinaires de pointe...</begin>
+<talk did="gmbaa" />
+<create o="Elt(12):5" zone="gmprai" title="Aller à la prairie infinie et créer 5 Rosées. Chaque élément présent à la fin d'une partie sera collecté. " />
+<end>Oh oh très bon travail, premier commis.</end>
+<xp v ="12" />
+<gold v="60" />
+<item v="Elt(12):1" />
+<reput s="gm" v="8" />
+</q>
+
+
+<q from="schgmb" id="gmbb" name="Laisser mijoter à feu doux" cond="quest(gmba)">
+<begin>
+Je viens de formaliser les éléments suivants pour la recette du pétale géminite chocolaté ! Il va falloir marcher un peu, c'est un élément du feu.
+</begin>
+<create o="Elt(17):3" zone="skshar" title="Ramener 3 Etincelles de l'école communale Shari. Chaque élément présent à la fin d'une partie sera collecté. " />
+<end>Tu fais des étincelles, ma parole ! Sinon, tu as goûté à des bons petits plats, chez Shang-Kah ? Non ? </end>
+<xp v ="14" />
+<gold v="75" />
+<item v="Elt(17):1" />
+<reput s="gm" v="10" />
+</q>
+
+<q from="schgmb" id="gmbc" name="Touiller fréquemment" cond="quest(gmbb)">
+<begin>
+Mauvaise nouvelle, l'élément dont j'ai besoin maintenant est un élément... du vent. Il va falloir se rendre à Kringdam, cher premier commis.
+</begin>
+<create o="Elt(25):3" zone="apfbg" title="Créer 3 Slamines au faubourg Audepint. Chaque élément présent à la fin d'une partie sera collecté. " />
+<end>
+J'espère que les étudiants d'Audepint ne t'ont pas trop cassé les pieds pendant que tu étais là-bas.
+</end>
+<xp v ="14" />
+<gold v="80" />
+<item v="Elt(10):1" />
+<reput s="gm" v="13" />
+</q>
+
+
+<q from="schgmb" id="gmbd" name="Ajouter les épices" cond="quest(gmbc)">
+<begin>
+Mercurules ! Il faut deux Mercurules et on a fini ! Enfin... "presque" fini.
+</begin>
+<create o="Elt(10):2" title="Créer deux Mercurules pendant une alchimie. Chaque élément présent à la fin d'une partie sera collecté. " />
+<end>
+Oh oh oh, très bon travail. 
+</end>
+<xp v ="17" />
+<gold v="105" />
+<item v="Elt(10):1" />
+<reput s="gm" v="9" />
+</q>
+
+
+<q from="schgmb" id="gmbe" name="C'est prêt. Servez chaud." cond="quest(gmbd)">
+<begin>
+Voilà la recette définitive pour créer le pétale géminite chocolaté ! Rends toi vite à la salle des chaudrons, j'ai hâte de voir le résultat. Oh j'oubliais... j'ai été obligé d'ajouter un dernier élément pour que ça fonctionne. Enfin tu verras dans ton livre de recette, j'ai baptisé cette recette "Richenfibre".
+</begin>
+<cauldron r="qchoca" collect="1" add="1" drop="1"  title="Créer un pétale géminite chocolaté à la salle des chaudrons." />
+<use qo="QuestObj(chocapic):1" zone="gmsch" action="Donner le pétale" text="Oh oh, c'est une réussite ! Je vais organiser immédiatement une dégustation avec d'éminents alchimistes gourmets ! " title="Donner le pétale chocolaté au chef Haggis." /> 
+<end>
+Oh oh oh, tout le monde a trouvé mon pétale chocolaté formidable ! J'ai une proposition d'un grand groupe industriel qui veut les commercialiser dans un packaging cartonné. Je suis sûr que ça va... euh... ben que ça va cartonner. 
+Tiens, tu as bien mérité ton exemplaire de la recette. 
+</end>
+<xp v ="19" />
+<gold v="60" />
+<recipe v="choca" />
+<reput s="gm" v="14" />
+</q>
+
+
+<q from="schgmb" id="gmbf" name="Un peu de formation" cond="quest(gmbe)">
+<begin>
+Bon c'est pas tout ça. C'est bien beau les affaires mais il serait temps de s'occuper un peu plus de ta formation d'alchimiste ! Je te propose un exercice : réaliser un score correct dans un environnement alchimique très très géminite.
+</begin>
+<score ratio="1.6" zone="gmkrom" title="Dépasser le score suivant pendant une alchimie au Kromlech du Penkrack. Attention aux graines de poiriers et autres spécialités géminites.">
+	<playMod artft="PearGrain(0):50;PearGrain(1):25;Dalton:15" />
+</score>
+<end>
+Oh oh bravo. Un exercice réussi avec brio ! 
+</end>
+<xp v ="12" />
+<gold v="140" />
+<reput s="gm" v="10" />
+</q>
+
+
+<q from="schgmb" id="gmbg" name="Ne jamais négliger l'inutilité" cond="quest(gmbe)">
+<begin>
+La qualité d'un alchimiste de Gémini se mesure à plusieurs choses très importantes : ses qualités d'alchimiste bien sûr, mais il ne faut pas oublier ses capacités au croquet ni son rang de transmutation en inutilité publique ! 
+</begin>
+<talk did="gmbga" />
+<talk did="gmbgb" title="Se rendre à la salle des chaudrons pour atteindre le rang 2 Pas très doué en transmutation d'inutilité publique, puis retourner à l'école Gémini pour en informer le chef Haggis." />
+<end>Oh au fait, n'oublie pas que la guilde récompense les alchimistes doués en transmutation au palais de Stime Pounk. Même en inutilité publique, si si.</end>
+<xp v ="16" />
+<gold v="400" />
+<reput s="gm" v="10" />
+</q>
+
+
+
+<q from="schgmb" id="gmbh" name="Nouvelle voie lactée" cond="quest(gmbg)+quest(gmbf)">
+<begin>
+Tu as entendu la nouvelle mode en ville ? Quelqu'un a laissé tomber ses pétales chocolatés du matin dans un bol de lait. Au lieu de les jeter, il a goûté et il parait que c'était super bon. Il faut que je teste ça au plus vite... Premier commis,  au boulot ! 
+</begin>
+<collect o="QuestObj(milk):3" zone="gmsch" title="Créer 3 briques de lait dans une alchimie à l'école Gemini. Pour chacune, assembler en jeu 2 Cranos, 1 Valvéole et 1 potion vide">
+	<playMod fuo="Empty;Empty;Empty"  />
+</collect>
+<end>
+Oh oh, tu as le lait ! Alors voyons voir. Crunch, crunch, crunch... Hmmm, c'est vrai que c'est pas mal du tout ! Je sens qu'on tient un truc, là. 
+</end>
+<xp v ="18" />
+<gold v="140" />
+<reput s="gm" v="13" />
+</q>
+
+
+
+<!-- ###### GEN QUESTS #######-->
+
+<q from="schgmb" id="rchoco" race="gm" name="C'est fort en chocolat ! " repeat="1" hideCond="quest(gmbe)">
+<begin>
+Il nous faut plus de pétales chocolatés ! La demande est immense, tous les gamins en veulent pour le petit déjeuner ! 
+</begin>
+<use o="QuestObj(chocapic):1" zone="gmsch" action="Donner le pétale" text="Oh oh, c'est une réussite ! Je vais organiser immédiatement une dégustation avec d'éminents alchimistes gourmets ! " title="Créer un pétale géminite chocolaté à la salle des chaudrons, puis le donner au chef Haggis." /> 
+<end>
+Merci. J'ai pas encore réussi à intégrer mon pétale dans une chaîne alchimique comme je voulais, mais au moins les kubors rentrent à flot ! N'hésite pas à revenir si tu veux encore m'aider à créer des pétales.
+</end>
+<xp v ="6" />
+<gold v="120" />
+<reput s="gm" v="12" />
+</q>
+
+<q from="schgmb" id="rdgma" race="gm" name="" rand="1" repeat="1" hideCond="quest(rchoco)">
+</q>
+
+<q from="schgmb" id="rdgmb" race="gm" name="" rand="1" repeat="1" hideCond="sch(gm)+grade(gm,6)">
+</q>
+
+<q from="schgmb" id="rdgmc" race="gm" name="" rand="1" repeat="1" hideCond="sch(gm)+grade(gm,10)">
+</q>
+
+
+</quests>
+

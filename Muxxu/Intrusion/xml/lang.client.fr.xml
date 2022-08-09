@@ -1,0 +1,242 @@
+<lang>
+	<t id="LoadCounter">::n:: Mo téléchargés</t>
+
+	<t id="AntivirusLocked">L'opération a été bloquée par un anti-virus.</t>
+	<t id="ConfigLocked">Les fichiers de configuration du système ne vous autorisent pas à effectuer cette opération.</t>
+
+	<t id="Wait">Veuillez patienter.__Un autre programme est en cours d'exécution.</t>
+	<t id="Disconnected">Vous avez été déconnecté(e).</t>
+	<t id="SystemCrashed">Impossible de redémarrer.|Erreur critique du système.|Contactez votre administrateur système.|ERREUR ... ERREUR ... ER</t>
+	<t id="SystemCorrupted">Droits d'administration activés.|Toutes les commandes sont maintenant autorisées.</t>
+	<t id="SystemSlowedDown">Note__Toutes les opérations sur ce système seront fortement perturbées par un Ralentisseur présent sur le réseau. Nous nous excusons pour la gêne occasionnée, continuez votre travail.||L'administrateur.</t>
+	<t id="ScanResult">SCAN DU DOSSIER [::dir::]__::res::__::sys::</t>
+	<t id="SystemFiles">::n:: fichier(s) système</t>
+	<t id="ControlFiles">::n:: fichier(s) de contrôle</t>
+	<t id="MissionComplete">Mission accomplie</t>
+	<t id="MissionTitle">Mission</t>
+	<t id="Corrupted">Système corrompu</t>
+	<t id="Crashed">Système crashé</t>
+	<t id="BigConnected">Connexion établie.</t>
+	<t id="BigDisconnected">Connexion interrompue.</t>
+	<t id="BigEnd">Fin de mission, veuillez patienter...</t>
+	<t id="Fatal">Une erreur critique s'est produite ! Cliquez sur ce message pour terminer la partie.</t>
+	<t id="InvalidConfigFile">Votre fichier de configuration (.hackrc) contient des erreurs ! La ligne suivante n'a pas pu être traitée :</t>
+	<t id="LP_Logout">Connexion Intrusion Europe...</t>
+	<t id="ConnectingPopUp">Connexion ::ip::...</t>
+
+	<!-- MENUS CONTEXTUELS -->
+	<t id="MenuCancel">ANNULER</t>
+	<t id="MenuLogout">Fin de mission</t>
+	<t id="MenuExtract">Extraire données</t>
+	<t id="ButtonSwitchDeck">Changer de deck</t>
+	<t id="ButtonMyFiles">Fichiers copiés</t>
+
+	<!-- VIRUS ERROR MESSAGE -->
+	<t id="InvalidTarget">Impossible d'exécuter la commande sur cette cible.</t>
+	<t id="NoAntivirusInFolder">Ce dossier ne contient aucun anti-virus.</t>
+	<t id="AlreadyDone">Vous ne pouvez pas faire cela à nouveau sur cette cible.</t>
+	<t id="NeedFolder">Vous ne pouvez lancer ce virus que sur un DOSSIER.</t>
+	<t id="NeedFile">Vous ne pouvez lancer ce virus que sur un FICHIER.</t>
+	<t id="NeedAV">Vous ne pouvez lancer ce virus que sur un anti-virus en état de marche.</t>
+	<t id="NeedInFolder">Ce virus ne peut pas être lancé sans fichier ::ext:: dans le dossier courant.</t>
+	<t id="NotThisFolder">Ce n'est pas le bon dossier, relisez le briefing de votre mission.</t>
+	<t id="NeedExt">Vous ne pouvez lancer ce virus que sur un fichier ::ext::.</t>
+	<t id="NoAV">Vous ne pouvez pas lancer ce virus sur un anti-virus.</t>
+	<t id="NeedCombo">Vous n'avez accumulé aucun POINT DE COMBO.</t>
+	<t id="NeedShield">Ce fichier n'est pas protégé par un effet SHIELD.</t>
+	<t id="UnknownType">Le type de ce fichier est inconnu (masqué), impossible de lancer un virus dont le type de cible autorisé est restreint.</t>
+	<t id="NoCharge">Ce virus ne peut plus être utilisé.</t>
+	<t id="OnlyOnce">Vous ne pouvez pas lancer à nouveau ce virus sur ce fichier.</t>
+	<t id="OnlyInRoot">Vous ne pouvez lancer ce virus qu'à la RACINE du système actuel.</t>
+	<t id="SystemLocked">L'accès à ce système est bloqué par un serveur VERROU : vous devez d'abord neutraliser ce serveur.</t>
+	<t id="WouldKillYou">Cette action mettrait hors-service votre terminal !</t>
+	<t id="CantCopyCrypted">Vous ne pouvez pas copier un fichier qui a été encrypté ou masqué.</t>
+	<t id="CantCopyPack">Vous ne pouvez pas copier un fichier PACK. Pour récupérer son contenu, vous devez utiliser un virus Extraction.</t>
+	<t id="CantCopyLog">Un fichier LOG ne peut être copié avec le virus COPIER. Détruisez-le pour gagner quelques précieuses secondes !</t>
+	<t id="Crypted">Vous ne pouvez pas lancer ce virus sur un fichier qui a été encrypté ou masqué.</t>
+	<t id="PackFound">Un ou plusieurs fichier PACK a été détecté !</t>
+	<t id="PackNotFound">Aucun fichier PACK.</t>
+	<t id="CoreProtected">Ce fichier COEUR ne peut être affecté car il est protégé par un ou plusieurs fichiers GARDIEN.</t>
+	<t id="NotInScoutMode">Cette action est impossible avec un chipset SCOUT.</t>
+	<t id="DiskFull">Vous n'avez plus d'emplacement libre pour copier un fichier (maximum : ::max::) !</t>
+	<t id="FileNotFound">Erreur : fichier introuvable.</t>
+	<t id="UnknownVirus">Commande ou virus inconnu.</t>
+
+	<!-- Applications -->
+	<t id="MapAV">Un ou plusieurs anti-virus ont été détectés dans ce dossier !</t>
+	<t id="MapYouAreHere">Vous vous trouvez actuellement dans ce dossier.</t>
+	<t id="MapAVList">Anti-virus détectés :</t>
+	<t id="MapLocked">Ce dossier est protégé par un mot de passe : impossible de scanner son contenu.</t>
+	<t id="OptMore">Augmenter</t>
+	<t id="OptLess">Diminuer</t>
+	<t id="OptSensitivity">Sensibilité de la molette de la souris (défilement) :</t>
+	<t id="OptReset">Ré-initialiser !</t>
+	<t id="OptSettings">Options du jeu</t>
+	<t id="OptAbandon">Abandon mission</t>
+	<t id="OptConfirm">CONFIRMER ?</t>
+	<t id="OptShortcuts">Raccourcis claviers du deck :</t>
+	<t id="OptCapture">Appuyez sur la TOUCHE DU CLAVIER souhaitée pour cet emplacement du deck ou appuyez sur ECHAP pour annuler.</t>
+	<t id="OptSaved">La configuration a été sauvegardée sur cet ordinateur.</t>
+
+	<!-- Fichiers -->
+	<t id="MaskedFile">Le nom et le contenu de ce fichier sont cachés par un anti-virus ::v::.</t>
+	<t id="AskPass">Mot de passe requis pour ::f:: :</t>
+	<t id="ExternalError">ERREUR : ce fichier est illisible.</t>
+
+	<t id="YouAreDead">ERREUR CRITIQUE __Votre terminal a subi trop de dégâts ! Déconnexion d'urgence !</t>
+	<t id="TimeOut">Temps écoulé !__L'administrateur réseau vous a repéré et a interrompu votre connexion !</t>
+	<t id="AlarmStatus">Alarme dans ::n:: secondes !</t>
+	<t id="AlarmStop">Alarme interrompue :)</t>
+	<t id="AlarmEnd">Alarme déclenchée !__L'administrateur réseau vous a repéré et a interrompu votre connexion !</t>
+	<t id="Useless">Vous n'avez pas besoin de cela pour le moment.</t>
+	<t id="CantConnectWhenDead">Impossible de vous connecter, votre terminal est hors-service :'(</t>
+	<t id="CantConnectWhenBusted">Les accès ont été totalement bloqués par l'administrateur réseau !</t>
+	<t id="CantConnectWhenOOM">Vous avez épuisé toutes les ressources de votre terminal.</t>
+	<t id="NotInRoot">Impossible de lancer cette commande dans le premier dossier (racine) du système.</t>
+	<t id="CantGetOut">Un anti-virus GLUE vous empêche de quitter le dossier actuel. Détruisez-le pour pouvoir vous déplacer.</t>
+	<t id="SystemIsCrashed">Ce système ne répond plus. Impossible de vous y connecter.</t>
+	<t id="CantReachNode">Vous ne pouvez pas encore vous connecter à ce système. Commencez par corrompre ou planter les systèmes qui sont sur votre chemin.</t>
+	<t id="OnlyOnFS">Cette commande ne peut être exécutée que lorsque vous êtes connecté(e) à un système</t>
+	<t id="UnknownCommand">Cette commande ou ce programme est inconnu.</t>
+	<t id="NotEnoughMana">Vous ne disposez pas de suffisamment de points de ressources pour lancer ce virus !</t>
+	<t id="RebootBlocked">Le redémarrage de ce système est bloqué par un anti-virus SYSDEF.</t>
+	<t id="Couveuse">Cette opération est bloquée par un anti-virus COUVEUSE.</t>
+	<t id="CorruptBlocked">La corruption a été bloquée par un anti-virus HARMONIE.</t>
+	<t id="Resisted">(résistance)</t>
+	<t id="Shielded">(absorbé ::n:: points)</t>
+	<t id="Immune">(immunité)</t>
+	<t id="CorruptResisted">(Anti-corruption)</t>
+	<t id="SpamResisted">(Anti-spam)</t>
+	<t id="OverResisted">(Anti-écrasement)</t>
+	<t id="EntranceName">Point d'entrée du réseau (cliquez dessus pour mettre fin à votre mission).</t>
+	<t id="ManaCost">Coût en ressources : ::n::</t>
+	<t id="ChargeRemaining">::n:: charge(s) restante(s)</t>
+	<t id="LoginFailed">Accès refusé, mot de passe incorrect.</t>
+	<t id="LoginSuccess">Accès autorisé.</t>
+	<t id="NodeShielded">Ce système est protégé par un serveur VERROU.</t>
+	<t id="NodeCrashed">Ce système est hors-service.</t>
+	<t id="HiddenNode">Nom du système inconnu...</t>
+	<t id="NodeAuth">Vous avez piraté ce système :)</t>
+	<t id="CantExtractThat">Ce n'est pas un fichier PACK.</t>
+	<t id="RemainingFurtivity">Actions furtives restantes : ::n::.</t>
+	<t id="RemainingMoveFurtivity">Déplacements furtifs restants : ::n::.</t>
+	<t id="RevengeEffect">L'antivirus ::av:: a subi le contre-coup de l'effet ::v:: (::p:: dégâts infligés) !</t>
+	<t id="EncodingTooStrong">L'encodage de ce fichier (niveau ::n::) est trop complexe pour être cassé par ce virus !</t>
+
+	<!-- ANTI-VIRUS -->
+	<t id="AntivirusBlocked">[::av::] Anti-virus bloqué !</t>
+	<t id="AntivirusDodged">[::av::] Votre action n'a pas été détectée.</t>
+	<t id="AV_mine">Sortie d'un dossier piégé</t>
+	<t id="AV_oxy">Changement de dossier</t>
+	<t id="AV_bigoxy">Changement de dossier</t>
+	<t id="AV_repurgator">Suppression d'un fichier</t>
+	<t id="AV_bomb">Attaque d'une bombe</t>
+	<t id="AV_paladin">Suppression d'un fichier (hors anti-virus)</t>
+	<t id="AV_sysdef">Suppression d'un fichier COEUR, GARDIEN ou CONTROL</t>
+	<t id="AV_fantassin">Exécution d'un virus à proximité</t>
+	<t id="AV_tique">Dégâts infligés par un virus</t>
+	<t id="AV_inferno">--</t>
+	<t id="AntivirusDamage">::n:: dégâts</t>
+	<t id="Ejected">[::av::] Aggression détectée : vous avez été déconnecté !</t>
+
+	<!-- INGAME LOG -->
+	<t id="Log_Connecting">Connexion en cours...</t>
+	<t id="Log_Cancelled">Opération interrompue.</t>
+	<t id="Log_ConnectedGlobal">Connexion établie.</t>
+	<t id="Log_Chipset">Initialisation chipset ::c::... [::id::.prg] OK !</t>
+	<t id="Log_ConnectedNode">Connexion établie sur [::name::].</t>
+	<t id="Log_FoundValuable">Vous avez dérobé un fichier de valeur (::name::) !</t>
+	<t id="Log_Stealth">Action furtive : aucun anti-virus n'a été alerté.</t>
+	<t id="Log_Scanner">Scanner activé sur ce système.</t>
+	<t id="Log_GainedMana">Vous avez récupéré ::n:: points de ressources.</t>
+	<t id="Log_GainedLife">Vous avez récupéré ::n:: points d'armure.</t>
+	<t id="Log_GainedTime">Traces effacées : vous avez gagné ::n:: secondes supplémentaires.</t>
+	<t id="Log_Copied">Fichier copié : ::name:: (emplacement ::n::/::max::).</t>
+	<t id="Log_Bomb">[BOMB] Un anti-virus Bombe a détecté votre action (amorçage : ::n::/::max::).</t>
+	<t id="Log_BombLast">[BOMB] Un anti-virus Bombe a détecté votre action (EXPLOSION IMMINENTE).</t>
+	<t id="Log_Shield">::n:: dégât(s) absorbé(s)</t>
+	<t id="Log_Death">Le fichier "::name::" a été effacé.</t>
+	<t id="Log_DistantDamage">Le fichier "::name::" a subi ::n:: dégât(s).</t>
+	<t id="Log_DistantDeath">Le fichier "::name::" a subi ::n:: dégât(s) et a été effacé !</t>
+	<t id="Log_MissionRemaining">Objectif de la mission : ::n:: / ::total::.</t>
+	<t id="Log_MissionComplete">Vous avez rempli l'objectif de votre mission !</t>
+	<t id="Log_CorruptRemain">Fichiers à corrompre : ::n:: restant.</t>
+	<t id="Log_AutoComplete">Complétion : ::list::</t>
+	<t id="Log_OOM">Épuisement des ressources : connexion perdue.</t>
+	<t id="Log_ChangedDeck">Chargement d'un nouveau deck : '::name::'... OK</t>
+
+	<t id="Tooltip_Extract">Ce fichier peut être exploité en cliquant dessus puis en choisissant l'action EXTRAIRE.</t>
+	<t id="Tooltip_Control">Avec le matériel adéquat, les fichiers CONTROL peuvent être piratés pour corrompre ce système discrètement.</t>
+	<t id="Tooltip_Core">Si vous détruisez tous les fichiers COEUR, le système plantera totalement.</t>
+	<t id="Tooltip_Guardian">Les fichiers GARDIEN protègent les fichiers COEUR du système contre les dégâts.</t>
+	<t id="Tooltip_Life">Armure : ::n::/::total::</t>
+	<t id="Tooltip_Mana">Ressources : ::n::/::total::</t>
+	<t id="Tooltip_Combo">Points de combo : ::n::/::total::</t>
+	<t id="Tooltip_History">Cliquez pour afficher les derniers messages du registre.</t>
+	<t id="Tooltip_LogFile">Ce fichier LOG contient un historique de vos agissements sur ce système ! Supprimez-le pour effacer vos traces, brouiller les pistes et gagner quelques précieuses secondes.</t>
+
+	<!-- EFFECTS -->
+	<t id="E_SkipAction">La prochaine attaque de ce fichier sera bloquée.</t>
+	<t id="E_Shield">Tous les dégâts subis sont réduits de ::n:: points (effet cumulatif).</t>
+	<t id="E_CShield">Ce nouyau est protégé par des fichiers GARDIEN, dégâts réduits de ::n:: points (effet cumulatif).</t>
+	<t id="E_Gathered">Vous avez extrait des informations de ce fichier.</t>
+	<t id="E_Disabled">Cet anti-virus a été mis hors-service et ne vous gênera plus.</t>
+	<t id="E_Immune">Tous les dégâts subis sont bloqués.</t>
+	<t id="E_Counter">Cet anti-virus infligera des dégâts lorsque ::total:: charges auront été accumulées (::n::/::total:: actuellement)</t>
+	<t id="E_PackMoney">Contient des données de valeur !</t>
+	<t id="E_PackMana">Contient des points de Ressource.</t>
+	<t id="E_PackLife">Contient des points d'Armure.</t>
+	<t id="E_Revenge">Si cet anti-virus vous inflige des dégâts, il subira des dégâts à son tour (une seule fois).</t>
+	<t id="E_Weaken">Les dégâts infligés par cet anti-virus sont divisés par ::f::.</t>
+	<t id="E_Encoded">Le contenu de ce fichier est encodé (niveau ::n::), vous devrez d'abord le décoder pour y accéder.</t>
+	<t id="E_Exploit">Tous les prochains dégâts seront multipliés par ::f::.</t>
+	<t id="E_Copy">Ce fichier a été copié sur votre propre terminal.</t>
+	<t id="E_Corrupt">Ce fichier a été corrompu : faites de même sur tous les fichiers du même type pour obtenir les droits d'accès "administrateur" sur ce système.</t>
+	<t id="E_Dot">Ce fichier subira ::n:: dégâts régulièrement.</t>
+	<t id="E_Splash">Si ce fichier subit des dégâts provoquant sa destruction, tous les fichiers du répertoire subiront à leur tour ::n::% de ces derniers dégâts.</t>
+	<t id="E_Tag">Si vous infligez des dégâts à ce fichier, tous les autres fichiers du système portant un marqueur LINK subiront à leur tour ::n::% de ces dégâts.</t>
+
+	<!-- VIRUS CUSTOM -->
+	<t id="CustSpy">Espion</t>
+	<t id="CustSpyDesc">Infecte le fichier ciblé pour espionner toute les activités du système (ne fonctionne que sur les fichiers COEUR).</t>
+	<t id="CustUp">Upload de fichier</t>
+	<t id="CustUpDesc">Envoie le fichier fourni pour votre mission dans le dossier courant.</t>
+	<t id="CustVideo">Final-cut</t>
+	<t id="CustVideoDesc">Analyse l'ensemble des fichiers VIDEO du dossier courant et supprime toutes les parties sur lesquelles le sujet est reconnaissable.</t>
+	<t id="CustRep">Remplacement</t>
+	<t id="CustRepDesc">Remplace le contenu du fichier DATA ciblé par celui que vous avez copié préalablement.</t>
+	<t id="CustOverwrite">Rouleau compresseur</t>
+	<t id="CustOverwriteDesc">Ecrase le contenu de tous les fichiers ::ext:: du dossier courant.</t>
+	<t id="CustGame">Game hacker</t>
+	<t id="CustGameDesc">Corrompt le fichier GAME ciblé en modifiant les valeurs qu'il contient.</t>
+	<t id="CustVirusDesc">Infecte le fichier CONTROL ciblé.</t>
+	<t id="CustVExtract">AnalyseVir</t>
+	<t id="CustVExtractDesc">Analyse puis récupère une partie du code source du virus qui infecte le fichier ::ext:: ciblé.</t>
+	<t id="UploadedFile">Fichier uploadé</t>
+	<t id="NotInfected">Ce fichier n'a pas été infecté par le virus ::vname::.</t>
+	<t id="ExtractedVirus">::pct:: % du virus ::vname:: a pu être reconstitué à partir des fichiers analysés.</t>
+	<t id="NeedTvCopy">Vous devez d'abord récupérer un programme télévisé dans les bases de "::from::".</t>
+	<t id="NeedTvProg">Ce virus ne fonctionne que sur les fichiers DATA contenant des programmes télévisés.</t>
+
+	<!-- NET NODES DESCRIPTIONS -->
+	<t id="NDescLock">Ce serveur bloque totalement l'accès à TOUS les systèmes qui lui sont directement reliés.</t>
+	<t id="NDescLockLight">Ce serveur bloque l'accès à un autre système qui lui est directement relié.</t>
+	<t id="NDescAlarm">Ce serveur analyse les activités de tous les systèmes qui lui sont reliés. Si l'un d'eux crash ou est corrompu, une alerte sera déclenchée.</t>
+
+	<!-- FICHIERS LOGS -->
+	<t id="TraceConnect"><strong>Connexion non-authentifiée [::name::]</strong></t>
+	<t id="TraceVirus"><strong>ALERTE VIRUS (::id::.PRG) !</strong></t>
+	<t id="TraceCD">Ouverture [::name::]</t>
+	<t id="TraceAccess">Accès [::name::]</t>
+	<t id="TraceDelete">Suppression [::name::]</t>
+
+	<!-- TUTORIAUX -->
+	<t id="TutorialTitle">Agent de liaison Circé :</t>
+	<t id="TutorialContinue">Continuer</t>
+	<t id="NotNow">Vous ne pouvez pas effectuer cette action maintenant. Il vous est demandé de suivre les instructions données par Circe.</t>
+	<t id="TipTitle">Conseil</t>
+
+	<!--- TEMP ! -->
+	<t id="YourMission">Objectif__</t>
+</lang>
+

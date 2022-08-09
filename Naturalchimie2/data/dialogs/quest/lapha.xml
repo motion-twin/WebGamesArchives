@@ -1,0 +1,122 @@
+<d place="agoraa" name="Prendre l'apéro" gfx="guoporg">
+
+<phase id="begin" frame="happy" next="gem:nogem">
+Te voilà, on va pouvoir fêter la fin de cette aventure ! | Une petite Geminish Regular ?
+</phase> 
+
+<a id="gem">Je veux bien, merci. </a>
+<a id="nogem">Non merci, je consomme avec modération.</a>
+
+<phase id="gem" frame="normal" give="QuestObj(geminishregular):1" next="keep">
+Tiens, * santé ! | Il doit aussi y avoir des amuse-gueules quelque part...
+</phase>
+
+<phase id="nogem" frame="normal" next="keep">
+Comme tu veux. | N'hésite pas à aller au buffet si tu le souhaites, c'est la Guilde qui régale. 
+</phase>
+
+<phase id="keep" frame="gudkeeper:normal" next="red">
+Bonjoouuuur.
+</phase>
+
+<a id="red">Euh... B-b-b-bonjour.</a>
+
+<phase id="red" frame="guoporg:happy" next="com">
+Ah ! Bonjour gardien. | Comme d'habitude, vous ne loupez jamais une petite fiesta, hein ! 
+</phase>
+
+<phase id="com" frame="gudkeeper:normal" next="comb">
+On ne peut rien vous cacheeer, Chambellaaand. | Où sont les packs de Geminiiiiish ? 
+</phase>
+
+<phase id="comb" frame="guoporg:happy" next="comc">
+Là-bas au frais, sous le buffet. Servez-vous.
+</phase>
+
+<phase id="comc" frame="guoporg:normal" next="obj">
+Bon. | En tout cas, tout est bien qui finit bien, le palais et la Grande Place sont sauvés ! | Mais quand même, il y a un truc qui me gêne...
+</phase>
+
+<a id="obj">Quoi donc ? </a>
+
+<phase id="obj" frame="guoporg:happy" next="rat">
+Dans les détails de l'accord que tu avais rapporté il y avait une cinquième ligne illisible, si tu te souviens bien. | Ca ne voulait rien dire, mais quand même... 
+</phase>
+
+<a id="rat">Boarf, juste une rature. N'oubliez pas que c'est une mite qui l'a écrit. Ca doit pas être facile.</a>
+
+<phase id="rat" frame="guoporg:normal" next="mite">
+Bien sûr, bien sûr. | Mais s'il s'agissait de pattes de mouche qu'on a pas réussi à lire...
+</phase>
+
+<a id="mite">Des pattes de mite, vous voulez dire. Ah ah ! </a>
+
+<phase id="mite" frame="guoporg:normal" next="que">
+Oh, très drôle. | Mais quand même, ["ia ia Qucasdhexzth ftaghn"] | ça me rappelle quelque chose. | Mais quoi...
+</phase>
+
+<phase id="que" frame="gudkeeper:angry" next="yep">
+Pardooon Chambellaand ? | Vous avez bien diiiit ["ia ia Qucasdhexzth ftaghn"] ? 
+</phase>
+
+<phase id="yep" frame="guoporg:happy" next="mal">
+Ah ! | Ca vous parle à vous, gardien ? 
+</phase>
+
+<phase id="mal" frame="gudkeeper:normal" effect="cthulo" next="cthul">
+Malheureusement ouiiiii... | Inverseeeez le [x] et le [z] et vouuus %func% aurez... 
+</phase>
+
+<a id="cthul">Aaaah ! Qu'est-ce qui se passe ! ?</a>
+
+<phase id="cthul" frame="gudkeeper:angry" next="aah">
+Il arrive ! * * | Chambelland... Rentrez au palaiiis ! Je preeends les choses en main ! 
+</phase>
+
+<a id="aah">Mais qu'est-ce qui se passe, enfin ? ! </a>
+
+<phase id="aah" frame="gudkeeper:happy" next="iih">
+Voouus là-bas, emporteeez les paacks de Geminiiish au Donjoooon ! | Le royauuume est en dangeeer ! 
+</phase>
+
+<a id="iih">Mais vous allez me répondre à la fin ? Qu'est-ce qui se passe ? !</a>
+
+<phase id="iih" frame="gudkeeper:angry" next="dites">
+Ce qui se paaasse ? | Si on inverrrrse le [z] et le [x], cela doooonne [Qucasdhezxth].
+</phase>
+
+<a id="dites">Ah ben oui c'est plus clair, là... Comment vous avez dit ? </a>
+
+<phase id="dites" frame="gudkeeper:angry" next="rit">
+[Qucasdhezxth] * ! | [Qucasdhezxth], l'entité démoniaque des tréfoooonds... Le dévoreeeeur de mooonde ! 
+</phase>
+
+<phase id="rit" frame="gudkeeper:angry" next="glo">
+Il existe un ritueeeeel pour l'invoquer... Par exemple, c'est [Qucasdhezxth] qui a creusééé le boyau de Jeezara... | En une seuuule bouchée.
+</phase>
+
+<a id="glo">Gloups ! </a>
+
+<phase id="glo" frame="gudkeeper:normal" next="drol">
+Apparemmeeent, Vorace l'a invoqué pour raseeeer la capitale. | Ce n'était pas une ratuuure. | Ni %angry% des pattes de mite ! *
+</phase>
+
+<a id="drol">Je... je voulais juste être drôle moi. Briller en société, tout ça... </a>
+
+<phase id="drol" frame="gudkeeper:normal" next="moi">
+Tu vas pouvoir briiiller. | Notre seul espoir, c'est de renvoyyyyer [Qucasdhezxth] dans sa dimensiooon origineeeeeelle. | Pour celaaaa, la Guilde possèèèède un contre-rituel secreeet. 
+</phase>
+
+<a id="moi">Et c'est à moi de le faire ? ! Pourquoi pas vous ?</a>
+
+<phase id="moi" frame="gudkeeper:happy" next="mont">
+Je dois superviseeer la mise à l'abri du buffeeet, à chacun sa mission.
+</phase>
+
+<a id="mont">D'accord ! Synchronisons nos montres ! </a>
+
+<phase id="mont" frame="gudkeeper:happy">
+Nooos quoi ?... | | | Peu %angry% impoooorte ! Fiiiile à la salle des chaudroooons, j'ai ajouté le ritueeel dans ton grimoire pour banniiir [Qucasdhezxth] ! | Allez ! * *
+</phase>
+
+</d>

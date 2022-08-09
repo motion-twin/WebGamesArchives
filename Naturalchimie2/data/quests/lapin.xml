@@ -1,0 +1,132 @@
+<quests>
+
+<q from="lapin" id="lapa" name="Vous avez dit Vorace ?" cond="grade(,5)">
+	<begin>J'ai reçu cette pub ce matin ! C'est du délire ! </begin>
+	<talk did="lapaa" />
+	<cauldron r="qcoord" qty="1" add="1" drop="1" collect="1" title="Faire la recette des 'feuillets jaunes' fournie pour obtenir l'adresse du cabinet Vorace." />
+	<end>Bon travail, maintenant on sait à quelle porte frapper. 2, allée de la ziggourat... Mmmh, ça m'étonne pas. Encore la faute d'un jeezariste ! </end>
+	<gold v="65" />
+	<xp v="6" />
+	<reput s="gu" v="4" />
+</q>
+
+<q from="lapin" id="lapb" name="C'est une blague ? " cond="quest(lapa)">
+	<begin>Bon. rends-toi à la Ziggourat d"or pour trouver ce cabinet Vorace. Reviens me voir dès que tu as leurs explications sur cette sale blague.</begin>
+	<talk did="lapba" title="Se rendre à la Ziggourat d'or pour obtenir des infos auprès du cabinet Vorace." step="1"/>
+	<create o="Elt(11):5" title="Créer 5 Pépites d'or toutes fraîches pour Hektor Vorace, comme preuve de solvabilité." />
+	<use zone="jzzig" action="Donner les 5 pépites" qo="Elt(11):5" text="Ahr très bien. On peut discuter entre personnes solvables, il semblerait." title="Donner les pépites à Hektor Vorace, à la Ziggourat." />
+	<talk did="lapbb" />
+	<end>Quoi ? Un promoteur ? Avec les écoles d'alchimie ? Mais c'est pire que ce que j'imaginais ! </end>
+	<gold v="80" />
+	<xp v="8" />
+	<reput s="gu" v="5" />
+</q>
+
+<q from="lapin" id="lapc" name="Un témoin crucial" cond="quest(lapb)">
+	<begin>Tu as dis qu'ils ont scellé leur accord dans le grenier aux alchimites ? Il faut enquêter là-bas, le vieil Altus a peut-être entendu quelque chose. </begin>
+	<talk did="lapca" title="Se rendre au grenier aux alchimistes pour interroger Altus à propos de l'accord secret." />
+	<talk did="lapcb" title="Chercher un témoin au grenier, car Altus n'a rien vu." step="1" />
+	<cauldron r="qconta" qty="1" add="1" drop="1" collect="1" title="Faire la recette de contrebande Parmenator Frelatus pour l'alchimite" step="1" />
+	<use zone="grenie" action="Donner les Aztèquéporteurs" qo="Teleport:10" text="Grnx. Merci. Voilà la seconde recette à faire." title="Rapporter le résultat de la recette à l'alchimite du grenier." />
+	<cauldron r="qcontb" qty="1" add="1" drop="1" collect="1" title="Faire la recette de contrebande Bisquerage pour l'alchimite" step="1"/>
+	<use zone="grenie" action="Donner les Chouettes d'or." qo="GodFather:5" text="Grnx. Merci encore. Tiens, voilà la dernière recette à réaliser." title="Rapporter le résultat de la recette à l'alchimite du grenier." />
+	<cauldron r="qcontc" qty="1" add="1" drop="1" collect="1" title="Faire la recette de contrebande Multiplex Ambidextrus pour les alchimites" step="1"/>
+	<talk did="lapcc" title="Donner les mains du mentor l'alchimite du grenier." />
+	<end>Tu as des infos, excellent ! Alors voyons voir... Dis donc c'est écrit super petit ce papier, quelle idée ! </end>
+	<gold v="100" />
+	<item v="MentorHand:1" />
+	<xp v="10" />
+	<reput s="gu" v="6" />
+</q>
+
+<q from="lapin" id="lapd" name="Travail de sape" cond="quest(lapc)">
+	<begin>Maintenant qu'on sait qui fait quoi, il est temps de passer à l'action ! </begin>
+	<talk did="lapda" />
+	<talk did="lapdb" title="Se rendre au manoir Audepint pour convaincre Maître Enguerrand de renoncer à l'accord avec le cabinet Vorace" step="1" />
+	<collect o="CountBlock(1):200" zone="apfbg" title="Se débarrasser des stocks de pierre entreprosés au faubourg. Il faut détruire 200 pyrites pour cela.">
+		<playMod replace="1" artft="Elts(2,null):1000;Elts(2,CountBlock(1)):1300;Elts(2,CountBlock(2)):1700;Elts(2,CountBlock(3)):1000;Dynamit(0):35;Dynamit(1):20;Alchimoth:10" >
+			<startGrid g="CountBlock(4):0:0;CountBlock(4):1:0;CountBlock(4):2:0;CountBlock(3):3:0;CountBlock(4):4:0;CountBlock(3):5:0;CountBlock(4):0:1;CountBlock(4):1:1;CountBlock(4):2:1;CountBlock(4):3:1;CountBlock(4):4:1;CountBlock(3):0:2;CountBlock(3):1:2;CountBlock(4):2:2;CountBlock(3):3:2;CountBlock(4):1:3;CountBlock(3):1:4;CountBlock(3):0:3;CountBlock(3):2:3;CountBlock(4):5:1;CountBlock(3):5:2;CountBlock(3):5:3;CountBlock(4):5:4;CountBlock(3):5:5;CountBlock(3):4:2;CountBlock(3):4:3" />
+		</playMod>
+	</collect>
+	<collect o="CountBlock(1):200" zone="apvos" title="Se débarrasser des stocks de pierre entreprosés à Vostok. Il faut détruire 200 pyrites pour cela.">
+		<playMod replace="1" artft="Elts(2,null):900;Elts(2,CountBlock(1)):1150;Elts(2,CountBlock(2)):1850;Elts(2,CountBlock(3)):1100;Dynamit(0):35;Dynamit(1):20;Alchimoth:10" >
+			<startGrid g="CountBlock(1):0:0;CountBlock(2):0:1;CountBlock(3):0:2;CountBlock(4):0:3;CountBlock(1):0:4;CountBlock(4):1:0;CountBlock(4):2:0;CountBlock(4):3:0;CountBlock(3):4:0;CountBlock(4):5:0;CountBlock(4):1:1;CountBlock(4):2:1;CountBlock(4):3:1;CountBlock(4):4:1;CountBlock(4):5:1;CountBlock(4):1:2;CountBlock(3):2:2;CountBlock(4):3:2;CountBlock(3):4:2;CountBlock(4):5:2;CountBlock(3):1:3;CountBlock(3):2:3;CountBlock(4):3:3;CountBlock(3):4:3;CountBlock(3):5:3;CountBlock(3):1:4;CountBlock(3):2:4;CountBlock(3):3:4;CountBlock(3):4:4;CountBlock(4):5:4" />
+		</playMod>
+	</collect>
+	<end>Audepint accepte d'abandonner le projet ? C'est parfait ! Et j'avais raison : tu vois bien que maître Enguerrand est sympathique et compréhensif.</end>
+	<gold v="140" />
+	<xp v="15" />
+	<reput s="gu" v="16" />
+</q>
+
+
+<q from="lapin" id="lape" name="Coup de froid pour Vorace" cond="quest(lapd)">
+	<begin>Il est temps d'aller voir Shang-Kah, qui doit s'occuper du chauffage central et du sauna de la résidence.</begin>
+	<talk did="lapea" title="Se rendre à l'école communale Tupuri pour convaincre le parrain Vaarza de renoncer à l'accord avec le cabinet Vorace." step="1" />
+	<talk did="lapeb" title="Aller voir Melchior Inc. Peut-être qu'il aura une oreille plus attentive." step="1" />
+	<create o="Elt(14):8;Elt(26):8" title="Créer 8 Torrentines et 8 Cyclonites pour Melchior Inc. Chaque élément présent à la fin d'une partie sera collecté. " />
+	<use zone="sktupu" action="Donner les éléments" qo="Elt(14):8;Elt(26):8" qgive="Elt(8):100;Elt(9):60" text="Merci. Comme convenu, voilà le métal de la résidence destiné à Shang-Kah. Hektor Vorace n'avait qu'à pas me piquer mes frites ! " title="Apporter les éléments recoltés à Melchior Inc, pour les échanger contre le métal de la résidence." />
+	<end>Bravo, mission accomplie ! ...Mais, mais qu'est-ce que c'est que tout ce bazar que tu trimballes ? Et comment ça "la Guilde doit te racheter tout ça"... ? </end>
+	<gold v="600" />
+	<xp v="6" />
+	<reput s="gu" v="4" />
+</q>
+
+
+<q from="lapin" id="lapf" name="La faiblesse de Mortgage" cond="quest(lapd)">
+	<begin>Maintenant, il faut convaincre Jeezara. Oui, oui j'ai bien mis "convaincre" et "Jeezara" dans la même phrase !</begin>
+	<talk did="lapfa" title="Se rendre au boyau central de Jeezara pour convaincre le mentor Mortgage de renoncer à son accord avec le cabinet Vorace." step="1" />
+	<talk did="lapfb" title="Aller voir BHV aux falaises anamentholées pour... récupérer son t-shirt" step="1" />
+	<cauldron r="qskat" qty="2" add="1" drop="1" collect="1" title="Créer 500 Skats pour BHV grâce à la recette Rabaspoil." />
+	<talk did="lapfc" title="Retourner voir BHV aux falaises pour lui donner les Skats." />
+	<talk did="lapfd" title="Apporter le t-shirt au mentor Mortgage, au boyau central." />
+	<end>Jeezara laisse tomber et tu reviens en un seul morceau ? Je n'en espérais pas tant.</end>
+	<gold v="120" />
+	<xp v="17" />
+	<reput s="gu" v="8" />
+</q>
+
+
+<q from="lapin" id="lapg" name="C'est ton destin, dude" cond="quest(lapd)">
+	<begin>Au tour de Gemini ! Ils s'occupent du terrain de croquet, c'est pas grand chose. Tu devrais pouvoir les convaincre sans trop de problème.</begin>
+	<talk did="lapga" title="Se rendre à l'école Didi-Wan Gemini pour convaincre le professeur Lecoussin de renoncer à l'accord avec le cabinet Vorace." step="1" />
+	<score ratio="3.0" zone="gmsch" title="Dépasser le score du professeur Lecoussin à l'école Gemini (les objets magiques sont autorisés) :  " >
+		<playMod obj="1"/>
+	</score>
+	<end>Il parait que tu as battu le score du professeur Lecoussin ? L'info est déjà arrivée jusqu'ici. Bon travail ! </end>
+	<gold v="130" />
+	<xp v="15" />
+	<reput s="gu" v="7" />
+</q>
+
+
+<q from="lapin" id="laph" name="Invité surprise !" cond="quest(lapd)+quest(lape)+quest(lapf)+quest(lapg)">
+	<begin>Mission accomplie. Cette résidence ne devrait jamais voir le jour, tout danger est écarté ! J'organise un petit apéritif sur la Grande Place pour fêter ça, tu me suis ? On l'a bien mérité !</begin>
+	<talk did="lapha" title="Se rendre à la Grande Place pour prendre l'apéro. Tout frais payé par la Guilde ! " step="1" />
+	<cauldron r="qcthu" qty="1" add="1" drop="1" collect="1" title="Bannir Qucasdhezxth grâce à la recette Ultima Moderatus." step="1" />
+	<talk did="laphb" title="Retourner voir le Chambelland Lapin au palais de Stime Pounk." />
+	<end>J'ai trouvé ! Voilà une recette spéciale. Je crois aussi que toutes les instances du royaume sont plutôt impressionnées par ce que tu as fait. </end>
+	<recipe v="rwdcth" />
+	<xp v="25" />
+	<reput s="gu" v="30" />
+	<reput s="ap" v="10" />
+	<reput s="sk" v="10" />
+	<reput s="jz" v="10" />
+	<reput s="gm" v="10" />
+</q>
+
+
+<q from="lapin" id="lapi" name="Hektor l'embrouille" cond="quest(laph)">
+	<begin>Bien. Le buffet est terminé, nous devrions nous rendre chez Hektor Vorace pour lui chauffer les oreilles ! Foi de Chambelland Lapin, il ne s'en tirera pas comme ça ! </begin>
+	<talk did="lapia" />
+	<talk did="lapib" title="Capturer Hektor Vorace avec l'aide du gardien et du chambelland, à la ziggourat d'or." step="1" />
+	<use o="Pa:25;Elt(14):5;Elt(18):5;Elt(22):5;Elt(26):5" zone="jzzig" action="Donner les objets" text="Ahr ahr, merci. Avec ceci je vais pouvoir fuir dans un autre pay... Euh non. Je veux dire, je vais pouvoir oublier cette histoire et continuer mon honnête activité la tête haute ! Allez, je ne vous retiens pas dans mon humble cabinet." title="Apporter les objets suivants à Hektor V. à la Ziggourat d'or, pour s'excuser des accusations calomnieuses." />
+	<end>Pfff, c'est très décevant que ce Vorace ait réussi à fuir avant notre arrivée ! Enfin... Au moins la Guilde a pu s'excuser comme il le fallait de son erreur envers ce pauvre Hektor V. Au moins, nous restons intègres ! </end>
+	<gold v="2200" />
+	<xp v="20" />
+	<reput s="gu" v="12" />
+</q>
+
+
+
+</quests>

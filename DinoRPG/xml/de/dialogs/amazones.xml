@@ -1,0 +1,166 @@
+<!-- ***************************************************************************** -->
+<!-- Chrysanthe et Cassandre gardent l'entrée du palais de Caushesmesh --->
+	
+<d place="cpyra1" name="Chrysanth" gfx="chrysanthe" cond="scenario(caush,42-)">
+	<phase id="begin" next="hein:mission:comin">
+		[I feel so empty, nothing is happening, I can't go on.]
+		[GO. Leave me. What if I just let myself fall into this lake of ether?]
+		[What is love, what is life?]
+	</phase>
+	<a id="hein" cond="scenario(caush,25-)">...Uuh...Hello...</a>
+	<phase id="hein" next="sieste">
+		[Noone may enter, the guardian is mid-siesta.]
+		[She's right. What is the point in staying awake in a world as sad as this.]
+		[I hope she is dreaming of her lost love, and most of all, most of all...]
+	</phase>
+	<a id="sieste">most of all?</a>
+	<phase id="sieste" next="bon:nobon:mission">
+		[Most of all that she doesn't wake up like a bear with a sore head!]
+		[...]
+		[Are you still there?]
+	</phase>
+	<a id="bon" cond="scenario(caush,21)">I'd like to come in...</a>
+	<a id="nobon" cond="!scenario(caush,21)">I'd like to come in...</a>
+	
+	<phase id="nobon" fast="1">
+		The Amazonian isn't even looking at you any more, she is too busy moping, sitting on the stairs.
+		Nothing you can say to her will change anything.
+	</phase>
+	
+	<phase id="bon" scenario="caush:22">
+		[Winter is coming but the cold still reigns in my heart.]
+		[If you wish to take some of the flak, I won't stand in your way.]
+		[At least for once it won't be me...]
+		[Go ahead, before the ice in my heart tells me the opposite.]
+	</phase>
+	
+	<a id="mission" cond="scenario(caush,25+)">Do you have a mission for me?</a>
+	<a id="comin" cond="scenario(caush,25+)">May I enter?</a>
+	
+	<phase id="comin">
+		[Winter is coming but the cold still reigns in my heart.]
+		[If you wish to take some of the flak, I won't stand in your way.]
+		[At least for once it won't be me...]
+		[Go ahead, before the ice in my heart tells me the opposite.]
+	</phase>
+	
+	<phase id="mission" missions="amazon"></phase>
+</d>
+
+<d place="cpyra1" name="Cassandra" gfx="cassandre" cond="scenario(caush,42-)">
+	<phase id="begin" next="quoi">
+		[OH MY GOD!]
+	</phase>
+	<a id="quoi">What's going on?</a>
+	<phase id="quoi" next="chic:mission:comin">
+		[Oh no no, I've lost a priceless earring!]
+	</phase>
+	<a id="chic" cond="scenario(caush,25-)">Is that it?</a>
+	<phase id="chic" next="dodo">
+		[What do you mean?]
+		[Oh good grief, you just have to take one look at you and your entourage of Dinoz to know you're not cool!]
+		[It's really important, I must look perfect, how do you suppose I got this job in the first place?]
+	</phase>
+	<a id="dodo">I'd rather not think about it.</a>
+	<phase id="dodo" next="bribe:nobribe:cadeau:mission">
+		[Oh dear, honestly, I feel sorry for you, not being able to recognize style and good taste when you see it...]
+		[...]
+		[ANyway, what is it that you want anyway?]
+	</phase>
+	<a id="bribe" cond="scenario(caush,20)">I'd like to come in...</a>
+	<a id="nobribe" cond="!scenario(caush,20)">I'd like to come in...</a>
+	<a id="cadeau" cond="scenario(caush,24)">Is there any way to please the guardian?</a>
+	
+	<phase id="bribe" next="got1:got2:got3:nogot">
+		[Our mistress has awoken... Her yelling can be easilt heard from here...]
+		[You've not even done anything to merit seeing her.]
+		[Bring me a beautiful jewel and I may just let you pass!]
+	</phase>
+	
+	<a id="got1" target="got1" cond="hasingr(art1)">Give her a precious ring</a>
+	<a id="got2" target="got2" cond="hasingr(art2)">Give her a carved chalice.</a>
+	<a id="got3" target="got3" cond="hasingr(art3)">Give her a nice necklace.</a>	
+	<a id="nogot" cond="!hasingr(art1)">You have nothing that might satisfy her.</a>
+	
+	<phase id="nogot">
+		[Oh no, you really have nothing of interest!]
+		[Come back and see me when you deserve to stand before me!]
+		[...Bzzzz]
+	</phase>
+	
+	<phase id="nobribe" next="nan">
+		[HIHIHIHI, you're dreaming!]
+		[Firstly, you're badly dressed, secondly, you make too much noise, furthermore, you nothing of the latest Caushemeshian fashion.]
+		[Oh yes, and doesn't want to be bothered.]
+		[...and I, I don't wan't to put up with this attitude.]
+		[OK, bzzzz, disappear!]
+	</phase>
+	<a id="nan">But...</a>
+	<phase id="nan">
+		[BZZZZZ !]
+	</phase>
+	
+	<phase id="got1" scenario="caush:21" fast="1" useingr="art1">
+		The unsociable amazon is bored of you now, she only has eyes for the jewel which you gave her.
+		You now have to convince the other amazon to let you in to the palace.
+	</phase>
+	
+	<phase id="got2" scenario="caush:21" fast="1" useingr="art2">
+		The unsociable amazon is bored of you now, she only has eyes for the jewel which you gave her.
+		You now have to convince the other amazon to let you in to the palace.
+	</phase>
+	
+	<phase id="got3" scenario="caush:21" fast="1" useingr="art3">
+		The unsociable amazon is bored of you now, she only has eyes for the jewel which you gave her.
+		You now have to convince the other amazon to let you in to the palace.
+	</phase>
+	
+	<phase id="cadeau" next="easy">
+		[So you have met the other guardian and you're still standing...]
+		[You should count yourself lucky!]
+		[They say she is the most powerful sorceress in all of Dinoland. So if I were you, I'd tread carefully around her.]
+	</phase>
+	<a id="easy">I want to know more about Caushemesh!</a>
+	<phase id="easy" next="mission" scenario="caush:25">
+		[Seriously, you're a real pain.]
+		[But at least you're not completely inane. In fact it would appear that she is the best person to advise you.]
+		[Listen up. Here's what we're going to do. I'm going to give you a short list of missions to carry out, and I'll give her little presents from you as we go along.]
+		[With a little luck, she'll want to speak to you then...!]
+	</phase>
+	
+	<a id="mission" cond="scenario(caush,25+)">Consult the list of missions!</a>
+	<a id="comin" cond="scenario(caush,25+)">May I come in?</a>
+	
+	<phase id="comin">
+		[Oh good grief you're irritating.]
+		[You can clearly see which door lies open to you, so why waste my time asking me about it.]
+		[BZZZZZZ!]
+	</phase>
+	
+	<phase id="mission" missions="amazon"></phase>
+</d>
+
+<d place="cpyra1" name="Chrysanth" gfx="chrysanthe" cond="scenario(caush,43+)">
+	<phase id="begin" next="mission">
+		[Our mistress abandoned us here, alone.
+		I'm caught between the feeling of joy at not having to put up with her any more, and the extreme boredom afforded by the task I've been given...]
+		[What do you want Dinoz master?]
+	</phase>
+	<a id="mission">Consult the list of missions!</a>
+	<phase id="mission" missions="amazon"></phase>
+</d>
+
+<d place="cpyra1" name="Cassandra" gfx="cassandre" cond="scenario(caush,43+)">
+	<phase id="begin" next="mission">
+		[My, my, my...]
+		[Now that the colossi are gone, we're getting more and more visites from the Acropolis.]
+		[The Caushemesh merchants should think about replenishing their stocks. I'm going round and round in circles here!]
+		[You wanted to give me something?]
+		[...]
+		[No? Shame...]
+	</phase>
+	<a id="mission">Consult the list of missions!</a>
+	<phase id="mission" missions="amazon"></phase>
+</d>
+
+

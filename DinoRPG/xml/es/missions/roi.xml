@@ -1,0 +1,178 @@
+﻿<!-- ***************************************************************************** -->
+<!-- Garde pour le Roi de Dinoville ----->
+<!--
+-Il y a une fuite dans les cuves de mana du château, il faut aller chercher broc pour réparer.
+Broc a besoin d’ingrédient (main mécanique) + 2 Silex Taillé pour réparer la fuite.
+-cueillir des ingrédients dans le monde sombre (retrouver gulom aux gouffres des âmes en peines qui vient de trouver un endroit où creuser) pour ramener des morceaux au roi
+-récolter du mana (?)
+-détruire du lichen
+-retrouver les coffres qui se sont fait la malle.
+-affronter des monstres sombres pour préparer la visite du roi
+-purifier un endroit du monde sombre pour la venue du roi (aller à la fontaine de jouvence avec un flacon vide donné par ?)
+-escorter le roi à la tour du monde sombre puis ressortir du monde sombre (le roi dit à la fin qu’il ira peut-être seul un jour)
+-->
+
+<missions>
+
+	<m group="roi" id="roia" name="Los baúles están locos">
+		<begin>A veces el maná tiene efectos inesperados sobre los objetos (o la gente). Una fuga de maná atravesó los muros del castillo hasta el salón de los tesoros.
+		Ahora, los baúles se volvieron locos y se dispersan por todas partes. Lo peor de todo es que los que están en Dinovilla podrían herir a los habitantes.
+		¿Podrías calmarlos y traerlos de nuevo al castillo?</begin>
+		<goto v="dnv"/>
+		<kill n="2" v="mimic"/>
+		<goto v="papy"/>
+		<kill n="4" v="mimic"/>
+		<goto v="port"/>
+		<kill n="6" v="mimic"/>
+		<end>Pudiste recuperar una parte del tesoro, gracias a ti, los impuestos dinovillanos no aumentará este año.
+		Mereces una recompensa.</end>
+		<xp v="50"/>
+	</m>
+	
+	<m group="roi" id="roib" name="Fuga de maná" cond="mission(roia)">
+		<begin>Hay una fuga en los barriles de maná dentro del castillo, habrá que llamar al técnico de las Islas Atlanteidas para que la repare.
+		¡Vaya problema!</begin>
+		<goto v="chbroc"/>
+		<talk v="broc" gfx="broc" background="5">¿Los barriles del castillo se volvieron a romper? Siempre es lo mismo. Claro que lo repararé, ¡pero eso pasa cuando se almacena tanto maná!
+		¡Necesitaré tu ayuda para conseguir los ingredientes para la reparación!
+		</talk>
+		<useingr v="fish" n="4"/>
+		<talk v="broc" gfx="broc" background="5">¿Cómo? ¿Un pescado para reparar un barril de mana?
+		En realidad uso sus mucosidades para llenar las fisuras ... ¡Y el resto, me lo como!
+		</talk>
+		<useingr v="enfdr" n="2"/>
+		<talk v="broc" gfx="broc" background="5">¡Y eso es para enducercer la mucosidad! Era obvio...
+		</talk>
+		<goto v="chato"/>
+		<end>El técnico vino para reparar la fuga, oí decir que le conseguiste el material que necesitaba. ¡Bien muchacho, mereces una recompensa!</end>
+		<xp v="80"/>
+	</m>
+	
+	<m group="roi" id="roic" name="Liquen mana-activo" cond="mission(roib)">
+		<begin>El liquen mana-activo ha vuelto a rodear el castillo, también ha aparecido en otros lugares de Dinovilla.
+		Debes ir de nuevo a ver al Chamán Lacio y que elimines la fuente de esa plaga. Hay un camino fuera de Dinoplaza, así podrás ir al Gran Todo Quema sin dificultad.</begin>
+		<goto v="fosslv"/>
+		<talk v="shaman" gfx="shaman">
+			¿D' nue'o es' liquen q' crece alre'edor'el cahhtillo?
+			Ya m' lo imahina'a, creo q' tengo lo ne'esario, pero d' todos modos tendrás q' ir a ver al Ven'rable p'ra golpearl' c'mo s' debe.
+			¡Va'os, conta'os connnti'o!
+		</talk>
+		<action v="Tomar una poción de flama azul">
+			Obtienes una poción conteniendo una flama azul @/img/icons/fx_potio1.gif@, ¡parece que hay que golpearla!
+		</action>
+		<goto v="vener"/>
+		<actfight act="Pelear contra el Venerable" monsters="vener4">
+			<begin m="vener4">
+				Vienes de nuevo para molestarme por pociones...
+				Te voy a dar una lección para que dejes de interrumpir mi siesta.
+			</begin>
+			<win>
+				Grumpf... ¿Contento? Ya tienes tu poción, ¡no vuelvas más!
+			</win>
+		</actfight>
+		<action v="Recoger la poción de flama roja">
+			Obtienes una poción conteniendo una flama roja @/img/icons/fx_potio2.gif@, ¡ideal para quemar plantas mana-activas!
+		</action>
+		<goto v="poste"/>
+		<talk v="Liquen" gfx="garde_dnv" background="2" frame="pouf">
+			Acabas de usar una parte de la poción roja, el liquen ha desaparecido en ese lugar.
+		</talk>
+		<talk v="Capitana" gfx="garde_dnv" background="2" frame="talk">
+			Perfecto, la situación aquí se ha estabilizado de momento. Hubo dos nuevas apariciones de liquenes en los alrededores, ahora hay que ir a Dinovilla y a Fuerzabruta para luchar contra esa amenaza.
+		</talk>
+		<goto v="dnv"/>
+		<talk v="Liquen" gfx="garde_dnv" background="3" frame="pouf">
+			Acabas de usar una parte de la poción roja, el liquen ha desaparecido en ese lugar.
+		</talk>
+		<goto v="frcbrt"/>
+		<talk v="Liquen" gfx="garde_dnv" background="4" frame="pouf">
+			Acabas de usar el resto de la poción roja, el liquen ha desaparecido en ese lugar.
+		</talk>
+		<end>La amenaza del liqen mana-activo está bajo control, aquí tienes tu recompensa.</end>
+		<xp v="100"/>
+	</m>
+	
+	<m group="roi" id="roid" name="Historia del Mundo Sombra" cond="mission(roic)">
+		<begin>El rey quisiera disfrutar de una de tus aventuras en el Mundo Sombra, pero no tiene mucho tiempo.
+		¿Podrías escribir en un pergamino tus aventuras y acompañarlas de un ingrediente extraído directamente de allá?</begin>
+		<goto v="dkchut"/>
+		<talk v="gulom" gfx="survivor" background="1">
+			Hola, ¿cómo te va?, hace mucho que no te veía por aquí...
+			¿Buscas un lugar para recoltar ingredientes?
+			Me parece haber visto brotes de plantas extrañas creciendo al norte de aquí...
+		</talk>
+		<goto v="fake2"/>
+		<talk v="gulom" gfx="survivor" background="1">
+			Sí aquí es, encuentra un ingrediente y lo secaré para que lo puedas colocar en tus escritos.
+		</talk>
+		<useingr v="fruita" n="1"/>
+		<talk v="gulom" gfx="survivor" background="1">
+			Listo, el brote oscuro está suficientemente seco para resistir a los rayos del sol, podrás mostrárselo al Rey sin que se evapore.
+		</talk>
+		<end>Felicitaciones, veo que eres uno de los valientes que fueron al Mundo Sombra, ¡me sorprendes! Toma tu recompensa.</end>
+		<xp v="100"/>
+	</m>
+
+	<m group="roi" id="roie" name="Historia del Mundo Sombra 2" cond="mission(roid)">
+		<begin>Su majestad quisiera visitar el Mundo Sombra, pero su seguridad es la prioridad absoluta.
+		Ha oído hablar de una extraña flama que los Maestros de Dinos habrían visto por allá, y quiere verla.
+		¿Podrías eliminar todo peligro que pueda arruinar su visita?</begin>
+		<goto v="fake2"/>
+		<kill n="4" v="feufol"/>
+		<goto v="fake"/>
+		<kill n="2" v="feufol"/>
+		<goto v="dktow"/>
+		<kill n="4" v="feufol"/>
+		<goto v="dkbao"/>
+		<kill n="6" v="feufol"/>
+		<end>¡Bien! El Mundo Sombra es un lugar seguro y el Rey estará a salgo. ¡Recibe esta recompensa!</end>
+		<xp v="80"/>
+	</m>
+	
+	<!-- rajouter condition sur le futur scénario monde sombre pour cette mission -->
+	<m group="roi" id="roif" name="Visita al Mundo Sombra" cond="mission(roie)">
+		<begin>El Rey está empecinado en visitar el Mundo Sombra para evaluar la amenaza que existe en Dinovilla.
+		¿Puedes acompañarle y traerle de regreso? Desde luego, estaré con vosotros.</begin>
+		<goto v="dkchut"/>
+		<talk v="Rey de Dinovilla" gfx="roi" background="3" frame="blabla">
+			Oooooh, está muy oscuro por aquí, avancemos un poco más...
+		</talk>
+		<kill n="2" v="garouz"/>
+		<goto v="dkbao"/>
+		<talk v="Rey de Dinovilla" gfx="roi" background="3" frame="blabla">
+			Oooooh, es como si estuviéramos en la casa de Bao...
+		</talk>
+		<kill n="10" v="piraos"/>
+		<goto v="fake"/>
+		<talk v="Rey de Dinovilla" gfx="roi" background="3" frame="blabla">
+			Ooooh, brrr, estas almas en pena me angustian, ¿habría una manera de salvarlas?...
+		</talk>
+		<kill n="5" v="amanpe"/>
+		<goto v="fake2"/>
+		<talk v="Rey de Dinovilla" gfx="roi" background="3" frame="blabla">
+			Oooooh, por fin, las flamas misteriosas que tanto quería ver...
+		</talk>
+		<kill n="3" v="feufol"/>
+		<talk v="Rey de Dinovilla" gfx="roi" background="3" frame="blabla">
+			¿Qué es esta torre oscura que está donde había un pantano pegajoso?
+		</talk>
+		<goto v="dktow"/>
+		<talk v="Rey de Dinovilla" gfx="roi" background="3" frame="blabla">
+			Interesante... ¿Subimos?
+		</talk>
+		<goto v="dktow3"/>
+		<kill n="1" v="towgrd"/>
+		<goto v="dktow4"/>
+		<kill n="1" v="upgrd"/>
+		<goto v="dktowa"/>
+		<talk v="Rey de Dinovilla" gfx="roi" background="4" frame="blabla">
+			¿Nunca has subido tan alto?
+			Esta torre crece y crece absorbiendo las tinieblas alrededor de ella...
+			¡Cuidado, presiento que algo no anda bien!
+		</talk>
+		<kill n="1" v="updwn"/>
+		<end>Al fin de vuelta al castillo, estaba muy preocupado, pero debo reconocer que eres digo de confianza. Aquí tienes tu recompensa.</end>
+		<xp v="200"/>
+	</m>
+	
+</missions>

@@ -1,0 +1,105 @@
+<d place="jztire" name="Ylasse et Lésée" gfx="jzylasse">
+
+<a id="exit">Je dois y aller.</a>
+
+<phase id="begin" next="quest:noquest:fquest:info:exit">
+Pfff, encore quelqu'un qui vient nous casser  les pieds... 
+</phase>
+
+<a id="quest" cond="quest(ylasa)+!quest(ylase)">C'est moi, ::user::. Je peux faire un truc ? </a>
+<a id="noquest" cond="quest(ylase)">C'est moi, ::user::. Je peux faire un truc ? </a>
+<a id="fquest" cond="!quest(ylasa)">Euh... Salut la compagnie ! </a>
+<a id="info" cond="quest(ylasa)">Vous passez votre temps ici à rien faire, vous deux ? </a>
+
+<phase id="quest" quest="ylasse" frame="happy">
+Hin hin ouais, on a toujours besoin de quelqu'un pour faire le boulot à notre place. 
+</phase>
+
+<!-- ###########" -->
+
+<phase id="fquest" frame="angry" quest="ylasse">
+Oula oula attends. | D'abord t'es qui, toi ? 
+</phase>
+
+<!-- ###########" -->
+
+<phase id="noquest" frame="normal">
+Euuuuh... Bof non. On s'ennuie, c'est tout. Reviens plus tard.
+</phase>
+
+<!-- ###########" -->
+
+<phase id="info" frame="angry" next="ev:mora">
+Oua l'autre. On "étudie" l'histoire de Jeezara ! On s'imprègne des évènements historiques qui ont eu lieu en ce lieu ! Alors viens pas faire ton vieux moraliste, hein. 
+</phase>
+
+<a id="ev">Evènements ? Quels évènements ? </a>
+<a id="mora">Mais c'est quoi un moraliste ?</a>
+
+
+<phase id="ev" frame="happy" next="tire">
+Purée, bonjour la culture chez les jeunes hein. On est à Tirésias là. Ca te dit rien Tirésias ?
+</phase>
+
+<a id="tire">Ben... non.</a>
+
+<phase id="tire" next="tireb">
+Eh ben Tirésias c'est | euh... | Torniche, il s'est passé quoi déjà à Tirésias ?
+</phase>
+
+<phase id="tireb" frame="normal2" next="tirec">
+{Tirésias :} bourgade de la province de Yoruba. Avant 1575 et la reconnaissance de Jeezara en tant qu'école officielle, les habitants de Tirésias taxaient les jeezaristes d'hérésie. Tirésias est célèbre pour sa chasse aux jeezaristes menée pendant plus de 100 ans. 
+</phase>
+
+<phase id="tirec" frame="happy2" next="tired">
+Dès 1575, les meneurs de Tirésias ont été arrêtés et emprisonnés au Donjon K. Le reste du village s'est volatilisé par peur des représailles. Depuis, les étudiants de Jeezara ont l'habitude de venir à Tirésias quand ils s'ennuient. Histoire de s'amuser un peu.
+</phase>
+
+<phase id="tired" frame="normal" next="no">
+T'as vu ça ? Elle en sait des trucs ma veille Torniche ! | En tout cas voilà. On apprend en s'amusant. On s'imprègne de ces faits historiques en balançant un charcleur par çi par là. Ca défoule. Tu veux essayer ? 
+</phase>
+
+<a id="no">Non ça va, pas besoin de me défouler.</a>
+
+<phase id="no" frame="angry"> 
+Pfff, quelle chochotte...
+</phase>
+
+
+<!-- ##########" -->
+
+<phase id="mora" frame="happy" next="morab"> 
+Hin hin... Tu sais pas ce que c'est un moraliste ? | Sans rire ? 
+</phase>
+
+<a id="morab">Ben non, si je demande...</a>
+
+<phase id="morab" next="ouvert">
+C'est facile : les moralistes c'est toutes les chochottes et tous les petits rigolos du royaume ! En gros c'est tout le monde sauf les alchimistes de Jeezara, quoi.
+</phase>
+
+<a id="ouvert">Ah oui, on est ouvert d'esprit chez Jeezara. </a>
+
+<phase id="ouvert" next="casse">
+Hin hin... Ben non, c'est l'inverse ! C'est les jeezaristes qui sont ouverts d'esprit ! Qui font des recherches sans se préoccuper des machins casse-pieds qui bloquent les autres écoles ! 
+</phase>
+
+<a id="casse">Des machins casse-pieds? </a>
+
+<phase id="casse" next="pied">
+Ben oui... des machins casse-pieds, quoi. | Torniche, t'es la plus balèze. C'est quoi les machins casse-pieds, déjà ? 
+</phase>
+
+<phase id="pied" frame="normal2" next="pied2">
+Alors... Jeezara liste trois  machins casse-pieds majeurs : 1. La morale, d'où les "moralistes." | 2. l'anesthésie, ça fait perdre du temps . | 3. le qu'en dira-t-on, aussi appelé "on s'en moque". 
+</phase>
+
+<phase id="pied2" frame="happy2" >
+ On peut y ajouter plusieurs machins casse-pieds mineurs comme la panne de réveil, les impôts de la guilde, l'avis des confrères ou les brevets des autres écoles. | Voilà.
+</phase>
+
+
+
+
+
+</d>

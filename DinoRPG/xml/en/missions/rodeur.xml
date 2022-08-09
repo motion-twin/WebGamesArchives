@@ -1,0 +1,33 @@
+﻿<missions>
+
+	<m group="rodeur" id="rodriz" name="The Amnesiac Rice" limit="15">
+		<begin>
+		I need some Amnesiac Rice to recharge my magic cape. I've been told that it grows in the Sticky Swamp of the Atlanteid Islands. Can you bring me enough Rice to recharge my cape so I can become invisible again? Hurry up, it's really important!
+		</begin>
+		<goto v="marais"/>
+		<action v="Search for Rice">
+		After searching the Swamp for several hours, you finally find an area full of Amnesiac Rice, a rare variety of Rice with amazing properties! The only problem is that hundreds of Pirhanoz are protecting the entrance. You'll have find a way past them!
+		</action>
+		<kill v="pira" n="30"/>
+		<action v="Gather the Rice">Congratulations! You've found some Amnesiac Rice!</action>
+		<end>
+		To be honest, I didn't need the Amnesiac Rice, sorry! I only needed a little bit of lightning energy to recharge my cape ... here, take this as a reward. You can keep the rice too, I don't need it anymore.
+		</end>
+		<gold v="5000"/>
+		<item v="riz"/>
+	</m>
+
+	<m group="rodeur" id="rodlif" name="The Dark Dinoz" limit="15" cond="mission(rodriz)">
+		<begin>
+		Three Dark Dinoz from Caushemesh are waiting for you at the Mutant Falls. Go and defeat them and then return to receive your reward ... take my advice, don't try to defeat them alone, your Dinoz could die!
+		</begin>
+		<goto v="chutes"/>
+		<fight v="pteroz:hippo:rocky"/>
+		<end>
+		Not bad for a weak Dinoz from Dinotown ... here take this!
+		</end>
+		<gold v="5000"/>
+		<xp v="250"/>
+	</m>
+
+</missions>

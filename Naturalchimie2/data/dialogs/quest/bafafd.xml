@@ -1,0 +1,29 @@
+<d place="gmkrom" name="Donner les bières" gfx="gmprof">
+
+<phase id="begin" next="oui:noui:exit">
+Tu as le pack de 6 Geminish Regular, c'est nickel. 
+Maintenant, il faut 2 Couivres par bouteille pour faire de la Geminish Red, donc {12 Couivres} ! Tu les as ? 
+</phase> 
+
+<a id="oui" cond="hasobject(Elt(9):12)">Oui, tenez.</a>
+<a id="noui" cond="!hasobject(Elt(9):12)">Oui, tenez.</a>
+<a id="exit">Je repasserai.</a>
+
+<phase id="oui" take="Elt(9):12" qtake="QuestObj(geminishregular):6" qgive="QuestObj(geminishred):6" next="done">
+Ok ! Allez hop, 2 couivres par bouteille. On mélange bien... | | | Et voilà ! 
+</phase>
+
+<a id="done">Merci ! </a>
+
+<phase id="done">
+Et ne bois pas tout sur le chemin hein ! Tu ne retrouverais jamais la capitale.
+</phase>
+
+<!-- ################ -->
+
+<phase id="noui" next="exit">
+Il en manque là, on va pas y arriver dude.
+</phase>
+
+
+</d>

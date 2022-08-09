@@ -1,0 +1,42 @@
+﻿<!-- Quete du charme d'eau -->
+	
+<d place="baobob" name="Baos Fan" gfx="baofan">
+	
+  <phase id="begin" next="ok">Guten Tag der Herr! Hast du schon mit Mister Bao
+  gesprochen? Er ist echt geeeeeniaaaaaaal, findest du nicht???</phase>
+
+  <a id="ok">Äh....ja.</a>
+
+  <phase id="ok" next="wah">Ja, das ist wohl wahr!! Er ist einfach zu cool! Ich bin extra durch den ganzen Grumhel-Wald gegangen, damit er mir viele tolle Geschichten erzählt! Weißt du was? Er hat schon einmal einen Gorilloz-Dämonen getötet! Ja, wirklich! Und dann war er von vielen bösartigen Tieren umzingelt! Und weißt du was? Er hat sie alle erschlagen!</phase>
+
+  <a id="wah">Waaahh!!</a>
+
+  <phase id="wah" next="yes:nothing:no">Ja! Herr Bao wollte mir gern ein paar Dinge beibringen! Er hat gesagt, dass ich für mein Alter sehr begabt wäre! Nicht schlecht, oder? Warte, schau mal... ich werde ein Ding verzaubern, soll ich es dir zeigen?</phase>
+
+  <a id="yes" cond="!fx(wcharm)">Ok!</a>
+  <a id="nothing" cond="fx(wcharm)">Ok!</a>
+  <a id="no">Nein, danke!</a>
+
+  <phase id="yes" effect="wcharm" next="spirit">............Hier ist es, ich
+  bin fertig! Willst du es haben? Hier....es ist ein Baozauber! Dann pass
+  mal gut drauf auf! Das müsste deinem Dinoz bei einigen Kämpfen behilflich sein. Wenn die ganze spitruelle Flüssigkeit verbraucht ist, kannst du wieder zu mir zurückkommen, dann lade ich sie wieder auf!</phase>
+
+  <a id="spirit">Du meinst "spirituell"?</a>
+
+  <phase id="spirit" next="thanks">Äh...ja, das meine ich!
+  Spitri....rell...spriti...! Ach, die sind zu kompliziert deine
+  technologischen Wörter! </phase>
+
+  <a id="thanks">Ok, ich muss jetzt gehen...vielen Dank für den Baozauber!
+  </a>
+
+  <phase id="thanks">Ooooch, du gehst schon... Du kommst aber wieder, oder? Dann bis bald!</phase>
+
+  <phase id="nothing">Hmm...aber dein Dinoz besitzt doch bereits einen
+  Baozauber! Hier schau, da ist noch Energie vorhanden...siehst du? Wenn er
+  nicht mehr funktioniert, kann ich ihn dir wieder aufladen.</phase>
+
+  <phase id="no">Ach wirklich? Tja, dann Pech gehabt...*schmoll*.
+  </phase>
+  
+</d>

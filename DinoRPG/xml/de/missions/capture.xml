@@ -1,0 +1,134 @@
+﻿<missions>
+
+	<m group="capture" id="mcapt1" name="Krieger-Training">
+		<begin>
+			Erstmal müssen wir deine Muskeln aufbauen! Du kannst nicht immer nur den ganzen Tag World-of-Dinoz spielen! Sieh dir nur deine kümmerlichen Bizeps an. Die sind eine Schande für einen echten Mann! Eine kleine Kampfeinheit zur körperlichen Ertüchtigung ist genau das Richtige für dich!
+		</begin>
+		<goto v="mport"/>
+		<actfight act="100 Liegestützen machen!">
+			<begin>Bei deinem 3. Liegenstützen greifen dich Monster an!</begin>
+		</actfight>
+		<goto v="mfpalc"/>
+		<action v="30 Mal um den Palast rennen!">
+			Nach deiner 5. Runde um den Palast tauchen einige Monster auf. Sie schauen dir interessiert zu und machen spöttische Kommentare über dein Tempo...
+		</action>
+		<actfight act="Angreifen!">
+			<win>Diese Monster lachen jetzt nicht mehr...</win>
+		</actfight>
+		<goto v="mcuzco"/>
+		<action v="50 schwere Steine hochheben">
+			Die Steine hier sind sehr schwer. Du würdest ja leichtere, weniger anstrengende Steine nehmen... Aber irgendwie wirst du das Gefühl nicht los, dass dich jemand beobachtet...
+		</action>
+		<actfight act="Schau dich um!" monsters="mugard:mugard:mugard:mugard">
+			<begin>Du stehst einer Abteilung Vegetox von Angesicht zu Angesicht gegenüber. Was für Spione!</begin>
+			<win>Wie es aussieht, hatte Sergeant Pepper diese Gruppe geschickt... Sie sagt dir was du als nächstes zu tun hast...</win>
+		</actfight>
+		<goto v="mcelit"/>
+		<action v="100 Liegestützen machen!">
+			Nach dem 10. beschließt du, dass es für heute genug ist. Schließlich hattest du einen anstrengenden Tag!
+		</action>
+		<end>
+			Du findest mein Training zu anstrengend! Diese Jugend von heute hat einfach keine Arbeitsmoral mehr! Ich sag dir was, die nächsten Aufgaben werden noch viel schwerer! Ich will dich LEIDEN sehen!
+		</end>
+		<xp v="40"/>
+	</m>
+
+	<m group="capture" id="mcapt2" name="Minenfeld" cond="mission(mcapt1)">
+		<begin>
+			Jetzt, wo du das WARM-UP beendet hast, können wir mit den RICHTIGEN Training beginnen! Ich habe erfahren, dass beim Frutox-Außenposten Minen vergraben sind. Geh hin und stell sicher, dass das Gelände für Zivilisten sicher ist!
+		</begin>
+		<goto v="mfoutp"/>
+		<talk v="Entschärfen">
+			Chef! Wir haben 5 Minen in der Nähe des Camps gefunden! Dahinter kann nur der Anführer der Vegetox stecken! Wir brauchen einen Minen-Detektor, um die Position der Minen zu finden!
+		</talk>
+		<use v="danger" n="1"/>
+		<actfight act="Entschärfen" monsters="minim2:minim2:minim2:minim2:minim2:minim2:minim2:minim2">
+			<begin>Minimouks haben ihr Nest genau unter den Minen gebaut!</begin>
+		</actfight>
+		<action v="Entschärfen">
+			Minen zu entschärfen ist schwieriger als gedacht. Zum Neutralisieren der Minen brauchst du ein Feuerzeug, damit du den Auslöser gefahrlos zerstören kannst.
+		</action>
+		<use v="zippo" n="1"/>
+		<action v="Entschärfen">
+			Du hast die Minen erfolgreich entschärft! Glücklicherweise gab es keine Explosionen!
+		</action>
+		<end>
+			Pass auf, Kleiner! Damit kannst du Minen leichter entschärfen und deine Fähigkeiten verbessern. Doch ein SOLDAT bist du noch lange nicht!
+		</end>
+		<xp v="50"/>
+	</m>
+
+	<m group="capture" id="mcapt3" name="Mouktizierung" cond="mission(mcapt2)">
+		<begin>
+			Komm mal her, Kleiner! Auch wenn wir Soldaten sind, wir haben nun Frieden und müssen den Zivilisten helfen! Die dreckigen Mouktiz haben auf Flößen das Meer überquert und sich im Köngreich von Dinoville niedergelassen. Finde sie und zerstöre ihre Nester, ehe sie über das gesamte Festland herfallen!
+		</begin>
+		<goto v="frcbrt" hide="1"/>
+		<actfight act="Mouktiz töten" monsters="mosqui:mosqui"/>
+		<goto v="univ" hide="1"/>
+		<actfight act="Mouktiz töten" monsters="mosqui"/>
+		<goto v="colesc" hide="1"/>
+		<actfight act="Mouktiz töten" monsters="mosqui:mosqui"/>
+		<goto v="marche" hide="1"/>
+		<actfight act="Mouktiz töten" monsters="mosqui:mosqui:mosqui:mosqui"/>
+		<goto v="dplaza" hide="1"/>
+		<actfight act="Mouktiz töten" monsters="mosqui"/>
+		<end>
+			Gut gemacht, Kleiner! So allmählich entdecke ich einen begnadeten Kämpfer in dir!
+		</end>
+		<gold v="3000"/>
+	</m>
+
+	<m group="capture" id="mcapt4" name="Initiierung" cond="mission(mcapt3)">
+		<begin>
+			Nun wollen wir dir beibringen, wie man Monster EINFÄNGT! Fangen wir ganz von vorn an!
+		</begin>
+		<goto v="mvoutp"/>
+		<talk v="Anweisungen des Sergeants">
+			Zuerst mal, Monster EINFANGEN bedeutet, dass Dinoz Monster AUF IHRE SEITE ziehen können. Das klappt nicht bei allen Monstern, aber bei den meisten! Sobald du ein Monster eingefangen hast, wird es während der Kämpfe bei deinen Dinoz bleiben bis es tot ist. Monster können nicht außerhalb eines Kampfes geheilt werden. Sie sterben darum oft sehr schnell, gewöhn dich also lieber nicht zu sehr an sie.
+		</talk>
+		<talk v="Anweisungen des Sergeants">
+			Ah! Eines vergaß ich zu erwähnen: An der Seite deiner Dinoz können nur maximal 3 Monster auf einmal kämpfen. Wenn einer deiner Dinoz mehr als 3 lebende Monster hat, werden für einen Kampf zufällig 3 Monster ausgewählt.
+		</talk>
+		<talk v="Anweisungen des Sergeants">
+			Wir fangen einfach an: Versuche, einen GOUPIGNON in Dinoville und einen PIRHANOZ in den stinkenden Sümpfen zu fangen!
+		</talk>
+		<goto v="dnv"/>
+		<actfight act="Einen Goupignon einfangen" monsters="goupi">
+			<begin m="goupi">Hilfe!</begin>
+			<win>Dein Dinoz hat diesen armen Goupignon nicht eingefangen...</win>
+		</actfight>
+		<goto v="marais"/>
+		<actfight act="Einen Pirhanoz einfangen" monsters="pira:pira:pira:pira">
+			<begin m="pira">Oh nein!
+				Oh no!!</begin>
+			<win>Scheinbar will kein Pirhanoz von deinem Dinoz eingefangen werden.</win>
+		</actfight>
+		<goto v="mvoutp"/>
+		<talk v="Anweisungen des Sergeants">
+			Na prima! Dein Training war ein glatter Reinfall! Du scheinst nicht mal in der Lage zu sein, selbst den schwächsten Dinoz einzufangen!
+			Normalerweise ist so etwas nicht möglich. Wenn du meine Anweisungen korrekt befolgt hättest, dann... Oder hast du etwa deine körperliche Ertüchtigung vernachlässigt?!
+		</talk>
+		<end>
+			Faulpelze kriegen keine Belohnung! Mehr hab ich dazu nicht zu sagen!
+		</end>
+		<gold v="0"/>
+	</m>
+
+	<m group="capture" id="mcapt5" name="Fang-Handschuh" cond="mission(mcapt4)+scenario(monisl,18)">
+		<begin>
+			Ah! Das bist du ja wieder, Kleiner! Pass auf! Der Große Antraxov hat mich gebeten, dich einem Test zu unterziehen, ehe ich dir den Fang-Handchuh gebe! Ich sag's dir gleich, diese Mission ist nichts für Warmduscher!
+		</begin>
+		<goto v="mvoutp"/>
+		<talk v="Anweisungen des Sergeants">
+			Eine Horde verwundeter Dämonen hat sich in CUZCOUS versammelt! Das können wir nicht zulassen! Regle das! Ich rate dir, in einer Gruppe hinzuehen. Sicher ist sicher!
+		</talk>
+		<goto v="mcuzco"/>
+		<actfight act="Dämonenhorde" monsters="singm2:singm2:singm2:singm2:singm2"/>
+		<end>
+			Gut gemacht! Du hast gut gekämpft, Kleiner! Nimm diesen Fang-Handschuh, dein Dinoz kann damit nun Monster einfangen. Viel Glück bei deinen Abenteuern!
+		</end>
+		<fx v="mcapt"/>
+		<xp v="100"/>
+	</m>
+
+</missions>

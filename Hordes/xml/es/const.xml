@@ -1,0 +1,329 @@
+<const>
+
+	<!-- HORDE ATTACK -->
+	<c id="start" v="1"/>		<!-- l'attaque démarrera après n secondes 180-->
+
+	<!-- XML -->
+	<c id="XmlFastCache" v="1"/>	<!-- en minutes -->
+	<c id="XmlSlowCache" v="5"/>	<!-- en minutes -->
+
+	<!-- HERO -->
+	<c id="SixMonthsToDays" v="200"/>
+	<c id="ThreeMonthToDays" v="98"/>
+	<c id="OneMonthToDays" v="31"/>
+
+<!--	<c id="SixMonthsThreshold" v="4000"/>
+	<c id="ThreeMonthThreshold" v="2430"/>
+	<c id="OneMonthThreshold" v="1000"/>-->
+	<c id="FifteenDaysPoints" v="600"/>
+	<c id="FifteenDays" v="15"/>
+	<c id="TwoDays" v="2"/>
+	<c id="OneWeekPoints" v="375"/>
+	<c id="OneWeek" v="7"/>
+	<c id="OneDayPoints" v="2"/>
+	<c id="HeroKickPower" v="2"/>
+	<c id="MaxTownPortalDistance" v="11"/>
+
+	<!-- MISC -->
+	<c id="armor" v="1"/>
+	<c id="TeamLogLimit" v="100"/>
+	<c id="TeamMaxPlayers" v="5"/>
+	<c id="AgeLimit" v="13"/>
+	<c id="MaxLogsDefault" v="5"/>			<!-- Nb de logs de ville max affiché par défaut -->
+	<c id="MaxLogsDefaultOutside" v="20"/>	<!-- Nb de logs de ville max affiché par défaut dehors -->
+	<c id="NewsMaxArts" v="8"/>
+	<c id="DebugSeed" v="12313"/>
+	<c id="RescueDistance" v="2"/>
+	<c id="MaxInvitation" v="5"/>
+	<c id="MaxVipCode" v="50"/>
+	<c id="OnlineStatusMinutes" v="5"/>
+	<c id="ForumBanDuration" v="3"/>
+	<c id="MaxRanking" v="1000"/>
+
+	<c id="SoulCityPoints" v="10" />
+
+	<!-- GLOBAL SETTINGS -->
+	<c id="EnableMIDCheck" v="1"/>		<!-- Ne pas oublier de mettre >0 en PROD :)-->
+	<c id="SessionCheckTime" v="5"/>
+	<c id="RecallDays" v="7"/>
+	<c id="MaxSubscribePerMachine" v="5"/>
+	<c id="MaxDailyUserPerMachine" v="3"/>
+	<c id="ExperiencedPlayer" v="3"/>
+	<c id="TeasingPlayers" v="10000000"/>
+	<c id="MaxPlayers_OLD" v="210"/>
+	<c id="BigMapWidth" v="25"/>
+	<c id="MapWidthStd" v="12"/>
+	<c id="MaxMapWidthGrow" v="3" />
+	<c id="SendStealLimit" v="10" />
+	<c id="AbusePicksLimit" v="5" />		<!-- (Nb + 1) max d'items que l'on peut prendre en bank en 1h -->
+	<c id="AbuseExtraBan" v="5" />		<!-- Abus répété = rallonge de XX minutes -->
+	<c id="AbuseBan" v="15" />			<!-- Durée du blocage des abus (en minutes) -->
+	<c id="GhostRankingMaxResultsPerPage" v="30"/>
+	<c id="TeamMIDCheckDays" v="15"/>
+	<c id="MaxSimilarMIDInTeam" v="2"/>
+	<c id="NightBankChance" v="40"/>
+	<c id="NightEvening" v="19"/>
+	<c id="NightMorning" v="6"/>
+	<c id="MinSurvivalReward" v="8" /><!-- Nombre de jours minimum pour valider les pictos en RNE pour les joueurs expérimentés -->
+
+	<c id="MinNoobRatioForReward" v="50" /><!-- % Ratio de joueurs non expérimentés exigé pour prétendre au titre de guide -->
+	<!-- GÉNÉRATION DES MAPS -->
+	<c id="CityMinSpawnRadius" v="4"/>
+	<!--<c id="MapsInPool" v="10" />
+	<c id="NewMapForHeroes" v="10" />-->
+	<c id="MinNoobMap" v="20"/> <!-- ATTENTION : valeur en % ! Ces villes sont les seules accessibles aux joueurs de bas niveau -->
+	<c id="MinHardcoreMap" v="1"/>
+	<c id="MinXpLevel" v="100"/> <!-- Régions éloignées -->
+
+
+	<!-- GLOBAL GAME SETTINGS -->
+	<c id="MaxPlayers" v="40"/>
+	<c id="BeginPeriodDays" v="3"/>			<!-- Jour max pour rejoindre une map -->
+	<c id="ChaosLimit" v="10"/>
+	<c id="MaxBuildings" v="10"/>
+	<c id="MapWater" v="90"/>
+	<c id="MapRandWater" v="90"/>
+	<c id="MinVotes" v="5"/>				<!-- Nb minimal de votes pour construire un building -->
+	<c id="MaxFreeWater" v="1"/>
+	<c id="MaxExtraWater" v="2"/>
+	<c id="GardenMaxLoots" v="4"/>			<!-- Random(n) + n/2 -->
+	<c id="GardenMaxTastyLoots" v="3"/>		<!-- Random(n) + n/2 -->
+	<c id="MinMapDifficulty" v="60"/>		<!-- (%) ratio de difficulté minimum  -->
+	<c id="BaseDefense" v="10"/>			<!-- défense de base d'une ville -->
+	<c id="MinComplaints" v="8"/>			<!-- Nb min de plaintes avant le bannissement d'un joueur -->
+	<c id="MinComplaintsIfBanned" v="6"/>	<!-- Nb min de plaintes avant la pendaison d'un joueur déjà banni auparavant -->
+	<c id="TheftDetection" v="50"/>			<!-- % de chance qu'un vol/pillage soit détecté -->
+	<c id="GiftDetection" v="10"/>
+	<c id="HomeRecycling" v="15"/>			<!-- Nb de PA pour recycler la maison d'un cadavre -->
+	<c id="MaxRecycledRsc" v="5"/>			<!-- Nb d'items max recyclés d'une maison -->
+	<c id="MaxExpeditionsByCity" v="16"/>
+	<c id="TeddyBearChance" v="30"/>		<!-- % de chances de fonctionnement du nounours -->
+	<c id="CigaretChance" v="33"/>			<!-- % de chances de fonctionnement du nounours -->
+	<c id="RewardsDailyRuleLimit" v="5"/>
+
+	<!-- CITY BUILDINGS SPECIFIC -->
+	<c id="MiradorTime" v="16"/>			<!-- heure d'affichage de l'estimation du Mirador (NOTE: penser à updater desc building !) -->
+
+	<c id="BigDoorLockMin" v="30"/>			<!-- Modificateur horaire - n minutes avant l'attaque de la Horde - pour le verrouillage auto de la porte (minutes) > 30 par défaut-->
+	<c id="BasicDoorLockMin" v="20"/>		<!-- Modificateur horaire - n minutes avant l'attaque de la Horde - pour le verrouillage auto de la porte (minutes) > 20 par défaut-->
+	<c id="RepairRatio" v="2"/>				<!-- 1 PA pour N pts de dégâts réparés -->
+
+	<!-- USER -->
+	<c id="UserControl" v="2"/>				<!-- Points de contrôle des joueurs -->
+	<c id="HeroDefBonus" v="2"/>			<!-- Bonus de défense des héros -->
+	<c id="RangerBonus" v="0"/>				<!-- Bonus de mouvement des éclaireurs -->
+	<c id="RangerDomination" v="-6"/>		<!-- Modificateur domination éclaireur -->
+	<c id="GuardianHomeDefBonus" v="1"/>		<!-- Bonus de défense ville pour chaque Gardien -->
+	<c id="HunterSearchChance" v="100"/>		<!-- Chance de trouver un ingrédient pour un trappeur -->
+	<c id="PA" v="6"/>
+	<c id="DefaultBagCapacity" v="4"/>		<!-- Sac à dos -->
+	<c id="DefaultTrunkCapacity" v="4"/>	<!-- Nombre de slots disponibles dans le coffre -->
+	<c id="JerryGunChanceEmpty" v="15"/>	<!-- % A remonter éventuellement -->
+	<c id="PetConversion" v="2"/>			<!-- Rations données par animal -->
+	<c id="CadaverConversion" v="4"/>		<!-- Rations données par un cadavre cuisiné -->
+	<c id="TastyBonus" v="1"/>				<!-- Nb de PA supplémentaires si on mange une nourriture Tasty -->
+	<c id="TastyDrugBonus" v="2"/>			<!-- Nb de PA supplémentaires si on mange une drogue Tasty -->
+	<c id="StepsForThirst" v="10"/>			<!-- Nb de pas avant de recevoir un nouvel état de soif -->
+	<c id="WoundedLegFallProba" v="15"/>
+	<c id="TerrorizedCantMove" v="15"/>
+	<c id="WrestleChance" v="8"/>			<!-- % chances de tuer un zombie en lutte à mains nues -->
+	<c id="ScoutLevels" v="5"/>				<!-- Seuils pour l'indicateur du level de scout d'une zone -->
+	<c id="ReductionByScoutLevel" v="3"/>	<!-- "% de chances d'être repéré" retirés par level de scout de la zone -->
+	<c id="MaxScoutLevel" v="3"/>
+	<c id="NapGain" v="2"/>					<!-- Gain en PA pour l'action Se Reposer chez soi -->
+	<c id="CoffeeRegen" v="4"/>				<!-- Gain en PA pour l'action Se Reposer chez soi -->
+	<c id="MaxComplaintsByDay" v="4"/>
+	<c id="HeroShareLimit" v="1"/>
+	<c id="ArmageddonPowerChance" v="50"/>
+	<c id="ArmageddonPowerDuration" v="10"/>
+	<c id="DrunkMsgMistakeChance" v="100"/>
+	<c id="FalsifyLimit" v="2"/>
+	<c id="FalsifyLimit2" v="4"/>
+	<c id="SquadLimit" v="4"/>
+	<c id="HideToolsCost" v="2"/>
+	<c id="FindHiddenChance" v="5"/>
+	<c id="MinRevengeDay" v="3"/>
+
+	<c id="ShamanSoulCurativeChance" v="40"/>
+	<c id="ShamanSoulCurativeRisk" v="5"/>
+	<c id="ShamanRainChance" v="75"/>
+	<c id="ShamanMagicPotionChance" v="98"/>
+	<c id="ShamanRainWell" v="5"/>
+	
+	<c id="ShamanHauntSoulCost" v="5" />
+	<c id="ShamanRainDanceCost" v="3"/>
+	<c id="ShamanHealCost" v="2"/>
+	<c id="ShamanPotionCost" v="1"/> 
+	
+	<c id="ShamanDailyActions" v="5" />
+	<c id="BecomeShamanChance" v="10" />
+
+
+	<!-- COÛTS EN PA -->
+	<c id="PA_Upgrade" v="2"/>				<!-- Upgrade de maison -->
+	<c id="PA_Repair" v="1"/>				<!-- Réparation d'objet -->
+	<c id="PA_ThowDead" v="2"/>				<!-- Sortir un cadavre -->
+	<c id="PA_ExtractBuilding" v="1"/>		<!-- Extraire une ruine dans le désert -->
+	<c id="PA_Door" v="1"/>					<!-- Manipulation porte de ville -->
+	<c id="PA_Refine" v="3"/>				<!-- Raffinage à l'atelier -->
+
+	<!-- EXPLORATION -->
+	<c id="ControlTime" v="30"/>			<!-- en minutes -->
+	<c id="MaxOutsideBuildingsRNE" v="7"/>
+	<c id="MaxOutsideBuildingsRE" v="20"/>
+
+	<c id="GatherAdminTime" v="1"/>
+	<c id="GatherTime" v="120"/>			<!-- en minutes 120 -->
+	<c id="GatherTimeShort" v="90"/>		<!-- en minutes (temps collecteur) 90 -->
+	<c id="GatherChance" v="60"/> <!-- 60 -->
+	<c id="GathererBonus" v="20"/>			<!-- Modificateur au % de chances de trouver un item -->
+	<c id="OverflowGatherChance" v="35"/>	<!-- % chances de gather dans les zones épuisées -->
+	<c id="GarbageSearchChance" v="100"/>
+	<c id="MaxGarbageSearches" v="3" />		<!-- Limite quotidienne -->
+	<c id="SpecialGatherChance" v="100"/>
+	<c id="SpecialGatherLimit" v="-5"/>
+	<c id="ZombiePartProba" v="0"/>
+	<c id="BuriedChance" v="50"/>			<!-- % de chance qu'un building externe soit enseveli -->
+	<c id="Diggers" v="20"/>				<!-- Random(Diggers) -->
+	<c id="DropCount" v="5"/>				<!-- objets par zone du désert (calcul = N + rand(N)) -->
+	<c id="BDropCount" v="8"/>				<!-- objets par building du désert (calcul = N + rand(N)) -->
+	<c id="MapBaseRegen" v="25"/>
+	<c id="MapRegenDropCount" v="5"/>
+	<c id="MapRegenSaturate" v="10"/>
+	<c id="MapRegenBDropCount" v="5"/>
+	<c id="RavagedBuildingDefChance" v="35"/>	<!-- % de chance de récupérer du contreplaqué en bon état sur un camp ravagé -->
+
+	<c id="MaxUpgradeLevel" v="5"/>
+
+	<c id="ExploMinSpawnRadius" v="5"/>
+
+	<!-- HORDE ATTACK -->
+	<c id="BuildingAttackDamageRatio" v="5"/> <!-- on divise le nb de zombies bloqués par les defs par ce ratio -->
+	<c id="BankAttackDamageRatio" v="50"/> <!-- on divise le nb de zombies bloqués par les defs par ce ratio -->
+	<c id="BankAttackMaxDamage" v="20"/>
+	<c id="WoundedDuringAttack" v="50"/>
+	<c id="BuildingPALost" v="20" />
+	<c id="WaterLost" v="20" />
+	<c id="AttackPowRatio" v="200"/>			<!-- divisé par 100 -->
+	<c id="KillsDeducedFromZombies" v="50"/>	<!-- divisé par 100 -->
+
+	<c id="GuardianDeathChance" v="5" />
+	<c id="GuardianImpactChance" v="10" />
+
+	<c id="GuardianHardcoreDeathChance" v="5" />
+	<c id="GuardianHardcoreImpactChance" v="25" />
+
+	<c id="GuardianChanceLost"	v="5" />
+	<c id="GuardianPandemoniumChanceLost"	v="10" />
+
+	<c id="MapStartZombies" v="110"/>
+	<c id="MapDailyAdds" v="50"/>
+	<c id="MapZombiesRatio" v="10"/>		<!-- % -->
+
+
+	<c id="AttDelta" v="40"/>				<!-- % de variation aléatoire, was : 35 -->
+	<c id="AttEstDelta" v="40"/>			<!-- % d'erreur sur les estimations d'attaque (mirador) -->
+	<c id="AttEstDelta2" v="10"/>			<!-- % d'erreur sur les estimations d'attaque (mirador2) -->
+	<c id="Tower1NeededInspections" v="30"/><!-- Nombre d'inspections requises à la Tour de Guet pour avoir une estimation à 100% -->
+	<c id="Tower2NeededInspections" v="15"/><!-- Nombre d'inspections requises à la Tour de Guet pour avoir une estimation à 100% -->
+
+	<c id="MaxOddCityDefense"			v="500" /> <!-- maximum de defense que les objets de défense peuvent apporter à la ville -->
+	<c id="ObjectiveWin"			v="10" />
+	<c id="ObjectiveReveal"			v="5" />
+	<c id="ObjectiveLoss"			v="10" />
+	<c id="ObjectiveLossRevealed"	v="5" />
+
+	<!-- ZOMBIES DISPATCH-->
+
+	<!-- Scénario 1 :
+		Les zombies sont dispatchées sur la carte et leur nombre dépend de leur localisation géographique
+		Les jours suivants,
+			si la zone est vide : on utilise le même algo
+			sinon on ajoute ZombieDefaultGrow
+	-->
+	<!-- Scénario 2 :
+		Les zombies sont dispatchées sur la carte et leur nombre dépend de leur localisation géographique
+		Les jours suivants,
+			on ajoute ZombieDefaultGrow
+	-->
+	<!-- Scénario 3 :
+		La première génération de zombies est spawnée dans les case de niveau < 4
+		Les jours suivants,
+			on ajoute ZombieDefaultGrow
+	-->
+	<!-- Scénario 4 :
+		Des zombies sont générés sur les bâtiments en fonction de la distance
+		chaque jour on checke toutes les zones :
+			si z == 0 : on ne fait rien
+			si z < ZombieGrowThreshold : on ajoute +1
+			si z >= ZombieGrowThreshold : on spawn n zombies sur une zone autour
+				on décrémente la zone de ce n
+			créant ainsi une dispersion des zombies
+	-->
+
+	<c id="ZombieGrowScenario" v="4"/>
+	<c id="ZombieDefaultGrow" v="2"/>
+	<c id="ZombieBackupThreshold" v="3"/>
+
+	<!-- Zombie fountain -->
+	<c id="ZombieGrowThreshold"		v="3"/>
+	<c id="ZombieSpreaded"			v="2"/>
+	<c id="ZombieStartIterations"	v="3"/>
+	<c id="ZombieSeeds"				v="3"/>
+	<c id="OverThresholdGrowChance"	v="75"/>
+	<c id="MinZombiesOnMap"			v="50"/>
+	<c id="MinZombiesOnSmallMap"	v="30"/>
+
+	<!-- Modération -->
+	<c id="AutoModerateCount"		v="-1"/>	<!-- Nombre de rapports requis pour auto-modérer un message, -1 pour désactiver -->
+	<c id="ReportBanDurationShort"	v="3"/>		<!-- Jours de ban en cas de modération via un rapport (durée courte) -->
+	<c id="ReportBanDurationLong"	v="15"/>	<!-- Jours de ban en cas de modération via un rapport (durée longue) -->
+
+	<!-- Catapulte -->
+	<c id="CatapultCost"			v="2"/>
+	<c id="CatapultMiss"			v="10"/>	<!-- % de chance qu'un lancé manque sa cible -->
+
+	<!-- Camping -->
+	<c id="CampBagItem"				v="5"/> <!-- item transporté octroyant un bonus permanent et personnel -->
+	<c id="CampUpgradeItem"			v="9"/> <!-- items consommables renforçant les chances de la zone -->
+	<c id="CampDefenseAction"		v="5"/> <!-- renfort de camp sans item -->
+	<c id="CampMaxDefense"			v="50"/> <!-- defense max pour une Zone -->
+	<c id="CampLoss"				v="15"/> <!-- dégâts subits à minuit -->
+	<c id="CampTombBonus"			v="8"/> <!-- creuser une tombe -->
+	<c id="CampNightBonus"			v="10"/> <!-- bonus de nuit -->
+	<c id="LastCampsRewardDay"		v="10"/> <!-- jours révolus pour recevoir la distinction "Campeur de l'au-delà" -->
+
+	<!-- Parrainage -->
+	<c id="RefererDays"				 v="20"/> <!-- en % des jours achetés par le filleul -->
+
+	<!-- Goules -->
+	<c id="GhoulCityDetect"			v="100"/> <!-- % de chances d'être détecté en ville -->
+	<c id="GhoulMaxHunger"			v="40"/> <!-- valeur / 100 au delà de laquelle la goule meure de faim -->
+	<c id="GhoulMidnightHunger"		v="25"/> <!-- valeur / 100 au delà de laquelle la goule meure de faim -->
+	<c id="GhoulMidnightHungerDevast"	v="15"/> <!-- augmentation de la faim en ville dévastée -->
+	<c id="GFoodDevour"				v="-50"/> <!-- tuer un joueur -->
+	<c id="GFoodBasic"				v="-15"/> <!-- viande humaine (item) -->
+	<c id="GFoodQuality"			v="-30"/> <!-- viande humaine de qualité (item) -->
+	<c id="GFoodCadaver"			v="-10"/> <!-- cadavre en ville -->
+	<c id="GFoodDrug"				v="0"/> <!-- paracétoïde -->
+
+	<!-- Villes privées -->
+	<c id="CustomMapCost"			v="0"/> <!-- Coût en jours héros -->
+
+	<!-- Plans de bâtiments -->
+	<c id="MaxDailyPlanDrop"		v="3"/> <!-- Plans trouvés en fouille normale / jour -->
+
+	<c id="MaxExploPlanDropUncommon"	v="8"/> <!-- Plans trouvés dans les explorations -->
+	<c id="MaxExploPlanDropRare"		v="4"/> <!-- Plans trouvés dans les explorations -->
+	<c id="MaxExploPlanDropEpic"		v="2"/> <!-- Plans trouvés dans les explorations -->
+
+	<c id="DefaultExploRoomRscDrop"	v="5"/> <!-- Nombre de ressources (plans inclus) que l'on peut trouver dans les pièces des explorations en moyenne -->
+	<c id="ExploRoomCount"			v="10"/><!-- Nombre de pièces disponibles dans les explorations (WARNING ne pas changer sans consulter le DEV) -->
+
+	<!-- ID a partir duquel les outside building sont des explorables -->
+	<c id="MaxNormalOutsideBuilding"	v="100"/> <!-- Plans trouvés en fouille normale / jour -->
+
+	<c id="TechnicianBuildingActions"	v="6" /><!-- Nombre de points de chantiers attribués aux techniciens -->
+	<c id="ExplorationDailyZombieGrow"	v="5" /><!-- Nombre de zombies que l'on fait apparaitre aléatoirement dans les explorations -->
+	<c id="ExplorationSearchChance"		v="55" /><!-- proba de trouver un objet en fouillant dans une pièce -->
+</const>

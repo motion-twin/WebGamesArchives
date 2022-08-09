@@ -1,0 +1,65 @@
+<!-- ***************************************************************************** -->
+<!-- Boulo, Nimbao l'île volante ----->
+	
+<d place="ipont" name="Soldat von Grizorg" gfx="boulo" cond="scenario(nimba2,50-)">
+	<phase id="begin" next="non:non2:oui:mot" dialect="arbori">
+		Hallo.
+		[Ich heiße Fleißig. Und eins sage ich dir - das ist kein einfacher Name, wenn man sein Leben lang schuften muss!]
+		[Seit 10 Jahren bin ich nun schon in der Wache. Und ganz ehrlich, diese Zeit kommt mir wie eine Ewigkeit vor...
+		Ich sehne mich danach, endlich mal einen freien Tag zu bekommen!]
+		Aber genug davon... Ich bewache diese Brücke. Und muss jeden anhalten, der sie überqueren will!
+	</phase>
+	
+	<a id="non" cond="scenario(nimbao,24)">Ich verstehe nicht...</a>
+	<a id="non2" cond="scenario(nimbao,25+)">?</a>
+	<a id="oui" cond="uvar(dicarb)">Du lässt niemals jemanden passieren?</a>
+	<a id="mot" cond="scenario(nimbao,34)">vcbdr QpObmc? vcbdr QpObmc?</a>
+	
+	<phase id="oui" dialect="arbori">
+		Seit Mandragores Rückkehr ist die ganze Insel in Alarmbereitschaft versetzt. Es wurde sogar ein Ausgehverbot ausgerufen.
+		Es ist verboten, sich ohne Erlaubnis draußen aufzuhalten. Nicht dass das für mich was geändert hätte... Ich muss natürlich weiter Wache halten.
+		Ich bin ja so frustriert. Wenn ich doch nur einen richtigen Job hätte...
+	</phase>
+	
+	<phase id="non" fast="1" frame="stop" scenario="nimbao:25">
+		Schnell entfernst du dich wieder. Diese Wache hat offenbar kein Interesse daran, dich aufzuhalten.
+		Trotzdem hindert sie dich daran, deine Reise fortzusetzen...
+	</phase>
+	
+	<phase id="non2" fast="1" frame="stop">
+		Schnell entfernst du dich wieder. Diese Wache hat offenbar kein Interesse daran, dich aufzuhalten.
+		Trotzdem hindert sie dich daran, deine Reise fortzusetzen...
+	</phase>
+	
+	<phase id="mot" fast="1" frame="stop">
+		Er hat verstanden was du gesagt hast, aber er weiß nicht, was er darauf antworten soll...
+		Offenbar sagt ihm dieses Wort nichts.
+	</phase>
+</d>
+
+<d place="icite" name="Soldat von Grizorg" gfx="boulo" cond="scenario(nimbao,28+)+scenario(nimbao,32-)">
+	<phase id="begin" next="non" dialect="arbori">
+		Hallo.
+		[Ich heiße Fleißig. Und eins sage ich dir - das ist kein einfacher Name, wenn man sein Leben lang schuften muss!]
+		[Seit 10 Jahren bin ich nun schon in der Wache. Und ganz ehrlich, diese Zeit kommt mir wie eine Ewigkeit vor...
+		Ich sehne mich danach, endlich mal einen freien Tag zu bekommen!
+		Doch als Wächter dieser Brücke muss ich jeden anhalten, der sie überqueren will!]
+	</phase>
+	
+	<a id="non" >Ich kann also nicht weiter...</a>
+
+	<phase id="non" fast="1" frame="stop">
+		Schnell entfernst du dich wieder. Offenbar hat diese Wache kein Interesse daran, dich aufzuhalten.
+		Trotzdem hindert sie dich daran, deine Reise fortzusetzen...
+	</phase>
+</d>
+
+<d place="ipont" name="Fleißig" gfx="boulo" frame="happy" cond="scenario(nimba2,51+)">
+	<phase id="begin">
+		Seid gegrüßt
+		[Ich heiße Fleißig. Und eins sage ich dir - das ist kein einfacher Name. Aber hey, Arbeit ist gut für die Gesundheit!]
+		[10 Jahre war ich in der Wache. Aber nun bin ich beim Tourismusverband angestellt und heiße Gäste auf unserer schönen Insel willkommen.
+		Manchmal machen sie sogar Fotos von mir!]
+	</phase>
+</d>
+	

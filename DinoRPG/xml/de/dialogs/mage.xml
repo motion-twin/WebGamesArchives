@@ -1,0 +1,40 @@
+﻿<!--  QUETE DE L'ARCHISAGE : trouver les 3 ingrédients avec la pelle => gant des zors -->
+	
+<d place="dome" name="Altweiser" gfx="archis" cond="!fx(gant)">
+	
+  <phase id="begin" next="enigm" fast="1">In der Mitte des Doms befindet sich
+  das Haus des Altweisen. Es handelt sich um einen Titel, der der Ehre halber
+  an einen Altmagier vergeben wurde, welcher zu alt geworden ist, um seine
+  Zauberkräfte einzusetzen. Nichtsdestotrotz bleibt er eine Persönlichkeit,
+  die über ein sehr großes Wissen verfügt, auch wenn seine Ratschläge manchmal
+  etwas konfus erscheinen mögen.</phase>
+
+  <a id="enigm">Hä?...Ist da jemand?</a>
+
+  <phase id="enigm" next="next">Hallo, hallo, hallo! Was suchst du hier?
+  Suchst du etwas Bestimmtes? Kann ich dir helfen?</phase>
+
+  <a id="next">Ich würde gerne wissen...</a>
+
+  <phase id="next" next="tresor">Ah! Sag nichts! Ich weiß, ich bin mir sicher, todsicher,
+  ja, ganz gewiss! Du suchst einen GROSSEN SCHATZ!</phase>
+
+  <a id="tresor">(Einen Schatz?!?) Ja, genau! </a>
+
+  <phase id="tresor" next="quoi"> Also hör zu, ich werd's dir sagen. Hör mir
+  zu. Ja. Ich werde es dir erzählen. Wenn du mir berichtest. Ja, alles.
+  Was willst du wissen? Und vor allem, was ist es nicht!</phase>
+
+  <a id="quoi">...Was?</a>
+
+  <phase id="quoi" next="show">Also hör zu. Mein erster ist klebrig, mein
+  zweiter ist aus Basalt, mein dritter ist aus purem Wasser. Du wirst ein
+  Werkzeug brauchen, ja genau. Ein Werkzeug um all das zu finden. Such mich
+  wieder auf und ich werde dir den Schatz zeigen. Aber pass auf
+  die Gefahren auf!F-O-E! </phase>
+
+  <a id="show" cond="fx(marais)+fx(wpure)+fx(basalt)">Die Zutaten herzeigen.</a>
+
+  <phase id="show" fight="eearth" noeffect="marais:wpure:basalt" effect="gant">Oh, bravo! Bravo! Danke für all das und vor allem: Bravo! Hier, es ist fertig, dein Dinoz hat einen GROSSEN SCHATZ!</phase>
+  
+</d>

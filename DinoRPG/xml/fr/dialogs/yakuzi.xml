@@ -1,0 +1,389 @@
+﻿<d place="port" name="Punk mystérieux" gfx="yakuzi" cond="scenario(kabuki,0)+(admin()|utime(6))+active(kabuki)">
+
+	<phase id="begin" next="welcome:quit">
+		Hey ! Psssst... Par ici !
+	</phase>
+	<a id="welcome">S'approcher pour voir ce qu'il veut</a>
+	<a id="quit">Ignorer ce type... Ras-le-bol des bonhommes louches...</a>
+
+	<phase id="welcome" next="hear:ref:leave">
+		Ecoute, j'ai une affaire intéressante à te proposer...
+	</phase>
+
+	<a id="hear"> Je vous écoute !</a>
+	<a id="ref">Vous me rappelez vaguement quelqu'un...</a>
+	<a id="leave" target="quit">Ho excusez-moi, je croyais que c'était à moi que vous parliez ! Au revoir.</a>
+
+	<phase id="hear" next="mission">
+		Chhhht !!! Pas si fort ! Tu vas nous faire repérer...
+	</phase>
+
+	<a id="mission"> Oups, pardon... Alors ?</a>
+
+
+	<phase id="ref" next="mission">
+		Chhhht !!! Pas si fort ! Tu vas nous faire repérer...
+	</phase>
+
+	<phase id="mission" next="ok:no">
+		Voilà. Je possède un passeport pour l'Ile du Totem. Je te propose un petit pari pour le gagner, Tu paries 10.000 pièces d'or. Si tu gagnes, tu repars avec le passeport et le fric. Sinon, le passeport reste dans ma poche, et tu me devras 10.000 pièces. Alors, qu'est ce que t'en dis ?
+	</phase>
+
+	<a id="ok"> Pourquoi pas, ça me paraît équitable.</a>
+	<a id="no"> Hein !? Ca va pas la tête ! Ou est-ce que je vais trouver tout cet argent ?</a>
+
+
+	<phase id="ok" next="compris:not">
+			Ok. Maintenant écoute attentivement les règles : Chaque pièce est composé de deux cotés différents. Le coté indiquant la valeur de la pièce est appelé "pile". Le second représentant une tête de moueffe s'apelle "face". Tu n'as qu'à choisir un des cotés. Ensuite, on regarde qui a gagné. C'est compris ?
+	</phase>
+	<a id="compris"> Un "pile ou face" quoi...</a>
+	<a id="not"> Heu j'ai pas tout suivi... je dois choisir quoi ?</a>
+
+
+	<phase id="no">
+		Dommage... Reviens me voir si tu changes d'avis, je bougerai pas d'ici.
+	</phase>
+	<phase id="compris" next="pile:face">
+		Ha, tu connais ? Je vois que t'es habitué aux affaires toi ! Alors, "pile" ou "face" ?
+	</phase>
+	<a id="pile"> Pile</a>
+	<a id="face"> Face</a>
+
+	<phase id="not" fast="1">
+		Chaque pièce est composé de deux cotés différents. Le coté indiquant la valeur de la pièce est appelé "pile". Le second représentant une tête de moueffe s'apelle "face". Tu n'as qu'à choisir un des cotés. Ensuite, on regarde qui a gagné. Alors, "pile" ou "face" ?
+	</phase>
+
+
+
+
+	<phase id="pile" next="suite">
+		Perdu ! Ha ha ha ! Je suis imbattable. Tu me dois 10.000 pièces d'or.
+	</phase>
+	<a id="suite"> Mais... vous n'avez pas lancé de pièce !</a>
+
+	<phase id="suite" next="end">
+		Ca va pas non ? L'argent, c'est trop précieux pour jouer avec ! Et d'ailleur, ce n'était pas dans les règles que TU as accepté... Si tu me ramènes mes 10.000 pièces d'or, je te proposerai peut-être une autre affaire... et cette fois, en lançant une pièce.
+	</phase>
+
+	<a id="end"> Si je veux ce passeport, j'ai pas vraiment le choix...</a>
+
+	<phase id="end" scenario="kabuki:1">
+		Hé hé ! Trouve le fric, et reviens me voir. Mon nom de code est "Yakuzi", je bougerai pas d'ici.
+	</phase>
+
+	<phase id="face" next="suite">
+		Perdu ! Ha ha ha ! Je suis imbattable. Tu me dois 10.000 pièces d'or.
+	</phase>
+
+	<phase id="quit" fast="1">
+		Malgré ses appels, vous vous éloignez un peu plus loin... Peut-être avait-il quelque chose d'important à vous dire.
+	</phase>
+
+</d>
+
+<d place="port" name="Yakuzi" gfx="yakuzi" cond="scenario(kabuki,1)">
+
+	<phase id="begin" next="welcome:quit">
+		Hey ! Psssst... Par ici !
+	</phase>
+	<a id="welcome">Aller le voir</a>
+	<a id="quit">Passer à coté sans rien dire</a>
+
+	<phase id="welcome" next="yes:leave">
+		Alors ? T'as l'argent ?
+	</phase>
+
+	<a id="yes"> Oui, 10.000 pièces d'or.</a>
+	<a id="leave" target="quit"> Oui, mais je ne le donnerai pas à un tricheur comme vous !</a>
+
+	<phase id="yes" usegold="10000" scenario="kabuki:2">
+		Hé hé ! Merci, merci merci, reviens me voir quand tu veux !
+	</phase>
+
+	<phase id="quit">
+		Hé Attends !
+	</phase>
+
+</d>
+
+
+<d place="port" name="Yakuzi" gfx="yakuzi" cond="scenario(kabuki,2)+(admin()|swait(kabuki,48))">
+
+	<phase id="begin" next="welcome:quit">
+		Hey ! Psssst... Par ici !
+	</phase>
+
+	<a id="welcome">Aller le voir</a>
+	<a id="quit">Passer à coté sans rien dire</a>
+
+	<phase id="welcome" next="give:nop:lock">
+		Alors voilà ce que je te propose : on parie 100.000 cette fois. Si tu gagnes, t'empoches tout, argent et passeport. Sinon, je le garde et tu me devras 100.000 pièces d'or. Si tu acceptes, donne-moi une pièce que je la lance...
+	</phase>
+
+	<a id="give"> D'accord, tenez... Mais attention, pas d'entourloupe cette fois !</a>
+	<a id="nop"> J'accepte, mais je lancerai la pièce moi même !</a>
+	<a id="lock"> Pas question ! Je n'ai plus confiance en vous. Au revoir.</a>
+
+	<phase id="give" next="pile:face">
+		Ok. "Pile" ou "Face" ?
+	</phase>
+
+	<a id="pile" target="start">Pile</a>
+	<a id="face" target="start">Face</a>
+
+	<phase id="start" fast="1" next="end">
+		Ting ! Yakuzi lance la pièce en l'air. Elle retombe sur le sol en tournoyant sur elle même. Le suspense est insoutenable.
+	</phase>
+
+	<phase id="nop" next="lance">
+		Comme tu veux... Je choisi heu... pile... non, face ! Face !
+	</phase>
+
+	<a id="lance">Lancer la pièce</a>
+
+	<phase id="lance" fast="1" next="end">
+		Ting ! Vous lancez la pièce en l'air, et la regardez tomber au sol avec un suspense insoutenable.
+	</phase>
+
+	<a id="end">(SUITE)</a>
+
+	<phase id="end" next="reend">
+		Impossible... j'ai... j'ai perdu... Ha non ! C'est MON AURA après tout. Elle est à moi ! Adieu, ha ha ha ha !
+	</phase>
+
+	<a id="reend"> Votre Aura ?... Hey ! Attendez !</a>
+
+	<phase id="reend" fast="1" scenario="kabuki:3">
+		Yakuzi s'enfuit avec votre récompense : peut-être devriez vous lui courir après...
+	</phase>
+
+	<phase id="quit">
+		Hé Attends !
+	</phase>
+
+	<phase id="lock">
+		Hé vous ! Attendez !
+	</phase>
+
+</d>
+
+
+<d place="forges" name="Yakuzi déguisé" gfx="yakuziDisguise" cond="scenario(kabuki,3)">
+
+	<phase id="begin" fast="1" next="hello">
+		Vous rencontrez un homme qui vous rapelle étrangement quelqu'un...
+	</phase>
+	<a id="hello"> Yakuzi ! Je vous ai reconnu, donnez-moi ma récompense !</a>
+
+	<phase id="hello" next="block:burn">
+		Je, heu... Yé vous démande pardon ? Yé crois qué vous fait' z'erreur. Yé m'apelle Bénédito Pacifico Juan Maria Ramirez. Escousez-moi yé dois vous laisser. Heu... yé quelqué choz' sur lé feu...
+	</phase>
+
+	<a id="block"> Vous ne vous enfuirez pas cette fois ! Mes dinoz vous encerclent</a>
+	<a id="burn"> Ha, j'ai dû me tromper... Dépêchez vous, ça va cramer</a>
+
+	<phase id="block" next="ready">
+		Très bien... Je n'ai pas le choix on dirait. En garde !
+	</phase>
+
+	<a id="ready"> Dinoz ! A l'attaque !</a>
+
+	<phase id="ready" fast="1" scenario="kabuki:4" fight="yakuzi">
+		Yakuzi a disparu avant la fin du combat. De nombreuses traces s'éloignent dans toutes les directions à la fois...
+	</phase>
+
+	<phase id="burn">
+		heu... oui. Au Révoir !
+	</phase>
+
+</d>
+
+
+<d place="gorges" name="Yakuzi gelé" gfx="yakuziFreeze" cond="scenario(kabuki,4)">
+
+	<phase id="begin" next="hello">
+		Je... suis... con... gelé...
+	</phase>
+	<a id="hello"> C'est bizarre, on dirait que vous faites semblant...</a>
+
+	<phase id="hello" next="block:help">
+		Je... suis... une... personne... quelconque... complêt...tement... gelée... ... Vous... pouvez... par... tir...
+	</phase>
+		<a id="block"> Donnez moi ma récompense, ou je demande à mes dinoz de vous réchauffer !</a>
+		<a id="help"> Ne bougez pas, je vais chercher de l'aide !</a>
+
+	<phase id="block" next="fight">
+		Non !! Ca va ! Bon bon, ok... je faisais semblant. Décidément, t'es pas facile à berner toi, hein ?
+	</phase>
+		<a id="fight">Maintenant donnez moi ce que j'ai gagné !</a>
+
+
+	<phase id="fight" next="combat">
+		Pas si vite ! J'ai une revanche à prendre. Prépare tes maudits Dinoz, je les aurai cette fois !
+	</phase>
+
+	<a id="combat"> C'est parti !</a>
+
+	<phase id="help">
+		Heu, oui merci... hum, Je veux dire : mer... ci... étran... ger...
+	</phase>
+
+	<phase id="combat" fast="1" scenario="kabuki:5" fight="yakuzi">
+		Une fois de plus Yakuzi s'est enfuit... Mais dans sa course il a égaré un étrange Parchemin !
+		Peut-être pourrez-vous trouver quelqu'un capable de le déchiffrer pour vous...
+	</phase>
+
+</d>
+
+<d place="itotem" name="Yakuzi" gfx="yakuziSerious" background="2" cond="scenario(kabuki,21)">
+
+	<phase id="begin" next="know">
+		Ouf ! Quel combat ! Ce Professeur Igor était vraiment coriace !
+	</phase>
+
+	<a id="know">Vous le connaissiez ?</a>
+
+	<phase id="know" next="start">
+		Oui, mais c'est une longue histoire... Par où commencer...
+	</phase>
+
+	<a id="start">Pourquoi pas par le début ?</a>
+
+	<phase id="start" next="herit">
+		C'est effectivement une bonne idée ! Le jour de mes dix-huit ans, j'ai
+		reçu l'héritage de mon Grand-Père, qui avait été transmis de génération en génération
+		dans ma famille. Jusque là, je n'étais qu'un petit voyou, mais cet héritage a tout changé pour moi !
+	</phase>
+
+	<a id="herit">Un héritage ?</a>
+
+	<phase id="herit" next="parch">
+		Oui. Il ne s'agissait pas d'argent, mais d'un objet unique que l'on nomme l'Aura Kabuki, ainsi que d'un
+		Parchemin indiquant en cas de problème majeur comment en fabriquer une autre.
+	</phase>
+
+	<a id="parch">Un parchemin...</a>
+
+	<phase id="parch" next="totem">
+		Oui, je l'ai perdu en combattant contre toi, et le Professeur Igor s'en est apparemment servi pour fabriquer
+		une Aura et se rendre sur l'Ile du Totem...
+	</phase>
+
+	<a id="totem">Que se passe-t-il sur cette île ?</a>
+
+	<phase id="totem" next="why">
+		C'est simple : il y a de cela des centaines d'années, mon ancêtre le Grand Judoki a sauvé lors du Grand Cataclysme
+		un groupe de Kabukis. Il les a installé sur cette île et a construit ce Totem qui la protège des intrusions...
+	</phase>
+
+	<a id="why">Pourquoi faire cela ?</a>
+
+	<phase id="why" next="ok">
+		Malgré leurs grandes capacités de combattants, les Kabukis ne peuvent donner naissance à des petits que dans un
+		endroit très calme. Comme ils sont très rares, mon ancêtre voulait leur permettre de survivre en paix ici...
+	</phase>
+
+	<a id="ok">Je comprends...</a>
+
+	<phase id="ok" next="see">
+		Quand j'ai hérité de mon grand père, le professeur Igor est venu me voir et m'a proposé plusieurs millions
+		de pièces d'or en échange de l'Aura ou du parchemin. Redoutant une embrouille, j'ai bien entendu refusé. Ce
+		type avait VRAIMENT l'air loûche, si tu vois ce que je veux dire...
+	</phase>
+
+	<a id="see">... je crois que je vois oui</a>
+
+	<phase id="see" next="nice">
+		Je me suis donc rendu sur l'Ile du Totem par mes propres moyens, et j'y ai découvert les Kabukis.
+		Ils sont tellement attachants que j'ai décidé d'en élever deux moi-même. Ce sont eux qui sont venus m'aider
+		dans les combats que nous avons menés...
+	</phase>
+
+	<a id="nice">Ils sont magnifiques !</a>
+
+	<phase id="nice" next="see2">
+		Oui, ils sont ma grande fierté ! Mais pour pouvoir m'occuper d'eux, j'ai dû à nouveau devenir un délinquant,
+		en organisant des arn... jeux de hasard, pour que les pig... touristes puissent se détendre un peu, tu vois ?
+	</phase>
+
+	<a id="see2">... je crois que je vois oui</a>
+
+	<phase id="see2" next="end">
+		En tout cas, voilà, grâce à toi j'ai pu empecher une catastrophe. Je ne sais comment te remercier...
+	</phase>
+
+	<a id="end">Oh ! Je n'ai besoin de rien !</a>
+
+	<phase id="end" next="yes:no">
+		Vraiment ? Mais laisse moi au moins de donner cet Oeuf de Kabuki en récompense ! Fais-y bien attention,
+		c'est un objet très rare ! Contrairement aux autres Dinoz, les Kabukis ne donnent que peu d'oeufs !
+	</phase>
+
+	<a id="yes">Prendre l'Oeuf</a>
+	<a id="no">Je ne peux pas accepter...</a>
+
+	<phase id="no">
+		Ah... Bien... Reviens me voir si un jour tu changes d'avis...
+	</phase>
+
+	<phase id="yes" give="kabegg" scenario="kabuki:22">
+		Voilà, il est à toi ! Tu peux aussi garder l'Aura Kabuki que le Professeur Igor avait fabriquée,
+		elle te serra utile pour revenir ici me voir de temps en temps. A bientôt mon ami !
+	</phase>
+
+</d>
+
+<d place="itotem" name="Yakuzi" background="2" gfx="yakuzi" cond="scenario(kabuki,22)">
+
+	<phase id="begin" next="egg:noegg">
+		Salut mon ami ! Comment vas-tu ?
+	</phase>
+
+	<a id="egg" cond="utime(100)">Quoi de neuf ?</a>
+	<a id="noegg" cond="!utime(100)">Quoi de neuf ?</a>
+
+	<phase id="noegg" scenario="kabuki:23">
+		Rien à signaler ! Mais reviens me voir plus tard, j'aurai peut-être quelque chose pour toi !
+	</phase>
+
+	<phase id="egg">
+		Je t'ai déjà donné un oeuf de Kabuki récemment, il faudra revenir me voir plus tard pour pouvoir en avoir un autre !
+	</phase>
+
+</d>
+
+<d place="itotem" name="Yakuzi" background="2" gfx="yakuzi" cond="scenario(kabuki,23)">
+
+	<phase id="begin" next="egg:noegg:maxegg">
+		Salut mon ami ! Comment vas-tu ?
+	</phase>
+
+	<a id="egg" cond="scenario(kabegg,1-)+utime(100)">Quoi de neuf ?</a>
+	<a id="noegg" cond="scenario(kabegg,1-)+!utime(100)">Quoi de neuf ?</a>
+	<a id="maxegg" cond="scenario(kabegg,2+)">Quoi de neuf ?</a>
+
+	<phase id="noegg">
+		Rien à signaler ! Mais reviens me voir plus tard, j'aurai peut-être quelque chose pour toi !
+	</phase>
+
+	<phase id="egg" next="buy:no">
+		Oh ! Un nouvel Oeuf de Kabuki est disponible, si ça t'interesse je te le vends pour 50.000 pièces !
+		Tu comprends, c'est pour la bonne cause... ces fonds me permettront de continuer à aider les survivants Kabukis !
+	</phase>
+
+	<a id="buy">OK !</a>
+	<a id="no">C'est bien trop cher pour moi...</a>
+
+	<phase id="no">
+		Je comprends, mais si tu change d'avis reviens vite car ce genre d'offre ne tient pas longtemps !
+	</phase>
+
+	<phase id="buy" usegold="50000" give="kabegg" scenario="kabuki:22" scenarioIncr="kabegg">
+		MERCI ! Voilà pour toi ! Et surtout occupe-toi bien de lui !
+	</phase>
+
+	<phase id="maxegg">
+		Les Kabukis sont menacés d'extinction par le nombre croissant de Maîtres Dinoz qui cherchent à obtenir leurs oeufs, et je ne pourrai donc plus te donner d'oeuf supplémentaire.... La survie des Kabukis en dépend !
+	</phase>
+
+</d>

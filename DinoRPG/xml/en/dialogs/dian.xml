@@ -1,0 +1,54 @@
+﻿<d place="camp" name="Dian Korgsey" gfx="dian">
+	<phase id="begin" next="korgons:nothing:missions">
+		Hey! Don't make any noise. We mustn't disturb the Korgons!
+	</phase>
+
+	<a id="korgons">Korgons?</a>
+	<a id="nothing">Oh ok, I'll keep quiet.</a>
+
+	<phase id="korgons" next="why:wood:tame:interest:missions">
+		Yeah, Korgons live here. They're nasty little monsters, we must keep an eye on them at all times!
+		Make sure you never look directly into their eyes and if one of them comes too close,
+		give him a piece of wood to nibble, that should calm him down.
+	</phase>
+
+	<a id="why">We can't look at them?</a>
+	<a id="wood">They eat wood?</a>
+	<a id="tame">Have they ever been tamed?</a>
+	<a id="interest" cond="fx(qwhy)+fx(qwood)+fx(qtame)+!fx(dian)">It's really fascinating!</a>
+
+	<phase id="why" next="wood:tame:interest:missions" effect="qwood">
+		They'll be offended! You can imagine what would happen if all the Korgons
+		from the camp think you have offended them....The last person who made that mistake ended up as Korgon dinner!
+	</phase>
+
+	<phase id="wood" next="why:tame:interest:missions" effect="qwhy">
+		They love it! That's why they live in the Grumhel Forest.
+		Fascinating, isn't it? But unfortunately for us, they can eat anything and everything, clueless travellers included.
+	</phase>
+
+	<phase id="tame" next="wood:why:interest:missions" effect="qtame">
+		A long time ago, I think Korgons were domesticated. Probably long before Jazz Island collapsed ....
+		But today, they have reverted to their wild state! There is no way to approach them without the risk of losing an arm.
+		Some tamers have tried, but nobody has got further than being bitten by them.
+	</phase>
+
+	<phase id="interest" next="service">
+		Isn't it! I'm happy to see that you're so interested in the Korgons!
+		If you're really interested, would you mind doing some favours for me?
+	</phase>
+
+	<a id="service">Yes, with pleasure!</a>
+
+	<phase id="service" next="missions" effect="dian">
+		Perfect! Here's what you can do for me....
+	</phase>
+
+	<phase id="nothing">
+		Ok, bon voyage!
+	</phase>
+
+	<a id="missions" cond="fx(dian)">Check missions list</a>
+	<phase id="missions" missions="dian"></phase>
+
+</d>

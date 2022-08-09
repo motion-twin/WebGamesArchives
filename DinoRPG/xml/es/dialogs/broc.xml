@@ -1,0 +1,317 @@
+<!-- ***************************************
+  Etape 21  du scénario  inutilisée
+******************************************** -->
+<!-- Broc, Sommet du mont Broky ----->
+<d place="chbroc" name="Broc" gfx="broc" background="5" cond="scenario(nimba2,50-)+(!hourrand(24,4+)|tag(brocport)|tag(brocbslt)|tag(brocilewkk))">
+	<phase id="begin" frame="parti" fast="1">
+		Hum... Parece que Broc no está en su taller. Debe ester probando alguno de sus locos inventos en algún lugar de Dinoland (¡en el mejor de los casos!).
+		Habrá que volver más tarde.
+	</phase>
+</d>
+
+<d place="chbroc" name="Broc" gfx="broc" background="5" cond="scenario(nimba2,50-)+(hourrand(24,4+)+!(tag(brocport)|tag(brocbslt)|tag(brocilewkk)))">
+	<phase id="begin" next="missions:voyage:voyage2" rmtag="brocport:brocbslt:brocilewkk">
+		Broc, inventor fuera de serie a tu servicio.
+		¿Qué puedo hacer por ti?
+	</phase>
+	<a id="missions" cond="active(mbroc)">Consultar la lista de misiones</a>
+	<phase id="missions" missions="broc"></phase>
+
+
+	<a id="voyage" cond="scenario(nimbao,19)">
+		Quisiera hacer un viaje por las nubes, ¡y me han dicho que es con usted con quien debo hablar...!
+	</a>
+	<a id="voyage2" cond="(scenario(nimbao,20)|scenario(nimbao,22)|scenario(nimbao,23+))+scenario(nimba2,37-)">
+		¿Podrías enviarme a Nimbao con tu Flying Broky?
+	</a>
+	
+	<!-- INTRODUCTION -->
+	<phase id="voyage" next="gloups">
+		¡Pues soy la persona ideal para ese tipo de misiones!
+		Aquí puedes ver mi digno invento, "El Flying Broky 5", ¡que espera impacientemente su primer vuelo!
+	</phase>
+	<a id="gloups">
+		¿Su primer vuelo? Flying Broky ... ¿5?
+	</a>
+	<phase id="gloups" next="go">
+		Sí... digamos que... las versiones anteriores de los Flying Brokys no tuvieron mucha suerte en su camino hacia las nubes.
+	</phase>
+	<a id="go">
+		Ah, al menos sé lo que arriesgo...
+	</a>
+	<phase id="go" next="nrj:tantpis">
+		[De todos modos, si no estás satisfecho, ¡te devolvemos tu dinero!
+		Bueno, como el transporte es gratis, no devuelvo nada. Pero eso no importa ahora.]
+		[Necesito un modo de resucitar a esta pobre máquina.
+		¡Se requiere una energía rayo para cargar sus baterías!]
+		[Teniendo eso, ¡cuando tú digas!]
+	</phase>
+	<a id="nrj">Darle una energía rayo.</a>
+	<a id="tantpis">Volveré más tarde.</a>
+	
+	<phase id="nrj" next="fin" useingr="enfdr:1" scenario="nimbao:20" >
+		Ok, ¡con esto mi fiel invento volará alrededor del mundo!
+		Cuando estés listo no dudes en buscarme de nuevo.
+	</phase>
+	<a id="fin">
+		¡Muchas gracias!
+	</a>
+	<phase id="fin" fast="1" frame="stop">
+		Broc espera tu señal para iniciar la nueva aventura.
+		Aún puedes pensarlo bien...
+	</phase>
+	<phase id="tantpis" frame="stop">
+		Te alejas algo decepcionado, necesitas esa poderosa energía para viajar, por fin, más alla de las nubes...
+	</phase>
+	
+	<!-- DEPART NIMBAO -->
+	<phase id="voyage2" next="noroute:depart_1:depart_2:depart_3:depart_4:depart_5">
+		¿Quieres dar una vuelta en mi fabuloso Flying Broky 5?
+		¡Sólo tienes que pedirlo!
+	</phase>
+	
+	<a id="noroute">Hum, pensándolo bien... no gracias, ¡prefiero seguir vivo!</a>
+	<a id="depart_1" cond="drand(6,1)">¡Nimbao, allá vamos!</a>
+	<a id="depart_2" cond="drand(6,2)">¡Nimbao, allá vamos!</a>
+	<a id="depart_3" cond="drand(6,3)">¡Nimbao, allá vamos!</a>
+	<a id="depart_4" cond="drand(6,4+)+(scenario(nimbao,20)|scenario(nimbao,22))">¡Nimbao, allá vamos!</a>
+	<a id="depart_5" cond="drand(6,4+)+scenario(nimbao,23+)">¡Nimbao, allá vamos!</a>
+	
+	<phase id="depart_1" fast="1" tag="brocilewkk" moveAll="ilewkk">
+		Al fin estás listo para partir, Broc te hace subir a la nave, ¡es hora de dar el gran salto!
+		¡Sujétate bien!
+		
+		El Flying Broky 5 coge vuelo, y... ¡ya estás en el aire!
+		.............
+		¿Qué? ¿En serio?
+		¡¡AAAAAHAHHHHHHHHHHH!
+	</phase>
+	<phase id="depart_2" fast="1" tag="brocbslt" moveAll="bslt">
+		Al fin estás listo para partir, Broc te hace subir a la nave, ¡es hora de dar el gran salto!
+		¡Sujétate bien!
+		
+		El Flying Broky 5 coge vuelo... ¡ya estás en el aire!
+		.............
+		¡Ah, veo algo que aparece entre las nubes!  ¿¿Qué?? ¡¡AAAAAHAHHHHHHHHHHH!!
+	</phase>
+	<phase id="depart_3" fast="1" tag="brocport" moveAll="port">
+		Al fin estás listo para partir, Broc te hace subir a la nave, ¡es hora de dar el gran salto!
+		¡Sujétate bien!
+		
+		El Flying Broky 5 coge vuelo, ¡ya estás en el aire!
+		.............
+		Broc, estás seguro de que el tanque está lleno, ¿verdad?....
+		¡¡AAAAAHAHHHHHHHHHHH!!
+	</phase>
+	<phase id="depart_4" fast="1" scenario="nimbao:22" moveAll="iroche">
+		Al fin estás listo para partir, Broc te hace subir a la nave, ¡es hora de dar el gran salto!
+		¡Sujétate bien!
+		
+		El Flying Broky 5 coge vuelo... ¡ya estás en el aire!
+		.............
+	</phase>
+	<phase id="depart_5" fast="1" moveAll="iroche">
+		Al fin estás listo para partir, Broc te hace subir a la nave, ¡es hora de dar el gran salto!
+		¡Sujétate bien!
+		
+		El Flying Broky 5 coge vuelo... ¡ya estás en el aire!
+		.............
+	</phase>
+	<phase id="noroute" fast="1" frame="stop">
+		Mejor no, la vida vale mucho, lanzarse a volar por los aires no es muy recomendable para mi integridad física...
+	</phase>
+	
+</d>
+
+<!-- arrivée sur NIMBAO -->
+<d place="iroche" name="Broc" gfx="broc" background="4" cond="scenario(nimbao,22)">
+	<phase id="begin" next="wouhou">
+		¡A esto se "llama tener alas"!
+		¡Qué talento Dios mío, qué talento!
+		.........Todo se ve muy bonito desde aquí. ¿Habías visto antes todos esos lugares?
+	</phase>
+	<a id="wouhou">
+		Para mí también es un gran espectáculo.
+	</a>
+	<phase id="wouhou" next="fin">
+		Lo menos que puedo decir,  ¡es que la estamos pasando muy bieeen!
+		Estaré por aquí si un día me necesitas.
+		¡El Flying Broky estará listo para otro viaje!
+	</phase>
+	<a id="fin">
+		¡Gracias!
+	</a>
+	<phase id="fin" fast="1" scenario="nimbao:23" frame="stop">
+		Es tiempo de explorar la Isla Celeste. ¿Qué sorpresas nos esperan en ese nuevo mundo?
+	</phase>
+</d>
+
+<!-- DEPART DE NIMBAO -->
+<d place="iroche" name="Broc" gfx="broc" background="4" cond="scenario(nimbao,23+)">
+	<phase id="begin" next="retour:noretour">
+		¡Hola amigo!
+		¿Quieres bajar a la superficie en mi poderoso Flying Broky 5?
+		¡Sólo tienes que pedirlo!
+	</phase>
+	<a id="retour">¡Por supuesto!</a>
+	<a id="noretour">Ahora no.</a>
+	
+	<phase id="retour" fast="1" frame="stop" moveAll="chbroc:port">
+		Al fín estás listo para partir, Broc te hace subir en la nave, ¡es hora de dar el gran salto!
+		¡Sujétate bien!
+		El Flying Broky 5 coge vuelo y... ¡ya estás en el aire!
+		.............
+	</phase>
+	
+	<phase id="noretour" fast="1" frame="stop">
+		Broc se queda ahí, admirando la vista que ofrece la Isla Celeste desde allá arriba.
+	</phase>
+</d>
+
+
+<!-- ARRIVEES ALEATOIRES -->
+<d place="ilewkk" name="Broc" gfx="broc" background="1" cond="scenario(nimbao,20)+tag(brocilewkk)">
+	<phase id="begin" next="oups" frame="nue">
+		Bueno, digamos que fue un intento.
+		Pero míralo por el lado bueno....
+		¡ESTAMOS VIVOS!
+	</phase>
+	<a id="oups">
+		......
+	</a>
+	<phase id="oups" fast="1" frame="stop" rmtag="brocilewkk">
+		Ahora tienes que volver a la cima del Monte Broky para un nuevo intento...
+		Ojalá tengas suerte la próxima vez...
+	</phase>
+</d>
+
+<d place="bslt" name="Broc" gfx="broc" background="3" cond="scenario(nimbao,20)+tag(brocbslt)">
+	<phase id="begin" next="oups" frame="nue">
+		Bueno, digamos que fue un intento.
+		Pero míralo por el lado bueno....
+		¡ESTAMOS VIVOS!
+	</phase>
+	<a id="oups">
+		......
+	</a>
+	<phase id="oups" fast="1" frame="stop" rmtag="brocbslt">
+		Ahora tienes que volver a la cima del monte Broky para un nuevo intento...
+		Ojalá tengas suerte la próxima vez...
+	</phase>
+</d>
+
+<d place="port" name="Broc" gfx="broc" background="2" cond="scenario(nimbao,20)+tag(brocport)">
+	<phase id="begin" next="oups" frame="nue">
+		[Bueno, digamos que fue un intento.
+		Pero míralo por el lado bueno....
+		¡ESTAMOS VIVOS!]
+		[.............]
+		[Pero qué extraño es haber aterrizado justo aquí, como si mi Flying Broky hubiese leido mi mente...
+		Vamos, ¡valor muchacho!]
+	</phase>
+	<a id="oups">
+		......
+	</a>
+	<phase id="oups" fast="1" frame="stop" rmtag="brocport">
+		Ahora tienes que volver a la cima del monte Broky para un nuevo intento...
+		Ojalá tengas suerte la próxima vez...
+	</phase>
+</d>
+
+<!-- Broc, rencontre sans avoir voyagé, on lui définit une position aléatoire qui change tous les jours (global à tous les joueurs) ----->
+<!-- rencontre aléatoires seulement hors scénario nimbao, principalement aux étapes clés ! -->
+<d place="ilewkk" name="Broc" gfx="broc" background="1" cond="hourrand(24,1)+(active(mbroc)|active(nimbao))">
+	<phase id="begin" next="oups">
+		¡Hola amigo!
+		Como puedes ver, esta vez tampoco he llegado a mi destino...
+		Si quieres volar, no dudes en venir a mi taller.
+	</phase>
+	<a id="oups">
+		¡Gracias!
+	</a>
+	<phase id="oups" fast="1" frame="stop">
+		Broc aprovecha el momento para descansar tranquilamente en la playa.
+		Te alejas discretamente, nunca se sabe en que nuevo proyecto está pensando.
+	</phase>
+</d>
+
+<d place="bslt" name="Broc" gfx="broc" background="3" cond="hourrand(24,2)+(active(mbroc)|active(nimbao))">
+	<phase id="begin" next="oups">
+		¡Hola amigo!
+		Como puedes ver, esta vez tampoco he llegado a mi destino...
+		Si quieres volar, no dudes en venir a mi taller.
+	</phase>
+	<a id="oups">
+	¡Muy bien!
+	</a>
+	<phase id="oups" fast="1" frame="stop">
+		Broc junta los pedazos de su Flying Broky e intenta repararlo.
+		¿Cuantos viajes podrá soportar aún?
+	</phase>
+</d>
+
+<d place="port" name="Broc" gfx="broc" background="2" cond="hourrand(24,3)+(active(mbroc)|active(nimbao))">
+	<phase id="begin" next="oups">
+		¡Hola amigo!
+		Como puedes ver, esta vez tampoco he llegado a mi destino...
+		Te lo aseguro, ¡no sabes cuánto me hubiera gustado!
+		Si quieres volar, no dudes en venir a mi taller.
+	</phase>
+	<a id="oups">
+		......
+	</a>
+	<phase id="oups" fast="1" frame="stop">
+		Broc parece un pez en el agua...
+		No le molestemos más, ¡podría meternos en otro lío!
+	</phase>
+</d>
+
+<!-- ***************************************
+  Fin du scénario Nimbao2
+******************************************** -->
+<!--
+-L'atelier de Broc est désormais réparé, il permet dorénavant au joueur d'aller sur nimbao facilement.
+-->
+
+
+<d place="chbroc" name="Broc" gfx="broc" background="5" cond="scenario(nimba2,51+)+!scenario(smog,6)+(hourrand(24,4+)+!(tag(brocport)|tag(brocbslt)|tag(brocilewkk)))">
+	<phase id="begin" next="missions:voyage3">
+		[Broc, inventor feliz sin causa a tu servicio.
+		Mi taller está reparado, ¡puedo llevarte a la cima de la Isla Celeste cuando quieras!]
+		
+		[Tengo algunas misiones que te pueden interesar]
+	</phase>
+	<a id="missions" cond="active(mbroc)">Consultar la lista de las misiones</a>
+	<phase id="missions" missions="broc"></phase>
+
+	<a id="voyage3">
+		¿Puedes llevarme a Nimbao con tu Flying Broky?
+	</a>
+	<phase id="voyage3" next="noroute:depart">
+		¿Quieres viajar con mi legendario Flying Broky 5?
+		¡Basta con pedirlo!
+	</phase>
+	
+	<a id="noroute">Hum, pensándolo bien... no gracias, ¡prefiero seguir vivo!</a>
+	<a id="depart">¡Nimbao, allá vamos!</a>
+	
+	<phase id="depart" fast="1" moveAll="iroche">
+		Al fin estás listo para partir, Broc te hace subir en la nave, ¡y ya comienza a despegar!
+		Cierras los ojos y...
+		
+		¡El Flying Broky 5 está en el aire! ¡Hurraaa!
+		.............
+	</phase>
+	<phase id="noroute" fast="1" frame="stop">
+		Tal vez es mejor que no, tu vida vale mucho, despegar los pies del suelo puede ser peligroso para tu salud...
+	</phase>
+</d>
+
+	<d place="chbroc" name="Broc" gfx="broc" background="5" cond="scenario(nimba2,51+)+scenario(smog,6)+(!hourrand(24,4+)|tag(brocport)|tag(brocbslt)|tag(brocilewkk))">
+	<phase id="begin" frame="parti" fast="1">
+		Hmm... Tal parece que Broc no está en su taller. Seguramente anda haciendo sus locos experimentos en Dinoland (esperemos que todo ande bien).
+		Vuelve más tarde.
+	</phase>
+</d>
+
+

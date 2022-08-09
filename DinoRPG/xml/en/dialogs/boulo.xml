@@ -1,0 +1,63 @@
+<!-- ***************************************************************************** -->
+<!-- Boulo, Nimbao l'île volante ----->
+	
+<d place="ipont" name="Grizorg's Soldier" gfx="boulo" cond="scenario(nimba2,50-)">
+	<phase id="begin" next="non:non2:oui:mot" dialect="arbori">
+		Good day to you,
+		[I'm Jobsworth, and I tell you, it's not an easy name to live with when you spend your life working!]
+		[I've been with the guard for 10 years, which to be honest may be a little too long...
+		I really hope I get a day off soon!]
+		Anyways, I guard the bridge, my job is to stop anyone crossing to the other side!
+	</phase>
+	
+	<a id="non" cond="scenario(nimbao,24)">I don't understand...</a>
+	<a id="non2" cond="scenario(nimbao,25+)">?</a>
+	<a id="oui" cond="uvar(dicarb)">You've never let anyone cross?</a>
+	<a id="mot" cond="scenario(nimbao,34)"> vcbdr QpObmc?</a>
+	
+	<phase id="oui" dialect="arbori">
+		Ever since Mandragore returned to the island, everyone is on the alert, a curfew is even in place.
+		It is forbidden to go anywhere without permission. Not that that changes anything for me, I always have to stand guard.
+		I'm bored, if only I had a proper job to do...
+	</phase>
+	
+	<phase id="non" fast="1" frame="stop" scenario="nimbao:25">
+		You set off, as clearly this guard has no interest in detaining you.
+		However, he is stopping you from continuing on your journey...
+	</phase>
+	
+	<phase id="non2" fast="1" frame="stop">
+		You set off, as clearly this guard has no interest in detaining you.
+		However, he is stopping you from continuing on your journey...
+	</phase>
+	<phase id="mot" fast="1" frame="stop">
+		He understood what you said, but he doesn't know what to say...
+		Clearly this word hasn't had any real effect on him.
+	</phase>
+</d>
+
+<d place="icite" name="Grizorg's Soldier" gfx="boulo" cond="scenario(nimbao,28+)+scenario(nimbao,32-)">
+	<phase id="begin" next="non" dialect="arbori">
+		Good day to you,
+		[I'm Jobsworth, and I tell you, it's not an easy name to live with when you spend your life working!]
+		[I've been with the guard for 10 years, which to be honest may be a little too long...
+		I really hope I get a day off soon!]
+		Anyways, I guard the bridge, my job is to stop anyone crossing to the other side!
+	</phase>
+	
+	<a id="non" >So I can't get past then...</a>
+
+	<phase id="non" fast="1" frame="stop">
+		You set off, as clearly this guard has no interest in detaining you.
+		However, he is stopping you from continuing on your journey...
+	</phase>
+</d>
+
+<d place="ipont" name="Boulo" gfx="boulo" frame="happy" cond="scenario(nimba2,51+)">
+	<phase id="begin">
+		Bonjour à vous,
+		[I'm Jobsworth, and I tell you, it's not an easy name to live with, but a busy life is a healthy life!]
+		[I've been with the guard for 10 years, but now I'm the officer in charge of welcoming tourists to our beautiful island.
+		Sometimes they even take photos with me!]
+	</phase>
+</d>

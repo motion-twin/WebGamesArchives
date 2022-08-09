@@ -1,0 +1,195 @@
+﻿
+<d place="univ" name="Professor Igor" cond="scenario(kabuki,5)" gfx="igor">
+
+	<phase id="begin" fast="1" next="speak:bye">
+		The Professor approaches after spotting you. It seems he wants to talk to you about something important....
+	</phase>
+
+	<a id="speak">Talk to him</a>
+	<a id="bye">Walk away</a>
+
+	<phase id="bye" fast="1">
+		You're right, if you start to talk with everyone you'll never finish your quest....
+	</phase>
+
+	<phase id="speak" next="legend:bye">
+		Hello young Dinoz master! Let me introduce myself. My name is Professor Igor! I've spent years studying various Dinoland mysteries and legends.
+	</phase>
+
+	<a id="legend">Legends?</a>
+
+	<phase id="legend" next="cata:bye">
+		Yes, there are hundreds of Dinoland legends. Certainly some are completely made up, but others are particularly unsettling and remain real mysteries ... As for me, I specialise in the pre-cataclysmic period....
+	</phase>
+
+	<a id="cata">Pre-what?</a>
+
+	<phase id="cata" next="next:bye">
+		Pre-Ca-ta-cly-sm-ic! That means, "before the Huge Cataclysm" ... I'm only telling you in case you didn't know already. Many centuries ago, Jazz Island collapsed and created an enormous tsunami that destroyed large parts of Dinoland ... only a few places up on high could be saved.
+	</phase>
+
+	<a id="next">...</a>
+
+	<phase id="next" next="kabuki:bye">
+		I'm also interested in Dinoz which lived BEFORE this Huge Cataclysm. The Korgons for example returned to their wild state, and can no longer be tamed by Dinoz Masters. Some strange ape-like dinoz survived in the Grumhel ... but the strangest are certainly the Kabukis!
+	</phase>
+
+	<a id="kabuki">Kabukis?</a>
+
+	<phase id="kabuki" next="oh:bye">
+		Yes. They're native to Caushemesh, and word has it that there are a lot of them there. It seems that the Korgons have become too accustomed to living in the mountains, as they no longer venture down onto the plains. People also say that a small group of ancient Kabukis managed to survive on the Atlanteid Islands....
+	</phase>
+
+	<a id="oh">Ohhhhh</a>
+
+	<phase id="oh" next="yes:no">
+		Listen! I'll be honest with you: I know full well that you're in possession of a scroll. If I decipher it, I think we'll be able to gain access to Kabuki Island! Both of us! Together! We'll become famous for sure! The Kabuki Discoverers! What do you think of my idea, are you in?
+	</phase>
+
+	<a id="yes">Ok, let's do it!</a>
+	<a id="no">Let me think about it, I'll get back to you</a>
+
+	<phase id="no" fast="1">
+		The Professor seems to be surprised by your refusal and looks at you with, disappointment. He forces himself to smile and asks you to come back as soon as possible, once you have decided.
+	</phase>
+
+	<phase id="yes" next="show:bye">
+		Fantastic! You better give me the scroll then.....
+	</phase>
+
+	<a id="show">Give the scroll to the professor</a>
+
+	<phase id="show" scenario="kabuki:10">
+		Mmmm ... the text is very complicated, I'll need some time to decipher it. Can you come back later? I'll wait you here once I've finished!
+	</phase>
+
+</d>
+
+<d place="univ" name="Professor Igor" cond="scenario(kabuki,10)+(admin()|swait(kabuki,35))" gfx="igor">
+
+	<phase id="begin" next="next">
+		AH! You've arrived at last! I've been waiting for you!!
+	</phase>
+
+	<a id="next">...</a>
+
+	<phase id="next" next="aura">
+		I've successfully deciphered the scroll, but there's a small problem ... in order to access Kabuki Island, we first need to construct a Kabuki Aura!
+	</phase>
+
+	<a id="aura">What's an Aura?</a>
+
+	<phase id="aura" next="how">
+		It's a long story.........you see, the person that saved the Kabukis from the Huge Cataclysm, protected the Island with a powerful spell. Whoever tries to approach the Island will be lost in the mist and end up going round in circles for years ... we must get a Kabuki Aura to be protected from the spell....
+	</phase>
+
+	<a id="how">And how do we do it?</a>
+
+	<phase id="how" next="ingr">
+		It's really easy: the instructions are written on the scroll. The only difficulty will be to gather the various ingredients needed to create the Aura.
+	</phase>
+
+	<a id="ingr">The ingredients?</a>
+
+	<phase id="ingr" next="ingr2">
+		Listen carefully, the list is very, very long...
+		5 Lujidanee Groupers, 5 Leaves of Pelinae, 5 Fur Tufts, 2 Sharpened Flints, one Air Energy and one Water Energy! Bring all these ingredients to me and then I'll know how to transform them into the Kabuki Aura!
+	</phase>
+
+	<a id="ingr2">How do I find all these ingredients?</a>
+
+	<phase id="ingr2" next="again:ok">
+		It's easy, there are two ways to get the ingredients: the first one is to teach your Dinoz all the various harvesting skills. As there are five harvesting skills, this can often take a lot of time. The other solution is to trade the ingredients with other Dinoz Masters at the Market Place!
+	</phase>
+
+	<a id="again" target="next">Can you repeat that for me?</a>
+
+	<a id="ok">Ok, I understand!</a>
+
+	<phase id="ok" scenario="kabuki:11">
+		Perfect! Come back once you've gathered the first few ingredients!
+	</phase>
+
+</d>
+
+<d place="univ" name="Professor Igor" cond="scenario(kabuki,11+)+scenario(kabuki,16-)" gfx="igor">
+
+	<phase id="begin" next="i1:i2:i3:i4:i5:i6">
+		So let see ... How are you getting along with gathering the ingredients?
+	</phase>
+
+	<a id="begin">Next</a>
+
+	<a id="i1" cond="scenario(kabuki,11)">Give 5 Lujidanee Groupers</a>
+	<a id="i2" cond="scenario(kabuki,12)">Give 5 Leaves of Pelinae</a>
+	<a id="i3" cond="scenario(kabuki,13)">Give 5 Fur Tufts</a>
+	<a id="i4" cond="scenario(kabuki,14)">Give 2 Sharpened Flints</a>
+	<a id="i5" cond="scenario(kabuki,15)">Give 1 Air Energy</a>
+	<a id="i6" cond="scenario(kabuki,16)">Give 1 Water Energy</a>
+
+	<phase id="i1" useingr="fish:5" scenario="kabuki:12" next="begin">
+		Oh nice groupers! Quick, next one!
+	</phase>
+
+	<phase id="i2" useingr="fruitc:5" scenario="kabuki:13" next="begin">
+		These leaves are beautiful! Next one!
+	</phase>
+
+	<phase id="i3" useingr="chasc:5" scenario="kabuki:14" next="begin">
+		These furs are so silky ... they're from a Tawny-Bat you say? Quick, next one!
+	</phase>
+
+	<phase id="i4" useingr="art:2" scenario="kabuki:15" next="begin">
+		Ouch! I cut myself, these flints are very sharp! Next one!
+	</phase>
+
+	<phase id="i5" useingr="enair:1" scenario="kabuki:16" next="begin">
+		This air energy is very pure! Just one more ingredient and I'll be able to make the Aura!
+	</phase>
+
+	<phase id="i6" useingr="eneau:1" scenario="kabuki:17">
+		PERFECT! You've done it! All I need to do now is make some preparations ... mmmm ... I wanted to say prepare all the requirements for the Aura! Come back once I've finished!
+	</phase>
+
+</d>
+
+<d place="univ" name="Professor Igor" cond="scenario(kabuki,17)+(admin()|swait(kabuki,70))" gfx="igor">
+
+	<phase id="begin" next="aura">
+		Here, here, here! Take this! I'm entrusting you with this Kabuki Aura!
+	</phase>
+
+	<a id="aura">Take the Aura</a>
+
+	<phase id="aura" next="ok">
+		I had some delays whilst preparing the Kabuki aura. It's extremely important that you don't use the Aura before we get to the Coral Mines! You got it??! We're PARTNERS! Have I made myself clear?
+	</phase>
+
+	<a id="ok">Yes</a>
+
+	<phase id="ok" fast="1" scenario="kabuki:18">
+		After Professor Igor has left, you open the box, to your surprise it's EMPTY! Professor Igor must have forgotten to put the Aura inside before he gave it to you ... unless....
+	</phase>
+
+</d>
+
+<d place="corail" name="Professor Igor" cond="scenario(kabuki,18)" gfx="igorBad">
+
+	<phase id="begin" next="why">
+		Pffeww! Well, you made it here quickly! Too bad though! You've served me well until now, but I don't need you anymore: Money and Fame await me!
+	</phase>
+
+	<a id="why">???</a>
+
+	<phase id="why" next="attack">
+		You're too naive my young friend! Who trusts strangers? Idiot! I want you to know that once I monopolise the Kabuki market, I'll be rich beyond my wildest dreams, Ah ah ah ah ah! ATTAAACCKK, loyal allies!!!
+	</phase>
+
+	<a id="attack">Defend yourself</a>
+
+	<phase id="attack" fast="1" fight="igor" scenario="kabuki:19">
+		Will you choose to pursue Igor on Totem Island? Beware, without the Kabuki Aura, your Dinoz will be lost for years!
+	</phase>
+
+</d>
+

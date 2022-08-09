@@ -1,0 +1,73 @@
+﻿<missions>
+
+	<!-- ***************************************************************************** -->
+	<!-- Anna Tomie, l'infirmière de Caushemesh ----->
+
+	<m group="infirmiere" id="ingr1" name="Primera receta médica">
+		<begin>La clínica necesita ingredientes. ¿Podrías traerme 10 hojas de Pelinae? Nos servirán para curar a nuestros pacientes.</begin>
+		<goto v="clinik"/>
+		<useingr v="fruitc" n="10"/>
+		<end>Gracias, amor. Sabía que podía contar contigo.</end>
+		<xp v="10"/>
+	</m>
+	<m group="infirmiere" id="ingr2" name="Bolet del bello pie">
+		<begin>La clínica necesita ingredientes. Algunos pacientes requieren ayuda especial y por ello buscamos 5 Bolets Falisks Blancos.</begin>
+		<goto v="clinik"/>
+		<useingr v="fruitu" n="5"/>
+		<end>Gracias, amor. Sabía que podía contar contigo.</end>
+		<xp v="20"/>
+	</m>
+	<m group="infirmiere" id="ingr3" name="Phytoterapia estrafalaria">
+		<begin>La clínica necesita nuevos ingredientes. Tenemos pacientes que requieren un cuidado especial. ¿Podrías traerme 1 Orquídea Fantasca?</begin>
+		<goto v="clinik"/>
+		<useingr v="fruit1" n="1"/>
+		<end>Gracias, amor. Gracias a ti la clínica puede tratar cualquier tipo de enfermedad.</end>
+		<xp v="30"/>
+		<gold v="500"/>
+	</m>
+	<m group="infirmiere" id="kill1" name="Vecinos obstinados" cond="mission(ingr1)+mission(ingr2)+mission(ingr3)+canfight(gropi)">
+		<begin>
+			La agitación alrededor de la clínica durante su construcción ha afectado el descanso de los monstruos de la zona. Ahora nos atacan sin cesar. ¿Te puedes encargar de ellos?
+		</begin>
+		<kill v="gropi" monsters="gropi:gropi:gropi" n="10" zone="6"/>
+		<end>
+			Bien. Ahora hay un poco menos de monstruos en los alrededores. ¡Qué tranquilidad!
+		</end>
+		<xp v="10"/>
+		<gold v="500"/>
+	</m>
+	<m group="infirmiere" id="kill2" name="Invasión de monstruos" cond="mission(kill1)+canfight(coq)">
+		<begin>
+			Han aparecido monstruos más tenaces. Tienen que irse, ¡si no, no podremos hacer nuestro trabajo correctamente!
+		</begin>
+		<kill v="coq" monsters="coq:coq" n="10" zone="6"/>
+		<end>
+			Qué bien. Eres un auténtico campeón. Estaba segura de haber hecho bien en elegirte.
+		</end>
+		<xp v="10"/>
+		<gold v="600"/>
+	</m>
+	<m group="infirmiere" id="bless1" name="Primeros auxilios" cond="mission(kill2)">
+		<begin>
+			Ahora que la clínica funciona a pleno ritmo, necesitamos más cli... o sea, pacientes. Parece que hay un lugar donde los Dinos luchan entre sí. ¡Seguro que puedes traerme un Dinito herido!
+		</begin>
+		<goto v="dome" hide="1"/>
+		<talk v="Participante">Hola. Veo que tú también eres un maestro de Dinos. El mío acaba de llevarse una buena... y estoy agotado. ¿Podrías llevármelo tú a algún sitio para que me lo curen?</talk>		
+		<goto v="clinik"/>
+		<end>Genial. ¡Eres un campeón de verdad! Me has traido un Dinito que necesitaba mi ayuda.</end>
+		<xp v="20"/>
+		<gold v="500"/>
+	</m>
+	<m group="infirmiere" id="bless2" name="¡La curiosidad chamuscó al gato!" cond="mission(bless1)">
+		<begin>Parece que hay turistas cerca de la bestia del Gran-Señor-Todo-Quema y acaban en un estado lamentable. Si me trajeras uno, quizás se molest... alegraría de estar en nuestra clínica.</begin>
+		<goto v="vener"/>
+		<talk v="Turista chamuscado" gfx="tourist_grill" background="1">Cof, cof. Hola joven Maestro de Dinos. ¿Puedo fotografiar a uno de tus Dinos? ... ¿Cómo? ¿Crees que necesito que me curen? Cof, cof. Mmm, bueno. No me molesta la idea de algo que me anime un poco. El Venerable no ha apreciado que le hiciera una foto. Mi cámara esta casi intacta, ¡menos mal!</talk>
+		<goto v="clinik"/>
+		<talk v="Turista chamuscado" gfx="tourist_grill" background="2">Gracias por haberme acompañado. Además dicen hay una bonita enfermera. Creo que me vendrá bien para alegrarme la vista.</talk>	
+		<end>Muy bien querido Maestro. Gracias a ti, la clínica funciona al 100%. Gracias por la ayuda que me has aportado. La clínica tiene un futuro prometedor.
+			Algún día habrá que hacer reformas para agrandarla.... ¡espero poder contar contigo para entonces!
+			Ana abraza cariñosamente a tus Dinos... pero solo a ellos.</end>
+		<xp v="20"/>
+		<gold v="500"/>
+	</m>
+</missions>

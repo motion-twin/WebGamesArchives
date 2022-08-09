@@ -1,0 +1,42 @@
+﻿<d place="marche" name="Shady Man" gfx="filou" cond="active(market)|!scenario(nimba2,2)">
+
+	<phase id="begin" next="listen:bye">
+		Psssst.... psssst!!
+	</phase>
+
+	<a id="listen">Approach the man</a>
+	<a id="bye">Walk away</a>
+
+	<phase id="bye" fast="1">
+		Good call, it's better to stay away from guys like that.
+	</phase>
+
+	<phase id="listen" next="yes:bye:convert:convert2">
+		Hey, hey, hey... you needing notes? Treasury Notes?
+	</phase>
+
+	<a id="yes">Yes, I could be interested...</a>
+	<a id="convert" cond="uvar(elites,1+)+uvar(conver,1+)+active(abo)">I'd like to convert some gold into notes!</a>
+	<a id="convert2" cond="!uvar(elites,1+)+active(abo)">I'd like to convert some gold into notes.</a>
+	
+	<phase id="yes" next="view:bye">
+		Aha! (Yes! A buyer!)... Lucky for you then that I've got some! Look, in perfect condition aren't they, just like the real ones!
+		I'll sell them to you for a good price! Taxes included of course ... I have to feed my seven children,
+		I'm sure you  understand man....
+	</phase>
+	
+	<phase id="convert" next="view">
+		No problem, I see you have the King's authority to engage in this kind of transaction.
+		I can only exchange a few notes for you, otherwise people would think me scrupulous... eh, I mean no, then there wouldn't be enough for everyone else.
+	</phase>
+	
+	<phase id="convert2">
+		Sorry my friend, I have to keep these ones for privileged masters.... I mean, ..., I'm in demand around here I'll have you know!
+	</phase>
+
+	<a id="view">Take a look</a>
+
+	<phase id="view" url="/dino/::did::/act/filou">
+	</phase>
+
+</d>

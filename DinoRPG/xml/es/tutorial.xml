@@ -1,0 +1,239 @@
+<!-- Guide Michel Tutorial -->
+
+
+<!--
+	@valid( Condition ) : optionnel. Condition qui, si remplie, fais passer le tutoriel à l'étape suivante
+	@cond( Condition ) : condition demander pour accéder à cette étape du tutoriel
+-->
+<objectives>
+<!-- 0- acheter un Dinoz -->
+
+	<objective id="dinoz" title="Adoptar un Dino" next="speak">
+		<begin fast="0" url="shop/dinoz">
+			Bienvenido a DinoRPG, Maestro. Para comenzar te entregamos varios miles de monedas de oro (mira arriba a la derecha), úsalos para comprar el Dino que más te guste, será tu fiel compañero.
+		</begin>
+		<end>Ahora estás listo para unirte a la gran comunidad de Maestros. </end>
+		<helpers>
+			<helper selector="#detail_0" url="shop/dinoz">¡Compara las características de cada uno!</helper>
+			<helper selector="#centerContent form .field" url="dino/*">¡Muy buena elección! Ahora ponle un nombre.</helper>
+		</helpers>
+		<rewards></rewards>
+	</objective>
+
+<!-- 1- parle au guide michel + initier la quête -->
+	<objective id="speak" title="Primera conversación" next="move">
+		<begin fast="0" url="dino/*/!act">
+			¡Bienvenido a Dinoland! Te enseñaré a hablar con los personajes del juego. <strong>¡Si estás bloqueado, presiona el botón Nueva Acción!</strong>
+			<span>Haz clic en <strong>El Guía Michel</strong> (soy yo) en la sección <strong>Acciones</strong> que encontrarás abajo de tu Dino.</span>
+		</begin>
+		<helpers>
+			<helper selector="#dinozList ul li:first" url="!dino">¡Aquí!</helper>
+			<helper selector="#answers" url="dino/*/act/dialog/guide">¡Aquí!</helper>
+			<helper selector="#act_dialog_guide_icon" url="dino/*">¡Aquí!</helper>
+		</helpers>
+		<end url="dino/*/">
+			Así como él, encontrarás muchos personajes durante esta gran aventura.
+		</end>
+		<rewards>
+			<object name="gold" count="100"/>
+		</rewards>
+	</objective>
+
+<!-- déplace ton dinoz à un autre endroit -->
+	<objective id="move" title="El inicio de una gran aventura" next="port" valid="uvar(moves,1+)">
+		<begin url="dino/*">
+			Ahora te toca aprender cómo desplazarte en este mundo. <strong>¡Si estás bloqueado, presiona el botón Nueva Acción!</strong>
+			<span>En la sección <strong>Mapa</strong>, haz clic <strong>en uno de los lugares que parpadean</strong> y empieza a explorar.</span>
+			Te recomiendo comenzar por la Fuente de la Juventud.
+		</begin>
+		<helpers>
+			<helper selector="#map" cond="tab(map)">Destino: La Fuente de la Juventud. ¡Allá vamos!</helper>
+			<helper selector="#combat" url="dino/*/act/move">Cuando te desplazas, encontrarás diferentes monstruos. Tu Dino peleará por sí mismo, ¡tu misión consiste en enseñarle las técnicas que lo convertirán en un gran guerrero!</helper>
+		</helpers>
+		<end url="dino/*">
+			Bien. Ahora sabes cómo recorrer los caminos de Dinoland. ¡Este mundo es inmenso y crece constantemente!
+		</end>
+		<rewards>
+			<object name="gold" count="500"/>
+		</rewards>
+	</objective>
+
+<!-- utilise une potion d'irma -->
+	<!--
+	<objective id="irma" title="Luchar contra el cansancio" next="port" valid="uvar(irma,1+)">
+		<begin url="dino/*">
+			Tu Dino realiza una acción diariamente y descansa. Las pociones de la Bruja Lola le permiten realizar otra acción.
+			<span>Haz clic en <strong>el menú de las acciones</strong> para utilizar una poción.</span>
+		</begin>
+		<helpers>
+			<helper selector="#act_irma" url="dino/*">¡Aquí es!</helper>
+		</helpers>
+		<end>
+			¡Tu Dino se llena de energía y está listo para continuar hacia el Puerto de Santa Moría!
+		</end>
+		<rewards>
+			<object name="gold" count="500"/>
+		</rewards>
+	</objective>
+		-->
+	
+<!--  Va au port de prêche -->
+	<objective id="port" title="Ir al Puerto" next="pub" valid="pos(port)">
+		<begin url="dino/**">
+			¡Tu Dino está muy entusiasmado eh! Ahora vamos al puerto.
+			Charla con la gente que vive ahí, ellos te contarán algunos secretos de ese lugar.
+		</begin>
+		<helpers>
+			<helper selector="#map" cond="tab(map)">Destino: El Puerto de Santa Moría. ¡Allá vamos!</helper>
+		</helpers>
+		<end url="dino/*">
+			Eso es, ¡has llegado a buen puerto!
+		</end>
+		<rewards>
+			<object name="irma" count="1"/>
+		</rewards>
+	</objective>
+
+<!-- parle au pilier de comptoir -->
+	<objective id="pub" title="Vivir una aventura" next="baobob" valid="scenario(intro,2+)">
+		<begin url="dino/*">
+			Charla con la gente que vive ahí, ellos te contarán algunos secretos.
+		</begin>
+		<helpers>
+			<helper selector="#act_dialog_intro__2" >¡Es él!</helper>
+		</helpers>
+		<end url="dino/*">
+			Sigue a Bao Bob, él te enseñará muchas cosas...
+		</end>
+		<rewards>
+			<object name="irma" count="1"/>
+		</rewards>
+	</objective>
+
+	<objective id="baobob" title="Suigue a Bao Bob" next="papy" cond="scenario(intro,2+)" valid="scenario(intro,6+)">
+		<begin visible="0">
+		</begin>
+		<helpers>
+			
+			<helper selector="#act_dialog_intro__4" url="dino/*">¡Aquí!</helper>
+			<helper selector="#act_dialog_intro__5" url="dino/*">¡Aquí!</helper>
+			<helper selector="#act_dialog_intro__6" url="dino/*">¡Aquí!</helper>
+			<helper selector="#act_dialog_intro__7" url="dino/*">Glups...</helper>
+			<helper selector="#act_levelup" url="dino/*">¡Bravo!</helper>
+			<helper selector="#swf_levelup" url="dino/*/act/levelup">¡Acabas de subir un nivel! Ahora elige una habilidad para tu Dino. ¡Elige bien! Estas decisiones afectan el futuro de tu compañero.</helper>
+			<helper selector="div#inventory table" cond="life(20-)" url="dino/*">Usa una Nube-Hamburguesa para recuperar energías.</helper>
+		</helpers>
+		<end url="dino/*">
+			Sigue a Bao Bob, él te enseñará muchas cosas...
+		</end>
+		<rewards>
+			<object name="irma" count="1"/>
+		</rewards>
+	</objective>
+
+<!-- va voir papy joe pour remplir ta première mission -->
+	<objective id="papy" title="Hacer un favor a un personaje" next="shop" valid="curmission(fish)|curmission(dog)">
+		<begin url="dino/*">
+			Es momento de cumplir con tu primera misión, vé a casa de Papy Jose pasando por la Universidad, él necesita tu ayuda.
+			<span>Cuando llegues a su casa acepta la misión que te encomendará. Sobre las acciones encontrarás las etapas de la misión para que sepas dónde estás.</span>
+		</begin>
+		<helpers>
+			<helper selector="#dinozList ul li:first" url="!dino">¡Aquí!</helper>
+			<helper selector="#map" url="dino/*">Destino: La casa de Papy Jose. ¡Allá vamos!</helper>
+			<helper selector="#act_dialog_papy" url="dino/*">Hablar con Papy Jose</helper>
+			<helper selector="div.mission table tr.new:first" url="dino/*/act/mission/list">Elige una misión</helper>
+		</helpers>
+		<end>
+			¡Bravísimo! Cumplir misiones es importante en el juego, además suelen darte recompensas.
+			Algunos personajes <strong>te abrirán las puertas de lugares increíbles </strong> y te enfrentarán con terribles monstruos.
+		</end>
+		<rewards>
+			<object name="angel" count="1"/>
+		</rewards>
+	</objective>
+
+<!-- achète un nuage burger dans la boutique -->
+	<objective id="shop" title="Las compras" next="burger" valid="uvar(sbuyer,1+)">
+		<begin>
+			Cuando hayas consumido todos tus objetos, podrás comprar más en la tienda usando el oro que ganaste en tus combates.
+			<span>Haz clic en el botón de la <strong>tienda arriba a la izquierda</strong>, justo debajo de tus reservas de oro.
+			Cuando estés en la tienda, elige <strong>una nube-hambruguesa</strong> por ejemplo. Miammm....</span>
+		</begin>
+		<helpers>
+			<helper selector="#menu_shop">¡Aquí!</helper>
+			<helper selector="#obj_burger" url="shop">¡Aquí!</helper>
+		</helpers>
+		<end>
+			¡Ahora lo que compraste está en tu inventario!
+		</end>
+		<rewards>
+			<object name="gold" count="500"/>
+		</rewards>
+	</objective>
+
+<!-- utilise le nuage burger -->
+	<objective id="burger" title="Hambre" next="clan" valid="uvar(healpv,1+)">
+		<begin>
+			<span>Al pelear, tu Dino pierde puntos de vida. Para curarlo, tienes varias opciones.
+			Haz que coma por ejemplo <strong>una nube-hamburguesa</strong>.</span>
+		</begin>
+		<helpers>
+			<helper selector="#inv_burger_use" url="dino/**">Clic aquí para darle de comer.</helper>
+		</helpers>
+		<end>
+			¡Se lo tragó todo en un solo bocado! Sigamos con la aventura...
+		</end>
+		<rewards>
+			<object name="gold" count="500"/>
+		</rewards>
+	</objective>
+
+<!-- découvre les clans en regardant le classement -->
+	<objective id="clan" title="Los poderosos clanes" next="user">
+		<begin>
+			Las aventuras se viven mejor en equipo. Si te sientes solo y quieres compartir y recibir consejos y experiencias, únete a otros Maestros ingresando a un clan.
+			<span>En el menú de la derecha, encontrarás el botón <strong>Clanes</strong> para ver la clasificación de los mejores clanes de DinoRPG.
+			¡Visita sus páginas, verás que son muy poderosos!</span>
+		</begin>
+		<helpers>
+			<helper selector="#clans_page" url="!clan">¡Aquí!</helper>
+		</helpers>
+		<end>
+			Durante todo el año los clanes de Maestros se enfrentan en descomunales Guerras y Campeonatos de Clanes. Los premios son fabulosos.
+		</end>
+		<rewards>
+			<object name="gold" count="500"/>
+		</rewards>
+	</objective>
+
+<!-- découvre ton compte en allant sur la page dédiée -->
+	<objective id="user" title="Conocerse a sí mismo" next="end">
+		<begin url="!user">
+			Accede a los datos de tu cuenta haciendo clic en el botón <strong>Mi Cuenta</strong>.
+			<span>Allí encontrarás tus datos públicos, <strong>tus Dinos, tus títulos y recompensas ganadas.</strong></span>
+		</begin>
+		<helpers>
+			<helper selector="#account_page" url="!user">¡Aquí!</helper>
+		</helpers>
+		<end>
+			Puedes cambiar tus datos personales con el botón <strong>Cambiar mis datos</strong>.
+		</end>
+		<rewards>
+			<object name="gold" count="500"/>
+		</rewards>
+	</objective>
+
+<!-- fin -->
+	<objective id="end" title="Fin">
+		<begin>
+			Ya estás listo para continuar tu camino, si me necesitas, ven a buscarme en Dinovilla.
+		</begin>
+		<end>
+			¡Mil aventuras y mucha fortuna esperan por ti!
+		</end>
+		<rewards>
+			<object name="gold" count="1000"/>
+		</rewards>
+	</objective>
+
+</objectives>

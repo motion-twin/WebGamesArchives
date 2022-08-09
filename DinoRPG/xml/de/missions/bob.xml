@@ -1,0 +1,123 @@
+﻿<missions>
+
+	<!-- ***************************************************************************** -->
+	<!-- BAO BOB , rallies ----->
+
+	<m group="bob" id="kilpir" name="Das Geburtstagsgeschenk" limit="15">
+		<begin>Bald ist der Geburtstag der kleinen Sophie von der Waikiki-Insel. Ihr Lieblingsgericht ist der Piranhoz aus dem Klebrigen Sumpf. Kannst du ihr für mich welche bringen?</begin>
+		<goto v="marais"/>
+		<kill v="pira" n="6"/>
+		<goto v="ilewkk"/>
+		<talk v="Die kleine Sophie">Oh! Danke! Das ist sehr nett von dir, dass du mir diesen köstlichen Piranhoz zu meinem Geburtstag gebracht hast! Gib Herrn Bao einen dicken Kuss von mir!!</talk><end>Ich mache gerne Geschenke...Hier, das ist deine Belohnung.</end>
+		<xp v="30"/>
+	</m>
+
+	<m group="bob" id="troc" name="Der Tausch der Atlantinischen Inseln" limit="30">
+		<begin>Es gibt einen großen Markt auf den Inseln, auf dem man alles tauschen kann was man will. Ich würde gerne diese Banane gegen einen Kleiderständer tauschen. Kannst du dich darum kümmern?</begin>
+		<goto v="corail" hide="1"/>
+		<talk v="Ein Händler">Diese Banane sieht köstlich aus. Ich tausche sie dir gegen diesen fliegenden Drachen!</talk>
+		<goto v="ilewkk" hide="1"/>
+		<talk v="Ein Verliebter">Pfff...Ich mache mich auf in Richtung Jungbrunnen. Wenn du willst, tausche ich dir diesen fliegenden Drachen gegen diesen ganz neuen Verlobungsring...der ist noch unbenutzt...</talk>
+		<goto v="chutes" hide="1"/>
+		<talk v="Ein Juwelier">Was?!?? Ja was sehe ich denn da?!!? Dieser Ring ist Teil einer alten königlichen Sammlung! Ich tausche ihn dir gegen das, was mir am wertvollsten auf der Welt ist: Meine Villa auf der Totem-Insel! Hier sind die Schlüssel. Das können Sie nicht ablehnen!</talk>
+		<goto v="marais" hide="1"/>
+		<talk v="Ein steckengebliebener Tourist">Ich habe die SCHNAUZE VOLL von diesem Sch... Sumpf!!!! Das ist jetzt schon das dritte Mal, dass unser Campingwagen stecken bleibt! Was für eine besch... Idee, URLAUB IN EINEM SUMPF zu machen!! Was? Eine Villa auf der Totem-Insel? Ok, kein Problem, ich tausch meinen Campingwagen gegen die Villa!</talk>
+		<goto v="corail" hide="1"/>
+		<talk v="Ein begeisterter Künstler">Wun-der-bar!! Ich bin sehrrr zufrieden! Siehst du diese Gesichter? Das ist eine vir-tu-ose Komposition! Was soll denn das heißen: "Das sieht ja nach nichts aus."? Du verstehst doch gar nichts von Kunst, von DER Kunst! Und überhaupt, mein Kunstwerk ist gut und gern einen Campingwagen wert. Voila, der Tausch ist gültig!</talk>
+		<goto v="baobob" hide="1"/>
+		<talk v="Eine Alte Dame">Ich habe gehört, du suchst einen Kleiderständer? Ich tausche ihn dir gegen was immer du willst...Was ist denn das? Gesichter? Das sieht nach nichts aus...aber gut, das wird nicht viel wert sein, dieser Herr Picassi ist total unbekannt. Nun gut, nimm diesen Kleiderständer dafür!</talk>
+		<end>Hast du meinen Kleiderständer auftreiben können? Ich hoffe, dass dir diese kleine Reise beigebracht hat, dass die größten Reichtümer vergänglich sind!</end>
+		<xp v="100"/>
+		<gold v="2000"/>
+	</m>
+
+	<m group="bob" id="kilksk" name="Kazkadinenjagd" limit="10" cond="mission(kilpir)+canfight(kazka)">
+		<begin>Mich hat ein dringender Hilferuf vom Unterwasserdom erreicht. Die Atlantiner sind beunruhigt, da eine große Anzahl von Kazkadinen ihre Stätten heimgesucht haben. Könntest du mit deinem Dinoz hingehen und ein wenig aufräumen? Pass auf, dass du keinen tödlichen elektrischen Schlag abbekommst.</begin>
+		<goto v="dome"/>
+		<kill v="kazka" n="6"/>
+		<end>Bravo, das war doch eine lässige Mission, nicht wahr?</end>
+		<xp v="30"/>
+		<gold v="2000"/>
+	</m>
+
+	<m group="bob" id="kilang" name="Aalos in Essig" limit="12" cond="mission(kilksk)+canfight(anguil)">
+		<begin>Kennst du das traditionelle Gericht "Aalos in Essig"? Es ist wirklich köstlich! Könntest du frische Aalos und Essig besorgen und das Ganze dann meinem Freund im Predigerhafen bringen? Es ist für ein Geschenk!</begin>		
+		<kill v="anguil" n="10" zone="2"/>
+		<goto v="dnv" hide="1"/>
+		<talk v="Weinhändler">Hmm? Du sagst, dass Hr. Bao dich schickt? Und du brauchst Essig? Hier, ich habe hier diesen Chateau Forcebrut, der perfekt zum Kochen geeignet sein müsste.</talk>
+		<goto v="port"/>
+		<talk v="Fischer">Du suchst Herrn Baos Freund? Es scheint so, als ob er nach Dinoville gegangen sei, um Madame Seyche einen Besuch abzustatten.</talk>
+		<goto v="dnv"/>
+		<talk v="Madame Seyche">Ooohh, dieser kleine, putzige Dinoz!! Wie bitte? Du suchst Herrn Baos Freund? Er ist zum guten alten Papy Joe aufgebrochen. Es schien, als hätten sie sich ein paar Männergeschichten zu erzählen!</talk>
+		<goto v="papy"/>
+		<talk v="Adam Natur">Hhmmm! Aalos in Essig!! Mein Lieblingsgericht! Es tut mir Leid, dass ich nicht im Predigerhafen auf dich gewartet habe. Ich werde dem lieben Bob Bescheid sagen, dass er dich anständig belohnen soll!</talk><end>Was soll denn das heißen, du wärst für diese Mission ein bisschen überall gewesen? Adam hat mir alles erzählt. Hier das ist für dich.</end>
+		<xp v="50"/>
+		<gold v="5000"/>
+	</m>
+
+	<m group="bob" id="bigpch" name="Die große Jagd" limit="10" cond="mission(kilksk)">
+		<begin>Ich bin ein kleines bisschen gelangweilt. Ich habe dem Altweisen vom Unterwasserdom versprochen, dass ich 150 Monster der Atlantinischen Inseln in weniger als 10 Tagen umbringen würde, aber ich habe mir den Arm gebrochen und kann mich deshalb nicht allzu gut bewegen. Kannst du für mich vielleicht so um die dreißig töten? Für die restlichen wird mir schon etwas einfallen!</begin>		
+		<kill n="30" zone="2"/>
+		<end>Super! Ich habe die restlichen Monster schließlich selbst fertig gemacht und zwar ausschließlich mit meinen Füßen! Aber ich danke dir trotzdem für deine Hilfe.</end>
+		<xp v="150"/>
+		<gold v="1500"/>
+	</m>
+
+	<m group="bob" id="rally1" name="Die Sardinenrallye" limit="10">
+		<begin>Nimm an der Sardinenrallye teil! Begib dich so schnell wie möglich zum Predigerhafen!</begin>
+		<goto v="port"/>
+		<action v="Rallye-Etappe">Du hast eine Etappe der Rallye abgeschlossen. Du musst jetzt erneut Herrn Bao Bob besuchen!</action>
+		<end>Herzlichen Glückwünsch zur Rallye! Hier ist dein Preis!</end>
+		<xp v="10"/>
+	</m>
+
+	<m group="bob" id="rally2" name="Die Fischrallye" limit="10" cond="mission(rally1)">
+		<begin>Nimm an der Fischrallye teil! Begib dich so schnell wie möglich zum Predigerhafen!</begin>
+		<goto v="port"/>
+		<action v="Rallye-Etappe">Du hast die erste Etappe der Rallye abgeschlossen. Du musst jetzt zur Universität gehen!</action>
+		<goto v="univ"/>
+		<action v="Rallye-Etappe">Du hast die zweite Etappe der Rallye abgeschlossen. Du musst jetzt wieder Herrn Bao Bob aufsuchen!</action>
+		<end>Herzlichen Glückwünsch zur Rallye! Hier ist dein Preis!</end>
+		<xp v="20"/>
+	</m>
+
+	<m group="bob" id="rally3" name="Die Haifischrallye" limit="10" cond="mission(rally2)+fx(matesc)">
+		<begin>Nimm an der Haifischrallye teil! Begib dich so schnell wie möglich zu den Korallenminen!</begin>
+		<goto v="corail"/>
+		<action v="Rallye-Etappe">Du hast die erste Etappe der Rallye abgeschlossen. Du musst jetzt nach Rohkraft gehen!</action>
+		<goto v="frcbrt"/>
+		<action v="Rallye-Etappe">Du hast die zweite Etappe der Rallye abgeschlossen. Du musst jetzt die Basalthänge aufsuchen!</action>
+		<goto v="bslt"/>
+		<action v="Rallye-Etappe">Du hast die letzte Etappe der Rallye abgeschlossen. Du musst jetzt wieder Herrn Bao Bob aufsuchen!</action>
+		<end>Herzlichen Glückwünsch zur Rallye! Hier ist dein Preis!</end>
+		<xp v="30"/>
+	</m>
+
+	<m group="bob" id="rally4" name="Die Walfischrallye" limit="10" cond="mission(rally3)+fx(matesc)">
+		<begin>Nimm an der Walfischrallye teil! Begib dich so schnell wie möglich nach Lavaloch und komm anschließend so schnell wie möglich wieder zurück!!</begin>
+		<goto v="fosslv"/>
+		<action v="Rallye-Etappe">Du hast die Etappe der Rallye abgeschlossen. Du musst jetzt so schnell wie möglich zu Herrn Bao Bob zurückkehren!</action>
+		<end>Herzlichen Glückwünsch zur Rallye! Hier ist dein Preis!</end>
+		<xp v="40"/>
+	</m>
+
+	<m group="bob" id="tour" name="Die Dinolandtour" limit="10" cond="mission(rally4)+fx(palmes)">
+		<begin>Die Dinolandtour ist das berühmteste aller Wettrennen! Bring die Tour in weniger als zehn Tagen hinter dich! Die erste Etappe ist die Waïkiki-Insel.</begin>
+		<goto v="ilewkk"/>
+		<action v="Tour-Etappe">Herzlichen Glückwunsch für das Erreichen der ersten Etappe der Dinolandtour. Die nächste Etappe ist Rohkraft. Viel Glück!</action>
+		<goto v="frcbrt"/>
+		<action v="Tour-Etappe">Herzlichen Glückwunsch für das Erreichen der zweiten Etappe der Dinolandtour. Die nächste Etappe sind die Steilen Hügel. Viel Glück auf den Hängen!</action>
+		<goto v="colesc"/>
+		<action v="Tour-Etappe">Herzlichen Glückwunsch für das Erreichen der dritten Etappe der Dinolandtour. Die nächste Etappe ist Lavaloch. Viel Glück für den Aufstieg auf die Große Dauerhitze!</action>
+		<goto v="fosslv"/>
+		<action v="Tour-Etappe">Herzlichen Glückwunsch für das Erreichen der vierten Etappe der Dinolandtour. Die nächste Etappe ist das Korgonenlager im Grumhel-Wald. Vermeide es, dich von diesen kleinen, dreckigen Biestern aufhalten zu lassen!</action>
+		<goto v="camp"/>
+		<action v="Tour-Etappe">Herzlichen Glückwunsch für das Erreichen der fünften Etappe der Dinolandtour. Die nächste Etappe liegt am Waldrand! Pass auf, dass du dich nicht auf dem Finsteren Weg verläufst...</action>
+		<goto v="auree"/>
+		<action v="Tour-Etappe">Herzlichen Glückwunsch für das Erreichen der sechsten Etappe der Dinolandtour. Die letzte Etappe besteht darin wieder zu Herrn Bao Bob zurückzukehren!</action>
+		<end>Bravo! Das war eine wunderbare Tour! Hier eine Belohnung, die deiner Meisterleistung würdig ist!</end>
+		<xp v="100"/>
+		<collec v="tour"/>
+	</m>
+
+</missions>

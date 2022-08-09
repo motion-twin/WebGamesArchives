@@ -1,0 +1,234 @@
+﻿<missions>
+
+	<m group="elmaster" id="elma" name="Les Courses du Maître">
+		<begin>Il n'a qu'à commencer par aller me faire mes courses déjà, ça lui fera les pieds... Il me faut de l'eau, des braises, du poisson, du pain et des champignons frais !</begin>
+		<goto v="fountj"/>
+		<action v="Puiser de l'Eau">Vous avez obtenu de l'eau pour le Maître Elémentaire</action>
+		<goto v="fosslv"/>
+		<action v="Ramasser les Braises Chaudes">Vous avez obtenu des braises encore chaudes pour le Maître Elémentaire</action>
+		<goto v="port"/>
+		<action v="Acheter un Poisson">Vous avez obtenu un poisson plutôt frais pour le Maître Elémentaire. Il ne manque plus que le pain et les champignons...</action>
+		<goto v="dnv"/>
+		<action v="Acheter du Pain">Vous avez obtenu du bon pain chaud pour le Maître Elémentaire</action>
+		<kill v="goupi:goupi2:goupi3" n="6" name="Goupignons"/>
+		<action v="Ramasser les Morceaux">Vous avez ramassé les morceaux des Goupignons que vous avez vaincu, miam ! La liste des courses du Maître Elémentaire est enfin complète...</action>
+		<end>Il a bien tout rapporté, c'est déjà ça...</end>
+		<xp v="20"/>
+		<gold v="500"/>
+	</m>
+
+	<m group="elmaster" id="elma1" name="Leçon 1 - la Foudre" cond="mission(elma)">
+		<begin>Vu qu'il persévère, nous allons essayer de lui enseigner la compréhension de l'élément le plus simple à capter : la Foudre. Mais vu son niveau, il va falloir qu'il retourne étudier les bases à l'Université d'abord...</begin>
+		<goto v="univ"/>
+		<action v="Etudier la Foudre">
+			La Foudre est l'élément le plus simple à capter, mais il est assez complexe à conserver. Seuls les Dinoz formés à la compétence Paratonnerre peuvent y parvenir...
+		</action>
+		<action v="Etudier la Foudre">
+			La plupart des livres sur le sujet ont été écrits par le Maître Elémentaire ! Pour comprendre la Foudre, son conseil aux étudiants semble être de se rendre au sommet du Grand Tout-Chaud un jour d'orage, de l'expérimenter directement... et d'y survivre...
+		</action>
+		<goto v="fosslv"/>
+		<actfight act="Expérimenter la Foudre" monsters="elhelp">
+			<win>Vous avez survécu à la Foudre. D'après le livre du Maître Elémentaire, vous comprenez un peu plus comment elle marche...</win>
+		</actfight>
+		<talk v="Maître Elémentaire" gfx="elmaster">
+			Seconde partie : il va aller tuer 3 Anguilloz du Marais pour étudier la façon dont leur peau génère de l'électricité !
+		</talk>
+		<goto v="marais"/>
+		<kill v="anguil" n="3"/>
+		<action v="Etudier les Peaux d'Anguilloz">
+			Le Maître avait raison ! En observant bien les peaux d'Anguilloz, vous y trouvez des centaines de « Minilec » : ces petits insectes produisent de la Foudre naturellement ! Vos connaissances de cet élément sont désormais meilleures...
+		</action>
+		<end>Tiens le revoilà ! Bon, c'est pas du travail très propre, mais on va peut-être arriver à faire quelque chose de lui...</end>
+		<xp v="30"/>
+		<gold v="1000"/>
+	</m>
+
+	<m group="elmaster" id="elma2" name="Leçon 2 - le Feu" cond="mission(elma1)">
+		<begin>Le Feu... un élément qui a toujours fasciné les hommes ! Alors que finalement, c'est l'un des plus simples, pas très complexe à comprendre...</begin>
+		<goto v="fosslv"/>
+		<talk v="Maître Elémentaire" gfx="elmaster">
+			Nous sommes au parfait endroit pour apprendre le Feu. Déjà il va commencer par aller tuer le Vénérable, on discutera de l'élément ensuite...
+		</talk>
+		<goto v="vener"/>
+		<action v="Tuer le Vénérable">
+			Alors que vous vous apprètiez à attaquer, certain d'y laisser la peau de votre Dinoz, vous recevez un message du Maître Elémentaire vous demandant de rentrer.
+		</action>
+		<goto v="fosslv"/>
+		<talk v="Maître Elémentaire" gfx="elmaster">
+			Alors si on lui disait d'aller sauter d'une falaise, il le ferait ? Quelle stupidité ! Il aura au moins appris à ne pas jouer avec le Feu ! En parlant de cela... Je pense qu'un bon entrainement consisterait à préparer une compote de Flammèches...
+		</talk>
+		<nogoto/>
+		<kill v="flam" n="20" zone="1"/>
+		<goto v="fosslv"/>
+		<talk v="Maître Elémentaire" gfx="elmaster">
+			Les Flammèches sont la personnification de l'élément Feu. Paradoxalement, elles se nourissent d'Air et ont la capacité de se diviser en plusieurs Flammèches indépendantes. Quand on ne le connait pas, le Feu peut faire de gros dégats en combat. Mais si l'on apprend à le manier, il devient inoffensif. Comme les Flammèches...
+		</talk>
+		<talk v="Maître Elémentaire" gfx="elmaster">
+			Bon, il ne faut pas qu'il se fasse d'illusion : les Flammèches n'étaient qu'un petit échauffement. Il va maintenant commencer les vrais exercices... Je ne pense pas qu'il puisse faire des étincelles, mais bon, puisqu'il cherche la mort à tout prix...
+		</talk>
+		<talk v="Maître Elémentaire" gfx="elmaster">
+			Pour la suite, il faut qu'il aille voir les Frères Pignuit des Ruines Ashpouk. Il y a quelques années, ils m'ont emprunté mon Super-Poivron-d'Invincibilité, et refusent toujours de me le rendre... Qu'il les écrase donc et me ramène au plus vite mon Poivron !
+		</talk>
+		<goto v="rashpk"/>
+		<actfight act="Combattre les Frères Pignuit" monsters="pign1:pign2">
+			<begin>Les Frères Pignuit sont des jumeaux Pigmous, particulièrement doués dans leur maîtrise du Feu...</begin>
+			<win>Vous avez vaincu les Frères Pignuit ! Leur caverne vous est grande-ouverte...</win>
+		</actfight>
+		<action v="Fouiller la Caverne">
+			Après quelques recherches, vous trouvez un étrange Poivron, comme vous n'en avez jamais vu... Il brille dans le noir et semble posséder un étrange pouvoir magique...
+		</action>
+		<end>
+			Ah ! Il a rapporté mon cher Super-Poivron-d'Invincibilité ! Je vais enfin pouvoir préparer ma Super-Piperade !
+		</end>
+		<xp v="40"/>
+	</m>
+
+	<m group="elmaster" id="elma3" name="Leçon 3 - le Bois" cond="mission(elma2)+level(10)">
+		<begin>L'élément Bois. Sûrement l'un des éléments les plus sous-estimés, et pourtant quelle puissance...</begin>
+		<goto v="fosslv"/>
+		<talk v="Maître Elémentaire" gfx="elmaster">
+			Tiens, le Bois me rappelle quelque chose... Il y a bien longtemps, je me suis rendu sur l'Ile Secrète des Monstres. D'étranges créatures nommées les Végétox y pullulent. Ils sont mi-insectes, mi-végétaux, et maîtrisent particulièrement bien le Bois ! Peut-être qu'un jour il pourra lui aussi s'y rendre... Mais j'en oubliais mes instructions !
+		</talk>
+		<talk v="Maître Elémentaire" gfx="elmaster">
+			Bref ! Pour apprendre le Bois, il faudrait qu'il se rende dans la Forêt de Grumhel, mais c'est un peu loin donc il va faire avec ce qu'on a sous la main...
+		</talk>
+		<talk v="Maître Elémentaire" gfx="elmaster">
+			J'ai entendu dire justement qu'un mystérieux groupe se faisant appeler les Korgons Vengeurs ont réussi à s'introduire au Grand-Tout-Chaud en passant par le Tunnel sous la Branche. Il devrait aller voir là-bas ce qu'il se passe et me tenir informé, car je n'ai vraiment aucune envie d'y aller moi-même...
+		</talk>
+		<goto v="tunel"/>
+		<action v="Se Renseigner">
+			Un groupe de cinq Korgons Vengeurs a été vu sortant du Tunnel. Ils se sont dirigés vers Fosselave.
+		</action>
+		<goto v="fosslv"/>
+		<talk v="Maître Elémentaire" gfx="elmaster">
+			Qu'est-ce qu'il dit ?? Bien entendu que je sais qu'ils sont passés ici ! Ces saletés de Korgons m'ont volé ma Baguette de Bois-Maudit. Je ne sais pas ce qu'ils comptent en faire, mais il faut à tout prix que je la récupère au plus vite ! Qu'il s'occupe d'eux, ils se sont enfuis vers le Sud !
+		</talk>
+		<goto v="dnv" hide="1"/>
+		<actfight act="Combattre les Korgons Vengeurs" monsters="korven:korven:korven">
+			<begin>Alors que vous vous approchez, les cinq Korgons vengeurs se séparent en deux groupes : deux s'enfuient et trois restent sur place pour combattre...</begin>
+			<win>Où a bien pu s'enfuir le reste du Groupe...</win>
+		</actfight>
+		<goto v="ilewkk" hide="1"/>
+		<action v="Korgons Vengeurs">
+			Un habitant de l'Ile vous assure avoir aperçu les deux Korgons Vengeurs restants. Ils semblaient fuir à toute vitesse en direction de l'Ouest, et transportaient une étrange Baguette de bois...
+		</action>
+		<goto v="marais" hide="1"/>
+		<actfight act="Combattre les Korgons Vengeurs" monsters="korven:kvenbs">
+			<begin>Vous avez enfin rattrapé le chef des Korgons-Vengeurs : le Korgon Masqué !</begin>
+			<win>Vous avez vaincu les Korgons-Vengeurs !!!</win>
+		</actfight>
+		<action v="Ramasser la Baguette Magique">
+			Cette étrange Baguette semble resceller des pouvoirs qui dépassent le commun des mortels... Il vaudrait mieux la ramener au plus vite à son propriétaire avant qu'elle ne fasse plus de victimes !
+		</action>
+		<end>
+			Ah ! Ma Baguette ! Il a bien travaillé ! Saleté de Korgons ! S'il a des problèmes d'effets secondaires, qu'il vienne donc me voir plus tard...
+		</end>
+		<gold v="2000"/>
+	</m>
+
+	<m group="elmaster" id="elma4" name="Leçon 4 - l'Air" cond="mission(elma3)">
+		<begin>Quand quelque chose disparaît, l'Air prend sa place. Avec cet élément, tout est une question de densité !</begin>
+		<goto v="fosslv"/>
+		<talk v="Maître Elémentaire" gfx="elmaster">
+			L'élément Air est plutôt mal connu à Dinoville, car la proximité du Grand Tout-Chaud et des Iles Atlantéinées favorise l'étude des éléments Feu et Eau. Il a fallu que j'aille jusqu'à Caushemesh où ils l'ont parfaitement maîtrisé pour pouvoir compléter mes études sur le sujet...
+		</talk>
+		<talk v="Maître Elémentaire" gfx="elmaster">
+			Mais plutôt que de lui demander d'aller si loin, ce qu'il serait certainement incapable de faire, je préfère lui demander un petit service... qu'il aille donc me ramener ces parchemins qui ont été trouvés dans les récents travaux d'aménagement de Dinoplaza, j'aimerais les étudier de façon plus précise...
+		</talk>
+		<goto v="dplaza"/>
+		<action v="Récupérer les Parchemins">
+			On vous explique que ces parchemins ont été trouvés lors de récentes fouilles, mais seul un maître serait capable de les décrypter...
+		</action>
+		<goto v="fosslv"/>
+		<actfight act="Donner les Parchemins" monsters="megoup">
+			<begin>Alors que vous alliez apporter les parchemins chez le Maître Elémentaire, vous tombez dans une embuscade !</begin>
+			<win>Il semblerait que dans la confusion du combat, quelqu'un en ait profité pour vous voler les précieux parchemins !</win>
+		</actfight>
+		<talk v="Maître Elémentaire" gfx="elmaster">
+			Quoi ?!? Il s'est fait voler ce que je lui avais demandé de ramener ?!? Quelle incompétence !! Il ne sait même pas à quel point ces parchemins sont précieux ! Qu'il me les rapporte au plus vite ! Les voleurs n'ont pas pu aller bien loin...
+		</talk>
+		<goto v="tunel" hide="1"/>
+		<actfight act="Voleurs de Parchemins" monsters="megoup">
+			<begin>Vous trouvez un des complices des voleurs des Parchemins...</begin>
+			<win>Vous avez récupéré une page des Parchemins... Où peuvent bien se trouver les autres ?!?</win>
+		</actfight>
+		<goto v="colesc" hide="1"/>
+		<actfight act="Voleurs de Parchemins" monsters="darkg2">
+			<begin>Vous trouvez le cerveau des voleurs des Parchemins...</begin>
+			<win>Ce voleur possédait deux pages des Parchemins. Vous avez trois pages sur quatre, et la dernière a disparu, peut-être cela sera-t-il suffisant pour le Maître ?</win>
+		</actfight>
+		<goto v="fosslv"/>
+		<talk v="Maître Elémentaire" gfx="elmaster">
+			Qu'il me laisse quelques instants pour étudier ces parchemins...
+		</talk>
+		<talk v="Maître Elémentaire" gfx="elmaster">
+			........ Bien, j'ai terminé. C'est une incroyable découverte : ces documents parlent de l'Ile du Dragon. D'après les légendes de plusieurs pays, ce serait une île munie de grandes ailes et qui serait capable de se déplacer !
+		</talk>
+		<talk v="Maître Elémentaire" gfx="elmaster">
+			Si ces parchemins sont authentiques, cela voudrait dire que l'Ile du Dragon existerait vraiment... Mais c'est étrange, les explications sur la façon d'y accéder s'arrêtent brusquement, comme s'il manquait une page...
+		</talk>
+		<talk v="Maître Elémentaire" gfx="elmaster">
+			Nous n'en saurons sans doûte pas plus tant que de nouvelles preuves n'auront pas été découvertes.... C'est bien dommage, j'aurais beaucoup aimé explorer cette nouvelle île !
+		</talk>
+		<talk v="Maître Elémentaire" gfx="elmaster">
+			Mais revenons à notre leçon sur l'élement Air.... Nous perdons du temps, avec toutes ces histoires ! Qu'il me ramène donc 2 Energies d'Air au plus vite !
+		</talk>
+		<useingr v="enair" n="2"/>
+		<talk v="Maître Elémentaire" gfx="elmaster">
+			Quoi ? C'est tout ? Je lui avais pourtant bien dit d'aller me chercher 5 Energies d'Air ! Aller, encore trois !!
+		</talk>
+		<useingr v="enair" n="3"/>
+		<end>Bien bien bien, il y arrive quand il veut, mais c'est dommage qu'il faille tout le temps répéter !</end>
+		<gold v="10000"/>
+	</m>
+
+	<m group="elmaster" id="elma5" name="Leçon 5 - l'Eau" cond="mission(elma4)">
+		<begin>Notre dernière Leçon va s'appliquer à l'élément Eau...</begin>
+		<goto v="fosslv"/>
+		<talk v="Maître Eléméntaire" gfx="elmaster">
+			Je garde toujours l'élément Eau pour la fin... En fait, je ne l'aime pas du tout : c'est froid et mouillé ! C'est pour cette raison d'ailleurs que je me suis installé au Grand-Tout-Chaud...
+		</talk>
+		<talk v="Maître Eléméntaire" gfx="elmaster">
+			Bien que je maîtrise parfaitement l'élément Eau, je n'ai donc aucune envie de le lui enseigner. Qu'il aille donc voir Bao de ma part pour faire son apprentissage !
+		</talk>
+		<goto v="baobob"/>
+		<talk v="Mr Bao Bob" gfx="baobob">
+			Mmmm.... voilà donc l'éleve dont le Maître Elémentaire m'a parlé ? Tu tombes plutôt bien, j'ai récemment eu quelques problèmes de fuites avec le Portail dont j'ai la garde, et des monstres qui ne devraient pas se trouver dans ce monde se sont dispersés dans les Iles... Pourrais-tu faire le ménage ?
+		</talk>
+		<goto v="chutes"/>
+		<kill v="pirao2" n="1"/>
+		<goto v="marais"/>
+		<kill v="pirao2" n="1"/>
+		<goto v="corail"/>
+		<kill v="pirao2" n="1"/>
+		<goto v="ilewkk"/>
+		<kill v="pirao2" n="1"/>
+		<goto v="baobob"/>
+		<kill v="pirao2" n="1"/>
+		<talk v="Mr Bao Bob" gfx="baobob">
+			Merci pour ton aide, je peux difficilement me déplacer quand le Portail est faible, et il vaut mieux de toute façon que je reste ici au cas où une créature bien plus puissante essaierait de venir dans ce monde...
+		</talk>
+		<talk v="Mr Bao Bob" gfx="baobob">
+			Mais j'en ai peut-être déjà trop dit... Mmmmm... Si nous parlions plutôt de l'élément Eau ?
+		</talk>
+		<talk v="Mr Bao Bob" gfx="baobob">
+			L'Eau est particulièrement présente dans les Iles Atlantéeinées, et c'est un élément trés puissant contre la Foudre. Savais-tu d'ailleurs qu'au delà de la Forêt de Grumhel s'étendent les Steppes Magnétiques où la Foudre est l'élément principal ?
+		</talk>
+		<talk v="Mr Bao Bob" gfx="baobob">
+			Mmm.... L'Eau possède bien des pouvoirs. L'un des plus recherché permet d'immobiliser presque totalement un adversaire. On ne peut apprendre cette compétence de façon normale, mais peut-être un jour un de tes Dinoz pourra la maîtriser ?
+		</talk>
+		<talk v="Mr Bao Bob" gfx="baobob">
+			Mmm.... C'est à peu près tout ce que j'avais à te dire sur l'Eau. Je vais faire savoir au Maître Elémentaire que tu as fini ta formation...
+		</talk>
+		<goto v="fosslv"/>
+		<talk v="Maître Elémentaire" gfx="elmaster">
+			Alors, comment va ce vieux Bao ? Je n'ai eu que peu d'occasions de le voir depuis qu'il a été assigné à la garde du Portail par Mandragore... Mais bon, apparemment, la formation est terminée...
+		</talk>
+		<end>
+			La dernière leçon se termine, qu'il vienne donc me parler pour sa récompense finale...
+		</end>
+		<xp v="20"/>
+		<fx v="sphere"/>
+	</m>
+
+</missions>

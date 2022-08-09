@@ -1,0 +1,52 @@
+<ups>
+<!--	<up key="" name="" def="" cap="" lock="" invisible="" parent="" desc="" pa=""/>-->
+	<u key="trunk" name="Rangements" desc="Ajoute une place dans votre coffre personnel." icon="item_bag" cap="1" pa="2">
+		<l cap="1" pa="2" />
+		<l cap="1" pa="2" />
+		<l cap="1" pa="3" />
+		<l cap="1" pa="4" />
+		<l cap="1" pa="6" />
+		<l cap="1" pa="6" />
+		<l cap="1" pa="6" />
+		<l cap="1" pa="6" />
+		<l cap="1" pa="6" />
+		<l cap="1" pa="6" />
+		<l cap="1" pa="6" />
+		<l cap="1" pa="6" />
+	</u>
+
+	<u key="lock" name="Verrou" desc="Ce système rudimentaire mais efficace empêchera quiconque de vous voler un objet." icon="item_lock" lock="1" pa="6" reqs="chain:1"/>
+	<u key="alarm" name="Alarme rudimentaire" desc="C'est un système un peu simpliste de ferrailles fixées par un fil, mais ça marchera bien pour rameuter tout le monde si quelqu'un entre chez vous..." icon="status_terror" alarm="1" pa="4" reqs="metal:1" />
+	<u key="hide" name="Gros Rideau" desc="Un vieux morceau de toile de jute taché qui permet de cacher aux yeux de vos voisins vos possessions." icon="small_stealthy" hide="1" pa="4" />
+	<u key="cook" name="Cuisine" desc="La cuisine est un coin aménagé de manière très sommaire pour y préparer des rations de meilleure qualité (chaque niveau augmente de 33% les chances d'obtenir un bon plat)." icon="item_machine_2" pa="6" actName="Cuisiner" limit="1">
+		<l pa="3" reqs="sKnife:1" limit="1"/>
+		<l pa="4" reqs="machine_2:1" limit="2"/>
+		<l pa="4" reqs="machine_3:1"  limit="3" desc="Cette dernière amélioration de la Cuisine permet de l'utiliser 3x par jour au lieu des 2x normales."/>
+	</u>
+
+	<u key="nap" name="Coin sieste" desc="Il s'agit juste d'un trou dans le sol couvert par quelques cartons. Mais c'est bien utile pour se faire une petite sieste quand l'envie s'en fait sentir (chaque niveau augmente de 33% les chances de bien dormir)." icon="status_tired" pa="6" actName="Faire une petite sieste">
+		<l pa="3" reqs="wood:1"/>
+		<l pa="4" reqs="bed:1"/>
+	</u>
+
+	<u key="labo" name="Cave laboratoire" desc="Un minuscule trou qui sent fort le camphre et la mort, creusé au milieu de votre 'salon'. Mais vous pouvez y mener vos expériences pharmaceutiques tranquillement (chaque niveau augmente de 25% les chances d'obtenir une puissante drogue)..." icon="item_drug" pa="6" reqs="machine_1:1" actName="Préparer une drogue">
+		<l pa="4" reqs="electro:1"/>
+		<l pa="4" reqs="tube:1"/>
+		<l pa="6" reqs="engine:1" limit="4" desc="Cette dernière amélioration ajoute +25% de chances d'obtenir une drogue et permet d'utiliser le laboratoire 3 fois de plus."/>
+	</u>
+
+	<u key="iron" name="Renforts" desc="Un peu de bricolage avec les moyens du bord et on augmente sa durée de vie... un peu (chaque niveau ajoute 1 pt de défense)." icon="item_fence" def="1" pa="3">
+		<l def="1" pa="3" reqs="fence:1" />
+		<l def="1" pa="3" reqs="fence:1" />
+		<l def="1" pa="3" reqs="fence:1" />
+		<l def="1" pa="6" reqs="fence:1" />
+		<l def="1" pa="6" reqs="fence:1" />
+		<l def="2" pa="6" reqs="fence:1;metal:1" />
+		<l def="2" pa="6" reqs="fence:1;metal:1" />
+		<l def="2" pa="6" reqs="fence:1;metal:1" />
+		<l def="2" pa="6" reqs="fence:1;metal:1" />
+	</u>
+
+	<u key="barrer" name="Clôture" desc="Quand les murs ne suffisent plus, une vraie clôture n'est jamais un luxe. Une défense de bonne qualité." icon="item_wood_plate" pa="3" def="3" reqs="mbeam:1;chain:1"/>
+
+</ups>

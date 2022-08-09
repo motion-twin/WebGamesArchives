@@ -1,0 +1,44 @@
+﻿<!--  QUETE DE L'ARCHISAGE : trouver les 3 ingrédients avec la pelle => gant des zors -->
+
+<d place="dome" name="ArchSage" gfx="archis" cond="!fx(gant)">
+
+	<phase id="begin" next="enigm" fast="1">
+		The Archsage mansion is at the center of the dome. It's an honorary title given to an Archmage
+		who is too old to use his magic powers. Nonetheless, he is a person of great knowledge
+		even if his words are sometimes too difficult to understand.
+	</phase>
+
+	<a id="enigm">Hello! Is someone there?</a>
+
+	<phase id="enigm" next="next">
+		Hello hello! What are you looking for? Do you want something? Maybe I can help you?
+	</phase>
+
+	<a id="next">I'd like to know...</a>
+
+	<phase id="next" next="tresor">
+		Ah! Don't say anything! I know what it is you're looking for! You're searching for a BIG TREASURE aren't you!
+	</phase>
+
+	<a id="tresor">(A treasure?) Yes, that's right!</a>
+
+	<phase id="tresor" next="quoi">
+		Listen to me OK? I'll tell you how to get what you're looking for. If you bring me everything I need yes, you understand, yes?
+		Now, what do you want to know?
+	</phase>
+
+	<a id="quoi">... What?</a>
+
+	<phase id="quoi" next="show">
+		Listen. My first is sticky, my second basaltic, my third is pure water. You will need
+		a tool, that yes. A tool to find all. Come back to me and I will give you the treasure, but
+		beware of the danger! F-O-E!
+	</phase>
+
+	<a id="show" cond="fx(marais)+fx(wpure)+fx(basalt)">Show the ingredients</a>
+
+	<phase id="show" fight="eearth" noeffect="marais:wpure:basalt" effect="gant">
+		Oh! Bravo! Bravo! Thanks, and bravo again! Here's your reward, your Dinoz received a BIG TREASURE!
+	</phase>
+
+</d>

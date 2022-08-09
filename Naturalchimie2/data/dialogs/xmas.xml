@@ -1,0 +1,104 @@
+<d place="apvos" name="La cabane du Poum-Noël" gfx="jzpouma" cond="worldmod(xmas)">
+
+<a id="exit">Au revoir, Poum Noël.</a>
+
+<phase id="begin" frame="nowelhappy" next="gift:nogift:poum:picts:exit">
+Bonjour bonjour, je suis le {Poum Noël} ! | Alors, tu as été sage cette année ? 
+</phase>
+
+<a id="gift" cond="xmasface()">Oh oui Poum Noël, j'ai bien mérité un cadeau ! </a>
+<a id="nogift" cond="!xmasface()">Oh oui Poum Noël, j'ai bien mérité un cadeau ! </a>
+<a id="poum">Hein ? Le Poum Noël ? C'est quoi cette histoire ?</a>
+<a id="picts" cond="fx(xface)">Je viens voir mon album photo souvenir.</a>
+
+
+<!-- ################ -->
+
+<phase id="gift"frame="nowel" next="anc">
+Oh oh oh ! | Bien sûr, tu vas avoir un cadeau. Viens sur mes genoux pour la photo souvenir ! 
+</phase>
+
+<a id="anc">Attention à vos pieds, j'arrive. </a>
+
+<phase id="anc"frame="nowel" url="/act/xmasGift">
+Voilà ! | Attention !  à trois... %nowelhappy% [Cheeeeeeese ! ]
+</phase>
+
+<!-- ################ -->
+
+
+<phase id="nogift"frame="nowel" next="nanc">
+Hum, hum... J'ai l'impression que tu es déjà venu, toi !
+</phase>
+
+<a id="nanc">Moi ?... Oh non non, pas du tout...</a>
+
+<phase id="nanc"frame="nowelhappy" next="ngo">
+Oh oh, le Poum Noël ne se fait pas avoir aussi facilement, tu as déjà eu ton cadeau et ta photo ! | Allons, laisse la place à tes amis alchimistes qui attendent.
+</phase>
+
+<a id="ngo">Grmmbl... Au r'voir Poum Noël...</a>
+
+<phase id="ngo" frame="nowel">
+Et joyeux Noël à toi !
+</phase>
+
+<!-- ################ -->
+
+
+<phase id="poum" frame="nowelhappy" next="rass:rec">
+Enfin... Le Poum Noël ! | Je viens chaque année dans le royaume pour distribuer des cadeaux aux alchimistes les plus sages ! 
+</phase>
+
+<a id="rass">Ah ouais ? vous êtes trop sympa, Poum Noël.</a>
+<a id="rec">N'importe quoi. Je vous reconnais, vous êtes le responsable du POUM ! </a>
+
+
+<phase id="rass" frame="nowel" next="lutins">
+Oh oh oui. Mais attention, je ne fais qu'un seul cadeau par alchimiste ! Et j'ai une mémoire infaillible pour reconnaître les fraudeurs ! 
+</phase>
+
+<phase id="lutins" frame="nowelhappy" next="ou">
+Sinon, sais-tu que mes facétieux {Poum lutins} m'ont accompagné dans le royaume ? | Ils s'amusent à cacher des surprises dans les alchimies, chaque jour dans un lieu différent ! 
+</phase>
+
+<a id="ou">Ah bon ? Et ils sont où ces Poum lutins en ce moment ?</a>
+
+<phase id="ou" frame="nowelsad">
+Regarde dans le Guildian Express ! Moi, j'ai trop à faire ici pour pouvoir m'occuper d'eux.
+</phase>
+
+<!--## -->
+
+<phase id="rec" frame="nowel" next="recb">
+Mais non, je suis le Poum Noël et rien d'autre ! Le mot [POUM] n'est que.. euh... Une pure coïncidence !
+</phase>
+
+<phase id="recb" frame="nowelhappy" next="bout:com">
+Ce n'est pas du tout une animation publicitaire pour notre... |* Pardon, pour cette association. | Association que j'apprécie beaucoup d'ailleurs, mais que finalement je ne connais pas du tout hein, bien évidemment ! 
+</phase>
+
+<a id="bout">Mouais mouais mouais... </a>
+
+<phase id="bout">
+Allez hop, fini les questions techniques. | Au suivant ! 
+</phase>
+
+<a id="com">Hum. C'est vrai que je vous ai croisé à la Grande Place tout à l'heure, donc ça peut pas être vous.</a>
+
+<phase id="com" frame="nowelhappy">
+Oh oh oh, les pouvoirs du Poum sont plus grands que tu ne crois * ! | | | Euh. | | |Hum pardon, tu as raison. Je ne peux pas être la personne dont tu parles. Déjà je ne la connais, pas, et en plus moi j'ai une barbe.
+</phase>
+
+
+<!-- ################ -->
+
+<phase id="picts" frame="nowel" url="/act/xmasPicts">
+Bien sûr, voilà tes photos souvenirs !  Euh... Comment ça "tes" photos souvenirs ? 
+</phase>
+
+
+
+</d>
+
+

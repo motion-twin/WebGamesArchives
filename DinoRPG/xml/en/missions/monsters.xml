@@ -1,0 +1,43 @@
+﻿<missions>
+
+	<m group="mbegin" id="mbegin" name="A Shady Affair">
+		<begin>
+			Hey! Do you think you could deliver something for me? It's not risky, all you need to do is follow my instructions carefully...
+		</begin>
+		<goto v="mport"/>
+		<talk v="Shady Man" gfx="filou">
+			Great! Here, take this black briefcase and deliver it to my cousin at the Market Place in Dinotown. He'll tell you what to do next...
+		</talk>
+		<action v="Black Briefcase">
+			You pick up the black briefcase. You have no idea what's inside and don't want to know either!
+		</action>
+		<goto v="marche"/>
+		<talk v="Shady Man" gfx="filou">
+			Hey! What's this?....It's from my cousin you say? He must be running a new scheme... Wait here for me, it'll take me a couple of hours to get the briefcase ready to give back to him, OK?
+		</talk>
+		<action v="Wait..." wait="3">
+			You wait patiently for him to return...
+		</action>
+		<talk v="Shady Man" gfx="filou">
+			Listen, we've had a slight problem, the briefcase still isn't ready yet. Wait here for me a little longer while I deal with it, OK?
+		</talk>
+		<action v="Wait..." wait="2">
+			You continue to wait...less patiently...
+		</action>
+		<talk v="Shady Man" gfx="filou">
+			OK, everything is ready, return the briefcase to my cousin as quickly as possible. I don't want to get screwed over just because it's a bit late!
+		</talk>
+		<action v="Black Briefcase">
+			You pick up the briefcase. It seems a lot lighter than before, they must have switched the contents...
+		</action>
+		<goto v="mport"/>
+		<talk v="Shady Man" gfx="filou">
+			Thanks! See! I told you it wouldn't be risky!
+		</talk>
+		<end>
+			Thanks, you've been a big help... in return I'll show you how to get past the guards.
+		</end>
+		<xp v="5"/>
+	</m>
+
+</missions>

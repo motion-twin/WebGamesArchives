@@ -1,0 +1,12 @@
+# SWF
+-swf ./swf/cauldron.swf
+-main CauldronLoader
+-cp src/
+-cp ../lib/
+-cp ../map/src
+-cp ../../../website/src/com/
+-cp ../persos/src/
+--flash-strict
+-D swf-mark
+-cmd %SWFMAKE% -f make_cauldron.xml
+-cmd copy swf\cauldron.swf ..\..\..\website\www\swf\cauldron.swf

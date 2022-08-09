@@ -1,0 +1,467 @@
+﻿<missions>
+
+	<!-- ***************************************************************************** -->
+	<!-- BROC, construction folles
+		Broc reçoit des commandes de la pars de PNJ de Dinoland. Il doit concevoir des pièges,
+		des objets un peu fous.
+	
+		Rappel : limit correspond au nombre de jours pour réaliser cette mission
+	----->
+	
+	<m group="broc" id="bcasse" name="Explosion of nuts and bolts">
+		<begin>
+			It looks like I still haven't found the right settings...
+			I'm working on a new high-performance motor for the future generations of the Flying Klutzo but I'm having balance problems.
+			I need you to find me all the pieces which were scattered to the four winds in the explosion:
+			|"My steering wheel"
+			|"The belt
+			|"Two pistons"
+			|"The fan"
+			|"The EGR valve"
+		</begin>
+		<goto v="baobob"/>
+		<talk v="Bao Bob" gfx="baobob">
+			Have I seen a flying object in the sky lately? Yes, take a look behind the house. I wish Klutz would give up with his experiments, I'm a light sleeper you see, and with all these explosions going off in the middle of the night... I'm getting bags under my eyes!
+		</talk>
+		<action v="Take the wheel">
+			Well that's the first object recovered. According to Bao, another fell to earth  opposite his home, just beside the Underwater Dome.
+		</action>
+		<goto v="dome" />
+		<actfight act="Collect the belt" bg="dome" monsters="borg:anguil:kazka">
+			<begin>When you bend down to pick up the belt, you are set upon by a gang waiting in ambush. They used the belt to set a trap for you!</begin>
+			<win>Another one bites the dust! The question is; were the aquatic attackers waiting for Klutz or you? </win>
+		</actfight>
+		<action v="Collect the belt">
+			Ewww it's covered in seaweed. Apparently the Atlanteans use this stuff as a staple of their diet. Poor people!
+		</action>
+		<goto v="marais"/>
+		<talk v="Seaweed Collector">
+			Ah yes, I remember!! Two pistons fell from the sky, just like that - I can't say that happens all the time.
+			They made a huge hole, but it was quickly filled in by the sand and water. You're going to have to dig deep now my friend!
+		</talk>
+		<dig>
+			Still nothing after several attempts. Maybe you still haven't gone deep enough?
+		</dig>
+		<dig>
+			According to the seaweed collector you're in the right place, but still no joy, is he sure that they landed there? Unless... of course!
+		</dig>
+		<talk v="Seaweed Collector">
+			Idiot! It's obvious! The objects were projected at an angle, so they'll be displaced relative to the visible point of impact.
+		</talk>
+		<dig>
+			Estimating the angle of impact, you start to search a few metres from the point of impact... Bingo! Your shovel hits a metallic object, both pistons are there, and only a little rusted by the salt in the water.
+		</dig>
+		<goto v="chutes"/>
+		<talk v="Extreme Fisherman">
+			A fan you say? Yeah, that's exactly what I reeled in this morning... Well I was gutted, there was me thinking I'd caught a new type of monster, thinking I'd have a great story to tell the young ladies tonight, and I end up with a fan. Of course you can take it, I don't need it to master the winds enyway.
+		</talk>
+		
+		<goto v="chbroc" hide="1" />
+		<talk v="Klutz" gfx="broc">
+			Did you not find the EGR valve? In fact you know what, I don't think it did anything anyway, bloody thing... I just thought it looked pretty on there. Haha!
+			_« pfffffff »_
+		</talk>
+		
+		<end>
+			Fantastic, you've found all the missing components. You'd make a good treasure hunter, Hahahaha.
+		</end>
+		<gold v="3000"/>
+		<xp v="40" />
+	</m>
+	
+	<!-- micro onde -->
+	<m group="broc" id="bchaud" name="Hot Invention" cond="mission(bcasse)">
+		<begin>
+			An inventor's life is difficult. With every new invention, I dive in head first. I get so involved that I forget to eat and never seem to have the time to enjoy a warm meal. It's not good for the digestion, but I'm sure that I could build something. To build it though, I need you to find me some stuff:
+			|« non-conducting plates »
+			|« some bolts »
+			|« a battery »
+			|« a rotating motor to turn the plate »
+		</begin>
+		<goto v="univ"/>
+		<action v="In the search of material" wait="1">
+			After asking around here and there, you are directed to a room behind the University.
+			You don't know what to make of it... mountains of wires, books, vials, everything sprayed everywhere in not nearly organised chaos.
+			You're going to need some time to find the pieces you need.
+		</action>
+		<action v="There they are">
+			There you go, 4 solid plates of non-conductive material, these seem to be pretty rare.
+		</action>
+		<goto v="dnv"/>
+		<talk v="Mrs Trewent" place="dnv" hide="1">
+			Ooooohhhh hello little one, it's been a while. Sorry what? Yes, I do have an old record player? In fact I've got one I don't use any more. Ahh little one, if only you had listened to Louis Hamstring.. it was a beautiful thing. Naaaa... Nanana..NANA NA...
+			_«Ruuuuunnnn!!!  quick!!!»_
+		</talk>
+		<action v="Take the record player">
+			You take the archaic object without really knowing what its purpose was, maybe it was one of those machines they used to communicate with extra-terrestrials?
+		</action>
+		<goto v="marche" />
+		<action v="Buy a battery">
+			Ah ... the market! A meeting place surrounded by the soft smell of spices and other rare ingredients, with animated discussions between cultured individuals. Look, from a distance you make out the object you require!
+		</action>
+		<talk v="trader">
+			_«Look here son, watch and learn how to give a client the shaft.»_
+			[Good day sir.
+			What's that? You wish to acquire this excellent battery! I understand, but you see, I've already promised it to another customer. I've put it aside so it wouldn't be cool to give it up to you.]
+			
+			[Although... you see, I have children to feed and that client hasn't paid me yet, so... if you make me a better offer than he did, I could justify giving it to you.
+			
+			It's up to you, he was going to take it for 1000 gold coins, so if you offer me... let's say *1500 gold coins*, she's all yours!]
+		</talk>
+		<branch v="payer_ok" cond="uvar(brocan,0)"/>
+		<branch v="payer_ko" cond="uvar(brocan,1+)"/>
+		
+		<label v="payer_ok"/>
+			<action v="Seal the deal">
+				This is the first time you've done business with a trader, and you really feel as though you've been robbed. Lesson learned for the next time!
+			</action>
+			<use v="gold" n="1500"/>
+			<branch v="objet_ok"/>
+			
+		<label v="payer_ko"/>
+			<action v="Look elsewhere" wait="1">Yeah, about that, you've already been had, so maybe have a look around and see if there's another similar battery knocking around.</action>
+			<talk v="trader">
+				Hello again sir.
+				No, he still hasn't come to collect the item,
+				It's up to you, he was going to take it for 1000 gold coins, so if you offer me the same price, she's all yours.
+			</talk>
+			<branch v="payer2_ok" cond="uvar(brocan,1)"/>
+			<branch v="payer2_ko" cond="uvar(brocan,2+)"/>
+			
+			<label v="payer2_ok"/>
+				<action v="Seal the deal">Here's the good thing, you're starting to understand how this market works... But it still all seems a bit expensive.</action>
+				<use v="gold" n="1000"/>
+				<branch v="objet_ok"/>
+					
+			<label v="payer2_ko"/>
+				<action v="Keep waiting" wait="1">he really believes he's got you with this technique, but this time you're going to be smarter than him!</action>
+				<talk v="trader">
+				Ah, it's you... he hasn't come back for it... So, if you take it for 500 gold coins, she's all yours.
+				</talk>
+				<action v="Job done">There you go, a nice little bit of business!</action>
+				<use v="gold" n="500"/>
+				<branch v="objet_ok"/>
+	
+		<label v="objet_ok"/>
+		<goto v="bslt" />
+		<action v="Get a hold of some bolts">
+			There's what we need to start putting the pieces together.
+		</action>
+		<end>
+			Ah, that's be perfect. I'm now able to heat up my meals. Here are a few coins to say thanks!
+		</end>
+		<gold v="2500" />
+		<uvar v="brocan"/>
+	</m>
+	
+	<!-- piège à mac gyver -->
+	<m group="broc" id="trapkg" name="The Korgon Trap" cond="mission(bchaud)+fx(palmes)">
+		<begin>
+			Diane Korgsey is a generous woman, she does a lot for the Grumhel Forest, but recently Korgons coming from the south are causing her more and more problems.
+			She has asked me to build a sufficiently cunning trap in order to capture one of these Korgons so that she can study it and work out where their aggression comes from.
+			At the moment, I'm totally wrapped up in my Flying Klutzo, but with your help, we should be able to make a trap that's not riddled with bugs!
+		</begin>
+		<action v="Examine Klutz' plan">
+			Grumhel Forest is a pretty dark place, so the Korgons have limited visibility.
+			What we need, is something fine enough to be invisible but at the same time something strong enough to hold a snared Korgon.
+			I don't really know what will do the job, but I'm sure you'll find some inspiration!
+		</action>
+		<goto v="port" hide="1" />
+		<talk place="port" v="Joveboze" gfx="joveboze">
+			Alri me ol mate! Wha's gan on wi the Scurpscoobs?
+			Y seen me ol' fishn wire? N wha'm ah gna do fir fishn if ye's gut me wire?
+			Well im ben thinkn if ye's giv's me a months fishs, I'll giv's ye me fishn wire!
+		</talk>
+		<nogoto/>
+		<!-- Donner des poissons en ingrédient -->
+		<!-- dialogue à nouveau, où il dit qu'il lui faut du gros poisson, nourriture plus variée -->
+		<kill n="60" v="pira:kazka" zone="2" />
+		<kill v="anguil" rare="1" n="10" zone="2"/>
+		<goto v="chutes" />
+		<kill v="rasca" n="10" zone="2"/>
+		<goto v="port"/>
+		<talk place="port" v="Joveboze" gfx="joveboze">
+			Ah wd'n be knwin' owt bout tha'.
+			Thurrs the wire, I's off lik a prom dress.
+		</talk>
+		<action v="Take the wire">
+			You take the large reel of fishing wire. The fishermen in this area use it to catch Scorpscuba, so there should be no concerns about its strength.
+		</action>
+		<goto v="chbroc"/>
+		<talk v="Klutz" gfx="broc">
+			Ah, fishing wire, a brilliant idea. Good thinking my young friend!
+			OK, now we have something to take them down, we need something to immobilize them.
+			I seem to recall that the venom of the Cobra from Big All Hot mixed with Figonicia Root works as a powerful paralyzing agent for Korgons.
+			Hurry up, Diane sent me a message by carrier-pig to tell me that the full moon approaches, and that is the time where Korgons from the south wreak havoc in the forest.
+		</talk>
+		<nogoto/>
+		<kill n="10" v="cobra" zone="1" />
+		
+		<action v="Collect all the venom">Bravo, that should calm that Korgon!
+			You would have come up with another plan involving knocking it out with a massive blow to the head, but you're too curious to see if Klutz's trap is actually going to work.
+		</action>
+		<goto v="chbroc" />
+		<talk v="Klutz" gfx="broc">
+			OK, it appears you are immune my friend. I think the trap is ready now. You won't be annoyed if I leave you to install the trap at Diane's camp, will you? It's just that this kind of caper isn't really doable at my age.
+		</talk>
+		<goto v="jungle" />
+		<talk v="Diane Korgsey" gfx="dian">
+			Shhh - don't make any noises...
+			Ah fantastic, just what I was worried about, Klutz has seemed totally overwhelmed lately, I expect he's been working on one of his crazy projects of which only he realizes the importance...
+			Anyway... I suggest you rig the thing up in the clearing behind you, and we'll hide behind this foul-smelling bush. Korgons have a very acute sense of smell, the smell of this bush will mask our scents.
+		</talk>
+		
+		<action v="Wait" wait="2">
+			You wait patiently for a Korgon to fall into the trap, unless, is there one behind you?
+		</action>
+		
+		<action v="Paralyze the Korgon">
+			_«Bop!»_  While you were daydreaming, the sound of a hollow skull hitting the ground grabs your attention. It came from a Korgon landing *heavily* on its head after getting its feet tangled up in the fishing wire. Under Diane's instructions you jump in the korgon and inject the venom behind its ear. The effect is immediate, the Korgon relaxes and begins to snore heavily.
+		</action>
+		
+		<talk place="jungle" v="Diane Korgsey" gfx="dian">
+			Fantastic, Kmutz is a genius.... this much is true, but you are a brave Dinoz Master!
+			All I have to do is to take him back to camp.
+			Hummmf ... Hummf ... !!! He's a solid little guy though, could you give me a hand?
+		</talk>
+		
+		<action v="Transport the Korgon">You carry the Korgon under your arm and set off in the direction of the camp.
+			Let's just hope that the deafening snoring coming from the Korgon doesn't attract the attention of any of the other forest residents, which are significantly more dangerous...
+		</action>
+		
+		<goto v="camp"/>
+		
+		<talk place="camp" v="Diane Korgsey" gfx="dian">
+			I have to say, you are most chivalrous and your dinoz very brave. Thanks for your help, I think I would have had a hard time transporting him on my own.
+			The important thing now is that I can manage to decipher its behavious by studying it. Maybe I'll be able to find out just what it is that is traumatizing them.
+		</talk>
+		
+		<goto v="chbroc"/>
+		
+		<talk place="chbroc" v="Klutz" gfx="broc">
+			There you go - a superb korgon trap built. I knew that I could count on you my young apprentice... Ahahahaah, worry ye not, *Dinoz Master*.
+		</talk>
+		
+		<end>
+			You have managed to impress Klutz, which isn't a formality.
+			For the time being the reward seems on the light side, but who knows, maybe helping this miserly genius could be rewarding in time!
+		</end>
+		
+		<gold v="3000"/>
+	</m>
+	
+	<m group="broc" id="leakjb" name="Engine leak" cond="mission(trapkg)">
+		<begin>
+			This morning I received an urgent demand from the fishermen at Frish Port, the engine aboard their boat is leaking and it needs to be plugged.
+		</begin>
+		<goto v="port"/>
+		<talk v="Fisherman">
+			G'day lil' guy!
+			Did Klutz send you? Yes... I know his style, send a youngster round to kick the tyres and see how he gets on...
+			At the very least, do you know where you're standing? Hmmm, looks like he saw you coming.
+			This is the season for amphidrome species, and believe me, it's not a good idea to try to navigate these currents, especially at night.
+			The boat is out of order, and I don't see how some kid is going to get it going again, but whatever, let's just see shall we, you seem motivated.
+		</talk>
+		<goto v="itotem"/>
+		<action v="Inspect the boat">
+			The engine is losing oil, a sizeable crack is visible in the oil reservoir. All you need to do is to plug the gap and fill it up again, however, the engine seems to be made of an unusual metal.
+		</action>
+		<talk v="Fisherman">
+			We don't want to risk hanging around here at night, kid. Lots of mariners have said they've seen monsters in the water after having hit a huge rock and breaking the motor.
+		</talk>
+		<goto v="chbroc" />
+		<talk v="Klutz" gfx="broc">
+			A leak in the oil reservoir? That's not good at all. I'm used to dealing with that kind of problem regularly with the Flying Klutzo, but at the moment, I've run out of Oxycombustibles.
+			It's a common problem, but you're going to have to come up with your own solution, you can't leave their boat there for too long.
+		</talk>
+		<goto v="forges" hide="1" />
+		<talk v="Responsible">
+			What's this: "a product guarantee"? Hahaha, couf cough, look here sir, why would we offer a guarantee when our forge produces an indestructible alloy!! Haha hahahaha, the thing that can break our engines hasn't been born yet.
+			Hum ..what? cough, cough, what?!! But that's impossible, no reef, cough cough, no known marine animal can damage the ductility of our alloy! It's I.M.P.O.S.S.I.B.L.E!
+			Although if you insist on fixing your imaginary crack, cough cough, yes, you'll have to bring us the broken piece.
+		</talk>
+		<goto v="chbroc" />
+		<talk v="Klutz" gfx="broc">
+			Ah, that was a good idea going to the forges! What did they tell you?
+			....
+			OK. .. Hum... it's a strange one, I don't know of any objects which are capable of breaking the alloy made in our forges. There is a "supernatural" marine animal which exists only in legends, which they call Nessie, lots of fishermen recount their Nessie stories in the tavern... but they're always so drunk, you never hear the same version twice. Hmmm, anyway...
+			All that remains is to test my grandfather Mac's theory, which involved pluggin the crack with an egg. It was a technique used by our ancestors, but I've never tried it myself. I don't see any alternative, given the urgency of the situation. you'll need to go collect some fresh eggs!
+		</talk>
+		<goto v="marche" />
+		<talk v="Farmer">
+			Hello hello young Dinoz master. Have you thought about feeding your Dinoz with good organic protein from Giant Cock Eggs? That ensures a balanced, healthy diet, with som much protein that your Dinoz' coat shines like a Feross shell, their eyes as bright and sharp as a carrier pig's....
+			... Ah ... yes... ok ok okay... I'll be quiet... Do you want some?
+			You want some fresh eggs??! Well you're knocking at the right door. With my eggs your Dinoz will never be unlucky again, their stamina will be matched only by their strength. Organic eggs - they're even tastier than Yak eggs!
+		</talk>
+		<action v="Shut the farmer up">
+			This might help him concentrate.
+		</action>
+		<talk v="Fffarmer">
+			Hum'f, feh geds seuk... Theyff always fed fhat I talk too mufch.
+			FFhhere are some ffine eggs, all yoursssh fffor 1500 coinssh, but sinshh I like you, I'll giffe you a good deal, 1000, ffriends prishes, Iff you take it now and leaffe.
+		</talk>
+		<use v="gold" n="1000" />
+		<goto v="itotem"/>
+		<action v="Fix it">
+			Without really believing in it at all, and in spite of the mockery from your fisherman friends, you crack the eggs over the fissure. In a few minutes, the heat of the engine and the sun cause the eggs to set over the crack. You attempt to put more oil in the engine, and... miracle of miracles, the leak is gone! Grandfather Mac was telling the truth, we managed to plug the crack with eggs...
+			The fishermen can now get Gyver, their boat, back in the water so they can get back to Frish Port quickly.
+		</action>
+		<end>
+			Once again, Klutz seems impressed by your initiative.
+			You lay have just saved the lives of these mariners, it's a shame that their job no longer provides them with enough money to live comfortably, obliging them to take more and more risks...
+			In spite of everything, Klutz and the fisherman will try their utmost to reward you to the best of their abilities.</end>
+		<xp v="50"/>
+		<gold v="2000"/>
+	</m>
+	
+	<m group="broc" id="airpur" name="Blood test" cond="mission(leakjb)">
+		<begin>
+			During my last expedition to the Grumhel Forest to visit Diane, she asked me to help her with analysis of the data recovered from the trapped Korgon. We must go and pick up the samples and have them analysed by the scientists at the University.
+		</begin>
+		<goto v="camp"/>
+		<talk v="Diane Korgsey" place="camp" gfx="dian">
+			Hello, have you come to pick up the samples? Thank you kindly, I'm not an expert, but I'm starting to think that the increased aggression we have observed in the Korgons is due to an environmental change. These beautiful creatures are not evil by nature... AHHHHHHAAAH
+		</talk>
+		<actfight act="Defend the camp" monsters="ksudbs:ksudbs:korven">
+		</actfight>
+		<talk v="Diane Korgsey" gfx="dian">
+			What in the name of a Korgon's codpiece is going on, but, that's not.... that's not ...normal.
+			We have to find out quickly what is going on ... Would you mind taking these samples to the university as quick as you can please?
+			And... if you have the time, would you mind scaring off any korgons you see knocking around near the camp?
+		</talk>
+		<kill v="korgon" n="20" />
+		<goto v="univ" />
+		<talk v="Professor Eugene" gfx="eugene">
+			hello there youngster, how is the life of the great adventurer? Ah, to be your age again...
+			What have you got there, Korgon samples? it's been a long time since I've had any dealings with these little critters.
+			You need a full analysis, is that what you said? I'll do what I can, but I'm not entirely sure if our machines are accurate enough.
+		</talk>
+		<action v="Wait" wait="1">
+			You wait while the professor completes his analysis.
+		</action>
+		
+		<branch v="spectro_ok" cond="uvar(airpur,1+)" />
+		<branch v="spectro_ko" cond="!uvar(airpur,1+)" />
+		<!-- FAIRE BRANCH -->
+		<label v="spectro_ko"/>
+		<goto v="univ" />
+		<talk v="Professor Eugene" gfx="eugene">
+			just as I feared, my equipment isn't well suited to this kind of work. My mass spectrometer is struggling to correctly measure the isotopic masses, we need to upgrade our equipment. However, I don't know who'd be capable of doing the job.
+		</talk>
+		<goto v="chbroc" hide="1" />
+		<talk v="Klutz" gfx="broc">
+			What now? yes, that should be possible... it must be down to a lack of skepticyl lelectrons, that much seems clear. But how to boost it... good question Gaston!
+			Hummm....
+			_(he starts talking to himself... In any case it's not as though you understood what was going on before anyway, ah well, might as well enjoy the view or something)_
+		</talk>
+		<action v="Wait" wait="1">
+			You wait for klutz to find whatever it is he appears to be frantically searching for in his workshop.
+		</action>
+		<talk v="Klutz" gfx="broc">
+			AAAAHHaaaah, I've found it!!!....
+			_(«But... what is he talking about?!»)_
+			It's an extremely rare lens, I got is in return for a favour years ago... For a fairly weird guy, truth be told, but anyway, here it is. Its thinness and clarity make is a perfect convergent convex lens for the university spectrometer. that will definitely boost their machine's performance, it's going to smoke those lelectrons!
+		</talk>
+		<action v="Take the lens">
+			You take the impressive lens.
+			it seems very fragile, it had better not take much of a beating on the way home, it could easily get smashed.
+		</action>
+		<goto v="univ"/>
+		<action v="Hand over the lens" wait="1">
+			You give the lens to the professor, in the hope that he understands how it should be used.
+			It'll take him a little time to install it and carry out some tests, so we'll have to wait...
+		</action>
+		<label v="spectro_ok"/>
+		<goto v="univ" />
+		<talk v="Professor Eugene" gfx="eugene">
+			Aaah Klutz is incredible, this lens is fantastic!!! A real beauty, brilliant!
+			It's lucky we have it in any case, the results are not good at all.
+			They are showing an unusually high concentration of CO2, which is really worrying for an animal living in a forest.
+			It has to be environmantal, the poor air quality means that the Korgons are getting more irritable and therefore aggressive.
+		</talk>
+		<goto v="fleuve" />
+		<action v="Check the place out">
+			You take a look around, your intuition tells you that a forest simply doesn't become sick without good reason...
+			There it is!
+		</action>
+		<actfight act="Attack" monsters="cervel">
+			<begin m="cervel">
+				But... who are you? You shouldn't be there, I'm not going to let you compromise my plans, no, I cannot, You leave me no choice... YiiiiPaaaa!!
+			</begin>
+			<win>
+				You have defeated Dohlah the poisoner, but why was he wanting to poison the river which would make the forest itself sick, and by relation, its residents?
+			</win>
+		</actfight>
+		
+		<end>
+			The league of Extraordinary Korgons thanks you for your help and your discretion which saved damaging the Korgons' reputation, they thank you and reward you generously.
+		</end>
+		<gold v="5000"/>
+		<xp v="90"/>
+		<uvar v="airpur"/>
+	</m>
+
+	<m group="broc" id="suppel" name="Call to shovels" cond="mission(airpur)">
+		<begin>
+			My neighbour the coral miner is really fed up losing the Coral Awards, he's spending more time repairing his equipment than training. He asked me to find a solution for reinforcing his equipment.
+		</begin>
+		<goto v="corail" />
+		<talk v="Coral Miner" gfx="mineur">
+			Hey how are you? What's the sketch with this shovel - still in 2 parts I see... I hate to say it, but it's simply not made for big guys like us.
+			The Coral Awards are full of pros, they're using good equipment at least. How am I supposed to improve my haul if I only bring up half my axe every time...
+			Are you taking care of it Klutz? Well that's good news, you understand me, you can't leave me like this and let me be ridiculed by Mr Statane.
+		</talk>
+		<action v="Take the Pick">
+			You take the pick, which has been coated in a particularly unconvincing alloy.
+		</action>
+		<goto v="forges" />
+		<talk v="Forger" >
+			Huh? Strengthen a pick? That I can do, but the guy who it's for had better be buit like the side of a barn! Haha
+			You'll have to help me out in return though, by getting rid of these bandits - they're stealing all our merguez, leaving us nothing to toss on the barbie!
+		</talk>
+		<goto v="rashpk"/>
+		<actfight act="Frighten the thieves" monsters="vol1:vol1:vol1">
+			<win>
+				Well that should scare them away for a while. It's difficult to eat merguez with your teeth on the ground anyway.
+			</win>
+		</actfight>
+		<goto v="forges" />
+		<talk v="Forger" >
+			You are indeed efficient, Dinoz Master! Here is your pick. I warn you though, it's more like a ship's anchor now. Hahahahaha.
+		</talk>
+		<action v="take the pick">
+			Huf....!!! GGgggGGNNNGnnnnnnn!!! Huf Huf.... It's impossible to lift, the alloy is way too heavy, it's impossible to use this bit of kit now. You have an idea, but it means you're going to have to drag this *$££%µ anvil around with you.
+		</action>
+		<goto v="fosslv" hide="1"/>
+		<action v="Dip the pick in the lava">
+			Somehow, you manage to dip the pick inthe lava without collapsing under the sheer weight of the thing. You pull out a slimmer pick, eaten away by the lava, but still in one piece, now we just need to find a catalyst to stop the reaction.
+		</action>
+		<goto v="gorges" />
+		<talk v="Popotholeler" gfx="spelele">
+			If I have any Jurgens lotion left... what I mean is... yeah, but, it's only used for scientific purposes, this stuff is not for messing around with. It's all in the knowhow, a complete mastery of security protocol.
+		</talk>
+		<action v="Show him the pick">
+			_«Ahhhhaahhhhhhahhhhh»_
+			Strange, Popotholeler gets scared and skates away at full speed into the middle of a forest of stalagmites.
+			He can't be used to the heat any more... Unless he thought that you were threatening him with the pickaxe?
+		</action>
+		<action v="Pour the Jurgens lotion">
+			When you pour the lotion on the still molten pickaxe, a strange smoke is released and the noise of a steam locomotive. The smoke seems to float on the surface of the ground, creating a cloud layer on the floor of the grotto, it's magnificent.
+		</action>
+		<action v="Take the pick">
+			After the object finished producing weird sounds, silence reigned once more in the grotto (apart from the chattering teeth of our scientist friend). The pick before you is now gleaming, and perfectly honed, as if it had been cast in a futuristic material. Nonetheless you brace yourself to pick it up, ok, get ready, 1 ... 2.... and  3! *HEEUUU*
+		</action>
+		<action v="Get back up">
+			Incredible! The thing is so light now that you fall over backwards. It's all good though, all that remains is to take it back to the miner.
+		</action>
+		<end>
+			The coral miner could not be happier with the work yu have carried out on his request, he even says he'll dedicate his forthcoming victory at the Corail Awards to you.
+			To thank you, he gives you a beautiful reinforced shovel. This one won't systematically break after each use, but as in life, there are no guarantees. The miner can always repair it for you if need be.
+		</end>
+		
+		<nofx v="brkpel" />
+		<nofx v="pelle" />
+		<fx v="pelle2" />
+	</m>
+	
+</missions>

@@ -1,0 +1,168 @@
+<!-- ***************************************************************************** -->
+<!-- Chrysanthe et Cassandre gardent l'entrée du palais de Caushesmesh --->
+
+<d place="cpyra1" name="Chrysantina" gfx="chrysanthe" cond="scenario(caush,42-)">
+	<phase id="begin" next="hein:mission:comin">
+		[Mi vida está vacía, me aburro, no tengo ganas de nada.]
+		[Déjame así. ¿Qué pasaría si me dejo caer en ese lago de éter?]
+		[Que la vida es sueño, y los sueños, sueños son...]
+	</phase>
+	<a id="hein" cond="scenario(caush,25-)">...Eh...Hola...</a>
+	<phase id="hein" next="sieste">
+		[Nadie puede entrar, la guardiana está en plena siesta.]
+		[Y tiene razón. No sirve de nada estar despierto en un mundo tan triste.]
+		[Ojalá esté soñando con su amor perdido y sobre todo...]
+	</phase>
+	<a id="sieste">¿Sobre todo qué?</a>
+	<phase id="sieste" next="bon:nobon:mission">
+		[¡Sobre todo que no se despierte con un humor de los mil demonios!]
+		[...]
+		[¿Sigues aquí?]
+	</phase>
+	<a id="bon" cond="scenario(caush,21)">Quisiera entrar...</a>
+	<a id="nobon" cond="!scenario(caush,21)">Quisiera entrar...</a>
+
+	<phase id="nobon" fast="1">
+		La amazona ya no te mira, está deprimida sentada en las escaleras.
+		Nada de lo que puedas decir le hará sonreir.
+	</phase>
+
+	<phase id="bon" scenario="caush:22">
+		[El invierno va y viene pero el frío ya reina en mi corazón.]
+		[¿Quieres que tu orgullo termine por los suelos? Adelante.]
+		[Al menos no seré yo...]
+		[Entra rápido, antes que me arrepienta.]
+	</phase>
+
+	<a id="mission" cond="scenario(caush,25+)">¿Tienes una misión para mí?</a>
+	<a id="comin" cond="scenario(caush,25+)">¿Puedo entrar?</a>
+
+	<phase id="comin">
+		[El invierno va y viene, pero el frío ya reina en mi corazón.]
+		[¿Quieres que tu orgullo termine por los suelos? Adelante.]
+		[Al menos no seré yo...]
+		[Entra rápido, antes que me arrepieenta.]
+	</phase>
+
+	<phase id="mission" missions="amazon"></phase>
+
+</d>
+
+<d place="cpyra1" name="Cassandra" gfx="cassandre" cond="scenario(caush,42-)">
+	<phase id="begin" next="quoi">
+		[¡OH DIOS MÍO!]
+	</phase>
+	<a id="quoi">¿Qué sucede?</a>
+	<phase id="quoi" next="chic:mission:comin">
+		[¡He perdido mi pendiente ultra-archi-caro!]
+	</phase>
+	<a id="chic" cond="scenario(caush,25-)">¿Eso es todo?</a>
+	<phase id="chic" next="dodo">
+		[¿Cómo?]
+		[¡Oye, se nota que vosotros siempre acomañados de bestias salvajes no sabéis nada de la moda!]
+		[Es suuuuuper importante, mi look debe ser im-pe-ca-ble, ¿cómo crees que conseguí este trabajo?]
+	</phase>
+	<a id="dodo">Pues no sé.</a>
+	<phase id="dodo" next="bribe:nobribe:cadeau:mission">
+		[Oye oye, francamente, qué pena me das, no sabes reconocer el buen gusto cuando está frente a ti...]
+		[...]
+		[Bueno, ¿para qué viniste?]
+	</phase>
+	<a id="bribe" cond="scenario(caush,20)">Quisiera entrar...</a>
+	<a id="nobribe" cond="!scenario(caush,20)">Quisiera entrar...</a>
+	<a id="cadeau" cond="scenario(caush,24)">¿Hay manera de caerle bien a la guardiana?</a>
+
+	<phase id="bribe" next="got1:got2:got3:nogot">
+		[Nuestra señora se ha despertado... Ya se le oye gritar...]
+		[Pero no has hecho nada para ganarte ese privilegio.]
+		[¡Tráeme una joya chic y te dejaré entrar! ¿Entiendes?]
+	</phase>
+
+	<a id="got1" target="got1" cond="hasingr(art1)">Darle un Anillo Valioso</a>
+	<a id="got2" target="got2" cond="hasingr(art2)">Darle un Cáliz Cincelado.</a>
+	<a id="got3" target="got3" cond="hasingr(art3)">Darle un Collar Karat.</a>
+	<a id="nogot" cond="!hasingr(art1)">No tienes nada que le pueda gustar.</a>
+
+	<phase id="nogot">
+		[Pfff ¡Nada, eso tienes, eso vales!]
+		[¡Vuelve cuando tengas algo bueno, bonito y caro para mí!]
+		[...Bssss]
+	</phase>
+
+	<phase id="nobribe" next="nan">
+		[JIJIJI, ¡estás soñando!]
+		[En primer lugar estás muy mal vestido, haces demasiado ruido, y para colmo no sabes nada de las tendencias Caushemeshianas.]
+		[Mi señora no quiere ser molestada.]
+		[Y yo no quiero tener que soportar sus gritos.]
+		[Entonces, bzzzz, bzzzz, ¡desaparece!]
+	</phase>
+	<a id="nan">Pero...</a>
+	<phase id="nan">
+		[¡Bzzzz!]
+	</phase>
+
+	<phase id="got1" scenario="caush:21" fast="1" useingr="art1">
+		La arisca amazona solo tiene ojos para la joya que le acabas de regalar.
+		Ahora solo queda convencer a la otra amazona para poder entrar al palacio.
+	</phase>
+
+	<phase id="got2" scenario="caush:21" fast="1" useingr="art2">
+		La arisca amazona solo tiene ojos para la joya que le acabas de regalar.
+		Ahora solo queda convencer a la otra amazona para poder entrar al palacio.
+	</phase>
+
+	<phase id="got3" scenario="caush:21" fast="1" useingr="art3">
+		La arisca amazona solo tiene ojos para la joya que le acabas de regalar.
+		Ahora solo queda convencer a la otra amazona para poder entrar al palacio.
+	</phase>
+
+	<phase id="cadeau" next="easy">
+		[Acabas de ver a la guardiana y aún estás entero...]
+		[¡Puedes considerarte afortunado!]
+		[Se dice que es muy poderosa en Dinoland.]
+	</phase>
+	<a id="easy">¡Quisiera saber más sobre Caushemesh!</a>
+	<phase id="easy" next="mission" scenario="caush:25">
+		[¡Pero qué pesado eres!.]
+		[Al menos no eres tonto. Efectivamente, ella es la mejor persona para informarte.]
+		[Mira, hagamos algo, te voy a dar una pequeña lista de misiones a cumplir y yo le daré los regalos que traigas uno a uno.]
+		[Con un poco de suerte te va a recibir.]
+	</phase>
+
+	<a id="mission" cond="scenario(caush,25+)">¡Consultar la lista de misiones!</a>
+	<a id="comin" cond="scenario(caush,25+)">¿Puedo entrar?</a>
+
+	<phase id="comin">
+		[¡Pero qué pesado eres!.]
+		[¿No te das cuenta que el camino está libre?, deja de hacerme perder el tiempo.]
+		[¡BZZZZZZ!]
+	</phase>
+
+	<phase id="mission" missions="amazon"></phase>
+
+</d>
+
+<d place="cpyra1" name="Chrysantina" gfx="chrysanthe" cond="scenario(caush,43+)">
+	<phase id="begin" next="mission">
+		[Nuestra señora nos ha dejado solas aquí.
+		Estoy entre la alegría de no verla más, y el aburrimiento de este trabajo...]
+		[¿Qué quieres Maestro de Dinos?]
+	</phase>
+	<a id="mission">Consultar la lista de misiones.</a>
+	<phase id="mission" missions="amazon"></phase>
+</d>
+
+<d place="cpyra1" name="Cassandra" gfx="cassandre" cond="scenario(caush,43+)">
+	<phase id="begin" next="mission">
+		[Vaya vaya.]
+		[Ahora que los colosos ya no rondan por aquí, recibimos cada vez más visitas de habitantes de la acrópolis.]
+		[Los comerciantes de Caushemesh deberían pensar en renovar sus productos. ¡Ya no sé qué ponerme!]
+		[¿Querías darme algo?]
+		[...]
+		[¿No? Qué lástima...]
+	</phase>
+	<a id="mission">Consultar la lista de misiones.</a>
+	<phase id="mission" missions="amazon"></phase>
+</d>
+
+

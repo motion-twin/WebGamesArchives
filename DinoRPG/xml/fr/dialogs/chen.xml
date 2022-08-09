@@ -1,0 +1,109 @@
+<!-- ***************************************************************************** -->
+<!-- Chen, Nimbao l'île volante ----->
+
+<d place="icite" name="Chen" gfx="chen" cond="scenario(nimbao,28)|scenario(nimbao,33-)">
+	<phase id="begin" next="non:non2" dialect="arbori">
+		Bonjour voyageur.
+		Je crée et vends des objets utiles pour combattre les nombreux monstres que tu croiseras sur ton chemin,
+		Ma boutique devrait bientôt ouvrir, il ne me manque que quelques ingrédients.
+	</phase>
+	<a id="non" cond="scenario(nimbao,28)">
+		Je ne comprends pas...
+	</a>
+	<phase id="non" fast="1" frame="stop" scenario="nimbao:30">
+		Vous vous éloignez, difficile d'établir le dialogue dans ces conditions...
+	</phase>
+	<a id="non2"cond="!scenario(nimbao,28)">
+		Je ne comprends vraiment pas...
+	</a>
+	<phase id="non2" fast="1" frame="stop">
+		Vous vous éloignez, difficile d'établir le dialogue dans ces conditions...
+	</phase>
+	
+</d>
+	
+<d place="icite" name="Chen" gfx="chen" cond="scenario(nimbao,34)">
+	<phase id="begin" next="non:mot" dialect="arbori">
+		Bonjour voyageur.
+		Je crée et vends des objets utiles pour combattre les nombreux monstres que tu croiseras sur ton chemin,
+		Ma boutique devrait bientôt ouvrir, il ne me manque que quelques ingrédients.
+	</phase>
+	<a id="non">
+		Je ne comprends toujours pas...
+	</a>
+	<phase id="non" fast="1" frame="stop">
+		Vous vous éloignez, difficile d'établir le dialogue dans ces conditions...
+	</phase>
+	<a id="mot">
+		vcbdr QpObmc ?
+	</a>
+	<phase id="mot" next="vener">
+		...........!!!
+		[Vous venez de dire "Petit dragon" en Arboris ?
+		Vous connaissez le petit-fils de l'Archidorogon ?]
+		[Mon père était au service de l'ancien Archidorogon, en qualité de grand prêtre, je les voyais souvent, leur disparition m'a bien attristée.
+		Je suis ce que l'on appelle une sybille. Je suis une sorte de médecin si vous voulez. J'aide les personnes en difficulté qui croisent mon chemin.]
+	</phase>
+	<a id="vener">
+		(Lui raconter toute l'histoire)
+	</a>
+	<phase id="vener" next="ou">
+		[Ainsi donc, il a besoin d'aide.
+		Je connais le responsable. Morg est un des plus puissants soldats Dorogon de Grizorg,
+		il utilise un poison tiré d'une plante extrémement vénéneuse que l'on ne trouve qu'ici.]
+		
+		[Malheureusement, seul l'Archidorogon possède le remède capable de le soigner.]
+		[Votre seule chance est de trouver l'accès au laboratoire de l'ancien Archidorogon, il avait pour habitude de confectionner des potions capables de guérir n'importe
+		quelles maladies, je m'exerce moi-même dans cet art, sans atteindre son talent.]
+	</phase>
+	<a id="ou">
+		Où se trouve ce laboratoire ?
+	</a>
+	<phase id="ou" next="fin">
+		[Il existe une montagne à l'autre extrémité de l'île appelée le mont sacré d'Everouest, le vieil Archidorogon avait pour habitude d'aller braver le froid pour
+		expérimenter ses nouvelles recettes.]
+		[Il disait que la température avait des vertus de conservation très utile.]
+		[Je n'ai malheureusement pas la possibilité d'y aller, donc je ne pourrais jamais le savoir...]
+	</phase>
+	<a id="fin">
+		Merci !
+	</a>
+	<phase id="fin" fast="1" frame="stop" scenario="nimbao:35">
+		Vous vous éloignez, qui pourrait vous renseigner sur le chemin à prendre pour aller là-bas ?
+	</phase>
+</d>
+
+
+<d place="icite" name="Chen" gfx="chen" cond="scenario(nimbao,35+)+scenario(nimbao,41-)">
+	<phase id="begin">
+		[Bonjour voyageur.
+		Je crée et vends des objets utiles pour combattre les nombreux monstres que tu croiseras sur ton chemin.]
+		[Ma boutique devrait bientôt ouvrir, il ne me manque que quelques ingrédients.]
+	</phase>
+
+</d>
+
+<d place="icite" name="Chen" gfx="chen" cond="scenario(nimbao,42+)+scenario(nimba2,48-)">
+	<phase id="begin" next="missions">
+		[Bonjour voyageur.
+		Je crée et vends des objets utiles pour combattre les nombreux monstres que tu croiseras sur ton chemin.]
+		[Ma boutique vient d'ouvrir, tu peux y jeter un coup d'oeil ! Je suis sûre que tu trouveras quelque chose d'utile.]
+	</phase>
+	<a id="missions" cond="active(mchen)">Consulter la liste des Missions</a>
+	<phase id="missions" missions="chen"></phase>
+</d>
+
+<d place="icite" name="Chen" gfx="chen" frame="happy" cond="scenario(nimbao,42+)+scenario(nimba2,49+)">
+	<phase id="begin" next="mission2">
+		[Bonjour voyageur.
+		Je crée et vends des objets utiles pour combattre les nombreux monstres que tu croiseras sur ton chemin.]
+		[Ma boutique vient d'ouvrir, tu peux y jeter un coup d'oeil ! Je suis sûre que tu trouveras quelque chose d'utile.]
+	</phase>
+	<a id="mission2" cond="active(mchen)">Consulter la nouvelle liste des Missions</a>
+	<phase id="mission2" next="gomi">
+		Je te propose de faire de nouvelles missions, maintenant que tu as terrassé Grizorg, rien ne sera plus comme avant.
+		Mes anciennes missions ne sont donc plus disponibles.
+	</phase>
+	<a id="gomi">D'accord !</a>
+	<phase id="gomi" missions="chen2"></phase>
+</d>

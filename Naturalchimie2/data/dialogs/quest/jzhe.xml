@@ -1,0 +1,32 @@
+<d place="jzclai" name="Archéologue" gfx="jzarcheo" auto="0">
+
+<a id="begin">Alors monsieur l'archéologue, ça brosse ? </a>
+
+<phase id="begin" next="euh">
+Ca brosse, ça brosse.
+</phase>
+
+<a id="euh">Oh regardez là-bas, ça brille ! On dirait que vous avez raté un indice crucial et sûrement très très précieux ! ! </a>
+
+<phase id="euh"next="plus">
+Hein ? Où ça ? | | %happy% Ah mais oui ça brille là-bas, pourtant j'y suis passé hier ! | Voyons voir ça...
+</phase>
+
+<phase id="plus" frame="hide" next="main">
+Qu'est-ce que c'est ? Ca brille énormément, comment j'ai pu louper ça ? Ah, un pépite d'o *... Euuuuuuuuuhhhh...
+</phase>
+
+<a id="main">Monsieur l'archéologue, ça va ? Si vous m'entendez, dites {"Vive ::user:: !"}</a>
+
+<phase id="main" frame="hide" next="quest">
+...Euuuuuuuuuhhhh..
+</phase>
+
+<a id="quest">Bon ben je vous emprunte votre petite brossette, hein... On dirait que vous en avez pas besoin ! Au revoir ! </a>
+
+<phase id="quest" qgive="QuestObj(brosse)" frame="hide">
+..Euuuhhh....
+</phase> 
+
+
+</d>

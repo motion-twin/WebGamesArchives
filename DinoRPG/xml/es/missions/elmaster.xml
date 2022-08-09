@@ -1,0 +1,235 @@
+﻿<missions>
+
+	<m group="elmaster" id="elma" name="Las Compras del Maestro">
+		<begin>No tiene más que comenzar a ir haciéndome las compras desde ya. Eso le irá espabilando... ¡Necesito agua, brasas, pescado, pan y champiñones frescos!</begin>
+		<goto v="fountj"/>
+		<action v="Extraer agua">Has obtenido agua para el Maestro Elemental.</action>
+		<goto v="fosslv"/>
+		<action v="Obtener brasas calientes">Has obtenido brasas bien calientes para el Maestro Elemental.</action>
+		<goto v="port"/>
+		<action v="Comprar Pescado">Has obtenido un pescado fresco para el Maestro Elemental. Ya no quedan más que el pan y los champiñones...</action>
+		<goto v="dnv"/>
+		<action v="Comprar pan">Has obtenido un buen pan caliente para el Maestro Elemental.</action>
+		<kill v="goupi:goupi2:goupi3" n="6" name="Gupiones"/>
+		<action v="Coger los trozos">Has cogido los trozos de Gupiones que acabas de vencer, ¡ñam! La lista de las compras para el Maestro Elemental está al fin completa.</action>
+		<end>Me lo ha traido todo correctamente. Algo es algo.</end>
+		<xp v="20"/>
+		<gold v="500"/>
+	</m>
+
+	<m group="elmaster" id="elma1" name="Lección 1 - El Rayo" cond="mission(elma)">
+		<begin>Visto que él persevera, vamos a enseñarle el misterio de la comprensión del elemento más simple de captar: el Rayo. Visto su nivel, va a tener que volver a estudiar las bases en la Universidad.</begin>
+		<goto v="univ"/>
+		<action v="Estudiar el Rayo">
+			El Rayo es el elemento más simple de captar. Sin embargo es el más complejo de conservar. Solo los Dinos formados en la competencia Pararrayos pueden conseguirlo.
+		</action>
+		<action v="Estudiar el Rayo">
+			La mayoría de los libros sobre el tema han sido escritos por el mismo Maestro Elemental. Para comprender el Rayo, su consejo para los estudiantes se encuentra en la cima del Gran Señor-Todo-Quema durante un día de tormenta. Experiencia directa... de supervivencia...
+		</action>
+		<goto v="fosslv"/>
+		<actfight act="Experimentar el Rayo" monsters="elhelp">
+			<win>Has sobrevivido al Rayo. Gracias al Libro del Maestro Elemental, ahora comprendes un poco mejor su funcionamiento.</win>
+		</actfight>
+		<talk v="Maestro Elemental" gfx="elmaster">
+			Segunda parte: él tiene que ir a matar 3 Anguilos del Pantano para estudiar la manera en que su piel genera electricidad.
+		</talk>
+		<goto v="marais"/>
+		<kill v="anguil" n="3"/>
+		<action v="Estudiar las Pieles de Anguilos">
+			¡El Maestro llevaba razón! Al observar detenidamente la piel de los Anguilos, aprecias centenas de «Minilecs». Se trata de pequeños insectos que producen el Rayo de forma natural. ¡Tus conocimientos en el Rayo han mejorado sensiblemente!
+		</action>
+		<end>¡Ya está de vuelta! No es lo que se diría un gran trabajo, pero es posible que lo consigamos...</end>
+		<xp v="30"/>
+		<gold v="1000"/>
+	</m>
+
+	<m group="elmaster" id="elma2" name="Lección 2 - El Fuego" cond="mission(elma1)">
+		<begin>El Fuego... ¡un elemento que siempre ha fascinado al ser humano! Y eso que es uno de los más simples.</begin>
+		<goto v="fosslv"/>
+		<talk v="Maestro Elemental" gfx="elmaster">
+			Estamos en el lugar perfecto para aprender el Fuego. Para empezar, él tiene que ir a matar al Venerable. Ya hablaremos del Fuego más tarde...
+		</talk>
+		<goto v="vener"/>
+		<action v="Matar al Venerable">
+			Cuando te encuentras a punto de atacar y dejarte la piel de tu Dino en el intento, recibes un mensaje del Maestro Elemental en el que te pide que regreses.
+		</action>
+		<goto v="fosslv"/>
+		<talk v="Maestro Elemental" gfx="elmaster">
+			Entonces, si le dijéramos que saltara de un precipicio, ¿lo haría él? ¡Qué estupidez! Así habrá aprendido a no jugar con el Fuego. Por cierto, ahora que hablamos de eso... Diría que un buen entrenamiento consistiría en preparar una compota de Flamachas...
+		</talk>
+		<nogoto/>
+		<kill v="flam" n="20" zone="1"/>
+		<goto v="fosslv"/>
+		<talk v="Maestro Elemental" gfx="elmaster">
+			Las Flamachas son la personificación del elemento Fuego. Paradójicamente, se alimentan del Aire y tienen la capacidad de dividirse en varias Flamachas independientes. Cuando no se le conoce, el Fuego puede hacer grandes daños en combate. Pero si se aprende a manejarlo, se vuelve inofensivo. Exactamente igual que las Flamachas.
+		</talk>
+		<talk v="Maestro Elemental" gfx="elmaster">
+			Que no se haga ilusiones, ¡eh! Lo de las Flamachas no era más que un calentamiento. Ahora va a comenzar los verdaderos ejercicios... No creo que algún día llegue a crear ni chispas, pero bueno, nada le impide intentarlo y dejarse la vida en el intento... ji, ji, ji.
+		</talk>
+		<talk v="Maestro Elemental" gfx="elmaster">
+			En el siguiente paso, debe ir a ver a los Hermanos Pignuit de las Ruinas Ashpuk. Hace algunos años me tomaron prestado mi Super-Poder-Pimiento-de-Invencibilidad, y ahora no quieren devolvérmelo. ¡Que los aplaste y me traiga lo más rápido posible mi Poder!
+		</talk>
+		<goto v="rashpk"/>
+		<actfight act="Combatir contra los Hermanos Pignuit" monsters="pign1:pign2">
+			<begin>Los Hermanos Pignuit son gemelos Pigmous especialmente dotados en el control del Fuego.</begin>
+			<win>¡Has vencido a los Hermanos Pignuit! Su caverna se encuentra ante ti.</win>
+		</actfight>
+		<action v="Explorar la Caverna">
+			Tras una intensa búsqueda, encuentras un extraño Pimiento... Brilla en la oscuridad y parece que posee un extraño poder mágico.
+		</action>
+		<end>
+			¡Ah! ¡Ha traido mi super Poder-Pimiento-de-Invencibilidad! ¡Al fin podré preparar mi super Bocadillo!
+		</end>
+		<xp v="40"/>
+	</m>
+
+	<m group="elmaster" id="elma3" name="Lección 3 - La Madera" cond="mission(elma2)+level(10)">
+		<begin>El elemento Madera. Seguramente uno de los elementos más subestimados y sin embargo, ¡qué increíble potencial posee!</begin>
+		<goto v="fosslv"/>
+		<talk v="Maestro Elemental" gfx="elmaster">
+			Ten, la Madera me recuerda a algo... Hace mucho tiempo descubrí la Isla Secreta de los Monstruos. Extrañas criaturas llamadas Vegetox pululan por allí. Son medio animales, medio vegetales, y ¡controlan especialmente bien la Madera! Quizás un día él también podrá ir a ese lugar... El problema es que he olvidado las instrucciones.
+		</talk>
+		<talk v="Maestro Elemental" gfx="elmaster">
+			¡Resumiendo! Para aprender la Madera, tiene que ir al Bosque de Grumhel. El problema es que está un poco lejos así que va a hacer nuestro truco...
+		</talk>
+		<talk v="Maestro Elemental" gfx="elmaster">
+			He oído que un misterioso grupo llamado los Korgones Vengadores han conseguido infiltrarse en el Gran Señor-Todo-Quema desde el Túnel situado bajo la Rama. Tiene que ir allí a ver qué ocurre para tenerme informado, pues no tengo ganas de ir yo mismo...
+		</talk>
+		<goto v="tunel"/>
+		<action v="Informarse">
+			Un grupo de cinco Korgones Vengadores ha sido detectado saliendo del Túnel. Se dirigen hacia Fosalava.
+		</action>
+		<goto v="fosslv"/>
+		<talk v="Maestro Elemental" gfx="elmaster">
+			¿¿Qué dice?? Pues claro que sabía que habían pasado por aquí. Esas criaturas inmundas me han robado mi Varita de Madera Maldita. No sé qué quieren hacer con ella, pero más vale que él la recupere lo antes posible. Que se ocupe de ellos, ¡rápido! ¡Han huido hacia el Sur!
+		</talk>
+		<goto v="dnv" hide="1"/>
+		<actfight act="Combatir los Korgones Vengadores" monsters="korven:korven:korven">
+			<begin>Cuando te acercas, los Korgones se separan en dos grupos: dos huyen y tres se quedan para luchar contra ti.</begin>
+			<win>¿A dónde habrá huido el resto de Korgones?</win>
+		</actfight>
+		<goto v="ilewkk" hide="1"/>
+		<action v="Korgones Vengadores">
+			Un habitante de la Isla asegura haber visto dos Korgones. Huían a toda velocidad en dirección oeste, y llevaban consigo una extraña Varita de madera...
+		</action>
+		<goto v="marais" hide="1"/>
+		<actfight act="Luchar contra los Korgones Vengadores" monsters="korven:kvenbs">
+			<begin>Al fin has atrapado al jefe de los Korgones-Vengadores: ¡El Korgón enmascarado!</begin>
+			<win>¡¡¡Has vencido a los Korgones Vengadores!!!</win>
+		</actfight>
+		<action v="Coger la Varita de Madera">
+			Esta extraña Varita reúne poderes que sobrepasan el entendimiento de cualquier mortal... ¡Más vale llevársela lo más rápido posible al Maestro antes de que provoque víctimas inocentes!
+		</action>
+		<end>
+			¡Qué bien! ¡Mi Varita! ¡Él ha trabajado bien! ¡Malditos sean esos Korgones! Si tiene problemas de efectos secundarios, que venga a verme más tarde.
+		</end>
+		<gold v="2000"/>
+	</m>
+
+	<m group="elmaster" id="elma4" name="Lección 4 - el Aire" cond="mission(elma3)">
+		<begin>Cuando algo desaparece, el Aire toma su lugar. Con este elemento, ¡todo es cuestión de densidad!</begin>
+		<goto v="fosslv"/>
+		<talk v="Maestro Elemental" gfx="elmaster">
+			El elemento Aire es muy desconocido en Dinovilla, pues la proximidad del Gran Señor-Todo-Quema y de las Islas Atlanteidas favorece el estudio de los elementos Fuego y Agua. Tuve que ir a Caushemesh para completar mis estudios sobre el tema, pues son sus habitantes quienes mejor controlan esos poderes.
+		</talk>
+		<talk v="Maestro Elemental" gfx="elmaster">
+			En vez de pedirle que vaya tan lejos, pues es algo totalmente imposible para sus capacidades, prefiero pedirle un pequeño favor. Que vaya a traerme los pergaminos que han sido encontrados en las recientes obras de Dinovilla. Me gustaría estudiarlos de forma más precisa...
+		</talk>
+		<goto v="dplaza"/>
+		<action v="Coger los Pergaminos">
+			Te explican que estos pergaminos han sido encontrados en unas excavaciones recientes. Sin embargo, solo existe un maestro capaz de descifrarlos...
+		</action>
+		<goto v="fosslv"/>
+		<actfight act="Dar los Pergaminos" monsters="megoup">
+			<begin>Mientras te disponías a llevarle los pergaminos al Maestro Elemental, ¡eres sorprendido por una repentina emboscada!</begin>
+			<win>¡Parece que durante la confusión del combate alguien te robó los preciados pergaminos!</win>
+		</actfight>
+		<talk v="Maestro Elemental" gfx="elmaster">
+			¡¿Cómo?! ¡¿Le han robado lo que le pedí?! ¡¡Menudo incompetente!! ¡Él no tiene ni idea de hasta qué punto esos pergaminos son importantes! ¡Que él me los traiga lo antes posible! Los ladrones no han podido ir demasiado lejos...
+		</talk>
+		<goto v="tunel" hide="1"/>
+		<actfight act="Ladrones de Pergaminos" monsters="megoup">
+			<begin>Has encontrado a uno de los cómplices del robo...</begin>
+			<win>Has recuperado una página de los Pergaminos... ¿dónde estará el resto?</win>
+		</actfight>
+		<goto v="colesc" hide="1"/>
+		<actfight act="Ladrones de Pergaminos" monsters="darkg2">
+			<begin>Acabas de encontrar al líder de los ladrones de Pergaminos...</begin>
+			<win>Este ladrón poseía dos páginas de los Pergaminos. Ya tienes tres páginas de cuatro. La última ha desaparecido. ¿Serán estas tres páginas suficientes para el Maestro?</win>
+		</actfight>
+		<goto v="fosslv"/>
+		<talk v="Maestro Elemental" gfx="elmaster">
+			Que me deje algunos instantes para estudiar estos pergaminos...
+		</talk>
+		<talk v="Maestro Elemental" gfx="elmaster">
+			... bien, ya he terminado. ¡Es un descubrimiento increíble!: estos documentos hablan de la Isla del Dragón. Según las leyendas de varios países, ¡se trata de una isla con grandes alas capaz de desplazarse en el aire por sí misma!
+		</talk>
+		<talk v="Maestro Elemental" gfx="elmaster">
+			Si estos pergaminos son auténticos, eso quiere decir que la Isla del Dragón realmente existe. Esto es extraño, la explicación sobre cómo llegar hasta ella se paran bruscamente aquí. Es como si le faltara una página...
+		</talk>
+		<talk v="Maestro Elemental" gfx="elmaster">
+			No podremos saber nada más a menos que encontremos nuevas pruebas... ¡Qué lástima! ¡Me habría encantado explorar esta nueva isla!
+		</talk>
+		<talk v="Maestro Elemental" gfx="elmaster">
+			No perdamos más el tiempo con todas estas historias. Volvamos a nuestra lección sobre el elemento Aire. ¡Que me traiga 2 Energías de Aire lo más rápido posible!
+		</talk>
+		<useingr v="enair" n="2"/>
+		<talk v="Maestro Elemental" gfx="elmaster">
+			¿Cómo? ¿Eso es todo? Le había dicho a él que trajera 5 Energías de Aire. ¡Venga, a buscar tres más!
+		</talk>
+		<useingr v="enair" n="3"/>
+		<end>Bien, bien, bien. Lo consigue todo cuando quiere el listillo. ¡Qué pena que le salga todo a la primera!</end>
+		<gold v="10000"/>
+	</m>
+
+	<m group="elmaster" id="elma5" name="Lección 5 - el Agua" cond="mission(elma4)">
+		<begin>Nuestra última lección nos enseña a manejar el elemento Agua.</begin>
+		<goto v="fosslv"/>
+		<talk v="Maestro Elemental" gfx="elmaster">
+			Siempre guardo el elemento Agua para el final... Eso es porque este elemento no me gusta nada: ¡está frío y mojado! Es por eso que me instalé aquí, en el Gran Gran Gran Señor-Todo-Quema...
+		</talk>
+		<talk v="Maestro Elemental" gfx="elmaster">
+			Aunque bien es cierto que manejo perfectamente el elemento Agua, no me apetece enseñárselo. ¡Que vaya a ver a Bao de mi parte para recibir la lección!
+		</talk>
+		<goto v="baobob"/>
+		<talk v="Don Bao Bob" gfx="baobob">
+			Mmmm.... ¿Eres tú entonces el alumno del que el Maestro Elemental me habló? ¡Llegas en buen momento! Hace poco tuve unos problemas de fugas en el Portal que vigilo.
+			Unos monstruos que no deberían estar en este mundo se encuentran dispersados en las Islas... ¿Podrías hacer un poco de limpieza?
+		</talk>
+		<goto v="chutes"/>
+		<kill v="pirao2" n="1"/>
+		<goto v="marais"/>
+		<kill v="pirao2" n="1"/>
+		<goto v="corail"/>
+		<kill v="pirao2" n="1"/>
+		<goto v="ilewkk"/>
+		<kill v="pirao2" n="1"/>
+		<goto v="baobob"/>
+		<kill v="pirao2" n="1"/>
+		<talk v="Don Bao Bob" gfx="baobob">
+			Gracias por tu ayuda. Apenas puedo desplazarme cuando el Portal está débil. Más vale que me quede aquí no vaya a ser que una criatura poderosa intente ingresar en nuestro mundo...
+		</talk>
+		<talk v="Don Bao Bob" gfx="baobob">
+			Mmmm... he hablado demasiado. ¿Vemos algo sobre el elemento Agua?
+		</talk>
+		<talk v="Don Bao Bob" gfx="baobob">
+			El Agua es un elemento muy presente en las Islas Atlanteidas. Se trata de un elemento muy poderoso contra el Rayo. ¿Sabías que más allá del Bosque de Grumhel se extienden las Estepas Magnéticas donde el Rayo es el elemento principal?
+		</talk>
+		<talk v="Don Bao Bob" gfx="baobob">
+			Mmmm.... El Agua posee poderes importantes. Uno de los más investigados y buscados permite tomar el control de un combatiente enemigo para volverlo contra sus compañeros. No se puede aprender esta competencia de manera normal. Quizás tu Dino pueda manejar este poder algún día.
+		</talk>
+		<talk v="Don Bao Bob" gfx="baobob">
+			Mmmm.... Esto es más o menos lo que te puedo contar sobre el Agua. Le comunicaré al Maestro Elemental que has terminado tu formación.
+		</talk>
+		<goto v="fosslv"/>
+		<talk v="Maestro Elemental" gfx="elmaster">
+			Que me cuente, ¿cómo le va al viejo Bao? Tengo pocas ocasiones para verlo desde que fue asignado a la vigilancia del Portal Mandrágora. ¡Oh! ¡Parece ser que su formación ha terminado!
+		</talk>
+		<end>
+			La última lección ha finalizado. Que venga a hablarme para obtener su recompensa final.
+		</end>
+		<xp v="20"/>
+		<fx v="sphere"/>
+	</m>
+
+</missions>

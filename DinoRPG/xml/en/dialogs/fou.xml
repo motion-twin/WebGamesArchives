@@ -1,0 +1,68 @@
+﻿<!-- FOU DES COLLINES HANTEES -->
+
+<d place="collin" name="Strange Man" gfx="fou" cond="!fx(lantrn)">
+
+	<phase id="begin" next="hi:approach:ignore" fast="1">
+		An strange and awkward looking person is hiding behind the trees. He brandishes a lantern and shines it in your direction.
+	</phase>
+
+	<a id="hi">Hello?</a>
+	<a id="approach">Approach carefully</a>
+	<a id="ignore">Ignore him</a>
+	<a id="run">Run away!</a>
+
+	<phase id="hi" next="approach:ignore:run" fast="1">
+		The man seems very worried and continues to look at you without saying anything.
+	</phase>
+
+
+	<phase id="approach" next="hi:ignore:run" fast="1">
+		You barely take a step in his direction before the man jumps,
+		frightened, into a bush! A moment later,
+		he lifts his head out of the bush and looks at you again with a look of anxiety strewn across his face.
+	</phase>
+
+
+	<phase id="run" fast="1">
+		You run away as fast as you possibly can!
+	</phase>
+
+	<phase id="ignore" next="intro:run" fast="1">
+		You turn your head to ignore him. But while glancing in his direction, 
+		you notice with surprise that he's now standing right in front of you! 
+		You can't prevent yourself from letting out a cry of surprise! 
+		He puts his lantern under your nose and starts sniffing you noisily....
+	</phase>
+
+	<a id="intro">ARGH! You scared me!</a>
+
+	<phase id="intro" next="seenWhat:leave">
+		Scared? Scared of what? The shadows or my voice? You're scared too? We're all scared!
+		I've seen them!
+	</phase>
+
+	<a id="seenWhat">Seen what?</a>
+	<a id="leave">Hmmm, I have to leave now....</a>
+
+	<phase id="leave" fast="1">
+		You step back slowly and move away without looking back...
+	</phase>
+
+	<phase id="seenWhat" next="show:run">
+		Gorgoth! The headeater from the dark abyss!!
+	</phase>
+
+	<a id="show">Aaahhh! He seems extremely dangerous!</a>
+
+	<phase id="show" next="fight:run">
+		He terrorises every living creature in the Grumhel Jungle! 
+		Look! There he is! (He points to a clearing in the jungle's dense vegetation)!	</phase>
+
+	<a id="fight">Attack Gorgoth!</a>
+
+	<phase id="fight" fight="korgon" fast="1" effect="lantrn">
+		While you are searching for the strange man, you notice that he has disappeared ... 
+		The good news is that he dropped his lantern whilst he was running away. You can use this lantern to help guide you in dark places.
+	</phase>
+
+</d>

@@ -1,0 +1,133 @@
+﻿<d place="vener" name="Der Ehrwürdige" gfx="dorogon" cond="!(scenario(nimbao,14+)+scenario(nimbao,41-))">  
+
+	<phase id="begin" next="moi:moi2:bye">
+		GWWWWWWWWAAAAAAARGGGGGGGHHHHHH!!!! Wer waaagt es, mich beim Mittagsschlaf zu stööören????
+	</phase>
+
+	<a id="moi" cond="!fx(vmem)">Äh... Ich bin`s.</a>
+	<a id="moi2" cond="fx(vmem)">Äh... Ich bin`s.</a>
+	<a id="bye">Leise verschwinden.</a>
+
+	<phase id="bye" fast="1">
+		Du hast recht. Es gibt Situationen im Leben, in denen es besser ist, all seinen Mut zusammenzunehmen und auf schnellstem Wege einen strategischen Rückzug anzutreten. Und zwar möglichst unbemerkt...
+	</phase>
+
+	<phase id="moi" next="perdu:chasse:deal:korgon:auto">
+		UUUHMMMM ?? Was willst du überhaupt von mir??? Ich hoffe du hast einen guten Grund, denn sonst werde ich deinen Dinoz ZUM FRÜHSTÜCK GRILLEN!!!
+	</phase>
+
+	<a id="perdu" target="fight">Ich habe mich auf dem Weg hierher verlaufen und...</a>
+	<a id="chasse" target="fight">Ich bin ein Großer Drachenjäger und ich bin gekommen, um dich herauszufordern! </a>
+	<a id="deal" target="fight">Ich möchte dir ein Goldgeschäft anbieten!</a>
+	<a id="korgon">Ich war gerade dabei einem Korgonen hinterherzulaufen und...</a>
+	<a id="auto" target="fight">Könnte ich vielleicht ein Autogramm haben?</a>
+
+	<phase id="korgon" next="next0:next1">
+		UHHMM??? Ein KORGONE, sagst du??? Wo denn, wo denn? Ich habe Hunger bekommen!
+	</phase>
+
+	<a id="next0" target="fight">Ich habe ihn gefangen.</a>
+	<a id="next1">Er ist mir entwischt.</a>
+
+	<phase id="next1" next="next2" effect="vmem">
+		Oohhh! Wie SCHAAADE!! Das muss wirklich ÄRGERLICH sein! Ich verstehe, ich verstehe. Als ich noch jung war, habe ich oft auf diese
+	Weise ein paar solcher Frühstückshappen entwischen lassen. Jetzt GRILLE ich sie direkt, so haben sie nicht mehr die Zeit zu entkommen!
+	</phase>
+
+	<a id="next2" target="question">Das ist effizient...</a>
+
+	<phase id="fight" fight="vener" collection="vener" effect="vmem:vkill">
+		GROOOOAAARRH !!! Dieses MAL hast du GEWONNEN! ABER wir werden uns WIEDERSEHEN!
+	</phase>
+
+	<phase id="moi2" next="question">
+		UHMMMM? Ja, ich erinnere mich an deinen Dinoz. Was willst du noch von mir?
+	</phase>
+
+	<a id="question">Äh...</a>
+
+	<phase id="question" next="force:fight:fight2">
+		Was ist, kleiner Korgonenfresser, kann ich etwas für dich GRILLEN? Oder vielleicht etwas anderes für dich tun? Verlange nicht allzu viel von mir, sonst zerlege ich dich in kleine, knusprige Stücke. Das würde ein hervorragendes FRÜHSTÜCK für mich abgeben!!!
+	</phase>
+
+	<a id="force">Ich wünsche mir, dass mein Dinoz stärker wird!</a>
+	<a id="fight" cond="!fx(vkill)">Ich werde dich ERSCHLAGEN!</a>
+	<a id="fight2" cond="fx(vkill)">Ich werde dich ERSCHLAGEN!</a>
+
+	<phase id="force" effect="fflag">
+		UHHMM??? STÄRKER sagst du? NA GUT, dann folge meinem Rat: Such den SCHAMANEN vom Lavaloch auf. Er wird dir zeigen, wie du deine Gegner GRILLEN kannst!
+	</phase>
+
+	<phase id="fight2">
+		UHMM...Ich habe eine wenig HUNGER...was hältst du davon, das auf später zu verschieben?
+	</phase>
+
+</d>
+
+<d place="vener" name="Der Ehrwürdige" gfx="dorogon" cond="scenario(nimbao,14+)+scenario(nimbao,41-)"> 
+	<phase id="begin" frame="hurt" next="ok:ko:ko2:force2">
+		GRRrrrr....Aaargh..... Ich warte noch immer auf deine Hilfe.
+		Ich zähle auf Dich.
+	</phase>
+	<a id="ok">Du kannst auf mich zählen!</a>
+	<a id="ko" cond="!fx(vmem)+!friend(mandr2)">Ich muss noch etwas trainieren!</a>
+	<a id="ko2" cond="fx(vmem)+!friend(mandr2)">Ich muss noch etwas trainieren.</a>
+	<a id="force2">Ich wünschte, mein Dinoz wäre stärker!</a>
+	
+	<phase id="ok" fast="1" frame="hurt">
+		Du gehst wieder. Doch du bist fest entschlossen, dem Ehrwürdigen zu helfen.
+	</phase>
+	<phase id="ko" frame="hurt" next="comb">
+		Sehr gut, bereite dich vor.
+	</phase>
+	<a id="comb" cond="!fx(vkill)">Auf geht's!</a>
+
+	<phase id="force2" effect="fflag" frame="hurt">
+		UHHMM??? Du glaubst WIRKLICH, du wärst STÄRKER? NUN... höre meinen Rat: Suche den Schamanen bei Lavaloch auf. 
+		Er kann dir beibrigen, wie du deine Feinde GRILLEN kannst!
+	</phase>	
+	<phase id="comb" fight="vener" collection="vener" effect="vmem:vkill" frame="hurt">
+		Gut gemacht. Du bist nun bereit, die Dorogons von Nimbao herauszufordern.
+	</phase>
+	
+	<phase id="ko2" frame="hurt">
+		Du bist nun bereit, die Dorogons von Nimbao herauszufordern. Viel Glück!
+	</phase>
+</d>
+
+
+
+
+<!-- Soldat blessé -->
+
+<d place="dnv" name="Verwundeter Soldat" gfx="soldat" cond="fx(vmem)+!fx(ccard)">
+
+	<phase id="begin" fast="1" next="talk">
+		An einem Straßenrand triffst du einen verwundeten Soldaten. Er sieht wirklich nicht gut aus, aber er ist noch bei Bewusstsein.
+	</phase>
+
+	<a id="talk">Mit ihm reden.</a>
+
+	<phase id="talk" next="give:no">
+		................ bo rot.... Pi.... ttee.... ! !
+	</phase>
+
+	<a id="give">Dem Soldaten ein Warmes Brot geben.</a>
+	<a id="no">Ihm nichts geben.</a>
+
+	<phase id="no" fast="1">
+		Du entfernst dich. Immerhin kann es gefährlich sein, einen Unbekannten zu verarzten!
+	</phase>
+
+	<phase id="give" next="derien">
+		..... mampf.... schluck... mampf... DANKE!!! MIR GEHT EF SCHON FIL BEFFER!!! DU BIFT MEIN RETTER!!!
+	</phase>
+
+	<a id="derien">Äh... Gern geschehen und auf Wiedersehen.</a>
+
+	<phase id="derien" effect="ccard" use="hotpan">
+		WARTE!! ICH WERD DICH PELOHNEN!! Fiehst du, ich war nicht fufällig in diefem Tfuftand... Ich hab in der Tat an einem FPETFIELLEN Training in den Lavaloch-Höhlen teilgenommen. Ef ift fehr hart und ef koftet ein biffchen Geld, aber ef hat mir ermöglicht, fo ftark tfu werden! HIER! Nimm diefen Mitgliedsausweis für deinen Dino', ich brauch ihn nicht mehr...
+	</phase>
+
+</d>
+

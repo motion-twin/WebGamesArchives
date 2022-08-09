@@ -1,0 +1,48 @@
+﻿<!-- Quete du charme d'eau -->
+
+<d place="baobob" name="Fan de Bao" gfx="baofan">
+
+	<phase id="begin" next="ok">
+		¡Hola señor! ¿Has hablado con Don Bao Bob? Es un tipo genial, ¿no te parece?		
+	</phase>
+
+	<a id="ok">Digamos que sí.</a>
+
+	<phase id="ok" next="wah">
+		¡¿A que sí que es verdad?! ¡Es estupendo! ¡Atravesé la Jungla de Grumhel sólo para que me contara sus increíbles historias! ¿Sabes qué? Una vez se enfrentó a un Gorilos, ¡sí sí! ¡Y además estaba rodeado de un montón de animales supermalos! ¿Y sabes qué? ¡pues los venció a todos!
+	</phase>
+
+	<a id="wah">¡¡Guaauuhh!!</a>
+
+	<phase id="wah" next="yes:nothing:no">
+		¡Sí! Y Don Bao Bob me está enseñando cosas. Dice que tengo mucho talento para mi edad. Es fantástico, ¿no te parece? Espera, mira... voy a crear un Talismán, ¿quieres ver cómo lo hago?
+	</phase>
+
+	<a id="yes" cond="!fx(wcharm)">¡Vale!</a>
+	<a id="nothing" cond="fx(wcharm)">¡Vale!</a>
+	<a id="no">No, gracias</a>
+
+	<phase id="yes" effect="wcharm" next="spirit">
+		.............. Ya está, ¡terminé! ¿Lo quieres? Toma... ¡Es un Talismán Bao! ¡Cuídalo bien! Debe de serte útil durante varios combates. Cuando el fluido esprital se agote, puedes venir a verme para que te lo recargue.
+	</phase>
+
+	<a id="spirit">¿Quieres decir "Espiritual"?</a>
+	<phase id="spirit" next="thanks">
+	Heu... sí, ¡eso mismo! ¡Espitri... ra... sprit...! ¡Jo qué palabras más raras tiene hoy la tecnología!
+	</phase>
+
+	<a id="thanks">Bueno, tengo que irme. ¡Gracias por el Talismán Bao!</a>
+	<phase id="thanks">
+		Joooo ya te vas... ¿volverás, no? ¡Hasta pronto!	
+	</phase>
+
+	<phase id="nothing">
+		Ah... ¡pero tu Dino ya tiene un Talismán Bao! Mira, sigue teniendo energía... ¿lo ves? Cuando deje de funcionar podré recargártelo.
+	</phase>
+
+	<phase id="no">
+		¿Ah? Bueno, pues peor para ti entonces... *refunfuño*.
+	</phase>
+
+</d>
+

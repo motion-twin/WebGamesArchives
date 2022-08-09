@@ -1,0 +1,145 @@
+<quests>
+
+<q from="schskb" id="skba" name="Le Miaouducteur quadriphasé" cond="grade(sk,3)">
+<begin>Je reprends le flambeau de la domestication des Catz, j'ai eu une idée pour découvrir ce qui ne va pas. </begin>
+<talk did="skbaa" />
+<create o="Elt(9):3;Elt(17):3" title="Créer 3 Couivres et 3 Etincelles. Chaque élément présent à la fin d'une partie sera collecté. " />
+<use qo="Elt(9):3;Elt(17):3" zone="sktupu" action="Donner les éléments" text="Ok, bon travail. Voilà la recette à faire pour créer un Miaouducteur quadriphasé. Quand tu l'auras, on le mettra en route avec les éléments dedans et on devrait pouvoir comprendre les Catz ! " title="Donner les Couivres et les Etincelles au Parrain Vaarza." />
+<cauldron r="qmiaou" collect="1" add="1" drop="1" title="Faire la recette Technocat pour créer un Miaouducteur quadriphasé." />
+<talk did="skbab" />
+<end>J'ai la réponse du Conseil : "On renvoie les Catz de l'autre côté des montagnes noires et on laisse Jeezara se débrouiller avec". </end>
+<xp v ="12" />
+<gold v="74" />
+<item v="Catz:1" />
+<reput s="sk" v="8" />
+</q>
+
+
+<q from="schskb" id="skbb" name="Le sacerdoce du gros score" cond="quest(skba)">
+<begin>Comme tu l'as peut-être entendu dire lors des portes ouvertes, il y a un truc qu'on aime particulièrement à Shang-Kah...</begin>
+<talk did="skbba" />
+<score ratio="1.8" zone="agoraa" title="Se rendre à la Grande place pour faire un gros score (c'est plus sympa avec des gens qui regardent) :  " />
+<end>Bon travail, en plus ça a fait un peu de pub pour Shang-Kah.</end>
+<xp v ="15" />
+<gold v="100" />
+<reput s="sk" v="11" />
+</q>
+
+<q from="schskb" id="skbc" name="Gros score, gros matériel" cond="quest(skbb)">
+<begin>
+La deuxième leçon pour tout savoir sur les gros scores, c'est qu'il ne faut jamais sous-estimer le matériel. Par exemple le Tejerkatum. C'est très bien le Tejerkatum pour faire des gros scores. Essaie un peu, pour voir.
+</begin>
+<score ratio="2.2" zone="skoasi" title="Faire le gros score suivant à l'Oasis Bogdan. Ne pas hésiter à utiliser les Tejerkatum gentiments fournis." >
+	<playMod fuo="Tejerkatum;Tejerkatum"  artft="Tejerkatum:35" />
+</score>
+<end>Excellent, tu es définitivement un adepte de la doctrine Shang-Kah.</end>
+<xp v ="16" />
+<gold v="280" />
+<reput s="sk" v="13" />
+</q>
+
+
+<q from="schskb" id="skbd" name="Oasis, un goût incomparable " cond="quest(skbb)">
+<begin>Tu as déjà goûté l'eau de l'Oasis Bogdan ? Elle est potable mais...</begin>
+<talk did="skbda" />
+<cauldron r="qpa" collect="1" add="1" drop="1" title="Faire la recette Multiplum Vigoroum pour créer 100 potions de vigueur en 1 seule fois." />
+<use qo="Pa:100" zone="skoasi" action="Verser les potions" text="98... Glou glou glou. 99... Glou glou glou.... et 100 ! Glou glou glou... Voilà, c'est fait." title="Verser les 100 potions de vigueur dans le lac de l'Oasis Bogdan." />
+<talk did="skbdb" />
+<end>Je ne m'avoue pas vaincu, j'ai plein d'autres idées ! </end>
+<xp v ="16" />
+<gold v="105" />
+<item v="Pa:5" />
+<reput s="sk" v="9" />
+</q>
+
+<q from="schskb" id="skbe" name="La puissance du fond de sauce" cond="quest(skbd)">
+<begin>J'ai demandé conseil auprès d'un spécialiste en goût pour l'oasis. Je suis allé voir le chef Haggis à Gémini.</begin>
+<talk did="skbea" />
+<talk did="skbeb" title="Trouver une main du mentor auprès des étudiants de Jeezara. Le mieux est de commencer par se rendre à Yoruba." step="1" />
+<use o="Elt(11):1;Elt(17):12" zone="jztire" qgive="MentorHand:1" action="Donner les éléments" text="Ok, file le matos.... Bon. Y'a le compte. Voilà ta Main du mentor. Si tu as encore besoin d'un petit deal, tu sais où me trouver." title="Apporter 1 pépite d'or et 12 Etincelles à Ylasse Flacule, au bourg de Tirésias." /> 
+<use qo="MentorHand:1" zone="skoasi" action="jeter la Main du mentor" text="Plouf. Attention, je goûte... Urrglll ! Ahkkkk ! Arrgl Kreu ! Kreu ! Pfyaaarrk !... Aaaaahh c'est dégueulasse ! C'est immonde ! Qu'est-ce que c'est que ce goût atroce ? !" title="Jeter la Main du mentor dans le lac de l'oasis Bogdan." />
+<end>Je trouverai ! Je le jure, je trouverai ! Ark, beurk...</end>
+<xp v ="14" />
+<gold v="142" />
+<reput s="sk" v="12" />
+</q>
+
+
+<q from="schskb" id="skbf" name="Non à l'eau qui pue ! " cond="quest(skbe)">
+<begin>Les habitants de la Médina sont furieux, ils refusent de boire l'eau de l'Oasis pendant nos expériences. Ils exigent qu'on les approvisionne en eau fraîche en attendant.</begin>
+<create o="Elt(12):20" title="Créer 20 rosées pour approvisionner la médina Shaka-Shaka en eau fraîche. Chaque élément présent à la fin d'une partie sera collecté. " />
+<end>Ok, les habitants de la médina sont satisfaits. On va essayer de finir nos travaux avant qu'ils épuisent leur stock d'eau, maintenant.</end>
+<xp v ="16" />
+<gold v="135" />
+<randomrecipe v="300:230" />
+<reput s="sk" v="14" />
+</q>
+
+
+<q from="schskb" id="skbg" name="Fashion Shang-Kah" cond="quest(skbe)">
+<begin>C'est moi ou depuis qu'on se connaît tu portes toujours les mêmes fringues ? Tu crois que ton Parrain va te laisser faire ça ?</begin>
+<talk did="skbga" />
+<talk did="skbgb" title="Se rendre à la salle des chaudrons pour atteindre le rang 2 Pas très doué en transmutation vestimentaire. Retourner ensuite à Tupuri pour en informer le Parrain Vaarza." />
+<end>N'oublie pas que la guilde récompense les alchimistes doués en transmutation au palais de Stime Pounk. Ils ont des recettes exclusives pas mal du tout.</end>
+<xp v ="16" />
+<gold v="400" />
+<reput s="sk" v="10" />
+</q>
+
+
+<q from="schskb" id="skbh" name="Ca sent... euh..." cond="quest(skbe)">
+<begin>J'ai une nouvelle idée pour l'Oasis ! </begin>
+<talk did="skbha" />
+<talk did="skbhb" title="Goûter l'eau de l'Oasis." step="1" />
+<talk did="skbhc" title="Se rendre au BAFA pour faire analyser le goût de l'eau." step="1" />
+<use o="Elt(10):5" zone="gubafa" action="Donner les éléments" text="Parfait. L'analyse sera faite dans 1 heure. Vous recevrez les résultats par Chouettex directement à l'école communale Tupuri." title="Donner 5 Mercurules pour payer les analyses."  />
+<talk did="skbhd" title="Attendre les résultats à Tupuri." /> 
+<end>Bon on laisse tomber le Patchinkrop. C'est pas une odeur comme ça qui va faire venir les touristes...</end>
+<xp v ="17" />
+<gold v="115" />
+<reput s="sk" v="13" />
+</q>
+
+
+<q from="schskb" id="skbi" name="On touche le fond" cond="quest(skbh)">
+<begin>On va tenter le goût de la dernière chance.... J'ai un peu peur des conséquences mais on a plus le choix.</begin>
+<talk did="skbia" />
+<talk did="skbib" title="Aller voir le professeur Lecoussin à l'école Gémini." step="1" />
+<talk did="skbic" title="Informer le Parrain Vaarza de la demande de Gémini." step="1" />
+<create o="Elt(25):8;Elt(18):4" title="Créer 8 Slamines et 4 Pyropâtes. Chaque élément présent à la fin d'une partie sera collecté. " />
+<use qo="Elt(25):8;Elt(18):4" qgive="Patchinko:1" zone="skoasi" action="Jeter les éléments" text="Plouf ! ... Ah ! je le vois ! Le Patchinkrop remonte. Je le tiens, c'est bon ! " title="Remonter le Patchinkrop en lançant les éléments dans le lac. Faut pas viser à côté ! "  />
+<use qo="Patchinko:1" qgive="QuestObj(anab):1" zone="gmsch" action="Donner le Patchinkrop" text="Marché conclu dude. Voilà ton anabolisant mentholé. " title="Apporter le Patchinkrop au professeur Lecoussin à Gémini." />
+<talk did="skbid" title="Jeter l'anabolisant dans le lac et goûter."/>
+<end>Qui ? Le Parrain Vaarza ? Ah si je l'ai vu passer un paquet de fois depuis hier, il a l'air de faire du footing. Il a une sacré endurance. 24 heures sans s'arrêter, chapeau.</end>
+<xp v ="22" />
+<gold v="260" />
+<randomrecipe v="200:80" />
+<reput s="sk" v="15" />
+</q>
+
+
+<!-- ###### GEN QUESTS #######-->
+
+<q from="schskb" id="reau" race="sk" name="L'eau, l'air, l'xp" repeat="1" hideCond="quest(skbf)">
+<begin>
+Les habitants réclament plus d'eau pure, il faudrait aller en chercher pour regonfler leurs stocks.
+</begin>
+<create o="Elt(13):10" title="Créer 10 Valvéoles pour approvisionner la médina Shaka-Shaka en eau fraîche. Chaque élément présent à la fin d'une partie sera collecté. " />
+<end>Bon travail. Une petite rasade pour te remettre ? </end>
+<xp v ="6" />
+<gold v="120" />
+<reput s="sk" v="12" />
+</q>
+
+<q from="schskb" id="rdska" race="sk" name="" rand="1" repeat="1" hideCond="quest(reau)">
+</q>
+
+<q from="schskb" id="rdskb" race="sk" name="" rand="1" repeat="1" hideCond="sch(sk)+grade(sk,6)">
+</q>
+
+<q from="schskb" id="rdskc" race="sk" name="" rand="1" repeat="1" hideCond="sch(sk)+grade(sk,10)">
+</q>
+
+
+</quests>
+

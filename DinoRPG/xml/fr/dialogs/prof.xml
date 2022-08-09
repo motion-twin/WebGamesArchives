@@ -1,0 +1,163 @@
+﻿<!--	QUETE DU PROFESSEUR : bouee & materiel d'escalade
+			+ infos sur les différentes zones
+			+ infos sur le gant des zors
+			+ transforme pierre en totem ashpouk
+ -->
+
+<d place="univ" name="Professeur Eugene" gfx="eugene">
+
+	<phase id="begin" next="talk" fast="1">
+		Dans la bibliothèque de l'Université, vous rencontrez le fameux professeur Eugene. Ce dernier est
+		réputé pour son grand intérêt envers les Maîtres Dinoz. Il vous pose souvent de nombreuses questions
+		mais en échange peut apprendre quelques techniques très utiles à vos Dinoz, ainsi que vous donner
+		des informations très importantes sur Dinoland.
+	</phase>
+
+	<a id="talk">Parler au Professeur Eugene</a>
+
+	<phase id="talk" next="question:nothing:nothing2:learn:learn_water:learn_fire:learn_done">
+		Bonjour le ptit jeunot, alors comment va la vie ? Les aventures tout ça c'est coool ? Ah ! Je me rappelle
+		quand j'avais ton âge, j'en ai arpenté des kilomètres tout autour de Dinoland ! N'hésite pas à venir me
+		poser des questions si tu veux des indices sur les grands mystères qui t'intriguent.
+
+		En plus, je peux apprendre quelques techniques utiles à ton Dinoz. A condition bien sûr qu'il soit prêt, car mon enseignement n'est pas de tout repos et pourrait lui être fatal si ton Dinoz n'est pas assez entraîné.
+	</phase>
+
+	<a id="question">Poser une Question</a>
+
+	<!-- APPRENTISSAGE -->
+
+	<a id="nothing" cond="!level(5)">Apprendre</a>
+	<a id="learn" cond="level(5)+!fx(bouee)+!fx(matesc)">Apprendre</a>
+	<a id="nothing2" cond="!level(7)+(fx(bouee)|fx(matesc))">Apprendre</a>
+	<a id="learn_water" cond="level(7)+fx(matesc)+!fx(bouee)">Apprendre</a>
+	<a id="learn_fire" cond="level(7)+fx(bouee)+!fx(matesc)">Apprendre</a>
+	<a id="learn_done" cond="fx(bouee)+fx(matesc)">Apprendre</a>
+
+	<phase id="nothing">
+	Bien, asseyez-vous là, et placez votre Dinoz ici... Voilà, parfait. (il sort une petite lampe de poche)... la pupille réagit correctement... Voyons la dentition, fais "haaaa !"...  Mmmm... ton Dinoz est encore un peu jeune... Pour l'instant je ne peux rien lui apprendre.
+		Reviens me voir quand il aura atteint le niveau 5.
+	</phase>
+
+	<phase id="nothing2">
+		Voyons voir... (il examine le Dinoz...) Bien, on dirait que ton Dinoz s'est vraiment amélioré depuis la dernière fois. Cependant, il n'est pas encore assez fort pour apprendre la seconde technique... son corps ne le supporterait pas. Je pense qu'il faudrait attendre le niveau 6... Mmmm non, le niveau 7, c'est plus sûr.
+	</phase>
+
+	<phase id="learn" next="water:fire">
+		Alors comme ça ton Dinoz veut apprendre une technique ? Pour cela ton Dinoz devra combattre un monstre. Je l'entraînerai uniquement s'il en sort vainqueur. Au fait, quelle technique veux-tu que je lui apprenne ?
+	</phase>
+
+	<a id="water">La nage en bouée</a>
+	<a id="fire">L'Escalade</a>
+
+	<phase id="water" next="water_fight:back">
+		Très bien. Si ton Dinoz remporte ce défi, je lui apprendrai à utiliser la Bouée. Grâce à ça, ton Dinoz pourra traverser de courtes distances d'eau.
+	</phase>
+
+	<phase id="fire" next="fire_fight:back">
+		L'Escalade n'est pas facile à maîtriser, et en plus il faut du Matériel d'Escalade pour pouvoir s'y initier.
+		S'il arrive à gagner contre ce monstre, j'enseignerai les bases à ton Dinoz et lui fournirai le materiel
+		qui devrait lui permettre de gravir le volcan du Grand Tout Chaud.
+	</phase>
+
+	<a id="water_fight">Combattre</a>
+	<a id="fire_fight">Combattre</a>
+	<a id="back" target="learn">Retour</a>
+
+	<phase id="water_fight" fight="ewater" effect="bouee">
+		Bravo, beau combat ! Comme promis, je viens de donner la Bouée à ton Dinoz. Maintenant il devrait pouvoir accéder
+		aux Iles Atlantéinées au sud de Dinoland. Bonne chance, et sois prudent !
+	</phase>
+
+	<phase id="fire_fight" fight="efire" effect="matesc">
+		Bravo, beau combat ! Ton Dinoz possède maintenant le Matériel d'Escalade, et il devrait pouvoir gravir
+		les pentes escarpées du volcan du Grand Tout Chaud. Les monstres là-bas sont très chaleureux, alors fais attention
+		en t'y rendant !
+	</phase>
+
+	<phase id="learn_water" next="water_fight">
+		Tu viens pour obtenir la Bouée c'est cela ? Il te faudra d'abord combattre ce monstre avant
+		que je la donne à ton Dinoz !
+	</phase>
+
+	<phase id="learn_fire" next="fire_fight">
+		Tu viens pour obtenir le Materiel d'Escalade ? Pour l'avoir, tu devras d'abord combattre ce monstre.
+	</phase>
+
+	<phase id="learn_done">
+		Je n'ai plus rien à enseigner à ton Dinoz. Mais ne t'inquiète pas, il y a d'autres personnes à travers l'Univers
+		de Dinoland qui pourront lui faire apprendre de nombreuses techniques !
+	</phase>
+
+	<!-- QUESTIONS -->
+
+	<phase id="question" next="dinoville:gtc:atlante:stone:gant:noquestion">
+		Ah, j'a-d-o-r-e les questions ! Que veux-tu savoir, mon p'tit ?
+	</phase>
+
+	<a id="dinoville">Le Royaume de Dinoville</a>
+	<a id="atlante" cond="level(8)">Les Iles Atlantéinées</a>
+	<a id="gtc" cond="level(5)">Le Grand Tout Chaud</a>
+	<a id="gant" cond="fx(gant)">Le Gant des Zors</a>
+	<a id="stone" cond="fx(astone)">Cette Vieille Pierre ?</a>
+	<a id="noquestion">Rien de tout cela</a>
+	<a id="menu" target="question">Retour</a>
+
+	<phase id="dinoville" next="menu">
+		Le Royaume de Dinoville a été détruit et refondé plusieurs fois depuis des temps anciens.
+		Aujourd'hui, c'est un endroit prospère et civilisé, comparé aux endroits sauvages qui l'entourent.
+		C'est pour cette raison que Dinoville est un endroit parfait pour un petiot Maître Dinoz comme toi !
+
+		N'hésite pas à bien y entraîner tes Dinoz avant de les faire s'aventurer dans d'autres endroits de
+		Dinoland, car les monstres y sont bien plus dangereux qu'ici !
+	</phase>
+
+	<phase id="atlante" next="menu">
+		Il y a de cela bien longtemps, il existait une île au sud de Dinoland. Elle avait été propulsée
+		au sommet d'un pic de roche volcanique à plusieurs centaines de mètres au-dessus de l'océan suite
+		à une éruption sous-marine. On l'appelait l'Ile de Jazz...
+
+		Cependant, petit à petit, les vagues de l'océan ont érodé le pic de roche et elle a fini par s'effondrer.
+		Un gigantesque tsunami a englouti une bonne moitié de Dinoland, détruisant une grande partie des anciennes
+		civilisations humaines. Aujourd'hui, après quelques centaines d'années, les choses commencent enfin à se
+		réorganiser peu à peu, mais une grande partie de Dinoland reste sauvage et dangereuse.
+
+		Pour en revenir au sujet principal, les Iles Atlantéinées sont les fragments de l'Ile de Jazz après son
+		effondrement. On dit que seul le Marais Collant n'a pas changé.
+	</phase>
+
+	<phase id="gtc" next="menu">
+		Hé mon p'tit, tu vois le petit triangle noir là-bas au nord ? C'est un immense volcan qui se nomme le
+		Grand Tout Chaud. Je te conseille d'aller y faire un tour, on y mange de très bonnes merguez, grillées
+		à point.
+
+		Quand j'étais plus jeune, j'ai beaucoup étudié les ruines des anciennes civilisations. Savais-tu par
+		exemple qu'au sommet du Grand Tout Chaud, il existait il y a de cela des millénaires la civilisation
+		Ashpouk ? Et puis un jour, boum ! éruption volcanique : plus rien ! Tu trouves pas ça triste toi ?
+
+		En tout cas, je te conseille d'aller faire des fouilles dans les ruines, on y trouve parfois d'anciennes
+		reliques, et n'oublie pas de goûter les merguez.
+	</phase>
+
+	<phase id="gant" next="menu">
+		Oh !! Le Gant des Zors !! C'est un objet bien rare que ton Dinoz a là ! On dit que le Gant des Zors
+		a un rapport avec les Chutes Mutantes et qu'il permet d'accéder à la Forêt de Grumhel, mais on ne sait pas comment s'en servir...
+	</phase>
+
+	<phase id="stone" next="stone_yes:stone_no">
+		Ohhhhhh !!! Mais voici quelque chose de très interessant, il me semble qu'il s'agit de.... uhmmuhu....
+		je ne suis pas sûr... (il regarde fixement la pierre)... Peux-tu me montrer cette Pierre, que je l'examine un peu ?
+	</phase>
+
+	<a id="stone_yes">Bien sûr, la voilà.</a>
+	<a id="stone_no" target="question">Hé, là ! Pas touche ! Avant, j'aimerais savoir quelque chose...</a>
+
+	<phase id="stone_yes" noeffect="astone" effect="totem">
+		Ooooooohhhhh !!! Oui.... C'est bien ce que je pensais.... Regarde ! (il nettoie délicatement la pierre)... c'est un Totem Ashpouk ! Ca a beaucoup de valeur tu sais... prends-en grand soin !
+	</phase>
+
+	<phase id="noquestion">
+		Ah bon, dommage, n'hésite pas à revenir de temps en temps pour en savoir plus sur l'univers de Dinoland !
+	</phase>
+
+</d>

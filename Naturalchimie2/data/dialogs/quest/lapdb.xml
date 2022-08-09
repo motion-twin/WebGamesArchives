@@ -1,0 +1,101 @@
+<d place="aphall" name="Discuter de l'accord secret " gfx="approf" auto="0">
+
+<a id="begin">Maître Enguerrand ? Il faut que je vous parle.</a>
+
+<phase id="begin" frame="normal" next="ouch:cap:voila">
+Tiens donc. | Que veux-tu à la famille Audepint ? 
+</phase>
+
+<a id="ouch">Je sais tout sur vos manigances ! Vous êtes foutus !</a>
+<a id="voila">C'est au sujet de votre accord avec Hektor Vorace...</a>
+<a id="cap">Je viens de la part de la Guilde. Vous ne pouvez pas raser la capitale ! </a>
+
+<!-- ########## -->
+
+<phase id="ouch" frame="happy" next="oust">
+Ouh je tremble. | Un petit alchimiste sait tout de nos "manigances"... 
+</phase>
+
+<phase id="oust" frame="angry" next="exit">
+* Débarasse-moi le plancher, maintenant ! 
+</phase>
+
+<a id="exit">Tout de suite ! </a>
+
+
+
+<!-- ########## -->
+
+<phase id="cap" frame="normal" next="capb">
+Raser la capitale ? | %happy% Ah oui, c'est à propos du projet de résidence. Le cabinet immobilier a commencé sa pub. 
+</phase>
+
+<phase id="capb" frame="normal" next="avis">
+Il ne faut pas exagérer. Le projet remplace juste le palais de Stime Pounk et la Grande Place... | On ne va pas raser %happy% {TOUTE} la capitale.
+</phase>
+
+<a id="avis">Mais c'est pareil ! Vous ne pouvez pas construire tout et n'importe quoi s'il y a déjà quelque chose !  </a>
+
+<phase id="avis" frame="angry" next="oust">
+Ah ! | Et la Guilde, elle nous a demandé notre avis pour prendre le contrôle de l'alchimie, peut-être ? 
+</phase>
+
+
+<!-- ########## -->
+
+
+<phase id="voila" frame="angry" next="dort">
+Hektor Vorace ? | Comment ça Hektor Vorace ? Les dortoirs sont terminés depuis longtemps. Heureusement, d'ailleurs...
+</phase>
+
+<a id="dort">Les dortoirs ? </a>
+
+<phase id="dort" frame="normal" next="pa">
+Oui, les dortoirs des élèves Audepint. C'était lui le promoteur immobilier quand on les a entièrement refaits. | Une horreur, il n'a apporté que des ennuis. %angry% Et on attend toujours le chèque de compensation !
+</phase>
+
+<a id="pa">Ah, mais moi je parle du nouveau projet là, la résidence de la capitale.</a>
+
+<phase id="pa" frame="happy" next="ben">
+Eh bien quoi ? Quel rapport avec Hektor Vorace ? 
+</phase>
+
+<a id="ben">Ben euh... Cabinet Vorace. Hektor Vorace... Il y a un lien, non ? </a>
+
+<phase id="ben" frame="angry" next="ev">
+Tu... tu veux dire que le {cabinet Vorace}... | C'est la même chose que le {cabinet H. Vorace} de l'époque, pour les dortoirs ! ? Ah le... | Le...
+</phase>
+
+<a id="ev">Euh... C'est évident, non ?</a>
+
+<phase id="ev" frame="angry" next="hors">
+Mais pas du tout ! | Il a changé le nom de son cabinet exprès, le... * Le fourbe ! 
+</phase>
+
+<phase id="hors" frame="angry" next="exp">
+Ah mais ça ne va pas se passer comme ça ! Hors de question de retravailler avec cet escroc ! 
+</phase>
+
+<a id="exp">Ah je suis bien d'accord avec vous. Quel escroc ! En plus il a camouflé son nom exprès pour vous tromper, ohlala ! </a>
+
+<phase id="exp" frame="normal" next="enf">
+* Exactement ! | Bon c'est décidé, Audepint se retire de cette histoire de résidence ! | Tout bien réfléchi je sentais bien que c'était fumeux dès le départ, ce projet...
+</phase>
+
+<a id="enf">C'est sûrement le plus sage, je suis bien d'accord avec vous ! </a>
+
+<phase id="enf" frame="happy">
+Puisque tu es d'accord, tu peux t'occuper de détruire les stocks de pyrite que nous avions commencé à faire pour cette résidence. Ils ne servent plus à rien. | Il sont au {Faubourg Audepint} et à {Vostok}.
+</phase>
+
+
+
+
+
+
+
+
+
+
+
+</d>

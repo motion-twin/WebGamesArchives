@@ -1,0 +1,120 @@
+<quests>
+
+<q from="schgm" id="gma" name="Accrocher son hamac" cond="sch(gm)">
+<begin>Commence par aller poser tes affaires au dortoir, tu pourras t'y reposer un peu si tu manques de points de déplacement. Voilà ton hamac, tu l'accroches à l'arbre que tu veux. Reviens me voir dès que tu es prêt à commencer ton apprentissage !</begin>
+<msg  zone="gmhome" action="Installer son hamac" text="Te voilà chez toi. Pourquoi ne pas faire un petit somme histoire de tester le confort et de se reposer un peu ? " title="Aller poser ses affaires au dortoir des étudiants. C'est juste à l'ouest de l'école, dans la forêt." />
+<end>Bien installé ? Les petits oiseaux te berçaient gentiment pendant ta sieste ?... Bon ben c'est fini tout ça, dude, il va falloir se mettre à bosser pour devenir un vrai alchimiste.</end>
+<xp v ="5" />
+<reput s="gm" v="6" />
+</q>
+
+<q from="schgm" id="gmb" name="Les plantes, c'est la santé" cond="quest(gma)|(!sch(gm)+reput(gm,1))">
+	<begin>Comme tu le sais, l'herboristerie est très importante à Gemini. Et que fait un herboriste de bon matin ? Il va ramasser des plantes pour ses travaux d'alchimie de l'après-midi ! Eeeeh oui.</begin>
+	<create o="Elt(7):15" zone="gmoree" title="Se rendre à l'Orée du bois et collecter 15 Flaums. Chaque élément présent à la fin d'une partie sera collecté. " />
+	<end>Super, dude. Du bon boulot.</end>
+	<xp v ="10" />
+	<gold v="55" />
+	<reput s="gm" v="10" />
+</q>
+
+<q from="schgm" id="gmc" name="Pénurie de maillets" cond="quest(gmb)">
+	<begin>Attention, tous les alchimistes du coin sont réquisitionnés ! Le stock de maillets de l'école est au plus bas, il faut absolument le remplir pour pouvoir finir notre championnat de croquet ! Chaque alchimiste doit ramener de quoi faire 2 maillets. C'est-à-dire 2 belles branches d'arbre. </begin>
+	<collect o="QuestObj(wood):2" zone="gmoree" title="Se rendre à l'orée du bois et trouver 2 branches d'arbre de qualité. Quand tu auras trouvé une branche dans ton alchimie, fais une transmutation à côté d'elle pour la récupérer.">
+		<playMod artft="QuestObj(wood):45" />
+	</collect>
+	<end>Superbes branches, dude. Avec de tels maillets, nos athlètes vont pouvoir bien mouiller leurs maillots ! </end>
+	<xp v ="12" />
+	<gold v="40" />
+	<reput s="gm" v="8" />
+</q>
+
+
+<q from="schgm" id="gmd" name="La performance, c'est mon dada" cond="quest(gmc)">
+	<begin>Il est temps que tu découvres quelques spécialités géminites. On va commencer par la première étape de la créations des anabolisants mentholés. Je vais te fournir les potions vides nécessaires en début de partie.</begin>
+	<talk did="gmda" />
+	<collect o="QuestObj(menthol):5" zone="gmsch" title="Créer 5 concentrés de menthol en jouant une partie d'alchimie à l'école Gemini. Pour chacun, assembler en jeu 2 feuilles menthols, 1 flaum et une potion vide.">
+		<playMod fuo="Empty;Empty;Empty;Empty"  />
+	</collect>
+	<end>Ok dude, on dirait que tu te débrouilles pas mal. C'est cool ! On pourra bientôt passer à la deuxième étape.</end>
+	<xp v ="13" />
+	<gold v="110" />
+	<randomrecipe v="300:280" />
+	<reput s="gm" v="10" />
+</q>
+
+
+<q from="schgm" id="gme" name="Prêt en retard" cond="quest(gmd)">
+	<begin>Aïe aïe aïe... Je me lève ce matin et je marche sur un truc poussiéreux à côté de mon hamac ! C'est un bouquin que j'ai emprunté à la bibliothèque il y a plus de 6 mois ! Je suis super mal, dude ! </begin>
+	<talk did="gmea" />
+	<use qo="QuestObj(livre):1" zone="skguic" action="Rendre le livre" text="Oh, mais c'est notre livre 'Comprendre les femmes en toute circonstance en 20 leçons' ! Depuis le temps qu'on l'attend celui là, il y a beaucoup de demandes ! Vous avez intérêt à faire attention la prochaine fois." title="Monter votre réputation envers Shang-Kah en jouant dans le désert pour accéder au guichet de la grande bibliothèque. Rendre ensuite le livre en retard." />
+	<end>C'est bon dude ? Et ils t'ont pas collé une amende ? T'as eu du bol. En tout cas, merci.</end>
+	<xp v ="15" />
+	<gold v="95" />
+	<reput s="gm" v="12" />
+</q>
+
+
+<q from="schgm" id="gmf" name="Une haleine toujours fraîche ! " cond="quest(gme)">
+	<begin qgive="QuestObj(menthol):3">Il est temps de finir tes premiers anabolisants Gemini ! Je vais te donner tes 3 concentrés et la recette nécessaire. Reviens me voir avec tes résultats.</begin>
+	<cauldron r="qanab" collect="1" add="1" drop="1" title="Se rendre à la salle des chaudrons pour créer un anabolisant mentholé grâce à la recette Fonlaforme, donnée par le professeur Lecoussin." />
+	<end>Beau boulot, dude. Ca c'est un anabolisant mentholé ou je ne m'y connais pas. </end>
+	<xp v ="14" />
+	<gold v="110" />
+	<reput s="gm" v="9" />
+</q>
+
+
+<q from="schgm" id="gmg" name="A boire ! " cond="quest(gmf)">
+	<begin>Mauvaise nouvelle, dude. Mon élève qui était de corvée d'arrosage a pris un sale coup vicieux pendant le match de croquet d'hier. Il est toujours dans les pommes, il me faut quelqu'un immédiatement pour arroser mes précieux plants de viandoxilys.</begin>
+	<talk did="gmga" />
+	<create o="Elt(13):3" zone="gmfal" title="Collecter 3 Valvéoles aux falaises anamentholées. Chaque élément présent à la fin d'une partie sera collecté. " />
+	<use qo="Elt(13):3" zone="gmsch" action="Arroser les plantes" text="Vous versez les valvéoles sur les plantes. Les feuilles se redressent et s'agitent, répandant une forte odeur de viande grillée au barbecue. Votre estomac l'a bien remarqué et fait un 'grouic'. " title="Arroser les Viandoxilys à l'école Gemini." />
+	<end>Ah ah, ça roule. Je renifle d'ici que les Viandoxilys sont satisfaites. Il faut pas trop les contrarier, elles peuvent être super hargneuses si elles veulent.</end>
+	<xp v ="18" />
+	<gold v="76" />
+	<reput s="gm" v="10" />
+</q>
+
+<q from="schgm" id="gmh" name="Repas équilibré, école bien dirigée" cond="quest(gmg)">
+	<begin>C'est le moment du repas mensuel de nos dirigeants. Ca t'intéresse de t'en charger, dude ? </begin>
+	<talk did="gmha" />
+	<use o="Elt(3):4" zone="gmsch" action="Donner 4 potions violettes" text="Merci dude. Plus qu'à les purifier." title="Donner 4 potions violettes au professeur Lecoussin, pour le repas du Korki Dru et du Korki Gwen." />
+	<score ratio="1.3" zone="gmsch" title="Dépasser le score suivant pendant une alchimie à l'école Gemini, pour purifier le repas : ">
+		<playMod>
+			<startGrid g="Elt(3):1:0;Elt(3):1:1;Elt(3):4:0;Elt(3):4:1"/>
+		</playMod>
+	</score>
+	<end>Bien joué, dude. Avec certains élèves, les Korkis attendent leurs plateaux-repas pendant un moment ! </end>
+	<xp v ="13" />
+	<gold v="105" />
+	<item v="PearGrain(0):1" />
+	<reput s="gm" v="12" />
+</q>
+
+
+<q from="schgm" id="gmi" name="Le retour du 3e tiers" cond="quest(gmh)">
+	<begin>Pfff... On a reçu le troisième tiers des impôts de scolarisation alchimique de la Guilde. Ca fait mal, dude. Je te le dis : ça fait mal...</begin>
+	<talk did="gmia" />
+	<talk did="gmib" step="1" title="Apporter l'impôt de scolarisation au Palais de Stime Pounk." />
+	<talk did="gmic" step="1" title="Retourner voir le professeur Lecoussin pour lui parler du braquage." />
+	<create o="Elt(13):8" title="Collecter 8 Valvéoles. Chaque élément présent à la fin d'une partie sera collecté. " />
+	<end>Ah te voilà. Il ne manquait plus que tes éléments. Tous les profs ont pris des super fortifiants pour ne pas dormir et bosser toute la nuit. On devrait pouvoir s'en sortir, finalement.</end>
+	<xp v ="17" />
+	<gold v="130" />
+	<randomrecipe v="280:200" />
+	<reput s="gm" v="6" />
+</q>
+
+<q from="schgm" id="gmj" name="Une vengeance bien méritée" cond="quest(gmi)">
+	<begin>Eh dude bonne nouvelle, l'enquête sur le braquage est résolue ! Il est temps de distribuer des tartes !</begin>
+	<talk did="gmja" />
+	<talk did="gmjb" title="Accompagner Lecoussin et Vanderclauf jusqu'à la cachette des braqueurs, au bourg de Tirésias." step="1" />
+	<cauldron r="qvoid" add="1" drop="1" title="Faire la recette Volt Umbra pour envoyer les braqueurs dans une dimension parallèle et pas accueillante pour un sou." />
+	<end>Justice est faite, dude. Par contre, j'ai reçu un message de la Guilde qui proteste à propos de la disparition d'un gardien du chaudron... Ca te parle, dude ? </end>
+	<xp v ="24" />
+	<gold v="100" />
+	<randomrecipe v="220:150" />
+	<reput s="gm" v="14" />
+</q>
+
+</quests>

@@ -1,0 +1,73 @@
+﻿<missions>
+
+	<!-- ***************************************************************************** -->
+	<!-- Anna Tomie, l'infirmière de Caushemesh ----->
+
+	<m group="infirmiere" id="ingr1" name="Première ordonnance">
+		<begin>La clinique a besoin d'ingrédients, il faudrait que vous me rameniez 10 feuilles de Pelinae, elles serviront pour soigner nos patients.</begin>
+		<goto v="clinik"/>
+		<useingr v="fruitc" n="10"/>
+		<end>Merci, mon chou,  je savais que je pouvais compter sur vous !</end>
+		<xp v="10"/>
+	</m>
+	<m group="infirmiere" id="ingr2" name="Bolet à beau pied">
+		<begin>La clinique a besoin d'ingrédients, certains de nos patients nécessitent plus de soins, il faudrait que vous me rameniez 5 Bolets Phalisk Blanc.</begin>
+		<goto v="clinik"/>
+		<useingr v="fruitu" n="5"/>
+		<end>Merci, mon chou,  je savais que je pouvais compter sur vous !</end>
+		<xp v="20"/>
+	</m>
+	<m group="infirmiere" id="ingr3" name="Phytothérapie farfelue">
+		<begin>La clinique a besoin d'ingrédients, certains de nos patients nécessitent plus de soins, il faudrait que vous me rameniez 1 Orchidée Fantasque.</begin>
+		<goto v="clinik"/>
+		<useingr v="fruit1" n="1"/>
+		<end>Merci, mon chou,  grâce à vous, la clinique peut traiter n'importe quel type de maladie !</end>
+		<xp v="30"/>
+		<gold v="500"/>
+	</m>
+	<m group="infirmiere" id="kill1" name="Voisins récalcitrants" cond="mission(ingr1)+mission(ingr2)+mission(ingr3)+canfight(gropi)">
+		<begin>
+			L'agitation autour de la clinique durant sa construction a troublé le repos des monstres aux alentours. Maintenant ils nous attaquent sans cesse, pouvez-vous vous en occuper ?
+		</begin>
+		<kill v="gropi" monsters="gropi:gropi:gropi" n="10" zone="6"/>
+		<end>
+			Bien, il y a un peu moins de monstres dans les environs, c'est déjà plus rassurant !
+		</end>
+		<xp v="10"/>
+		<gold v="500"/>
+	</m>
+	<m group="infirmiere" id="kill2" name="Invasion de monstres" cond="mission(kill1)+canfight(coq)">
+		<begin>
+			Des monstres plus coriaces ont fait leur apparition, il faut qu'ils partent, sinon nous ne pourrons jamais nous occuper de nos patients convenablement !
+		</begin>
+		<kill v="coq" monsters="coq:coq" n="10" zone="6"/>
+		<end>
+			Bravo, vous êtes un vrai champion, j'étais sûre de faire le bon choix en vous choisissant !
+		</end>
+		<xp v="10"/>
+		<gold v="600"/>
+	</m>
+	<m group="infirmiere" id="bless1" name="Premier secours" cond="mission(kill2)">
+		<begin>
+			Maintenant que la clinique tourne à plein régime, il nous faut des cli... des patients, il paraît qu'il existe un endroit ou les dinoz se battent entre eux, vous y trouverez sûrement un dinoz blessé à ramener ici !
+		</begin>
+		<goto v="dome" hide="1"/>
+		<talk v="Participant">Bonjour, je vois que toi aussi tu es un maître dinoz, le mien vient de se faire battre à plate couture, et je suis exténué, pourrais-tu le faire soigner pour moi s'il te plaît ?</talk>		
+		<goto v="clinik"/>
+		<end>Bravo, vous êtes un vrai champion ! Vous m'avez ramené un dinoz qui a bien besoin de moi !</end>
+		<xp v="20"/>
+		<gold v="500"/>
+	</m>
+	<m group="infirmiere" id="bless2" name="La curiosité est un vilain défaut !" cond="mission(bless1)">
+		<begin>Les dinoz sont mignons, mais nous ne sommes pas qu'une clinique vétérinaire ! Il paraît qu'il y a souvent des touristes près de la grosse bête du mont tout chaud, et ils sont souvent dans un piètre état. Si vous en rameniez un ici, il serait sûrement gêné... content de notre clinique !</begin>
+		<goto v="vener"/>
+		<talk v="Touriste grillé" gfx="tourist_grill" background="1">KEUF KEUF, bonjour jeune Maître dinoz, je peux prendre une photo de vos dinoz ? ... Comment ? Vous pensez que j'ai besoin de soin ? KEUF KEUF, Ma foi, je ne serais pas contre un petit remontant, le grand vénérable n'a pas apprécié la photo que j'ai voulu prendre de lui. Enfin au moins mon appareil est presque intact, c'est déjà ça !</talk>	
+		<goto v="clinik"/>
+		<talk v="Touriste grillé" gfx="tourist_grill" background="2">Merci de m'avoir accompagné ici, en plus il y a une jolie infirmière, je sens que je vais me plaire...</talk>	
+		<end>Bravo mon maître dinoz à moi ! Grâce à vous, la clinique marche à plein régime. Merci encore pour l'aide que vous m'avez apporté, la clinique a un bel avenir. 
+			Un jour, il faudra sûrement  l'agrandir... à ce moment là,  j'espère pouvoir faire appel à vous !
+			Anna embrasse vos dinoz... juste vos dinoz...</end>
+		<xp v="20"/>
+		<gold v="500"/>
+	</m>
+</missions>

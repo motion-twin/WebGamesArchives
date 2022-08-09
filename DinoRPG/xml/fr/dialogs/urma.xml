@@ -1,0 +1,89 @@
+<!-- ***************************************************************************** -->
+<!-- Urma, Vieille sorcière, soeur jumelle d'irma ----->
+
+<d place="dnv" name="Urma" gfx="irma" cond="active(urma)+uvar(paques,300+)+promo(easter)">
+	<phase id="begin" >
+		[Salutations Maître Dinoz.]
+		[Je suis désolée, il ne me reste plus d'oeufs à te vendre, tu as déjà épuisé tout le stock que je pouvais te consacrer.]
+		[J'espère que tu as eu de la chance et trouvé des objets qui te seront utiles dans ta quête.]
+	</phase>
+</d>
+
+<d place="dnv" name="Urma" gfx="irma" cond="active(urma)+uvar(paques,299-)+promo(easter)">
+	<phase id="begin" next="suivant:irma:oui2:oui3:non">
+		[Salutations Maître Dinoz.]
+		[Tu dois surement connaître de nom ma soeur Irma, mais je te prierais de ne pas me confondre avec elle !
+		Je suis beaucoup plus puissante, et je vais te le prouver !]
+	</phase>
+
+	<a id="suivant" cond="!tag(urma)">
+		Qu'est ce que vous allez faire ? me transformer en Wanwan démon ?
+	</a>
+	<a id="irma" cond="!tag(urma)">
+		Vous êtes Irma ? C'est vous qui faîtes les potions ?
+	</a>
+	<a id="non" target="bof">
+		Non merci.
+	</a>
+	
+	<phase id="suivant" next="oeuf">
+		L'idée est tentante, mais il faut que j'écoule mon stock d'oeuf d'abord...
+	</phase>
+	<phase id="irma" next="popo">
+		[Humpff, je le savais, cette vieille bique me vole encore la vedette...]
+		[Il faut toujours qu'elle se fasse remarquer.
+		Elle ne fait qu'une simple potion, mais moi j'ai créé un objet beaucoup plus intéressant !]
+	</phase>
+	
+	<a id="popo">
+		Vous pouvez me donner des potions ?
+	</a>
+	
+	<phase id="popo" next="bof:oeuf">
+		Puisque je te dis que je ne suis pas IRMA !
+		Tu ne veux vraiment pas que je te vende mon Oeuf ?
+	</phase>
+	
+	<a id="bof">Non, merci, je préfère les potions.</a>
+	<a id="oeuf">Un oeuf ?</a>
+	
+	<phase id="oeuf" next="oui:bof">
+		[Un oeuf très particulier !]
+		[*L'oeuf d'Urma*, renferme n'importe quel objet de Dinoland !]
+		[Tu peux tomber sur un pain chaud, une monochromatique, ou même un dinoz de couleur spécial!]
+		[*La chance* sera ton seul moyen de trouver l'objet de tes rêves, soit donc raisonnable et *pense à avoir de la place dans ton inventaire, sinon ton objet sera perdu* !]
+		[Cet oeuf ne te coûtera que *1000 pièces d'or* !]
+	</phase>
+	
+	<a id="oui" confirm="1">J'en prend un pour 1000 pièces d'or !</a>
+	<a id="oui2" cond="tag(urma)" confirm="1">Je voudrais vous acheter un oeuf d'Urma pour 1000 pièces d'or !</a>
+	<a id="oui3" cond="tag(urma)+uvar(paques,290-)" confirm="1">Je voudrais vous acheter 10 oeufs d'Urma pour 10000 pièces d'or !</a>
+	
+	<phase id="oui" next="bye" usegold="1000" give="paques" nocheck="1" tag="urma" gvar="paques:1" uvar="paques:1">
+		Merci bien Maître Dinoz, j'espère que tu trouveras ce que tu cherches dans cet oeuf.
+		Reviens me voir quand tu voudras, je resterais par ici quelque temps.
+	</phase>
+	
+	<a id="bye">
+		A une prochaine fois !
+	</a>
+	
+	<phase id="oui2" next="bye" usegold="1000" give="paques" nocheck="1" gvar="paques:1" uvar="paques:1">
+		Merci bien Maître Dinoz, j'espère que tu trouveras ce que tu cherches dans cet oeuf.
+		Reviens me voir quand tu voudras, je resterais par ici quelque temps.
+	</phase>
+	
+	<phase id="oui3" next="bye" usegold="10000" give="paques:10" nocheck="1" gvar="paques:10" uvar="paques:10">
+		Merci bien Maître Dinoz, j'espère que tu trouveras ce que tu cherches dans ces oeufs.
+		Reviens me voir quand tu voudras, je resterais par ici quelque temps.
+	</phase>
+	
+	<phase id="bye" fast="1" frame="stop">
+		Vous vous éloignez, la vieille Urma se frotte les mains, aura t'elle du succès avec son oeuf ?
+	</phase>
+	
+	<phase id="bof" fast="1" frame="stop">
+		Vous vous éloignez, la vieille Urma semble un peu déçu, peut-être aurait-elle dû vendre des potions comme sa soeur ?
+	</phase>
+</d>
+	

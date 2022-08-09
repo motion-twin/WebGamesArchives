@@ -1,0 +1,55 @@
+<!-- ***************************************************************************** -->
+<!-- Saul, Nimbao l'île volante ----->
+	
+<d place="ilac" name="Saul" gfx="saul" cond="scenario(nimba2,50-)">
+	<phase id="begin" next="quoi:seul:mot" dialect="arbori" >
+		Bonjour voyageur.
+		Je vous prierais de me laisser seule,
+		Je pleure l'absence de mon frère.
+	</phase>
+	
+	<a id="quoi" cond="!uvar(dicarb)"> Je ne comprends pas...</a>
+	<a id="seul" cond="uvar(dicarb)"> Que lui est il arrivé ?</a>
+	<a id="mot" cond="scenario(nimbao,34)"> vcbdr QpObmc ?</a>
+	
+	<phase id="seul" frame="cry" dialect="arboris" >
+		Des soldats de Grizorg l'ont emprisonné pour avoir volé dans les jardins des Dorogons.
+		Il savait pourtant qu'il est interdit de faire ce genre de chose...
+		Il me manque tant... Je ne le reverrai sans doute jamais.
+	</phase>
+	
+	<phase id="quoi" frame="cry" fast="1" >
+		Vous vous éloignez de cette jeune fille. Vous n'avez pas compris un traître mot de ce qu'elle a dit.
+		Mais visiblement, elle semble très triste.
+	</phase>
+	
+	<phase id="mot" fast="1" frame="stop">
+		Elle a compris ce que vous avez dit, mais ne sait quoi vous répondre...
+		Visiblement, ce mot n'éveille rien en elle.
+	</phase>
+</d>
+
+	
+<d place="ilac" name="Saul" gfx="saul" frame="blabla2" cond="scenario(nimba2,51+)">
+	<phase id="begin" next="seul2">
+		Bonjour voyageur.
+		Je vous prierais de me laisser seule,
+		Je pleure l'absence de mon frère.
+	</phase>
+	
+	<a id="seul2"> Où est-t'il ?</a>
+	
+	<phase id="seul2" frame="blabla2" next="libere">
+		Il est toujours enfermé en prison, pour avoir volé dans les jardins des Dorogons.
+		Je voudrais tant qu'il soit libéré un jour, mais les dorogons renégats restent maître de Priranèse... 
+		Il me manque tellement ...
+	</phase>
+	
+	<a id="libere">Il faudrait pouvoir le libérer !</a>
+	
+	<phase id="libere" frame="cry2" fast="1">
+		Saul ne vous écoute plus du tout, elle se morfond près du bord de l'île.
+		Comment pourriez-vous l'aider dans sa détresse...
+	</phase>
+	
+</d>

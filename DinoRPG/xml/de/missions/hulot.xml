@@ -1,0 +1,95 @@
+﻿<missions>
+
+	<!-- ***************************************************************************** -->
+	<!-- NICOLAS MULOT ----->
+
+	<m group="hulot" id="seqact" name="Die Route der großen Gefahr" limit="10" cond="!mission(toxic)|mission(hucure)">
+		<begin>Um in den Dschungel vordringen zu können, muss man zunächst einen Ort durchqueren, der der Graugrüne Pfad genannt wird...Es handelt sich um eine gefährliche Route, die in den Norden führt! Könntest du da bitte ein bisschen für mich aufräumen?</begin>
+		<goto v="chemin"/>
+		<kill n="6"/>
+		<end>Man hört von dort kein Gebrüll mehr...Das ist ein gutes Zeichen, oder?</end>
+		<gold v="1500"/>
+		<xp v="40"/>
+	</m>
+
+	<m group="hulot" id="toxic" name="Allergien" limit="15">
+		<begin>Ich bin gegen bestimmte Pflanzen aus dem Wald allergisch...Aber ich weiß im Moment noch nicht gegen welche! Könntest du mir ein paar verdächtige Pflanzen bringen, so dass ich sie testen kann?</begin>
+		<goto v="chemin"/>
+		<action v="Warzige Figonicia">Du pflückst eine aufgeblasene und klebrige Blume...</action>
+		<goto v="collin"/>
+		<action v="Eitrige Schwarze">Die Eitrige versprüht eine kleine Wolke übelriechender Pollen, der höchst verdächtig aussieht.</action>
+		<goto v="fleuve"/>
+		<action v="Zähflüssige aus dem Schlamm">Du findest eine Art grünliches Seerosenblatt, welches in einer modrigen Wasserpfütze ausgebreitet ist.</action>
+		<goto v="auree"/>
+		<end>Die sehen ja ganz passabel aus...Ich werde versuchen welche von diesen Pflanzen bei mir eine Allergie auslöst...Das ist für deine Dienste.</end>
+		<gold v="1500"/>
+		<xp v="20"/>
+	</m>
+
+	<m group="hulot" id="map" name="Kartographie" limit="20" cond="!mission(toxic)|mission(hucure)">
+		<begin>Es scheint, dass eine gute Karte immer nützlich ist. Das Problem ist nur, dass es für den Grumhel-Dschungel keine Einzige gibt! Könntest du in den Norden gehen und ein paar Notizen für mich machen? Es gibt ein paar Hügel im Osten, das könnte ein guter Ort sein, um einen Überblick zu bekommen!</begin>
+		<goto v="collin" title="Den erhöhten Punkt finden"/>
+		<action v="Eine Karte zeichnen">Du setzt dich auf einen alten Baumstumpf, um eine Karte der Umgebung zu zeichnen... Urplötzlich taucht wie aus dem Nichts eine abscheuliche Raubtierfledermaus und bemächtigt sich mit einem Biss deines Notizblocks! Mit einem mächtigen Flügelschlag entfernt sie sich, um sich auf einem hohen Ast zu setzen... </action>
+		<action v="Die Raubtierfledermaus fangen">Du hast das Gefühl, sie auf ihrer Stange sitzend hämisch lachen zu hören...Du schnappst dir einen Ast und versuchst, die Fledermaus durch Schütteln runterzuholen, aber diese fliegt einfach weg und verschwindet im Dschungel!</action>
+		<goto v="chemin" title="Die Raubtierfledermaus wiederfinden"/>
+		<action v="Raubtierfledermaus">Dieses hinterhältige Biest hat sich auf die Spitze eines riesigen Baumes gesetzt! Gleichmütig start sie dich an.</action>
+		<action v="Einen Stein werfen">Gereizt setzt sie sich ein Stück weiter weg und fixiert dich mit einem herausfordernden Blick...</action>
+		<kill v="bat" n="1" name="Schelmische Raubtierfledermaus töten"/>
+		<action v="Den Notizblock aufheben">Endlich hast du deinen Notizblock wieder!</action>
+		<goto v="collin" title="Zu den Verfluchten Hügeln zurückkehren"/>
+		<action v="Die Karte zeichnen">Du schließt deine Kartenzeichungen ab, diesmal  jedoch mit einem wachsamen Auge...</action>
+		<end>Das sieht wirklich gut aus! Ich werde mir das mal etwas genauer ansehen, um mich gut auf meine Extremexpedition vorzubereiten.</end>
+		<gold v="2500"/>
+		<xp v="60"/>
+	</m>
+
+	<m group="hulot" id="hucure" name="Gegenmittel" limit="25" cond="mission(toxic)">
+		<begin>Sas ist wirklich sehr nett von dir...Is glaube sass die Önche der Mutierenden Surzfluden mir helfen könnten...Nimm die Flansen mit, die du mir gebracht hass und such die Önche in meinem Auftrag auf...Schnief....</begin>
+		<goto v="auree"/>
+		<action v="Die Pflanzen einpacken">Du nimmst die Pflanzen von Heinz Fielmann wieder mit. Man könnte meinen, dass er versucht hätte, sich einen Tee zu brauen...</action>
+		<goto v="chutes"/>
+		<talk v="Medizin Mönch">Du hast ihm die Warzige Figonicia gegeben? Die Eitrige Schwarze?! Eine Zähflüssige aus dem Schlamm!! Au weia...!! Wir sollten keine Zeit verlieren! Bring mir doch gleich mal etwas Korallenpulver.</talk>
+		<goto v="corail"/>
+		<action v="Korallenstück">Du sammelst ein Stück abgebrochene Koralle ein: Das wird ihm wohl bekommen!</action>
+		<goto v="chutes" title="Dem Mönch die Koralle bringen"/>
+		<talk v="Medizin Mönch">Bring mir ein paar Korgonenzähne vom Graugrünen Pfad und ein Paar Raubtierfledermausflügel aus dem Norden.</talk>
+		<goto v="chemin"/>
+		<kill v="korgon" n="4"/>
+		<action v="Die Zähne einsammeln">Du erhälst ein paar Korgonenzähne.</action>
+		<goto v="fleuve"/>
+		<kill v="bat" n="5"/>
+		<action v="Die Flügel einsammeln">Du erhälst eine schöne Sammlung Raubtierfledermausflügel...</action>
+		<goto v="chutes" title="Die Zutaten zu den Sturzfluten bringen"/>
+		<talk v="Medizin Mönch">Das ist perfekt! Damit kann ich mir eine leckere Brühe machen...Verzeihung? Ah, du kommst wegen des Gegenmittels? Ja, das stimmt. Um ehrlich zu sein, hatte ich davon schon eine ganze Kiste. Soll ich dir etwas von der Brühe aufheben?</talk>
+		<action v="Kiste mit Gegenmittel">Du nimmst drei oder vier Flakons Gegengift für Heinz mit, man weiß ja nie...</action>
+		<end>Gluck, gluck!Filen dang...Hofn wir, das das wirkt...Sas war langsam echt gnap...Hier, nimm siesen Drang als Seichen meiner Dangbarkeit.</end>
+		<item v="angel"/>
+		<xp v="60"/>
+	</m>
+
+	<m group="hulot" id="bckpck" name="Abenteurerausrüstung" limit="20" cond="mission(hucure)+mission(map)">
+		<begin>Bevor ich meine unglaubliche Reise in ein unbekanntes Land beginne, fehlt mir noch etwas unverzichtbares! Ein guter Rucksack. Ich habe meinen verloren, als ich die Mutierenden Sturzfluten umfahren habe... Könntest du ihn für mich wiederfinden?</begin>
+		<goto v="chutes"/>
+		<talk v="Extremfischer">Einen Rucksack sagst du? Ne, glaub nich' so etwas gefischt zu haben! Du müsstest vielleicht mal schauen, ob er von der Strömung nicht Richtung Sumpf gespült wurde. Die Strömung fließt hier nicht ganz normal...</talk>
+		<goto v="marais"/>
+		<talk v="Algensammler">Ah, ja doch, ich erinnere mich!! Ein richtig schöner Rucksack war das, der klebte richtig in einem Schlammfladen! Ich habe ihn meinem Cousin in den Minen gegeben, damit er seine Steine tragen kann. Der ist richtig praktisch! Heia!</talk>
+		<goto v="corail"/>
+		<action v="Die Minenarbeiter befragen">Du fragst ein paar Minenarbeiter und man zeigt mit dem Finger auf einen von ihnen...</action>
+		<talk v="Minenarbeiter, der seine Pause macht">Jo. Ich verstehe ganz gut, wovon du sprichst. Aber ich habe den Rucksack nicht mehr. [Er spuckt auf den Boden] Jo. Das Ding hat nicht mal zwei Tage gehalten. Ich habe ihn meinem Cousin im Predigerhafen gegeben. Jo. Das könnte ein gutes Netz abgeben, habe ich mir gedacht. [Er spuckt erneut auf den Boden]</talk>
+		<goto v="port"/>
+		<talk v="Geschäftiger Fischer">Der Rucksack? Ja, den habe ich noch immer! Aber der ist in einem bedauernswerten Zustand! Hier, falls du damit noch was anfangen kannst. Ich kann ihn dir reparieren, doch dazu bräuchte ich ein paar Sachen... Eine Fadenrolle und ein paar Nadeln müssten reichen. Du findest alles in Dinoville.</talk>
+		<goto v="dnv"/>
+		<action v="Eine Fadenrolle finden">Du drehst eine schnelle Runde auf dem Markt, um etwas Nähmaterial zu finden. Schließlich findest du einen Näherinnenladen......</action><talk v="Näherin">Guten Tag Herr Dinomeister, willkommen in meinem Verkaufsstand! Nadel und Faden? Ja, ich verkaufe welches, aber das ist nicht umsonst... Ich schenke es Ihnen, wenn Sie mir einen kleinen Gefallen tun! Mein Haus befindet sich in der Nähe des Brunnens. Es vergeht kein Abend, an dem ich nicht von diesen grässlichen Hartschalen angegriffen werde! Ich wäre Ihnen sehr dankbar, wenn Sie ihnen den Garaus machen könnte. Als Belohung würde Sie von mir dann das Material erhalten.</talk>
+		<goto v="fountj"/>
+		<kill v="coq" n="2" name="Verbissene Hartschalen umbringen"/>
+		<goto v="dnv" title="In Dinoville Bericht erstatten" />
+		<talk v="Näherin">Tausend Dank für ihren Einsatz! Wie versprochen, hier das Material...</talk>
+		<goto v="port"/>
+		<talk v="Geschäftiger Fischer">Ah, das ist alles, was ich zum Flicken deines Rucksacks brauche. [Er arbeitet ne gute Stunde daran...] Und hier ist er! Er müsste jetzt noch eine Weile halten.</talk>
+		<end>Äh, du wirst jetzt lachen... aber stell dir vor, ich habe soeben einen Ersatzrucksack erhalten! Ich hatte ihn für meine Expedition bestellt... Gut, dann machen wir es so: Ich nehme wieder meinen alten Rucksack und gebe dir den neuen! Ist das OK für dich?</end>
+		<fx v="bckpck"/>
+		<xp v="40"/>
+	</m>
+
+
+</missions>

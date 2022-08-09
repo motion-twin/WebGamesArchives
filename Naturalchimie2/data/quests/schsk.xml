@@ -1,0 +1,133 @@
+<quests>
+
+<q from="schsk" id="ska" name="Choisir sa tente" cond="sch(sk)">
+<begin>Commence par aller poser tes affaires au dortoir Tupuri, tu pourras t'y reposer un peu si tu manques de points de déplacement. Ensuite, reviens me voir pour commencer ta formation.</begin>
+<msg  zone="skhoma" action="Poser ses affaires" text="Te voilà chez toi. Pourquoi ne pas faire un petit somme histoire de tester le confort et de se reposer un peu ? " title="Aller poser ses affaires au dortoir Tupuri, juste à côté... de l'école communale Tupuri." />
+<end>Ok, tu es désormais un étudiant Shang-Kah à part entière. On va faire de toi un vrai super alchimiste, tu vas voir.</end>
+<xp v ="5" />
+<reput s="sk" v="6" />
+</q>
+
+<q from="schsk" id="skb" name="Shang-Kah, ça rigole pas" cond="quest(ska)|(!sch(sk)+reput(sk,1))">
+<begin>Bon. A Shang-Kah, on est pas là pour rigoler. L'alchimie, c'est un métier tu sais. </begin>
+<talk did="skba" />
+<create o="Elt(7):10;Elt(16):5" zone="sktupu" title="Créer 10 Flaums et 5 Charbonides en jouant à l'école Tupuri. Chaque élément présent à la fin d'une partie sera collecté. " />
+<end>Bon travail. Je vais pouvoir mettre en pratique ma super idée anti-poils !Et puis c'était une bonne leçon d'alchimie : tu as vu qu'on trouve des Charbonides à l'école Tupuri alors qu'ici, c'est un Oxyde à la place. C'est  une info très utile ! </end>
+<xp v="8" />
+<gold v="94" />
+<reput s="sk" v="8" />
+</q>
+
+<q from="schsk" id="skc" name="Des amis pour la vie" cond="quest(skb)">
+<begin>Shang-Kah a un grand dessein pour résoudre définitivement le problème des Catz. Ca t'intéresse d'y participer ? </begin>
+<talk did="skca" />
+<collect o="Catz:4" zone="skmedi" title="Trouver les 4 Catz errants à la Médina Shaka Shaka pendant une alchimie. Une transmutation à côté d'eux suffit pour les attraper.">
+	<playMod artft="Catz:65" />
+</collect>
+<end>Super, je vais les garder à l'oeil ! Oooh ils sont trop mignons quand même.. Aïe ! Mon doigt ! </end>
+<xp v="10" />
+<gold v="85" />
+<reput s="sk" v="12" />
+</q>
+
+
+<q from="schsk" id="skd" name="A boire et à manger" cond="quest(skc)">
+<begin>Bon c'est pas tout ça, il faut penser à les nourrir pour qu'ils soient heureux, ces petits Catz. Apporte-moi de l'eau fraîche et... euh... qu'est-ce qu'ils pourraient bien manger ? Boaf, va déjà leur chercher à boire. Rends-toi à l'oasis Bogdan, juste au Sud.</begin>
+<create o="Elt(12):8" zone="skoasi" title="Créer 8 Rosées à l'oasis Bogdan. Chaque élément présent à la fin d'une partie sera collecté. " />
+<use qo="Elt(12):8" zone="skmedi" action="Donner les Rosées" text="Merci. Sinon j'ai eu une super idée pour la nourriture..."  title="Apporter les Rosées au professeur Fili, à la médina." />
+<talk did="skda" />
+<cauldron r="qadel" qty="1" add="1" drop="1" collect="1" title="Utiliser la recette Crénom de Zeus pour créer 5 portions de réglisse de Delorean. L'étincelle nécessaire peut être trouvée à l'école Shari." />
+<end>Allez les minous ! A taaaaable ! </end>
+<xp v="12" />
+<gold v="130" />
+<reput s="sk" v="10" />
+</q>
+
+
+<q from="schsk" id="ske" name="Renforts collatéraux" cond="quest(skd)">
+<begin>Impossible de domestiquer ces monstres ! Ils sont en train de bouffer leurs cages ! Il faut vite qu'on trouve des renforts en métal si on ne veut pas qu'ils s'échappent !  </begin>
+<create o="Elt(8):15" title="Créer 15 Oxydes pour renforcer les cages des Catz. Chaque élément présent à la fin d'une partie sera collecté. " />
+<end>Ouf... Avec ça les cages devraient tenir encore quelques jours. En tout cas la domestication des Catz, moi j'abandonne. Si un autre prof veut prendre le relais il sera le bienvenu ! </end>
+<xp v="15" />
+<gold v="130" />
+<randomrecipe v="300:230" />
+<reput s="sk" v="11" />
+</q>
+
+
+<q from="schsk" id="skf" name="Un score décapant" cond="quest(skb)">
+<begin>Il est temps que tu découvre quelques objets magiques qui font la spécificité de Shang-Kah. Tu connais la dynamite spéciale, modèle Bomberman ?  </begin>
+<score ratio="1.2" zone="sktupu" title="Dépasser le score suivant pendant une alchimie à l'école Tupuri. Attention aux Dynamites Bomberman, spécialités de Shang-Kah !">
+	<playMod artft="Dynamit(2):100" />
+</score>
+<end>Bien, bien. Pour la suite, le conseil d'administration a décidé qu'il était temps d'éclaircir un des plus grands mystères du Royaume... Il est temps de retrouver Kevin Sonnette!</end>
+<xp v="14" />
+<gold v="110" />
+<item v="Dynamit(2):1" />
+<reput s="sk" v="8" />
+</q>
+
+
+<q from="schsk" id="skg" name="Avis de recherche" cond="quest(ske)+quest(skf)">
+<begin>Nous lançons un grand concours ! Ca te dit d'y participer ? </begin>
+<talk did="skga" />
+<talk did="skgb" title="Monter votre réputation envers Gemini pour se rendre au Kromlech du Penkrack. Une fois là-bas, rencontrer en douce le Gardien du chaudron pour récupérer sa recette secrète contre 1500 kubors." />
+<cauldron r="qkevin" qty="1" add="1" drop="1" collect="1" title="Se rendre à la salle des chaudrons pour faire la recette Prapradel. Elle devrait faire apparaître Kevin Sonnette." />
+<end>La recette n'a pas marché ? Pas de bol, c'est ce qui s'appelle se faire avoir... Je suis bien contente d'avoir financé la recette pour seulement la moitié ! </end>
+<xp v="14" />
+<gold v="142" />
+<reput s="sk" v="12" />
+</q>
+
+<q from="schsk" id="skh" name="Mon nom est Domou. Major Domou" cond="quest(skg)">
+<begin>Ah ! On dirait que voilà un autre candidat ! Tout n'est pas perdu ! </begin>
+<talk did="skha" />
+<talk did="skhb" step="1" title="Se rendre au Faubourg Audepint s'occuper de l'intendance." />
+<collect o="CountBlock(1):100" zone="apfbg" title="Détruire 100 blocs de pyrite pendant ses alchimies pour nettoyer le faubourg Audepint.">
+	<playMod replace="1" artft="Elts(2,null):1000;Elts(2,CountBlock(2)):1300;Elts(2,CountBlock(3)):1700;Elts(2,CountBlock(3)):1000;Dynamit(0):45;Dynamit(1):30;Alchimoth:10" >
+	</playMod>
+	</collect>
+<talk did="skhc" />
+<create o="Elt(24):6" zone="scroad" title="Créer 6 Bouts de souffle à la route scintillante. Chaque élément présent à la fin d'une partie sera collecté. " />
+<create o="Elt(20):6" zone="gmoree" title="Créer 6 Glaises à l'orée du bois. Chaque élément présent à la fin d'une partie sera collecté. " />
+<talk did="skhd" title="Apporter les éléments récoltés au Faubourg Audepint." />
+<end>Pfff, c'est de plus en plus mal parti pour retrouver ce Kevin Sonnette... Si même le major Domou n'arrive à rien, c'est pas gagné.</end>
+<xp v="16" />
+<gold v="180" />
+<reput s="sk" v="10" />
+<reput s="ap" v="4" />
+</q>
+
+
+<q from="schsk" id="ski" name="Numéro spécial Kevin !" cond="quest(skh)">
+<begin>Tiens, un journaliste qui arrive... j'espère que c'est pour le concours et pas pour nous vendre un calendrier.</begin>
+<talk did="skia" />
+<create o="Elt(10):3" title="Créer 3 Mercurules. Chaque élément présent à la fin d'une partie sera collecté. " />
+<use zone="skmedi" qo="Elt(10):3" qgive="Elt(11):1" action="Donner les Mercurules" text="Gnniiii... Hop ! Voilà notre pépite d'or. Plus qu'à l'apporter au Guildian Express."  title="Donner les Mercurules au professeur Fili pour qu'elle les transforme en pépite d'or." />
+<talk did="skib" title="Apporter la pépite d'or au Guildian et vérifier les résultats de l'opération du journal." />
+<end>Je viens d'avoir le journaliste du Guildian au téléphone. Aucune info pertinente... Encore un échec... j'en peux plus ! ! ! </end>
+<xp v="18" />
+<item v="Elt(10):1" />
+<gold v="20" />
+<reput s="sk" v="12" />
+</q>
+
+
+<q from="schsk" id="skj" name="Le coup du lapin" cond="quest(ski)">
+<begin>Je suis désespérée, on y arrivera jamais. Tiens, voilà un lapin idiot qui arrive... Ca va encore être le grand n'importe quoi.</begin>
+<talk did="skja" />
+<use o="Elt(3):50" zone="skmedi" action="Donner les potions" text="Ah ouais hé, merci. Trop Bien ! Bon euuuuh... Faut qu'j'vous révèle mon secret alors, là ? " title="Donner 50 potions violettes à Georgy pour qu'il révèle son secret." />
+<talk did="skjb" />
+<end>Le mystère est résolu mais quand même, je suis très déçue...</end>
+<xp v="2" />
+<gold v="300" />
+<randomrecipe v="200:120" />
+<reput s="sk" v="1" />
+</q>
+
+
+
+
+
+
+</quests>

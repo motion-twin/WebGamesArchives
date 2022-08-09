@@ -1,0 +1,25 @@
+<d place="jzboy" name="Confirmer son rang en transmutation" gfx="jzprof" auto="0">
+
+<a id="exit">D'accord.</a>
+
+<phase id="begin" frame="back" next="oui:noui:non" >
+Alors ? | Tu es {pas très doué} en transmutations cosmétiques ? 
+</phase>
+
+<a id="oui" cond="rank(morph,1)">Oui, c'est bon.</a>
+<a id="noui" cond="!rank(morph,1)">Oui, c'est bon.</a>
+<a id="non">Non.</a>
+
+<phase id="oui" frame="happy">
+Mpff. | Bien... | Très bien.
+</phase>
+
+<phase id="noui" frame="angry" next="exit">
+Bizarre, on ne dirait pas... | Un peu de nerfs ! * Il suffit de faire des [recettes cosmétiques] au chaudron jusqu'à ce que la fiole correspondante soit remplie sur ta page personnelle...
+</phase>
+
+<phase id="non" frame="happy" next="exit">
+Ah ! | Un peu de nerfs * ! L'alchimie n'attend pas ! 
+</phase>
+
+</d>

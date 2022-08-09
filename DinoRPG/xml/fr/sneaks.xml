@@ -1,0 +1,175 @@
+﻿<sneaks>
+	
+	<s id="sneaka" level="1" scenario="nimbao" name="Première infiltration" cond="scenario(nimbao,26)">
+
+		<enter place="ipont" />
+		<fail place="ipont" />
+		<exit place="iporte" />
+		<monsters>cyclo</monsters>
+
+		<messages>
+			<success>Vous avez réussi à traverser le pont en déjouant la sécurité en place, Bravo !
+			Il vous est désormais possible de traverser le pont en toute tranquillité.</success>
+			<fightStart>Vous vous êtes fait repérer ! Il est interdit de circuler sur l'île, et les étrangers ne sont pas admis. Vous allez être chassé comme un malpropre !</fightStart>
+			<fightWon>Ouf, sauvé ! Faut vraiment faire gaffe, ils ont pas l'air malins ces gardes mais quand même !!</fightWon>
+			<fightLost>Vous échouez dans votre tentative d'évasion ... Reverrez vous un jour votre maman ? Personne ne le sait !</fightLost>
+		</messages>
+				
+	</s>
+	
+	<s id="sneakb" level="2" scenario="nimbao" name="Infiltration d'apprenti" cond="scenario(nimbao,27)">
+
+		<enter place="iporte" />
+		<fail place="iporte" />
+		<exit place="icite" />
+
+		<monsters>cyclo:cyclo</monsters>
+		<messages>
+			<success>Vous avez réussi à éviter la sécurité en place, Bravo !
+			Vous pouvez désormais aller à la cité Arboris plus facilement.</success>
+			<fightStart>Vous vous êtes fait repérer ! Il est interdit de circuler sur l'île, et les étrangers ne sont pas admis. Vous allez être chassé comme un malpropre !</fightStart>
+			<fightWon>L'endroit est rempli de gardes, mieux vaut fuir pour le moment.</fightWon>
+			<fightLost>Vous échouez dans votre tentative d'évasion ... Reverrez vous un jour votre maman ? Personne ne le sait !</fightLost>
+		</messages>
+				
+	</s>
+	
+	<s id="sneakc" level="3" scenario="nimbao" name="Infiltration standard" cond="scenario(nimbao,30)">
+
+		<enter place="icite" />
+		<fail place="icite" />
+		<exit place="ilacro" />
+		<monsters>cyclo:cyclo</monsters>
+		<messages>
+			<success>Vous avez réussi à traverser la cité, vous pouvez désormais vous déplacer plus facilement.</success>
+			<fightStart>Vous vous êtes fait repérer ! Il est interdit de circuler sur l'île, et les étrangers ne sont pas admis. Vous allez être chassé comme un malpropre !</fightStart>
+			<fightWon>L'endroit est rempli de gardes, mieux vaut fuir pour le moment.</fightWon>
+			<fightLost>Vous échouez dans votre tentative d'évasion ... Reverrez vous un jour votre maman ? Personne ne le sait !</fightLost>
+		</messages>
+				
+	</s>
+	
+	<s id="sneakd"  level="4" scenario="nimbao" name="Infiltration avancé" cond="scenario(nimbao,31)">
+
+		<enter place="ilacro" />
+		<fail place="ilacro" />
+		<exit place="ilac" />
+		<monsters>cyclo:cyclo</monsters>
+		<messages>
+			<success>Vous vous approchez du bord d'île, là où l'eau du lac céleste se diffusent dans l'atmosphère.
+			Vous pourrez revenir ici sans problème désormais.</success>
+			<fightStart>Vous vous êtes fait repérer ! Il est interdit de circuler sur l'île, et les étrangers ne sont pas admis. Vous allez être chassé comme un malpropre !</fightStart>
+			<fightWon>L'endroit est rempli de gardes, mieux vaut fuir pour le moment.</fightWon>
+			<fightLost>Vous échouez dans votre tentative d'évasion ... Reverrez vous un jour votre maman ? Personne ne le sait !</fightLost>
+		</messages>
+				
+	</s>
+	
+	<s id="sneake"  level="5" scenario="nimbao" name="Infiltration relevé" cond="scenario(nimbao,32)">
+
+		<enter place="ilac" />
+		<fail place="ilac" />
+		<exit place="iporte" />
+		<monsters>cyclo:cyclo</monsters>
+		<messages>
+			<success>Bravo, vous avez réussi votre infiltration.
+			Maintenant vous pouvez profiter du paysage pour faire un peu de tourisme ...</success>
+			<fightStart>Vous vous êtes fait repérer ! Il est interdit de circuler sur l'île, et les étrangers ne sont pas admis. Vous allez être chassé comme un malpropre !</fightStart>
+			<fightWon>L'endroit est rempli de gardes, mieux vaut fuir pour le moment.</fightWon>
+			<fightLost>Vous échouez dans votre tentative d'évasion ... Reverrez vous un jour votre maman ? Personne ne le sait !</fightLost>
+		</messages>
+				
+	</s>
+
+	<s id="sneakf"  level="6" scenario="nimbao" name="Infiltration corsé" cond="scenario(nimbao,36)">
+
+		<enter place="iporte" />
+		<fail place="iporte" />
+		<exit place="iplain" />
+		<monsters>cyclo:cyclo</monsters>
+		<messages>
+			<success>Vous avez trouvé le chemin menant vers les loitaines plaines enneigées. Vous pourrez y circuler librement désormais.</success>
+			<fightStart>Vous vous êtes fait repérer ! Il est interdit de circuler sur l'île, et les étrangers ne sont pas admis. Vous allez être chassé comme un malpropre !</fightStart>
+			<fightWon>Mieux vaut continuer la route, il fait très froid par ici.</fightWon>
+			<fightLost>Vous échouez dans votre tentative d'évasion ... Reverrez vous un jour votre maman ? Personne ne le sait !</fightLost>
+		</messages>
+	
+	</s>
+
+	<s id="sneakg" level="7" scenario="nimbao" name="Infiltration épicé" cond="scenario(nimbao,37)">
+
+		<enter place="iplain"/>
+		<fail place="iplain" />
+		<exit place="isnow2" />
+		<monsters>cyclo:cyclo</monsters>
+		<messages>
+			<success>Bravo, vous venez de traverser les plaines sans devenir congelé.
+			Il vous faut maintenant traverser les bois givrés.</success>
+			<fightStart>Vous vous êtes fait repérer ! Il est interdit de circuler sur l'île, et les étrangers ne sont pas admis. Vous allez être chassé comme un malpropre !</fightStart>
+			<fightWon>Un vent glacial souffle sur les plaines, mieux vaut ne pas rester planté là.</fightWon>
+			<fightLost>Vous échouez dans votre tentative d'évasion ... Reverrez vous un jour votre maman ? Personne ne le sait !</fightLost>
+		</messages>
+				
+	</s>
+	
+	<s id="sneakh"  level="8" scenario="nimbao" name="Infiltration de maître" cond="scenario(nimbao,38)">
+
+		<enter place="isnow2" />
+		<fail place="isnow2" />
+		<exit place="imont" />
+		<monsters>cyclo:cyclo</monsters>
+		<messages>
+			<success>La traversé des bois givrés fut difficile mais vous y êtes parvenu, il ne vous reste plus qu'à escalader le mont sacré.</success>
+			<fightStart>Vous vous êtes fait repérer ! Il est interdit de circuler sur l'île, et les étrangers ne sont pas admis. Vous allez être chassé comme un malpropre !</fightStart>
+			<fightWon>Ces bois portent bien leur nom, si vous ne voulez pas rester congelé, il vaut mieux ne pas rester ici.</fightWon>
+			<fightLost>Vous échouez dans votre tentative d'évasion ... Reverrez vous un jour votre maman ? Personne ne le sait !</fightLost>
+		</messages>
+				
+	</s>
+	
+	<s id="sneaki"  level="9" scenario="nimba2" name="Evasion de Priranèse" cond="scenario(nimba2,24)">
+
+		<enter place="prison" />
+		<fail place="prison" />
+		<exit place="prison" />
+		<monsters>cyclo:cyclo2</monsters>
+		<messages>
+			<success>Vous avez réussi à vous évader de la terrible prison de Priranèse, vous espérez ne plus avoir à parcourir ce dédale mais de nombreux prisonniers sont encore à l'intérieur.</success>
+			<fightStart>Vous vous êtes fait repérer ! Personne n'a jamais tenté de s'échapper de Priranèse, vous allez passer un moment difficile !</fightStart>
+			<fightWon>Ces gardes ne poseront plus de problème, il faut continuer votre chemin pour revoir la lumière du jour !</fightWon>
+			<fightLost>Vous échouez dans votre tentative d'évasion ... Reverrez vous un jour votre maman ? Personne ne le sait !</fightLost>
+		</messages>
+				
+	</s>
+	
+	<s id="sneakj"  level="10" scenario="nimba2" name="Traversé du piliers" cond="scenario(nimba2,45)">
+
+		<enter place="egout" />
+		<fail place="egout" />
+		<exit place="sommet" />
+		<monsters>doro2:dorolu</monsters>
+		<messages>
+			<success>Vous avez enfin traversé le pilier menant vers le palais de l'Archidorogon, ces égouts étaient plus labyrinthique que prévu !</success>
+			<fightStart>Vous vous êtes fait repérer ! Personne ne passe par ici en général, mais la sécurité a été doublé pour éviter que les intrus n'accèdent au palais !</fightStart>
+			<fightWon>Ces gardes ne poseront plus de problème, il faut continuer votre chemin pour accéder au chemin vers le palais !</fightWon>
+			<fightLost>Vous échouez dans votre traversé du passage menant vers le palais ... Reverrez vous un jour votre maman ? Personne ne le sait !</fightLost>
+		</messages>
+				
+	</s>
+
+	<s id="sneakk"  level="11" scenario="nimba2" name="Palais de l'Archidorogon" cond="scenario(nimba2,47)">
+
+		<enter place="palais" />
+		<fail place="palais" />
+		<exit place="palais" />
+		<monsters>doro2:dorolu</monsters>
+		<messages>
+		<success>Vous allez enfin pouvoir rencontrer Grizorg, il est temps de régler cette histoire !</success>
+			<fightStart>Vous vous êtes fait repérer ! Il est interdit de circuler dans le palais, vous allez passer un moment difficile !</fightStart>
+			<fightWon>Ces gardes ne poseront plus de problème, il faut continuer votre chemin pour accéder jusqu'au trône de Grizorg !</fightWon>
+			<fightLost>Grizorg n'est plus qu'à quelques pas, il faut persévérer pour arriver jusqu'à lui ! Courage !</fightLost>
+		</messages>
+				
+	</s>
+	
+</sneaks>

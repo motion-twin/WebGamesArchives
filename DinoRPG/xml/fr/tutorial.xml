@@ -1,0 +1,239 @@
+<!-- Guide Michel Tutorial -->
+
+
+<!--
+	@valid( Condition ) : optionnel. Condition qui, si remplie, fais passer le tutoriel à l'étape suivante
+	@cond( Condition ) : condition demander pour accéder à cette étape du tutoriel
+-->
+<objectives>
+<!-- 0- acheter un Dinoz -->
+	<objective id="dinoz" title="Adopter un Dinoz" next="speak">
+		<begin fast="0" url="shop/dinoz">
+			Bienvenue sur DinoRPG. Je serai ton guide pour ces premières étapes. Tout d'abord, il te faut adopter un Dinoz !
+			Prend ton temps pour le choisir, il sera ton compagnon pour un bon moment.
+		</begin>
+		<end>Félicitations, vous voilà maintenant plongé dans un immense univers que nous allons continuer à vous présenter !</end>
+		<helpers>
+			<helper selector="#detail_0" url="shop/dinoz">Comparez les caractéristiques de chaque races !</helper>
+			<helper selector="#centerContent form .field" url="dino/*">Très bon choix ! Maintenant, donnez un nom à ce Dinoz !</helper>
+		</helpers>
+		<rewards></rewards>
+	</objective>
+
+<!-- 1- parle au guide michel + initier la quête -->
+	<objective id="speak" title="Discussion enflammée" next="move">
+		<begin fast="0" url="dino/*/!act">
+			Bienvenue à Dinoland, je vais t'apprendre à parler avec les personnages du jeu ! <strong>Si tu es bloqué, appuie sur le bouton Nouvelle Action !</strong>
+			<span>Appuie sur <strong>Leguide Michel</strong> (c'est moi !) dans la partie <strong>actions</strong>, que tu trouveras en dessous de ton dinoz.</span>
+		</begin>
+		<helpers>
+			<helper selector="#dinozList ul li:first" url="!dino">C'est par ici !</helper>
+			<helper selector="#answers" url="dino/*/act/dialog/guide">C'est par ici !</helper>
+			<helper selector="#act_dialog_guide_icon" url="dino/*">C'est par ici !</helper>
+		</helpers>
+		<end url="dino/*/">
+			Vous venez de parler à un des premier habitant de Dinoland. Vous rencontrerez encore beaucoup de personnages tout au long de votre aventure !
+		</end>
+		<rewards>
+			<object name="gold" count="100"/>
+		</rewards>
+	</objective>
+
+<!-- déplace ton dinoz à un autre endroit -->
+	<objective id="move" title="A l'aube d'une grande aventure" next="port" valid="uvar(moves,1+)">
+		<begin url="dino/*">
+			Il est temps maintenant de découvrir les autres lieux. <strong>Si tu es bloqué, appuie sur le bouton Nouvelle Action !</strong>
+			<span>Dans la section <strong>Carte</strong>, appuie sur la destination de ton choix en cliquant sur un <strong>des lieux clignotant</strong>, et part à l'aventure !</span>
+			Je te conseille de te diriger vers la fontaine de Jouvence dans un premier temps.
+		</begin>
+		<helpers>
+			<helper selector="#map" cond="tab(map)">Direction : La fontaine de Jouvence !</helper>
+			<helper selector="#combat" url="dino/*/act/move">Lorsque tu te déplaces, tu recontreras différents monstres. Ton Dinoz va combattre seul, ton but sera de le dresser pour lui faire apprendre des techniques plus puissantes !</helper>
+		</helpers>
+		<end url="dino/*">
+			Félicitations, Vous voilà rendu dans un nouveau lieu de Dinoland ! Il existe de nombreux lieux à découvrir, vous les verrez tous un jour, l'âme d'un aventurier sommeille en vous !
+		</end>
+		<rewards>
+			<object name="gold" count="500"/>
+		</rewards>
+	</objective>
+
+<!-- utilise une potion d'irma -->
+	<!--
+	<objective id="irma" title="Lutter contre la fatigue" next="port" valid="uvar(irma,1+)">
+		<begin url="dino/*">
+			Ton dinoz a fait son action quotidienne, il est fatigué, et doit se reposer, heureusement, avec une potion d'irma, toute sa fatigue s'évanouïra !
+			<span>Appuie directement sur <strong>le raccourci dans le menu des actions</strong> pour utiliser une potion.</span>
+		</begin>
+		<helpers>
+			<helper selector="#act_irma" url="dino/*">C'est par ici !</helper>
+		</helpers>
+		<end>
+			Votre dinoz a retrouvé sa forme, vous pouvez continuer votre aventure et aller au Port de Prêche !
+		</end>
+		<rewards>
+			<object name="gold" count="500"/>
+		</rewards>
+	</objective>
+		-->
+	
+<!--  Va au port de prêche -->
+	<objective id="port" title="Aller au port de Prêche" next="pub" valid="pos(port)">
+		<begin url="dino/**">
+			Ton Dinoz a retrouvé ses forces, et il va lui en falloir pour traverser les terres du royaume de Dinoville. Dirige toi vers le port de prêche.
+			Tu pourras discuter avec les autochtones locaux et peut-être en savoir plus sur le monde dans lequel tu viens d'arriver !
+		</begin>
+		<helpers>
+			<helper selector="#map" cond="tab(map)">Direction : Le port de Prêche !</helper>
+		</helpers>
+		<end url="dino/*">
+			Te voilà arrivé à bon port ! (oui oui ...)
+		</end>
+		<rewards>
+			<object name="irma" count="1"/>
+		</rewards>
+	</objective>
+
+<!-- parle au pilier de comptoir -->
+	<objective id="pub" title="Vivre une aventure" next="baobob" valid="scenario(intro,2+)">
+		<begin url="dino/*">
+			Discute avec les autochtones locaux et peut-être en savoir plus sur le monde dans lequel tu viens d'arriver !
+		</begin>
+		<helpers>
+			<helper selector="#act_dialog_intro__2" >C'est lui !</helper>
+		</helpers>
+		<end url="dino/*">
+			Suivez Baobob vers cette nouvelle aventure, il vous apprendra surement beaucoup de chose...
+		</end>
+		<rewards>
+			<object name="irma" count="1"/>
+		</rewards>
+	</objective>
+
+	<objective id="baobob" title="Suivez Bao Bob" next="papy" cond="scenario(intro,2+)" valid="scenario(intro,6+)">
+		<begin visible="0">
+		</begin>
+		<helpers>
+			
+			<helper selector="#act_dialog_intro__4" url="dino/*">C'est ici !</helper>
+			<helper selector="#act_dialog_intro__5" url="dino/*">C'est ici !</helper>
+			<helper selector="#act_dialog_intro__6" url="dino/*">C'est ici !</helper>
+			<helper selector="#act_dialog_intro__7" url="dino/*">Gloups...</helper>
+			<helper selector="#act_levelup" url="dino/*">Félicitations !</helper>
+			<helper selector="#swf_levelup" url="dino/*/act/levelup">Tu viens de gagner un niveau ! Il est temps maintenant pour toi de choisir une compétence que tu souhaite faire apprendre à ton Dinoz. Choisis bien ! Ces choix caractérisent le futur de ton compagnon.</helper>
+			<helper selector="div#inventory table" cond="life(20-)" url="dino/*">Utilise un Nuage Burger avant d'être à bout de force pour continuer ton aventure.</helper>
+		</helpers>
+		<end url="dino/*">
+			Suivez Baobob vers cette nouvelle aventure, il vous apprendra surement beaucoup de chose...
+		</end>
+		<rewards>
+			<object name="irma" count="1"/>
+		</rewards>
+	</objective>
+
+<!-- va voir papy joe pour remplir ta première mission -->
+	<objective id="papy" title="Rendre service pour un monde meilleur" next="shop" valid="curmission(fish)|curmission(dog)">
+		<begin url="dino/*">
+			L'heure est venue de réaliser ta première mission, va voir Papy Joe dans sa maison en passant par l'université, il aura surement des missions à te proposer.
+			<span>Rejoins la maison de Papy joe et accepte ta première mission ! Au dessus de tes actions, tu retrouveras les étapes de ta mission pour ne pas oublier où tu en es !</span>
+		</begin>
+		<helpers>
+			<helper selector="#dinozList ul li:first" url="!dino">C'est par ici !</helper>
+			<helper selector="#map" url="dino/*">Direction : Chez Papy Joe !</helper>
+			<helper selector="#act_dialog_papy" url="dino/*">Parler à Papy Joe !</helper>
+			<helper selector="div.mission table tr.new:first" url="dino/*/act/mission/list">Choisi une mission parmis celles disponibles</helper>
+		</helpers>
+		<end>
+			Félicitations, vous avez accepté votre première mission. Réaliser des missions est important pour progresser dans le jeu.
+			En plus des missions, certains personnages vous entraineront dans leurs aventures, des <strong>quêtes</strong> incroyables qui vous feront visiter de nouveaux lieux et combattre des monstres terrifiants !
+		</end>
+		<rewards>
+			<object name="angel" count="1"/>
+		</rewards>
+	</objective>
+
+<!-- achète un nuage burger dans la boutique -->
+	<objective id="shop" title="L'excitation de l'achat" next="burger" valid="uvar(sbuyer,1+)">
+		<begin>
+			Une fois tous tes objets consommés, il faudra en racheter dans la boutique grâce à l'or que tu auras gagné lors des combats !
+			<span>Appuie sur le bouton <strong>boutique en haut à gauche</strong>, juste en dessous de ta réserve d'or.
+			Tu découvriras la boutique, il ne te reste plus qu'à choisir <strong>un nuage burger</strong> par exemple !</span>
+		</begin>
+		<helpers>
+			<helper selector="#menu_shop">C'est par ici !</helper>
+			<helper selector="#obj_burger" url="shop">C'est par ici !</helper>
+		</helpers>
+		<end>
+			Bien, votre achat figure désormais dans votre inventaire !
+		</end>
+		<rewards>
+			<object name="gold" count="500"/>
+		</rewards>
+	</objective>
+
+<!-- utilise le nuage burger -->
+	<objective id="burger" title="Un petit creux" next="clan" valid="uvar(healpv,1+)">
+		<begin>
+			<span>Durant les combats, ton Dinoz perd des points de vie. Pour le guérir, il te faut utiliser des objets.
+			Utilise par exemple un <strong>nuage burger</strong> sur ton dinoz pour lui redonner de la vie.</span>
+		</begin>
+		<helpers>
+			<helper selector="#inv_burger_use" url="dino/**">Clique ici pour utiliser l'objet.</helper>
+		</helpers>
+		<end>
+			Bien, vous avez redonné de la vie à votre dinoz, votre périple peut continuer.
+		</end>
+		<rewards>
+			<object name="gold" count="500"/>
+		</rewards>
+	</objective>
+
+<!-- découvre les clans en regardant le classement -->
+	<objective id="clan" title="Les clans surpuissants" next="user">
+		<begin>
+			Tu es bientôt prêt à partir à l'aventure. Si tu te sens seul et ne sais pas trop où aller, je te conseille de rejoindre un clan pour discuter et échanger des astuces avec d'autres maîtres Dinoz.
+			<span>Dans le menu de droite, tu verras un bouton <strong>Clans</strong> qui te permettra de voir le classement des meilleurs clans.
+			A partir de cette page, tu pourras visiter la page d'accueil de chaque clan et peut-être en rejoindre un !</span>
+		</begin>
+		<helpers>
+			<helper selector="#clans_page" url="!clan">C'est ici !</helper>
+		</helpers>
+		<end>
+			Vous trouverez les meilleurs maîtres Dinoz dans les clans qui se livrent des batailles farouches lors des terrifiantes Guerres de Clans et autre Championnat des clans.
+		</end>
+		<rewards>
+			<object name="gold" count="500"/>
+		</rewards>
+	</objective>
+
+<!-- découvre ton compte en allant sur la page dédiée -->
+	<objective id="user" title="Se connaître soi-même" next="end">
+		<begin url="!user">
+			Sais-tu que tu peux accéder à tes informations de compte à travers la page <strong>Mon Compte</strong> ?
+			<span>Dans le menu de droite, tu verras un bouton <strong>Mon Compte</strong> qui te permettra de voir tes informations publiques, tes dinoz, tes titres et tes récompenses épiques !</span>
+		</begin>
+		<helpers>
+			<helper selector="#account_page" url="!user">C'est ici !</helper>
+		</helpers>
+		<end>
+			N'oubliez pas que vous pouvez éditer vos informations personnelles en cliquant sur le bouton <strong>Modifier mes informations</strong> !
+		</end>
+		<rewards>
+			<object name="gold" count="500"/>
+		</rewards>
+	</objective>
+
+<!-- fin -->
+	<objective id="end" title="Fin">
+		<begin>
+			Voilà, je vais te laisser partir à l'aventure maintenant, si tu as encore besoin de moi, tu peux venir me parler à Dinoville, je serai toujours là pour te conseiller.
+		</begin>
+		<end>
+			Nous vous souhaitons une excellente et longue aventure sur les terres de Dinoland ! Bon courage maître Dinoz !
+		</end>
+		<rewards>
+			<object name="gold" count="1000"/>
+		</rewards>
+	</objective>
+
+</objectives>

@@ -1,0 +1,56 @@
+<d place="kirvie" name="Gardien du donjon" cond="!sch(gu)+!(fx(cthulo)+curquest(laph))" gfx="gudkeeper" auto="0">
+
+<a id="end">Désolé, je dois y aller.</a>
+
+<phase id="begin" next="quit:ou">
+Ouuuiiii ? ...Que désireeees tu ? 
+</phase>
+
+<a id="quit" cond="!sch(gu)">Je voudrais quitter mon école. Vous pouvez m'aider ? </a>
+<a id="ou">Je cherche où se trouve mon école.</a>
+
+
+<phase id="quit" frame="happy" url="/user/quitSchool">
+Très bieeeeen... Remplis ce document pour que je puiiiiisse procéder. 
+</phase>
+
+
+<phase id="ou" next="sk:jz:gm:ap">
+Queeelle écooole cherches-tuuuu ? 
+</phase>
+
+
+<a id="sk">Shang-Kah, c'est où ?</a>
+<a id="ap">Comment on va chez Audepint ?</a>
+<a id="gm">Où est l'école Gemini ?</a>
+<a id="jz">Jezaara, c'est loin ? </a>
+
+<!-- ################ -->
+
+<phase id="sk" next="ok:ou"> 
+Il faut aller à {Tupuri}, à l'oueeest. Direction Chouettex, c'est juste aprèèèès.
+</phase>
+
+<phase id="ap" next="ok:ou"> 
+Tout à l'eeest : Grande place, Guildian Expreeeeess... Puis suivre la rouuute jusqu'au {Faubouuuurg Audepint}.
+</phase>
+
+
+<phase id="gm" next="ok:ou"> 
+Il faut aller auuuu Nord. Par la Grande place, la Prairie infinie puis {l'Oréeeee du bois}.
+</phase>
+
+<phase id="jz" next="ok:ou"> 
+Tu doiiiis aller à {l'Entrée du Boyau}, au Sud. | Passe par le BAFA puis le Bourg de Tiresiaaaas.
+</phase>
+
+<phase id="ok">
+C'est celaaaa. Au revoir.
+</phase>
+
+
+
+
+
+
+</d>

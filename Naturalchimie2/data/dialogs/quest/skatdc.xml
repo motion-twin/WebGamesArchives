@@ -1,0 +1,22 @@
+<d place="agoraa" name="Donner les Foleils" gfx="gusellagora" auto="0">
+
+<phase id="begin" next="oui:non">
+Alors ? Tu as mes 10 Foloeils  ?
+</phase>
+
+<a id="oui" cond="hasobject(Elt(5):10)">Oui, les voilà.</a>
+<a id="non" cond="!hasobject(Elt(5):10)">Pas encore. </a>
+
+
+<phase id="oui" take="Elt(5):10">
+C'est bon il y a le compte. Voilà ta recette. 
+Et passe le bonjour à l'exterminateur !
+</phase>
+
+<phase id="non" next="exit">
+Ne viens pas me déranger, dans ce cas. Enfin... A moins que tu veuilles acheter quelque chose, bien sûr !
+</phase>
+
+<a id="exit">Je repasserai.</a>
+
+</d>

@@ -1,0 +1,83 @@
+﻿<missions>
+
+	<!-- ***************************************************************************** -->
+	<!-- Gulom, aide à un survaïvor ----->
+<!--
+	<m group="gullom" id="remed" name="Soin d'urgence" limit="2">
+		<begin>Même s'il endure en silence, on voit bien que Gulom peut tomber dans les limbes d'une minute à l'autre. Il faut vite lui donner un remède pour guérir ses blessures.</begin>
+		<goto v="chutes"/>
+		<use v="remed2" n="1"/>
+		<end>Merci, je n'aurai pu aller beaucoup plus loin sans ton aide !</end>
+		<xp v="30"/>
+	</m>
+-->
+	<m group="gullom" id="truci1" name="Haltet das Camp sauber">
+		<begin>Die dunkle Welt wird von vielen seltsamen Geschöpfen bevölkert. Ich werde einige Zeit hier bleiben.
+		Kannst du mir einen Gefallen tun und einige dieser lästigen Biester erledigen, damit wir in Ruhe ein Lager aufbauen können?</begin>
+		<goto v="dkchut"/>
+		<kill n="10" v="piraos" zone="4" />
+		<goto v="dktow"/>
+		<kill n="10" v="piraos" zone="4" />
+		<goto v="dkbao"/>
+		<kill n="5" v="garouz" zone="4" />
+		<end>Dankesehr. Dank dir kann ich mich nun in Sicherheit ausruhen!</end>
+		<xp v="40"/>
+	</m>
+	
+	<!-- Le maître est un ermite aveugle, il ne peut donc voir les ouvertures du portail-->
+	
+	<m group="gullom" id="ouestu" name="O Meister, wo seid ihr?" cond="mission(truci1)">
+		<begin>Kannst du mir helfen, meinen Meister zu finden? Er muss hier irgendwo in der Nähe auf mich warten. Immer wenn das Portal geöffnet wird, erstrahlt ein typisches Licht. ...unwahrscheinlich, dass er das nicht gesehen hat.</begin>
+		<goto v="dkbao"/>
+		<talk v="gulom" gfx="survivor">Meister, seid ihr da?</talk>
+		<goto v="dktow"/>
+		<talk v="gulom" gfx="survivor">Huhu? Könnt ihr mich sehen, Meister?</talk>
+		<goto v="fake"/>
+		<talk v="gulom" gfx="survivor">Hört auf mit diesem Versteckspiel! Wenn man älter als 10 Jahre ist, ist das nicht mehr lustig! Oops, ich habe nichts gesagt!</talk>
+		<end>
+			Äh, es tut mir leid, dass ich deine Zeit verschwendet habe. Ich hatte ganz vergessen, dass mein Meister blind ist!
+			Also kann er die Lichstrahlen gar nicht sehen, die von der Dunklen Welt ausgehen. Lass uns zum Camp zurückgehen, es gibt hier nichts mehr zu finden...
+		</end>
+		<gold v="1000"/>
+	</m>
+	
+	<m group="gullom" id="truci2" name="Es spukt" cond="mission(ouestu)">		
+		<begin>An eines haben ich mich nie wirklich gewöhnt. Stell dir nur vor, ich habe immer noch Angst im Dunkeln!
+		In letzter Zeit habe ich da drüben einige bedrohliche Schatten bemerkt. Könntest du einen Blick darauf werfen?</begin>
+		<goto v="fake"/>
+		<kill n="10" v="amanpe" zone="4" />
+		<end>Danke, jetzt werde ich die Nacht schon irgendwie überstehen!</end>
+		<xp v="40"/>
+		<gold v="500"/>
+	</m>
+	
+	<m group="gullom" id="monte" name="Dunkler Turm	" cond="mission(truci2)">
+		<begin>An der Spitze des dunklen Turms wacht ein Wächter - mächtiger als alle, die dir jemals zuvor begegnet sind. Von dort oben blickt er still hinab auf die dunkle Welt.
+		Er weiß vielleicht etwas über das Verschwinden meines Meisters. Könntest du hingehen und ihn höflich fragen?</begin>
+		<goto v="dktow2"/>
+		<goto v="dktow3"/>
+		<goto v="dktow4"/>
+		<actfight act="Turmwächter bekämpfen" monsters="upgrd"/>
+		<talk v="Turmwächter">.....</talk>
+		<action v="Helm mitnehmen">Unmöglich, ihn noch zu befragen. Außer einem leeren Helm ist nichts mehr übrig...</action>
+		<goto v="dkchut"/>
+		<talk v="gulom" gfx="survivor">Und, hast du etwas herausgefunden? ... Nichts? Nichts außer diesem Helm? ... Gut, dann muss ich mir etwas anderes ausdenken...</talk>
+		<end>Immerhin kann er mich nun nicht mehr dabei beobachten, wie mir meine Beine von Piranjochen zerbissen werden...</end>
+		<xp v="50"/>
+		<gold v="2000"/>
+	</m>	
+	
+	<m group="gullom" id="lumi" name="Mehr Licht" cond="mission(monte)">
+		<begin>Ich frage mich, ob man an einigen strategisch wichtigen Punkten nicht ein Feuer entzünden könnte, damit wir etwas mehr in dieser Dunkelheit sehen könnten. Ich wär jedenfalls schon dankbar, wenn ich wenigstens erkennen könnte, was ich esse!</begin>
+		<goto v="dktow"/>
+		<useingr v="enfeu" n="1"/>
+		<goto v="dkbao"/>
+		<useingr v="enfeu" n="1"/>
+		<goto v="fake"/>
+		<useingr v="enfeu" n="1"/>
+		<end>Dankesehr. Dank dir können wir nun mehr sehen! Jetzt hab ich nur das Problem, dass mir der Appetit vergeht, wenn ich sehe was da auf meinen Teller liegt...</end>
+		<xp v="60"/>
+		<gold v="6000"/>	
+	</m>
+	
+</missions>

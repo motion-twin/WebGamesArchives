@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+	<meta http-equiv="content-type" value="text/html; charset=utf-8"/>
+	<title>Happy p'ti tank</title>
+	<style type="text/css">
+		@font-face {
+		font-family: "nokia";
+		src: url("gfx/nokiafc22.ttf");
+		}
+		body {
+		font-family: "nokia", "Courier", fixed;
+		font-size: 12px;
+		color: #777;
+		}
+		h1 {
+		border-bottom: 2px solid #777;
+		}
+	</style>
+	<body>
+		<h1>Happy p'ti tank</h1>
+		
+		<object type="application/x-shockwave-flash" id="haxePath" data="../api/loader9.swf" width="300" height="320">
+			<param name="allowScriptAccess" value="always"/>
+			<param name="allowFullScreen" value="true"/>
+			<param name="scale" value="noscale"/>
+			<param name="salign" value="lt"/>
+			<param name="quality" value="high"/>
+			<param name="flashvars" value="swf=game.swf&amp;lang=fr"/>
+		</object>
+		
+<script type="text/javascript">
+	double = false;
+	function toggleDouble() {
+		double = !double;
+		if (double)
+			document.body.className += " fullscreen";
+		else
+			document.body.className.replace("fullscreen","");
+		var fl = window.document["haxePath"];
+		var x = double ? 2 : 1;
+		fl.width = 300 * x;
+		fl.height = 320 * x;
+		fl.setDouble(double);
+	}
+</script>
+
+<p>
+	<a href="#" onclick="toggleDouble(); return false;">Double</a>
+</p>
+
+		<div style="width:300px; float:left;">
+			<p><strong>histoire</strong></p>
+			<p>La brigade gaie 69 de l'Happy pti tank a encore usé de substances illicites lors de sa dernière 'pride et elle se retrouve non sans surprise au milieu d'un essai d'arme col-horrifique.</p>
+			<p>Aidez le Happy pti tank à s'enfuir au plus vite de ce mauvais trip en éliminant un maximum de vieux croûtons noir et blancs !</p>
+			<p><strong>aide</strong></p>
+			<p>Eloignez-vous du centre pour gagner plus de points en franchissant des cercles.</p>
+			<p>Attention au bout de 2 minutes le missile col-horrifique détruira tout !</p>
+			<p>Il existe 5 options que vous pouvez ramasser sur le sol, attention vous ne pouvez bénéficier que d'une option à la fois :</p>
+			<ul>
+				<li><strong>Armure:</strong> redonne un point de vie au tank</li>
+				<li><strong>Rafale:</strong> accélère la cadance de tir du tank</li>
+			</ul>
+		</div>
+	
+	</body>
+</html>

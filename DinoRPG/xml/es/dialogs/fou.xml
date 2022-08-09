@@ -1,0 +1,70 @@
+﻿<!-- FOU DES COLLINES HANTEES -->
+
+<d place="collin" name="Hombre raro" gfx="fou" cond="!fx(lantrn)">
+
+	<phase id="begin" next="hi:approach:ignore" fast="1">
+		Un individuo raro escondido torpemente entre los árboles te mira fijamente con 
+		una mirada inquietante... Tiene una linterna que apunta hacia tu dirección.
+	</phase>
+
+	<a id="hi">Eh... ¿Hola?</a>
+	<a id="approach">Intentar acercarse...</a>
+	<a id="ignore">Ignorarlo</a>
+	<a id="run">¡Salir corriendo!</a>
+
+	<phase id="hi" next="approach:ignore:run" fast="1">
+		El hombre parece inquieto y te mira de arriba a abajo sin decir nada...		
+	</phase>
+
+
+	<phase id="approach" next="hi:ignore:run" fast="1">
+		Apenas haces un paso en su dirección y el hombre pega un brinco aterrorizado y 
+		se lanza a la maleza. Un instante más tarde, su cabeza emerge de las plantas y
+		te echa otra mirada inquietante...
+	</phase>
+
+
+	<phase id="run" fast="1">
+		¡Echas a correr!		
+	</phase>
+
+	<phase id="ignore" next="intro:run" fast="1">
+		Giras la cabeza para intentar ignorarlo. Cuando echas una mirada rápida en su dirección,
+		constatas con sorpresa que corre hacia ti como un loco. ¡No puedes evitar lanzar un grito 
+		de sorpresa! Te pega la linterna bajo la nariz e intenta sonarte la nariz...
+	</phase>
+
+	<a id="intro">¡Argh! ¡Me has asustado!</a>
+
+	<phase id="intro" next="seenWhat:leave">
+		¿Tienes miedo? ¿Miedo de qué? ¿Las sombras o las voces? ¿Tú también? ¿Tú también tienes miedo?
+		¡Todos tenemos miedo! ¡Yo los he visto!
+	</phase>
+
+	<a id="seenWhat">¿Qué has visto?</a>
+	<a id="leave">Creo que me marcho...</a>
+
+	<phase id="leave" fast="1">
+		Retrocedes lentamente y te vuelves sobre los talones sin más miramientos...
+	</phase>
+
+	<phase id="seenWhat" next="show:run">
+		¡¡Gorgoth!! ¡¡Ése al que dicen el innombrable comedor de cabezas de la perfidia abisal!!
+	</phase>
+
+	<a id="show">¡Erk! ¡Parece peligroso!</a>
+
+	<phase id="show" next="fight:run">
+		¡Aterroriza todo lo que vive en la Jungla de Grumhel! Sabiendo además que la Jungla de por sí 
+		da mucho miedo a todo el mundo. Anda mira, está justo ahí (señala la vegetación espesa y negra).
+	</phase>
+
+	<a id="fight">¡Atacar a Gorgoth (el innombrable comedor de cabezas de la perfidia abisal)!</a>
+
+	<phase id="fight" fight="korgon" fast="1" effect="lantrn">
+		Buscas la mirada del hombre raro, pero constatas con sorpresa que ha desaparecido... La buena noticia
+		es que ha olvidado su linterna. A partir de ahora podrás usar la linterna para no perderte más en los 
+		lugares oscuros.
+	</phase>
+
+</d>

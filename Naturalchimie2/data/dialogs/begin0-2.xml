@@ -1,0 +1,44 @@
+<d place="grenie" name="" gfx="gualtus" auto="1" cond="!fx(welcom)+firstplaydone()+(!demo()|!fx(demosu))">
+
+<phase id="begin" next="oui:ouid">
+Ca y est, tu as créé un [Foloeil] ?  
+</phase>
+
+<a id="oui" cond="!demo()">Oui, c'est bon.</a>
+<a id="ouid" cond="demo()">Oui, c'est bon.</a>
+
+<!-- ALREADY SUBSCRIBED USER -->
+<phase id="oui" next="ouia" frame="happy">
+%happy%Parfait ! 
+Maintenant, il faut que tu ailles récupérer les objets indispensables à ta formation. J'avais une vieille liste quelque part, attends un peu...
+</phase>
+
+<phase id="ouia" effect="welcom" quest="altus">
+Ah ! Je l'ai ! | | Voilà, tout est indiqué. Tu peux revenir la consulter quand tu veux.
+</phase>
+
+
+<!-- DEMO USER -->
+<phase id="ouid" next="ok" frame="happy">
+%happy%Parfait.
+Maintenant il faudrait remplir ce formulaire pour t'inscrire, j'en ai besoin pour pouvoir te donner 8 parties en plus. Après tu pourras partir récupérer tes affaires. 
+</phase>
+
+<a id="ok">Ok, passez-moi votre paperasse et un stylo.</a>
+<!--
+<a id="bof">Bof... je peux pas le faire plus tard ? </a>
+-->
+
+<phase id="ok" effect="sudemo" url="/user/subscribe">
+Voilà.
+</phase>
+<!--
+<phase id="bof" next="liste">
+C'est possible. Je te le laisse là. Clique sur le lien à gauche [Enregistrer la partie] pour le remplir quand tu veux. 
+</phase>
+
+<phase id="liste" next="ouia">
+En attendant, il faut que tu ailles récupérer les objets indispensables à ta formation. J'avais une vieille liste quelque part, attends un peu...
+</phase>
+-->
+</d>

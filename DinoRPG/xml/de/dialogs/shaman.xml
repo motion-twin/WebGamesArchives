@@ -1,0 +1,72 @@
+﻿<!-- Quete du charme de feu, se débloque en parlant au Vénérable -->
+<!-- Quete de l'amulette de stratégie -->
+	
+<d place="fosslv" name="Lässiger Schamane" gfx="shaman">
+	
+  <phase id="begin" next="vener:souvenir:missions:charm">Hallo junger
+  Abenteurer, willkommen in Lavaloch...der Hauptstadt der Großen
+  Dauerhitze...Kannst ja mal einen Blick auf unsere super Basaltskulpturen
+  werfen. Dort hast du auch die Magmabäder, wenn de Bock hast....da kannste
+  relaxen. Wirst sehen, ist echt coool....Wenn de Hunger hast, kannste
+  unsere Spezialität probieren, die Goblinwürstchen....Die machen dich wieder
+  fit, juuuhuuu, das kannste dir nich vorstellen...</phase>
+
+  <a id="vener">Der Ehrwürdige...</a>
+  <a id="souvenir" cond="!fx(shflag)">Kann man hier irgendwo Souvenirs
+  kaufen?</a>
+  <a id="missions" cond="fx(shflag)">Auf der Missionsliste nachsehen.</a>
+ <a id="charm" cond="fx(fflag)">Man hat mir von einem Zauber erzählt...</a>
+
+  <phase id="charm" next="boost:nothing">Ach ja, stimmt...scheint so, als ob
+  ich dir helfen müsste... Hier ein Feuerzauber, der wird deinem Dinoz in seinen
+  nächsten Kämpfen behilflich sein. </phase>
+
+  <a id="boost" cond="!fx(fcharm)">Den Zauber annehmen.</a>
+  <a id="nothing" cond="fx(fcharm)">Den Zauber annehmen.</a>
+
+  <phase id="boost" effect="fcharm">Beweg dich nicht, ich werd dich mit dem
+  Zauber der Schamanen verzaubern...Oyeeee, oyeee! ZZZZzzzzzz... ... Ok passt.
+  Du kannst jetzt gehen, bist jetzt'n Überflieger.</phase>
+
+  <phase id="nothing">Hey, versuch mich nich zu linken. Dein Dinoz hat schon
+  einen Zauber....Schau später wieder vorbei.</phase>
+
+  <phase id="vener" next="force:merci">Hhmm...? Der Ehrwürdige?...Dieser
+  Rohling! Gestern hat er mich fast aufgefressen....und dies, weil er fand,
+  dass ich zu hektisch sei und dass er deswegen nicht schlafen könne...Willst 
+  du da wirklich hin? Boah...das musst du selbst wissen...Bieg
+  bei den Schmieden rechts ab und dann einfach gerade aus.</phase>
+
+  <a id="force">Echt? Und ist er stark?</a>
+  <a id="merci">Danke. Ich werde deine Ratschläge beherzigen!</a>
+
+  <phase id="merci">Tschau Kumpel...bis zum nächsten Mal... </phase>
+
+  <phase id="force" next="merci">Stark? Der große Drache da?....jo, der ist
+  schon gut stark...Ist die erste Todesursache bei Touristen, knapp vor den
+  Herzattacken, die sie vom Verzehr unserer Würstchen bekommen...Oh Mann! Was
+  für Weicheier, diese Touristen....</phase>
+
+  <phase id="souvenir" next="more:merci">Du suchst Souvenirs?....Tja...ich
+  habe da zwar meinen Stapel Zauberblätter, der noch nicht fertig ist, aber ich
+  weiß nicht, ob dich das interessiert...Ich kann dir auch ein Autogramm
+  geben, eins, das mit meinem richtigen Namen unterschrieben ist: Frank
+  Backpfeife...nein? Ok, Pech gehabt...Ansonsten kannst du noch ein paar
+  Kampfgegenstände bei den Schmieden finden...Kampfausrüstungen und so
+  Zeug....Vielleicht ist ja was Cooles für dich dabei.</phase>
+
+  <a id="more">Und das ist alles?</a>
+
+  <phase id="more" next="accept">Hhmmm... Wenn dein Dinoz ein paar Missionen
+  für mich erledigt, dann werde ich ihm meinem Strategieguide geben. Der ist
+  echt praktisch....</phase>
+
+  <a id="accept">Annehmen.</a>
+
+  <phase id="accept" effect="shflag" next="missions">Geschäft
+  abgeschlossen...</phase>
+
+  <!--missions="shaman"-->
+  <phase id="missions" missions="shaman">(Bald verfügbar)</phase>
+  
+</d>

@@ -1,0 +1,71 @@
+<quests>
+
+<q from="ylasse" id="ylasa" name="Pas taper ! Pas taper ! ">
+	<begin>Eh toi ! On t'a jamais vu dans le coin ! </begin>
+	<talk did="ylasaa" />
+	 <score ratio="1.2" zone="jztire" title="Atteindre le score demandé au bourg de Tiresias pour prouver qu'on est pas une chochotte." />
+	<end>Ok ok, t'es pas une chochotte. On va pas dire qu'on est pote mais on te piquera pas tes fringues pour rigoler, en tout cas.</end>
+	<xp v ="8" />
+	<gold v="80" />
+	<reput s="jz" v="7" />
+</q>
+
+
+<q from="ylasse" id="ylasb" name="Passe-temps explosif" cond="quest(ylasa)">
+	<begin>Notre sac de charcleurs est vide ! Comment voulez-vous qu'on s'amuse, ici ? ! </begin>
+	<talk did="ylasba" />
+	<talk did="ylasbb" title="Se rendre à la Potion Joyeuse sur la Grande Place et ramener le plus de charcleurs possibles." />
+	<create o="Elt(16):5" title="Créer 5 charbonides pendant une alchimie, vous pouvez en trouver à Tiresias. Chaque élément présent à la fin d'une partie sera collecté. " />
+	<use qo="Elt(16):5" zone="agoraa" qgive="Grenade(0):1" action="Donner les charbonides" text="Très bien. Tu diras aussi à Ylasse de pas rentrer trop tard ce soir, et de bien faire ses devoirs." title="Echanger les 5 charbonides contre un charcleur à la Potion Joyeuse." />
+	<end>Quoi ? Un seul charcleur ? Pfff... Toujours aussi radin, tonton.</end>
+	<xp v ="12" />
+	<gold v="70" />
+	<reput s="jz" v="10" />
+</q>
+
+
+<q from="ylasse" id="ylasc" name="Une blague qui fait POUM ! " cond="quest(ylasb)">
+	<begin>Un seul charcleur, il faut pas le gaspiller. J'ai une idée de sale blague absolument super ! </begin>
+	<talk did="ylasca" />
+	<collect o="QuestObj(corb):16" zone="jzdoor" title="Récupérer 16 corbeaux à l'entrée du Boyau. Il suffit de créer un Foloeil à côté d'un corbeau pour l'attirer.">
+		<playMod artft="Elts(2,null):2000;Elts(2,QuestObj(corb)):1000;Elts(2,Neutral):1300;QuestObj(corb):300;Dynamit(0):30;Dynamit(1):15;Alchimoth:10" />
+	</collect>
+	<use qo="QuestObj(corb):16" zone="jztire" action="Donner les corbeaux" text="Hin hin... Super, plus qu'à patienter un peu et on pourra récupérer assez de fiente. Repasse quand ce sera prêt." title="Ramener les corbeaux à Ylasse Flacule au bourg de Tiresias." />
+	<use gold="0" zone="jztire" qgive="QuestObj(fiente):1;Grenade(0):1" action="Prendre la bombe" text="Ok, c'est prêt. Prend le bazar et va à la Grande Place pour la balancer chez le POUM. On te suivra de loin pour pas se faire repérer. Frappe à la porte avant aussi. Histoire de vérifier qu'il y a quelqu'un." title="Prendre la bombe de fiente." />
+	<talk did="ylascb" title="Se rendre à l'antenne du POUM sur la Grande Place, vérifier qu'il y a quelqu'un à l'intérieur." />
+	<use qo="QuestObj(fiente):1;Grenade(0):1"  zone="agoraa" action="Lancer la bombe" text="'Je me demande quelle mouche l'a piqué. Il semblait intéressé par le POUM, pourtant...' Roul roul roul... Poc. 'Tiens, qu'est-ce que c'est que ce tr... BOOUUUM ! ! !.... Aaaaah, c'est ignoble ! Ca pue ! " title="Lancer la bombe de fiente par la fenêtre." />
+	<end>Ouais ! Mon plan machiavélique a trop bien marché ! On est les plus forts ! </end>
+	<xp v ="12" />
+	<gold v="160" />
+	<reput s="jz" v="10" />
+</q>
+
+
+<q from="ylasse" id="ylasd" name="Un après-midi bien rempli" cond="quest(ylasc)">
+	<begin>C'est génial, je viens de retrouver un vieux stock de charcleurs dans cette baraque. Sûrement un étudiant de Jeezara qui l'a oublié. On va pouvoir s'amuser, machin ! </begin>
+	<collect o="CountBlock(1):120" zone="jztire" title="Eclater 120 blocs de pyrite à Tirésias pour s'occuper. N'hésitez pas à utiliser les charcleurs que balance Ylasse.">
+		<playMod replace="1" artft="Elts(2,null):1000;Elts(2,CountBlock(2)):1300;Elts(2,CountBlock(3)):1700;Elts(2,CountBlock(4)):1000;CountBlock(3):400;CountBlock(4):200;Dynamit(0):30;Dynamit(1):15;Alchimoth:10;Grenade(0):350;Grenade(1):80" >
+		</playMod>
+	</collect>
+	<end>Hin hin, on s'est bien défoulés. Faudra remettre ça demain. </end>
+	<xp v ="12" />
+	<gold v="70" />
+	<item v="Grenade(0):1" />
+	<reput s="jz" v="8" />
+</q>
+
+
+<q from="ylasse" id="ylase" name="Devoir en retard" cond="quest(ylasd)">
+	<begin>Un quoi ? Un devoir à rendre pour hier ? Pfff... Machin, tu veux pas t'en occuper pour nous ? Tu pourrais t'améliorer en alchimie, comme ça.</begin>
+	<create o="Elt(8):4;Elt(12):4;Elt(16):4;Elt(20):4;Elt(24):4" title="Faire les devoirs d'Ylasse et Lésée en créant les éléments demandés. Chaque élément présent à la fin d'une partie sera collecté. " />
+	<end>Trop fortiche ! T'es vraiment un pote tu sais, machin.</end>
+	<xp v ="20" />
+	<gold v="85" />
+	<randomrecipe v="250:160" />
+	<reput s="jz" v="11" />
+</q>
+
+
+
+
+</quests>

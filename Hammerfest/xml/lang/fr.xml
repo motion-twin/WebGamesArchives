@@ -1,0 +1,1100 @@
+﻿<lang id="fr" debug="0">
+	<statics>
+		<!-- STATICS -->
+		<t id="1"	v="Niveau"/>
+		<t id="2"	v="Apprentissage"/>
+		<t id="3"	v="niveau suivant"/>
+		<t id="4"	v="VITE !"/>
+		<t id="5"	v="Instructions"/>
+		<t id="6"	v="Cliquez pour continuer..."/>
+		<t id="7"	v="Se déplacer"/>
+		<t id="8"	v="Poser une bombe"/>
+		<t id="9"	v="Pause"/>
+		<t id="10"	v="ESPACE"/>
+		<t id="11"	v="PARFAIT !"/>
+		<t id="12"	v="DANGER BOSS !"/>
+		<t id="13"	v="Nouvelle contrée"/>
+		<t id="14"	v="Contrée: "/>
+		<t id="15"	v="Flash 8 est nécessaire pour jouer à Hammerfest. Vous pourrez le télécharger gratuitement à l'adresse suivante:"/>
+		<t id="16"	v="Forêt d'Hammerfest"/>
+		<t id="17"	v="Caverne de l'apprenti"/>
+		<t id="18"	v="MINUTE"/>
+		<t id="19"	v="MINUTES"/>
+		<t id="20"	v="TIME ATTACK !"/>
+		<t id="21"	v="Préparez-vous..."/>
+		<t id="22"	v="BUT !!"/>
+		<t id="23"	v="CONTRE SON CAMP!"/>
+		<t id="24"	v="Engagement !"/>
+		<t id="25"	v="Fin du match"/>
+		<t id="26"	v="VICTOIRE: IGOR !"/>
+		<t id="27"	v="VICTOIRE: SANDY !"/>
+		<t id="28"	v="MATCH NUL !!"/>
+		<t id="29"	v="Se déplacer"/>
+		<t id="30"	v="Frapper"/>
+		<t id="31"	v="Pousser en haut"/>
+		<t id="32"	v="Amenez le ballon dans le but adverse. Tous les coups sont permis ! Ce mode se joue à 2 sur le même ordinateur."/>
+		<t id="33"	v="Appuyez sur P pour l'aide"/>
+		<t id="34"	v="Téléportation impossible"/>
+		<t id="35"	v="Bonus vies: "/>
+		<t id="36"	v="Tubercourse"/>
+		<t id="37"	v="Votre temps:"/>
+		<t id="38"	v="Temps moyen par niveau:"/>
+		<t id="39"	v="Temps:"/>
+		<t id="40"	v="Clé requise:"/>
+		<t id="41"	v="Utilise: "/>
+		<t id="42"	v="Bombe"/>
+		<t id="43"	v="est eliminé !"/>
+		<t id="44"	v="Cible interdite !"/>
+		<t id="45"	v="Cible éliminée."/>
+
+		<!-- LOADER -->
+		<t id="50"	v="Voyage vers Hammerfest..."/>
+		<t id="51"	v="km"/>
+		<t id="52"	v="Vous y êtes !"/>
+		<t id="53"	v="Cliquez pour commencer..."/>
+		<t id="54"	v="Démarrage de la partie..."/>
+		<t id="55"	v="Sauvegarde en cours !"/>
+		<t id="56"	v="Merci de patienter..."/>
+		<t id="57"	v="Une partie vous sera alors décomptée."/>
+		<t id="58"	v="Ce mode est gratuit et illimité !"/>
+		<t id="59"	v="----[ MODE DEV LOCAL ]----"/>
+		<t id="60"	v="Echec d'envoi des données, tentative: "/>
+		<t id="61"	v="Chargement des musiques..."/>
+		<t id="62"	v="Tout est prêt !"/>
+		<t id="63"	v="Lecture des pistes..."/>
+		<t id="64"	v="Une erreur a eu lieu lors du chargement des données."/>
+		<t id="65"	v="Vous devez installer Flash version 7"/>
+		<t id="66"	v="Le serveur de fichiers n'a pas été trouvé."/>
+		<t id="67"	v="Erreur lors du téléchargement"/>
+		<t id="68"	v="Une erreur a eu lieu lors de l'initialisation du téléchargement"/>
+		<t id="69"	v="Une erreur a eu lieu lors du téléchargement de la musique !"/>
+		<t id="70"	v="Une erreur a eu lieu lors du téléchargement du jeu ! Veuillez consulter le SUPPORT TECHNIQUE en bas du site pour savoir comment Vider le cache de votre navigateur."/>
+		<t id="71"	v="Sauvegarde de la partie précédente..."/>
+		<t id="72"	v="Impossible de terminer la sauvegarde."/>
+		<t id="73"	v="Sauvegarde réussie ! :)"/>
+		<t id="74"	v="Enfin presque..."/>
+
+		<!-- ADVENTURE SCRIPT -->
+		<t id="100"	v="Sautez *dans le puits* pour démarrer l&apos;aventure !"/>
+		<t id="101"	v="Passage secret !"/>
+		<t id="102" v="Au fond du puits, tout au fond, résonne un rire inquiétant..."/>
+		<t id="103" v="Vous avez découvert *un passage secret* !"/>
+		<t id="104" v="Vous venez de libérer les derniers fruits de l'emprise de Tuberculoz !"/>
+		<t id="105" v="A quelques mètres seulement, le cliquetis d'une meute de *Bombinos* se fait entendre..."/>
+		<t id="106" v="Les Bombinos sont détruits ! Igor peut maintenant continuer son aventure."/>
+		<t id="107" v="D'étranges bruits vous parviennent des étages inférieurs..."/>
+		<t id="108" v="Vous entrez dans la tanière des *Poires Melbombes*..."/>
+		<t id="109" v="Igor a vaincu les Poires Melbombes !"/>
+		<t id="110" v="La température semble avoir baissé d'un seul coup... Igor est arrivé dans l'antre des *Sorbex* !"/>
+		<t id="111" v="Les terribles citrons Sorbex ont été terrassés ! Igor peut poursuivre son exploration..."/>
+		<t id="112" v="Igor vient d'arriver en plein match de Fraise-Ball. Il va falloir vaincre l'équipe des *Tagadas* !"/>
+		<t id="113" v="L'équipe des *Tagadas* a été battue 4-0 par Igor !"/>
+		<t id="114" v="Igor est entré dans la caverne des facétieux *Sapeurs Kiwis* !"/>
+		<t id="115" v="Vous avez vaincu les Sapeurs Kiwis !"/>
+		<t id="116" v="L'épreuve du *Destin*"/>
+		<t id="117" v="Vous entrez un lieu secret et oublié... Le *Temple des épreuves* !"/>
+		<t id="118" v="L'épreuve de *Dextérité*"/>
+		<t id="119" v="Vous avez *échoué* à cette épreuve"/>
+		<t id="120" v="Vous avez *remporté* cette terrible épreuve !"/>
+		<t id="121" v="L'épreuve de *Courage*"/>
+		<t id="122" v="Vous avez ouvert un *raccourci* !"/>
+		<t id="123" v="Le sifflement des corps filant dans les airs... Pas de doute ! Vous êtes sur le territoire des *Bondissantes* !"/>
+		<t id="124" v="Le silence retombe tandis que la dernière Bondissante est terrassée..."/>
+		<t id="125" v="BETA-TEST: cette porte mène au niveau 51."/>
+		<t id="126" v="*L'obscurité* envahit les cavernes, à mesure que vous descendez..."/>
+		<t id="127" v="Le sol tremble... Préparez-vous à affronter les *Ananargeddons* !"/>
+		<t id="128" v="Le calme revient alors que le dernier Ananargeddon est terrassé..."/>
+		<t id="129" v="Choisissez le terrain pour ce match. Vous pouvez *appuyer sur P* pour obtenir de l'aide à tout moment."/>
+		<t id="130" v="Ce *terrain spécial* est dédié au VolleyFest !"/>
+
+		<t id="131" v="Vous avez retrouvé le *Joyau d'Ankhel* ! Rick serait fier de vous..."/>
+		<t id="132" v="Le *Joyau d'Ankhel* a été scellé à tout jamais. Tant d'effort pour rien !"/>
+		<t id="133" v="Protégez le bouton rouge !"/>
+		<t id="134" v="Ramassez un maximum de cristaux !"/>
+		<t id="135" v="La porte vient de s'ouvrir !"/>
+		<t id="136" v="Une odeur de moisissure suspecte émane des niveaux inférieurs..."/>
+		<t id="137" v="Quelque chose d'horrible semble avoir germé de la Canne de Bobble... Vous êtes dans l'antre des Bobbles Déchus !"/>
+		<t id="138" v="Les Bobbles déchus ont été vaincus... Mais vu la taille de cette Canne, il est fort probable qu'il y en ait d'autres ailleurs dans les cavernes."/>
+
+		<t id="139" v="*mrloxa* : Bienvenue dans le *Repaire des Carotteux*, nous t'attendions."/>
+		<t id="140" v="*Chipseater* : Nous sommes des reflets de ta personne. Nous provenons chacun d'une dimension parallèle où avons réussi à vaincre Tuberculoz."/>
+		<t id="141" v="*steph0808* : Une entité supérieure nous a envoyé ici afin de t'aider dans ta quête et te montrer la voie."/>
+		<t id="142" v="*blaguenul* : Poil au doigt !"/>
+		<t id="143" v="*GlobZOsiris* : Voici la *Clé de Gordon* qui te permettra d'ouvrir l'accès à notre cave."/>
+		<t id="144" v="*rollerfou* : Nous avons caché au fond de cette cave une *Canne de Bobble*, un objet de légende et de grande valeur !"/>
+		<t id="145" v="*GlobZOsiris* : Mais c'était il y a bien longtemps... Avant la Grande Mise à Jour..."/>
+		<t id="146" v="*Tout le monde* : ooooooooh.... la Grande Mise à Jour ! "/>
+		<t id="147" v="*mrloxa* : SILENCE !"/>
+		<t id="148" v="*mrloxa* : En tant que Premier Panthéonien, je te confie la lourde tâche de *retrouver cette Canne de Bobble*. Va, maintenant."/>
+
+		<t id="149" v="*mrloxa* : La Canne de Bobble a été *corrompue* !"/>
+		<t id="150" v="*Tout le monde* : ooooooooh...."/>
+		<t id="151" v="*blaguenul* : Corrompue ! Poil au ..."/>
+		<t id="152" v="*GlobZOsiris* : Il y a fort à parier que cette corruption sera à l'origine de grands changements !"/>
+		<t id="153" v="*steph0808* : Tu dois retourner explorer les cavernes, Igor. Nul doute que *d'autres lieux secrets* comme celui-ci existent..."/>
+		<t id="154" v="*mrloxa* : Oui c'est évident ! Tu dois être attentif, Igor. Fouille chaque recoin de ce monde..."/>
+		<t id="155" v="*mrloxa* : Nous ne l'avions jamais remarqué... Mais de nombreux secrets se cachent encore dans *Les Cavernes de Hammerfest* !!"/>
+		<t id="156" v="*rollerfou* : ... Comme le coup de la bombe dans le Puits ?"/>
+		<t id="157" v="*Tout le monde* : ooooooooooooooooh...."/>
+
+		<t id="158"	v="Vous êtes en mode *Ninjutsu* ! Visez en priorité tout ennemi marqué d'un *CRANE*. Ne tuez jamais un ennemi portant un *COEUR* !"/>
+
+		<t id="159" v="Le bruit visqueux que l'on entend dans ces cavernes ne laisse aucun doute: vous êtes dans *la tanière des Framboijules* !"/>
+		<t id="160" v="Vous avez vaincu les premières *Framboijules* ! Mais il y a fort à parier que ce ne seront pas les dernières..."/>
+		<t id="161" v="Attention ! Cette région est extrêmement dangereuse et difficile ! Ne vous y aventurez surtout pas !"/>
+		<t id="162" v="Seuls les plus téméraires passeront !"/>
+		<t id="163" v="Un voix féminine douce et calme annonce : *'Accès interdit aux ninjas'*."/>
+
+
+
+
+		<!-- TUTORIAL SCRIPT -->
+		<t id="200" v="Utilisez les *flèches du clavier* pour vous déplacer à gauche et à droite."/>
+		<t id="201" v="Pour franchir ce mur, sautez en appuyant sur la touche *flèche du haut* !"/>
+		<t id="202" v="Laissez vous tomber dans le vide pour passer au niveau suivant."/>
+
+		<t id="203" v="Utilisez la *barre espace* pour poser une bombe près de lui. Ces bombes *gèlent les ennemis*, mais n'ont *aucun effet sur vous*."/>
+		<t id="204" v="Un ennemi vaincu vous donne un *bonus*. Ne tardez pas à le ramasser, il ne durera pas éternellement !"/>
+
+		<t id="205" v="Parfois il faudra vous y reprendre à *plusieurs fois* avant de réussir à pousser un ennemi dans le vide. Posez une bombe pres d'un monstre gelé pour le pousser encore."/>
+		<t id="206" v="N'oubliez pas votre bonus avant de quitter le niveau"/>
+
+		<t id="207" v="Vous pouvez *pousser vos bombes* ! Appuyez a nouveau sur Espace une fois la bombe posée."/>
+		<t id="208" v="Posez une bombe ici, et *appuyez sur Espace à nouveau, sitôt la bombe posée* !"/>
+		<t id="209" v="Bien ! Faites de même pour le suivant !"/>
+		<t id="210" v="Cette technique est très importante ! Apprenez à la maîtriser."/>
+
+		<t id="211" v="Il existe d'autres types de bombes à poser. Passez dans les *champs d'énergie* pour changer d'arme."/>
+		<t id="212" v="Les *bombes vertes* explosent comme des *mines* au contact d'un ennemi !"/>
+		<t id="213" v="Posez une *mine verte* ici !"/>
+		<t id="214" v="Notez que si vous tapez dans une mine verte, elle explosera *dès qu'elle touchera le sol* !"/>
+
+		<t id="215" v="Vous pourrez changer d'arme à nouveau en franchissant d'autres champs d'énergie."/>
+		<t id="216" v="Vous noterez que *votre écharpe change de couleur* selon votre type de bombe !"/>
+
+		<t id="217" v="Les bombes *bleues* permettent d'assomer un ennemi et de *le faire tomber d'un étage*."/>
+		<t id="218" v="Notez que les bombes bleues explosent plus rapidement."/>
+
+		<t id="219" v="Certains objets aux effets surprenants viendront parfois vous aider au fil de votre exploration !"/>
+		<t id="220" v="Certains auront des effets positifs, d'autres non. A vous de tous les découvrir !"/>
+
+		<t id="221" v="Accumulez les lettres du mot *CRISTAL* qui apparaitront au fil des niveaux."/>
+		<t id="222" v="Tous les ennemis seront alors détruits, vous libérant l'accès au niveau suivant !"/>
+
+		<t id="223" v="Utilisez les bombes *rouges* pour vous propulser vers des plate-formes trop élevées. *Posez une bombe rouge ici, puis ne bougez plus* !"/>
+		<t id="224" v="Dites donc, qu'est-ce que vous faites ici ?"/>
+		<t id="225" v="Ah mais non ! Pas par là !"/>
+		<t id="226" v="Bon ca suffit maintenant..."/>
+
+		<t id="227" v="Vous pouvez monter plus haut *en jetant vos bombes en plein saut* ! Cela vous donnera une petite poussée supplémentaire si vous le faites au bon moment."/>
+		<t id="228" v="Bravo !"/>
+
+		<t id="229" v="Cette même technique vous permet aussi de *sauter plus loin*. Jetez une bombe pendant votre saut."/>
+		<t id="230" v="Lancez votre bombe *pendant la descente* et non pendant la montée dans votre saut."/>
+		<t id="231" v="Bien !"/>
+
+		<t id="232" v="Voyons si vous arrivez à atteindre la sortie dans ce niveau !"/>
+		<t id="233" v="Votre apprentissage est terminé ! Passons aux travaux appliqués..."/>
+		<t id="234" v="*Secret*: il existe une porte secrète dans le *premier niveau* de cet apprentissage ! Posez *une bombe tout à droite, au premier niveau* !"/>
+
+		<t id="235" v="Vous pouvez sauter au travers d'un plafond, pour *monter d'un étage*."/>
+		<t id="236" v="Pour sauter par dessus ce trou, appuyez sur la *flèche haut*, puis *maintenez la flèche de gauche* enfoncée."/>
+		<t id="237" v="Presque ! *Remontez par la droite*, puis essayez à nouveau."/>
+
+		<t id="238" v="Voici un *ennemi* !"/>
+		<t id="239" v="Vous ne pouvez pas quitter un niveau si tous les ennemis ne sont pas vaincus !"/>
+
+		<t id="240" v="Ne vous inquiétez pas si vous mourrez, contrairement aux autres modes de jeu, vous disposez de *vies illimitées* pendant l'apprentissage !"/>
+
+		<t id="241" v="Bien ! Re-descendez *par la droite*..."/>
+		<t id="242" v="Si vous n'y parvenez pas, vous pouvez continuer par le passage à gauche. *Sautez bien à l'instant précis où la bombe rouge explose* !"/>
+		<t id="243" v="Non, pas ici :) Dans le *premier niveau de cet apprentissage* ! Pour l'instant, vous pouvez simplement continuer."/>
+
+		<t id="244" v="Cette porte permet d'écourter l'apprentissage. Pour continuer, suivez la flèche !"/>
+
+		<t id="245" v="N'allez pas plus loin ! C'est le bout du monde !"/>
+		<t id="246" v="Ce seau là ne tombera pas."/>
+		<t id="247" v="Vous n'irez pas plus loin !"/>
+
+		<t id="248"	v="Les *bombes rouges* peuvent également sortir un ennemi d'une situation bloquée."/>
+
+		<!-- SHAREWARE SCRIPT -->
+		<t id="400" v="Voici un petit avant-goût de ce que vous rencontrerez dans les Cavernes d'Hammerfest... *Sautez dans le vide pour continuer* !"/>
+		<t id="401" v="Vous voila paré à débuter la grande aventure !"/>
+		<t id="402" v="Si ca n'est pas déjà fait, il ne vous reste plus qu'à *vous inscrire* et à guider Igor au fin fond des Cavernes de Hammerfest..."/>
+		<t id="403" v="Hammerfest, c'est plus de *320 NIVEAUX* à explorer, plus de *210 OBJETS* à collectionner et *18 TYPES D'ENNEMIS* uniques !"/>
+		<t id="404" v="Vous pouvez voir en bas de l'écran vos *vies restantes*, le *numéro du niveau* et *vos points*."/>
+		<t id="405" v="Une fois inscrit, vous pourrez par exemple améliorer votre nombre de vies grâce aux *quêtes* !"/>
+		<t id="406" v="Une quête consiste à ramasser un certain nombre d'objets impartis en jeu."/>
+		<t id="407" v="A chaque partie, votre score sera enregistré et vous participerez aux *classements des joueurs* !"/>
+		<t id="408" v="Allez, ne soyez pas timide, sautez !"/>
+
+		<!-- FJV SPECIFIC -->
+		<t id="500" v="Utilisez la *barre espace* pour poser une bombe près du fruit. Ces bombes *gèlent les ennemis*, mais n'ont *aucun effet sur vous*."/>
+		<t id="501" v="Faites attention aux *pièges* !!"/>
+		<t id="502" v="Bravo ! Vous avez réussi à terminer cette série de niveaux ! Hammerfest vous attend, avec ses *centaines de niveaux uniques* et ses *milliers de surprises* !"/>
+		<t id="503" v="Essayez donc d'attraper ce *joyau*... Attention, les *scies ne peuvent pas être détruites* !"/>
+
+
+		<!-- TIP OF THE DAY (PAUSE SCREEN) -->
+		<!-- MAXLENGHT |xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx|      -->
+		<t id="300" v="Conseil: "/>
+		<t id="301" v="Vous pouvez poser une bombe pendant que vous tombez pour profiter d'une petite impulsion de saut supplémentaire."/>
+		<t id="302" v="Appuyez sur la touche M pour couper temporairement la musique en cours de partie."/>
+		<t id="303" v="Un monstre gelé peut en tuer d'autres s'il les percute à grande vitesse !"/>
+		<t id="304" v="Si vous tuez plusieurs monstres avec une seule bombe, vous recevrez des bonus plus importants."/>
+		<t id="305" v="Si vous atteignez 100.000 points, vous recevrez une vie supplémentaire."/>
+		<t id="306" v="Certaines lettres du mot CRISTAL sont plus rares que d'autres (le 'L' ou le 'S', par exemple)"/>
+		<t id="307" v="Dans chaque niveau, vous recevrez un objet à points, un objet spécial et quelques lettres."/>
+		<t id="308" v="L'immense cristal à la fin de certains niveaux ne tombe pas par hasard..."/>
+		<t id="309" v="Former le mot CRISTAL, c'est déjà bien, mais on peut peut être faire mieux..."/>
+		<t id="310" v="Appuyez à nouveau sur Espace alors qu'une bombe est posée devant vous, vous la pousserez !"/>
+		<t id="311" v="Appuyez sur CONTROL + SHIFT + K pour abandonner la partie (elle sera quand même enregistrée)."/>
+		<t id="312" v="Maintenez la touche F enfoncée pour afficher la vitesse du jeu (la valeur idéale est de 30)."/>
+		<t id="313" v="En appuyant sur C, vous pouvez voir la Carte du Monde !"/>
+
+	</statics>
+
+
+	<!-- ITEM FAMILIES -->
+	<families>
+		<!-- SPECIAL ITEMS -->
+		<family id="0" name="Objets de base"/>
+		<family id="1" name="Kit de premiers secours"/>
+		<family id="2" name="Destruction massive"/>
+		<family id="3" name="Champignons"/>
+		<family id="4" name="Cartes à jouer"/>
+		<family id="5" name="Signes du zodiaque"/>
+		<family id="6" name="Potions du zodiaque"/>
+		<family id="7" name="Coeur 1"/>
+		<family id="8" name="Coeur 2"/>
+		<family id="9" name="Coeur 3"/>
+		<family id="10" name="Trésor des pirates"/>
+		<family id="11" name="Gadgets Motion-Twin"/>
+		<family id="12" name="Armement norvégien expérimental"/>
+		<family id="13" name="Eclairage antique"/>
+		<family id="14" name="Igor-Newton"/>
+		<family id="15" name="Flocon 1"/>
+		<family id="16" name="Flocon 2"/>
+		<family id="17" name="Flocon 3"/>
+		<family id="18" name="Kit d'appel main libre"/>
+		<family id="19" name="Mario party"/>
+
+
+		<!-- SCORE ITEMS -->
+		<family id="1000" name="Petites gâteries"/>
+		<family id="1001" name="Aliments classiques"/>
+		<family id="1002" name="Friandises"/>
+		<family id="1003" name="Pierres précieuses"/>
+		<family id="1004" name="Junk food"/>
+		<family id="1005" name="Exotic !"/>
+		<family id="1006" name="Apéritifs"/>
+		<family id="1007" name="Kapital Risk"/>
+
+		<family id="1008" name="Trophées de Grand Prédateur"/>
+		<family id="1009" name="Délices de Harry 'le beau'"/>
+		<family id="1010" name="Chocolats"/>
+		<family id="1011" name="Fromages"/>
+		<family id="1012" name="Conserves"/>
+		<family id="1013" name="Légumes"/>
+		<family id="1014" name="Délices MT"/>
+		<family id="1015" name="Kit de survie MT"/>
+		<family id="1016" name="L'heure du goûter"/>
+		<family id="1017" name="Garçon patissier"/>
+		<family id="1018" name="Les lois de la robotique"/>
+		<family id="1019" name="Trophées de baroudeur"/>
+
+		<family id="1020" name="Clés des Glaces"/>
+		<family id="1021" name="Clé avinée"/>
+		<family id="1022" name="Paperasse"/>
+		<family id="1023" name="Clés perdues"/>
+		<family id="1024" name="Batons de joie"/>
+		<family id="1025" name="Boissons rigolotes"/>
+		<family id="1026" name="Matériel administratif d'El Papah"/>
+		<family id="1027" name="Artefacts mythiques"/>
+		<family id="1028" name="Sandy en kit"/>
+		<family id="1029" name="Récompenses du Ninjutsu"/>
+		<family id="1030" name="Artefacts du Ninjutsu"/>
+	</families>
+
+
+
+	<!-- ITEM NAMES -->
+	<items>
+		<!-- SPECIAL ITEMS -->
+		<item id="0"	name="Alphabet Cristallin" />
+		<item id="1"	name="Bouclidur en or" />
+		<item id="2"	name="Bouclidur argenté" />
+		<item id="3"	name="Ballon de banquise" />
+		<item id="4"	name="Lampe Fétvoveu" />
+		<item id="5"	name="Lampe Léveussonfé" />
+		<item id="6"	name="Paix intérieure" />
+		<item id="7"	name="Basket IcePump" />
+		<item id="8"	name="Etoile des neiges" />
+		<item id="9"	name="Mauvais-oeil" />
+		<item id="10"	name="Téléphone-phone-phone" />
+		<item id="11"	name="Parapluie rouge" />
+		<item id="12"	name="Parapluie bleu" />
+		<item id="13"	name="Cass-Tet" />
+		<item id="14"	name="Délice hallucinogène bleu" />
+		<item id="15"	name="Champignon rigolo rouge" />
+		<item id="16"	name="Figonassée grimpante" />
+		<item id="17"	name="Petit Waoulalu des bois" />
+		<item id="18"	name="Pissenlit tropical" />
+		<item id="19"	name="Tournelune" />
+		<item id="20"	name="Coffre d'Anarchipel" />
+		<item id="21"	name="Enceinte Bessel-Son" />
+		<item id="22"	name="Vieille chaussure trouée" />
+		<item id="23"	name="Boule cristalline" />
+		<item id="24"	name="Hippo-flocon" />
+		<item id="25"	name="Flamme froide" />
+		<item id="26"	name="Ampoule 30 watts" />
+		<item id="27"	name="Porte-grenouilles" />
+		<item id="28"	name="Bibelot en argent" />
+		<item id="29"	name="Bague 'Thermostat 8'" />
+		<item id="30"	name="Lunettes tournantes bleues" />
+		<item id="31"	name="Lunettes renversantes rouges" />
+		<item id="32"	name="As de pique" />
+		<item id="33"	name="As de trêfle" />
+		<item id="34"	name="As de carreau" />
+		<item id="35"	name="As de coeur" />
+		<item id="36"	name="Ig'or" />
+		<item id="37"	name="Collier rafraîchissant" />
+		<item id="38"	name="Totem des dinoz" />
+		<item id="39"	name="Tête de granit lestée de plomb" />
+		<item id="40"	name="Sagittaire" />
+		<item id="41"	name="Capricorne" />
+		<item id="42"	name="Lion" />
+		<item id="43"	name="Taureau" />
+		<item id="44"	name="Balance" />
+		<item id="45"	name="Bélier" />
+		<item id="46"	name="Scorpion" />
+		<item id="47"	name="Cancer" />
+		<item id="48"	name="Verseau" />
+		<item id="49"	name="Gémeaux" />
+		<item id="50"	name="Poisson" />
+		<item id="51"	name="Vierge" />
+		<item id="52"	name="Elixir du Sagittaire" />
+		<item id="53"	name="Elixir du Capricorne" />
+		<item id="54"	name="Elixir du Lion" />
+		<item id="55"	name="Elixir du Taureau" />
+		<item id="56"	name="Elixir de la Balance" />
+		<item id="57"	name="Elixir du Bélier" />
+		<item id="58"	name="Elixir du Scorpion" />
+		<item id="59"	name="Elixir du Cancer" />
+		<item id="60"	name="Elixir du Verseau" />
+		<item id="61"	name="Elixir des Gémeaux" />
+		<item id="62"	name="Elixir du Poisson" />
+		<item id="63"	name="Elixir de la Vierge" />
+		<item id="64"	name="Arc-en-miel" />
+		<item id="65"	name="Bouée canard" />
+		<item id="66"	name="Branche de Kipik" />
+		<item id="67"	name="Anneau de Guillaume Tell" />
+		<item id="68"	name="Bougie" />
+		<item id="69"	name="Koulraoule des îles" />
+		<item id="70"	name="Trêfle commun" />
+		<item id="71"	name="Chaud devant !" />
+		<item id="72"	name="Chapeau de Mage-Gris" />
+		<item id="73"	name="Feuille de sinopée" />
+		<item id="74"	name="Esprit de l'orange" />
+		<item id="75"	name="Esprit de la pluie" />
+		<item id="76"	name="Esprit des arbres" />
+		<item id="77"	name="Lucidjané à crête bleue" />
+		<item id="78"	name="Filandreux rougeoyant" />
+		<item id="79"	name="Poisson empereur" />
+		<item id="80"	name="Escargot Poussépa" />
+		<item id="81"	name="Perle nacrée des murlocs" />
+		<item id="82"	name="Jugement avant-dernier" />
+		<item id="83"	name="Jugement dernier" />
+		<item id="84"	name="Talisman scorpide" />
+		<item id="85"	name="Baton tonnerre" />
+		<item id="86"	name="Surprise de paille" />
+		<item id="87"	name="Larve d'oenopterius" />
+		<item id="88"	name="Pokuté" />
+		<item id="89"	name="Oeuf de Tzongre" />
+		<item id="90"	name="Fulguro pieds-en-mousse" />
+		<item id="91"	name="Couvre-chef de Luffy" />
+		<item id="92"	name="Chapeau violin" />
+		<item id="93"	name="Boit'a'messages" />
+		<item id="94"	name="Anneau Antok" />
+		<item id="95"	name="Cagnotte de Tuberculoz" />
+		<item id="96"	name="Perle flamboyante" />
+		<item id="97"	name="Perle vertillante" />
+		<item id="98"	name="Grosse pé-perle " />
+		<item id="99"	name="Poils de Chourou" />
+		<item id="100"	name="Pocket-Guu" />
+		<item id="101"	name="Colis surprise" />
+		<item id="102"	name="La Carotte d'Igor" />
+		<item id="103"	name="Vie palpitante" />
+		<item id="104"	name="Vie aventureuse" />
+		<item id="105"	name="Vie épique" />
+		<item id="106"	name="Livre des champignons" />
+		<item id="107"	name="Livre des étoiles" />
+		<item id="108"	name="Parapluie Frutiparc" />
+		<item id="109"	name="Flocon simple" />
+		<item id="110"	name="Flocon bizarre" />
+		<item id="111"	name="Flocon ENORME !" />
+		<item id="112"	name="Pioupiou carnivore" />
+		<item id="113"	name="Cape de Tuberculoz" />
+		<item id="114"	name="Mode Mario" />
+		<item id="115"	name="Casque de Volleyfest" />
+		<item id="116"	name="Joyau d'Ankhel" />
+		<item id="117"	name="Clé de Gordon" />
+
+
+		<!-- SCORE ITEMS -->
+		<item id="1000"	name="Cristaux d'Hammerfest" />
+		<item id="1001"	name="Pain à la viande" />
+		<item id="1002"	name="Canne de Bobble" />
+		<item id="1003"	name="Bonbon Berlinmauve" />
+		<item id="1004"	name="Bonbon Chamagros" />
+		<item id="1005"	name="Bonbon rosamelle-praline" />
+		<item id="1006"	name="Sucette aux fruits bleus" />
+		<item id="1007"	name="Sucette chlorophylle" />
+		<item id="1008"	name="Diamant Oune-difaïned" />
+		<item id="1009"	name="Oeil de tigre" />
+		<item id="1010"	name="Jade de 12kg" />
+		<item id="1011"	name="Reflet-de-lune" />
+		<item id="1012"	name="Surprise de Cerises" />
+		<item id="1013"	name="Muffin aux cailloux" />
+		<item id="1014"	name="Gelée des bois" />
+		<item id="1015"	name="Suprême aux framboises" />
+		<item id="1016"	name="Petit pétillant" />
+		<item id="1017"	name="Pierres du Changement" />
+		<item id="1018"	name="Glace Fraise" />
+		<item id="1019"	name="Coupe Glacée" />
+		<item id="1020"	name="Noodles" />
+		<item id="1021"	name="Poulet Surgelé" />
+		<item id="1022"	name="Liquide bizarre" />
+		<item id="1023"	name="Gros acidulé" />
+		<item id="1024"	name="Liquide étrange" />
+		<item id="1025"	name="Oeuf cru" />
+		<item id="1026"	name="Gland gnan-gnan" />
+		<item id="1027"	name="Réglisse rouge" />
+		<item id="1028"	name="Oeuf Au Plat" />
+		<item id="1029"	name="Saucisse piquée" />
+		<item id="1030"	name="Cerise-apéro confite" />
+		<item id="1031"	name="Fromage piqué" />
+		<item id="1032"	name="Olive pas mûre" />
+		<item id="1033"	name="Olive noire" />
+		<item id="1034"	name="Oeil de pomme" />
+		<item id="1035"	name="Blob intrusif" />
+		<item id="1036"	name="Gouda mou" />
+		<item id="1037"	name="Poulpi empalé" />
+		<item id="1038"	name="Olive oubliée" />
+		<item id="1039"	name="Monsieur radis" />
+		<item id="1040"	name="Sushi thon" />
+		<item id="1041"	name="Sucette acidulée" />
+		<item id="1042"	name="Délice d'Aralé" />
+		<item id="1043"	name="Sorbet au plastique" />
+		<item id="1044"	name="Manda" />
+		<item id="1045"	name="Pétale mystérieuse" />
+		<item id="1046"	name="Gump" />
+		<item id="1047"	name="Bleuet" />
+		<item id="1048"	name="Rougeoyant" />
+		<item id="1049"	name="Verdifiant" />
+		<item id="1050"	name="KassDent" />
+		<item id="1051"	name="Pièce d'or secrète" />
+		<item id="1052"	name="Sou d'argent" />
+		<item id="1053"	name="Sou d'or" />
+		<item id="1054"	name="Gros tas de sous" />
+		<item id="1055"	name="Boisson kipik" />
+		<item id="1056"	name="Doigts-de-tuberculoz" />
+		<item id="1057"	name="Pizza de Donatello" />
+		<item id="1058"	name="Canelé du sud-ouest" />
+		<item id="1059"	name="Eclair noisette choco caramel et sucre" />
+		<item id="1060"	name="Bleuette rouge" />
+		<item id="1061"	name="Perroquet décapité en sauce" />
+		<item id="1062"	name="Morvo-morphe" />
+
+		<item id="1063"	name="Fraise Tagada" />
+		<item id="1064"	name="Car-En-Sac" />
+		<item id="1065"	name="Dragibus" />
+		<item id="1066"	name="Krokodile" />
+		<item id="1067"	name="Demi Cocobats" />
+		<item id="1068"	name="Happy Cola" />
+		<item id="1069"	name="Cacahuete secrète" />
+		<item id="1070"	name="P'tit fantome" />
+		<item id="1071"	name="Cookie deshydraté" />
+		<item id="1072"	name="Arbuche de noël" />
+		<item id="1073"	name="Piment farceur" />
+		<item id="1074"	name="Soja Max IceCream" />
+		<item id="1075"	name="Bouquet de steack" />
+		<item id="1076"	name="Daruma-Pastèque" />
+		<item id="1077"	name="Graine de tournesol" />
+		<item id="1078"	name="Croissant confit" />
+		<item id="1079"	name="Haricot paresseux" />
+		<item id="1080"	name="Lapin-choco" />
+		<item id="1081"	name="Biloo" />
+		<item id="1082"	name="Graine de pechume en gelée" />
+		<item id="1083"	name="Sombrino aux amandes" />
+		<item id="1084"	name="Emi-Praline" />
+		<item id="1085"	name="Frogmaliet aux pepites de chocolat" />
+		<item id="1086"	name="Yumi au café" />
+		<item id="1087"	name="Bouchée mielleuse nappée au gel de Vodka" />
+		<item id="1088"	name="Escargot au chocolat persillé" />
+		<item id="1089"	name="Fossile de cacao marbré au fois gras" />
+		<item id="1090"	name="Cerisot mariné a la bière" />
+		<item id="1091"	name="Jambon de Bayonne" />
+		<item id="1092"	name="Saucisson entamé" />
+		<item id="1093"	name="Raide red reste" />
+		<item id="1094"	name="Torchon madrangeais au sirop d'érable" />
+		<item id="1095"	name="Saucisson de marcassin sauvage" />
+		<item id="1096"	name="Tranches de Jaret de Kangourou" />
+		<item id="1097"	name="Saucissaille de St-Morgelet" />
+		<item id="1098"	name="Paté d'ongles au truffes" />
+		<item id="1099"	name="Saucisson maudit scellé" />
+		<item id="1100"	name="Manquereau-sauce-au-citron" />
+		<item id="1101"	name="Mini-saucisses en boite" />
+		<item id="1102"	name="Haricots blanc" />
+		<item id="1103"	name="Lychees premier prix" />
+		<item id="1104"	name="Zion's Calamar" />
+		<item id="1105"	name="Aubergines au sirop" />
+		<item id="1106"	name="Camembert" />
+		<item id="1107"	name="Emmental" />
+		<item id="1108"	name="Fromage verni" />
+		<item id="1109"	name="Roquefort" />
+		<item id="1110"	name="Fromage frais vigné" />
+		<item id="1111"	name="Pâte dessert fromagée" />
+
+		<item id="1112"	name="Saladou" />
+		<item id="1113"	name="Poire d'eau" />
+		<item id="1114"	name="Cacahuète mauve et juteuse" />
+		<item id="1115"	name="Pommes de pierre" />
+		<item id="1116"	name="Patates douces" />
+		<item id="1117"	name="Matraque bio" />
+		<item id="1118"	name="Tomate pacifique" />
+		<item id="1119"	name="Radix" />
+		<item id="1120"	name="Haricots verts" />
+		<item id="1121"	name="Pomme Sapik" />
+		<item id="1122"	name="Pomme Sapu" />
+		<item id="1123"	name="Echalottes" />
+		<item id="1124"	name="Sel rieur" />
+		<item id="1125"	name="Poivron vert" />
+		<item id="1126"	name="Poivron jaune" />
+		<item id="1127"	name="Poivron rouge" />
+		<item id="1128"	name="Brocolis digérés" />
+		<item id="1129"	name="Grappe de Radix" />
+		<item id="1130"	name="Lance-poix" />
+		<item id="1131"	name="Haricots blancs" />
+		<item id="1132"	name="Poires d'eau en grappe" />
+		<item id="1133"	name="Artifroid" />
+		<item id="1134"	name="Choux-flou" />
+		<item id="1135"	name="Chourou" />
+		<item id="1136"	name="Pom pom pom.." />
+
+		<item id="1137"	name="Hollandais" />
+		<item id="1138"	name="Fondant XXL au choco-beurre" />
+		<item id="1139"	name="Pétillante" />
+		<item id="1140"	name="Warpoquiche" />
+		<item id="1141"	name="Brioche dorée" />
+		<item id="1142"	name="Café de fin de projet" />
+
+		<item id="1143"	name="Laxatif aux amandes" />
+		<item id="1144"	name="Smiley croquant" />
+		<item id="1145"	name="Barquette de lave" />
+		<item id="1146"	name="Nonoix" />
+		<item id="1147"	name="Amande croquante" />
+		<item id="1148"	name="Noisette" />
+		<item id="1149"	name="Noodles crus" />
+		<item id="1150"	name="Brioche vapeur" />
+		<item id="1151"	name="Tartine chocolat-noisette" />
+		<item id="1152"	name="Tartine hémoglobine" />
+		<item id="1153"	name="Tartine à l'orange collante" />
+		<item id="1154"	name="Tartine au miel" />
+		<item id="1155"	name="Lombric nature" />
+		<item id="1156"	name="Grenade de chantilly" />
+		<item id="1157"	name="Profies très drôles" />
+		<item id="1158"	name="Chouchocos" />
+		<item id="1159"	name="Blob périmé" />
+		<item id="1160"	name="Bonbon Hélène-fraiche" />
+		<item id="1161"	name="Nem aux anchois" />
+		<item id="1162"	name="Surimi pamplemousse" />
+		<item id="1163"	name="Poulpi à l'encre" />
+		<item id="1164"	name="Curly" />
+		<item id="1165"	name="Tartelette framboise" />
+		<item id="1166"	name="Oeuf de Poire" />
+		<item id="1167"	name="Truffe collante sans goût" />
+		<item id="1168"	name="Sardines" />
+		<item id="1169"	name="Etoile Toulaho" />
+		<item id="1170"	name="Transformer en sucre" />
+		<item id="1171"	name="Kitchissime" />
+		<item id="1172"	name="Igorocop" />
+		<item id="1173"	name="Tidouli didi" />
+		<item id="1174"	name="Dalek ! Exterminate !" />
+		<item id="1175"	name="Robo-malin" />
+		<item id="1176"	name="Johnny 6" />
+		<item id="1177"	name="Biscuit Transformer" />
+
+		<item id="1178"	name="Statue: Citron Sorbex" />
+		<item id="1179"	name="Statue: Bombino" />
+		<item id="1180"	name="Statue: Poire Melbombe" />
+		<item id="1181"	name="Statue: Tagada" />
+		<item id="1182"	name="Statue: Sapeur-kiwi" />
+		<item id="1183"	name="Statue: Bondissante" />
+		<item id="1184"	name="Statue: Ananargeddon" />
+
+		<item id="1185"	name="Anneau hérissé" />
+
+		<item id="1190"	name="Passe-partout en bois" />
+		<item id="1191"	name="Clé de Rigor Dangerous" />
+		<item id="1192"	name="Méluzzine" />
+		<item id="1193"	name="Clé du Bourru" />
+		<item id="1194"	name="Furtok Glaciale" />
+		<item id="1195"	name="Vieille clé rouillée" />
+		<item id="1196"	name="Autorisation du Bois-Joli" />
+		<item id="1197"	name="Clé des Mondes Ardus" />
+		<item id="1198"	name="Clé piquante" />
+		<item id="1199"	name="Passe-partout de Tuberculoz" />
+		<item id="1200"	name="Clé des cauchemars" />
+
+		<item id="1201"	name="Pad Sounie" /> <!--cavavin-->
+		<item id="1202"	name="Pad Frusion 64" /> <!--hard-->
+		<item id="1203"	name="Pad Game-Pyramid" /> <!--bubble-->
+		<item id="1204"	name="Pad Sey-Ga" /> <!--blob-->
+		<item id="1205"	name="Pad Super Frusion" /> <!-- alt hard -->
+		<item id="1206"	name="Pad du Système Maitre" /> <!--sonic -->
+		<item id="1207"	name="Pad Frusion Entertainment System" /> <!--ice-->
+		<item id="1208"	name="Manette S-Téhéf" /> <!--temple-->
+
+		<item id="1209"	name="Canette Express" />
+		<item id="1210"	name="Bouteille aux 2064 bulles" />
+		<item id="1211"	name="Mousse volante" />
+		<item id="1212"	name="Vin Merveilleux" />
+		<item id="1213"	name="Liqueur maléfique" />
+
+		<item id="1214"	name="Tampon MT" />
+		<item id="1215"	name="Facture gratuite" />
+		<item id="1216"	name="Post-It de François" />
+		<item id="1217"	name="Pot à crayon solitaire" />
+		<item id="1218"	name="Agrafeuse du Chaos" />
+
+		<item id="1219"	name="Miroir bancal" />
+		<item id="1220"	name="Etoile du Diable" />
+
+		<item id="1221"	name="Poudre de plage magique" />
+		<item id="1222"	name="Matériel d'architecte" />
+		<item id="1223"	name="Maquette en sable" />
+		<item id="1224"	name="Winkel" />
+		<item id="1225"	name="Miroir des Sables" />
+		<item id="1226"	name="Etoile des Diables Jumeaux" />
+		<item id="1227"	name="Sceau d'amitié" />
+
+		<item id="1228"	name="Insigne de l'ordre des Ninjas" />
+		<item id="1229"	name="Couteau suisse japonais" />
+		<item id="1230"	name="Shuriken de second rang" />
+		<item id="1231"	name="Shuriken d'entraînement" />
+		<item id="1232"	name="Najinata" />
+		<item id="1233"	name="Lance-boulettes de Précision" />
+		<item id="1234"	name="Ocarina chantant" />
+		<item id="1235"	name="Armure de la nuit" />
+
+		<item id="1236"	name="Insigne du Mérite" />
+		<item id="1237"	name="Neige-o-glycérine" />
+		<item id="1238"	name="Pass-Pyramide" />
+	</items>
+
+	<!-- QUESTS -->
+	<quests>
+		<quest id="0" title="Les constellations">
+			Igor peut maintenant poser 2 bombes au lieu d'une seule à la fois, et ce,
+			de manière permanente !
+		</quest>
+		<quest id="1" title="Mixtures du zodiaque">
+			Igor sait désormais envoyer ses bombes à l'étage supérieur ! Maintenez BAS enfoncé
+			pendant que vous tapez dans une bombe posée.
+		</quest>
+		<quest id="2" title="Premiers pas">
+			Igor débutera désormais la partie avec une vie supplémentaire.
+		</quest>
+		<quest id="3" title="L'aventure commence">
+			Igor débutera désormais la partie avec une autre vie supplémentaire.
+		</quest>
+		<quest id="4" title="Une destinée épique">
+			Igor débutera désormais la partie avec encore une vie supplémentaire !
+		</quest>
+		<quest id="5" title="Persévérance">
+			Igor débutera désormais la partie avec une vie supplémentaire.
+		</quest>
+		<quest id="6" title="Gourmandise">
+			De nouveaux aliments (plus sains) apparaîtront désormais en jeu !
+		</quest>
+		<quest id="7" title="Du sucre !">
+			Igor veut encore plus de sucre ! Des délicieuses friandises apparaîtront
+			désormais en jeu.
+		</quest>
+		<quest id="8" title="Malnutrition">
+			Le goût d'Igor pour les aliments peu équilibrés lui permettra de trouver
+			des aliments encore plus... "douteux" en jeu.
+		</quest>
+		<quest id="9" title="Goût raffiné">
+			Le régime bizarre d'Igor a amené de nouveaux aliments exotiques en jeu !
+		</quest>
+		<quest id="10" title="Avancée technologique">
+			Pour vous aider dans votre aventure, tout un tas d'objets aux effets bizarres
+			font leur apparition en jeu !
+		</quest>
+		<quest id="11" title="Le petit guide des Champignons">
+			Igor a découvert un étrange ouvrage, une sorte de livre de cuisine traitant
+			des champignons hallucinogènes. Il pourra désormais en trouver lors de ses
+			explorations.
+		</quest>
+		<quest id="12" title="Trouver les pièces d'or secrètes !">
+			Des richesses supplémentaires de très grande valeur apparaitront maintenant
+			en jeu !
+		</quest>
+		<quest id="13" title="Le grimoire des Etoiles">
+			Cet ouvrage mystérieux en dit long sur les 12 constellations du Zodiaque.
+			Vous pourrez désormais les collectionner en jeu !
+		</quest>
+		<quest id="14" title="Armageddon">
+			Des objets aux effets ravageurs vont maintenant apparaître en jeu !
+		</quest>
+		<quest id="15" title="Régime MotionTwin">
+			A force de manger n'importe quoi, Igor a acquis la maîtrise des jeux ! Il
+			pourra collectionner des objets rarissimes pendant son exploration et
+			trouver	des aliments d'exception !
+		</quest>
+		<quest id="16" title="Créateur de jeu en devenir">
+			Igor semble apprécier les aliments basiques, une belle carrière dans le monde
+			du jeu vidéo pourrait s'offrir à lui ! Des aliments adaptés lui seront
+			dorénavant proposés et quelques cartes à jouer pour se faire la main.
+		</quest>
+		<quest id="17" title="La vie est une boîte de chocolats">
+			De délicieux chocolats sont maintenant distribués en Hammerfest !
+		</quest>
+		<quest id="18" title="Le trésor Oune-difaïned">
+			A force de ramasser des diamants apparus on ne sait comment, Igor a acquis
+			la faculté de repérer des pierres précieuses rares ! Il en trouvera au cours
+			de ses explorations.
+		</quest>
+		<quest id="19" title="Super size me !">
+			Toujours plus loin dans la malnutrition, Igor a découvert qu'il pouvait aussi
+			se nourrir de produits en boite.
+		</quest>
+		<quest id="20" title="Maître joaillier">
+			Igor est devenu un véritable expert en pierres précieuses. Il pourra maintenant
+			découvrir de puissants bijoux magiques au fil de ses explorations !
+		</quest>
+		<quest id="21" title="Grand prédateur">
+			Igor en a plus qu'assez de chasser des choses sucrées ! Désormais devenu un prédateur
+			sans pitié, il pourra traquer et dévorer toute sorte de charcuteries.
+		</quest>
+		<quest id="22" title="Expert en salades et potages">
+			On raconte partout qu'Igor serait la réincarnation de Saladou, le maître mondialement
+			reconnu de la salade. Fort de ce don, il pourra à l'avenir cueillir une très grande variété
+			de légumes !
+		</quest>
+		<quest id="23" title="Festin d'Hammerfest">
+			Avec un repas aussi complet, Igor est fin prêt pour avoir accès aux patisseries les
+			plus raffinées qui existent.
+		</quest>
+		<quest id="24" title="Goûter d'anniversaire">
+			Igor a trouvé tous les éléments pour assurer à son prochain goûter d'anniversaire !
+			Il trouvera maintenant pleins de petits en-cas pour patienter jusque là.
+		</quest>
+		<quest id="25" title="Bon vivant">
+			Un bon repas ne peu se concevoir sans des petits trucs à grignotter à l'apéritif.
+			Igor le sait, maintenant, et il pourra trouver ce qu'il faut en jeu.
+		</quest>
+		<quest id="26" title="Fondue norvégienne">
+			Les odeurs qui émanent de la tanière d'Igor ne laissent aucun doute là-dessus:
+			il est devenu un grand amateur de fromages. De nouveaux produits laitiers
+			apparaîtront dans les cavernes.
+		</quest>
+		<quest id="27" title="Mystère de Guu">
+			Cette quête n'a aucun intérêt, à part vous conseiller de découvrir au plus vite
+			l'excellent dessin animé "Haré + Guu" disponible en DVD dans toutes les bonnes
+			boutiques ! Banyaaaaaïï. ^^
+		</quest>
+		<quest id="28" title="Friandises divines">
+			Les sucreries n'ont plus aucun secret pour Igor. Il saura, à compter de ce jour,
+			débusquer les délices légendaires de Harry "le beau" disséminés à travers tout
+			Hammerfest.
+		</quest>
+		<quest id="29" title="Igor et Cortex">
+			Igor a entrepris la fabrication de gadgets mystérieux... Attendez-vous à
+			collectionner des machines étranges en jeu !
+		</quest>
+		<quest id="30" title="Affronter l'obscurité">
+			Igor sait maintenant s'éclairer ! Il pensera maintenant à apporter avec lui une
+			torche pour ne pas trop se perdre dans l'obscurité des niveaux avancés !
+		</quest>
+		<quest id="31" title="Et la lumière fût !">
+			Préparé à tous les dangers, le courageux Igor ne craint plus du tout
+			l'obscurité dans les niveaux avancés !
+		</quest>
+		<quest id="32" title="Noël sur Hammerfest !">
+			Vous avez gagné 5 parties supplémentaires.
+		</quest>
+		<quest id="33" title="Joyeux anniversaire Igor">
+			Vous avez gagné 10 parties supplémentaires !
+		</quest>
+		<quest id="34" title="Cadeau céleste">
+			Vous avez gagné 20 parties supplémentaires !
+		</quest>
+		<quest id="35" title="Achat de parties amélioré">
+			Vos appels dans la boutique vous rapporteront dorénavant plus de flocons !
+		</quest>
+		<quest id="36" title="Exterminateur de Sorbex">
+			Vous avez pressé sans pitié les Citrons Sorbex !
+		</quest>
+		<quest id="37" title="Désamorceur de Bombinos">
+			Vous avez survécu aux explosions des Bombinos !
+		</quest>
+		<quest id="38" title="Tueur de poires">
+			Vous avez vaincu un nouveau boss: les Poires-Melbombes !
+		</quest>
+		<quest id="39" title="Mixeur de Tagadas">
+			Vous n'avez fait qu'une bouchée des Fraises-Tagada !
+		</quest>
+		<quest id="40" title="Kiwi frotte s'y pique">
+			Vous avez su éviter tous les pièges des Sapeur-kiwis !
+		</quest>
+		<quest id="41" title="Chasseur de Bondissantes">
+			Vous ne vous êtes pas laissé impressionner par la meute de Bondissantes !
+		</quest>
+		<quest id="42" title="Tronçonneur d'Ananargeddons">
+			Vous êtes venu à bout d'un groupe d'Ananargeddons surentraînés !
+		</quest>
+		<quest id="43" title="Roi de Hammerfest">
+			Votre persévérance et votre ténacité ont eu raison du sorcier Tuberculoz:
+			vous avez retrouvé la carotte de Igor ! Vous débuterez vos prochaines parties
+			avec une vie supplémentaire et Igor portera fièrement sa carotte préférée.
+		</quest>
+		<quest id="44" title="Chapelier fou">
+			Igor s'est découvert une passion nouvelle pour les coiffes. Vous pourrez
+			maintenant appuyer sur la touche "D" pendant la partie pour changer de
+			déguisement !
+		</quest>
+		<quest id="45" title="Poney éco-terroriste">
+			Igor a accumulé suffisament de richesses pour financer ses activités
+			louches en Hammerfest. Il peut maintenant se déguiser en appuyant sur la
+			touche "D" pendant la partie ! Et sinon, si ca n'est pas déjà fait, avez-vous
+			déjà visité www.dinoparc.com ?
+		</quest>
+		<quest id="46" title="Le Pioupiouz est en toi">
+			Il fallait s'y attendre: à force de ramasser n'importe quoi, Igor s'est
+			fait gober par un Pioupiou ! Appuyez sur la touche "D" pendant la partie
+			pour changer de déguisement (au fait, vous connaissiez le site
+			www.pioupiouz.com ?)
+		</quest>
+		<quest id="47" title="Chasseur de champignons">
+			Comme son homologue italien (plombier de son état), Igor a une passion
+			bizarre pour les champignons. Il pourra désormais se déguiser
+			en appuyant sur la touche "D" pendant la partie !
+		</quest>
+		<quest id="48" title="Successeur de Tuberculoz">
+			Igor semble avoir... changé.. Son regard est maintenant plus froid. Il
+			affiche une mine sombre et se cache maintenant sous une grande cape
+			pourpre. Petit à petit, il devient ce qu'il a combattu... Vous pouvez
+			maintenant revêtir l'apparence du sorcier Tuberculoz en appuyant sur "D"
+			pendant la partie !
+		</quest>
+		<quest id="49" title="La première clé !">
+			Igor a trouvé une sorte de Passe-partout en Bois. Nul doute qu'il ouvre
+			une porte quelque part dans les cavernes...
+		</quest>
+		<quest id="50" title="Rigor Dangerous">
+			Vous avez découvert dans votre aventure une vieille clé rouillée
+			mystérieuse ! Elle comporte une petite mention gravée: "Rick". Sans
+			doute son ancien propriétaire...
+		</quest>
+		<quest id="51" title="La Méluzzine perdue">
+			La Méluzzine, clé légendaire sortie des vieux contes hammerfestiens,
+			ouvre à ce qu'on raconte la porte de grandes richesses. Reste à savoir où ?
+		</quest>
+		<quest id="52" title="Enfin le Bourru !">
+			Cette étrange petite clé sent le vin.
+		</quest>
+		<quest id="53" title="Congélation">
+			Bien qu'étant un bonhomme de neige, Igor lui-même a du mal à garder cette clé
+			en main, tant le froid qu'elle dégage est intense. La porte qu'elle ouvre
+			donne sûrement sur les endroits les plus reculés de Hammerfest.
+		</quest>
+		<quest id="54" title="Une clé rouillée">
+			Ce petit bout de ferraille difforme n'a pas l'air d'avoir une grande valeur.
+			Mais il faut parfois ce méfier des apparences ! Qui peut savoir quel genre d'aventure
+			se cache au delà de la porte qu'elle ouvre ?
+		</quest>
+		<quest id="55" title="Laissez passer !">
+			Votre toute puissance administrative sera dorénavant appuyée par le formulaire
+			d'Autorisation du Bois-Joli BJ22a.
+		</quest>
+		<quest id="56" title="Les mondes ardus">
+			Pour avoir atteint le niveau 50 en mode Cauchemar, vous avez gagné la Clé
+			des Mondes Ardus.
+		</quest>
+		<quest id="57" title="Viiiite !">
+			Sans trop savoir pourquoi, la Clé Piquante que vous avez trouvé vous donne une
+			folle envie de courir partout et de vous rouler en boule.
+		</quest>
+		<quest id="58" title="Faire les poches à Tubz">
+			Tuberculoz, le vilain sorcier, portait sur lui une clé...
+		</quest>
+		<quest id="59" title="Tuberculoz, seigneur des enfers">
+			Votre toute puissance et votre maîtrise absolue des techniques de combat de
+			Hammerfest vous ont permi de gagner une clé unique en terrassant Tuberculoz
+			en mode Cauchemar !
+		</quest>
+
+
+		<quest id="60" title="L'eau ferrigineuneuse">
+			Votre excès dans la consommation de boissons alcoolisées vous a permis de
+			débloquer la Clé du Bourru ! Vous aurez maintenant de bonnes chances de la
+			trouver au cours de vos explorations.
+		</quest>
+		<quest id="61" title="Paperasse administrative">
+			Igor est un maître dans l'art de remplir des formulaires administratifs.
+			Il trouvera donc sans problème bientôt l'Autorisation du Bois-Joli dans
+			les dédales des cavernes...
+		</quest>
+		<quest id="62" title="Meilleur joueur">
+			Le meilleur joueur du net, c'est vous, plus personne n'a de doute là dessus !
+			Votre collection de manettes de jeu fera sans nul doute des envieux ^^
+			Igor dispose maintenant de l'option Tornade qui procure un boost de vitesse
+			au début de chaque partie, quelques soient les options choisies !
+		</quest>
+		<quest id="63" title="Miroir, mon beau miroir">
+			Le Miroir Bancal que vous avez trouvé en jeu vous permet maintenant de voir les choses
+			sous un angle nouveau. L'option de jeu "Miroir" a été débloquée !
+		</quest>
+		<quest id="64" title="Mode cauchemar">
+			Vous êtes doué. Surement très doué même... Mais saurez-vous aider Igor en mode Cauchemar ?
+			Cette option a été débloquée !
+		</quest>
+		<quest id="65" title="L'aventure continue !">
+			Le conseil des Carotteux vous a choisi pour explorer plus en avant les cavernes de Hammerfest.
+			La Clé de Gordon est une première étape dans cette nouvelle mission.
+		</quest>
+		<quest id="66" title="Joyau d'Ankhel">
+			Vous avez fait preuve d'une dextérité et d'une perspicacité sans égal en retrouvant le Joyau
+			d'Ankhel. L'option Controle du Ballon a été débloquée pour le mode SoccerFest !
+		</quest>
+		<quest id="67" title="Sandy commence l'aventure !">
+			Tous les éléments sont réunis pour donner naissance à Sandy, le bonhomme de sable !
+			Ce nouveau personnage pourra se joindre à vous dans le mode Multi Coopératif,
+			jouable à deux sur le même ordinateur. Re-découvrez la grande aventure avec un ami !
+		</quest>
+		<quest id="68" title="Miroir, NOTRE beau miroir">
+			Avec le Miroir des Sables, vous pouvez maintenant voir les choses sous un angle nouveau
+			mais à deux ! L'option de jeu "Miroir" a été débloquée pour le mode Multi Coopératif !
+		</quest>
+		<quest id="69" title="Mode double cauchemar">
+			De toute évidence, vous êtes capables de grandes choses à deux ! L'option de jeu "Cauchemar"
+			a été débloquée pour le mode Multi Coopératif !
+		</quest>
+		<quest id="70" title="Une grande Amitié">
+			Mieux vaut tard que jamais ! Igor et Sandy ont enfin compris qu'il valait mieux s'entraider
+			s'ils voulaient survivre à deux dans les Cavernes de Hammerfest. L'option de jeu "Partage de vies"
+			a été débloquée pour le mode Multi Coopératif ! Si cette option est activée, lorsqu'un joueur
+			perd sa dernière vie, il en prend une au second joueur et peut ainsi continuer la partie !
+		</quest>
+		<quest id="71" title="Apprentissage des canifs volants">
+			A toujours sauter partout, Igor a fini par acquérir une souplesse digne d'un ninja et une
+			dextérité hors du commun ! Mais pour prouver sa valeur, il doit maintenant collecter les
+			artefacts ninjas dispersés en Hammerfest !
+		</quest>
+		<quest id="72" title="Shinobi do !">
+			Igor a rempli sa quêté initiatique et maîtrise maintenant à la perfection un grand
+			nombre d'armes du Ninjutsu ! Mais comme son nouveau de l'honneur le lui interdit, il ne
+			pourra pas s'en servir. Toutefois, il pourra mettre à l'épreuve ses compétences grâce
+			à l'option de jeu "Ninjutsu" qu'il vient de débloquer pour le mode Aventure !
+		</quest>
+		<quest id="73" title="Rapide comme l'éclair !">
+			Igor est imbattable dès lors qu'il s'agit de viser juste et se déplacer avec précision...
+			Il faut maintenant le prouver aux autres ! Le mode TIME ATTACK est débloqué et vous ouvre
+			en plus l'accès à un nouveau classement sur le site. Soyez le bonhomme de neige le
+			plus rapide de tout Hammerfest !
+		</quest>
+		<quest id="74" title="Maître des Bombes">
+			Vous êtes l'expert réputé dans tout Hammerfest en matière d'explosifs. Et pour montrer
+			qu'on ne vous ne la fait pas, à vous, l'option "Explosifs instables" a été débloquée
+			pour le mode Aventure ! Gare à TOUT ce qui explose en jeu ! De plus, vous pouvez pousser
+			toutes vos bombes plus loin en avançant en même temps que vous la frappez.
+		</quest>
+		<quest id="75" title="Tombeau de Tuberculoz">
+			Vous avez découvert une étrange pyramide de poche dans le tombeau de Tuberculoz.
+		</quest>
+	</quests>
+
+	<!-- DIMENSIONS -->
+	<dimensions>
+		<dimension id="0">
+			<level id="0" name="Village de Hammerfest" />
+			<level id="2" name="Les premières cavernes" />
+			<level id="10" name="Le terrier glissant" />
+			<level id="16" name="Profondeurs oubliées" />
+			<level id="20" name="Cavernes des Vert-tiges" />
+			<level id="31" name="Région du Frimas" />
+			<level id="41" name="Strates supérieures de Morgenfell" />
+			<level id="51" name="Domaine Mangue-qui-roule" />
+			<level id="61" name="Souterrain de la Prune" />
+			<level id="71" name="Jungle cavernicole" />
+			<level id="81" name="La grotte versicolore" />
+		</dimension>
+		<dimension id="1"> <!-- deepnight -->
+			<level id="0" name="Temple pré-tuberculien" />
+			<level id="12" name="Cachette du plombier" />
+			<level id="14" name="BubbleFest" />
+			<level id="24" name="Grottes du looping" />
+			<level id="33" name="Petite salle bonus" />
+			<level id="35" name="Diffiland" />
+			<level id="41" name="Bois-Joli de Tournefleur" />
+			<level id="55" name="Base secrète de Tubz" />
+			<level id="60" name="Cavavin" />
+			<level id="66" name="Cavavin: salle secrète" />
+			<level id="68" name="Prototype Secret Tubzien" />
+			<level id="70" name="Frimas Moejulien" />
+			<level id="76" name="Piège de cristal !" />
+			<level id="78" name="Bois caché de Hammerfest" />
+			<level id="80" name="Antre des Géluloz" />
+			<level id="86" name="Salle du Gardien" />
+			<level id="90" name="Le deuxième Puits" />
+			<level id="97" name="Les autres premières cavernes" />
+			<level id="108" name="Bonus de Hâte" />
+			<level id="110" name="La troglogrotte" />
+			<level id="119" name="Le monde du Miroir" />
+			<level id="125" name="Caverne de la nausée" />
+			<level id="127" name="La cachette des Carotteux" />
+			<level id="134" name="Le Dojo" />
+			<level id="141" name="Les enfers" />
+			<level id="148" name="Mixer de Sacha" />
+			<level id="149" name="Puits des Zâmes" />
+			<level id="154" name="La tanière des Framboijules" />
+			<level id="157" name="Metal hurlant" />
+			<level id="168" name="Crypte framboisée" />
+			<level id="188" name="Le tombeau de Tuberculoz" />
+			<level id="206" name="L'entrée du tombeau !" />
+			<level id="211" name="La véritable tombe de Tubz !" />
+			<level id="217" name="Cachette des conseillers" />
+		</dimension>
+		<dimension id="2"> <!-- hiko -->
+		</dimension>
+		<dimension id="3"> <!-- ayame -->
+			<level id="0" name="Mechayame"/>
+			<level id="6" name="Irish Coffee"/>
+			<level id="12" name="Les Chat-vernes"/>
+			<level id="42" name="Ayamedium"/>
+		</dimension>
+	</dimensions>
+
+	<!-- KEYS -->
+	<keys>
+		<key id="0" name="Passe-partout en bois"/>
+		<key id="1" name="Clé de Rigor-Dangerous"/>
+		<key id="2" name="Méluzzine"/>
+		<key id="3" name="Clé du Bourru"/>
+		<key id="4" name="Furtok glaciale"/>
+		<key id="5" name="Vieille clé rouillée"/>
+		<key id="6" name="Autorisation du Bois-Joli"/>
+		<key id="7" name="Clé des Mondes Ardus"/>
+		<key id="8" name="Clé Piquante"/>
+		<key id="9" name="Passe-partout de Tuberculoz"/>
+		<key id="10" name="Clé des cauchemars"/>
+		<key id="11" name="Clé d'inversion"/>
+		<key id="12" name="Clé de Gordon"/>
+		<key id="13" name="Clé des apprentis"/>
+		<key id="14" name="Pass-Pyramide"/>
+	</keys>
+</lang>

@@ -1,0 +1,92 @@
+﻿<d place="frcbrt" name="Madame X" gfx="mmex" cond="active(mmex)+(admin()|(mission(fish)+mission(dog)))">
+
+	<phase id="begin" fast="1" next="talk">
+		Alors que vous passiez par Forcebrut, vous rencontrez une femme, qui semblait justement vous attendre.
+	</phase>
+
+	<a id="talk">Lui parler</a>
+
+	<phase id="talk" next="talk2">
+		Tiens donc, voilà donc ce jeune Maître Eleveur dont j'ai tant entendu parler ?
+		Il semble que Papy Joe dise beaucoup de bien à propos de toi, tant tu t'appliques à remplir
+		ses missions ?
+	</phase>
+
+	<a id="talk2">...</a>
+
+	<phase id="talk2" next="missions:question">
+		Puisque tu sembles être quelqu'un à qui on peut faire confiance, j'aurais moi aussi
+		aimé te confier quelques missions, libre à toi d'accepter ou non !
+	</phase>
+
+	<a id="missions">Liste de Missions</a>
+	<a id="question">Mais qui êtes-vous ?</a>
+
+	<phase id="question" next="question2">
+		Qui je suis ?!? Ah ah ah ! Pardonne-moi, mon jeune ami, j'avais complètement oublié
+		de me présenter ! Je suis.... .... ....
+	</phase>
+
+	<a id="question2">Vous êtes ?</a>
+
+	<phase id="question2" next="double">
+		... désolée... je m'excuse. Je viens juste de me rappeler que je ne pouvais justement
+		pas révéler qui je suis, car cela pourrait t'attirer de gros ennuis ! Mais comme c'est
+		tout de même très malpoli, je vais te révéler quelque chose d'intéressant...
+	</phase>
+
+	<a id="double">Ah ?</a>
+
+	<phase id="double" next="double2">
+		Voyons voir... Je suppose que jusqu'à présent, tu as appris que chaque compétence
+		correspondait à un unique élément parmi les cinq élements possibles ? Par exemple,
+		Colère correspond à l'élément Feu et Perception correspond à l'élément Eau.
+	</phase>
+
+	<a id="double2">Oui !</a>
+
+	<phase id="double2" next="double3">
+		Et bien... c'est faux ! Il existe des compétences spéciales, qui sont associées
+		non pas à un seul mais à DEUX éléments ! On les appelle les compétences-doubles. Une
+		compétence-double peut s'apprendre à partir de l'un des deux éléments qui la composent,
+		mais demande de connaître au préalable une compétence de chacun des deux éléments.
+	</phase>
+
+	<a id="double3">!!!</a>
+
+	<phase id="double3" next="learn:already">
+		Je comprends tout à fait ta surprise, c'est un secret bien gardé. Cependant pour
+		pouvoir apprendre ces compétences, il est nécessaire de maîtriser Compétence-Double,
+		une compétence secrète que seuls les Drag.... mais j'en ai déjà trop dit !
+	</phase>
+
+	<a id="learn" cond="!skill(multi)">Comment l'apprendre ?</a>
+	<a id="already" cond="skill(multi)">Comment l'apprendre ?</a>
+
+	<phase id="learn" next="learn1:learn2:learn3:learn4:learn5:no">
+		Oh c'est plutôt simple, regarde, il me suffit de faire "ça" et...
+	</phase>
+
+	<a id="learn1" target="dolearn" cond="(skill(waikk)+skill(cocon))|(skill(combus)+skill(zero))">Et ?</a>
+	<a id="learn2" target="dolearn" cond="(skill(kamikz)+skill(kaos))|(skill(venge)+skill(talona))">Ah ??</a>
+	<a id="learn3" target="dolearn" cond="(skill(resmag)+skill(clone))|(skill(etatpr)+skill(gaia))">Hein ???</a>
+	<a id="learn4" target="dolearn" cond="(skill(instin)+skill(paumej))|(skill(marecg)+skill(foudre))">Oh !</a>
+	<a id="learn5" target="dolearn" cond="(skill(sappe)+skill(formev))|(skill(adrena)+skill(elasti))">Quoi...</a>
+	<a id="no">(ouille)</a>
+
+	<phase id="dolearn" skill="multi">
+		Ouah ! Ca a marché ! Tu vois que c'était facile ? Ton Dinoz maîtrise désormais Compétence-Double, félicitations !
+	</phase>
+
+	<phase id="no">
+		Non... ça ne marche pas... si ça te picote quand je fait "ça" ou si ton Dinoz n'a pas encore appris les compétences
+		te permettant de maîtriser Compétence-Double, ça ne marchera pas. Reviens me voir plus tard pour que l'on réessaie !
+	</phase>
+
+	<phase id="already">
+		A ton avis ? .... Il me semble que tu l'as déjà appris ! Ah ah ah !
+	</phase>
+
+	<phase id="missions" missions="mmex"></phase>
+
+</d>

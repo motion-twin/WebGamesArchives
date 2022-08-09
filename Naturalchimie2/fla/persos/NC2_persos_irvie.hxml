@@ -1,0 +1,29 @@
+# 
+-swf ./swf/display.swf
+Display
+-cp ./src
+-cmd copy persos\swf\persos_lib.swf ..\..\website\www\swf\persos_lib.swf
+
+--next
+# 
+-swf ./swf/editor_code.swf
+-main Editor
+-cp ./src
+-cmd %SWFMAKE% -f persos\src\make_editor.xml
+-cmd copy persos\swf\editor.swf ..\..\website\www\swf\editor.swf
+
+--next
+# 
+-swf ./swf/viewer_code.swf
+-main Viewer
+-cp ./src
+-cmd %SWFMAKE% -f persos\src\make_viewer.xml
+-cmd copy persos\swf\viewer.swf ..\..\website\www\swf\viewer.swf
+
+--next
+# 
+-swf ./swf/viewerthumb_code.swf
+-main ViewerThumb
+-cp ./src
+-cmd %SWFMAKE% -f persos\src\make_viewerthumb.xml
+-cmd copy persos\swf\viewerthumb.swf ..\..\website\www\swf\viewerthumb.swf

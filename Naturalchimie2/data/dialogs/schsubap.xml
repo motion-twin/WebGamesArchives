@@ -1,0 +1,20 @@
+<d place="apfbg" name="Rejoindre Audepint" cond="sch(gu)" gfx="apmajor" auto="0">
+
+<phase id="begin" frame="angry" next="ouiok:ouino:exit">
+Repos !  Tu viens intégrer notre école ? 
+</phase>
+
+<a id="ouiok" cond="reput(ap,0)">Oui, je veux devenir un alchimiste Audepint.</a>
+<a id="ouino" cond="!reput(ap,0)">Oui, je veux devenir un alchimiste Audepint.</a>
+<a id="exit">Non merci. Je me suis trompé. </a>
+
+<phase id="ouiok" frame="normal" url="/user/subSchool?s=ap">
+Humpf, je t'inscris. Bienvenue à Audepint, recrue.
+On va commencer tout de suite ta formation.
+</phase>
+
+<phase id="ouino" frame="angry" >
+Humph... Tu ne sembles pas digne de l'école Audepint pour l'instant ! Il te faut au moins une réputation {Neutre} envers l'école pour t'inscrire.
+</phase>
+
+</d>

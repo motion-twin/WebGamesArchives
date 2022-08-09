@@ -1,0 +1,77 @@
+<keepers>
+
+<k id="tuto" name="Gardien du chaudron" gfx="cadkeeper2" frame="1" weight= "0">
+	<!--<dialog did="tuto_1" weight="100" /> -->
+
+	<goOut to="coliq" frame="normal">Beuh... | Me sens pas très bien... || Je... | Je vais y aller ! </goOut>
+	<goOut to="umbra" frame="normal">Eh ! Qu'est-ce que ! </goOut>
+	<goOut to="redux" frame="normal">Mais ! Je... je... Eeeeeh ! </goOut>
+
+	<forbidden frame="angry">Recette interdite détectée ! [Alerte ! |Alerte !] Je confisque le résultat.</forbidden>
+	<fail frame="happy">Voilà ce qui arrive quand on ne fait pas attention. Ca pète.</fail>
+	<luck frame="angry">Mais... Tu ne connais pas | VRAIMENT | cette recette, non ? </luck>
+
+	<success frame="happy" weight="100">Ooooh. Bravo !</success>
+	<success frame="happy" weight="100">Très belle transmutation. Chapeau.</success>
+</k>
+
+<k id="g1" name="Gardien du chaudron" gfx="cadkeeper2" frame="1" weight="100"> <!-- standard -->
+	<goOut to="coliq" frame="normal">Beuh... | Me sens pas très bien... || Mal au ventre...</goOut>
+	<goOut to="umbra" frame="normal">Eh ! Qu'est-ce que ! </goOut>
+	<goOut to="redux" frame="normal">Mais ! Je... je... Eeeeeh ! </goOut>
+
+	<forbidden frame="angry">[Stop ! | Interdit ! | Résultat confisqué !] Non mais z'avez pas honte, non ? </forbidden>
+	<fail frame="angry" >Ah. Je me disais bien que je connaissais pas cette recette...</fail>
+	<luck frame="happy" >Sacré coup de moule, alchimiste.</luck>
+
+	<success frame="happy" weight="100">Oh. Très joli.</success>
+	<success frame="happy" weight="100">Voilà, ça c'est de la belle transmutation.</success>
+	<success frame="happy" weight="100" >Ah bon ça existe cette recette ? Il faut que je m'en souvienne.</success>
+	<success frame="happy" weight="100" cat="morph">Ahahah ! C'est absolument ridicule !</success>
+</k>
+
+
+<k id="g2" name="Gardien du chaudron" gfx="cadkeeper3" frame="1" weight="100"> <!-- monsieur "ca va rater" -->
+	<!-- <dialog did="g2_dialog" weight="100" /> -->
+	
+	<goOut to="coliq" frame="normal">Beuh... | Me sens pas très bien... || Je... | Je vais y aller ! </goOut>
+	<goOut to="umbra" frame="normal">Eh ! Qu'est-ce que ! </goOut>
+	<goOut to="redux" frame="normal">Mais ! Je... je... Eeeeeh ! </goOut>
+
+	<forbidden frame="angry" >Recette interdite détectée ! [Alerte ! |Alerte !] Je confisque le résultat.</forbidden>
+	<fail frame="happy" >Je savais que ça allait rater.</fail>
+	<luck frame="angry" >Hum... normalement ça aurait dû rater. | C'est bizarre. </luck>
+
+	<success frame="angry" weight="100">Mais ? Mais pourquoi ça n'explose pas, là ? Avec les étudiants ça explose tout le temps.</success>
+	<success frame="happy" weight="100">Une recette réussie ? Vraiment réussie ? Sans tricher ni rien ? | C'est historique.</success>
+</k>
+
+
+<k id="g3" name="Gardien du chaudron" gfx="cadkeeper2" frame="1" weight="100"> <!-- monsieur enthousiaste -->
+	<forbidden frame="happy" >Formidable une recette interdite ! On a pas souvent la chance de voir ça ! C'est trop chouette. Bon par contre je dois te confisquer ta transmutation.</forbidden>
+	<fail frame="angry" >Aïe...</fail>
+	<luck frame="happy" >Wahou ! Quelle chance tu as ! Réussir une recette inconnue ! | Je suis jaloux.</luck>
+	
+	<goOut to="coliq" frame="normal">Beuh... | Me sens pas très bien... || Je... | Je vais y aller ! </goOut>
+	<goOut to="umbra" frame="normal">Eh ! Qu'est-ce que ! </goOut>
+	<goOut to="redux" frame="normal">Mais ! Je... je... Eeeeeh ! </goOut>
+
+	<success frame="happy" weight="100">Bravo ! Quel coup de poignet dans le lancer d'éléments !</success>
+	<success frame="happy" weight="100">Quel sûreté du geste dans le tirage de la corde ! </success>
+	<success frame="angry" weight="100" cat="morph">Oh c'est... | euh... | comment dire... | original ! </success>
+	<success frame="happy" weight="100" cat="cloth">C'est complètement has-been mais je suis sûr qu'avec un peu de chance, tu vas lancer une mode.</success>
+</k>
+
+<k id="g4" name="Gardien du chaudron" gfx="cadkeeper3" frame="1" weight="100"> <!-- monsieur grogne -->
+	<!-- <dialog did="g4_dialog" weight="100" /> -->
+	
+	<goOut to="coliq" frame="normal">Beuh... | Me sens pas très bien... || Je... | Je vais y aller ! </goOut>
+	<goOut to="umbra" frame="normal">Eh ! Qu'est-ce que ! </goOut>
+	<goOut to="redux" frame="normal">Mais ! Je... je... Eeeeeh ! </goOut>
+
+	<forbidden frame="angry">Grumph... c'est interdit. | Je confisque.</forbidden>
+	<fail frame="anry" >Grumph... | évident, ça. Rahlala...</fail>
+	<luck frame="angry" >Pfff. | Coup de pot. | Si ça ne tenait qu'à moi je confisquerais le résultat. Grumph...</luck>
+</k>
+
+</keepers>

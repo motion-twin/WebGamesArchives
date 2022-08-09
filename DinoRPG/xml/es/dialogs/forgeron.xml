@@ -1,0 +1,37 @@
+﻿<d place="forges" name="Herrera" gfx="damas" frame="stop" cond="active(fmedal)|admin()">
+	<phase id="begin" fast="1" next="repair:repair2:pelle:no">
+		Entras en la herrería de Fosalava. El calor que reina aquí no tiene nada que envidiar a los cráteres del Gran Todo Quema.
+		Aquí nada se crea, todo se transforma, ¡a martillazos!
+		
+		100 monedas de oro por reparar una pala, ¿buen precio, no?
+	</phase>
+
+	<a id="repair" cond="fx(brkpel)">¿Puedes reparar mi pala?</a>
+	<a id="repair2" cond="fx(brkpe2)">¿Puedes reparar mi super pala?</a>
+	<a id="pelle" cond="fx(brkpel)+fx(brkpe2)">¿Quieres ser mi novia...?</a>
+	<a id="no">Nada en particular</a>
+
+	<phase id="pelle" frame="blabla">
+		[¿No prefieres un palazo en la cabeza?]
+	</phase>
+	
+	<phase id="repair" next="thanks" frame="blabla" usegold="100" effect="pelle" noeffect="brkpel">
+		[¡Listo, tu pala está reparada, Maestro!]
+		[Son 100 monedas de oro. No olvides pasar por la caja.]
+	</phase>
+
+	<phase id="repair2" next="thanks" frame="blabla" usegold="100" effect="pelle2" noeffect="brkpe2">
+		[¡Listo, tu pala está reparada, Maestro!]
+		[Son 100 monedas de oro. No olvides pasar por la caja.]
+	</phase>
+	
+	<a id="thanks">¡Estupendo!</a>
+
+	<phase id="thanks" frame="blabla">
+		¡Aquí estaremos siempre para servirte!
+	</phase>
+
+	<phase id="no" frame="blabla">
+		Vuelve cuando tengas algo en los bolsillos, muchacho. ¡Hasta pronto!]
+	</phase>
+</d>

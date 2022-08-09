@@ -1,0 +1,227 @@
+<!-- ***************************************************************************** -->
+<!-- Oldbot, Nimbao l'île volante ----->
+	
+<d place="iroche" name="Alter Roboter" gfx="oldbot">
+	<phase id="begin" fast="1" frame="stop" next="bzi1:bzi2:bzi3:bzi4:bzi5:bzi9:bzi6:bzi7:bzi8">
+		Ein alter Roboter scheint fest mit einem der Hörner am Inselkopf verwachsen zu sein.
+		
+		Niemand weiß, seit wie vielen Jahrhunderten er dort schon ist. Doch eines ist sicher: In dieser lange Zeit muss er Zeuge vieler Ereignisse auf der Insel geworden sein. Er kann sicher von Nutzem sein. Du musst ihm nur die richtigen Fragen stellen...
+	</phase>
+	
+	<a id="bzi1" cond="scenario(nimbao,23)"> Ist da jemand?</a>
+	<a id="bzi2" cond="scenario(nimbao,24+)"> Wie wird das Wetter morgen?</a>
+	<a id="bzi3" cond="scenario(nimbao,24+)"> Ist hier in letzter Zeit jemand vorbeigekommen?</a>
+	<a id="bzi4" cond="scenario(nimbao,24+)"> Wann wurde Grizorg zum Erzdorogon?</a>
+	<a id="bzi5" cond="scenario(nimbao,25)"> Wie kann ich die Insel durchstreifen, ohne angehalten zu werden?</a>
+	<a id="bzi9" cond="scenario(nimbao,33)"> Ich verstehe die Sprache der Einwohner von Nimbao nicht.</a>
+	<a id="bzi6" cond="scenario(nimbao,35)"> Wo ist der heilige Berg?</a>
+	<a id="bzi7" cond="scenario(nimbao,35+)"> Halten deine Batterien eigentlich ewig?</a>
+	<a id="bzi8" cond="scenario(nimbao,42+)"> Wie gelange ich auf die 2. Ebene der Insel? </a>
+	
+<!-- Réponse à la 1ère question -->	
+	
+	<phase id="bzi1" next="gzi1" >
+		Ja, es ist jemand hier.
+		Bzzz... Hallo Fremder....Rrzzz...
+	</phase>
+	<a id="gzi1">
+		Wa... ein sprechender Toaster!
+	</a>
+	<phase id="gzi1" next="tzi1">
+		[Ich bin kein Toaster, Bzzz, ich bin ein Roboter, neuestes Modell...]
+		Bzzzoooo... Bzzziiii....
+	</phase>
+	<a id="tzi1">
+		Ja, das sieht man...
+	</a>
+	<phase id="tzi1" next="gzu1">
+		Es ist meine Aufgabe, Auskunft zu geben an... Gziii, PSHHH....PAF
+		... an jedermann. Falls du eine Frage hast, stell sie mir.
+		Danke aber daran, ich kann wirklich nur auf konkrete Fragen antworten. Gzzzziiiiiish....
+	</phase>
+	<a id="gzu1">
+		Ich werde es mir merken.
+	</a>
+	<phase id="gzu1" fast="1" frame="stop" scenario="nimbao:24">
+		Der alte Roboter schaltet wieder auf Standby. Was für Antworten er wohl für dich bereithält?
+	</phase>
+	
+<!-- Réponse à la 2ème question -->		
+	
+	<phase id="bzi2" next="gzi2" >
+		Im gesamten Süden der Insel trocken und sonnig. Nach Nordwesten hin kühler. Darunter wolkig.
+		Wie eigentlich jeden Tag seitdem ich hier bin... Die Temperatur wird...
+		[Moment mal - ICH BIN DOCH NICHT DER WETTERKANAL! Gziiiii....]
+	</phase>
+	<a id="gzi2">
+		Entschuldige, ich habe ja nur gefragt...
+	</a>
+	<phase id="gzi2" fast="1" frame="stop">
+		Der alte Roboter schaltet wieder auf Standby. Was für Antworten wird er wohl noch für dich bereithalten?
+	</phase>
+
+<!-- Réponse à la 3ème question -->		
+	
+	<phase id="bzi3" next="gzi3" >
+		Gzii, Bzii... Crash....
+		[Nun... Ich habe bemerkt, wie jemand vorbeiging... Aber wann das war, kann ich nicht sagen.
+		Die Jahrhunderte, die ich nun schon hier bin, haben ihre Spuren an meiner inneren Uhr hinterlassen...]
+	</phase>
+	<a id="gzi3">
+		Kannst du mir mehr über diese Person erzählen?
+	</a>
+	<phase id="gzi3" next="gzu3">
+		Gzii....Pshhhh...
+		[Nun, dieser Mann war sehr in Eile. Ein riesiger Dinoz begleitete ihn, aber sie trennten sich, als sie die Insel erreichten.
+		Er überquerte die Brücke so schnell, dass die Wachen in alle Richtungen fortrannten.]
+		[Seitdem sie die Wachen verstärkt haben, ist es viel schwieriger geworden, sich auf der Insel zu bewegen.
+		Für mich hingegen hat sich nicht viel geändert. Niemand kommt hierher zum Drachenkopf.]
+	</phase>
+	<a id="gzu3">
+		Das muss Mandragore gewesen sein.
+	</a>
+	<phase id="gzu3" fast="1" frame="stop">
+		Der alte Roboter schaltet wieder auf Standby. Was für Antworten wird er wohl noch für dich bereithalten?
+	</phase>	
+	
+	<!-- Réponse à la 4ème question -->		
+	
+	<phase id="bzi4" next="gzi4" >
+		Gzii, Bzii... Crunch....
+		[Grizorg wurde erst kürzlich Erzdorogon. Ich glaube vor so etwa 3 Tagen...
+		Oder vielleicht vor 30 Jahren... Oder vor 300 Jahren? Ich weiß es nicht mehr.]
+	</phase>
+	<a id="gzi4">
+		Wie kam es dazu?
+	</a>
+	<phase id="gzi4" next="gzu4">
+		Gzii....Pshhhh...
+		[Der frühere Erzdorogon war ein ruhigerer, entpannterer Typ. Er regierte friedlich mit den anderen Mitgliedern des Dorogon-Rates.
+		Er hatte zu der Zeit 2 Schüler, die oft zum Meditieren oder Trainieren hierherkamen. Einer war ein Dorogon, der andere ein Mensch.
+		Ein solches Arrangement würde es heute gar nicht mehr geben.]
+		[Das Verschwinden des alten Erzdorogon bleibt ein Rätsel. Einige sagen, dass er seine sterbliche Hülle nicht freiwillig verlassen hat, sondern bedrängt wurde...
+		Leider weiß ich nicht mehr darüber. Nachdem das passierte, habe ich mich nicht mehr von diesem Fleck bewegt.]
+		Gziii, PSHHH....PAF
+	</phase>
+	<a id="gzu4">
+		Könnte das etwas mit Mandragore zu tun haben?
+	</a>
+	<phase id="gzu4" fast="1" frame="stop">
+		Der alte Roboter schaltet wieder auf Standby. Was für Antworten wird er wohl das nächste Mal für dich bereithalten?
+	</phase>
+	
+	<!-- Réponse à la 5ème question -->		
+	
+	<phase id="bzi5" next="gzi5" >
+		Gzii, Bzii... Crunch....
+		[Grizorgs Soldaten kontrollieren fast die gesamte Insel.]
+		[Es ist dadurch wirklich schwierig geworden, sich fortzubewegen. Aber glücklicherweise gibt es eine Mö.........]
+		[........glichkeit. Wenn du dich zu Fuß durch Nimbao fortbewegen willst, dann musst du einen Wachposten zu infiltrieren!]
+	</phase>
+	<a id="gzi5">
+		Was meinst du mit Inflitrieren?
+	</a>
+	<phase id="gzi5" next="gza5">
+		Gzii....Pshhhh...
+		[////...Tutorial mode ON...00100011111001010 ////]
+		Wenn du den Befehl *Bewegen* verwenden willst, ersetze ihn durch den Befehl *Infiltrieren*, der im Navigationsmenü erscheint.
+		[////...Tutorial mode OFF... 00100011111001010 ////]
+	</phase>
+	<a id="gza5">
+		Und dann?
+	</a>
+	<phase id="gza5" next="gzu5">
+		[Du brauchst dann nur noch einen Weg dahin finden, wo du hin willst.]
+		[Behalte trotzdem die Wachen im Auge. Sie beobachten alles... Falls sie dich fänden, würden sie dich sofort wieder zurück zum Anfang der Passage bringen.]
+		[Sobald du die Wächter aber erst einmal infiltriert hast, wirst du dich ohne weitere Probleme von einem Ort zum anderen bewegen können.]
+		Gzii, Bzii... Crunch....
+	</phase>
+	<a id="gzu5">
+		Danke für deine Hilfe!
+	</a>
+	<phase id="gzu5" fast="1" frame="stop" scenario="nimbao:26">
+		Der alte Roboter schaltet wieder auf Standby. Was für Antworten wird er wohl das nächste Mal für dich bereithalten?
+	</phase>
+	
+	<!-- Réponse à la 6ème question -->	
+	
+	<phase id="bzi9" next="gzi9" >
+		Gzii, Bzii... Crunch....
+		[Das ist normal...Bip... Die Inselbewohner sprechen eine Sprache, die auf der Oberfläche schon vor langer Zeit verschwunden ist.]
+		[Es wird aber sicher noch irgendwo jemanden geben, der ihre Sprache kennt.
+		Du machst dich besser auf die Suche.]
+		Gzii....Pshhhh...
+	</phase>
+	<a id="gzi9">
+		Danke für deine Hilfe!
+	</a>
+	<phase id="gzi9" fast="1" frame="stop">
+		Der alte Roboter schaltet wieder auf Standby. Wer weiß, was er noch alles für dich bereithält?
+	</phase>
+		
+		
+	<!-- Réponse à la 7ème question -->	
+		
+	<phase id="bzi6" next="gzi6" >
+		Gzii, Bzii... Crunch....
+		[Der heilige Berg?]
+		[Er befindet sich auf dem weißen Teil der Insel. Dort ist es so bitter kalt, dass jeder diese Gegend meidet. Ich glaube, der Ex-Erzdorogon hatte dort einen Ort, wo er all von ihm hergestellten Tränke lagerte.]
+		[Irgendein riesiger Saal aus Eis...]
+	</phase>
+	<a id="gzi6">
+		Wie komme ich dorthin?
+	</a>
+	<phase id="gzi6" next="gzu6">
+		Gzii....Pshhhh...
+		[Hinter der Pforte zur 2. Ebene, gibt es einen Tunnel zu den verschneiten Ebenen.
+		Von dort wirst du sicher einen Weg finden.]
+		[Auf dem Weg zu deinem Ziel musst du allerdings durch den gefrorenen Wald reisen. Sei auf der Hut, dass du nicht auf der Stelle festfrierst.]
+	</phase>
+	<a id="gzu6">
+		Danke, ich werde vorsichtig sein!
+	</a>
+	<phase id="gzu6" fast="1" frame="stop" scenario="nimbao:36">
+		Der alte Roboter schaltet wieder auf Standby. Wer weiß, was er das nächste Mal für dich bereithält?
+	</phase>
+	
+	<!-- Réponse à la 8ème question -->		
+	
+	<phase id="bzi7" next="gzu7" >
+		Gzii, Bzii... Crunch....
+		[Ich laufe mit Sonnenenergie...
+		Ich bin ein leuchtendes Beispiel für regenerative Energieversorgung! Damals war das der letzte Schrei...]
+		[Meine Batterien laden sich tagsüber auf und entladen sich nachts...
+		Zum Glück scheint hier immer die Sonne. Aber manchmal, wenn eine Wolke vorbeizieht, halte ich abrupt in einer Unter.......]
+		[..............haltung inne.]
+	</phase>
+	<a id="gzu7">
+		Ja, das ist mir schon aufgefallen.
+	</a>
+	<phase id="gzu7" fast="1" frame="stop">
+		Der alte Roboter schaltet wieder auf Standby. Was wird er wohl beim nächsten Mal für dich bereithalten?
+	</phase>
+	
+	<!-- Réponse à la 9ème question -->		
+	
+	<phase id="bzi8" next="gza8" >
+		Gzii, Bzii... Crunch....
+		[Die 2. Ebene der Insel ist für Dorogons reserviert. Du kannst ihre Stadt nur durch die Pforte betreten.]
+		[Nur einige wenige, von den Dorogons ausgewählte Arborianer, können sie durchqueren. Leider kenne ich keinen anderen Weg, wie man durch die Pforte kommen kann.]
+	</phase>	
+	
+	<a id="gza8">
+		Dann kann ich wohl niemals dorthin gelangen...
+	</a>
+	<phase id="gza8" next="gzu8" >
+		[Es gibt noch eine 3. Ebene auf Nimbao. Diese ist für den Erzdorogon und seine Wächter reserviert.]
+		[Der Palast befindet sich am höchsten Punkt der Insel. Der aktuelle Erzdorogon empfängt nur selten Besucher. Und falls doch, dann nur unter besonderen Umständen.]
+	</phase>
+	<a id="gzu8">
+		Das alles scheint außer meiner Reichweite zu sein...
+	</a>
+	<phase id="gzu8" fast="1" frame="stop">
+		Der alte Roboter schaltet wieder auf Standby. Wer weiß was er noch alles für dich bereithält?
+	</phase>
+	
+</d>
+	

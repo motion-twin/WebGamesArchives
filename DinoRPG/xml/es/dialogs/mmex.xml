@@ -1,0 +1,87 @@
+﻿<d place="frcbrt" name="Señora X" gfx="mmex" cond="active(mmex)+(admin()|(mission(fish)+mission(dog)))">
+
+	<phase id="begin" fast="1" next="talk">
+		Paseas por Fuerzabruta con tranquilidad y te encuentras con una mujer que aparenta estar precisamente esperándote.
+	</phase>
+
+	<a id="talk">Hablar con ella.</a>
+
+	<phase id="talk" next="talk2">
+		¡Anda! ¡Mira por dónde! Estoy ante este gran joven Maestro del que tanto he oído hablar.
+		Papy Jose habla muy bien de ti. ¿Tanto te aplicas para realizar sus misiones?
+	</phase>
+
+	<a id="talk2">...</a>
+
+	<phase id="talk2" next="missions:question">
+		Puesto que pareces ser alguien en quien se puede confiar, me gustaría darte algunas misiones.
+		¡Eres libre de aceptarlas o no!
+	</phase>
+
+	<a id="missions">Lista de Misiones</a>
+	<a id="question">¿Podría saber quién es usted?</a>
+
+	<phase id="question" next="question2">
+		¿Quién soy? ¡Ja, ja, ja! Perdóname joven, había olvidado presentarme. Soy... ... ...
+	</phase>
+
+	<a id="question2">¿Usted es...?</a>
+
+	<phase id="question2" next="double">
+		... lo siento... perdona. Acabo de acordarme justamente de que no puedo revelar mi identidad.
+		De lo contrario podría suponerme un grave problema. Ya sé que no es precisamente muy educado, así que
+		al menos te diré algo interesante...
+	</phase>
+
+	<a id="double">¿Y qué es?</a>
+
+	<phase id="double" next="double2">
+		Veamos... Supongo que ya habrás aprendido que cada competencia se corresponde con un elemento de los cinco posibles.
+		Por ejemplo, Cólera se corresponde con el elemento Fuego, y Percepción se corresponde con el elemento Agua.
+	</phase>
+
+	<a id="double2">¡Sí!</a>
+
+	<phase id="double2" next="double3">
+		Pues... ¡esto es falso! Hay competencias especiales que no están asociadas a un solo elemento sino a DOS elementos.
+		Se llaman competencias-doble. Una competencia-doble se puede aprender a partir de uno de los dos elementos que la compone.
+		Sin embargo es necesario conocer al menos una competencia de cada uno de estos dos elementos.
+	</phase>
+
+	<a id="double3">!!!</a>
+
+	<phase id="double3" next="learn:already">
+		Sí, comprendo tu sorpresa. Es un secreto muy bien guardado. Sin embargo para poder aprender estas competencias es
+		necesario controlar la competencia-doble. Es una competencia secreta que solo los Drag... ¡hablo demasiado!
+	</phase>
+
+	<a id="learn" cond="!skill(multi)">¿Cómo puedo aprenderla?</a>
+	<a id="already" cond="skill(multi)">¿Cómo puedo aprenderla?</a>
+
+	<phase id="learn" next="learn1:learn2:learn3:learn4:learn5:no">
+		Oh, bueno. Es más bien simple. Mira, es suficiente con hacer "esto" y...
+	</phase>
+
+	<a id="learn1" target="dolearn" cond="(skill(waikk)+skill(cocon))|(skill(combus)+skill(zero))">¿Y?</a>
+	<a id="learn2" target="dolearn" cond="(skill(kamikz)+skill(kaos))|(skill(venge)+skill(talona))">¿¿Ah??</a>
+	<a id="learn3" target="dolearn" cond="(skill(resmag)+skill(clone))|(skill(etatpr)+skill(gaia))">¿¿¿Cómo???</a>
+	<a id="learn4" target="dolearn" cond="(skill(instin)+skill(paumej))|(skill(marecg)+skill(foudre))">¡Oh!</a>
+	<a id="learn5" target="dolearn" cond="(skill(sappe)+skill(formev))|(skill(adrena)+skill(elasti))">Pero qué...</a>
+	<a id="no">(ya, ya)</a>
+
+	<phase id="dolearn" skill="multi">
+		¡Uaaah! ¡Funcionó! ¿Ves cómo era fácil? Tu Dino ya controla la Competencia-Doble. ¡Enhorabuena!
+	</phase>
+
+	<phase id="no">
+		No... no funciona... si sientes un picor cuando hago "esto" o si tu Dino no ha aprendido todavía las competencias que te permitan controlar la
+		Competencia-Doble, no funcionará. ¡Vuelve a verme más adelante para intentarlo de nuevo!
+	</phase>
+
+	<phase id="already">
+		¿Tú qué piensas?... Pues me parece que ya la has aprendido, ¿no? ¡Ja, ja, ja!
+	</phase>
+
+	<phase id="missions" missions="mmex"></phase>
+
+</d>

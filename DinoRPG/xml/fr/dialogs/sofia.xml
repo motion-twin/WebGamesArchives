@@ -1,0 +1,216 @@
+<!-- ***************************************************************************** -->
+<!-- Sofia, gardien nde Caushesmesh --->
+	
+<d place="cpyra2" name="Sofia" gfx="sofia" frame="nocare" cond="!scenario(caush,36)+!scenario(caush,37)+!scenario(caush,38)+scenario(caush,42-)">
+	<phase id="begin" fast="1" next="rah:niveau:ether">
+		Au fur et à mesure que vous vous enfoncez dans le palais,
+		une onde maléfique de plus en plus forte se fait sentir, une atmoshpère à vous glacer le sang...
+		et des hurlements insoutenables, que peut-il bien y avoir au fond de ce palais ?
+		Un ogre ?
+	</phase>
+	
+	<a id="rah">Gloups...</a>
+	<a id="niveau" cond="!fx(lvlup1)+level(50)+scenario(caush,28+)">Pourriez vous rendre mon dinoz plus fort ?</a>
+	<a id="ether" cond="fx(lvlup1)+!fx(newski)+level(50)+scenario(caush,28+)">Que se passerait-t'il si mon dinoz tombait dans le lac d'éther  ?</a>
+
+	<phase id="rah" next="dsl">
+		[Rahhhh...]
+		[Grrrr, mais qu'est ce qui m'a fichu des empotés pareil !]
+		[Où est mon alcool préféré, je viens de me réveiller et je n'ai pas ce que je veux, c'est intolérable !
+		Inacceptable ! Inconcevable !]
+	</phase>
+	<a id="dsl">Euh, excusez moi...?</a>
+	<phase id="dsl" next="pardon" frame="silence">
+		[SILENCE !]
+	</phase>
+	<a id="pardon">...pardon, désolé...!</a>
+	<phase id="pardon" next="rod:norod:ouille">
+		[Et en plus je suis décoiffée, j'ai horreur qu'on me voit dans cet état, qui vous a laisser entrer, mais qui m'a fichu des incapables pareilles !]
+		[Je dois tout faire toute seule ici !]
+		[...]
+		[J'ai la flemme de vous botter moi-même les fesses.]
+		[Alors je ne ferai rien, mais ne vous avisez pas de me déranger ou même de me parler.]
+	</phase>
+	<a id="norod" cond="!scenario(caush,22)">Bien Madame !</a>
+	<a id="rod" cond="scenario(caush,22)">Bien Madame !</a>
+	
+	<phase id="norod" fast="1">
+		Il vaut mieux la laisser tranquille pour le moment.
+		Et attendre un éventuel moment où elle serait de meilleure humeur...
+		Mission impossible ?
+	</phase>
+	
+	<phase id="rod" fast="1" next="tg">
+		Alors que vous vous apprétiez à rebrousser chemin, des bruits de pas se font bruyamment entendre dans le couloir menant vers la salle du trône.
+	</phase>
+	<a id="tg">Ohoh c'est pas bon ça...</a>
+	<phase id="tg" name="Rôdeur Etrange" gfx="rodeur3" frame="wrap" background="3" next="oups">
+		[Maîtres, Maîtres !]
+		[Je suis enfin de retour !]
+		[Maaaaaaaaaîtres !]
+	</phase>
+	<a id="oups">Oulala, on est mal...</a>
+	<phase id="oups" name="Sofia" gfx="sofia" next="degage" frame="silence">
+		[SILENCE !]
+	</phase>
+	<a id="degage">C'était couru d'avance...</a>
+	<phase id="degage" name="Rôdeur Etrange" gfx="rodeur3" frame="unwrap" background="3" next="mais">
+		[Mais..., c'est moi votre fidèle serviteur Rodrigo Tortilla !]
+		[Vous ne me reconnaissez pas ?...]
+		[Mais au fait, qui êtes vous ?]
+	</phase>
+	<a id="mais">Je le plains déjà !</a>
+	<phase id="mais" fight="rodeur|sofia" name="Sofia" gfx="sofia" next="ouille" scenario="caush:23">
+		[Disparait de ma vue à présent !]
+	</phase>
+	<a id="ouille" cond="scenario(caush,23)">...</a>
+	<phase id="ouille" name="Rôdeur Etrange" gfx="rodeur3" frame="stun" background="3" next="pouf">
+		[Mais...]
+		[Que sont devenu mes maîtres ?]
+		[Tout a tellement changé depuis la dernière fois, je ne reconnais plus mon pays !]
+		[Je suis choqué !]
+		[Il faut que je retrouve mes maîtres !]
+	</phase>
+	<a id="pouf">Bon débarras...</a>
+	<phase id="pouf" name="Sofia" gfx="sofia" scenario="caush:24">
+		[Toi aussi, laisse moi à mes affaires et disparaît !]
+		[Quand tu auras quelque chose d'intéressant à me dire, je serai disposée à t'écouter.]
+		[En attendant, hors de ma vue !]
+	</phase>
+	<phase id="niveau" next="yes:no" frame="fixe">
+		[C'est bien vrai qu'avec ton niveau actuel, tu ne vas pas aller très loin, et je sens que je vais devoir attendre des lunes pour que tu remettes les choses en ordre...]
+		[Bon, je suis capable de briser la limite du niveau maximal de ton dinoz, mais prend garde, cette décision est IRREVOCABLE !]
+		[Une fois la limite brisée, tu pourras évoluer jusqu'au niveau 60 !]
+	</phase>
+	
+	<a id="yes" confirm="1">Je suis sûr de moi, mon dinoz veut évoluer !</a>
+	<a id="no" confirm="1">Non merci, mon dinoz n'a pas besoin de surpasser le niveau 50 !</a>
+	
+	<phase id="yes" effect="lvlup1" frame="fixe" next="ether">
+		[Qu'il en soit ainsi !]
+		_(Sofia se lève d'un seul coup, concentre son énergie... et projette une décharge intense sur votre dinoz !)_
+		_(Au travers de sa souffrance, son organisme réagit. Il développe une nouvelle force, capable de surmonter les dures épreuves qui lui feront face !)_
+		[Bien, j'ai levé le seau qui empêchait ton dinoz d'évoluer. Cette sécurité avait été apposée il y a longtemps pour éviter une surpopulation de dinoz aussi puissant...]
+		_(Votre dinoz a changé, il peut dorénavant dépasser ses limites, comment va t'il évoluer ?)_
+	</phase>
+	
+	<phase id="ether" next="newskill:no2" frame="fixe">
+		[Il en mourra sûrement... Cependant, s'il est exposé un temps très court à l'éther, il pourrait développer de nouvelles compétences qui le rendrait surement plus fort !]
+		[Mais attention, tu n'aurais plus accès à l'ancien arbre de compétences, tu ne pourrais donc pas apprendre les dernières compétences qu'il te manquait...
+		Avant d'exposer ton dinoz à l'ether, sois sûr de bien avoir optimisé son choix de compétences...]
+	</phase>
+	
+	<a id="newskill" confirm="1">Je suis sûr de moi, mon dinoz veut apprendre de nouvelles compétences !</a>
+	<a id="no2" confirm="1">Non merci, mon dinoz préfère continuer d'apprendre les anciennes compétences !</a>
+	
+	<phase id="newskill" effect="newski" skill="lvlup" frame="fixe">
+		[Qu'il en soit ainsi !]
+		_(Sofia fait amener une cuve remplie d'ether, et y plonge votre dinoz d'un coup !)_
+		_(Peu content d'être malmené, votre dinoz en ressort très vite en boudant...)_
+		[Voilà, ton dinoz va petit à petit comprendre la portée de cet acte quand il gagnera des niveaux supplémentaires.]
+		_(Vous regardez votre dinoz avec interrogation, sa pupille est plus verte qu'avant. Que vous réserve-t'il ?)_
+	</phase>
+	
+	<phase id="no">
+		[Bien, si tu changes d'avis, tu peux revenir me voir.]
+		[Tu peux aussi venir me voir avec n'importe lequel de tes dinoz ayant atteint le niveau 50.]
+	</phase>
+	
+	<phase id="no2">
+		[Bien, si tu changes d'avis, tu peux revenir me voir.]
+		[Tu peux aussi venir me voir avec n'importe lequel de tes dinoz ayant dépassé le niveau 50.]
+	</phase>
+	
+</d>
+
+<d place="villa" gfx="sofia" name="Sofia" frame="plage" background="2" cond="scenario(caush,43+)">
+	<phase id="begin" next="slurp" fast="1">
+		Allongée sur le transat de Mandragore, Sofia sirote un cocktail.
+		Elle profite allégrement du soleil et se laisse bronzer sur la plage...
+	</phase>
+	<a id="slurp">Bonjour !</a>
+	<phase id="slurp" next="troph:nouvelle:niveau:ether">
+		[Slurpp....]
+	</phase>
+	<a id="nouvelle">Tout va bien ?</a>
+	<a id="troph" cond="scenario(caush,43)">Et Caushemesh ?</a>
+	
+	<phase id="nouvelle" next="bien">
+		[Sluuuuuuuuurpp....]
+		[Ca va pas trop mal, j'étais plutôt tranquille avant que tu n'arrives.]
+		[Si tu allais jouer ailleurs ?]
+		[Slurpp....]
+		[Et ne dérange pas mon mari, je ne voudrais pas que tu lui donnes des idées suspectes...]
+	</phase>
+	<a id="bien">Euh... Bien sûr...</a>
+	<phase id="bien" fast="1">
+		Il vaut mieux la laisser tranquille, si même Mandragore n'ose pas la contrarier, alors qui serait assez fou pour le faire...?
+	</phase>
+	
+	<phase id="troph" next="palais">
+		[Slurpp....]
+		[Caushemesh ne craint rien...]
+		[J'ai chargé les filles de surveiller la brêche du monde sombre.]
+		[En cas de problème, j'enverrai mon mari faire mon boulot.]
+	</phase>
+	<a id="palais">Et le palais ?</a>
+	<phase id="palais" next="retour">
+		[Il n'y a rien d'intéressant de toute façon là-bas... Hormis peut-être un objet.]
+		[Humm... Je n'ai pas envie d'aller le chercher... Ecoute, je te le donne, je n'en ai plus besoin de toute façon, maintenant que j'ai le vrai, héhé...]
+		[Prend le donc en guise de récompense pour avoir retrouvé mon mari.]
+	</phase>
+	<a id="retour">euh merci ?</a>
+	<phase id="retour" scenario="caush:44">
+		[Maintenant laisse moi, j'ai des affaires urgentes à traiter...]
+		[...]
+		[Mandrachou !!!! Viens me masser...]
+		[VITE !]
+	</phase>
+	
+	<a id="niveau" cond="!fx(lvlup1)+level(50)">Pourriez vous rendre mon dinoz plus fort ?</a>
+	<a id="ether" cond="fx(lvlup1)+!fx(newski)+level(50)">Je ferais bien tremper mon dinoz dans de l'éther !</a>
+	
+	<phase id="niveau" next="yes:no" frame="plage">
+		[C'est bien vrai qu'avec ton niveau actuel, tu ne vas pas aller très loin...]
+		[Bon, je suis capable de briser la limite du niveau maximal de ton dinoz, mais prend garde, cette décision est IRREVOCABLE !]
+		[Une fois la limite brisée, tu pourras évoluer jusqu'au niveau 60 !]
+	</phase>
+	
+	<a id="yes" confirm="1">Je suis sûr de moi, mon dinoz veut évoluer !</a>
+	<a id="no" confirm="1">Non merci, mon dinoz n'a pas besoin de surpasser le niveau 50 !</a>
+	
+	<phase id="yes" effect="lvlup1" frame="plage" next="ether">
+		[Qu'il en soit ainsi !]
+		_(Sofia se lève d'un seul coup, concentre son énergie... et projette une décharge intense sur votre dinoz !)_
+		_(Au travers de sa souffrance, son organisme réagit. Il développe une nouvelle force, capable de surmonter les dures épreuves qui lui feront face !)_
+		[Bien, j'ai levé le seau qui empêchait ton dinoz d'évoluer. Cette sécurité avait été apposée il y a longtemps pour éviter une surpopulation de dinoz aussi puissant...]
+		_(Votre dinoz a changé, il peut dorénavant dépasser ses limites, comment va t'il évoluer ? )_
+	</phase>
+	
+	<phase id="ether" next="newskill:no2" frame="plage">
+		[Oula, il en mourra sûrement... Cependant, s'il est exposé un temps très court à l'éther, il pourrait développer de nouvelles compétences qui le rendrait surement plus fort !]
+		[Mais attention, tu n'aurais plus accès à l'ancien arbre de compétences, tu ne pourrais donc pas apprendre les dernières compétences qu'il te manquait...
+		Avant d'exposer ton dinoz à l'ether, sois sûr de bien avoir optimisé son choix de compétences...]
+	</phase>
+	
+	<a id="newskill" confirm="1">Je suis sûr de moi, mon dinoz veut apprendre de nouvelles compétences !</a>
+	<a id="no2" confirm="1">Non merci, mon dinoz préfère continuer d'apprendre les anciennes compétences !</a>
+	
+	<phase id="newskill" effect="newski" skill="lvlup" frame="plage">
+		[Qu'il en soit ainsi !]
+		_(Sofia fait amener une cuve remplie d'ether, et y plonge votre dinoz d'un coup !)_
+		_(Peu content d'être malmené, votre dinoz en ressort très vite en boudant...)_
+		[Voilà, ton dinoz va petit à petit comprendre la portée de cet acte quand il gagnera des niveaux supplémentaires.]
+		_(Vous regardez votre dinoz avec interrogation, sa pupille est plus verte qu'avant. Que vous réserve-t'il ?)_
+	</phase>
+	
+	<phase id="no" frame="plage">
+		[Bien, si tu changes d'avis, tu peux revenir me voir.]
+		[Tu peux aussi venir me voir avec n'importe lequel de tes dinoz ayant atteint le niveau 50.]
+	</phase>
+	
+	<phase id="no2" frame="plage">
+		[Bien, si tu changes d'avis, tu peux revenir me voir.]
+		[Tu peux aussi venir me voir avec n'importe lequel de tes dinoz ayant dépassé le niveau 50.]
+	</phase>
+</d>

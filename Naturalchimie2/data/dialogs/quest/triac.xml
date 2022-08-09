@@ -1,0 +1,59 @@
+<d place="apvos" name="Dépouiller le récolteur des impôts" gfx="apsellfbg" auto="1">
+
+<phase id="begin" next="plan">
+Ok, je suis prêt. J'ai repéré le récolteur d'impôts, il est en train de se balader dans la rue d'à côté. 
+</phase>
+
+<phase id="plan" frame="angry" next="planb">
+Je vais faire le tour pour le prendre à revers... enfin... lui proposer notre deal en profitant de l'effet de surprise. 
+</phase>
+
+<phase id="planb" next="biz">
+Toi, jette la pépite au milieu de la rue après que je sois parti. Ca attirera son attention et ça.. euh... lui montrera ce qu'on lui propose.
+</phase>
+
+<a id="biz">Ce serait pas plus simple d'aller le voir directement  ? Et puis c'est quoi ce gros gourdin dans votre dos ? </a>
+
+<phase id="biz" next="ok">
+Oh c'est rien du tout ! Je me suis foulé la cheville en randonnée ce week-end, je m'en sers comme canne !
+Et ne t'inquiète pas pour mes méthodes bizarres, c'est parce que je suis un professionnel de la vente. 
+</phase>
+
+<a id="ok">Ah ok, c'est pour ça.</a>
+
+<phase id="ok" frame="angry" next="go">
+Bon j'y vais. Jette bien la pépite dès que j'ai passé le coin.
+</phase>
+
+<phase id="go" frame="hide" next="hop">
+Go ! C'est parti ! 
+</phase>
+
+<a id="hop">Je jette. * Hop ! </a>
+
+<phase id="hop" frame="hide" next="paf">
+{roule roule roule roule pok.} | | | 
+Oh une pépite d'or ! C'est l'administration fiscale alchimique qui va être contente ! 
+</phase>
+
+<phase id="paf" frame="hide" next="done">
+Eh là, mais qui êtes vous ? ! * Mais ! Arrê... A la gar..  * [POC] | |
+</phase>
+
+<phase id="done" frame="sellfbg" next="price">
+Ahah, voilà qui est fait. C'était une excellente transaction ! 
+Voilà ta robe taille XS, étoiles fushia sur fond bleu. J'ai réussi à ne pas faire d'accroc dedans ! 
+</phase>
+
+<phase id="price" next="mais">
+Je garde la pépite d'or en paiement, hein. Vu le mal que je me suis donné ça reste une bonne affaire. 
+</phase>
+
+<a id="mais">Euh oui mais euh... comment dire... | | C'est pas ce que je...</a>
+
+<phase id="mais" frame="happy">
+Ah, tu ne sais pas comment me remercier, hein. Ne t'inquiète pas, j'ai l'habitude. 
+Et n'oublie pas : chez Troc Shop, le client est toujours satisfait ! 
+</phase>
+
+</d>

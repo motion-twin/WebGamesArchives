@@ -1,0 +1,176 @@
+﻿<sneaks>
+	
+	<s id="sneaka" level="1" scenario="nimbao" name="Primera infiltración" cond="scenario(nimbao,26)">
+
+		<enter place="ipont" />
+		<fail place="ipont" />
+		<exit place="iporte" />
+		<monsters>cyclo</monsters>
+		
+		<messages>
+			<success>¡Has conseguido evitar la seguridad y así atravesar el puente!
+			A partir de ahora puedes atravesar el puente con toda tranquilidad.</success>
+			<fightStart>¡Te han encontrado! Está prohibido circular por la isla y los extranjeros no son admitidos.</fightStart>
+			<fightWon>¡Uf, salvado! Hay que tener cuidado, ¡aunque tampoco parecen muy listos estos guardias!</fightWon>
+			<fightLost>Fracasas en tu tentativa de escape... ¿Volverás a ver a tu madre un día? ¡Nadie lo sabe!</fightLost>
+		</messages>
+				
+	</s>
+	
+	<s id="sneakb" level="2" scenario="nimbao" name="Infiltración de aprendiz" cond="scenario(nimbao,27)">
+
+		<enter place="iporte" />
+		<fail place="iporte" />
+		<exit place="icite" />
+
+		<monsters>cyclo:cyclo</monsters>
+		<messages>
+			<success>Has logrado evitar la seguridad. ¡Enhorabuena!
+			Ya puedes ir con tranquilidad a la ciudad de Arboris.</success>
+			<fightStart>¡Te han encontrado! Está prohibido circular por la isla y los extranjeros no son admitidos. ¡Van a por ti!</fightStart>
+			<fightWon>El lugar está lleno de guardias. Más vale huir por el momento.</fightWon>
+			<fightLost>Fracasas en tu tentativa de escape... ¿Volverás a ver a tu madre un día? ¡Nadie lo sabe!</fightLost>
+		</messages>
+				
+	</s>
+	
+	<s id="sneakc" level="3" scenario="nimbao" name="Infiltración estándar" cond="scenario(nimbao,30)">
+
+		<enter place="icite" />
+		<fail place="icite" />
+		<exit place="ilacro" />
+		<monsters>cyclo:cyclo</monsters>
+		<messages>
+			<success>Has logrado atravesar la ciudad. A partir de ahora podrás desplazarte fácilmente.</success>
+			<fightStart>¡Te han encontrado! Está prohibido circular por la isla y los extranjeros no son admitidos. ¡Van a por ti!</fightStart>
+			<fightWon>El lugar está lleno de guardias. Más vale huir por el momento.</fightWon>
+			<fightLost>Fracasas en tu tentativa de escape... ¿Volverás a ver a tu madre un día? ¡Nadie lo sabe!</fightLost>
+		</messages>
+				
+	</s>
+	
+	<s id="sneakd"  level="4" scenario="nimbao" name="Infiltración avanzada" cond="scenario(nimbao,31)">
+
+
+		<enter place="ilacro" />
+		<fail place="ilacro" />
+		<exit place="ilac" />
+		<monsters>cyclo:cyclo</monsters>
+		<messages>
+			<success>Te aproximas al borde de la isla, donde el agua del lago celeste se difuse en la atmósfera.
+			A partir de ahora podrás venir aquí sin problemas.</success>
+			<fightStart>¡Te han encontrado! Está prohibido circular por la isla y los extranjeros no son admitidos. ¡Van a por ti!</fightStart>
+			<fightWon>El lugar está lleno de guardias. Más vale huir por el momento.</fightWon>
+			<fightLost>Fracasas en tu tentativa de escape... ¿Volverás a ver a tu madre un día? ¡Nadie lo sabe!</fightLost>
+		</messages>
+				
+	</s>
+	
+	<s id="sneake"  level="5" scenario="nimbao" name="Infiltración especial" cond="scenario(nimbao,32)">
+
+		<enter place="ilac" />
+		<fail place="ilac" />
+		<exit place="iporte" />
+		<monsters>cyclo:cyclo</monsters>
+		<messages>
+			<success>Enhorabuena. Has pasado con éxito esta etapa de Infiltración.
+			Ahora podrás disfrutar del paisaje y hacer un poco de turismo.</success>
+			<fightStart>¡Te han encontrado! Está prohibido circular por la isla y los extranjeros no son admitidos. ¡Van a por ti!</fightStart>
+			<fightWon>El lugar está lleno de guardias. Más vale huir por el momento.</fightWon>
+			<fightLost>Fracasas en tu tentativa de escape... ¿Volverás a ver a tu madre un día? ¡Nadie lo sabe!</fightLost>
+		</messages>
+				
+	</s>
+
+	<s id="sneakf"  level="6" scenario="nimbao" name="Infiltración fortificada" cond="scenario(nimbao,36)">
+
+		<enter place="iporte" />
+		<fail place="iporte" />
+		<exit place="iplain" />
+		<monsters>cyclo:cyclo</monsters>
+		<messages>
+			<success>Has encontrado el camino que lleva a las planicies lejanas y nevadas. Ya puedes desplazarte por este lugar libremente.</success>
+			<fightStart>¡Te han encontrado! Está prohibido circular por la isla y los extranjeros no son admitidos. ¡Van a por ti!</fightStart>
+			<fightWon>El lugar está lleno de guardias. Más vale huir por el momento.</fightWon>
+			<fightLost>Fracasas en tu tentativa de escape... ¿Volverás a ver a tu madre un día? ¡Nadie lo sabe!</fightLost>
+		</messages>
+	
+	</s>
+
+	<s id="sneakg" level="7" scenario="nimbao" name="Infiltración clave" cond="scenario(nimbao,37)">
+
+		<enter place="iplain"/>
+		<fail place="iplain" />
+		<exit place="isnow2" />
+		<monsters>cyclo:cyclo</monsters>
+		<messages>
+			<success>Buen trabajo. Acabas de atravesar las planicies sin congelarte. Ahora tienes que atravesar los bosques, ¡cuidado con la escarcha!</success>
+			<fightStart>¡Te han encontrado! Está prohibido circular por la isla y los extranjeros no son admitidos. ¡Van a por ti!</fightStart>
+			<fightWon>El lugar está lleno de guardias. Más vale huir por el momento.</fightWon>
+			<fightLost>Fracasas en tu tentativa de escape... ¿Volverás a ver a tu madre un día? ¡Nadie lo sabe!</fightLost>
+		</messages>
+				
+	</s>
+	
+	<s id="sneakh"  level="8" scenario="nimbao" name="Infiltración maestra" cond="scenario(nimbao,38)">
+
+		<enter place="isnow2" />
+		<fail place="isnow2" />
+		<exit place="imont" />
+		<monsters>cyclo:cyclo</monsters>
+		<messages>
+			<success>Ha sido complicado atravesar los bosques pero lo has conseguido. Ya no queda más que el Monte Sagrado.</success>
+			<fightStart>¡Te han encontrado! Está prohibido circular por la isla y los extranjeros no son admitidos. ¡Van a por ti!</fightStart>
+			<fightWon>El lugar está lleno de guardias. Más vale huir por el momento.</fightWon>
+			<fightLost>Fracasas en tu tentativa de escape... ¿Volverás a ver a tu madre un día? ¡Nadie lo sabe!</fightLost>
+		</messages>
+				
+	</s>
+
+
+	<s id="sneaki"  level="9" scenario="nimba2" name="Escape de Priranese" cond="scenario(nimba2,24)">
+
+		<enter place="prison" />
+		<fail place="prison" />
+		<exit place="prison" />
+		<monsters>cyclo:cyclo2</monsters>
+		<messages>
+			<success>Has logrado escapar de la prisión de Priranese, esperas no volver a recorer ese laberinto pero muchos prisioneros están aún dentro.</success>
+			<fightStart>¡Te han encontrado! Nunca nadie había intentado escapar de Priranese, ¡te has metido en un gran problema!</fightStart>
+			<fightWon>Esos guardias ya no serán un problema, ¡ahora debes continuar tu camino para ver la luz del día!</fightWon>
+			<fightLost>Tu intento de escapar ha fracasado... ¿Volverás a ver algún día a tu familia, tus amigos? ¡Nadie lo sabe!</fightLost>
+		</messages>
+				
+	</s>
+	
+	<s id="sneakj"  level="10" scenario="nimba2" name="Cruzando el puente" cond="scenario(nimba2,45)">
+
+		<enter place="egout" />
+		<fail place="egout" />
+		<exit place="sommet" />
+		<monsters>doro2:dorolu</monsters>
+		<messages>
+			<success>Al fin has atravesado el puente que lleva al palacio del Archidorogón. ¡Esas alcantarillas resultaron ser más laberintosas que lo previsto!</success>
+			<fightStart>¡Te han encontrado! Nadie pasa por aquí generalmente, ¡pero la seguridad ha sido redoblada para evitar que intrusos accedan al palacio!</fightStart>
+			<fightWon>Esos guardias ya no serán un problema, ¡ahora debes continuar tu camino hacia el palacio!</fightWon>
+			<fightLost>Has fracasado en tu intento de llegar al palacio... ¿Volverás a ver algún día a tu familia, tus amigos? ¡Nadie lo sabe!</fightLost>
+		</messages>
+				
+	</s>
+
+	<s id="sneakk"  level="11" scenario="nimba2" name="Palacio del Archidorogón" cond="scenario(nimba2,47)">
+
+		<enter place="palais" />
+		<fail place="palais" />
+		<exit place="palais" />
+		<monsters>doro2:dorolu</monsters>
+		<messages>
+		<success>Al fín podrás encontrar a Grizorg, ¡ya es tiempo de poner los puntos sobre las íes!</success>
+			<fightStart>¡Te han encontrado! Está prohibido circular en el palacio, ¡te has metido en un gran problema muchacho!</fightStart>
+			<fightWon>Esos guardias ya no serán un problema, ¡ahora debes continuar tu camino para llegar al trono de Grizorg!</fightWon>
+			<fightLost>Grizorg está a solo unos pasos, no desmayes hasta llegar a él ¡Ánimo!</fightLost>
+		</messages>
+				
+	</s>
+	
+</sneaks>

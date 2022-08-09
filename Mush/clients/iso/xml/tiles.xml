@@ -1,0 +1,1638 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<data>
+	
+	<bitmap
+		startX="64"
+		maxRoomWidth="32"
+		maxRoomHeight="32"
+	/>
+	
+	<debug>
+		<tileOfs colorId="ccb76d"/>
+	</debug>
+	
+	<tiles>
+		
+		
+		<sheet src="BmpGfx2">
+		
+			<!-- <slice 	id="MY_ID" params="top,left,width,height,num frames X,num frames Y" ofs="x,y" flipX="false" flipY="false" >
+				<frame color="#FF00FF" />
+				<dep>y,z</dep>
+			</slice> -->
+			
+			<slice id="GROUND" params = "0,0,32,20,8" ofs="0,8" data="_pathable">
+				<frame color="ffa301" />
+				<frame color="ffa3ff" />
+				<frame color="944063" />
+				<frame color="6e8a47" />
+				<frame color="c96d89" />
+				<frame color="655146" />
+				<frame color="00a17e" /> <!-- nexus -></!-->
+				<frame color="a24e86" />
+			</slice>
+			
+			<slice id="ground_higher" params = "0,24,32,40,3" ofs="0,6" data="_pathable">
+				<dep>1,1</dep>
+				<frame color="ffcc60" grdOfsY="4" />
+				<frame color="ffccaa" grdOfsY="2" />
+				<frame color="66ff66" grdOfsY="2" />
+			</slice>
+			
+			<!--<slice id="ground_lower" params = "0,0,32,20,3" ofs="0,12" data="_pathable">
+				<dep>1,1</dep>
+				<frame color="9c4646" grdOfsY="-12" />
+			</slice>-->
+			
+			<slice id="BIG_WALL_R" params = "0,66,48,66,3" ofs="-8,-7" >
+				<frame color="ff0000" />
+				<frame color="00ccbd" />
+				<frame color="87164a" />
+			</slice>
+			<slice id="BIG_WALL_L" params = "16,142,48,66,3" ofs="8,-11" >
+				<frame color="06fd00" />
+				<frame color="ff7d54" />
+				<frame color="78e9b5" />
+			</slice>
+			
+			<slice id="COLUMN" params = "16,463,32,65" ofs="0,-11" >
+				<frame color="00fbc3" />
+			</slice>
+			
+			<slice id="CORNER" params = "16,527,32,25" ofs="0,0" >
+				<frame color="001eff" />
+			</slice>
+			
+			<slice id="corner_02" params = "16,1391,32,58" ofs="0,-14" >
+				<frame color="dd6e3b" />
+			</slice>
+			
+			<slice id="BORDER_R" params = "32,215,48,25" ofs="8,0" >
+				<frame color="fe0095" />
+			</slice>
+			
+			<slice id="BORDER_L" params = "0,255,48,28" ofs="-8,2" >
+				<frame color="8a00ff" />
+			</slice>
+			
+			<slice id="DOOR_L" params = "9,305,40,70,24" ofs="13,-14" data="_door,_target"  >
+				<dep>1,2</dep>
+				<anim range="0,1,2,3,4,5,6,7,8,9" rhythm="1,3,2,2,1,1,1,1,1,2,2,20"/>
+				<anim range="12,13,14,15,16,17,18,19,20,21,22,23,0" rhythm="3,3,2,2,2,2,3,3,2,2,3,3,1"/>
+				<frame color="c0c0c0" />
+			</slice>
+			
+			<slice id="DOOR_L_UPGRADE" params = "9,1459,40,70,24" ofs="13,-15" data="_door"  >
+				<dep>1,2</dep>
+				<frame color="8332ff" />
+				<anim range="0,1,2,3,4,5,6,7,8,9" rhythm="1,3,2,2,1,1,1,1,1,2,2,20"/>
+				<anim range="12,13,14,15,16,17,18,19,20,21,22,23,0" rhythm="3,3,2,2,2,2,3,3,2,2,3,1"/>
+			</slice>
+			
+			<slice id="DOOR_L_FLOOR" params = "5,608,74,40,5" ofs="0,1" data="_decal" engine="prewall" >
+				<frame color="410da1" />
+				<anim range="0,1,2,3,4" rhythm="5,5,5,5,5" auto="true"/>
+				<dep>2,1</dep>
+			</slice>
+			
+			<slice id="DOOR_R" params = "9,384,40,70,24" ofs="-13,-14" data="_door" >
+				<frame color="999999" />
+				<anim range="0,1,2,3,4,5,6,7,8,9" rhythm="1,3,2,2,1,1,1,1,1,2,2,20"/>
+				<anim range="12,13,14,15,16,17,18,19,20,21,22,23,0" rhythm="3,3,2,2,2,2,3,3,2,2,3,3,1"/>
+				<dep>2,1</dep>
+			</slice>
+			
+			<slice id="DOOR_BL" params = "5,558,74,40,5" ofs="-13,7" data="_door"  >
+				<frame color="444444" />
+				<anim range="0,1,2,3,4" rhythm="5,5,5,5,5" auto="true"/>
+				<dep>2,1</dep>
+			</slice>
+			
+			<slice id="DOOR_BR" params = "5,658,74,40,5" ofs="16,7" data="_door"  >
+				<frame color="e4e4e4" />
+				<anim range="0,1,2,3,4" rhythm="5,5,5,5,5" auto="true"/>
+				<dep>1,2</dep>
+			</slice>
+			
+			<slice id="DOOR_R_FLOOR" params = "5,707,74,40,5" ofs="8,1" data="_decal" engine="prewall" >
+				<frame color="bef25e" />
+				<anim range="0,1,2,3,4" rhythm="5,5,5,5,5" auto="true"/>
+				<dep>1,2</dep>
+			</slice>
+			
+			<slice id="GROUND_DECK" params = "0,784,32,19,20" ofs="0,7" data="_pathable">
+				<frame color="c3a5e2" />
+				<frame color="f9e53f" />
+				<frame color="8472b5" />
+				<frame color="afc476" />
+				
+				<frame color="7a907a" />
+				<frame color="3c737b" />
+				<frame color="5682a3" />
+				<frame color="6b78ac" />
+				
+				<frame color="e0ed4a" />
+				<frame color="ed4a71" />
+				
+				<frame color="1f12b5" />
+				<frame color="12b55d" />
+				
+				<frame color="a06685" />
+				<frame color="00f8bc" />
+				<frame color="ff8957" />
+				<frame color="ff57b2" />
+				<frame color="ff0743" />
+				<frame color="0076a8" />
+				<frame color="4c458f" />
+				<frame color="b3ba70" />
+				
+			</slice>
+			
+			<slice id="WALL_R_DECK" params = "28,839,32,81,2" ofs="-4,-19" >
+				<frame color="839ce0" />
+				<frame color="ff754b" />
+			</slice>
+			
+			<slice id="WALL_L_DECK" params = "37,951,32,81,2" ofs="5,-19" >
+				<frame color="00b3be" />
+				<frame color="c441a3" />
+			</slice>
+						
+			<slice id="CORNER_DECK" params = "40,1056,16,68,2" ofs="0,-16" >
+				<frame color="367ecf" />
+				<frame color="cf5c4a" />
+			</slice>
+		
+			<slice id="DOOR_L_DECK" params = "42,1152,40,88,24" ofs="14,-22" data="_door">
+				<frame color="b69998" />
+				
+				<anim range="0,1,2,3,4,5,6,7,8,9" rhythm="1,3,2,2,1,1,1,1,1,2,2,20"/>
+				<anim range="12,13,14,15,16,17,18,19,20,21,22,23,0" rhythm="3,3,2,2,2,2,3,3,2,2,3,3,1"/>
+				
+				<dep>1,2</dep>
+				
+			</slice>
+			
+			<slice id="DOOR_R_DECK" params = "42,1263,40,88,24" ofs="-14,-23" data="_door">
+				<frame color="b06979" />
+				
+				<anim range="0,1,2,3,4,5,6,7,8,9" rhythm="1,3,2,2,1,1,1,1,1,2,2,20"/>
+				<anim range="12,13,14,15,16,17,18,19,20,21,22,23,0" rhythm="3,3,2,2,2,2,3,3,2,2,3,3,1"/>
+				
+				<dep>2,1</dep>
+				
+			</slice>
+			
+			<slice id="bay_ground_window" params = "0,816,32,15" ofs="0,6" data="_blocker,_target" engine="tile">
+				<dep>1,1</dep>
+				<frame color="bba8b6" />
+			</slice>
+			
+		</sheet>
+		
+		<sheet src="BmpGfxFx">
+			<slice id="FX_PIXEL" params = "0,0,1,1" />
+			<slice id="FX_FIRE_X" params = "5,0,3,3,6" ofs="0,8" />
+			<slice id="FX_FIRE_X2" params = "5,0,3,3,6" ofs="0,8" rot="45" />
+			
+			<!--animations-->
+			
+			<slice id="FX_CLOUD" params="96,128,23,32,4">
+				<anim range="0,1,2,3" rhythm="2,2,2,2" auto="true" />
+			</slice>
+			
+			<slice id="FX_DRONE" params="96,208,32,16,15">
+				<anim range="0,1,2,3,4,5,6,7,8,9,10,11,12,13,14" rhythm="1,1,1,1,1,1,1,1,1,1,1,1,1,1,1" auto="true" />
+			</slice>
+			<slice id="FX_GEARS" params="96,192,32,16,4">
+				<anim range="0,1,2,3" rhythm="2,2,2,2" auto="true" />
+			</slice>
+			<slice id="FX_RING" params="96,160,15,10"/>
+			<slice id="FX_RAY_OF_LIGHT" params="192,128,22,26"/>
+			<slice id="FX_THINKING" params="96,224,32,20,3">
+				<anim range="0,1,2" rhythm="4,4,4" auto="true" />
+			</slice>
+			<slice id="FX_MUSIC" params="96,256,32,16,4">
+				<anim range="0,1,2,3" rhythm="2,2,2,2" auto="true" />
+			</slice>
+			
+			<slice id="FX_HEART2" params="127,160,9,8" />
+			
+			<slice id="FX_NOTES" params="96,272,8,15,3" >
+			</slice>
+			
+			<slice id="FX_XMASBALL" params="0,383,32,36,1" >
+			</slice>
+			
+			
+			<slice id="FX_TURRET_MASK" params = "240,432,32,48" ofs="0,0"/>
+			<slice id="FX_TURRET_MASK_S" params = "240,432,32,48" ofs="0,0," flipX="true" />
+			
+			<slice 	id="DOOR_ARROW_TR" params = "48,0,32,32,2" ofs="0,8" >
+				<anim range="0,1" rhythm="10,10"/>
+			</slice>
+			
+			<slice 	id="DOOR_ARROW_BL" params = "48,32,32,32,2" ofs="0,8" >
+				<anim range="0,1" rhythm="10,10"/>
+			</slice>
+			
+			<slice 	id="DOOR_ARROW_TL" params = "48,64,32,32,2" ofs="0,8" >
+				<anim range="0,1" rhythm="10,10"/>
+			</slice>
+			
+			<slice 	id="DOOR_ARROW_BR" params = "48,96,32,32,2" ofs="0,8" >
+				<anim range="0,1" rhythm="10,10"/>
+			</slice>
+			
+			<slice id="FX_TILE_HIGHLIGHT_GREEN" 	params = "0,16,32,32" 	ofs="0,8"	/>
+			<slice id="FX_TILE_HIGHLIGHT_BLUE" 		params = "0,48,32,32"	ofs="0,8" 	/>
+			<slice id="FX_TILE_HIGHLIGHT_RED"		params = "0,80,32,32" 	ofs="0,8" 	/>
+			
+			<slice id="FX_HL_DOOR_L"		params = "0,128,64,80" 	ofs="0,0" 	/>
+			
+			<slice id="FX_LOAD"		params = "128,16,32,51" 	ofs="-2,-9" 	/>
+			
+			<slice id="FX_SMOKE"		params = "240,48,16,16" 	ofs="0,0" 	/>
+			
+			<slice id="FX_SPC_SMALL_PATROL"	params = "328,81,36,26" ofs="0,0" flipX="true" />
+			<slice id="FX_SPC_SMALL_HUNTER"	params = "383,83,36,26" ofs="0,0" />
+			<slice id="FX_SPC_SMALL_TURRET"	params = "384,112,36,26" ofs="0,0" />
+			
+			<slice id="FX_SPC_SMALL_TRAX"		params = "487,62,36,26" ofs="0,0" />
+			<slice id="FX_SPC_SMALL_SPIDER"		params = "562,57,36,26" ofs="0,0" />
+			<slice id="FX_SPC_SMALL_ASTEROID"	params = "396,345,36,26" ofs="0,0" />
+			<slice id="FX_SPC_SMALL_DICE"		params = "489,321,36,26" ofs="0,0" />
+			
+			<slice id="FX_SPC_SHIELD"	params = "432,80,13,13" ofs="0,0" />
+			<slice id="FX_SPC_CHARGE"	params = "433,96,10,13" ofs="0,0" />
+			<slice id="FX_ANON_CHAR" params = "240,368,20,42" ofs="0,0" />
+			
+			<slice id="FX_SENSOR_ALERT" params = "449,82,5,4" ofs="0,0" />
+			
+			<slice id="base_drone" params="0,120,32,56,2" ofs="0,0" />
+			
+			<slice id="FX_SPC_HUNTER"	params = "378,80,48,26" ofs="0,0" />
+			<slice id="FX_SPC_TRAX"		params = "480,49,66,46" ofs="0,0" />
+			<slice id="FX_SPC_SPIDER"	params = "547,34,76,70" ofs="0,0" />
+			<slice id="FX_SPC_ASTEROID"	params = "373,330,81,72" ofs="0,0" />
+			<slice id="FX_SPC_DICE"		params = "492,309,84,92" ofs="0,0" />
+			
+			<!--Trading Ships-->
+			<slice id="FX_TRANSPORT_0"	params = "0,441,104,70" ofs="0,0">
+				<anim range="0,1,2,3" rhythm="1,1,1,1"/>
+			</slice>
+			<slice id="FX_TRANSPORT_1"	params = "0,520,72,55" ofs="0,0">
+				<anim range="0,1,2,3" rhythm="1,1,1,1"/>
+			</slice>
+			<slice id="FX_TRANSPORT_2"	params = "0,582,48,66" ofs="0,0">
+				<anim range="0,1,2,3" rhythm="1,1,1,1"/>
+			</slice>
+			<slice id="FX_TRANSPORT_3"	params = "447,417,93,104" ofs="0,0" />
+			
+			<slice id="FX_TRANSPORT_SMALL_0"	params = "0,461,36,26" ofs="0,0"/>
+			<slice id="FX_TRANSPORT_SMALL_1"	params = "0,520,36,26" ofs="0,0"/>
+			<slice id="FX_TRANSPORT_SMALL_2"	params = "0,582,36,26" ofs="0,0"/>
+			<slice id="FX_TRANSPORT_SMALL_3"	params = "464,464,36,26" ofs="0,0"/>
+			
+			<!-- this is the fake set of slice for projectification tentative
+			
+			<slice id="drone_of_fire" params="252,383,16,21,4" />
+			
+			!-->
+			
+			<slice id="FX_CITROUILLE"			params = "4,351,25,25" ofs="0,0" />
+			<slice id="FX_CITROUILLE_BACK"		params = "29,351,25,25" ofs="0,0" />
+			
+		</sheet>
+		
+		<!--
+		<sheet src="BmpGfxChar">
+			<slice id="KIM_JIN_SU" params="0, 128, 32, 49, 4" ofs="0,-12"/>
+			<slice id="LAI_KUAN_TI" params="0,64,32,49,4 " ofs="0,-12"/>
+			<slice id="WANG_CHAO" params="0, 0, 32, 49, 4" ofs="0,-12"/>
+			<slice id="JANICE_KENT" params="0,192, 32, 49,4" ofs="0,-12"/>
+			
+			
+			<slice id="ANON" params="0,304, 32, 49,4" ofs="0,-12"/>
+		</sheet>
+		-->
+			
+		<sheet src="BmpSmallFill">
+			
+			<slice id="camera" params = "0,0,26,26,14,1" ofs="11,-24" data="_equipment,_target" prioOfs="5" engine="post">
+				<frame color="5ba484" />
+				<dep>1,1</dep>
+				<anim range="0,1,2,3,4,5,6,7,8,9,10,11,12,13,12,11,10,9,8,7,6,5,4,3,2,1" rhythm="6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6" auto="true"></anim>
+			</slice>
+			
+			<slice id="camera2" params = "0,0,26,26,14,1" ofs="-10,-24" data="_equipment,_target" prioOfs="5" engine="post"> <!--amarillo -->
+				<frame color="c8d810" />
+				<dep>1,1</dep>
+				<anim range="0,1,2,3,4,5,6,7,8,9,10,11,12,13,12,11,10,9,8,7,6,5,4,3,2,1" rhythm="6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6" auto="true"></anim>
+			</slice>
+			
+			<slice id="bay_light" params = "0,725,54,42,6,1" ofs="0,-10" data="_blocker">
+				<dep>1,1</dep>
+				<frame color="59bc4b" />
+				<anim range="0,1,2,3,4,5" rhythm="2,2,2,2,2,2" auto="true"></anim>
+			</slice>
+			
+			<slice id="trash_1" params = "0,32,32,16" ofs="0,0" >				<frame color="00aef0" />
+			</slice>
+			
+			<slice id="trash_2" params = "0,48,32,16" ofs="0,0" >
+				<frame color="ee1846" />
+			</slice>
+			
+			<slice id="trash_3" params = "0,64,32,16" ofs="0,0" >
+				<frame color="ab5667" />
+			</slice>
+			
+			<slice id="mop" params = "0,87,32,40" ofs="2,-6" data="_blocker">
+				<dep>1,1</dep>
+				<frame color="f78b1f" />
+			</slice>
+			
+			<slice id="medicine_chest" params = "0,134,32,26" ofs="7,-17" data="_decal">
+				<dep>1,1</dep>
+				<frame color="5b57a6" />
+			</slice>
+			
+			<slice id="towel" params = "12,172,20,32,2" ofs="-7,-4" data="_decal">
+				<dep>1,1</dep>
+				<frame color="325dbf" />
+				<frame color="68d2ec" />
+			</slice>
+					
+			<slice id="soap" params = "0,222,32,16" ofs="14,-20" data="_blocker">
+				<dep>1,1</dep>
+				<frame color="720040" />
+			</slice>
+						
+			<slice id="slippers" params = "0,253,32,16,2" ofs="0,0" data="_decal">
+				<dep>1,1</dep>
+				<frame color="0096b7" />
+				<frame color="006d65" />
+			</slice>
+			
+			<slice id="poster" params = "0,305,20,35" ofs="9,-28" data="_decal">
+				<dep>1,1</dep>
+				<frame color="48773a" />
+			</slice>
+			
+			<slice id="wash" params = "0,344,32,32" ofs="0,-2" data="_blocker">
+				<dep>1,1</dep>
+				<frame color="dde764" />
+			</slice>
+			
+			<slice id="trash_4" params = "0,381,78,28" ofs="-34,-20" data="_decal">
+				<frame color="389c3f" />
+			</slice>
+			
+			<slice id="book" params = "0,285,32,16,2" ofs="12,8" data="_decal">
+				<dep>1,1</dep>
+				<frame color="89d9cc" />
+				<frame color="00b993" />
+			</slice>
+			
+			<slice id="planets" params = "0,421,32,22,10,1" ofs="0,-15" data="_blocker" priOffs="10">
+				<dep>1,1</dep>
+				<anim range="0,1,2,3,4,5,6,7,8,9" rhythm="3,3,3,3,3,3,3,3,3,3" auto="true"></anim>
+				<frame color="3333ff" />
+			</slice>
+			
+			<slice id="wc" params = "220,506,44,44" ofs="4,-5" data="_blocker">
+				<dep>1,1</dep>
+				<frame color="bcaeb1" />
+			</slice>
+			
+			<slice id="sensor" params="0,785,24,26" ofs="0,-6" data="_decal">
+				<dep>1,1</dep>
+				<frame color="7ae9cd"/>
+			</slice>
+			
+			<slice id="quantum_sensors_upgrade" params="0,812,24,46" ofs="0,5" data="_equipment,_decal">
+				<dep>1,1</dep>
+				<frame color="851631"/>
+			</slice>
+			
+			<slice id="auto_watering" params="0,859,24,22,2,1" ofs="-7,-26" data="_decal,_target">
+				<dep>1,1</dep>
+				<anim range="0,1" rhythm="20,20" auto="true"></anim>
+				<frame color="009923"/>
+			</slice>
+			
+			<slice id="auto_watering_2" params="0,882,24,22,2,1" ofs="10,-24" data="_decal,_target">
+				<dep>1,1</dep>
+				<anim range="0,1" rhythm="15,15" auto="true"></anim>
+				<frame color="ff66db"/>
+			</slice>
+			
+			<slice id="auto_watering_2_bay" params="0,882,24,22,2,1" ofs="-8,-24" data="_decal,_target">
+				<dep>1,1</dep>
+				<anim range="0,1" rhythm="15,15" auto="true"></anim>
+				<frame color="ff00c3"/>
+			</slice>
+
+			<slice id="stool" params = "12,464,19,32,2" ofs="0,0" data="_chair">
+				<dep>1,1</dep>
+				<frame color="8d3732" dir="up" />
+				<frame color="ad9013" />
+			</slice>
+			
+			<slice id="light_door_bay_left" params = "0,905,44,36" ofs="15,-44" data="_decal">
+				<dep>1,1</dep>
+				<frame color="6c793d" />
+			</slice>
+			
+			<slice id="light_door_bay_right" params = "0,942,44,36" ofs="-12,-46" data="_decal">
+				<dep>1,1</dep>
+				<frame color="9385c2" />
+			</slice>
+			
+			<slice id="chair_1" params = "0,506,44,44,5" ofs="4,-5" data="_chair" dir="left">
+				<dep>1,1</dep>
+				<frame color="009933" /> <!-- pilot -->
+				<frame color="c8a008" /> <!-- surgery -->
+				<frame color="00929d" /> <!-- kitchen -->
+				<frame color="ff6d62" /> <!-- labo -->
+				<frame color="f387b7" /> <!-- turret -->
+			</slice>
+			
+			<slice id="chair_2" params = "0,558,44,44,2" ofs="2,-6" data="_chair" dir="up" >
+				<dep>1,1</dep>
+				<frame color="66ffcc" /> <!-- astro, comm -->
+				<frame color="990033" /> <!-- turret -->
+			</slice>
+			
+			<slice id="chair_3" params = "0,609,44,44" ofs="4,-8" data="_chair" dir="down">
+				<dep>1,1</dep>
+				<frame color="9900ff" /> <!-- astro, comm -->
+			</slice>
+			
+			<slice id="chair_turret_beta" params = "44,609,44,44" ofs="1,-15" data="_chair" dir="down" prioOfs="-5" engine="wall">
+				<dep>1,1</dep>
+				<frame color="66ff00" /> <!-- turret -->
+			</slice>
+			
+			<slice id="chair_turret_beta_back" params = "44,609,44,44" ofs="1,-15" data="_chair" dir="right" prioOfs="-5"  engine="wall">
+				<dep>1,1</dep>
+				<frame color="ff4d9e" /> <!-- turret beta back -->
+			</slice>
+			
+			<slice id="chair_4" params = "0,661,44,44" ofs="2,-11" data="_chair" dir="right">
+				<dep>1,1</dep>
+				<frame color="00b261" /> <!-- kitchen -->
+			</slice>
+		</sheet>
+		
+		<sheet src="BmpMidFill">
+			<slice id="shelf" params = "16,8,58,32" ofs="-4,-26" data="_blocker">
+				<dep>1,3</dep>
+				<frame color="17479e" />
+			</slice>
+			
+		
+			
+
+			<slice id="table_computer" params = "15,45,96,60" ofs="31,-15" data="_equipment">
+				<dep>1,4</dep>
+				<frame color="d11f5c" />
+				<modulePad>1,-3</modulePad>
+			</slice>
+			<slice id="analyzer" params = "16,111,34,40" ofs="2,-8" data="_blocker">
+				<dep>1,1</dep>
+				<frame color="2e0557" />
+			</slice>
+			<slice id="gravity_simulator" params = "16,167,36,50,10,1" ofs="4,-11" data="_equipment" >
+				<frame color="e11b22" />
+				<dep>1,1</dep>
+				<anim range="0,1,2,3,4,5,6,7,8,9" rhythm="45,2,2,2,2,2,2,2,2,2" auto="true"></anim>
+				<modulePad>0,1</modulePad>
+			</slice>
+			
+			<slice id="sick_couch" params = "9,231,70,56" ofs="-18,-10" data="_equipment" >
+				<frame color="d8c800" />
+				<dep>3,1</dep>
+			</slice>
+			
+			<slice id="surgery" params = "6,303,74,68" ofs="-6,-18" data="_blocker" >
+				<frame color="00793a" />
+				<dep>3,2</dep>
+			</slice>
+			
+			<slice id="surgery_console" params = "6,384,58,56,8,1" ofs="5,-14" data="_equipment" >
+				<frame color="7ed4f7" />
+				<dep>1,2</dep>
+				<anim range="0,1,2,3,4,5,6,7" rhythm="3,3,3,3,3,3,3,3" auto="true"></anim>
+				<modulePad>1,0</modulePad>
+			</slice>
+			
+			<slice id="table_lab" params = "9,450,56,48" ofs="-11,-8" data="_equipment" >
+				<frame color="f58220" />
+				<dep>2,1</dep>
+			</slice>
+			
+			<slice id="file" params = "15,504,40,48" ofs="6,-11" data="_blocker" >
+				<frame color="cbdb2a" />
+				<dep>1,1</dep>
+			</slice>
+			
+			<slice id="bed_left" params = "16,568,80,48,3" ofs="-10,-11" data="_equipment" >
+				<frame color="92513a" />
+				<frame color="ff93a1" />
+				<frame color="ec2c46" />
+				<dep>3,1</dep>
+				<modulePad>-1,-1</modulePad>
+			</slice>
+			
+			<slice id="bed_right" params = "13,632,80,48,3" ofs="25,-12" data="_equipment" >
+				<frame color="aa2c4a" />
+				<frame color="fda5ca" />
+				<frame color="e73d9b" />
+				<dep>1,3</dep>
+				<modulePad>-1,-1</modulePad>
+			</slice>
+			
+			<slice id="shower" params = "16,695,33,64" ofs="0,-19" data="_equipment,_target" >
+				<frame color="864674" />
+				<dep>1,1</dep>
+				<modulePad>1,0</modulePad>
+			</slice>
+			
+			<slice id="bit_neron" params = "0,763,20,22" ofs="-2,-6" data="_decal" >
+				<frame color="336a21" />
+				<dep>1,1</dep>
+			</slice>
+			
+			<slice id="server" params = "0,859,30,60,2,1" ofs="0,-23" data="_blocker,_target" >
+				<frame color="da5cae" />
+				<dep>2,2</dep>
+				<!--<anim range="0,1" rhythm="5,5" auto="true"></anim>-->
+			</slice>
+			
+			<slice id="server_active" params = "64,858,30,61,2" ofs="0,-23" data="_equipment,_target" >
+				<frame color="cc384d" />
+				<dep>2,2</dep>
+				<anim range="0,1" rhythm="10,10" auto="true"></anim>
+				<modulePad>-1,1</modulePad>
+			</slice>
+			
+			<slice id="bios" params = "0,859,32,62,2,1" ofs="0,-23" data="_equipment" >
+				<frame color="25a351" />
+				<dep>2,2</dep>
+				<anim range="0,1,0,1" rhythm="5,5,10,5" auto="true"></anim>
+				<modulePad>-1,1</modulePad>
+			</slice>
+			
+			<slice id="server_cut" params = "0,1948,38,41" ofs="2,-12" data="_blocker" >
+				<frame color="422d2e" />
+				<dep>2,2</dep>
+			</slice>
+			
+			<slice id="tank_o2_left_front" params = "16,938,46,46,6,1" ofs="7,-9" data="_equipment" >
+				<frame color="6059a1" />
+				<dep>1,1</dep>
+				<anim range="0,1,2,3,4,5" rhythm="4,4,4,4,4,4" auto="true"></anim>
+				<modulePad>1,0</modulePad>
+			</slice>
+			
+			<slice id="tank_fuel_left_front" params = "17,995,46,46" ofs="16,-12" data="_equipment" >
+				<frame color="89a995" />
+				<dep>1,1</dep>
+			</slice>
+			
+			<slice id="tank_o2_right_front" params = "16,1046,46,46,6,1" ofs="-3,-9" data="_equipment" >
+				<frame color="4badb2" />
+				<dep>1,1</dep>
+				<anim range="0,1,2,3,4,5" rhythm="4,4,4,4,4,4" auto="true"></anim>
+			</slice>
+			
+			<slice id="tank_fuel_right_front" params = "16,1095,46,46,6,1" ofs="-4,-9" data="_equipment" >
+				<frame color="9d8d6e" />
+				<anim range="0,1,2,3,4,5" rhythm="4,4,4,4,4,4" auto="true"></anim>
+				<dep>1,1</dep>
+				<modulePad>0,1</modulePad>
+			</slice>
+			
+			<slice id="tank_o2_right_back" params = "16,1146,46,46,6,1" ofs="2,-9" data="_equipment" >
+				<frame color="dd7cc4" />
+				<dep>1,1</dep>
+				<anim range="0,1,2,3,4,5" rhythm="4,4,4,4,4,4" auto="true"></anim>
+				<modulePad>-1,0</modulePad>
+			</slice>
+			
+			<slice id="tank_fuel_left_back" params = "16,1195,46,46,6,1" ofs="4,-8" data="_equipment" >
+				<frame color="00548a" />
+				<dep>1,1</dep>
+				<anim range="0,1,2,3,4,5" rhythm="4,4,4,4,4,4" auto="true"></anim>
+				<modulePad>0,-1</modulePad>
+			</slice>
+			
+			<slice id="table_workshop" params = "10,1258,48,56" ofs="-8,-15" data="_blocker" >
+				<frame color="3e7888" />
+				<dep>2,1</dep>
+				<modulePad>0,-2</modulePad>
+			</slice>
+					
+			<slice id="board" params = "10,1328,48,48" ofs="-3,-25" data="_decal" >
+				<frame color="ff8ea2" />
+				<dep>2,1</dep>
+			</slice>
+			
+			<slice id="pilot_platform_front" params = "12,1391,76,46" ofs="18,-15" data="_decal">
+				<frame color="339966" />
+				<dep>2,6</dep>
+			</slice>
+			
+			<slice id="pilot_grid" params = "16,1463,64,34" ofs="-12,-2" data="_decal">
+				<frame color="0099cc" />
+				<dep>3,1</dep>
+			</slice>
+			
+			<slice id="pilot_leds" params = "0,1520,96,74,2,1" ofs="16,-19" data="_decal">
+				<frame color="880000" />
+				<dep>4,4</dep>
+				<anim range="0,1" rhythm="1,1" auto="true"></anim>
+			</slice>
+			
+			<slice id="bay_led_1" params="0,2402,32,22" ofs="16,5" data="_decal" prioOfs="15" >
+				<frame color="d093d1"/>
+				<dep>1,2</dep>
+			</slice>
+			
+			<slice id="bay_led_2" params="0,2425,32,22" ofs="4,-3" data="_decal" prioOfs="15" >
+				<frame color="eae930"/>
+				<dep>2,1</dep>
+			</slice>
+			
+			<slice id="bay_led_3" params="0,2448,56,24" ofs="-8,-2" data="_decal" prioOfs="15">
+				<frame color="44218f"/>
+				<dep>1,1</dep>
+			</slice>
+			
+			<slice id="bay_led_corner_beta" params="0,2473,60,24" ofs="14,16" data="_decal" >
+				<frame color="e89e72 "/>
+				<dep>1,1</dep>
+			</slice>
+			
+			<slice id="bay_led_5" params="0,2498,36,36" ofs="32,6" data="_decal" prioOfs="15">
+				<frame color="d60076"/>
+				<dep>1,1</dep>
+			</slice>
+			
+			<slice id="bay_led_corner2_beta" params="0,2535,36,36" ofs="-12,1" data="_decal" prioOfs="15">
+				<frame color="00bfb7"/>
+				<dep>1,1</dep>
+			</slice>
+			
+			<slice id="bay_led_7" params="0,2572,32,22" ofs="22,8" data="_decal" prioOfs="15">
+				<frame color="3ee055"/>
+				<dep>1,2</dep>
+			</slice>
+			
+			<slice id="bay_led_8" params="0,2595,32,22" ofs="0,-1" data="_decal" prioOfs="15">
+				<frame color="9439e9"/>
+				<dep>2,1</dep>
+			</slice>
+			
+			<slice id="bay_letter_1" params="0,2618,28,28,3" ofs="-2,-12" data="_decal">
+				<frame color="bb9f6a"/>
+				<frame color="dd362e"/>
+				<frame color="32abaf"/>
+				<dep>1,1</dep>
+			</slice>
+			
+			<slice id="bay_letter_2" params="0,2647,28,28" ofs="-2,-16" data="_decal">
+				<frame color="994393"/>
+				<dep>1,1</dep>
+			</slice>
+			
+			<slice id="icarus_letters" params="0,2676,84,58" ofs="-24,-26" data="_decal">
+				<frame color="70bb64"/>
+				<dep>5,1</dep>
+			</slice>
+			
+			<slice id="plant_controller" params = "0,1598,92,63" ofs="-18,-15" data="_equipment" >
+				<frame color="39b54a" />
+				<dep>4,1</dep>
+				<modulePad>-1,1</modulePad>
+			</slice>
+			
+			<slice id="plant_controller_mask" params = "368,1598,92,63"   >
+			</slice>
+			
+			<slice id="pilot_astro_left" params = "0,1807,60,68,8,1" ofs="25,-20" data="_blocker">
+				<frame color="ff0099" />
+				<dep>1,4</dep>
+				<anim range="0,1,2,3,4,5,6,7" rhythm="17,17,17,17,17,17,17,17" auto="true"></anim>
+			</slice>
+			
+			<slice id="pilot_astro_left_upgrade" params = "0,1807,60,68,8,1" ofs="25,-20" data="_blocker">
+				<anim range="0,1,2,3,4,5,6,7" rhythm="17,17,17,17,17,17,17,17" auto="true"></anim>
+			</slice>
+			
+			<slice id="pilot_astro_right" params = "0,1738,72,64" ofs="-15,-18" data="_equipment">
+				<frame color="6600ff" />
+				<dep>4,1</dep>
+				<modulePad>-1,1</modulePad>
+			</slice>
+			
+			<slice id="pilot_astro_center" params = "0,1887,60,50" ofs="0,-7" data="_blocker">
+				<frame color="fff200" />
+				<dep>2,1</dep>
+			</slice>
+						
+			<slice id="pilot_astro_mask" params = "69,1738,72,64" ofs="-4,0" >
+			</slice>
+			
+			<slice id="neron" params = "0,1992,104,92,8" ofs="40,-37" data="_equipment,_target" >
+				<frame color="3e7e4e" />
+				<dep>2,5</dep>
+				<anim range="0,1,2,3,4,5,6,7" rhythm="4,4,4,4,4,4,4,4" auto="true"></anim>
+				<modulePad>1,-2</modulePad>
+			</slice>
+			
+			<slice id="neron_upgrade" params = "0,2085,104,92,8" ofs="40,-37" data="_blocker" >
+				<dep>2,5</dep>
+				<modulePad>1,-2</modulePad>
+				<anim range="0,1,2,3,4,5,6,7" rhythm="4,4,4,4,4,4,4,4" auto="true"></anim>
+			</slice>
+			
+			<slice id="neron_mask" params = "0,2296,104,92,8" ofs="0,0"  >
+			</slice>
+			
+			<slice id="cupboard" params = "0,2735,36,56" ofs="0,-12" data="_blocker, _locker" >
+				<frame color="fb5e64" />
+				<dep>1,1</dep>
+			</slice>
+			
+			<slice id="cupboard2" params = "0,2791,36,56" ofs="0,-12" data="_blocker, _locker" >
+				<frame color="04a19b" />
+				<dep>1,1</dep>
+			</slice>
+			
+			<slice id="cupboard3" params = "0,2847,36,56" ofs="0,-12" data="_blocker, _locker" >
+				<frame color="334893" />
+				<dep>1,1</dep>
+			</slice>
+			
+			<slice id="cupboard4" params = "0,2903,36,56" ofs="0,-12" data="_blocker, _locker" >
+				<frame color="ccb76c" />
+				<dep>1,1</dep>
+			</slice>
+			
+			<slice id="dynarcade" params = "0,3076,82,86" ofs="10,-30" data="_equipment,_target">
+				<dep>3,4</dep>
+				<frame color="ccb76d" />
+			</slice>
+			
+			<slice id="sofa" params = "0,3011,74,61" ofs="14,-16" data="_blocker" flipX="false">
+				<dep>1,3</dep>
+				<frame color="765757"/>
+			</slice>
+			
+			<slice id="sofaReverse" params = "0,3011,74,61" ofs="0,0" data="_blocker" flipX="true">
+				<dep>3,1</dep>
+				<frame color="593232"/>
+			</slice>
+
+			<slice id="beat_box" params = "0,2969,24,35" ofs="0,-4" data="_equipment,_target">
+				<dep>1,1</dep>
+				<frame color="ccb76e" />
+			</slice>
+			
+			<slice id="thalasso" params = "55,695,33,64" ofs="0,-19" data="_equipment" >
+				
+			</slice>
+			
+			
+		</sheet>
+		
+		<sheet src="BmpMidFill2">
+			<slice id="auxiliary_terminal_neron" params = "0,0,42,62" ofs="3,-16" data="_blocker,_target">
+				<dep>1,2</dep>
+				<frame color="9861bf" />
+			</slice>
+			
+			<slice id="auxiliary_terminal_neron_upgrade_a" params = "0,1,42,62,8" ofs="3,-16" data="_equipment">
+				<dep>1,2</dep>
+				<modulePad>0,1</modulePad>
+				<anim range="0,1,2,3,4,5,6,7" rhythm="4,4,4,4,4,4,4,4" auto="true"></anim>
+			</slice>
+			
+			<slice id="auxiliary_terminal_neron_upgrade_b" params = "0,63,42,62,8" ofs="3,-16" data="_equipment">
+				<dep>1,2</dep>
+				<modulePad>0,1</modulePad>
+				<anim range="0,1,2,3,4,5,6,7" rhythm="4,4,4,4,4,4,4,4" auto="true"></anim>
+			</slice>
+			
+			<slice id="radar_trans_void" params = "0,126,64,68,4" ofs="0,-23" data="_equipment,_target">
+				<dep>2,2</dep>
+				<frame color="679e40" />
+				<modulePad>0,1</modulePad>
+				<anim range="0,1,2,3" rhythm="1,1,1,1" auto="true"></anim>
+			</slice>
+			
+			<slice id="radar_trans_void_upgrade" params = "0,195,64,68,8" ofs="0,-23" data="_equipment">
+				<dep>2,2</dep>
+				<anim range="0,1,2,3,4,5,6,7" rhythm="2,2,2,2,2,2,2,2" auto="true"></anim>
+			</slice>
+			
+			<slice id="antennas" params="0,264,136,136" ofs="-35,-21" data="_decal">
+				<dep>1,1</dep>
+				<frame color="ec9625" />
+			</slice>
+			
+			<slice id="quantum_sensors_console" params="0,401,68,62" ofs="-13,-18" data="_equipment,_target">
+				<dep>3,1</dep>
+				<frame color="1369da" />
+				<modulePad>-1,-1</modulePad>
+			</slice>
+			
+			<slice id="magnetic_net" params="0,478,52,36" ofs="5,10" data="_decal,_target">
+				<dep>2,1</dep>
+				<frame color="4f1785" />
+			</slice>
+			
+			<slice id="magnetic_net_2" params="0,515,52,48" ofs="-18,2" data="_decal,_target">
+				<dep>2,1</dep>
+				<frame color="b0e87a" />
+			</slice>
+			
+			<slice id="food_retailer_garden" params="0,564,40,46" ofs="4,-7" data="_blocker,_target">
+				<dep>1,1</dep>
+				<frame color="4d23aa" />
+			</slice>
+			
+			<slice id="food_retailer_refectory" params="0,611,40,46" ofs="2,-8" data="_blocker,_target">
+				<dep>1,1</dep>
+				<frame color="b2dc55" />
+			</slice>
+			
+			<slice id="half_fake_wall" params="0,658,62,70" ofs="-21,-20" data="_blocker">
+				<dep>1,1</dep>
+				<frame color="00deff" />
+			</slice>
+			
+			<slice id="auto_return_icarus" params="0,730,60,36" ofs="9,12" data="_decal,_target">
+				<dep>2,1</dep>
+				<frame color="f0c026" />
+			</slice>
+			
+			<slice id="auto_return_icarus2" params="0,767,60,36" ofs="9,12" data="_decal,_target">
+				<dep>2,1</dep>
+				<frame color="0f3fd9" />
+			</slice>
+			
+			<slice id="combustion_chamber" params="0,879,80,64" ofs="13,-16" data="_equipment" >
+				<frame color="928d39" />
+				<dep>2,2</dep>
+				<modulePad>-1,1</modulePad>
+			</slice>
+			
+			<slice id="pilgred_console" params="0,944,90,74" ofs="26,-20" data="_equipment" >
+				<frame color="000aad" />
+				<dep>1,4</dep>
+				<modulePad>1,-2</modulePad>
+			</slice>
+			
+			<slice id="coffee" params="0,804,36,58" ofs="0,-13" data="_equipment,_target" >
+				<frame color="31e537" />
+				<dep>1,1</dep>
+				<modulePad>1,0</modulePad>
+			</slice>
+			
+			<slice id="coffee_upgrade_a" params="36,804,36,58" ofs="0,-13" data="_blocker" >
+			</slice>
+			
+			<slice id="coffee_upgrade_b" params="72,804,36,58" ofs="0,-13" data="_blocker" >
+			</slice>
+			
+			<slice id="coffee_upgrade_ab" params="108,804,36,58" ofs="0,-13" data="_blocker" >
+			</slice>
+			
+			<slice id="drug_dispenser" params="0,1019,52,62" ofs="-5,-13" data="_equipment" >
+				<frame color="ce1ac8" />
+				<dep>2,1</dep>
+				<modulePad>-1,1</modulePad>
+			</slice>
+			
+			<slice id="human_tank" params="0,1082,42,62,9" ofs="-4,-18" data="_bloquer" >
+				<frame color="507be4" />
+				<anim range="0,1,2,3,4,5,6,7,8" rhythm="12,12,12,12,12,12,12,12,12" auto="true"></anim>
+				<dep>1,1</dep>
+				<modulePad>-1,1</modulePad>
+			</slice>
+			
+			
+		</sheet>
+		
+		<sheet src="BmpBigFill">
+			<slice id="kitchen_p0" params = "0,8,192,136" ofs="-81,-55" data="_equipment,_target">
+				<dep>11,1</dep>
+				<frame color="f270a8" />
+				<modulePad>-4,1</modulePad>
+			</slice>
+			
+			<slice id="kitchen_p0_apero" params = "256,8,192,136" ofs="-81,-55" data="_equipment">
+				<dep>11,1</dep>
+				<frame color="9b4a4a" />
+				<modulePad>-4,1</modulePad>
+			</slice>
+			
+			<slice id="kitchen_mask" params = "1,2808,180,140" ofs="9,8" >
+			</slice>
+			
+			<slice id="kitchen_p1" params = "197,122,54,34" ofs="8,-1" data="_blocker,_target">
+				<dep>1,2</dep>
+				<frame color="a2d261" />
+			</slice>
+			
+			<slice id="kitchen_p1_apero" params = "452,122,54,34" ofs="8,-1" data="_blocker">
+				<dep>1,2</dep>
+				<frame color="779d44" />
+			</slice>
+			
+			<slice id="table_kitchen" params = "15,167,114,74" ofs="24,-22" data="_blocker,_target">
+				<dep>2,4</dep>
+				<frame color="1f268c" />
+			</slice>
+						
+			<slice id="table_kitchen_apero" params = "271,167,114,74" ofs="24,-22" data="_blocker">
+				<dep>2,4</dep>
+				<frame color="4850c1" />
+			</slice>
+			
+			<slice id="storage_front_1" params = "24,520,136,114" ofs="46,-33" data="_blocker" >
+				<frame color="f6b0c2" />
+				<dep>1,7</dep>
+			</slice>
+			
+			<slice id="storage_front_2" params = "184,520,136,114" ofs="-35,-25" data="_blocker" >
+				<frame color="f1e4da" />
+				<dep>6,1</dep>
+			</slice>
+			
+			<slice id="storage_front_3" params = "320,520,128,114" ofs="-31,-25" data="_blocker" >
+				<frame color="ffad99" />
+				<dep>6,1</dep>
+			</slice>
+			
+			<slice id="storage_front_4" params = "448,520,128,114" ofs="-31,-25" data="_blocker,_locker">
+				<frame color="ffd996" />
+				<dep>6,1</dep>
+			</slice>
+			
+			<slice id="storage_beta_center_1" params = "24,383,136,114" ofs="45,-43" data="_blocker">
+				<frame color="79958c" />
+				<dep>1,6</dep>
+			</slice>
+			
+			<slice id="storage_beta_center_2" params = "176,400,80,80" ofs="-8,-20" data="_blocker">
+				<frame color="8f8f28" />
+				<dep>3,1</dep>
+			</slice>
+			
+			<slice id="storage_beta_center_3" params = "272,400,96,80" ofs="-19,-11" data="_blocker,_locker">
+				<frame color="7a3657" />
+				<dep>3,1</dep>
+			</slice>
+			
+			<slice id="storage_alpha_center_1" params = "32,663,112,90" ofs="39,-31" data="_blocker,_locker">
+				<frame color="ff5b00" />
+				<dep>1,6</dep>
+			</slice>
+			
+			<slice id="storage_alpha_center_2" params = "176,663,84,90" ofs="-23,-30" data="_blocker,_locker">
+				<frame color="ffe000" />
+				<dep>4,1</dep>
+			</slice>
+			
+			<slice id="storage_back" params = "16,768,200,136" ofs="-77,-55" data="_blocker,_locker">
+				<frame color="cedb3b" />
+				<dep>11,1</dep>
+			</slice>
+			
+			<slice id="storage_workshop" params = "12,958,50,50,2" ofs="7,-12" data="_blocker">
+				<frame color="0082ac" />
+				<frame color="9cf182" />
+				<dep>1,2</dep>
+			</slice>
+			
+			<slice id="storage_workshop_locker" params = "112,958,50,50,1" ofs="7,-12" data="_blocker,_locker">
+				<frame color="68648c" />
+				<dep>1,2</dep>
+			</slice>
+			
+			<slice id="mycoscan" params = "32,304,97,66,12" ofs="-8,-26" data="_equipment" >
+				<frame color="007a61" />
+				<dep>4,3</dep>
+				<anim range="0,1,2,3,4,5,6,7,8,9,10,11" rhythm="20,3,3,3,3,3,10,3,3,3,3,3" auto="true"></anim>
+				<modulePad>1,1</modulePad>
+			</slice>
+			
+			<slice id="cryo" params = "8,1968,150,116" ofs="5,-40" data="_equipment" >
+				<frame color="6f60aa" />
+				<dep>4,4</dep>
+				<modulePad>1,-1</modulePad>
+			</slice>
+			
+			<slice id="toilet_a_wall" params = "16,2095,80,80" ofs="24,-19" data="_decal" >
+				<frame color="da7a20" />
+				<dep>1,3</dep>
+			</slice>
+			
+			<slice id="toilet_a_floor" params = "16,2183,98,50" ofs="1,-10" data="_decal" >
+				<frame color="461500" />
+				<dep>3,3</dep>
+			</slice>
+			
+			<slice id="toilet_b_wall_left" params = "9,2266,72,72" ofs="30,-17" data="_decal" >
+				<frame color="f57d46" />
+				<dep>1,3</dep>
+			</slice>
+			
+			<slice id="toilet_b_wall_right" params = "16,2360,80,72" ofs="-23,-19" data="_decal" >
+				<frame color="f15b78" />
+				<dep>3,1</dep>
+			</slice>
+			
+			<slice id="toilet_b_floor" params = "16,2456,96,55" ofs="1,-10" data="_decal" prioOfs="5" >
+				<frame color="ba3e97" />
+				<dep>3,3</dep>
+			</slice>
+			
+			<slice id="nexus_platform" params = "14,2648,99,61,2,1" ofs="-17,-11" data="_decal" >
+				<frame color="00a496" />
+				<dep>4,2</dep>
+				<anim range="0,1" rhythm="1,1" auto="true"></anim>
+			</slice>
+			
+			<slice id="workshop" params = "17,2725,96,82" ofs="-29,-27" data="_equipment" >
+				<frame color="2f2076" />
+				<dep>4,1</dep>
+				<modulePad>-3,1</modulePad>
+			</slice>
+			
+			<slice id="turret_alpha" params = "0,1516,150,88,2" ofs="0,-12" data="_equipment,_target" engine="tile" >
+				<frame color="9933ff" />
+				<frame color="00cc99" />
+				<dep>3,3</dep>
+				<modulePad>0,0</modulePad>
+			</slice>
+			
+			<slice id="turret_alpha_upgrade_a" params = "0,1605,150,88,2" ofs="0,-12" data="_decal" engine="tile" >
+				<frame color="62b014" />
+				<frame color="ff3366" />
+				<dep>3,3</dep>
+			</slice>
+			
+			<slice id="turret_alpha_upgrade_b" params = "0,1694,150,88,2" ofs="0,-12" data="_decal" engine="tile" >
+				<frame color="ccc100" />
+				<frame color="ff33d6" />
+				<dep>3,3</dep>
+			</slice>
+			
+			<slice id="turret_alpha_upgrade_ab" params = "0,1783,150,88,2" ofs="0,-12" data="_decal" engine="tile" >
+				<frame color="333eff" />
+				<frame color="00cc29" />
+				<dep>3,3</dep>
+			</slice>
+			
+			<slice id="turret_beta" params = "0,1240,152,68,3" ofs="2,12" data="_equipment,_target" engine="tile" >
+				<frame color="50cf96" grdOfsY="-15" />
+				<frame color="478a6c" grdOfsY="-20" />
+				<frame color="f9ab02" grdOfsY="-20" />
+				<dep>3,3</dep>
+				<modulePad>0,0</modulePad>
+			</slice>
+			
+			<slice id="turret_beta_upgrade_a" params = "0,1309,152,68,3" ofs="2,12" engine="tile">
+				<frame color="af3069" />
+				<frame color="b87593" />
+				<frame color="0654fd" />
+				<dep>3,3</dep>
+			</slice>
+			
+			<slice id="turret_beta_upgrade_b" params = "0,1309,152,68,3" ofs="2,12"  engine="tile">
+				<frame color="76007f" />
+				<frame color="a100ac" />
+				<frame color="008a94" />
+				<dep>3,3</dep>
+			</slice>
+			
+			<slice id="turret_beta_upgrade_ab" params = "0,1309,152,68,3" ofs="2,12"  engine="tile">
+				<frame color="89ff80" />
+				<frame color="5eff53" />
+				<frame color="ff756b" />
+				<dep>3,3</dep>
+			</slice>
+			
+			<slice id="turret_beta_structure" params = "0,1131,186,108" ofs="1,-7" data="_decal" engine="prewall" >
+				<frame color="f1dc42" />
+				<dep>1,1</dep>
+			</slice>
+			
+			<slice id="pilot_wall" params = "48,3279,128,114,4,1" ofs="-52,-32" data="_blocker" >
+				<frame color="9999ff" />
+				<dep>7,1</dep>
+				<anim range="0,1,2,3" rhythm="14,14,14,14" auto="true"></anim>
+			</slice>
+			
+			<slice id="pilot_window" params = "32,3407,224,170" ofs="96,-62" data="_decal" engine="tile">
+				<frame color="33cccc" />
+				<dep>4,12</dep>
+			</slice>
+			
+			<slice id="pilot_module" params = "18,3579,112,76,5,1" ofs="25,-17" data="_equipment">
+				<frame color="66cc00" />
+				<dep>2,5</dep>
+				<modulePad>0,-2</modulePad>
+				<anim range="0,1,2,3,4" rhythm="30,30,30,30,30" auto="true"></anim>
+			</slice>
+			
+			<slice id="pilot_module_mask" params = "578,3579,112,76" ofs="0,0" >
+			</slice>
+			
+			<slice id="pilot_floor_circle" params = "0,3656,111,48,2,1" ofs="7,-19" data="_decal">
+				<frame color="ffff66" />
+				<dep>2,6</dep>
+				<anim range="0,1" rhythm="1,1" auto="true"></anim>
+			</slice>
+			
+			<slice id="com_center_left" params = "33,3873,64,56,8,1" ofs="1,-13" data="_blocker">
+				<frame color="660000" />
+				<dep>1,4</dep>
+				<anim range="0,1,2,3,4,5,6,7" rhythm="2,2,2,2,2,2,2,2" auto="true"></anim>
+			</slice>
+			
+			<slice id="com_center_right" params = "34,3930,86,64,8,1" ofs="-19,-16" data="_equipment">
+				<frame color="339999" />
+				<dep>4,1</dep>
+				<modulePad>-1,-1</modulePad>
+				<anim range="0,1,2,3,4,5" rhythm="3,3,3,3,3,3" auto="true"></anim>
+			</slice>
+			
+			<slice id="com_center_mask" params = "549,3930,86,64" ofs="0,0">
+			</slice>
+			
+			<slice id="rotational_reactor" params = "1010,423,228,182,1,8" ofs="75,18" data="_equipment">
+				<frame color="d2ff00" />
+				<dep>3,6</dep>
+				<anim range="0,1,2,3,4,5,6,7" rhythm="2,2,2,2,2,2,2,2" auto="true"></anim>
+				<modulePad>-3,-3</modulePad>
+			</slice>
+			
+			<slice id="emergency_reactor" params = "1010,423,228,182,1,8" ofs="75,18" data="_equipment">
+				<frame color="78ff00" />
+				<dep>3,6</dep>
+				<anim range="0,1,2,3,4,5,6,7" rhythm="2,2,2,2,2,2,2,2" auto="true"></anim>
+				<modulePad>-3,-3</modulePad>
+			</slice>
+			
+			<slice id="reactor_mask" params = "1010,423,228,182" ofs="0,0">
+			</slice>
+			
+			<slice id="motor_floor_1" params = "1338,231,350,207,1,8" ofs="7,-100" data="_decal">
+				<frame color="20574f" />
+				<dep>10,14</dep>
+				<anim range="0,1,2,3,4,5,6,7" rhythm="15,15,15,15,15,15,15,15" auto="true"></anim>
+			</slice>
+			
+			<slice id="inviz_blocker" params = "300,0,0,0" ofs="0,-10" data="_blocker">
+				<dep>1,1</dep>
+				<frame color="00aabb" />
+			</slice>
+			
+			<slice id="motor_content" params = "0,4264,358,238" ofs="0,-133" data="_decal">
+				<frame color="5e3ca6" />
+				<dep>11,14</dep>
+			</slice>
+			
+			<slice id="icarus_platform" params = "0,4530,362,179" ofs="-22,-69" data="_decal">
+				<frame color="a23540" />
+				<dep>12,8</dep>
+			</slice>
+			
+			<slice id="core_pilgred" params = "769,1021,128,110" ofs="0,-34" data="_blocker,_target" >
+				<frame color="5ef970" />
+				<dep>3,3</dep>
+			</slice>
+			
+			<slice id="core_pilgred_upgrade" params = "0,1021,128,110,6" ofs="0,-34" data="_blocker,_target" >
+				<dep>3,3</dep>
+				<anim range="0,1,2,3,4,5" rhythm="3,3,3,3,3,3" auto="true"></anim>
+			</slice>
+			
+		</sheet>
+		
+		<sheet src="BmpBigFill2">
+			<slice id="bay_window" params = "0,0,334,230,16,1" ofs="-158,-95" data="_blocker,_target">
+				<dep>20,1</dep>
+				<frame color="64685c" />
+				<anim range="0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15" rhythm="2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2" auto="true"></anim>
+			</slice>
+			
+			<slice id="bay_window_upgrade" params = "0,230,334,230,16,1" ofs="-159,-96" data="_blocker">
+				<dep>20,1</dep>
+				<anim range="0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15" rhythm="2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2" auto="true"></anim>
+			</slice>
+			
+			<slice id="bay_alpha_platform" params = "0,1437,194,110,2,1" ofs="33,-32" data="_decal,_target" engine="tile">
+				<frame color="776b60" />
+				<dep>4,6</dep>
+				<anim range="0,1" rhythm="8,8" auto="true"></anim>
+				<state id="off"> bay_alpha_platform_off </state>
+			</slice>
+			
+			<slice id="bay_alpha_platform_upgrade" params = "0,1548,194,110,2,1" ofs="33,-32" data="_decal" >
+				<frame color="776b61" />
+				<dep>4,6</dep>
+				<anim range="0,1" rhythm="8,8" auto="true"></anim>
+				<state id="off"> bay_alpha_platform_off </state>
+			</slice>
+			
+			<slice id="bay_beta_platform" params = "1,1658,194,110,2,1" ofs="7,-19" data="_decal,_target" >
+				<frame color="96867f" />
+				<dep>4,6</dep>
+				<anim range="0,1" rhythm="8,8" auto="true"></anim>
+			</slice>
+			
+			<slice id="bay_beta_platform_upgrade" params = "1,1768,194,110,2,1" ofs="7,-19" data="_decal" >
+				<dep>4,6</dep>
+				<anim range="0,1" rhythm="8,8" auto="true"></anim>
+			</slice>
+			
+			<slice id="spaceship" params = "0,1878,110,78" ofs="21,-36" data="_equipment,_target">
+				<frame color="ff64cb" />
+				<dep>4,5</dep>
+			</slice>
+			
+			<slice id="spaceship_upgrade_a" params = "0,1956,110,78" ofs="21,-36" data="_blocker" />
+			
+			<slice id="spaceship_upgrade_b" params = "0,2034,110,78" ofs="21,-36" data="_blocker" />
+			
+			<slice id="spaceship_upgrade_ab" params = "0,2112,110,78" ofs="21,-36" data="_blocker" />
+			
+			<slice id="spaceship_broken" params = "0,2856,110,78" ofs="21,-36" data="_blocker,_target">
+				<frame color="64ad12" />
+				<dep>4,5</dep>
+			</slice>
+			
+			<slice id="pasiphae" params = "0,2755,100,100" ofs="15,-42" data="_equipment">
+				<frame color="9b52ed" />
+				<dep>4,5</dep>
+			</slice>
+			
+			<slice id="icarus" params = "0,2191,190,140" ofs="-55,-52" data="_equipment,_target">
+				<frame color="b86134" />
+				<dep>8,2</dep>
+			</slice>
+			
+			<slice id="icarus_upgrade_a" params = "0,2332,190,140" ofs="-55,-52" data="_equipment" />
+			
+			<slice id="icarus_upgrade_b" params = "0,2473,190,140" ofs="-55,-52" data="_equipment" />
+			
+			<slice id="icarus_upgrade_ab" params = "0,2614,190,140" ofs="-55,-52" data="_equipment" />
+			
+			<slice id="garden" params = "0,677,268,180,4" ofs="-32,-75" data="_blocker,_target" >
+				<frame color="d7df23" />
+				<anim range="0,1,2,3" rhythm="2,2,2,2" auto="true"></anim>
+				<dep>10,6</dep>
+			</slice>
+			
+			<slice id="garden_upgrade_a" params = "0,858,268,180" ofs="-32,-75" data="_blocker" />
+			
+			<slice id="garden_upgrade_b" params = "0,1039,268,180" ofs="-32,-75" data="_blocker" />
+			
+			<slice id="garden_upgrade_ab" params = "0,1220,268,180" ofs="-32,-75" data="_blocker" />
+			
+			<!--motor_floor_2-->
+			<slice id="plasma_shield" params = "0,469,240,208" ofs="-102,-74" data="_decal,_target">
+				<frame color="2e83d5" />
+				<dep>10,4</dep>
+			</slice>
+			
+			<slice id="plasma_shield_upgrade" params = "0,469,240,208,7,1" ofs="-102,-74" data="_decal">
+				<anim range="0,1,2,3,4,5,6" rhythm="33,3,2,1,1,1,2" auto="true"></anim>
+			</slice>
+			
+		</sheet>
+		
+		<sheet src="BmpGfxDev">
+			<slice id="equip_0" params = "32,32,32,48" ofs="0,-10" data="_equipment">
+				<dep>1,1</dep>
+				<frame color="000FFF" />
+				<modulePad>1,0</modulePad>
+			</slice>
+			
+			<slice id="equip_1" params = "32,96, 32,48" ofs="0,-10" data="_equipment">
+				<dep>1,1</dep>
+				<frame color="00AFFF" />
+				<modulePad>1,0</modulePad>
+			</slice>
+			
+			<slice id="equip_2" params = "32,160, 32,48" ofs="0,-10" data="_equipment">
+				<dep>1,1</dep>
+				<frame color="00BFFF" />
+				<modulePad>1,0</modulePad>
+			</slice>
+			
+			<slice id="equip_3" params = "32,224, 32,48" ofs="0,-10" data="_equipment">
+				<dep>1,1</dep>
+				<frame color="00CFFF" />
+				<modulePad>1,0</modulePad>
+			</slice>
+			
+			
+			<!--
+			
+			<slice id="engine_backdrop_part_1" params = "6,289,345,198" ofs="-2,-115" data="_decal">
+				<frame color="00AA00" />
+				<dep>10,10</dep>
+			</slice>
+			
+			<slice id="engine_backdrop_part_2" params = "357,289,219,194" ofs="-90,-75" data="_blocker" >
+				<frame color="00AA01" />
+				<dep>10,4</dep>
+			</slice>
+			
+			<slice id="inviz_blocker" params = "0,0,0,0" ofs="0,-10" data="_blocker">
+				<dep>1,1</dep>
+				<frame color="00AABB" />
+			</slice>-->
+		</sheet>
+		
+		<sheet src="BmpMasks">
+		</sheet>
+	</tiles>
+	
+	<!--orderis important -->
+	<extras>
+		<room rid="COMMAND_CENTER">
+			<makeDoor tgt="LASER_TURRET_A_0" />
+			<makeDoor tgt="CORRIDOR_A" />
+			<makeDoor tgt="LASER_TURRET_B_0" />
+			
+			<bindEquipment id="ASTRO_MODULE" 	tile="pilot_astro_right" mask="pilot_astro_mask" dir="up" module="true" />
+			<bindEquipment id="COM_CENTER" 		tile="com_center_right" mask="com_center_mask" dir="down" module="true"/>
+			<bindEquipment id="PILOT_MODULE" 	tile="pilot_module" mask="pilot_module_mask" dir="left" module="true"/>
+		</room>
+		
+		<room rid="SPACESHIP_BAY_A">
+			<makeDoor tgt="LASER_TURRET_A_1" />
+			<makeDoor tgt="SPACESHIP_BAY_AA" />
+			<makeDoor tgt="CORRIDOR_B" />
+			<makeDoor tgt="STORAGE_A_0" />
+			<makeDoor tgt="BEDROOM_A" />
+			
+			<bindEquipment id="PATROL_INTERFACE" tile="spaceship" dir="up" key="PATROL_SHIP_A_0" />
+			<bindEquipment id="PATROL_INTERFACE" tile="spaceship" dir="up" key="PATROL_SHIP_A_1" />
+			<bindEquipment id="PATROL_INTERFACE" tile="spaceship" dir="up" key="PATROL_SHIP_A_2" />
+		</room>
+		
+		<room rid="SPACESHIP_BAY_B">
+			<makeDoor tgt="CORRIDOR_B" />
+			<makeDoor tgt="STORAGE_B_0" />
+			<makeDoor tgt="BEDROOM_B" />
+			<makeDoor tgt="LASER_TURRET_B_1" />
+			<makeDoor tgt="CORRIDOR_C" />
+			
+			<bindEquipment id="PATROL_INTERFACE" tile="spaceship" dir="up" key="PATROL_SHIP_B_0" />
+			<bindEquipment id="PATROL_INTERFACE" tile="spaceship" dir="up" key="PATROL_SHIP_B_1" />
+			<bindEquipment id="PATROL_INTERFACE" tile="spaceship" dir="up" key="PATROL_SHIP_B_2" />
+		</room>
+		
+		<room rid="SPACESHIP_BAY_AA">
+			<makeDoor tgt="SPACESHIP_BAY_A" />
+			<makeDoor tgt="LASER_TURRET_A_2" />
+			<makeDoor tgt="CORRIDOR_C" />
+			<makeDoor tgt="MOTOR_ROOM" />
+			
+			<bindEquipment id="PATROL_INTERFACE" tile="spaceship" dir="up" key="PATROL_SHIP_AA_0" />
+			<bindEquipment id="PATROL_INTERFACE" tile="pasiphae" dir="up" key="PATROL_SHIP_AA_1" />
+			<bindEquipment id="DYNARCADE" 		tile="dynarcade" dir="up"  />
+			<bindEquipment id="BEAT_BOX" 		tile="beat_box" dir="up"  />
+		</room>
+		
+		<room rid="NEXUS_ROOM">
+			<makeDoor tgt="CORRIDOR_C" />
+			<bindEquipment id="NERON_CORE" tile="neron" dir="left" module="true" mask="neron_mask" />
+			<bindEquipment id="NERON_BIOS_TERM" tile="bios" dir="right" module="true" />
+			<bindEquipment id="SUPER_CALC" tile="server_active" dir="up" module="true" />
+		</room>
+		
+		<room rid="SICK_BAY">
+			<makeDoor tgt="CORRIDOR_A" />
+			<makeDoor tgt="LABORATORY" />
+			<makeDoor tgt="LASER_TURRET_B_1" />
+			
+			<bindEquipment id="SURGERY_POD" tile="surgery_console" dir="left" module="true" />
+			<bindEquipment id="DRUG_DISP" tile="drug_dispenser" dir="right" module="true" />
+			<bindEquipment id="BED" tile="sick_couch" dir="down" module="true" key="sick_couch" data="flipped;ofsx_-18;ofsy_-2" />
+			
+			<bindEquipment id="NERON_CORE" tile="auxiliary_terminal_neron" dir="down" module="true" key="neron_sick" />
+		</room>
+		<room rid="LABORATORY">
+			<makeDoor tgt="CORRIDOR_A" />
+			<makeDoor tgt="SICK_BAY" />
+			
+			<bindEquipment id="RESEARCH_LAB" tile="table_computer" dir="left" module="true" />
+			<bindEquipment id="CRYO_MODULE" tile="cryo" dir="left" module="true" />
+			
+			<bindEquipment id="MYCOSCAN" tile="mycoscan" dir="left" module="true" />
+			
+			<bindEquipment id="GRAVITY_SIMULATOR" tile="gravity_simulator" dir="right" module="true" />
+			
+		</room>
+		
+		<room rid="REFECTORY">
+			<makeDoor tgt="CORRIDOR_B" />
+			
+			<bindEquipment id="KITCHEN" tile="kitchen_p0" dir="right" module="true" mask="kitchen_mask" />
+			<bindEquipment id="COFFEE_DISPENSER" tile="coffee" dir="left" module="true" />
+			
+			
+		</room>
+		
+		<room rid="HYDROPONIC_CENTER">
+			<makeDoor tgt="STORAGE_FRONT" />
+			<makeDoor tgt="CORRIDOR_A" />
+			
+			<bindEquipment id="PLANT_CONTROLLER" tile="plant_controller" dir="right" module="true" mask="plant_controller_mask" />
+		</room>
+		
+		<room rid="MOTOR_ROOM">
+			<makeDoor tgt="SPACESHIP_BAY_AA" />
+			<makeDoor tgt="LASER_TURRET_A_2" />
+			<makeDoor tgt="STORAGE_A_1" />
+			<makeDoor tgt="STORAGE_B_1" />
+			<makeDoor tgt="ICARUS" />
+			<makeDoor tgt="LASER_TURRET_B_2" />
+			
+			<bindEquipment id="COMBUSTION_CHAMBER_ACCESS" tile="combustion_chamber" dir="right" module="true" />
+			
+			<bindEquipment id="PILGRED" tile="pilgred_console" dir="left" module="true" />
+			
+			<bindEquipment id="STELLAR_ANTENNA" tile="radar_trans_void" dir="up" module="true" />
+			
+			<bindEquipment id="STELLAR_ANTENNA" tile="radar_trans_void_upgrade" dir="up" module="true" />
+			
+			<bindEquipment id="PLANET_SCANNER" tile="quantum_sensors_console" dir="down" module="true" />
+			
+			<bindEquipment id="ROTATIONAL_REACTOR" tile="rotational_reactor" dir="down" mask="reactor_mask" key="reac_a" module="true"  />
+			<bindEquipment id="ROTATIONAL_REACTOR" tile="rotational_reactor" dir="down" mask="reactor_mask" key="reac_b" module="true"  />
+			
+			<bindEquipment id="EMERGENCY_REACTOR" tile="emergency_reactor" dir="down" mask="reactor_mask" module="true" />
+			
+			
+			<bindEquipment id="NERON_CORE" tile="auxiliary_terminal_neron" dir="down" module="true" key="neron_engine" />
+			
+		</room>
+		
+		<room rid="LASER_TURRET_A_0">
+			<makeDoor tgt="CORRIDOR_A" />
+			<makeDoor tgt="COMMAND_CENTER" />
+			
+			<bindEquipment id="TURRET_COMMAND" tile="turret_alpha" dir="left" module="true" />
+		</room>
+		
+		<room rid="LASER_TURRET_A_1">
+			<makeDoor tgt="SPACESHIP_BAY_A" />
+			<makeDoor tgt="STORAGE_FRONT" />
+			
+			<bindEquipment id="TURRET_COMMAND" tile="turret_alpha" dir="up" module="true" />
+		</room>
+		
+		<room rid="LASER_TURRET_A_2">
+			<makeDoor tgt="SPACESHIP_BAY_AA" />
+			<makeDoor tgt="MOTOR_ROOM" />
+			
+			<bindEquipment id="TURRET_COMMAND" tile="turret_alpha" dir="up" module="true" />
+		</room>
+		
+		<room rid="LASER_TURRET_B_0">
+			<makeDoor tgt="COMMAND_CENTER" />
+			<makeDoor tgt="CORRIDOR_A" />
+			
+			<bindEquipment id="TURRET_COMMAND" tile="turret_beta" dir="down" module="true" />
+			<bindEquipment id="SOFA" tile="sofa" dir="left" module="false"/>
+		</room>
+		
+		<room rid="LASER_TURRET_B_1">
+			<makeDoor tgt="SICK_BAY" />
+			<makeDoor tgt="SPACESHIP_BAY_B" />
+			
+			<bindEquipment id="TURRET_COMMAND" tile="turret_beta" dir="down" module="true" />
+		</room>
+		
+		<room rid="LASER_TURRET_B_2">
+			<makeDoor tgt="MOTOR_ROOM" />
+			<makeDoor tgt="ICARUS" />
+			
+			<bindEquipment id="TURRET_COMMAND" tile="turret_beta" dir="right" module="true" />
+		</room>
+		<!-- no doors por patrols -->
+		
+		<!-- current -->
+		<room rid="CORRIDOR_A">
+			<makeDoor tgt="LASER_TURRET_A_0" />
+			<makeDoor tgt="HYDROPONIC_CENTER" />
+			<makeDoor tgt="STORAGE_FRONT" />
+			<makeDoor tgt="COMMAND_CENTER" />
+			<makeDoor tgt="CORRIDOR_B" />
+			<makeDoor tgt="LABORATORY" />
+			<makeDoor tgt="SICK_BAY" />
+			<makeDoor tgt="LASER_TURRET_B_0" />
+		</room>
+		
+		<room rid="CORRIDOR_B">
+			<makeDoor tgt="SPACESHIP_BAY_A" />
+			<makeDoor tgt="CORRIDOR_A" />
+			<makeDoor tgt="REFECTORY" />
+			<makeDoor tgt="SPACESHIP_BAY_B" />
+		</room>
+		
+		<room rid="CORRIDOR_C">
+			<makeDoor tgt="SPACESHIP_BAY_AA" />
+			<makeDoor tgt="BEDROOM_A" />
+			<makeDoor tgt="STORAGE_A_1" />
+			
+			<makeDoor tgt="NEXUS_ROOM" />
+			<makeDoor tgt="BEDROOM_B" />
+			<makeDoor tgt="STORAGE_B_1" />
+			<makeDoor tgt="SPACESHIP_BAY_B" />
+			<makeDoor tgt="ICARUS" />
+			
+		</room>
+		
+		<room rid="ICARUS">
+			<makeDoor tgt="MOTOR_ROOM" />
+			<makeDoor tgt="CORRIDOR_C" />
+			<makeDoor tgt="LASER_TURRET_B_2" />
+			
+			<bindEquipment id="ICARUS_COMMAND" tile="icarus" dir="up" />
+		</room>
+		
+		<room rid="BEDROOM_A">
+			<makeDoor tgt="SPACESHIP_BAY_A" />
+			<makeDoor tgt="CORRIDOR_C" />
+			
+			<bindEquipment id="SHOWER" tile="shower" dir="left" module="true" />
+			
+			<bindEquipment id="BED" tile="bed_left" dir="down" module="true" key="bed_a_a" data="flipped;ofsx_-12;ofsy_1" />
+			<bindEquipment id="BED" tile="bed_left" dir="down" module="true" key="bed_a_b" data="flipped;ofsx_-12;ofsy_1"/>
+			<bindEquipment id="BED" tile="bed_left" dir="down" module="true" key="bed_a_c" data="flipped;ofsx_-12;ofsy_1"/>
+		</room>
+		
+		<room rid="BEDROOM_B">
+			<makeDoor tgt="CORRIDOR_C" />
+			<makeDoor tgt="SPACESHIP_BAY_B" />
+			
+			<bindEquipment id="SHOWER" tile="shower" dir="up" module="true"/>
+			
+			<bindEquipment id="BED" tile="bed_right" dir="right" module="true" key="bed_b_a" data="ofsx_12;ofsy_1" />
+			<bindEquipment id="BED" tile="bed_right" dir="right" module="true" key="bed_b_b" data="ofsx_12;ofsy_1"/>
+			<bindEquipment id="BED" tile="bed_right" dir="right" module="true" key="bed_b_c" data="ofsx_12;ofsy_1"/>
+		</room>
+		
+		<room rid="STORAGE_FRONT">
+			<makeDoor tgt="LASER_TURRET_A_1" />
+			<makeDoor tgt="HYDROPONIC_CENTER" />
+			<makeDoor tgt="CORRIDOR_A" />
+		</room>
+		
+		<room rid="STORAGE_A_0">
+			<makeDoor tgt="SPACESHIP_BAY_A" />
+			<bindEquipment id="OXYGEN_TANK" tile="tank_o2_left_front"  dir="left" module="true" />
+		</room>
+		
+		<room rid="STORAGE_A_1">
+			<makeDoor tgt="CORRIDOR_C" />
+			<makeDoor tgt="MOTOR_ROOM" />
+						
+			<bindEquipment id="FUEL_TANK" 	tile="tank_fuel_right_front"  dir="up" module="true" />
+		</room>
+		
+		<room rid="STORAGE_B_0">
+			<makeDoor tgt="SPACESHIP_BAY_B" />
+			<bindEquipment id="OXYGEN_TANK" tile="tank_o2_right_back"  dir="right" module="true" />
+		</room>
+		
+		<room rid="STORAGE_B_1">
+			<makeDoor tgt="CORRIDOR_C" />
+			<makeDoor tgt="MOTOR_ROOM" />
+			
+			<bindEquipment id="FUEL_TANK" 	tile="tank_fuel_left_back"  dir="down" module="true" />
+			
+		</room>
+		
+		<!-- generic configuration for simple cases-->
+		<autoBind>
+			<eq id="CAMERA" 	tile="camera" />
+			<eq id="CAMERA" 	tile="camera2" />
+			<eq id="HELP_DRONE" tile="base_drone" />
+		</autoBind>
+	</extras>
+</data>

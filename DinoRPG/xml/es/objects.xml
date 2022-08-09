@@ -1,0 +1,615 @@
+﻿<objects>
+	<!------------------------------- TEMPORAIRE SCENARIO ------------------------------>
+
+	<o id="ptsage" name="Punto de sabiduría" max="5">
+		<desc>Un punto de sabiduría dado por un Dorogón en la ciudad superior. Tener 5 permite encontrar al Archidorogón.</desc>
+	</o>
+
+	<o id="remede" name="Elixir de vida" max="1">
+		<desc>Un remedio capaz de curar al Venerable del mal que le aqueja. Obtenido del extracto de savia de una planta que se halla únicamente en la Isla Celeste.
+		Es casi imposible encontrar otro ejemplar.</desc>
+	</o>
+
+
+	<o id="fmedaa" icon="fmedal" name="Fragmento de medallón" max="1" limit="1">
+		<desc>Has encontrado el primer fragmento del medallón de 3 ojos. Según el Archidorogón, si logras juntar todas las partes, podrás acceder al "templo celeste (?)".</desc>
+	</o>
+
+	<o id="fmedab" icon="fmedal" name="Fragmento de medallón" max="1" limit="1">
+		<desc>Has encontrado el segundo fragmento del medallón de 3 ojos. Según el Archidorogón, si logras juntar todas las partes, podrás acceder al "templo celeste (?)".</desc>
+	</o>
+
+	<o id="fmedac" icon="fmedal" name="Fragmento de medallón" max="1" limit="1">
+		<desc>Has encontrado el tercer fragmento del medallón de 3 ojos. Según el Archidorogón, si logras juntar todas las partes, podrás acceder al "templo celeste (?)".</desc>
+	</o>
+
+	<o id="fmedad" icon="fmedal" name="Fragmento de medallón" max="1" limit="1">
+		<desc>Has encontrado el cuarto fragmento del medallón de 3 ojos. Según el Archidorogón, si logras juntar todas las partes, podrás acceder al "templo celeste (?)".</desc>
+	</o>
+
+	<o id="fmedae" icon="fmedal" name="Fragmento de medallón" max="1" limit="1">
+		<desc>Has encontrado el quinto fragmento del medallón de 3 ojos. Según el Archidorogón, si logras juntar todas las partes, podrás acceder al "templo celeste (?)".</desc>
+	</o>
+
+	<o id="fmedaf" icon="fmedal" name="Fragmento de medallón" max="1" limit="1">
+		<desc>Has encontrado el sexto fragmento del medallón de 3 ojos. Según el Archidorogón, si logras juntar todas las partes, podrás acceder al "templo celeste (?)".</desc>
+	</o>
+
+	<o id="fmedag" icon="fmedal" name="Fragmento de medallón" max="1" limit="1">
+		<desc>Has encontrado el séptimo fragmento del medallón de 3 ojos. Según el Archidorogón, si logras juntar todas las partes, podrás acceder al "templo celeste (?)".</desc>
+	</o>
+	
+	<o id="metal" icon="metal" name="Bout de métal" max="3" limit="3">
+		<desc>The metal from the steppes is reputed to be of the highest quality. Take it to a master artisan so that they can get the best out of it.</desc>
+	</o>
+	
+	<o id="icepie" icon="icepie" name="Morceau de glace" max="1" limit="1">
+		<desc>This icec ube melts really slowly! Ideal for air conditioners!</desc>
+	</o>
+	
+	<o id="pile" icon="icedoc" name="Pile sous-marine" max="1" limit="1">
+		<desc>A highly charged battery, only to be used in a high tech lab!</desc>
+	</o>
+
+
+	<!------------------------------- EVENT SPECIAUX ------------------------------>
+
+	<o id="paques" name="Huevo de La Bruja Lula" max="300">
+		<desc>Un huevo de Lula permite ganar un objeto entre todos los que existen en Dinoland. Objeto raro o común, ¡Hoy puede ser tu día de suerte!</desc>
+		<effect>Has ganado algo, ¡corre a tu inventario para ver qué es!</effect>
+	</o>
+
+	<!------------------------------- BASE OBJECTS + SOINS ------------------------------>
+
+	<o id="gold" name="Monedas de oro" max="10000">
+		<desc></desc>
+	</o>
+
+	<o id="irma" name="Poción de la Bruja Lola" max="100">
+		<desc>La famosa Poción de la Bruja Lola permite al Dino que la beba *realizar inmediatamente una nueva acción* sin tener que esperar al día siguiente.</desc>
+		<effect>¡*::name::* ha bebido la Poción de la Bruja Lola y ya puede realizar una nueva acción inmediatamente!</effect> </o>
+
+	<o id="irma2" name="Poción Especial de la Bruja Lola" max="3">
+		<desc>La famosa Poción de la Bruja Lola permite al Dino que la beba *realizar inmediatamente una nueva acción* sin tener que esperar al día siguiente. Solo puedes llevar 3.</desc>
+		<effect>¡*::name::* ha bebido la Poción de la Bruja Lola y ya puede realizar una nueva acción inmediatamente!</effect>
+	</o>
+
+	<o id="angel" name="Poción de Ángel" max="10"> <desc>Si tu Dino muere, usa una Poción de Ángel para *resucitarlo sin ninguna penalización en la experiencia*.</desc>
+	<effect>¡*::name::* ha vuelto a la vida gracias a una Poción de Ángel!</effect> </o>
+
+	<o id="burger" name="Nube-hamburguesa" max="30"> <desc>Una buena hamburguesa recupera *10 puntos de vida* a tu Dino. ¡Presta atención a su estómago!</desc>
+	<effect>¡*::name::* ha recuperado ::pv:: puntos de vida! Es muy feliz y te da las gracias.</effect> <fight proba="50" priority="1"/> </o>
+
+	<o id="hotpan" name="Pan caliente auténtico" max="10"> <desc>Cuando lo necesites, los *100 puntos de vida* del Pan caliente vendrán muy bien a tu Dino. Perfecto para antes de luchar contra los dragones.</desc>
+	<effect>¡*::name::* ha recuperado ::pv:: puntos de vida de una sola vez! Gracias a esto, ¡tu Dino va a poder aplastar muchos monstruos de una vez!</effect> </o>
+
+	<o id="remed2" name="Elixir" max="5">
+		<desc>Un remedio super-poderoso utilizado por los más legendarios Maestros para curar a sus fieles compañeros. Un elixir les devolverá *200 puntos de vida*</desc>
+		<effect>¡*::name::* ha recuperado ::pv:: puntos de vida con un solo trago! Es hora de continuar su aventura.</effect>
+	</o>
+
+	<o id="tartev" name="Pastel de Carne" max="20"> <desc>Si tu Dino tiene mucha hambre, nada mejor que un buen Pastel de Carne. Le aportará *30 puntos de vida* de forma instantánea.</desc> <effect>¡*::name::* ha recuperado ::pv::
+	puntos de vida! Ñam, qué buen festín.</effect> </o>
+
+	<o id="ration" name="Ración de Combate" max="10"> <desc>En caso de líos, la Ración de Combate te dará *hasta 20 puntos de vida* en combate.</desc>
+	<fight proba="50" priority="1"/> </o>
+
+	<o id="surviv" name="Ración de Supervivencia" max="10">
+		<desc>En caso de heridas graves, recuperarás *entre 10 y 40 puntos de vida* durante un combate.</desc>
+		<fight proba="50" priority="1"/>
+	</o>
+
+	<o id="mergz" name="Salchicha de Goblin" max="5">
+		<desc>La especialidad de la región del Gran Señor-Todo-Quema. A consumir con mucha moderación.</desc>
+		<fight proba="20" priority="1"/>
+	</o>
+
+	<o id="fruit" name="Pomelum" max="10">
+		<desc>¡Un fruto bello y apetitoso capaz de darte 15 puntos de vida con un solo mordisco!</desc>
+		<effect>*::name::* ha recuperado ::pv:: puntos de vida. ¡Te llevas un *Hueso de Pomelum*! Cuidado, no lo vayas a morder...</effect>
+	</o>
+
+	<!------------------------------- GTC OBJECTS ------------------------------>
+
+	<o id="hlmsos" name="Casco de Seguridad" max="15">
+		<desc>Aumenta la armadura de tu Dino en 1 punto cuando es utilizado.</desc>
+		<fight proba="50" priority="1"/>
+	</o>
+
+	<o id="ppoiv" name="Pimiento explosivo" max="15">
+		<desc>Aumenta en 10 puntos el próximo asalto de tu Dino.</desc>
+		<fight proba="50" priority="1"/>
+	</o>
+
+	<o id="zippo" name="Mechero" max="15">
+		<desc>¡Tu Dino quema!</desc> <fight proba="50" priority="1"/>
+	</o>
+
+	<o id="flamch" name="Flamacha de Socorro" max="15">
+		<desc>Nada mejor que una Flamacha de Socorro para ayudarte durante un combate.</desc>
+		<fight proba="50" priority="1"/>
+	</o>
+
+	<o id="combi" name="Escudo refrigerado" max="15">
+		<desc>Aumenta la defensa contra el Fuego en 20 puntos.</desc>
+		<fight proba="50" priority="1"/>
+	</o>
+
+	<!------------------------------- OBJETS UTILES ------------------------------>
+
+	<o id="fuca" name="Caramelo Fuca" max="5" trade="1000">
+		<desc>Aumenta en 50% la velocidad de los ataques de tu Dino.</desc>
+		<fight proba="20" priority="3"/>
+	</o>
+
+	<o id="monoch" name="Monocromático" max="5" trade="5000">
+		<desc>Los asaltos de tus Dinos se vuelven todos del color de su mejor elemento.</desc>
+		<fight proba="15" priority="5"/>
+	</o>
+
+	<o id="antip" name="Jeringuilla de Venenite" max="10" trade="300">
+		<desc>Protege a tu Dino de los efectos del veneno.</desc>
+		<fight proba="0" priority="0"/>
+	</o>
+
+	<o id="confus" name="Traje de Lori" max="10" trade="400" family="abus">
+		<desc>Un enemigo ataca a uno de sus compañeros.</desc>
+		<fight proba="30" priority="4"/>
+	</o>
+
+	<o id="costve" name="Disfraz de Guardia Vegetox" max="5" trade="1000">
+		<desc>Con este disfraz podrás disfrazar a tu Dino en Guardia Vegetox durante el combate. Atención, es altamente inflamable.</desc>
+		<fight proba="0" priority="0"/>
+	</o>
+
+	<o id="costgb" name="Disfraz de Goblin" max="5" trade="1000">
+		<desc>Este disfraz te permitirá disfrazar a tu Dino en Goblin durante el combate. Presta atención, pues es altamante inflamable.</desc>
+		<fight proba="0" priority="0"/>
+	</o>
+
+	<o id="noyau" name="Hueso de Pomelum" max="15">
+		<desc>El Hueso de Pomelum es particularmente frágil y puede romperse con cualquier golpe. Su contenido es especialmente tóxico. Por ello algunos lo utilizan en combate para asegurarse de tener una ventaja extra.</desc>
+		<fight proba="50" priority="1"/>
+		</o>
+
+	<o id="amour" name="Amor Portátil" max="10" trade="300">
+		<desc>El amor da alas... tu Dino podrá atacar a los enemigos voladores.</desc>
+		<fight proba="70" priority="1"/>
+	</o>
+
+	<o id="danger" name="Detector de Peligro" max="5" trade="4000">
+		<desc>Este objeto permite proteger una sola vez a tu Dino contra un efecto indirecto que conlleve la pérdida de más de 25 puntos de vida.</desc>
+		<fight proba="0" priority="0"/>
+	</o>
+
+	<o id="bamboo" name="Amigo Bambo" max="1" lock="1">
+		<desc>Un amigo Bambo vendrá a ayudar a tu Dino durante los combates.</desc>
+		<fight proba="0" priority="0"/>
+	</o>
+
+
+	<!------------------------------- MAUDIT SHOP OBJECTS ------------------------------>
+
+	<o id="odemon" name="Ungüento del Demonio" max="5" trade="5000">
+		<desc>Un poderoso ungüento pastoso, de un color oscuro y extremadamente maloliente.	¡Habrá que untárselo en el cuerpo si queremos quitarnos algunas 	maldiciones!</desc>
+		<effect>Las Maldiciones de ::name:: han sido eliminadas, pero parece que el olor del Ungüento no va a partir fácilmente...</effect>
+	</o>
+
+	<o id="piran" name="Piranta en bolsita" max="10">
+		<desc>Un Piranta atrapado en una bolsita, ¡listo para ser lanzado en combate cuando sea necesario!</desc>
+		<fight proba="50" priority="1"/>
+	</o>
+
+	<!------------------------------- NIMBAO ISLAND OBJECTS ------------------------------>
+
+	<o id="cendre"	name="País de cenizas" max="1" trade="2000" family="nimbao">
+		<desc>Este objeto cubre la zona de combate con una hoguera sofocante.
+		*Todos los Dinos* que no tengan al menos *10 puntos en elemento fuego*, no podrán usar las competencias A y E durante los 3 próximos turnos del lanzador.</desc>
+		<fight proba="100" priority="1"/>
+	</o>
+
+	<o id="abysse"	name="Abismo" max="1" trade="2000" family="nimbao">
+		<desc>Este objeto inunda la zona de combate en los abismos.
+		*Todos los Dinos* que no tengan al menos *10 puntos en el elemento agua* ven la potencia de sus ataques y los asaltos disminuidos en un 25% durante los 3 próximos turnos del lanzador.</desc>
+		<fight proba="100" priority="1"/>
+	</o>
+
+	<o id="amazon"	name="Amazonia" max="1" trade="2000" family="nimbao">
+		<desc>Este objeto recubre la zona de combate en una jungla tropical.
+		*Todos los Dinos* que no tengan al menos *10 puntos en madera* se duermen durante los 3 próximos turnos, a menos que sufran un ataque de más de 10 puntos de vida.</desc>
+		<fight proba="100" priority="1"/>
+	</o>
+
+	<o id="stelme"	name="Fuego de San Telmo" max="1" trade="2000" family="nimbao">
+		<desc>Este objeto cubre la zona de combate con un campo magnético superpoderoso.
+		*Todos los Dinos* que no tengan al menos *10 puntos en el elemento rayo*, pierden 5% de puntos de vida en cada uno de los 3 próximos turnos del lanzador.</desc>
+		<fight proba="100" priority="1"/>
+	</o>
+
+	<o id="ourano"	name="Urano" max="1" trade="2000" family="nimbao">
+		<desc>Este objeto devasta la zona de combate con un huracán devastador.
+		*Todos los Dinos* que no tengan al menos *10 puntos el elemento aire* ven su velocidad disminuir en un 50% durante los 3 próximos turnos del lanzador.</desc>
+		<fight proba="100" priority="1"/>
+	</o>
+
+
+	<!------------------------------- NEW OBJECTS ------------------------------>
+
+	<o id="boost"	name="Grano de Experiencia" max="10">
+		<desc>El Dino que lo utilice ganará el doble de experiencia al final del combate .</desc>
+	</o>
+
+	<o id="sterod"	name="Esteroidino" max="10">
+		<desc>El Dino que lo utilise recuperará 50 puntos de energía durante el combate.</desc>
+	</o>
+
+	<o id="parfum"	name="Perfume de olvido" max="6" trade="25000">
+		<desc>Este objeto, utilizable solo por los Dinos que han sobrepasado el nivel 50, le permite volver a este nivel olvidando las competencias aprendidas entre tanto.</desc>
+	</o>
+
+	<o id="cofee" name="Té concentrado" max="10" trade="2000">
+		<desc>Este té ultrafuerte, preparado por Chen, te permite anular los efectos de la cerveza en el equipo contrario.</desc>
+		<fight proba="60" priority="1"/>
+	</o>
+
+	<o id="ptime" name="Estabilizador temporal" max="10" trade="3000">
+		<desc>La tecnología Dorogón ha hecho posible romper el Manipulador Temporal. Es tan delicado y potente que solo resiste un uso.</desc>
+		<fight proba="0" priority="1"/>
+	</o>
+
+	<!--
+	<o id="compri"	name="Aspiruna" max="10">
+		<desc>Aumenta la recuperación de energía del Dino durante el combate.</desc>
+	</o>
+	-->
+
+
+	<!------------------------------- MAGIC SHOP OBJECTS ------>
+
+	<o id="mbann" name="Destierro" max="5" lock="1">
+		<desc>Impide a todos los Dinos pedir refuerzos durante el combate</desc>
+		<fight proba="0" priority="0"/>
+	</o>
+
+	<o id="mbeli" name="Ariete" max="5" lock="1">
+		<desc>El Dino ataca dos veces el castillo contrario en caso de victoria</desc>
+		<fight proba="0" priority="0"/>
+	</o>
+
+	<o id="mbrais" name="Brasa" max="5" lock="1">
+		<desc>Aumenta los asaltos de fuego de todos los combatientes en un 30%</desc>
+		<fight proba="0" priority="0"/>
+	</o>
+
+	<o id="mbalan" name="Equilibrio" max="5" lock="1">
+		<desc>Un Dino enemigo es matado si tu Dino muere durante el combate</desc>
+		<fight proba="0" priority="0"/>
+	</o>
+
+	<o id="mbala2" name="Equilibrio" max="5" lock="1">
+ 		<desc>Un Dino enemigo es matado durante el combate *(Proceso de carga en curso)*</desc>
+		<fight proba="0" priority="0"/>
+	</o>
+
+	<o id="mbeer" name="Cerveza" max="5" lock="1">
+		<desc>Impide a todos los Dinos ganar puntos de vida durante el combate</desc>
+		<fight proba="0" priority="0"/>
+	</o>
+
+	<o id="mencly" name="Enciclopedia" max="5" lock="1">
+		<desc>Aumenta la ganancia de experiencia al final del combate en un 15%</desc>
+		<fight proba="0" priority="0"/>
+	</o>
+
+	<o id="mantic" name="Anticromático" max="5" lock="1">
+		<desc>Anula el efecto de los Monocromáticos utilizados por el adversario</desc>
+		<fight proba="0" priority="0"/>
+	</o>
+
+	<o id="mantip" name="Antiveneno" max="5" lock="1">
+		<desc>Inmuniza a los Dinos del Veneno de forma permanente</desc>
+		<fight proba="0" priority="0"/>
+	</o>
+
+	<o id="mtime" name="Manipulador temporal" max="5" lock="1">
+		<desc>Los Dinos no pueden usar competencias de tipo Evento</desc>
+		<fight proba="0" priority="0"/>
+	</o>
+
+	<o id="mpdim" name="Dimensión Paralela" max="5" lock="1">
+		<desc>Cuando un Dino baja de los 10 PV, es enviado a un agujero negro y desaparece del combate.</desc>
+		<fight proba="0" priority="0"/>
+	</o>
+
+	<o id="mbaget" name="Varita del Mago" max="5" lock="1">
+		<desc>Disminuye los PV de cualquier Dino (enemigo o amigo) al azar en un 30% en lugar de atacar.</desc>
+		<fight proba="0" priority="0"/>
+	</o>
+
+	<o id="mhelp" name="Silbato amistoso" max="5" lock="1">
+		<desc>Cuando tu Dino efectúa un asalto contra otro Dino, sus amigos sin silbato vienen a echarle una mano</desc>
+		<fight proba="0" priority="0"/>
+	</o>
+
+
+	<!-- Nouveaux objets magiques -->
+	<o id="plandc" name="Dinocubo" max="5" lock="1">
+		<desc>El Dino puede hacer girar de nuevo el tablero de elementos en sus subidas de nivel hasta el nivel 10.</desc>
+		<fight proba="0" priority="0"/>
+	</o>
+
+	<o id="dampt" name="Amortiguador temporal" max="5" lock="1">
+		<desc>Reduce los bonus y penalidades de iniciativa en 50% del Dino que lo posee.</desc>
+		<fight proba="0" priority="0"/>
+	</o>
+
+	<o id="tearlf" name="Lágrima de vida" max="5" lock="1">
+		<desc>Da 10% de la vida del Dino a los clones.</desc>
+		<fight proba="0" priority="0"/>
+	</o>
+
+	<o id="mindim" name="Máscara Cuzcús" max="5" lock="1">
+		<desc>Impide que los miembros del equipo del poseedor sean hipnotizados.</desc>
+		<fight proba="0" priority="0"/>
+	</o>
+
+	<o id="agrav" name="Traje de plomo" max="5" lock="1">
+		<desc>Protege a todo el equipo que lo lleva, anulando las aspiraciones hacia los agujeros negros durante los combates.</desc>
+		<fight proba="0" priority="0"/>
+	</o>
+
+	<o id="stero" name="Esteroide mágico" max="5" lock="1">
+		<desc>Protege a su portador contra todas las pérdidas de resistencia. Si el Dino tiene habilidades que la elevan, como Oxigenación Muscular, Proteínas Ibéricas o Apoyo Moral, puede perder la resistencia extra hasta que alcanzar ese nivel máximo.</desc>
+		<fight proba="0" priority="0"/>
+	</o>
+
+	<o id="loking" name="Candado maldito" max="5" lock="1">
+		<desc>Bloquea al azar a un adversario en su elemento más débil durante 3 ciclos.</desc>
+		<fight proba="0" priority="0"/>
+	</o>
+
+	<o id="trouil" name="Fuerza brava" max="5" lock="1">
+		<desc>Un Dino que tenga la habilidad Bravo y que lleve este objeto, podrá agruparse con otros Dinos con su misma afinidad de elementos.</desc>
+		<fight proba="0" priority="0"/>
+	</o>
+
+	<!-- Objets rares (non achetables) -->
+	<o id="vlife" name="Robo de Vida" max="5" lock="1">
+		<desc>Cuando el dinoz es menos que 20 puntos de vida, robar 30 puntos de vida a un adversario y ganarlos.</desc>
+		<fight proba="0" priority="0"/>
+	</o>
+	
+	<!------------------------------- SPHERES DE COMPETENCES ------------------------------>
+
+	<o id="spher1" name="Esfera de Fuego" max="100" trade="10000">
+ 		<desc>La Esfera Elemental enseña directamente a tu Dino una de las competencias esféricas.</desc>
+ 		<effect>¡*::name::* ha aprendido la competencia esférica *::skill::*!</effect>
+ 	</o>
+
+	<o id="spher2" name="Esfera de Madera" max="100" trade="10000">
+		<desc>La Esfera Elemental enseña directamente a tu Dino una de las competencias esféricas.</desc>
+		<effect>¡*::name::* ha aprendido la competencia esférica *::skill::*!</effect>
+	</o>
+
+	<o id="spher3" name="Esfera de Agua" max="100" trade="10000">
+		 <desc>La Esfera Elemental enseña directamente a tu Dino una de las competencias esféricas.</desc>
+		 <effect>¡*::name::* ha aprendido la competencia esférica *::skill::*!</effect>
+	</o>
+
+	<o id="spher4" name="Esfera de Rayo" max="100" trade="10000">
+		<desc>La Esfera Elemental enseña directamente a tu Dino una de las competencias esféricas.</desc>
+		<effect>¡*::name::* ha aprendido la competencia esférica *::skill::*!</effect>
+	</o>
+
+	<o id="spher5" name="Esfera de Aire" max="100" trade="10000">
+		 <desc>La Esfera Elemental enseña directamente a tu Dino una de las competencias esféricas.</desc>
+		 <effect>¡*::name::* ha aprendido la competencia esférica *::skill::*!</effect>
+	</o>
+
+	<!------------------------------- TICKETS ------------------------------>
+
+	<o id="tictac" name="Tickets Taque" max="36" trade="5000">
+		<desc>Los Tickets Taque te permitirán excavar en el jardín de Papy Jose. Podrás encontrar tesoros escondidos por su tatarabuelo.</desc>
+	</o>
+
+	<o id="xmtix" name="Ticket de Navidad" max="5000" trade="5000">
+		<desc>Este Ticket de Navidad te permite acceder al juego de caza nieves en Dinovilla.</desc>
+	</o>
+
+	<o id="ptix" name="Ticket Amigo" max="100">
+		<desc>Has recibido este Ticket Amigo gracias a la inscripción de un jugador que ha seguido tu recomendación. Puedes usarlo en la Plaza del Mercado.</desc>
+	</o>
+
+	<o id="demtix" name="Ticket-Demonio" max="8000">
+		<desc>Los Tickets-Demonio se obtienen al sacrificar Dinos en la Tienda Demoníaca. Una vez tengas suficientes, puedes intercambiarlos por Dinos-Demonio.</desc>
+	</o>
+
+	<o id="bougie" name="Vela de Aniversario" max="5000" trade="5000">
+		<desc>¡Esta vela te permite buscar regalos en el Pastel Sorpresa en el Puerto de Santa Moría!</desc>
+	</o>
+
+	<o id="petard" name="Petardo mágico" max="5000" trade="5000">
+		<desc>¡Con este petardo lanzarás los fuegos artificiales en Dinovilla que te harán ganar tesoros!</desc>
+	</o>
+
+	<o id="tix" name="Bono del Tesoro" max="9999">
+		<desc>Un Bono del Tesoro vale 1.000 Monedas. Te permite participar en la Plaza del Mercado. Para pasarlo a monedas, úsalo desde la sección Inventario.</desc>
+		<effect>Has convertido tu Bono del tesoro a *1.000* monedas de oro.</effect>
+	</o>
+
+	<!------------------------------- OEUF DE DINOZ ------------------------------>
+
+	<o id="tufufu" name="Bebé Tufufu" max="2" trade="30000">
+		<desc>Este Bebé Tufufu comienza a patalear, ¡y ya quiere salir a hacer de las suyas en los campos de batalla! </desc>
+		<effect>¡Felicitaciones! Acabas de obtener un magnífico *Tufufu* !</effect>
+	</o>
+
+	<o id="kabegg" name="Huevo de Kabuki" max="10" trade="30000">
+		<desc>Este huevo extraño está a punto de romperse para dar paso a un bonito Dino...</desc>
+		<effect>¡Enhorabuena! ¡Has obtenido un magnífico *Kabuki*!</effect>
+	</o>
+
+	<o id="stzegg" name="Huevo de Polvorón" max="10" trade="30000">
+		<desc>De este huevo tan raro saldrá un Dino de mirada tierna, pero muy rudo en combate...</desc>
+		<effect>¡Enhorabuena! ¡Has obtenido un magnífico *Polvorón*!</effect>
+	</o>
+
+	<o id="feregg" name="Huevo de Feros" max="10" trade="30000">
+		<desc>De este huevo tan raro parece que pronto va a salir un bonito Dino...</desc>
+		<effect>¡Enhorabuena! ¡Has obtenido un magnífico *Feros*!</effect>
+	</o>
+
+	<o id="mamegg" name="Bebé Mahamuti" max="10" trade="30000">
+		<desc>Distingues una forma extraña a través del hielo. Parece una bola de pelos con un cuerno. ¿Qué será?</desc>
+		<effect>¡Enhorabuena! ¡Has obtenido un magnífico Dino *Mahamuti*!</effect>
+	</o>
+
+	<o id="rocky2" name="Huevo raro de Rokky " max="10" trade="30000">
+		<desc>Un bloque de piedra duro como el acero, parece que hay algo que vibra en el interior... ¡Un corazón de guerrero ansioso por comenzar la aventura!</desc>
+		<effect>¡Felicitaciones! Has obtenido un magnifico *Rokky*, ¡por su color, es diferente a los demás de su especie!</effect>
+	</o>
+
+
+	<o id="casti2" name="Huevo raro de Castivore" max="10" trade="30000">
+		<desc>Una bola de pelos, cuando se le toca salta en todos los sentidos. Este compañero será de gran ayuda en el futuro.</desc>
+		<effect>¡Felicitaciones! Has obtenido un magnifico *Castivore*, ¡por su color, es diferente a los demás de su especie!</effect>
+	</o>
+
+	<o id="nuago2" name="Huevo raro de Nubeis" max="10" trade="30000">
+		<desc>Una pequeña nube, pero hay que desconfiar de su aparente tranquilidad. ¡La tormenta que trae puede ser muy violenta!</desc>
+		<effect>¡Felicitaciones! Has obtenido un magnifico *Nubeis*, ¡por su color, es diferente a los demás de su especie!</effect>
+	</o>
+
+	<o id="winks2" name="Huevo raro de Winks" max="10" trade="30000">
+		<desc>Un huevo de cáscara muy dura, ¡sólo la criatura que está dentro puede romperla! </desc>
+		<effect>¡Magnífico! Acabas de ganar un fabuloso huevo de *Winks*, por su color, es diferente a los demás de su especie!</effect>
+	</o>
+
+	<o id="fereg2" name="Huevo raro de Feros" max="10" trade="30000">
+		<desc>Este huevo no es como los otros, ¡tiene rasgos de guerrero!</desc>
+		<effect>¡Estupendo! Ahora tienes un *Feros especial*</effect>
+	</o>
+	
+	<o id="fereg3" name="Huevo de Feros de Navidad" max="10" trade="30000">
+		<desc>This Feross egg isn't like all the rest... Direct from the North Pole! It seems that old Pere Nicolas delivers more than jsut presents!</desc>
+		<effect>Congratulations! You've received a wonderful *Christmas Feross egg*!</effect>
+	</o>
+
+	<o id="stzeg2" name="Huevo raro de Polvorón" max="10" trade="30000">
+		<desc>Este huevo no es nada común, ¿qué sorpresas guardará?</desc>
+		<effect>¡Vaya suerte, ahora tienes un ejemplar de *Polvorón* muy especial!</effect>
+	</o>
+
+	<o id="pigm" name="Huevo raro de Pigmou" max="10" trade="30000">
+		<desc>Este bebé Pigmou está listo a hacer destrozos, sus rayas de presidiario espantan a sus enemigos en los campos de batalla.</desc>
+		<effect>¡Felicidades! Has encontrado un magnífico huevo de *Pigmou raro* </effect>
+	</o>
+
+	<o id="sirain" name="Huevo raro de Sirain" max="10" trade="30000">
+		<desc>Este huevo es muy misterioso, ¿cómo será el Dino que tiene dentro?</desc>
+		<effect>¡Felicidades! ¡Has encontrado un magnífico y raro huevo de *Sirain*! </effect>
+	</o>
+
+	<o id="soufle" name="Huevo de Visper" max="10" trade="30000">
+		<desc>Este huevo está a punto de abrirse, ¿cómo será la criatura que lleva dentro?</desc>
+		<effect>¡Estupendo! ¡Ahora tienes un magnífico *Visper*!</effect>
+	</o>
+
+
+	<o id="kabeg2" name="Huevo raro de Kabuki" max="10" trade="30000">
+		<desc>Este insólito huevo contiene un Dino extraordinario...</desc>
+		<effect>¡Estupendo! ¡Ahora tienes un magnífico huevo de *Kabuki raro*!</effect>
+	</o>
+
+
+	<o id="tufeg2" name="Huevo raro de Tufufu" max="10" trade="30000">
+		<desc>Este huevo contiene un Dino especial...</desc>
+		<effect>¡Felicitaciones, has ganado  un raro y espectacular *Tufufu*!</effect>
+	</o>
+
+	<!-- Existe??-->
+	<o id="quetzu" name="Huevo de Quetzu" max="10" trade="30000">
+		<desc>Este huevo contiene un Dino especial...</desc>
+		<effect>¡Felicitaciones, has ganado  un raro y espectacular *Quetzu*!</effect>
+	</o>
+
+
+	<o id="smegg" name="Huevo de Smog Navideño" max="10" trade="30000">
+		<desc>Este huevo es muy extraño... El Dino que tenga dentro debe ser excepcional.</desc>
+		<effect>¡Felicidades! Has ganado un rarísimo y espectacular *Smog Navideño*.</effect>
+	</o>
+
+	
+	<o id="smegg2" name="Huevo de Smog" max="10" trade="30000">
+		<desc>Este extraño huevo contiene un Dino excepcional...</desc>
+		<effect>¡Enhorabuena! Ahora tienes un fabuloso *Smog*!</effect>
+	</o>
+	
+	<o id="smegg3" name="Anniversary Smog Egg" max="10" trade="30000">
+		<desc>This odd ball of an egg seems ready to become more than just an egg...</desc>
+		<effect>Congratulations! You've received a wonderful *Smog Anniversary*!</effect>
+	</o>
+	
+	<o id="smegg4" name="Huevo de Smog Navideño" max="10" trade="30000">
+		<desc>Este extraño huevo contiene un Dino excepcional...</desc>
+		<effect>¡Enhorabuena! Ahora tienes un fabuloso *Smog*!</effect>
+	</o>
+
+	<o id="mameg2" name="Bebé de Mahamuti Raro" max="10" trade="30000">
+		<desc>Detras del hielo distingues una forma extraña, ¿qué es esa bola de pelos?</desc>
+		<effect>¡Vaya suerte! ¡Acabas de encontrar un *Mahamuti raro* y es todo tuyo!</effect>
+	</o>
+
+	<o id="mouef2" name="Bebé Moueffe raro" max="10" trade="30000">
+		<desc>Este huevo extraño contiene un Dino excepcional</desc>
+		<effect>¡Acabas de encontrar un *Moeuffe raro*!</effect>
+	</o>
+
+	<o id="wan2" name="Bebé Wanwan raro" max="10" trade="30000">
+		<desc>Este huevo es muy extraño... El Dino que tenga dentro debe ser excepcional.</desc>
+		<effect>¡Felicidades! Has ganado un rarísimo y espectacular *Wanwan raro*.</effect>
+	</o>
+	
+	<o id="plan2" name="Bebé Planeala raro" max="10" trade="30000">
+		<desc>Este huevo es muy extraño... El Dino que tenga dentro debe ser excepcional.</desc>
+		<effect>¡Felicidades! Has ganado un rarísimo y espectacular *Planeala raro*.</effect>
+	</o>
+	
+	<o id="triceg" name="Baby Triceragnon" max="10" trade="30000">
+		<desc>This strange little egg seems to be ready to transform into an amazing Dino!</desc>
+		<effect>Congratulations! You’ve received a magnificent *Triceragnon* !</effect>
+	</o>
+	
+	<o id="xmase1" name="Christmas... Egg?" max="10" trade="30000">
+		<desc>This egg is hiding a little surprise... It's going to hatch into either a baby Trcerithumps or  a baby Santaz. It'll be a surprise!</desc>
+		<effect>Congratulations you've received a wonderful new dino!</effect>
+	</o>
+	
+	<o id="goegg1" name="Bebé Gorilos raro" max="10" trade="30000">
+		<desc>Este huevo es muy extraño... El Dino que tenga dentro debe ser excepcional.</desc>
+		<effect>¡Felicidades! Has ganado un rarísimo y espectacular *Gorilos raro*.</effect>
+	</o>
+	
+	<!------------------------------- OBJETS DE FIN D'INVENTAIRE ------------------------------>
+
+	<o id="riz" name="Arroz amnésico" max="5" trade="5000">
+		<desc>Esta variedad muy rara de Arroz vuelve amnésico a los Dinos. Si come este arroz, tu Dino perderá su nombre así como su experiencia acumulada desde su último nivel...</desc>
+		<effect>¡Tu Dino ha olvidado su nombre! Es buen momento para elegirle otro nombre...</effect>
+	</o>
+
+	<o id="regen" name="Brazalete en Tik" max="1">
+		<desc>Este objeto perteneciente a la tecnología de Caushemesh, ¡puede dar cada día hasta 10 puntos de vida al Dino que la lleve!</desc>
+		<fight proba="0" priority="0"/>
+	</o>
+
+	<o id="star" name="Estrella Mágica" max="7">
+		<desc>Estas misteriosas estrellas se encuentran repartidas por todo Dinoland. ¿Conseguirás reunir las 7?</desc>
+	</o>
+
+	<o id="cgold" name="Napodino de oro" max="100">
+		<desc>Los Napodinos de oro son piezas de oro masivo provenientes de una civilización pre-dinovillana. Tienen un gran valor para los coleccionistas, y se dice que dan buena suerte a los Dinos que lo lleven consigo.</desc>
+		<fight proba="0" priority="0"/>
+	</o>
+
+
+</objects>

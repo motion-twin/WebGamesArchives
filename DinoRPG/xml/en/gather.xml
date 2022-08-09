@@ -1,0 +1,199 @@
+﻿<gathers>
+
+	<g id="pe" act="peche" skill="peche1" skin="Fish" size="7" clicks="2" type="Fishes">
+		<i v="fish" count="18"/>
+		<i v="fishu" count="5" cond="skill(peche2)"/>
+		<i v="fish1" count="1" cond="skill(peche3)+pos(port)"/>
+		<i v="fish2" count="1" cond="skill(peche3)+pos(chutes)"/>
+		<i v="fish3" count="1" cond="skill(peche3)+pos(fleuve)"/>
+	</g>
+
+	<g id="cu" act="cueill" skill="cueill" skin="Cueille" size="8" clicks="3" type="Plants">
+		<i v="fruitc" count="28"/>
+		<i v="fruitu" count="11" cond="skill(oeil)"/>
+		<i v="fruit1" count="3" cond="skill(oeil)+pos(forges)"/>
+		<i v="fruit2" count="3" cond="skill(oeil)+pos(chemin)"/>
+		<i v="fruit3" count="3" cond="skill(oeil)+pos(marais)"/>
+	</g>
+
+	<g id="cu2" act="cueill" skill="cueill" skin="Cueille" size="8" clicks="3" type="Plants">
+		<i v="fruitc" count="20"/>
+		<i v="fruitu" count="5" cond="skill(oeil)"/>
+		<i v="fruit1" count="1" cond="skill(oeil)+random(4)"/>
+		<i v="fruit2" count="1" cond="skill(oeil)+random(4)"/>
+		<i v="fruit3" count="1" cond="skill(oeil)+random(4)"/>
+		<i v="fruit4" count="1" cond="skill(oeil)+pos(isnow2)"/>
+	</g>
+	
+	<g id="cu3" act="cueill" skill="cueill" skin="Cueille" size="8" clicks="3" type="Plantes">
+		<i v="fruitc" count="5"/>
+		<i v="fruitu" count="5" cond="skill(oeil)"/>
+		<i v="fruit1" count="2" cond="skill(oeil)"/>
+		<i v="fruit5" count="5" cond="skill(oeil)+pos(cpuits)"/>
+	</g>
+	
+	<g id="cu4" act="cueill" skill="cueill" skin="Sombre" size="8" clicks="3" type="Plantes">
+		<i v="fruitc" count="8"/>
+		<i v="fruitu" count="3"/>
+		<i v="fruit1" count="4" cond="skill(oeil)"/>
+		<i v="fruit3" count="2" cond="skill(oeil)"/>
+		<i v="fruita" count="1" cond="pos(fake2)"/>
+	</g>		
+	
+	<g id="en" act="energy" skill="energy" skin="Energy" size="6" clicks="1" type="Energy">
+		<i v="enfdr" count="6"/>
+		<i v="enair" count="3" cond="skill(fiselt)+pos(frcbrt)"/>
+		<i v="enfeu" count="1" cond="skill(fiselt)+pos(bslt)"/>
+		<i v="enbois" count="1" cond="skill(fiselt)+pos(garde)"/>
+		<i v="eneau" count="1" cond="skill(fiselt)+pos(dome)"/>
+	</g>
+
+	<g id="en2" act="energy" skill="energy" skin="Energy" size="6" clicks="1" type="Energy">
+		<i v="enfdr" 	count="1"/>
+		<i v="enair" 	count="3" cond="skill(fiselt)"/>
+		<i v="enfeu" 	count="1" cond="skill(fiselt)+random(6)"/>
+		<i v="enbois" 	count="1" cond="skill(fiselt)+random(6)"/>
+		<i v="eneau" 	count="1" cond="skill(fiselt)+random(6)"/>
+	</g>	
+	
+	<g id="ch" act="chasse" skill="chass1" skin="Hunt" size="6" clicks="1" type="Hunt Trophies">
+		<i v="chasc" 			count="7"/>
+		<i v="chasu" 			count="4" cond="skill(chass2)"/>
+		<i v="chas1,chas2" 		count="1" cond="skill(chass3)"/>
+		
+		<i v="chas3" 			count="1" cond="!pos(ilacro)+skill(chass3)+random(3)"/>
+		<i v="chas3,chas4" 		count="1" cond="pos(ilacro)+skill(chass3)+random(3)"/>
+		
+		<i v="chas5" 			count="2" cond="skill(chass2)+pos(ccrane)"/>
+	</g>
+
+	<g id="fo" act="fouiller" skill="fouill" skin="Fouille" size="10" clicks="1" type="Artifacts">
+		<i v="art"   			count="3"/>
+		<i v="artu"  			count="1" cond="skill(detect)"/>
+		<i v="art1,art2,art3"  	count="2" cond="skill(archeo)+random(5)"/>
+		<i v="artr1,artr2" 		count="1" cond="skill(archeo)+random(15)"/>
+		<i v="artr3" 			count="1" cond="skill(archeo)+random(10)+pos(iroche)"/>
+	</g>
+
+	<g id="xmas" act="snow" object="xmtix" skin="Snow" size="10" clicks="3" type="Christmas presents" cond="promo(xmas)|!config(xmas)">
+		<i v="art" count="8"/>
+		<i v="artu" count="4"/>
+		<i v="art2" count="1"/>
+		<i v="art3" count="1"/>
+		<i v="chasc" count="13"/>
+		<i v="fruitc" count="11"/>
+		<i v="fruitu" count="8"/>
+		<i v="fruit2" count="1"/>
+		<i v="fruit4" count="1"/>
+		<i v="fruit5" count="1"/>
+		<i v="fish" count="11"/>
+		<i v="fishu" count="5"/>
+		<i v="chasu" count="5"/>
+		<i v="enair" count="5"/>
+		<i v="eneau" count="3"/>
+		<i v="enfdr" count="5"/>
+		<i v="enbois" count="4"/>
+		<i v="enfeu" count="2"/>
+		<i v="dgrain" count="3"/>
+		<i gold="3000" count="6"/>
+		<i object="xmase1" count="1"/>
+		<i object="smegg4" count="1"/>
+	</g>
+
+	<g id="parr" act="parrain" object="ptix" skin="Parrain" size="10" clicks="3" type="Sponsor Treasures">
+		<i v="fish" count="10"/>
+		<i v="fruitc" count="10"/>
+		<i v="enfdr" count="10"/>
+		<i v="art" count="10"/>
+		<i v="chasc" count="10"/>
+		<i v="fishu" count="7"/>
+		<i v="fruitu" count="7"/>
+		<i v="enair" count="7"/>
+		<i v="artu" count="7"/>
+		<i v="chasu" count="7"/>
+		<i object="irma" count="7"/>
+		<i gold="3000" count="6"/>
+		<i object="feregg" count="2"/>
+	</g>
+	
+	<g id="papjar" act="fouiller" object="tictac" skin="Treasure" size="6" clicks="6" type="Treasure From Grandpa Joe's Garden">
+		<i v="enfdr" count="2"/>
+		<i v="chasc" count="1"/>
+		<i v="fruit2" count="3"/>
+		<i v="art" count="4"/>
+		<i gold="500" count="3"/>
+		<i object="mamegg" count="1" />
+	</g>
+	
+	<g id="labo" act="fouiller" skin="Labodo" size="10" clicks="3" type="Resources in the Archidorogon's laboratory" cond="scenario(nimbao,41)+!hasobject(remede)">
+		<i v="chasc" count="1"/>
+		<i object="combi" count="1"/>
+		<i v="fruitc" count="5"/>
+		<i object="riz" count="2"/>
+		<i gold="100" count="5"/>
+		<i object="remede" count="1" />
+	</g>
+	
+	<g id="anniv" act="anniversaire" object="bougie" skin="Anniv" size="10" clicks="3" type="Fabulous Treasures">
+		<i v="fish" 	count="16"/>
+		<i v="fishu" 	count="5"/>
+		<i v="fish1" 	count="5"/>
+		<i v="fish2" 	count="5"/>
+		<i v="fish3" 	count="4"/>
+		<i v="fruit5" 	count="5"/>
+		<i v="chas5" 	count="2"/>
+		<i v="dgrain" 	count="1"/>
+		<i v="art" 		count="10"/>
+		<i v="artu" 	count="3"/>
+		<i v="art3" 	count="1"/>
+		<i gold="1000" 	count="10"/>
+		<i gold="2000" 	count="8"/>
+		<i gold="3000" 	count="5"/>
+		<i v="enair" 	count="4"/>
+		<i v="eneau" 	count="2"/>
+		<i v="enfdr" 	count="3"/>
+		<i v="enfeu" 	count="4"/>
+		<i v="enbois" 	count="2"/>
+		<i gold="20000" count="2"/>
+		<i object="tictac" count="1"/>
+		<i object="smegg3" count="2"/>
+	</g>	
+
+	<g id="fete" act="artifice" object="petard" skin="Fete" size="10" clicks="3" type="Wondrous Treasures">
+		<i v="fish" 	count="5"/>
+		<i v="fishu" 	count="5"/>
+		<i v="fish1" 	count="5"/>
+		<i v="fish2" 	count="5"/>
+		<i v="fish3" 	count="4"/>
+		<i v="fruit5" 	count="5"/>
+		<i v="chas5" 	count="2"/>
+		<i v="dgrain" 	count="1"/>
+		<i v="art" 		count="10"/>
+		<i v="artu" 	count="3"/>
+		<i v="art3" 	count="1"/>
+		<i gold="1000" 	count="10"/>
+		<i gold="2500" 	count="4"/>
+		<i gold="5000" 	count="4"/>
+		<i gold="10000" 	count="3"/>
+		<i v="enair" 	count="3"/>
+		<i v="eneau" 	count="3"/>
+		<i v="enfdr" 	count="3"/>
+		<i v="enfeu" 	count="3"/>
+		<i v="enbois" 	count="3"/>
+		<i object="cendre" count="1"/>
+		<i object="abysse" count="1"/>
+		<i object="amazon" count="1"/>
+		<i object="stelme" count="1"/>
+		<i object="ourano" count="1"/>
+		<i object="surviv" count="1"/>
+		<i object="ration" count="1"/>
+		<i object="tartev" count="1"/>
+		<i object="remed2" count="1"/>
+		<i object="burger" count="1"/>
+		<i object="hotpan" 	count="3"/>
+		<i object="tictac" count="3"/>
+		<i object="winks2" count="1"/>
+		<i object="goegg1" count="1" cond="date(2016-06-28,+)+date(2017-07-04,-)" />
+	</g>
+
+</gathers>

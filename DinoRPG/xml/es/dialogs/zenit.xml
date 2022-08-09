@@ -1,0 +1,97 @@
+﻿<d place="frcbrt" name="Maestro Zenit" background="2" gfx="zenit" cond="(active(dojo)|admin())">
+
+	<phase id="begin" fast="1" next="talk:talk2:aide:missions" frame="stop">
+		Un anciano medita inmóvil en un rincón. De pronto, te mira atentamente: Verte caminando en círculos parece haber llamado su atención...
+	</phase>
+
+	<a id="talk" cond="scenario(dojo,0)">¡Hey, abuelo!, ¿qué hay de nuevo, viejo?</a>
+	<a id="talk2" cond="scenario(dojo,0)">(Te inclinas ante el Maestro)</a>
+	<a id="missions" cond="scenario(dojo,1)">Check out the Mission List</a>
+	
+	<phase id="missions" missions="zenit"></phase>
+	
+	<phase id="talk">
+		Hum, joven imprudente, aún no estás listo.
+	</phase>
+	<phase id="talk2" next="ouep">
+		Veo que tienes espíritu de combate joven aprendiz...
+	</phase>
+	
+	<a id="ouep">¡Me entreno para ser el mejor!</a>
+	
+	<phase id="ouep" next="hm:hm2:hm3">
+		Jaja, tu ímpetu me recuerda cuando yo era joven. En esa época me divertía dando tremendas palizas a los monstruos de las Estepas... ¡Y a puño limpio! Todo eso para endurecerme.
+	</phase>
+	
+	<a id="hm" target="insol">(Uyuyuy, otro viejo que chochea...)</a>
+	<a id="hm2">(Te quedas)</a>
+	<a id="hm3" target="insol">(Te muestras impresionado.)</a>
+	
+	<phase id="insol">
+		Leo en tus ojos duda e incredulidad... ¡a menos que no estés totalmente decidido!
+		Qué pena por ti.
+	</phase>
+	
+	<phase id="hm2" next="dojo">
+		Bueno, bueno... tu corazón parece claro como el agua. Entonces debes estar listo para crear tu propio Dojo.
+	</phase>
+	
+	<a id="dojo">¿Mi propio Dojo?</a>
+	
+	<phase id="dojo" next="va">
+		[Sí, gracias a mí, vas a poder crear tu Dojo en el lugar que prefieras en Dinoland.]
+		[Es un lugar de meditación y de perfeccionamiento donde combatirás con otros Maestros Dinos que lleguen a estas tierras.]
+		[También podrás participar en el Torneo Inter-Dojos. Esta competencia pondrá a la vista de todos tu audacia y tu valentía.]
+	</phase>
+	
+	<a id="va">
+		¿Y qué debo hacer para construir mi Dojo?
+	</a>
+	
+	<phase id="va" next="bien">
+		[Primero debes escoger un lugar, el que prefieras.]
+		[Siempre podrás venir para obtener mi ayuda.]
+		[Ahora, anda...]
+	</phase>
+	
+	<a id="bien">¡Bien!</a>
+	
+	<phase id="bien" fast="1" scenario="dojo:1" frame="stop">
+		Te marchas a paso firme. ¿Estás seguro que estás listo para enfrentar los desafíos que te esperan?
+	</phase>
+
+	<a id="aide" cond="scenario(dojo,1)">Maestro, ¡necesito su ayuda!</a>
+	<phase id="aide" frame="aide" next="aideurl:noaide:maitre">
+		¿Mi ayuda? Pareces un joven honorable ¿Qué puedo hacer por ti?
+	</phase>
+	
+	<a id="aideurl">¿Puedes explicarme de qué se trata el Dojo?</a>
+	<a id="noaide">Eehh... no, nada.</a>
+	<a id="maitre">¿También eres un Maestro Dino?</a>
+	
+	<phase id="aideurl" url="/help?id=dojos">
+		Puedes consultar la Guía del Juego para ver mejor.
+	</phase>
+	
+	<phase id="maitre" frame="aide" next="dinoz">
+		[Efectivamente, yo mismo crío y entreno mis criaturas. Dicho sea de paso, soy el único en haberlas domesticado.]
+		[Si tu Dojo se convierte en uno de los más célebres de Dinoland y pruebas tu valor, yo te recompensaré regalándote uno de mis magníficos Dinos.]
+	</phase>
+	
+	<phase id="noaide" fast="1" frame="stop">
+		Sigues tu camino.
+	</phase>
+	<a id="dinoz">
+		¿De verdad? ¿Y qué tipo de Dino es?
+	</a>
+	
+	<phase id="dinoz" frame="aide" next="sustense">
+		Lo descubrirás muy pronto. El hecho de que no lo veas, no quiere decir que no exista...
+	</phase>
+	
+	<a id="sustense">¡Pues, voy a luchar por él!</a>
+	
+	<phase id="sustense" frame="stop" fast="1">
+		El viejo Maestro te observa marcharte, dibujándose en su rostro una sonrisa pícara...
+	</phase>
+</d>

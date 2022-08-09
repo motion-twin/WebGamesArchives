@@ -1,0 +1,102 @@
+<d place="jzlabo" name="Portes ouvertes Jeezara" cond="curquest(schoo)+disable()" gfx="jzprof" auto="1">
+
+<phase id="begin" frame="back" next="hum">
+.. Une once de flaum... Touiller. Ajouter ensuite... du charcoal bouffi. 
+Du charcoal bouffi ? Qu'est-ce que c'est que ce truc ? Boaf. On va mettre un peu de pyropâte, ça ira bien...
+</phase>
+
+<a id="hum">Hum... Excusez-moi! je viens pour les portes ouvertes ! </a>
+
+<phase id="hum" frame="back" next="no">
+Oula, drôle de couleur. Et ça pue ! 
+...Mmmh ? Les portes ouvertes ? Il n'y a personne d'autre à qui tu pourrais aller casser les pieds, dans le coin ? 
+</phase>
+
+<a id="no">Ben non. Il n'y a que vous.</a>
+
+<phase id="no" frame="back" next="so">
+Bon... Vas-y. Pose tes questions. Mais sans me déranger hein ! 
+</phase>
+
+<phase id="so" frame="angry" next="spe:hist:home:how:go">
+Alors tu veux savoir quoi, espèce de casse-pi... euh d'apprenti ? 
+</phase>
+
+<a id="spe">On enseigne quoi à Jeezara ? </a>
+<a id="hist">Mais on est où là ? C'est une grotte ?</a>
+<a id="home">La cantine est bonne ? </a>
+<a id="how">Si je veux devenir jeezariste, je fais comment ? </a>
+<a id="go">Je vous laisse.</a>
+
+<!-- ###################### -->
+<phase id="spe" next="speb">
+On enseigne rien à Jeezara ! 
+On cherche ! On découvre ! On tâtonne ! 
+</phase>
+
+<a id="speb">Ah bon. Et euh... On tâtonne quoi à Jeezara ? </a>
+
+<phase id="speb" frame="angry" next="spec">
+Tout ! Si Jeezara avance, c'est parce qu'on va où on veut. 
+On ne s'embête pas avec les professeurs, les étudiants.... Toutes ces idioties passéistes qui font perdre du temps !
+</phase>
+
+<a id="spec">Mais ça se passe comment alors ? </a>
+
+<phase id="spec" next="sped">
+Comme tu veux ! Tout le monde fait son alchimie dans son coin !
+Et si certains sont trop bêtes tous seuls, ils peuvent travailler ensemble. C'est les méthodes modernes. 
+</phase>
+
+<a id="sped">Et les alchimistes plus expérimentés ne guident pas les plus jeunes ? C'est la base d'une école, quand même.</a>
+
+<phase id="sped" frame="normal" next="spee">
+Ah si. On guide souvent les étudiants vers ce qui nous manque pour qu'ils nous le ramènent.  C'est très pratique. 
+S'ils veulent apprendre des trucs ils n'ont qu'à bien regarder leurs aînés. Mais sans les déranger.
+</phase>
+
+<phase id="spee" frame="happy" next="so">
+Pas de limites ! Pas de règles ! Pas de consensus ! 
+Voilà la base de la recherche alchimique jeezariste.
+</phase>
+
+<!-- ###################### -->
+<phase id="hist" next="histb">
+C'est le boyau ! C'est comme ça qu'on appelle le réseau de grottes qui abrite l'école Jeezara.
+</phase>
+
+<a id="histb">Ah ? Ca doit être un peu humide, non ? </a>
+
+<phase id="histb" frame="angry" next="histc">
+On s'habitue. Et puis il fallait bien que les jeezaristes puissent se planquer avant que la guilde nous reconnaisse comme une école d'alchimie.
+</phase>
+
+<a id="histc">Vous n'étiez pas une école avant ? C'est compliqué dites donc. </a>
+
+
+<phase id="histc" next="so">
+Oui ben justement, c'est trop long. Si tu rejoins Jeezara tu trouveras bien quelques gogos pour perdre leur temps à t'expliquer tout ce bazar. 
+</phase>
+
+
+<!-- ###################### -->
+<phase id="home" frame="angry" next="so">
+Pourquoi ? Elle devrait ? 
+</phase>
+
+
+<!-- ###################### -->
+<phase id="how" frame="angry" next="so">
+Il faut venir au boyau. L'entrée est dans la province de Yoruba, dans le sud. 
+On te trouvera bien un bout de paillasse pour commencer à travailler.
+</phase>
+
+
+<!-- ###################### -->
+<phase id="go" frame="angry" url="/act?did=po2">
+C'est ça. |
+%back% Alors... si j'ajoute une patte de boogaloo, ce truc doit vivre. Voyons voir...
+</phase>
+
+
+</d>

@@ -1,0 +1,98 @@
+﻿<d place="baobob" name="Mr Bao Bob" gfx="baobob">
+	<phase id="begin" next="question:nothing">
+		Hello, hello! What do you want young Master Tamer?
+	</phase>
+
+	<a id="question">I've got a question for you</a>
+	<a id="nothing">Nothing</a>
+
+	<phase id="question" next="mission:quest2:quest3:quest4:no">
+		A question? Mmmmmm... what do you think about a little Mission for your Dinoz instead?
+		Some friends and I organize rallies around Dinoland. You could take part, if you're interested.
+	</phase>
+
+	<a id="mission">Yes, I'd like that</a>
+	<a id="no" target="nothing">No thanks</a>
+	<a id="quest2" cond="active(steppes)+!fx(palmes)">What about my question?</a>
+	<a id="quest3" cond="active(steppes)+fx(palmes)+!fx(sylkey)">What about my question?</a>
+	<a id="quest4" cond="scenario(magnet,8)">What about my question?</a>
+
+	<phase id="nothing">
+		Oh well. Bon voyage!
+	</phase>
+
+	<phase id="mission" missions="bob"></phase>
+
+	<phase id="quest2">
+		Return to me when you have obtained the Korgon fins from Grumhel Forest.
+		Then I'll answer any question you want.
+	</phase>
+
+	<a id="bye" target="nothing">I have to leave</a>
+
+	<phase id="quest3" next="where:bye">
+		A question? Mmmmm ... I see that you have obtained the Korgon fins.
+		That means that you should be able to survive... maybe...
+	</phase>
+
+	<a id="where">Where?</a>
+
+	<phase id="where" next="where2:how:danger:bye">
+		Mmmm ... You must round up seven Dinoz and bring them here. Not necessarily yours,
+		they can also be Dinoz of members of your Clan. Once you have enough Dinoz I'll send you on your way.
+	</phase>
+
+	<a id="where2">But where exactly?</a>
+	<a id="how">What do I need to do?</a>
+	<a id="danger">Is it dangerous?</a>
+
+	<phase id="where2" next="how:danger:bye">
+		Mmmm ... it's a place ... I can't say any more. But know that you'll find a key there,
+		THE key for the Blacksilva door. It'll allow you to continue your adventure. If you survive that is....
+	</phase>
+
+	<phase id="how" next="where2:danger:concen:bye">
+		How you ask? Listen. You must round up seven Dinoz and bring them here. Not necessarily yours,
+		they can also be Dinoz of members of your Clan. Each Dinoz needs to focus. Once you have enough Dinoz I'll send you on your way.
+	</phase>
+
+	<phase id="danger" next="where2:how:bye">
+		Dangerous? It's fair to say that you'll only have a few chances to survive ...
+		But as the saying goes, nothing ventured, nothing gained, no?
+	</phase>
+
+	<a id="concen">I want my Dinoz to focus!</a>
+
+	<phase id="concen" next="ok:bye">
+		If you would like I can hypnotize your Dinoz. This will focus your Dinoz.
+		Don't worry, you can stop the hypnosis at any point, if you want.
+	</phase>
+
+	<a id="ok">Ok</a>
+
+	<phase id="ok" url="/dino/::did::/act/concentrate"></phase>
+
+	<phase id="quest4" next="noingr:ingr:bye">
+		A question? Mmmmm ... You'll need some ingredients if you would like me to help you.
+		If I guess well, the question you want to ask me....
+	</phase>
+
+	<a id="ingr" cond="fx(gshop)+fx(ice)+fx(corail)">Here are the ingredients!</a>
+	<a id="noingr" cond="!(fx(gshop)+fx(ice)+fx(corail))">Here are the ingredients!</a>
+
+	<phase id="noingr">
+		Mmmm....Coral that never breaks, Ice that never melts, and a Branch that never fades.
+		It seems that there's something missing, my friend.
+	</phase>
+
+	<phase id="ingr" noeffect="gshop:ice:corail" effect="potion" scenario="magnet:9" next="potion">
+		Poum poum palalam poum poum palalam PAM! Done, a wonderful Anti SEDH Potion is ready for you...
+	</phase>
+
+	<a id="potion">So you are an Antique Monkey!!!</a>
+
+	<phase id="potion">
+		Good bye my good friend, come back again when you can!
+	</phase>
+
+</d>

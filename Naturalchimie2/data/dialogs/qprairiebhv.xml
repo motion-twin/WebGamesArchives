@@ -1,0 +1,143 @@
+<d place="gmprai" name="BHV" gfx="gmbhv" cond="quest(quotd)+grade(,3)+!fx(skatbo)">
+
+<a id="end">Je vous laisse.</a>
+
+<phase id="begin" next="quest:questb:noquest:quoi:qui">
+Oh un admirateur ! En pleine cambrousse ! Incroyable !
+</phase>
+
+<a id="quest" cond="fx(diabhv)+quest(skata)+!quest(bhvd)+!fx(skatsa)">Je peux vous aider pour votre plan secret ?</a>
+<a id="questb" cond="fx(skatsa)">Vous avez l'air débordée...</a>
+<a id="noquest" cond="quest(bhvd)+!fx(skatsa)">Je peux vous aider pour votre plan secret ?</a>
+
+<a id="quoi" cond="curquest(skata)">Dites, ça m'intéresse votre histoire là... Votre plan secret...</a>
+<a id="qui" cond="!fx(skatsa)">Votre tête me dit quelque chose...</a>
+
+<!-- #############################" -->
+<phase id="quoi" next="okspa:nospa:spaquoi">
+%happy%Mmmmh... Si tu acceptes de devenir membre de ma société protectrice du vivant poilu et cromignon...  il est possible que je puisse te considérer comme quelqu'un digne de confiance.
+</phase>
+
+<a id="okspa">Bon ok. Promis, je m'inscrirai à votre société, là. </a>
+
+<phase id="okspa" next="okspab" effect="spapro">
+Ooooh c'est merveilleux ! J'étais sûre que je pouvais compter sur toi !
+Pour payer ta cotisation il faudre te rendre au BAFA, un membre actif de la société s'occupe de la permanence là-bas. Il encaissera ta cotisation et te fera ta carte de membre. 
+</phase>
+
+<phase id="okspab" next="vive">
+%happy%Mais bon tu feras ça plus tard. En tant que futur membre actif de la société protectrice, %normal%je sais que je peux te faire confiance !
+Allez ! Tous ensembles : Vive le vivant poilu ! Vive les Skats ! 
+</phase>
+
+<a id="vive">Vive le vivant poilu ! Vive les skats ! </a>
+
+<phase id="vive" next="plan">
+Bravo tu es doué ! %happy%Bon pour le plan secret, je peux te mettre dans la confidence, maintenant... 
+</phase>
+
+<phase id="plan" next="oua" effect="verext">
+En fait c'est très simple, c'est le même plan que d'habitude : Je vais alerter le guildian Express pour qu'ils fassent un article élogieux sur l'importance des Skats, leur écosystème en péril, tout ça. Ils ne me refusent jamais rien. Une interview de moi avec photo, ça gonfle toujours leurs tirages ! 
+</phase>
+
+<a id="oua">Ouah, astucieux.</a>
+
+<phase id="oua">
+Eh oui. Non seulement je suis splendide, mais en plus je suis géniale ! 
+</phase>
+
+
+<a id="nospa">Quoi ! ? Jamais vous m'entendez ! Jamais ! </a>
+
+<phase id="nospa">
+%angry%Alors jamais tu ne connaitras mon plan secret ! C'est tout !
+</phase>
+
+<a id="spaquoi">Ca consiste en quoi d'être membre de votre société protectrice ? </a>
+
+<phase id="spaquoi" next="poing">
+Oh, essentiellement à payer sa cotisation annuelle. On peut aussi avoir besoin des membres pour des actions coup de poing de temps à autre. 
+</phase>
+
+<a id="poing">Des actions coup de poing ? C'est-à-dire ? </a>
+
+<phase id="poing" next="quoi">
+%happy%Ca consiste à rester assis tous ensembles sur la grande place en criant, en gros. %normal%C'est très sympathique.
+</phase>
+
+
+<!-- #############################" -->
+
+<phase id="quest" quest="prairiebhv">%happy%Evidemment ! Tout le monde %normal%peut TOU| - JOURS m'aider ! </phase>
+
+<phase id="questb" quest="prairiebhv">Oui, l'interview a très bien marché ! Tout le monde veut sauver les Skats ! </phase>
+
+<phase id="noquest">C'est bon je suis prête pour l'interview. Plus qu'à attendre le journaliste.</phase>
+
+<!-- #############################" -->
+
+<phase id="qui" next="quib">
+%angry%Ahah très drôle. Soit c'est une petite blague, soit c'est une amnésie fulgurante... |
+Tout le monde me connait dans le royaume, toi comme les autres !
+</phase>
+
+<phase id="quib" next="pulp:reb:fat">
+Je suis {Blancheflor Hostia Vargotte} ! La plus populaire des alchimistes ! La plus sexy ! La plus médiatisée ! %happy%La plus... La plus... 
+</phase>
+
+<a id="pulp">Pulpeuse ? </a>
+<a id="reb">Rebondie ?</a>
+<a id="fat">Fatiguante ?</a>
+
+<phase id="pulp" next="sec">
+...Pulpeuse ? Mmmh, il faudra que j'en parle à mon agent, ça sonne pas mal "La pulpeuse Blancheflor Hostia Vargotte"....
+S'il est d'accord tu auras droit à une photo dédicacée. 
+</phase>
+
+<phase id="reb" next="sec">
+Rebon... Quoi ? 
+</phase>
+
+<phase id="fat" next="sec">
+%angry%Hum. Mettons que je n'ai rien entendu et que je ne vais pas appeler mon service d'ordre pour quelqu'un comme toi.
+</phase>
+
+<phase id="sec" next="secb">
+Bref ! Je suis sûre que tu meurs d'envie de dire à tout le monde en ville que la célèbre BHV est dans la prairie infinie, mais il faut absolument que tu te retiennes ! 
+</phase>
+
+<phase id="secb" next="prq">
+Impossible de tolérer une horde de fans ici ! 
+J'ai une mission à acccomplir...Il faut rester discret pour l'instant !
+</phase>
+
+<a id="prq">Une mission ? J'aime bien les missions. C'est quoi ?</a>
+
+<phase id="prq" next="ext">
+Tu vois le vilain bonhomme là-bas ? C'est un exterminateur ! Le plus horrible poste de la guilde des alchimistes ! 
+Mes contacts à la guilde m'ont appris qu'il a fait un carnage dans le coin ! Il a détruit des milliers de skats ! Le monstre ! 
+</phase>
+
+<a id="ext">Des milliers des milliers... j'en ai pas... euh je veux dire il en a pas exterminé tant que ça...</a>
+
+<phase id="ext" next="extb">
+%angry%Peu importe ! Même un seul skat écrasé sous la semelle aveugle des quotas de la guilde est un skat écrasé de trop !
+</phase>
+
+<phase id="extb" next="do">
+La {société de protection du vivant poilu et cromignon} (dont je suis la directrice comme tu le sais) ne peut pas tolérer de telles horreurs ! Ces pauvres bêtes ! 
+</phase>
+
+<a id="do">Mais qu'est-ce que vous voulez faire ? C'est la guilde en face... ils sont tout puissants non ? </a>
+
+<phase id="do" next="secret">
+Ahah ! Et moi ! Je ne suis pas toute puissante, peut-être ? ! Personnalité préférée des alchimistes 1574, 75 et 76 !
+%happy%Et non seulement je suis toute puissante... mais j'ai un plan ! 
+</phase>
+
+<phase id="secret" effect="diabhv">
+Mais pour l'instant, c'est secret. Il faut encore que je m'organise pour mettre cet exterminateur hors d'état de nuire.
+</phase>
+
+	
+</d>

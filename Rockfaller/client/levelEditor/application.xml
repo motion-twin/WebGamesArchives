@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<project>
+	<meta title="Level Editor" package="com.motiontwin.RFM" version="1.0.0" company="Motion-Twin" />
+	
+	<!-- output -->
+	<app main="Main" file="levelEditor" path="bin" />
+	
+	<window background="#C0C0C0" fps="60" />
+	
+	<!--Mandatory (important of the dead) for the GPU to function properly-->
+	<!--<window width="432" height="768" unless="mobile" />-->
+	<window width="1000" height="800" unless="mobile" />
+	<window orientation="portrait" />
+	<!--<window width="1280" height="720" unless="mobile" />-->
+	<!--<window width="1080" height="1920" unless="mobile" />-->
+	<!--<window width="1280" height="720" unless="mobile" />-->
+	
+	<haxelib name="castle" />
+	<haxelib name="openfl" />
+	<haxelib name="h3d" />
+	<haxelib name="air3" />
+	<haxedef name="standalone"/>
+	<haxedef name="advanced-telemetry"/>
+	<haxedef name="NoTextureGC"/>
+	<haxedef name="noEmit"/>
+	<haxedef name="version2_1"/>
+	<!--<haxedef name="sound"/>-->
+	
+	<assets path="../client/assets" rename="" />
+	<assets path="../../src/com" rename="com" />
+	
+	<include path="." />
+	
+	<postBuild if="flash" unless="display" command="obfu9 -fake bin/flash/bin/levelEditor.swf -o ../../www/swf/levelEditor.local.swf"/>
+	<postBuild if="flash" unless="display" command="obfu9 -keyfile ../../src/com/obfu.key bin/flash/bin/levelEditor.swf -o ../../www/swf/levelEditor.swf"/>
+</project>

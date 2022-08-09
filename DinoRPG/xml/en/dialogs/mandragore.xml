@@ -1,0 +1,171 @@
+﻿<!-- Mandragore, une fois Nimbao2 terminée-->
+<!--On retrouve Mandragore en train de siroter son cocktail sur la plage de sa villa, visiblement, ça ne l'intéresse pas...
+-On peut lui demander s'il a toujours l'orbe noire du donjon des steppes, il répond qu'il s'en sert de boule de bowling, et qu'il est impossible qu'il s'en sépare (peut être un jour).
+-Mandragore nous apprend un peu le background des gardiens. Il avait été nommé gardien au moment de l'apparition du monde sombre,
+-->
+	
+	
+<d place="villa" gfx="mandragore" name="Mandragore" frame="glou" cond="scenario(nimba2,51+)+!(scenario(caush,33+)+scenario(caush,42-))">
+	<phase id="begin" fast="1" next="forme:orbe:caush:gardien:merci:quetza:sofia:rebirth">
+		Mandragore is back at home...
+		Relaxing stretched out on his deckchair, he's sipping a cocktail of his own design...
+	</phase>
+	<a id="forme">Hey, what's new?</a>
+	<a id="rebirth" cond="fx(lvlup3)">I can reach level 80!</a>
+	<a id="orbe">Do you still have the dark orb?</a> <!-- si possible mettre condition avoir fini cavmagnet -->
+	<a id="caush">What do you know about Caushemesh?</a>
+	<a id="gardien">What are the guardians?</a>
+	<a id="merci" cond="scenario(nimba2,51)">Thanks for everything!</a>
+	<a id="quetza" cond="collec(quetzu)">Unique skills?</a>	
+	<a id="sofia" cond="scenario(caush,43+)">How is married life?</a>
+	
+	<phase id="forme" next="orbe:caush:gardien:merci" frame="bla">
+		I'm doing ok, thanks for asking, and I was pretty relaxed until you showed up.
+	</phase>
+	
+	<phase id="rebirth" frame="bla" next="rebirth2">
+	[This is great! You were at the top of your game in one of your lives...]	
+	</phase>
+	<a id="rebirth2">One... of .. my lives?</a>
+	<phase id="rebirth2" next="rebirth3">
+		[Yes young master. You didn't believe that the perfection of a Dino stopped at the end of its first life did you?]
+		[The perfection and the power of our Dinoz is acquired through work, but also through experience. What's better than the experience of a lifetime?]
+		[One of the priveliges of those who have reached the ultimate level, is to be reborn even more powerful than before and relive the experiences to really perfection their skills.]
+		[But that... that's only for the bravest of men!]
+		_(I'm sorry what?  Oh yeah! Of course, or the bravest of women! Figure of speech you see...)_
+	</phase>
+	<a id="rebirth3" next="rebirth4">Rebirth??</a>
+	<phase id="rebirth3" next="rebirth4">
+		[Yep... The principle is simple, when your Dino sufferes a crushing defeat and finds itself at 0HP, you're not just going to save it with a potion, but give it the opportunity to rediscover a new path in life.]
+		[It's kind of like reincarnation in a way, But much more powerful because your Dino will retain a portion of the knowledge from its previous life.]
+		[But it's been a long time since I've taken an interest in such things, I really am too old for this kind of thing...]
+	</phase>
+	<a id="rebirth4">Ok... ok...</a>
+	<phase id="rebirth4" next="rebirth5">
+		[I see that you might not be ready right now, however it is the logical next step in the pursuite of perfection for your Dinoz.]
+		[Well, all this talking is making me thirsty... I'm a bit out of practice it seems. On that note, get out of here!]
+	</phase>
+	<a id="rebirth5">See you next time!</a>
+	<phase id="rebirth5" fast="1" frame="glou">
+		It's time to go, but this "Rebirth" business seems interesting... What could this mean for your Dinoz?
+	</phase>
+	
+	<phase id="orbe" next="morceaux:forme:caush:gardien:merci" frame="bla">
+		[The black orb that I found in the Magnetite caves?]
+		[I use it as a bowling ball, I refuse to be separated from it.]
+		[In any case, what would you do with it, you've only seen a glimpse of a fraction of the monsters in the dark world.
+		The day you stroll calmly around Caushemesh... I might lend you the orb...]
+		
+		[Yeah, we'll have an awesome bowling match!]
+	</phase>
+	
+	<a id="morceaux" cond="fx(morsso)">Piece of the Dark Orb?</a>
+	
+	<phase id="morceaux" next="forme:caush:gardien:merci" frame="bla">
+		[Are you asking me how there could be things from the Dark World running around in our realm?]
+		[it's obvious, look, if you want to play with a bowling ball, there have to be holes in it...]
+		[On the other hand, however, you'll struggle to find them, I threw the three fragments in the bin a whila back...]
+	</phase>
+	
+	<phase id="caush" next="forme:caush:gardien:merci" frame="bla">
+		[I've been there quite a few times, you could say that I know some influential people there...
+		However, I prefer not to talk about it, it could come back to bite me...]
+		[In any case, if you go there one day I think you'll be surprised to discover what goes on there.]
+		
+		[Whatever the case, it's definitely not my problem, so if you don't mind, I'll be continuing my siesta now!]
+	</phase>
+	
+	<phase id="gardien" next="sombre" frame="bla">
+		[Ha, the guardians...]
+		[This thing is pretty old...]
+		[The story must date back to about a century ago, I was but a nipper back then...
+		There was an event that shook Dinoland.]
+		_(It stays between us, but it came from Caushemesh... For the record, that didn't come from me, ok!)_
+		
+		[This particular phenomenon changed the face of Caushemesh,
+		but given that nobody ever saw its first face, it's not that big of a deal...]
+	</phase>
+	
+	<a id="sombre">The dark world?</a>
+	<phase id="sombre" next="super" frame="bla">
+		[Exactly, because of this phenomenon, some sort of of breach opened leading from a parallel world, known as the dark world, to our own...
+		When that happened, there was a massive invasion of mosters and dark dinoz ...]
+		[Once the invasion had been repelled, the various kings and the Archdorogon named guardians,
+		people capable of surveilling the breach and stopping any attempt to invade our world.]
+		[Even now there are five guardians who permanently monitor the security of Dinoland.]
+	</phase>
+	<a id="super">I know one of them!</a>
+	
+	<phase id="super" next="vous" frame="bla">
+		[You know two of them actually!]
+		[Bao is the current guardian of the island zone, there is a large breach to be found there. Not the biggest, but it is open enough to keep the guardian nearby at all times...]
+		[The second guardian was Grizorg, Nimbao isn't really concerned about the dark world, which is why the Archdorogon could take the job on.]
+		[I'm convinced that Pistachio would make a good guardian, or at least a guardian that wouldn't do anything dangerous!]
+	</phase>
+	
+	<a id="vous">Were you not a guardian?</a>
+	
+	<phase id="vous" next="autre" frame="bla">
+		Long before Bao was born, I was placed in chargeof the islands, but as luck would have it, I was able to get out of it as my disciple was so keen to take over the responsibility...
+		hehehe...
+	</phase>
+	
+	<a id="autre">And the other guardians?</a>
+	
+	<phase id="autre" next="forme:caush:orbe:merci" frame="bla">
+		[Well, there's a guardian at Caushemesh, who is certainly the strongest among us, after all, the breach at Caushemesh is the largest...
+		I know nothing of the last two guardians, some say that one of them was lost in the dark world...]
+		[Frankly, I'm not bothered.
+		I prefer to stay here and relax, sipping cocktails.]
+	</phase>
+	
+	<phase id="merci" next="go" collection="quetzu" scenario="nimba2:52" frame="bla">
+		[Don't worry, it's normal, this story began a long, long time ago.]
+		[Oh, by the way, I have a present for you. You've met Lucette before, yes? My Dinoz is a Quetzu, a race of dinoz that originates from Nimbao.
+		I brought some eggs, which I've left in the Dinoz shop. If you show the trophy which I'll give you, *and have a little patience*, you'll be able to buy one! I've only managed to acquire five eggs, so choose wisely before you settle on one.]
+		
+		[All the best in your continued adventuring, come back and see me now and again, I might be able to give you some tips!
+		See you later!]
+	</phase>
+	<a id="go">See you around!</a>
+	<phase id="go" fast="1" frame="glou">
+		It is now time to find a new adventure... What will your next destination be? Caushemesh? The Dark World?
+		Only time will tell!
+	</phase>
+	
+	<phase id="quetza" next="comp" frame="bla">
+		[The Quetzu is a race full of mystery, you'll soon notice its unique fire and water skills, but it also has an extreme skill that you might be interested in...]
+		[Every Dinoz has hidden potential which allows them to summon a divinity in times of great danger. 
+		The dinoz inhabiting our world have unfortunately lost this capacity. Maybe they'll find a way to restore them one day, but that's not the point here.]
+ 	</phase>
+	<a id="comp" >And the Quetzu?</a>
+	<phase id="comp" next="trouve" frame="bla">
+		[The Quetzu has not forgotten the skills of their ancestors and can call them in times of need! 
+		You have to find the skill called *Invocation* in the skill trees which you'll know quite well by now.]
+		[Once you have created the pact with the Quetzalcoat, the great ancestor of the Quetzu, you can engulf the battlefield in a violent storm.]
+		[Good luck in finding the skill!]
+	</phase>
+	<a id="trouve" >I'm rolling up my sleeves as we speak!</a>
+	<phase id="trouve" fast="1" frame="glou"> 
+		it is once again time to set out on new adventures, will you manage to unravel all the mysteries of the Quetzu?
+	</phase>
+	
+	<phase id="sofia" next="vie">
+		[Haha, if you only knew...]
+		[Every day is a new experience, a new adventure wherever you may be...]
+		[I must say, I've got about 50 years of adventuring to catch up on...]
+		[But there are good sides too!]
+	</phase>
+	<a id="vie">Such as?</a>
+	<phase id="vie" next="parti" gfx="sofia" name="Sofia" frame="plage" background="2">
+		[Mandrakins!]
+		[Bring me another drink please.]
+		[...]
+		[QUICKLY!]
+	</phase>
+	<a id="parti">...</a>
+	<phase id="parti" fast="1">
+		Mandragore didn't have time to reply, he hurried off to refill the glass.
+		Let's leave thes two to get on with their business and we can discretely make ourselves scarce.
+	</phase>
+</d>

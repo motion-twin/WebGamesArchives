@@ -1,0 +1,63 @@
+<quests>
+
+<q from="prairiebhv" id="bhva" name="Un article en or" cond="quest(quotd)+grade(,3)">
+	<begin qgive="QuestObj(goldBag):1">Primo, aller voir le Guildian Express pour organiser l'interview. Ils vont accourir quand tu diras mon nom, mais prend quand même ce sac de kubors...</begin>
+	<talk did="bhvaa"  title="Se rendre au siège du Guildian Express pour organiser l'interview" step="1" />
+	<use zone="guexpr" gold="350" text="Merci bien. Tu pourras dire à Blancheflor que c'est un plaisir de traiter avec elle ! Et pour l'interview, son heure sera la nôtre." action="Donner les 350 kubors manquants" title="Donner les 350 kubors au journaliste" />
+	<end>Quel journaliste A DO RA BLE... Hein ? En maillot de bain ? Mmmmh d'accord mais il faudra vérifier la météo.</end>
+	<xp v="8" />
+	<reput s="gm" v="5" />
+</q>
+
+<q from="prairiebhv" id="bhvb" name="Le maillot de bain perdu" cond="quest(bhva)">
+	<begin>C'est horrible ! Je n'ai pas mon maillot de bain ! Sans lui l'interview tombe à l'eau. Je crois que je l'ai oublié sur la plage chez Chouettex, à la dernière campagne pub. Tu pourrais aller me le chercher ? </begin>
+	<talk did="bhvab" title="Aller au siège de Chouettex récupérer le maillot de bain." step="1" />
+	<use zone="chouet" o="Elt(6):15" text="Chouette ! C'est exactement ce qu'il me fallait. Tiens, voilà le maillot." action="Echanger les 15 Cranos" title="Echanger 15 Cranos contre le maillot de bain" />
+	<end>Je ne sais pas ce que je ferais sans toi. Mais... Snnnf ? Snnnf ? ...Il sent un peu bizarre non ? Quelqu'un a dormi avec pendant 1 mois ou quoi ? </end>
+	<gold v="35" />
+	<xp v="10" />
+	<reput s="gm" v="6" />
+</q>
+
+<q from="prairiebhv" id="bhvc" name="Préparer le terrain" cond="quest(bhvb)">
+	<begin>Le journaliste ne devrait pas tarder. Il faudrait aller chercher quelques Skats aux alentours pour qu'on puisse en avoir sur la photo. L'exterminateur a tellement fait le ménage dans le coin qu'on en croise plus beaucoup...</begin>
+	<collect o="QuestObj(pickSkat):60" zone="gmoree" title="Capturer 60 Skats à l'orée du bois et les ramener à BHV">
+		<playMod replace="1" artft="Elts(2,null):3000;Elts(2,QuestObj(pickSkat)):2000;Dynamit(0):30;Dynamit(1):15;Alchimoth:10" />
+	</collect>
+	<end>Pose les là-bas, qu'ils ne s'échappent pas. On va leur faire un peu peur pour qu'ils aient l'air malheureux, et ce sera parfait... BOUH !</end>
+	<gold v="70" />
+	<xp v="12" />
+	<reput s="gm" v="5" />
+</q>
+
+<q from="prairiebhv" id="bhvd" name="Un Skat docile" cond="quest(bhvc)">
+	<begin>Aïe ! Cette sale bête m'a mordue ! Grrr... Je ne pourrai jamais caresser une bestiole aussi mal élevée pendant l'interview, je suis trop importante pour risquer ma vie ! Voilà ce qu'on va faire...</begin>
+	<talk did="bhvda" />
+	<talk did="bhvdb" step="1" title="Aller chercher un sac à dos Skat en peluche chez Chouettex" />
+	<use zone="chouet" o="Elt(8):5" text="Merci bien. C'est un plaisir de faire affaire. Voilà votre sac à dos Skat en magnifique peluche 100% naturelle." action="Donner les 5 Oxydes" title="Echanger 5 Oxydes contre le sac à dos Skat en peluche" />
+	<end>Eh bien en voilà un mignon petit animal ! Qu'il est gentil ! Il va pas mordre maman Blancheflor lui alors, hein ! Ahlala, c'est quand même plus facile à vivre quand c'est en peluche...</end>
+	<gold v="85" />
+	<xp v="12" />
+	<randomrecipe v="190:100" />
+	<reput s="gm" v="4" />
+</q>
+
+
+<q from="prairiebhv" id="skati" name="C'est vraiment cromignon" hideCond="quest(skatg)+fx(skatsa)" repeat="1">
+	<begin>Il faut AB SO LU MENT que tu m'aides à ramasser des Skats pour les envoyer aux gens qui veulent en héberger chez eux. Tout le monde en veut. Surtout les plus jolis là, les roses.</begin>
+	<collect o="QuestObj(pickRedSkat):60" zone="gmprai" title="Ramasser 60 Skats roses à la prairie infinie pour que BHV puisse les faire adopter.">
+		<playMod replace="1" artft="Elts(2,null):1000;Elts(2,QuestObj(pickRedSkat)):3600;Elts(2,Neutral):1300;QuestObj(pickRedSkat):200;Dynamit(0):30;Dynamit(1):15;Alchimoth:10" />
+	</collect>
+	<end>Merci pour ton aide ! L'écosystème te le rendra au centuple !</end>
+	<gold v="18" />
+	<xp v="10" />
+	<reput s="gm" v="14" />
+</q>
+
+
+
+
+
+
+
+</quests>

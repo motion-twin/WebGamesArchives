@@ -1,0 +1,308 @@
+<lang>
+	<!-- Website -->
+	<t id="BuySuccessful">*Votre achat a bien été enregistré*, la Compagnie des CroqueMotels vous remercie de votre confiance !</t>
+	<t id="BuyCampaignSuccessful">Les *::sponsor::* vous remercient de votre confiance !</t>
+	<t id="UnknownHotel">L'hôtel que vous souhaitez visualiser n'existe pas.</t>
+	<t id="UnknownCampaign">Désolé, mais cette campagne publicitaire n'est plus disponible.</t>
+	<t id="TimeFormat">%Hh%M</t>
+	<t id="DateFormat">%d %B %Y</t>
+	<t id="AddPointFailed">Vous ne pouvez pas ajouter un point à cette spécialité.</t>
+	<t id="TreeMaxed">Vous ne pouvez pas répartir *plus de ::n:: points* dans vos spécialités.</t>
+	<t id="CantRetreat">Vous n'avez pas rempli tous les *prérequis* pour léguer votre hôtel.</t>
+	<t id="Forbidden">Cette opération n'est pas autorisée.</t>
+	<t id="IntroMonsterName"><strong>::name::</strong>, ::age:: ans, ::job:: chez <em>::company::</em></t>
+	<t id="Fame">Prestige</t>
+	<t id="MuxxuProfileFame"><span style="font-weight:bold; color:#ce4300;">::n:: <img style="vertical-align:-15%" src="http://::host::/img/icons/fame.png" alt=""/></span></t>
+	
+	<!-- Flash -->
+	<t id="Currency">C€</t>
+	<t id="DefaultHotelName">CroqueMotel</t>
+	<t id="FlashUpdateRequired">Vous devez mettre à jour votre lecteur flash pour que ce jeu fonctionne normalement.<br/><br/>Dernière version (gratuite) : *http://www.adobe.com/go/getflash*</t>
+	
+	<t id="CancelStaff">Rappeler l'employé</t>
+	<t id="MoveClient">Déplacer ce client</t>
+	<t id="ClientInfos">Examiner</t>
+	<t id="Build">Aménager : ::name::</t>
+	<t id="TakeItem">Récupérer : ::item::</t>
+	<t id="DoService">Rendre service !</t>
+	<t id="RemoveItem">Détruire ::item:: !</t>
+	<t id="NextClient">Le prochain client arrivera vers *::time::*. Placez vos employés à l'accueil pour réduire ce délai.</t>
+	<t id="UnderConstruction">Ce chantier sera terminé aux environs de ::time::.</t>
+	<t id="UnderService">Cet équipement sera de nouveau disponible vers ::time::.</t>
+	<t id="WorkingStaff">Votre employé aura terminé sa tâche vers ::time::</t>
+	<t id="WaitingService">Ce client a fait une demande de *service en chambre* : répondez-y rapidement pour ne pas perdre en satisfaction.</t>
+	<t id="ClientQueueDate">Ce client quittera la file d'attente vers ::time::</t>
+	<t id="NextClock">Cette horloge indique *l'heure d'arrivée du prochain client*. Placez *un employé à l'accueil* pour réduire l'attente. Note : il n'y a jamais de client entre minuit et ::wakeUp::.</t>
+	<t id="StaffHelp"><p>Un employé peut être placé dans une pièce de l'hôtel :</p><p>- dans une *chambre vide abîmée*, il la réparera,</p><p>- dans une *chambre occupée*, il prendra soin du client qui y loge,</p><p>- au *bureau de l'accueil*, il accélèrera l'arrivée de nouveaux clients.</p></t>
+	<t id="Equipment">Equipement : </t>
+	<t id="DecoButtonTitle">Changer le mobilier</t>
+	<t id="DecoButton">Cliquez sur ce bouton pour modifier librement le placement de la décoration de votre hôtel.</t>
+	<t id="DecoButtonNotice">Vous êtes en  train de modifier le mobilier. *Cliquez à nouveau sur ce bouton pour revenir en jeu.*</t>
+	<t id="DecoTip">Cliquez sur cet objet pour le déplacer. Maintenez MAJ lorsque vous cliquez sur l'objet pour le ranger dans votre réserve.</t>
+	<t id="EnlargeButtonTitle">Agrandir l'hôtel</t>
+	<t id="EnlargeButton">Cliquez sur ce bouton pour modifier la forme de votre hôtel en y ajoutant des extensions !</t>
+	<t id="EnlargeButtonNotice">Vous êtes en train d'agrandir votre hôtel. *Cliquez à nouveau sur ce bouton pour revenir en jeu.*</t>
+	<t id="EnlargeCost">Coût : *::money:: ::currency::*</t>
+	<t id="EnlargeHotelNextCost">La prochaine extension coûtera *::money:: ::currency::*.</t>
+	<t id="QueueLeaveDate">Ce client a prévu un séjour de ::day:: nuit(s). Il quittera la file d'attente à minuit s'il n'est pas placé.</t>
+	<t id="LevelUpLobbyTitle">Améliorer l'accueil</t>
+	<t id="LevelUpLobby">A chaque amélioration de votre accueil, vous pourrez y faire travailler *un employé de plus*.</t>
+	<t id="LevelUpTitle">Améliorer la chambre</t>
+	<t id="LevelUp">Un client installé dans une chambre améliorée rapportera *plus d'argent*, mais *les réparations de la chambre coûteront aussi plus cher*.</t>
+	<t id="Level">Niveau ::n::</t>
+	<t id="Confirm">CONFIRMER</t>
+	<t id="Cancel">Annuler</t>
+	<t id="ConfirmAction">Confirmez-vous cette action ?</t>
+	<t id="ConfirmReplacement">*ATTENTION !* La salle *::old::* sera détruite et remplacée par la salle que vous avez demandé ! Confirmez-vous cette action ?</t>
+	<t id="ConfirmEquipLoss">IMPORTANT : *l'équipement* actuel de cette chambre sera également *perdu* !</t>
+	<t id="ConfirmLevelLoss">IMPORTANT: le *niveau* de la chambre sera également *perdu* !</t>
+	<t id="ScrollTip">Vous pouvez aussi utiliser *la molette de votre souris* ou *les flèches du clavier* pour faire défiler votre hôtel.</t>
+	<t id="Loading">Chargement...</t>
+	<t id="LabProgress">Recherches : *::pct::%*</t>
+	<t id="LabInfos">Sacrifiez des clients dans cette salle pour augmenter ce pourcentage et ainsi obtenir des *Points de recherche*.</t>
+	<t id="NoClientHere">Aucun client ici...</t>
+	<t id="BandLabel">Dernière mise à jour :</t>
+	<t id="GameLocked">Aucune action n'est possible autour de minuit (heure serveur). Merci de patienter quelques minutes...</t>
+	
+	<t id="DateToday">aujourd'hui, à %H:%M</t>
+	<t id="DateTomorrow">demain (vers %H:%M)</t>
+	<t id="DateDayAfter">après-demain</t>
+	<t id="DateFar">dans ::days:: jours</t>
+	<t id="DateYesterday">hier, à %H:%M</t>
+	<t id="DateLongAgo">le %d/%m, à %H:%M</t>
+	
+	<t id="LikeMissing">Absence de</t>
+	<t id="LikePresent">Présence de</t>
+	
+	<t id="HappyBase">Satisfaction de base</t>
+	<t id="HappyBonus">Petites attentions</t>
+	<t id="HappyMalus">Petits tracas</t>
+	<t id="HappyMove">Déménagement</t>
+	<t id="HappyRoomState">État de la chambre</t>
+	<t id="HappyHystery">Autre client qui HURLE !</t>
+	
+	<t id="LikeNEIGHBOR">Voisinage</t>
+	<t id="LikeWATER">Humidité</t>
+	<t id="LikeFIRE">Chaleur</t>
+	<t id="LikeNOISE">Bruit</t>
+	<t id="LikeODOR">Odeurs</t>
+	<t id="LikeFOOD">Nourriture</t>
+	<t id="LikeJOY">Zombie</t>
+	<t id="LikeLUX_ROOM">Chambre de luxe</t>
+	
+	<!-- Règles des familles de monstres -->
+	<t id="Rule_AQUA">Ce monstre est un *Poisson sourd* : les petites attentions de vos employés durent 3h de plus.</t>
+	<t id="Rule_FIRE">Ce monstre est *Pyromane* : il détruira la chambre (et son équipement) à son départ.</t>
+	<t id="Rule_BLOB">Ce monstre est un *Blob fauché* : il paye peu sauf si sa satisfaction est au maximum. Sa prime est alors plus élevée que la moyenne.</t>
+	<t id="Rule_GHOST">Ce monstre est un *Fantôme* : il n'émet aucun effet autour de lui et ne compte pas comme un voisin pour ceux qui apprécient ou détestent le voisinage.</t>
+	<t id="Rule_SM">Ce monstre est *Hystérique* : si sa satisfaction est de 4 ou moins, elle hurle et embête tous les clients de l'hôtel.</t>
+	<t id="Rule_BOMB">Ce monstre est une *Bombe émotive* : si elle atteint une satisfaction de *0 ou de 10*, elle explose !</t>
+	<t id="Rule_VEGETAL">Ce monstre est un *Monstro-Plantes* : il émet 2 effets différents autour de lui au lieu d'un seul (par exemple : humidité + chaleur).</t>
+	<t id="Rule_BUSINESS">Ce monstre est un *Capitaliste* : à son départ, il oublie plus souvent un objet derrière lui que les autres clients.</t>
+	<t id="Rule_FRANK">Ce monstre est une *Abomination* : elle fait progresser vos recherches plus rapidement lorsqu'elle est sacrifiée dans un *Institut du Bonheur*.</t>
+	<t id="Rule_GIFT">Ce monstre est un *Colis suspect* : il vous a été envoyé par un ami ! Il ne vous rapportera pas d'argent mais permettra de débloquer des récompenses s'il est bien traité.</t>
+	<t id="Rule_BASIC">Ce monstre est une *Sorcière banale* : elle n'a aucune particularité notable.</t>
+	<t id="Rule_ZOMBIE">Ce monstre est un *Zombie jovial* : il répand la joie de vivre et donne *un bonus de satisfaction à tout son entourage*.</t>
+	<t id="Rule_FLYING">Ce monstre est un *Hypno-chat* : lorsque vous le placez pour la première fois dans une chambre, s'il a 8 ou plus en satisfaction, un autre client rentre dans votre hôtel.</t>
+	
+	<!-- Messages spécifiques du serveur -->
+	<t id="InvalidRoom">Vous ne pouvez pas réaliser cette action sur cette pièce.</t>
+	<t id="UnknownClient">Ce client n'a pu être trouvé : peut-être a-t-il déjà quitté l'hôtel ?</t>
+	<t id="InvalidClient">Le client que vous essayez d'envoyer n'est pas valide.</t>
+	<t id="GotFriendClient">Un *ami* vous a envoyé un client !</t>
+	<t id="GotFriendClients">*Plusieurs amis* vous ont envoyé des clients !</t>
+	<t id="CantHostHere">*Cet endroit ne peut pas accueillir un client !* Cliquez à nouveau sur votre client puis choisissez une chambre libre.</t>
+	<t id="BuildBedroomFirst">Avant de faire cela, *construisez d'abord une chambre ici*. Pour cela, cliquez sur le mur vide et choisissez *Construire une chambre*.</t>
+	<t id="RoomDirty">Vous ne pouvez *pas* effectuer cette action sur une pièce *sale ou endommagée*.</t>
+	<t id="RoomNotDirty">Vous ne pouvez effectuer cette action *que sur une pièce sale ou endommagée*.</t>
+	<t id="UselessCleaning">Cette chambre n'a pas besoin d'être *nettoyée*.</t>
+	<t id="RoomUnderConstruction">Vous ne pouvez pas effectuer cette action *sur une pièce en construction*, attendez que les travaux soient terminés.</t>
+	<t id="RoomUnderService">Les équipements de cette pièce sont *en cours d'utilisation*.</t>
+	<t id="RoomNotVacant">*Cette pièce n'est pas libre* : un client ou un employé s'y trouve.</t>
+	<t id="CantEquipOccupiedRoom">Vous ne pouvez pas placer *cet équipement* dans une chambre *occupée par un client*.</t>
+	<t id="TooManyEquipments">Vous ne pouvez pas installer d'avantage d'équipments dans cette pièce : supprimez en d'abord.</t>
+	<t id="RoomCountLimit">Vous ne pouvez pas construire *plus de ::n:: exemplaire(s) de cette pièce*.</t>
+	<t id="EquipmentAlreadyInstalled">Vous ne pouvez installer le même équipement 2 fois dans la même pièce.</t>
+	<t id="OnlyOneStaff">Un employé travaille déjà ici.</t>
+	<t id="ItemToPick">Ramassez d'abord *l'objet* que le client précédent vous a laissé :)</t>
+	<t id="TooManyLobby">Vous n'avez pas la place de construire un Accueil supplémentaire : élargissez l'immeuble pour ce faire.</t>
+	<t id="NotEnoughStaffForLobby">*Vous n'avez pas besoin d'un bureau d'accueil supplémentaire pour l'instant.*<br/>En effet, chaque bureau d'accueil pouvant contenir ::n:: employés, vous ne disposez pas de suffisamment d'employés pour l'instant pour avoir l'utilité d'un autre bureau.</t>
+	<t id="NoJob">*Votre employé n'a rien de particulier à faire à cet endroit*. Envoyez-le au bureau de l'accueil si vous ne savez pas quoi lui demander :)</t>
+	<t id="NoJobInSpecial">Vous ne pouvez pas envoyer votre employé ici. Si vous souhaitiez faire plaisir au client qui se trouve ici, *envoyez votre employé dans sa chambre plutôt*.</t>
+	<t id="CantSwapLobby">L'accueil ne peut pas être transformé en une autre pièce.</t>
+	<t id="LobbyFull">*Ce bureau d'accueil ne peut pas accueillir plus d'employés !* Améliorez-le pour régler ce problème (vous devrez d'abord retirer tous les employés qui y travaillent pour pouvoir l'améliorer).</t>
+	<t id="NotEnoughMoney">Cette opération coûte *::money:: ::currency::*, vous n'avez pas cette somme actuellement...</t>
+	<t id="NotEnoughToken">Cette opération coûte *::money:: jetons Muxxu* : vous pouvez en acquérir depuis la section *"Plus de jetons", en haut du site* !</t>
+	<t id="CantMoveOnLastDay">Vous ne pouvez pas demander à un client de déménager *le jour de son départ*.</t>
+	<t id="TooLateToAttend">Ce client est sur le point de partir : il est trop tard pour lui envoyer un employé.</t>
+	<t id="HotelTooLarge">Vous ne pouvez pas *élargir* d'avantage votre hôtel : remplissez les trous ou étendez-vous vers le haut !</t>
+	<t id="HotelTooHigh">Vous avez atteint la hauteur maximale légale pour votre établissement !</t>
+	<t id="NeedServiceRoom">Il vous faut un équipement *::room::* disponible dans l'hôtel pour remplir cette tache ! Construisez en un ou attendez qu'un équipement existant se libère.</t>
+	<t id="NeedXp">Vous n'avez pas suffisamment de *Points de Recherche*.</t>
+	<t id="BuildReset">Vos spécialités ont été réinitialisées.</t>
+	<t id="BuildResetChanged">Vos spécialités ont été réinitialisées car des modifications ont été apportées aux spécialités du labo.</t>
+	<t id="Useless">Vous n'avez pas besoin de faire cela.</t>
+	<t id="NewDeco">Vous avez obtenu un nouvel objet de décoration : *::name::* ! Cliquez sur le bouton "Changer le mobilier" pour le placer dans votre hôtel.</t>
+	<t id="GotResearchPoint">Vos recherches ont porté leurs fruits : ramassez *le Point de Recherche* obtenu devant l'Institut du bonheur.</t>
+	<t id="GotResearchMaxed">Vos recherches ont porté leurs fruits : vous avez obtenu *une fiole d'or* (vous ne recevez plus de points de recherche car votre réserve de points est à son maximum).</t>
+	<t id="GotDeco">Vous avez utilisé les restes de vos recherches pour fabriquer un nouvel de décoration.</t>
+	<t id="TooManyFriendClients">Ce joueur a déjà reçu ::n:: clients de la part de ses amis : il ne peut pas en recevoir d'avantage tant qu'il ne les aura pas placé.</t>
+	<t id="ClientSent">Vous avez envoyé un client à votre ami(e) !</t>
+	<t id="PresentForbidden">Vous ne pouvez pas offrir de *cadeau* à un client ayant déjà reçu de *petites attentions*.</t>
+	<t id="Retreat">*Félicitations ! Vous avez légué votre hôtel !* A ce titre, vous avez obtenu une *nouvelle étoile* et *::fame:: points de prestigue* !</t>
+	<t id="RoomNumber">ch. ::n::</t>
+	
+	<t id="EventRoomFailure">Un problème est survenu dans la chambre ::n:: : *::event::* !</t>
+	<t id="EventFloorFailure">Argh !<br/>Un terrible accident est survenu : *::event::* !!<br/>Tous les clients à *l'étage ::f::* y sont passés.</t>
+	<t id="EventTheft">Au vol !<br/>Le client de la chambre ::room::, *::name::*, s'est enfui avec une partie de la caisse ! Vous avez perdu *::loss:: ::currency::* !</t>
+	<t id="EventLove">Le client de la *::room::* a été pris d'un grand élan d'amour et a offert *un cadeau* à tous les clients de l'étage : *::gift::* ! Ils ont tous gagné *+::gain:: en satisfaction*.</t>
+	<t id="EventSad">Le client de la *::room::* a eu un petit accident : *::accident::*. Il a perdu *::loss:: en satisfaction* !</t>
+	<t id="EventHappy">Le client de la *::room::* a eu une bonne surprise : *::event::*. Cela lui a fait très plaisir et il a gagné *+::gain:: en satisfaction* !</t>
+	<t id="EventVip">Incroyable ! Un employé a découvert que le client de la *::room::* était en réalité une *personnalité très connue* ! Ce client est dorénavant un *client prestigieux*.</t>
+	<t id="EventSblurb">Un *sblurb* aurait attaqué le client de la *::room::* ! La victime, complètement déboussolée, aurait subi un lavage total de cerveau. *Ses envies (ie. ce qu'il aime ou déteste) ont totalement changé !*</t>
+	
+	<t id="CE_Vip">Ce fabuleux sponsor vous enverra *::n:: client(s) prestigieux* (à partir de ::time:: du matin) !</t>
+	<t id="CE_Client">Ce sponsor vous enverra *::n:: client(s)* supplémentaires (à partir de ::time:: du matin).</t>
+	<t id="CE_Tomorrow">à l'ouverture demain matin.</t>
+	<t id="CE_Soon">à l'ouverture.</t>
+	
+	<t id="Monday">Lundi</t>
+	<t id="Tuesday">Mardi</t>
+	<t id="Wednesday">Mercredi</t>
+	<t id="Thursday">Jeudi</t>
+	<t id="Friday">Vendredi</t>
+	<t id="Saturday">Samedi</t>
+	<t id="Sunday">Dimanche</t>
+	
+	<!-- Log Muxxu -->
+	<t id="MuxxuBuyMisc">Achat au supermarché (::item::)</t>
+	<t id="MuxxuBuildReset">Réinitialisation des recherches</t>
+	<t id="MuxxuBuyClient">Recherche de client</t>
+	
+	<!-- Messages divers du serveur au flash -->
+	<t id="MoneyFound">Vous avez récupéré *::money:: ::currency::* "oubliés" par un client !</t>
+	<t id="ResearchFameFound">Vous avez récupéré *::fame:: points de prestige* grace à vos recherches à l'Institut du bonheur.</t>
+	<t id="ItemFound">Vous avez récupéré *::item::*. Quelqu'un l'aura sûrement oublié... Mais c'est à vous maintenant !</t>
+	
+	<!-- Log de jeu -->
+	<t id="LEndActivity">::room:: : ::name:: (+::gain::{money}).</t>
+	<t id="LEndActivityHappy">::room:: : ::name:: (+::happy:: satisfaction, +::gain::{money}).</t>
+	<t id="LRepair">*Réparations en cours dans la chambre ::n:: (-::money::{money}).*</t>
+	<t id="LEndRepair">*Réparations terminées dans la chambre ::n:: (-::money::{money}).*</t>
+	<t id="LEndConstruction">++Construction terminée : ::room::++</t>
+	<t id="LRegisterClient">*::name:: a été placé(e) dans la chambre ::n::.*</t>
+	<t id="LMoveClient">--::name:: a été *déplacé(e)* de la ::from:: à la ::to::.--</t>
+	<t id="LSacrified">--::name:: a été envoyé(e) à l'institut du bonheur. Pour le bien de tous...--</t>
+	<t id="LPopClient">*Nouveau client : ::name::.*</t>
+	<t id="LPopClientVip">*Célébrité : {vip} ::name::.*</t>
+	<t id="LMidnight">Nuit du ::date1:: au ::date2::</t>
+	<t id="LNightPayment">++Bilan nocturne : ::gain::{money} pour ::clients:: client(s).++</t>
+	<t id="LClientNightGain">++::name:: (*::happy:: en satisfaction*) a rapporté ::gain::{money}.++</t>
+	<t id="LClientNightLoss">--::name:: (*::happy:: en satisfaction*) a coûté ::gain::{money}.--</t>
+	<t id="LClientNightNull">--::name:: (*::happy:: en satisfaction*) ne vous a *rien* rapporté.--</t>
+	<t id="LClientLeaveAngry">--Départ : ::name::, visiblement très en colère, parti(e) *sans payer* et en détruisant tout le mobilier !--</t>
+	<t id="LClientLeaveHappyLow">--Départ : ::name::, très moyennement satisfait(e) de vos services...--</t>
+	<t id="LClientLeaveHappyNormal">++Départ : ::name::, plutôt satisfait(e) de vos services.++</t>
+	<t id="LClientLeaveHappyMaxed">++Départ : ::name::, absolument enchanté(e) de son séjour dans votre hôtel !++</t>
+	<t id="LClientGains">Gain(s) : </t>
+	<t id="LClientMoney">::gain::{money}</t>
+	<t id="LClientFame">::fame::{fame}</t>
+	<t id="LClientLeaveItem">++Objet oublié : ::item:: (par ::name::).++</t>
+	<t id="LClientBreakItem">--Equipement détruit : ::item:: (chambre ::number::)--</t>
+	<t id="LClientItemNotBroken">++L'objet ::item:: (chambre ::number::) n'a pas été détruit.++</t>
+	<t id="LBecameUnstable">--ATTENTION : ::name:: est devenu(e) instable ! Ce client explosera si rien n'est fait.--</t>
+	<t id="LBecameStable">++::name:: s'est finalement calmé(e) et est redevenu(e) stable.++</t>
+	<t id="LExplodedAngry">--::name:: était tellement énervé qu'il a explosé !--</t>
+	<t id="LExplodedHappy">--::name:: n'a pas supporté d'être aussi heureux, il a explosé !--</t>
+	<t id="LStartHysteria">--::name:: n'en peut plus de votre hôtel et s'est mise à hurler comme une malade ! C'est les autres clients qui vont être contents...--</t>
+	<t id="LEndHysteria">++::name:: s'est enfin calmée et a arrêté de hurler...++</t>
+	<t id="LAttendingSuccess">++Petites attentions réussies : ::name::, +::gain:: en satisfaction, ::money::{money}.++</t>
+	<t id="LAttendingFail">--Petites attentions manquées : ::name::, ::money::{money}.--</t>
+	<t id="LServiceFail">--Demande de service annulée : ::name::.--</t>
+	
+	
+	<!-- Quêtes -->
+	<t id="Welcome1">*Bienvenue dans votre hôtel !* En tant que directeur, votre rôle est de faire plaisir à vos clients pour mieux leur soutirer de l'argent.</t>
+	<t id="Welcome2">Pour bien débuter, *suivez les instructions qui vont apparaître au-dessus de votre hôtel*.</t>
+	<t id="QuestComplete">*Vous avez rempli votre contrat !* Vous avez reçu :</t>
+	<t id="NewQuest">Nouvelle *mission*...</t>
+	<t id="R_Money">*::money::* ::currency::</t>
+	<t id="R_Item">l'objet "*::item::*"</t>
+	<t id="R_Client">un nouveau *client* à l'accueil</t>
+	<t id="R_Research">1 point de recherche</t>
+	<t id="R_Fame">::fame:: points de prestige</t>
+	<t id="G_AddClient">Client placé</t>
+	<t id="G_BuyStaff">Employé acheté</t>
+	<t id="G_InstallItem">Équipement installé</t>
+	<t id="G_ChangeDeco">Décoration modifiée</t>
+	<t id="G_StaffLobby">Employé placé à l'accueil</t>
+	<t id="G_BuildRoom">Nouvelle salle construite</t>
+	<t id="G_Rename">Nom de l'hôtel changé</t>
+	<t id="G_ClientPop">Attendre l'arrivée du prochain client (vous pouvez vérifier l'heure d'arrivée des clients au dessus de l'entrée de l'hôtel).</t>
+	<t id="G_Midnight">Nuit passée</t>
+	<t id="G_ExtendAny">Extension d'hôtel construite</t>
+	<t id="G_EndConstruction">Travaux terminés</t>
+	<t id="G_Level">Taxe payée</t>
+	<t id="G_Satisfy">Client parti satisfait (::n:: pts ou +)</t>
+	<t id="G_SatisfyMax">Client comblé (10 pts)</t>
+	<t id="G_PickItem">Objet oublié par un client</t>
+	<t id="G_DropResearch">Point de recherche obtenu</t>
+	<t id="G_UseResearch">Point de recherche utilisé</t>
+	<t id="G_RoomLevel">Chambre de niveau ::n::</t>
+	<t id="G_PlaceDeco">Objet de déco installé</t>
+	<t id="G_Service">Rendre un service</t>
+	
+	<!-- OBJETS -->
+	<t id="BUFFET">Buffet à volonté | Pour les *gourmands*, ce buffet gargantuesque sera synonyme de grands moments de bonheur. Pour les autres, ça sera la gastro. | Génère de la *nourriture* dans la chambre.</t>
+	<t id="RADIATOR">Radiateur surpuissant | Il est tellement puissant qu'il pourrait servir à cuire une dinde. | Génère de la *chaleur* dans la chambre.</t>
+	<t id="FRIEND">Nounours en p'luche| Ils succombent tous à son regard trop choux et sa petite frimousse toute meugnonne. Et il est parfumé à la guimauve.| Les clients qui aiment avoir du voisinage apprécieront de le trouver dans leur chambre.</t>
+	<t id="STINK_BOMB">Momie dans le placard | Elle sent horriblement mauvais et chaque jour cela semble empirer... | Génère de *mauvaises odeurs* dans la chambre.</t>
+	<t id="HUMIDIFIER">Climatiseur déréglé | Ce climatiseur rend n'importe quelle chambre plus humide qu'une piscine. | Génère de *l'humidité* dans la chambre.</t>
+	<t id="HIFI_SYSTEM">Chaîne HIFI | BOUM BOUM BOUM ! BOUM TCHIK BOUM TCHIK BOUM BOUM BOUM ! | Génère du *bruit* dans la chambre.</t>
+	<t id="OLD_BUFFET">Buffet d'il y a un an| Ce sont les restes d'un buffet de mariage. Le problème est que ce mariage a eu lieu l'année dernière. | Génère de *mauvaises odeurs* ET de la *nourriture* dans la chambre.</t>
+	<t id="DJ">Rockeur sur le retour | Ce rockeur est un loser mais il a le rythme dans la peau.| Génère du *bruit* ET de la *chaleur* dans la chambre.</t>
+	<t id="PRESENT">Cadeau de bienvenue | Un gros cadeau en plastique pour faire plaisir à vos vaches à lait. | Le client reçoit un *bonus de satisfaction (+1)* et l'objet est aussitôt détruit. Vous ne pouvez pas utiliser cet objet sur un client ayant déjà reçu de petites attentions.</t>
+	<t id="PRESENT_XL">Super pack de bienvenue| Quand les petites cadeaux de bienvenue ne suffisent plus, il faut savoir sortir l'arme lourde : serviette brodée, savonnettes, parfums et sac en cuir cousu main.| Le client reçoit un *bonus de satisfaction (+2)* et l'objet est aussitôt détruit. Vous ne pouvez pas utiliser cet objet sur un client ayant déjà reçu de petites attentions.</t>
+	<t id="LABY_CUPBOARD">Armoire labyrinthique | Ce meuble a été conçu pour être effroyablement complexe à utiliser : il regorge de recoins obscurs et de tiroirs (plus de 200). On fini toujours par y perdre quelque chose. | Augmente *fortement les chances d'obtenir un objet* au départ du client.</t>
+	<t id="MATTRESS">Matelalala | Il chantonne de douces berceuses, propose un mode "massage de la nuque" et peut même vous sussurer des mots doux si vous lancez le programme adéquat.| Donne un *bonus de satisfaction chaque nuit*.</t>
+	<t id="FIREWORKS">Feux d'artifice | Un spectacle incroyable juste avant de s'endormir ! Par contre, vous n'aurez plus qu'à tout repeindre ensuite. | Offre un *bonus de satisfaction énorme la première nuit*, puis l'objet est détruit, *ainsi que la chambre*.</t>
+	<t id="WALLET">Lit de diamants | Pour faire payer plein pot un client, impressionnez-le avec un lit de diamants. | *Gains augmentés de +25%* par nuit passée dans cette chambre, l'objet est forcément détruit au départ du client.</t>
+	<t id="REPAIR">Vitaclou | Quelques clous, un bon coup de peinture et des petits raccords au feutre et votre chambre sera comme neuve ! | Répare instantanément *tous les dégâts* d'une chambre.</t>
+	<t id="MONEY">Un porte-monnaie| ??? | ???</t>
+	<t id="ISOLATION">Caisson d'isolation | Pour les cas les plus récalcitrants, une bonne cloison en fonte doublée d'une mousse anti-Tout devrait suffir à les mettre au calme. | Isole totalement une chambre de tous les effets entrants ET sortants (odeur, chaleur, ...). L'objet sera forcément détruit au départ du client.</t>
+	<t id="RANDPAINT">Pot de peinture|De la peinture, mais vous ne choisissez pas la couleur !|Ce kit permet d'appliquer une *peinture de couleur aléatoire (vive ou douce)* sur les murs d'un étage au choix.</t>
+	<t id="RANDPAINTWARM">Pot de peinture vive|Un pot de peinture de couleur vive, mais laquelle ?|Ce kit permet d'appliquer une *peinture de couleur vive aléatoire* sur les murs d'un étage au choix.</t>
+	<t id="RANDPAINTCOOL">Pot de peinture douce|Un pot de peinture de couleur douce, mais laquelle ?|Ce kit permet d'appliquer une *peinture de couleur douce aléatoire* sur les murs d'un étage au choix.</t>
+	<t id="RANDBOTTOM">Bas de mur surprise |Des planches, des clous et tout le nécessaire pour changer le design du bas de vos murs !|Ce kit permet de modifier aléatoirement *le style du bas de mur* d'un étage au choix.</t>
+	<t id="RANDTEXTURE">Papier surprise|De gros rouleaux de papier pour coller sur vos murs.|Ce kit permet de modifier aléatoirement *le motif du mur* d'un étage au choix.</t>
+	<t id="RANDDECO">Décoration surprise|Chouette, une surprise !|Le carton contient un objet de décoration aléatoire, à installer où bon vous semblera dans les étages de votre hôtel !</t>
+	<t id="RESEARCH">Point de recherche|Le sacrifice de clients désignés consentants a permi de faire progresser la science. Un peu.|Utilisez les *Points de recherche* dans la section *Laboratoire* du site !</t>
+	<t id="RESEARCH_GOLD">Fiole d'or|Le sacrifice de clients désignés consentants a permi d'accroître votre fortune.|???</t>
+	<t id="ShopPack">Ce kit contient *un objet de chaque de la catégorie « % »*. Son prix est plus avantageux que l'achat séparé de chaque objet.</t>
+	
+	<t id="DecoPlantSmall">petite plante en pot bizarre</t>
+	<t id="DecoPlantLarge">grande plante encombrante</t>
+	<t id="DecoPaintSmall">petit tableau de maître</t>
+	<t id="DecoLight">luminaire classieux</t>
+	<t id="DecoFurniture">meuble rustique d'avant-guerre</t>
+	<t id="DecoSofa">canapé moelleux et confortable</t>
+	
+	<t id="TR_NONE">Emplacement libre pour une pièce|Un bel espace vide que vous ne tarderez sans doute pas à combler...|Utilisez cet emplacement libre pour construire une *nouvelle pièce*.</t>
+	<t id="TR_BEDROOM">Chambre|Les clients sont vraiment tatillons : ils refusent de dormir à même le sol dans le couloir...|Une chambre peut *héberger un nouveau client*.</t>
+	<t id="TR_LOBBY">Accueil|Un beau bureau et un panneau de clés (factices, bien entendu) pour faire pro.|Placez des employés au bureau d'accueil pour accélérer l'arrivée des prochains clients.</t>
+	<t id="TR_LOBBY_SLOT">Emplacement libre pour un nouveau bureau d'accueil|Pour l'instant, c'est là que vos clients poireautent.|Vous pouvez bâtir un *bureau d'accueil* supplémentaire dans cet emplacement.</t>
+	<t id="TR_RESTAURANT">Restaurant astronomique|Il n'a d'astronomique que son prix.|Les clients qui apprécient *la nourriture* pourront aller y dépenser leur argent.</t>
+	<t id="TR_BIN">Vide-Ordure|Tout le secret réside dans le fait qu'on y jette tout, mais qu'on ne le vide jamais.|Les clients qui apprécient *les mauvaises odeurs* pourront aller y dépenser leur argent.</t>
+	<t id="TR_DISCO">Macumbayéyé|Personne ne s'entend parler et cela convient à tout le monde.|Les clients qui apprécient *le bruit* pourront aller y dépenser leur argent.</t>
+	<t id="TR_FURNACE">Crématofour|C'est comme un four pyrolise, mais avec des chaises dedans.|Les clients qui apprécient *la chaleur* pourront aller y dépenser leur argent.</t>
+	<t id="TR_POOL">Rivière sauvage|L'eau de cette attraction à succès a été rendue deux fois plus humide grace à l'ajout de micro-gouttes autour de chaque goutte d'eau.|Les clients qui apprécient *l'humidité* pourront aller y dépenser leur argent.</t>
+	
+	<t id="TR_SERV_WASH">Savounet'|Un modèle performant de lave-linge qui, en plus de laver le linge, est capable de trier les couleurs, sécher, repasser et plier.|Permet de nettoyer le linge des clients qui le demandent.</t>
+	<t id="TR_SERV_SHOE">Lustro-pompes|Une cireuse capable de nettoyer et désinfecter en profondeur n'importe quelle paire de chaussures.|Permet de nettoyer les chaussures des clients qui le demandent.</t>
+	<t id="TR_SERV_ALCOOL">Poivromatique|Un distributeur de spiritueux connecté à de grandes cuves à essence par un réseau de tuyauterie complexe. Bien sûr, officiellement, c'est du champagne.|Permet de fournir des boissons aux clients qui le demandent.</t>
+	<t id="TR_SERV_FRIDGE">Cascadabouf|La solution moderne à une problèmatique vieille comme le monde : le frigo vide. Spécialement calibré pour satisfaire les besoins des monstres, il fourni, en quelques minutes, de quoi faire des apéros pendant plusieurs années.|Permet de remplir le frigo des clients qui le demandent.</t>
+	
+	<t id="TR_LAB">Institut du bonheur|Pour mieux connaître vos futurs clients, le mieux reste encore d'étudier les actuels en les découpant en petits morceaux.|Permet de gagner des *Points de Recherche* en sacrifiant des clients.</t>
+	
+</lang>
+

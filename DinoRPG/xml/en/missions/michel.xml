@@ -1,0 +1,33 @@
+﻿<missions>
+
+	<!-- ***************************************************************************** -->
+	<!-- Guide Michel Tutorial ----->
+
+	<m group="michel" id="move" name="Voyage of Discovery" limit="10">
+		<begin>Welcome to Dinoland, I'm going to teach you how to travel around the green wilderness of these parts, brace yourself... Try to lake it to the University and I'll speak to you there!</begin>
+		<goto v="univ"/>
+		<talk v="Mitchell Starr" gfx="michel">Bravo, you made it, all you need to do now is confirm that you've completed the mission by meeting me in Dinotown again</talk>
+		<goto v="dnv"/>
+		<talk v="Madame Seche">Well played! Let's move on to the next one.</talk>
+		<end>Mitchell Starr seems impressed, he gives you an Irma's potion as a gift, this gives you an extra move!</end>
+		<item v="irma" />
+	</m>
+
+	<m group="michel" id="atk" name="Dangerous Battle" limit="20" cond="mission(move)">
+		<begin>You had to fight before to get to the University, now, you're going to fight right here!</begin>
+		<kill v="goupi" n="2" name="Savage monsters"/>
+		<end>Excellent, you've killed all the monsters on your own! You will meet many of them as you carry out missions and explore! The more you exlpore, the more powerful you become!</end>
+		<item v="tartev"/>
+		<gold v="2000"/>
+	</m>
+
+	<m group="michel" id="boutik" name="One Step Beyond" limit="20" cond="mission(atk)">
+		<begin>Now you're going to buy an Angel Potion at the flying shop, this potion revives your Dinoz if they are overcome by injuries sustained when fighting monsters! 
+		To do this, simply click on the "Shop" button at the top left of the interface. You can then give me the object you have bought!</begin>
+		<use v="angel" n="1" />
+		<end>Congratulations! You have successfully used the shop, and it can be accessed from wherever you are in the game, Don't hesitate to use it if need be!</end>
+		<gold v="1000"/>
+		<item v="angel"/>
+	</m>
+	
+</missions>

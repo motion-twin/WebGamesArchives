@@ -1,0 +1,102 @@
+<d place="gmsch" name="Portes ouvertes Gemini" cond="curquest(schoo)+disable()" gfx="gmprof" auto="1">
+
+<phase id="begin" next="name">
+Bienvenue dans la belle école Didi-wan Gemini ! 
+Tu t'appelles comment ?
+</phase>
+
+<a id="name">euh... {::user::}.</a>
+
+<phase id="name" next="so">
+Que veux-tu savoir sur Gemini, {::user::} ? 
+</phase>
+
+<phase id="so" frame="happy" next="spe:hist:home:you:go">
+Vas-y ! Aux portes ouvertes, on ne cache rien ! On explique tout ! 
+</phase>
+
+<a id="spe">Quelles sont les alchimies enseignées, ici ?</a>
+<a id="hist">Vous pouvez m'en dire plus sur Gemini ? </a>
+<a id="home">C'est des hamacs que je vois là-bas ? C'est pour les étudiants ?</a>
+<a id="you">Vous pétez toujours la forme comme ça ?</a>
+<a id="go">J'ai plus de questions.</a>
+
+<!-- ###################### -->
+<phase id="spe" next="speb">
+Les alchimistes de Gemini sont réputés pour leurs capacités supérieures en transformation d'éléments. C'est ce qu'on appelle l'alchimie élémentaire. 
+Ca permet de faire des économies incroyables ! 
+</phase>
+
+<a id="speb">Mouais. Ca a pas l'air super fun.</a>
+
+<phase id="speb" frame="happy" next="spec">
+C'est vrai. Et c'est d'ailleurs pour ça qu'on enseigne aussi plein de trucs rigolos à côté ! 
+Objets magiques ! Fortifiants ! Souches maladives ! Produits dopants ! 
+</phase>
+
+<phase id="spec" next="sped">
+Sinon, on utilise surtout des plantes et des machins naturels pour l'alchimie. C'est plus simple. Et puis le bio, l"harmonie avec la nature" tout ça, ça revient à la mode. Ca nous permet d'avoir pas mal d'étudiants.
+</phase>
+
+<a id="sped">Quelqu'un m'a parlé de sports virils, aussi.</a>
+
+<phase id="sped" frame="happy" next="so">
+Ahah ! Oui, on est pas des mauviettes à Gemini ! 
+Avec toutes les potions dopantes et bidules anabolisants qu'on invente ici, il faut bien qu'on fasse un peu de sport pour voir si c'est efficace ! On pratique le sprint, le marathon sans fin, le croquet, le lancer de bûches...
+</phase>
+
+<!-- ###################### -->
+<phase id="hist" next="histb">
+Aaaah Gemini. Ecole des herboristes. Chantre d'une alchimie faite d'harmonie et de patience. Gardienne d'un savoir ancestral qui est arrivé jusqu'à nous, et que nous léguerons aux générations futures...
+</phase>
+
+<a id="histb">On dirait une pub ce que vous dites, là.</a>
+
+<phase id="histb" frame="angry" next="histc">
+Hum. | Euh oui, en fait j'ai appris le prospectus de l'école par coeur. Je savais pas trop quoi dire pour les portes ouvertes...
+</phase>
+
+<a id="histc">J'ai entendu dire que Gemini avait été en guerre avec Audepint. C'est vrai ? </a>
+
+<phase id="histc" next="histd">
+Oula, c'est vieux ça. 
+C'est vrai. Il paraît que les deux écoles se sont fait la guerre, mais j'en sais pas plus. Il faudrait demander aux alchimistes plus âgés.
+</phase>
+
+<phase id="histd" frame="happy" next="so">
+Tu devrais demander aux ermites de l'école. On a pas plus vieux comme alchimistes, dans le coin.
+En tout cas c'est vrai qu'à Gemini, on aime pas Audepint ! Et c'est réciproque !
+</phase>
+
+<!-- ###################### -->
+<phase id="home" next="hiver">
+Oui. Ici tout le monde dort à la belle étoile. On se sent plus proche de la nature, notre alchimie n'en est que meilleure ! 
+</phase>
+
+<a id="hiver">Même en hiver ? Il fait pas trop froid ? </a>
+
+<phase id="hiver" frame="happy" next="cant">
+Eh bien... Disons que chaque année, on perd toujours un ou deux étudiants. Ceux qui ont raté leurs potions de dégel aux travaux pratiques la veille...
+</phase>
+
+<a id="cant">Ahah très drôle...Et sinon, la cantine ? </a>
+
+<phase id="cant" frame="angry" next="so">
+La cantine ? Comme partout : infâme. 
+</phase>
+
+<!-- ###################### -->
+<phase id="you" next="youb">
+Je viens de corriger un devoir de mes étudiants sur les anabolisants ! Il faut bien que je teste leurs potions pour pouvoir les noter ! 
+</phase>
+
+<phase id="youb" frame="happy" next="so">
+Ca fait 5 jours que j'ai pas dormi et pourtant je pète le feu ! J'ai pu faire toutes les portes ouvertes non stop. Gemini 24/24, 7/7 ! 
+Alchimie à toute heure ! Wouhou ! 
+</phase>
+
+<!-- ###################### -->
+<phase id="go" url="/act?did=po2">
+A bientôt chez Gemini, {::user::} !
+</phase>
+</d>

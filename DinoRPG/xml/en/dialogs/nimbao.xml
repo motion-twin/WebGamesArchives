@@ -1,0 +1,984 @@
+<!-- ***************************************************************************** -->
+<!-- Mandragore, Aeris l'île volante ----->
+	
+<!-- 1- The Meeting with Mandragore -->
+	
+<!--At the port, the player meets a strange character, a well-built old man, sporting an impressive tan and a pair of sunglasses that are almost as kitsch as they are large...
+The player asks who he is, but the man desn't reply and leaves with his bags. He is quick, and loses the player easily.-->
+
+	
+<d place="port" name="Eccentric man" gfx="mandragore" background="2" cond="(mission(elma5)+scenario(clinik,1+)+scenario(nimbao,0))+(admin()|active(nimbao))">
+	<phase id="begin" next="salut:quit" frame="glou">
+		...................
+	</phase>
+	<a id="salut">
+		Uh, hello?
+	</a>
+	<a id="quit">
+		Ignore him.
+	</a>
+	<phase id="salut" next="poisson:quit">
+		Hello there friend! Give me a ton of the finest fish so that I have something to snack on this week!
+	</phase>
+	<a id="poisson">
+		I'm sorry?
+	</a>
+	<phase id="poisson" next="soleil">
+		Well, would you care to tell me what you're up to? You don't know who I am, do you? Maybe you'd prefer that I go fishing instead of you? 
+	</phase>
+	<a id="soleil">
+		I'm not a fishmonger!
+	</a>
+	<phase id="soleil" next="suite">
+		You don't sell fish?
+		What exactly ARE you doing here then?
+	</phase>
+	<a id="suite">
+		I am a Dinoz master!
+	</a>
+	<phase id="suite" next="qui">
+		Dinoz master you say...
+		I see.........
+	</phase>
+	<a id="qui">
+		But who are you?
+	</a>
+	<phase id="qui" next="bye" frame="glou" scenario="nimbao:1">
+		....... I really must go and change my sunglasses...
+	</phase>
+	<a id="bye">
+		Wait! You haven't answered my question!
+	</a>
+	<phase id="bye" fast="1" frame="parti">
+		The man has gone. Despite having a ton of fish on his back, he vanished pretty quickly.
+	</phase>
+	<phase id="quit" fast="1" frame="glou">
+		You distance yourself from this suspicious character pronto...
+	</phase>
+</d>
+
+<!--Upon arriving at Bao's house, the player sees the man talking to him, but can't understand what they are saying.-->
+
+<d place="baobob" name="Eccentric man" gfx="mandragore" background="3" cond="scenario(nimbao,1)">
+	<phase id="begin" next="quoi" frame="rire">
+		So, how the devil are you Bao? Guarding the hole isn't too difficult?
+		Surely by now you must understand why I passed the job on to you, yes? 
+		HAHAHAHAHA!
+	</phase>
+	<a id="quoi">
+		...........
+	</a>
+	<phase id="quoi" next="mais" gfx="baobob" name="Bao Bob">
+		[No, not really. The last time, when it was time to harvest my vegetables, the island was surrounded, which meant I had to clean everything afterwards...
+		This dark world is really something, I now understand the value of Guardians...]
+		[In any case, I haven't seen you in some time, what brings you here?]
+	</phase>
+	<a id="mais">
+		(listen attentively)
+	</a>
+	<phase id="mais" next="ha" gfx="mandragore" name="Mandragore" background="3" frame="bla">
+		I was getting seriously bored at home, so I decided to go and annoy my pandawak, have a bit of a chat, stretch my legs and do a bit of shopping...
+	</phase>
+	<a id="ha">
+		(continue listening)
+	</a>
+	<phase id="ha" next="age" gfx="baobob" name="Bao Bob">
+		Well I'm really glad you decided to stop by, I had thought that you were dead in fact, having not seen you in 10 years...
+	</phase>
+	<a id="age">
+		.....
+	</a>
+	<phase id="age" next="bye" gfx="mandragore" name="Mandragore" background="3" frame="rire">
+		HAHAHAHA, I think you're burying me a shade early youngster! After all, I'm only 115, and i've got some good years left in me yet!
+	</phase>
+	<a id="bye">
+		Uh, Excuse me?
+	</a>
+	<phase id="bye" next="out" gfx="mandragore" name="Mandragore" background="3" frame="bla" scenario="nimbao:2">
+		It seems you have a visitor, I'll leave you to it... see you again in another 10 years...
+		HAHAHAHAHAHAHA!
+	</phase>
+	<a id="out">
+		No, don't go!
+	</a>
+	<phase id="out" fast="1" gfx="baobob" name="Bao Bob">
+		The mysterious man disappears quickly. As Baobob looks at you, he seems slightly annoyed.
+	</phase>
+</d>
+
+<!--Bao refuses to speak to the player.-->
+
+<d place="baobob" name="Bao Bob" gfx="baobob" cond="scenario(nimbao,2)">
+	<inject id="bob:begin" next="dsl"/>
+	<a id="dsl">
+		Sorry for interrupting your conversation, but who is that guy?
+	</a>
+	<phase id="dsl" next="grr">
+		You know, I haven't seen him in 10 years?
+		I would have liked to speak to him for longer, but hey, nothing stops him...
+	</phase>
+	<a id="grr">
+		Ha! So you know who he is!
+	</a>
+	<phase id="grr" next="out" scenario="nimbao:3">
+		.......
+		I don't see who you're talking about,
+		Anyway, I need to work on my vegetable plot now, see you later!
+	</phase>
+	<a id="out">
+		I guess that's that then, nobody wants to answer me...
+	</a>
+	<phase id="out" fast="1">
+		Baobob has directed his attention elsewhere, it doesn't look like he's going to answer your questions...
+	</phase>
+</d>
+
+<!--The player finally finds the man in a new place in West Dinoville Kingdom, a villa by the sea. The man is clearly angry and doesn't want anyone to disturb him. He sends his Dinoz to deal with his visitors. After a good going over, the player finds themselves half-dead in the villa.-->
+
+<d place="villa" name="Eccentric man" gfx="mandragore" background="1" cond="scenario(nimbao,3)">
+	<phase id="begin" next="fight">
+		I hate being followed like this!
+		I am RETIRED, does nobody know what that means any more?
+		It seems like nobody knows what it is...
+		Look, I just don't want to be disturbed...
+		Lucette! Show this unfortunate the way out. 
+	</phase>
+	<a id="fight">
+		Lucette? .....HAAA!
+	</a>
+	<phase id="fight" fast="1" scenario="nimbao:4" fightgroup="lucet" frame="rire">
+		This Dinoz seems invincible... as you lose consciousness you figure 
+		maybe it's best not to mess around with people like him...
+	</phase>
+</d>
+	
+<!-- 2 - Find out more about Mandragore -->
+	
+<!--The nurse is already on the scene, having been alerted by the noise. She offers to heal the player's Dinoz.-->	
+	
+<d place="villa" name="Anna Tomie" gfx="infirmiere" background="4" cond="scenario(nimbao,4)">
+	<phase id="begin" next="aide" frame="flou">
+		It looks like you need me. These first aid kits will surely help you make it through this...
+	</phase>
+	<a id="aide">
+		Who is talking to me, I feel like I'm floating...
+	</a>
+	<phase id="aide" next="fin" frame="flou">
+		Don't worry, everything is going to be alright...
+	</phase>
+	<a id="fin">
+		Who... Who am I?
+	</a>
+	<phase id="fin" fast="1" scenario="nimbao:5" heal="-1" moveAll="dnv" frame="flou">
+		It seems like someone is taking you somewhere. In any event, you are too weak to do anything about it...
+	</phase>
+</d>
+
+<!--Elle indique qu'il y a un vieil excentrique qui vit sur la côte loin de tous, et qu'il est plutôt caractériel, 
+il ne veut voir personne. Le joueur demande d'où il vient, mais elle dit qu'il a beau avoir la même couleur de peau qu'elle, il ne vient pas de caushemesh.-->
+
+<d place="dnv" name="Anna Tomie" gfx="infirmiere" background="1" cond="scenario(nimbao,5)">
+	<phase id="begin" next="ouf">
+		So, is that you back on your feet again?
+		Stretched out half-dead on the beach? Funny way to spend your remaining days...
+	</phase>
+	<a id="ouf">
+		It's pretty far from ideal actually...
+	</a>
+	<phase id="ouf" next="peau">
+		So I take it you annoyed the old eccentric guy who lives in the villa?
+		He's a fairly emotional character, he doesn't want to see anybody. It's not the first time I've found Dinoz Masters lying on the beach in agony...
+	</phase>
+	<a id="peau">
+		Do you know who he is?
+	</a> 
+	<phase id="peau" next="ha">
+		No, despite the fact that we have the same skin colour, he doesn't come from Caushemesh....
+		He must just really like sunbathing...
+	</phase>
+	<a id="ha">
+		.......You come from Caushemesh?
+	</a>
+	<phase id="ha" next="fin">
+		.........
+		In any case, I'm glad you're back on your feet. Be more careful next time!
+		And hang in there...
+	</phase>
+	<a id="fin">
+		It is time to continue the adventure.
+	</a>
+	<phase id="fin" frame="stop" fast="1" scenario="nimbao:6">
+		You set out purposefully from Dinotown. What will happen next?
+	</phase>
+</d>
+
+<!--Il faut rendre visite au Fan de Bao, on apprend que cet homme est en fait Mandragore, 
+le célèbre Aventurier de Dinoland et maître de Bao, on apprend qu'il a été l'un des gardiens de Dinoland, mais qu'il a pris sa retraite après avoir confié la tâche à Bao.
+ Le joueur veut en savoir plus sur la tâche des gardiens, mais Bao refuse d'en parler, il marmonne juste quelque chose à propos du monde sombre...-->
+
+<d place="baobob" name="Bao's Fan" gfx="baofan" cond="scenario(nimbao,6)"> 
+	<inject id="wcharm:begin" next="qui"/>
+	<a id="qui">
+		By any chance would you happen to know the old man who came to visit Bao last time I was here?
+	</a>
+	<phase id="qui" next="mandra">
+		Oh, that idiot, he doesn't even know who he is, he's the talk of Dinotown, the hero of years gone by, a robot from another galaxy who has travelled the universe!
+	</phase>
+	<a id="mandra">
+		Are you really sure about that?
+	</a>
+	<phase id="mandra" next="bon">
+		Eh, it's the truth, I saw him, the last time he came, I remember perfectly, it was 10 years ago, he came down from the sky...
+	</phase>
+	<a id="bon">
+		But you could only have been about 2 years old then!
+	</a>
+	<phase id="bon" next="oue">
+		Ha, yeah, maybe, nonetheless I remember a gigantic shadow descending on our house...
+	</phase>
+	<a id="oue">
+		Your shadow must've been called Lucette...
+	</a>
+	<phase id="oue" next="fin">
+		[Listen, you seem nice enough, so I'm going to tell you a secret. Bao often likes to call me little pandawak, which I figure to mean a disciple of sorts in his language...
+		So work this out - I heard that man say it to Bao during their conversation yesterday...]
+		[Hang on to your hats... I am convinced that the old man is none other than Bao's master!]
+		Oh goodness, I'm overcome, that would make him my grand-master, wow...
+	</phase>
+	<a id="fin">
+		Bao's master? Interesting...
+	</a>
+	<phase id="fin" fast="1" scenario="nimbao:7">
+		You leave the little guy alone, and head towards Bao's house...
+	</phase>
+</d>
+
+<d place="baobob" name="Bao Bob" gfx="baobob" cond="scenario(nimbao,7)">
+	<inject id="bob:begin" next="poisson"/>
+	<a id="poisson">
+		I get the feeling your master likes fish...
+	</a>
+	<phase id="poisson" next="pwned">
+		Wow, does he, he can eat tons of the stuff, you should have seen what he brought yesterday!
+	</phase>
+	<a id="pwned">
+		.........
+	</a>
+	<phase id="pwned" next="mandra">
+		.........
+		Ah! you got me...
+		OK, it's pointless hiding it, and you're going to harass me with endless questions now anyway, aren't you?
+	</phase>
+	<a id="mandra">
+		Pretty much! So who is that guy?
+	</a>
+	<phase id="mandra" next="gardien:eleve">
+		He is called Mandragore, maybe you've heard of him, he has travelled all over Dinoland more or less, he must have left signs of his passing all over the land... 
+		He has been my master for a long, long time.
+	</phase>
+	<a id="gardien">
+		Now at least I know who kicked my ass...
+	</a>
+	<a id="eleve">
+		Can you believe he took me as a disciple?
+	</a>
+	<phase id="gardien" next="sombre">
+		Did you go and visit him in his villa?
+		Did you know he hates to be disturbed since he retired?
+		I can sympathise with your pain, when he is annoyed, he doesn't realise his own strength...
+		I remember my initiation, and I saw it in glorious technicolor, well... black and blue to be precise!.
+	</phase>
+	<phase id="eleve" next="mandra">
+		HAHA, don't take this the wrong way, but I don't think a shrimp like you would make it through his training!
+	</phase>
+	<a id="sombre">
+		He's retired?
+	</a>
+	<phase id="sombre" next="muet">
+		He is one of the former guardians of Dinoland. He held that title for a long time, until he passed the responsibility on to me.
+		I must admit, I was very proud to be chosen to take his place, but every day I understand a little more why he retired...
+	</phase>
+	<a id="muet">
+		What do Guardians do exactly?
+	</a>
+	<phase id="muet" next="fin">
+		It is still too early for you...
+		You can't imagine the dangers lurking in Dinoland's shadows, 
+		its dark side would make the most powerful Dinoz masters go mad...		
+	</phase>
+	<a id="fin">
+		The Dark Side?
+	</a>
+	<phase id="fin" fast="1" scenario="nimbao:8">
+		Bao doesn't seem to want to answer you, he's even pretending to fall asleep...
+	</phase>
+</d>
+
+<!-- 3 - The existence of a floating island -->
+
+<!--On croise le touriste grillé au sommet du Mont tout chaud, qui nous apprend qu'il a vu récemment une grosse masse nuageuse qui se déplace très légèrement dans le ciel...-->
+
+<d	place="fosslv" name="Toasted Tourist" gfx="tourist_grill" background="1" cond="scenario(nimbao,8)">
+	<phase id="begin" next="ciel:fou">
+		Hey! You! Have you seen the huge cloud in the sky?
+		You can't see through it, it's incredible! The sky is falling on our heads!
+		Quick - take a photo!
+	</phase>
+	<a id="ciel">
+		Are you sure you shouldn't be getting some help?
+	</a>
+	<a id="fou">
+		Are you aware that you're completely off your head?
+	</a>
+	<phase id="fou" next="fin">
+		I've been watching this cloud-like mass for three days now, and it's never been this close!
+		It is enormous! I'm sure it's moving by itself... look, I'll prove it - the wind is blowing in the other direction!
+	</phase>
+	<a id="fin">
+		Yeah, erm, good story... by any chance did you find 5 dollars after that?
+	</a>
+	<phase id="fin" fast="1">
+		You decide to get away from the oddball, clearly his visit to the Venerable nuked some of his neurons...
+		He must have gone crazy while he slept...
+	</phase>
+	<phase id="ciel" fast="1">
+		You decide to get away from the oddball, clearly his visit to the Venerable nuked some of his neurons...
+		He must have gone crazy while he slept...
+	</phase>
+</d>
+
+<!--You need to go to see the Venerable, and wait for him to fall asleep. As he sleeps, he talks about an island that he misses, and that he would like to see his grandfather, but since Grizorg became the Archdorogon, he has been exiled to Big All-Hot Mountain.-->
+
+<d place="vener" name="The Venerable" gfx="dorogon"  cond="scenario(nimbao,8)">
+	<inject id="venerable:begin" next="cache" />
+	<a id="cache">
+		Hide and wait for him to fall asleep.
+	</a> Hide
+	<phase id="cache" next="dodo:reveil" frame="dodo">
+		Zzzzzzz.....zzzzzzz
+		Snorf, grumpf.....zzzzzzz....Grrrrrrr.....WOOF.......
+	</phase>
+	<a id="dodo">
+		(woof?).........
+	</a>
+	<a id="reveil">
+		Go closer...
+	</a>
+	<phase id="dodo" next="snif:reveil" frame="dodo">
+		Zzzzzzzzz.....snork....................Sniff.....
+	</phase>
+	<a id="snif">
+		(sniff?).....
+	</a>
+	<phase id="snif" next="nimbao:reveil2" frame="dodo"> 
+		Zzzzz...... my dearest Nimbao....
+		I miss you so much....ZZZZZZzzzzzzz.....Snork.....Zzzzzz....
+	</phase>
+	<a id="nimbao">
+		(Nimbao? Who is that?)
+	</a>
+	<a id="reveil2" target="reveil">
+		Nimbao? Who is that?
+	</a>
+	<phase id="nimbao" next="zzz:reveil3" frame="dodo">
+		ZZZZZ....zzzzzz... I really prefer to be on top... as high as Big All-Hot is, it still can't give me as spectacular a view as you can... 
+	</phase>
+	<a id="zzz" target="reveil">
+		(OK, so it's not someONE, or I've definitely got the wrong end of this stick...)
+	</a>
+	<a id="reveil3">
+		Approach cautiously...
+	</a>
+	<phase id="reveil3" next="grizorg" frame="dodo">
+		Z....z....zzzzzzz. Grandfather... why did you leave?
+		Ever since Grizorg took your place, my life has been turned upside down...
+		I have to hide myself away here, this exile has gone on too long, one day it must change...
+		But for now it's siesta time....ZzzzzzzzZZZZzzzz....
+	</phase>
+	<a id="grizorg">
+		(Grizorg....)
+	</a>
+	<phase id="grizorg" fast="1" scenario="nimbao:9" frame="dodo">
+		You carefully distance yourself from the Venerable, someone must know what he was just talking about...
+	</phase>
+	<phase id="reveil" next="fuite" frame="bla">
+		Zzzzz....Snork....Crack....Hmmmm?
+		WHO DARES TO DISTURB ME WHEN I'M SLEEPING?
+	</phase>
+	<a id="fuite">
+		Run away as fast as you can!
+	</a>
+	<phase id="fuite" frame="bla" fast="1">
+		You run away as fast as your legs will carry you, a rudely-awakened Venerable is rarely the friendliest creature to be around...
+	</phase>
+</d>
+
+<!--Pour en savoir plus, il faut s'adresser à Baobabe qui nous dit que le vénérable était parti parce qu'il avait peur de Grizorg. 
+	Elle le suit parce qu'elle était à son service, au fil du temps, ils sont devenu amis... 
+	peu après, elle parle de l'archidorogon actuel: Grizorg, qui mène une politique élitiste, empêchant quiconque de venir sur l'île.-->
+
+<d place="vener" name="Bao Babe" gfx="baobabe" cond="scenario(nimbao,9)">
+	<phase id="begin" next="grizorg">
+		Good day Dinoz master, which fortuitous breeze leads you to me this fine morning...
+	</phase>
+	<a id="grizorg">
+		Would the name Grizorg happen to mean anything to you?
+	</a>
+	<phase id="grizorg" next="peur">
+		Of course, who doesn't know about Grizorg...
+	</phase>
+	<a id="peur">
+		Apart from me?
+	</a>
+	<phase id="peur" next="arbori:dorogon">
+		[OK, if you didn't, you probably should know that it's a name really shouldn't be mentioned in front of the Venerable, there's a chance he'll lose the plot.] 
+		[It turns out that Grizorg is the current ArchDorogon. The former was none other than the Venerable's grandfather, who passed on the mantle around thirty years ago.] 
+		[That must seem like a long time to you, but for us Arboris and Dorogons, it's the blink of an eye. Even more so for Dorogons...]
+	</phase>
+	<a id="arbori">
+		Arboris?
+	</a>
+	<a id="dorogon">
+		Dorogons?
+	</a>
+	<phase id="arbori" next="suite">
+		That's the name of our people, some also call us Arborians.
+		You must have noticed that I only have one eye...?
+	</phase>
+	<a id="suite">
+		(SHOCK) I just thought you'd been winking at me since we met!
+	</a>
+	<a id="suite2">
+		A celestial city...
+	</a>
+	<phase id="dorogon" next="suite2">
+		[The Dorogons are the dragon people who live on the celestial island of Nimbao.]
+		[They are a wise people who are usually governed by a council of citizens of the island. They are presided over by the Archdorogon, and their function is to ensure the security of the island and that of all of Dinoland.]
+	</phase>
+	<phase id="suite" next="dorogon:arbori:exil">
+		Sorry, but no...
+		Long story short, Bao and I are the only people of our kind who live on the earth, we haven't had any contact with our homeland or its people since we left the island...
+	</phase>
+	<phase id="suite2" next="dorogon:arbori:exil">
+		It's true, the island moves freely around the skies. Unfortunately it is impossible for us to return there.
+	</phase>
+	<a id="exil">
+		I would like to know more about the island...
+	</a>
+	<phase id="exil" next="fuite">
+		[I don't know the whole story, but from what I've managed to pick up, everything has changed since Grizorg came to power.] 
+		[The island has become completely self-sufficient and refues to have any contact with Dinoland. 
+		The Venerable had to flee because he felt that his life was threatened by Grizorg, after all, he too could have become the Archdorogon.]
+		[Having fled with him, I have been in his service ever since. Every Arbori becomes the servant of a Dorogon, it is our destiny. 
+		And the way I see it, I've been pretty lucky, I have a lot of fun with his... shall we say, multi-faceted personality.]
+	</phase>
+	<a id="fuite">
+		Thanks for the info!
+	</a>
+	<phase id="fuite" next="fin">
+		Not many people know that story, maybe you'll be able to find out more if you ask these people yourself...
+	</phase>
+	<a id="fin">
+		Thanks again.
+	</a>
+	<phase id="fin" fast="1" scenario="nimbao:10">
+		You leave Miss Bao. You catch her giving you a wink, it seems you made quite an impression!.....
+	</phase>
+</d>
+
+<!--Il faut ensuite parler au maître élémentaire, il apprend au joueur que Mandragore a passé sa vie sur l'île, 
+et que ce n'est que depuis ses 30 (50?) dernières années qu'il parcourt Dinoland en long et en large. Il dit souvent à Bao qu'il n'y remettra plus les pieds.-->
+
+<d place="fosslv" name="Elemental Master" gfx="elmaster" cond="scenario(nimbao,10)">
+	<inject id="elmaster:begin" next="mandra" />
+	<a id="mandra">
+		Mandragore?
+	</a>
+	<phase id="mandra" next="devoil">
+		What, he wants me to tell him what I know about Mandragore?
+		He thinks I'm some kind of tourist guide, he thinks I'm just going to hand over everything I know about the Guardian of the Islands?
+		He'll believe what he wants anyway...
+	</phase>
+	<a id="devoil">
+		(let him talk)
+	</a>
+	<phase id="devoil" next="pied">
+		He thinks I'm going to tell him that Mandragore only came to Dinoland thirty years ago or so, and that since then he has kept himself occupied by exploring the furthest reaches of Dinoland.
+	</phase>
+	<a id="pied">
+		(remain silent)
+	</a>
+	<phase id="pied" next="fin">
+		Don't worry about it Bao, I won't tell him what you told me that time. That your master never wants to set foot on that island again.
+	</phase>
+	<a id="fin">
+		Uh, thanks for the information.
+	</a>
+	<phase id="fin" scenario="nimbao:11">
+		Is that guy still there? He just can't leave me alone, meditation requires absolute concentration, but he just doesn't realise that yet, he's still too young...
+	</phase>
+</d>
+
+
+<!-- 4-Connaître la raison qui pousse Mandragore à ne pas aller sur l'île. -->
+
+<!--Il faut aller voir Bao une nouvelle fois, celui-ci nous dit que son maître parle rarement de ces choses là, mais que visiblement, il serait en froid avec Grizorg.
+ Il nous apprend qu'ils étaient comme frère, et que Grizorg et lui ce sont combattu pour une raison inconnue. Il sait tout ça de la bouche du vénérable qui parle dans son sommeil...-->
+ 
+ <d place="baobob" name="Bao Bob" gfx="baobob" cond="scenario(nimbao,11)">
+	<inject id="bob:begin" next="froid"/>
+	<a id="froid">
+		So, Mandragore doesn't want to go to the island any more?
+	</a>
+	<phase id="froid" next="frere">
+		My master rarely speaks about such things, you're really curious, aren't you...
+		I don't know much about it, but it seems as though he and the Archdorogon have fallen out with one another.
+	</phase>
+	<a id="frere">
+		They know each other?
+	</a>
+	<phase id="frere" next="combat">
+		They were like brothers, but they had a fight a long time ago according to the Venerable, he talks about it in his sleep sometimes...
+	</phase>
+	<a id="combat">
+		A fight?
+	</a>
+	<phase id="combat" next="fin">
+		[Yes, we're still not sure of the reason for it, but some still remember the aftermath that followed...]
+		[In any case, this fight changed the destinies of my master, the Venerable, my sister and yours truly...]
+		[That's all that I can tell you. In future, I'd rather not talk about this, I miss my homeland so much, and talking about it like this only re-opens wounds which have been closed for a long time.]
+	</phase>
+	<a id="fin">
+		Incredible story.
+	</a>
+	<phase id="fin" fast="1" scenario="nimbao:12">
+		You leave Bao Bob to his own devices, he seems lost in thought.
+	</phase>
+</d>
+
+<!--Il faut voir le vénérable, le joueur assiste à un combat entre le vénérable et un soldat dorogon de Grizorg, 
+le vénérable finit par blesser le soldat qui s'enfuit. Blessé gravement, le vénérable demande de l'aide au joueur qui doit prévenir Mandragore -->
+
+<d place="vener" name="The Venerable" gfx="dorogon" cond="scenario(nimbao,12)|scenario(nimbao,13)">
+	<inject id="venerable:begin" next="morg"/>
+	<a id="morg">
+		I think I can see something.
+	</a>
+	<phase id="morg" next="fight" gfx="morg" name="Morg">
+		[HAHAHAHAhaha!]
+		I've finally found you, you who calls yourself the Venerable, you are nothing compared to the Archdorogon.
+		He has charged me with the task of eliminating Nimbaoan rebels residing in Dinoland.
+		[And I'm really going to enjoy carrying out this order!]
+	</phase>
+	<a id="fight">
+		Watch out!
+	</a>
+	<phase id="fight" fast="1" scenario="nimbao:13" fight="vener3" next="haha" frame="hurt">
+		The venerable has just been attacked by someone!
+		Despite his strength, he couldn't do anything about it...
+	</phase>
+	<a id="haha">
+		He is really strong!
+	</a>
+	<phase id="haha" gfx="morg" name="Morg" frame="rire" next="aide">
+		[HAHAHAHAhaha! You are worthless!]
+		You don't even merit me destroying you, your weakness is enough to ensure your demise.
+	</phase>
+	<a id="aide">
+		What a heartless monster!
+	</a>
+	<phase id="aide" next="grr" gfx="morg" name="Morg" frame="parti">
+		[So long, "Venerable", HAHAHAHAhaha!]
+	</phase>
+	<a id="grr">
+		How is the Venerable?
+	</a>
+	<phase id="grr" next="fin" frame="hurt">
+		GRRrrrr....Grouph...Crooakkk.....
+		[We must warn Mandragore. Hufff, Huff, Grizorg has taken the initiative, he has decided to move to strike.]
+		[Even after all this time it looks like he still hasn't forgotten about us.]
+	</phase>
+	<a id="fin">
+		I'll give it my best shot!
+	</a>
+	<phase id="fin" fast="1" frame="hurt" scenario="nimbao:14">
+		You leave the venerable like a flash, only Mandragore will be able to help him.
+	</phase>
+</d>
+
+<!-- 5-Save the venerable -->
+	
+<!-- Il faut aller voir Mandragore et lui dire ce qu'il vient de se passer -->
+	
+<d place="villa" name="Mandragore" gfx="mandragore" background="1" cond="scenario(nimbao,14)">
+	<phase id="begin" next="combat">
+		Look here, he's come back, did he not get enough the first time?
+		He must enjoy it...
+		Ha, the youth of today...
+	</phase>
+	<a id="combat">
+		It's awful, I need your help!
+	</a>
+	<phase id="combat" next="aide">
+		Wait, he's found a way to avoid getting another spanking.
+		You had better not have disturbed me for nothing...
+	</phase>
+	<a id="aide">
+		The Venerable is hurt!
+	</a>
+	<phase id="aide" next="noway" frame="rire">
+		The Venerable? Hurt? Is this some kind of joke? 
+		Believe me, if indeed someone exists who is capable of doing that, I think they'd have better things to do than to mess with Ven-ven..
+	</phase>
+	<a id="noway">
+		It's Grizorg!
+	</a>
+	<phase id="noway" next="go">
+		[Him? Impossible, he never comes down from his island.
+		but if it's Ven-ven who told you that, something must be going on.]
+		[Very well, I'll go to Big All-Hot, I want to know more. You can accompany me if you feel like it but I find it somewhat difficult to calm down at times like these...]
+	</phase>
+	<a id="go">
+		I'll come with you!
+	</a>
+	<phase id="go" fast="1" scenario="nimbao:15" frame="glou" friend="mandr2">
+		Mandragore thinks fast, talks fast and needs you to act fast if you want to go with him.
+	</phase>
+</d>
+
+<!-- Arrivé près du vénérable, on voit un dialogue entre les deux, le joueur écoute respectueusement.
+	Mandragore prend mouche et part sur l'île pour régler une bonne fois pour toutes ses comptes avec Grizorg. Il laisse le joueur en plan 
+	Le vénérable se plaint de l'impulsivité de son ami, et se demande comment il va survivre, 
+	le joueur propose son aide, et accepte le danger conséquent que cela représente, car pour cela, il doit ramener de l'île un objet capable de guérir le vénérable.-->
+
+<d place="vener" name="The Venerable" gfx="dorogon" frame="hurt" cond="scenario(friend,8+)+(scenario(nimbao,15)|scenario(nimbao,16))">
+	<inject id="venerable__2:begin" next="aide" />
+	<a id="aide">
+		Mandragore is here!
+	</a>
+	<phase id="aide" next="hum" gfx="mandragore" name="Mandragore" background="4" frame="rire" scenario="nimbao:16" friend="" >
+		So, what happened to you, it looks like you took quite a beating...
+		Have you tried to fly yet?
+	</phase>
+	<a id="hum">
+		Listen to them.
+	</a>
+	<phase id="hum" next="grizorg" frame="hurt">
+		GRRrrrr....Grouph...Croaakkk..... I'm getting too old for this...
+		It was one of Grizorg's soldiers who did this to me.
+		He didn't pull his punches either, I think I've been poisoned. Fortunately, I should have a few days before the poison takes effect.
+	</phase>
+	<a id="grizorg">
+		Listen to the conversation.
+	</a>
+	<phase id="grizorg" next="colere" gfx="mandragore" name="Mandragore" background="4" frame="serieuxbla">
+		[OK, enough joking around, this is serious. I suspected this would happen sooner or later.]
+		[I'll have to put an end to this once and for all, Grizorg has crossed the line.
+		I did nothing until now, but the moment he attacks my friends, I cannot stand idly by, I must intervene!]
+		That's it. I'm going back to the island. Farewell!
+	</phase>
+	<a id="colere">
+		eh...
+	</a>
+	<phase id="colere" next="oubli" gfx="mandragore" name="Mandragore" background="4" frame="parti">
+		.......
+	</phase>
+	<a id="oubli">
+		But...... You forgot to help the Venerable!
+	</a>
+	<phase id="oubli" next="remede" frame="hurt">
+		GRRrrrr....Grouph...Crooakkk.....
+		As usual, he rushes in blindly... How am I going to follow him, I'm stuck here...
+	</phase>
+	<a id="remede">
+		I'll help you!
+	</a>
+	<phase id="remede" next="dur" frame="hurt">
+		Grumph...
+		You? You think you'll be able to help me?
+		The only way is to bring me a cure which can only be found on the island.
+		Unless I'm mistaken, you have no means of getting there. Mandragore uses his Dinoz to get to wherever he wants to go,
+		but you, you might as well be nailed to the ground!
+	</phase>
+	<a id="dur">
+		I'll find a way!
+	</a>
+	<phase id="dur" next="fin" frame="hurt">
+		Very well....
+		GRRrrrr....Grouph...Croakkk.....
+		In any case, I have no choice, it looks like I'll just have to trust you.
+	</phase>
+	<a id="fin">
+		You can count on me!
+	</a>
+	<phase id="fin" scenario="nimbao:17" frame="hurt" fast="1">
+		You set out on your quest to find a way to get to the island...
+		But how do you get somewhere that nobody knows exists...?
+	</phase>
+</d>
+
+<!--Le joueur se renseigne auprès de bao qui lui dit avoir vu un inventeur loufoque habitant au sommet de la tour des iles. 
+	Il se vanterait à la taverne du port qu'il aurait bientot trouvé un moyen de voler dans les airs, tout le monde se moque de lui bien entendu.-->
+	
+
+<d place="baobob" name="Bao Bob" gfx="baobob" cond="scenario(nimbao,17)">
+	<inject id="bob:begin" next="histoire" />
+	<a id="histoire">
+		Tell him the whole story.
+	</a>
+	<phase id="histoire" next="nimbao:grizorg:remede">
+		So, my master has gone to settle the score with Grizorg, he's going to need help, that Dorogon is really powerful...
+		I also left the island a long time ago... Getting back up there has become almost impossible...
+	</phase>
+	
+	<a id="nimbao">I'd like to know more about Nimbao.</a>
+	<a id="grizorg">I'd like to know more about Grizorg.</a>
+	<a id="remede">Is there any way to save the Venerable?</a>
+
+	<phase id="nimbao" next="grizorg:remede:nimbao">
+		[The celestial island is nothing but a myth for most of the people who live on Dinoland. However, I was born on that island. Back in the day, the Archdorogon promoted a policy of sharing, of equality and of freedom.]
+		[Unfortunately this era ended immediately after the death of the Archdorogon was announced.
+		I don't recall now how Grizorg became the current Archdorogon, but since then we have had no contact whatsoever with the island.
+		Having taken Mandragore's side, we too became outcasts.]
+	</phase>
+	
+	<phase id="grizorg" next="remede:nimbao:grizorg">
+		[Grizorg and my master were both disciples of the former Archdorogon. During my initiation, he told me about their journey, their rivalry, their friendship...]
+		[I don't know what came between them, but it ended in a terrible battle. 
+		Seriously injured, my Master had to leave the island, leaving the door open for Grizorg.
+		The Venerable, my sister and I accompanied him. As we were somewhat linked to both him and the former patriarch, our lives were in danger...]
+	</phase>
+	
+	<phase id="remede" next="moyen:remede:grizorg:nimbao">
+		[There are many species of plants and animals which exist on Nimbao which you cannot find on the surface.
+		Therefore it is not surprising that poisons and antidotes exist there which cannot be found on the surface of Dinoland...]
+		[So, to cure the Venerable, you absolutely must find a way to get to the island.
+		Unfortunately I won't be able to be of much help, I'm stuck here because of my duties as Guardian.]
+	</phase>
+	
+	<a id="moyen">Do you have any suggestions how I might get to the island?</a>
+	
+	<phase id="moyen" next="ok">
+		[I might have something for you...]
+		[I heard a story in the tavern at Frish Port. A slightly nutty inventor has built a flying machine...,
+		Maybe you could learn more by doing some research. ]
+	</phase>
+	<a id="ok" target="fin">
+		I'll go and find out, thanks.
+	</a>
+	<phase id="fin" fast="1" scenario="nimbao:18">
+		You leave Bao and head off in search of the flying machine, wondering how he came across all this information if he never leaves his house...
+	</phase>
+	
+</d>
+
+<!--Le joueur doit récolter des informations au Frish Port-->
+
+<d place="port" name="Barfly" gfx="pilier" cond="scenario(nimbao,18)">
+	<phase id="begin" next="poivrot">
+		What be ye wantin', kid?
+	</phase>
+	<a id="poivrot">
+		I'm looking for an inventor.
+	</a>
+	<phase id="poivrot" next="broc">
+		To be sure there's no shortage round these parts, there be nutty ones, screwball ones, plain suicidal ones, there even be one who thinks he's a bird...
+		HAHAHAHAHA, some be likin' the hooch a bit much too...
+	</phase>
+	<a id="broc">
+		Hang on, go back one - he might be able to help me...
+	</a>
+	<phase id="broc" next="gloups">
+		HAHAHAHAHAHA, is it old Klutz ye be lookin' for?
+		HEY GUYS! WE GOT US A KAMIKAZE! MOUAHAHAHAHA
+		He ain't even scared neithers, HAHAHAHA!
+	</phase>
+	<a id="gloups">
+		Uh... and where does this guy live exactly?
+	</a>
+	<phase id="gloups" next="fin">
+		HAHAHA, we're not going to do the work for ye, we just be givin' ye a hand:
+		Looks to me like idiots be getting more fame than regular folks! Now, be off wit' ye and leave us fermentin' in peace!
+	</phase>
+	<a id="fin">
+		Yeah, sure, why not. Uh, thanks anyway?
+	</a>
+	<phase id="fin" fast="1" scenario="nimbao:19" frame="stop">
+		As soon as you get outside the tavern, you hear a politically less than correct song strike up inside...
+		Well if nothing else, it seems as though you managed to breathe some life into the tavern...
+	</phase>
+</d>
+
+<!--Une fois arrivé là-bas, le joueur doit réunir 5 ingrédients afin de finaliser l'appareil, grâce à cet inventeur, le joueur peut enfin aller sur l'ile-->	
+
+<!--comme le ballon n'a pas de gouvernail, 1/2 de chance d'emporter le joueur n'importe où à Dinoland (entre les îles, Dinoville et le mont tout chaud), 
+et 1/2 de chance d'amener le joueur sur l'île.-->
+
+<!-- 7-L'arrivée sur l'île -->	
+	
+
+<!-- Il faut parler au vieux robot (voir oldbot.xml)-->	
+
+<!-- Il faut parler au soldat de grizorg (voir boulo.xml)-->	
+
+<!-- Il faut retourner parler au vieux robot (voir oldbot.xml)-->	
+
+<!-- Il faut aller voir chen dans le village arboris -->	
+	
+<!-- Il faut retourner parler au vénérable, on peut parler à bao et baobabe aussi sans incrément de scénar.-->	
+
+<d place="baobob" name="Bao Bob" gfx="baobob" cond="scenario(nimbao,33)">
+	<inject id="bob:begin" next="prob" />
+	<a id="prob">
+		I've found a way to get to the island!
+	</a>
+	<phase id="prob" next="dsl">
+		[Bravo, Dinoz master, you are indeed resourceful, unfortunately, the language spoken by the Arborian people is very difficult to learn, and dictionaries which would help you translate it are rare...]
+		[You need to win our people's trust, which only requires a single word. There will only be a handful of Arborian people who can speak the language of the surface, but if you find one, you can surely discuss things with them.]
+	</phase>
+	<a id="dsl">
+		Well then, I'm going to look for it.
+	</a>	
+	<phase id="dsl" fast="1">
+		You set out on your quest for a word!
+		A very specific word in Arborian...
+		All the best!
+	</phase>
+</d>
+
+<d place="vener" name="Bao Babe" gfx="baobabe" cond="scenario(nimbao,33)">
+	<phase id="begin" next="prob">
+		Hello Dinoz master, have you anything new to teach me?
+	</phase>
+	<a id="prob">
+		I've found a way to get to the island!
+	</a>
+	<phase id="prob" next="dsl">
+		[Bravo, Dinoz master, you are indeed resourceful, unfortunately, the language spoken by the Arborian people is very difficult to learn, and dictionaries which would help you translate it are rare...]
+		[You need to win our people's trust, which only requires a single word. There will only be a handful of Arborian people who can speak the language of the surface, but if you find one, you can surely discuss things with them.]
+	</phase>
+	<a id="dsl">
+		Well then, I'm going to look for it.
+	</a>	
+	<phase id="dsl" fast="1">
+		You set out on your quest for a word!
+		A very specific word in Arborian...
+		All the best!
+	</phase>
+</d>
+
+<d place="vener" name="The Venerable" gfx="dorogon" cond="scenario(nimbao,33)">
+	<inject id="venerable__2:begin" next="prob"/>
+	<a id="prob">
+		I've found a way to get to the island!
+	</a>
+	<phase id="prob" next="cool" frame="hurt" >
+		GRRrrrr....Grumph...Croaakkk.....
+		[Well done, young adventurer.
+		I remember a time when we were all on Nimbao...]
+		[I like to make the most of my free time, and the high priest, who was my grandfather's servant, often used to give me lectures. He really enjoyed lecturing me way back when...]
+		[He must have died of old age since then, but I can give you something, a word in Arboris, the word used by this servant all these years ago.]
+	</phase>
+	<a id="cool">
+		What is this word?
+	</a>
+	<phase id="cool" next="fin" frame="hurt" > 
+		When you meet an Arborian, try to tell them this:
+		[vcbdr QpObmc]
+		...Which means (cough cough) ........[Grand Venerable]....
+	</phase>
+	<a id="fin">
+		I'll give that word a go! Thanks.
+	</a>
+	<phase id="fin" fast="1" scenario="nimbao:34" frame="hurt" >
+		It is time to return to the island, so you need to go to see Klutz... Meh...
+	</phase>
+</d>
+
+<!-- Il faut aller voir chen dans le village arboris pour la faire parler du vénérable-->	
+	
+<!-- Il faut retourner parler au vieux robot (voir oldbot.xml)-->	
+
+<!-- 8-Combat contre morg -->	
+	
+
+<d place="ihaut" name="????" background="2" gfx="morg" cond="scenario(nimbao,39)">
+	<phase id="begin" next="quoi" frame="parti">
+		HAHAHAHAhaha!
+	</phase>
+	<a id="quoi">
+		Who's there?
+	</a>
+	<phase id="quoi" next="morg" frame="rire">
+		[HAHAHAHAhaha!]
+		I suspected that someone would try to save the traitor!
+	</phase>
+	<a id="morg">
+		YOU!
+	</a>
+	<phase id="morg" next="fight">
+		I didn't introduce myself last time,
+		I am Morg, the chief guard of his holiness the Archdorogon Grizorg.
+		Now, prepare to die!
+	</phase>
+	<a id="fight">
+		I guess there's no choice, on guard!
+	</a>
+	<phase id="fight" fightgroup="morg" frame="hurt" scenario="nimbao:41" next="keuf">
+		Heuh.... Heuh.... haa...ha,
+		You've not heard the last of me, we will meet again, and that.... That will be the last time!
+	</phase>
+	<a id="keuf">
+		Good Riddance!
+	</a>
+	<phase id="keuf" fast="1" frame="parti">
+		Morg disappears, the signs of your struggle can be seen in the snow inside the cavern.
+		You will surely find him again sooner or later. His revenge could indeed be terrible...
+		Now all that remains is to find the cure in the laboratory...
+	</phase>
+</d>
+
+<!-- Gather, retrouver l'antidote pour soigner le vénérable -->	
+
+<!-- Take the antidote to the Venerable -->
+
+<d place="vener" name="The Venerable" gfx="dorogon" cond="scenario(nimbao,41)+hasobject(remede)">
+	<inject id="venerable__2:begin" next="aide" />
+	<a id="aide">
+		I brought you the antidote!
+	</a>
+	<phase id="aide" next="merci" use="remede" scenario="nimbao:42" collection="dico1" frame="hurt">
+		Finally...! Thank you for all your help, with this I will be able to recover.
+	</phase>
+	<a id="merci">
+		I was only doing my duty!
+	</a>
+	<phase id="merci" next="mandra" fast="1" frame="hurt">
+		The Venerable seems to recover before your very eyes. Soon there won't be any trace of the injuries inflicted by Morg...
+	</phase>
+	<a id="mandra">
+		And Mandragore?
+	</a>
+	<phase id="mandra" next="fini" >
+		[Mandragore has gone to the island, we won't be seeing him for a long time...
+		But none of this concerns you, you have already done too much, leave him to resolve this problem on his own.]
+		[In any case, the intricacies of this war are beyond all of us.
+		And this problem certainly won't be resolved overnight...]
+	</phase>
+	<a id="fini">
+		So it's really finished?
+	</a>
+	<phase id="fini" next="fin">
+		[You can get back to adventuring now, maybe you'll meet Mandragore again on the island one day. I have a feeling we'll hear about him sooner or later...]
+		[I don't have much to give you, but please take this book. I've not found a way to open it yet but I found it a long time ago during my escape from Nimbao,
+		it belonged to my grandfather so it must be valuable. Take good care of it.]
+	</phase>
+	<a id="fin">
+		Thanks! See you next time...
+	</a>
+	<phase id="fin" popup="1">
+		The Venerable gave you a really old book, @/img/icons/fx_dico1.gif@ the word 'dictionary' is printed on it, but it is locked with a very complex lock. It is impossible to open, for the time being...
+	</phase>
+</d>
+
+<!-- Fin de la première partie de la quête -->

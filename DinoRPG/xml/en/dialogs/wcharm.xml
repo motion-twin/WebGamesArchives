@@ -1,0 +1,51 @@
+﻿<!-- Quete du charme d'eau -->
+
+<d place="baobob" name="Bao's Fan" gfx="baofan">
+
+	<phase id="begin" next="ok">
+		Hello young tamer! Have you spoken to Mister Bao yet? He's great isn't he???
+	</phase>
+
+	<a id="ok">Uh...yes, I suppose</a>
+
+	<phase id="ok" next="wah">
+		He's so cool! He took me through Grumhel Forest, he even told me stories as we were travelling! Did you know that he once
+		stunned a Devil Gorilloz! Yep, I know, incredible isn't it! He was even surrounded at the time by dangerous animals and he beat them all!
+	</phase>
+
+	<a id="wah">Wow, that is impressive!</a>
+
+	<phase id="wah" next="yes:nothing:no">
+		Yeah! He's agreed to teach me a few things! He said that I'm really gifted for my age!
+		That's good, isn't it? Wait, look, I can bewitch something for you. Want to see?
+	</phase>
+
+	<a id="yes" cond="!fx(wcharm)">Ok!</a>
+	<a id="nothing" cond="fx(wcharm)">Ok!</a>
+	<a id="no">No thanks</a>
+
+	<phase id="yes" effect="wcharm" next="spirit">
+		.............. I've finished. Do you want it? Take it... it's a Bao Charm! Be careful with it, OK?
+		It should help your Dinoz during battles. Once all the spitril fluid has run out, you can come back here and I'll recharge it for you!
+	</phase>
+
+	<a id="spirit">Did you mean "spiritual"?</a>
+	<phase id="spirit" next="thanks">
+	Yeah, sorry, that's right. "Spiritual" Ah, these technological words are so difficult to pronounce!
+	</phase>
+
+	<a id="thanks">Well, I have to go now. Thanks a lot for the Bao Charm, it was really kind of you!</a>
+	<phase id="thanks">
+	Oh no! You're leaving already, that's a shame. You have to come back again, hopefully I'll see you soon.
+	</phase>
+
+	<phase id="nothing">
+		It seems your Dinoz already has a Bao Charm! Look, it still has some energy left. When it runs out I can recharge it for you.
+	</phase>
+
+	<phase id="no">
+		Oh really? Well it's your loss. *sulk*.
+	</phase>
+
+</d>
+

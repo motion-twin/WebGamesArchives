@@ -1,0 +1,46 @@
+﻿<d place="dnv" name="Crieur des rues" gfx="paperboy" cond="active(gazette)+scenario(intro,1+)">
+
+	<phase id="begin" fast="1" next="talk:notalk" frame="stop">
+		Vous voyez dans un coin des rues de Dinoville, une personne hurlant et gesticulant,
+		rien que de le regarder, il vous épuise déjà, que peux bien vouloir cet énergumène ?
+		Peut-être qu'en vous rapprochant de lui, vous en saurez plus sur le sujet...
+	</phase>
+
+	<a id="talk">...Bonjour ?</a>
+	<a id="notalk">Fuir le plus loin possible !</a>
+	
+	<phase id="talk" next="cagaz">
+		LA GAZETTE VIENT DE SORTIR, LISEZ LA GAZETTE DE DINOVILLE !
+		LISEZ L'ANGUILLOZ ENLISEE ET VOUS SAUREZ TOUT DE DINOLAND ET DES MAITRES DINOZ QUI FOULENT SES TERRES !
+	</phase>
+	
+	<phase id="notalk" fast="1" frame="stop">
+		Vous avez échappé au pire, peut-être allait-il vous avaler avec sa grande bouche...
+	</phase>
+	
+	<a id="cagaz">Une gazette ?</a>
+	
+	<phase id="cagaz" next="ok">
+		REDIGEE PAR LES MAITRES DINOZ EUX-MEMES, ET OUAIS MON BON MONSIEUR,
+		C'EST DE LA NEWS FRAICHE QUE VOUS ALLEZ LIRE !
+		IL VOUS SUFFIT DE CLIQUER SUR LE BOUTON "GAZETTE" DANS LE MENU DE DROITE !
+		C'EST PAS COMPLIQUE !
+	</phase>
+	
+	<a id="ok">Vous pourriez juste faire moins de bruit ?</a>
+	
+	<phase id="ok" next="fin">
+		BON ALLEZ, MOI JE VOUS LAISSE, N'OUBLIEZ PAS, IL Y A UNE EDITION TOUS LES MOIS,
+		SAUF QUAND ILS FONT GREVE...
+	</phase>
+	
+	<a id="fin">MERCI ! Voyons voir ça...</a>
+	
+	<phase id="fin" fast="1" frame="stop">
+		Etiez-vous au courant que la gazette de DinoRPG était disponible ? Vous l'êtes maintenant,
+		vous n'avez donc plus aucune excuse pour ne pas en profiter, rendez-vous sur la page Gazette.
+		A bientôt !
+	</phase>
+	
+</d>
+

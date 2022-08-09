@@ -1,0 +1,176 @@
+﻿<missions>
+
+	<!-- ***************************************************************************** -->
+	<!-- SHAMAN , gain de l'amulette ----->
+
+	<m group="shaman" id="init1" name="La puesta a prueba" limit="20">
+		<begin>Esto... sobre la Guía de Estrategia... tiene' que ir a traducirla... a las ruina' Ashpuk. Seguro que eres capaz..</begin>
+		<goto v="rashpk"/>
+		<action v="Examinar las inscripciones">Eh... ¿y tú entiende' a'go? Yo no pillo nada... Si tuviéramo' un diccionario...</action>
+		<goto v="univ" hide="1" title="Encontrar el Diccionario"/>
+		<action v="Diccionario Ashpukiano">Encuentras un viejo diccionario lleno de verdina y hongos en un estante de la biblioteca. Lleva el título "Ashpuk-Dinociano, Ediciones Lamousse".</action>
+		<goto v="rashpk"/>
+		<action v="Descifrar las inscripciones">Consigues descifrar las misteriosas inscripciones Ashpuk. Tras varias horas de trabajo intenso, logras comprenderlo casi totalmente: parece una receta de cocina...</action>
+		<end>Mmmm... yo diría que es una receta... de las legendarias Salchichas de Arquelión. Genial... voy a prepararme enseguida, esto me va a dar la ene'gia que necesito... De todos modos, está claro que has conseguido traducir e'to... Eres un tipo muy intelige'te.</end>
+		<xp v="20"/>
+	</m>
+
+	<m group="shaman" id="init2" name="El espanta-arqueliano" limit="20" cond="mission(init1)">
+		<begin>Ja, ¡esta' salchichas de Arquelión me han dado energía! ¡Veo que ere' alguien con talent'! Por favor, hazme un último favor y te daré mi Guía de Estrategia. La región del Gran Señor-Todo-Quema es un hábitat ideal para los arquelianos de todos los tamaños y colores... ¡Salvaje, seco y en perpetua erupción! Pero hay que saber mantener alejados a los Arquelianos si no queremos ser su cena... ¡Quiero que me fabrique' un espanta-arquelianos! Necesitaré las Garras Talladas.</begin>
+		<goto v="vener"/>
+		<kill v="barche" n="1"/>
+		<action v="Coger las garras">Has cogido unas garras bien grandes de un cachorro arqueliano. Ahora hay que tallarlas bien.</action>
+		<goto v="forges"/>
+		<talk v="Forjar">¿Quieres tallar las Garras de Arquelión? ¿Sabes que es muy peligroso pasearse con eso encima? Esa cosa de ahí atrae a TODO TIPO de monstruos. ¡Ala, lo que faltaba! ¡Ahí vienen!...</talk>
+		<kill n="6"/>
+		<talk v="Guardia de las Fraguas">¿Eres tú el culpable de este desastre? ¡Gracias por nada, eh! ¿Es el chamán ese tan lacio, el que te envía? ¿Quiere un espanta-arquelianos? Eso es fácil, sólo tienes que ... ¡OH! ¡Cuidado que llegan más!</talk>
+		<kill n="6"/>
+		<talk v="Guardia de las Fraguas">Anda dame esas Garras, ¡ya me encargo yo! Sobre los arquelianos, te doy una pomada olorosa a aplicar cada mañana para mantenerlos alejados. Te aviso, huele muy mal...</talk>
+		<end>¿Ah? No sabía nada sobre esa historia de las Garras... bueno, mejor saberlo ahora que nunca. Espero que el Guardia de las Fraguas no haya sido desagradable contigo. Gracias por la pomada, ¡me imagino que me vale como compensación! Ten la Guía de Estrategia, gracias por todo.</end>
+		<fx v="amulst"/>
+		<xp v="60"/>
+	</m>
+
+	<m group="shaman" id="burn" name="¡Fuego!" limit="10" cond="mission(init2)">
+		<begin>Como ya te habrás dado cuenta, la región está llena de Flamachas... Incluso si su presencia es necesaria para el equilibrio cósmico, ¡esto empieza a descontrolarse! Hay que actuar rápido: anda a lo largo del cráter para llegar al Túnel situado bajo la Rama. ¡Allí sí que hay!</begin>
+		<goto v="tunel"/>
+		<kill v="flam" n="3"/>
+		<action v="Examinar las cenizas">Las cenizas dejadas por las Flamachas huelen raro.... ¡Huele a fritura en aceite viejo! Esto hay que investigarlo...</action>
+		<goto v="forges" hide="1"/>
+		<talk v="Artesano de las Fraguas">¿Que las Flamachas huelen a aceite viejo? Pues no tenía ni idea. Aunque ahora que lo pienso, me parece que hacia el oeste hay un olor de ese estilo...</talk>
+		<goto v="rashpk"/>
+		<action v="Olfatear">Snif, snif... ¡ja! ¡no hay duda! El olor de aquí es el mismo que el de fritura de aceite viejo proveniente de las cenizas de Flamachas que combatiste. No hay tiempo que perder, hay que luchar para limpiar todo esto...</action>
+		<kill v="flam" n="5"/>
+		<action v="Investigar los alrededores">Parece ser que estas Flamachas vienen de la Barbacoa del vendedor de salchichas... ¡Hay que decírselo al Chamán Lacio!</action>
+		<end>Tus valientes actos han permitido reestablecer el equilibrio en la región, ¡es un buen comienzo! Pero tendrás que hacer algo con este lío de la Barbacoa... Mientras tanto, aquí tienes tu recompensa.</end>
+		<gold v="2000"/>
+		<xp v="40"/>
+	</m>
+
+	<m group="shaman" id="barbec" name="La barbacoa desmontada" limit="15" cond="mission(burn)">
+		<begin>Este vendedor de salchichas en las ruinas Ashpuk utiliza un combustible especial que provoca la aparición de numerosas Flamachas en la región... ¡Hay que hacer algo! Aunque tampoco queremos arruinar el lucrativo negocio de este humilde vendedor. Tenemos que encontrar una solución. Empieza por recuperar algunos ingredientes: una rama seca, una escama de Dorogón y un trozo de basalto amarillo. Tritúralo, mézclalo todo, ¡y échalo en la barbacoa!</begin>
+		<goto v="tunel"/>
+		<action v="Recoger una rama">Encuentras el primer ingrediente en el suelo: una rama de árbol (más bien calcinada).</action>
+		<goto v="vener"/>
+		<action v="Robar una escama al Venerable">Te acercas al gran dorogón. Éste te echa una oscura mirada... más vale encontrar otro modo de conseguir una escama de dorogón.</action>
+		<action v="Buscar por el suelo">Exploras la guarida, pero las únicas escamas que encuentras están secas o rotas...</action>
+		<action v="Examinar la entrada de la guarida">Al salir de la caverna del Venerable encuentras una bella y brillante escama bajo un montón de piedras. ¡Estupendo! Esto evitará complicaciones innecesarias...</action>
+		<goto v="bslt"/>
+		<action v="Buscar basalto">Buscas durante varios minutos un trozo de basalto amarillo. Terminas por encontrar uno un poco más abajo de las pendientes.</action>
+		<goto v="forges"/>
+		<action v="Triturar los ingredientes">Trituras los diferentes ingredientes a base de golpes con un martillo; supones que funcionará...</action>
+		<goto v="rashpk"/>
+		<action v="Utilizar la mezcla">Nada más echar la mezcla en las llamas un sinfín de chispas de múltiples colores surgen de todas partes y crujen sin parar. De repente, las chispas cesan y todo se vuelve normal...</action>
+		<end>¡Bien hecho! La mezcla reducirá el efecto del combustible mágico utilizado en esta barbacoa sin alterar demasiado las deliciosas salchichas. Toma, una Flamacha para ti. Muchas gracias.</end>
+		<item v="flamch"/>
+		<xp v="40"/>
+	</m>
+
+	<m group="shaman" id="joke" name="Disputas" limit="20" cond="mission(init2)">
+		<begin>El profesor Eugenio de la Universidad y yo mismo tenemos desde hace años una vieja disputa... Nunca nos ponemos de acuerdo sobre la temperatura ideal para la cocción de alubias. Ayúdame a darle una lección a ese viejo cascarrabias. ¡Primero tienes que encontrar cosas que huelan muy mal! El Puerto de Santa Moría es ideal para eso...</begin>
+		<goto v="port"/>
+		<action v="Coger restos de pescado">Coges los trozos más desagradables de los restos de la venta de pescado. ¡Destaca especialmente un asqueroso Pescado-Fétido!</action>
+		<goto v="univ"/>
+		<action v="Llenar el escritorio del profesor">Pones los restos del Pescado-Fétido en los cajones del profesor Eugenio... ¡ji, ji, ji!</action>
+		<end>¡Ah, ah! ¡Perfecto! Nunca pensé que serías capaz de poner un Pescado-Fétido en su escritorio... ¡es maquiavélico!</end>
+		<gold v="1500"/>
+		<xp v="30"/>
+	</m>
+
+	<m group="shaman" id="defend" name="¡En defensa de las Fraguas!" limit="20" cond="mission(init2)">
+		<begin>Esta mañana me he dado cuenta de la llegada de una cohorte de criaturas un poco más abajo de las montañas... Apostaría mi amuleto a que se dirigen a las Fraguas Gran Señor-Todo-Quema. ¡Ayúdales, rápido!</begin>
+		<goto v="forges"/>
+		<talk v="Guardia de las Fraguas">¡En guardia soldados! ¡Hay que ser fuertes! ¡¡Mantened vuestras posiciones!! ¡Allí, allí tenéis los monstruos!</talk>
+		<kill n="15"/>
+		<talk v="Guardia de las Fraguas">¡Gracias por la ayuda, soldado! He visto varios de estos monstruos refugiarse en las Pendientes, ¡hay que perseguirlos y eliminarlos de una vez por todas!</talk>
+		<goto v="bslt"/>
+		<talk v="Explorador de las Fraguas">Se esconden en las cavernas que rodean las Pendientes de Basalto, señor. ¡Va a tener que ir a por ellos uno a uno!</talk>
+		<kill n="5"/>
+		<action v="Cogerles el cartel">Encuentras un cartel de guerra que llevaba el jefe de estos monstruos. ¡Seguro que le encanta al Guardia de las Fraguas!</action>
+		<goto v="forges"/>
+		<talk v="Guardia de las Fraguas">¡Buen trabajo, soldado! La victoria es nuestra gracias a tu intervención heroica. Dale esta carta de recomendación al Chamán Lacio, él sabrá recompensarte. ¡¡ROMPED FILAS!!</talk>
+		<end>La carta es un auténtico elogio sobre ti. ¡Mereces una recompensa por este acto de valentía! Y además, como me has traído el cartel de guerra de los monstruos, te doy algo más de lo que tenía previsto.</end>
+		<item v="hotpan"/>
+		<gold v="4000"/>
+		<xp v="60"/>
+	</m>
+
+	<m group="shaman" id="shipmt" name="El paquete desaparecido" limit="10" cond="mission(defend)">
+		<begin>Hace tiempo le encargué a Papy Jose una nueva reserva de polvos para mis rituales, pero el paquete nunca llegó. ¿Quizás se perdiera con el ataque reciente de las Fraguas? ¿Podrías buscármelo? ¡Es muy urgente!</begin>
+		<goto v="bslt" hide="1"/>
+		<talk v="Escolta de Dinovilla">¡¡Socorro!! Tenía que llevar un importante paquete allí arriba en el volcán, ¡pero un grupo de goblins furiosos me ha asaltado! Me han robado el paquete y ahora no sé qué hacer... ¡Buuuuaaaa! Me van a despedir si no encuentro una solución...</talk>
+		<kill v="goblin" n="4"/>
+		<talk v="Escolta de Dinovilla">Mil gracias, ¡me has salvado la vida! Jo, jo, ¡creo que eso de ahí es el paquete!</talk>
+		<action v="Coger el paquete">Encuentras el paquete junto a un goblin... ¡Desafortunadamente está vacío! Habrá que ver dónde ha acabado su contenido...</action>
+		<talk v="Escolta de Dinovilla">Vi a algunos dirigirse al norte... encuéntralos, ¡nos veremos en Fosalava cuando encuentres la mercancía!</talk>
+		<goto v="tunel" hide="1"/>
+		<action v="Ruidos sospechosos...">Oyes unas risas burlonas provenientes de las sombras de la caverna. ¡Seguro que se trata de la banda de goblins que buscabas!</action>
+		<kill v="goblin" n="6"/>
+		<action v="Recuperar la mercancía">Te llevas unas cuantas cantimploras llenas de polvo multicolor. Seguro que es lo que el Chamán Lacio había encargado.</action>
+		<goto v="fosslv"/>
+		<talk v="Escolta de Dinovilla">Ah, ¡encontraste la valiosa mercancía! ¡Genial! No sé cómo agradecértelo... ¡Hablaré muy bien de ti al Chamán!</talk>
+		<end>Mi repartidor acaba de darme el paquete. Me ha explicado lo mucho que le has ayudado, ¡muchas gracias! Ten, aquí tienes una poción y una pequeña propina en muestra de mi gratitud.</end>
+		<item v="angel"/>
+		<gold v="1000"/>
+		<xp v="25"/>
+	</m>
+
+	<m group="shaman" id="sales" name="Comercio (poco) justo" limit="20" cond="mission(init2)">
+		<begin>Vendo de vez en cuando algunas baratijas para ganarme la vida en el Mercado de Dinovilla. Últimamente estoy muy ocupado, ¿podrías ir tú en mi lugar? ¡Te daré un buen porcentaje por las ventas! Verás qué bien.</begin>
+		<goto v="rashpk"/>
+		<action v="Coger las baratijas">Coges algunos objetos "típicos" (trampas para turistas) para venderlos en el Mercado de Dinovilla.</action>
+		<goto v="dnv"/>
+		<action v="Mercado de Dinovilla">Te dispones a vender las baratijas sin valor de las ruinas... ¡todos se las llevan a un precio muy bueno para ti! El chamán llevaba razón, te desprendes de ellas sin ninguna dificultad.</action>
+		<end>Gracias, ¡aquí tienes mi parte de las ventas!</end>
+		<gold v="3500"/>
+		<xp v="20"/>
+	</m>
+
+
+	<m group="shaman" id="ritual" name="Ritual ridículo" limit="20" cond="mission(init2)">
+		<begin>La congregación chamánica donde hice mis estudios me reclama cada año para hacerles un ritual. Sin embargo, ¡tengo mejores cosas que hacer! ¿Podrías ir en mi lugar? Las instrucciones están en mi buzón, haz como en casa.</begin>
+		<action v="Coger las instrucciones">Has cogido la carta de la Congregación. Las instrucciones indican que hay que empezar por vencer un goblin en un combate un poco particular...</action>
+		<kill v="goblin" n="1" zone="1"/>
+		<action v="Seguir leyendo las instrucciones">La carta indica que hay que gritar (bien fuerte): "¡CHAMANA MANÁ!"</action>
+		<action v="Gritar chamana maná...">¡CHAMANA MANÁ! ... Bueno muy bien, pasemos a otra cosa...</action>
+		<goto v="vener"/>
+		<kill v="goblin" n="3"/>
+		<action v="Gritar donga donga...">¡DONGA! ¡DONGAAA! ... Eah, ya lo único que queda es terminar el ritual en el lado oeste del volcán.</action>
+		<goto v="tunel"/>
+		<kill v="goblin" n="3"/>
+		<action v="Gritar waaah...">¡WAAAAAAAAH! ...</action>
+		<goto v="fosslv"/>
+		<action v="Echar una piedra al cráter">Tiras una piedra en el gran cráter para completar el Ritual ridículo.</action>
+		<end>A juzgar por tu cara de disgusto, me imagino que entenderás ahora por qué no tenía ningunas ganas de realizar este ritual tan ridículo... En fin, gracias por el favor. Aquí tienes con qué compensar las molestias.</end>
+		<gold v="1500"/>
+		<item v="ppoiv"/>
+		<xp v="50"/>
+	</m>
+
+
+	<m group="shaman" id="hiero" name="Jeroglíficos" limit="6" cond="mission(init2)+mission(defend)+mission(barbec)">
+		<begin>He oído decir que en las cavernas del oeste, las que te llevan a la Jungla de Grumhel, hay jeroglíficos muy valiosos para mis investigaciones místicas. Anda, ¡ve y cópiamelas! Cuidado, ¡para penetrar en las cavernas necesitas un medio para no perder tu camino en la oscuridad!</begin>
+		<goto v="gorges"/>
+		<action v="Copiar los jeroglíficos">Copias como puedes los jeroglíficos en el pergamino que te ha dado el Chamán.</action>
+		<end>Hmmm... Esto es muy pero que muy interesante... Hmmm... Aquí tengo lo que podrá cerrarle el pico a ese charlatán de la Universidad. ¡Gracias por el favor!</end>
+		<item v="burger"/>
+		<xp v="20"/>
+	</m>
+
+	<m group="shaman" id="pigeon" name="Paloma mensajera" limit="20" cond="mission(hiero)">
+		<begin>Recientes descubrimientos que hice en las cavernas gracias a ti son una ocasión única para probar mis teoría a ese profesor Eugenio. Imagínatelo, ¡unas antiguas escrituras que hablan de nuestra época actual! ¡No hay que perder un instante! ¡Llévale esta carta!</begin>
+		<goto v="univ"/>
+		<talk v="Eugenio (darle la carta)">Veo que este mago de pacotilla ha encontrado algo que pegarme debajo del bigote. ¡Hmm... Hmm... ¡OH! Necesito verlo con claridad... ¡Muéstrale esta carta a mi buena amiga la doctora Yolanda de la Isla Waïkiki!</talk>
+		<goto v="ilewkk"/>
+		<talk v="Doctora Yolanda">Anda, ¿y eso? ¿Dices que proviene de las Gargantas Profundas? Bueno, esto es increíble. ¿Se lo has enseñado al señor Peleté, el arqueólogo de Fuerzabruta?</talk>
+		<goto v="frcbrt"/>
+		<action v="Encontrar el arqueólogo">El arqueólogo Peleté no parece ser de por aquí. Pronto descubres que en este momento trabaja en un proyecto situado en las Gargantas Profundas...</action>
+		<goto v="gorges"/>
+		<talk v="Arqueólogo Peleté">Oh... qué gracioso, se diría que ahora a la gente le da por copiar las notas que dejé en las cavernas. ¿Pero cómo? ¿que este Chamán ha tomado eso por unos textos antiguos? Qué me dices... ¡Solo son notas personales! </talk>
+		<end>Apostaría uno de mis amuletos a que estábamos a punto de hacer un descubrimiento fundamental. Qué lástima... Bueno, en todo caso, gracias y lamento las molestias.</end>
+		<gold v="5500"/>
+		<item v="hotpan"/>
+		<xp v="100"/>
+	</m>
+
+</missions>

@@ -1,0 +1,40 @@
+﻿<d place="dnv" name="Pregonero" gfx="paperboy" cond="active(gazette)+scenario(intro,1+)">
+
+	<phase id="begin" fast="1" next="talk:notalk" frame="stop">
+		Caminando por las calles de Dinovilla, ves a una persona gritando y gesticulando. Con sólo verlo ya cansa, ¿qué puede querer ese energúmeno?
+		Tal vez si te acercas a él, te quites la duda...
+	</phase>
+
+	<a id="talk">...¿Disculpa?</a>
+	<a id="notalk">¡Huir lo más lejos posible!</a>
+	
+	<phase id="talk" next="cagaz">
+		¡NOTICIAS, NOTIIIIICIAS! ¡EL PERIODINO ACABA DE SALIR, LEA EL PERIODINO DE DINOVILLA!
+	</phase>
+	
+	<phase id="notalk" fast="1" frame="stop">
+		Qué miedo te dio, parecía que te iba a comer con su tremenda boca...
+	</phase>
+	
+	<a id="cagaz">¿Un perio-qué?</a>
+	
+	<phase id="cagaz" next="ok">
+		UN BOLETÍN REDACTADO POR LOS MAESTROS, PARA LOS MAESTROS, SÍ SEÑOR, SÍ SEÑORA,
+		¡LAS MEJORES ANÉCDOTAS Y SUCESOS EN DINOLAND ESTÁN AQUÍ!
+		ACCEDE A SUS PÁGINAS A TRAVÉS DEL BOTÓN "BOLETÍN" EN EL MENÚ DE LA DERECHA.
+	</phase>
+	
+	<a id="ok">¿Y es necesario gritar?</a>
+	
+	<phase id="ok" next="fin">
+		SIGO MI CAMINO, YA TODOS LO SABEN, EL PERIODIIINO DE DINOLAND...
+	</phase>
+	
+	<a id="fin">¡GRACIAS! Veamos qué trae...</a>
+	
+	<phase id="fin" fast="1" frame="stop">
+		No te pierdas las futuras ediciones, así los Maestros escriben la historia del juego.
+	</phase>
+	
+</d>
+

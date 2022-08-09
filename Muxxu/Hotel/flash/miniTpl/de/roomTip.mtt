@@ -1,0 +1,52 @@
+<div class="roomSign level_::_roomLevel::">::_roomName::</div>
+
+::if _isBedroom::
+
+	::if _client::
+		::_clientTpl::
+	::else::
+		::if _workEnd::
+			<p class="locked">
+				::if _repairing::
+					Dein Angestellter wird bis ::_workEnd:: 1 Punkt repariert haben.
+				::else::
+					Dein Angestellter wird ::_workEnd:: fertig sein.
+				::end::
+			</p>
+		::end::
+		::if _constEnd::
+			<p class="locked">Die Bauarbeiten werden bis ::_constEnd:: beendet sein.</p>
+		::end::
+		<p class="misc">Dieses Zimmer ist nicht belegt.</p>
+		::if _isDamaged::
+			<p>Vergiss nicht, einen <strong>Angestellten</strong> herzuschicken, der den Schlamassel aufräumt...</p>
+		::end::
+		::if _itemToTake::
+			<p>Der letzte Gast hat den Gegenstand <strong>::_itemToTake._name::</strong> vergessen!</p>
+		::end::
+	::end::
+	
+::else::
+
+	::if _constEnd::
+		<p class="locked">Die Bauarbeiten werden bis ::_constEnd:: beendet sein.</p>
+	::end::
+	::if _client::
+		<p class="time">::_client._name:: mag die Einrichtung. Das wird dir einige <img src='/img/icons/money.png' alt=''/> einbringen!</p>
+	::end::
+	::if _research::
+		<p class="research">Stand der Forschung: ::_research::%.</p>
+	::end::
+	::if _isLobby::
+		<p class="time"><strong>Wartezeit bis zum nächsten Gast: ::_clientDelay::.</strong></p>
+	::end::
+	::if _lockEnd::
+		<p class="locked">Diese Einrichtung ist erst wieder gegen ::_lockEnd:: verfügbar.</p>
+	::end::
+	::if _workEnd::
+		<p class="locked">Dein Angestellter wird ::_workEnd:: fertig sein.</p>
+	::end::
+	<p class="rule">::_roomTexts._rule::</p>
+	<p class="misc">::_roomTexts._ambiant::</p>
+	
+::end::

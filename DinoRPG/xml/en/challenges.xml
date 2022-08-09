@@ -1,0 +1,83 @@
+	<challenges>
+
+	<c id="victoire_totale"	enemy="1" dead="1">
+		<text>Claim victory and annihilate your enemy before the end of the battle, leave them no chance of victory !</text>
+		<check result="1" dead="1" />
+		<check result="0" dead="0" />
+	</c>
+	<c id="no_poison" poison="1" inv="1">
+		<text>Claim victory and avoid being poisoned by your enemy.</text>
+		<check result="1" dead="0" startLife="100" lostLife="9" poison="0" />
+		<check result="0" dead="0" startLife="100" lostLife="80" poison="1" />
+	</c>
+	<c id="counter" counters="1:2:3">
+		<text>Claim victory and carry out ::counters:: or more counter-attacks.</text>
+		<check result="1" dead="0" counters="10" />
+		<check result="1" dead="0" counters="3"  />
+		<check result="0" dead="0" counters="0"  />
+	</c>
+	<c id="esquives" esquives="1:2:3">
+		<text>Claim victory and evade the enemy ::esquives:: or more times.</text>
+		<check result="1" esquives="3" />
+		<check result="0" esquives="0" />
+	</c>
+	
+	<c id="assault" assaults="2:5:8:10">
+		<text>Claim victory and carry out ::assaults:: or more assaults.</text>
+		<check result="1" dead="0" assaults="11" />
+		<check result="0" dead="0" assaults="1"  />
+	</c>
+	<c id="lost" inv="1" lostLife="10:25:50:80">
+		<text>Claim victory and lose ::lostLife:: or less health points.</text>
+		<check result="1"  lostLife="10"  />
+		<check result="0"  lostLife="90" />
+	</c>
+	
+	<c id="group" groupAttacks="2:3:4">
+		<text>Claim victory and carry out ::groupAttacks:: or more group attacks.</text>
+		<check result="1" groupAttacks="4" />
+		<check result="0" groupAttacks="1" />
+	</c>
+	
+	<c id="attaque_enemy" enemy="1" inv="1" attacks="2:5:8:10">
+		<text>Claim victory having withstood a maximum of ::attacks:: enemy attacks.</text>
+		<check result="1" attacks="2" />
+		<check result="0" attacks="11" />
+	</c>
+	
+	<c id="lost_enemy" 	enemy="1" inv="1" lostLife="30:40:50:60:70:80:90:100">
+		<text>Claim victory and cause your adversary to lose a maximum of ::lostLife:: life points.</text>
+		<check result="1" lostLife="30" />
+		<check result="0" lostLife="101" />
+	</c>
+	
+	<c id="group_enemy" enemy="1" inv="1" groupAttacks="2:3:4">
+		<text>Claim victory and withstand a maximum of ::groupAttacks:: group attacks.</text>
+		<check result="1" groupAttacks="0"  />
+		<check result="1" groupAttacks="2"  />
+		<check result="0" groupAttacks="5"  />
+	</c>
+	
+	<c id="poison_enemy" enemy="1" poison="1">
+		<text>Claim victory and poison your adversary during the combat.</text>
+		<check result="1" dead="0"  poison="1" />
+		<check result="0" dead="0"  poison="0" />
+	</c>
+	
+	<c id="assault_percent" percent="1" assaults="10:20:30:40:50">
+		<text>Claim victory and make assaults account for ::assaults::% or more of all your attacks.</text>
+		<check result="1" assaults="55" attacks="100" />
+		<check result="0" assaults="1"  attacks="100" />
+	</c>
+	<c id="lost_percent" percent="1" inv="1" lostLife="5:10:20:30:40">
+		<text>Claim victory and lose less than ::lostLife::% of your life points.</text>
+		<check result="1" startLife="100" lostLife="4"  />
+		<check result="0" startLife="100" lostLife="90" />
+	</c>
+	<c id="lost_enemy_percent" enemy="1" percent="1" lostLife="10:20:30:40:50">
+		<text>Claim victory and cause your adversary to lose at least ::lostLife::% of their life points.</text>
+		<check result="1"  startLife="100" lostLife="60" />
+		<check result="0"  startLife="100" lostLife="9"  />
+	</c>
+
+</challenges>

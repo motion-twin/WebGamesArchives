@@ -1,0 +1,43 @@
+﻿<missions>
+
+	<m group="mbegin" id="mbegin" name="Un Service Louche">
+		<begin>
+			Voilà, j'aurais aimé que tu transportes quelque chose pour moi. Tu verras c'est sans risque, il te suffit juste de suivre mes instructions...
+		</begin>
+		<goto v="mport"/>
+		<talk v="Homme Louche" gfx="filou">
+			Bon. Tu vas prendre cette malette noire, et tu vas l'ammener à mon Cousin à la Place du Marché de Dinoville. Il te donnera la suite des instructions...
+		</talk>
+		<action v="Malette Noire">
+			Vous avez pris la malette noire. Vous n'avez aucune envie de savoir ce qu'elle contient...
+		</action>
+		<goto v="marche"/>
+		<talk v="Homme Louche" gfx="filou">
+			Tiens, c'est de la part de mon Cousin ? Il a trouvé une bonne combine... Tu vas m'attendre bien sagement ici quelques heures, le temps que je rassemble ce qu'il faut mettre dans la malette retour, capito ?
+		</talk>
+		<action v="Attendre..." wait="3">
+			Vous attendez que le Cousin soit prêt...
+		</action>
+		<talk v="Homme Louche" gfx="filou">
+			Ecoute, on a eu une embrouille, et le fric n'est pas encore prêt. Attends moi encore un peu le temps que je m'occupe de ça, ok ?
+		</talk>
+		<action v="Attendre..." wait="2">
+			Vous attendez que le Cousin soit prêt...
+		</action>
+		<talk v="Homme Louche" gfx="filou">
+			Voilà, tout est prêt, prends cette malette et ramène-la à mon Cousin au plus vite. J'ai pas envie de me faire trouer à cause du retard moi...
+		</talk>
+		<action v="Malette Noire">
+			Vous avez pris la malette noire. Elle vous semble plus légère qu'à l'aller, son contenu doit donc avoir changé...
+		</action>
+		<goto v="mport"/>
+		<talk v="Homme Louche" gfx="filou">
+			Merci, tu vois je t'avais dit que ce serait sans danger !
+		</talk>
+		<end>
+			Bon, voilà une bonne chose de faite... Je vais t'ouvrir le passage qui te permettra de franchir les Gardes.
+		</end>
+		<xp v="5"/>
+	</m>
+
+</missions>

@@ -1,0 +1,72 @@
+<d place="grenie" name="Alchimite" gfx="gumite" cond="grade(,4)">
+
+
+<a id="end">J'ai autre chose à faire.</a>
+
+<phase id="begin" next="boh:disp:quest">
+Grnx ! Hé ! Je suis là ! 
+</phase>
+
+
+<a id="boh" cond="!fx(dimite)">Aaaah ! * Une mite qui parle ! </a>
+
+<a id="disp" cond="fx(dimite)">C'est quoi déjà cette histoire de disparitions ?</a>
+<a id="quest" cond="fx(dimite)">Je suis avec vous ! Tirons ça au clair ! </a>
+
+
+
+<!-- ################################## -->
+
+<phase id="quest" quest="mite">
+Tu serais digne d'être une alchimite, tu sais. 
+</phase>
+
+<!-- ################################## -->
+
+
+<phase id="boh" next="bohb">
+Eh bien oui, une mite qui parle. Où est le problème ? Qui a dit que les alchimites ne parlaient pas ? 
+</phase>
+
+<a id="bohb">Euh... Eh ben... | Euh...</a>
+
+<phase id="bohb" next="bohc" frame="happy">
+Voilà ! Donc les mites parlent. Pas de quoi fouetter un Catz. Maintenant, les alchimites ont aussi besoin de ton aide ! Grnx.
+</phase>
+
+<a id="bohc">Mon aide ? Mon aide à moi ? </a>
+
+<phase id="bohc" next="bohd">
+Oui ! Tu es une des rares personnes à passer dans le coin. Et on ne peut pas compter sur Altus, il est complètement gaga.
+</phase>
+
+<phase id="bohd" next="bohe" frame="angry">
+Ecoute ! Il se passe des choses pas très claires par ici. Beaucoup de mes consoeurs disparaissent sans laisser de traces ! 
+</phase>
+
+<a id="bohe">Diantre ! Des mites disparaissent !</a>
+
+<phase id="bohe" next="bohf">
+Oui, il faut absolument que tu enquêtes ! 
+Tout ce qu'on sait pour l'instant, c'est qu'Altus ne reçoit que des potions orange pour nous nourrir. | Et dès qu'une mite change de couleur Paf ! * Elle disparait dans les jours suivants ! 
+</phase>
+
+<a id="bohf">Ah parce qu'une alchimite peut changer de couleur ? </a>
+
+<phase id="bohf" effect="dimite" url="/act">
+Bien sûr ! Si on ne mange que des potions jaunes on va finir toutes jaunes. C'est évident ! 
+En tout cas ne recevoir que des potions orange, c'est déjà louche car c'est pas les moins chères. Mais avec les disparitions ça sent le complot à pleines mandibules ! Grnx !
+</phase>
+
+
+<!-- ################################## -->
+
+<phase id="disp" next="bohd">
+Grnx... Ces humains vraiment. Une vraie mémoire de Skat...
+</phase>
+
+<!-- ################################## -->
+
+
+
+</d>

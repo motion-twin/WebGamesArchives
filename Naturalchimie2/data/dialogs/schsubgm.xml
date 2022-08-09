@@ -1,0 +1,19 @@
+<d place="gmsch" name="Rejoindre Gémini" cond="sch(gu)" gfx="gmprof" auto="0">
+
+<phase id="begin" next="ouiok:ouino:exit">
+Salut ! Tu viens t'inscrire à Gémini ? 
+</phase>
+
+<a id="ouiok" cond="reput(gm,0)">Oui, je veux devenir un alchimiste Gemini.</a>
+<a id="ouino" cond="!reput(gm,0)">Oui, je veux devenir un alchimiste Gemini.</a>
+<a id="exit">Non merci. Je me suis trompé. </a>
+
+<phase id="ouiok" url="/user/subSchool?s=gm">
+C'est parti ! Je t'ajoute à la liste des étudiants. 
+</phase>
+
+<phase id="ouino" frame="angry">
+Ah... pourtant j'ai pas l'impression que tu sois très Gemini style, toi. Il va falloir faire des efforts... Il te faut au moins une réputation {Neutre} envers Gemini pour t'inscrire.
+</phase>
+
+</d>

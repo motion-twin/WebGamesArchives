@@ -1,0 +1,176 @@
+﻿<missions>
+
+	<!-- ***************************************************************************** -->
+	<!-- SHAMAN , gain de l'amulette ----->
+
+	<m group="shaman" id="init1" name="La mise à l'épreuve" limit="20">
+		<begin>Yo... Alors, pour le Guide de stratégie, y faut aller l'traduire... aux ruines Ashpouk. Tu devrais en être capable.</begin>
+		<goto v="rashpk"/>
+		<action v="Examiner les inscriptions">Heu... t'y comprends quelque chose toi ? Moi j'pige que dalle... Si on avait un dictionnaire, on y arrivera sûrement...</action>
+		<goto v="univ" hide="1" title="Trouver le Dictionnaire"/>
+		<action v="Dictionnaire Ashpoukien">Vous trouvez un vieux dictionnaire verdi de moisissure dans les rayons de la bibliothèque. Il porte le titre "Ashpouk-Dinozien, des Editions Petit Lamousse".</action>
+		<goto v="rashpk"/>
+		<action v="Déchiffrer les inscriptions">Vous entreprenez de déchiffrer les mystérieuses inscriptions Ashpouk. Au terme de plusieurs heures de travail acharné, vous parvenez à en comprendre la quasi totalité : ça ressemble à s'y méprendre à une recette de cuisine...</action>
+		<end>Mmmm... On dirait une recette... celle des légendaires Merguez d'Archelion. Cool... J'vais m'en préparer tout de suite, ça me donnera p't'être la pêche... En tout cas, t'as réussi à traduire ce truc... T'es vachement doué.</end>
+		<xp v="20"/>
+	</m>
+
+	<m group="shaman" id="init2" name="L'épouvantarchelion" limit="20" cond="mission(init1)">
+		<begin>Ha, ces merguez d'Archelion m'ont donné la pêche ! Bon, je vois que tu es quelqu'un de capable ! Rends-moi un dernier petit service et je te laisserai mon Guide de Stratégie. La région du Grand Tout-Chaud est un habitat idéal pour les Archelions de toutes tailles... Sauvage, pas humide pour un sou et en perpetuelle éruption ! Mais il faut les tenir éloignés de nous si on ne veut pas leur servir de déjeuner... Je veux que tu me fabriques une sorte d'épouvantail à Archelions ! Il me faut donc des Griffes Taillées.</begin>
+		<goto v="vener"/>
+		<kill v="barche" n="1"/>
+		<action v="Ramasser les griffes">Vous récupérez deux grosses griffes de bébé Archelion. Il faut maintenant les tailler correctement.</action>
+		<goto v="forges"/>
+		<talk v="Forgeron">Tailler des griffes d'Archelion ? Vous savez que c'est dangereux de se promener avec ce genre de choses ?! Même si ça les effraie un peu, ça attire TOUS les autres monstres !! Ah vraiment bravo ! En voilà déjà qui arrivent...</talk>
+		<kill n="6"/>
+		<talk v="Garde des forges">C'est vous le responsable de tout ce bazar ?! On ne vous félicite pas hein ! Comment ça, c'est ce filou de Shaman qui vous envoie ? Il veut un Epouvantarchelion ? C'est facile, il suffit de... OH ! Attention en voilà d'autres !!</talk>
+		<kill n="6"/>
+		<talk v="Garde des forges">Bon donnez-moi ces Griffes que je nous en débarrasse ! Pour ce qui est des Archélions, pour les éloigner, voici une pommade odorante à appliquer chaque matin. Je vous préviens, ça sent fort...</talk>
+		<end>Ah ? Je ne savais pas pour les griffes ! Ben... Au temps pour moi... J'espère que le Garde des Forges ne vous a pas trop fait d'histoires. Merci pour la pommade, j'imagine que ça fera bien l'affaire ! Tenez voilà le Guide de Stratégie que j'ai en ma possession pour vous remercier.</end>
+		<fx v="amulst"/>
+		<xp v="60"/>
+	</m>
+
+	<m group="shaman" id="burn" name="Au feu !" limit="10" cond="mission(init2)">
+		<begin>Comme tu as dû le remarquer, la région est peuplée d'un nombre invraisemblable de Flammèches... Même si leur présence est nécessaire au grand équilibre cosmique, leur nombre progresse bien trop vite et doit être contrôlé ! Il faut réagir vite, rends-toi au Tunnel sous la Branche en longeant le cratère, leur présence là-bas est devenue critique !</begin>
+		<goto v="tunel"/>
+		<kill v="flam" n="3"/>
+		<action v="Examiner le tas de cendres">Les cendres laissées par ces flammèches ont une odeur étrange... Ca ressemble fort à une odeur de friture ! Il faudrait enquêter à ce sujet...</action>
+		<goto v="forges" hide="1"/>
+		<talk v="Artisan des Forges">Des flammèches qui sentent la friture vous dites ? Aucune idée. Mais il m'semble qu'il y a un genre d'odeur comme vous dites vers l'ouest...</talk>
+		<goto v="rashpk"/>
+		<action v="Renifler">Snif, snif... Pas de doute ! L'odeur de friture ici est la même que celle des cendres de Flammèches que vous avez combattues ! Pas de temps à perdre, il va falloir se battre pour faire le ménage...</action>
+		<kill v="flam" n="5"/>
+		<action v="Fouiller les environs">De toutes évidences, ces flammèches sortent du Barbecue même du vendeur de Merguez... Il faut signaler ce problème au Shaman Mou !</action>
+		<end>Tes actions ont partiellement rétabli l'équilibre dans la région, c'est un bon début ! Mais il va falloir faire quelque chose pour cette histoire de Barbecue... En attendant, voilà de quoi te récompenser.</end>
+		<gold v="2000"/>
+		<xp v="40"/>
+	</m>
+
+	<m group="shaman" id="barbec" name="Le barbecue déjanté" limit="15" cond="mission(burn)">
+		<begin>Ce vendeur de Merguez aux ruines Ashpouk utilise un combustible spécial qui provoque l'apparition de nombreuses flammèches dans la région... Il faut faire quelque chose ! Toutefois, pas question d'empêcher ce pauvre vendeur de faire son travail, on va trouver une solution plus subtile. Commence par me récupérer quelques ingrédients: une branche séchée, une écaille de Dorogon et un morceau de basalte jaune. Broie et mélange bien le tout, et jette ça dans le barbecue !</begin>
+		<goto v="tunel"/>
+		<action v="Ramasser une branche">Vous trouvez le premier ingrédient par terre: une branche d'arbre séchée (voire calcinée).</action>
+		<goto v="vener"/>
+		<action v="Voler une écaille au Vénérable">Vous vous approchez du grand dorogon, mais celui-ci vous jette un regard noir et glacé qui ne laisse aucun doute: mieux vaut trouver un autre moyen !</action>
+		<action v="Chercher par terre">Vous fouillez le repaire, mais vous ne trouvez que des écailles brisées ou séchées...</action>
+		<action v="Examiner l'entrée du repaire">En sortant de la caverne du Vénérable vous apercevez une belle écaille brillante sous un tas de cailloux ! Voilà qui évitera bien des complications...</action>
+		<goto v="bslt"/>
+		<action v="Chercher du basalte">Vous cherchez pendant plusieurs minutes un morceau de basalte jaune. Vous finissez par en trouver un en contrebas des pentes.</action>
+		<goto v="forges"/>
+		<action v="Broyer les ingrédients">Vous broyez les différents ingrédients à grands coups de marteau: ça devrait faire l'affaire...</action>
+		<goto v="rashpk"/>
+		<action v="Utiliser le mélange">Sitôt le mélange jeté dans les flammes, de grands éclairs multicolores jaillissent de partout et crépitent tout autour du barbecue. Aussi rapidement qu'ils sont venus, les éclairs cessent et tout redevient normal...</action>
+		<end>Bien joué ! Le mélange devrait réduire l'effet du combustible magique utilisé dans ce barbecue sans pour autant trop altérer le goût des délicieuses Merguez ! Tiens voilà une petite Flammèche apprivoisée pour te remercier.</end>
+		<item v="flamch"/>
+		<xp v="40"/>
+	</m>
+
+	<m group="shaman" id="joke" name="Querelles" limit="20" cond="mission(init2)">
+		<begin>Le professeur Eugène de l'Université et moi-même entretenons depuis des années une vieille querelle... Nous n'arrivons jamais à tomber d'accord sur quelque sujet que ce soit ! Aide-moi à lui jouer un petit tour, à ce vieux grincheux. Il faut tout d'abord trouver des choses qui sentent suffisamment fort ! Le Port de Prêche est idéal pour ça...</begin>
+		<goto v="port"/>
+		<action v="Prendre des restes de poisson">Vous récupérez les pires morceaux de poisson parmi les invendus, notamment un terrifiant Poisson-Fétide !</action>
+		<goto v="univ"/>
+		<action v="Piéger le bureau du professeur">Vous disposez les restes malodorants du Poisson-Fétide dans les tiroirs du bureau du professeur Eugène... Hi hi hi !</action>
+		<end>Ah ah ! C'est parfait ! Jamais je n'aurais imaginé que tu irais jusqu'à lui cacher un poisson Fétide dans son bureau... C'est machiavélique !</end>
+		<gold v="1500"/>
+		<xp v="30"/>
+	</m>
+
+	<m group="shaman" id="defend" name="La défense des Forges !" limit="20" cond="mission(init2)">
+		<begin>J'ai aperçu ce matin des cohortes de créatures avancer dans les montagnes en contrebas... Je parierais mon grigri qu'ils se dirigeaient tout droit vers les Forges du Grand Tout Chaud ! Porte-leur assistance sans plus tarder !</begin>
+		<goto v="forges"/>
+		<talk v="Garde des Forges">Au rapport soldat ! Va falloir tenir le choc ! Tenez vos positions !! Là-bas, voilà des monstres !</talk>
+		<kill n="15"/>
+		<talk v="Garde des Forges">Merci pour l'aide, soldat ! J'ai vu plusieurs de ces monstres se réfugier dans les Pentes, il faut les poursuivre et les éliminer une bonne fois pour toutes !</talk>
+		<goto v="bslt"/>
+		<talk v="Eclaireur des Forges">Ils se cachent dans les cavernes qui bordent les Pentes de Basalte m'sieur. Vous allez devoir les débusquer un à un !</talk>
+		<kill n="5"/>
+		<action v="Ramasser leur bannière">Vous trouvez la bannière de guerre portée par le chef de ces monstres ! Cela devrait faire plaisir au Garde des Forges...</action>
+		<goto v="forges"/>
+		<talk v="Garde des Forges">Beau travail, soldat ! La victoire est à nous, et c'est grâce à votre intervention héroïque. Transmettez cette lettre de recommandation au Shaman Mou, il saura vous récompenser. ROMPEZ !!</talk>
+		<end>La lettre est élogieuse à ton sujet. Tu as bien mérité ta récompense pour cet acte de bravoure ! Et puisque tu as trouvé la Bannière de Guerre des monstres, je t'ajoute un petit quelque chose en bonus.</end>
+		<item v="hotpan"/>
+		<gold v="4000"/>
+		<xp v="60"/>
+	</m>
+
+	<m group="shaman" id="shipmt" name="Le colis disparu" limit="10" cond="mission(defend)">
+		<begin>Il y a quelques temps, j'ai commandé à Papy Joe une nouvelle réserve de poudres pour mes rituels, mais mon colis n'est toujours pas arrivé ! Peut être qu'avec l'attaque récente des Forges, il a été perdu quelque part ? Peux-tu me le retrouver ? C'est très urgent !</begin>
+		<goto v="bslt" hide="1"/>
+		<talk v="Convoyeur de Dinoville">Au secours !! Je devais livrer un important colis en haut de ce volcan, mais un groupe de Gobelins hargneux m'est tombé dessus ! Ils m'ont volé mon paquet et depuis je ne sais plus quoi faire... Bouhouhou ! On va me renvoyer si je ne trouve pas une solution...</talk>
+		<kill v="goblin" n="4"/>
+		<talk v="Convoyeur de Dinoville">Merci mille fois, vous m'avez sauvé la vie ! Hé je crois que c'est mon colis là-bas !</talk>
+		<action v="Ramasser le colis">Vous trouvez le colis près d'un gobelin... Malheureusement celui-ci est vide ! Il faut trouver où ils ont emmené son contenu...</action>
+		<talk v="Convoyeur de Dinoville">J'ai vu plusieurs d'entre eux filer vers le nord... Retrouvez-les puis rejoignez-moi à Fosselave quand vous aurez trouvé la marchandise !</talk>
+		<goto v="tunel" hide="1"/>
+		<action v="Des bruits suspects...">Vous entendez des ricanements venant des ombres de la caverne. Certainement la bande de gobelins que vous recherchez !</action>
+		<kill v="goblin" n="6"/>
+		<action v="Récupérer la marchandise">Vous ramassez des gourdes remplies de poudres multicolores, ce sont très certainement les produits commandés par le Shaman Mou.</action>
+		<goto v="fosslv"/>
+		<talk v="Convoyeur de Dinoville">Ah vous avez retrouvé la précieuse marchandise ! Génial ! Je ne sais comment vous remercier... Je parlerai de vous en bien au Shaman !</talk>
+		<end>Mon livreur vient juste de m'apporter ma commande. Il m'a expliqué toute l'aide précieuse que tu avais pu lui apporter et je t'en remercie ! Tiens voilà une potion et un petit pourboire en gage de ma gratitude !</end>
+		<item v="angel"/>
+		<gold v="1000"/>
+		<xp v="25"/>
+	</m>
+
+	<m group="shaman" id="sales" name="Commerce (peu) équitable" limit="20" cond="mission(init2)">
+		<begin>Pour me permettre de manger à ma faim, je vends de temps à autre des petites babioles sur le Marché de Dinoville. Comme je suis très pris en ce moment, pourrais-tu y aller à ma place ? Je te donnerai un généreux pourcentage des ventes ! Tu verras, ça se vend bien.</begin>
+		<goto v="rashpk"/>
+		<action v="Ramasser des babioles">Vous récupérez quelques objets "typiques" (des pièges à touristes) traînant dans les ruines pour les revendre au Marché de Dinoville.</action>
+		<goto v="dnv"/>
+		<action v="Marché de Dinoville">Vous passez l'heure qui suit à revendre au plus offrant les babioles sans valeur ramassées dans les ruines... Tout le monde se les arrache au prix fort ! Le shaman avait raison, vous écoulez votre stock sans difficulté.</action>
+		<end>Merci bien, voilà ta part des ventes !</end>
+		<gold v="3500"/>
+		<xp v="20"/>
+	</m>
+
+
+	<m group="shaman" id="ritual" name="Rituel ridicule" limit="20" cond="mission(init2)">
+		<begin>La congrégation shamanique au sein de laquelle j'ai fait mes études me réclame chaque année un rituel en gage de cette formation. Evidemment, j'ai autre chose à faire que m'occuper de ces âneries ! Pourrais-tu t'en charger à ma place ? Les instructions sont arrivées dans ma boîte aux lettres, fais comme chez toi.</begin>
+		<action v="Prendre les instructions">Vous récupérez la lettre de la Congrégation. Les instructions indiquent qu'il faut commencer par vaincre un Gobelin en combat singulier...</action>
+		<kill v="goblin" n="1" zone="1"/>
+		<action v="Lire la suite des instructions">La lettre indique qu'il faut crier (fort): "SHAMANA MANA !"</action>
+		<action v="Crier shamana mana...">SHAMANA MANA ! ... Oui bon passons à la suite...</action>
+		<goto v="vener"/>
+		<kill v="goblin" n="3"/>
+		<action v="Crier donga donga...">DONGA ! DONGAAA ! ... Voilà, il ne reste qu'à finaliser le rituel sur le versant ouest du volcan.</action>
+		<goto v="tunel"/>
+		<kill v="goblin" n="3"/>
+		<action v="Crier waaah...">WAAAAAAAAH ! ...</action>
+		<goto v="fosslv"/>
+		<action v="Jeter un caillou dans le cratère">Vous jetez un caillou dans le grand cratère pour compléter le Rituel Ridicule.</action>
+		<end>A en juger par ta mine dépitée, tu dois maintenant comprendre pourquoi je n'avais aucune envie de m'occuper de ce rituel idiot... Enfin, merci pour le service, voilà de quoi couvrir le dérangement.</end>
+		<gold v="1500"/>
+		<item v="ppoiv"/>
+		<xp v="50"/>
+	</m>
+
+
+	<m group="shaman" id="hiero" name="Hiéroglyphes" limit="6" cond="mission(init2)+mission(defend)+mission(barbec)">
+		<begin>J'ai entendu dire qu'il y avait dans les cavernes à l'ouest, celles qui mènent dans la Jungle de Grumhel, des hiéroglyphes de la plus haute importance pour mes recherches mystiques ! Vas-y et recopie-les pour moi. Attention, pour pénétrer dans ces cavernes, il te faudra un moyen de retrouver ton chemin dans l'obscurité !</begin>
+		<goto v="gorges"/>
+		<action v="Copier les hiéroglyphes">Vous recopiez tant bien que mal les hiéroglyphes sur le parchemin donné par le Shaman.</action>
+		<end>Hmmm... Très très intéressant... Hmmm... Voilà qui pourrait bien clouer le bec à ce vieux guignol de l'Université ! Merci en tous cas pour le petit service !</end>
+		<item v="burger"/>
+		<xp v="20"/>
+	</m>
+
+	<m group="shaman" id="pigeon" name="Pigeon voyageur" limit="20" cond="mission(hiero)">
+		<begin>Les découvertes récentes dans les cavernes sont une occasion inespérée de prouver mes théories à ce vieux farfelu de l'Université, le professeur Eugène ! Imaginez ça, des écritures anciennes qui parlent de notre époque ACTUELLE !! Il ne faut pas perdre un instant ! Apporte lui cette lettre !</begin>
+		<goto v="univ"/>
+		<talk v="Eugène (donner la lettre)">Je vois que ce magicien de pacotille a encore trouvé quelque chose à me coller sous la moustache. Hmm... Hmm... OH ! Ca par exemple ! Il faut que j'en ai le coeur net... Montrez cette lettre à ma bonne amie le docteur Yolande de l'île de Waïkiki !</talk>
+		<goto v="ilewkk"/>
+		<talk v="Docteur Yolande">Oh ben ça ! Et ça vient des cavernes des Gorges Profondes, vous dites ? Ca alors, c'est vraiment incroyable ! Et vous l'avez montré à monsieur Pelletée, l'archéologue à Forcebrut ?</talk>
+		<goto v="frcbrt"/>
+		<action v="Trouver l'archéologue">L'archéologue Pelletée ne semble pas être ici. Vous apprenez rapidement qu'il travaille en ce moment sur un chantier dans les Gorges Profondes...</action>
+		<goto v="gorges"/>
+		<talk v="Archéologue Pelletée">Oh... C'est amusant, on dirait à s'y méprendre les notes que j'ai laissé sur les parois des cavernes. Comment ? Et ce Shaman a pris ça pour des textes anciens ? Oh, mais non ! Ce sont justes des notes personnelles ! Je les ai écrites moi-même...</talk>
+		<end>J'aurais parié un de mes grigris qu'on tenait là une découverte fondamentale ! Dommage... En tous cas, merci pour la course et désolé pour le dérangement !</end>
+		<gold v="5500"/>
+		<item v="hotpan"/>
+		<xp v="100"/>
+	</m>
+
+</missions>

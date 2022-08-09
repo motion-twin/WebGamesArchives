@@ -1,0 +1,173 @@
+﻿<missions>
+
+	<!-- ***************************************************************************** -->
+	<!-- SHAMAN , gain de l'amulette ----->
+
+	<m group="shaman" id="init1" name="Bewährungstest" limit="20">
+		<begin>Yo...Also, was den Strategieguide angeht, den musst du zuerst übersetzen...in den Aschpuck-Ruinen. Du müsstest es schaffen.</begin>
+		<goto v="rashpk"/>
+		<action v="Die Inschriften untersuchen">Äh...verstehst du da was? Also ich check da nix...Wenn wir ein Wörterbuch hätten bekämen wir es sicher hin...</action>
+		<goto v="univ" hide="1" title="Das Wörterbuch finden"/>
+		<action v="Aschpuckisches Wörterbuch">Du findest eine altes, schimmlig grünes Wörterbuch in den Bücherregalen der Bibliothek. Es hat den Namen: "Aschpuck-Dinozisch" und ist vom Duben Verlag herausgegeben worden.</action>
+		<goto v="rashpk"/>
+		<action v="Die Inschriften entziffern">Du versuchst die geheimnisvollen Aschpuck Inschriften zu entziffern. Nach mehreren Stunden mühseliger Arbeit bist du imstande, fast alles zu verstehen: Das scheint einem Kochrezept zum Verwechseln ähnlich zu sein......</action><end>Mmmm...Sieht wie ein Rezept aus...wie das der legendären Archelöwen-Bratwürste. Cool...Ich werde mir gleich welche machen, dann komm ich vielleicht wieder in Schwung...Na jedenfalls hat du es geschafft diese Ding hier zu übersetzen...Du bist echt begabt.</end>
+		<xp v="20"/>
+	</m>
+
+	<m group="shaman" id="init2" name="Die Archelöwenscheuche" limit="20" cond="mission(init1)">
+		<begin>Ha, diese Archelöwen-Würste haben mich wieder in Schwung gebracht! Du hast es echt drauf, wie ich sehe! Tue mir noch einen letzten Gefallen, dann gebe ich dir meinen Strategieguide. Die Gegend um die Große Dauerhitze ist ein idealer Lebensraum für Archelöwen jeglicher Größe... Sie sind wild, überhaupt nicht klamm und ständig in Bewegung! Aber wir müssen sie von uns fernhalten, wenn wir nicht als ihr Mittagessen enden wollen... Ich möchte, dass du mir eine Art Archelöwenscheuche herstellst! Dazu brauche ich Geschliffene Klauen.</begin>
+		<goto v="vener"/>
+		<kill v="barche" n="1"/>
+		<action v="Klauen einsammeln">Du sammelst zwei große Archelöwenbabyklauen ein. Jetzt musst du sie noch richtig schleifen.</action>
+		<goto v="forges"/>
+		<talk v="Schmied">Sie wollen Archelöwenklauen schleifen lassen? Sie wissen, dass es gefährlich ist, solche Dinge mit sich herumzutragen?! Selbst wenn es ein wenig abschreckt, zieht es ALLE anderen Monster an!! Na prima! Da kommen schon die ersten...</talk>
+		<kill n="6"/>
+		<talk v="Schmiedenwächter">Sie sind für diesen Saustall hier verantwortlich?! Na herzlichen Glückwunsch! Was soll denn das heißen, dieser Schamanengauner hätte Sie geschickt? Er möchte einen Archelöwenscheuche haben? Das ist ganz einfach, dazu musst...OH! Achtung, da sind noch mehr!! </talk>
+		<kill n="6"/>
+		<talk v="Schmiedenwächter">Ok, geben Sie diese Klauen her, damit ich uns davon befreie! Was die Archelöwen angeht, so müssen Sie, wenn Sie sie fernhalten wollen, jeden Morgen diese riechende Salbe auftragen. Ich warne Sie, das riecht stark...</talk>
+		<end>Ach wirklich? Das wusste ich nicht, mit den Klauen! Na ja..jetzt weiß ich's...Ich hoffe, dass der Schmiedenwächter dir nicht allzu sehr auf die Nerven gegangen ist. Danke für die Salbe. Ich denke die wird's schon bringen! Hier ist der Strategieguide, den ich schon in meiner Tasche hatte, um mich bei dir zu bedanken.</end>
+		<fx v="amulst"/>
+		<xp v="60"/>
+	</m>
+
+	<m group="shaman" id="burn" name="Feuer!" limit="10" cond="mission(init2)">
+		<begin>Wie du sicherlich bemerkt hast, ist die Gegend hier mit einer unwahrscheinlich großen Anzahl an Flammen bevölkert...Auch wenn ihre Anwesenheit für das große kosmische Gleichgewicht vonnöten ist, steigt ihre Anzahl viel zu schnell, weswegen sie wieder unter Kontrolle gebracht werden muss! Du musst schnell handeln. Begibt dich zum Tunnel unter dem Ast, indem du am Krater entlangt läufst. Ihre Präsenz dort unten ist wirklich kritisch geworden!</begin>
+		<goto v="tunel"/>
+		<kill v="flam" n="3"/>
+		<action v="Die Aschehaufen untersuchen">Diese von den Flammen hinterlassenen Aschehaufen haben einen seltsamen Geruch... Das riecht stark nach Fritierfett! Ich muss die Sache mal näher untersuchen...</action>
+		<goto v="forges" hide="1"/>
+		<talk v="Handwerker der Schmieden">Flammen, die nach Fritierfett riechen, sagst du? Keine Ahnung. Aber es scheint, als ob so ein Geruch, wie du ihn beschreibst, aus dem Westen kommen würde...</talk>
+		<goto v="rashpk"/>
+		<action v="Riechen">Schnüffel, schnüffel...Es besteht kein Zweifel! Der Fritiergeruch ist der gleiche, wie der, den du in den Aschehaufen der besiegten Flammen gerochen hast! Du darfst keine Zeit verlieren und musst hier noch ein bisschen aufräumen...</action>
+		<kill v="flam" n="5"/>
+		<action v="Die Umgebung absuchen">Ganz offensichtlich kommen diese Flammen aus dem Grill des Würstchenverkäufers...Du musst dieses Problem sofort dem Lässigen Schamanen melden!!</action><end>Deine Aktionen haben das Gleichgewicht in der Gegend zum Teil wiederhergestellt. Das war ein guter Anfang! Allerdings muss etwas wegen dieser Grillgeschichte geschehen...Hier schon schon einmal etwas als Belohnung.</end>
+		<gold v="2000"/>
+		<xp v="40"/>
+	</m>
+
+	<m group="shaman" id="barbec" name="Der durchgeknallte Grill" limit="15" cond="mission(burn)">
+		<begin>Dieser Würstchenverkäufer in den Aschpuck-Ruinen benutzt einen speziellen Brennstoff, der für die zahlreichen Flammen in der Gegend verantwortlich ist... Man muss etwas dagegen tun! Allerdings können wir diesen armen Teufel nicht daran hindern, seine Arbeit zu machen. Wir werden eine raffiniertere Lösung finden. Du kannst schon mal damit anfangen, ein paar Zutaten einzusammeln: Einen getrockneten Ast, eine Drachenschuppe und ein Stück gelben Basalt. Zermalme alles, vermische es gut und wirf es dann in den Grill!</begin>
+		<goto v="tunel"/>
+		<action v="Einen Ast aufsammeln">Du findest die erste Zutat am Boden: Einen getrockneten Baumast (wenn nicht sogar verkokelt...).</action>
+		<goto v="vener"/>
+		<action v="Dem Ehrwürdigen eine Schuppe klauen">Du näherst dich dem großen Drachen. Dieser wirft dir einen finsteren und eiskalten Blick zu... damit ist eigentlich schon alles gesagt: Du musst dir etwas anderes einfallen lassen!</action>
+		<action v="Am Boden suchen">Du suchst die Höhle ab, findest jedoch nur zerbrochene oder vertrocknete Schuppen...</action>
+		<action v="Den Eingang der Höhle absuchen">Als du die Höhle des Ehrwürdigen verlässt, bemerkst du eine schöne funkelnde Schuppe unter einem Steinhaufen! Na also! Das wird uns einige Komplikationen ersparen...</action>
+		<goto v="bslt"/>
+		<action v="Basalt suchen">Du suchst mehrere Minuten nach einem Stück gelben Basalt. Schließlich findest du eine Stück etwas weiter unten an den Hängen.</action>
+		<goto v="forges"/>
+		<action v="Zutaten zermalmen">Du zermahlst die verschiedenen Zutaten mit ein paar Hammerschlägen: Das dürfte wohl reichen...</action>
+		<goto v="rashpk"/>
+		<action v="Die Mischung verwenden">Kaum hast du die Mischung in die Flammen geworfen, blitzt und kracht es in allen Farben um den Grill. Du bist von den ganzen Blitzen noch ganz geblendet und benommen, da hören sie auch schon wieder auf...</action>
+		<end>Gut gemacht! Die Mischung dürfte die Wirkung des in diesem Grill verwendeten magischen Brennstoffs schmälern, ohne dabei den Geschmack der köstlichen Würstchen allzu sehr zu beeinträchtigen! Hier hast du eine kleine gezähmte Flamme als Dankeschön.</end>
+		<item v="flamch"/>
+		<xp v="40"/>
+	</m>
+
+	<m group="shaman" id="joke" name="Streitigkeiten" limit="20" cond="mission(init2)">
+		<begin>Professor Eugen aus der Universität und ich haben seit Jahren immer wieder Streit...Egal um welches Thema es sich handelt, wir sind uns nie einig! Hilf mir, der alten Miesmuschel einen kleinen Streich zu spielen. Du musst zunächst ein paar Sachen finden, die übel riechen! Der Predigerhafen ist der ideale Ort dafür...</begin>
+		<goto v="port"/>
+		<action v="Ein paar alte Fischreste mitnehmen">Du sammelst vom unverkauften Fisch die übelriechendsten Stücke ein. Insbesondere einen fürchterlichen Übelgestankfisch!</action>
+		<goto v="univ"/>
+		<action v="Den Schreibtisch des Professors präparieren">Du verteilst die übelriechenden Reste des Übelgestankfisches in den Schreibtischschubladen von Professor Eugen...Hi hi hi!</action>
+<end>Ah ah! Jetzt ist es perfekt! Ich hätte niemals gedacht, dass du soweit gehen würdest, einen Übelgestankfisch in seinem Schreibtisch zu verstecken...Das ist ja hundsgemein!</end>
+		<gold v="1500"/>
+		<xp v="30"/>
+	</m>
+
+	<m group="shaman" id="defend" name="Die Verteidigung der Schmieden" limit="20" cond="mission(init2)">
+		<begin>Ich habe in den Bergen heute Morgen einige Monsterkohorten wandern gesehen... Ich wette meinen Grigri, dass sie sich geradewegs auf die Schmieden der Großen Dauerhitze zubewegten! Nimm sofort die Verfolgung auf!</begin>
+		<goto v="forges"/>
+		<talk v="Schmiedenwächter">Auf eure Plätze, Soldaten! Dort unten, da sind Monster! Wir müssen sie aufhalten, koste es was es wolle!!</talk>
+		<kill n="15"/>
+		<talk v="Schmiedenwächter">Danke für die Hilfe, Soldat! Ich habe gesehen, wie mehrere dieser Monster zu den Hängen geflüchtet sind. Sie müssen verfolgt und ein für alle Mal vernichtet werden!</talk>
+		<goto v="bslt"/>
+		<talk v="Aufklärer der Schmieden">Sie verstecken sich in den Höhlen, die die Basalthänge säumen, mein Herr! Sie werden sie alle einzeln da rausholen müssen!</talk>
+		<kill n="5"/>
+		<action v="Ihre Fahne einsammeln">Du findest eine Kriegsfahne, die von dem Anführer der Monster getragen wird! Das dürfte dem Schmiedenwächter gefallen...</action>
+		<goto v="forges"/>
+		<talk v="Schmiedenwächter">Gute Arbeit, Soldat! Dank deines heldenhaftes Einsatzes ist unser Sieg zum Greifen nahe. Bring dieses Empfehlungsschreiben dem Lässigen Schamanen, er wird dich zu belohnen wissen. AUFBRUCH!!</talk>
+		<end>Der Brief lobt dich in den höchsten Tönen. Du hast dir deine Belohung für dieses Bravourstück redlich verdient! Und da du die Kriegsfahne der Monster gefunden hast, gebe ich dir noch einen kleinen Bonus mit dazu.</end>
+		<item v="hotpan"/>
+		<gold v="4000"/>
+		<xp v="60"/>
+	</m>
+
+	<m group="shaman" id="shipmt" name="Das verschwundene Paket" limit="10" cond="mission(defend)">
+		<begin>Vor einiger Zeit habe ich bei Papy Joe einen neuen Pulvervorrat für meine Zeremonien bestellt, aber bis heute ist noch nichts angekommen! Kann es vielleicht sein, dass es bei dem Angriff auf die Schmieden neulich verloren gegangen ist? Kannst du es für mich wiederfinden? Es ist sehr dringend!</begin>
+		<goto v="bslt" hide="1"/>
+		<talk v="Bote aus Dinoville">Hilfe!! Ich sollte ein wichtiges Paket auf dieser Vulkanspitze abgeben, als mich eine Gruppe grantiger Goblins überfiel! Sie haben mir mein Paket gestohlen und seitdem weiß ich nicht mehr, was ich machen soll... Wuhuhu! Wenn ich keine Lösung finde bin ich gefeuert... </talk>
+		<kill v="goblin" n="4"/>
+		<talk v="Bote aus Dinoville">Tausend Dank, du hast mir das Leben gerettet! Hey, ich glaube, dass das da unten mein Paket ist!</talk>
+		<action v="Das Paket aufheben">Neben einem Goblin findest du das Paket...Leider ist es leer! Ich muss herausfinden, wohin sie den Inhalt gebracht haben...</action>
+		<talk v="Bote aus Dinoville">Ich habe mehrere von ihnen gen Norden flüchten gesehen...Finde sie und stoße in Lavaloch wieder zu mir, sobald du die Ware wieder gefunden hast!</talk>
+		<goto v="tunel" hide="1"/>
+		<action v="Verdächtige Geräusche...">Du hörst Kichergeräusche, die aus den Schatten der Höhle kommen. Das ist bestimmt die Goblinsbande, die du suchst!</action>
+		<kill v="goblin" n="6"/>
+		<action v="Die Ware einsammeln">Du sammelst ein paar Feldflaschen ein, die mit mehrfarbigen Pulvern gefüllt sind. Das sind ganz bestimmt die vom Lässigen Schamanen bestellten Produkte.</action>
+		<goto v="fosslv"/>
+		<talk v="Bote aus Dinoville">Ah, du hast die wertvolle Ware wiedergefunden! Genial! Ich weiß nicht, wie ich dir danken soll...Ich werde dem Schamanen nur Gutes von dir erzählen!</talk>
+		<end>Mein Bote hat mir soeben meine Bestellung gebracht. Er hat mir von deiner wertvollen Hilfe erzählt. Ich danke dir dafür! Hier, ein Trank und ein kleines Trinkgeld als Zeichen meiner Dankbarkeit!</end>
+		<item v="angel"/>
+		<gold v="1000"/>
+		<xp v="25"/>
+	</m>
+
+	<m group="shaman" id="sales" name="(Kaum) Fair Trade" limit="20" cond="mission(init2)">
+		<begin>Damit ich mich satt essen kann, verkaufe ich ab und zu etwas Nippes auf dem Markt in Dinoville. Nur habe ich momentan etwas viel zu tun... Könntest du vielleicht für mich hingehen? Ich werde dir einen großzügigen Anteil des Gewinns abgeben! Du wirst sehen, das Zeug verkauft sich gut.</begin>
+		<goto v="rashpk"/>
+		<action v="Den Nippes einsammeln">Du nimmst ein paar "typische" Gegenstände mit (Touristenfallen), die in den Ruinen herumliegen, um sie auf dem Markt in Dinoville zu verkaufen. </action>
+		<goto v="dnv"/>
+		<action v="Markt in Dinoville">Du verbringst die nächste Stunde damit, den in den Ruinen eingesammelten, wertlosen Krimskrams an den Meistbietenden zu verkaufen... Jedermann reißt es sich zu hohen Preisen unter den Nagel! Der Schamane hatte recht, das Geschäft läuft wie geschmiert.</action>
+		<end>Vielen Dank. Hier ist dein Gewinnanteil!</end>
+		<gold v="3500"/>
+		<xp v="20"/>
+	</m>
+
+
+	<m group="shaman" id="ritual" name="Lächerliches Ritual" limit="20" cond="mission(init2)">
+		<begin>Die Kongregation der Schamanen, in der ich meine Studien gemacht habe, verlangt jedes Jahr von mir ein Ritual als Pfand für diese Ausbildung. Ich habe aber besseres zu tun, als mich um diese Eseleien zu kümmern! Könntest du das bitte für mich machen? Die Anleitung dazu ist in meinem Briefkasten angekommen. Fühl dich wie zu Hause.</begin>
+		<action v="Die Anleitung herausnehmen">Du nimmst den Brief der Kongregation an dich. Die Anleitung beginnt damit, dass man einen Goblin im Einzelkampf besiegen muss...</action>
+		<kill v="goblin" n="1" zone="1"/>
+		<action v="Die Fortsetzung der Anleitung lesen">Der Brief besagt, dass man ganz laut rufen muss: "SHAMANA MANA!"</action>
+		<action v="Shamana mana rufen...">SHAMANA MANA! ... Na gut, lass uns weitermachen...</action>
+		<goto v="vener"/>
+		<kill v="goblin" n="3"/>
+		<action v="Donga donga rufen...">DONGA! DONGAAA! ... Das hätten wir. Jetzt muss ich nur noch das Ritual auf der Westseite des Vulkans zu Ende bringen.</action>
+		<goto v="tunel"/>
+		<kill v="goblin" n="3"/>
+		<action v="Waaah rufen...">WAAAAAAAAH! ...</action>
+		<goto v="fosslv"/>
+		<action v="Einen Stein in den Krater werfen">Du wirst einen Stein in den großen Krater, um das Lächerliche Ritual zu Ende zu bringen.</action>
+		<end>Deinem enttäuschten Gesichtsausdruck nach zu urteilen, bin ich mir sicher, dass du jetzt verstehst, warum ich nicht die geringste Lust hatte, mich um dieses idiotische Ritual zu kümmern... Nun denn, danke für deinen Gefallen. Das hier dürfte die Umstände ausgleichen.</end>
+		<gold v="1500"/>
+		<item v="ppoiv"/>
+		<xp v="50"/>
+	</m>
+
+
+	<m group="shaman" id="hiero" name="Hieroglyphen" limit="6" cond="mission(init2)+mission(defend)+mission(barbec)">
+		<begin>Ich habe gehört, dass es in den Höhlen des Westens - das sind die, die in den Grumhel-Dschungel führen - Hieroglyphen gibt, die für meine geheimen Recherchen äußerst wichtig sind! Geh doch bitte dahin und mache eine Kopie für mich. Pass jedoch auf! Um in die Höhlen vordringen zu können, wirst du etwas brauchen, um dich in der Dunkelheit nicht zu verlieren!</begin>
+		<goto v="gorges"/>
+		<action v="Die Hieroglyphen kopieren">Du schreibst die Hieroglyphen so gut es eben geht auf die Pergamentrolle, die dir der Schamane gegeben hat.</action>
+		<end>Hmmm... Sehr, sehr interessant... Hmmm... Das ist doch mal was, um den alten Kasper an der Universität zum Schweigen zu bringen! Vielen Dank für deinen Dienst!</end>
+		<item v="burger"/>
+		<xp v="20"/>
+	</m>
+
+	<m group="shaman" id="pigeon" name="Reisende Taube" limit="20" cond="mission(hiero)">
+		<begin>Die kürzlich in den Höhlen gemachten Entdeckungen sind eine unverhoffte Gelegenheit, diesem alten Spinner von der Uni, diesem Professor Eugen, meine Theorien zu beweisen. Stell dir das mal vor, antike Schriften, die von unserer AKTUELLEN Epoche sprechen!! Wir dürfen nicht eine Sekunde verlieren! Bring ihm diesen Brief!</begin>
+		<goto v="univ"/>
+		<talk v="Mit Eugen reden">Wie ich sehe hat dieser Pfuschermagier wieder etwas gefunden, das er mir unter die Nase reiben kann. Hmm...Hmm...OH! Das allerdings...! Ich muss mir Gewissheit verschaffen... Zeig diesen Brief meinem guten Freund, dem Doktor Yolanda. Er lebt auf der Waïkiki-Insel!</talk>
+		<goto v="ilewkk"/>
+		<talk v="Doktor Yolanda">Oh, na das ist ja mal was! Und das kommt aus den Höhlen der Tiefen Schluchten, sagst du? Also das... das ist ja wirklich unglaublich! Hast du das auch Herrn Schaufel, dem Archäologen von Rohkraft, gezeigt?</talk>
+		<goto v="frcbrt"/>
+		<action v="Archäologen finden">Der Archäologe Schaufel scheint nicht hier zu sein. Ziemlich schnell erfährst du, dass er momentan auf einer Grabungsstätte in den Tiefen Schluchten arbeitet...</action>
+		<goto v="gorges"/>
+		<talk v="Archäologe Schaufel">Oh...Das ist ja amüsant. Das sieht den Notizen, die ich auf die Wände geschrieben habe, zum Verwechseln ähnlich. Wie? Und der Schamane hat gedacht, das seien alte Texte? Aber nicht doch! Das sind nur persönliche Aufzeichnungen! Die habe ich selbst geschrieben......</talk><end>Ich hätte einen meiner Grigris verwettet, dass es sich hierbei um eine bahnbrechende Entdeckung handelt! Schade... Na jedenfalls, bedanke ich mich für den Botengang und entschuldige mich für die Umstände!</end>
+		<gold v="5500"/>
+		<item v="hotpan"/>
+		<xp v="100"/>
+	</m>
+
+</missions>

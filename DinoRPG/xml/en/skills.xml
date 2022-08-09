@@ -1,0 +1,452 @@
+﻿<skills>
+
+	<!--------------------- FIRE ------------------->
+
+	<s id="force" elt="fire" name="Strength" type="P" energy="0">Increases the strength of all assaults by 1</s>
+	<s id="griffe" elt="fire" name="Burning Claws" type="P" energy="0">Increases the strength of all Fire assaults by 7</s>
+	<s id="colere" elt="fire" name="Wrath" type="E">Increases the strength of the next assault by 25%</s>
+	<s id="artmat" elt="fire" require="force" name="Martial Arts" type="P" energy="0">Increases the strength of all assaults by 2</s>
+	<s id="charge" elt="fire" require="force" name="Charge" type="P" energy="0">Increases the strength of the first assault by 5</s>
+	<s id="soufla" elt="fire" require="griffe" name="Burning Breath" type="A">Attacks all enemies with Fire at a strength of 5</s>
+	<s id="chass1" elt="fire" require="griffe" name="Smashroom Hunter" type="G" energy="0">Enables the Dinoz to hunt small animals in some places</s>
+	<s id="sangch" elt="fire" require="colere" name="Warm Blood" type="P" energy="0">Increases initiative by 4</s>
+	<s id="furie" elt="fire" require="colere" name="Fury" type="P" energy="0">Increases the strength of all assaults by 3 and decreases all defenses by 2</s>
+	<s id="vigila" elt="fire" require="artmat" name="Vigilance" type="P" energy="0">Increases the Fire defense by 5</s>
+	<s id="waikk" elt="fire" require="artmat" name="Waïkikidô" type="P" energy="0">Increases counter-attack chance by 10% and maximum health points by 20. Decreases Dinoz initiative by 5</s>
+	<s id="paumes" elt="fire" require="artmat" name="Blowtorch Palm" type="A">Attacks one enemy with Fire at a strength of 10 then decreases Dinoz initiative by 15</s>
+	<s id="kamikz" elt="fire" require="charge" name="Kamikaze" type="A">Attacks one enemy with Fire at a strength of 15 then the Dinoz loses half of his life</s>
+	<s id="combus" elt="fire" require="soufla" name="Combustion" type="E">All enemies lose health points equal to their Wood element</s>
+	<s id="bdefeu" elt="fire" require="soufla" name="Fire Ball" type="A">Attacks one enemy with Fire at a strength of 7</s>
+	<s id="coulee" elt="fire" require="chass1" name="Lava Flow" type="A" energy="25">Attacks one enemy with Fire at a strength of 12</s>
+	<s id="chass2" elt="fire" require="chass1" name="Giant Hunter" type="G" energy="0">Enables Dinoz to hunt medium animals in some places</s>
+	<s id="sieste" elt="fire" require="sangch" name="Nap" type="A">Dinoz recovers up to 20 health points and falls asleep</s>
+	<s id="coeura" elt="fire" require="sangch" name="Burning Heart" type="P" energy="0">Increases the strength of all Fire assaults by 12 and increases maximum health points by 20</s>
+	<s id="aurinc" elt="fire" require="furie" name="Incandescent Aura" type="P" energy="0">Increases the Fire element by 2</s>
+	<s id="venge" elt="fire" require="furie" name="Vengeance" type="P" energy="0">Increases counter-attack chances by 5%</s>
+	<s id="chefdg" elt="fire" require="vigila" name="Warlord" type="P" energy="0">Increases the strength of assaults by all Dinoz in the Group by 2</s>
+	<s id="belier" elt="fire" require="kamikz" name="Ram" type="P" energy="0">Increases the strength of the first assault by 20</s>
+	<s id="torche" elt="fire" require="combus" name="Torch" type="S" candisable="1" energy="0">The Dinoz is on fire</s>
+	<s id="chass3" elt="fire" require="chass2" name="Dragon Hunter" type="G" energy="0">Enables Dinoz to hunt very rare and dangerous animals in some places</s>
+	<s id="self" elt="fire" require="sieste" name="Self-Control" type="S" energy="0">Prevents all negative statuses and decreases initiative by 3</s>
+	<s id="meteor" elt="fire" require="aurinc" name="Meteors" type="A" energy="35">Attacks all enemies with Fire at a strength of 10</s>
+	<s id="brave" elt="fire" require="self" name="Brave" type="S" energy="0">The Dinoz won't be able to be part of a Group anymore. Increases the Fire element by 6, maximum life by 50 and speed by 15%</s>
+
+	<!--------------------- WOOD -------------------->
+
+	<s id="endur" elt="wood" name="Endurance" type="P" energy="0">Increases Wood defense by 2</s>
+	<s id="sauvag" elt="wood" name="Savagery" type="P" energy="0">Increases strength of Wood assaults by 5</s>
+	<s id="carapc" elt="wood" name="Carapace" type="P" energy="0">Increases armor by 1</s>
+	<s id="croiss" elt="wood" require="endur" name="Growth" type="P" energy="0">Increases strength of all assaults by 1 and increases maximum health points by 20</s>
+	<s id="fouill" elt="wood" require="endur" name="Search" type="G" energy="0">Enables the Dinoz to find artifacts in some places</s>
+	<s id="tenace" elt="wood" require="sauvag" name="Tenacity" type="P" energy="0">Increases minimum damage by 1</s>
+	<s id="renfor" elt="wood" require="sauvag" name="Korgon Reinforcement" type="E" energy="30">Calls a Korgon to help during a fight</s>
+	<s id="vignes" elt="wood" require="carapc" name="Vines" type="E">Decreases initiative of an enemy by 15</s>
+	<s id="boost1" elt="wood" require="carapc" name="Sympathetic" type="S" energy="0">Dinoz can be followed by an additional Dinoz</s>
+	<s id="largem" elt="wood" require="croiss" name="Wide Jaw" type="P" energy="0">Increases strength of Wood assaults by 15</s>
+	<s id="cocon" elt="wood" require="croiss" name="Cocoon" type="S" energy="0">Increases speed of health points recovery when resting</s>
+	<s id="detect" elt="wood" require="fouill" name="Detective" type="G" energy="0">Enables Dinoz to find some uncommon artifacts in some places</s>
+	<s id="fouil2" elt="wood" require="fouill" name="Search Expert" type="G" energy="0">Enables Dinoz to search an additional square</s>
+	<s id="resmag" elt="wood" require="tenace" name="Magic Resistance" type="E">Cancels all negative statuses</s>
+	<s id="charsm" elt="wood" require="tenace" name="Charisma" type="S" energy="0">Dinoz can be followed by an additional Dinoz</s>
+	<s id="acroba" elt="wood" require="renfor" name="Acrobat" type="P" energy="0">Increases speed by 15%</s>
+	<s id="instin" elt="wood" require="renfor" name="Wild Instinct" type="P" energy="0">Increases Wood element by 2</s>
+	<s id="etatpr" elt="wood" require="vignes" name="Primal State" type="E">Cancels all positive statuses of the enemies and all negative statuses of the Group</s>
+	<s id="prprec" elt="wood" require="vignes" name="Precocious Spring" type="E">All the other Dinoz in the Group recover health points up to the Wood element of the Dinoz</s>
+	<s id="herita" elt="wood" require="boost1" name="Faroe Heritage" type="P" energy="0">Increases strength of the Wood attacks by 12 and armor by 1</s>
+	<s id="boost2" elt="wood" require="boost1" name="Planner" type="G" energy="0">Enables Dinoz to search an additional square</s>
+	<s id="geant" elt="wood" require="cocon" name="Giant" type="P" energy="0">Increases assault strength by 5, maximum health points by 30. Decreases Dinoz speed by 20%</s>
+	<s id="archeo" elt="wood" require="detect" name="Archeologist" type="G" energy="0">Enables Dinoz to find rare or exceptional artifacts in some places</s>
+	<s id="leader" elt="wood" require="charsm" name="Leader" type="U" energy="0">Increases the maximum Dinoz amount by 3</s>
+	<s id="inge" elt="wood" require="instin" name="Engineer" type="U" energy="0">All Dinoz can be equipped with an additional combat gear</s>
+	<s id="garde" elt="wood" require="prprec" name="Forest Keeper" type="P" energy="0">Increases Wood defense of all Dinoz in the Group by 3</s>
+	<s id="esprit" elt="wood" require="herita" name="Gorilloz Spirit" type="E" energy="40">Calls a Gorilloz Spirit to help in a fight</s>
+	<s id="coloss" elt="wood" require="geant" name="Colossus" type="P" energy="0">Increases strength of all assaults by 15 and maximum health points by 50. Decreases Dinoz speed by 20%</s>
+
+	<!--------------------- WATER ------------------->
+
+	<s id="percep" elt="water" name="Perception" type="P" energy="0">Increases strength of all Water assaults by 4 and enables your Dinoz to attack immaterial enemies</s>
+	<s id="mutat" elt="water" name="Mutation" type="P" energy="0">Increases maximum health points by 30</s>
+	<s id="canon" elt="water" name="Water Cannon" type="A" energy="5">Attacks one enemy with Water at a strength of 6</s>
+	<s id="csourn" elt="water" require="percep" name="Tricky Hits" type="A">Attacks one enemy. If successful, the enemy loses half of its health points</s>
+	<s id="peche1" elt="water" require="percep" name="Apprentice Fisherman" type="G" energy="0">Allows Dinoz to catch small fish in some places</s>
+	<s id="poche" elt="water" require="mutat" name="Ventral Pouch" type="S" energy="0">Gives Dinoz an additional slot to equip combat gear</s>
+	<s id="karate" elt="water" require="mutat" name="Underwater Karate" type="P" energy="0">Increases strength of all Water assaults and powers by 10</s>
+	<s id="gel" elt="water" require="canon" name="Gel" type="A">Attacks one enemy with Water at a strength of 5. The enemy's speed is reduced</s>
+	<s id="douche" elt="water" require="canon" name="Cold Shower" type="E">Attacks all enemies with Water at a strength of 2</s>
+	<s id="cfatal" elt="water" require="csourn" name="Fatal Hit" type="A">Attacks one enemy. If he is hit, he loses all his health points</s>
+	<s id="esousm" elt="water" require="csourn" name="Undersea Training" type="P" energy="0">Increases maximum health points by 10</s>
+	<s id="peche2" elt="water" require="peche1" name="Skilled Fisherman" type="G" energy="0">Allows Dinoz to catch big fish in some places</s>
+	<s id="marecg" elt="water" require="peche1" name="Marsh" type="E">Slows down all enemies</s>
+	<s id="spitie" elt="water" require="poche" name="Without Mercy" type="S" candisable="1" energy="0">Chooses enemy with the least health points for each assault</s>
+	<s id="sumo" elt="water" require="poche" name="Sumo" type="P" energy="0">Increases maximum health points by 100</s>
+	<s id="griffp" elt="water" require="karate" name="Poisoned Claws" type="S" energy="0" candisable="1">If one of the Dinoz' Water assaults hits an enemy, he is poisoned</s>
+	<s id="clone" elt="water" require="karate" name="Aqueous Clone" type="E" energy="35">Creates a clone of the Dinoz with 1 health point</s>
+	<s id="zero" elt="water" require="gel" name="Absolute Zero" type="P" energy="0">Increases defense against Fire by 25</s>
+	<s id="petrif" elt="water" require="gel" name="Petrification" type="A">Petrifies one enemy</s>
+	<s id="accup" elt="water" require="douche" name="Acupuncture" type="S" energy="0">Gives recovery status. If one enemy is hit with an assault by the Dinoz, the enemy will lose 1 health point</s>
+	<s id="sappe" elt="water" require="douche" name="Sapper" type="S" candisable="1" energy="0">Increases the probability of using combat gear by 50%</s>
+	<s id="esous2" elt="water" require="esousm" name="Advanced Undersea Training" type="P" energy="0">Increases maximum health points by 20</s>
+	<s id="magasi" elt="water" require="sappe" name="Storekeeper" type="U" energy="0">Increases maximum storable items by 50%</s>
+	<s id="cuisin" elt="water" require="sumo" name="Cooker" type="U" energy="0">Increases the life gain of the items by 10% for all the Dinoz</s>
+	<s id="sangac" elt="water" require="griffp" name="Acid Blood" type="S" energy="0">If one of the enemy's assaults hits the Dinoz, he can make the enemy lose some life</s>
+	<s id="rayonk" elt="water" require="petrif" name="Kaar-Sher Beam" type="A" energy="40">Attacks all the enemies with Water at a strength of 7</s>
+	<s id="peche3" elt="water" require="peche2" name="Master Fisherman" type="G" energy="0">Allows Dinoz to catch very rare fish in some places</s>
+	<s id="mnage" elt="water" require="esous2" name="Life Guard" type="P" energy="0">Increases Water element by 5</s>
+
+	<!--------------------- THUNDER ------------------->
+
+	<s id="celer" elt="thunder" name="Celerity" type="P" energy="0">Increases Dinoz speed by 15%</s>
+	<s id="focus" elt="thunder" name="Focus" type="E">Enhances strength of the next assault with a Lightning bonus 1</s>
+	<s id="intell" elt="thunder" name="Intelligence" type="S" energy="0">Increases experience gain at the end of the fight by 5%</s>
+	<s id="eclair" elt="thunder" require="celer" name="Lightning Attack" type="P" energy="0">Increases speed of all Lightning attacks by 40%</s>
+	<s id="double" elt="thunder" require="celer" name="Double Hit" type="P" energy="0">Increases chances of multi-attacks by 20%</s>
+	<s id="concen" elt="thunder" require="focus" name="Concentration" type="S" candisable="1" energy="0">The assaults always target the same enemy</s>
+	<s id="regen" elt="thunder" require="focus" name="Regeneration" type="S" energy="0">Increases speed of health points recovery when resting</s>
+	<s id="energy" elt="thunder" require="intell" name="Lightning Conductor" type="G" energy="0">Enables Dinoz to absorb lightning energy in some places</s>
+	<s id="premso" elt="thunder" require="intell" name="First Aid" type="S" energy="0">Dinoz will recover one health point at the end of the fight if he has lost some life</s>
+	<s id="embuch" elt="thunder" require="eclair" name="Hazard" type="P" energy="0">Increases initiative by 7</s>
+	<s id="foudre" elt="thunder" require="double" name="Lightning" type="A" energy="25">Attacks one enemy with Lightning at a strength of 10</s>
+	<s id="plandc" elt="thunder" require="double" name="Career Plan" type="S" energy="0">Enables Dinoz to re-do the level up element selection process</s>
+	<s id="danse" elt="thunder" require="double" name="Lightning Dance" type="A" energy="35">Attacks 5 times with Lightning at a strength of 3</s>
+	<s id="kaos" elt="thunder" require="concen" name="Kaos Path" type="P" energy="0">Increases strength of Fire and Lightning assaults by 6</s>
+	<s id="gaia" elt="thunder" require="concen" name="Gaïa Path" type="P" energy="0">Increases strength of Wood and Lightning defense by 3</s>
+	<s id="hermet" elt="thunder" require="regen" name="Hermetic Aura" type="E">Gives Dinoz "Shield" status</s>
+	<s id="puree" elt="thunder" require="regen" name="Saving Puree" type="E" energy="45">Cancels all the negative statuses of the Group</s>
+	<s id="fiselt" elt="thunder" require="energy" name="Elemental Fission" type="G" energy="0">Enables Dinoz to collect all kinds of elemental energy in some places</s>
+	<s id="crocs" elt="thunder" require="energy" name="Diamond Fangs" type="P" energy="0">Increases strength of all assaults by 2</s>
+	<s id="medeci" elt="thunder" require="premso" name="Medicine" type="S" energy="0">Enables Dinoz to recover up to 3 health points at the end of the fight</s>
+	<s id="adrena" elt="thunder" require="premso" name="Adrenaline" type="P" energy="0">Increases speed of all Lightning attacks by 50%</s>
+	<s id="reinca" elt="thunder" require="plandc" name="Reincarnation" type="S" energy="0">Dinoz will be able to be reincarnated from the level 40</s>
+	<s id="crepus" elt="thunder" require="kaos" name="Blazing Twilight" type="A" energy="40">Attacks all enemies with Fire at a strength of 6 + Lightning at a strength of 6</s>
+	<s id="aubefe" elt="thunder" require="gaia" name="Leafy Dawn" type="A" energy="65">Regenerates all Dinoz in the Group up to Lightning 2 + Wood 2 health points</s>
+	<s id="benede" elt="thunder" require="puree" name="Benediction" type="E">Gives Dinoz "Blessed" status to all Dinoz in the Group</s>
+	<s id="marcha" elt="thunder" require="fiselt" name="Merchant" type="U" energy="0">Decreases prices in the Dinoland flying shop by 10%</s>
+	<s id="branca" elt="thunder" require="medeci" name="Hospital Porter" type="S" energy="0">Enables one another Dinoz in the Group to recover up to 5 health points at the end of the fight</s>
+	<s id="archcr" elt="thunder" require="crepus" name="Corrosive Archangel" type="P" energy="0">Increases the Fire element by 2 and the Lightning element by 1</s>
+	<s id="archgn" elt="thunder" require="aubefe" name="Genesive Archangel" type="P" energy="0">Increases the Wood element by 2 and the Lightning element by 1</s>
+	<s id="pretre" elt="thunder" require="benede" name="Priest" type="U" energy="0">Increases speed of health point recovery of all Dinoz when resting</s>
+
+	<!--------------------- AIR ------------------->
+
+	<s id="agili" elt="air" name="Agility" type="P" energy="0">Increases strength of all Air assaults by 5</s>
+	<s id="strate" elt="air" name="Strategy" type="S" candisable="1" energy="0">Adopts the best attack strategy according to enemies' defenses</s>
+	<s id="mistra" elt="air" name="Mistral" type="A">Attacks all enemies with Air at a strength of 3</s>
+	<s id="envol" elt="air" name="Flight" type="A">Dinoz strikes and then escapes to the air. Reserved for flying Dinoz</s>
+	<s id="esquiv" elt="air" require="agili" name="Dodge" type="P" energy="0">Increase evasion chance by 10%</s>
+	<s id="saut" elt="air" require="agili" name="Jump" type="P" energy="0">Enables Dinoz to attack flying enemies</s>
+	<s id="analys" elt="air" require="strate" name="Analyse" type="S" candisable="1" energy="0">Chooses the best target for each attack</s>
+	<s id="cueill" elt="air" require="strate" name="Gathering" type="G" energy="0">Enables Dinoz to gather plants in some places</s>
+	<s id="tornad" elt="air" require="mistra" name="Tornado" type="A" energy="30">Attacks all enemies with Air at a strength of 5</s>
+	<s id="taichi" elt="air" require="mistra" name="Tai-chi" type="P" candisable="1" energy="0">Increases strength of Air assaults by 15. Decreases speed of Air attacks by 20%</s>
+	<s id="elasti" elt="air" require="esquiv" name="Elasticity" type="P" energy="0">Increases strength of Air assaults by 10 and increases Air defense by 3</s>
+	<s id="disque" elt="air" require="esquiv" name="Vacuum Disk" type="A" energy="35">Attacks one enemy with Air at a strength of 12</s>
+	<s id="aplong" elt="air" require="saut" name="Plunging Attack" type="A">Attacks one enemy with an assault having an Air bonus 2</s>
+	<s id="furtiv" elt="air" require="saut" name="Stealth" type="P" energy="0">Increases Air, Water and Lightning defense by 2</s>
+	<s id="specia" elt="air" require="analys" name="Specialist" type="S" energy="0">For the assaults, the weakest element is replaced by the strongest</s>
+	<s id="talona" elt="air" require="analys" name="Achilles' Heel" type="P" energy="0">Increases strength of all assaults by 2</s>
+	<s id="nuaget" elt="air" require="cueill" name="Toxic Cloud" type="A" energy="45" candisable="1">Poisons all enemies</s>
+	<s id="oeil" elt="air" require="cueill" name="Sharp-Eye" type="G" energy="0">Enables Dinoz to find exotic plants in some places</s>
+	<s id="formev" elt="air" require="tornad" name="Vaporous Form" type="S" energy="0">Enables Dinoz to gain "Immaterial" status by defending himself</s>
+	<s id="ventvf" elt="air" require="tornad" name="Vivacious Wind" type="E" energy="25">Gives Dinoz "Accelerated" status</s>
+	<s id="eveil" elt="air" require="taichi" name="Awakening" type="P" energy="0">Decreases speed of Air attacks by 20%</s>
+	<s id="paumej" elt="air" require="taichi" name="Ejector Palms" type="A">Attacks one enemy with an assault of double strength then decreases the initiative by 15</s>
+	<s id="tnoir" elt="air" require="disque" name="Black Hole" type="A" energy="60">Send one enemy into a parallel dimension</s>
+	<s id="maitrl" elt="air" require="aplong" name="Master Levitater" type="S" energy="0">Enables all Dinoz in the Group to attack flying enemies</s>
+	<s id="prof" elt="air" require="eveil" name="Professor" type="U" energy="0">Increases experience gain of all Dinoz by 5%</s>
+	<s id="halein" elt="air" require="nuaget" name="Fetid Breath" type="S" energy="0" candisable="1">Poisons all enemies touched by an assault</s>
+	<s id="sdevie" elt="air" require="ventvf" name="Life Breath" type="S" energy="0">Protects Dinoz against poisons and curses</s>
+	<s id="medsol" elt="air" require="eveil" name="Lonely Meditation" type="P" energy="0">Increases Air defense by 3. Decreases speed of Air attacks by 50%</s>
+	<s id="medtra" elt="air" require="medsol" name="Transcendental Meditation" type="P" energy="0">Increases Air defense by 6. Decreases speed of Air attacks by 50%</s>
+	<s id="formee" elt="air" require="medtra" name="Etheral Form" type="S" energy="0">Gives Dinoz "Immaterial" status</s>
+
+	<!--------------------- SPECIAL ------------------->
+
+	<s id="crush" elt="void" name="Rampage" type="S" energy="0">Removes enemies' armor</s>
+	<s id="rock" elt="void" name="Rock" type="S" candisable="1" energy="0">Become a favourite target of the enemies</s>
+	<s id="ccorne" elt="void" name="Horned Charge" type="P" energy="0">Increases strength of first assault by 20%</s>
+	<s id="ninja" elt="void" name="Elusive" type="S" energy="0">Increases evasion chances by 10%</s>
+	<s id="coque" elt="void" name="Shell" type="P" energy="0">Increases armor by 1</s>
+	<s id="carap" elt="void" name="Cuirass" type="S" energy="0">Reduces damage partially at the moment of an opponent's assault</s>
+	<s id="test" elt="void" name="Test" type="S" candisable="1">Test skill for dev.</s>
+	<s id="quake" elt="void" name="Wipeout" type="A" candisable="1">Sends a shockwave through all surrounding enemies</s>
+	<s id="sesqui" elt="void" name="Artful Dodge" type="S" energy="0">Increases the chances of avoiding certain ranged attacks by 15%</s>
+	<s id="napoma" elt="void" name="Napomagician" type="S" energy="0">The dinoz can equip 2 magic objects at the same time</s>
+	<s id="cognon" elt="void" name="Bigmagnon" type="S" energy="0">The Dino jumps on his adversaire and thumps him for several turns!</s>
+	
+	<!--------------------- DEMONS ------------------->
+
+	<s id="demwnk" elt="void" name="Hard-boiled" type="P" energy="0">Increases all defenses by 6</s>
+	<s id="demgrl" elt="void" name="Brutal Force" type="P" energy="0">Increases strength of all assaults by 5</s>
+	<s id="dempig" elt="void" name="Softpig Charge" type="A">Attacks one enemy with Fire strength 5 plus Wood strength 3</s>
+	<s id="demwan" elt="void" name="Mass Frenzy" type="E">All Dinoz in the Group are under the effect "Haste"</s>
+	
+	<s id="demmou" elt="void" name="Light Force" type="P" energy="0">Increases assaults of the dinoz by 30 when it is in the Dark World.</s>
+	<s id="demkab" elt="void" name="Caushemesh Origins" type="P" energy="0">Increases assaults of the dinoz by 30 when it is in Caushemesh.</s>
+	<s id="dempla" elt="void" name="Shadow Force" type="P" energy="0">Increases endurance and healing of the dinoz by 25%</s>	
+	
+	<!--------------------- SPHERES -------------------->
+
+	<s id="sphere" elt="void" name="Sphere" type="S" energy="0">Elemental Sphere</s>
+
+	<s id="braser" elt="fire" require="sphere" name="Brazier" type="E" energy="30">Attacks all enemies with Fire at a strength of 3</s>
+	<s id="detona" elt="fire" require="sphere:braser" name="Detonation" type="E" energy="60">Dinoz loses 5 health points and gains 15 points of initiative</s>
+	<s id="pheart" elt="fire" require="sphere:detona" name="Phoenix Heart" type="S" energy="0">Dinoz will be able to regenerate 15% additional health points when resting</s>
+
+	<s id="launch" elt="wood" require="sphere" name="Acorn Thrower" type="A" energy="25">Attacks one enemy with Wood at a strength of 5</s>
+	<s id="gratte" elt="wood" require="sphere:launch" name="Scratcher" type="G" energy="0">Enables Dinoz to search an additional square during an excavation</s>
+	<s id="beigne" elt="wood" require="sphere:gratte" name="Good Whack" type="E" energy="45">Doubles strength of the next assault</s>
+
+	<s id="vital" elt="water" require="sphere" name="Vitality" type="P" energy="0">Increases maximum health points by 10</s>
+	<s id="moigno" elt="water" require="sphere:vital" name="Liquid Stumps" type="A" energy="75">Decreases initiative of one enemy by 25</s>
+	<s id="deluge" elt="water" require="sphere:moigno" name="Flood" type="A" energy="75">Attacks all enemies with Water at a strength of 10. All enemies lose 8 points of initiative</s>
+
+	<s id="reflex" elt="thunder" require="sphere" name="Reflex" type="P" energy="0">Increases initiative by 5</s>
+	<s id="sclair" elt="thunder" require="sphere:reflex" name="Sinuous Lightning" type="A" energy="50">Attacks up to three enemies with Lightning at a strength of 10</s>
+	<s id="surviv" elt="thunder" require="sphere:sclair" name="Survival" type="S" energy="65">Dinoz can avoid death once per fight</s>
+
+	<s id="aiguil" elt="air" require="sphere" name="Sting" type="E" energy="35">Attacks one enemy with Air at a strength of 3</s>
+	<s id="aurap" elt="air" require="sphere:aiguil" name="Smelly Aura" type="S" energy="0" candisable="1">If the assault of one enemy damages a Dinoz, the enemy is poisoned</s>
+	<s id="hypno" elt="air" require="sphere:aurap" name="Hypnosis" type="A" energy="50">One enemy joins your side for 3 turns</s>
+
+	<!--------------------- DOUBLES --------------------->
+
+	<s id="multi" elt="void" name="Double-Skill" type="S" energy="0">Enables the Dinoz to learn the double-skills</s>
+
+	<s id="barmor" elt="fire" elt2="wood" name="Basalt Armor" require="multi:waikk:cocon" type="P" energy="0">Increases armor by 3</s>
+	<s id="melemt" elt="fire" elt2="water" name="Elemental Master" require="multi:combus:zero" type="P" energy="0">Increases Fire and Water elements by 2</s>
+	<s id="sprint" elt="fire" elt2="thunder" name="Sprint" require="multi:kamikz:kaos" type="P" energy="0">Increases initiative by 6</s>
+	<s id="vendet" elt="fire" elt2="air" name="Vendetta" require="multi:venge:talona" type="P" energy="0">Increases counter-attack chances by 20%</s>
+	<s id="increv" elt="wood" elt2="water" name="Tireless" require="multi:resmag:clone" type="P" energy="0">Increases all defenses by 2</s>
+	<s id="choc" elt="wood" elt2="thunder" name="Shock" require="multi:etatpr:gaia" type="S" energy="0">Adds the value of the wood element to Lightning assaults, and vice versa</s>
+	<s id="secous" elt="wood" elt2="air" name="Earth Tremor" require="multi:instin:paumej" type="A">Attacks all enemies on the ground with Wood and Air at a strength of 4</s>
+	<s id="elctly" elt="water" elt2="thunder" name="Electrolysis" require="multi:marecg:foudre" type="P" energy="0">Increases speed of all Dinoz of the Group by 5%</s>
+	<s id="bulle" elt="water" elt2="air" name="Bubble" require="multi:sappe:formev" type="P" energy="0">Protects damage of non Wood elemental spells according to the AIR and WATER elements of the Dinoz</s>
+	<s id="surcha" elt="thunder" elt2="air" name="Overload" require="multi:adrena:elasti" type="P" energy="0">Increases chances of multi-hit by 15%</s>
+
+	<!--------------------- MONSTERS ------------------->
+
+	<s id="renfrt" elt="void" name="Reinforcements" type="A">Calls a clone as reinforcement</s>
+	<s id="absorb" elt="void" name="Absorption" type="A">Makes an assault and recovers life</s>
+	<s id="fregen" elt="void" name="Regeneration" type="E">Recovers health points</s>
+	<s id="goblin" elt="void" name="Goblin" type="P">Goblin's capacities</s>
+	<s id="electr" elt="void" name="Electrocution" type="P">Electrifies the attackers</s>
+	<s id="coqdur" elt="void" name="Hardcock" type="P">Hardcock's capacities</s>
+	<s id="envol2" elt="void" name="Flight" type="A">Flight with 60%</s>
+	<s id="intang" elt="void" name="Immaterial" type="E">Becomes immaterial for a short time</s>
+	<s id="resist" elt="void" name="Resistance" type="S">Resists special attacks</s>
+	<s id="protct" elt="void" name="Protection" type="S">Protects against the assaults</s>
+	<s id="sentin" elt="void" name="Sentinel" type="A">Doesn't attack, counter-attack only</s>
+	<s id="comet" elt="void" name="Comet" type="A">Special attack</s>
+	<s id="vener" elt="void" name="Venerable" type="A">Special attack</s>
+	<s id="bite" elt="void" name="Bite" type="A">Wolf attack</s>
+	<s id="gtour" elt="void" name="Elemental" type="E">Guardian event</s>
+	<s id="off" elt="void" name="Disable" type="S">Disabled (no attack, no damage)</s>
+	<s id="scorp" elt="void" name="Stinger" type="A">Scorpions caracs</s>
+	<s id="worm" elt="void" name="" type="S">Sandworm caracs</s>
+	<s id="worm2" elt="void" name="" type="S">Sandworm caracs</s>
+	<s id="cactus" elt="void" name="Poisoned Picks" type="S">Kaktuz</s>
+	<s id="escap" elt="void" name="Flee" type="S">Flees</s>
+	<s id="wormrf" elt="void" name="Call" type="S">Call a worm baby</s>
+	<s id="coward" elt="void" name="Flee" type="S">Chance to flee</s>
+
+	<s id="brig1" elt="void" name="Steal" type="S">Bandits</s>
+	<s id="brig2" elt="void" name="Steal" type="S">Bandits</s>
+	<s id="brig3" elt="void" name="Steal" type="S">Bandits</s>
+
+	<s id="igor" elt="void" name="Invisibility" type="S">Pr. Igor's power</s>
+	<s id="yakuzi" elt="void" name="Yakuzi!!!" type="S">Yakuzi's power</s>
+
+	<s id="ggoupi" elt="void" name="Contamination" type="S">Bigshroom Caracs</s>
+
+	<s id="elhelp" elt="void" name="????" type="S">Elemental-Disciple's powers</s>
+	<s id="bmaudt" elt="void" name="Cursed Wand" type="S">Masked Korgon</s>
+	
+	<s id="attall" elt="void" name="All For One" type="S">All monsters of the same race attack</s>
+	<s id="rminit" elt="void" name="Initiative" type="S">Reset the initiative of all enemies and set the intiative of all allies to 1</s>
+	<s id="healg" elt="void" name="Heal Group" type="E">Add 1 HP to all allies and also revive all those which are dead.</s>
+	<s id="mantoo" elt="void" name="Last Breath" type="A">Poison</s>
+	<s id="mosqui" elt="void" name="Untouchable" type="E">Make an ally untouchable</s>
+
+	<s id="mugard" elt="void" name="Defend" type="S">Vegetox Defender</s>
+	<s id="infini" elt="void" name="Reinforcements" type="S">Infinite Reinforcements</s>
+	<s id="frutox" elt="void" name="Faster!" type="S">Frutox Defender</s>
+	<s id="cuzbos" elt="void" name="Psychic Attack" type="S">Cuzcous Defender</s>
+	<s id="grotox" elt="void" name="Boom!" type="S"></s>
+	<s id="ffrutx" elt="void" name="Flight" type="S"></s>
+	<s id="singmu" elt="void" name="" type="S"></s>
+	
+	<s id="rapaca" elt="void" name="Rapacarapace" type="A">Special Attack</s>
+	
+	<s id="friend" elt="void" name="Friend" type="P">Special Attack</s>
+	<s id="mbao" elt="void" name="Bao Boost" type="P">Special Attack</s>
+	<s id="febrez" elt="void" name="" type="P"></s>
+	<s id="nodead" elt="void" name="" type="P"></s>	
+	
+	<!-- NIMBAO -->
+	<s id="cyclo" elt="void" name="" type="S"></s>
+	<s id="ecuren" elt="void" name="" type="S"></s>
+	<s id="gromst" elt="void" name="" type="S"></s>
+	<s id="lapouf" elt="void" name="" type="S"></s>
+	<s id="grizou" elt="void" name="" type="S"></s>
+	<s id="ourano" elt="void" name="Uvavu" type="P"></s>
+	<s id="amazon" elt="void" name="Amazon" type="P"></s>
+	<s id="stelme" elt="void" name="St Elma's Fire" type="P"></s>
+	<s id="abysse" elt="void" name="Abyss" type="P"></s>
+	<s id="cendre" elt="void" name="Ember" type="P"></s>
+	<s id="grizhs" elt="void" name="Heroic death" type="P"></s>
+	<s id="morph" elt="void" name="Transformation" type="P"></s>
+	
+
+	<!--------------------- QUETZU ------------------->
+	
+	<s id="propul" require="force" elt="fire" restricted="quetzu" name="Divine Propulsion" type="P" energy="0">Increases the speed of fire attacks by 30%. Reduces the fire element level by 2.</s>
+	<s id="grifff" require="propul" elt="fire" restricted="quetzu" name="Infernal Talons" type="S" energy="0" candisable="1">Inflicts continuous fire damage on an adversary.</s>
+	<s id="ecaill"  require="mutat" elt="water" restricted="quetzu" name="Glowing Scales" type="P" energy="0">Increases armour by 2.</s>
+	<s id="skin" require="ecaill" elt="water" restricted="quetzu" name="Snakeskin" type="P" energy="0">Increases the ability to dodge assaults by 10% and reduces the speed of water attacks by 15%.</s>
+	<s id="quetza" require="foudre" elt="thunder" restricted="quetzu" name="Quetzalcoatl" type="I" energy="50">Attacks all enemies with a lightning invocation of strength 40.</s>
+	
+	<!--------------------- INVOCATIONS ------------------->
+	
+	<s id="invoc" elt="void" name="Invocator" type="S" energy="0">Allows a Dinoz to learn invocation skills.</s>
+	
+	<s id="vulcan" elt="fire" elt2="thunder" require="invoc:coulee:crocs"  restricted="mouef" name="Vulcan" type="I" energy="50" candisable="1">Attacks all enemies with a fire invocation of strength 20.</s>
+	<s id="ifrit"  elt="fire" elt2="wood"   require="invoc:bdefeu:herita" restricted="pigmou"  name="Armor of Ifrit" type="I" energy="50" candisable="1">Improves fire element defence by 20 points for the whole team.</s>
+	<s id="salama" elt="fire" elt2="water"  require="invoc:cfatal:paumes" restricted="feross"  name="Salamander" type="I" energy="50" candisable="1">Attacks one enemy with a fire invocation of strength 30.</s>
+	
+	<s id="bluewh" elt="water" elt2="thunder" require="invoc:peche3:adrena" restricted="winks"  name="Sacred Whale" type="I" energy="50" candisable="1">Improves water element defence by 20 points for the whole team.</s>
+	<s id="leviat" elt="water" elt2="air" require="invoc:sangac:tornad" restricted="mahamu" name="Leviathan" type="I" energy="50" candisable="1">Attacks all enemies with a water invocation of strength 20.</s>
+	<s id="ondine" elt="water" elt2="fire" require="invoc:spitie:venge"  restricted="sirain" name="Ondine" type="I" energy="50" candisable="1">Attacks one enemy with a water invocation of strength 30.</s>
+	
+	<s id="louga" elt="wood" elt2="air" require="invoc:instin:ventvf" restricted="casti" name="Werewolf" type="I" energy="50" candisable="1">Attacks all enemies with a wood invocation of strength 30.</s>
+	<s id="fairy"  elt="wood" elt2="fire" require="invoc:etatpr:coeura" restricted="gorill" name="Fairy Blessing" type="I" energy="50" candisable="1">Adds 10 initiative points to all Dinoz in the team</s>
+	<s id="yggdra" elt="wood" elt2="air"  require="invoc:garde:cueill"  restricted="wanwan" name="Yggdrasil" type="I" energy="50" candisable="1">Improves wood element defence by 20 points for the whole team.</s>
+	<s id="mama" elt="wood" elt2="fire"  require="invoc:amazo2:recroc"  restricted="trice" name="Big Mama" type="I" energy="50" candisable="1">A hundred year old Tricerithumps comes along and squashes all the Dinos with its huge foot, emtying their energy gauges.</s>
+	
+	<s id="raijin" elt="thunder" elt2="air"  require="invoc:foudre:elasti" restricted="plan"  name="Raijin" type="I" energy="50" candisable="1">Attacks all enemies with a lightning invocation of strength 20.</s>
+	<s id="golem"  elt="thunder" elt2="fire" require="invoc:fiselt:aurinc" restricted="rocky" name="Golem" type="I" energy="50" candisable="1">Improves lightning element defence by 20 points for the whole team.</s>
+	<s id="goku"   elt="thunder" elt2="wood" require="invoc:danse:charsm"  restricted="toufu" name="Grand High Babooner" type="I" energy="50" candisable="1">Increases the likelihood of dodging an attack by 20% for the whole team</s>
+	
+	<s id="djinn" elt="air" elt2="fire"    require="invoc:soufla:halein" restricted="pteroz" name="Djinn" type="I" energy="50" candisable="1">Attacks all enemies with an air invocation of strength 20.</s>
+	<s id="fujin" elt="air" elt2="thunder" require="invoc:disque:danse"  restricted="nuagoz" name="Fujin" type="I" energy="80" candisable="1">Doubles the speed of all Dinoz in the team.</s>
+	<s id="totem" elt="air" elt2="fire"    require="invoc:eveil:combus"  restricted="kabuki" name="Ancestral Flying Totem" type="I" energy="50" candisable="1">Attacks one enemy with an air invocation of strength 30. </s>
+	
+	<s id="boudda" elt="fire" elt2="thunder" elt3="air"   require="invoc:artmat:concen:eveil"  restricted="hippo"  name="Buddha" type="I" energy="50" candisable="1">Improves every elemental defence by 10 points for the whole team.</s>
+	<s id="hades"  elt="air" elt2="wood"    elt3="water" require="invoc:halein:tenace:csourn" restricted="santaz" name="Hades" type="I" energy="60" candisable="1">Poisons and slows down all enemies</s>	
+	<s id="reiruc" elt="air" elt2="wood" require="invoc:ventvf:prprec" restricted="soufle" name="Hive Queen" type="I" energy="50" candisable="1">Drains all energy from your adversaries.</s>
+	<s id="herco" elt="thunder" elt2="air" require="invoc:formev:archcr" restricted="smog" name="Herculous" type="I" energy="50" candisable="1">Non elemental attack on all enemies.</s>
+
+	
+	<!--------------------- NOUVEL ARBRE LEVEL 50+ ------------------->
+	
+	<s id="lvlup" elt="void" name="Limit Break" type="S" energy="0" level="10">Allows the dinoz to evolve beyond its original potential and explore a new skills tree.</s>
+		
+	<!-- FIRE -->
+	<s id="protei" elt="fire" require="lvlup"  name="Dinoz Max-Protein" type="P" energy="0">Increases dinoz' endurance by 30%.</s>
+	
+	<s id="extenu" elt="fire" require="protei" name="Attenuator" type="A">Reduces an enemy's ability to recover by 25% during an assault.</s>
+	<s id="rouge"  elt="fire" require="protei" name="Deep Red" type="P" energy="0">Increases a dinoz' assaults by 20 when it is at Big All Hot.</s>
+	
+	<s id="magma"  elt="fire" require="extenu" name="Magma Shell" type="P" energy="0">Increases life points by 30 and increases fire assaults by 5.</s>
+	<s id="crigue" elt="fire" require="rouge"  name="Battle Cry" type="A" energy="25" >Forces the dinoz to use their most powerful A-skill on the next turn.</s>
+	
+	<s id="artemi" elt="fire" require="magma"  name="Artemesian Prayer" type="P" energy="0">When hunting, this skill allows the dinoz to hunt once more.</s>
+	<s id="fiebru" elt="fire" require="magma"  name="Burning Fever" type="P" energy="0">Increases the chances of a multi-hit combo by 30%.</s>
+	<s id="joker"  elt="fire" require="crigue" name="Joker" type="P" energy="0">Either increases speed by 25% or reduces it by 25% at the start of a battle.</s>
+	<s id="arfeu"  elt="fire" require="crigue" name="Flaming Armor" type="P" energy="0">Increases defence against wood by 20.</s>
+	
+	<s id="phonix" elt="fire" require="artemi" name="Phoenix Feather" type="E">Revives the dinoz with 1HP during the battle, increses initiative and speed by 10 but the dinoz cannot heal.</s>
+	<s id="recroc" elt="fire" require="artemi" name="Rocky Receptacle" type="A" energy="35">Allows a dinoz to cancel an enemy's A and E sphere skills in WOOD.</s>
+	<s id="cendr2" elt="fire" require="fiebru" name="Ember Country" type="E" energy="35">All dinoz without at least 10 points in FIRE will not use A and E skills during the user's next 3 turns.</s>
+	<s id="acclam" elt="fire" require="joker"  name="Frat Party" type="E">Increases the healing of all dinoz by 30%.</s>
+	<s id="pgbrai" elt="fire" require="arfeu"  name="Brazier Fist" type="P" energy="0">Increases FIRE assaults by 20.</s>
+	
+	<!-- WOOD -->
+	<s id="oxygen" elt="wood" require="lvlup"  name="Muscular Oxygenation" type="P" energy="0">Increases dinoz' endurance by 20%.</s>
+	<s id="vert"   elt="wood" require="lvlup"  name="Racing Green" type="P" energy="0">Increses a dinoz assaults by 20 when in the Grumhel Forest.</s>
+	
+	<s id="lifsrc" elt="wood" require="oxygen" name="Life Source" type="S">If the dinoz is hit by an assault, it can absorb up to 5% of the life points of their enemy.</s>
+	<s id="videne" elt="wood" require="oxygen" name="Energy Sink" type="S">Reduces an adversary's healing capacity by 15% during an assault.</s>
+	<s id="acilac" elt="wood" require="vert"   name="Lactic Acid" type="P" energy="0">Reduces the dinoz' endurance by 15%.</s>
+	<s id="boudin" elt="wood" require="vert"   name="Shield Dinoz" type="E">Automatically protects the dinoz with fewest life points for the duration of the combat.</s>
+	
+	<s id="lanroc" elt="wood" require="lifsrc" name="Rock Thrower" type="A" energy="35" >Attacks in WOOD with power 10, a rock is projected at the enemy at mesmerising speed.</s>
+	<s id="courba" elt="wood" require="videne" name="Aches" type="E">Reduces an enemy dinoz endurance by 30% during an assault.</s>
+	<s id="peafer" elt="wood" require="acilac" name="Flame Skin" type="P" energy="0">Increases HP by 50.</s>
+	<s id="forcon" elt="wood" require="boudin" name="Force Control" type="P">The dinoz will deal at least 10 HP of damage to the enemy dinoz.</s>
+	
+	<s id="champo" elt="wood" require="lanroc" name="Re-Searcher" type="P" energy="0">Allows a dinoz to search once more when scavenging.</s>
+	<s id="coustr" elt="wood" require="courba" name="Flow of Life" type="P" energy="0">Increases WATER defence by 20 and increases WOOD assaults by 20.</s>
+	<s id="lifstr" elt="wood" require="peafer" name="River of Life" type="P" energy="0">Increases initiative by 20.</s>
+	<s id="berser" elt="wood" require="forcon" name="Berserk" type="E">Doubles assault power, but bans the dinoz from using E and A skills.</s>
+	
+	<s id="mudwal" elt="wood" require="champo" name="Mud Wall" type="A" energy="45" >Absorbs up to 30 damage points before vanishing. Is vulnerable to the Kaar-Sher Beam.</s>
+	<s id="peaaci" elt="wood" require="champo" name="Steel Skin" type="P" energy="0">Increases HP by 100.</s>
+	<s id="sharig" elt="wood" require="coustr" name="Skill Forger" type="E" energy="45" >Copies a skill which has already been used by an enemy dinoz and keeps it until the end of the combat.</s>
+	<s id="recaqu" elt="wood" require="lifstr" name="Aqueous Receptacle" type="A" energy="50">Allows a dinoz to cancel an enemy's A and E sphere skills in WATER.</s>
+	<s id="amazo2" elt="wood" require="berser" name="Amazonia" type="A" energy="40">All dinoz without at least 10 points in WOOD will not use A and E skills during the user's next 3 turns unless they are victim of an attack which costs them 10HP.</s>
+	
+	<!-- WATER -->
+	<s id="odivi"  elt="water" require="lvlup"  name="Holy Water" type="S" energy="0">Doubles the number of HP restored by the dinoz when resting.</s>
+	
+	<s id="gamma"  elt="water" require="odivi"  name="Gamma Radiation" type="P" energy="0">Increases strength of all assaults by 5 and maximum HP by 30 but reduces initiative by 10.</s>
+	<s id="bleu"   elt="water" require="odivi"  name="Deepest Blue" type="P" energy="0">Increases a dinoz assaults by 20 when it is at the Atlanteid Islands.</s>
+	
+	<s id="mueac"  elt="water" require="gamma"  name="Aqueous Metamorphosis" type="P" energy="0">Increases defence against lightning by 20.</s>
+	<s id="carabl" elt="water" require="gamma"  name="Armor-Plated Shell" type="P" energy="0">Increases armor by 10 and reduces speed by 20%</s>
+	<s id="diete"  elt="water" require="bleu"   name="Chromatic diet" type="E" energy="45">Gives an enemy MonoElement status, restricting them to using a single element.</s>
+	
+	<s id="efflu"  elt="water" require="mueac"  name="Aphrodisia" type="S" energy="0">The dinoz can be followed by an additional dinoz.</s>
+	<s id="nemo"   elt="water" require="mueac"  name="Nemo" type="S" energy="0">Whilst fishing, this allows the dinoz to fish once more.</s>
+	<s id="clepto" elt="water" require="carabl" name="Cleptomania" type="P" energy="45">Cancels all of an enemy's equipped objects except magic items.</s>
+	<s id="bandie" elt="water" require="diete"  name="God Banned" type="E">Stops the selected enemy from summoning their deity.</s>
+	<s id="abyss2" elt="water" require="diete"  name="Abyss" type="A" energy="35">All dinoz without at least 10 points in WATER will see the strength of their attacks and assaults reduced by 25% during the user's next 3 turns.</s>
+	
+	<s id="tourbi" elt="water" require="efflu"  name="Magic Tourbillon" type="P" energy="0">Increases water assaults by 20.</s>
+	<s id="hyperv" elt="water" require="nemo"   name="Hyperventilation" type="A" energy="55">Decreases the endurance of all enemy dinoz by 20%.</s>
+	<s id="thera"  elt="water" require="clepto" name="Group Therapy" type="E" energy="55">The dinoz will recover as many HP as the enemy team recover when they use a healing action.</s>
+	<s id="vitmar" elt="water" require="bandie" name="Marine Vitality"  type="P" energy="0">Increases HP by 80.</s>
+	<s id="rectes" elt="water" require="abyss2" name="Tesla Receptacle" type="A" energy="45">Allows a dinoz to block an enemy dinoz' A et E LIGHTNING sphere skills.</s>
+	
+	<!-- THUNDER -->
+	<s id="soumor" elt="thunder" require="lvlup"  name="Moral Support" type="P" energy="0">Increases a dinoz' endurance by 10%.</s>
+	
+	<s id="sticar" elt="thunder" require="soumor" name="Cardiac Massage" type="P" energy="0">Increases dinoz recovery rate by 20%.</s>
+	<s id="jaune"  elt="thunder" require="soumor" name="Yellow Fever" type="P" energy="0">Increases a dinoz assaults by 20 when it is at the Magnetic Steppes.</s>
+	
+	<s id="flash"  elt="thunder" require="sticar" name="Sun Blindness" type="E" energy="30">Dazzles an enemy dinoz, causing them to miss their target one time in three.</s>
+	<s id="crampe" elt="thunder" require="jaune"  name="Chronic Cramp" type="E">The dinoz loses 10 energy points, and the dinoz using the skill loses 15% of their power to heal.</s>
+	
+	<s id="batsup" elt="thunder" require="flash"  name="Backup Battery" type="P" energy="0">Increases health points by 50 but reduces initiative by 15.</s>
+	<s id="einste" elt="thunder" require="flash"  name="Einstein" type="P" energy="0">Allows a dinoz to search one additional time during fission.</s>
+	<s id="oracle" elt="thunder" require="crampe" name="Oracle" type="P" energy="0">Doubles the chances of a dinoz using an invocation.</s>
+	<s id="barelc" elt="thunder" require="crampe" name="Electric Fence" type="P" energy="0">Increases defence against AIR by 20.</s>
+	
+	<s id="recaer" elt="thunder" require="batsup" name="Air Receptacle" type="A">Allows a dinoz to cancel an enemy's A and E sphere skills in AIR..</s>
+	<s id="stelm2" elt="thunder" require="einste" name="St. Elmine's Fire" type="A" energy="40">All dinoz without at least 10 points in LIGHTNING will lose 5% of their health during the user's next 3 turns.</s>
+	<s id="remane" elt="thunder" require="oracle" name="Love Hertz" type="P" energy="0">Increases the ability to dodge an attack by 20%.</s>
+	<s id="zeus"   elt="thunder" require="barelc" name="Force of Zeus" type="P" energy="0">Increases lightning assaults by 20.</s>
+	
+	<!-- AIR -->
+	<s id="maicor" elt="air" require="lvlup"  name="Mind over Body" type="P" energy="0">Increases a dinoz' healing ability by 25%.</s>
+	
+	<s id="blanc"  elt="air" require="maicor" name="All White on the Night" type="P" energy="0">Increases a dinoz assault strength by 20 if it is on Nimbao</s>
+	<s id="anaero" elt="air" require="maicor" name="Anaerobics" type="P" energy="0">Reduces a dinoz' endurance by 25%.</s>
+	
+	<s id="flagel" elt="air" require="blanc"  name="Whips" type="P" energy="0">Reduces a dinoz' healing ability by 15%.</s>
+	<s id="doufac" elt="air" require="blanc"  name="Double Face" type="P">Has a 50/50 chance of increasing OR reducing a dinoz' initiative by 10 at the start of a combat.</s>
+	<s id="sange"  elt="air" require="anaero" name="Angel's Breath" type="P" energy="0">Increases defence against FIRE by 20.</s>
+	<s id="ouraga" elt="air" require="anaero" name="Hurricane" type="P" energy="0">Increases attacks against FIRE by 20.</s>
+	
+	<s id="twino5" elt="air" require="flagel" name="Twinoid 500mg" type="P" energy="0">Increases a dinoz' endurance by 50%.</s>
+	<s id="ouran2" elt="air" require="doufac" name="Uvavu" type="A" energy="45">All dinoz without at least 10 points in AIR will lose 50% of their speed during the user's next 3 turns.</s>
+	<s id="londuo" elt="air" require="sange" name="Harvester" type="P" energy="0">Allows a dinoz to search once more during harvesting.</s>
+	<s id="surhad" elt="air" require="ouraga" name="Hades' Store" type="S" energy="0">Adds one additional inventory slot to a dinoz.</s>
+	<s id="recthe" elt="air" require="ouraga" name="Heat Sink" type="A" energy="45">Allows a dinoz to block an enemy dinoz' A et E FIRE skills.</s>
+	
+	<s id="sylphe" elt="air" require="twino5" name="Sylphs" type="A" energy="65">Wind spirits remove an enemy dinoz from the combat.</s>
+	<s id="qigong" elt="air" require="ouran2" name="Qi gong" type="E" energy="55">Takes away all of a dinoz' endurance in one assault.</s>
+	<s id="messie" elt="air" require="londuo" name="Messiah" type="U" energy="0">Increases the maximum number of dinoz in a team by 3.</s>
+	<s id="mutin"  elt="air" require="surhad" name="Mutiny" type="E" energy="40">Causes clones to attack their masters.</s>
+	<s id="maicol" elt="air" require="recthe" name="Sticking Hands" type="E">Blocks an enemy's ability to dodge attacks.</s>
+
+</skills>

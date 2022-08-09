@@ -1,0 +1,111 @@
+﻿<missions>
+
+	<!-- ***************************************************************************** -->
+	<!-- Al Zaimeur missions ----->
+
+	<m group="alzaim" id="fiesta" name="La fiesta d'Al" limit="10">
+		<begin>Pour fêter mon retour chez Papy Joe, j'aimerais organiser une belle soirée à DinoVille. Je me suis occupé de presque tout, il faudrait juste que tu me rendes un service ou deux. Mais il va falloir être rapide, c'est bientôt ! si tu veux plus de détails, on peut en parler tous les deux...</begin>
+		<goto v="marche"/>
+		<talk v="Isabella" gfx="isabella">Si j'accepte de vous accompagner à une fête ?  Et bien je .... oui avec grand plaisir ! Seulement il faudrait que ... je me trouve une nouvelle tenue de soirée.</talk>
+		<goto v="dnv"/>
+		<talk v="Anna Tomie" gfx="infirmiere" background="1">Vous voulez m'inviter à une soirée ? Mais que vont devenir mes dinoz chéries pendant mon absence ? Cela dit, je ne suis plus très loin, et je pourrai prétexter une visite à domicile ! J'accepte !</talk>
+		<goto v="fosslv"/>
+		<talk v="Shaman Mou" gfx="shaman">Yo, une teuf sans le shaman moua ca s'peu pas ! J'peux inviter des amis ? Sont coolos, pô problème. Yeaaahh carr'ment qu'on s'retrouve là bas. A toute mon pote.</talk>
+		<goto v="vener"/>
+		<talk v="Mademoiselle Bao" gfx="baobabe">Mon très cher maître Dinoz, que je suis ravie de te voir. Une fête dis-tu ? Mais c'est adooorable de penser à moi, cela fait tellement longtemps que je n'ai pas eu l'occasion de danser. Je compte sur toi pour être mon cavalier.</talk>
+		<goto v="gorges"/>
+		<talk v="Spélélélologue" gfx="spelele">Hello. Une soirée à Dinoville, oui très bonne idée, avec plaisir. Ça me réchaufferait un peu de me déplacer jusqu'en ville et je pourrai faire un bilan de mes recherches auprès de mon tuteur à l'université.</talk>
+		<goto v="auree"/>
+		<talk v="Nicolas Mulot" gfx="hulot">Quitter cette terre de mystères pour retrouver mon public du magazine Ouïaïa ... Quitter Mère Nature pour retrouver une ère mature et célébrer amour et joie, séquence Émotion ! Je serai en votre compagnie.</talk>
+		<goto v="camp"/>
+		<talk v="Dian Korgsey" gfx="dian">Quitter mes Korgons chéris, quitter le campement ? Je ne sais pas si j'en suis capable ... Qui guidera les touristes égarés, qui les préviendra du danger qu'ils encourent ? Remarquez, il y a peu de touristes en ce moment, ils préfèrent aller sur les Îles. J'accepte votre invitation.</talk>
+		<end>
+			Tu es trop fort, va y avoir un max de monde et tu as ramené de trop jolies filles, tiens tu mérites une jolie récompense.
+		</end>
+		<xp v="80"/>
+		<gold v="3000"/>
+	</m>
+ 
+	<m  group="alzaim" id="mcrame" name="Des merguez sinon rien" limit="10" cond="mission(fiesta)">
+		<begin>
+			Des invités viennent de loin, et du coup il faudrait leur prévoir un bon repas pour qu'ils soient bien en forme pour la soirée, et j'ai rien prévu côté bouffe, tu peux t'en occuper ?
+			Tu peux venir en parler avec moi si tu veux.
+		</begin>
+		<goto v="rashpk"/>
+		<talk v="vendeur de merguez" gfx="merguez">
+			Je veux bien te donner quelques merguez cramées, mais cette fois-ci, il faut que tu me rendes un service, débarrasse moi des brigands qui ne cessent d'en vouloir à mes merguez !!
+		</talk>
+		<action v="Voleurs de merguez">
+			Vous voyez des voleurs en train de chaparder des merguez !
+		</action>
+		<actfight act="Leur foncer dessus" monsters="vol1:vol1:vol1">
+		</actfight>
+		<action v="Voleurs de merguez">
+			Mince les voleurs ont du alerter les autres membres de leur bande.
+		</action>
+		<actfight act="Les renvoyer chez eux" monsters="vol1:vol1:vol1:vol1:vol1:vol1:vol1">
+		</actfight>
+		<talk v="vendeur de merguez" gfx="merguez">
+			Merci à toi, ces brigands ne devraient pas revenir de si tôt. Tiens voilà assez de merguez pour tenir pendant 1 mois !
+		</talk>
+		<end>
+			Excellent, ils vont se régaler. Et ces merguez cramées, ça va donner soif .. l'astuce ultime ! Tiens voilà pour toi.
+		</end>
+		<xp v="40"/>
+		<gold v="1000"/>
+	</m>
+
+	<m  group="alzaim" id="alcool" name="Al cool" limit="10" cond="mission(fiesta)">
+		<begin>
+			J'ai eu du mal à me remettre de ma dernière soirée et j'ai pas eu le temps d'aller chercher les boissons, tu pourrais t'en occuper pour moi ?
+			Tu peux venir en parler avec moi si tu veux avoir plus de détails.
+		</begin>
+		<goto v="fountj"/>
+		<action v="récupérer de l'eau">
+			Vous emportez avec vous de l'eau de la Fontaine de Jouvence pour faire plaisir à Papy Joe.
+		</action>
+		<goto v="fosslv"/>
+		<talk v="Shaman Mou" gfx="shaman">Yo, du siro' d'lave ? Sûr que j'ai çô. Je t'en donne contre trois silex taillés, plus d'allum'-feu pour ma pipe, c'est trop la galère...
+		</talk>
+		<useingr v="art" n="3"/>
+		<action v="récupérer le sirop de lave">
+			Shaman mou vous a donné du sirop de lave en remerciement, il ne manque plus qu'à trouver le petit plus pour rendre la soirée parfaite !
+		</action>
+		<goto v="gorges" hide="1" />
+		<talk v="Spélélélologue" gfx="spelele">
+			Salut, tu veux un truc cool pour agrémenter vos boissons ? As tu déjà pensé à des glaçons ? Il suffit de se baisser pour en trouver, mais je te conseille de les prendre par blocs pour éviter qu'ils fondent trop vite. Oui pour ça le mieux est de creuser, tu as bien une pelle non ?</talk>
+		<dig>
+			Vous avez obtenu un magnifique bloc de glace, à vous les coktails avec glaçons !
+		</dig>
+		<end>
+			C'est parfait, nous avons vraiment tout pour faire une soirée d'anthologie. Tu mérites bien ta récompense mon ami.
+		</end>
+		<xp v="40"/>
+		<gold v="1000"/>
+	</m>
+
+	<m group="alzaim" id="minuit" name="Permission de minuit" limit="10" cond="mission(mcrame)+mission(alcool)">
+		<begin>Il vous faut survivre à la fête d'Al...</begin>
+		<action v="Party time" wait="1">
+			La fête bat son plein, vous essayez de vous enfuir discrétement mais Al vous aggripe et vous fait danser durant toute la nuit...
+		</action>
+		<end>
+			Vous avez survécu à cette superbe soirée. Elle était vraiment réussie, quelle expérience !.
+		</end>
+		<xp v="20"/>
+	</m>
+
+	<m group="alzaim" id="magne" name="Excès de magnétisme" limit="10" cond="mission(minuit)">
+		<begin>
+			Durant la soirée, Al a tellement remué qu'il a ameuté des rapacarapaces des Steppes en ville. Il faut vite aller protéger les villageois en les attaquant.
+		</begin>
+		<goto v="dnv"/>
+		<actfight act="Tuer les Rapacarapaces" monsters="rapac2:rapac2"/>
+		<end>
+			Bravo ! Là on peut vraiment dire que vous avez sauvé le village, ces monstres étaient surpuissants.
+		</end>
+		<xp v="100"/>
+		<gold v="1000"/>
+	</m>
+	
+</missions>

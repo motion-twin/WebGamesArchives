@@ -1,0 +1,1003 @@
+<!-- Quête du Smog -->
+<!--
+Pré-requis :
+scénario de nimbao 2 fini + accès au monde sombre
+
+L'ADN des Smogs a été découvert par le professeur Grand. En extrayant le sang d'une sangsue piégée dans la glace, 
+il a pu recréer génétiquement cette espèce qui faisait partie autrefois des plus redoutables prédateurs de la planète.
+
+Le professeur Grand a établit un laboratoire sur une île de l'archipel.
+
+Un immense glacier a fait surface récemment, ce glacier en se collant à une île existante a offert un terrain propice à l'expérimentation sur les dinoz.
+Un échantillon de Smog avait été découvert au préalable par le professeur, et il avait réussi à créer quelques Smogs dans son laboratoire.
+Il décide de construire un laboratoire plus grand sur cette nouvelle île pour mener à bien ses recherches. 
+
+PROLOGUE :
+-Le joueur peut parler au pilier de comptoir au port de prêche. Ce dernier lui raconte que des pêcheurs ont vu un glacier émerger au loin.
+-En parlant au pêcheur, le joueur apprend où se trouve le glacier. Mais il ne veut pas tenter de s'en approcher de peur d'endommager son bateau.
+-pour s'approcher du glacier, il faut une barque renforcée capable de briser les petits récifs glacés qui entoure cette île, broc peut le faire mais il doit demander au forgeron une proue transperce-glace.
+-Il faut aller voir le forgeron, celui-ci accepte de renforcer le bateau du pêcheur contre des ingrédients, il dit qu'il a une info intéressante qu'il ne dira qu'en échange d'un peu de glace de ce fameux glacier.
+(si on essaie de donner de la glace de nimbao, le forgeron s'en rendra compte)
+-Il faut aller sur le nouveau lieu et prendre un morceau de glace, puis le ramener au forgeron.
+-En parlant au forgeron, on apprend qu'il vient juste de terminer la commande d'un incubateur pour un professeur de l'université.
+-En parlant au professeur Eugêne, on apprend qu'un professeur s'est mis en tête de créer génétiquement des dinoz disparus.
+
+HISTOIRE :
+-Le joueur croise le professeur Grand à l'université. Ce dernier l'ignore en marmonnant des phrases scientifiques sur les griffes de Smog.
+-Le joueur lui apporte une Griffes acérées qui lui permet d'éveiller sa curiosité. Le joueur apprend l'existence du laboratoire en construction.
+-Le professeur demande au joueur de l'aide pour finir sa construction.
+-Action de clan, finir de construire le laboratoire.
+
+-Présentation du laboratoire, de l'échantillon et du specimen contenant le sang du smog.
+-Il lui manque de l'eau noire pour décongeler la sangsue et ainsi obtenir l'échantillon.
+-Le joueur part dans le monde sombre, récupère de l'eau noire, et la raporte au professeur.
+-le processus de création débute et génère des oeufs de Smogs. Mais ces oeufs ne sont pas viables. Il faut plus d'énergie. Le professeur s'enferme dans son atelier.
+-En parlant au forgeron, on apprend qu'il vide son stock et qu'il aimerait se débarasser d'une machine construite pour le professeur Igor dont il ignore le but.
+-En parlant à broc, le joueur découvre que cette machine permettrait d'extraire et de filtrer l'énergie négative présente dans le monde sombre.
+-Le joueur aide broc à terminer cette machine en lui ramenant des ingrédients et de l'énergie.
+-une fois terminé, le joueur remet la machine au professeur.
+
+-L'expérience tourne mal, l'énergie noire n'est pas filtré correctement, une faille se crée et transforme le laboratoire.
+-La machine permettant de créer artificiellement les Smogs s'emballe. Des Smogs noirs envahissent les iles atlantéinées.
+-Les Smogs sont intelligents, ils chassent en groupe et se cachent pour frapper quand on s'y attend le moins. Impossible de gérer la crise dans ses conditions.
+
+-Le joueur doit aller sur nimbao dans l’observatoire pour demander plus d’infos sur les méthode de chasse des Smogs et leur manière de se déplacer. 
+-Une fois les infos obtenues, le joueur peut croiser des Smogs noirs (bonus xp) sur les îles.
+-Une fois la menace contenue sur l’île du laboratoire, le joueur doit aller au fond du labo pour mettre un terme à la production de dinoz noir.
+
+-Le joueur traverse un donjon qui abouti au boss, la sangsue abreuvée d'énergie noire a fusionné avec les machines pour créer une entité bio-mécanique.
+
+EPILOGUE :
+La machine a été stoppée, elle a réussi à créer un oeuf de smog viable avant d'être détruite. Le professeur donne l'oeuf au joueur.
+Le professeur continue ses expérimentations sur l'île.
+
+
+-RÉCOMPENSES :
+Une fois la crise résolue, le professeur Grand donnera un set de mission au joueur. 
+Il gagnera aussi un oeuf de smog.
+item consommable permettant de booster x2 son xp lors d’un combat ?
+-->
+
+
+<d place="port" name="Bar Hound" gfx="pilier" cond="scenario(smog,0)+(admin()|active(smog))">
+	<phase id="begin" next="ice">
+		[Hey hey little dude!]
+		[How's it hanging on this fine day?]
+	</phase>
+	
+	<a id="ice">Pretty good if I do say so...</a>
+	
+	<phase id="ice" next="berg">
+		[You know what time it is!
+		You're thinking to yourself that if there's something going down in Dinoland, Frish port will have the goss!]
+		[You're a smart kid.]
+	</phase>
+	
+	<a id="berg">All the best adventures start in this kind of place!</a>
+	
+	<phase id="berg" next="erf">
+		[You said it youngster!
+		Although I've gotta say it's been quiet around here for a while now...]
+		[Lucky you're around to lively things up a bit. What with all your Championships and Wars and such!
+		The rest of us get our kicks watching from the bar! It's especially funny when you go off to war during the night... Better off in here if you ask me!]
+	</phase>
+	
+	<a id="erf">Riight... So waht is going on? I know something's up, i can smell it!</a>
+	
+	<phase id="erf" next="avent">
+		[Listen up then! We were just talking about the big ol' block of ice that's shown up in the Atlanteid Islands.]
+		[We've been arguing over where it might of come from. I'm sure it's come up from the depths.]
+		[The things so big it's not even melting!]
+		[It's incredible!]
+	</phase>
+	
+	<a id="avent">And do you think I can get out to it?</a>
+	
+	<phase id="avent" next="go">
+		[Still itching for another adventure then I see...]
+		[I wouldn't know anything about that myself, ask some of the local fishermen if they've been, i'm hapy right where I am! I've got plenty enough ice in this here glass! Hahaha.]
+	</phase>
+	
+	<a id="go">I'm definitely going to find a way out there!</a>
+	
+	<phase id="go" fast="1" scenario="smog:1">
+		You go looking for more, reliable, information...
+	</phase>
+</d>
+
+<d place="port" name="Joveboze" gfx="joveboze" cond="scenario(smog,1)">
+	<phase id="begin" next="ice">
+		Ehder yawee grmet!
+		Chewan summit u!
+	</phase>
+	<a id="ice">Errr, maybe, yeah.</a>
+	<phase id="ice" next="po">
+		[Nuz dis eyeecebrg wotsit ineet,
+		yaseen im?]
+		[Warrrhhh eh!]
+	</phase>
+	<a id="po">Nope, I haven't seen it at all!</a>
+	<phase id="po" next="possible">
+		[Djuwannaseeim?]
+		[Garnout decoral yaseeim frm faaararrooofff!]
+	</phase>
+	<a id="possible">And if I want to get a little closer? Would it be possible with a boat?</a>
+	<phase id="possible" next="bateau">
+		[Lookerre, tridet, butche ken gitno bot eet dere!
+		Bustdimup reelgud I dun!]
+		[Nomor fishinaftr dat!]
+	</phase>
+	<a id="bateau">C'mon there's gotta be some way for me to get you out there?</a>
+	<phase id="bateau" next="bla">
+		[Idhaf to beh maard!]
+		[Tha r ya gemme a tenkbote, hehe, bigol tenk!]
+		[Den mehbe ibegoooin ooot dere gain.]
+	</phase>
+	<a id="bla">So i've got to find a way to reinforce his boat? Hum...</a>
+	<phase id="bla" fast="1" scenario="smog:2">
+		You must find a solution to this problem if you want to go any further.
+	</phase>
+</d>
+
+<d place="chbroc" name="Klutz" gfx="broc" cond="scenario(smog,2)" background="5" >
+	<inject id="broc__11:begin" next="acier" />
+	
+	<a id="acier">Have you seen the Iceberg?</a>
+	<phase id="acier" next="fou">
+		[An iceberg?]
+		[What are you on about?!]
+	</phase>
+	<a id="fou">Well, you should be able to see everything from where you are!</a>
+	<phase id="fou" next="gla">
+		[Oh actually I never look down! I've got vertigo, you see.]
+		[....]
+		[I'm really just looking for some peace and quiet, at least, I won't hurt anyone else with my inventions here.]
+		[Heum, let's have a look...]
+		_(Klutz goes back into his workshop, and looks out over the ocean, through some kind of contraption that only he knows how to work.)_
+		[.......]
+		[Holy blue blazes!]
+		[I was saying just the other day that it's been getting colder lately...]
+	</phase>
+	<a id="gla">HA! I told you so!</a>
+	<phase id="gla" next="id">
+		[Calm down, calm down! I believe you. It IS a giant iceberg.]
+		[But if you want to cool down a bit, you can do that here, I just finished working on an amazing invention: a re-cold-inator!]
+		[The name needs a bit of work, but it makes ice cubes and err...]
+	</phase>
+	<a id="id">Yeah... Anyway would you know how I might be able to get to this iceberg?</a>
+	<phase id="id" next="forge">
+		[Ahh, i think that you should be able to approach the monstrosity in a decent boat... But the hull might suffer some... err... damage. No doubt any captain crazy enough to take you out there would be less than pleased!]
+	</phase>
+	<a id="forge">That's exactly what the other guy said... Do you think you could do anything to strengthen the hull of a boat?</a>
+	<phase id="forge" next="go">
+		[By jove, I might be able to do something, but I'll need help.]
+		[I'd need some kind of coating for the hull, strong enough to break ice, but light enough not to sink the boat...]
+	</phase>
+	<a id="go">I can go and ask at the forge, maybe they have something...</a>
+	<phase id="go" next="ouep">
+		[Haha.. Err yeah, why not? But ahhh, just one thing. Don't tell them that I sent you...]
+		[I might be a little, umm, behind with my last payment...]
+		[I was planning on sellig the re-cold-inator down at the market, but you know it's hard work getting this thing down the mountain, It litterally weighs three tonnes...]
+	</phase>
+	<a id="ouep">Yeah of course, no problem! Well I'm off to the forge!</a>
+	<phase id="ouep" fast="1" frame="stop" scenario="smog:3">
+		Back to the crater eh... It's been a while.
+	</phase>
+</d>
+
+<d place="forges" name="Forger" gfx="damas" cond="scenario(smog,3)">
+	<inject id="forgeron:begin" next="revet" />
+	<a id="revet">Would you have the time for another order?</a>
+	<phase id="revet" next="glace">
+		[Listen kiddo, work, that's why we're here, bring it on!]
+		[If it wasn't so insufferably hot here, it really would be the best job I ever had.]
+	</phase>
+	<a id="glace">I could bring you back a decent sized lump of ice in payment if you take this order!</a>
+	<phase id="glace" next="ok" >
+		[Ice you say! Now you're speaking my language!]
+		[So what's this job of yours anyway?]
+		[.................]
+		[We're going to need a lot of metal to cover the hull of an entire boat...]
+		[If you manage to bring us 3 pieces of metal, then we'll get straight to work.]
+	</phase>
+	<a id="ok">Do you know where I might get my hands on some of this metal?</a>
+	<phase id="ok" next="creuse">
+		[Go excavate on the Magnetic Steppes.]
+		[I've got to get back to work. Don't come back without the metal!]
+	</phase>
+	<a id="creuse">Yes ma'am!</a>
+	<phase id="creuse" fast="1" scenario="smog:4">
+		Now off to the Magnetic Steppes...
+	</phase>
+</d>
+
+<d place="sking" name="Citadel Guard" gfx="sgarde" cond="scenario(smog,4)">
+	<phase id="begin" next="sentier">
+		[Greetings foreigner...]
+		[Be brief, I  am about the business of the King of the Steppes, I have no time to spare for Dino Masters.]
+	</phase>
+	<a id="sentier">I'm looking for somewhere that I could mine some metal!</a>
+	<phase id="sentier" next="go">
+		[You should find what you seek in the Neerhel Paths, you'll need a decent shovel in order to find what you need.]
+		[The King has authorised the mining of metals, you can take as much as you need unhindered.]
+	</phase>
+	<a id="go">Thank you!</a>
+	<phase id="go" fast="1">
+		Alright then, let's trapse to the Neerhel Paths.
+	</phase>
+</d>
+
+<!-- le joueur creuse 3x au sentier -->
+
+<d place="forges" name="Forger" gfx="damas" cond="scenario(smog,4)|scenario(smog,5)|scenario(smog,8+)">
+	<inject id="forgeron:begin" next="metal:nometal:info:glace" />
+	<a id="metal" cond="hasobject(metal)">I've mined some metal!</a>
+	<a id="nometal" cond="!hasobject(metal)+!scenario(smog,5+)">I'm still searching for enough metal!</a>
+	<a id="info" cond="scenario(smog,5)|scenario(smog,8)">Do you know anything about the iceberg?</a>
+	<a id="glace" cond="hasobject(icepie)">As promised! Your very own lump of ice!</a>
+	
+	<phase id="metal" use="metal:3" scenario="smog:5" next="plan">
+		[Hé bien, tu auras mis le temps !]
+		[Bon, voyons voir ça.]
+		[...............]
+		[Voilà, tu peux recouvrir toute la coque d'un bateau avec tout ce métal !]
+	</phase>
+	
+	<phase id="nometal">
+		[Écoute p'tit gars, reviens quand tu auras trouvé ce qu'on te demande !]
+		[Amène tout en une fois, sinon je n'en veux pas !]
+	</phase>
+	<a id="plan">Bien, une bonne chose de faite !</a>
+	<phase id="plan" next="leave">
+		[Tu auras besoin d'un plan de construction et d'un ingénieur ?]
+		[J'imagine que tu vas aller voir Broc ?]
+		[Tu pourras lui rappeler qu'il doit passer nous voir ?]
+	</phase>
+	<a id="leave">Ha, euh, qui donc ?</a>
+	<phase id="leave" fast="1">
+		Vous partez lentement sous le regard noir du forgeron.
+	</phase>
+	
+	<phase id="info" next="leave2:glace">
+		[Effectivement, je peux te donner une info qui te plaira surement si tu t'intéresses à cet iceberg qui vient d'apparaitre.]
+		[Apporte moi un morceau de glace bien frais et je t'en dirais plus.]
+	</phase>
+	<a id="leave2">Je vais voir ce que je peux faire.</a>
+	<phase id="leave2" fast="1">
+		Vous partez à la recherche d'un peu de glace. Quelle est donc cette information, est-elle vraiment digne d'intérêt ?
+	</phase>
+	<phase id="glace" use="icepie:1" nocheck="1" next="prec">
+		[Ha, voilà enfin quelqu'un de serviable !]
+		[................]
+		[Ha, quel plaisir, on va pouvoir se rafraîchir un peu !]		
+	</phase>
+	<a id="prec" cond="scenario(smog,8)">Au sujet de la petite info ?</a>
+	<phase id="prec" next="univ">
+		[Très bien, si tu veux tout savoir...]
+		[On vient de terminer la commande d'un incubateur pour un professeur de l'université.]
+		[Et cet incubateur a besoin d'être énormément refroidi pour pouvoir fonctionner correctement...]
+	</phase>
+	<a id="univ">Quand les scientifiques s'en mêlent, ça se passe rarement bien !</a>
+	<phase id="univ" scenario="smog:9">
+		[Je n'en dis pas plus, même si j'avoue être légèrement inquiète.]
+		[Enfin, ce ne sont plus mes affaires, retour au boulot.]
+		_(Le forgeron se détourne et repart au fond des forges.)_
+	</phase>
+</d>
+
+<d place="chbroc" name="broc" gfx="broc" cond="scenario(smog,5)" background="5">
+	<inject id="broc__11:begin" next="bat" />
+	
+	<a id="bat">J'ai les matériaux nécessaires !</a>
+	<phase id="bat" next="where">
+		[Parfait, et moi je viens de terminer les plans de la coque transperce-glace !]
+		[Il ne reste plus qu'à trouver un bateau !]
+	</phase>
+	<a id="where">Je connais un pêcheur qui accepterait de transformer son bateau !</a>
+	<phase id="where" next="go:nope" scenario="smog:6">
+		[Parfait, je charge tout à bord du Flying Brocky, et c'est parti !]
+		[Si tu veux partir à bord, tu n'as qu'à demander !]
+	</phase>
+	<a id="go">Ok, c'est parti pour le port de prêche !</a>
+	<a id="nope">Je préfère y aller tout seul !</a>
+	<phase id="go" moveAll="port" fast="1">
+		Le flying Brocky part en trombe, direction le port de prêche !
+	</phase>
+	<phase id="nope">
+		Ok, on se retrouve là bas dans ce cas !
+	</phase>
+</d>
+
+<d place="port" name="broc" gfx="broc" cond="scenario(smog,6)" background="2">
+	<phase id="begin" next="peche">
+		[Hé, tu as vu, je suis arrivé là où je voulais, et en un seul morceau !]
+		[Incroyable !]
+		[Alors, il est où ce bateau ?]
+	</phase>
+	<a id="peche">Par ici !</a>
+	<phase id="peche" name="Jovébozé" gfx="joveboze" next="work" background="1">
+		[Vindiou, vou zetes sur de vous j'esper !]
+		[J'voudrions point qu'ma borque cool dans lo !]
+	</phase>
+	<a id="work">Pas d'inquiétude, on est des pros !</a>
+	<phase id="work" fast="1" scenario="smog:7" frame="stop">
+		Broc s'attèle à la tâche, il lui faudra plusieurs heures pour finir le revêtement.
+	</phase>
+</d>
+
+<d place="port" name="broc" gfx="broc" cond="scenario(smog,7)+(swait(smog,2)|admin())" background="2">
+	<phase id="begin" next="done">
+		[Et voilà le travail !]
+		[Ce bateau transperce-glace va pouvoir fendre les blocs sur son passage !]
+		[Je propose de le nommer, le transperce-glagla !]
+	</phase>
+	<a id="done">Ha oui, c'est hautement original.</a>
+	<phase id="done" next="joze">
+		[Ha, tu trouves aussi !]
+		[Bon, je retourne à mon atelier, à la prochaine, maître dinoz !]
+		_(Broc redémarre son appareil et s'envole dans un nuage de sable.)_
+	</phase>
+	<a id="joze">Son avion n'a pas fait un bruit bizarre au décollage ?</a>
+	<phase id="joze" name="Jovébozé" gfx="joveboze" background="1" scenario="smog:8">
+		[Ci cé po dla magi, je mi connai po !]
+		[Vous autres, cé pa mal, ma borque elle est super là ! Je peux aller partout !]
+		[Va au corail, j'sera là pour te poser !]
+		[A plus, gars !]
+	</phase>
+</d>
+
+<d place="corail" name="Jovébozé" gfx="joveboze" background="2" cond="scenario(smog,8+)">
+	<phase id="begin" next="go">
+		[Te vla toua !]
+		[Te vla prêt à yaller, ma borque, elle est prête, kan tu veu ?]
+	</phase>
+	<a id="go">Allez, c'est parti !</a>
+	<phase id="go" fast="1">
+		Vous pouvez aller sur l'iceberg grâce au transperce-glagla (...) de Jovébozé !
+	</phase>
+</d>
+
+<d place="iceisl" name="..." gfx="grand" cond="scenario(smog,8+)">
+	<phase id="begin" fast="1" frame="vide">
+		La glace a congelé le peu d'îles présentes autrefois à cet endroit.
+		Il est possible de creuser pour obtenir de la glace ici même.
+	</phase>
+</d>
+
+<d place="univ" name="Professeur Eugene" gfx="eugene" cond="scenario(smog,9)">
+	<inject id="prof:talk" next="grand"/>
+	<a id="grand">Sauriez vous à quoi peut servir un incubateur ?</a>
+	<phase id="grand" next="ha">
+		[C'est assez simple en fait, un incubateur permet de mettre en culture n'importe quel être animal ou végétal en le préservant de toute agression extérieure.]
+		[C'est étonnant que tu me demandes ça.]
+		[Le professeur Henderson fait actuellement des recherches pour mettre au point un incubateur.]
+	</phase>
+	<a id="ha">Le professeur Henderson ?</a>
+	<phase id="ha" next="va">
+		[Oui, tu pourras même le trouver dans les murs de notre université en ce moment.]
+		[Fais attention, il peut être hargneux.]
+		[...........]
+	</phase>
+	<a id="va">Merci pour vos conseils !</a>
+	<phase id="va" fast="1" scenario="smog:10">
+		Vous voilà à la recherche du professeur Henderson...
+	</phase>
+</d>
+
+<d place="univ" name="Professeur Henderson" gfx="grand" background="2" frame="stop2" cond="scenario(smog,10)">
+	<phase id="begin" next="grand" fast="1">
+		Vous voyez une étrange personne que vous n'aviez jamais croisé auparavant dans les murs de l'université...
+	</phase>
+	<a id="grand">Professeur Henderson ? Bonjour ?</a>
+	<phase id="grand" next="ha:haa" frame="blabla2">
+		[.........]
+		[Les Smogs...........]
+		[........griffes pointues......]
+		[spaghettis ?......]
+	</phase>
+	<a id="ha">C'est bon les spaghettis !</a>
+	<a id="haa" cond="hasingr(chasu)">Vous parlez de ce genre de griffes ?</a>
+	<phase id="ha" next="ha:haa" frame="blabla2">
+		[Hum, c'est vrai que c'est bon les spaghettis...]
+		[.............]
+		[........impossible...Je n'y arriverai pas tout seul.....]
+		[........griffes pointues......]
+		[spaghettis ?......]
+	</phase>
+	<phase id="haa" next="va" useingr="chasu:1" scenario="smog:11" frame="blabla2">
+		[...........Faites moi voir ça ?]
+		[Non, rien à voir avec ces griffes, les Smogs possèdent des griffes bien plus aiguisées que celles-ci.]
+		_(Le professeur jette la griffe que vous venez de lui donner !)_
+ 	</phase>
+	<a id="va">Ma griffe !</a>
+	<phase id="va" next="non" frame="blabla2">
+		[Allons, ne vous lamentez pas sur ce fossile inintéressant, si j'arrive à mener à bien mon projet, vous verrez beaucoup de griffes à Dinoland, directement sur de vrais dinoz !]
+		[Mais c'est impossible, il faudrait des moyens colossaux...]
+		[Où est donc mon assistant, il n'est jamais là quand il faut !]
+	</phase>
+	<a id="non">Il m'ignore complétement...</a>
+	<phase id="non" frame="stop2" fast="1" >
+		Le professeur est déjà perdu dans ses pensées, il attend l'aide de son assistant, peut-être aurez vous plus de chance en retrouvant directement cette personne ?
+	</phase>
+</d>
+
+<d place="frcbrt" name="..." gfx="omar" cond="scenario(smog,11)">
+	<phase id="begin" next="assist" fast="1" frame="vide">
+		Au détour d'une arène de forcebrut, vous entendez une voix tonitruante parmi les spectateurs...
+	</phase>
+	<a id="assist">D'où peut bien provenir ce bruit ?</a>
+	<phase id="assist" next="prof" name="Omar Non">
+		[Relève toi, j'ai parié un paquet sur toi !]
+		[Allez Gogo, tu peux pas me faire ça !]
+		[NOooooOOOoonnnnnn.....]
+		[Snif, je vais encore me faire taper sur les doigts...]
+	</phase>
+	<a id="prof">Aïe, il n'aura pas son plat de spaghettis !</a>
+	<phase id="prof" next="give">
+		[Oui, il ne peut pas se passer une journée de son plat favoris !]
+		[Hé, mais comment vous savez ça vous ?]
+	</phase>
+	<a id="give">Je viens de rencontrer le professeur, il vous cherche !</a>
+	<phase id="give" next="smog:or:tcho">
+		[Je sais bien qu'il me cherche, mais moi ces travaux, ça ne m'intéresse pas.]
+		[Il m'a engagé pour dresser des Smogs, mais pour l'instant, je n'ai rien à faire.]
+		[Heureusement, je me console en pariant sur les dinoz...]
+		[Enfin bon, sans les 1000 pièces d'or pour son plat, je ne risque pas rentrer de sitôt.]
+	</phase>
+	<a id="smog"cond="race(smog)">J'ai un Smog ici-même !</a>
+	<a id="or">Je peux vous dépanner si vous me suivez !</a>
+	<a id="tcho">Je vous souhaite bon courage !</a>
+	
+	<phase id="smog" next="or:tcho">
+		[Wouah, un vrai Smog, en chair et os ! Pas en fossile ni en morceau d'ADN !]
+		[Il doit provenir des tests du professeur !
+		Il a du s'en séparer pour construire son labo, mais il est encore loin de l'achever.]
+		[Enfin, ce n'est pas mon problème, moi je bouge pas de là.]
+	</phase>
+	
+	<phase id="tcho" fast="1">
+		Omar vous tourne déjà le dos, il consulte le tableau des prochains combats, pour parier sa chemise peut-être ?...
+	</phase>
+	
+	<phase id="or" usegold="1000" scenario="smog:12" next="go">
+		_(Vous donnez 1000 pièces d'or à Omar)_
+		[Merci bien l'ami !]
+		[Je peux aller chercher son plat sans problème, on se retrouve à l'université ?]
+	</phase>
+	<a id="go">Hey, je n'avais pas dit oui !</a>
+	<phase id="go" fast="1">
+		Omar ne vous écoute déjà plus, il part... en direction du tableau des paris ?
+		Espérons qu'il ne cède pas encore à la tentation...
+	</phase>
+</d>
+
+<d place="univ" name="Omar Non" gfx="omar" background="2" cond="scenario(smog,12)">
+	<phase id="begin" next="prof" fast="1">
+		Vous retrouvez Omar à côté du professeur.
+		Celui-ci se régale d'un plat de nouilles.
+	</phase>
+	<a id="prof">Alors vous êtes rentré ?</a>
+	<phase id="prof" next="suite">
+		[Il fallait bien, sans moi, le professeur ne bouge pas de sa chaise.]
+	</phase>
+	<a id="suite">Alors professeur, quel est ce projet qui vous parait impossible ?</a>
+	<phase id="suite" next="projet" frame="eat" name="Professeur Henderson" gfx="grand">
+		[Slurp... Sluuuuuuuuuuurp...]
+		[Hum.... Slurp...]
+		[Je travaille sur la restauration des espèces disparues de dinoz et leur réinsertion dans notre monde actuel.]
+		[Lors de mes fouilles sur l'iceberg qui vient d'émerger, j'ai trouvé un Smog en parfait état de congélation.]
+		[J'ai pu obtenir de l'ADN de dinoz parfaitement conservé et je m'apprête à faire revivre cette superbe race de dinoz !]
+	</phase>
+	<a id="projet">Incroyable !</a>
+	<phase id="projet" next="clan" frame="blabla2" name="Professeur Henderson" gfx="grand">
+		[Malheureusement, pour continuer mes expériences et pouvoir créer plusieurs dinoz, je dois construire mon laboratoire directement sur cette nouvelle île.]
+		[Je dois pouvoir refroidir les machines grâce à cette glace éternelle qui est remontée du fond des abysses !]
+		[C'est impossible, je n'y arriverai jamais tout seul.]
+	</phase>
+	<a id="clan">Je peux vous aider !</a>
+	<phase id="clan" next="action" frame="slurp" name="Professeur Henderson" gfx="grand">
+		[Sluuuuuuuuuuuuuuurp....!]
+		[Mais ce serait merveilleux ! Comment comptes-tu t'y prendre ?] 
+		[Demande de l'aide à tes amis ou aux membres de ton clan, si tu t'y mets dessus tout seul, on n'y arrivera jamais !]
+	</phase>
+	<a id="action">Je vous rejoins sur l'île !</a>
+	<phase id="action" fast="1" scenario="smog:13" frame="stop2" name="Professeur Henderson" gfx="grand">
+		Le professeur est parti devant, il parait très excité !
+	</phase>
+</d>
+
+
+<d place="iceisl" name="Professeur Henderson" gfx="grand" cond="scenario(smog,13)+!clanact(labora)">
+	<phase id="begin">
+		[Nous y sommes.]
+		[C'est ici même que se dressera le futur laboratoire du professeur Henderson !]
+		[Demande de l'aide à tes amis ou aux membres de ton clan, si tu t'y mets dessus tout seul, on y arrivera jamais !]
+	</phase>
+</d>
+
+<d place="iceisl" name="Professeur Henderson" gfx="grand" cond="scenario(smog,13)+clanact(labora)">
+	<phase id="begin" next="ombre">
+		[Parfait !]
+		[Mon laboratoire est achevé.]
+		[Passe me voir dans le laboratoire dans quelques heures, je pourrais te montrer le résultat de ta précieuse aide.]
+		
+	</phase>
+	<a id="ombre">Pas de problème !</a>
+	<phase id="ombre" fast="1" scenario="smog:14" frame="stop">
+		Vous vous félicitez de cette réussite, le Smog va sans aucun doute pouvoir renaitre !
+	</phase>
+</d>
+
+<d place="labo" name="Professeur Henderson" gfx="grand" background="3" frame="blabla2" cond="scenario(smog,14)+(swait(smog,6)|admin())">
+	<phase id="begin" next="pres">
+		[Voilà le laboratoire !]
+		[Grâce aux tuyaux qui acheminent du froid en continu, les incubateurs permettent de mettre en culture des oeufs de Smog !]
+		[Bientôt, les premiers spécimens vont naître !]
+		[Le laboratoire en surface n'est que la partie émergée de l'iceberg (c'est le cas de le dire), 
+		la plus grosse partie se trouve sous les eaux. 
+		Il est important de pouvoir contrôler l'environnement atmosphérique autour des incubateurs, 
+		d'où la nécessité d'aller aussi loin sous la mer.]
+	</phase>
+	<a id="pres">Formidable !</a>
+	<phase id="pres" fast="1" next="mer">
+		[Nous allons te conduire au centre névralgique du laboratoire.]
+		[Ne te perds pas !]
+	</phase>
+	<a id="mer">Je vous suis !</a>
+	
+	<phase id="mer" next="bien" fast="1" frame="stop2">
+		Vous traversez toutes les salles menant vers la partie la plus profonde du laboratoire.
+		Des couloirs à n'en plus finir se dressent face à vous, ce complexe est devenu un vrai labyrinthe...
+	</phase>
+	<a id="bien">C'est encore loin ?</a>
+	<phase id="bien" next="yes">
+		[Nous voici bientôt arrivés.]
+		[Pour te remercier de ton aide, je tiens à ce que tu sois le propriétaire d'un des premiers oeufs de Smog !]
+	</phase>
+	<a id="yes">Je me ferai un plaisir de l'élever !</a>
+	<phase id="yes" next="echec">
+		[........Voilà....Nous y sommes.]
+		_(Le professeur commence l'initialisation de la procédure de création....)_
+		[La première partie est achevée. Une dizaine d'oeufs viennent d'être créés...]
+	</phase>
+	<a id="echec">Comment vont-ils ?</a>
+	<phase id="echec" name="Omar Non" gfx="omar" background="3" next="plus">
+		[Professeur, nous avons un problème, l'énergie diffusée dans les incubateurs n'est pas suffisante !]
+		[Nous allons perdre les specimens !]
+		[Il faut plus de puissance !]
+	</phase>
+	<a id="plus">Nooon !</a>
+	<phase id="plus" name="Professeur Henderson" frame="stop2" gfx="grand" next="rate">
+		_(Le professeur sort délicatement un oeuf de son cocon...)_
+		_(L'oeuf se décompose lentement)_
+		[C'est terminé, l'expérience est un échec.]
+	</phase>
+	<a id="rate">Que pouvons nous faire ?</a>
+	<phase id="rate" next="boude" frame="stop2">
+		_(Le professeur ne répond pas. Il se lève, se dirige vers son bureau et referme brutalement la porte derrière lui.)_
+		[.........]
+	</phase>
+	<a id="boude">Professeur ?</a>
+	<phase id="boude" name="Omar Non" gfx="omar" next="nope">
+		[C'est inutile, quand le professeur est dans cet état, il ne veut voir personne.]
+	</phase>
+	<a id="nope">(Ecouter à la porte ?)</a>
+	<phase id="nope" name="..." gfx="grand" frame="eat" scenario="smog:15">
+		[...........Snif.....Encore un échec.....]
+		[sob..sob.... SLUUUUURP......]
+		[Beuheuheuh....Si seulement j'avais plus de puissance...]
+		[....à cause de cette polarité....énergies sombres....]
+		[...Impossible...]
+	</phase>
+</d>
+
+<d place="labo" name="Omar Non" gfx="omar" background="3" cond="scenario(smog,15)">
+	<phase id="begin">
+		[Je ne sais pas quoi faire pour lui remonter le moral.]
+		[Si seulement on arrivait à résoudre ce problème d'énergie...]
+	</phase>
+</d>
+
+<d place="dkchut" gfx="survivor" name="Gulom" frame="blabla" background="1" cond="scenario(smog,15)">
+	<inject id="gullom__3:begin" next="machine"/>
+	<inject id="gullom__2:begin" next="machine"/>
+	<a id="machine">Saurais tu comment extraire de l'énergie du monde sombre ?</a>
+	<phase id="machine" next="go">
+		[Extraire de l'énergie...Humm...]
+		[Il existe une machine au sommet de la tour sombre qui permet de stocker de l'énergie dans un réservoir.]
+		[Il me semble que le gardien s'en sert pour recharger ses batteries.] 
+	</phase>
+	<a id="go">Parfait, c'est exactement ce qu'il me faut !</a>
+	<phase id="go" next="warn">
+		[Je te déconseille de te servir de cette énergie autre part que dans le monde sombre cependant.]
+		[......Dis, tu m'écoutes au moins ?]
+	</phase>
+	<a id="warn">Oui, oui...</a>
+	<phase id="warn" fast="1" frame="stop">
+		Vous vous dirigez vers la tour sombre, Gullom continue à parler, mais il ne faut pas perdre de temps !
+	</phase>
+</d>
+
+<d place="dktows" name="..." gfx="omar" background="5" frame="vide" cond="scenario(smog,15)">
+	<phase id="begin" next="fight">
+		_(Vous n'aviez pas fait attention auparavant, mais une salle des machines existe bel et bien au sommet de la tour.)_
+	</phase>
+	<a id="fight">Entrons dedans !</a>
+	<phase id="fight" next="caps" scenario="smog:16" fightgroup="fullgd">
+		Un gardien vous a attaqué par surprise.
+	</phase>
+	<a id="caps">Pfiou...</a>
+	<phase id="caps" fast="1">
+		Le danger est écarté. Vous pouvez actionner la machine.
+		L'opération devrait prendre un peu de temps. Il faut patienter.
+	</phase>
+</d>
+
+<d place="dktows" name="..." gfx="omar" background="5" frame="vide" cond="scenario(smog,16)+(swait(smog,3)|admin())">
+	<phase id="begin" next="caps">
+		_(Après une longue attente, la machine délivre une capsule d'énergie sombre.)_
+	</phase>
+	<a id="caps">Voilà une capsule d'énergie sombre !</a>
+	<phase id="caps" fast="1" scenario="smog:17">
+		Il ne vous reste plus qu'à retourner voir le professeur pour lui remetter cette capsule !
+	</phase>
+</d>
+
+<d place="labo" name="Omar Non" gfx="omar" background="3" cond="scenario(smog,17)">
+	<phase id="begin" next="prof">
+		[Professeur, nous avons de l'énergie !]
+	</phase>
+	<a id="prof">Attention, elle est instable !</a>
+	<phase id="prof" name="Professeur Henderson" gfx="grand" frame="blabla2" next="rate">
+		_(Le professeur sort en trombe de son bureau)_
+		[Comment ? De l'énergie négative ? Vous vous rendez compte des risques que vous avez pris ?]
+		[Tout ça pour mon expérience ?]
+		[.......]
+		[Vous êtes donc prêt à sacrifier la stabilité de Dinoland pour vos intêrets personnels ?]
+		[.....]
+		[Génial !]
+	</phase>
+	<a id="rate">Si vous le dîtes...</a>
+	<phase id="rate" next="mer">
+		[Grâce à cette énergie, nous pouvons recommencer l'expérience de création du spécimen !]
+		[Descendons tout en bas du laboratoire pour installer ce fut d'énergie négative.]
+	</phase>
+	<a id="mer">On va encore devoir faire tout le chemin ?....</a>
+	<phase id="mer" next="prob">
+		[Allons, ne te plains pas, nous allons accomplir une chose extraordinaire aujourd'hui.]
+		_(La descente est longue, les couloirs sont interminables... Mais vous arrivez enfin à destination.)_
+	</phase>
+	<a id="prob">Nous y voilà !</a>
+	<phase id="prob" next="fuite" name="Professeur Henderson" gfx="grand" frame="blabla2">
+		_(Le professeur recommence l'initialisation de la procédure de création....)_
+		[La première partie est achevée. Une dizaine d'oeufs viennent d'être créés...]
+	</phase>
+	<a id="fuite">Comment ça se passe cette fois-ci ?</a>
+	<phase id="fuite" next="noir" name="Professeur Henderson" gfx="grand" frame="blabla2">
+		[L'énergie afflue correctement, la proportion d'énergie positive et négative est bonne.]
+		[...........]
+		[Le premier oeuf semble viable ! L'incubation va prendre un certain temps mais on peut dire que l'expérience est un succès !]
+		[Qu'en est-il des autres ?]
+	</phase>
+	<a id="noir">Euh, ils n'ont pas la même tête...^_^</a>
+	<phase id="noir" name="Omar Non" gfx="omar" next="argh">
+		[Professeur, il semble y avoir un problème, l'énergie positive est consommée, mais l'énergie négative continue à arriver, alors que le fût est vide !]
+		[L'énergie négative est en train de corrompre les spécimens, il faut isoler les incubateurs !]
+	</phase>
+	<a id="argh">Vite, il faut au moins sauver le premier !</a>
+	<phase id="argh" next="risk" name="Professeur Henderson" gfx="grand" frame="blabla2">
+		[Le premier est isolé !]
+		[Mais où avez vous trouvé cette énergie négative ? Elle est en train de prendre possession du laboratoire !]
+	</phase>
+	<a id="risk">Ben, dans le monde sombre !</a>
+	<phase id="risk" next="flee" name="Professeur Henderson" gfx="grand" frame="blabla2">
+		[QUOI ? Mais ce n'est pas possible ! Il fallait me le dire !]
+		[Quel imbécile je suis, en exploitant l'énergie sombre, nous avons créé un portail vers le monde sombre directement dans le laboratoire !]
+		[Il faut fuir, c'est trop tard pour les autres spécimens. Il nous faut aussi abandonner le premier !]
+	</phase>
+	<a id="flee">Attention professeur !</a>
+	<phase id="flee" next="gloups" scenario="smog:18" fightgroup="sangsa">
+		_(Déjà, des monstres du monde sombre commencent à apparaitre. 
+		Et les spécimens contaminés mutent pour prendre la forme de smog noir.)_
+	</phase>
+	<a id="gloups">Il faut fuir le plus vite possible !</a>
+	<phase id="gloups" fast="1">
+		_(Vous atteignez la surface, le laboratoire est désormais corrompu par le monde sombre, il ne sera pas facile d'y retourner.)_
+	</phase>
+</d>
+
+<d place="iceis2" name="Omar Non" gfx="omar" background="6" cond="scenario(smog,18)">
+	<phase id="begin" next="wake">
+		Enfin, nous sommes sortis de ce cauchemar.
+		_(Le professeur commence à retrouver ses esprits...)_
+	</phase>
+	<a id="wake">Enfin réveillé, il faut faire quelque chose !</a>
+	<phase id="wake" next="smog" name="Professeur Henderson" gfx="grand" background="1">
+		[C'est une catastrophe, nous ne pouvons plus retourner au fond du laboratoire.]
+		[J'ai bien peur qu'il ne soit perdu à jamais.]
+	</phase>
+	<a id="smog">Les Smogs noirs se sont échappés !</a>
+	<phase id="smog" next="fight">
+		[C'est terrible, ils représentent une menace évidente pour Dinoland.]
+		[Leur instinct de prédateur est légendaire, ils chassent en groupe et n'attaquent leur proie que s'ils sont sûrs d'avoir l'avantage.]
+		[Il va être très difficile de s'en débarasser.]
+	</phase>
+	<a id="fight">Je vais essayer !</a>
+	<phase id="fight" next="etude">
+		[Si tu ne parviens pas à en trouver, il te faudra étudier leur manière de chasser.]
+		[Fais ce que tu peux, je vais de mon côté essayer de contenir les dégâts à partir du laboratoire de surface.]
+		[Il doit être possible de fermer l'accès et contenir les monstres à l'intérieur du laboratoire sous-marin.]
+	</phase>
+	<a id="etude">Je pars.</a>
+	<phase id="etude" fast="1" scenario="smog:19">
+		Comment trouver des informations sur les Smogs ?
+		Cette race disparue depuis des milliers d'année... 
+		Tant que l'on n'en saura pas plus, il sera impossible de chasser ces dinoz noirs...
+	</phase>
+</d>
+
+<d place="observ" gfx="sage_mentos" name="Sage Menthos" cond="scenario(smog,19)">
+	<inject id="menthos:begin" next="smog" />
+	<a id="smog">Pouvez vous m'en dire plus sur les Smogs ?</a>
+	<phase id="smog" next="fight">
+		[Les Smogs sont une race de dinoz éteinte depuis longtemps...]
+		[Mais à voir ton trouble, je devine que ce n'est plus vraiment le cas...]
+		[Oui, je peux t'en dire plus...]
+	</phase>
+	<a id="fight">Je vous écoute.</a>
+	<phase id="fight" scenario="smog:20">
+		_(Le sage Menthos commence son explication...)_
+		_(Tout y passe, de leur ossature à leur méthode de chasse...Il serait malpoli de vous endormir...)_
+		_(Plus que quelques heures à écouter, courage !)_
+	</phase>
+</d>
+
+<d place="observ" gfx="sage_mentos" name="Sage Menthos" cond="scenario(smog,20)+(swait(smog,3)|admin())">
+	<inject id="menthos:begin" next="smog" />
+	<a id="smog">....Zzzzz</a>
+	<phase id="smog" next="fight">
+		[Et voilà, je t'ai tout dit.]
+	</phase>
+	<a id="fight">Zzzzz, hein ?</a>
+	<phase id="fight" scenario="smog:21">
+		Hum, tu peux aussi regarder ce dessin pour comprendre comment ils chassent...
+		_(Vous êtes désormais capable de chasser les smogs !)_
+	</phase>
+</d>
+
+<d place="labo2" name="Professeur Henderson" gfx="grand" frame="blabla2" background="4" cond="scenario(smog,21+)+scenario(smog,24-)">
+	<phase id="begin" next="boucle:spag">
+		[Tu as trouvé comment chasser les Smogs noirs ?]
+		[Parfait, de mon côté, j'ai une bonne et une mauvaise nouvelle !]
+		[Laquelle tu veux en premier ?]
+	</phase>
+	<a id="boucle">La bonne ?</a>
+	<a id="spag">La mauvaise ?</a>
+
+	<phase id="spag" next="joke">
+		[Alors, voilà, je suis un peu géné de devoir révéler ça, mais...]
+		[J'ai laissé un de mes plats de spaghettis dans le laboratoire, et de l'adn de smog corrompu est entré en contact avec.
+		J'ai créé un nouveau monstre sans le vouloir, le monstre de spaghettis volant...]
+	</phase>
+	
+	<a id="joke">C'est une blague...?</a>
+	<phase id="joke" next="boucle">
+		Si seulement...
+	</phase>
+	<phase id="boucle" next="bon">
+		[La bonne nouvelle est que j'ai réussi à sceller le laboratoire sous-marin. Les monstres ne s'en échappent plus.]
+		[Je peux reprendre mon travail dans le laboratoire et tenter de résoudre la situation.]
+	</phase>
+	<a id="bon">Je vais me mettre en chasse pour traquer les Smogs noirs.</a>
+	<phase id="bon" fast="1" frame="stop2">
+		Les Smogs chassent principalement dans le secteur des îles, mais peut-être ont ils réussi à aller plus loin ?
+	</phase>
+</d>
+
+<d place="corail" name="..." gfx="omar" background="7" frame="vide" cond="scenario(smog,21)">
+	<phase id="begin" next="yes:no">
+		[Vous débusquez des Smogs noirs dans les environs grâce aux conseils du sage Menthos.]
+		[Vous êtes prêt pour le combat ?]
+	</phase>
+	<a id="yes">Oui, je suis prêt !</a>
+	<a id="no">Non, je vais me préparer !</a>
+	
+	<phase id="yes" fast="1" fightgroup="darkii:darkii:darkii" scenario="smog:22">
+		Vous arrivez à éliminer les Smogs noirs de cet endroit. Mais il en reste encore beaucoup.
+	</phase>
+	
+	<phase id="no" fast="1">
+		Il vaut mieux bien se préparer avant d'affronter les Smogs noirs.
+	</phase>
+</d>
+
+
+<d place="chemin" name="..."  gfx="omar" background="8" frame="vide" cond="scenario(smog,22)">
+	<phase id="begin" next="yes:no">
+		[Vous débusquez des Smogs noirs dans les environs grâce aux conseils du sage Menthos.]
+		[Vous êtes prêts pour le combat ?]
+	</phase>
+	<a id="yes">Oui, je suis prêt !</a>
+	<a id="no">Non, je vais me préparer !</a>
+	
+	<phase id="yes" fast="1" fightgroup="darkii:darkii" scenario="smog:23">
+		Vous arrivez à éliminer les Smogs noirs de cet endroit. Mais il en reste encore beaucoup.
+	</phase>
+	
+	<phase id="no" fast="1">
+		Il vaut mieux bien se préparer avant d'affronter les Smogs noirs.
+	</phase>
+</d>
+
+
+<d place="colesc" name="..."  gfx="omar" background="9" frame="vide" cond="scenario(smog,23)">
+	<phase id="begin" next="yes:no">
+		[Vous débusquez des Smogs noirs dans les environs grâce aux conseils du sage Menthos.]
+		[Vous êtes prêts pour le combat ?]
+	</phase>
+	<a id="yes">Oui, je suis prêt !</a>
+	<a id="no">Non, je vais me préparer !</a>
+	
+	<phase id="yes" fast="1" fightgroup="darkii:darkii" scenario="smog:24">
+		Vous arrivez à éliminer les Smogs noirs de cet endroit. Mais il en reste encore beaucoup.
+	</phase>
+	
+	<phase id="no" fast="1">
+		Il vaut mieux bien se préparer avant d'affronter les Smogs noirs.
+	</phase>
+</d>
+
+<d place="chato" name="..."  gfx="omar" background="10" frame="vide" cond="scenario(smog,24)">
+	<phase id="begin" next="yes:no">
+		[Vous débusquez des Smogs noirs dans les environs grâce aux conseils du sage Menthos.]
+		[Vous êtes prêts pour le combat ?]
+	</phase>
+	<a id="yes">Oui, je suis prêt !</a>
+	<a id="no">Non, je vais me préparer !</a>
+	
+	<phase id="yes" fast="1" fightgroup="darkii:darkij:darkii" scenario="smog:25">
+		Celui là était bien plus gros que les autres !
+		Vous arrivez à éliminer les Smogs noirs de cet endroit. Mais il en reste encore beaucoup.
+	</phase>
+	
+	<phase id="no" fast="1">
+		Il vaut mieux bien se préparer avant d'affronter les Smogs noirs.
+	</phase>
+</d>
+
+<d place="labo2" name="Professeur Henderson" gfx="grand" background="4" frame="blabla2" cond="scenario(smog,25)">
+	<phase id="begin" next="menace">
+		[Ainsi donc, tu as pu retrouver les Smogs qui se sont échappés du laboratoire.]
+		[La menace n'est pas complétement écartée, mais ils se tiendront plus tranquilles à l'avenir.]
+		[Il faut maintenant traiter le mal à la racine.]
+	</phase>
+	<a id="menace">Que faut-il faire ?</a>
+	<phase id="menace" next="go">
+		[J'ai remarqué une activité énergétique négative intense au fond du laboratoire.]
+		[Il faut que tu t'introduises seul dans le laboratoire sous-marin et que tu arrêtes la machine.
+		Nous courons au devant d'un grave danger si rien n'est fait.]
+		[Si tu pouvais au passage me ramener une pile sous-marine pour alimenter les machines.]
+	</phase>
+	<a id="go">J'irai à l'intérieur du laboratoire.</a>
+	<phase id="go" fast="1" scenario="smog:26" frame="stop2">
+		Le professeur vous montre l'entrée scellée.
+		Il vous ouvrira dès que vous serez prêt à risquer votre vie.
+	</phase>
+</d>
+
+
+<!-- DONJON A EXPLORER -->
+
+<d place="labo3" name="..." gfx="grand" background="4" frame="vide" cond="!hasobject(pile)">
+	<phase id="begin" next="menace:menace2:fuite" fast="1">
+		Vous arrivez au fond du laboratoire sous-marin.
+		Tout est étrangement calme, il règne un silence macabre.
+		Le chargeur de pile se trouve dans un coin du laboratoire, il est farouchement gardé par un gardien bio-mécanique.
+	</phase>
+	<a id="menace" 				cond="!uvar(saboss,1+)"	>Prenons cette pile rapidement et partons.</a>
+	<a id="menace2" target="go"	cond="uvar(saboss,1+)"	>Prenons cette pile rapidement et partons.</a>
+	<a id="fuite">Je ne suis pas prêt.</a>
+	<phase id="fuite">
+		Il serait préférable de se préparer correctement avant de défier cette créature.
+	</phase>
+	<phase id="menace" next="go" fightgroup="saboss" uvar="saboss:1" fast="1">
+		Le gardien est éliminé. 
+		Malheureusement, les machines commencent à le régénérer, vite il faut se dépécher !
+	</phase>
+	<a id="go">Voilà la pile ! Et il y a même un ascenseur pour remonter à la surface !</a>
+	<phase id="go" fast="1" give="pile:1" nocheck="1" moveAll="labo2">
+		Une fois la pile en main, vous prenez l'ascenseur pour la surface.
+		Bien joué !
+	</phase>
+</d>
+
+<!-- EPILOGUE -->
+<d place="labo2" name="Professeur Henderson" gfx="grand" background="3" frame="blabla2" cond="scenario(smog,26)+hasobject(pile)">
+	<phase id="begin" next="end">
+		[Bravo tu as éliminé la signature énergétique émanant des profondeurs du laboratoire.]
+		[Tu as même ramené une pile chargée à bloc !]
+		[Excellent !]
+	</phase>
+	<a id="end">La voilà !</a>
+	<phase id="end" use="pile:1" scenario="smog:27" next="go">
+		_(Vous remettez la pile au professeur Henderson.)_
+		[Merci pour ton aide, j'ai réussi à sauver le premier oeuf de Smog produit par l'incubateur.
+		Je te le remet, ce sera le dernier, j'ai décidé d'arrêter les expériences sur eux.]
+		[Je te donne aussi cette statuette de smog en souvenir de cette hitoire !]
+	</phase>
+	<a id="go">Dommage, mais merci tout de même.</a>
+	<phase id="go" fast="1" scenario="smog:28" collection="labowi" give="smegg2:1" frame="stop2">
+		Vous avez obtenu l'oeuf de smog récupéré au fond du laboratoire sous-marin.
+		Une juste récompense pour tout ce que vous avez dû endurer.
+		Le professeur vous donne aussi une statuette de smog...
+	</phase>
+</d>
+	
+<d place="labo2" name="Professeur Henderson" gfx="grand" background="3" frame="blabla2" cond="scenario(smog,27)+!hasobject(pile)+!hasobject(smegg2)">
+	<phase id="begin" next="go">
+		_(Vous remettez la pile au professeur Henderson.)_
+		[Merci pour ton aide, j'ai réussi à sauver le premier oeuf de Smog produit par l'incubateur.
+		Je te le remet, ce sera le dernier, j'ai décidé d'arrêter les expériences sur eux.]
+		[Je te donne aussi cette statuette de smog en souvenir de cette hitoire !]
+	</phase>
+	<a id="go">Dommage, mais merci tout de même.</a>
+	<phase id="go" fast="1" scenario="smog:28" collection="labowi" give="smegg2:1" frame="stop2">
+		Vous avez obtenu l'oeuf de smog récupéré au fond du laboratoire sous-marin.
+		Une juste récompense pour tout ce que vous avez dû endurer.
+		Le professeur vous donne aussi une statuette de smog...
+	</phase>
+</d>
+
+<d place="labo2" name="Omar Non" gfx="omar" background="3" cond="scenario(smog,28+)">
+	<phase id="begin" next="cool">
+		[Bravo maître dinoz !]
+		[Avec l'arrêt de la production des Smogs, mon poste d'assistant va changer, mais bon, ce n'est pas si grave.]
+		[Les expériences du professeur me laissent le temps de retourner à forcebrut assez souvent.]
+		[Je ne me plains pas !]
+	</phase>
+	<a id="cool">Tant mieux pour toi !</a>
+	<phase id="cool">
+		[Si tu cherches un peu de boulot, va voir le professeur, je crois qu'il a quelques missions pour toi.]
+		[Allez, à plus !]
+	</phase>
+</d>
+
+<d place="labo2" name="Professeur Henderson" background="3" frame="blabla2" gfx="grand" cond="scenario(smog,28+)+!fx(sphere)">
+	<phase id="begin" next="mission:fin">
+		J'ai quelques missions pour toi, maître dinoz !
+	</phase>
+	<a id="mission">Consulter la liste des Missions</a>
+
+	<phase id="mission" missions="smog">
+	</phase>
+	<a id="fin" cond="mission(smogb)+!collec(scorp)">J'ai terminé les missions !</a>
+	<phase id="fin" next="cool">
+		[Je t'adresse mes félicitations, maître dinoz, grâce à toi, Dinoland a pu traverser cette crise.]
+		[Nous sommes de nouveaux en paix et je vais pouvoir me consacrer à mes études.]
+	</phase>
+	<a id="cool">Vous pouvez compter sur moi.</a>
+	<phase id="cool" fast="1" collection="scorp" nocheck="1" frame="stop2">
+		Le professeur vous salue et retourne à ses travaux.
+		Tout est rentré dans l'ordre à Dinoland.
+		Vivement la prochaine guerre, c'est devenu trop calme par ici !
+		Vous recevez un trophée pour commémorer votre victoire contre Scorpus.
+	</phase>
+</d>
+
+<!-- Gain de sphère mission smoga -->
+
+<d place="labo2" name="Professeur Henderson" background="3" frame="blabla2" gfx="grand" cond="mission(smoga)+fx(sphere)">
+	<phase id="begin" next="gain">
+		_(Le professeur tient un objet entre ses mains.)_
+		[Grâce à toi, j'ai pu créer artificiellement cet objet.
+		Tu peux le prendre, je ne l'ai créé que pour mes recherches.]
+	</phase>
+	<a id="gain">Merci professeur !</a>
+	<phase id="gain" rnditem="spher1:spher2:spher3:spher4:spher5" frame="stop2" noeffect="sphere" next="tx">
+		_(Vous obtenez une sphère de compétence !)_
+	</phase>
+	<a id="tx">Votre machine est vraiment puissante !</a>
+	<phase id="tx" fast="1" frame="stop2">
+		Le professeur est reparti vers son bureau, il se désintéresse vite des expériences abouties...
+	</phase>
+</d>

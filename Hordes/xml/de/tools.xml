@@ -1,0 +1,1603 @@
+﻿<!--
+	tools.xml : Fichier de configuration des objets du jeu
+
+	Attributs obligatoires :
+	************************
+
+		id : id numérique > à chaque ajout d'objet, incrémenter ce compteur
+		key : id String > permet d'accéder à l'objet de façon plus intuitivee
+		name : nom de l'objet tel qu'il apparaît pour le joueur
+		types: liste de type que l'objet peu avoir
+			(voir ../src/Common.hx)
+		icon : nom de l'image associé à l'objet
+
+	Attributs facultatifs :
+	***********************
+
+		action : détermine une action pour un objet. Si aucune action n'est spécifiée, l'objet est "passif" (ex: cartouche pour un fusil)
+		replacement : détermine par quoi sera remplacé l'objet une fois utilisé, on attend l'id de l'objet
+		parts : liste d'objets requis pour un craft (action Assemble)
+		loss_probability : détermine le % de chance que les munitions udilisées ne puissent pas être réutilisées
+		power : détermine le nombre de zombies tués par l'objet, ou son degré de "puissance" si ça n'est pas une arme
+		fatigue : détermine le % de chance qu'un joueur soit fatigué après utilisation de l'objet
+		transport : incrémente le nombre de slots libre du sac à dos
+		bonus : description texte de ce qu'apporte un objet Furniture
+		deco : le nombre de points de déco qui permet au moral de remonter
+		limit : "outer" ou "town" endroit où on peut accomplir l'action
+		lock : "day" ou "zone" selon le type de lock d'action
+
+-->
+
+<tools>
+	<tool id="1" key="water" name="Ration Wasser" water="1" types="Beverage|Critical" icon="water" action="drink">
+		Das Wasser gibt dir einmal pro Tag deine Aktionspunkte zurück oder löscht alternativ deinen Durst (unbegrenzt).
+	</tool>
+
+	<tool id="2" key="batt" name="Batterie" types="Rsc|Critical|Battery" icon="pile">
+		Die Batterie ist für vieles nützlich. Allerdings ist sie auch ziemlich schnell leer ...
+	</tool>
+
+	<tool id="3" key="can" name="Konservendose" types="Box|Refinable" replacement="oCan" icon="can" action="open">
+		Auf dem vergilbtem Etikettenbild erkennst du ein leckeres Bohnengericht! Allerdings brauchst du ein Werkzeug, um die Dose öffnen zu können...
+	</tool>
+
+	<tool id="4" key="oCan" name="Offene Konservendose" types="Food" icon="can_open" action="eat" lock="day">
+		Jetzt mach mal kein Gezeter, schließ deine Augen, mach deinen Mund ganz weit auf und runter damit! Du wirst sehen, dass es dir danach besser geht.
+	</tool>
+
+	<tool id="5" key="pGun" name="Batteriewerfer 1-PDTG (geladen)" limit="outer" types="Weapon" power="0.90" loss_probability="100" replacement="pGun_empty" icon="pilegun" action="batGun">
+		Der Batteriewerfer 1-PDTG wurde äußerst einfallsreich zusammengeschraubt. Dank einer virtuosen Recyclingprozedur ist er in der Lage, harmlose Batterien in mächtige Geschosse zu verwandeln.
+	</tool>
+
+	<tool id="7" key="taser" name="Taser" limit="outer" types="Gadget|Weapon" power="0.3" loss_probability="70" replacement="taser_empty" icon="taser" action="batGun">
+		Der Taser ist eine kleine technische Spielerei, mit der man grässliche Elektrostöße in den Körper seines Opfers jagen kann. Allerdings ist er nicht sehr effektiv, wenn man bedenkt, dass den Zombies Schmerzen nichts ausmachen. Vielleicht gelingt es dir ja, mit einem Stromstoß ein wichtiges Körperglied oder Organ zum Platzen zu bringen?
+	</tool>
+
+	<tool id="9" key="mixer" name="Handmixer (geladen)" limit="outer" types="Weapon|Slasher" power="1" loss_probability="40" replacement="mixer_empty" icon="mixergun" action="batGun">
+		Rührt elektrisch und sehr schnell - was gibt's sonst noch zu sagen? Er hat den Vorteil, dass er nur eine Batterie braucht, die sich mit 40% Wahrscheinlichkeit entlädt.
+	</tool>
+
+	<tool id="10" key="saw" name="Kettensäge (geladen)" hero="1" limit="outer" isHeavy="1" types="Weapon|Slasher|Critical" power="3" loss_probability="30" replacement="saw_empty" icon="chainsaw" action="batGun">
+		Damit richtest du ein wahres Massaker an. Ob du das aber zu 100% unversehrt überstehst ist eine andere Frage... Diese umgebaute Höllenmaschine funktioniert - man glaubt es kaum - mit einer gewöhnlichen Batterie!
+	</tool>
+
+	<tool id="11" key="lawn" name="Rasenmäher" hero="1" limit="outer" types="Weapon|Slasher" isHeavy="1" power="2" broken="20" icon="lawn" action="combatHit">
+		Du magst es wenn es sauber ist und frisch nach Gras duftet? Vergiss das mal lieber ganz schnell. Wenn du ihn verwendest, wird es ganz anders riechen...
+	</tool>
+
+	<tool id="12" key="shovel" name="Kleine Schaufel" types="SoulLocked|JobTool" icon="pelle">
+		Das Standardwerkzeug aller Buddler. Dank der kleinen Schaufel reduziert sich die Ausgrabungszeit in der Wüste (automatisch)... Die Chance, einen Gegenstand zu finden, ist auch bedeutend höher.
+	</tool>
+
+	<tool id="13" key="wrench" name="Verstellbarer Schraubenschlüssel" types="Weapon|Slasher" limit="outer" power="0.33" broken="20" icon="wrench" action="combatHit">
+		Mit einem verstellbaren Schraubenschlüssel kannst du wahlweise an einem Gegenstand herumbasteln oder etwas zerstören (muss nicht unbedingt ein Gegenstand sein...)
+	</tool>
+
+	<tool id="14" key="screwd" name="Schraubenzieher" types="Weapon|Slasher|Opener" limit="outer" power="0.2" broken="40" icon="screw" action="combatHit">
+		Um Schrauben festzudrehen oder zu lösen. Du kannst mit ihm etwas reparieren und zur Not auch eine Konservendose aufmachen. Wenn du ihn mit voller Wucht in einen Kopf rammst, kann er dir in Extremsituationen auch mal das Leben retten...
+	</tool>
+
+	<tool id="15" key="staff" name="Großer trockener Stock" limit="outer" types="Weapon|Slasher" power="0.4" broken="60" icon="staff" replacement="staff2" action="combatHit">
+		Ein ziemlich großer trockener Stock, mit dem man etwas aufspießen kann. Allerdings sieht er etwas zerbrechlich aus... bete, dass er den Stoß übersteht und nicht bricht.
+	</tool>
+
+	<tool id="16" key="knife" name="Jagdmesser" hero="1" limit="outer" types="Weapon|Slasher|Critical" power="1" broken="33" icon="knife" action="combatHit">
+		Skinner, Buck, Bowie... völlig egal, Hauptsache es schneidet.
+	</tool>
+
+	<tool id="17" key="cutcut" name="Machete" limit="outer" types="Weapon|Slasher|Critical" power="2" broken="25" icon="cutcut" action="combatHit">
+		Wird für die Entfernung von Unkraut und Pflanzengeflecht benutzt. Das ist auch hier der Fall. Allerdings ist die "Vegetation" hier ziemlich rachsüchtig und laut...
+	</tool>
+
+	<tool id="18" key="sKnife" name="Lächerliches Taschenmesser" limit="outer" types="Weapon|Slasher" power="0.15" broken="45" icon="small_knife" action="combatHit">
+		Taschenmesser [Substantiv, n]: Ein Taschenmesser ist ein Messer, dessen Klinge zum gefahrlosen Transport in den Griff eingeklappt werden kann. Wenn du schlau bist, lässt du es bei diesem Messer besser nicht drauf ankommen...
+	</tool>
+
+	<tool id="19" key="swKnife" name="Schweizer Taschenmesser" hero="1" limit="outer" types="Weapon|Slasher|Opener" power="0.15" broken="50" icon="swiss_knife" action="combatHit">
+		Das Schweizer Taschenmesser ist für viele kleinere Arbeiten nützlich. Für eine Horde lebender Untoter reicht es allerdings nicht ganz aus.
+	</tool>
+
+	<tool id="20" key="cutter" name="Teppichmesser" limit="outer" types="Weapon|Slasher" power="0.6" broken="70" icon="cutter" action="combatHit">
+		Dieses kleine kükengelbe Messer mit ausfahrbarer Klinge passt hervorragend zu der Eingeweidenfarbe deiner untoten Freunde. Vorausgesetzt du kommst so weit.
+	</tool>
+
+	<tool id="21" key="bike" name="Mountainbike" limit="outer" hero="1" isHeavy="1" types="" loss_probability="100" icon="bike">
+		Mit dem umgebauten Mountainbike kannst du flüchten wohin du willst (erhöht die Anzahl deiner APs beträchtlich).
+	</tool>
+
+	<tool id="22" key="cart" name="Einkaufswagen" isHeavy="1" types="Bag" transport="3" icon="cart" loss_probability="100">
+		Man nennt ihn auch "Caddy". Niemand weiß so recht, wozu er gut ist, außer um ein paar Gegenstände herumzufahren. Im Sand rollt er leider nicht ganz so gut.
+	</tool>
+
+	<tool id="23" key="copener" name="Dosenöffner" limit="outer" types="Weapon|Slasher|Opener" power="0.5" broken="100" icon="can_opener" action="combatHit">
+		Wie der Name schon sagt: Bestens dafür geeignet, um eine Konservendose aufzumachen. Leider ist er etwas zu klein, um auch deine zweibeinigen Kameraden in der Wüste korrekt zu "öffnen".
+	</tool>
+
+	<tool id="24" key="shoe" name="Sportschuhe" types="ToDo" icon="shoe">
+		Ein Flickwerk verschiedener Häute unbekannter Herkunft. Es gibt sie mit Klett- oder Reißverschluss. Na ja, solange sie bequem sind...
+	</tool>
+
+	<tool id="25" key="bag" name="Extra Tasche" types="Bag" transport="2" icon="bag">
+		Diese Tasche eignet sich bestens für ausgedehnte Wanderungen unter Freunden, denn sie erlaubt dir, noch mehr Souvenirstücke jeglicher Art (biologische, nukleare, usw..) mitzunehmen
+	</tool>
+
+	<tool id="26" key="matches" name="Streichholzschachtel" types="Critical" icon="lights" parts="wood_bad" replacement="torch" action="assemble">
+		Gib es ruhig zu: Die Zombies sind für dich schon immer Feuer und Flamme gewesen.
+	</tool>
+
+	<tool id="27" key="medic" name="Erste Hilfe Tasche" types="ToDo|SoulLocked|Med" loss_probability="15" icon="medic" action="heal">
+		Was willst du mit diesen ganzen Verbänden? Was abgerissen wurde ist weg. Die kleine Pillen hingegen sind immer von Nutzen.
+	</tool>
+
+	<tool id="28" key="xanax" name="Beruhigungsspritze" types="Drug" icon="xanax" action="calm">
+		Entspann dich... das wird nicht die letzte sein, die du brauchst.
+	</tool>
+
+	<tool id="29" key="chair" name="Schaukelstuhl" deco="5" isHeavy="1" types="Furniture" icon="chair" loss_probability="100">
+		ZZzzzz... Knarr knarr... ZZzzzz... Knarr knarr...
+	</tool>
+
+	<tool id="30" key="book" name="Staubiges Buch" types="BookBox" icon="rp_book" action="book">
+		Ein altes Buch, dessen Seiten größtenteils zerrissen oder verklebt sind. Ein paar sind jedoch lesbar...
+	</tool>
+
+	<tool id="31" key="bed" name="Matratze" isHeavy="1" bonus="Verbessert die Verteidigung" deco="3" types="Armor|Furniture" icon="bed" limit="outer" action="putOutsideDef" loss_probability="100">
+		ZZzzzz... Quietsch... ZZzzzz... Quietsch...
+	</tool>
+
+	<tool id="32" key="lamp" name="Ausgeschaltete Nachttischlampe" types="Furniture" deco="1" icon="lamp" parts="batt" replacement="lamp_on" action="assemble" loss_probability="100">
+		Das ist eine hübsche Nachttischlampe. Allerdings brauchst du eine Batterie, um sie benutzen zu können...
+	</tool>
+
+	<tool id="33" key="carpet" name="Perser" isHeavy="1" deco="10" types="Furniture" icon="carpet" loss_probability="100">
+		Leg ihn dir ins Wohnzimmer dann fallen dir all die grässlichen Dinge, die überall am Boden herum liegen nicht mehr so auf...
+	</tool>
+
+	<tool id="34" key="music" name="Mini Hi-Fi Anlage (defekt)" isHeavy="1" deco="1" types="Gadget|Furniture" icon="music_part" parts="batt|electro" replacement="music_on" action="assemble" loss_probability="100">
+		Eine kleine Hi-Fi Anlage vom Discounter nebenan. Schade, dass keine Batterien mehr drin sind, aber vielleicht kannst du ja welche auftreiben...
+	</tool>
+
+	<tool id="35" key="shackle" name="Kette + Vorhängeschloss" bonus="Verhindert Diebstähle" types="Furniture|Lock" icon="lock">
+		Eine schwere Kette mit passendem Vorhängeschloss. Sie gibt dir ein beruhigendes Gefühl, wenn du mal nicht daheim bist. Für das Stadttor ist sie leider viel zu klein.
+	</tool>
+
+	<tool id="36" key="straw" name="Fußabstreifer" deco="5" types="Furniture" icon="door_carpet">
+		Du trittst mal ausnahmsweise nicht auf Leichen rum. Ein gutes Gefühl.
+	</tool>
+
+	<tool id="37" key="foot" name="Fußball" types="ToDo" icon="soccer">
+		Für den kleinen Kick zwischendurch.
+	</tool>
+
+	<tool id="38" key="dice" name="Ein paar Würfel" types="Playable" icon="dice" action="roll" lock="day">
+		Spiele ne Runde mit den anderen Losern.
+	</tool>
+
+	<tool id="39" key="engine" name="Motor" isHeavy="1" types="Critical" icon="engine" loss_probability="100">
+		Es handelt sich um einen kleinen Motor, der mit Ölspuren und undefinierbaren Brennresten verschmutzt ist und der schwer wie Blei ist.
+	</tool>
+
+	<tool id="40" key="belt" name="Riemen" types="Rsc|Critical" icon="courroie">
+		Ein Riemen... Der ist bestimmt für irgendetwas nützlich.
+	</tool>
+
+	<tool id="41" key="mecaParts" name="Handvoll Schrauben und Muttern" types="Rsc|Critical" icon="meca_parts">
+		Ein paar Teile sind verrostet, andere von einem moosartigen Flaum überzogen... aber sie funktionieren noch halbwegs.
+	</tool>
+
+	<tool id="42" key="chicken" name="Huhn" types="Animal" replacement="undef" loss_probability="100" power="1" icon="pet_chick" action="pet">
+		Sehr schön! Jetzt musst du nur noch einen Metzger finden. Nebenbei bemerkt: Du kannst es auch auf einen Zombie werfen...
+	</tool>
+
+	<tool id="43" key="pig" name="Übelriechendes Schwein" isHeavy="1" types="Animal" replacement="undef" loss_probability="100" power="1" icon="pet_pig" action="pet">
+		Sehr schön! Jetzt musst du nur noch einen Metzger finden.  Nebenbei bemerkt: Du kannst es auch auf einen Zombie werfen...
+	</tool>
+
+	<tool id="44" key="rat" name="Riesige Ratte" types="Animal" replacement="undef" loss_probability="100" power="1" icon="pet_rat" action="pet">
+		Sehr schön! Jetzt musst du nur noch einen Metzger finden. Nebenbei bemerkt: Du kannst sie auch auf einen Zombie werfen...
+	</tool>
+
+	<tool id="45" key="dog" name="Bissiger Hund" hero="1" types="Animal|Weapon|Armor|Furniture|Lock" bonus="Verbessert die Verteidigung und verhindert Diebstähle" replacement="tastyMeat" loss_probability="10" power="1" icon="pet_dog" action="pet">
+		Der beste Freund des Menschen. Du kannst ihn wahlweise dein Haus bewachen lassen, ihn auf Zombies hetzen oder dir ein paar leckere Steaks braten....
+	</tool>
+
+	<tool id="46" key="cat" name="Großer knuddeliger Kater" types="Animal|Weapon|Furniture" bonus="Macht 'Miau'." deco="5" replacement="tastyMeat" loss_probability="20" power="1" icon="pet_cat" action="pet">
+		Ist der knuddelig! Ein wahres Prachtstück für daheim, das dich im Notfall auch gegen Zombies verteidigt. Und wenn du mal Hunger hast...
+	</tool>
+
+	<tool id="47" key="snake" name="Zwei-Meter Schlange" types="Animal" isHeavy="1" replacement="tastyMeat" loss_probability="100" power="1" icon="pet_snake" action="pet">
+		Sie ist grün, beißt und zischt. Du brauchst nur einen Metzger, dann kannst du dir ein paar Reptiliensteaks machen. Auf einen Zombie kannst du sie auch werfen...
+	</tool>
+
+	<tool id="48" key="vib" limit="town" name="Vibrator (geladen)" types="Gadget" icon="vibr" replacement="vib_empty" action="vibro" loss_probability="100">
+		Er vibriert und kitzelt dich am ganzen Körper und lässt dich für einen Augenblick all deine Sorgen vergessen (benötigt 1 Batterie).
+	</tool>
+
+	<tool id="49" key="model" name="Zombiefiguren aus Plastik" types="ToDo" icon="figurine">
+		Mit diesen sehr detailliert gearbeiteten Figuren kannst du die Zombieangriffe nachspielen. Das verspricht ein paar tolle Abende Spielspaß!
+	</tool>
+
+	<tool id="50" key="badge" name="Seltsamer Aufkleber" types="ToDo" icon="badge">
+		Auf dem kleinen Aufkleber steht: "Lass deinen Dinoz kämpfen! - http://www.dinorpg.de/?ref=warp " , was das wohl zu bedeuten hat...?
+	</tool>
+
+	<tool id="51" key="steroid" name="Anaboles Steroid" types="Drug|Critical" icon="drug" action="useDrug">
+		Mit dieser Droge siehst du alles rosa: Du spürst keine Müdigkeit mehr und strotzt nur so vor Kraft! Das bisschen Herzrasen und der verstärkt auftretende Speichelfluss - geschenkt! Vorsicht: Bei übermäßiger Einnahme droht eine Abhängigkeit!
+	</tool>
+
+	<tool id="52" key="tastyMeat" name="Leckeres Steak" hero="1" types="Food|Tasty" icon="meat" action="eat" lock="day">
+		Es ist labbrig wie weiches Gummi und es riecht nach Fisch ... Was das wohl für ein Fleisch ist? Jedenfalls hat es bestimmt viele Vitamine und Proteine (und sonst hoffentlich nichts).
+	</tool>
+
+	<tool id="53" key="undef" name="Undefinierbares Fleisch" types="Food" icon="undef" action="eat" lock="day">
+		Du bist dir so gut wie sicher, dass man dieses weiche und glibbrige Etwas essen kann. Zumindest riecht es nicht sooo schlecht und es bewegt sich auch nicht.
+	</tool>
+
+	<tool id="54" key="sheet" name="Zeltplane" types="CampBonus" icon="sheet" loss_probability="100" >
+		Eine große, solide Zeltplane, die auch noch wasserdicht ist. Sie eignet sich bestens dazu die Löcher in deinem Hausdach zu schließen. ANMERKUNG: Dieser Gegenstand ist für die Verbesserung deines Hauses zwingend vorgeschrieben.
+	</tool>
+
+	<tool id="55" key="shield" name="Schutzschild" power="2" types="SoulLocked|Control|JobTool" icon="shield">
+		Ein großes Schutzschild, das sich gegen Zombies bewährt hat und das keine Wünsche offen lässt. Ermöglicht dir, in der Wüste 2 zusätzliche Zombies auf Distanz zu halten.
+	</tool>
+
+	<tool id="56" key="bagxl" name="Superpraktischer Rucksack" hero="1" types="Bag" transport="3" icon="bagxl">
+		Dein idealer Begleiter für unterwegs! Massage im Schulter- und Lendenbereich, zweistufig regulierbar und mit großen Seitentaschen. Ein hübsches Logo aus Chrom mit der Auffschrift "Desert Addict" verziert ihn zusätzlich.
+	</tool>
+
+	<tool id="58" key="jerry" name="Kanister" types="Jerrycan|Critical" limit="town" icon="jerrycan" replacement="water" action="purifyWater">
+		Der "Jerrycan" kann mehrere Rationen nicht-trinkbares Wasser aufnehmen. Sobald die Stadt über eine passende Filteranlage verfügt, kann dieses Wasser trinkbar gemacht werden.
+	</tool>
+
+	<tool id="59" key="wood" name="Krummes Holzbrett" types="Rsc|Critical|Refinable" replacement="wbeam" icon="wood2">
+		Ein total verschimmeltes Holzbrett, das noch einigermaßen stabil ist... Anmerkung: Holz wird für den Bau zahlreicher Gebäude gebraucht. Bringe es deshalb in die Bank.
+	</tool>
+
+	<tool id="60" key="metal" name="Alteisen" types="Rsc|Critical|Refinable"  replacement="mbeam" icon="metal">
+		Stinknormales Metall, das zwar schwer ist, aber immer verwendet werden kann! Anmerkung: Metall wird für den Bau zahlreicher Gebäude gebraucht. Bringe es deshalb in die Bank.
+	</tool>
+
+	<tool id="61" key="map" types="Radar|ToDo" name="Wüstenkarte" icon="map">
+		Mit dieser Karte kannst du jederzeit die Karte der Außenwelt abrufen (sogar außerhalb der Stadt).
+	</tool>
+
+	<tool id="62" key="grenade" name="Wasserbombe" limit="outer" types="Weapon" power="2" random="3" icon="grenade" action="grenade" loss_probability="100" >
+		Gebrauchsanweisung: Auf einen Zombie werfen und beten, dass sie platzt. Anschließend warten bis es "Splatsch!!" macht.
+	</tool>
+
+	<tool id="63" key="admin" name="Adminoid 1000mg" types="Drug|SoulLocked" icon="admin" action="adminDrug">
+		Eine schöne Adminoidspritze in den Nacken und weiter geht's.
+	</tool>
+
+	<tool id="64" key="plate" name="Blechplatte" types="Armor|Furniture" bonus="Verbessert die Verteidigung" isHeavy="1" icon="plate" limit="outer" action="putOutsideDef">
+		Fast nichts ist besser als eine rostige Blechplatte, um die Zombies am Eindringen zu hindern... Anmerkung: Verteidigungsgegenstände zählen mehr Punkte, wenn sie in der Bank aufbewahrt werden anstatt daheim.
+	</tool>
+
+	<tool id="65" key="jerrygun_part" name="Kanisterpumpe (zerlegt)" types="Critical" icon="jerrygun_part" parts="rustine|jerry" replacement="jerrygun" action="assemble">
+		Früher konntest du diesem Gegenstand gerade mal ein müdes Lächeln abgewinnen. Er war so sinnlos wie ein Kropf. Inzwischen hat sich diese Pumpe in eine gefürchtete Waffe verwandelt, um nicht gereinigtes Wasser auf Zombies zu versprühen (das Ansatzstück passt auf einen Kanister).
+	</tool>
+
+	<tool id="66" key="bandage" name="Bandage" types="Med|Critical" loss_probability="100" icon="bandage" action="heal" lock="day">
+		Sie riecht schlecht und weist ein paar Schimmelspuren auf, aber jetzt mal ganz ehrlich: In dieser Lage kannst du nicht rumnörgeln. Mit der Bandage kannst du eine Wunde verbinden.
+	</tool>
+
+	<tool id="67" key="club" name="Golfschläger" types="ToDo|Weapon" loss_probability="100" icon="club" action="playGolf" power="1">
+		Ein Golfschläger ist was ganz Feines... Wozu brauchst du noch einen Ball?
+	</tool>
+
+	<tool id="68" key="z_head" name="Zombiekopf" types="ZombiePart" icon="zombie_toy">
+		Mit ein bisschen Fantasie kannst du mit ihm etwas Sport treiben.
+	</tool>
+	
+	<tool id="69" key="vodka" name="Wodka Marinostov" types="Alcohol|Stealthy" hero="1" icon="vodka" action="alcohol">
+		Nimm einen kräftigen Schluck aus der Pulle und deine Lebenskräfte werden wieder geweckt (Du erhältst alle deine Aktionspunkte zurück!). Da nimmt man die lose darin rumschwimmenden organischen Substanzen doch gerne. Prost Kameraden!
+	</tool>
+
+	
+	<!--
+	<tool id="69" key="vodka" name="Grüne Bierflasche" types="Alcohol|Stealthy" hero="1" icon="vodka_de" action="alcohol">
+		Das Glas dieser gut erhaltenen Bierflasche ist ziemlich verfärbt. Du vermutest, dass es früher mal grün war. Ah, da, das Etikett! Roter Rand..."Welcome to the Feck's experience"... okay, ein Pils. Na dann lass uns doch mal das "Experiment" wagen... Mit einem kräftigen Schluck kippst du dir den Saft hinter die Binde und lässt kurz darauf einen Riesenrülpser los! - "Prost Kameraden!"
+	</tool>
+	-->
+	
+	<tool id="70" key="jerrygun_empty" name="Kanisterpumpe (leer)" types="EmptyWeapon|Critical" icon="jerrygun_off" parts="jerry" replacement="jerrygun" action="assemble">
+		Früher konntest du diesem Gegenstand gerade mal ein müdes Lächeln abgewinnen. Er war so sinnlos wie ein Kropf. Inzwischen hat sich diese Pumpe in eine gefürchtete Waffe verwandelt, um nicht gereinigtes Wasser auf Zombies zu versprühen (das Ansatzstück passt auf einen Kanister).
+	</tool>
+
+	<tool id="71" key="pq" name="Sauberes Toilettenpapier" types="ToDo" icon="pq">
+		Jetzt rat mal, wofür du das brauchst...
+	</tool>
+
+	<tool id="72" key="projo" name="Videoprojektor" types="Weapon|Slasher|Furniture" replacement="lens" deco="3" isHeavy="1" power="1" broken="50" icon="cinema" action="combatHit">
+		Wenn du Filme mit köpfeabreißenden Untoten magst, die ihre Infektion vorzugsweise durch einen Biss übertragen, ist dieser Beamer genau das richtige für dich!
+	</tool>
+
+	<tool id="73" key="explo" name="Sprengstoff" types="Rsc|Critical" icon="explo">
+		Booom!
+	</tool>
+
+	<tool id="74" key="huMeat" name="Menschenfleisch" types="Food|HumanMeat" icon="hmeat" action="eat" lock="day" ghoulProba="5">
+		Denk am besten gar nicht daran, was du soeben geschluckt hast und mach einfach weiter...
+	</tool>
+
+	<tool id="76" key="emptyGren" name="Plastiktüte" types="EmptyWeapon" parts="water" replacement="grenade" icon="grenade_empty" action="assemble">
+		Eine alte Plastiktüte aus dem Supermarkt. Wenn du sie mit Wasser füllst, verwandelt sie sich in eine gefürchtete Waffe...
+	</tool>
+
+	<tool id="77" key="bGrenade" name="Explodierende Wasserbombe" hero="1" limit="outer" types="Weapon" power="6" random="5" icon="bgrenade" action="grenade" loss_probability="100">
+		Aus einer Plastiktüte, Wasser und etwas Sprengstoff bastelst du dir eine Massenvernichtungswaffe, die du nur noch in eine Zombiehorde werfen brauchst. Gibt ein nettes Massaker.
+	</tool>
+
+	<tool id="78" key="emptyBGren" name="Plastiktüte mit Sprengstoff" types="EmptyWeapon" parts="water" replacement="bGrenade" icon="bgrenade_empty" action="assemble">
+		Eine Ladung Sprengstoff, die an eine Plastiktüte befestigt wurde - simpel und effektiv. Jetzt brauchst du nur noch Wasser...
+	</tool>
+
+	<tool id="79" key="sawPart" name="Unvollständige Kettensäge" types="Critical" isHeavy="1" parts="engine|belt|mecaParts|rustine" replacement="saw_empty" icon="chainsaw_part" action="assemble">
+		Das ist ein richtig lustiges Spielzeug. Allerdings brauchst du noch einen Riemen und noch ein paar andere Kleinigkeiten, um sie zum Laufen zu bringen...
+	</tool>
+
+	<tool id="80" key="mixerPart" name="Unvollständiger Handmixer" types="" icon="mixergun_part" parts="electro|mecaParts|rustine" replacement="mixer_empty" action="assemble">
+		Das könnte eine gute Waffe ergeben, wenn du auch die fehlenden Teile auftreibst....
+	</tool>
+
+	<tool id="81" key="rustine" name="Klebeband" types="Rsc|Critical" icon="rustine">
+		Immer nützlich, wenn man etwas kleben möchte.
+	</tool>
+
+	<tool id="82" key="lawnPart" name="Zerlegter Rasenmäher" types="" isHeavy="1" parts="mecaParts|metal|rustine" replacement="lawn" icon="lawn_part" action="assemble" loss_probability="100">
+		DAS klassische Gerät für die Gartenarbeit. Er funktioniert ohne Strom und ist in seine Einzelteile zerlegt... Du müsstest ihn zusammenbauen.
+	</tool>
+
+	<tool id="83" key="bikePart" name="Mountainbike ohne Lenker" types="" isHeavy="1" parts="belt|tube|mecaParts" replacement="bike" icon="bike_part" action="assemble" loss_probability="100">
+		Ein schönes Fahrrad, aber es fehlt das wichtigste Stück: Der Lenker.
+	</tool>
+
+	<tool id="84" key="tube" name="Kupferrohr" types="Rsc|Critical" icon="tube">
+		Ein schmutziges Rohr aus Kupfer, für das dir noch keine Verwendung einfällt...
+	</tool>
+
+	<tool id="85" key="cartPart" name="Wackliger Einkaufswagen" types="" isHeavy="1" parts="tube|metal|rustine" replacement="cart" icon="cart_part" action="assemble" loss_probability="100">
+		Eine Art Einkaufswagen aus Metall. Leider fehlt ihm eine Radachse. Du müsstest sie durch irgendetwas ersetzen...
+	</tool>
+
+	<tool id="86" key="camoVest" name="Tarnkleidung" types="Camo|SoulLocked|JobTool" icon="vest_on" replacement="camoVest_off">
+		 In diesem Aufzug kannst du dich in der Wüste problemlos unter die Zombies mischen, ohne erkannt zu werden. Vorsicht ist dennoch geboten! Wenn du durch eine Zone läufst, in der die Zombies in Überzahl sind, kannst du trotzdem entdeckt werden.
+	</tool>
+
+	<tool id="87" key="camoVest_off" name="Tarnkleidung (nicht wirksam!)" types="Stealthy|SoulLocked|JobTool" icon="vest_off" replacement="camoVest" action="switch">
+		Du trägst keine Tarnkleidung und hast deswegen auch keinerlei Tarnungsvorteile!
+	</tool>
+
+	<tool id="88" key="pocketBelt" name="Gürtel mit Tasche" types="Bag" icon="pocket_belt" transport="2">
+		Mit diesem Gürtel kannst du einen weiteren Platz in deinem Rucksack freimachen. Außerdem ist der Gürtel äußerst ergonomisch entworfen worden, denn er gestattet dir, später noch eine weitere Tasche tragen zu können.
+	</tool>
+
+	<tool id="89" key="tastyDrug" name="Twinoid 500mg" hero="1" types="Drug|Tasty|Critical" icon="drug_hero" action="useDrug">
+		Eine Mischung aus konzentriertem Koffein, verschiedenen chemischen Drogen und zermahlenen Stierhoden. Die ideale Droge für den kleinen Energieschub am Abend, wenn du vor einer Zombiemeute flüchten musst, die es auf deine Leber abgesehen hat.
+	</tool>
+
+	<!-- produits divers (drogues, bandages, alcool) ou Caisse en bois -->
+	<tool id="90" key="chest" name="Metallkiste" types="Box|Refinable" isHeavy="1" replacement="steroid|tastyDrug|bandage|vodka|rhum|explo|matches" icon="chest" action="open" loss_probability="100">
+		Eine komplett zerbeulte, alte rostige Kiste. Was könnte da wohl drin sein?
+	</tool>
+
+	<!-- items rares -->
+	<tool id="91" key="chest_xl" name="Großer Metallkoffer" types="Box|Refinable" isHeavy="1" replacement="lawnPart|mixerPart|sawPart|cutcut|pocketBelt|watGun3k_part|big_pgun_part|pilegun_upkit" icon="chest_xl" action="open" loss_probability="100">
+		Der Koffer ist wirklich schwer und enthält bestimmt etwas Wertvolles... Jetzt musst du nur noch das passende Werkzeug finden, denn mit deinen Zähnen bekommst du das nicht auf.
+	</tool>
+
+	<!-- outils et composants divers -->
+	<tool id="92" key="chest_tools" name="Werkzeugkiste" types="Box|FragileBox|Refinable" isHeavy="1" replacement="pharma|explo|tube|rustine|mecaParts|batt" icon="chest_tools" action="open" loss_probability="100">
+		Diese alte Holzkiste enthält sicher ein paar brauchbare Kleinigkeiten...
+	</tool>
+
+	<tool id="93" key="lamp_on" name="Nachttischlampe (an)"types="Gadget|Furniture|Lamp" deco="3" icon="lamp_on" loss_probability="100">
+		Mit einer Nachttischlampe hast du nachts weniger Angst und kannst so besser schlafen.
+	</tool>
+
+	<tool id="94" key="music_on" name="Mini Hi-Fi Anlage (an)" types="Gadget|Furniture" deco="10" icon="music" loss_probability="100">
+		Gönn dir etwas Entspannung und höre dir ein bisschen Musik an. Hmmm... Ne Maxi-CD mit "Zombie Eaters" von Faith No More befindet sich noch im CD-Fach.
+	</tool>
+
+	<tool id="95" key="pharma" name="Pharmazeutische Substanz" types="Critical" replacement="xanax|steroid|waterDrug|tastyDrug|rand_drug|purifier" icon="pharma" action="assembleIdenticals">
+		Ein paar geheimnisvolle Substanzen und ein kleines Fläschchen. Alles ist in Plastik eingepackt. Kein Plan, wozu du das gebrauchen kannst... Vielleicht kann man einige der Substanzen mit anderen Produkten mischen?
+	</tool>
+
+	<tool id="96" key="plate_raw" name="Unverarbeitete Blechplatten" types="Critical|Refinable" isHeavy="1" icon="plate_raw" replacement="plate">
+		Ein paar Blechplatten, die nur darauf warten, von dir daheim verbaut zu werden... Du musst sie nur noch korrekt zusammensetzen.
+	</tool>
+
+	<tool id="97" key="rhum" name="'Wake The Dead'" types="Alcohol|Stealthy" icon="rhum" action="alcohol">
+		Ein Cocktail, der Tote weckt und der von Chuck erfunden wurde (wenn man dem Etikett glaubt...). Man nehme einen guten Schuss Rum, etwas roten Chili, Whisky und einen marinierten Finger, der in einer Flüssigkeit schwimmt...
+	</tool>
+
+	<tool id="98" key="coffee" name="Heißer Kaffee" types="Stealthy" icon="coffee" action="coffee">
+		Wie konnte diese Thermoskanne so lange heiß bleiben? Das spielt jetzt keine Rolle, es ist jedenfalls starker Kaffee, SEHR starker Kaffee, der auf irgendeine Weise von jemandem gebrüht wurde. Nichts für kleine Mädchen!
+	</tool>
+
+	<tool id="99" key="coffeeMaker" name="Kaffeekocher" isHeavy="1" hero="1" deco="5" types="Gadget|Furniture" icon="coffee_machine" parts="batt|pharma|wood_bad" limit="town" action="makeCoffee">
+		Das ultimative Gerät für den Abenteuerer, der in dir schlummert. Sein einzigartiges Filtersystem stellt den besten Kaffee her, den man mit den hier erhältlichen Zutaten brühen kann. Frag besser nicht nach...
+	</tool>
+
+	<tool id="100" key="coffeeMakerPart" name="Unvollständiger Kaffeekocher" isHeavy="1" types="" icon="coffee_machine_part" parts="cyanure|electro|rustine|mecaParts|metal|tube" replacement="coffeeMaker" action="assemble">
+		Diese Kaffeemaschine könnte sehr nützlich sein, nur ist sie komplett zerlegt.
+	</tool>
+
+	<tool id="101" key="electro" name="Elektronisches Bauteil" types="Gadget|Rsc|Critical" icon="electro">
+		Eine alte elektronische Platine, die wahrscheinlich aus einem Radioempfänger oder aus einem sonstigen Gerät stammt.
+	</tool>
+
+	<!-- outils et composants divers -->
+	<tool id="102" key="chest_citizen" name="Habseligkeiten eines Bürgers" types="Box|OpenBox" isHeavy="1" replacement="batt|radio_off|pharma|matches" icon="chest_citizen" action="open">
+		Diese kleine Box enthält alles, was man so als neuer Bürger braucht! Sie ist wie eine Wundertüte oder eine Pralinenschachtel: Man weiß nie was man bekommt. Aber eigentlich ist sie'n Witz...
+	</tool>
+
+	<tool id="103" key="waterDrug" name="Hydraton 100mg" types="Drug" icon="drug_water" action="useWaterDrug">
+		Eine äußerst praktische Tablette, die du überall einstecken kannst. Kurz nach ihrer Einnahme verschwindet dein Durst. Trotzdem kann sie WEDER deine Erschöpfung lindern, NOCH gibt sie dir Aktionspunkte zurück.
+	</tool>
+
+	<tool id="104" key="radio_off" name="Kassettenradio (ohne Strom)" types="Gadget" icon="radio_off" parts="batt" replacement="radio_on" action="assemble" loss_probability="100">
+		Ein altes Transistorradio mit Kassettenfach. Es ist eine Blues-Kassette drin. Mit dem Radio wirst du nicht viel anfangen können, da du hier sowieso nichts empfängst, aber du kannst ein bisschen Musik hören. Das übertönt das Geschrei deiner Nachbarn... Jetzt brauchst du nur noch eine Batterie.
+	</tool>
+
+	<tool id="105" key="radio_on" name="Kassettenradio" types="Critical|Furniture" deco="2" icon="radio_on" loss_probability="100">
+		Ein altes Transistorradio mit Kassettenfach. Es ist eine Blues-Kassette drin. Mit dem Radio wirst du nicht viel anfangen können, da du hier sowieso nichts empfängst, aber du kannst ein bisschen Musik hören. Das übertönt das Geschrei deiner Nachbarn...
+	</tool>
+
+	<tool id="106" key="cyanure" name="Zyanid" types="Drug" icon="cyanure" action="poison">
+		Wenn wirklich gar nichts mehr geht, schluckst du diese Kapsel mit einem großen Glas Wasser. Danach einfach warten und sich mit einem zufriedenen Grinsen von dieser Welt verabschieden.
+	</tool>
+
+	<tool id="107" key="door" name="Alte Tür" isHeavy="1" types="Furniture|Armor" bonus="Verbessert die Verteidigung" icon="door" limit="outer" action="putOutsideDef" loss_probability="100">
+		Eine alte Holztür. Das klassische Modell in weiß. Sie ist zwar total verdreckt, aber wer weiß, wozu du sie noch gebrauchen kannst...
+	</tool>
+
+	<tool id="108" key="vegetable" name="Verdächtiges Gemüse" types="Food" icon="vegetable" action="eat" lock="day">
+		Sieht wie Gemüse aus, allerdings wunderst du dich, wie es so krumm wachsen konnte. Wichtig ist, dass du es essen kannst – oder besser nicht?
+	</tool>
+
+	<tool id="109" key="repairKitPart" name="Reparaturset (kaputt)" types="Critical|Refinable" icon="repair_kit_part" replacement="repairKit">
+		Dieses Reparaturset ist kaputt. Du müsstest es in der Werkstatt reparieren, bevor du es wieder benutzen kannst.
+	</tool>
+
+	<tool id="110" key="repairKit" name="Reparaturset" types="Critical" icon="repair_kit" replacement="repairKitPart" action="repair">
+		Diese Eisenkiste enthält alle wichtigen Werkzeuge und Materialien um so ziemlich alles zu reparieren... außer vielleicht deinen toten Nachbarn.
+	</tool>
+
+	<tool id="115" key="mixer_empty" name="Handmixer (ohne Strom)" types="EmptyWeapon" parts="batt" replacement="mixer" icon="mixergun_empty" action="assemble">
+		Rührt elektrisch und sehr schnell - was gibt's sonst noch zu sagen? Er hat den Vorteil, dass er nur eine Batterie braucht, die sich mit 40% Wahrscheinlichkeit entlädt.
+	</tool>
+
+	<tool id="116" key="saw_empty" name="Kettensäge (ohne Strom)" isHeavy="1" types="EmptyWeapon|Critical" parts="batt" replacement="saw" icon="chainsaw_empty" action="assemble">
+		Damit richtest du ein wahres Massaker an. Ob du das aber zu 100 Prozent unversehrt überstehst ist eine andere Frage... Diese umgebaute Höllenmaschine funktioniert - man glaubt es kaum - mit einer gewöhnlichen Batterie!
+	</tool>
+
+	<tool id="117" key="pGun_empty" name="Batteriewerfer 1-PDTG (entladen)"  types="EmptyWeapon" parts="batt" replacement="pGun" icon="pilegun_empty" action="assemble">
+		Der Batteriewerfer 1-PDTG wurde äußerst einfallsreich zusammengeschraubt. Dank einer virtuosen Recyclingprozedur ist er in der Lage, harmlose Batterien in mächtige Geschosse zu verwandeln.
+	</tool>
+
+	<tool id="118" key="taser_empty" name="Taser (ohne Strom)" types="EmptyWeapon" parts="batt" replacement="taser" icon="taser_empty" action="assemble">
+		Der Taser ist eine kleine technische Spielerei, mit der man grässliche Elektrostöße in den Körper seines Opfers jagen kann. Allerdings ist er nicht sehr effektiv, wenn man bedenkt, dass den Zombies Schmerzen nichts ausmachen. Vielleicht gelingt es dir ja mit einem Stromstoß ein wichtiges Körperglied oder Organ zum Platzen zu bringen?
+	</tool>
+
+	<tool id="119" key="spelec_empty" name="Elektrischer Bauchmuskeltrainer (ohne Strom)" types="" parts="batt" replacement="spelec" icon="sport_elec_empty" action="assemble">
+		Die militärische Ausführung eines 'body shapers', der dazu dient, seinen Körper mittels schwacher Stromstöße zu stählen. Er mildert deine Erschöpfung und gibt dir deine Aktionspunkte wieder. Allerdings verursacht er auch schwere Verletzungen und du kannst unter Umständen sogar qualvoll sterben...
+	</tool>
+
+	<tool id="120" key="spelec" name="Elektrischer Bauchmuskeltrainer (geladen)" types="" replacement="spelec_empty" icon="sport_elec" action="violentRegen">
+		Die militärische Ausführung eines 'body shapers', der dazu dient, seinen Körper mittels schwacher Stromstöße zu stählen. Er mildert deine Erschöpfung und gibt dir deine Aktionspunkte wieder. Allerdings verursacht er auch schwere Verletzungen und du kannst unter Umständen sogar qualvoll sterben...
+	</tool>
+
+	<tool id="121" key="shield_mt" name="TwinSchild" types="SoulLocked" icon="shield_mt">
+		Ein Schild gegen den vorzeitigen nächtlichen Tod. Die Zombies werden dich nicht kriegen.
+	</tool>
+
+	<tool id="122" key="big_pgun_empty" name="Zerstörer (entladen)" hero="1" types="EmptyWeapon|Critical" replacement="big_pgun" parts="batt" icon="big_pgun_empty" action="assemble">
+		Die militärische Ausführung des Batteriewerfers 1-PDTG. Sein übermächtiger Kolben ist in der Lage, eine Batterie derart schnell zu beschleunigen, dass sie fast jedes Material durchstößt. Das Gerät reißt faustgroße Löcher in bis zu zwei Zombies, vorausgesetzt sie stehen hintereinander.
+	</tool>
+
+	<tool id="123" key="big_pgun" name="Zerstörer (geladen)" hero="1" limit="outer" types="Weapon|Critical" power="2" loss_probability="50" replacement="big_pgun_empty" icon="big_pgun" action="batGunUp">
+		Die militärische Ausführung des Batteriewerfers 1-PDTG. Sein übermächtiger Kolben ist in der Lage, eine Batterie derart schnell zu beschleunigen, dass sie fast jedes Material durchstößt. Das Gerät reißt  faustgroße Löcher in bis zu zwei Zombies, vorausgesetzt sie stehen hintereinander.
+	</tool>
+
+	<tool id="124" key="big_pgun_part" name="Unvollständiger Zerstörer" types="Critical" replacement="big_pgun_empty" parts="belt|mecaParts" icon="big_pgun_part" action="assemble">
+		Die militärische Ausführung des Batteriewerfers 1-PDTG. Sein übermächtiger Kolben ist in der Lage, eine Batterie derart schnell zu beschleunigen, dass sie fast jedes Material durchstößt. Das Gerät reißt  faustgroße Löcher in bis zu zwei Zombies, vorausgesetzt sie stehen hintereinander.
+	</tool>
+
+	<tool id="125" key="radius" name="Zonenmarker 'Radius'" types="Stealthy" icon="tagger" loss_probability="100" action="radius">
+		Der Zonenmarker "Radius" gibt dir auf deiner Karte nützliche Informationen zu Sektoren, die an deine aktuelle Position angrenzen.
+	</tool>
+
+	<tool id="126" key="flare" name="Leuchtrakete" types="ToDo" action="flare" icon="flare" loss_probability="100">
+		Die Leuchtrakete ermöglicht dir Informationen über weitentfernte Zonen zu bekommen. Sobald die Rakete am Boden aufschlägt, wird ein kleiner Sender freigesetzt, der Informationen über die Umgebung sendet.
+	</tool>
+
+	<tool id="127" key="jerrygun" name="Kanisterpumpe (einsatzbereit)" types="Weapon|Critical" hero="1" icon="jerrygun" limit="outer" power="1" replacement="jerrygun_empty" action="jerryGun">
+		Früher konntest du diesem Gegenstand gerade mal ein müdes Lächeln abgewinnen. Er war so sinnlos wie ein Kropf. Inzwischen hat sich diese Pumpe in eine gefürchtete Waffe verwandelt, um nicht gereinigtes Wasser auf Zombies zu versprühen (das Ansatzstück passt auf einen Kanister).
+	</tool>
+
+	<tool id="128" key="chair_basic" name="Ektorp-Gluten Stuhl" limit="outer" types="Furniture|Slasher|Weapon" icon="chair_basic" deco="2" isHeavy="1" power="0.5" broken="50" action="combatHit">
+		Ein schlichter Stuhl mit lustigem Namen aus schwedischer Herstellung. Man kann damit Leute vermöbeln, aber besser du stellst ihn dir ins Wohnzimmer...
+	</tool>
+
+	<tool id="129" key="old_gun" name="Revolver (entladen)" types="EmptyWeapon|Furniture|Weapon" icon="gun" deco="5" parts="bullets" replacement="old_gun" action="assemble">
+		Eine Faustfeuerwaffe vom Modelltyp P-22. Sie ist für ihre Treffgenauigkeit und Zuverlässigkeit berühmt. Ohne Munition kannst du damit aber überhaupt nichts anfangen...
+	</tool>
+
+	<tool id="130" key="old_machine_gun" name="Sturmgewehr (entladen)" types="EmptyWeapon|Furniture|Weapon" icon="machine_gun" deco="15" parts="bullets" replacement="old_machine_gun" action="assemble">
+		Eine umgebaute Version des AK-47. Dieses Gewehr ist kompakter und wahrscheinlich für den "zivilen" Einsatz entworfen worden... Manche sagen man könne damit sehr gut 'Problembären' kalt machen.
+	</tool>
+
+	<tool id="131" key="bullets" name="Handvoll Patronen" types="" icon="bullets">
+		[NoDrop]
+	</tool>
+
+	<tool id="132" key="deto" name="Zünder" types="Rsc|Critical" icon="deto" parts="explo|emptyGren|rustine" replacement="emptyBGren" action="assemble">
+		Ein kleiner, kompakter Zünder, mit dem man eine kleine Sprengladung explodieren lassen kann.
+	</tool>
+
+	<tool id="133" key="concrete" name="Zementsack" types="Critical" isHeavy="1" icon="concrete" parts="water" replacement="concrWall" action="assemble">
+		Ein großer Zementsack von mittelmäßiger Qualität... Wenn du den Zement in Wasser auflöst trocknet er ziemlich schnell und du erhälst einen besonders festen Beton, den du für allerhand Konstruktionen verwenden kannst!
+	</tool>
+
+	<tool id="134" key="concrWall" name="Unförmige Zementblöcke" limit="outer" types="Rsc|Critical|Armor|Furniture" isHeavy="1" icon="concrete_wall" bonus="Verbessert die Verteidigung" power="1" broken="50" action="combatHit">
+		Sie ähneln in keiner Weise Bauziegeln, aber es handelt sich um Stahlbeton, welches du sicherlich für die Verbesserung der Verteidigung deines Hauses verwenden kannst... Schlimmstenfalls kannst du sie auch auf ein paar Zombies werfen, so wie bei einer Demo.
+	</tool>
+
+	<tool id="135" key="rand_drug" name="Etikettenloses Medikament" types="Drug" icon="drug_random" action="randomDrug">
+		Eine Medikamentenschachtel, dessen Etikett abgerissen wurde... Die darin eingepackten Pillen sind größtenteils verschimmelt. Allerdings findest du welche, die noch einigermaßen "genießbar" sind. Um das zu schlucken, muss es dir schon wirklich schlecht gehen...
+	</tool>
+
+	<tool id="136" key="disinfect" name="Paracetoid 7g" types="Drug|Critical" icon="disinfect" action="disinfect">
+		Ein starkes Antibiotikum, das jede Infektion platt macht. Auf dem Beipackzettel steht: "Dieses Medikament kann manchmal unerwünschte und unberechenbare Nebenwirkugen hervorrufen (Akne, Erbrechen, Krämpfe und Herzstillstand)".
+	</tool>
+
+	<tool id="137" key="digger" limit="outer" name="Unkrautbekämpfungsmittel Ness-Quick" types="" icon="digger" power="2" random="2" action="dig">
+		Das auf den Sack geklebte Etikett besagt, dass das Produkt genießbar sei, wenn man es in Milch auflöst. Ein leichter Zweifel befällt dich...
+	</tool>
+
+	<tool id="138" key="chest_food" name="Nahrungsmittelkiste" types="Box|FragileBox" isHeavy="1" icon="chest_food" replacement="can|vegetable|food_bag|tastyMeat|huMeat" action="open" loss_probability="100">
+		Ein unerträglicher Verwesungsgestank kitzelt deine Nase als du die Kiste anfasst. Du bist dir fast sicher, dass sie etwas Essbares enthält. Du hoffst es zumindest.
+	</tool>
+
+	<tool id="139" key="food_bag" name="Doggybag" types="Box|OpenBox" icon="food_bag" replacement="food_bar1|food_bar2|food_bar3|food_biscuit|food_chick|food_pims|food_tarte|food_sandw" action="open">
+		Eine fettverschmierte alte Papiertüte, in der wohl irgendetwas zum Essen drin ist... Sie riecht aber schlecht.
+	</tool>
+
+	<tool id="140" key="food_bar1" name="Tüte mit labbrigen Chips" types="Food" icon="food_bar1" action="eat" lock="day">
+		Die Kartoffelchips sind total weich und schmecken nach trockenem Papier. Du hast aber keine Wahl: Essen ist Essen.
+	</tool>
+
+	<tool id="141" key="food_bar2" name="Verschimmelte Waffeln" types="Food" icon="food_bar2" action="eat" lock="day">
+		Ein leckeres in Alupapier eingepacktes Gebäck. Als Geschmack wird "Vanille-Schoko" angegeben. Wenn du es schüttelst hört es sich an, als ob da auch eine Flüssigkeit drin wäre...
+	</tool>
+
+	<tool id="142" key="food_bar3" name="Trockene Kaugummis" types="Food" icon="food_bar3" action="eat" lock="day">
+		Eine Handvoll staubtrockener Kaugummis. Normalerweise werden sie gekaut und nicht geschluckt, aber du solltest besser nicht rumnörgeln... viel anderes gibt es nicht.
+	</tool>
+
+	<tool id="143" key="food_biscuit" name="Ranzige Butterkekse" types="Food" icon="food_biscuit" action="eat" lock="day">
+		Sie sehen trocken aus. Was würdest du nicht alles geben, um diese Kekse nicht schmecken zu müssen...
+	</tool>
+
+	<tool id="144" key="food_chick" name="Angebissene Hähnchenflügel" types="Food" icon="food_chick" action="eat" lock="day">
+		Zwei Hähnchenflügel, die schon jemand vor dir angebissen hat, bevor er sie weggeworfen hat... Hmmm...
+	</tool>
+
+	<tool id="145" key="food_pims" name="Abgelaufene Pim's Kekse" types="Food" icon="food_pims" action="eat" lock="day">
+		Eine Handvoll Kekse, die mit ... schwer zu sagen, was es ist... gefüllt sind.
+	</tool>
+
+	<tool id="146" key="food_tarte" name="Fades Gebäck" types="Food" icon="food_tarte" action="eat" lock="day">
+		Ein streng riechendes Törtchen... Denk einfach an etwas Leckeres.
+	</tool>
+
+	<tool id="147" key="food_sandw" name="Verschimmelte Stulle" types="Food" icon="food_sandw" action="eat" lock="day">
+		Der Rest eines Schinkenbrötchens. Die grünlich-weiß verschimmelten Schinkenecken lassen sich kurzerhand unter dem Brot verstecken und dann nichts wie runter damit...
+	</tool>
+
+	<tool id="148" key="food_noodles" name="Chinesische Nudeln" types="Food" icon="food_noodles" action="eat" lock="day">
+		Trotz all der Jahre, die sie wahrscheinlich schon in dieser Wüste liegen, haben diese Nudeln ihr Aussehen und ihren Geschmack behalten. Erstaunlich.
+	</tool>
+
+	<tool id="149" key="spices" name="Starke Gewürze" types="" icon="spices" parts="food_noodles|water" replacement="food_noodles_tasty" action="assemble">
+		Ein Säckchen mit starken Gewürzen...
+	</tool>
+
+	<tool id="150" key="food_noodles_tasty" name="Gewürzte chinesische Nudeln" types="Food|Tasty" icon="food_noodles_hot" action="eat" lock="day">
+		Richtig gut gewürzte chinesische Nudeln! Das ist mal 'ne Abwechslung von dem sonstigen verschimmelten Fraß.
+	</tool>
+
+	<tool id="151" key="cards" name="Unvollständiges Kartenspiel" types="Playable" icon="cards" action="drawCard" lock="day">
+		Ein Kartenset mit 54 abgegriffenen Karten, die ein paar Eselsohren haben... Du solltest gleich mal eine Runde zocken, denn oft wirst du hier nicht zum Spielen kommen.
+	</tool>
+
+	<tool id="152" key="gameBox" name="Gesellschaftsspiel" types="Box|OpenBox" icon="game_box" replacement="dice|cards" action="open">
+		Die Schachtel enthält ein Spiel, das du nicht kennst. Wow!
+	</tool>
+
+	<tool id="154" key="vib_empty" name="Vibrator (entladen)" types="" icon="vibr_empty" parts="batt" replacement="vib" action="assemble">
+		Er vibriert und kitzelt dich am ganzen Körper und lässt dich für einen Augenblick all deine Sorgen vergessen (benötigt 1 Batterie).
+	</tool>
+
+	<tool id="155" key="reveil_off" name="Kreischender Wecker (entladen)" types="SoulLocked" icon="reveil_off" replacement="reveil" action="switch">
+		Es gibt morgens doch nichts Schöneres als einen lauten Wecker, der dein Trommelfell schön stimuliert.
+	</tool>
+
+	<tool id="156" key="reveil" name="Kreischender Wecker (mit Strom)" types="SoulLocked" icon="reveil">
+		Es gibt morgens doch nichts schöneres als einen lauten Wecker, der dein Trommelfell schön stimuliert. Funktioniert einwandfrei.
+	</tool>
+
+	<tool id="157" key="bone_meat" name="Knochen mit Fleisch" lock="day" types="Food|Toxic|HumanMeat" power="50" icon="bone_meat" replacement="bone" action="eat" ghoulProba="3">
+		Ein Knochen, an dem noch Fleisch ist... Komisch, er riecht sogar noch frisch. Vielleicht stammt er von einem Tier, das letzte Nacht getötet wurde?
+	</tool>
+
+	<tool id="158" key="bone" name="Angeknackster menschlicher Knochen" types="Weapon|Slasher" limit="outer" icon="bone" power="1" broken="80" action="combatHit">
+		Ein trockener Knochen (wahrscheinlich ein Schienbein), den jemand vor Kurzem abgenagt hat... Den kannst du bestimmt für etwas gebrauchen.
+	</tool>
+
+	<tool id="159" key="wbeam" name="Zusammengeschusterter Holzbalken" isHeavy="1" types="Rsc|Critical|Refinable" icon="wood_beam" replacement="wood">
+		Notdürftig zusammengebundene Holzstücke, die einen relativ stabilen Stützbalken abgeben.
+	</tool>
+
+	<tool id="160" key="mbeam" name="Metallstruktur" isHeavy="1" types="Rsc|Critical|Refinable" icon="metal_beam" replacement="metal">
+		Eine schnell zusammengebaute Metallstruktur, die ein gutes stützendes Bauteil abgibt.
+	</tool>
+
+	<tool id="161" key="metal_bad" name="Metalltrümmer" types="Rsc|Critical|Refinable" icon="metal_bad" replacement="metal">
+		Ein paar verrostete Metallstangen, ein Gitter, ein paar Schrauben...  Nichts, was du sofort benutzen könntest. Du musst es erst in der Stadt ein wenig bearbeiten.
+	</tool>
+
+	<tool id="162" key="wood_bad" name="Verrotteter Baumstumpf" types="Rsc|Critical|Refinable" icon="wood_bad" replacement="wood">
+		Ein großer Baumstumpf, der von schleimigen Pilzen bedeckt ist. Damit kannst du nichts anfangen, es sei denn, du schneidest ihn dir in der Stadt zurecht...
+	</tool>
+
+	<tool id="163" key="tool_saw" name="Metallsäge" types="Opener|Critical" icon="saw_tool">
+		Eine Säge, deren Zacken größtenteils verbogen sind. Du kannst mit ihr aber noch verschiedene Sachen zerteilen. Die Säge verringert die Verarbeitungskosten in der Werkstatt um 1 AP. Dafür musst du sie in deinem Rucksack haben.
+	</tool>
+
+	<tool id="164" key="wood_log" name="Gut erhaltener Holzscheit" isHeavy="1" deco="2" types="Furniture|Critical|Refinable" icon="wood_log" replacement="wood">
+		Ein schöner Holzscheit, den du als Hocker für deine Einrichtung verwenden kannst. Was willst du mehr? Ist doch besser als nichts.
+	</tool>
+
+	<tool id="165" key="electro_box" name="Defektes Elektrogerät" types="Rsc|Refinable" icon="electro_box" replacement="mecaParts|electro|batt|pGun_empty|radius|deto">
+		Ein uraltes Haushaltsgerät, von dem du aber nicht weißt, für welchen Zweck es bestimmt war. Vielleicht erhälst du ein paar nützliche Sachen wenn du es auseinanderbaust?
+	</tool>
+
+	<tool id="166" key="deco_box" name="Möbelpackung" isHeavy="1" types="Refinable" icon="deco_box" replacement="chair|chair_basic|door|trestle|table" loss_probability="100">
+		Ein Möbelstück, das in seine Einzelteile zerlegt ist. Schwer zu sagen, was es ist...
+	</tool>
+
+	<tool id="167" key="tool_saw_part" name="Beschädigte Metallsäge" types="Critical" icon="saw_tool_part" parts="rustine|mecaParts" replacement="tool_saw" action="assemble">
+		Diese Säge könnte nützlich sein, wenn du es schaffst, sie zu reparieren.
+	</tool>
+
+	<tool id="168" key="meca_box" name="Getriebe" types="Rsc|Refinable" icon="mecanism" replacement="mecaParts|mecaParts|metal_bad|metal|metal|tube">
+		Dieses Getriebe war wohl mal Teil einer größeren Maschine oder eines Fahrzeugs... In dieser Form kannst du aber nichts mehr damit anfangen.
+	</tool>
+
+	<tool id="169" key="trestle" name="Holzbock" types="Armor|Furniture" bonus="Verbessert die Verteidigung" isHeavy="1" icon="trestle" deco="1" limit="outer" action="putOutsideDef" loss_probability="100">
+		Ein relativ solider Holzbock, den du zweifelsohne für deine persönliche Verteidigung oder für die Stadtverteidigung gebrauchen kannst.
+	</tool>
+
+	<tool id="170" key="table" name="Järpen-Tisch" types="Armor|Furniture|Critical" bonus="Verbessert die Verteidigung" isHeavy="1" icon="table" deco="3" limit="outer" action="putOutsideDef" loss_probability="100">
+		Der Tisch lässt sich ganz leicht mit Gummizügen und Holzstiften zusammenbauen. In deinem Wohnzimmer wird er ein richtiger Hingucker sein. Und wenn du ihn senkrecht stellst, kann er dir eines Nachts vielleicht sogar das Leben retten.
+	</tool>
+
+	<tool id="171" key="purifier" name="Micropur Brausetablette" types="" icon="water_cleaner" limit="town">
+		Eine desinfizierende Brausetablette, mit der man Wasser reinigen kann. Eigentlich handelt es sich um ein Reinigungstab für Toiletten. Den Geschmack kannst du dir ja ausmalen... (ACHTUNG: Die Ausbeute dieses Produkts ist im Vergleich zum industriellen Reiniger wesentlich geringer.)
+	</tool>
+
+	<tool id="172" key="vegetable_tasty" name="Darmmelone" types="Food|Tasty" icon="vegetable_tasty" action="eat" lock="day">
+		Normalerweise "wächst" die Darmmelone im Grimmdarm von Kadavern, doch es sieht so aus, als ob dein Gemüsebeet dir ein paar hübsche Exemplare beschert hätte. Kann es vielleicht sein, dass dein Gemüsebeet auf einem alten Indianerfriedhof liegt?
+	</tool>
+
+	<tool id="173" key="flash_part" name="Raketenpulver" types="" icon="powder" parts="rustine|emptyGren" replacement="flash" action="assemble">
+		Dieses Feuerwerkraketenpulver könnte als Ablenkung dienen, wenn du es korrekt verwendest...
+	</tool>
+
+	<tool id="174" key="flash" name="Schießpulverbombe" types="Stealthy" icon="flash" limit="outer" power="300" action="flash" loss_probability="100">
+		Diese improvisierte Granate ermöglicht dir, die Zombies in einer Zone abzulenken. Nutze die sich bietende Gelegenheit, um dich zu verdrücken.
+	</tool>
+
+	<tool id="175" key="teddy" name="Teddybär" types="Furniture" icon="teddy" deco="8" lock="day" action="hug">
+		Eine kleines Stoffkuscheltier, das einem Kind vor langer Zeit viel Freude bereitet hat...
+	</tool>
+
+	<tool id="176" key="suit" name="Bürgerkleidung" types="SoulLocked" replacement="suit_dirt" icon="basic_suit">
+		Die Klamotten, die du Tag ein, Tag aus an hast und in denen du auch sterben wirst. Nichtsdestotrotz sind sie relativ bequem und funktionell, du kannst dich also nicht allzu sehr beschweren.
+	</tool>
+
+	<tool id="177" key="suit_dirt" name="Dreckige Bürgerkleidung" types="SoulLocked" icon="basic_suit_dirt" limit="town" replacement="suit" action="switch">
+		Schau dich nur an! Deine Kleidung ist vollkommen verdreckt und blutbesprengt. Du solltest sie reinigen, sobald du daheim bist.
+	</tool>
+
+	<tool id="178" key="wood_plate_part" name="Holzkistendeckel" isHeavy="1" types="" icon="wood_plate_part" parts="wood" replacement="wood_plate" action="assemble">
+		Eine lose Ansammlung von Brettern, die früher wahrscheinlich einen Holzdeckel formten. Du könntest ihn gut für die Verteidigung gebrauchen, allerdings brauchst du etwas, um die Bretter zu fixieren.
+	</tool>
+
+	<tool id="179" key="wood_plate" name="Solide Holzplatte" isHeavy="1" types="Furniture|Armor" bonus="Verbessert die Verteidigung" icon="wood_plate" limit="outer" action="putOutsideDef">
+		Dieser große Kistendeckel könnte dir gute Dienste leisten, um ein Fenster oder eine Tür bei dir daheim zu verriegeln...
+	</tool>
+
+	<tool id="180" key="money" name="Geldbündel" types="Furniture" deco="7" bonus="Gibt eine Hübsche Girlande ab, wenn du sie zusammen aufhängst." icon="money">
+		Ein bedrucktes Bündel Papierscheine und ein paar Kupferstücke. Beides diente früher mal als Währung, doch hier ist es wertlos. Alles, was du nicht essen oder dir ins Blut spritzen kannst, ist uninteressant...
+	</tool>
+
+	<tool id="181" key="repairKitPartRaw" name="Loses Werkzeug" types="Critical" icon="repair_kit_part_raw" parts="mecaParts|rustine|wood" replacement="repairKit" action="assemble">
+		Eine Tasche mit verschiedenen Werkzeugen, denen hier und da ein Griff oder eine Schraube fehlt. Du müsstest es reparieren, wenn du es ernsthaft gebrauchen willst.
+	</tool>
+
+	<tool id="182" key="radiusMk2_part" name="Radius Mark II (entladen)" types="Critical" icon="radius_mk2_part" parts="batt" replacement="radiusMk2" action="assemble">
+		Der Radar-Marker 'Radius Mark II' ist ein fantasievoll zusammengeschraubtes Gerät, das dir ermöglicht, Lebewesen in deiner Umgebung ausfindig zu machen. Es wird behauptet, dass er Krebs verursache und Gehirnzellen irreparable schädige, doch das kann dir egal sein, da du eh nicht lang genug leben wirst... und überhaupt: Um ihn zu benutzen, brauchst du erstmal eine Batterie.
+	</tool>
+
+	<tool id="183" key="radiusMk2" name="Radius Mark II" types="Critical|Stealthy" icon="radius_mk2" replacement="radiusMk2_part" loss_probability="33" action="radius" limit="outer">
+		Der Radar-Marker 'Radius Mark II' ist ein fantasievoll zusammengeschraubtes Gerät, das dir ermöglicht, Lebewesen in deiner Umgebung ausfindig zu machen. Es wird behauptet, dass er Krebs verursache und Gehirnzellen irreparabel schädige, doch das kann dir egal sein, da du eh nicht lang genug leben wirst...
+	</tool>
+
+	<tool id="184" key="repairOne" name="Reparatur Fix" types="Critical" icon="repair_one" action="repair">
+		'Reparatur Fix' ist ein kleines Reparaturkit für den einmaligen Gebrauch, mit dem du fast alles richten kannst. Es enthält das übliche Grundwerkzeug, ein paar Plastikersatzteile und eine Do-it-yourself-Anleitung in sieben Sprachen.
+	</tool>
+
+	<tool id="185" key="engine_part" name="Unvollständiger Motor" isHeavy="1" types="Critical" icon="engine_part" parts="mecaParts|rustine|metal|deto|bone" replacement="engine" action="assemble" loss_probability="100">
+		Es handelt sich um einen kleinen Motor, der mit Ölspuren und undefinierbaren Brennresten verschmutzt ist und der schwer wie Blei ist.
+	</tool>
+
+	<tool id="186" key="machine_1" name="Alte Waschmaschine" isHeavy="1" types="Furniture|Critical|Weapon" deco="2" limit="outer" icon="machine_1" power="1" broken="40" action="combatHit">
+		Diese uralte Waschmaschine ist das Relikt einer Ära, in der die Menschen noch Wert auf Sauberkeit legten. Heute kannst du nur noch darüber lachen...
+	</tool>
+
+	<tool id="187" key="machine_2" name="Krebserregender Ofen" isHeavy="1" types="Furniture|Critical|Weapon" deco="2" limit="outer" icon="machine_2" power="1" broken="43" action="combatHit">
+		Legenden erzählen, dass die Mikrowellentechnologie einer der Gründe für den Untergang der menschlichen Zivilisation waren. Manche behaupten sogar, dass Mikrowellenöfen für das Auftauchen der Untoten verantwortlich seien...
+	</tool>
+
+	<tool id="188" key="machine_3" name="Minibar" isHeavy="1" types="Furniture|Critical|Weapon" deco="2" limit="outer" icon="machine_3" power="1" broken="40" action="combatHit">
+		Leider enthält dieser kleine Kühlschrank keinen Alkohol mehr. Zudem funktioniert er nicht mehr. Allerdings könnte er ein gutes Wurfgeschoss abgeben.
+	</tool>
+
+	<tool id="189" key="letter" name="Ein Brief ohne Adresse" types="BookBox" icon="rp_letter" action="book">
+		Ein blutbefleckter Briefumschlag, auf dem die Empfängeradresse nicht mehr lesbar ist... Der Umschlag ist noch zu.
+	</tool>
+
+	<tool id="190" key="scroll" name="Aufgewelltes Blatt" types="BookBox" icon="rp_scroll" action="book">
+		Ein aufgewelltes, sprödes Blatt Papier. Du hast nicht den blassesten Schimmer, was es sein könnte. Versuche es vorsichtig zu reinigen, vielleicht kannst du ja was entziffern...
+	</tool>
+
+	<tool id="191" key="manual" name="Betriebsanleitung" types="BookBox" icon="rp_manual" action="book">
+		Ein Blätterstapel, der wie eine Reparaturanleitung aussieht. Manche Blätter sind mit Anmerkungen vollgeschrieben...
+	</tool>
+
+	<tool id="192" key="stamp" name="Ein Etikett" types="BookBox" icon="rp_scroll" action="book">
+		Ein Flaschenetikett... Hey, auf der Rückseite ist es sogar beschrieben!
+	</tool>
+
+	<tool id="193" key="notepad" name="Unleserliches Notizbuch" types="BookBox" icon="rp_book2" action="book">
+		Es handelt sich ganz offensichtlich um ein persönliches Notizbüchlein, das einmal einem anderen Einwohner gehörte. Jetzt gehört es dir. Vielleicht steht ja was Interessantes drin?
+	</tool>
+
+	<tool id="194" key="photos" name="Fotoalbum" types="BookBox" icon="rp_book" action="book">
+		Sieht wie ein alter Schuljahresbericht aus. Die Fotos sind stinklangweilig. Beim Durchblättern fällt dir ein dazwischengeschobenes Blatt in die Hände...
+	</tool>
+
+	<tool id="195" key="sheets" name="Blätterstapel" types="BookBox" icon="rp_sheets" action="book">
+		Ein Haufen Papierkram, das aus einer Verwaltung stammt. Nichts Interessantes, wobei manche Blätter Handnotizen erkennen lassen...
+	</tool>
+
+	<tool id="196" key="chain" name="Große rostige Kette" limit="outer" types="Critical|Weapon|Slasher" power="0.5" broken="25" icon="chain" action="combatHit">
+		Diese alte Eisenkette ist total krumm und ist nicht mehr von großem Nutzen... Aber vielleicht kannst du jemanden damit erwürgen?
+	</tool>
+
+	<tool id="197" key="dish" name="Verdächtige Speise" types="Food" icon="dish" action="eat" lock="day">
+		Eine nicht ganz durchgegarte wilde Mischung verschiedenster Zutaten, fein abgeschmeckt mit Wüstensand. Hhhmmm...
+	</tool>
+
+	<tool id="198" key="dish_tasty" name="Leckere Speise" types="Critical|Food|Tasty" icon="dish_tasty" action="eat" lock="day">
+		Auf den ersten Blick sieht es kaum besser aus als das, was du sonst zu dir nimmst. In Wirklichkeit schmeckt es jedoch sehr sehr gut und ist sättigend!
+	</tool>
+
+	<tool id="199" key="home_box_xl" name="Schrankkoffer" isHeavy="1" types="Critical" limit="town" icon="home_box_xl" power="2" action="upgradeChest" loss_probability="100">
+		Dieser Schrankkoffer ist zwar schwer, aber äußerst praktisch, um daheim mal aufzuräumen.
+	</tool>
+
+	<tool id="200" key="home_box" name="Kartons" types="Critical" limit="town" icon="home_box" power="1" action="upgradeChest" loss_probability="100">
+		Ein paar Haushaltsgerätekartons, die stark nach Schimmel riechen. Du kannst sie aber immer noch verwenden - als Möbel zum Beispiel.
+	</tool>
+
+	<tool id="201" key="home_def" name="Nagelbare Barrikade" types="Critical" isHeavy="1" limit="town" icon="home_def" power="1" action="upgradeDef" loss_probability="100">
+		Dieser lustige Blech- und Holzverbund hat wohl einem anderen Einwohner als Schutz gedient. Den Beulen und Blutflecken nach zu urteilen, hat sie wohl nicht ganz gereicht...
+	</tool>
+
+	<tool id="202" key="book_gen_1" name="Ein Briefumschlag" types="" icon="book_gen_letter" replacement="sheets|notepad|stamp|manual|scroll|letter" action="genBook">
+		Ein großer, versiegelter Briefumschlag... Dem Tasten nach zu urteilen enthält er Papier oder doch etwas anderes?
+	</tool>
+
+	<tool id="203" key="book_gen_2" name="Ein Paket" types="" icon="book_gen_box" replacement="book|photos|notepad|sheets" action="genBook">
+		Die Adresse ist nicht mehr lesbar. Beim Schütteln hörst du ein raschelndes Geräusch...
+	</tool>
+
+	<tool id="204" key="fence" name="Maschendrahtzaunstück" types="Critical" icon="fence">
+		Ein kleines, verrostetes Stück Maschendrahtzaun.
+	</tool>
+
+	<tool id="153" key="watGun3k_part" name="Aqua-Splash (zerlegt)" types="Critical" parts="rustine|tube|emptyGren|deto" replacement="watGun3k_empty" icon="watergun_opt_part" action="assemble">
+		Eine furchterregende Waffe, der nur ein paar Teile fehlen...
+	</tool>
+
+	<tool id="8" key="watGun3k_empty" name="Aqua-Splash (leer)" types="EmptyWeapon|Critical" parts="water" replacement="watGun3k_5" icon="watergun_opt_empty" action="assemble">
+		Eine furchterregende Waffe, die nur noch etwas reines Wasser benötigt.
+	</tool>
+
+	<tool id="208" key="watGun3k_5" name="Aqua-Splash (5 Ladungen)" limit="outer" types="Weapon|Critical" power="1" replacement="watGun3k_4" icon="watergun_opt_5" action="waterGun">
+		Die Aqua-Splash-Kanone ist die Lieblingswaffe aller Wüstenwanderer! Nicht geeignet für Kinder unter 8 Jahren.
+	</tool>
+
+	<tool id="209" key="watGun3k_4" name="Aqua-Splash (4 Ladungen)" limit="outer" types="Weapon|Critical" power="1" replacement="watGun3k_3" icon="watergun_opt_4" action="waterGun">
+		Die Aqua-Splash-Kanone ist die Lieblingswaffe aller Wüstenwanderer! Nicht geeignet für Kinder unter 8 Jahren.
+	</tool>
+
+	<tool id="112" key="watGun3k_3" name="Aqua-Splash (3 Ladungen)" limit="outer" types="Weapon|Critical" power="1" replacement="watGun3k_2" icon="watergun_opt_3" action="waterGun">
+		Die Aqua-Splash-Kanone ist die Lieblingswaffe aller Wüstenwanderer! Nicht geeignet für Kinder unter 8 Jahren.
+	</tool>
+
+	<tool id="113" key="watGun3k_2" name="Aqua-Splash (2 Ladungen)" limit="outer" types="Weapon|Critical" power="1" replacement="watGun3k_1" icon="watergun_opt_2" action="waterGun">
+		Die Aqua-Splash-Kanone ist die Lieblingswaffe aller Wüstenwanderer! Nicht geeignet für Kinder unter 8 Jahren.
+	</tool>
+
+	<tool id="114" key="watGun3k_1" name="Aqua-Splash (1 Ladung)" limit="outer" types="Weapon|Critical" power="1" replacement="watGun3k_empty" icon="watergun_opt_1" action="waterGun">
+		Die Aqua-Splash-Kanone ist die Lieblingswaffe aller Wüstenwanderer! Nicht geeignet für Kinder unter 8 Jahren.
+	</tool>
+
+	<tool id="75" key="watGun" name="Wasserpistole (3 Ladungen)" limit="outer" types="Weapon" power="1" icon="watergun_3" replacement="watGun_2" action="waterGun">
+		Die Wasserpistole erinnert dich irgendwie an Räuber und Gendarmen... Nur mit sauberem Wasser benutzen (zum Beispiel aus einer Trinkflasche).
+	</tool>
+
+	<tool id="205" key="watGun_3" name="Wasserpistole (3 Ladungen)" limit="outer" types="Weapon" power="1" icon="watergun_3" replacement="watGun_2" action="waterGun">
+		Die Wasserpistole erinnert dich irgendwie an Räuber und Gendarmen... Nur mit sauberem Wasser benutzen (zum Beispiel aus einer Trinkflasche).
+	</tool>
+
+	<tool id="206" key="watGun_2" name="Wasserpistole (2 Ladungen)" limit="outer" types="Weapon" power="1" icon="watergun_2" replacement="watGun_1" action="waterGun">
+		Die Wasserpistole erinnert dich irgendwie an Räuber und Gendarmen... Nur mit sauberem Wasser benutzen (zum Beispiel aus einer Trinkflasche).
+	</tool>
+
+	<tool id="207" key="watGun_1" name="Wasserpistole (1 Ladung)" limit="outer" types="Weapon" power="1" icon="watergun_1" replacement="watGun_empty" action="waterGun">
+		Die Wasserpistole erinnert dich irgendwie an Räuber und Gendarmen... Nur mit sauberem Wasser benutzen (zum Beispiel aus einer Trinkflasche).
+	</tool>
+
+	<tool id="111" key="watGun_empty" name="Wasserpistole (leer)" types="EmptyWeapon" parts="water" replacement="watGun_3" icon="watergun_empty" action="assemble">
+		Eine Wasserpistole ist gegen Zombies äußerst wirksam! Es sei denn sie ist leer, wie diese hier...
+	</tool>
+
+	<tool id="210" key="cigs" name="Angefangene Zigarettenschachtel" types="Critical" parts="matches" icon="cigs" action="smoke" lock="day">
+		Eine gammelige alte Zigarettenschachtel, die nach Aas riecht. Du kannst dich richtig glücklich schätzen, sowas findet man heutzutage nur noch sehr selten. Auf der Packung ist ein Warnhinweis: "Rauchen ist tödlich".
+	</tool>
+
+	<tool id="211" key="pilegun_upkit" name="Druckregler PDTT Mark II" types="Critical" parts="pGun_empty|mecaParts|rustine|electro" replacement="pilegun_up_empty" icon="pilegun_upkit" action="assemble">
+		Mit diesem veralteten Druckregler kannst du den Druck in der Schusskammer des Batteriewerfer 1-PDTG regeln.
+	</tool>
+
+	<tool id="212" key="pilegun_up_empty" name="Batteriewerfer Mark II (leer)" types="EmptyWeapon|Critical" parts="batt" replacement="pilegun_up" icon="pilegun_up_empty" action="assemble">
+		Bei dieser verbesserten Version des normalen Batteriewerfers 1-PDTG ist der PDTT Mark II-Druckregler schon eingebaut. Durch Feinjustierung der Schusskraft ist es manchmal sogar möglich die verschossene Batterie wieder einzusammeln.
+	</tool>
+
+	<tool id="213" key="pilegun_up" name="Batteriewerfer Mark II (geladen)" types="Critical|Weapon" parts="batt" replacement="pilegun_up_empty" power="1" loss_probability="20" icon="pilegun_up" action="batGunUp" limit="outer">
+		Bei dieser verbesserten Version des normalen Batteriewerfers 1-PDTG ist der PDTT Mark II-Druckregler schon eingebaut. Durch Feinjustierung der Schusskraft ist es manchmal sogar möglich die verschossene Batterie wieder einzusammeln.
+	</tool>
+
+	<tool id="214" key="batt_broken" name="Zerquetschte Batterie" types="" icon="pile_broken">
+		Das war mal eine Batterie. Jetzt ist es nur noch ein komplett zerdrücktes Stück Metall...
+	</tool>
+
+	<tool id="215" key="rsc_pack_3" name="Kiste mit Materialien" isHeavy="1" types="Box|Critical" icon="rsc_pack_3" parts="rsc_pack_2" replacement="wood|metal" action="openMulti">
+		Diese große Kiste ist in Zellophan eingeschweißt und mit bedruckten Etiketten nur so zugepflastert. Sie enthält wahrscheinlich Baumaterialien.
+	</tool>
+
+	<tool id="216" key="rsc_pack_2" name="Kiste mit Materialien" isHeavy="1" types="Box|Critical" icon="rsc_pack_2" parts="rsc_pack_1" replacement="wood|metal" action="openMulti">
+		Diese große Kiste ist in Zellophan eingeschweißt und mit bedruckten Etiketten nur so zugepflastert. Sie enthält wahrscheinlich Baumaterialien.
+	</tool>
+
+	<tool id="217" key="rsc_pack_1" name="Kiste mit Materialien" isHeavy="1" types="Box|Critical" icon="rsc_pack_1" replacement="wood|metal" action="openMulti">
+		Diese große Kiste ist in Zellophan eingeschweißt und mit bedruckten Etiketten nur so zugepflastert. Sie enthält wahrscheinlich Baumaterialien.
+	</tool>
+
+	<tool id="218" key="car_door" name="Autotür" isHeavy="1" types="Critical|Furniture|Armor|Control" bonus="Verbessert die Verteidigung" power="1" icon="car_door" loss_probability="30">
+		Diese Autotür kann dir als Schutzschild dienen, wenn du eine Reihe hungriger Zombies durchqueren musst. Die haben nämlich nur eines im Sinn: Dein köstliches Gehirn zu verschlingen.
+	</tool>
+
+	<tool id="219" key="car_door_part" name="Beschädigte Autotür" isHeavy="1" types="Critical" parts="metal|rustine|mecaParts" replacement="car_door" icon="car_door_part" action="assemble" loss_probability="30">
+		Eine Autotür, bei der ein entscheidendes Teil fehlt: Der Türgriff. Schlecht...
+	</tool>
+
+	<tool id="220" key="poison" name="Giftfläschchen" types="" parts="water|oCan|steroid|fruit|vegetable" replacement="_poisoned" icon="poison" action="assembleOne">
+		Diese winzige, kleine Dosis Gift reicht aus, um jeden deiner Mitbürger umzubringen. Wenn du das Gift mit einer Essensration oder einer Droge vermischst, oder wenn du es in eine Trinkflasche kippst...nun ja...
+	</tool>
+
+	<tool id="221" key="poison_part" name="Ätzmittel" types="" parts="pharma|batt" replacement="poison" icon="poison_part" action="assemble">
+		Mit den richtigen Zutaten kannst du dir ein schönes Gift mischen. Musst du denn unbedingt jemanden umbringen? Das willst du doch nicht wirklich... oder doch?
+	</tool>
+
+	<tool id="222" key="water_poisoned" name="Ration Wasser" types="Beverage|Fake" replacement="water" icon="water" action="poison">
+		Das Wasser gibt dir einmal pro Tag deine Aktionspunkte zurück oder löscht alternativ deinen Durst (unbegrenzt).
+	</tool>
+
+	<tool id="223" key="steroid_poisoned" name="Anaboles Steroid" types="Drug|Critical|Fake" replacement="steroid" icon="drug" action="poison">
+		Mit dieser Droge siehst du alles in Rosa: Du spürst keine Müdigkeit mehr und strotzt nur so vor Kraft! Das bisschen Herzrasen und der verstärkt auftretende Speichelfluss - geschenkt! Vorsicht: Bei übermäßiger Einnahme droht eine Abhängigkeit!
+	</tool>
+
+	<tool id="224" key="oCan_poisoned" name="Offene Konservendose" types="Food|Fake" replacement="oCan" icon="can_open" lock="day" action="poison">
+		Jetzt mach mal kein Gezeter, schließ deine Augen, mach deinen Mund ganz weit auf und runter damit! Du wirst sehen, dass es dir danach besser geht.
+	</tool>
+
+	<tool id="225" key="chest_hero" name="Vorräte eines umsichtigen Bürgers" types="Box|OpenBox" isHeavy="1" replacement="watGun_empty|pGun_empty|flash|repairOne|smoke_bomb" icon="chest_hero" action="open">
+		Sobald du in dieser Welt ein wenig Erfahrung gesammelt hast, weißt du, dass es wichtig ist, ein paar Gegenstände für sich zu behalten. Denn eines Tages können sie dir das Leben retten.
+	</tool>
+
+	<tool id="226" key="postal_box_xl" name="Großes Postpaket" types="Box|OpenBox" isHeavy="1" replacement="rsc_pack_2|old_machine_gun|teddy|rhum|vib_empty|electro_box|chest_hero" icon="postal_box_xl" action="open">
+		Die Adresse ist nicht mehr lesbar. Beim Schütteln hörst du ein lautes Geräusch... Das ist ja besser als Weihnachten!
+	</tool>
+
+	<tool id="227" key="postal_box" name="Postpaket" types="Box|OpenBox" replacement="photos|sheets|money|book" icon="postal_box" action="open">
+		Die Adresse ist nicht mehr lesbar. Es scheint etwas drin zu sein... Das ist ja besser als Weihnachten!
+	</tool>
+
+	<tool id="228" key="chest_armag" name="Reisekoffer eines Bürgers" types="ToDo|Box|OpenBox" isHeavy="1" replacement="batt|radio_off|pharma|wood" icon="chest_armag" action="open" loss_probability="100">
+		Wie viele andere hast auch du auf "Die Verdammten" das Armageddon erlebt... Aus diesem Grund hast du diesen Überseekoffer gepackt. Denn man nie genug vorbereitet sein.
+	</tool>
+
+	<tool id="229" key="food_armag" name="Lunch-Box" types="Box|OpenBox" replacement="tastyMeat|vegetable_tasty|food_noodles_tasty|food_candies" icon="food_armag" action="open">
+		Da du hier kein richtiges Dinner mit Freunden erleben kannst, hast du dir eine paar leckere Happen beiseite gelegt und in dieser Lunch-Box aufbewahrt. Ab und zu muss man sich mal was gönnen...
+	</tool>
+
+	<tool id="230" key="food_candies" name="Eine Handvoll Bonbons" types="Food|Tasty" icon="food_candies" action="eat" lock="day">
+		Beim Anblick dieser Bonbons kommen dir die Tränen...
+	</tool>
+
+	<tool id="231" key="out_def" name="Sperrholzstück" types="" icon="out_def" action="putOutsideDef" limit="outer">
+		Dieses alte Sperrholzstück stammt aus irgend einem alten Gebäude. Mit ein wenig Einfallsreichtum könntest du es für eine neue Konstruktion wiederverwenden.
+	</tool>
+
+	<tool id="232" key="out_def_broken" name="Unbrauchbares Sperrholz" types="Refinable" icon="out_def_broken" replacement="wood">
+		Ein blutverschmiertes Stück Holz, das wahrscheinlich mal Teil einer großen Sperrholzplatte war. Die Feuchtigkeit hat es stark aufgewellt.
+	</tool>
+
+	<tool id="233" key="torch" name="Fackel" bonus="Verbessert die Verteidigung" types="Weapon|Armor|Furniture|Lamp" limit="outer" power="1" broken="100" replacement="torch_off" icon="torch" action="combatHit">
+		Die brennt bestimmt noch ein paar Stunden... Selbst damit kannst du dir die Zombies vom Leib halten.
+	</tool>
+
+	<tool id="234" key="torch_off" name="Verbrauchte Fackel" types="Weapon" power="0.1" broken="75" icon="torch_off" action="combatHit" limit="outer">
+		Mit diesem alten verbranntem Stück Holz kannst du wahrscheinlich nicht mehr viel anfangen...
+	</tool>
+
+	<tool id="235" key="chama" name="Getrocknete Marshmallows" types="Food" icon="chama" parts="torch" replacement="chama_tasty" action="switch" >
+		Eine Handvoll steinharte Marshmallows, die nach Rattengift riechen. So wie sie jetzt sind, kannst du sie nicht essen...
+	</tool>
+
+	<tool id="236" key="chama_tasty" name="Geröstete Marshmallows" types="Food|Tasty" icon="chama_tasty" action="eat" lock="day">
+		Eine Handvoll steinharter Marshmallows, die nach Rattengift riechen. Jetzt, da sie komplett geröstet sind, kannst du sie essen, und wenn du es dir genau überlegst, sind sie sogar richtig lecker...
+	</tool>
+
+	<tool id="237" key="chest_christmas_3" name="Überraschungskiste" isHeavy="1" types="Box|OpenBox" icon="chest_christmas_3" parts="chest_christmas_2" replacement="useless_drink" action="openMulti">
+		Sieht so aus als hätte dein Nachbar dir ein Geschenk gemacht! Dein Name steht drauf! Was mag die wohl enthalten?
+	</tool>
+
+	<tool id="238" key="chest_christmas_2" name="Überraschungskiste" isHeavy="1" types="Box|OpenBox" icon="chest_christmas_2" parts="chest_christmas_1" replacement="pocketBelt" action="openMulti">
+		Sieht so aus als hätte dein Nachbar dir ein Geschenk gemacht! Dein Name steht drauf! Was mag die wohl enthalten?
+	</tool>
+
+	<tool id="239" key="chest_christmas_1" name="Überraschungskiste" isHeavy="1" types="Box|OpenBox" icon="chest_christmas_1" replacement="letter" action="openMulti">
+		Sieht so aus als hätte dein Nachbar dir ein Geschenk gemacht! Dein Name steht drauf! Was mag die wohl enthalten?
+	</tool>
+
+	<tool id="240" key="christmas_story" name="Ein Stück Papier" types="Book" icon="rp_scroll" action="getChristmasStory">
+		"Weihnachtsmärchen"... klingt vielversprechend... hoffenlich mal was Heiteres.
+	</tool>
+
+	<tool id="241" key="christmas_candy" name="Lebkuchen" types="Food" icon="christmas_candy" action="eatChristmasCandy">
+		Ein knochenhartes rundes Plätzchen, das von seiner Größe her an Lebkuchen erinnnert. Normalerweise schmecken Lebkuchen nach Zimt und Nelken, dieser aber versprüht eine streng muffige Note... Du freust dich trotzdem.
+	</tool>
+
+	<tool id="242" key="pc" name="PC-Gehäuse" limit="outer" types="Weapon|Slasher|Furniture" deco="3" isHeavy="1" power="1" broken="50" icon="pc" action="combatHit">
+		Diese alte Blechkiste war mal mit verschiedenen elektronischen Bauteilen gefüllt (CPU, Hauptplatine, Hardwareschnittstellen etc...). Was willst du jetzt damit noch anfangen?
+	</tool>
+
+	<tool id="243" key="safe" name="Safe" types="Box" isHeavy="1" icon="safe" broken="4" replacement="book_gen_1|lawnPart|mixerPart|sawPart|cutcut|pocketBelt|watGun3k_part|big_pgun_part|pilegun_upkit|mecaParts" action="openSafe">
+		Toll... und wie findest du jetzt raus, was da drin ist? Ohne die Geheimkombination dürfte das etwas schwierig werden.
+	</tool>
+
+	<tool id="244" key="rp_twin" name="Eine Enzyklopädie" types="BookBox" icon="rp_twin" action="book">
+		Dieser große staubige Schinken gehört zu einer Lexikonausgabe mit dem Titel "Twinpedia". Die Seiten sind mit Anmerkungen unterschiedlichster Handschriften vollgeschrieben. Es scheint, als ob mehrere Personen daran und darin gearbeitet hätten.
+	</tool>
+
+	<tool id="245" key="water_can_empty" name="Wasserspender (leer)" types="Critical" icon="water_can_empty" isHeavy="1" parts="water" replacement="water_can_1" action="assemble">
+		Ein typischer Wasserspender, wie man ihn in jedem Großraumbüro antreffen kann. Wie durch ein Wunder ist er dir in die Hände gefallen. So ein Ding könnte hier gut nützlich sein... GEBRAUCH: Wenn du eine Ration Wasser bei dir hast wird diese in den Wasserspender geschüttet. Sollte dies nicht der Fall sein, trinkst du den Inhalt des Wasserspenders aus.
+	</tool>
+
+	<tool id="246" key="water_can_1" name="Wasserspender (1 Ration)" types="Beverage|Critical" icon="water_can_1" isHeavy="1" parts="water" replacement="water_can_empty|water_can_2" action="useWaterCan">
+		Ein typischer Wasserspender, wie man ihn in jedem Großraumbüro antreffen kann. Wie durch ein Wunder ist er dir in die Hände gefallen. So ein Ding könnte hier gut nützlich sein... GEBRAUCH: Wenn du eine Ration Wasser bei dir hast wird diese in den Wasserspender geschüttet. Sollte dies nicht der Fall sein, trinkst du den Inhalt des Wasserspenders aus.
+	</tool>
+
+	<tool id="247" key="water_can_2" name="Wasserspender (2 Rationen)" types="Beverage|Critical" icon="water_can_2" isHeavy="1" parts="water" replacement="water_can_1|water_can_3" action="useWaterCan">
+		Ein typischer Wasserspender, wie man ihn in jedem Großraumbüro antreffen kann. Wie durch ein Wunder ist er dir in die Hände gefallen. So ein Ding könnte hier gut nützlich sein... GEBRAUCH: Wenn du eine Ration Wasser bei dir hast wird diese in den Wasserspender geschüttet. Sollte dies nicht der Fall sein, trinkst du den Inhalt des Wasserspenders aus.
+	</tool>
+
+	<tool id="248" key="water_can_3" name="Wasserspender (3 Rationen)" types="Beverage|Critical" icon="water_can_3" isHeavy="1" replacement="water_can_2" action="drink">
+		Ein typischer Wasserspender, wie man ihn in jedem Großraumbüro antreffen kann. Wie durch ein Wunder ist er dir in die Hände gefallen. So ein Ding könnte hier gut nützlich sein... GEBRAUCH: Wenn du eine Ration Wasser bei dir hast wird diese in den Wasserspender geschüttet. Sollte dies nicht der Fall sein, trinkst du den Inhalt des Wasserspenders aus.
+	</tool>
+
+	<tool id="249" key="beta_drug" name="Betapropin-Tablette 5mg" types="SoulLocked" icon="beta_drug" action="beta">
+		Die Wirkung dieser Tablette ist höchst zweifelhaft... Auf der Schachtel steht: "Für BETA-Tester unter 18 Jahren nicht geeignet".
+	</tool>
+
+	<tool id="250" key="beta_drug_bad" name="Abgelaufene Betapropin-Tablette 5mg" types="Drug" icon="beta_drug_bad" action="randomDrug">
+		Die Wirkung dieser Tablette ist höchst zweifelhaft... Auf der Schachtel steht: "Für BETA-Tester unter 18 Jahren nicht geeignet". Seltsam...
+	</tool>
+
+	<tool id="251" key="hunter_book" name="Tick, Trick und Tracks Schlaues Buch" types="SoulLocked|ToDo|JobTool" icon="rp_book2" limit="outer" lock="" action="hunt">
+		TODO
+	</tool>
+
+	<tool id="252" key="fruit_sub_part" name="Aasbeeren" types="BannedTool|Stealthy" replacement="fruit_part" icon="fruit_sub_part" action="assembleIdenticals">
+		"Aasbeeren" sind Beeren, die auf verwesenden Leichen wachsen. Man findet sie oft auf Zombies, aber erst recht auf Tierkadavern... Willst du sie wirklich essen?
+	</tool>
+
+	<tool id="253" key="fruit_part" name="Schleimige Kugel" types="BannedTool|Stealthy" parts="fruit_sub_part" replacement="fruit" icon="fruit_part" action="assemble">
+		Eine glitschige Kugel aus zusammengeklebten "Aasbeeren". "Aasbeeren" wachsen hauptsächlich auf Kadavern.
+	</tool>
+
+	<tool id="254" key="rope" name="Altes Seilstück" types="" icon="rope" parts="metal" replacement="zombie_trap" action="assemble">
+		Wie lautet doch gleich das Sprichwort? "Die Hoffnung ist ein langes Seil, an dem sich viele zu Tode ziehen...."
+	</tool>
+
+	<tool id="255" key="zombie_trap" name="Zombiefalle" types="" icon="zombie_trap" parts="bone_meat" replacement="zombie_trap_xl" action="assemble">
+		Du wärst beim besten Willen nicht darauf gekommen, dass das eine Zombiefalle sein soll. Platziere sie an einer guten Stelle, dann kannst du heute Abend fette Beute machen. Mit einem geeigneten Köder kannst du sie wahrscheinlich noch verbessern.
+	</tool>
+
+	<tool id="256" key="zombie_trap_xl" name="Verbesserte Zombiefalle" types="" icon="zombie_trap_xl">
+		Wo auch immer du diese Falle ablegst: Sie wird ein ein richtiges Gemetzel veursachen...
+	</tool>
+
+	<tool id="257" key="flesh_part" name="Fleischfetzen" types="BannedTool|Stealthy" replacement="flesh" icon="flesh_part" action="assembleIdenticals">
+		Ein altes Hautstück oder irgend etwas anderes, das mal zu einem Lebewesen gehörte. Was willst du damit anstellen?
+	</tool>
+
+	<tool id="258" key="flesh" name="Makabre Bombe" types="BannedTool|Stealthy" icon="flesh" power="40" limit="outer" action="flash">
+		Das Tolle an dieser unförmigen Fleischkugel ist, dass sie auf zehn Meter nach Aas stinkt. Damit kannst du die Zombies 'ne Zeit lang beschäftigen.
+	</tool>
+
+	<tool id="259" key="pharma_part" name="Dickflüssige Substanz" types="BannedTool|Stealthy" replacement="pharma|pharma|steroid|waterDrug|rand_drug|purifier" icon="pharma_part" action="assembleIdenticals">
+		Dieses kleine Fläschen enthält eine fluoriszierende Flüssigkeit. Erstaunlich! Vielleicht kannst du ja was Nützliches brauen, wenn du die Substanz mit etwas anderem mischst?
+	</tool>
+
+	<tool id="260" key="fruit" name="Aasbeerenbrei" types="BannedTool|Food" icon="fruit" lock="day" action="eat" ghoulProba="4" >
+		Dieser Brei stinkt wie die Pest, da die dafür verarbeiteten Beeren für gewöhnlich auf Kadavern wachsen. Wenn du vor einer akuten Infektion keine Angst hast, könntest du ihn ja mal vorsichtig probieren. Vielleicht macht er ja satt?
+	</tool>
+
+	<tool id="261" key="fruit_poisoned" name="Aasbeerenbrei" types="BannedTool|Food|Fake" icon="fruit" lock="day" replacement="fruit" action="poison">
+		Dieser Brei stinkt wie die Pest, da die dafür verarbeiteten Beeren für gewöhnlich auf Kadavern wachsen. Wenn du vor einer akuten Infektion keine Angst hast, könntest du ihn ja mal vorsichtig probieren. Vielleicht macht er ja satt?
+	</tool>
+
+	<tool id="262" key="vegetable_poisoned" name="Verdächtiges Gemüse" types="Food|Fake" replacement="vegetable" lock="day" icon="vegetable" action="poison">
+		Sieht wie Gemüse aus... allerdings wunderst du dich, wie es so krumm wachsen konnte. Wichtig ist, dass du es essen kannst - oder besser nicht?
+	</tool>
+
+	<tool id="263" key="water_cup_part" name="Eisengefäß mit modrigem wasser" types="" power="1" icon="water_cup_part" replacement="water_cup" action="purifyWater">
+		Dieser total verformte Eisenbehälter hat eine kleine Menge Wasser aufgefangen. Das Problem ist, dass du es nicht trinken kannst, da es schmutzig ist.
+	</tool>
+
+	<tool id="264" key="water_cup" name="Gereinigtes modriges Wasser" types="Beverage" icon="water_cup" action="drink">
+		Dieser total verformte Eisenbehälter enthält eine kleine Menge gereinigtes Wasser. Es ist nicht viel, aber besser als nichts.
+	</tool>
+
+	<tool id="265" key="banned_note" name="Notizzettel eines Verbannten" types="Stealthy" icon="banned_note" action="readBannedNote">
+		Dieser Notizzettel gehörte einem *Verbannten*. Mal sehen was er geschrieben hat...
+	</tool>
+
+	<tool id="266" key="acid_part" name="Stark ätzende Flüssigkeit" types="ObjectiveTool" icon="acid_part" parts="water|pharma|tastyDrug|batt" replacement="acid" action="assemble">
+		Diese Flüssigkeit könnte einige Schäden anrichten, wenn man sie mit den richtigen Zutaten mischt...
+	</tool>
+
+	<tool id="267" key="acid" name="Starke Säure" types="ObjectiveTool" icon="acid" action="acid">
+		Mit dieser Säure kann man fast alles auflösen.
+	</tool>
+
+	<tool id="268" key="destroyed_rsc" name="Versengtes Fleischstück" types="" icon="destroyed_rsc">
+		Was immer das für ein Körperteil gewesen sein mag, es wurde buchstäblich lebendig verbrannt, aber nicht durch Flammen... es scheint eher eine stark ätzende Säure gewesen zu sein....
+	</tool>
+
+	<tool id="269" key="objective" name="Mysteriöses Schriftstück" types="" icon="objective" action="objective">
+		Diese Nachricht scheint für dich bestimmt zu sein... Du fragst dich, wer und vor allem was jemand von dir wohl wollen wird.
+	</tool>
+
+	<tool id="270" key="infect_poison_part" name="Blutdurchtränkter Verband" types="ObjectiveTool" icon="infect_poison_part" parts="water|steroid|pharma|waterDrug" replacement="infect_poison" action="assemble">
+		Dieser blutdurchtränkte Verband wurde vormals von einem infizierten Bürger getragen...
+	</tool>
+
+	<tool id="271" key="infect_poison" name="Toxin" types="ObjectiveTool" parts="water|oCan|steroid|fruit|vegetable" replacement="_infected" icon="infect_poison" action="assembleOne">
+		Dieses Fläschchen enthält verseuchtes Blut und einige andere Substanzen. Wenn du etwas Essbares findest, kannst du es draufträufeln.
+	</tool>
+
+	<tool id="272" key="water_infected" name="Ration Wasser" types="Beverage|Fake" replacement="water" icon="water" action="infect">
+		Das Wasser gibt dir einmal pro Tag deine Aktionspunkte zurück oder löscht alternativ deinen Durst (unbegrenzt).
+	</tool>
+
+	<tool id="273" key="steroid_infected" name="Anaboles Steroid" types="Drug|Critical|Fake"replacement="steroid" icon="drug" action="infect">
+		Mit dieser Droge siehst du alles rosa: Du spürst keine Müdigkeit mehr und strotzt nur so vor Kraft! Das bisschen Herzrasen und der verstärkt auftretende Speichelfluss - geschenkt! Vorsicht: Bei übermäßiger Einnahme droht eine Abhängigkeit!
+	</tool>
+
+	<tool id="274" key="oCan_infected" name="Offene Konservendose" types="Food|Fake" replacement="oCan" icon="can_open" action="infect">
+		Jetzt mach mal kein Gezeter, schließ deine Augen, mach deinen Mund ganz weit auf und runter damit! Du wirst sehen, dass es dir danach besser geht.
+	</tool>
+
+	<tool id="275" key="fruit_infected" name="Aasbeerenbrei" types="BannedTool|Food|Fake" icon="fruit" replacement="fruit" action="infect">
+		Dieser Brei stinkt wie die Pest, da die dafür verarbeiteten Beeren für gewöhnlich auf Kadavern wachsen. Wenn du vor einer akuten Infektion keine Angst hast, könntest du ihn ja mal vorsichtig probieren. Vielleicht macht er ja satt?
+	</tool>
+
+	<tool id="276" key="vegetable_infected" name="Verdächtiges Gemüse" types="Food|Fake" replacement="vegetable" icon="vegetable" action="infect">
+		Sieht wie Gemüse aus... allerdings wunderst du dich, wie es so krumm wachsen konnte. Wichtig ist, dass du es essen kannst - oder besser nicht?
+	</tool>
+
+	<tool id="277" key="teddy_bad" name="Verfluchter Teddybär" types="Furniture" icon="teddy" deco="1" action="terror">
+		Eine kleines Stoffkuscheltier, das einem Kind vor langer Zeit viel Freude bereitet hat... vielleicht auch nicht, wer weiß das schon so genau.
+	</tool>
+
+	<tool id="278" key="april_drug" name="Schwarzes Exsudationssekret" types="Drug|Tasty" icon="april_drug" action="useDrug">
+		Das Etikett weist es als "EXTREM virulentes Gift" aus. Die Einnahme des Exsudationssekrets kann einen vorzeitigen Tod, eine Lungenexplosion mit anschließendem Gehirnaustritt aus alle Körperöffnungen sowie Hautverbrennungen dritten Grades verursachen. Die Reihenfolge kann dabei variieren.
+	</tool>
+
+	<tool id="279" key="hunter_tool" name="Survivalbuch" types="SoulLocked|JobTool" icon="surv_book" limit="outer" lock="day" action="huntRegen">
+		Auch wenn der Titel anderes vermuten lässt: "Tick, Trick und Tracks schlaues Buch" ist von unschätzbarem Wert. Es enthält zahlreiche Tipps und Tricks, wie man in der Natur überleben und Nahrung finden kann.
+	</tool>
+	
+	<tool id="280" key="tamed_pet" name="Dreibeiniger Malteser" types="SoulLocked|JobTool" icon="tamed_pet" limit="outer" action="tamedPet" replacement="tamed_pet_off">
+		Der kleine kläffende Malteser stinkt nach nassem Fell, humpelt und sabbert ohne Ende. Einmal pro Tag kannst du ihn mit deinem Rucksackinhalt in die Stadt schicken. Dabei spielt es keine Rolle, wo du dich gerade befindest... Dein treuer Begleiter schlägt sich immer durch.
+	</tool>
+
+	<!-- todo -->
+	<tool id="281" key="woodMeat" name="Sägemehlsteak" types="Tasty|Food" icon="woodsteak" action="eat" lock="day">
+		Man nehme eine Scheibe Fleisch, paniere das Ganze in Sägemehl und streue abschließend einige Holzstücke darüber... Voila! Im Holz scheinen auch einige Holzwürmer gewesen zu sein, denn das Ding hört nicht auf, sich zu bewegen.
+	</tool>
+
+	<tool id="282" key="cm_suit_1" name="Abgetragene rote Jacke" types="Critical" icon="christmas_suit_1" parts="cm_suit_2|cm_suit_3" replacement="cm_suit" action="assemble">
+		Diese Jacke ist viel zu groß für dich und gehörte einst einem übergewichtigen Weihnachtsmann. So hässlich wie sie aussieht, stammt sie wahrscheinlich aus dem Woolworth Resteverkauf. Der rote Filz ist ganz aufgescheuert und das weiße Schafwollimitat an den Ärmeln und am Kragen eher grau...
+	</tool>
+
+	<tool id="283" key="cm_suit_2" name="Zerrissene rote Hose" types="Critical" icon="christmas_suit_2" parts="cm_suit_1|cm_suit_3" replacement="cm_suit" action="assemble">
+		Diese alte rote Hose stinkt nach Urin und ist mit unbeschreiblichen Flecken übersät. Eigentlich gehört sie gleich verbrannt... Hmm, andererseits: Wer weiß, wozu du die noch gebrauchen kannst?
+	</tool>
+
+	<tool id="284" key="cm_suit_3" name="Schweißtriefende rote Mütze" types="Critical" icon="christmas_suit_3" parts="cm_suit_1|cm_suit_2" replacement="cm_suit" action="assemble">
+		Diese rote Mütze stinkt übel nach abgestandenem Schweiß. Im Inneren der Mütze kleben weiße Partikel, die wie alte Hautschuppen aussehen. Beim Anziehen verspürst du ein leichtes Jucken...
+	</tool>
+
+	<tool id="285" key="cm_suit" name="Übelriechender Anzug aus einer anderen Zeit" types="Critical" icon="christmas_suit_full">
+		Dieser Anzug passt dir wie angegossen (böse Zungen sagen, dass er deinen penetranten Körpergeruch mehr oder weniger effektiv überdecken würde). Urplötzlich verspürst du eine unglaubliche Lust, deinen Nachbarn ein paar Geschenke vorbeizubringen. Du siehst dich klammheimlich in sein Haus schleichen, um ihm 'nen Kater oder vielleicht eine vollgeladene Wasserpistole dazulassen. Hmm... Du könntest allerdings auch schamlos seine Bude plündern und mit einem Sack voller Geschenke verschwinden. Ja, ja, Weihnachten, das Fest der Liebe!
+	</tool>
+
+	<tool id="286" key="iphone" name="Mobiltelefon" limit="outer" types="Weapon" power="1" random="2" replacement="electro|deto|batt_broken|metal_bad|metal_bad|metal_bad|metal_bad|metal_bad" icon="iphone" action="grenade">
+		Dieses uralte Modell war mal ein ziemlich angesagtes Handy. Eines Tages jedoch fingen die Dinger urplötzlich an zu explodieren... Da das Handy weit verbreitet war, sind Millionen Menschen bei diesen Explosionen gestorben. Ganze Städte wurden von der Landkarte ausgelöscht. Hhmmm... Das gibt bestimmt eine gute Granate ab.
+	</tool>
+
+	<tool id="287" key="smelly_meat" name="Ekliger Hautfetzen" types="CampBonus" icon="smelly_meat" >
+		Dieser übelriechende Hautfetzen gehörte früher mal einem deiner Mitbürger. Jetzt gehört er den Maden... Mit seinem unerträglichen Gestank kannst du deinen eigenen Körpergeruch überdecken, so dass dich die Untoten nicht mehr so gut riechen können. Benutze diesen Gegenstand, um deine Überlebenschancen beim Campen zu verbessern (dazu musst du den Hautfetzen bei dir tragen).
+	</tool>
+
+	<tool id="288" key="broken" name="Unidentifizierbare Trümmerstücke" types="" icon="broken" >
+		Diese Trümmerstücke waren mal Teil eines Gegenstandes, den du nicht mehr identifizieren kannst. Die Verformung der Teile lassen vermuten, dass dieser Gegenstand mit hoher Geschwindigkeit am Boden aufgeprallt ist...
+	</tool>
+	
+	<tool id="289" key="tamed_pet_off" name="Müdes Malteser Hündchen" types="SoulLocked|JobTool" icon="tamed_pet_off" replacement="tamed_pet">
+		Dein Hündchen sieht *müde* aus... Es keucht die ganze Zeit und starrt dich aus erschöpften Augen an.
+	</tool>
+
+	<tool id="290" key="tamed_pet_drug" name="Malteser Hündchen auf Droge" types="SoulLocked|JobTool" icon="tamed_pet_drug" limit="outer" action="tamedPet" replacement="tamed_pet_off" >
+		Nun, da dein Hündchen auf Droge ist, kann es selbst schwere und sperrige Gegenstände in die Stadt schleppen. Dir fällt auf, dass es ohne Ende sabbert. Es sieht aus, als würde er dich jeden Augenblick anspringen.
+	</tool>
+
+	<tool id="291" key="maglite_off" name="MagLite Kinderlampe (aus)" types="Furniture" deco="5" icon="maglite_off" parts="batt" replacement="maglite_2" action="assemble">
+		Diese große Taschenlampe könnte sich auf Wüstenausflügen als äußerst nützlich erweisen. Zum Anschalten, drücke einfach die große, gelbe Hundenase am Griff.
+	</tool>
+
+	<tool id="292" key="maglite_1" name="MagLite Kinderlampe (1 Ladung)" types="Furniture|Lamp" deco="5" icon="maglite_1" parts="batt" replacement="maglite_2" action="assemble">
+		Diese große Taschenlampe könnte sich auf Wüstenausflügen als äußerst nützlich erweisen. Zum Anschalten, drücke einfach die große, gelbe Hundenase am Griff. Du bemerkst, dass die Lampe nun "Wuff Wuff" macht, wenn Du sie schüttelst.
+	</tool>
+
+	<tool id="293" key="maglite_2" name="MagLite Kinderlampe (2 Ladungen)" types="Furniture|Lamp" deco="5" icon="maglite_2">
+		Diese große Taschenlampe könnte sich auf Wüstenausflügen als äußerst nützlich erweisen. Zum Anschalten, drücke einfach die große, gelbe Hundenase am Griff. Du bemerkst, dass die Lampe nun "Wuff Wuff" macht, wenn Du sie schüttelst.
+	</tool>
+	
+	<tool id="294" key="firework_powder" name="Super-Fuzz Pulver" types="Furniture|Critical" deco="5" icon="firework_powder">
+		Diese Pulver fand in der Vergangenheit zahlreiche Anwendungsbereiche. Bevor es als Insidersubstanz zur Herstellung billiger Drogen eingesetzt wurde, diente es als Antriebspulver für Artilleriegranaten und Feuerwerkskörper. In allen drei Einsetzbereichen gab es zahlreiche Tote...
+	</tool>
+
+	<tool id="295" key="firework_tube" name="Abschussrohre" isHeavy="1" types="Furniture|Critical" deco="2" icon="firework_tube">
+		Mehrere Plastikrohre, von denen du nicht weißt, was du damit anfangen könntest.
+	</tool>
+
+	<tool id="296" key="firework_box" name="Feuerwerkskörperkiste" isHeavy="1" types="Furniture|Critical" deco="3" icon="firework_box">
+		Diese Kiste enthält eine große Vielfalt hochtoxischer Feuerwerkskörper, die auf Basis so verheißungsvoller Substanzen wie Sodium-Fuzz, Kaliumkarbonatum Bling Bling und Regebogen-Zyan-Lithium hergestellt wurden.
+	</tool>
+	
+	<tool id="297" key="oldCadaver" name="Leiche eines Reisenden" types="Food|HumanMeat|Toxic" power="100" isHeavy="1" icon="cadaver" replacement="oldCadaverRemains" action="eat" lock="day" ghoulProba="90">
+		Diese Leiche liegt hier schon ein bisschen länger rum: Fliegenmaden haben sich schon an ihr zu schaffen gemacht und den größten Teil gegessen... Bist du sicher, dass du DIESES DING schultern möchtest?
+	</tool>
+
+	<tool id="298" key="oldCadaverRemains" name="Angenagte Leiche" isHeavy="1" icon="cadaver_remains">
+		Loses herumliegendes Gebein. Sieht aus, als ob es von einem 'wilden Tier' angenagt worden wäre... Die Bissspuren sehen aber menschlich aus. Irgend etwas stimmt hier nicht.
+	</tool>
+
+	<tool id="299" key="smoke_bomb" name="Rauchgranate 'Tannenduft'" icon="smoke_bomb" limit="outer" action="smokeBomb">
+		Es handelt sich um eine bekannte Rauchgranatenmarke, die herzlich frisch nach Tannenzapfen riecht. BEACHTE: Dieser Gegenstand löscht alle Registereinträge, die in den letzten drei Minuten eingetragen wurden. Außerdem löscht er deine nächste Bewegungsaktion, wenn sie spätestens eine Minute nach Benutzung der Rauchgranate erfolgt. ACHTUNG: Die Rauchgranate bitte erst NACH deiner Verheimlichungsaktion werfen ;)
+	</tool>
+	
+	<tool id="300" key="pumpkin_raw" name="Weicher Kürbis" isHeavy="1" types="Critical" icon="pumpkin_raw" parts="sKnife" replacement="pumpkin_off" action="assemble">
+		Du hältst ein übelriechendes, orangenes Gemüse in deinen Händen. Sowas hast du bis jetzt noch nicht gesehen. Dich befällt urplötzlich eine unbändige Lust, das Teil mit deinem Messer 'auszuweiden'...
+	</tool>
+	
+	<tool id="301" key="pumpkin_off" name="Ausgeschnitzter weicher Kürbis" types="Critical|Furniture" deco="5" icon="pumpkin_off" parts="matches|pharma" replacement="pumpkin_on" action="assemble">
+		Du hältst ein übelriechendes, orangenes Gemüse in deinen Händen. Sowas hast du bis jetzt noch nicht gesehen. Zu allem Überfluss hat jemand ein grinsendes Gesicht reingeschnitzt. Was für barbarisches Ritual! Wer tut so etwas?!
+	</tool>
+	
+	<tool id="302" key="pumpkin_on" name="Leuchtender Kürbis" types="Armor|Critical|Furniture" icon="pumpkin_on" deco="15" replacement="pumpkin_off" action="switch">
+		Na das ist ja mal ne alberne Idee! Jemand hat dieses große, komisch aussehende Gemüse ausgenommen, mit einem spitzen Gegenstand beschnitzt und eine brennende Kerze reingestellt...
+	</tool>
+	
+	<tool id="303" key="sand_ball" name="Sandball" limit="outer" types="" icon="sand_ball" deco="1" action="throwBall">
+		Du hältst eine schlichte Sandkugel in der Hand, die du vorher mit ein paar fiesen Kieselsteinchen angereichert hast. Hehe! Irgendwie verspürst du gerade eine unglaubliche Lust, diesen Ball jemanden ins Gesicht zu werfen. Wenn schon kein Schnee, dann wenigstens 'ne Sandballschlacht!
+	</tool>
+	
+	<tool id="304" key="useless_drink" name="Verdächtiger Traubensaft" types="Food" icon="omg_this_will_kill_you" action="uselessDrink" ghoulProba="5" >
+		Dieses gut versiegelte Fläschchen enthält Traubensaft. Das ist wirklich komisch... Warum sollte jemand Traubensaft versiegeln? Zumal ein Etikett angebracht wurde: 'Bei versehentlichem Verschlucken, bitte sofort den Giftnotruf anrufen oder schnellstens die nächste Ambulanz aufsuchen'. Das willst du doch nicht trinken? Oder etwa doch?!
+	</tool>
+	
+	<tool id="305" key="bplan_c" name="Bauplan (gewöhnlich)" types="Critical" icon="bplan_c" action="unlockBuilding">
+		Was du in deinen Händen hältst, sieht wie ein Bauplan aus! Wofür genau, lässt sich auf den ersten Blick schwer sagen. Du musst ihn schon genauer studieren, um das herauszufinden.
+	</tool>
+	<tool id="306" key="bplan_u" name="Bauplan (ungewöhnlich)" types="Critical" icon="bplan_u" action="unlockBuilding">
+		Was du in deinen Händen hältst, sieht wie ein Bauplan aus! Wofür genau, lässt sich auf den ersten Blick schwer sagen. Du musst ihn schon genauer studieren, um das herauszufinden.
+	</tool>
+	<tool id="307" key="bplan_r" name="Bauplan (selten)" types="Critical" icon="bplan_r" action="unlockBuilding">
+		Was du in deinen Händen hältst, sieht wie ein Bauplan aus! Wofür genau, lässt sich auf den ersten Blick schwer sagen. Du musst ihn schon genauer studieren, um das herauszufinden.
+	</tool>
+	<tool id="308" key="bplan_e" name="Bauplan (sehr selten!)" types="Critical" icon="bplan_e" action="unlockBuilding">
+		Was du in deinen Händen hältst, sieht wie ein sehr seltener Bauplan aus! Wofür genau, lässt sich auf den ersten Blick schwer sagen. Du musst ihn schon genauer studieren, um das herauszufinden.
+	</tool>
+	<tool id="309" key="bplan_box" name="Architektenkoffer" types="Critical|Box|OpenBox" isHeavy="1" icon="bplan_box" replacement="bplan_r" action="open">
+		Dieser Koffer enthält mehrere Dokumente und obskure Gegenstände (Bleistifte, Kompass, Plastiklineale,...). Nichts was dir irgendwie helfen würde, in der Wüste zu überleben. ...zumindest auf den ersten Blick.
+	</tool>
+	<tool id="310" key="bplan_box_e" name="Versiegelter Architektenkoffer" types="Critical|Box" broken="6" isHeavy="1" icon="bplan_box_e" replacement="bplan_e" action="openSafe">
+		Dieser Koffer enthält höchstwahrscheinlich ein sehr seltenes und kostbares Dokument...
+	</tool>
+	
+	<tool id="311" key="egg" name="Ei" types="Food|Tasty" icon="egg" action="eat" lock="day">
+		Hier in dieser Einöde ein Ei zu finden, sollte dich eigentlich glücklich machen. Aber eine Frage lässt dir einfach keine Ruhe: Wo zum Teufel steckt das verdammte Huhn...
+	</tool>
+	
+	<tool id="312" key="apple" name="Apfel" types="Food|Tasty" icon="apple" action="eat" lock="day">
+		Wenn Newton eines von diesen Exemplaren auf den Kopf gefallen wär, hätte er ganz sicher nicht zuerst an die universelle Gravitation gedacht... Zumindest müssten einige Vitamine drin sein.
+	</tool>
+
+	<tool id="313" key="fgrenade" name="Explosive Pampelmuse" limit="outer" types="Weapon" power="5" random="5" icon="boomfruit" action="grenade">
+		Sie ist sehr groß, fruchtig und macht "tick-tack".
+	</tool>
+
+	<tool id="314" key="bplan_drop" name="Abgenutzte Kuriertasche" types="Critical" icon="bplan_drop" action="getBuildingPlan">
+		Diese kleine Ledertasche scheint Unterlagen zu enthalten. Du betest inständig, dass es sich dabei um ein Männermagazin handelt, oder den Bauplan für ein neues, mächtiges Gebäude. ...und nicht um die verblichenen Kopien einer Umsatzschätzung der Buchhaltung.
+	</tool>
+
+	<tool id="315" key="photo_3" name="Kamera aus Vorkriegs-Tagen" power="120" types="SoulLocked|Critical" random="100" limit="outer" icon="photo_3" replacement="photo_2" action="flash">
+		Diese nostalgische Knipse aus dem letzten Jahrhundert wirkt, als hätte sie schon Aberhunderten Leuten die Netzhaut verbrannt. Ihr schwacher Blitz könnte dich aus brenzligen Situationen retten, wenn du Zombies damit blendest!
+	</tool>
+
+	<tool id="316" key="photo_2" name="Fotoapparat (2 Ladungen)" power="60" types="SoulLocked|Critical" random="66" limit="outer" icon="photo_2" replacement="photo_1" action="flash">
+		Diese nostalgische Knipse aus dem letzten Jahrhundert wirkt, als hätte sie schon Aberhunderten Leuten die Netzhaut verbrannt. Ihr schwacher Blitz könnte dich aus brenzligen Situationen retten, wenn du Zombies damit blendest!
+	</tool>
+	
+	<tool id="317" key="photo_1" name="Fotoapparat (1 Ladung)" power="30" types="SoulLocked|Critical" random="33" limit="outer" icon="photo_1" replacement="photo_off" action="flash">
+		Diese nostalgische Knipse aus dem letzten Jahrhundert wirkt, als hätte sie schon Aberhunderten Leuten die Netzhaut verbrannt. Ihr schwacher Blitz könnte dich aus brenzligen Situationen retten, wenn du Zombies damit blendest!
+	</tool>
+	
+	<tool id="318" key="photo_off" name="Fotoapparat (leer)" types="SoulLocked|Critical" icon="photo_off">
+		Diese nostalgische Knipse aus dem letzten Jahrhundert wirkt, als hätte sie schon Aberhunderten Leuten die Netzhaut verbrannt. Ihr schwacher Blitz könnte dich aus brenzligen Situationen retten, wenn du Zombies damit blendest!
+	</tool>
+	
+	<tool id="319" key="keymol" name="Engländer" types="SoulLocked|JobTool" icon="keymol">
+		Dieser Engländer ist der letzte Schrei für Handwerker. Die Arbeit wird damit zum Kinderspiel. Er ist außerdem äußerst nützlich, wenn es darum geht, widerspenstige Türen zu öffnen.
+	</tool>
+	
+	<tool id="321" key="magneticKey" name="Magnet-Schlüssel" types="" limit="outer" icon="magneticKey">
+		Mit diesem HighTech-Schlüssel lassen sich Türen der Sicherheitsklasse 6.2 AOC öffnen. Nur Angeheröge der Elite können sich damit brüsten, so einen Schlüssel zu besitzen.
+		Leider ist der Schlüssel in einem so schlechten Zustand, dass er nur eine einzige Tür öffnet.
+	</tool>
+	
+	<tool id="322" key="bumpKey" name="Schlagschlüssel" types="" limit="outer" icon="bumpKey">
+		Dieser Schlüssel ist der Liebling aller Einbrecher und öffnet Türen so rasend schnell, dass man sich glatt fragt, warum man überhaupt noch normale Schlüssel benutzt.
+		Leider ist der Schlüssel in einem so schlechten Zustand, dass er nur eine einzige Tür öffnet.
+	</tool>
+	
+	<tool id="323" key="classicKey" name="Flaschenöffner" types="" limit="outer" icon="classicKey">
+		Einige der Zimmer sind wahre Flaschenhälse. Darum ist das das perfekte Werkzeug, um sich Zutritt zu verschaffen und den einen oder anderen nützlichen Gegenstand herauszuholen.
+		Leider ist der Flaschenöffner in einem so schlechten Zustand, dass er nur eine einzige Tür öffnet.
+	</tool>
+	
+	<tool id="324" key="magneticKey_blank" name="Abdruck vom Magnet-Schlüssel" limit="town" types="Refinable" replacement="magneticKey" icon="prints">
+		Mit diesem Abdruck des HighTech-Schlüssels lassen sich Türen der Sicherheitsklasse 6.2 AOC öffnen.
+	</tool>
+	
+	<tool id="325" key="bumpKey_blank" name="Abdruck vom Schlagschlüssel" limit="town" types="Refinable" replacement="bumpKey" icon="prints">
+		Mit diesem Abdruck kannst du einen Schlagschlüssel, den Liebling aller Einbrecher, herstellen. Damit lassen sich Türen so rasend schnell öffnen,
+		dass man sich glatt fragt, warum man überhaupt noch normale Schlüssel benutzt.
+	</tool>
+	
+	<tool id="326" key="classicKey_blank" name="Abdruck vom Flaschenöffner" limit="town" types="Refinable" replacement="classicKey" icon="prints">
+		Einige der Zimmer sind wahre Flaschenhälse. Darum ist das das perfekte Werkzeug, um sich Zutritt zu verschaffen und den einen oder anderen nützlichen Gegenstand herauszuholen!r !
+	</tool>
+	
+	<tool id="327" key="ghoul_vaccine" name="Ghul-Serum" types="Drug" action="cancelGhoul" icon="vagoul">
+		Dieses extrem seltene Serum wurde durch der Untersuchung der DNA eines fast immunen Wesens gewonnen. Es hatte zuvor über 3 Tage überlebt, obwohl es von einem Infizierten gebissen wurde. Mit dem Serum kann man einen Ghul wieder in einen normalen Menschen verwandeln.
+	</tool>
+
+	<tool id="328" key="hotel_bplan_u" name="Bauplan (ungewöhnlich)" types="Critical" icon="mbplan_u" action="unlockBuilding">
+		Was du in deinen Händen hältst, sieht wie ein Bauplan aus! Wofür genau, lässt sich auf den ersten Blick schwer sagen. Du musst ihn schon genauer studieren, um das herauszufinden.
+	</tool>
+	<tool id="329" key="hotel_bplan_r" name="Bauplan (selten)" types="Critical" icon="mbplan_r" action="unlockBuilding">
+		Was du in deinen Händen hältst, sieht wie ein Bauplan aus! Wofür genau, lässt sich auf den ersten Blick schwer sagen. Du musst ihn schon genauer studieren, um das herauszufinden.
+	</tool>
+	<tool id="330" key="hotel_bplan_e" name="Bauplan (sehr selten!)" types="Critical" icon="mbplan_e" action="unlockBuilding">
+		Was du in deinen Händen hältst, sieht wie ein sehr seltener Bauplan aus! Wofür genau, lässt sich auf den ersten Blick schwer sagen. Du musst ihn schon genauer studieren, um das herauszufinden.
+	</tool>
+	
+	<tool id="331" key="bunker_bplan_u" name="Bauplan (ungewöhnlich)" types="Critical" icon="bbplan_u" action="unlockBuilding">
+		Was du in deinen Händen hältst, sieht wie ein Bauplan aus! Wofür genau, lässt sich auf den ersten Blick schwer sagen. Du musst ihn schon genauer studieren, um das herauszufinden.
+	</tool>
+	<tool id="332" key="bunker_bplan_r" name="Bauplan (selten)" types="Critical" icon="bbplan_r" action="unlockBuilding">
+		Was du in deinen Händen hältst, sieht wie ein Bauplan aus! Wofür genau, lässt sich auf den ersten Blick schwer sagen. Du musst ihn schon genauer studieren, um das herauszufinden.
+	</tool>
+	<tool id="333" key="bunker_bplan_e" name="Bauplan (sehr selten!)" types="Critical" icon="bbplan_e" action="unlockBuilding">
+		Was du in deinen Händen hältst, sieht wie ein sehr seltener Bauplan aus! Wofür genau, lässt sich auf den ersten Blick schwer sagen. Du musst ihn schon genauer studieren, um das herauszufinden.
+	</tool>
+	
+	<tool id="334" key="hospital_bplan_u" name="Bauplan (ungewöhnlich)" types="Critical" icon="hbplan_u" action="unlockBuilding">
+		Was du in deinen Händen hältst, sieht wie ein Bauplan aus! Wofür genau, lässt sich auf den ersten Blick schwer sagen. Du musst ihn schon genauer studieren, um das herauszufinden.
+	</tool>
+	<tool id="335" key="hospital_bplan_r" name="Bauplan (selten)" types="Critical" icon="hbplan_r" action="unlockBuilding">
+		Was du in deinen Händen hältst, sieht wie ein Bauplan aus! Wofür genau, lässt sich auf den ersten Blick schwer sagen. Du musst ihn schon genauer studieren, um das herauszufinden.
+	</tool>
+	<tool id="336" key="hospital_bplan_e" name="Bauplan (sehr selten!)" types="Critical" icon="hbplan_e" action="unlockBuilding">
+		Was du in deinen Händen hältst, sieht wie ein sehr seltener Bauplan aus! Wofür genau, lässt sich auf den ersten Blick schwer sagen. Du musst ihn schon genauer studieren, um das herauszufinden.
+	</tool>
+	
+	
+	
+	<!-- ITEMS POUR LA ST PATRICK -->
+	
+	<tool id="338" key="stp_suit" name="Green Imp Suit" types="Critical" icon="leprechaun_suit">
+			With this outfit on, you are so conspicuous no-one will even notice you, or think they imagined it! You wouldn't abuse it, would you?
+	</tool>
+
+	<tool id="339" key="guiness" name="Winness" types="Alcohol|Stealthy" icon="guiness" action="alcohol">
+			Nothing beats a pint of the black stuff to inspire poetry, laughter and erm, fight the zombies... *As approved by Charlie Sheen
+	</tool>
+
+	<tool id="340" key="hurling_stick" name="Hurling stick" limit="outer" types="Weapon|Slasher" power="0.6" broken="15" icon="hurling_stick" action="combatHit">
+			A word of advice. If you're picking the wrong fight... at least pick the right weapon.
+	</tool>
+
+	
+	<!-- ITEMS V.3.2 -->
+	<tool id="350" key="masque" name="Voodoomaske" types="SoulLocked|JobTool" limit="outer" icon="shaman">
+		Diese Maske kann nur vom Schamanen getragen werden. Mit ihr kann er einfacher die verirrten Seelen frisch verstorbener Bürger aufspüren.
+	</tool>
+	
+	<tool id="351" key="soul" name="Verirrte Seele" types="Refinable|Special" replacement="blue_soul" limit="town" icon="soul_blue">
+		Du triffst auf eine neblige Erscheinung, die ziellos und klagend umherstreift. Vielleicht nimmst du sie erst einmal mit und überlegst dann, was du Nützliches damit anfangen kannst.
+	</tool>
+
+	<tool id="352" key="red_soul" name="Starke Seele" types="Special" icon="soul_red">
+		Von wegen, der Tod habe nur schlechte Seiten... Die Seelen von Mitbürgern kann der Schamane auf Baustellen für äußerst wirksame Verteidigungszauber einsetzen.
+	</tool>
+	
+	<tool id="353" key="blue_soul" name="Schwache Seele" types="Refinable|Special" replacement="red_soul" limit="town" icon="soul_blue" action="soul">
+		Eine schwache Seele. Einmal in der Bank abgelegt, kann ein Schamane sie nehmen und in eine starke Seele umwandeln. Sie kann einem Schamanen noch in vielen anderen Situationen nützen...
+	</tool>
+	
+	<!-- ITEMS POUR L'ANNIVERSAIRE DE DIE VERDAMMTEN -->
+	
+	<tool id="354" key="festbier" name="Bierkrug" types="Alcohol|Stealthy" hero="1" icon="fest" action="alcohol">
+	In Wehmut versunken starrst du diesen überdimensionalen Bierkrug an... Sicher warm und geschmacklos, aber das Beste, das du seit der Apokalypse getrunken hast. Du musst wieder an all die verrückten Tage in München denken..
+	</tool>
+	
+	<tool id="355" key="pretzel" name="Brezel" types="Food" icon="bretz" action="eat" lock="day">
+	Ein leckerer, essbarer Snack... zumindest war es das einmal. Auf dieser Brezel wurde herumgetreten, sie riecht, als würde sie in Bezin getränkt (leider zu wenig, um sie für den Panzer im Südwesten der Stadt zu verwenden - schade) und es scheint, als wäre sie als Hammer oder als Zuhause für einen Holzwurm verwendet zu sein. Auf jedenfall erinnert sie dich jetzt stark an Prinzessin Beatrices Hochzeitshut..
+	</tool>
+	
+	<tool id="356" key="dackel" name="Dackel" types="Animal|Weapon|Armor|Furniture|Lock" bonus="Verbessert die Verteidigung und verhindert Diebstähle" replacement="tastyMeat" loss_probability="5" power="1" icon="tekel" action="pet">
+	Der einzige in diesem gottverlassenen Ort, der dir wirklich Liebe schenken kann, ohne dir danach deine Pillen zu stehlen. Soweit du dich mit Hunden auskennst, sieht er ziemlich seltsam aus, aber er ist treu, hat scharfe Zähne und kann wunderbar knurren. Und sollte es doch mal zum schlimmsten Fall kommen, wird sich der Metzger sicher freuen, sich um Ihn zu "kümmern"..
+	</tool>
+	
+<!-- ITEMS V.4.0 -->
+	
+	<tool id="357" key="rlauncher" name="Pfahlwerfer" power="5" isHeavy="1" types="Weapon|Critical" limit="outer" icon="rlaunc" loss_probability="100">
+		Ein Pfahlwerfer kann dazu benutzt werden, die Barrikaden der Stadt zu verstärken und sich gegen jede Art Monstrosität zu verteidigen.
+Leider steckt nur noch ein Pfahl.
+	</tool>
+	
+	<tool id="358" key="kalachao" name="Kalaschni-Splash" power="3" isHeavy="1" types="Weapon|Critical" action="waterGun" limit="outer" icon="kalach" loss_probability="100" replacement="kalachao_empty">
+		Eine wirklich mächtige Wasserpistole - die nur noch einmal funktioniert.
+	</tool>
+	
+	<tool id="359" key="bureau" name="Schnellgebauter Tisch" power="1" types="Furniture" deco="2" isHeavy="1" icon="bureau" loss_probability="100">
+		Dieser wackelige Tisch wurde offensichtlich in Eile gebaut. Doch könnte er, von den Barrikaden geworfen, bestimmt gut einige Zombies zerquetschen.
+	</tool>
+	
+	<tool id="360" key="distri" name="Leerer Automat" power="1" types="Furniture" deco="4" loss_probability="100" icon="distri">
+		Dieser Automat hat nach den großen Plünderungen nahezu jeden Wert verloren. Man könnte ihn aber bestimmt gut von einer Stadtmauer auf einige Stinker stoßen.
+	</tool>
+	
+	<tool id="361" key="renne" name="Santas Rentier" types="Critical" isHeavy="1" limit="outer" icon="renne" loss_probability="100">
+		Früher waren mit diesem stattlichen Tier so manche Sage verknüpft. Das war einmal, nützlich sind sie jedoch immer noch.
+	</tool>
+	
+	<tool id="362" key="cadeau" name="Geburtstagsgeschenk" isHeavy="1" types="Critical" limit="outer" icon="cadeau" loss_probability="100" mod="birthday">
+		Für 2 Jahre in der Wüste. Es ist schwer... Es atmet nicht... Ach, wen interessiert der Inhalt. Lasst es uns auf Zombies schmeissen!
+	</tool>
+	
+	<tool id="363" key="uranium" name="Abgereichertes Uran" types="Critical" power="5" limit="outer" icon="uraniu" loss_probability="100" mod="arma">
+		Es wird stark davon abgeraten, Uran mit bloßen Händen anzufassen. Andererseits, was hast du zu verlieren?
+	</tool>
+	
+		<tool id="364" key="easter" name="Osterei" types="Critical" power="30" limit="outer" icon="paques" loss_probability="100" mod="easter">
+		Ein großes, verschimmeltes Osterei, dessen ekelhafter Geruch entfernt an Schwarzpulver erinnert. Hat der Schimmel vielleicht mit der Zeit die Zusammensetzung verändert? Probier es doch mal an einem Zombie aus.
+	</tool>
+	
+	<!-- Die2Nite Only - ANZAC Day-->
+	
+		<tool id="365" key="anzac" name="ANZAC Badge" types="Critical" power="30" limit="outer" icon="badge" loss_probability="100" mod="anzac">
+		 Rummaging through the wastes a dull glint catches your eye. On closer inspection you find it to be an ANZAC Badge. You immediately feel the strength of ten warriors within you. Guard this badge with your life, and the lives of those who have fallen before you. This legendary item must have some kind of effect on the evil horde...
+	</tool>
+	
+		<tool id="366" key="kalachao_empty" name="Kalashni-Splash (empty)" types="EmptyWeapon" parts="water" replacement="kalachao" icon="kalach" action="assemble">
+		A water pistol is extremely effective against zombies! Except when it's empty, like this one...
+	</tool>
+	
+<!--Nouveau contenu Septembre 2013-->
+
+	<tool id="370" key="wirereel" name="Drahtrolle" types="Rsc" loss_probability="100" icon="wire" replacement="claymore" parts="explo|rustine|mecaParts" action="assemble">
+		Pass auf, dich nicht in den Drähten zu verstricken - wir würden dir nur ungern die Finger amputieren müssen, um dich zu befreien..
+	</tool>
+	
+	<tool id="371" key="oilcan" name="Leeres Ölkännchen" types="Rsc" loss_probability="100" icon="oilcan" action="assemble" replacement="hmbrew" parts="fungus|vodka">
+		Ab und an finden wir diese Behälter leer in der Wüste – meistens an der Seite einer Leiche. Wann lernen die Leute endlich, dass man Motoröl nicht trinken kann?
+	</tool>
+	
+	<tool id="372" key="lens" name="Konvexlinse" types="Rsc" loss_probability="100" icon="lens" replacement="scope" parts="tube" action="assemble">
+		Diese fast makellose Linse wartet scheinbar nur darauf, von deiner Kreativität einem höheren Zweck zugeführt zu werden.
+	</tool>
+	
+	<tool id="373" key="angrycat" name="Wütende Mieze (halb verdaut)" types="Weapon|Furniture|Animal" bonus="Hiissss." deco="1" loss_probability="50" power="1.5" icon="angryc" action="angrycat" replacement="flesh">
+		Das Kätzchen sieht ein wenig angefressen aus. Du solltest es besser nicht noch mehr reizen, es faucht ja jetzt schon.
+	</tool>
+
+	<tool id="374" key="claymore" name="Tretmine" types="Rsc|Critical|Weapon" replacement="trapmat" parts="straw" loss_probability="100" power="10" icon="claymo" action="assemble">
+		Irgendwer hat sie mal in der Wüste vergraben, vermutlich um die Zombies aufzuhalten... Bisher haben sie sich nur als effektiv gegen unvorsichtige Mitbürger erwiesen.
+	</tool>
+	
+	<tool id="375" key="diode" name="Laserdiode" types="Rsc" loss_probability="100" icon="diode" parts="wirereel|maglite_2|tube|mecaParts" action="assemble" replacement="lpointe4">
+		Ein elektronisches Bauteil aus alter Zeit. Du hast nicht viel Ahnung von dem Zeug, aber es scheint noch zu funktionieren.
+	</tool>
+	
+	<tool id="376" key="guitar" name="Selbstgebaute Gitarre" types="Critical|Furniture" limit="town" deco="6" icon="guitar" loss_probability="100" broken="25" lock="day" action="guitar">
+		Früher konnte man damit die Damenwelt beeindrucken... Diese Zeiten sind vorbei, doch beliebt ist die Gitarre immer noch. Sie kommt zwar nicht an eine echte Les Paul '58 heran, aber die Stadt kann ein wenig Auflockerung gebrauchen. Wer hätte denn keinen Spaß an ein bisschen Musik?
+	</tool>
+	
+	<tool id="377" key="lsd" name="LSD" types="Drug|Rsc|Critical|Scary" loss_probability="100" power="25" icon="lsd" action="useDrug">
+		Keine Ahnung, wo dieses kleine, pinke Stück Papier herkommt, aber wenn du es in den Mund nimmst kribbelt dein Gehirn!
+	</tool>
+	
+	<tool id="378" key="lpointe4" name="Starker Laserpointer (4 Schuss)" types="Weapon|Critical" limit="outer" icon="lpoint4" replacement="lpointe3" power="2" loss_probability="100" action="waterGun">
+		Wurde offiziell verboten, als ein fast greiser Mitbürger versucht hat den Strahl des Lasers zu queren. Immerhin schneidet es gut durch totes Fleisch.
+	</tool>
+	
+	<tool id="379" key="lpointe3" name="Starker Laserpointer (3 Schuss)" types="Weapon|Critical" limit="outer" icon="lpoint3" replacement="lpointe2" power="2" loss_probability="100" action="waterGun">
+		Wurde offiziell verboten, als ein fast greiser Mitbürger versucht hat den Strahl des Lasers zu queren. Immerhin schneidet es gut durch totes Fleisch.
+	</tool>
+	
+	<tool id="380" key="lpointe2" name="Starker Laserpointer (2 Schuss)" types="Weapon|Critical" limit="outer" icon="lpoint2" replacement="lpointe1" power="2" loss_probability="100" action="waterGun">
+		Wurde offiziell verboten, als ein fast greiser Mitbürger versucht hat den Strahl des Lasers zu queren. Immerhin schneidet es gut durch totes Fleisch.
+	</tool>
+	
+	<tool id="381" key="lpointe1" name="Starker Laserpointer (1 Schuss)" types="Weapon|Critical" limit="outer" icon="lpoint1" replacement="lpointe0" power="2" loss_probability="100" action="waterGun">
+		Wurde offiziell verboten, als ein fast greiser Mitbürger versucht hat den Strahl des Lasers zu queren. Immerhin schneidet es gut durch totes Fleisch.
+	</tool>
+	
+	<tool id="382" key="lpointe0" name="Starker Laserpointer (Leer)" types="EmptyWeapon" icon="lpoint" replacement="lpointe4" parts="batt" action="assemble">
+		Wurde offiziell verboten, als ein fast greiser Mitbürger versucht hat den Strahl des Lasers zu queren. Immerhin schneidet es gut durch totes Fleisch.
+	</tool>
+	
+	<tool id="383" key="scope" name="Teleskop" types="Rsc" loss_probability="100" icon="scope" broken="80">
+		Vor langer Zeit hat man mit diesem Werkzeug die Sterne beobachtet. Heute beobachten wir Zombies. Damit braucht die Angriffsabschätzung nur noch halb so viele Bürger.
+	</tool>
+	
+	<tool id="384" key="trapmat" name="Unpersönliche Explodierende Fußmatte" types="Critical|Furniture|Hidden" deco="5" loss_probability="100" icon="trapma">
+		Wie könnte man wohl dafür sorgen, dass sich Besucher nicht willkommen fühlen.. Natürlich, eine Mine unter der Türmatte! Warum sind wir da nicht viel früher drauf gekommen?
+	</tool>
+	
+	<tool id="385" key="lasgu2" name="Voll Aufgeladenes Lasergewehr" types="Weapon|Critical" limit="outer" loss_probability="100" icon="lasgun" replacement="lasgu1" power="20" action="waterGun">
+		Wenn es genug Energie hat kann dieser militärische Prototyp die Zombies regelrecht pulverisieren. Aber Achtung, die Batterie ist ziemlich schwach.
+	</tool>
+	
+	<tool id="386" key="lasgu1" name="Aufgeladenes Lasergewehr (1 Schuss)" types="Weapon|Critical" limit="outer" loss_probability="100" icon="lasgun" replacement="lasgu0" power="20" action="waterGun">
+		Wenn es genug Energie hat kann dieser militärische Prototyp die Zombies regelrecht pulverisieren. Aber Achtung, die Batterie ist ziemlich schwach.
+	</tool>
+	
+	<tool id="387" key="lasgu0" name="Aufgeladenes Lasergewehr" types="Weapon|Critical" limit="outer" loss_probability="100" icon="lasgun" replacement="lasgu2" parts="batt|lens" power="2" action="assemble">
+		Lasergewehr ohne Strom
+	</tool>
+	
+	<tool id="388" key="chuckdoll" name="Chuck-Figur" types="Rsc|Furniture" loss_probability="100" deco="15" icon="chudol" parts="lsd" replacement="chkspk" action="assemble">
+		Der Geist von Chuck lebt in dieser Figur. Nichts kann ihr schaden und sie wird noch lange nach deinem Tod hier sein, stets unerschrocken im Angesicht der Zombies.
+	</tool>
+	
+	<tool id="389" key="lilbook" name="Kleine Zen-Fibel" types="BookBox|Drug" icon="lilboo" action="book" deco="2">
+		Dieses Buch wurde in vielen Sprachen veröffentlicht. Es bietet Rat für aussichtslose Situationen und schützt so vor Angststarren.
+	</tool>
+	
+	<tool id="390" key="ryebag" name="Trockene Kräuter" types="Rsc" loss_probability="100" icon="ryebag" parts="lens" replacement="fungus" action="assemble">
+		Scheint nicht viel besser als Heu zu sein, aber es wird sicher für irgendwas verwendbar sein. Außer ziemlich enttäuschenden Zigaretten.
+	</tool>
+	
+	<tool id="391" key="fungus" name="Mutterkorn" types="Rsc|Food" loss_probability="100" icon="fungus" action="assemble" parts="poison_part" replacement="lsd">
+		Manchmal finden wir Pilze auf Leichen nach deren Genuss man die merkwürdigsten Sachen von sich gibt. Es heißt die Schäden am Gehirn seien irreparabel und dein aktueller Zustand könnte das sogar bestätigen...
+	</tool>
+	
+	<tool id="392" name="Korn-Bräu" key="hmbrew" types="Alcohol|Stealthy" icon="hmbrew" action="alcohol" loss_probability="100">
+		Gesöff der Krieger, Trank der Könige, Cocktail der Götter! Zweifelst du an der Stärke dieses Getränks, dann lass ruhig erst einmal deine Nachbarn probieren.
+	</tool>
+	
+	<tool id="393" key="hifim" name="Verfluchte HiFi" types="Gadget|Furniture|Weapon" power="2" deco="10" loss_probability="100" icon="hifiev">
+		Dieses Teil hat das Potenzial einer Massenvernichtungswaffe, wenn man erst einmal eine CD einlegt!
+	</tool>
+	
+	<tool id="394" key="cdcollins" name="Phil Collins CD" types="Rsc|Furniture" loss_probability="100" icon="cdphil" deco="2" action="assemble" parts="music_on" replacement="hifim">
+		Nichts geht über ein wenig nostalgische 80er Musik um die Abende in der Stadt aufzupeppen! Bist du ein rücksichtsloser *******, dann mach die Fenster auf, dreh die Musik laut und spiel sie die ganze Nacht!
+	</tool>
+	
+	<tool id="397" key="cdspears" name="Britney CD" types="Rsc|Furniture" loss_probability="100" icon="cdbrit" deco="3" action="assemble" parts="music_on" replacement="hifim">
+		"Britney mag auf dem Cover unschuldig lächeln, doch die Musik birgt ein nicht zu verachtendes Verteidigungspotenzial.
+		Sobald die ersten Klänge ertönen wird sich niemand bei Verstand deinem Haus nähern.
+		Pech für dich: Unseree Zombies kann man wohl kaum als ""bei Verstand"" bezeichnen, also vertrau lieber nicht auf die CD..."
+	</tool>
+	
+	<tool id="395" key="quies" name="Ohrstöpsel" types="Rsc" loss_probability="100" icon="bquies" action="assemble" parts="hifim" replacement="dfhifi">
+		"Hast du genug von dem Gequassel vor deiner Tür, den Streitereien nach zu viel Korn-Bräu oder Bürgern, die verzweifelt um ihr Leben schreien?
+Diese Ohrstöpsel sind genau das Richtige für dich!"
+	</tool>
+	
+	<tool id="396" key="staff2" name="Kaputter Stock"  types="Rsc" icon="staff2" parts="wirereel|oilcan" action="assemble" replacement="guitar">
+		Ein zerbrochener Stock. Leider zu kurz, um eine vernünftige Waffe zu sein, aber er ist nicht völlig nutzlos...
+	</tool>
+	
+	<tool id="398" key="cdelvis" name="Best of The King CD" types="Rsc|Furniture" loss_probability="100" icon="cdelvi" deco="7" parts="music_on" replacement="rnrhifi" action="assemble">
+		Bereit deine Hüften zu ein wenig Rock 'n' Roll zu schwingen? Diese Sammlung der besten Songs des King of Rock wird Stimmung in jede Party bringen!
+	</tool>
+	
+	<tool id="399" key="rnrhifi" name="Rock 'n' Roll HiFi" loss_probability="20" types="Gadget|Furniture" deco="10" icon="dfhifi">
+		Wenn dich die Hits des Kings wecken wachst du motivierter denn je zuvor auf und sprühst vor Energie!
+	</tool>
+	
+	<tool id="400" key="dfhifi" name="Verteidigende HiFi" loss_probability="100" types="Gadget|Furniture" deco="10" icon="dfhifi">
+		Die richtige CD und ein Schutz für deine Ohren bilden eine mächtige Waffe, welche dir einen ruhigen Schlaf garantiert und gleichzeitig Fremde fernhält.
+	</tool>
+	
+	<tool id="401" key="bxschr" name="Schrödingers Box" types="Box|Refinable" isHeavy="1" replacement="poison_part|cat|angrycat" icon="catbox" action="open" loss_probability="100">
+		Sie ist verdammt schwer und du bist dir fast sicher, dass da etwas Nützliches drin ist.. Aber erst einmal brauchst du was, um sie zu öffnen – zumindest was Besseres als deine Zähne.
+	</tool>
+	
+	<tool id="402" key="chkspk" icon="chkspk" name="Geistiger Beistand" types="Critical" power="30" limit="outer" loss_probability="100">
+		Keine Ahnung, ob es am LSD liegt oder daran, dass Chuck Norris so hart ist, er trinkt Napalm gegen Sodbrennen – aber diese Rede hat definitiv einen positiven Einfluss auf unsere Nachtwächter!
+	</tool>
+	
+	<tool id="403" key="snake2" name="Fette Python" types="Animal" isHeavy="1" replacement="angrycat" parts="cutter" loss_probability="100" power="1" icon="pet_snake2" action="assemble">
+		Diese riesige Schlange scheint Verdauungsprobleme zu haben... SO kannst du jedenfalls nichts mit ihr anfangen.
+	</tool>
+	
+</tools>

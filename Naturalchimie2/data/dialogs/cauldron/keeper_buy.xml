@@ -1,0 +1,18 @@
+<d place="gucaul" name="Acheter une recette" gfx="" fast="2">
+
+<phase id="begin" frame="happy" next="ok:nook">
+Une recette au hasard ? Bien sûr, ça coûte [un pyram].
+</phase>
+
+<a id="nook" cond="!hascollection(book)" >J'achète ! </a>
+
+<phase id="nook" frame="angry" >
+Désolé mais tu n'as pas encore ton grimoire, il me semble. 
+{Altus} devrait pouvoir te dire comment le récupérer. Reviens me voir ensuite pour acheter des recettes.
+</phase>
+
+
+<a id="ok" cond="hascollection(book)" urlauto="/cauldron/buy">J'achète ! </a>
+<a id="end">Non merci.</a>
+
+</d>

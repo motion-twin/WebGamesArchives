@@ -1,0 +1,192 @@
+﻿ <missions>
+
+	<m group="mmex" id="mmex1" name="The Black Briefcase">
+		<begin>
+			Last night a ship delivered a Black Briefcase for me at Frish Port. Can you go and pick it up for me? Make sure you don't open it!
+		</begin>
+		<goto v="port"/>
+		<action v="Take the Black Briefcase">You've been given the Black Briefcase from a man dressed in a long trench coat. This mission seems too easy!</action>
+		<goto v="frcbrt"/>
+		<talk v="Madam X" gfx="mmex">That's strange ... the briefcase ... IT WAS BOOBY-TRAPPED!</talk>
+		<actfight act="Trap!" monsters="gluon">
+			<begin>A Gluon has been put in the briefcase to attack Madam X!</begin>
+			<win>Madam X is pleased that you disarmed the briefcase!</win>
+		</actfight>
+		<end>
+			Thanks for your help! Take your reward, you've earned it!
+		</end>
+		<xp v="10"/>
+		<gold v="300"/>
+	</m>
+
+	<m group="mmex" id="mmex2" name="The Merchant Traitor">
+		<begin>
+			It seems that there's a traitor in the king's court. This traitor passes his information using a merchant who visits Dinotown from time to time. Arrest the merchant and bring him here so I can interrogate him!
+		</begin>
+		<goto v="dnv"/>
+		<action v="Find The Merchant">You have found a suspicious-looking merchant who seems to match the description.</action>
+		<actfight act="Fighhhht!" monsters="march1">
+			<begin m="march1">Heellllppp!!!</begin>
+			<win>After questioning it seems that this merchant was in fact innocent! Poor man.</win>
+		</actfight>
+		<action v="Find The Merchant">This time you are certain that you have found the merchant who matches the description ... </action>
+		<actfight act="Fighhhht!" monsters="march1">
+			<begin m="march1">Aarrrgg!!!</begin>
+			<win>You've captured the merchant! Take him to Madam X!</win>
+		</actfight>
+		<goto v="frcbrt"/>
+		<end>
+			Thanks for arresting this traitor! Don't worry, I know how to make him confess!! But I hope that you were not wrong about this person.
+		</end>
+		<item v="ration"/>
+	</m>
+
+	<m group="mmex" id="mmex3" name="Police Chase" cond="mission(mmex1)+mission(mmex2)">
+		<begin>
+			I've received a police report saying that a Dinoz has been attacking merchants
+			in Dinotown. Can you investigate this strange case for me?
+		</begin>
+		<goto v="dnv"/>
+		<action v="Facial Composite Image">The Facial Composite of the suspected Dinoz looks a lot like one of your Dinoz. Coincidence or conspiracy?</action>
+		<actfight act="Investigate" monsters="march2:march2:march2">
+			<begin>
+				While you are searching for clues, angry merchants attack your Dinoz!
+			</begin>
+			<win>
+				This situation is becoming far too complicated ... maybe it's better to just explain everything to Madam X?
+			</win>
+		</actfight>
+		<goto v="frcbrt"/>
+		<talk v="Madam X" gfx="mmex">
+			.... (you explain the entire story) ... What? So it really was your Dinoz they were looking for?!
+			Mmmm ... I understand. But it will take me some time for me to bury this case. In the meantime, go and hide in the Precipitous Hills!
+		</talk>
+		<goto v="colesc"/>
+		<action v="Wait" wait="3">
+			You wait to hear from Madam X....
+		</action>
+		<action v="Message MX">
+			A message signed "MX" is waiting for you. It reads "Return to Dinotown as soon as possible"
+		</action>
+		<goto v="dnv"/>
+		<talk v="Merchant">
+			So you are the master of the famous twin?!? Ha ha ha! That's right! Your Dinoz looks just like the one we caught yesterday! Yeah, the real culprit was captured by the Elite Royal Police. You don't have to worry anymore!
+		</talk>
+		<end>
+			I've successfully covered you for this time, using my connections, but if you ever make a mistake like that again during a mission, I will have to disown you, understand?
+		</end>
+		<gold v="50"/>
+	</m>
+
+	<m group="mmex" id="mmex4" name="Island it's Cool" cond="mission(mmex3)">
+		<begin>
+			We've found a group of people growing illegal drugs in the Sticky Swamp. They then export them to the capital. We need someone to go and investigate. This means you must go to the Atlanteid Islands.
+		</begin>
+		<goto v="marais"/>
+		<action v="Investigate">
+			Following the strong scent and the Djembe sounds, you find a group delinquents with long, greasy hair.
+		</action>
+		<actfight act="Fight them" allies="gang1:gang2:gang3" monsters="borg">
+			<begin m="gang2">
+				Aarrg!! A Borg! I think we need to fight together this time!!
+			</begin>
+			<win>
+				After having defeated them, the three delinquants want to talk with you....
+			</win>
+		</actfight>
+		<talk v="Jean-Hubert">
+			Yo man! I understand that you don't really like what we're doing here, but it's all cool. So don't abuse us, man!
+		</talk>
+		<talk v="Charles-Edouard">
+			Hey man! You're not a bad fighter! But you need to chill out. Cops annoy me and the beach is so cool!
+		</talk>
+		<talk v="Louis-Stanislas">
+			My friends wanted to show their gratitude, and ask humbly if we can make a plea deal to avoid the horrors of prison. These horrors will make us waste what all the poets refer to as "our most beautiful years"!
+		</talk>
+		<goto v="frcbrt"/>
+		<talk v="Madam X" gfx="mmex">
+			WHAT? You sympathize with these outlaws? ... I'm not so sure you'll be a good agent after all ... Even if they are nice, they've broken the law. They need to be punished!
+		</talk>
+		<talk v="Madam X" gfx="mmex">
+			Due to your insistance, I'll make arrangements so that they're granted mitigating circumstances. But they'll still be required to perform community service, comprising tasks such as organising books in the University Library. Will you help them since you're such a big fan of theirs!
+		</talk>
+		<goto v="marais"/>
+		<talk v="Louis-Stanislas">
+			Thank you so much for keeping us out of prison. We'd be happy to organise the University Library, especially with you there at our side to help us!
+		</talk>
+		<goto v="univ"/>
+		<action v="Organize the Library" wait="30">
+			Your Dinoz helps Jean-Hubert, Charles-Edouard and Louis-Stanislas to organize the University's huge library....
+		</action>
+		<talk v="Jean-Hubert">
+			Thanks a lot man! We gonna go back to the Islands now! We promise we won't mess around again! Ciao!!
+		</talk>
+		<end>
+			The law is the law. All violations must be punished.
+		</end>
+		<xp v="30"/>
+		<gold v="1000"/>
+	</m>
+
+	<m group="mmex" id="mmex5" name="The Ashpouk Conspiracy" cond="mission(mmex3)">
+		<begin>
+			Recently we've seen a rise in the trafficking of fake relics from Ashpouk. We need your Dinoz to go to the Big All-Hot and investigate.
+		</begin>
+		<goto v="fosslv"/>
+		<talk v="The Informer">
+			I'm responsible for gathering information for Madam X here. We've been informed that strange things occur at night near the Ashpouk Ruins....
+		</talk>
+		<goto v="rashpk"/>
+		<action v="Hide" wait="10">
+			Your Dinoz hides, and prepares to follow possible suspects.
+		</action>
+		<action v="Suspects!">
+			Your Dinoz has located the suspects. They seem to gather earth from the Ashpouk Ruins and store it in large bags ... You decide to follow them to find out why.
+		</action>
+		<goto v="forges"/>
+		<action v="Stalking">The suspects travel north</action>
+		<goto v="tunel"/>
+		<action v="Stalking">
+			It seems the suspects have spotted us, they've disappeared....
+		</action>
+		<goto v="fosslv" hide="1"/>
+		<action v="Suspects!">
+			You recognise one of the suspects in a street near the Lavapit!
+		</action>
+		<actfight act="Challenge Him!" monsters="suspc1">
+		</actfight>
+		<action v="Search">
+			After defeating the suspect, you find many little bags filled with earth from the ruins as well as an access card with the name of "El Signor Don Fuego". Report to Madam X!
+		</action>
+		<goto v="frcbrt"/>
+		<talk v="Madam X" gfx="mmex">
+			El Signor Don Fuego? That's a funny coincidence ... He is one of the most famous Lavapit merchants, and he has many connections in the Court. In order to expose him, we need to find proof that directly implicates him!
+		</talk>
+		<goto v="rashpk" hide="1"/>
+		<action v="Stakeout" wait="5">
+			Grandpa Der'hik used to always say, "A stakeout is the most boring part of the job ...". Now you understand why....
+		</action>
+		<action v="Suspects!">
+			Some suspiscious looking men arrive and talk with the merguez seller, they leave soon after....
+		</action>
+		<talk v="Merguez Seller" gfx="merguez">
+			What did the tourists want you ask? They just wanted to use my new Bread-Oven which I use to make my Goblin Sandwiches ... apparently they use it to heat pottery. They went to the Lavapit to take it to their boss.
+		</talk>
+		<goto v="fosslv"/>
+		<action v="Suspects!">
+			You recognise the three suspects in a street near the Lavapit!
+		</action>
+		<actfight act="Challenge Them!" monsters="suspc:suspc:suspc">
+			<win>
+				After defeating the suspects, they admit that they made fake relics with the earth from the Ashpouk Ruins! You better take them to Madam X....
+			</win>
+		</actfight>
+		<goto v="frcbrt"/>
+		<end>
+			Great! I will make sure that they testify against Don Fuego. Great timing, he was becoming far too rich and powerful in the Court ... Thanks for your help as always!
+		</end>
+		<xp v="30"/>
+		<gold v="1000"/>
+	</m>
+
+</missions>

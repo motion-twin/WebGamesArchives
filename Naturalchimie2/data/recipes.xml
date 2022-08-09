@@ -1,0 +1,2818 @@
+<recipes>
+
+
+
+<!-- ############################################ -->
+<!-- ##############    PUBLIC USELESSNESS   ############## -->
+<!-- ############################################ -->
+
+<recipe id="dstamp" name="Oblitere" school="gu" category="stupid" specialist="0" flash="0">
+<desc>
+Crée 15 Chouettes Timbres.
+</desc>
+<flavor>
+Un exemple unique de recette sponsorisée ! [g]Oblitère[/g] a en effet été créée lors d'un concours de transmutation organisé par la Guilde et la société Chouettex. 
+La recette gagnante devenait de fait la propriété de Chouettex, tandis que l'alchimiste gagnant recevait des goodies de la compagnie à vie (une peluche par semaine). 
+Au départ vendue à prix d'or par les boutiques Chouettex, les dirigeants se sont vite rendus compte que pouvoir s'affranchir de l'achat de carnets de chouettes timbres restait trop intéressant pour les consommateurs, quel que soit le prix de la recette. 
+"Oblitère" a donc été retirée des boutiques. Mais en tant que recette officielle, elle peut encore être achetée auprès des gardiens des chaudrons. Une chance pour tous les alchimistes du royaume !
+</flavor>
+<disp way="random" weight="230" />
+<needs>Elt(0):7;Elt(4):5;Elt(7):1</needs>
+<result>add(Stamp:15)</result>
+</recipe>
+
+
+<recipe id="dcatz" name="Franken Catz" school="gu" category="stupid" forbidden="1">
+<desc>
+Crée 1 Catz.
+</desc>
+<disp way="random" weight="150" />
+<needs>Elt(11):2;Elt(6):9;Elt(26):2</needs>
+<result>add(Catz:1)</result>
+</recipe>
+
+
+
+<recipe id="surpa" name="Cartonite" school="gu" category="stupid" specialist="0" flash="0">
+	<desc>
+	Crée une caisse surprise.
+	</desc>
+	<disp way="school" />
+	<needs>Elt(7):7;Elt(13):2;Elt(17):2;Elt(10):2</needs>
+	<result>add(Surprise(0):1)</result>
+</recipe>
+
+<recipe id="surpb" name="Securox" school="gu" category="stupid" specialist="0" flash="0">
+	<desc>
+	Crée une super caisse surprise.
+	</desc>
+	<disp way="school" />
+	<needs>Elt(2):4;Elt(21):4;Elt(27):1;Elt(19):1;Elt(11):4</needs> <!-- ### TODO  ### -->
+	<result>add(Surprise(1):1)</result>
+</recipe>
+
+
+
+
+
+<!-- ######################################### -->
+<!-- ##############    ALCHIMIC FIGHT     ############## -->
+<!-- ######################################### -->
+
+<recipe id="peara" name="Arrosam" school="gu" category="object" specialist="0" flash="0">
+<desc>
+Crée 1 graine de poirier.
+</desc>
+	<disp way="random" weight="160" />
+	<needs>Elt(4):5;Elt(9):4;Elt(20):5</needs>
+	<result>add(PearGrain(0))</result>
+</recipe>
+
+<recipe id="pearb" name="Chamboul Seve" school="gm" category="object" specialist="0" flash="0">
+	<desc>
+Crée 1 souche de poirier.
+	</desc>
+	<disp way="school" />
+	<disp way="race" weight="140" cond="grade(,6)" />
+	<needs>Elt(3):6;Elt(7):2;Elt(21):4;Elt(23):1</needs>
+	<result>add(PearGrain(1))</result>
+</recipe>
+
+<recipe id="pearc" name="Fertiligerme" school="gm"  category="object" specialist="0" flash="0">
+	<desc>
+Crée 3 graines de poirier.
+	</desc>
+	<disp way="school" />
+	<disp way="race" weight="100" cond="grade(,10)" />
+	<needs>Elt(1):6;Elt(7):5;Elt(12):5;Elt(22):3</needs>
+	<result>add(PearGrain(0):3)</result>
+</recipe>
+
+<recipe id="desjok" name="Cruxaram" school="ap" category="object" specialist="0" flash="0">
+<desc>
+Crée un crux à vide. L'élément au choix définit l'élément ciblé par le crux.
+</desc>
+<flavor>
+Le cruxaram est la toute première recette à avoir exploité la notion d'élément au choix. Suite à la redécouverte des Crux, l'envie de pouvoir créer facilement celui de son choix s'est vite imposée dans le royaume. 
+Hélas, créer une recette de crux pour chaque élément alchimique était une tâche un peu trop casse-pied et aucun alchimiste n'avait trop envie de s'y mettre.... Jusqu'à ce que Nestor Plaubin, alchimiste Audepint de son état, ait la lumineuse idée de laisser un élément de la recette au choix pour définir le crux demandé. 
+Applaudissement général de toute la communauté alchimique.
+</flavor>
+	<disp way="school" />
+	<disp way="race" weight="120" cond="grade(,8)" />
+	<needs>Elt(0):6;Elt(5):3;Elt(6):8;Elt(23):1;Joker:1</needs>
+	<result>add(Destroyer(null))</result>
+</recipe>
+
+
+<recipe id="desjau" name="Appata-Crux jaune" school="gu" category="object" specialist="0" flash="0">
+	<desc>
+	Crée un crux à vide dévoreur de potion jaune.
+	</desc>
+	<disp way="random" weight="260" />
+	<needs>Elt(0):6;Elt(1):4;Elt(6):2;Elt(20):4</needs>
+	<result>add(Destroyer(1))</result>
+</recipe>
+
+<recipe id="desvio" name="Appata-Crux Violet" school="gu" category="object" specialist="0" flash="0">
+	<desc>
+	Crée un crux à vide dévoreur de potion violette.
+	</desc>
+	<disp way="random" weight="260" />
+	<needs>Elt(0):6;Elt(3):3;Elt(5):1;Elt(20):4</needs>
+	<result>add(Destroyer(3))</result>
+</recipe>
+
+<recipe id="dynh" name="Badaboum type 1" school="gu" category="object" specialist="0" flash="0">
+	<desc>
+	Crée un bâton de dynamite horizontal. ne pas laisser à la portée des inconscients.
+	</desc>
+	<disp way="random" weight="260" />
+	<needs>Elt(3):6;Elt(8):3;Elt(17):1</needs>
+	<result>add(Dynamit(0))</result>
+</recipe>
+
+<recipe id="awomb" name="Bouldeuhpoil" school="gu" category="object" specialist="0" flash="0">
+	<desc>
+	Crée un Branle-bas de wombat. Merci de veiller à sa bonne santé. 
+	</desc>
+	<disp way="random" weight="260" />
+	<needs>Elt(2):2;Elt(5):4;Elt(7):4;Elt(13):2</needs>
+	<result>add(Wombat)</result>
+</recipe>
+
+<recipe id="aalchi" name="Alchinoptere" school="gu" category="object" specialist="0" flash="0">
+	<desc>
+	Crée une alchimite à votre service.
+	</desc>
+	<disp way="random" weight="260" />
+	<needs>Elt(0):6;Elt(4):6;Elt(24):4;Elt(15):1</needs>
+	<result>add(Alchimoth)</result>
+</recipe>
+
+<recipe id="detart" name="Patadan" school="gu" category="object" specialist="0" flash="0">
+	<desc>
+	Crée un balai de détartrage. 
+	</desc>
+	<disp way="random" weight="260" />
+	<needs>Elt(6):3;Elt(8):5;Elt(18):1</needs>
+	<result>add(Detartrage)</result>
+</recipe>
+
+<recipe id="ajesel" name="Kisifrott" school="gu" category="object" specialist="0" flash="0">
+	<desc>
+	Crée un os de distorsion. 
+	</desc>
+	<disp way="random" weight="260" />
+	<needs>Elt(7):3;Elt(21):3;Elt(25):3</needs>
+	<result>add(Jeseleet(0))</result>
+</recipe>
+
+<recipe id="abomb" name="Bohm-Bohm" school="gu" category="object" specialist="0" flash="0">
+	<desc>
+	Crée une bombe polarisée. Attention, elles fonctionnent par deux.
+	</desc>
+	<disp way="random" weight="260" />
+	<needs>Elt(1):4;Elt(2):4;Elt(8):2;Elt(24):2</needs>
+	<result>add(PolarBomb)</result>
+</recipe>
+
+<recipe id="cbomb" name="Diploboum" school="gu" category="object" specialist="0" flash="0">
+	<desc>
+	Crée deux bombes polarisées.
+	</desc>
+	<disp way="school"/>
+	<needs>Elt(4):3;Elt(6):6;Elt(12):3;Elt(25):2</needs>
+	<result>add(PolarBomb:2)</result>
+</recipe>
+
+<recipe id="agrena" name="Schrapnull" school="gu" category="object" specialist="0" flash="0">
+	<desc>
+	Crée un charcleur standard. Ne pas jeter sur la voie publique.
+	</desc>
+	<disp way="random" weight="240" />
+	<needs>Elt(9):3;Elt(17):2;Elt(18):1</needs>
+	<result>add(Grenade(0))</result>
+</recipe>
+
+<recipe id="dynv" name="Badaboum type 2" school="gu" category="object" specialist="0" flash="0">
+	<desc>
+	Crée un bâton de dynamite vertical. Déconseillé aux distraits.
+	</desc>
+	<!-- <disp way="random" weight="150" /> -->
+	<disp way="quest" />
+	<needs>Elt(1):4;Elt(3):4;Elt(26):1;Dynamit(0):1</needs>
+	<result>add(Dynamit(1))</result>
+</recipe>
+
+<recipe id="dynvb" name="Badaboum type 2 bis" school="gu" category="object" specialist="0" flash="0">
+	<desc>
+	Crée 2 bâtons de dynamite verticaux.
+	</desc>
+	<disp way="school" />
+	<needs>Elt(2):8;Elt(7):2;Elt(16):3;Elt(17):2;Dynamit(0):1</needs>
+	<result>add(Dynamit(1):2)</result>
+</recipe>
+
+<recipe id="adelor" name="Nom de Zeus" school="gu" category="object" specialist="0" flash="0">
+	<desc>
+	Crée une portion de réglisse de Delorean.
+	</desc>
+	<disp way="random" weight="150" />
+	<needs>Elt(2):5;Elt(5):9;Elt(10):1;Elt(11):1</needs>
+	<result>add(Delorean(0))</result>
+</recipe>
+
+<recipe id="cetart" name="Oxyquid" school="gu" category="object" specialist="0" flash="0">
+	<desc>
+	Crée 2 balais de détartrage. 
+	</desc>
+	<disp way="random" weight="150" />
+	<needs>Elt(0):6;Elt(8):8;Elt(18):2;Elt(21):3</needs>
+	<result>add(Detartrage:2)</result>
+</recipe>
+
+<recipe id="daplop" name="Protect ! Plop !" school="gu" category="object" specialist="0" flash="0">
+	<desc>
+	Crée un protoplop v2, avec soupape d'engorgement. Modèle validé par la guilde.
+	</desc>
+	<disp way="random" weight="150" />
+	<needs>Elt(0):6;Elt(4):3;Elt(22):1;Elt(10):1;Elt(20):2</needs>
+	<result>add(Protoplop(1))</result>
+</recipe>
+
+<recipe id="piston" name="Alta-Firma" school="gu" category="object" specialist="0" flash="0">
+	<desc>
+	Crée une pistonide. 
+	</desc>
+	<disp way="random" weight="150" />
+	<needs>Elt(0):4;Elt(3):4;Elt(7):5;Elt(12):4;Elt(26):2</needs>
+	<result>add(Pistonide:1)</result>
+</recipe>
+
+<recipe id="desver" name="Appata-Crux vert" school="gu" category="object" specialist="0" flash="0">
+	<desc>
+	Crée un crux à vide dévoreur de potion verte.
+	</desc>
+	<disp way="random" weight="260" />
+	<needs>Elt(0):10;Elt(16):5;Elt(23):1</needs>
+	<result>add(Destroyer(0))</result>
+</recipe>
+
+<recipe id="dohand" name="SerreManCinque" school="gu" category="object" specialist="0" flash="0" forbidden="0">
+<desc>
+Crée une main du mentor. 
+</desc>
+<flavor>
+La recette [g]SerreManCinque[/g] n'est pas l'invention originale Jeezara. Il s'agit d'une déclinaison plus... politiquement correcte, pour permettre la validation d'une recette de main du mentor par la Guilde. 
+Alors que Jeezara a plutôt l'habitude de garder ses découvertes secrètes, dans le cas de la main du mentor la demande était tellement forte (et les royalties promises tellement élevées) que l'école a fait une entorse à sa règle de non divulgation. 
+Le procédé est parait-il plus coûteux que l'original mais sans douleur pour quiconque, ce qui a conduit à la validation de cette recette par la guilde. Elle a aussi permis de réduire énormément le nombre de cancres jeezaristes manchots. L'invention de cette recette a donc été applaudie des deux mains. 
+</flavor>
+	<disp way="random" weight="120" />
+	<needs>Elt(4):8;Elt(5):6;Elt(14):2;Elt(19):1</needs>
+	<result>add(MentorHand)</result>
+</recipe>
+
+<recipe id="atejer" name="Het-Spirazaar" school="gu" category="object" specialist="0" flash="0" forbidden="1">
+<desc>
+Crée un Tejerkatum.
+</desc>
+<flavor>
+Les recettes de l'antique confrérie "Het" sont le summum du rapport qualité/prix, mais elles sont hélas interdites par la guilde.
+Les habitudes sacrificielles des Hets sont la raison principale invoquée, mais le manque à gagner par la propagation de recettes aussi intéressantes n'y est certainement pas étranger non plus. 
+On peut noter que l'interdiction de [g]Het-Spirazaar[/g], qui permet de créer un Tejerkatum par le sacrifice d'un wombat, a été saluée comme une grande victoire pour la cause animale par la société geminite de protection du vivant poilu et cromignon. 
+</flavor>
+<disp way="random" weight="120" />
+<needs>Elt(2):4;Elt(24):6;Elt(25):1;Wombat:1</needs>
+<result>add(Tejerkatum)</result>
+</recipe>
+
+<recipe id="adolly" name="Val-Purliche" school="gu" category="object" specialist="0" flash="0">
+<desc>
+Crée une once de Dollyxir.
+</desc>
+<flavor>
+[g]Val-Purliche[/g], aussi connue comme "la recette de la honte" pour Jeezara. Première recette créant le Dollyxir, c'est elle qui a été malencontreusement ébruitée par un étudiant, condamnant Jeezara à une médiatisation à outrance et à la distribution de cette recette secrète par la Guilde. 
+Le scandale aurait pu en rester là si l'étudiant maladroit n'avait pas mystérieusement disparu peu de temps après. La réputation encore sulfureuse de Jeezara à l'époque a fait de l'école la coupable idéale de cette disparition. 
+Hélas, rien n'a pu être prouvé et la coupe des écoles suivante a fini par faire oublier cet épisode. Mais nul ne doute dans le royaume que le pauvre étudiant a fini dans une unité de recherche jeezariste particulièrement... désagréable.
+</flavor>
+<disp way="random" weight="90" />
+<needs>Elt(3):10;Elt(7):6;Elt(23):2;Elt(27):1</needs>
+<result>add(Dollyxir(0))</result>
+</recipe>
+
+
+<recipe id="telepo" name="Parmenator" school="gu" category="object" specialist="0" flash="0">
+<desc>
+Crée un Aztèquéporteur.
+</desc>
+<flavor>
+Formidablement pratique, l'Aztèquéporteur est issu d'une civilisation disparue voilà des siècles. Seule cette recette, qui permet d'en créer un pour un coût finalement modique, est parvenue jusqu'à nous.
+En un sens ça tombe bien, car avec des inventions aussi fortiches cette civilisation nous aurait sûrement tous éclatés depuis longtemps.
+Selon les sources officielles, la recette Parmenator a été découverte au plus profond de la ziggourat d'or de la province de Yoruba. Depuis, les recherches se poursuivent dans toute cette région pour essayer de découvrir de nouvelles informations sur cette civilisation disparue. 
+Au grand désespoir de l'école du coin, Jeezara détestant voir des curieux fouiner partout autour de chez elle. Il n'est donc pas rare de croiser des archéologues traîner un peu partout à Yoruba, et pas beaucoup plus rare de voir un mentor jeezariste en train de les insulter copieusement. 
+</flavor>
+	<disp way="random" weight="90" />
+	<needs>Elt(8):8;Elt(10):1;Elt(11):1;Elt(15):1</needs>
+	<result>add(Teleport)</result>
+</recipe>
+
+<recipe id="bjesel" name="Gargarine" school="gu" category="object" specialist="0" flash="0">
+	<desc>
+	Crée des côtes de distorsion.
+	</desc>
+	<disp way="random" weight="90" />
+	<needs>Elt(7):4;Elt(22):2;Elt(25):2</needs>
+	<result>add(Jeseleet(1))</result>
+</recipe>
+
+<recipe id="bgrena" name="Total Schrap" school="gu" category="object" specialist="0" flash="0">
+<desc>
+Crée deux charcleurs standards. Ne pas jeter sur la voie publique.
+</desc>
+<flavor>
+Deux semaines après sa découverte du charcleur, l'aspirant Schrap croulait sous les commandes. Son charcleur avait un succès fou ! Il mit donc au point cette recette améliorée qui en donnait deux d'un coup. 
+Il se retrouva avec deux fois moins de boulot et put à nouveau savourer les joies des week-ends bien mérités. 
+Torgul Schrap continue ses études alchimiques, mais depuis que les royalties de son invention coulent à flot on voit bien que sa motivation scientifique s'est un peu émoussée.
+</flavor>
+	<disp way="random" weight="170" />
+	<needs>Elt(4):4;Elt(8):4;Elt(17):2;Elt(19):1</needs>
+	<result>add(Grenade(0):2)</result>
+</recipe>
+
+<recipe id="desora" name="Appata-Crux orange" school="gu" category="object" specialist="0" flash="0">
+<desc>
+Crée un crux à vide dévoreur de potion orange.
+</desc>
+	<disp way="random" weight="150" />
+	<needs>Elt(2):10;Elt(20):3;Elt(15):1</needs>
+	<result>add(Destroyer(2))</result>
+</recipe>
+
+<recipe id="adalto" name="Parfaite Parflaum" school="gu" category="object" specialist="0" flash="0">
+	<desc>
+	Crée une dose d"Au paradis du daltonisme".
+	</desc>
+	<disp way="school" />
+	<needs>Elt(4):3;Elt(7):3;Elt(10):3;Elt(27):1</needs>
+	<result>add(Dalton)</result>
+</recipe>
+
+<recipe id="araz" name="Het-Contraulzhede" school="gu" category="object" specialist="0" flash="0">
+	<desc>
+	Crée un RazKröll en état de fonctionnement.
+	</desc>
+<flavor>
+[g]Het-Contraulzhède[/g] est très  intéressante car il s'agit de l'unique recette de la confrérie "Het" autorisée par la guilde des alchimistes. 
+Certainement parce que le sacrifice demandé par cette recette, marque de fabrique des Hets, n'a pas été considéré comme un crime répréhensible. En effet, le sacrifice de 3 chouettes timbres n'a offusqué personne : ni le bureau de validation, ni les associations de consommateurs, ni même Chouettex (sûrement très satisfait de voir une nouvelle façon de consommer ses produits).
+</flavor>
+	<disp way="random" weight="110" />
+	<needs>Elt(1):6;Elt(9):3;Elt(22):2;Stamp:3</needs>
+	<result>add(RazKroll)</result>
+</recipe>
+
+
+<recipe id="balchi" name="Het-Trinoptere" school="gu" category="object" specialist="0" flash="0" forbidden="1">
+	<desc>
+	Crée trois alchimites en parfaite santé.
+	</desc>
+<flavor>
+Interdite sous la pression de la société geminite protectrice du vivant poilu et tromignon, cette recette aurait pu être autorisée par la guilde quand on connait sa considération toute relative pour les alchimites.
+D'un point de vue purement scientifique cette recette a la particularité d'utiliser une alchimite pour en créer trois, ce qui est un cas unique dans toute l'histoire de l'alchimie moderne.
+</flavor>
+	<disp way="random" weight="120" />
+	<needs>Elt(0):8;Elt(4):3;Elt(5):3;Elt(13):1;Elt(23):1;Alchimoth:1</needs>
+	<result>add(Alchimoth:3)</result>
+</recipe>
+
+
+<recipe id="bdelor" name="Gigawatt" school="gu" category="object" specialist="0" flash="0">
+	<desc>
+	Crée une portion de réglisse de Delorean extra concentrée.
+	</desc>
+	<disp way="random" weight="200" />
+	<needs>Elt(4):1;Elt(10):2;Elt(11):1;Elt(24):3;Elt(13):1;Elt(17):1</needs>
+	<result>add(Delorean(1))</result>
+</recipe>
+
+
+<recipe id="bbomb" name="Oolong" school="gu" category="object" specialist="0" flash="0">
+<desc>
+Crée quatre bombes polarisées.
+</desc>
+<flavor>
+Même si l'existence et le fonctionnement des bombes polarisées reste un mystère, plusieurs recettes ont été créées pour en transmuter. [g]Oolong[/g] est certainement une des plus intéressantes car elle en crée 4 d'un coup, très pratique pour des bombes fonctionnant par paire. 
+Quelques alchimistes aux idées un peu alambiquées militent auprès de la Guilde pour changer la loi "un seul type d'objet magique identique par alchimie à la coupe de écoles". Persuadés que les bombes polarisées leur permettraient des stratégies alchimiques nouvelles pour gagner la coupe, ils aimeraient beaucoup pouvoir en utiliser plusieurs à la fois. 
+ La Guilde ne veut rien savoir, les accusant de militer pour un objet magique mineur alors que leurs vraies intentions seraient de pouvoir utiliser 4 Aztèquéporteurs à la fois. Tout le monde s'accorde à dire que ce serait effectivement bien plus intelligent de leur part.
+</flavor>
+	<disp way="random" weight="260" />
+	<needs>Elt(0):10;Elt(7):5;Elt(21):2;Elt(19):1;Elt(15):1</needs>
+	<result>add(PolarBomb:4)</result>
+</recipe>
+
+<!-- ######################################### -->
+
+<recipe id="dahand" name="ChowChose" school="jz"  category="object" specialist="0" flash="0" forbidden="1">
+	<desc>
+Crée deux mains du mentor ! Recette secrète de l'école Jeezara ! 
+	</desc>
+	<disp way="school" />
+	<disp way="race" weight="100" cond="grade(,10)" />
+	<needs>Elt(3):8;Elt(5):1;Elt(9):4;Elt(12):4;Elt(22):3</needs>
+	<result>add(MentorHand:2)</result>
+</recipe>
+
+<recipe id="doplop" name="Proto ! Plop ! (tm)" school="jz" category="object" specialist="0" flash="0">
+<desc>
+Crée un protoplop classique. A utiliser à vos risques et périls.
+</desc>
+	<disp way="school" />
+	<disp way="race" weight="130" cond="grade(,2)" />
+	<needs>Elt(0):6;Elt(4):3;Elt(22):1</needs>
+	<result>add(Protoplop(0))</result>
+</recipe>
+
+<recipe id="cgrena" name="Pouchitte" school="jz" category="object" specialist="0" flash="0">
+	<desc>
+	Crée un charcleur à retardement. 
+	</desc>
+	<disp way="school" />
+	<disp way="race" weight="140" cond="grade(,6)" />
+	<needs>Elt(8):2;Elt(9):3;Elt(17):3;Elt(18):1</needs>
+	<result>add(Grenade(1))</result>
+</recipe>
+
+<recipe id="bdolly" name="Bal-Moral" school="jz"  category="object" specialist="0" flash="0" forbidden="1">
+	<desc>
+	Crée une once de Dollyxir amélioré. Recette secrète de l'école Jeezara ! 
+	</desc>
+	<disp way="school" />
+	<disp way="race" weight="60"  cond="grade(,12)" />
+	<needs>Elt(1):5;Elt(2):5;Elt(11):2;Elt(12):3;Elt(25):3</needs>
+	<result>add(Dollyxir(1))</result>
+</recipe>
+
+<recipe id="cdyn" name="Shang-Kah Special" school="sk" category="object" specialist="0" flash="0">
+	<desc>
+	Crée un bâton de dynamite croisée.
+	</desc>
+	<disp way="school" />
+	<disp way="race" weight="160"  cond="grade(,5)" />
+	<needs>Elt(20):3;Elt(26):2;Dynamit(0):1</needs>
+	<result>add(Dynamit(2))</result>
+</recipe>
+
+<recipe id="bwomb" name="Argl-o-Touffu" school="sk"  category="object" specialist="0" flash="0">
+	<desc>
+	Crée deux Branles-bas de wombat.
+	</desc>
+	<disp way="school" />
+	<disp way="race" weight="120" cond="grade(,9)" />
+	<needs>Elt(2):6;Elt(6):5;Elt(16):4</needs>
+	<result>add(Wombat:2)</result>
+</recipe>
+
+<recipe id="btejer" name="Argl-o-Spirazaar" school="sk"  category="object" specialist="0" flash="0">
+	<desc>
+	Crée deux Tejerkatums.
+	</desc>
+	<disp way="school" />
+	<disp way="race" weight="100" cond="grade(,10)" />
+	<needs>Elt(0):6;Elt(4):5;Elt(13):4;Elt(27):1;Catz:1</needs>
+	<result>add(Tejerkatum:2)</result>
+</recipe>
+
+
+<recipe id="patchi" name="Argl-o-Jackpot" school="sk" category="object" specialist="0" flash="0">
+	<desc>
+	Crée un Patchinkrop.
+	</desc>
+	<disp way="school" />
+	<disp way="race" weight="120" cond="grade(,8)" />
+	<needs>Elt(5):5;Elt(9):5;Elt(10):3</needs>
+	<result>add(Patchinko)</result>
+</recipe>
+
+<recipe id="agold" name="Scrooge" school="gu" category="stupid" specialist="0" flash="0">
+<desc>
+Crée 500 kubors.
+</desc>
+<flavor>
+L'invention de cette recette qui crée une somme non négligeable de kubors a été un véritable tremblement de terre. Les marchés financiers se sont affolés, la famille Audepint a hurlé à la mort, les cadres de Chouettex ont dansé la gigue... et  tout le monde dans le royaume se voyait déjà riche à millions.
+Après 2 semaines de dévaluation continue du kubor tout le royaume a pu constater que rien n'avait changé... il fallait juste ajouter 2 zéros à tous les prix, et donc prévoir un porte-feuille beaucoup plus gros pour aller chercher le pain. 
+</flavor>
+	<disp way="school" />
+	<needs>Elt(0):9;Elt(3):3;Elt(4):3;Elt(9):2</needs>
+	<result>win(0,500)</result>
+</recipe>
+
+
+<recipe id="bgold" name="Boursicoti" school="ap"  category="stupid" specialist="0" flash="0">
+	<desc>
+	Crée 1300 kubors.
+	</desc>
+	<disp way="school" />
+	<disp way="race" weight="80"  cond="grade(,11)" />
+	<needs>Elt(1):7;Elt(6):4;Elt(21):2;Elt(25):1;Elt(26):1</needs>
+	<result>win(0,1300)</result>
+</recipe>
+
+
+<recipe id="atoken" name="Calamus" school="gu" category="stupid" specialist="0" flash="0">
+<desc>
+Crée un Pyram.
+</desc>
+<flavor>
+Recette extrêmement appréciée et très connue, il est très difficile de se la procurer. On raconte que la Guilde refuse de la diffuser alors que [g]Calamus[/g] n'est pas interdite. Les analyses des recettes achetées chaque semaine semblent d'ailleurs confirmer cette malheureuse hypothèse. 
+Pour parer à tout soulèvement populaire, la Guilde préfère donner cette recette uniquement à quelques alchimistes particulièrement méritants, ce qui a l'avantage de calmer les esprits et de donner à tout le monde l'envie de bien travailler pour la guilde, des fois que... 
+Bravo à la Guilde des alchimistes, c'est fourbe et particulièrement bien joué !
+Ah, on me signale que ce n'est pas avec des remarques pareilles que je récupèrerai cette recette... Eh bien je dirais que vous avez bien raison, chers lecteurs, mais qui vous dit que je ne l'ai pas déjà ? 
+</flavor>
+<!--<disp way="random" weight="50" />-->
+<disp way="school" />
+<needs>Elt(6):7;Elt(7):5;Elt(21):1;Elt(24):2</needs>
+<result>win(1,0)</result>
+</recipe>
+
+
+<recipe id="btoken" name="Vexillum" school="sk"  category="stupid" specialist="0" flash="0" forbidden="1">
+<desc>
+Crée trois Pyrams.
+</desc>
+<disp way="school" />
+<disp way="race" weight="60" cond="grade(,10)" />
+<needs>Elt(4):4;Elt(5):4;Elt(17):4;Elt(19):2</needs>
+<result>win(3,0)</result>
+</recipe>
+
+<!--pas dispo pour l'instant-->
+<recipe id="ctoken" name="Extra Vexillum" school="gu" category="stupid" specialist="0" flash="0" forbidden="1">
+	<desc>
+	Crée cinq Pyrams.
+	</desc>
+	<!--<disp way="black" weight="5" price="7:2:8000:430" />-->
+	<needs>Elt(2):9;Elt(11):1;Elt(15):1;Elt(23):1;Elt(28):1</needs>
+	<result>win(5,0)</result>
+</recipe>
+
+<!--  Gain de pa -->
+<recipe id="cpa" name="Pasta vigor" school="gu" category="stupid" specialist="0" flash="0">
+<desc>
+Crée une potion de vigueur.
+</desc>
+<flavor>
+Découverte complètement par hasard par un étudiant Gemini qui voulait se faire des crèpes, Pasta Vigor est assurément la plus mauvaise recette alchimique pour créer une potion de vigueur. 
+Malgré tout beaucoup d'alchimistes débutants s'en servent, sans doute parce qu'ils n'ont pas le niveau pour Asco Stéroidex, la recette par excellence des randonneurs.
+</flavor>
+<disp way="quest" />
+<needs>Elt(4):4;Elt(7):3;Elt(8):2</needs>
+<result>add(Pa)</result>
+</recipe>
+
+
+<recipe id="apa" name="Asco Steroidex" school="gu" category="stupid" specialist="0" flash="0">
+<desc>
+Crée une potion de vigueur.
+</desc>
+<flavor>
+[g]Asco Stéroidex[/g], la recette la plus utilisée lors de la préparation des examens de fin d'année ! 
+D'après les statistiques trimestrielles établies par les gardiens des chaudrons, on constate chaque année un bond de plus de 700% d'utilisation d'[g]Asco Stéroidex[/g] pendant le mois qui précède les examens. 
+On monterait même à 1140% durant la dernière semaine. 
+Et après on s'étonne que les étudiants ont des cernes, avec toutes ces potions de vigueur qu'ils s'enfilent.... Heureusement, une bonne recette cosmétique après les épreuves et il n'y paraitra plus.
+</flavor>
+<disp way="random" weight="200" />
+<needs>Elt(0):4;Elt(1):4;Elt(5):3;Elt(6):1</needs>
+<result>add(Pa)</result>
+</recipe>
+
+
+<recipe id="bpa" name="Melio Steroidex" school="gm" category="stupid" specialist="0" flash="0">
+<desc>
+Crée trois potions de vigueur.
+</desc>
+	<disp way="school" />
+	<disp way="race" weight="160" cond="grade(,5)" />
+	<needs>Elt(0):4;Elt(3):4;Elt(4):6;Elt(9):1</needs>
+	<result>add(Pa:3)</result>
+</recipe>
+
+
+<!-- random, courant -->
+<recipe id="sone" name="Satiskat" school="gu" category="stupid" specialist="0" flash="0">
+	<desc>
+	Crée 20 smileys de Skat content. 
+	</desc>
+	<disp way="school" />
+	<needs>Elt(2):5;Elt(20):2</needs>
+	<result>smiley(happy,20)</result>
+</recipe>
+
+<!-- random, courant  -->
+<recipe id="stwo" name="Boudinos" school="gu" category="stupid" specialist="0" flash="0">
+	<desc>
+	Crée 20 smileys de Skat vraiment pas d'accord.
+	</desc>
+	<disp way="school"/>
+	<needs>Elt(0):4;Elt(3):2;Elt(12):2</needs>
+	<result>smiley(snonono,20)</result>
+</recipe>
+
+<!-- random, courant -->
+<recipe id="sten" name="Skatarsis" school="gu" category="stupid" specialist="0" flash="0">
+	<desc>
+	Crée 20 smileys de Skat tristouille.
+	</desc>
+	<disp way="school" />
+	<needs>Elt(16):5</needs>
+	<result>smiley(ssad,20)</result>
+</recipe>
+
+
+<!-- random, courant  -->
+<recipe id="sthree" name="TroSkool" school="gu" category="stupid" specialist="0" flash="0">
+	<desc>
+	Crée 20 smileys de Skat souriant.
+	</desc>
+	<disp way="school"/>
+	<needs>Elt(21):2</needs>
+	<result>smiley(ssmile,20)</result>
+</recipe>
+
+
+
+<!-- random, assez rare -->
+<recipe id="slove" name="Smoochy Poochy" school="gu" category="stupid" specialist="0" flash="0">
+	<desc>
+	Crée 20 smileys pleins d'amour. A consommer avec modération.
+	</desc>
+	<disp way="random" weight="100"/>
+	<needs>Elt(3):5;Elt(7):1;Elt(17):2</needs>
+	<result>smiley(plove,20)</result>
+</recipe>
+
+<!-- random, assez rare -->
+<recipe id="sgold" name="Toutentoc" school="gu" category="stupid" specialist="0" flash="0">
+	<desc>
+	Crée 20 smileys 100% plaqués or.
+	</desc>
+	<disp way="random" weight="100"/>
+	<needs>Elt(0):8;Elt(3):8;Elt(11):1</needs>
+	<result>smiley(pygold,20)</result>
+</recipe>
+
+
+<!-- random, assez rare  -->
+<recipe id="sfour" name="Champyram" school="gu" category="stupid" specialist="0" flash="0">
+	<desc>
+	Crée 20 smileys pour les champions ! 
+	</desc>
+	<disp way="random" weight="100"/>
+	<needs>Elt(25):2;Elt(23):2</needs>
+	<result>smiley(pchamp,20)</result>
+</recipe>
+
+<recipe id="spoum" name="Poum attitude" school="gu" category="stupid" specialist="0" flash="0">
+<desc>
+Crée 10 smileys du POUM.
+</desc>
+<flavor>
+Profitons de cette recette totalement inintéressante d'un point de vue alchimique pour parler des dérives mercantiles et marketing de l'alchimie moderne. Le POUM étant une association sans le sou, on devrait pouvoir éviter un procès. 
+L'alchimie a un rôle humanitaire certain, dans le sens où elle est la voie du progrès pour tout le royaume. Les alchimistes montrent la voie, et leurs recherches sont le chemin à suivre vers la lumière, toute la populace les suivant joyeusement en dansant. 
+
+Hélas, 3 fois hélas, les chemins du progrès sont parfois détournés par des alchimistes sans scrupules ! Les récentes recettes publicitaires, créatrices de [g]smileys[/g] ridicules, sont une triste pantomime de transmutation. L'alchimie dans sa forme la plus vaine, tristement réduite de science première du royaume à "mode rigolote pour la récré".
+Vous aussi, montrez votre désapprobation de ces recettes encombrantes, coûteuses et polluantes ! Refusez la dictature des recettes publicitaires, boycottez les smileys idiots et autres encres d'écriture aux couleurs de votre équipe de cricket préférée ! 
+L'alchimie doit être une science utile et sérieuse ! On est pas là pour s'amuser, nom de nom ! 
+</flavor>
+	<disp way="quest" />
+	<needs>Elt(1):8;Elt(6):2</needs>
+	<result>smiley(poum,10)</result>
+</recipe>
+
+<!-- random, rare, interdit -->
+<recipe id="scand" name="Scandalus Flex" school="gu" category="stupid" specialist="0" flash="0" forbidden="1">
+	<desc>
+	Crée 20 smileys de fort méchante humeur. Créboudiou de corneguidouille. 
+	</desc>
+	<disp way="random" weight="150"/>
+	<needs>Elt(5):9;Elt(12):4;Elt(18):1</needs>
+	<result>smiley(pevil,20)</result>
+</recipe>
+
+<!-- random, rare -->
+<recipe id="snine" name="Skatissime" school="gu" category="stupid" specialist="0" flash="0">
+	<desc>
+	Crée 20 smileys de Skat à lunettes.
+	</desc>
+	<disp way="school"/>
+	<needs>Elt(7):5;Elt(24):3</needs>
+	<result>smiley(sdoc,20)</result>
+</recipe>
+
+
+<!-- school-->
+<recipe id="sfourt" name="Blasonus" school="gu" category="stupid" specialist="0" flash="0">
+	<desc>
+	Crée 20 smileys officiels de la Guilde.
+	</desc>
+	<disp way="random" weight="300"/>
+	<needs>Elt(1):8;Elt(10):1</needs>
+	<result>smiley(guSmall,20)</result>
+</recipe>
+
+<!-- school-->
+<recipe id="sfive" name="Audepint Forever" school="ap"  category="stupid" specialist="0" flash="0">
+	<desc>
+	Crée 20 smileys aux armes d'Audepint.
+	</desc>
+	<disp way="school" />
+	<needs>Elt(7):2;Elt(8):3;Elt(24):1</needs>
+	<result>smiley(apSmall,20)</result>
+</recipe>
+
+
+<!-- school -->
+<recipe id="ssix" name="Jeezara Max" school="jz" category="stupid" specialist="0" flash="0">
+	<desc>
+	Crée 20 smileys aux armes de Jeezara.
+	</desc>
+	<disp way="school" />
+	<needs>Elt(5):1;Elt(16):2;Elt(13):2</needs>
+	<result>smiley(jzSmall,20)</result>
+</recipe>
+
+
+<!-- school -->
+<recipe id="sseven" name="Geministick" school="gm" category="stupid" specialist="0" flash="0">
+	<desc>
+	Crée 20 smileys aux armes de Gémini.
+	</desc>
+	<disp way="school" />
+	<needs>Elt(4):2;Elt(13):2;Elt(21):2</needs>
+	<result>smiley(gmSmall,20)</result>
+</recipe>
+
+<!-- school -->
+<recipe id="seight" name="Shang Classe" school="sk" category="stupid" specialist="0" flash="0">
+	<desc>
+	Crée 20 smileys aux armes de Shang-Kah.
+	</desc>
+	<disp way="school" />
+	<needs>Elt(8):2;Elt(17):2;Pa:2</needs>
+	<result>smiley(skSmall,20)</result>
+</recipe>
+
+<!-- school - -->
+<recipe id="sfifte" name="Blasonuche" school="gu" category="stupid" specialist="0" flash="0">
+	<desc>
+	Crée 30 mega-smileys officiels de la Guilde.
+	</desc>
+	<disp way="random" weight="120"/>
+	<needs>Elt(9):5;Elt(10):2</needs>
+	<result>smiley(gu,30)</result>
+</recipe>
+
+<!-- school - -->
+<recipe id="ssixt" name="Super Frimante" school="ap" category="stupid" specialist="0" flash="0">
+	<desc>
+	Crée 30 mega-smileys aux armes d'Audepint.
+	</desc>
+	<disp way="school" />
+	<needs>Elt(4):6;Elt(24):6;Elt(26):2</needs>
+	<result>smiley(ap,30)</result>
+</recipe>
+
+
+<!-- school -->
+<recipe id="selev" name="Jeez Arma" school="jz" category="stupid" specialist="0" flash="0">
+	<desc>
+	Crée 30 mega-smileys aux armes de Jeezara.
+	</desc>
+	<disp way="school" />
+	<needs>Elt(6):4;Elt(18):2;Elt(14):2</needs>
+	<result>smiley(jz,30)</result>
+</recipe>
+
+
+<!-- school -->
+<recipe id="stwelv" name="Maxi Gemini" school="gm" category="stupid" specialist="0" flash="0">
+	<desc>
+	Crée 30 mega-smileys aux armes de Gémini.
+	</desc>
+	<disp way="school" />
+	<needs>Elt(2):4;Elt(9):5;Elt(23):2</needs>
+	<result>smiley(gm,30)</result>
+</recipe>
+
+<!-- school -->
+<recipe id="sthen" name="Ultra Shang Kah" school="sk" category="stupid" specialist="0" flash="0">
+	<desc>
+	Crée 30 mega-smileys aux armes de Shang-Kah.
+	</desc>
+	<disp way="school" />
+	<needs>Elt(0):8;Elt(1):8;Elt(9):3;Elt(19):1</needs>
+	<result>smiley(sk,30)</result>
+</recipe>
+
+
+<!-- catz -->
+<recipe id="ssent" name="Cromignon" school="gu" category="stupid" specialist="0" flash="0" forbidden="1">
+	<desc>
+	Crée 20 smileys de catz cromignon.
+	</desc>
+	<disp way="random" weight="80" />
+	<needs>Elt(3):5;Elt(12):6;Catz:1</needs>
+	<result>smiley(ccute,20)</result>
+</recipe>
+
+<recipe id="seigh" name="In Ur Pozt" school="gu" category="stupid" specialist="0" flash="0" forbidden="1">
+	<desc>
+	Crée 20 smileys de catz souriant.
+	</desc>
+	<disp way="random" weight="80" />
+	<needs>Elt(5):4;Elt(16):6;Catz:1</needs>
+	<result>smiley(csmile,20)</result>
+</recipe>
+
+<recipe id="snint" name="Berzerkatz" school="gu" category="stupid" specialist="0" flash="0" forbidden="1">
+	<desc>
+	Crée 20 smileys de catz pas content du tout.
+	</desc>
+	<disp way="random" weight="80" />
+	<needs>Elt(3):9;Detartrage:1;Catz:1</needs>
+	<result>smiley(carg,20)</result>
+</recipe>
+
+<recipe id="stwone" name="Godam" school="gu" category="stupid" specialist="0" flash="0" forbidden="1">
+	<desc>
+	Crée 20 smileys de catz très surpris.
+	</desc>
+	<disp way="random" weight="80" />
+	<needs>Elt(2):3;Elt(6):8;Elt(16):2;Catz:1</needs>
+	<result>smiley(cwhat,20)</result>
+</recipe>
+
+
+<recipe id="stwent" name="Catz Aiez" school="gu" category="stupid" specialist="0" flash="0" forbidden="1">
+	<desc>
+	Crée 20 smileys de catz ninja.
+	</desc>
+	<disp way="random" weight="40" />
+	<needs>Elt(0):6;Elt(13):1;Elt(17):1;Catz:1</needs>
+	<result>smiley(cninja,20)</result>
+</recipe>
+
+
+<!-- KEEPER GO OUT -->
+<recipe id="coliq" name="Rotavirus" school="gu" category="stupid" specialist="0" flash="0">
+<desc>
+Flanque la colique. Pensez à bien vous laver les mains.
+</desc>
+<flavor>
+Sans doute une des recettes les plus craintes du royaume. Alors que certaines recettes vraiment dangereuses génèrent plutôt une curiosité malsaine auprès du public qu'une véritable peur, il est amusant de constater que Rotavirus et son effet de colique fulgurant joue dans un tout autre registre. 
+Quiconque parle de Rotavirus en société voit immédiatement son entourage reculer d'un bond ! Certains n'hésitant pas à emmener de force l'alchimiste sous la douche pour lui laver les mains à grandes eaux. 
+Du coup, personne n'en parle. Mais il est de notoriété publique que cette recette est en bonne place dans les statistiques des recettes les plus populaires : faire fuir un gardien trop collant, punir un professeur trop sévère, ralentir un agent du fisc en pleine poursuite... les applications pratiques de Rotavirus ne manquent pas. 
+</flavor>
+	<disp way="school" />
+	<disp way="race" weight="120"  cond="grade(,8)" />
+	<needs>Elt(1):3;Elt(6):2;Elt(9):1;Elt(14):2</needs>
+	<result>keepergoout(coliq)</result>
+</recipe>
+
+<recipe id="redux" name="Arcus Minor" school="jz" category="stupid" specialist="0" flash="0">
+	<desc>
+	Réduction microbienne du corps d'autrui.
+	</desc>
+	<disp way="school" />
+	<disp way="race" weight="160" cond="grade(,5)" />
+	<needs>Elt(16):5;Jeseleet(0):1</needs>
+	<result>keepergoout(redux)</result>
+</recipe>
+
+<recipe id="govoid" name="Inc Umbra" school="gu" category="stupid" specialist="0" flash="0">
+	<desc>
+	Crée un trou noir vers une dimension inconnue. Ne pas jeter de gardien dedans.
+	</desc>
+	<disp way="quest"/>
+	<disp way="random" weight="80" />
+	<needs>Elt(4):1;Elt(5):6;Elt(24):3;Elt(10):1;Elt(11):1</needs>
+	<result>keepergoout(umbra)</result>
+</recipe>
+
+
+
+<!-- COLORS forum / chat-->
+<recipe id="acolor" name="Lagonisse" school="gu" category="stupid" specialist="0" flash="0">
+	<desc>
+	Permet d'écrire en bleu.
+	</desc>
+	
+	<disp way="random" weight="300" />
+	<needs>Elt(3):7;Elt(4):5;Elt(12):2</needs>
+	<result>color(0,1500)</result>
+</recipe>
+
+<recipe id="bcolor" name="Flambotin" school="gu" category="stupid" specialist="0" flash="0">
+	<desc>
+	Permet d'écrire en rouge.
+	</desc>
+	<disp way="random" weight="300" />
+	<needs>Elt(0):3;Elt(1):3;Elt(2):3;Elt(17):1</needs>
+	<result>color(1,1500)</result>
+</recipe>
+
+<recipe id="ccolor" name="Vita mine" school="gu" category="stupid" specialist="0" flash="0">
+	<desc>
+	Permet d'écrire en orange.
+	</desc>
+	<disp way="random" weight="270" />
+	<needs>Elt(2):6;Elt(16):2</needs>
+	<result>color(2,1500)</result>
+</recipe>
+
+
+<recipe id="dcolor" name="Jardinax" school="gu" category="stupid" specialist="0" flash="0">
+	<desc>
+	Permet d'écrire en vert.
+	</desc>
+	<disp way="random" weight="220" />
+	<needs>Elt(4):5;Elt(7):3;Elt(21):1</needs>
+	<result>color(3,1500)</result>
+</recipe>
+
+<recipe id="ecolor" name="Framboisille" school="gu" category="stupid" specialist="0" flash="0">
+	<desc>
+	Permet d'écrire en violet.
+	</desc>
+	<disp way="random" weight="220" />
+	<needs>Elt(5):7;Elt(25):1</needs>
+	<result>color(4,1500)</result>
+</recipe>
+
+
+<recipe id="fcolor" name="Calcitrace" school="gu" category="stupid" specialist="0" flash="0">
+	<desc>
+	Permet d'écrire en gris.
+	</desc>
+	<disp way="random" weight="190" />
+	<needs>Elt(1):1;Elt(8):3;QuestObj(milk):1</needs>
+	<result>color(5,1500)</result>
+</recipe>
+
+
+<recipe id="gcolor" name="Champagnou" school="gu" category="stupid" specialist="0" flash="0">
+	<desc>
+	Permet d'écrire en or blanc. Très chic !
+	</desc>
+	<disp way="random" weight="190" />
+	<needs>Elt(6):4;Elt(10):1;QuestObj(geminishregular):1</needs>
+	<result>color(6,1500)</result>
+</recipe>
+
+<recipe id="hcolor" name="Poneystyle" school="gu" category="stupid" specialist="0" flash="0">
+	<desc>
+	Permet d'écrire en rose. Trop choupy !
+	</desc>
+	<disp way="random" weight="190" />
+	<needs>Elt(0):9;Elt(5):5;Catz:1</needs>
+	<result>color(7,1500)</result>
+</recipe>
+
+
+<!-- ######################################### -->
+<!-- ################ ELEMENTAIRE ################ -->
+<!-- ######################################### -->
+
+<recipe id="feuila" name="Chlorophyzzz" school="gu" category="elem" specialist="0" flash="0">
+	<desc>
+	Crée 1 feuille menthol.
+	</desc>
+	<disp way="random" weight="300" />
+	<needs>Elt(0):2;Elt(1):2;Elt(3):2</needs>
+	<result>add(Elt(4):1)</result>
+</recipe>
+
+<recipe id="feuilb" name="Composti" school="gu" category="elem" specialist="0" flash="0">
+	<desc>
+	Crée 5 feuilles menthols.
+	</desc>
+	<disp way="random" weight="200" />
+	<needs>Elt(2):8;Elt(5):3;Elt(6):3</needs>
+	<result>add(Elt(4):5)</result>
+</recipe>
+
+<recipe id="oeila" name="Folbiglone" school="gu" category="elem" specialist="0" flash="0">
+	<desc>
+	Crée 2 Foloeils.
+	</desc>
+	<disp way="random" weight="300" />
+	<needs>Elt(0):5;Elt(3):5;Elt(4):5</needs>
+	<result>add(Elt(5):2)</result>
+</recipe>
+
+<recipe id="oeilb" name="Hypnote" school="gu" category="elem" specialist="0" flash="0">
+	<desc>
+	Crée 6 Foloeils.
+	</desc>
+	<disp way="random" weight="250" />
+	<needs>Elt(8):4;Elt(10):2</needs>
+	<result>add(Elt(5):6)</result>
+</recipe>
+
+<recipe id="crana" name="Calcifortus" school="gu" category="elem" specialist="0" flash="0">
+	<desc>
+	Crée 3 Cranos.
+	</desc>
+	<disp way="random" weight="270" />
+	<needs>Elt(0):3;Elt(1):5;Elt(2):8;Elt(4):5</needs>
+	<result>add(Elt(6):3)</result>
+</recipe>
+
+<recipe id="flauma" name="Alto-Germe" school="gu" category="elem" specialist="0" flash="0">
+	<desc>
+	Crée 1 Flaum.
+	</desc>
+	<disp way="random" weight="220" />
+	<needs>Elt(1):7;Elt(3):7;Elt(5):4</needs>
+	<result>add(Elt(7):1)</result>
+</recipe>
+
+<recipe id="oxyda" name="Decrepi" school="gu" category="elem" specialist="0" flash="0">
+	<desc>
+	Crée 1 Oxyde.
+	</desc>
+	<disp way="random" weight="260" />
+	<needs>Elt(0):10;Elt(2):10;Elt(6):3;Elt(7):1</needs>
+	<result>add(Elt(8):1)</result>
+</recipe>
+
+<recipe id="couiva" name="Cadmiam" school="gu" category="elem" specialist="0" flash="0">
+	<desc>
+	Crée 2 Couivres.
+	</desc>
+	<disp way="random" weight="150" />
+	<needs>Elt(0):7;Elt(1):7;Elt(2):7;Elt(3):7;Elt(7):4</needs>
+	<result>add(Elt(9):2)</result>
+</recipe>
+
+<recipe id="couivb" name="Boesium" school="gu" category="elem" specialist="0" flash="0">
+	<desc>
+	Crée 1 Couivre.
+	</desc>
+	<disp way="random" weight="260" />
+	<needs>Elt(1):6;Elt(6):8;Elt(8):2</needs>
+	<result>add(Elt(9):1)</result>
+</recipe>
+
+<recipe id="mercua" name="Saturnis" school="gu" category="elem" specialist="0" flash="0">
+	<desc>
+	Crée 1 Mercurule.
+	</desc>
+	<disp way="random" weight="150" />
+	<needs>Elt(5):8;Elt(9):3</needs>
+	<result>add(Elt(10):1)</result>
+</recipe>
+
+<recipe id="etinca" name="Proto Flamme" school="gu" category="elem" specialist="0" flash="0">
+	<desc>
+	Crée 1 Etincelle.
+	</desc>
+	<disp way="quest"/>
+	<needs>Elt(4):3;Elt(7):1;Elt(9):3;Protoplop(0):2</needs>
+	<result>add(Elt(17):1)</result>
+</recipe>
+
+<recipe id="mercub" name="Poli Proxi" school="gu" category="elem" specialist="0" flash="0">
+	<desc>
+	Crée 2 Mercurules.
+	</desc>
+	<disp way="random" weight="180" />
+	<needs>Elt(2):3;Elt(4):4;Elt(7):5;Elt(8):6</needs>
+	<result>add(Elt(10):2)</result>
+</recipe>
+
+<recipe id="ora" name="Flamelor" school="gu" category="elem" specialist="0" flash="0">
+<desc>
+Crée 1 Pépite d'or.
+</desc>
+<flavor>
+Recette mythique par excellence, [g]Flamelor[/g] permet à tout un chacun de créer sa pépite d'or sans effort... hormis celui de se procurer les éléments nécessaires. 
+Il est de notoriété publique que d'autres recettes de création de pépites existent, toutes plus secrètes et plus efficaces. Mais tout le monde s'accorde à dire que ces recettes utilisent sûrement des éléments tous plus rares les uns que les autres, [g]Flamelor[/g] a donc la préférence des flemmards, bien contents de pouvoir créer une pépite d'or à partir des éléments qu'on peut trouver sur le pas de sa porte.
+</flavor>
+	<disp way="random" weight="100" />
+	<needs>Elt(0):8;Elt(6):3;Elt(8):2;Elt(9):2;Elt(10):2</needs>
+	<result>add(Elt(11):1)</result>
+</recipe>
+
+<recipe id="disloa" name="Decruxifieur vert" school="gu" category="elem" specialist="0" flash="0">
+	<desc>
+	Crée 30 Potions vertes.
+	</desc>
+	<disp way="random" weight="250" />
+	<needs>Elt(7):4;Destroyer(0):1</needs>
+	<result>add(Elt(0):30)</result>
+</recipe>
+
+<recipe id="dislob" name="Decruxifieur jaune" school="gu" category="elem" specialist="0" flash="0">
+	<desc>
+	Crée 30 Potions jaunes.
+	</desc>
+	<disp way="random" weight="180" />
+	<needs>Elt(8):4;Destroyer(1):1</needs>
+	<result>add(Elt(1):30)</result>
+</recipe>
+
+<recipe id="disloc" name="Decruxifieur orange" school="gu" category="elem" specialist="0" flash="0">
+	<desc>
+	Crée 30 Potions oranges.
+	</desc>
+	<disp way="random" weight="120" />
+	<needs>Elt(6):3;Destroyer(2):1</needs>
+	<result>add(Elt(2):30)</result>
+</recipe>
+
+<recipe id="dislod" name="Decruxifieur violet" school="gu" category="elem" specialist="0" flash="0">
+	<desc>
+	Crée 30 Potions violettes.
+	</desc>
+	<disp way="random" weight="50" />
+	<needs>Elt(9):2;Destroyer(3):1</needs>
+	<result>add(Elt(3):30)</result>
+</recipe>
+
+
+<recipe id="inva" name="Pistouille" school="gu" category="elem" specialist="0" flash="0">
+	<desc>
+	Crée 10 Potions vertes.
+	</desc>
+	<disp way="quest" />
+	<needs>Elt(4):5;Elt(5):4</needs>
+	<result>add(Elt(0):10)</result>
+</recipe>
+
+<recipe id="invb" name="Pilchouille" school="gu" category="elem" specialist="0" flash="0">
+	<desc>
+	Crée 10 Potions jaunes.
+	</desc>
+	<disp way="quest" />
+	<needs>Elt(2):1;Elt(4):6;Elt(6):3</needs>
+	<result>add(Elt(1):10)</result>
+</recipe>
+
+<recipe id="invc" name="Cassetouille" school="gu" category="elem" specialist="0" flash="0">
+	<desc>
+	Crée 10 Potions oranges.
+	</desc>
+	<disp way="quest" />
+	<needs>Elt(5):3;Elt(6):5;Elt(7):3;Stamp:1</needs>
+	<result>add(Elt(2):10)</result>
+</recipe>
+
+<recipe id="invd" name="Frichtouille" school="gu" category="elem" specialist="0" flash="0">
+	<desc>
+	Crée 10 Potions violettes.
+	</desc>
+	<disp way="quest" />
+	<needs>Elt(7):5;Elt(8):1;Pa:1</needs>
+	<result>add(Elt(3):10)</result>
+</recipe>
+
+
+<!-- ### CHAINES AVANCEES ### -->
+
+<recipe id="eaua" name="Melio Ruche" school="gu" category="elem" specialist="0" flash="0">
+	<desc>
+	Crée 2 Valvéoles.
+	</desc>
+	<disp way="random" weight="140" />
+	<needs>Elt(3):3;Elt(8):5;Elt(12):6</needs>
+	<result>add(Elt(13):2)</result>
+</recipe>
+
+<recipe id="eaub" name="Dissolvo" school="gu" category="elem" specialist="0" flash="0">
+	<desc>
+	Crée 1 Abyssonne.
+	</desc>
+	<disp way="random" weight="100" />
+	<needs>Elt(5):3;Elt(12):2;Elt(14):5</needs>
+	<result>add(Elt(15):1)</result>
+</recipe>
+
+<recipe id="eauc" name="Floconnage" school="gu" category="elem" specialist="0" flash="0">
+	<desc>
+	Crée 2 Torrentines.
+	</desc>
+	<disp way="random" weight="100" />
+	<needs>Elt(0):10;Elt(9):4;Elt(13):3;Elt(15):1</needs>
+	<result>add(Elt(14):2)</result>
+</recipe>
+
+<recipe id="eaud" name="Pouss Pouss" school="gu" category="elem" specialist="0" flash="0">
+	<desc>
+	Crée 5 Flaums.
+	</desc>
+	<disp way="random" weight="100" />
+	<needs>Elt(2):4;Elt(13):6</needs>
+	<result>add(Elt(7):5)</result>
+</recipe>
+
+<recipe id="feua" name="Molten" school="gu" category="elem" specialist="0" flash="0">
+	<desc>
+	Crée 1 Magma.
+	</desc>
+	<disp way="random" weight="60" />
+	<needs>Elt(1):8;Elt(9):1;Elt(17):5;Elt(18):2</needs>
+	<result>add(Elt(19):1)</result>
+</recipe>
+
+<recipe id="terrb" name="Engramine" school="gu" category="elem" specialist="0" flash="0">
+	<desc>
+	Crée 1 Primoterre.
+	</desc>
+	<disp way="school" />
+	<needs>Elt(24):2;Elt(9):5;Elt(14):4;Elt(22):1</needs>
+	<result>add(Elt(23):1)</result>
+</recipe>
+
+<recipe id="feub" name="Ferreroxx" school="gu" category="elem" specialist="0" flash="0">
+	<desc>
+	Crée 1 Pyropâte.
+	</desc>
+	<disp way="random" weight="120" />
+	<needs>Elt(6):5;Elt(16):5;Elt(17):2</needs>
+	<result>add(Elt(18):1)</result>
+</recipe>
+
+<recipe id="feuc" name="Cesari" school="gu" category="elem" specialist="0" flash="0">
+	<desc>
+	Crée 4 Oxydes.
+	</desc>
+	<disp way="random" weight="270" />
+	<needs>Elt(1):6;Elt(4):4;Elt(7):5;Elt(16):6</needs>
+	<result>add(Elt(8):4)</result>
+</recipe>
+
+<recipe id="feud" name="Extinction" school="gu" category="elem" specialist="0" flash="0">
+	<desc>
+	Crée 2 Charbonides.
+	</desc>
+	<disp way="random" weight="130" />
+	<needs>Elt(12):5;Elt(17):2</needs>
+	<result>add(Elt(16):2)</result>
+</recipe>
+
+<recipe id="terrea" name="Cristalism" school="gu" category="elem" specialist="0" flash="0">
+	<desc>
+	Crée 2 Géoles.
+	</desc>
+	<disp way="random" weight="130" />
+	<needs>Elt(3):8;Elt(20):6;PolarBomb:1</needs>
+	<result>add(Elt(21):2)</result>
+</recipe>
+
+<recipe id="terreb" name="Sedimenthe" school="gu" category="elem" specialist="0" flash="0">
+	<desc>
+	Crée 8 feuilles menthol.
+	</desc>
+	<disp way="random" weight="220" />
+	<needs>Elt(1):12;Elt(23):1</needs>
+	<result>add(Elt(4):8)</result>
+</recipe>
+
+<recipe id="terrec" name="Gado Gado" school="gu" category="elem" specialist="0" flash="0">
+	<desc>
+	Crée 2 Glaises.
+	</desc>
+	<disp way="random" weight="240" />
+	<needs>Elt(3):12;Elt(23):1</needs>
+	<result>add(Elt(20):2)</result>
+</recipe>
+
+<recipe id="terred" name="Anansi-Toth" school="gu" category="elem" specialist="0" flash="0">
+	<desc>
+	Crée 1 Ancestrasse.
+	</desc>
+	<disp way="random" weight="240" />
+	<needs>Elt(0):2;Elt(5):4;Elt(20):2;Elt(21):3</needs>
+	<result>add(Elt(22):1)</result>
+</recipe>
+
+<recipe id="venta" name="Fastouille" school="gu" category="elem" specialist="0" flash="0">
+	<desc>
+	Crée 1 Slamine.
+	</desc>
+	<disp way="random" weight="300" />
+	<needs>Elt(2):8;Elt(24):5</needs>
+	<result>add(Elt(25):1)</result>
+</recipe>
+
+<recipe id="ventb" name="Mach Fastouille" school="gu" category="elem" specialist="0" flash="0">
+	<desc>
+	Crée 1 Cyclonite.
+	</desc>
+	<disp way="random" weight="240" />
+	<needs>Elt(3):8;Elt(25):5</needs>
+	<result>add(Elt(26):1)</result>
+</recipe>
+
+<recipe id="ventc" name="Asco Tornade" school="gu" category="elem" specialist="0" flash="0">
+	<desc>
+	Crée 1 Coeur de vortex.
+	</desc>
+	<disp way="random" weight="170" />
+	<needs>Elt(10):1;Elt(25):3;Elt(26):2</needs>
+	<result>add(Elt(27):1)</result>
+</recipe>
+
+<recipe id="ventd" name="Poltinagen" school="gu" category="elem" specialist="0" flash="0">
+	<desc>
+	Crée 5 Cranos.
+	</desc>
+	<disp way="random" weight="140" />
+	<needs>Elt(4):10;Elt(24):5</needs>
+	<result>add(Elt(6):5)</result>
+</recipe>
+
+
+<recipe id="transa" name="As-pyro" school="gu" category="elem" specialist="0" flash="0">
+	<desc>
+	Crée 2 Bouts de souffle.
+	</desc>
+	<disp way="random" weight="150" />
+	<needs>Elt(1):6;Elt(3):4;Elt(16):4;Elt(18):1</needs>
+	<result>add(Elt(24):2)</result>
+</recipe>
+
+<recipe id="transb" name="Stalagmix" school="gu" category="elem" specialist="0" flash="0">
+	<desc>
+	Crée 1 Géole.
+	</desc>
+	<disp way="random" weight="150" />
+	<needs>Elt(2):1;Elt(12):1;Elt(13):1;Elt(14):1;Elt(15):1</needs>
+	<result>add(Elt(21):1)</result>
+</recipe>
+
+<recipe id="transc" name="Melio Souffre" school="gu" category="elem" specialist="0" flash="0">
+	<desc>
+	Crée 3 Pyropâtes.
+	</desc>
+	<disp way="random" weight="200" />
+	<needs>Elt(9):5;Elt(11):3;Elt(22):4</needs>
+	<result>add(Elt(18):3)</result>
+</recipe>
+
+<recipe id="transd" name="Brise matinale" school="gu" category="elem" specialist="0" flash="0">
+	<desc>
+	Crée 5 Rosées.
+	</desc>
+	<disp way="random" weight="90" />
+	<needs>Elt(7):8;Elt(9):5;Elt(24):5</needs>
+	<result>add(Elt(12):5)</result>
+</recipe>
+
+
+<!-- ### ELEM SCHOOL RECIPES ### -->
+<recipe id="scaa" name="Liquefacboom" school="jz"  category="elem" specialist="0" flash="0">
+	<desc>
+	Crée 4 Valvéoles. 
+	</desc>
+	<disp way="school" />
+	<disp way="race" weight="120" cond="grade(,8)" />
+	<needs>Elt(8):6;Elt(10):2;Grenade(0):2</needs>
+	<result>add(Elt(13):4)</result>
+</recipe>
+
+
+<recipe id="scab" name="Pili Pili" school="sk" category="elem" specialist="0" flash="0">
+	<desc>
+	Crée 6 Etincelles.
+	</desc>
+	<disp way="school" />
+	<disp way="race" weight="160" cond="grade(,3)" />
+	<needs>Elt(3):5;Elt(8):5;Elt(11):2;Pa:5</needs>
+	<result>add(Elt(17):6)</result>
+</recipe>
+
+<recipe id="scac" name="Etincelante" school="ap" category="elem" specialist="0" flash="0">
+	<desc>
+	Crée 2 Etincelles.
+	</desc>
+	<disp way="school" />
+	<disp way="race" weight="140" cond="grade(,6)" />
+	<needs>Elt(0):8;Elt(5):4;Elt(9):2;Elt(24):4</needs>
+	<result>add(Elt(17):2)</result>
+</recipe>
+
+<recipe id="scad" name="Tonitruante" school="ap" category="elem" specialist="0" flash="0">
+	<desc>
+	Crée 2 Cyclonites.
+	</desc>
+	<disp way="school" />
+	<disp way="race" weight="130" cond="grade(,2)" />
+	<needs>Elt(2):3;Elt(3):3;Elt(8):5;Elt(9):3;Elt(10):1</needs>
+	<result>add(Elt(26):2)</result>
+</recipe>
+
+<recipe id="scae" name="Rejouissante" school="ap"  category="elem" specialist="0" flash="0">
+	<desc>
+	Crée 5 Pépites d'or.
+	</desc>
+	<flavor>
+		Cette recette utilise une technique particulière dite de" multiplication élémentaire pentagonale". Technique jusqu'à présent unique dans toute l'histoire de l'alchimie. On applaudit bien fort.
+	</flavor>
+	<disp way="school" />
+	<disp way="race" weight="60" cond="grade(,12)" />
+	<needs>Elt(24):5;Elt(25):5;Elt(10):5;Elt(11):1</needs>
+	<result>add(Elt(11):5)</result>
+</recipe>
+
+<recipe id="scaf" name="Oripilante" school="ap"  category="elem" specialist="0" flash="0">
+	<desc>
+	Crée 2 Coeurs de vortex.
+	</desc>
+	<disp way="school" />
+	<disp way="race" weight="100" cond="grade(,10)" />
+	<needs>Elt(1):8;Elt(4):8;Elt(11):3</needs>
+	<result>add(Elt(27):2)</result>
+</recipe>
+
+<recipe id="scag" name="Forgo glou" school="gm"  category="elem" specialist="0" flash="0">
+	<desc>
+	Crée 3 Abyssonnes.
+	</desc>
+	<disp way="school" />
+	<disp way="race" weight="80" cond="grade(,11)" />
+	<needs>Elt(0):7;Elt(1):7;Elt(2):7;Elt(7):10;Elt(10):6</needs>
+	<result>add(Elt(15):3)</result>
+</recipe>
+
+<recipe id="scah" name="Forgo Sol" school="gm"  category="elem" specialist="0" flash="0">
+	<desc>
+	Crée 3 Primoterres.
+	</desc>
+	<disp way="school" />
+	<disp way="race" weight="120" cond="grade(,9)" />
+	<needs>Elt(0):7;Elt(1):7;Elt(3):7;Elt(6):12;Elt(10):6</needs>
+	<result>add(Elt(23):3)</result>
+</recipe>
+
+<recipe id="scai" name="Ravigor" school="gm"  category="elem" specialist="0" flash="0">
+	<desc>
+	Crée 3 Magmas.
+	</desc>
+	<disp way="school" />
+	<disp way="race" weight="60" cond="grade(,12)" />
+	<needs>Elt(1):8;Elt(3):8;Elt(6):8;Elt(9):6;Elt(16):6</needs>
+	<result>add(Elt(19):3)</result>
+</recipe>
+
+
+<recipe id="scaj" name="Octoflotte" school="gm" category="elem" specialist="0" flash="0">
+	<desc>
+	Crée 8 Valvéoles.
+	</desc>
+	<disp way="school" />
+	<disp way="race" weight="160" cond="grade(,3)" />
+	<needs>Elt(4):7;Elt(7):7;Elt(8):7;Elt(20):7;Elt(21):7</needs>
+	<result>add(Elt(13):8)</result>
+</recipe>
+
+
+<recipe id="scas" name="Teetan'os" school="gm" category="elem" specialist="0" flash="0">
+	<desc>
+	Crée 2 Ancestrasses.
+	</desc>
+	<disp way="school" />
+	<disp way="race" weight="140" cond="grade(,6)" />
+	<needs>Elt(4):5;Elt(6):2;Elt(9):4;Elt(20):5</needs>
+	<result>add(Elt(22):2)</result>
+</recipe>
+
+
+
+<recipe id="tchroa" name="Semper Aurificum" school="gu" category="elem" specialist="0" flash="0">
+	<desc>
+	Crée 5 Pépites d'or.
+	</desc>
+	<disp way="school" />
+	<needs>Elt(4):2;Elt(10):2;Elt(15):1;Elt(19):1;Elt(23):1;Elt(27):1</needs>
+	<result>add(Elt(11):5)</result>
+</recipe>
+
+
+<!-- ### CHRONIUM ### -->
+
+<recipe id="chroa" name="Luxurius temporam" school="gu" category="elem" specialist="0" flash="0">
+	<desc>
+	Crée 6 Pépites d'or.
+	</desc>
+	<disp way="quest" />
+	<needs>Elt(3):7;Elt(10):5;Elt(28):2</needs>
+	<result>add(Elt(11):6)</result>
+</recipe>
+
+<recipe id="chrob" name="Acquariox temporam" school="gu" category="elem" specialist="0" flash="0">
+	<desc>
+	Crée 6 Abysonnes.
+	</desc>
+	<disp way="quest" />
+	<needs>Elt(0):10;Elt(14):5;Elt(28):2</needs>
+	<result>add(Elt(15):6)</result>
+</recipe>
+
+<recipe id="chroc" name="ExVolcanis temporam" school="gu" category="elem" specialist="0" flash="0">
+	<desc>
+	Crée 6 Magmas.
+	</desc>
+	<disp way="quest" />
+	<needs>Elt(2):8;Elt(18):5;Elt(28):2</needs>
+	<result>add(Elt(19):6)</result>
+</recipe>
+
+<recipe id="chrod" name="Carnifex temporam" school="gu" category="elem" specialist="0" flash="0">
+	<desc>
+	Crée 6 Primoterres.
+	</desc>
+	<disp way="quest" />
+	<needs>Elt(1):8;Elt(22):5;Elt(28):2</needs>
+	<result>add(Elt(23):6)</result>
+</recipe>
+
+<recipe id="chroe" name="Volgoth temporam" school="gu" category="elem" specialist="0" flash="0">
+	<desc>
+	Crée 6 Coeurs de vortex.
+	</desc>
+	<disp way="quest" />
+	<needs>Elt(4):6;Elt(26):5;Elt(28):2</needs>
+	<result>add(Elt(27):6)</result>
+</recipe>
+
+
+
+
+<!-- ######################################### -->
+<!-- ################     MORPH      ################ -->
+<!-- ######################################### -->
+
+<!-- BG -->
+
+<recipe id="beta" name="Frimette" school="gu" category="morph" specialist="0" flash="0" icon="bg_s">
+	<desc>
+	Change le fond de votre personnage dans un style exclusif très beta-test-attitude.
+	</desc>
+	<disp way="quest" />
+	<needs>Elt(2):2;Elt(3):2;Elt(6):5;Elt(9):2</needs>
+	<result>avatar(5,1)</result>
+</recipe>
+
+<recipe id="fjv" name="Festivalite" school="gu" category="morph" specialist="0" flash="0" icon="bg_s">
+	<desc>
+	Change le fond de votre personnage dans un style exclusif très FJV 2010 ! 
+	</desc>
+	<disp way="quest" />
+	<needs>Elt(1):5;Elt(8):5;Elt(13):1;Pa:1</needs>
+	<result>avatarlist(avatar(5,7):avatar(26,11))</result>
+</recipe>
+
+
+<recipe id="pyrit" name="Deserode" school="gu" category="morph" specialist="0" flash="0" icon="bg_s">
+	<desc>
+	Change le motif du fond de votre personnage avec moults blocs de pyrite.
+	</desc>
+	<disp way="school" />
+	<needs>Elt(4):8;Elt(5):2;Elt(25):3</needs>
+	<result>avatar(5,6)</result>
+</recipe>
+
+
+
+<recipe id="bgb" name="Grondine" school="gu" category="morph" specialist="0" flash="0" icon="bg_s">
+	<desc>
+	Change le motif du fond de votre personnage.
+	</desc>
+	<disp way="quest" />
+	<needs>Elt(6):3;Elt(7):4;Elt(8):1</needs>
+	<result>avatarrand(5,2,4)</result>
+</recipe>
+
+
+<recipe id="bgc" name="Calorifuge" school="gu" category="morph" specialist="0" flash="0" icon="bg_c">
+	<desc>
+	Change la couleur du fond de votre personnage.
+	</desc>
+	<disp way="random" weight="250" />
+	<needs>Elt(5):5;Elt(12):1;Elt(20):1;Joker:1</needs>
+	<result>avatar(26,0)</result>
+</recipe>
+
+<!-- HAIR -->
+
+<recipe id="ahair" name="Flameche" school="gu" category="morph" specialist="0" flash="0" icon="hair_s">
+	<desc>
+	Change la coupe de cheveux.
+	</desc>
+	<disp way="random" weight="300" />
+	<needs>Elt(0):10;Elt(5):4</needs>
+	<result>avatarrand(7,3,0)</result>
+</recipe>
+
+<recipe id="chair" name="Moloch Bol" school="gu" category="morph" specialist="0" flash="0" icon="hair_s">
+	<desc>
+	Change la coupe de cheveux pour une coupe à la mode.
+	</desc>
+	<disp way="random" weight="200" />
+	<needs>Elt(0):10;Elt(4):6;Elt(24):2</needs>
+	<result>avatarrand(7,2,3)</result>
+</recipe>
+
+
+<recipe id="fhairc" name="Shamp D'or" school="gu" category="morph" specialist="0" flash="0" icon="hair_c">
+	<desc>
+	Avoir les cheveux blonds.
+	</desc>
+	<disp way="random" weight="230" />
+	<needs>Elt(6):2;Elt(8):1;Dynamit(0):1</needs>
+	<result>avatarrand(17,2,0)</result>
+</recipe>
+
+
+<recipe id="bhairc" name="Shamp Sombre" school="gu" category="morph" specialist="0" flash="0" icon="hair_c">
+	<desc>
+	Avoir les cheveux foncés. 
+	</desc>
+	<disp way="random" weight="170" />
+	<needs>Elt(3):2;Elt(4):4</needs>
+	<result>avatarrand(17,2,4)</result>
+</recipe>
+
+
+
+<recipe id="dhairc" name="Shamp Brunk" school="gu" category="morph" specialist="0" flash="0" icon="hair_c">
+	<desc>
+	Avoir les cheveux chatains.
+	</desc>
+	<disp way="random" weight="250" />
+	<needs>Elt(1):3;Elt(2):3;Elt(13):1</needs>
+	<result>avatarrand(17,2,2)</result>
+</recipe>
+
+<recipe id="ehairc" name="Shamp Rune" school="gu" category="morph" specialist="0" flash="0" icon="hair_c">
+	<desc>
+	Avoir les cheveux bleus !
+	</desc>
+	<disp way="random" weight="200" />
+	<needs>Elt(0):6;Elt(1):6;Elt(2):6;Elt(3):6;Elt(20):3</needs>
+	<result>avatar(17,9)</result>
+</recipe>
+
+
+<recipe id="ghairc" name="Shamp y Flamme" school="gu" category="morph" specialist="0" flash="0" icon="hair_c">
+	<desc>
+	Avoir les cheveux roux !
+	</desc>
+	<disp way="school" />
+	<needs>Elt(6):6;Elt(17):1;Dynamit(1):1</needs>
+	<result>avatar(17,7)</result>
+</recipe>
+
+<recipe id="chairc" name="Shamp Albi'n" school="gu" category="morph" specialist="0" flash="0" icon="hair_c">
+	<desc>
+	Avoir les cheveux blancs !
+	</desc>
+	<disp way="random" weight="140" />
+	<needs>Elt(2):2;Elt(6):5;Elt(11):1</needs>
+	<result>avatar(17,6)</result>
+</recipe>
+
+<recipe id="hhairc" name="Shamp u Moisi" school="gu" category="morph" specialist="0" flash="0" icon="hair_c">
+	<desc>
+	Avoir les cheveux verts !
+	</desc>
+	<disp way="random" weight="140" />
+	<needs>Elt(6):2;Elt(20):1;Dynamit(2):1</needs>
+	<result>avatar(17,8)</result>
+</recipe>
+
+
+<!-- EYES -->
+
+<recipe id="aeye" name="Sourcillon" school="gu" category="morph" specialist="0" flash="0" icon="eyes_s">
+	<desc>
+	Modifie la forme des yeux. Plus rare ! 
+	</desc>
+	<disp way="random" weight="200" />
+	<needs>Elt(5):2;Elt(7):4;QuestObj(menthol):1</needs>
+	<result>avatarrand(8,2,2)</result>
+</recipe>
+
+<recipe id="beye" name="Sharingag" school="gu" category="morph" specialist="0" flash="0" icon="eyes_s">
+	<desc>
+	Modifie la forme des yeux.
+	</desc>
+	<disp way="random" weight="300" />
+	<needs>Elt(1):8;Elt(3):8;Elt(5):2</needs>
+	<result>avatarrand(8,2,0)</result>
+</recipe>
+
+<recipe id="deye" name="Flagadeye" school="gu" category="morph" specialist="0" flash="0" icon="eyes_s">
+	<desc>
+	Avoir les yeux fermés.
+	</desc>
+	<disp way="random" weight="200" />
+	<needs>Elt(5):3;Elt(13):1;Dalton:1</needs>
+	<result>avatarrand(8,1,4)</result>
+</recipe>
+
+
+<!-- EYES COLORS -->
+
+<recipe id="aeyeco" name="Grassouille v4.6" school="gm" category="morph" specialist="0" flash="0" icon="eyes_c">
+<desc>
+Modifie la couleur des yeux au hasard. 
+</desc>
+<flavor>
+Malgré tous les efforts de l'école Gemini, la colorimétrie rétinienne reste une des transmutations les plus instables. Les multiples versions de la recette Grassouille - aujourd'hui la 4.6 - en sont la preuve. 
+A la sortie de cette version de la recette, un professeur de Gemini l'a annoncé : [i]"La 4.6 sera la dernière version de Grassouille. La couleur des yeux a été stabilisée dans le temps, mais il est toujours impossible de la choisir avec certitude à l'éxécution de la recette. Nous conseillons donc aux alchimistes de recommencer jusqu'à ce que la couleur obtenue leur convienne."[/i]
+Après cette annonce, de nombreuses moqueries ont été entendues du côté de l'école Audepint, la plus connue étant : "Grassouille, satisfait ou recommencé".
+</flavor>
+	<disp way="school" />
+	<disp way="race" weight="130" cond="grade(,2)" />
+	<needs>Elt(5):2;Elt(9):2</needs>
+	<result>avatarrand(18,8,0)</result>
+</recipe>
+
+
+<!-- NOSE -->
+<recipe id="anose" name="Taar a Nin" school="gu" category="morph" specialist="0" flash="0" icon="noz_s">
+	<desc>
+	Modifie la forme du nez. 
+	</desc>
+	<disp way="random" weight="220" />
+	<needs>Elt(0):10;Elt(4):3;Elt(8):4</needs>
+	<result>avatarrand(9,4,0)</result>
+</recipe>
+<!--
+<recipe id="bnose" name="Cochonou" school="gu" category="morph" specialist="0" flash="0">
+	<desc>
+	Modifie la forme du nez. 
+	</desc>
+	<disp way="random" weight="280" />
+	<needs>Elt(21):1;Elt(25):1</needs>
+	<result>avatar(9,1)</result>
+</recipe>
+-->
+<!-- MOUTH -->
+<!--
+<recipe id="amouth" name="Wees-tee" school="gu" category="morph" specialist="0" flash="0">
+	<desc>
+	Modifie la forme de la bouche. 
+	</desc>
+	<disp way="random" weight="200" />
+	<needs>Elt(0):6;Elt(2):3;Elt(16):1</needs>
+	<result>avatar(10,0)</result>
+</recipe>
+
+<recipe id="bmouth" name="Mouemolle" school="gu" category="morph" specialist="0" flash="0">
+	<desc>
+	Modifie la forme de la bouche. 
+	</desc>
+	<disp way="random" weight="300" />
+	<needs>Elt(1):5;Elt(6):2;Elt(20):1</needs>
+	<result>avatar(10,1)</result>
+</recipe>
+-->
+<recipe id="cmouth" name="Tohu Bohu" school="gu" category="morph" specialist="0" flash="0" icon="mouth_s">
+	<desc>
+	Modifie la forme de la bouche. 
+	</desc>
+	<disp way="random" weight="300" />
+	<needs>Elt(3):3;Elt(21):2</needs>
+	<result>avatarrand(10,3,0)</result>
+</recipe>
+
+<recipe id="emouth" name="Gravigomatique" school="gu" category="morph" specialist="0" flash="0" icon="mouth_s">
+	<desc>
+	Modifie la forme de la bouche. 
+	</desc>
+	<disp way="random" weight="200" />
+	<needs>Elt(0):3;Elt(1):3;Elt(2):3;Elt(22):2</needs>
+	<result>avatarrand(10,2,3)</result>
+</recipe>
+
+<recipe id="fmouth" name="Yogzebulle" school="jz" category="morph" specialist="0" flash="0" icon="mouth_s">
+	<desc>
+	Avoir la bouche cousue.
+	</desc>
+	<disp way="school" />
+	<disp way="race" weight="160" cond="grade(,3)" />
+	<needs>Elt(18):3</needs>
+	<result>avatar(10,5)</result>
+</recipe>
+
+<!-- EARS -->
+
+<recipe id="aear" name="Amplifik" school="gu" category="morph" specialist="0" flash="0" icon="ear_s">
+	<desc>
+	Modifie la forme des oreilles.
+	</desc>
+	<disp way="random" weight="300" />
+	<needs>Elt(4):2;Elt(12):2;Elt(13):1</needs>
+	<result>avatarrand(11,2,0)</result>
+</recipe>
+
+
+<recipe id="cear" name="Ox-Grolob" school="gu" category="morph" specialist="0" flash="0" icon="ear_s">
+	<desc>
+	Avoir des oreilles d'elfe. Mais au fait c'est quoi, un elfe ? 
+	</desc>
+	<disp way="random" weight="240" />
+	<needs>Elt(4):6;Elt(20):3;Elt(21):3</needs>
+	<result>avatarrand(11,0,2)</result>
+</recipe>
+
+<!-- SIZE -->
+<recipe id="asize" name="Rikiki-Zaam" school="gu" category="morph" specialist="0" flash="0" icon="hole">
+	<desc>
+	Devenir tout petit.
+	</desc>
+	<disp way="random" weight="250" />
+	<needs>Elt(3):8;Elt(10):2</needs>
+	<result>avatarrand(1,2,0)</result>
+</recipe>
+
+<recipe id="bsize" name="Alakha-Zaam" school="gu" category="morph" specialist="0" flash="0" icon="hole">
+	<desc>
+	Avoir une taille moyenne.
+	</desc>
+	<disp way="random" weight="180" />
+	<needs>Elt(1):3;Elt(3):3;Elt(6):4</needs>
+	<result>avatarrand(1,3,4)</result>
+</recipe>
+
+
+<recipe id="csize" name="Trebojing-Zaam" school="gu" category="morph" specialist="0" flash="0" icon="hole">
+	<desc>
+	Devenir très grand !
+	</desc>
+	<disp way="random" weight="250" />
+	<needs>Elt(2):4;Elt(26):1</needs>
+	<result>avatarrand(1,2,8)</result>
+</recipe>
+
+<recipe id="dsize" name="Major-Zaam" school="gu" category="morph" specialist="0" flash="0" icon="hole">
+	<desc>
+	Dilatation du squelette pour devenir un peu plus grand. 
+	</desc>
+	<disp way="black" weight="100" price="1:0:1500:347" />
+	<needs>Elt(0):5;Elt(3):7;Elt(24):3</needs>
+	<result>avatarinc(1,1)</result>
+</recipe>
+
+<recipe id="esize" name="Minor-Zaam" school="gu" category="morph" specialist="0" flash="0" icon="hole">
+	<desc>
+	Contraction du squelette pour devenir un peu plus petit. 
+	</desc>
+	<disp way="random" weight="250" />
+	<needs>Elt(0):5;Elt(3):7;Elt(20):3</needs>
+	<result>avatarinc(1,0)</result>
+</recipe>
+
+
+<!-- SKIN -->
+<recipe id="askin" name="Poltergruul" school="gu" category="morph" specialist="0" flash="0" icon="skin_c">
+<desc>
+Change la couleur de peau au hasard.
+</desc>
+<flavor>
+A son apparition, Poltergruul a immédiatement déclenché une nouvelle mode. La couleur de peau de tout le royaume changeait tous les 4 matins. 
+Cette mode a coïncidé avec la venue d'une ambassade du lointain royaume de Perfidalbionie. En guise de bienvenue, le comité d'accueil de la Guilde des alchimistes avait préparé une petite surprise :
+un Poltergruul offert à chacun des membres de l'ambassade en visite. Plutôt sympa quand on connait les ingrédients nécessaires à cette recette. 
+
+A l'étonnement général, les Perfidalbioniens ont très mal pris le changement de leur couleur de peau. Ils ont commencé à s'étriper entre eux comme s'ils ne se reconnaissaient pas. Le voyage a été ajourné et ils sont immédiatement rentrés chez eux. Il paraît qu'une guerre sanglante s'est déclenchée en Perfidalbionie dès leur retour. 
+Le comité d'accueil a envoyé un petit mot d'excuse et d'encouragement, mais on en a jamais réentendu parler. 
+En tout cas personne n'a compris comment on pouvait attacher de l'importance à une bête couleur de peau. Ils sont bizarres ces Perfidalbioniens.
+</flavor>
+	<disp way="random" weight="270" />
+	<needs>Elt(24):4;Elt(16):4</needs>
+	<result>avatarrand(16,8,1)</result>
+</recipe>
+
+<recipe id="bskin" name="Racinarve" school="gu" category="morph" specialist="0" flash="0" icon="skin_c">
+	<desc>
+	Changement de la couleur du corps ! La peau et les cheveux sont concernés.
+	</desc>
+	<disp way="school" />
+	<needs>Elt(0):3;Elt(1):3;Elt(2):3;Elt(22):1;Elt(23):1</needs>
+	<result>avatarlist(avatarrand(17,10,0):avatarrand(16,11,0))</result>
+</recipe>
+
+<recipe id="cskin" name="Tifanee" school="ap"  category="morph" specialist="0" flash="0" icon="skin_c">
+	<desc>
+	Avoir la peau bleue. Le froid, sans doute.
+	</desc>
+	<disp way="school" />
+	<disp way="race" weight="160" cond="grade(,5)" />
+	<needs>Elt(1):6;Elt(3):3;Elt(24):5;Elt(13):2</needs>
+	<result>avatar(16,9)</result>
+</recipe>
+
+<recipe id="dskin" name="Bulbouillu" school="jz"  category="morph" specialist="0" flash="0" icon="skin_c">
+	<desc>
+	Avoir la peau verte. 
+	</desc>
+	<disp way="school" />
+	<disp way="race" weight="120" cond="grade(,9)" />
+	<needs>Elt(4):9;Elt(7):1;Elt(14):1;Elt(20):3</needs>
+	<result>avatar(16,10)</result>
+</recipe>
+
+<recipe id="eskin" name="Tektonuke" school="gu" category="morph" specialist="0" flash="0" icon="skin_c">
+	<desc>
+	Avoir la peau toute blanche.
+	</desc>
+	<disp way="random" weight="150" />
+	<needs>Elt(0):3;Elt(1):3;Elt(2):3;Elt(24):6;Elt(23):1</needs>
+	<result>avatar(16,0)</result>
+</recipe>
+
+
+
+<!-- SURGERY -->
+<recipe id="asurge" name="Chirurgigue" school="jz"  category="morph" specialist="0" flash="0" icon="face_r">
+<desc>
+Transformation du visage et des cheveux au hasard !
+</desc>
+<flavor>
+La recette [g]Chirur gigue[/g] est certainement le plus grand cauchemar des services administratifs du royaume. La création de cette recette jeezariste coïncidait avec les grands départs en vacances annuels. 
+Tous les alchimistes chirurgigués se sont fait refouler à la frontière, avec les problèmes que l'on sait : menaces terroristes abracadabrantes, explosion du nombre de dossiers de réfection de passeport, populace grincheuse car interdite de plage.
+Certainement la pire période estivale du royaume. A Jeezara, les mentors en rigolent encore. 
+</flavor>
+<disp way="school" />
+<disp way="race" weight="80" cond="grade(,11)" />
+<needs>Elt(5):2;Elt(6):3;Elt(14):2;Elt(21):3</needs>
+<result>avatarlist(avatarrand(8,5,0):avatarrand(9,4,0):avatarrand(10,6,0):avatarrand(7,5,0):avatarrand(17,10,0))</result>
+</recipe>
+
+
+<recipe id="sexa" name="Choubidoune" school="gu" category="morph" specialist="0" flash="0" icon="hole">
+<desc>
+Changer de sexe.
+</desc>
+<flavor>
+[g]Choubidoune[/g], la célèbre recette pour changer de sexe, est très utilisée dans le millieu du grand banditisme. Les plus grands braqueurs de banque du royaume s'en servent souvent dès qu'il s'agit d'échapper aux autorités. 
+A cause de cela, la Guilde doit souvent traiter des demandes d'interdiction de cette recette. Mais le "LAI" (Lobby des Alchimistes Indécis) veille au grain, et milite activement pour la liberté de choix de chacun. 
+Détail amusant : la recette ne change pas la voix de son utilisateur, ce qui rend la transformation tout de suite moins convaincante. On peut penser que ce détail joue un rôle important dans le fait que la recette soit toujours autorisée. 
+</flavor>
+	<disp way="school" />
+	<needs>Elt(4):1;Elt(7):1;Elt(11):4;Elt(23):2;Pistonide:2;Teleport:1</needs>
+	<result>avatar(-1,0)</result> <!-- hack needed -->
+</recipe>
+
+
+<recipe id="perso" name="Fantomousse" school="gu" category="morph" specialist="0" flash="0" icon="hole">
+<desc>
+Transformation en un autre personnage.
+</desc>
+<disp way="school" />
+<needs>Elt(6):1;Elt(19):8;Elt(15):7;Elt(27):8;Elt(23):7;RazKroll:1</needs>
+<result>avatar(-2,0)</result>
+</recipe>
+
+
+
+
+
+
+<!-- ######################################### -->
+//<!-- #################  CLOTH  ################# -->
+<!-- ######################################### -->
+
+<!-- SHOE-->
+<recipe id="aamisc" name="Calixte" school="gu" category="cloth" specialist="0" flash="0" icon="shoes_c">
+	<desc>
+	Change la couleur des chaussures avec le bleu de l'eau.
+	</desc>
+	<disp way="random" weight="300" />
+	<needs>Elt(0):10;Elt(3):5;Elt(4):4;Elt(13):2</needs>
+	<result>avatarrand(24,4,12)</result>
+</recipe>
+
+<recipe id="abmisc" name="Biclone" school="gu" category="cloth" specialist="0" flash="0" icon="shoes_c">
+	<desc>
+	Change la couleur des chaussures avec la couleur du métal.
+	</desc>
+	<disp way="random" weight="270" />
+	<needs>Elt(0):6;Elt(1):6;Elt(2):6;Elt(3):6;Elt(8):2;Elt(9):2</needs>
+	<result>avatarrand(24,4,8)</result>
+</recipe>
+
+<recipe id="acmisc" name="Furibarde" school="ap"  category="cloth" specialist="0" flash="0" icon="shoes_c">
+	<desc>
+	Change la couleur des chaussures avec le bleu du vent.
+	</desc>
+	<disp way="school" />
+	<disp way="race" weight="160" cond="grade(,3)" />
+	<needs>Elt(6):2;Elt(24):5;Elt(26):1</needs>
+	<result>avatarrand(24,4,24)</result>
+</recipe>
+
+
+<recipe id="amisco" name="Pollixiste" school="sk"  category="cloth" specialist="0" flash="0" icon="shoes_c">
+	<desc>
+	Change la couleur des chaussures. L'élément au choix modifie le résultat !
+	</desc>
+	<disp way="school" />
+	<disp way="race" weight="140" cond="grade(,6)" />
+	<needs>Elt(2):2;Elt(5):10;Elt(7):4;Joker:1</needs>
+	<result>avatar(24,0)</result>
+</recipe>
+
+<recipe id="bmisco" name="Deetanil" school="gu" category="cloth" specialist="0" flash="0" icon="shoes_c">
+	<desc>
+	Change la couleur des chaussures avec le rouge des flammes.
+	</desc>
+	<disp way="random" weight="250" />
+	<needs>Elt(1):6;Elt(3):3;Elt(6):4;Elt(16):5;Elt(17):1</needs>
+	<result>avatarrand(24,4,16)</result>
+</recipe>
+
+<recipe id="cmisco" name="Chatoiement Fulgurant" school="gu" category="cloth" specialist="0" flash="0" icon="shoes_c">
+	<desc>
+	Change la couleur des chaussures avec le vert de la nature.
+	</desc>
+	<disp way="random" weight="300" />
+	<needs>Elt(6):2;Elt(20):2;Elt(21):2</needs>
+	<result>avatarrand(24,4,20)</result>
+</recipe>
+
+
+<!-- BOTTOM 1 -->
+<recipe id="aabot" name="Poulapix" school="gu" category="cloth" specialist="0" flash="0" icon="top_s">
+	<desc>
+	Transforme votre haut. 
+	</desc>
+	<disp way="random" weight="300" />
+	<needs>Elt(3):12;Elt(7):8</needs>
+	<result>avatarrand(12,2,0)</result>
+</recipe>
+
+<recipe id="abotco" name="Frip-Frap" school="gu" category="cloth" specialist="0" flash="0" icon="top_c">
+	<desc>
+	Change la couleur de votre haut. L'élément au choix modifie le résultat !
+	</desc>
+	<disp way="random" weight="230" />
+	<needs>Elt(1):9;Elt(18):1;Joker:1</needs>
+	<result>avatar(22,0)</result>
+</recipe>
+
+<recipe id="bbotco" name="Valvapeur" school="gu" category="cloth" specialist="0" flash="0" icon="top_c">
+	<desc>
+	Change la couleur de votre haut avec le bleu de l'eau.
+	</desc>
+	<disp way="random" weight="260" />
+	<needs>Elt(14):2</needs>
+	<result>avatarrand(22,4,12)</result>
+</recipe>
+
+<recipe id="cbotco" name="Total-Loox" school="gu" category="cloth" specialist="0" flash="0" icon="top_c">
+	<desc>
+	Change la couleur de votre haut avec la couleur du métal.
+	</desc>
+	<disp way="school" />
+	<needs>Elt(5):9;Elt(10):1</needs>
+	<result>avatarrand(22,4,8)</result>
+</recipe>
+
+<recipe id="cnisco" name="Assertine" school="gu" category="cloth" specialist="0" flash="0" icon="top_c">
+	<desc>
+	Change la couleur de votre haut avec le rouge des flammes.
+	</desc>
+	<disp way="random" weight="260" />
+	<needs>Elt(6):3;Elt(16):3;Elt(17):2</needs>
+	<result>avatarrand(22,4,16)</result>
+</recipe> 
+
+<recipe id="bnisco" name="Arc-Vunte" school="gu" category="cloth" specialist="0" flash="0" icon="top_c">
+	<desc>
+	Change la couleur de votre haut avec le vert de la nature.
+	</desc>
+	<disp way="random" weight="240" />
+	<needs>Elt(0):8;Elt(7):3;Elt(22):1</needs>
+	<result>avatarrand(22,4,20)</result>
+</recipe>
+
+
+<recipe id="anisco" name="Algodon" school="gu" category="cloth" specialist="0" flash="0" icon="top_c">
+	<desc>
+	Change la couleur de votre haut avec le bleu du vent. 
+	</desc>
+	<disp way="random" weight="250" />
+	<needs>Elt(4):5;Elt(24):5</needs>
+	<result>avatarrand(22,4,24)</result>
+</recipe>
+
+
+
+<!-- BOTTOM 2-->
+<recipe id="babot" name="Popliton" school="sk" category="cloth" specialist="0" flash="0" icon="bottom_s">
+	<desc>
+	Transforme votre bas.
+	</desc>
+	<disp way="school" />
+	<disp way="race" weight="130" cond="grade(,2)" />
+	<needs>Elt(2):8;Elt(16):4</needs>
+	<result>avatarrand(13,2,0)</result>
+</recipe>
+
+<recipe id="acotco" name="Glossante" school="gu" category="cloth" specialist="0" flash="0" icon="bottom_c">
+	<desc>
+	Change la couleur de votre bas. L'élément au choix modifie le résultat !
+	</desc>
+	<disp way="random" weight="220" />
+	<needs>Elt(0):5;Elt(6):5;Elt(21):1;Joker:1</needs>
+	<result>avatar(23,0)</result>
+</recipe>
+
+<recipe id="bcotco" name="Um Strum Grum" school="gu" category="cloth" specialist="0" flash="0" icon="bottom_c">
+	<desc>
+	Change la couleur de votre bas avec la couleur du métal.
+	</desc>
+	<disp way="random" weight="300" />
+	<needs>Elt(3):4;Elt(8):1;Elt(11):1</needs>
+	<result>avatarrand(23,4,8)</result>
+</recipe>
+
+<recipe id="ccotco" name="Burburu Tu Tum" school="sk"  category="cloth" specialist="0" flash="0" icon="bottom_c">
+	<desc>
+	Change la couleur de votre bas avec le rouge des flammes.
+	</desc>
+	<disp way="school" />
+	<disp way="race" weight="80" cond="grade(,10)" />
+	<needs>Elt(3):7;Elt(19):1</needs>
+	<result>avatarrand(23,10,18)</result>
+</recipe>
+
+<recipe id="banisc" name="Chagirax" school="gu" category="cloth" specialist="0" flash="0" icon="bottom_c">
+	<desc>
+	Change la couleur de votre bas avec le bleu de l'eau.
+	</desc>
+	<disp way="random" weight="290" />
+	<needs>Elt(4):5;Elt(6):3;Elt(14):1</needs>
+	<result>avatarrand(23,4,12)</result>
+</recipe>
+
+<recipe id="bbnisc" name="Etno-Fulgure" school="gu" category="cloth" specialist="0" flash="0" icon="bottom_c">
+	<desc>
+	Change la couleur de votre bas avec le vert de la nature.
+	</desc>
+	<disp way="random" weight="200" />
+	<needs>Elt(1):8;Elt(4):5;Elt(22):1</needs>
+	<result>avatarrand(23,4,20)</result>
+</recipe>
+
+<recipe id="bbbot" name="Cosmo-Pax" school="gu" category="cloth" specialist="0" flash="0" icon="bottom_c">
+	<desc>
+	Change la couleur de votre bas avec le bleu du vent.
+	</desc>
+	<disp way="random" weight="150" />
+	<needs>Elt(2):5;Elt(26):1</needs>
+	<result>avatarrand(23,4,24)</result>
+</recipe>
+
+
+<!-- ##########	PATTERN 	###########-->
+<recipe id="aapat" name="Liberstyx" school="gu" category="cloth" specialist="0" flash="0" icon="pattern_s">
+	<desc>
+	Transforme les motifs de l'uniforme.
+	</desc>
+	<disp way="random" weight="300" />
+	<needs>Elt(0):6;Elt(1):4;Elt(10):1</needs>
+	<result>avatarrand(4,3,5)</result>
+</recipe>
+
+
+<recipe id="acpat" name="Prechi Precha" school="gu" category="cloth" specialist="0" flash="0" icon="pattern_s">
+	<desc>
+	Transforme les motifs de l'uniforme avec des motifs rares. 
+	</desc>
+	<!-- <disp way="random" weight="150" /> -->
+	<disp way="school" />
+	<needs>Elt(1):12;Elt(24):4</needs>
+	<result>avatarrand(4,2,2)</result>
+</recipe>
+
+<recipe id="adpat" name="Melpomene n4" school="ap"  category="cloth" specialist="0" flash="0" icon="pattern_s">
+<desc>
+Transforme les motifs de l'uniforme en quelque chose d'inédit !
+</desc>
+<flavor>
+Figure de la mode du siècle avant-avant-dernier, dame Melpomène Audepint (1295 - 1341) est encore aujourd'hui l'une des pionnières du motif vestimentaire alchimique. 
+Ses créations ont traversé les siècles sans rien perdre de leur originalité et de leur classe intemporelle. Le seul regret du monde de la mode est l'extrême parcimonie créatrice de dame Melpomène... 4 recettes en 46 ans. 
+4e et dernière recette inventée avant sa triste fin le 14 Mulpore 1341, le [g]Melpomène numéro 4 [/g] est réputé comme son motif alchimique le plus réussi. 
+Enfin, pour nos lecteurs qui s'intéressent davantage aux faits divers scabreux qu'à l'histoire de la mode vestimentaire, nous rappelons que dame Melpomène fut victime de sa propre participation au culte des [g]Même pas peur[/g]. Secte expérimentale aujourd'hui disparue qui promulguait le test des anciennes croyances par l'exemple. 
+En tant que [g]Grande prêtresse de la mouise 3e degré[/g], dame Melpomène eu l'insigne honneur de se jeter du haut du manoir Audepint déguisée en Catz le dos tartiné de confiture, sur fond de chants grégoriens entonnés par l'ensemble du culte en bas de la tour. Le résultat de l'expérience fut négatif. 
+Ne faites pas ça chez vous chers lecteurs, le culte des Même pas peur est aujourd'hui interdit par la Guilde des alchimistes.
+</flavor>
+	<disp way="school" />
+	<disp way="race" weight="120" cond="grade(,9)" />
+	<needs>Elt(4):5;Elt(7):5;Elt(17):2;Elt(23):1</needs>
+	<result>avatar(4,4)</result>
+</recipe>
+
+
+<recipe id="bpatco" name="Tabernaceul" school="gu" category="cloth" specialist="0" flash="0" icon="pattern_c">
+	<desc>
+	Change la couleur des motifs de l'uniforme en ::c_0::.
+	</desc>
+	<disp way="random" weight="240" />
+	<needs>Elt(12):1;Elt(16):1;Elt(20):1;Elt(24):1</needs>
+	<result>avatar(21,0)</result>
+</recipe>
+
+<recipe id="cpatco" name="Caracolique" category="cloth" specialist="0" flash="0" icon="pattern_c">
+	<desc>
+	Change la couleur des motifs de l'uniforme en ::c_1::.
+	</desc>
+	<disp way="random" weight="240" />
+	<needs>Elt(1):5;Elt(12):2;Elt(18):1;Elt(24):1</needs>
+	<result>avatar(21,1)</result>
+</recipe>
+
+
+<recipe id="dpatco" name="Houmderloo" school="gu" category="cloth" specialist="0" flash="0" icon="pattern_c">
+	<desc>
+	Change la couleur des motifs de l'uniforme en ::c_2::.
+	</desc>
+	<disp way="random" weight="240" />
+	<needs>Elt(0):6;Elt(9):1;Elt(13):1;Elt(17):1;Elt(21):1;Elt(25):1</needs>
+	<result>avatar(21,2)</result>
+</recipe>
+
+
+<recipe id="aaunif" name="Revivalve" school="gu" category="cloth" specialist="0" flash="0" icon="pattern_c">
+	<desc>
+	Change la couleur des motifs de l'uniforme en ::c_3::.
+	</desc>
+	<disp way="random" weight="240" />
+	<needs>Elt(0):9;Elt(2):10;Elt(10):1</needs>
+	<result>avatar(21,3)</result>
+</recipe>
+
+<recipe id="dmouth" name="Sixorsite" school="gu" category="cloth" specialist="0" flash="0" icon="pattern_c">
+	<desc>
+	Change la couleur des motifs de l'uniforme au hasard.
+	</desc>
+	<disp way="random" weight="160" />
+	<needs>Elt(7):6;Elt(22):1</needs>
+	<result>avatarrand(21,4,0)</result>
+</recipe>
+
+
+
+
+<recipe id="abunif" name="Carthet" school="gu" category="cloth" specialist="0" flash="0" icon="cos_c2">
+	<desc>
+	Modifie la couleur principale de l'uniforme en ::c_0::.
+	</desc>
+	<disp way="random" weight="280" />
+	<needs>Elt(4):4;Elt(13):2;Stamp:2</needs>
+	<result>avatar(19,0)</result>
+</recipe>
+
+
+<recipe id="aunico" name="Gominade" school="gu" category="cloth" specialist="0" flash="0" icon="cos_c2">
+	<desc>
+	Modifie la couleur principale de l'uniforme en ::c_1::.
+	</desc>
+	<disp way="random" weight="280" />
+	<needs>Elt(0):6;Elt(2):6;Elt(17):1</needs>
+	<result>avatar(19,1)</result>
+</recipe>
+
+<recipe id="bunico" name="Farfondu" school="gu" category="cloth" specialist="0" flash="0" icon="cos_c2">
+	<desc>
+	Modifie la couleur principale de l'uniforme en ::c_2::.
+	</desc>
+	<disp way="random" weight="280" />
+	<needs>Elt(0):1;Elt(4):3;Elt(9):2</needs>
+	<result>avatar(19,2)</result>
+</recipe>
+
+<recipe id="apatco" name="Terschellingam" school="gu" category="cloth" specialist="0" flash="0" icon="cos_c2">
+	<desc>
+	Modifie la couleur principale de l'uniforme en ::c_3::.
+	</desc>
+	<disp way="random" weight="280" />
+	<needs>Elt(3):3;Elt(12):2;Elt(16):2</needs>
+	<result>avatar(19,3)</result>
+</recipe>
+
+<recipe id="bbasco" name="PoPourri" school="gu" category="cloth" specialist="0" flash="0" icon="cos_c2">
+	<desc>
+	Change la couleur principale de l'uniforme au hasard.
+	</desc>
+	<disp way="random" weight="260" />
+	<needs>Elt(0):9;Elt(8):3</needs>
+	<result>avatarrand(19,4,0)</result>
+</recipe>
+
+<!-- ###################################################-->
+
+<recipe id="cunico" name="Proto-Tache" school="gu" category="cloth" specialist="0" flash="0" icon="cos_r">
+	<desc>
+	Change toutes les couleurs de l'uniforme au hasard.
+	</desc>
+	<disp way="school" />
+	<needs>Elt(12):2;Protoplop(1):1</needs>
+	<result>avatarlist(avatarrand(20,4,0):avatarrand(19,4,0):avatarrand(21,4,0))</result>
+</recipe>
+
+<recipe id="dunico" name="Rezelarzam" school="gu" category="cloth" specialist="0" flash="0" icon="cos_c1">
+	<desc>
+	Change la couleur des bordures de l'uniforme au hasard
+	</desc>
+	<disp way="random" weight="240" />
+	<needs>Elt(1):8;Elt(20):2</needs>
+	<result>avatarrand(20,4,0)</result>
+</recipe>
+
+
+<recipe id="abasco" name="Manchetax" school="gu" category="cloth" specialist="0" flash="0" icon="cos_c1">
+	<desc>
+	Change la couleur des bordures de l'uniforme en ::c_0::.
+	</desc>
+	<disp way="random" weight="270" />
+	<needs>Elt(0):6;Elt(8):1</needs>
+	<result>avatar(20,0)</result>
+</recipe>
+
+
+
+<recipe id="cbasco" name="OrdroFol" school="gu" category="cloth" specialist="0" flash="0" icon="cos_c1">
+	<desc>
+	Change la couleur des bordures de l'uniforme en ::c_1::.
+	</desc>
+	<disp way="random" weight="270" />
+	<needs>Elt(2):10;Elt(12):1</needs>
+	<result>avatar(20,1)</result>
+</recipe>
+
+<recipe id="dbasco" name="Macrolle" school="gu" category="cloth" specialist="0" flash="0" icon="cos_c1">
+	<desc>
+	Change la couleur des bordures de l'uniforme en ::c_2::.
+	</desc>
+	<disp way="random" weight="270" />
+	<needs>Elt(3):5;Elt(5):1;Elt(25):1</needs>
+	<result>avatar(20,2)</result>
+</recipe>
+
+<recipe id="abpat" name="Googoth" school="gu" category="cloth" specialist="0" flash="0" icon="cos_c1">
+	<desc>
+	Change la couleur des bordures de l'uniforme en ::c_3::.
+	</desc>
+	<disp way="random" weight="270" />
+	<needs>Elt(5):2;Elt(6):2;Elt(13):2</needs>
+	<result>avatar(20,3)</result>
+</recipe>
+
+
+<recipe id="unifa" name="Moldo Gul" school="gu" category="cloth" specialist="0" flash="0" icon="cos_r">
+<desc>
+Change le style de l'uniforme.
+</desc>
+<disp way="school" />
+<needs>Elt(3):6;Elt(8):5;Elt(11):1;PearGrain(0):2</needs>
+<result>avatarrand(3,4,0)</result>
+</recipe>
+
+
+
+<!-- #############		ACCESSOIRES	################## -->
+<recipe id="aacc" name="Boulazed" school="gu" category="cloth" specialist="0" flash="0" icon="unknown">
+	<desc>
+	Supprime un accessoire casse-pied, comme euh... une casquette ?
+	</desc>
+	<disp way="quest" />
+	<needs>Elt(6):8;Elt(7):5;Elt(16):1</needs>
+	<result>avatar(14,0)</result>
+</recipe>
+
+
+<!-- ############################################ -->
+<!-- ##############    QUEST RECIPES   ############## -->
+<!-- ############################################ -->
+
+
+<recipe id="papera" name="Paperascal" school="gu" category="stupid" quest="1" flash="0" specialist="0">
+	<desc>
+	Incline des rayures imprimées. 
+	</desc>
+	<disp way="quest" />
+	<needs>Elt(2):6;Elt(4):5;Elt(6):8;Elt(9):3;QuestObj(vertForm):1</needs>
+	<result>add(QuestObj(oblForm):1)</result>
+</recipe>
+
+<recipe id="coliqf" name="Rotavirus Maxima" school="gu" category="stupid" quest="1" specialist="0" flash="0">
+	<desc>
+	Flanque la colique à distance. Pensez à bien vous laver les mains.
+	</desc>
+	<disp way="quest"/>
+	<needs>Elt(0):6;Elt(6):2;Elt(8):3;Elt(12):6;QuestObj(guildian):1</needs>
+	<result>keepergoout(coliq)</result>
+</recipe>
+
+<recipe id="balai" name="Ganon Swifferam" school="gu" category="stupid" quest="1" specialist="0" flash="1">
+	<desc>
+	Crée un balai magique niveau 2. Une recette légendaire !
+	</desc>
+	<disp way="quest"/>
+	<needs>Elt(10):3;QuestObj(wood):1;QuestObj(wombatBeard):1;QuestObj(amu0):1;QuestObj(amu1):1;QuestObj(amu2):1</needs>
+	<result>add(QuestObj(broom2))</result>
+</recipe>
+
+<recipe id="gremit" name="Schrap Pack" school="gu" category="object" quest="1" specialist="0" flash="1">
+	<desc>
+	Crée quatre charcleurs standards. 
+	</desc>
+	<disp way="quest" /> 
+	<needs>Elt(9):12;Elt(17):8;Elt(18):4</needs>
+	<result>add(Grenade(0):4)</result>
+</recipe>
+
+<recipe id="adaltf" name="Parflaum Flash" school="gu" category="object" quest="1" specialist="0" flash="1">
+	<desc>
+	Crée une dose d"Au paradis du daltonisme".
+	</desc>
+	<disp way="quest" />
+	<needs>Elt(4):5;Elt(7):5;Elt(13):5;QuestObj(vortex):1</needs>
+	<result>add(Dalton)</result>
+</recipe>
+
+<recipe id="qpaler" name="Palermolle" school="gu" category="stupid" quest="1" specialist="0" flash="1">
+	<desc>
+	Crée une potion spéciale anti gueule de bois. Résultat garanti ! 
+	</desc>
+	<disp way="quest" />
+	<needs>Elt(3):12;Elt(10):3;Elt(13):8;QuestObj(cage):3;QuestObj(fiente):1;QuestObj(epid):1</needs>
+	<result>add(QuestObj(liquid))</result>
+</recipe>
+
+<recipe id="qfeub" name="Ferreroxx Petula" school="gu" category="elem" quest="1" specialist="0" flash="0">
+	<desc>
+	Crée 1 pyropâte.
+	</desc>
+	<disp way="quest" />
+	<needs>Elt(6):5;Elt(16):5;Elt(21):1;Elt(17):2</needs>
+	<result>add(Elt(18):1)</result>
+</recipe>
+
+<recipe id="qanab" name="Fonlaforme" school="gu" category="stupid" quest="1" specialist="0" flash="0">
+	<desc>
+	Crée 1 dose d'anabolisant mentholé. Ne pas secouer.
+	</desc>
+	<disp way="quest" />
+	<needs>Elt(3):6;Elt(12):4;Elt(20):4;Elt(9):1;Elt(13):1;QuestObj(menthol):3</needs>
+	<result>add(QuestObj(anab))</result>
+</recipe>
+
+
+<recipe id="qvoid" name="Volt Umbra" school="gu" category="stupid" quest="1" specialist="0" flash="0">
+	<desc>
+	Crée un trou noir vers une dimension inconnue. Ne pas mettre les doigts.
+	</desc>
+	<disp way="quest" />
+	<needs>Elt(4):1;Elt(5):6;Elt(24):5;Elt(10):1;QuestObj(cage):1</needs>
+	<result>keepergoout(umbra)</result>
+</recipe>
+
+
+<recipe id="choca" name="Richenfibre" school="gm" category="stupid" specialist="0" flash="0">
+	<desc>
+	Crée un élément expérimental et comestible au bon goût de chocolat. 
+	</desc>
+	<disp way="quest" />
+	<needs>Elt(12):5;Elt(17):3;Elt(25):3;Elt(10):2;Elt(11):1</needs>
+	<result>add(QuestObj(chocapic))</result>
+</recipe>
+
+<recipe id="qchoca" name="Richenfibre" school="gu" category="stupid" quest="1" specialist="0" flash="0">
+	<desc>
+	Crée un élément expérimental et comestible au bon goût de chocolat. 
+	</desc>
+	<disp way="quest" />
+	<needs>Elt(2):10;Elt(12):5;Elt(17):3;Elt(25):3;Elt(10):2;Elt(11):1</needs>
+	<result>add(QuestObj(chocapic))</result>
+</recipe>
+
+
+<recipe id="qaraz" name="Jeez-Contraulzhede" school="gu" category="object" quest="1" specialist="0" flash="0">
+	<desc>
+	Crée 2 RazKrölls en état de fonctionnement.
+	</desc>
+	<disp way="quest" />
+	<needs>Elt(1):6;Elt(9):2;Elt(20):3;Elt(16):2;Stamp:4</needs>
+	<result>add(RazKroll:2)</result>
+</recipe>
+
+<recipe id="qborne" name="Tsunammifere" school="gu" category="object" quest="1" specialist="0" flash="0">
+	<desc>
+	Crée 40 Branles-bas de Wombat.
+	</desc>
+	<disp way="quest" />
+	<needs>Elt(4):8;Elt(6):8;Elt(8):6;Elt(20):5;Elt(17):2;QuestObj(wombatBeard):4</needs>
+	<result>add(Wombat:40)</result>
+</recipe>
+
+
+<recipe id="qeaub" name="Wannabyssoon" school="gu" category="elem" quest="1" specialist="0" flash="0">
+	<desc>
+	Crée 1 abyssonne.
+	</desc>
+	<disp way="quest" />
+	<needs>Elt(5):3;Elt(20):4;Elt(12):5;Elt(13):3;Elt(14):1</needs>
+	<result>add(Elt(15):1)</result>
+</recipe>
+
+
+<recipe id="qtrap" name="Zangraguette" school="gu" category="stupid" quest="1" specialist="0" flash="0">
+	<desc>
+	Crée 1 pépite d'or hypnotisante piégée.
+	</desc>
+	<disp way="quest" />
+	<needs>Elt(5):4;Elt(13):2;Elt(17):2;Elt(14):1;Elt(11):1</needs>
+	<result>add(QuestObj(goldTrap):1)</result>
+</recipe>
+
+
+<recipe id="qcutan" name="Cutan Cutan" school="gu" category="stupid" quest="1" specialist="0" flash="0">
+	<desc>
+	Crée 1 flacon de crème solaire top qualité.
+	</desc>
+	<disp way="quest" />
+	<needs>Elt(3):6;Elt(9):1;Elt(16):3;Elt(13):3;QuestObj(gras):5</needs>
+	<result>add(QuestObj(liquid):1)</result>
+</recipe>
+
+<recipe id="qadel" name="Crenom de Zeus" school="gu" category="object" quest="1" specialist="0" flash="0">
+	<desc>
+	Crée 5 portions de réglisse de Delorean.
+	</desc>
+	<disp way="quest" />
+	<needs>Elt(2):10;Elt(5):6;Elt(9):2;Elt(17):1</needs>
+	<result>add(Delorean(0):5)</result>
+</recipe>
+
+<recipe id="qkevin" name="Prapradel" school="gu" category="stupid" specialist="0" quest="1" flash="0" icon="hole">
+	<desc>
+	Fait apparaître une personne disparue. Sous vos applaudissements ! 
+	</desc>
+	<disp way="quest" />
+	<needs>Elt(5):5;Elt(8):3;Elt(20):1;Elt(17):2</needs>
+	<result>avatarrand(7,5,0)</result>
+</recipe>
+
+<recipe id="qmiaou" name="Technocat" school="gu" category="stupid" quest="1" specialist="0" flash="0">
+	<desc>
+	Crée un Miaouducteur quadriphasé. 
+	</desc>
+	<disp way="quest" />
+	<needs>Elt(0):4;Elt(2):4;Elt(10):2;Elt(20):5</needs>
+	<result>add(QuestObj(magneto):1)</result>
+</recipe>
+
+
+<recipe id="qpa" name="Multiplus Vigoroum" school="gu" category="stupid" quest="1" specialist="0" flash="0">
+<desc>
+Crée 100 potions de vigueur.
+</desc>
+	<disp way="quest" />
+	<needs>Elt(3):8;Elt(6):5;Elt(9):4;Elt(10):4;Elt(12):4</needs>
+	<result>add(Pa:100)</result>
+</recipe>
+
+<recipe id="qloose" name="Mega Mouise" school="gu" category="stupid" quest="1" specialist="0">
+<desc>
+Manque de bol garanti pour une personne au hasard. Compte-rendu de l'incident fourni ! 
+</desc>
+	<disp way="quest" />
+	<needs>Elt(4):6;Elt(7):9;Elt(10):1;Elt(16):1</needs>
+	<result>add(QuestObj(loose):1)</result>
+</recipe>
+
+
+<recipe id="qcoord" name="Les Feuillets Jaunes" school="gu" category="stupid" quest="1" specialist="0">
+<desc>
+Pensez à un personne ou une entreprise, la recette vous fournira son adresse.
+</desc>
+	<disp way="quest" />
+	<needs>Stamp:4;Elt(10):6;Elt(14):3;Elt(26):3</needs>
+	<result>add(QuestObj(coords):1)</result>
+</recipe>
+
+<recipe id="qconta" name="Parmenator Frelatus" school="gu" category="object" forbidden="1" quest="1" specialist="0">
+<desc>
+Créé 10 Aztèquéporteurs.
+</desc>
+	<disp way="quest" />
+	<needs>Elt(9):5;Elt(10):4;Elt(11):2;Elt(14):5</needs>
+	<result>add(Teleport:10)</result>
+</recipe>
+
+
+<recipe id="qcontb" name="Bisquerage" school="gu" category="stupid" forbidden="1" quest="1" specialist="0">
+<desc>
+Crée 5 Chouettes d'or contrefaites.
+</desc>
+	<disp way="quest" />
+	<needs>Elt(0):2;Elt(7):8;Elt(21):5;PolarBomb:8;Alchimoth:4</needs>
+	<result>add(GodFather:5)</result>
+</recipe>
+
+
+<recipe id="qcontc" name="Multiplex Ambidextrus" school="gu" category="object" forbidden="1" quest="1" specialist="0">
+<desc>
+Crée 20 mains du mentor. 
+</desc>
+	<disp way="quest" />
+	<needs>Elt(5):2;Elt(10):8;Elt(14):6;Elt(18):6;QuestObj(milk):5</needs>
+	<result>add(MentorHand:20)</result>
+</recipe>
+
+
+<recipe id="qskat" name="Rabaspoil" school="gu" category="stupid" forbidden="0" quest="1" specialist="0">
+<desc>
+Crée 250 Skats.
+</desc>
+	<disp way="quest" />
+	<needs>Elt(6):4;Elt(11):3;Elt(22):1;Elt(16):8;Dynamit(1):2;Detartrage:2</needs>
+	<result>add(QuestObj(pickSkat):250)</result>
+</recipe>
+
+<recipe id="qcthu" name="Ultima Moderatus" school="gu" category="stupid" forbidden="0" quest="1" specialist="0">
+<desc>
+Bannir une entité démoniaque quelconque.
+</desc>
+	<disp way="quest" />
+	<needs>Alchimoth:3;Elt(15):4;Elt(22):3;Catz:10;QuestObj(geminishregular):6;Destroyer(2):1</needs>
+	<result>kaboom(nocthul)</result>
+</recipe>
+
+<recipe id="rwdcth" name="Melanthor" school="gu" category="object" forbidden="0" specialist="0">
+<desc>
+Crée 2 charcleurs à retardement.
+</desc>
+	<disp way="quest" />
+	<needs>Elt(12):2;Elt(16):2;Elt(20):2;Elt(24):2;Elt(11):5</needs>
+	<result>add(Grenade(1):2)</result>
+</recipe>
+
+
+
+<!-- #############		PUMPKIN		################## -->
+
+<recipe id="pkina" name="Bidoubeurre" school="gu" category="stupid" forbidden="0" specialist="0">
+<desc>
+Crée 10 smileys de courge orange.
+</desc>
+	<disp way="school" />
+	<needs>Elt(7):5;Elt(21):2;Pumpkin(0):10</needs>
+	<result>smiley(pkm,10)</result>
+</recipe>
+
+<recipe id="pkinb" name="Calebassille" school="gu" category="stupid" forbidden="0" specialist="0">
+<desc>
+Crée 10 smileys de courge verte.
+</desc>
+	<disp way="school" />
+	<needs>Elt(4):4;Elt(17):2;Pumpkin(1):10</needs>
+	<result>smiley(pko,10)</result>
+</recipe>
+
+<recipe id="pkinc" name="Patidou" school="gu" category="stupid" forbidden="0" specialist="0">
+<desc>
+Crée 10 smileys de courge blanche.
+</desc>
+	<disp way="school" />
+	<needs>Elt(6):6;Elt(13):2;Pumpkin(2):10</needs>
+	<result>smiley(pky,10)</result>
+</recipe>
+
+
+<recipe id="pkind" name="Transfotiron" school="gu" category="morph" forbidden="0" specialist="0" icon="unknown">
+<desc>
+Révélez la courge qui est en vous ! 
+</desc>
+	<disp way="school" />
+	<needs>Elt(9):4;Elt(20):1;Elt(25):2;Pumpkin(0):7;Pumpkin(1):7;Pumpkin(2):7</needs>
+	<result>avatartemp(pkav:avatarrand(0,3,8))</result>
+</recipe>
+
+
+<!-- #############		XMAS	################## -->
+<recipe id="xmhat" name="Frimalobe" school="gu" category="stupid" forbidden="0" specialist="0" icon="hair_s">
+<desc>
+Crée un magnifique bonnet de Noël ! 
+</desc>
+	<disp way="school" />
+	<needs>Elt(2):5;Elt(6):4;Elt(12):2;SnowBall:1</needs>
+	<result>avatar(14,2)</result>
+</recipe>
+
+<recipe id="xmbg" name="Tinoroussine" school="gu" category="morph" forbidden="0" specialist="0" icon="bg_s">
+<desc>
+Change le motif du fond de votre personnage avec un beau sapin.
+</desc>
+	<disp way="school" />
+	<needs>Elt(20):2;Elt(25):2;Choco:1</needs>
+	<result>avatar(5,8)</result>
+</recipe>
+
+
+<!-- #############		SECRET SCT RECIPES	################## -->
+
+<recipe id="scthat" name="Pyrasol" school="gu" category="cloth" forbidden="0" specialist="0" icon="hair_s">
+<desc>
+Crée un pyram flottant sur la tête, symbole de légitimité alchimique.
+</desc>
+	<disp way="secretrace" weight="100" />
+	<needs>Elt(2):4;Elt(8):1;Elt(11):2;Pa:5;Joker:1</needs>
+	<result>avatarlist(avatar(14,5):avatar(25,0))</result> 
+</recipe>
+
+<recipe id="sctsap" name="Codexale" school="ap" category="morph" forbidden="0" specialist="0" icon="unknown">
+<desc>
+Révèle en vous l'esprit d'Audepint, Dure 1 mois, fait gagner un élément de plus par partie.
+</desc>
+	<disp way="secretrace" weight="100" />
+	<needs>Elt(5):2;Elt(25):2;Elt(27):1;Elt(28):1</needs>
+	<result>avatartemp(apav:avatar(0,12):avatarrand(6,100,0):avatarrand(7,100,0):avatarrand(8,100,0):avatarrand(9,100,0):avatarrand(10,100,0))</result> 
+</recipe>
+
+
+<recipe id="sctsjz" name="Esperost" school="jz" category="morph" forbidden="0" specialist="0" icon="unknown">
+<desc>
+Révèle en vous l'esprit de Jeezara, Dure 1 mois, fait gagner un élément de plus par partie.
+</desc>
+	<disp way="secretrace" weight="100" />
+	<needs>Elt(4):2;Elt(13):2;Elt(15):1;Elt(28):1</needs>
+	<result>avatartemp(jzav:avatar(0,13):avatarrand(6,100,0):avatarrand(7,100,0):avatarrand(8,100,0))</result> 
+</recipe>
+
+<recipe id="sctsgm" name="Gayaforma" school="gm" category="morph" forbidden="0" specialist="0" icon="unknown">
+<desc>
+Révèle en vous l'esprit de Gemini, Dure 1 mois, fait gagner un élément de plus par partie.
+</desc>
+	<disp way="secretrace" weight="100" />
+	<needs>Elt(7):2;Elt(21):2;Elt(23):1;Elt(28):1</needs>
+	<result>avatartemp(gmav:avatar(0,15):avatarrand(6,100,0):avatarrand(7,100,0):avatarrand(8,100,0):avatarrand(9,100,0):avatarrand(10,100,0))</result> 
+</recipe>
+
+<recipe id="sctssk" name="Flamargol" school="sk" category="morph" forbidden="0" specialist="0" icon="unknown">
+<desc>
+Révèle en vous l'esprit de Shang-Kah, Dure 1 mois, fait gagner un élément de plus par partie.
+</desc>
+	<disp way="secretrace" weight="100" />
+	<needs>Elt(6):2;Elt(17):2;Elt(19):1;Elt(28):1</needs>
+	<result>avatartemp(skav:avatar(0,14):avatarrand(6,100,0):avatarrand(7,100,0):avatarrand(8,100,0):avatarrand(9,100,0):avatarrand(10,100,0))</result>
+</recipe>
+
+
+<recipe id="sctogr" name="MiniDrone" school="gu" category="object" forbidden="0" specialist="0" icon="unknown">
+<desc>
+Crée 4 charcleurs téléguidés.
+</desc>
+	<disp way="secretrace" weight="100" />
+	<needs>Elt(17):4;Elt(28):1</needs>
+	<result>add(Grenade(2):4)</result>
+</recipe>
+
+
+<recipe id="sctosa" name="Fizziroulis" school="gu" category="object" forbidden="0" specialist="0" icon="unknown">
+<desc>
+Crée 4 Pendulors.
+</desc>
+	<disp way="secretrace" weight="100" />
+	<needs>Elt(13):4;Elt(28):1</needs>
+	<result>add(Slide(0):4)</result>
+</recipe>
+
+<recipe id="sctosb" name="Elevatoche" school="gu" category="object" forbidden="0" specialist="0" icon="unknown">
+<desc>
+Crée 4 Turbulors.
+</desc>
+	<disp way="secretrace" weight="100" />
+	<needs>Elt(25):4;Elt(28):1</needs>
+	<result>add(Slide(1):4)</result>
+</recipe>
+
+<recipe id="sctopl" name="Bougraine" school="gu" category="object" forbidden="0" specialist="0" icon="unknown">
+<desc>
+Crée 4 Peluchards.
+</desc>
+	<disp way="secretrace" weight="100" />
+	<needs>Elt(21):4;Elt(28):1</needs>
+	<result>add(Skater:4)</result>
+</recipe>
+
+
+
+
+</recipes>

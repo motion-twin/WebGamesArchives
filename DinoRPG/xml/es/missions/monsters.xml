@@ -1,0 +1,43 @@
+﻿<missions>
+
+	<m group="mbegin" id="mbegin" name="Un servicio raro para un hombre raro">
+		<begin>
+			Ejem, ejem. Me gustaría que transportaras algo para mí. Ya verás, no hay ningún riesgo. Tan sólo sigue mis instrucciones (ji, ji, ji)...
+		</begin>
+		<goto v="mport"/>
+		<talk v="Hombre raro" gfx="filou">
+			Bien. Vas a coger esta maleta negra y se la vas a llevar a mi Primo que está en la Plaza del Mercado de Dinovilla. Te dará nuevas instrucciones.
+		</talk>
+		<action v="Maletín Negro">
+			Has cogido el maletín negro. No tienes ninguna curiosidad por saber lo que contiene.
+		</action>
+		<goto v="marche"/>
+		<talk v="Hombre raro" gfx="filou">
+			Ajá, ¿de parte de mi Primo? Habrá encontrado la buena combinación... Espérame aquí bien tranquilo durante unas horas. Necesito algo de tiempo para conseguir lo que necesito introducir en el maletín de vuelta, ¿capito?
+		</talk>
+		<action v="Esperar..." wait="3">
+			Esperas a que el Primo esté listo.
+		</action>
+		<talk v="Hombre raro" gfx="filou">
+			Oye escúchame bien. Tenemos un problema, y la pasta no está lista todavía. Espérame un poco más para que pueda ocuparme de todo, ¿ok?
+		</talk>
+		<action v="Esperar..." wait="2">
+			Esperas una vez más a que el Primo esté listo.
+		</action>
+		<talk v="Hombre raro" gfx="filou">
+			Ja, ja. Ya está todo listo. Coge este maletín y llévaselo a mi Primo lo más rápido posible. No tengo ganas de que me agujereen por un retraso insignificante.
+		</talk>
+		<action v="Maletín Negro">
+			Has cogido el maletín negro. Parece más ligero que a la ida. Supones que el contenido ha cambiado.
+		</action>
+		<goto v="mport"/>
+		<talk v="Hombre raro" gfx="filou">
+			Gracias. ¿Ves? ¡Te dije que no habría peligro!
+		</talk>
+		<end>
+			Perfecto, esto está hecho. Ahora, voy a ofrecerte el pasaje que te permitirá franquear los Guardias.
+		</end>
+		<xp v="5"/>
+	</m>
+
+</missions>

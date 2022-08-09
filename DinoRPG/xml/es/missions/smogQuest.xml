@@ -1,0 +1,153 @@
+﻿<!-- ***************************************************************************** -->
+<!--
+-trouver des matériaux pour colmater une brèche du monde sombre dans le laboratoire
+-éliminer des dinoz noirs dans différents lieux des îles atlantéinées
+-trouver des matériaux pour réparer les installations du laboratoire
+-aller chercher broc et lui permettre de réparer la machine qui purifie le sang noir
+-retourner dans le donjon et ramener un objet
+-ramener des énergies pour alimenter la machine qui crée des sphères de compétences. (gain d’une sphère random)
+-battre Scorpus dans le monde sombre
+-->
+
+<missions>
+
+	<m group="smog" id="smog1" name="Colmater la brêche">
+		<begin>
+			Le laboratoire du professeur Henderson est une nouvelle fois victime d'un débordement d'énergie sombre.
+			Il faut colmater la brêche en utilisant des matériaux, Broc saura les utiliser pour fixer le problème.
+		</begin>
+		<goto v="chbroc" />
+		<talk v="Broc" gfx="broc" background="5">Il faut colmater une brêche du monde sombre, je compte sur toi !</talk> 
+		<useingr v="chasc" n="10"/>
+		<useingr v="chas3" n="2"/>
+		<useingr v="fish2" n="1"/>
+		<talk v="Broc" gfx="broc" background="5">Parfait, les ingrédients de base sont collectés.</talk> 
+		<goto v="labo2"/>
+		<talk v="Henderson" gfx="grand" frame="blabla2" background="3">Grâce à cette énergie foudre, les matériaux vont s'agglutiner.</talk> 
+		<useingr v="enfdr" n="1"/>
+		<end>
+			La menace est pour le moment contenue, 
+			mais combien de temps cette réparation de fortune pourra résister à la pression du monde sombre ?
+		</end>
+		<xp v="150"/>
+	</m>
+
+	<m group="smog" id="smog2" name="Protéger les îles atlantéinées" cond="mission(smog1)">
+		<begin>
+			Les Smogs noirs continuent à sévir dans le secteur des îles. Il faut intervenir pour éviter 
+			qu'ils ne blessent quelqu'un.
+		</begin>
+		<goto v="ilewkk"/>
+		<kill n="2" v="darkii"/>
+		<goto v="baobob"/>
+		<kill n="4" v="darkii"/>
+		<goto v="corail"/>
+		<kill n="3" v="darkii"/>
+		<end>
+			La menace est écartée. 
+			Le reste des Smogs noirs a pris la fuite, ils resteront tranquille quelques temps.
+		</end>
+		<xp v="250"/>
+		<gold v="5000"/>
+	</m>
+	
+	<m group="smog" id="smog3" name="Réparer les installations du laboratoire" cond="mission(smog2)">
+		<begin>
+			Les incubateurs du laboratoire ont encore des fuites, il faut les réparer pour que le professeur puisse continuer ses expériences.
+		</begin>
+		<goto v="scanyo"/>
+		<action v="Creuser">Vous avez récupéré du métal.</action>
+		<goto v="forges"/>
+		<talk v="Forgeron" gfx="damas">Le métal est maintenant utilisable.</talk>
+		<goto v="chbroc"/>
+		<talk v="Broc" gfx="broc">Parfait, j'ai tout le métal nécessaire pour réparer les machines du professeur !</talk> 
+		<goto v="labo2"/>
+		<action v="Réparer">Broc a réparé la machine grâce au métal apporté.</action>
+		<end>
+			Les machines fonctionnent de nouveau à plein régime. Le professeur vous donne des griffes acérées vu que vous sembliez les affectionner.
+		</end>
+		<xp v="200"/>
+		<gold v="4000"/>
+		<ingr v="chasu" n="5"/>
+	</m>
+		
+	<m group="smog" id="smog4" name="Pastafarisme" cond="mission(smog3)">
+		<begin>
+			Le professeur a renversé de l'adn de dinoz sur son plat favori. Depuis, il a muté, s'est reproduit et répand la terreur partout où il va !
+			Il faut supprimer cette menace qui plane sur Dinoland.
+		</begin>
+		<goto v="corail"/>
+		<kill n="2" v="stroa"/>
+		<goto v="colesc"/>
+		<kill n="1" v="stroa"/>
+		<goto v="villa"/>
+		<kill n="3" v="stroa"/>
+		<goto v="iceis2"/>
+		<actfight act="Combattre le boss" monsters="stroa:strob:stroa">
+			<begin>Vous faites face au grand monstre de spaghettis volant !</begin>
+			<win>Ce monstre n'avait pas l'air dans son assiette.</win>
+			<lost>Certains l'avaient annoncé, c'est devenu officiel, le monstre en spaghettis volant n'est plus un mythe.</lost>
+		</actfight>
+		<end>
+			La menace du monstre en spaghettis volant est écartée.
+			Comment ce genre de monstre a t'il pu voir le jour ?
+			Qui a autorisé le scénariste a écrire cette mission ?
+			Le mystère reste entier.
+		</end>
+		<xp v="100"/>
+		<gold v="4000"/>
+	</m>
+	
+	<m group="smog" id="smog5" name="2000 pieds sous l'eau" cond="mission(smog4)">
+		<begin>
+			Le professeur a besoin d'une pile se trouvant au fond du laboratoire sous-marin. Depuis l'invasion des monstres, il lui est impossible d'y retourner.
+			Peux-tu y aller et la ramener à la surface ?
+		</begin>
+		<goto v="labo3"/>
+		<goto v="labo2"/>
+		<use v="pile" n="1"/>
+		<talk v="Henderson" gfx="grand">Merci, grâce à cette pile, je vais pouvoir utiliser ma nouvelle machine !</talk> 
+		<end>
+			La traversée du donjon aura été difficile mais heureusement, la pile a été ramené à bon port.
+		</end>
+		<item v="tix" n="10"/> 
+	</m>
+	
+	<m group="smog" id="smoga" name="Nouvelle expérience" cond="mission(smog5)">
+		<begin>
+			Le professeur a mis au point une nouvelle machine permettant de créer des objets rares.
+			Malheureusement, elle est très gourmande en énergie.
+		</begin>
+		<goto v="labo2"/>
+		<useingr v="enfdr" n="1"/>
+		<useingr v="enair" n="1"/>
+		<useingr v="enfeu" n="1"/>
+		<useingr v="enbois" n="1"/>
+		<useingr v="eneau" n="1"/>
+		<talk v="Henderson" gfx="grand" background="3" frame="blabla2">Viens me parler après avoir terminé la mission, j'aurais quelque chose pour toi !</talk> 
+		<end>
+			La machine tourne à plein régime, vous serez bientôt en possession du fruit de son travail.
+		</end>
+		<xp v="120"/>
+		<fx v="sphere"/>
+	</m>
+	
+	<m group="smog" id="smogb" name="Menace du monde sombre" cond="mission(smoga)">
+		<begin>
+			Une aura malfaisante émane de nouveau du monde sombre. Il se pourrait que ce soit un dinoz Infernal.
+			Il faut intervenir pour le renvoyer dans les tréfonds du monde sombre ! 
+		</begin>
+		<goto v="fake"/>
+		<actfight act="Combattre Scorpus " monsters="scorpu">
+			<begin>Vous faîtes face à Scorpus, le Winks infernal.</begin>
+			<win>Scorpus retourne dans l'ombre, il devrait rester dans son coin pour le moment.</win>
+			<lost>Les monstres sombres préparent leur invasion, vous êtes le dernier rempart. Courage !</lost>
+		</actfight>
+		<end>
+			Bravo, la menace est une nouvelle fois écartée !
+		</end>
+		<gold v="30000"/>
+		<xp v="300"/>
+	</m>
+	
+</missions>

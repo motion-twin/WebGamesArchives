@@ -1,0 +1,59 @@
+<d place="skmedi" name="" gfx="skprofa" auto="1">
+
+<phase id="begin" frame="happy" next="rec">
+Bonjour cher candidat. On vous écoute. | Quelle est votre proposition ? 
+</phase>
+
+<phase id="rec" frame="approf:angry" next="vente">
+Hum. | Il fait un peu chaud, chez vous. | | Bref. %happy% Je viens vous proposer grâcieusement l'aide du meilleur enquêteur du royaume... Lui seul est capable de retrouver Kevin Sonnette, c'est une certitude.
+</phase>
+
+<phase id="vente" frame="skprofa:normal" next="ex">
+J'ignorais que vous étiez le meilleur enquêteur du Royaume, maître Enguerrand. | Vos chevilles vont toujours bien chez Audepint, dites moi. 
+</phase>
+
+<phase id="ex" frame="approf:angry" next="louch">
+Je ne parle pas de moi, évidemment ! | Tout le monde sait que le meilleur enquêteur du royaume est le [major Domou], l'intendant du manoir Audepint. | * Major ! 
+</phase>
+
+<phase id="louch" frame="apmajor:normal" next="dev">
+A votre service, maître Enguerrand. 
+</phase>
+
+<phase id="dev" frame="approf:normal" next="tient">
+Tout le monde sait que le major Domou s'est illustré dans une carrière militaire sans tâche pendant des années. C'est un homme de terrain. S'il faut retrouver Kevin Sonnette, c'est l'homme de la situation...
+</phase>
+
+<phase id="tient" frame="approf:happy" next="cher">
+... Et l'école Audepint gagnera la récompense de votre petit concours... Bien évidemment. 
+</phase>
+
+<phase id="cher" frame="skprofa:angry" next="ok">
+Mmmmh, admettons. | On peut essayer ça. 
+</phase>
+
+<phase id="ok" frame="approf:normal" next="toi">
+Il y a par contre une petite contrepartie... | Pendant la durée de l'enquête, le major ne pourra pas assurer l'intendance du manoir. | Nous aurions besoin d'un remplaçant...
+</phase>
+
+<phase id="toi" frame="skprofa:happy" next="moi">
+Ah ça c'est facile ! | ::user::, tu iras aider au manoir Audepint pour quelques jours. 
+</phase>
+
+<a id="moi">Eh ! Pourquoi moi ! ? </a>
+
+<phase id="moi" frame="skprofa:normal" next="work">
+Tu es la seule personne disponible ici, on dirait. Quel sera le travail à faire, en gros ? 
+</phase>
+
+<phase id="work" frame="apmajor:happy" next="fin">
+Oh presque rien... Il y a la cour du manoir à netttoyer tous les matins... les réclamations du chancelier Audepint à honorer et quelques autres petites choses. | Rien de bien méchant.
+</phase>
+
+<phase id="fin" frame="approf:happy">
+Très bien. Euh... | ::user::, c'est ça ? Retrouve-moi au Faubourg Audepint dans les plus brefs délais. | %normal% Major je vous laisse, je rentre au manoir. Faites le plus vite possible, comme d'habitude.
+</phase>
+
+
+
+</d>

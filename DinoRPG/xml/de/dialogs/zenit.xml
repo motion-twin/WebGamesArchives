@@ -1,0 +1,95 @@
+﻿<d place="frcbrt" name="Meister Zenit" background="2" gfx="zenit" cond="(active(dojo)|admin())">
+
+	<phase id="begin" fast="1" next="talk:talk2:aide" frame="stop">
+		Du erblickst einen alten Mann, der gedankenversunken in einer Ecke meditiert.
+		Der alte Mann wirft einen stoischen Blick auf dich und zwirbelt an seinem Bart...
+		Du hast den Eindruck, dass es ihm Spaß macht dir zuzusehen, wie du dich ratlos im Kreis drehst... 
+	</phase>
+
+	<a id="talk" cond="scenario(dojo,0)">Hey, Alterchen!</a>
+	<a id="talk2" cond="scenario(dojo,0)">(Sich vor dem Meister verbeugen)</a>
+	
+	<phase id="talk">
+		Du bist noch nicht so weit, du junger, unverschämter Lümmel.
+	</phase>
+	<phase id="talk2" next="ouep">
+		Gehe ich davon richtig aus, dass du deine Kampfkunst verbessern möchtest ?
+	</phase>
+	
+	<a id="ouep">Ja, in der Tat! Ich trainiere, um eines Tages der beste Kämpfer zu werden!</a>
+	
+	<phase id="ouep" next="hm:hm2:hm3">
+		Haha, dein ungestümer Kampfeswille erinnert mich an meine Jugend, als ich in den Steppen jeden Tag ein paar Monster verdroschen habe...
+	</phase>
+	
+	<a id="hm" target="insol">(Schon wieder so ein alter Sack, der mir was erzählen möchte...)</a>
+	<a id="hm2">(Nicht bewegen!)</a>
+	<a id="hm3" target="insol">(So tun, als ob du beeindruckt wärst.)</a>
+	
+	<phase id="insol">
+		Aus deinen Augen lese ich Ungläubigkeit und Zweifel... wenn nicht gar Verdruss!
+		Was für ein Pech für dich.
+	</phase>
+	
+	<phase id="hm2" next="dojo">
+		Schön, du scheinst ein reines Herz zu haben.
+		Bist du bereit deinen eigenen Dojo zu gründen ?
+	</phase>
+	
+	<a id="dojo">Meinen eigenen Dojo ? Wozu das denn ?</a>
+	
+	<phase id="dojo" next="va">
+		[Ja, dein Dojo! Mit meiner Hilfe kannst du überall im Dinoland einen Dojo gründen.]
+		[An diesem Ort der Meditation und der Vervollkommnung kannst du gegen andere Dinozüchter kämpfen.]
+		[Mit deinem Dojo kannst du außerdem am Großen Dojo Turnier teilnehmen. Dadurch kannst du dein Ansehen und deinen Ruhm steigern und die anderen Dinozüchter mit deinen Fertigkeiten beeindrucken.]
+	</phase>
+	
+	<a id="va">
+		Was muss ich tun, um mein eigenes Dojo gründen zu können?
+	</a>
+	
+	<phase id="va" next="bien">
+		Suche dir einen geeigneten Ort aus und komme anschließend wieder zu mir zurück, um weitere Hilfe zu erhalten. Gehe nun...
+	</phase>
+	
+	<a id="bien">Sehr gut!</a>
+	
+	<phase id="bien" fast="1" scenario="dojo:1" frame="stop">
+		Furchtlos und entschlossen ziehst du von dannen. Bist du bereit den zukünftigen Herausforderungen entgegen zu treten?
+	</phase>
+
+
+	<a id="aide" cond="scenario(dojo,1)">Meister, ich brauche eure Hilfe!</a>
+	<phase id="aide" frame="aide" next="aideurl:noaide:maitre">
+		Soso, meine Hilfe...
+		Nun, ich respektiere deine Bitte. Wie kann ich dir helfen?
+	</phase>
+	<a id="aideurl">Könnt ihr mir mehr über das Dojo erzählen?</a>
+	<a id="noaide">Äh... eigentlich gar nichts.</a>
+	<a id="maitre">Sind Sie auch ein Dinozüchter?</a>
+	
+	<phase id="aideurl" url="/help?id=dojos">
+		Lies dir bitte die Spielhilfe durch.
+	</phase>
+	
+	<phase id="maitre" frame="aide" next="dinoz">
+		[Ja, auch ich züchte Dinoz. Ich habe eine Gattung gezähmt, die niemand anders bisher gezähmt hat.]
+		[Wenn es dir gelingt, dein Dojo im ganzen Dinoland berühmt zu machen, werde ich dir einen dieser Dinoz schenken.]
+	</phase>
+	
+	<phase id="noaide" fast="1" frame="stop">
+		Du verlässt Meister Zenit. Das Dojo ist ab sofort kein Geheimnis mehr für dich.
+	</phase>
+	<a id="dinoz">Was ist das für eine Art Dinoz?</a>
+	
+	<phase id="dinoz" frame="aide" next="sustense">
+		Das wirst du bald selbst herausfinden können. Auch wenn du sie noch nicht gesehen hat... es gibt sie!
+	</phase>
+	
+	<a id="sustense">Au ja! Ich werde mein Bestes geben!</a>
+	
+	<phase id="sustense" frame="stop" fast="1">
+		Der alte Meister schaut dir verschmitzt lächelnd hinterher...
+	</phase>
+	
+</d>

@@ -1,0 +1,18 @@
+-cp src
+-cp ../../src/com
+-cp ../../tpl/fr
+-swf swf/game.swf
+-swf-header 660:400:40:FFFFFF
+-swf-lib obj\gameResources.swf
+--flash-strict
+-swf-version 10
+-main Main
+-lib format
+-D dev
+-D bumdum
+-swf-lib swf/bumdum.swf
+-swf-lib swf/fx.swf
+-swf-lib swf/decors.swf
+-swf-lib swf/gfx.swf
+-swf-lib swf/all.mtswf
+-cmd "obfu9 swf\game.swf -o swf\game.swf -fake"

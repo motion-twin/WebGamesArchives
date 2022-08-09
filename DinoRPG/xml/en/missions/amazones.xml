@@ -1,0 +1,96 @@
+﻿<missions>
+
+	<!-- ***************************************************************************** -->
+	<!-- Amazones, Garde du palais de Caushemesh ----->
+	
+	<m group="amazon" id="gift1" name="Act One">
+		<begin>The well of ether attracts lots of monsters. The Palace draws a large proportion of its energy from this well. Could you get rid of the monsters currently surrounding it?
+		You can make the most of this opportunity to reactivate the pump which allows you to convert ether into energy.</begin>
+		<goto v="cpuits"/>
+		<kill v="groule:roking:groule" n="3" zone="9"/>
+		<action v="Reactivate the pump" wait="1">It'll take you a while to re-engage the mechanism. Let's just hope that this doesn't attract any monsters that are too powerful to deal with...</action>
+		<kill v="groule:roking:groule" n="9" zone="9"/>
+		<end>OK, the jacuzzi will be ready for use again in a few days. Thanks!</end>
+		<xp v="50"/>
+		<gold v="3000"/>
+	</m>
+	
+	<m group="amazon" id="gift2" name="Act Two" cond="mission(gift1)">
+		<begin>The dark dinoz coming from the technodome continue to trouble us on a daily basis. It is impossible to stop these dinoz from invading, but at least we're lucky that they can't arrive en masse!
+		If you can wipe out some of them, that should give us enough time to fit in some shopping at the Acropolis.</begin>
+		<goto v="ctecno"/>
+		<kill v="darki4:darki5" n="2" zone="9"/>
+		<kill v="darkia:darkib" n="3" zone="9"/>
+		<kill v="darki3" n="1" zone="9"/>
+		<end>Great! We've had no visiting monsters today!</end>
+		<xp v="30"/>
+		<gold v="5000"/>
+	</m>
+	
+	<m group="amazon" id="gift3" name="Act Three" cond="mission(gift2)">
+		<begin>We have some free time, but we'd rather spend it in the jacuzzi.
+		Could you go and do our shopping for us? In fact, seeing as you come from far away, could you bring us something back from Big All Hot? And some wine from Dinotown. In fact, I'll make you a list.
+		And if you could hurry up that'd be great!</begin>
+		<goto v="cacrop"/>
+		<talk v="Acropolis Merchant">Good day, are you here to collect the daily order from the palace? That'll be 2000 gold coins!</talk>
+		<use v="gold" n="2000"/>
+		<action v="Sort the objects" wait="1">You're running out of patience, the objects vary from simple dishcloths to luxury loincloths... Who really needs all this stuff?</action>
+		<goto v="fosslv"/>
+		<talk v="lavapit Merchant">Hello! Show me the list... Good good, that comes to 4000 gold coins!</talk>
+		<use v="gold" n="4000"/>
+		<goto v="dplaza"/>
+		<talk v="Wine Merchant" gfx="sommelier">Hello there, are you looking for some fine wine? Let us see, oh my! Excellent choices... you have remarkable taste... That'll be 5000 gold coins!</talk>
+		<use v="gold" n="5000"/>
+		<end>You brought everything, congratulations. Oh I am sorry, I forgot to give you the money to pay for it all!... There you are, keep the change. </end>
+		<xp v="60"/>
+		<gold v="18000"/>
+	</m>
+	
+	<m group="amazon" id="gift4" name="Act Four" cond="mission(gift3)">
+		<begin>We have an urgent problem to deal with. The battery which allows us to heat the water for the swimming pool is flat!
+		We have to do something! We're counting on you to go and find it, and to find a place to recharge it with electrical energy.</begin>
+		<goto v="cpyra2"/>
+		<action v="Remove the battery">You remove the swimming pool battery, taking care to ensure that you are not seen by the guardian.</action>
+		<goto v="spylon" hide="1"/>
+		<action v="Leave the battery to charge" wait="2">Just like for magnetite, there's nothing like a little electrical storm to revive a dead battery!</action>
+		<actfight act="Protect the battery" monsters="baraba:baratr">
+			<begin m="baraba">Give us that shiny object, quickly, quicker than that now!</begin>
+			<win>These brigands won't be bothering you for a while.</win>
+			<lose>Yeah, that's a pointless bauble. Let's leave this loser here and go find another job worth doing!</lose>
+		</actfight>
+		<action v="Leave the battery to charge again" wait="3">Just like for magnetite, there's nothing like a little electrical storm to revive a dead battery!</action>
+		<goto v="cpyra2"/>
+		<action v="Replace the battery">You replace the swimming pool battery in the hot water generator.</action>
+		<end>Thank you, you have fixed the pool, now all that remains is to try it out!</end>
+		<xp v="50"/>
+		<gold v="3000"/>
+	</m>
+	
+	<m group="amazon" id="gift5" name="Act Five" cond="mission(gift4)">
+		<begin>We've not even had the time to take a dip in the pool, could you look after things around here for a few hours, just to give us a chance to enjoy it?</begin>
+		<goto v="cpyra1"/>
+		<action v="Stand guard" wait="9">You are now officially doing someone else's job. Really, this is becoming a habit...</action>
+		<actfight act="Do the guard's job..." monsters="darki5:darkia" zone="9"></actfight>
+		<action v="Remonter la garde" wait="1">You are now officially doing someone else's job. Thankfully the changing of the guard is imminent! Or at least you hope so...</action>
+		<end>Ah that dip was so refreshing, would you consider replacing us more often?</end>
+		<xp v="20"/>
+		<gold v="1000"/>
+	</m>
+
+	<m group="amazon" id="gifta" name="Act Six" cond="mission(gift5)">
+		<begin>We need some ingredients to make an elixir which is essential for our survival!
+		For some of these ingredients, you'll have to search our world. It is not only on Caushemesh that you can find ethereal spores and radioactive rocks.</begin>
+		<goto v="cpyra1"/>
+		<useingr v="fruit1" n="1"/>
+		<goto v="cpyra1"/>
+		<useingr v="enair" n="1"/>
+		<goto v="cpyra1"/>
+		<useingr v="chas5" n="2"/>
+		<goto v="cpyra1"/>
+		<useingr v="fruit5" n="5"/>
+		<end>Perfect, thanks to you we've now got everything we need to make the special Caushemesh perfume. It would be unimaginable to even think of getting up in the morning without this little treat!</end>
+		<xp v="40"/>
+		<gold v="6000"/>
+	</m>
+	
+</missions>

@@ -1,0 +1,26 @@
+<d place="chouet" name="Demander de la fiente" gfx="guchxemp">
+
+
+<phase id="begin" next="get:nget">
+Cher client ! Bonjour ! Quel bonheur de vous revoir ! Que puis-je faire pour vous aider, cher client ? 
+</phase> 
+
+<a id="get" cond="fx(difien)+rank(stupid,2)">J'ai le rang {On se débrouille} en inutilité publique, je veux ma fiente ! </a>
+<a id="nget" cond="fx(difien)+!rank(stupid,2)">J'ai le rang {On se débrouille} en inutilité publique, je veux ma fiente ! </a>
+
+<phase id="get" frame="happy">
+Aucun problème, cher client {qui se débrouille} ! Voici vos 10 kilos de fiente de chouette grâcieusement offerts par la maison ! 
+</phase>
+
+
+
+<!----- ######### -->
+
+<phase id="nget" frame="angry" next="exit">
+Vous ne semblez pas vraiment être un client {qui se débrouille} en inutilité publique, désolé. 
+</phase>
+
+<a id="exit">Ah bon, vous croyez ? </a>
+
+
+</d>

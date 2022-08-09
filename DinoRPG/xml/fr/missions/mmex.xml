@@ -1,0 +1,192 @@
+﻿<missions>
+
+	<m group="mmex" id="mmex1" name="La Mallette Noire">
+		<begin>
+			Un bateau est arrivé la nuit dernière au Port de Prêche, il a déposé une petite malette noire pour moi. Peux-tu me la ramener ? Surtout ne l'ouvre pas !
+		</begin>
+		<goto v="port"/>
+		<action v="Prendre la Malette Noire">Vous avez obtenu la Malette Noire auprès d'un homme avec un long imperméable. Cette mission semble plutôt facile !</action>
+		<goto v="frcbrt"/>
+		<talk v="Madame X" gfx="mmex">C'est étrange... Cette malette... ELLE A ETE PIEGEE !</talk>
+		<actfight act="Piège !" monsters="gluon">
+			<begin>Un Gluon avait été glissé dans la malette, sans doute dans le but d'attaquer Madame X !</begin>
+			<win>Madame X est ravie que vous ayez déminé la malette a sa place !</win>
+		</actfight>
+		<end>
+			Merci pour ta précieuse aide, voici ta récompense !
+		</end>
+		<xp v="10"/>
+		<gold v="300"/>
+	</m>
+
+	<m group="mmex" id="mmex2" name="Le Marchand Traître">
+		<begin>
+			Il semblerait qu'il y ait un traître à la cour du Roi. Il fait passer ses informations grâce à un marchand qui se présente de temps en temps à Dinoville. Arrête ce marchand et amène-le moi pour que je puisse l'interroger !
+		</begin>
+		<goto v="dnv"/>
+		<action v="Chercher le Marchand">Vous avez trouvé un marchand particulièrement louche qui semble correspondre à la description...</action>
+		<actfight act="A l'Attaaaaque !" monsters="march1">
+			<begin m="march1">Au secourrrss !!!</begin>
+			<win>Après vérification, ce Marchand était innocent ! Le pauvre...</win>
+		</actfight>
+		<action v="Chercher le Marchand">Vous avez trouvé LE marchand qui correspond exactement à la description... Il ne peut pas y avoir d'erreur cette fois ! (a priori)</action>
+		<actfight act="A l'Attaaaaque !" monsters="march1">
+			<begin m="march1">Aarrrgg !!!</begin>
+			<win>Vous avez capturé le marchand ! Il va falloir le ramener à Madame X !</win>
+		</actfight>
+		<goto v="frcbrt"/>
+		<end>
+			Merci d'avoir ramené ce traître au Royaume ! Ne t'inquiete pas je sais comment je vais le faire avouer !! J'espère par contre que tu ne t'es pas trompé de personne...
+		</end>
+		<item v="ration"/>
+	</m>
+
+	<m group="mmex" id="mmex3" name="La Course-Poursuite" cond="mission(mmex1)+mission(mmex2)">
+		<begin>
+			J'ai reçu un rapport de police comme quoi un Dinoz avait attaqué des marchands
+			à Dinoville récemment. Pourrais-tu enquêter sur cette étrange affaire ?
+		</begin>
+		<goto v="dnv"/>
+		<action v="Portrait-Robot">Le Portrait-Robot du Dinoz accusé d'avoir attaqué les marchands ressemble étrangement à votre Dinoz. Simple coïncidence ou complot ?</action>
+		<actfight act="Enquêter" monsters="march2:march2:march2">
+			<begin>
+				Alors que vous cherchiez des indices, des marchands en colère trouvent et attaquent votre Dinoz !
+			</begin>
+			<win>
+				La situation va devenir complexe à expliquer... mieux vaut peut-être en informer Madame X ?
+			</win>
+		</actfight>
+		<goto v="frcbrt"/>
+		<talk v="Madame X" gfx="mmex">
+			.... (vous expliquez toute l'histoire) ... Quoi ! Alors c'était vraiment ton Dinoz qu'ils recherchaient ?!?
+			Uhmm... je comprends. Il va me falloir du temps pour faire enterrer cette affaire. En attendant, va te planquer aux Collines Escarpées !
+		</talk>
+		<goto v="colesc"/>
+		<action v="Attendre" wait="3">
+			Vous attendez que Madame X vous contacte...
+		</action>
+		<action v="Message MX">
+			Un message signé "MX" vous attend, il précise juste "Retourne à Dinoville au plus vite"
+		</action>
+		<goto v="dnv"/>
+		<talk v="Marchand">
+			Oh ! Alors c'est vous qui êtes le maître du fameux jumeau ?!? Ah ah ah ! C'est vrai que votre Dinoz ressemble beaucoup à celui qu'on a attrapé hier ! Mais ne vous inquiétez pas, le vrai coupable a été capturé par la Police d'Elite Royale, donc vous ne craignez plus rien !
+		</talk>
+		<end>
+			J'ai réussi à te couvrir pour cette fois, grâce à mes relations. Mais si jamais tu fais une seule fois une telle faute dans une mission, je serais obligée de te lâcher, et tu n'auras alors jamais travaillé pour moi. Capito ?
+		</end>
+		<gold v="50"/>
+	</m>
+
+	<m group="mmex" id="mmex4" name="Les Iles c'est Kool" cond="mission(mmex3)">
+		<begin>
+			Nous avons isolé un groupe d'individu qui cultive des herbes illégales dans le Marais Collant et les exporte ensuite vers la capitale. Nous devons envoyer un agent sur place. Il faut bien entendu que ton Dinoz soit capable de se déplacer aux Iles Atlantéinées.
+		</begin>
+		<goto v="marais"/>
+		<action v="Enquêter">
+			L'odeur assez forte et les sons du Djembé qu'on entend depuis très loin vous permettent de facilement localiser une bande de délinquants aux cheveux longs et gras.
+		</action>
+		<actfight act="Les Neutraliser" allies="gang1:gang2:gang3" monsters="borg">
+			<begin m="gang2">
+				Aarrg !! Un Borg ! Je pense qu'il vaudrait mieux combattre ensemble pour cette fois !!
+			</begin>
+			<win>
+				Après votre victoire commune, il semblerait que les trois délinquants veuillent discuter avec vous...
+			</win>
+		</actfight>
+		<talk v="Jean-Hubert">
+			Yo mec ! Je comprends que tu kiff trop pas ce qu'on fait ici, mais c'est trop kool, alors abuse pas mec !
+		</talk>
+		<talk v="Charles-Edouard">
+			Eh mon pote ! Tu t'es battu à donf là ! Trop kool ! Mais nous dénonce pas, les keufs me gavent, et la beach c'est trop kool !
+		</talk>
+		<talk v="Louis-Stanislas">
+			Mes deux associés voulaient exprimer leur gratitude à votre encontre, et vous demander humblement si un arrangement n'était pas possible pour que nous puissions éviter les affres de la prison qui nous feraient gâcher ce que tous les grand poêtes ont surnommé "nos plus belles années". Merci de votre compréhension.
+		</talk>
+		<goto v="frcbrt"/>
+		<talk v="Madame X" gfx="mmex">
+			QUOI ? Tu as sympathisé avec des hors-la-loi ? ... Je ne suis pas certain que tu fasses un très bon agent après-tout... Enfin bref : ils ont enfreint la loi, et même s'ils sont très gentils ils n'en sont pas moins coupables !
+		</talk>
+		<talk v="Madame X" gfx="mmex">
+			Puisque tu insistes, je vais m'arranger pour que les circonstances atténuantes leurs soient accordées, mais ils devront quand même faire des travaux d'intêret public, comme le rangement de la bibliothèque de l'Université ! Et tu vas les aider, puisque tu les aimes bien !
+		</talk>
+		<goto v="marais"/>
+		<talk v="Louis-Stanislas">
+			Je vous remercie de nous avoir aidé à éviter le pire. Nous serons ravis de ranger la bibliothèque de l'Université, surtout si vous êtes avec nous pour nous soutenir le moral pendant ces longues heures de labeur !
+		</talk>
+		<goto v="univ"/>
+		<action v="Ranger la Bibliothèque" wait="30">
+			Votre Dinoz aide Jean-Hubert, Charles-Edouard et Louis-Stanislas à ranger la grande bibliothèque de l'Université...
+		</action>
+		<talk v="Jean-Hubert">
+			Trop kool mec ! Nous on retourne aux Iles, car c'est trop kool ! Mais promis on déconnera plus ! Tchaw !!
+		</talk>
+		<end>
+			La loi est la loi, et toute infraction mérite sanction.
+		</end>
+		<xp v="30"/>
+		<gold v="1000"/>
+	</m>
+
+	<m group="mmex" id="mmex5" name="Le Complot Ashpouk" cond="mission(mmex3)">
+		<begin>
+			Un trafic de fausses reliques de la civilisation Ashpouk semble avoir lieu, et il se pourrait que des notables y soient mêlés. Nous devons envoyer un agent sur place pour enquêter. Il faut bien entendu que ton Dinoz soit capable de se déplacer jusqu'au Grand-Tout-Chaud.
+		</begin>
+		<goto v="fosslv"/>
+		<talk v="L'indic">
+			Je suis le responsable de la collecte de renseignements pour Madame X dans ce quartier. On nous a signalé que des choses étranges se passaient la nuit du côté des Ruines Ashpouk...
+		</talk>
+		<goto v="rashpk"/>
+		<action v="Se Planquer" wait="10">
+			Votre Dinoz prends la planque, et se prépare à prendre en filature les suspects qui viennent trafiquer dans le coin.
+		</action>
+		<action v="Suspects !">
+			Votre Dinoz a repéré des suspects, qui semblent rassembler de la terre prise dans les Ruines pour la stocker dans de grands sacs... Pour quelle raison ? Vous décidez de les suivre.
+		</action>
+		<goto v="forges"/>
+		<action v="Filature">Les suspects s'éloignent en direction du Nord</action>
+		<goto v="tunel"/>
+		<action v="Filature">
+			Apparemment les suspects se sont doutés de quelquechose car ils ont accéléré et se sont évanouis dans la nature...
+		</action>
+		<goto v="fosslv" hide="1"/>
+		<action v="Suspects !">
+			Vous reconnaissez l'un des suspects dans une rue de Fosselave !
+		</action>
+		<actfight act="Lui foncer dessus !" monsters="suspc1">
+		</actfight>
+		<action v="Fouiller">
+			Après avoir vaincu le suspect, vous trouvez sur lui plusieurs sachets de terre en provenance des ruines ainsi qu'une carte de visite au nom de "El Signor Don Fuego". Il est temps de faire votre rapport a Madame X !
+		</action>
+		<goto v="frcbrt"/>
+		<talk v="Madame X" gfx="mmex">
+			El Signor Don Fuego ? Tiens c'est une drôle de coïncidence... c'est l'un des marchands les plus en vue à Fosselave, et il dispose de nombreux soutiens à la Cour. Pour le faire tomber, il faudrait trouver des preuves qui l'impliquent directement !
+		</talk>
+		<goto v="rashpk" hide="1"/>
+		<action v="Se Planquer" wait="5">
+			"Les planques c'est toujours la partie la moins drôle du métier..." C'est toujours ce que vous avait raconté votre Grand Père Der'hik. Maintenant vous comprenez ce qu'il voulait dire...
+		</action>
+		<action v="Suspects !">
+			Des hommes ressemblant étrangement aux suspects arrivent, discutent avec le vendeur de Merguez, avant de repartir...
+		</action>
+		<talk v="Vendeur de Merguez" gfx="merguez">
+			Ce que me voulaient ces touristes ? Ils voulaient juste pouvoir utiliser mon nouveau Four-à-Pain avec lequel je compte fabriquer prochainement mes Sandwichs de Gobelin... Apparemment, ils y ont fait cuire des poteries. Ils sont retournés à Fosselave pour les amener à leur patron.
+		</talk>
+		<goto v="fosslv"/>
+		<action v="Suspects !">
+			Vous reconnaissez les trois suspects dans une rue de Fosselave !
+		</action>
+		<actfight act="Leur foncer dedans !" monsters="suspc:suspc:suspc">
+			<win>
+				Après avoir vaincu les suspects, ils vous avouent fabriquer des fausses reliques à l'aide de la terre des Ruines Ashpouk ! Il vaut mieux les amener à Madame X...
+			</win>
+		</actfight>
+		<goto v="frcbrt"/>
+		<end>
+			Super, des pigeons ! Je vais m'arranger pour qu'ils témoignent contre Don Fuego. Cela tombe bien, il commencait justement à devenir beaucoup trop riche, et il était trop populaire à la Cour pour qu'on se débarrasse de lui par les moyens classiques... Merci pour le coup de main !
+		</end>
+		<xp v="30"/>
+		<gold v="1000"/>
+	</m>
+
+</missions>

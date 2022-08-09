@@ -1,0 +1,45 @@
+<quests>
+
+<q from="trifbg" id="tria" name="Plan B. Phase 1 ! " cond="grade(,2)+quest(balag)">
+	<begin>Avec ton aide, on va pouvoir appliquer le plan B ! C'est trop cool ! </begin>
+	<talk did="triaa" />
+	<talk did="triab" title="Se rendre au magasin de fringues de Vostok pour trouver une robe d'alchimiste" />
+	<use o="Elt(11):1" action="Donner une pépite au Troc Shop" text="Parfait, tu as la pépite ! Rendez-vous à l'arrière du magasin dans 2 minutes, je prépare mes affaires et on va aller voir ce récolteur." title="Ramener une pépite d'or au Troc Shop" />
+	<talk did="triac" />
+	<end>Ouah super ! Fushia et bleu, mes couleurs préférées ! Ca c'est de la robe de trimilliardaire ! </end>
+	<xp v ="12" />
+	<reput s="ap" v="6" />
+	<reput s="gu" v="-3" />
+</q>
+
+
+<q from="trifbg" id="trib" name="Le machin sur la tête" cond="quest(tria)">
+	<begin>Maintenant il me faut un super machin ! Tu sais bien... le machin, là... sur la tête.</begin>
+	<talk did="triba" />
+	<talk did="tribb" title="Aller chercher une mini-ziggourat souvenir à la ziggourat d'or." />
+	<msg zone="apvos" action="Donner la mini ziggourat" text="...Mais ! Elle est toute blanche ! La peinture est partie, ça va pas du tout ! Il faut aller réclamer auprès du POUM, je peux pas porter ça comme ça... Sinon, il existe des recettes efficaces contre les mains moites hein." title="Ramener la ziggourat souvenir à Eliot23 à Vostok." step="1" />
+	<talk did="tribc" title="Se rendre à l'antenne du POUM sur la grande place pour déposer une réclamation." step="1" />
+	<use o="Elt(13):6" zone="jzzig" action="Frotter les valvéoles sur la ziggourat" text="Tu poses les six valvéoles sur le bord de la ziggourat. Elle se dissolvent rapidement et la peinture ramolli assez pour pouvoir l'appliquer sur ton souvenir. Incroyable, c'est bien de la peinture à l'eau ! Maintenant il faut éviter de trop toucher avec les doigts...." title="Frotter six valvéoles sur la ziggourat pour récupérer un peu de peinture dorée" />
+	<msg zone="apvos" action="Donner la mini ziggourat repeinte" text="Super, celle-là est trop bien dorée ! " title="Ramener la ziggourat souvenir repeinte à Eliot23 à Vostok." />	
+	<end>C'est bon ça tient nickel avec le fil de fer ! Je ressemble à un vrai alchimiste trimilliardaire, là. Je suis une légende de l'alchimie ! Wouhou ! ! ! </end>
+	<xp v ="18" />
+	<gold v ="84" />
+	<reput s="ap" v="11" />
+</q>
+
+<q from="trifbg" id="tric" name="Un trimilliardaire officiel" cond="quest(trib)">
+	<begin>Je suis prêt pour la venue des journalistes ! Dès qu'ils sauront que j'ai pété le score des 3 milliards ils vont accourir ! C'est super ! </begin>
+	<talk did="trica" />
+	<use o="Elt(4):10;Elt(26):6" zone="apvos" action="Donner les éléments à Eliot23" text="Oua super, tu as tous les éléments ! " title="Ramener 10 feuilles menthol et 6 cyclonites à Eliot23 pour charger l'anticycloniteur " step="1" />
+	<talk did="tricb" />
+	<talk did="tricc" title="Trouver un bâton super solide." />
+	<talk did="tricd" title="Se rendre à la terrasse du manoir Audepint pour intercepter la chouette"/>
+	<end>J'ai déjà 5 rendez-vous pour des interviews demain ! Je suis célèbre ! C'est super !</end>
+	<xp v ="24" />
+	<gold v="180" />
+	<randomrecipe v="230:40" />
+	<reput s="ap" v="13" />
+</q>
+
+
+</quests>

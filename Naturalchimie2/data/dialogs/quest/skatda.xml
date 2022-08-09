@@ -1,0 +1,38 @@
+<d place="gmprai" name="Le formulaire vertical" gfx="gmexterm" auto="1">
+
+<phase id="begin" next="time">
+Ils ont dû se tromper de papier, c'est pas possible ! Un prêt de 3 jours ! C'est la durée la plus courte possible ! Personne n'emprunte un truc pour 3 jours ! 
+</phase>
+
+<a id="time">Vous prenez combien de temps, d'habitude ? </a>
+
+<phase id="time" next="oui:non">
+%happy%Je sais pas ! ...  | Longtemps ! 2 ans, 3 ans minimum. Il me faut au moins ça. 
+bon, je sais ce qu'on va faire. tu connais {la Potion Joyeuse} ? 
+</phase>
+
+<a id="oui">Oui.</a>
+<a id="non">Non.</a>
+
+<phase id="oui" next="vert">
+%angry%Bon. Tu vas t'y rendre avec ce formulaire à rayures verticales. Je viens de le signer. 
+Dis au patron que tu viens de ma part et que j'ai besoin de rayures obliques. Il comprendra.
+</phase>
+
+<phase id="nonb" next="vert">
+Bon. Tu vas t'y rendre avec ce formulaire à rayures verticales. Je viens de le signer. 
+Dis au patron que tu viens de ma part et que j'ai besoin de rayures obliques. Il comprendra.
+</phase>
+
+<phase id="non" next="nonb">
+%angry%Mais si ! C'est la boutique d'alchimie sur la grande place, tu ne peux pas la louper ! 
+</phase>
+
+<a id="vert">Des rayures obliques ? </a>
+
+<phase id="vert" qgive="QuestObj(vertForm):1">
+%happy%Oui, on va un peu arranger ce formulaire... 
+Si tout se passe bien, tu devrais pouvoir revenir ici avec un appareil photo.
+</phase>
+
+</d>

@@ -1,0 +1,57 @@
+﻿<!-- FOU DES COLLINES HANTEES -->
+	
+<d place="collin" name="Seltsamer Mann" gfx="fou" cond="!fx(lantrn)">
+	
+  <phase id="begin" next="hi:approach:ignore" fast="1">Ein seltsamer Typ, der
+  sich etwas ungeschickt zwischen den Bäumen versteckt, fixiert dich mit
+  einem beunruhigenden Blick... Er streckt eine Laterne in deine Richtung
+  aus.</phase>
+
+  <a id="hi">Äh...Hallo?</a>
+  <a id="approach">Versuchen sich ihm zu nähern.</a>
+  <a id="ignore">Ihn ignorieren.</a>
+  <a id="run">Weglaufen!</a>
+
+  <phase id="hi" next="approach:ignore:run" fast="1">Der Mann macht einen
+  besorgten Eindruck und schaut dich weiterhin verächtlich und lautlos an... </phase>
+
+  <phase id="approach" next="hi:ignore:run" fast="1">Kaum hast du einen
+  Schritt in seine Richtung gemacht, da springt er vor Schreck auf
+  und wirft sich in ein etwas entferntes Gestrüpp! Einen Augenblick später
+  lugt sein Kopf aus dem Gebüsch hervor und er starrt dich erneut rastlos
+  an....</phase>
+
+  <phase id="run" fast="1">Lauf, was die Beine hergeben!</phase>
+
+  <phase id="ignore" next="intro:run" fast="1"> Du drehst deinen Kopf woanders hin und versuchst ihn zu ignorieren. Aber als du erneut flüchtig einen Blick in seine Richtung wirfst, stellst du überrascht fest, dass er sich hoch wie ein Pfosten vor dir aufgebaut hat!! Vor lauter Schreck stößt Du einen Schrei aus!! Er hält Dir seine Laterne unter die Nase und beschnüffelt dich lautstark...</phase>
+
+  <a id="intro">Argh! Haben Sie mir einen Schrecken eingejagt!</a>
+
+  <phase id="intro" next="seenWhat:leave">Angst? Wovor? Vor
+  den Schatten oder vor den Stimmen? Haben Sie auch Angst? Wir haben alle
+  Angst! Ich habe sie gesehen!</phase>
+
+  <a id="seenWhat">Was haben Sie gesehen?</a>
+  <a id="leave">Äh... Ich werde Sie in Ruhe lassen...</a>
+
+  <phase id="leave" fast="1">Du weichst langsam zurück, dann machst du auf dem Absatz kehrt, ohne dir die Mühe zu machen, noch einen Blick hinter dich zu werfen...</phase>
+
+  <phase id="seenWhat" next="show:run">Gorgoth!! Er wird auch der
+  unbeschreibliche Köpfefresser der schwarzen Tiefe genannt!!
+  </phase>
+
+  <a id="show">Woho! Der sieht aber gefährlich aus!</a>
+
+  <phase id="show" next="fight:run">Er terrorisiert alles, was im
+  Grumheldschungel lebt!! Und das, obwohl der Dschungel selbst alles und jeden
+  terrorisiert. Da, schau selbst, da ist er (er zeigt mit dem Finger
+  auf den dicken, schwarzen Pflanzenwuchs)!</phase>
+
+  <a id="fight">Gorgoth angreifen (den unbeschreiblichen Köpfefresser aus der
+  schwarzen Tiefe)</a>
+
+  <phase id="fight" fight="korgon" fast="1" effect="lantrn">
+	  Während du versuchst, den Seltsamen Mann irgendwo zu erblicken, stellst du ernüchtert fest, dass er verschwunden ist... Die gute Nachricht ist die, dass er bei seiner Flucht seine Laterne zurückgelassen hat. Diese kannst du benutzen, um dich an finsteren Orten nicht mehr zu verlaufen. 
+  </phase>
+  
+</d>

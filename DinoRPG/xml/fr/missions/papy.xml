@@ -1,0 +1,115 @@
+﻿<missions>
+
+	<!-- ***************************************************************************** -->
+	<!-- PAPY JOE, petits jobs ----->
+
+	<m group="papy" id="fish" name="Du poisson frais" limit="10">
+		<begin>Madame Seyche, habitante de Dinoville, recherche du poisson frais pour organiser un dîner avec ses amis. Peux-tu aller lui chercher du poisson chez le Marchand au Port de Prêche au sud ? Il a été prévenu et il t'attend.</begin>
+		<goto v="port"/>
+		<talk v="Marchand de Poisson">Salut mon ptit, tu viens chercher du poisson c'est ça ? Tiens, prends-le et apporte-le à Dinoville au plus vite.</talk>
+		<goto v="dnv"/>
+		<talk v="Madame Seyche">Ooooohhhh merci mon petit, ce dîner va être très réussi grâce à toi ! Retourne vite voir Papy Joe pour obtenir ta récompense...</talk>
+		<end>Madame Seyche est très contente de toi, voilà ta récompense !</end>
+		<xp v="20"/>
+	</m>
+
+	<m group="papy" id="dog" name="Le chien perdu" limit="20">
+		<begin>La Vieille Ducraft a perdu son caniche alors qu'elle visitait son fils dans les Collines Escarpées, sauras-tu le retrouver ?</begin>
+		<goto v="colesc"/>
+		<talk v="Jacqueline Ducraft">Bonjour jeune homme ! Nioufniouf, mon petit amour de caniche, a disparu ! Je l'avais puni car il avait fait une bêtise...ohh... comme je regreettte ! Vite, retrouve-le s'il te plaît. Je suis certaine qu'il n'a pas pu grimper ces montagnes avec ses petites pattes, il doit donc être parti vers le Sud.</talk>
+		<goto v="port" hide="1"/>
+		<action v="NioufNiouf">Vous avez retrouvé NioufNiouf ! Ramenez-le vite à sa propriétaire !</action>
+		<goto v="colesc"/>
+		<talk v="Jacqueline Ducraft">Mon NioufNiouf chéri !!! Pardonne-moi, ta moooman a été très méchante avec le gentil chienchien ! Merci jeune homme, retournez au plus vite chez ce vieux schnock pour obtenir votre récompense !</talk>
+		<end>Uhmm... Elle ne perd rien pour attendre cette vieille peau ! Enfin, voilà pour toi</end>
+		<xp v="15"/>
+		<item v="angel"/>
+	</m>
+
+	<m group="papy" id="kilgou" name="Les Goupignons des Collines" limit="20" cond="mission(fish)">
+		<begin>De nombreux Loups et Goupignons sévissent dans les Collines Escarpées au nord de Dinoville, le chef d'un village voisin cherche quelqu'un pour en tuer quelques-uns et ainsi leur faire peur pour qu'ils se calment, sauras-tu te montrer suffisamment fort ?</begin>
+		<goto v="colesc"/>
+		<kill v="goupi:goupi2:goupi3:wolf" n="6" name="Loups et Goupignons"/>
+		<end>Bravo, grâce à toi les Collines ont retrouvé un certain calme, félicitations !</end>
+		<xp v="30"/>
+		<gold v="500"/>
+	</m>
+
+	<m group="papy" id="kilwlf" name="La chasse aux loups" limit="15" cond="mission(kilgou)">
+		<begin>Récemment, les paysans ont beaucoup de problèmes avec des groupes de Loups qui attaquent leurs chèvres. Peux-tu faire un tour ici-et-là et en tuer quelques-uns histoire de les éloigner ?</begin>
+		<goto v="frcbrt"/>
+		<kill v="wolf" n="2"/>
+		<goto v="fountj"/>
+		<kill v="wolf" n="2"/>
+		<goto v="dnv"/>
+		<kill v="wolf" n="2"/>
+		<goto v="univ"/>
+		<kill v="wolf" n="2"/>
+		<end>Bravo, c'est bien joué, avec ça ils ne devraient plus trop s'approcher des chèvres pendant quelque temps !</end>
+		<xp v="30"/>
+		<gold v="2000"/>
+	</m>
+
+	<m group="papy" id="fflow" name="Le rosier en danger" limit="15" cond="mission(fish)">
+		<begin>Le rosier préféré de Madame Seyche est en sale état à cause de la canicule. Pourrais-tu aller chercher de l'Eau Pure à la Fontaine et lui en apporter ?</begin>
+		<goto v="fountj"/>
+		<action v="Eau Pure">Vous obtenez de l'Eau Pure qui est particulièrement conseillée pour arroser les fleurs...</action>
+		<goto v="dnv"/>
+		<talk v="Madame Seyche">Ooohhh merci mon petit, grâce à toi mon rosier va pouvoir retrouver de belles couleurs ! Retourne vite voir Papy Joe, il te donnera ta récompense...</talk>
+		<end>Cette charmante Madame Seyche m'a félicité pour ton travail, tu as bien mérité ta récompense !</end>
+		<xp v="20"/>
+	</m>
+
+	<m group="papy" id="kbook" name="Le livre de recettes" limit="15" cond="mission(fflow)">
+		<begin>J'ai à nouveau reçu une demande de la ravissante Madame Seyche. Elle voudrait consulter un livre de recettes qui se trouve à l'Université, peux-tu aller lui chercher ?</begin>
+		<goto v="univ"/>
+		<action v="Livre de Recettes">Vous obtenez "100 Façons de cuire un Korgon", écrit et illustré par Gorak le borgne</action>
+		<goto v="dnv"/>
+		<talk v="Madame Seyche">OOOooooooh merci mon petit ! Je vais pouvoir expérimenter différentes recettes de Korgons, n'hésite pas à venir y goûter un peu de temps en temps !</talk>
+		<end>Bravo, grâce à toi Madame Seyche m'a remercié en m'envoyant un bout de Korgon grillé. Un vrai délice !</end>
+		<xp v="20"/>
+	</m>
+
+	<m group="papy" id="msg" name="Les Timbres" limit="30" cond="mission(kbook)">
+		<begin>J'ai très envie d'écrire une lettre à une certaine personne qui me tient à coeur. Mais il se trouve que mes Timbres ont été volés par des Goupignons Chapardeurs qui se regroupent habituellement à la Fontaine de Jouvence. Si tu les tues, je te laisserai utiliser mes Timbres, ça te va ?</begin>
+		<goto v="fountj"/>
+		<kill v="goupi:goupi2:goupi3" n="15" name="Goupignons Chapardeurs"/>
+		<action v="Ramasser les Timbres">Bravo, vous récupérez les Timbres, ramenez-les vite à Papy Joe !</action>
+		<end>Merci, génial, je vais pouvoir écrire ma lettre ! Tiens, tu as bien mérité tes timbres...</end>
+		<collec v="msg"/>
+		<xp v="20"/>
+	</m>
+
+	<m group="papy" id="lettre" name="La lettre confidentielle" limit="2" cond="mission(msg)">
+		<begin>Uhm... Cette fois-ci c'est pour moi, Papy Joe, que tu vas travailler... J'aurais besoin de toi pour que tu apporte d'URGENCE cette lettre à une certaine personne à Dinoville. Il faut faire très vite surtout !</begin>
+		<goto v="dnv"/>
+		<talk v="Madame Seyche">Oohhhh mon petit, que m'apportes-tu cette fois ? Quoi ? Une lettre de papy ? .... ..... Apporte-lui vite cette réponse !</talk>
+		<end>Uhm ! Ehm... Une réponse ?! Déjà ?!? GENIAL ! Elle accepte mon invitation à dîner. C'est dans la poche : malgré mon grand âge, la nuit va être chaude !</end>
+		<xp v="20"/>
+	</m>
+
+	<m group="papy" id="kilglu" name="Un étrange monstre" limit="10" cond="mission(kilwlf)+canfight(gluon)">
+		<begin>Un étrange monstre est apparu ces derniers temps dans le Royaume de Dinoville. Il est assez coriace et peut suivant les cas faire beaucoup de dégâts lors d'un combat. Pourrais-tu en tuer un et me le ramener pour que je puisse l'étudier ?</begin>
+		<kill v="gluon" n="1"/>
+		<end>Merci, c'est un beau spécimen. Voilà pour ta récompense !</end>
+		<xp v="30"/>
+		<gold v="500"/>
+	</m>
+
+	<m group="papy" id="kilgnt" name="Les Géants" limit="10" cond="mission(kilglu)+canfight(gvert)">
+		<begin>Je ne sais pas si tu t'en es aperçu, mais le Royaume de Dinoville est envahi par d'immenses Géants Verts qui ne semblent pas se nourrir que de légumes ! Peux-tu aller en exterminer une douzaine au plus vite ? Il s'agit d'un ordre du Roi, alors il faut faire vite !</begin>
+		<kill v="gvert" n="12" zone="0"/>
+		<end>Ouf ! C'était juste ! Merci tu m'as bien aidé, je vais pouvoir parler de cet exploit au Roi demain pendant que nous jouerons au golf.</end>
+		<xp v="100"/>
+		<gold v="5000"/>
+	</m>
+
+	<m group="papy" id="kilcoq" name="L'exploit du mois" limit="20" cond="mission(kilgnt)+canfight(coq)">
+		<begin>Uhm... J'ai encore un Golf de prévu avec le Roi le mois prochain, et figure toi qu'il veut encore entendre parler de tes exploits... Que dirais-tu d'aller tuer quelques Coqdur rapidement ? Tu seras bien récompensé !</begin>
+		<kill v="coq" n="20" zone="0"/>
+		<end>Ah ! Super ! Je vais maintenant réfléchir à rajouter un peu d'épique pour relever tout cela ! Le Roi devrait être ravi !</end>
+		<xp v="200"/>
+		<gold v="8000"/>
+	</m>
+
+</missions>

@@ -1,0 +1,482 @@
+﻿<!-- Roi des Rockys -->
+
+<d place="sking" name="Garde de la Citadelle" gfx="sgarde" cond="scenario(magnet,0)">
+	<phase id="begin">
+		Bonjour étranger... Le Roi est bien trop occupé actuellement avec cette tentative de vol de la Magnétite,
+		il ne pourra pas te recevoir pour l'instant !
+	</phase>
+</d>
+
+<d place="sking" name="Roi des Rockys" gfx="rocking" cond="scenario(magnet,1)">
+
+	<phase id="begin" fast="1" next="enter">
+		Vous racontez que vous avez été attaqué par de féroces Wanwans... Après vous avoir questionné, les gardes
+		vous accordent finalement une audience avec le Roi des Rockys, Monseigneur Rocky IV.
+	</phase>
+
+	<a id="enter">Entrer dans le Palais</a>
+
+	<phase id="enter" next="events">
+		Bienvenue à notre cher Maître Dinoz... nous voyons que vous n'êtes pas natif des Steppes Magnétiques, vous avez
+		du faire long voyage, pardonnez-nous de ne pas pouvoir vous recevoir avec l'hospitalité habituelle de notre
+		peuple, mais les événements récents nous ont épuisé...
+	</phase>
+
+	<a id="events">Que s'est-il passé ?</a>
+
+	<phase id="events" next="magnet">
+		Voyez-vous, cela n'est pas un secret, la Famille Royale dont nous sommes l'héritier contrôle tous les Rockys
+		de la région. Ce pouvoir nous a été confié il y a maintenant de nombreuses générations par le Grand-Lourd-Acéré,
+		le dompteur de la Magnétite...
+	</phase>
+
+	<a id="magnet">La Magnétite ?</a>
+
+	<phase id="magnet" next="magnet2">
+		La Magnétite est une pierre que l'on ne trouve que dans les Steppes, qui d'ailleurs lui doivent leur nom...
+		C'est une pierre qui, sous l'action des frottements du vent et du sable, produit de l'énergie électrique !
+	</phase>
+
+	<a id="magnet2">...</a>
+
+	<phase id="magnet2" next="events2">
+		A l'état naturel, la Magnétite est très instable et donc difficilement contrôlable, mais le Grand-Lourd-Acéré a
+		dans sa jeunesse découvert une pierre d'une pureté parfaite, la Pierre d'Ange. Les héritiers de la Famille Royale
+		doivent en assurer la protection, pour éviter qu'elle ne tombe dans de mauvaises mains.
+	</phase>
+
+	<a id="events2">Et ?</a>
+
+	<phase id="events2" next="again:me">
+		Et, récemment... quelqu'un a tenté de voler la Pierre d'Ange !!! C'est une lourde responsabilité, mais il faut
+		que nous la protégions à tout prix ! Il en va de l'honneur de la Famille Royale... Avez-vous bien tout compris ?
+	</phase>
+
+	<a id="again" target="events">Pouvez-vous répéter ?</a>
+	<a id="me">Quel rapport avec moi ?</a>
+
+	<phase id="me" next="team">
+		Nous y venons... Voyez-vous, de nombreux brigands sévissent à l'extrême-occident des Steppes Magnétiques. On a vu
+		certains d'eux roder à plusieurs reprises aux alentours du château et ce sont sûrement eux qui vous ont attaqué
+		prés du Syphon. Ils se font appeler la Team-W...
+	</phase>
+
+	<a id="team">La Team-W ?</a>
+
+	<phase id="team" next="team2">
+		Oui... La Team-W est un groupe de nomades à l'allure étrange contrôlant des Wanwans. Nous les soupçonnons d'être
+		ceux qui cherchent à voler notre Pierre d'Ange. Nous avons envoyé nos soldats d'élite à leur recherche, et nous
+		avons blessé leur leader, mais nous ne savons pas où ils se cachent...
+	</phase>
+
+	<a id="team2">Uhm...</a>
+
+	<phase id="team2" next="again2:accept:refuse">
+		Nous avons dû rappeler nos soldats pour qu'ils protègent la Pierre d'Ange, car nous ne savons pas ni quand ni où l'ennemi
+		frappera la prochaine fois... Pourrions-nous vous charger de trouver et de détruire la Team-W ? Vous en serrez
+		royalement récompensé !
+	</phase>
+
+	<a id="again2" target="me">Pouvez-vous répéter ?</a>
+	<a id="accept">J'accepte !</a>
+	<a id="refuse">Je ne peux pas accepter pour l'instant</a>
+
+	<phase id="refuse">
+		Bien bien... nous comprenons, et nous ne voulons pas vous impliquer dans une histoire qui n'est pas la votre.
+		Nous vous souhaitons un bon voyage dans les Steppes Magnétiques, revenez nous voir si malgré tout vous changez d'avis...
+	</phase>
+
+	<phase id="accept" next="leave">
+		Vraiment ? Vous nous êtes d'une aide précieuse, cher Maître Dinoz ! Nos conseillers vont vous enseigner les
+		chemins secrets qui vous permettront d'accéder à l'extrême-occident, le repaire des brigands des Steppes...
+		Notre majesté vous souhaite bonne chance, et nous espérons rapidement de positives nouvelles de votre part !
+	</phase>
+
+	<a id="leave">Remercier le Roi</a>
+
+	<phase id="leave" scenario="magnet:2" fast="1">
+		Un conseiller du Roi vous explique le chemin qui permet d'accéder aux camps des brigands de l'extrême-occident
+		à partir du Syphon. Il vous met aussi en garde contre les dangers qui vous attendent. Préparez-vous bien !
+	</phase>
+
+</d>
+
+<d place="slake" name="Rôdeur Etrange" gfx="rodeur2" cond="scenario(magnet,2)+!fx(rodtmp)">
+	<phase id="begin" next="view">
+		......... uhmm, aurais-je été repéré ??? .....
+	</phase>
+
+	<a id="view">Surveiller le Rôdeur</a>
+
+	<phase id="view" fast="1" effect="rodtmp">
+		Avant que vous ayez pu vous approcher, le Rôdeur a mystérieusement disparu. Que peut-il bien manigancer ici...
+	</phase>
+</d>
+
+<d place="scampw" name="Capitaine" gfx="wteamc" cond="scenario(magnet,6)">
+
+	<phase id="begin" next="who">
+		..... Pourquoi nous as-tu attaqué ? Est-ce pour te venger de notre attaque précédente ? Je pensais pourtant m'être
+		excusé...
+	</phase>
+
+	<a id="who">Qui êtes-vous ?</a>
+
+	<phase id="who" next="dont:tell">
+		Oui, je ne me suis pas présenté, je suis Mulder, le capitaine de la Team-W... Qui t'envoie et pourquoi nous as-tu
+		attaqué ?
+	</phase>
+
+	<a id="dont">Ne rien raconter</a>
+	<a id="tell">Raconter que le Roi des Rocky vous envoie</a>
+
+	<phase id="dont" next="dont2:tell">
+		Je vois... tu ne veux pas parler... Tu dois donc être un de SES espions ! Je te le demande une dernière fois :
+		qui t'envoie ? et pourquoi somme nous pris pour cible par le Roi ?
+	</phase>
+
+	<a id="dont2">Se taire</a>
+
+	<phase id="dont2">
+		Bien.... je vois.... Puisque tu n'as rien à me dire pour excuser tes actions, vas-t'en !
+		Sache qu'ici nous pouvons tenir des mois face aux attaques du Roi, et que rien ne nous ferra abandonner notre mission !
+	</phase>
+
+	<phase id="tell" fast="1" next="hist1">
+		Pendant l'heure qui suit, vous racontez au Capitaine tout ce qui vous est arrivé depuis votre entrée dans les Steppes
+		Magnétiques. L'attaque de sa Team-W, puis l'entretiens avec le Roi, et bien entendu le complot pour s'emparer
+		de la Magnétite...
+	</phase>
+
+	<a id="hist1">Continuer</a>
+
+	<phase id="hist1" next="hist2">
+		...... je comprends maintenant... Il y a quelques jours maintenant, notre Wanwan le plus puissant - Grobourin - que tu
+		as tenté de combattre dehors, a été empoisonné par une étrange substance...
+	</phase>
+
+	<a id="hist2">Continuer</a>
+
+	<phase id="hist2" next="hist3">
+		Nous avons bien entendu enquêté pour savoir qui avait pu commettre un tel acte, et une piste nous a mené jusqu'à la citadelle du Roi des Rockys. C'est pour cette raison que nous l'observions de près : nous cherchions un moyen de guérir Grobourin...
+	</phase>
+
+	<a id="hist3">Continuer</a>
+
+	<phase id="hist3" next="hist4">
+		... mais je peux te jurer qu'à aucun moment nous n'avons eu comme plan de nous emparer de la Magnétite. Cette pierre
+		n'a aucune signification pour nous les nomades, car nous trouvons déjà dans les steppes tout ce qui suffit à nous
+		rendre heureux...
+	</phase>
+
+	<a id="hist4">Continuer</a>
+
+	<phase id="hist4" next="hist5">
+		On nous traite souvent de voleurs mais c'est parce qu'on nous confonds avec ces Brigands de l'extrême-occident !
+		Nous les combattons régulièrement quand nous les trouvons... ils nous détestent, mais les habitants nous aident
+		car le Roi n'envoie jamais aucun soldat ici... ils ont bien trop peur du Grand Ver...
+		Les nomades ont été abandonnés par le Roi...
+	</phase>
+
+	<a id="hist5">Continuer</a>
+
+	<phase id="hist5" next="ask:again">
+		Voilà... je t'ai tout raconté. Souhaite-tu que je répète ?
+	</phase>
+
+	<a id="ask">Non merci j'ai tout compris !</a>
+	<a id="again" target="hist1">Je n'ai pas tout suivi...</a>
+
+	<phase id="ask" next="yes:no">
+		... je suis désolé de ce qu'il s'est passé... mais tu dois comprendre, nous devons absolument soigner Grobourin... il
+		faiblit de jour en jour et nous craignons le pire... Tu es en contact avec le Roi : pourrais-tu nous aider en plaidant
+		notre cause ? Il s'agit d'un malentendu, et il est possible qu'il puisse nous aider à trouver la cause de
+		l'empoisonnement...
+	</phase>
+
+	<a id="yes">Oui</a>
+	<a id="no">Non</a>
+
+	<phase id="no">
+		Je comprends... après tout, nous sommes des inconnus, et tu n'est pas obligé de nous croire... reviens me voir si tu change d'avis.
+	</phase>
+
+	<phase id="yes" scenario="magnet:7">
+		...vraiment ? tu feras cela pour nous, alors que nous t'avons attaqué ? .... que le Grand Ver veille sur toi !
+		Fait attention aux Brigands sur ta route... nous attendons avec impatience de tes nouvelles !
+	</phase>
+
+</d>
+
+<d place="scampw" name="Capitaine" gfx="wteamc" cond="scenario(magnet,7)">
+
+	<phase id="begin">
+		Tu as vu le Roi ? Tu sais comment soigner Grobourin ? .... nous comptons tous sur toi, reviens nous voir avec de bonnes nouvelles !
+	</phase>
+
+</d>
+
+<d place="sking" name="Roi des Rockys" gfx="rocking" cond="scenario(magnet,7)|scenario(magnet,8)">
+
+	<phase id="begin" next="next">
+		Notre cher Maître Dinoz est déjà de retour ? Nous espérons de tout coeur qu'il nous apporte de bonnes nouvelles...
+	</phase>
+
+	<a id="next">Ah euh... oui...</a>
+
+	<phase id="next" next="talk">
+		Bien ! Nous sommes très heureux, racontez-nous vos exploits, mon cher......
+	</phase>
+
+	<a id="talk">Raconter</a>
+
+	<phase id="talk" next="cont" fast="1">
+		Vous racontez au Roi des Rockys votre rencontre avec le Capitaine de la Team-W, sa version de l'histoire
+		concernant l'empoisonnement de Grobourin, et son innocence quand à la tentative de vol de la Magnétite.
+		Le Roi vous écoute avec un silence... royal...
+	</phase>
+
+	<a id="cont">Continuer</a>
+
+	<phase id="cont" next="serv">
+		Bien bien... Vous comprendrez que nous ne pouvons pas faire confiance à ces étranges personnes immédiatement.
+		Il va falloir que nous diligentions une enquête préalable à tout pour parler avec ces habitants des basses-steppes...
+		Pendant ce temps, nous aimerions que vous nous rendiez un autre service, si cela n'est pas abuser de votre
+		precieux temps.
+	</phase>
+
+	<a id="serv">Un service ?</a>
+
+	<phase id="serv" next="sehd">
+		Oui tout a fait, c'est cela : un service... Ces ouï-dire concernant un étrange empoisonnement nous inquiètent. Le cas
+		échéant, nous devrions nous préparer au pire. Si nos informations sont exactes, il pourrait s'agir de Sehd Actif.
+	</phase>
+
+	<a id="sehd">De... quoi ?</a>
+
+	<phase id="sehd" next="control">
+		Le Sehd est un poison très puissant que l'on ne trouve que dans les steppes magnétiques. Il est obtenu en concentrant
+		du poison de Scorpiowink auquel il faut rajouter un ingrédient secret qui permet d'activer ses pouvoirs cachés.
+		Notre armée à depuis longtemps été interdite de fabrication de Sehd car une fois activé il permet de prendre le contrôle
+		total de l'homme ou du Dinoz empoisonné...
+	</phase>
+
+	<a id="control">Prendre le contrôle ?</a>
+
+	<phase id="control" next="serv2">
+		Oui, tout a fait. Qui est sous le contrôle du Sehd Actif ne peut plus raisonner normalement et il lui est même
+		possible de trahir les siens... Le Sedh a été banni du royaume depuis longtemps par nos ancêtres. S'il s'agit
+		vraiment de ce poison, nous devons arrêter son auteur au plus vite...
+	</phase>
+
+	<a id="serv2">Vous parliez d'un service...</a>
+
+	<phase id="serv2" next="ingr">
+		Nous aimerions que vous alliez chercher certains ingrédients.
+		Une fois ces ingredients rassemblés, cela vous permettra de constituer une Potion Anti Sedh qui permet de guérir
+		les effets du poison.
+	</phase>
+
+	<a id="ingr">Des ingrédients ?</a>
+
+	<phase id="ingr" next="sage">
+		Oui. D'après nos légendes il faut rassembler les trois ingrédients perpétuels : le Corail qui jamais ne se brise,
+		la Glace qui jamais ne fond, et la Branche qui jamais ne fane. Une fois ces trois ingrédients rassemblés, il faut
+		trouver un Singe Antique...
+	</phase>
+
+	<a id="sage">Un Singe Antique ?</a>
+
+	<phase id="sage" next="face">
+		Ah... euh... c'était peut-être un Sage Antique, nous ne nous rappellons plus bien. En tout cas, il s'agit d'êtres
+		aux grands pouvoirs et qui paraît-il peuvent vivre pendant plusieurs siècles ! On les reconnais à leur troisième
+		oeil, qui peut voir l'autre face de Dinoland...
+	</phase>
+
+	<a id="face">L'autre face ?</a>
+
+	<phase id="face" next="end">
+		Oui... nos légendes racontent que Dinoland possède une autre face, une face Sombre.
+		On appelle cet endroit le Monde Sombre. Personne n'en est jamais revenu bien entendu... mais les Sages (ou singes ?)
+		Antiques peuvent librement voyager dans le Monde Sombre... Mais nous doutons que ces informations puissent vous
+		servir à trouver cet être au troisième oeil...
+	</phase>
+
+	<a id="end">......</a>
+
+	<phase id="end" next="bye">
+		En tout cas, notre majesté comptons sur vos efforts pour rassembler les trois ingrédients, trouver le Singe Antique,
+		et nous ramener au plus vite la Potion Anti Sedh qui nous permettra de nous protéger contre ce poison... En ce qui
+		concerne ces nomades, nous allons enquêter sur eux pour vérifier leurs dires... L'audience est levée, au revoir...
+	</phase>
+
+	<a id="bye">Partir</a>
+
+	<phase id="bye" fast="1" scenario="magnet:8">
+		Vous voilà reparti pour de nouvelles aventures...
+	</phase>
+
+</d>
+
+<d place="sking" name="Garde de la Citadelle" gfx="sgarde" cond="scenario(magnet,10)">
+
+	<phase id="begin" next="fight:no">
+		Etranger !! Vite ! Le Roi est attaqué par de puissantes créatures, elles essaient de l'empoisonner et de prendre le contrôle de la Pierre Royale !!! Peux-tu nous aider à les battre ?
+	</phase>
+
+	<a id="fight">A l'attaque !</a>
+	<a id="no">J'ai besoin de me préparer un peu avant...</a>
+
+	<phase id="no">
+		Faites vite ! La situation est critique !
+	</phase>
+
+	<phase id="fight" scenario="magnet:11" fightgroup="wbour2" next="ok" name="Capitaine" gfx="wteamc">
+		Merci pour votre aide... Après votre départ, ces Goupignons sombres se sont emparés de Grobourin. Il semblait que le poison qu'ils utilisaient permettait de le contrôler...
+	</phase>
+
+	<a id="ok">Je comprends...</a>
+
+	<phase id="ok" next="thanks" name="Capitaine" gfx="wteamc">
+		Ils ont ensuite utilisé la puissance de Grobourin pour attaquer la Citadelle Royale et tenter de s'emparer de la Magnétite... Heureusement, nous sommes arrivés à temps...
+	</phase>
+
+	<a id="thanks">Merci de votre aide en combat !</a>
+
+	<phase id="thanks" next="how" name="Capitaine" gfx="wteamc">
+		Oui, mais c'était naturel, nous ne pouvions pas laisser Grobourin tout détruire de cette façon. Et c'est grâce à votre
+		Potion que le contrôle a pu être rompu...
+	</phase>
+
+	<a id="how">Comment va-t-il ?</a>
+
+	<phase id="how" next="not" name="Capitaine" gfx="wteamc">
+		Nous l'avons rappatrié à notre campement. Il est bien amôché mais il s'en sortira... grâce à vous...
+	</phase>
+
+	<a id="not">Ce n'était vraiment rien...</a>
+
+	<phase id="not" next="thanks2" name="Capitaine" gfx="wteamc">
+		C'était déjà beaucoup. Le Grand Ver vous a protégé semble-t-il... Venez nous voir quand vous le voulez au campement, nous vous donnerons accès à notre Boutique secrète...
+	</phase>
+
+	<a id="thanks2">A bientôt !</a>
+
+	<phase id="thanks2" fast="1" scenario="magnet:12" name="Capitaine" gfx="wteamc">
+		Le Capitaine est reparti vers le campement de la Team-W...
+	</phase>
+
+</d>
+
+<d place="sking" name="Capitaine" gfx="wteamc" cond="scenario(magnet,11)">
+
+	<phase id="begin" next="ok">
+		Merci pour votre aide... Après votre départ, ces Goupignons sombres se sont emparés de Grobourin. Il semblait que le poison qu'ils utilisaient permettait de le contrôler...
+	</phase>
+
+	<a id="ok">Je comprends...</a>
+
+	<phase id="ok" next="thanks" name="Capitaine" gfx="wteamc">
+		Ils ont ensuite utilisé la puissance de Grobourin pour attaquer la Citadelle Royale et tenter de s'emparer de la Magnétite... Heureusement, nous sommes arrivés à temps...
+	</phase>
+
+	<a id="thanks">Merci de votre aide en combat !</a>
+
+	<phase id="thanks" next="how" name="Capitaine" gfx="wteamc">
+		Oui, mais c'était naturel, nous ne pouvions pas laisser Grobourin tout détruire de cette façon. Et c'est grâce à votre
+		Potion que le contrôle a pu être rompu...
+	</phase>
+
+	<a id="how">Comment va-t-il ?</a>
+
+	<phase id="how" next="not" name="Capitaine" gfx="wteamc">
+		Nous l'avons rappatrié à notre campement. Il est bien amôché mais il s'en sortira... grâce à vous...
+	</phase>
+
+	<a id="not">Ce n'était vraiment rien...</a>
+
+	<phase id="not" next="thanks2" name="Capitaine" gfx="wteamc">
+		C'était déjà beaucoup. Le Grand Ver vous a protégé semble-t-il... Venez nous voir quand vous le voulez au campement, nous vous donnerons accès à notre Boutique secrète...
+	</phase>
+
+	<a id="thanks2">A bientôt !</a>
+
+	<phase id="thanks2" fast="1" scenario="magnet:12" name="Capitaine" gfx="wteamc">
+		Le Capitaine est reparti vers le campement de la Team-W...
+	</phase>
+
+</d>
+
+
+<d place="sking" name="Roi des Rockies" gfx="rocking" cond="scenario(magnet,12)+!collec(magnet)">
+	<phase id="begin" next="not">
+		Cher ami ! Nous sommes très heureux du dénouement de cet affrontement... nous voulons vous remercier pour les nombreux
+		services que vous avez rendu à la famille Royale, allant même jusqu'à risquer votre vie...
+	</phase>
+
+	<a id="not">Ce n'était rien...</a>
+
+	<phase id="not" next="not2">
+		Pensez-vous ! Grâce à ces évenements, nous avons pu nous réconcilier avec les nomades de l'extrême-occident...
+		Nous serons désormais plus attentionnés envers nos lointains sujets, car il semble que notre jugement à leur encontre
+		ait été quelque peu hâtif.
+	</phase>
+
+	<a id="not2">Ce n'était rien...</a>
+
+	<phase id="not2" next="plan">
+		Si, nous insistons pour vous récompenser correctement. Grâce à vous nous avons pu capturer ces infâmes Goupignons Sombres qui semblent avoir tramé la tentative de vol de la Magnétite, la fabrication du Sedh Actif, l'empoisonnement de Groubourin et l'attaque de la Citadelle... Quel plan machiavélique !!
+	</phase>
+
+	<a id="plan">Effectivement...</a>
+
+	<phase id="plan" next="ok">
+		Mais ne vous inquiêtez pas, tous les suspects ont été enfermés dans nos geôles les plus profondes, et ils ne sont pas prêts d'en sortir, vous avez notre parôle Royale...
+	</phase>
+
+	<a id="ok">....</a>
+
+	<phase id="ok" next="accept">
+		Bien bien, pour vos services rendus nous vous avons prévu une récompense... royale ! Nous souhaitons que vous l'acceptiez en remerciement de votre action à notre service...
+	</phase>
+
+	<a id="accept">J'accepte (chouette!)</a>
+
+	<phase id="accept" next="thanks">
+		Voila pour vous... nous vous confions cet éclat de Magnétite Négative. Elle a pour propriété d'annuler les effets de la Magnétite en certains endroits. C'est un objet extrêmement rare et nous souhaitons qu'il vous aide dans vos futur voyages...
+	</phase>
+
+	<a id="thanks">Merci beaucoup !</a>
+
+	<phase id="thanks" collection="magnet" fast="1">
+		Le Roi des Rockys vous a confié l'objet de collection : "l'Eclat de Magnétite Négative". Mais à quoi cela peut-il bien servir ?
+	</phase>
+
+</d>
+
+<d place="scaush" name="Rodeur Etrange" gfx="rodeur2" cond="scenario(magnet,12)">
+
+	<phase id="begin" next="ask">
+		Alors c'était donc toi.......
+	</phase>
+
+	<a id="ask">Moi ?</a>
+
+	<phase id="ask" next="euh">
+		Oui ! En plus de faire échouer mon plan, tu me poursuis et compte peut-être pouvoir m'arrêter ?
+	</phase>
+
+	<a id="euh">Euh...</a>
+
+	<phase id="euh" next="end">
+		Sâche que je n'oublierai rien de ta participation ! Je dois maintenant retourner faire mon rapport aux maîtres de Caushemesh...
+		Tu as de la chance, je suis pressé, mais la prochaine fois que nous nous rencontrerons, je te ferai payer tes actions !
+	</phase>
+
+	<a id="end">...</a>
+
+	<phase id="end" scenario="magnet:13" fast="1">
+		Le Rodeur à mysterieusement disparu... il semblait très en colère contre vous...
+	</phase>
+
+</d>

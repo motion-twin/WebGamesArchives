@@ -1,0 +1,16 @@
+-cp src
+-cp ../com
+-cp ../../../base/com
+-cp ../../tpl/fr
+-cp ../../../../../bumdum/old_lib
+-swf swf/game.swf
+-swf-version 9
+-swf-header 800:420:40:FFFFFF
+-swf-lib obj\gameResources.swf
+--flash-strict
+-main Main
+-lib format
+-D dev
+-D fr
+-swf-lib ../swf/gfx.swf
+-cmd "obfu9 swf\game.swf -o swf\game.swf -fake -bmp GfxArts"

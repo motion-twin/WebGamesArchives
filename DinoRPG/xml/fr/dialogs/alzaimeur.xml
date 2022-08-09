@@ -1,0 +1,750 @@
+﻿<!-- ***************************************************************************** -->
+<!-- Al Zaïmeur, quête de la mémoire ----->
+<!-- 1 -->
+<d place="papy" name="Papy Joe" gfx="papy" cond="(fx(sylkey)+mission(kilcoq)+scenario(alzaim,0))+(admin()|active(alzaim))" >
+	
+	<inject id="papy:begin" next="hello" />
+	
+	<a id="hello">Tiens au fait....</a>
+	
+	<phase id="hello" next="accept:refuse">
+		Tu tombes bien, j'aurai besoin d'un jeune en pleine force de l'âge pour m'aider.
+		Tu as une minute ?
+	</phase>
+	
+	<a id="accept">
+		Oui bien entendu, de quoi s'agit'il ?
+	</a>
+	<a id="refuse" target="quit">
+		Non merci, je suis pas en grande forme...
+	</a>
+	
+	<phase id="accept" next="more1:refuse2">
+		Et bien vois-tu, je rencontre des problèmes de mémoire depuis quelques années.
+		J'ai une impression très étrange qui revient de plus en plus souvent, tu sais... comme si j'avais oublié quelque chose d'important... je sais pas si tu vois ce que je veux dire.
+	</phase>
+	
+	<a id="more1">
+		Plus ou moins, je peux peut être vous aider ?
+	</a>
+	
+	<a id="refuse2" target="quit">
+		Oh, j'avais oublié, j'ai un rendez-vous chez le coiffeur. Bye.
+	</a>
+	
+	<phase id="more1" next="more2:refuse3">
+		Pourrais-tu te rendre dans les Steppes Magnétiques pour y chercher quelque chose, un objet que j'aurais pu perdre là-bas par exemple ?
+	</phase>
+	
+	<a id="more2">
+		Avec plaisir
+	</a>
+	
+	<phase id="more2" scenario="alzaim:1">
+		Merci mon petit. Je savais qu'on pouvait faire confiance aux jeunes de nos jours !
+		Je t'attend ici.
+	</phase>
+	
+	<a id="refuse3">
+		C'est à dire, ça fait un peu loin là...
+	</a>
+	<phase id="refuse3">
+		Ok je comprends... reviens me voir si jamais tu pense aller y faire un tour plus tard.
+	</phase>
+	
+	<phase id="quit" >
+		Bon ben salut....
+	</phase>
+</d>
+
+<!--
+GUIDE MICHEL
+-->
+<d place="dnv" name="Leguide Michel" gfx="michel" cond="scenario(alzaim,1)">
+	<inject id="guide:begin" next="p13" />
+	<a id="p13">
+		Demander comment trouver un objet perdu dans les steppes.
+	</a>
+	<phase id="p13">
+		Tu dois trouver un objet perdu depuis près de 10 ans aux Steppes Magnétiques ? Voyons voir ... comme cela fait longtemps, le sable a dû tout recouvrir et tu auras surement besoin d'un outil solide...
+	</phase>
+</d>
+
+<!--
+	ACTION AUX PYLONES MAGNETIQUES
+	Creuser donne accès à une moitiée de photo sur laquelle est identifié PapyJoe jeune
+	Cette action fait passer le scénario alzaim en phase 2
+-->
+<!-- 2 -->
+<d place="papy" name="Papy Joe" gfx="papy" cond="(scenario(alzaim,2))">
+
+	<inject id="papy:begin" next="accept" />
+	
+	<a id="accept">
+		...... (Lui montrer la photo déchirée)
+	</a>
+
+	<phase id="accept" next="more1">
+		Hum, c'est une jolie photo.... C'est ton père ?
+	</phase>
+	
+	<a id="more1">
+		..... Heu non, c'est vous  !
+	</a>
+	
+	<phase id="more1" next="more2">
+		Oh par la barbe de Mère Lain... tu as raison.
+		Aahhh j'étais jeune et beau à l'époque.
+		Mais ce n'était pas ça, j'ai toujours cette drôle de sensation de souvenir enfoui en moi. Il doit forcément y avoir une raison...
+	</phase>
+	
+	<a id="more2">
+		Vous devriez peut être vous reposer ?
+	</a>
+	
+	<phase id="more2" scenario="alzaim:3">
+		Oui, je te remercie mon petit, j'irai faire un tour sur les plages des Iles Atlantéinées pour me rafraîchir la mémoire, mais maintenant, je vais aller dormir un peu...
+	</phase>
+</d>
+
+<!-- 3 -->
+<d place="marais" name="Homme fatigué" gfx="al_zaimeur2" cond="scenario(alzaim,3)">
+	<phase id="begin" next="breath">
+		......(souffle)....(souffle)...ha....excusez .... excusez moi...désolé .....de vous déranger ....dans votre aventure... (souffle)...(souffle)...
+		..................
+	</phase>
+	<a id="breath">
+		Le laisser reprendre son souffle.
+	</a>
+	<phase id="breath" next="help:not">
+		Ca fait des années que je tourne en rond, Je suis exténué, je ne peux plus faire un pas,
+		j'aimerais rejoindre Dinoville, mais je suis trop faible pour continuer mon voyage...
+		Pourriez vous me donner un petit coup de main ? il faudrait juste me rapporter de quoi boire quelque chose...
+	</phase>
+	<a id="help">
+		Bien sur, si je vous apporte de l'eau ça ira ?
+	</a>
+	<a id="not" target="quit">
+		Débrouillez vous tous seul, je n'ai pas le temps de m'occuper de vous, j'ai une mission à finir moi !
+	</a>
+	<phase id="help" next="end" scenario="alzaim:4">
+		Ce serait tellement aimable à vous, cela dit, si je pouvais abuser un petit peu plus de votre temps, un grand cru classé Dinoville serait l'idéal pour me requinquer, je ne sais plus où en trouver par contre...
+	</phase>
+	<a id="end">
+		Bon, s'il ne vous faut que ça, je peux faire un effort...
+	</a>
+	<phase id="end" fast="1">
+		Vous vous éloignez en quête du service qu'il vous a demandé.
+	</phase>
+	<phase id="quit">
+		Ouin, je vais mourir isolé dans mon coin complétement seul, ouin, qu'est ce que j'ai fait pour mériter ça!
+	</phase>
+</d>
+
+<!-- 4 -->
+<d place="dplaza" name="Vendeur de vin" gfx="sommelier" cond="scenario(alzaim,4)">
+	<phase id="begin" next="vente">
+		Bonjour à vous amateur de bonnes choses !
+		Laissez moi vous guider parmi notre sélection des meilleurs crus, le pompelope 142 est succulent, le extremitédeau 144 devient rare,
+		Il faut absolument se le procurer avant que je ... enfin qu'un connaisseur de goût prenne tout le stock !
+	</phase>
+	<a id="vente">
+		en fait je suis à la recherche d'une bouteille de Dinoville...
+	</a>
+	<phase id="vente" next="stock">
+		COMMENT ? Le Grand Cru Dinoville ! Je vois que vous n'êtes pas n'importe qui, tout le monde n'arrive pas forcément à reconnaître toutes les subtilités de ce mélange de saveurs...
+		Vous avez de la chance, il me reste quelques bouteilles...
+	</phase>
+	<a id="stock">
+		Quelques ? je vois une centaine de bouteilles derrière vous !!!
+	</a>
+	<phase id="stock" next="merci">
+		Ah ? vous avez vu, hum bon d'accord, pour tout vous dire, il a un goût de vinaigre... il paraît que les viticulteurs se trouvent tout près du mont tout chaud, du coup,
+		toutes leurs récoltes tournent. Cela dit sur un plat typique de là-bas, comme des merguez, c'est très goûtu !
+	</phase>
+	<a id="merci">
+		Merci beaucoup, combien je vous dois ?
+	</a>
+	<phase id="merci" scenario="alzaim:5" next="quit">
+		Bof, allez-y prenez le, vous n'avez qu'à faire de la pub pour cette bouteille, j'arriverai peut être à écouler mon stock !
+	</phase>
+	
+	<a id="quit">
+		D'accord... mais c'est pas gagné !
+	</a>
+	
+	<phase id="quit" popup="1">
+		Vous obtenez une bouteille Dinoville grand cru (non) classé.
+	</phase>
+</d>
+
+<!-- 4 -->
+<d place="chutes" name="Homme fatigué" gfx="al_zaimeur2" cond="scenario(alzaim,5)">
+	<phase id="begin" next="aide">
+		.....Glou glou glou, haaaaa.... merci beaucoup, impossible de boire autre chose, une fois qu'on y a gouté..!
+		Mais j'avoue que j'ai très faim aussi, je n'ai rien avalé depuis des jours...
+	</phase>
+	<!-- revoir dialogue? -->
+	<a id="aide">
+		Vous avez encore besoin de moi ? Bon mais ce sera la dernière fois alors... j'imagine qu'il y a un plat que vous préférez...?
+	</a>
+	<phase id="aide" next="where">
+		Merci énormement, c'est vrai, il y a un plat qui me ferait plaisir, des merguez cramées, comme dans mon enfance, je ne sais plus où on en trouve, j'avoue que ma mémoire est un peu floue...
+	</phase>
+	<a id="where" >
+		Ne vous inquiétez pas, je sais où trouver ça...
+	</a>
+	<phase id="where" next="end" >
+		Au fait, je m'appelle Al zaimeur !
+	</phase>
+	<a id="end">
+		Drôle de nom...enfin je vais vous chercher ça ! A plus tard !
+	</a>
+	<phase id="end" fast="1"  scenario="alzaim:6">
+		Vous vous éloignez en quête du service qu'il vous a demandé.
+	</phase>
+</d>
+
+<!-- suite scénario, dialogue du vendeur de merguez -->
+
+
+<!-- 5 -->
+<d place="rashpk" name="Vendeur de Merguez" gfx="merguez" cond="scenario(alzaim,6)+(admin()|active(alzaim))">
+
+	<inject id="merguez:begin" next="crame" />
+	
+	<a id="crame" >
+		Et parmi vos merguez, vous en auriez pas quelque-unes qui auraient cramé?
+	</a>
+	
+	<phase id="crame" next="quoi">
+		COMMENT CA CRAME ? tu sous-entends que je ne sais pas faire cuire mes merguez ? Je vais te botter l'arrière-train moi !
+	</phase>
+	
+	<a id="quoi">
+		HA, excusez moi, mais j'aime les merguez cramées moi...
+	</a>
+	
+	<phase id="quoi" next="rate">
+		SACHE QUE JE NE RATE JAMAIS LA CUISSON DE MES MERGUEZ.....
+	</phase>
+		
+	<a id="rate">
+		ha bon, alors pardon, je vais aller chercher ailleurs...
+	</a>
+	
+	<phase id="rate" next="uh">
+		............Attends, t'en vas pas comme ça.............
+	</phase>
+	
+	<a id="uh">
+		..................?
+	</a>
+	
+	<phase id="uh" next="recuperation">
+		(chuchotte) Tiens tu peux te servir là derrière, y'en a plein..........
+	</phase>
+
+	<a id="recuperation">
+		ha donc vous admettez en avoir raté !
+	</a>
+	
+	<phase id="recuperation" next="end" scenario="alzaim:7">
+		CHuuuuuuteuuuuh, sinon je te crame avec !
+	</phase>
+	
+	<a id="end">
+		D'accord, d'accord, je m'en vais, merci encore !
+	</a>
+	
+	<phase id="end" popup="1" >
+		Vous vous éloignez en emportant une merguez cramée prête à être "dégustée"...
+	</phase>
+
+</d>
+
+<!-- 6 -->
+<d place="chutes" name="Al zaimeur" gfx="al_zaimeur" cond="scenario(alzaim,7)">
+	<phase id="begin" next="ravie">
+		....crunch.... crack... mmm... C'était fameux, merci beaucoup, vous êtes mon sauveur...
+		Grâce à vous, je ne suis plus à l'article de la mort...
+	</phase>
+	<a id="ravie">
+		ravi de vous avoir aidé...
+	</a>
+	<phase id="ravie" next="vie">
+		en fait, vous êtes tellement sympa, ça vous dérangerait d'écouter ma vie ?
+	</phase>
+	<a id="vie">
+		........
+	</a>
+	<phase id="vie" next="pouf">
+		en fait ce n'est pas vraiment long, vu que je ne me souviens de pas grand chose...
+		Je suis AMNESIQUE ! ........... comment......... vous vous en doutiez ?
+	</phase>
+	<a id="pouf">
+		........pas du tout !
+	</a>
+	<phase id="pouf" next="poiss">
+		oui, mais là, je ne me souviens de rien, ça fait des années que je cherche à savoir qui je suis...
+	</phase>
+	<a id="poiss">
+		Qu'est ce que je pourrai bien faire pour vous aider dans ce cas ?
+	</a>
+	<phase id="poiss" next="end" >
+		Il parait que le poisson esdérame a des facultés curatives, .... accompagné de sel de lave, ça .... hum.... décuple ses effets !
+	</phase>
+	<a id="end" >
+		Ok, attendez moi là, je vais vous chercher ça !
+	</a>
+	<phase id="end" fast="1" scenario="alzaim:8" >
+		Une fois de plus, vous vous éloignez avec une tâche à accomplir...vous êtes du genre serviable vous, non ?
+	</phase>
+</d>
+
+<!-- 7 -->
+<d place="port" name="Jovébozé" gfx="joveboze" cond="scenario(alzaim,8)">
+	<phase id="begin" next="poiss">
+		l'est bo l'poiscaille, passepérim !
+	</phase>
+	<a id="poiss">
+		Aurais-tu du poisson esdérame ?
+	</a>
+	<phase id="poiss" next="end" scenario="alzaim:9">
+		esdérame, dis ? Crévindiou, pas fretin ct bête là !
+		chance va,  j'en ai max, zont montés chutmut, pondent dan l'noir i paré, i remont pour s'faire graillou !
+		cado, vlà un mork, mais vaut plus le graillou cho, mal au bide sinon !
+	</phase>
+	<a id="end">
+		Ben, merci !
+	</a>
+	<phase id="end" popup="1" >
+		Vous vous éloignez avec un poisson esdérame dans votre sac, visiblement il faut le faire cuire avant de le consommer...
+	</phase>
+</d>
+<!--
+Passage a  fosselave ou en creusant on trouve du sel de lave
+Ce sel permet de cuire le poisson comme voulu
+On passe a l'étape suivante du scénario Alzaimer
+-->
+
+<!-- 8 -->
+<d place="marais" name="Al zaimeur" gfx="al_zaimeur" cond="scenario(alzaim,10)">
+	<phase id="begin" next="plat">
+		Miam, miam, crunch, slurp, burp.... haa ça fait du bien, surtout ce sel, c'est vraiment le petit plus pour ravir mes papilles !
+	</phase>
+	<a id="plat">
+		Comment ? C'était juste votre plat favori ? ce n'est pas du tout curatif ?
+	</a>
+	<phase id="plat" next="end">
+		Euh, si évidemment, je sens déjà que mon cerveau est en ébullition !
+		Je crois me souvenir d'un accident qui m'aurait fait perdre la mémoire, peut-être pourriez-vous en apprendre d'avantage en cherchant des archives...
+		D'ailleurs j'aimerais savoir pourquoi j'ai perdu la mémoire et pourquoi depuis, un rapacarapace fait une fixette sur moi !
+	</phase>
+	<a id="end">
+		Je vais voir ce que je peux faire...
+	</a>
+	<!-- pauvre hère?? -->
+	<phase id="end"  fast="1" scenario="alzaim:11">
+		Encore une fois votre bonté vous perdra... Mais ce pauvre hère semble cacher un bien mystérieux secret...
+	</phase>
+</d>
+
+<!-- 9 -->
+<d place="univ" name="Professeur Eugene" gfx="eugene" cond="scenario(alzaim,11)">
+	<inject id="prof:talk" next="demarch" />
+	
+	<a id="demarch">
+		Demander à accéder aux archives d'accidents.
+	</a>
+	<phase id="demarch" next="arch">
+		Des archives d'accidents ? Mais où voulez vous que l'on stocke tout ça ?
+	</phase>
+	<a id="arch">
+		.......
+	</a>
+	<phase id="arch" next="stock">
+		M'enfin vous imaginez bien qu'avec tous ces maitres dinoz et tous ces monstres dans les parages, les accidents c'est pas ce qui manque !
+		Non, nous n'avons vraiment pas la place pour stocker tout ceci. Et puis de toute façon vous croyez franchement que c'est le rôle d'une université ??
+	</phase>
+	<a id="stock">
+		Ok ! Mais où je peux trouver ça alors ?
+	</a>
+	<phase id="stock" next="idee">
+		Je n'en ai aucune idée... Les anciens de Dinoville vous aideront plus que moi sur le sujet...
+	</phase>
+	<a id="idee">
+		Et pour le monstre ?
+	</a>
+	<phase id="idee" next="champ">
+		J'ai deux théories à ce sujet.  Soit il porte un steak de Gorgon  attaché à la cuisse comme faisaient certains maitres dinoz à l'époque pour entrainer  leurs élèves....
+	</phase>
+	<a id="champ">
+		......Soit ?
+	</a>
+	<phase id="champ" next="soit">
+		Il serait possible que ce soit un monstre des steppes magnétiques qui aurait son champ intrinsèque perturbé...
+	</phase>
+	<a id="soit">
+		Comment ça ?
+	</a>
+	<phase id="soit" next="vite">
+		En fait, les monstres des steppes magnétiques se servent justement de ces champs de courant pour s'orienter. Et notament pour trouver de la nourriture ou ........ se reproduire !
+	</phase>
+	
+	<a id="vite">
+		Ah..... D'accord....il vaut mieux que je me dépêche !
+	</a>
+	<phase id="vite" next="end">
+		Bon je vous laisse, j'ai une équation Couscouzienne à résoudre.
+		Oui un petit pari avec mes collègues ! Eux ils pensent pouvoir résoudre ça avec la méthode de Goss classique, c'est ridicule, moi je suis sûr que l'approche diophantienne est plus adaptée parce que....
+	</phase>
+	<a id="end">
+		S'enfuir en courant !!!!
+	</a>
+	<phase id="end" fast="1" scenario="alzaim:12">
+		Vous vous éloignez rapidement, la voix du professeur se fait lointaine...
+	</phase>
+</d>
+
+<!-- 10 -->
+<d place="papy" name="papy joe" gfx="papy" cond="scenario(alzaim,12)">
+
+	<inject id="papy:begin" next="recher" />
+	
+	<a id="recher">
+		Demander où trouver des archives.
+	</a>
+	
+	<phase id="recher" next="paper">
+		Tu recherches des traces de vieux documents ? As-tu pensé à regarder dans les archives du DailyDino, le journal de DinoVille ?
+	</phase>
+	<a id="paper">
+		Euh, non...
+	</a>
+	<phase id="paper" next="joke">
+		Attends, je pense avoir des vieux numéros ici-même, je les conservais plus jeune pour faire la collection des blagues à Nono le dino, fort populaires à l'époque, je m'en souviens même d'une...
+	</phase>
+	<a id="joke">
+		Hum hum.....
+	</a>
+	 <phase id="joke" next="end" scenario="alzaim:13">
+		Oui tu as raison, on en reparleras plus tard. Voyons, vient m'aider à trier tout ça, on va chercher un évènement qui peut correspondre...
+	</phase>
+	<a id="end">
+		Ok, je viens vous aider !
+	</a>
+	<phase id="end" popup="1" >
+		Vous accompagnez Papy Joe pour l'aider à trier les archives. Dieu sait combien de temps cela va prendre...
+	</phase>
+</d>
+
+<!-- 11 -->
+<d place="papy" name="papy joe" gfx="papy" cond="scenario(alzaim,13)+(admin()|swait(alzaim,2))">
+	<inject id="papy:begin" next="alors" />
+	
+	<a id="alors">
+		Alors ces vieux journaux ?
+	</a>
+	
+	<phase id="alors" next="paper">
+		Je suis désolé, mais il semblerait qu'il n'y ait rien de noté à ce sujet...
+		Le bon côté des choses c'est que j'ai retrouvé toutes mes blagues, je vais pouvoir m'occuper en les relisant...
+	</phase>
+	<a id="paper" >
+		........................
+	</a>
+	<phase id="paper" fast="1" scenario="alzaim:14">
+		Vous vous éloignez de chez Papy Joe en grommelant... Qui d'autre pourrait en savoir plus à Dinoville ?
+	</phase>
+</d>
+
+<!-- 12 -->
+<d place="skull" name="skully" gfx="skully" cond="scenario(alzaim,14)+fx(skull)">
+	<inject id="skull__3:begin" next="accidents" />
+	<inject id="skull__2:begin" next="accidents" />
+	<a id="accidents">
+		Demander à propos d'un accident.
+	</a>
+	<phase id="accidents" next="triste">
+		Oh oh oh oh oh oh oh ??!! Un accident qui aurait fait perdre la mémoire à quelqu'un ?
+		Oui cela est déjà arrivé quelques fois lors d'un combat, mais je me souviens aussi
+		d'une période où l'équilibre des steppes magnétiques avait été perturbé et cela avait provoqué une série d'accidents.
+	</phase>
+	<a id="triste">
+		Ah ?
+	</a>
+	<phase id="triste" next="dispa">
+		Oui je me souviens même d'un jeune garçon qui avait ... disparu.
+		... Quelle tristesse !
+	</phase>
+	<a id="dispa">
+		Un jeune homme ... disparu ?
+	</a>
+	<phase id="dispa" next="end">
+		Oui, c'était il y a une dizaine d'années je dirai.
+		(Se gratte la tête... enfin le crâne)
+		Mais j'y pense... cela pourrait être ton survivant !! Tout semble correspondre.
+	</phase>
+	<a id="end">
+		ça coïncide avec les propos du professeur. Je vais prevenir Al ! Merci !
+	</a>
+	<phase id="end" fast="1" scenario="alzaim:15">
+		Skully vous fait un mouvement de l'os de la main à mesure que vous vous éloignez...
+	</phase>
+</d>
+
+<!-- 13 -->
+<d place="chutes" name="Al zaimeur" gfx="al_zaimeur" cond="scenario(alzaim,15)">
+	<phase id="begin" next="blabla">
+		Alors est-ce que tu as appris des choses ?
+	</phase>
+	<a id="blabla">
+		Tout lui raconter..........
+	</a>
+	<phase id="blabla" next="end" scenario="alzaim:16">
+		Donc ce serait les ondes magnétiques que je dégage qui seraient responsables de ma mésaventure ?
+		Merci à toi, je vais me débrouiller pour le reste, je n'ai que ce bout de photo pour te récompenser de tout ce que tu as fait pour moi malheureusement.
+	</phase>
+	<a id="end">
+		Je la prends avec plaisir.
+	</a>
+	<phase id="end" popup="1" >
+		Al vous a remis un bout de photo déchirée, @/img/icons/fx_alztof.gif@ cette photo vous rappelle quelque chose...
+	</phase>
+</d>
+
+<!-- 14 -->
+<d place="papy" name="papy joe" gfx="papy" cond="scenario(alzaim,16)">
+	<inject id="papy:begin" next="photo" />
+	
+	<a id="photo">
+		Bonjour !
+	</a>
+	<phase id="photo" next="paper">
+		Bonjour mon ami éleveur de Dinoz......
+		Tu viens enfin écouter mes blagues?
+	</phase>
+	<a id="paper" >
+		.......Lui montrer la photo.
+	</a>
+	<phase id="paper" next="rien">
+		Ah ! Très jolie photo, mais tu devrais prendre plus soin de tes objets ! C'est ta maman ?
+	</phase>
+	<a id="rien" target="autre">
+		....... Elle ne vous rappelle rien ?
+	</a>
+	<phase id="autre" next="suite">
+		Hum.... en y regardant de plus près, cela me dit quelque chose en effet...
+		MAIS !!!   C'est !!! ...........
+		Ah non c'est pas ça ....
+	</phase>
+	<a id="suite" >
+		Regardez mieux !!!
+	</a>
+	<phase id="suite" next="suite2">
+		(Il remet ses lunettes)
+		Mais !!!! C'est l'autre moitié de la photo que tu m'a ramenée !!
+	</phase>
+	<a id="suite2" >
+		(ENFIN)
+	</a>
+	<phase id="suite2" next="suite3" scenario="alzaim:17">
+		Oh ! Mais je me rappelle maintenant... Il s'agit de moi et de ... mon ... mon fils !
+		Oh mon Dieu, comme ai-je pu l'oublier durant toutes ces années ... ? 
+	</phase>
+	<a id="suite3">
+		Votre fils ??
+	</a>
+	<phase id="suite3" next="suite4">
+		Oui Al est mon fils. Nous avons été victimes d'un accident des années auparavant alors que nous étions en voyage aux steppes près des Pylônes de Magnétite.
+		Depuis cet accident, j'éprouve beaucoup de mal à me souvenir de ma vie d'avant. 
+		Mais relire ces vieux journaux, avoir retrouvé cette photo de famille, tout ça vient de faire ressurgir ces souvenirs enfouis !
+		Et tu l'a retrouvé alors ? 
+	</phase>
+	<a id="suite4" >
+		Oui par hasard. Il va bien ! Je vais le chercher si vous voulez !
+	</a>
+	<phase id="suite4">
+		Oh oui, merci mon petit. J'ai vraiment hâte de le retrouver !
+		J'espère qu'il ne m'en veut pas trop, ça va faire 10 ans quand même...
+	</phase>
+</d>
+
+<!-- Combat de boss -->
+<!-- 15 -->
+<d place="marais" name="Al zaimeur" gfx="al_zaimeur" cond="scenario(alzaim,17)">
+	<phase id="begin" next="suite">
+		Au secours, revoilà le Rapacarapace, je suis allé aux toilettes et ça a généré un champ magnétique, qui a de suite alerté le monstre !
+		S'il te plait, débarrasse moi une bonne fois pour toute de cette sangsue.
+	</phase>
+	<a id="suite">
+		Tu peux compter sur moi !
+	</a>
+	<phase id="suite" fast="1" next="fight">
+		Le Rapacarapace surgit du fond des marais, caché par un nénuphar.
+		Le combat est inévitable !
+	</phase>
+	<a id="fight">
+		Combattre
+	</a>
+	<phase id="fight" fast="1" scenario="alzaim:18" fightgroup="rapaca">
+		Tu as réussi à vaincre le Rapacarapace qui terrorisait Al.
+		Vous le mettez au courant de l'incroyable découverte que vous avez faites, et vous lui annoncé que son père l'attend à Dinoville.
+		Il ne vous reste plus qu'à réunir les deux parents !
+	</phase>
+</d>
+<!-- 16 -->
+<!--
+	DONNER LES 6 TICKETS
+	METTRE POPUP POUR AVERTIR
+-->
+<d place="papy" name="papy joe" gfx="papy" cond="scenario(alzaim,18)">
+	<inject id="papy:begin" next="heureux" />
+	<a id="heureux">
+		Alors ces retrouvailles ?
+	</a>
+	<phase id="heureux" next="fiston" >
+		Merci de m'avoir ramené mon fils, j'espère qu'il ne m'en voudra pas trop de l'avoir oublié durant toutes ces années...
+		Nous avons tant à nous dire, je pense qu'il va rester avec moi quelque temps.
+	</phase>
+	<a id="fiston">
+		(continuer)
+	</a>
+	<phase id="fiston" next="cadeau" gfx="al_zaimeur" name="Al Zaimeur" background="2" >
+		Toutes ces années perdues à retrouver la mémoire vont être difficiles à rattraper, nous allons y remédier tout de suite, merci encore de m'avoir aidé !
+		Au fait, tu voudrais pas aller me chercher des merguez par hasard ?.........
+		Non, je plaisante, tu en as assez fait pour nous.... enfin....si tu veux revenir me voir, ne te gêne pas !
+	</phase>
+	<a id="cadeau">
+		Avec plaisir !
+	</a>
+	<phase id="cadeau" next="joie"  give="tictac:6" scenario="alzaim:19" >
+		Pour te remercier je te donne 6 Tickets Taque, tu peux les utiliser pour creuser dans mon jardin... parait que mon arrière grand-père y cachait plein de choses de valeur.
+		Oui je sais... certains mettent ça dans des coffres ou sous un matelas, lui c'était dans son jardin.
+	</phase>
+	
+	<a id="joie" >
+		Cool, merci pour ce cadeau !
+	</a>
+	
+	<phase id="joie" popup="1" next="end">
+		Papy Joe vous a remis 6 Tickets taque, @/img/icons/fx_tictac.gif@ ces tickets permettent de creuser dans son jardin à la recherche de trésors enfouis...
+	</phase>
+	
+	<a id="end"></a>
+	
+	<phase id="end" next="end2">
+		Mais bon, n'aies pas de grands espoir, ça fait déjà deux générations que l'on cherche comme des fous, sans même prendre le temps de se raser la barbe.
+	</phase>
+	<a id="end2">Hummm, Ok !</a>
+	<phase id="end2" fast="1" >
+		Les deux parents semblent heureux de s'être retrouvés, vous les laissez entre eux pour partir vers de nouvelles aventures...
+	</phase>
+</d>
+
+
+<!--texte générique d'introduction des missions d'Al-->
+
+<d place="papy" name="Al Zaimeur" gfx="al_zaimeur" background="2" cond="scenario(alzaim,19)+(active(malzaim)|admin())">
+	<phase id="begin" next="bu">
+		Hey salut ! Ca fait longtemps qu'on s'est pas bu .... heu vu ! Tu deviens quoi ?
+	</phase>
+	<a id="bu">
+		Consulter la liste des missions.
+	</a>
+	<phase id="bu" missions="alzaim">
+	</phase>
+</d>
+
+<!--dialogues missions d'Al-->
+
+<d place="papy" name="Al Zaimeur" gfx="al_zaimeur" background="2" cond="curmission(fiesta,0)">
+	<inject id="alzaimeur__19:begin" next="oui">
+	</inject>
+	<a id="oui">
+		Tu veux organiser une fête ?
+	</a>
+	<phase id="oui" next="quoi">
+		Oui, je fête mon retour et mes retrouvailles avec Papy Joe.
+	</phase>
+	<a id="quoi">
+		Quoi ? Tu fêtes toujours ton retour ?
+	</a>
+	<phase id="quoi" next="vie">
+		Bah oui, tu sais j'ai pas vraiment eu la chance de vivre la vie d'étudiant, alors je veux en profiter maintenant.
+		D'ailleurs tu as  manqué une de ces soirées hier soir, tout DinoVille était là (bon ça fait pas grand monde mais bon).
+	</phase>
+	<a id="vie">
+		Mais... ça n'est pas ta première soirée ?
+	</a>
+	<phase id="vie" next="revoir">
+		Carrément pas. Et là j'aimerai remettre ça, mais pas faire un truc d'amateur cette fois-ci, je te parle d'une Méga soirée ! 
+		Et ce serait super qu'il y ait des gens de mon âge un peu, des jeunz qui savent faire la fête quoi.
+		Tu pourrais aller voir ceux que tu connais pour leur proposer de nous rejoindre pour THE FIESTA DE DINOVILLE ?
+	</phase>
+	<a id="revoir">
+		Oui, ça me fera plaisir de les revoir !
+	</a>
+	<phase id="revoir" next="end">
+		Et si tu connais des filles .... , tu peux leur demander hein. L'entrée est gratuite pour elles !
+		Autrement, tu connaitrais pas un certain Tanguy ?  ... Dommage, c'est parce que je le connais pas encore et que les gens du village me disent que je lui ressemble beaucoup ...
+	</phase>
+	<a id="end">
+		...
+	</a>
+	<phase id="end" fast="1">
+		Il est temps de partir distribuer les invitations pour la Méga-fiesta.
+	</phase>
+</d>
+
+<d  place="papy" name="Al Zaimeur" gfx="al_zaimeur" background="2" cond="curmission(mcrame,0)">
+	<inject id="alzaimeur__19:begin" next="hum">
+	</inject>
+	<a id="hum">
+		Tu as pas prévu les merguez ?
+	</a>
+	<phase id="hum" next="arf">
+		A vrai dire, je me suis levé un peu tard ce matin et disons que j'ai pas eu le temps.  Tu peux t'en occuper pour moi ? Allez sois sympa, Papy Joe est fatigué avec toutes ces soirées. Du coup il faut que quelqu'un reste pour s'occuper de lui, tu comprends ?
+		Il faut absolument des saucisses crâmées. Tu te souviens ? J'avais adoré en manger à nouveau...
+	</phase>
+	<a id="arf">
+		Ok je vais te chercher ça.
+	</a>
+	<phase id="arf" next="go">
+		Tu assures un max. Ça va être la meilleure fête de l'année. Je suis sûr qu'il y en a qui vont pas êtres couchés avant .... minuit au moins !!! Ahah, ça va être la folie.
+	</phase>
+	<a id="go">
+		Mouais...
+	</a>
+	<phase id="go" fast="1" frame="dodo">
+		Vous vous éloignez d'Al, visiblement, il s'est endormi debout...
+	</phase>
+</d>
+
+<d place="papy" name="Al Zaimeur" gfx="al_zaimeur" background="2" cond="curmission(alcool,0)">
+	<inject id="alzaimeur__19:begin" next="al">
+	</inject>
+	<a id="al">
+		Tu veux boire quoi à ta soirée ?
+	</a>
+	<phase id="al" next="boire">
+		Ah c'est toi ? Désolé je t'avais pas reconnu, mais j'ai un peu de mal à ouvrir les yeux là tellement je suis fatigué.
+		Ouais il ne reste plus qu'à trouver des choses à boire.
+	</phase>
+	<a id="boire">
+		Tu t'en es pas occupé ?
+	</a>
+	<phase id="boire" next="rhon">
+		Non, Papy Joe refuse que je m'en occupe, il a pas confiance en moi, il dit que je ne sais pas être raisonnable.
+		Il aimerait qu'on ne boive que de l'eau pure de la Fontaine de Jouvence... mais on est des jeunz nous, il nous faut quelque chose de plus adapté pour faire la fête !
+		On m'a dit que le sirop de Lave ça assure trop ! Tu pourrais nous en trouver ? Mais pas seul, il faut l'accompagner avec quelque chose de sympa.
+		Enfin je sais que tu vas nous trouver des trucs sympa toi, ça se voit que tu sais organiser des soirées !
+	</phase>
+	<a id="rhon">
+		Ah ? Tu le vois à quoi ?
+	</a>
+	<phase id="rhon" frame="dodo">
+		RRHOONNNN .... PPPSHHHUITTTT .... RONRRRORONNROON..... PSHHHHUIHHHHHHUUIII ........(il dort).....
+	</phase>
+</d>

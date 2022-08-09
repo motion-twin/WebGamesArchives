@@ -1,0 +1,46 @@
+﻿<d place="bslt" name="Seltsamer Dinoz" gfx="pteroz" cond="!collec(pteroz)+level(8)">
+	<phase id="begin" next="fight:leave" fast="1">
+		Ein seltsamer und bedrohlich wirkender Dinoz ist auf deinem Weg aufgetaucht. Seine roten Augen starren dich unablässig an. Er sieht sehr wild aus!
+	</phase>
+	<a id="fight">Ihn angreifen!</a>
+	<a id="leave">Flüchten!</a>
+	<phase id="fight" fight="pteroz" collection="pteroz" fast="1">
+		Du hat einen Pteroz besiegt! Du erhälst die Pteroz-Trophäe. Mit ihr kannst du ab sofort diesen Dinoz im Dinozgeschäft kaufen!	
+	</phase>
+	<phase id="leave">
+		Uff! Einen Schritt weiter und dieser Dinoz hätte dich angegriffen!
+	</phase>
+</d>
+
+<d place="ilewkk" name="Seltsamer Dinoz" gfx="hippo" cond="!collec(hippo)+level(8)">
+	<phase id="begin" next="fight:leave" fast="1">
+		Ein seltsamer Dinoz ist auf deinem Weg aufgetaucht und dann geflüchtet...Was möchtest du tun?</phase>
+	<a id="leave">Warten.</a>
+	<a id="fight">Ihn verfolgen.</a>
+	<phase id="fight" fight="hippo" collection="hippo" fast="1">
+		Du hast einen seltenen Dinoz besiegt: Einen Hippoklampen! Du erhälst die Hippoklampen-Trophäe. Mit ihr kannst du ab sofort diesen Dinoz in dem Dinozgeschäft kaufen!
+	</phase>
+	<phase id="leave">
+		Sieht so aus, als ob er nicht wiederkäme...Aber um was für eine Art könnte es sich wohl handeln?
+	</phase>
+</d>
+
+<d place="frcbrt" name="Seltsamer Stein" gfx="rocky" cond="!collec(rocky)+level(13)">
+	<phase id="begin" next="touch:fight:grave:leave" fast="1">
+		Ein seltsamer Stein ragt mitten aus dem Weg. Sieht nicht so aus, als ob es sein natürlicher Platz wäre...Was möchtest du tun?
+	</phase>
+	<a id="touch">Ihn berühren.</a>
+	<a id="fight">Versuchen ihn umzuwerfen.</a>
+	<a id="grave" target="fight">Etwas darauf eingravieren.</a>
+	<a id="leave">Deinen Weg fortsetzen.</a>
+	<phase id="touch" fast="1">
+		Das ist komisch...der Stein scheint warm zu sein, wenn du ihn anfasst. Sonst ist alles gleich...Vielleicht ist es besser, nicht weiter zu machen...
+	</phase>
+	<phase id="leave" fast="1">
+		Du hast recht, schließlich ist es nur ein einfacher Stein...
+	</phase>
+	<phase id="fight" fight="rocky" collection="rocky" fast="1">
+		Ouuups! Der besagte Stein war ein Rocky. Das ist ein Dinoz, der halb Tier, halb Gestein 
+	ist und der im Königreich von Dinoville sehr selten anzutreffen ist... Nachdem du ihn besiegt hast, erhälst du die Trophäe der Rockys. Mit ihr kannst du ab sofort Rockys im Dinozgeschäft kaufen! Bravo!
+	</phase>
+</d>

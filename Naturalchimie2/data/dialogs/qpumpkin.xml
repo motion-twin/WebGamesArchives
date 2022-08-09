@@ -1,0 +1,100 @@
+<d place="enfagu" name="Fête des Courgesprits" gfx="gucourgea" cond="worldmod(halow)">
+
+<a id="exit">Au revoir.</a>
+
+<phase id="begin" frame="happy" next="quest:quoi:origin:exit">
+Bienvenue ! Bienvenue à la fête des Courgesprits !
+</phase>
+
+<a id="quest" cond="fx(pumppr)">Si vous avez besoin d'aide pour la fête, je suis là.</a>
+<a id="quoi">La fête de quoi ? Des Courgesprits ? Qu'est-ce que c'est que ça ?</a>
+<a id="origin">Mais au fait, comment se fait-il que vous soyez une cucurbitacée ? </a>
+
+
+<phase id="quest" quest="pumpkin" frame="normal">
+Ah ! | Voyons comment tu pourrais nous aider...
+</phase>
+
+<!-- ################ -->
+
+<phase id="quoi"frame="normal" next="anc">
+La fête des Courgesprits est la plus grande fête des cucurbitacées ! | A cette occasion, nous célébrons les esprits de nos ancêtres qui apparaissent à cette époque de l'année. 
+</phase>
+
+<a id="anc">Alors c'est vos ancêtres toutes ces vieilles citrouilles qui pourrissent les alchimies partout ? </a>
+
+<phase id="anc"frame="happy" next="ancb">
+Euh... | Hum... Oui, ce sont nos ancêtres. Il ne s'agit pas de vieilles citrouilles, comme tu dis. 
+</phase>
+
+<phase id="ancb" frame="normal" next="ancd">
+Les esprits des cucurbitacées restent très liés à l'alchimie, même après leur disparition. | Et chaque année à la même date, ils sont visibles dans le royaume.
+</phase>
+
+<phase id="ancd" frame="normal" next="cons">
+C'est un des grands mystères des cucurbitacées, mais c'est l'occasion pour nous de célébrer nos ancêtres ! 
+</phase>
+
+<a id="cons">Ok, ok. Et ça consiste en quoi alors, votre fête des Courgesprits ? </a>
+
+<phase id="cons" frame="happy" next="rass">
+C'est essentiellement des prières entre cucurbitacées, peu d'alchimistes se joignent à nous. | Néanmoins, nous avons besoin d'aide pour la fête, car il faut rassembler les esprits.
+</phase>
+
+<a id="rass">Les rassembler ? </a>
+
+<phase id="rass" frame="normal" next="rec">
+Oui, nous devons rassembler les esprits autour de nous pour les prières. | Mais nous les courges, nous sommes un peu limitées dans nos mouvements, tu t'en doutes...
+</phase>
+
+<phase id="rec" frame="happy" next="bout">
+Pour motiver les alchimistes à nous apporter les esprits qu'ils rencontrent, nous ouvrons une [boutique] pendant la fête. | Nous avons plusieurs recettes spéciales de cucurbitacées à proposer, mais avant il faut nous donner un coup de main. 
+</phase>
+
+<a id="bout">Des recettes spéciales, vous dites ? </a>
+
+<phase id="bout" effect="pumppr" url="/act">
+Ah ah tu es bien un alchimiste, pas de doute. | Mais avant d'aller à la boutique de la fête, reviens me voir et nous verrons comment tu peux aider les cucurbitacées.
+</phase>
+
+
+<!-- ################ -->
+
+<phase id="origin" frame="normal" next="euh">
+Sacrée question... Et toi ? Comment se fait-il que tu sois un être humain ?
+</phase>
+
+<a id="euh">Eh bien, euh... </a>
+
+<phase id="euh" frame="angry" next="thes">
+Les cucurbitacées existent depuis la nuit  des temps, même si certains alchimistes en doutent ! * 
+</phase>
+
+<phase id="thes" frame="normal" next="leg">
+D'ailleurs, tu connais sûrement la légende qui dit que la race des cucurbitacées a été créée par une recette interdite.
+</phase>
+
+<phase id="leg" frame="happy" next="alors">
+L'histoire raconte que la famine sévissait dans le royaume. | Pour nourrir sa famille, un humain a inventé cette recette et fit apparaître les premières cucurbitacées. | | Il a été drôlement surpris quand les légumes se sont mis à taper la discute ! 
+</phase>
+
+<a id="alors">Oui, et alors ? </a>
+
+<phase id="alors" frame="normal" next="gloup">
+Ce qui est amusant c'est que la même légende existe chez nous : | Les êtres humains auraient été créés grâce à une recette alchimique. Par une cucurbitacée qui voulait nourrir sa famille... | %happy% Ca fait réfléchir, non ? 
+</phase>
+
+<a id="gloup">Gloups... Euh, je vais vous laisser.</a>
+
+<phase id="gloup" frame="happy">
+Hé hé... A plus tard ! 
+</phase>
+
+
+
+
+
+
+</d>
+
+

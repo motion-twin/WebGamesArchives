@@ -1,0 +1,37 @@
+﻿<d place="forges" name="Forgeron" gfx="damas" frame="stop" cond="active(fmedal)|admin()">
+	<phase id="begin" fast="1" next="repair:repair2:pelle:no">
+		Vous entrez dans les forges de Fosselave. la chaleur qui règne ici n'a rien à envier à l'intérieur du cratère du Grand Tout Chaud.
+		Ici rien ne se crée, tout se transforme, à grand coup de marteau !
+		
+		100 pièces d'or pour réparer une pelle, c'est donné non ?
+	</phase>
+
+	<a id="repair" cond="fx(brkpel)">Pouvez vous me réparer ma pelle ?</a>
+	<a id="repair2" cond="fx(brkpe2)">Pouvez vous me réparer ma super pelle ?</a>
+	<a id="pelle" cond="fx(brkpel)+fx(brkpe2)">Pouvez vous me rouler une...</a>
+	<a id="no">Rien de particulier</a>
+
+	<phase id="pelle" frame="blabla">
+		[Et une pelle dans la gueule ca te tente ?]
+	</phase>
+	
+	<phase id="repair" next="thanks" frame="blabla" usegold="100" effect="pelle" noeffect="brkpel">
+		[Et voilà, ta pelle est réparée mon ptit gars !]
+		[Ca fera 100 pièces d'or. T'es gentil, t'oublie pas de passer à la caisse.]
+	</phase>
+
+	<phase id="repair2" next="thanks" frame="blabla" usegold="100" effect="pelle2" noeffect="brkpe2">
+		[Et voilà, ta pelle est réparée mon ptit gars !]
+		[Ca fera 100 pièces d'or. T'es gentil, t'oublie pas de passer à la caisse.]
+	</phase>
+	
+	<a id="thanks">Euh oui mdame !</a>
+
+	<phase id="thanks" frame="blabla">
+		Reviens si t'as encore besoin de nos services ptit gars !
+	</phase>
+
+	<phase id="no" frame="blabla">
+		Reviens avec les poches pleines ptit gars, tu nous fais perdre notre temps !
+	</phase>
+</d>

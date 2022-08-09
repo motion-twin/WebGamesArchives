@@ -1,0 +1,57 @@
+<d place="jzzig" name="Asticoter Vorace" gfx="jzpromo" cond="quest(lapi)">
+
+<a id="exit">Jamais de la vie ! Au revoir ! </a>
+
+<phase id="begin" frame="angry" next="ques:balai:exit">
+Ahr... Qui revoilà...
+</phase>
+
+<a id="ques" cond="quest(vora)">Je referais bien une petite quête pour ne pas vous dénoncer, moi.</a>
+<a id="balai">Je ne suis pas dupe, Vorace ! Vous pouvez changer de nom, je sais que c'est vous le responsable ! </a>
+
+<phase id="ques" quest="vorace">
+Mmmh... Tout ce que tu veux.
+</phase>
+
+
+<phase id="balai" frame="normal" next="balaib">
+Alors comme ça, tu serais plus malin que les hauts responsables de la Guilde ? | Ahr, c'est bien, tu iras loin...
+</phase>
+
+<a id="balaib">Ne vous moquez pas de moi ! Je vais vous dénoncer à la Guilde ! </a>
+
+<phase id="balaib" frame="angry" next="route:exit">
+Grmbl... On pourrait trouver un arrangement pour que tu gardes ça pour toi, non ? 
+</phase>
+
+<a id="route">Un arrangement ? Quel genre d'arrangement ?</a>
+
+<phase id="route" next="scint">
+Ahr... Je ne sais pas. | Des Kubors, peut-être ? Ou quelques Pyrams ? | A la rigueur, je pourrais même accepter de te céder mon magnifique couvre-chef....
+</phase>
+
+<a id="scint">Non non, je sais ce que je veux en fait ! </a>
+
+<phase id="scint" frame="happy" next="nq">
+Ah ! * Et si je te le donnes, tu ne me dénonceras pas, hein ! | Dis moi ce que c'est.
+</phase>
+
+<a id="nq">Ce que je veux, c'est une nouvelle quête ! </a>
+
+<phase id="nq" frame="angry" next="prin">
+Une nouvelle quête ? | Comment ça une nouvelle quête ? 
+</phase>
+
+<a id="prin">C'est simple : Vous me donnez une tâche à accomplir, je le fais et après vous m'offrez une récompense !</a>
+
+<phase id="prin" frame="angry" next="choix">
+Ah. | Ah bon. Comme tu veux, hein. | Et euh... | Une récompense de mon choix ? 
+</phase>
+
+<a id="choix">Oui oui.</a>
+
+<phase id="choix" frame="happy" quest="vorace">
+Ahr... Alors voyons : {"Alchimiste, j'ai besoin de toi pour quelque chose de très important !} | | Ca va comme ça ? 
+</phase>
+
+</d>

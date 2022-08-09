@@ -1,0 +1,50 @@
+<!-- dialogue menthos fin de nimbao 2 -->
+
+	
+<d place="observ" gfx="sage_mentos" name="Sage Menthos" cond="scenario(nimba2,51+)">
+	<phase id="begin" next="sage">
+		Je suis partagé entre mon rôle de conseiller et ma tâche ici, heureusement, je connais le moyen de me déplacer très vite entre le palais et ici.
+		Maintenant que les frontières ont été abollies, se déplacer sur Nimbao est devenu vraiment aisé...
+	</phase>
+
+	<a id="sage">S'incliner respectueusement</a>
+	
+	<phase id="sage" gfx="sage_mentos" name="Sage Menthos" background="1" next="ques3:ques4">
+		Bon soleil à toi, jeune maître Dinoz.
+		Pose moi les questions que tu veux.
+	</phase>
+
+	<a id="ques3">Il y a beaucoup de livres par ici !</a>
+	<a id="ques4">Pouvez vous me raconter l'histoire de Dinoland ?</a>
+	
+	<phase id="ques3" next="ques3:ques4:merc"  gfx="sage_mentos" name="Sage Menthos" background="1">
+		[Cet Observatoire sert de bibliothèque pour nous autres Dorogons. Nous notons depuis le début des temps tout ce qu'il se passe à la surface, et ceux depuis la séparation de l'île céleste de la surface.]
+		[Savais-tu par exemple que Nimbao n'est autre que le sommet du Grand tout Chaud ? Il fut projeté dans les airs il y a de cela plusieurs milliers d'années, bien avant la chute de l'île de Jazz.]
+		[Elle flotte grâce à la particularité de la roche qui constitue le sol de Nimbao. Nous avons depuis, une place privilégiée pour regarder les êtres de la surface qui ont su évoluer bon gré mal gré sans notre
+		aide.]
+	</phase>
+	
+	<phase id="ques4" next="ques3:ques4:merc"  gfx="sage_mentos" name="Sage Menthos" background="1">
+		[A l'aube des temps, nous avons appris à l'homme les rudiments de la vie, le feu et bien d'autres choses. Nous leur avons appris à dresser les dinoz sauvages, à se familiariser avec ces créatures qui depuis
+		vivent en harmonie avec vous.]
+		[Toute l'histoire est décrite dans les livres de l'Observatoire, malheureusement pour toi, ils sont écrits en langue de Dorogon ancien, et seul les plus sages peuvent désormais les consulter.]
+		[Je traduis petit à petit ces livres afin de permettre à la prochaine génération de continuer à transmettre l'histoire de Dinoland.]
+	</phase>
+	
+	<a id="merc">Merci pour tous ces renseignements.</a>
+	
+	<phase id="merc" fast="1" frame="stop">
+		Le vieux sage retourne à ses occupations, sa tâche lui tient vraiment à coeur.
+	</phase>
+</d>
+
+<d place="palais" gfx="sage_mentos" name="Sage Menthos" background="2" cond="scenario(nimba2,51+)">
+	<phase id="begin">
+		[Mandragore a refusé le poste d'Archidorogon, tu le trouveras chez lui, il me semble qu'il parlait d'une récompense.]
+		[Je reste au côté de Maître Pistache, maintenant que le conseil des dorogons a fait de lui l'Archidorogon, il aura besoin de toute notre sagesse
+		pour mener à bien sa mission. J'ai confiance en lui, tout ira bien !]
+	</phase>
+</d>
+
+
+

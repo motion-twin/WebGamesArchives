@@ -1,0 +1,23 @@
+<d place="enfagu" name="Valider mon score" gfx="gucourgea" auto="1">
+
+<phase id="begin" next="bourse">
+%happy%Tu as réussi ! Très bien.
+</phase>
+
+<phase id="bourse" next="tk" >
+Voilà ta bourse d'étude. Cette année, elle est de {517 kubors}. Tu as aussi {6 potions de vigueur} offertes. Si tu es trop fatigué pour te déplacer, tu peux en boire pour récupérer tes [points de déplacement]. Tu peux garder ton {Oxyde}, aussi.
+</phase>
+
+<a id="tk">Chouette !</a>
+
+<phase id="tk" frame="happy" next="tg">
+Ah ! | Il y a aussi ta {boule à papote} dans le paquet. Elle te permet de discuter avec les autres alchimistes. | Fais-en bon usage, elle est disponible à côté de ton inventaire. 
+</phase>
+
+<a id="tg">Ok, merci.</a>
+
+<phase id="tg" give="Pa:6" gold="517" collection="papote">Maintenant {retourne voir Altus au grenier}, il a sûrement une récompense à te donner.</phase>
+
+</d>
+
+

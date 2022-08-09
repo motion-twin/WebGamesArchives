@@ -1,0 +1,72 @@
+<d place="sktupu" name="Melchior Inc." gfx="skmelch">
+
+<a id="exit">Au revoir.</a>
+
+<phase id="begin" frame="happy" next="quest:qui:exit">
+Meeeeelchior Incorporated ! | Import-export d'éléments ! Besoin d'un partenaire de confiance pour vos marchandises ? Pensez Melchior Incorporated ! 
+</phase>
+
+<a id="quest" cond="fx(pmelch)">Intérimaire ::user::, à votre service ! </a>
+<a id="qui" >Melchior Incorporated ? C'est quoi ? Vous êtes qui ? </a>
+
+
+<phase id="quest" quest="melch">
+Ca tombe bien, j'ai justement des missions en attente. 
+</phase>
+
+<phase id="qui" frame="angry" next="quoi:nom">
+Je suis {Melchior Incorporated}, je viens de le dire ! Mais tu peux m'appeler {Melchior Inc.}, comme tout le monde.
+</phase>
+
+<a id="quoi">Et vous faites quoi ici ?</a>
+<a id="nom">C'est votre vrai nom, "Incorporated" ? </a>
+
+<phase id="nom" frame="happy" next="fonde">
+Bien sûr que c'est mon vrai nom ! Je l'ai changé il y a plus de vingt ans quand j'ai fondé ma société ! 
+</phase>
+
+<a id="fonde">Vous étiez obligé de changer votre nom pour ça ? </a>
+
+<phase id="fonde" frame="sad" next="oldname">
+Hum... | En fait oui, mon nom d'origine n'était pas trop... hem... compatible avec une activité commerciale.
+</phase>
+
+<a id="oldname">Vous vous appeliez comment ? Hein dites ? Je suis curieux. </a>
+
+<phase id="oldname" frame="angry" next="ah">
+Hem... | Je m'appelais | {Melchior Enfaillite}...
+</phase>
+
+<a id="ah">Ah oui... Effectivement. </a>
+
+<phase id="ah" next="begin">
+Voilà. | J'ai préféré changer pour un nom plus commercial. {Melchior Incorporated} ça sonne bien et ça fait sérieux. 
+</phase>
+
+<!-- ###################### -->
+
+<phase id="quoi" frame="angry" next="com">
+Je fais de l'import-export : Quelqu'un a besoin d'éléments alchimiques ? Melchior Inc. s'occupe de tout et livre les éléments dans les meilleurs délais ! 
+</phase>
+
+<a id="com">Waaah. Mais comment vous faites ça avec juste euh...  un parasol ? </a>
+
+<phase id="com" frame="happy" next="sun">
+Ah mais moi je suis le Président Directeur Général, la tête pensante ! La création et la livraison des éléments sont faites par des alchimistes triés sur le volet.
+</phase>
+
+<a id="sun">Ah ok, vous vous dorez au soleil pendant que les autres travaillent, en gros.</a>
+
+<phase id="sun" effect="pmelch">
+Mais je travaille, je travaille ! | Je coordonne, je projette, j'administre... | %happy% Tout ça au soleil, c'est vrai.
+</phase>
+
+
+
+
+
+
+
+
+
+</d>

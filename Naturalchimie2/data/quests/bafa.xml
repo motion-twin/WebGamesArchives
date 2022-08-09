@@ -1,0 +1,160 @@
+<quests>
+
+<q from="bafa" id="bafaa" name="Test qualitatif : Pistonide" cond="grade(,4)">
+<begin>Une des missions du Bureau de Validation des Objets Magiques est la veille qualitative des objets en circulation. Pour cela, rien de mieux qu'un étudiant désoeuvré! La grande question étant : mais c'est quoi une veille qualitative ? </begin>
+<talk did="bafaaa" />
+<create o="Elt(8):5" allInOne="1" zone="agoraa" title="Créer 5 Oxydes en une seule alchimie à la Grande Place. Ils doivent être présents en jeu à la fin de l'alchimie pour être créés.">
+	<playMod artft="Pistonide:400" />
+</create>
+<end>Bien. Je note ta réussite dans les statistiques. Voilà ta récompense.</end>
+<xp v="8" />
+<gold v="155" />
+<item v="Pistonide:1" />
+<reput s="gu" v="7" />
+</q>
+
+<q from="bafa" id="bafab" name="Test qualitatif : Charcleur à retardement" cond="quest(bafaa)">
+<begin>Le test suivant concerne le charcleur à retardement. Hum... Va le tester à Tirésias, c'est déjà en mauvais état donc tu ne risques pas de casser grand chose.</begin>
+<create o="Elt(9):6" allInOne="1" zone="jztire" title="Créer 6 Couivres en une seule alchimie au bourg de Tirésias. Ils doivent être présents en jeu à la fin de l'alchimie pour être créés.">
+	<playMod artft="Grenade(1):450" obj="-1" />
+</create>
+<end>J'entendais les explosions jusqu'ici, j'espère que tu n'as pas fait trop de dégâts ! </end>
+<xp v="12" />
+<gold v="165" />
+<item v="Grenade(1):1" />
+<reput s="gu" v="9" />
+</q>
+
+
+<q from="bafa" id="bafac" name="Test qualitatif : Réglisse Delorean" cond="quest(bafab)">
+<begin>Si tu aimes bien les tests qualitatifs, il m'en reste encore quelques-uns ! Le suivant est à l'orée du bois et teste la réglisse de Delorean. Un test difficile !</begin>
+<create o="Elt(10):3" allInOne="1" zone="gmoree" title="Créer 3 mercurules en une seule alchimie à l'orée du bois. Elles doivent être présentes en jeu à la fin de l'alchimie pour être créées.">
+	<playMod artft="Delorean(0):420" />
+</create>
+<end>Bon travail ! Et puisque tu as réussi, la famille Delorean (qui comme chacun sait commercialise la réglisse du même nom) t'offre ces potions de vigueur et une réglisse promotionnelle. Ils sponsorisent ce test qualitatif...</end>
+<xp v="10" />
+<gold v="120" />
+<item v="Delorean(0):1" />
+<item v="Pa:5" />
+<reput s="gu" v="8" />
+</q>
+
+<q from="bafa" id="bafad" name="Test qualitatif : Dynamite Bomberman" cond="quest(bafac)">
+<begin>Maintenant la dynamite Bomberman. Le major Domou a demandé que ce test soit réalisé au Faubourg Audepint, ça l'aide bien pour ses problèmes de pyrite.</begin>
+<create o="Elt(25):6" allInOne="1" zone="apfbg" title="Créer 6 Slamines en une seule alchimie au faubourg Audepint. Elles doivent être présentes en jeu à la fin de l'alchimie pour être créées.">
+	<playMod artft="Dynamit(2):450" />
+</create>
+<end>Parfait, la dynamite bomberman est validée.</end>
+<xp v="11" />
+<gold v="145" />
+<item v="Dynamit(2):1" />
+<reput s="gu" v="10" />
+</q>
+
+<q from="bafa" id="bafae" name="Test qualitatif : Souche de poirier" cond="quest(bafad)">
+<begin>Le dernier test disponible pour l'instant ! Tiens, drôle de test... c'est bien la première fois que je vois autant d'éléments à créer pour réussir.</begin>
+<create o="Elt(6):12" allInOne="1" zone="sktupu" title="Créer 12 Cranos en une seule alchimie à l'école Tupuri. Ils doivent être présents en jeu à la fin de l'alchimie pour être créés.">
+	<playMod artft="PearGrain(1):400;PearGrain(0):200" />
+</create>
+<end>Bonne nouvelle, on dirait que les souches de poirier que j'ai en stock ont germé. Tu as donc droit à quelques graines bonus pour ta réussite ! Par contre il faudra que j'aille signaler que les locaux du BAFA sont trop humides...</end>
+<xp v="15" />
+<gold v="120" />
+<item v="PearGrain(1):1" />
+<item v="PearGrain(0):2" />
+<reput s="gu" v="12" />
+</q>
+
+<!-- ############################################# -->
+
+
+<q from="bafa" id="bafaf" name="Le mystère du Chtrucmuchenul" cond="quest(bafae)">
+<begin>Il y a un problème au BAFA depuis quelques temps. J'aurais besoin de toi pour essayer de le résoudre. </begin>
+<talk did="bafafa" step="1" />
+<talk did="bafafb" step="1" title="Enquêter auprès de l'agent Pirlotte, au BAFA" />
+<talk did="bafafc" step="1" title="Se rendre au Kromlech du Penkrack avec les 6 bouteilles vides consignées" />
+<collect o="QuestObj(geminishregular):6" zone="gmkrom" title="Créer 6 bières Geminish Regular dans une alchimie au kromlech. Pour chaque bière, assembler en jeu 2 potions jaunes, 1 rosée et une potion vide">
+	<playMod fuo="Empty;Empty;Empty;Empty"  />
+</collect>
+<talk did="bafafd" title="Apporter 12 Couivres au Kromlech pour terminer la Geminish Red artisanale" />
+<use qo="QuestObj(geminishred):6" zone="gubafa" action="Donner le pack" text="Ahah ! L'objet du délit est donc... hein ? Une vulgaire potion orange ? C'est louche. Voyons voir... Snif snif ? Bark ! Ca sent la bière ! Pire, ça sent la Géminish Red !  La bière couivrée hallucinatoire de Gémini ! Je comprends mieux les délires de Pirlotte." title="Apporter le pack de 6 Geminish au BAFA, à monsieur 25-678-9" />
+<end>C'est incroyable, il n'a pas dû dessaoûler depuis plus de 2 semaines, enfermé dans son petit bureau ! Il faut qu'on trouve un moyen de l'aider, pour son bien et celui du système administratif... J'ai encore reçu 3 nouvelles recettes appelées Chtrucmuchenul ce matin ! </end>
+<xp v="8" />
+<gold v="110" />
+<reput s="gu" v="7" />
+</q>
+
+
+<q from="bafa" id="bafag" name="Un remède pour Pirlotte" cond="quest(bafaf)">
+<begin>Je connais la recette d'une potion miracle anti-gueule de bois. On va la concocter pour l'agent Pirlotte, ça devrait le remettre en selle. </begin>
+<talk did="bafaga" />
+<collect o="Catz:3" zone="jzzig" title="Trouver 3 Catz à la Ziggourat d'or, pendant une alchimie. Attention, les individus esseulés ont tendance à se montrer timides.">
+	<playMod artft="Catz:25" />
+</collect>
+<end>Parfait, je garde les Catz le temps que tu trouves le reste des ingrédients.</end>
+<xp v="10" />
+<gold v="165" />
+<reput s="gu" v="8" />
+</q>
+
+
+<q from="bafa" id="bafah" name="Un ingrédient nauséabond" cond="quest(bafag)">
+<begin>Le 2e ingrédient du remède est à aller chercher chez Chouettex. Ils en ont forcément, c'est de la euh... de la fiente de chouette. Une dizaine de kilos suffirait.</begin>
+<talk did="bafaha"/>
+<talk did="bafahb" title="Se rendre chez Chouette-Ex pour demander de la fiente de Chouettex" />
+<end>On te sentait arriver depuis que tu as passé le donjon K. Je ne te demande pas si tu as réussi ta mission...</end>
+<xp v="8" />
+<gold v="115" />
+<reput s="gu" v="6" />
+</q>
+
+<q from="bafa" id="bafai" name="Un peu de doigté" cond="quest(bafah)">
+<begin>Le dernier ingrédient va nécessiter un certain savoir-faire pour être récupéré sans encombres...</begin>
+<talk did="bafaia" />
+<use o="Elt(5):30;Grenade(1):1" zone="jzdoor" action="Tendre le piège" text="Vous posez les Foleils en petit tas à une dizaine de mètres du monstre et filez vous cacher dans les fourrés. Les narines du monstre commencent à frémir, il se dirige vers les Foleils ! Pendant que vous l'entendez baffrer, vous placez rapidement le charcleur à retardement à côté de l'entrée de Jeezara. Tout est prêt ! " title="Tendre un piège au monstre qui garde l'entrée de l'école Jeezara. Le piège nécessite 30 Foloeils et 1 charcleur à retardement" />
+<msg zone="jzdoor" action="Surveiller le monstre" text="Après un dernier rot, le monstre revient à sa place.... Avant de s'enfuir en hurlant en se tenant le pied gauche ! Vous récupérez vite fait quelques morceaux d'épiderme qui volètent autour de vous... Attention aux petites verrues qui dépassent." title="Récupérer l'épiderme de dessous de pieds monstrueux" />
+<end>Excellent, plus qu'à fabriquer la potion !</end>
+<xp v="10" />
+<gold v="200" />
+<reput s="gu" v="5" />
+</q>
+
+
+<q from="bafa" id="bafaj" name="Jusqu'à la dernière goutte" cond="quest(bafai)">
+<begin qgive="QuestObj(cage):3;QuestObj(fiente):1;QuestObj(epid):1">J'ai retrouvé la recette, elle s'appelle Palermolle ! Tiens, je te la donne avec les ingrédients. Quand tu auras fabriqué la potion, va l'apporter à Pirlotte. Et vérifie bien qu'il la boit, hein.</begin>
+<cauldron r="qpaler" qty="1" add="1" drop="1" collect="1" title="Utiliser la recette Palermolle pour créer la potion anti-gueule de bois" />
+<talk did="bafaja" title="Apporter la potion anti-gueule de bois à Albéric Pirlotte, au BAFA." />
+<end>Fantastique, j'ai reçu une recette qui ne s'appelle pas "Chtrucmuchenul" ! Pour te remercier, en voilà un exemplaire. Le nom est pas super mais bon... il y a du progrès.</end>
+<xp v="15" />
+<gold v="120" />
+<recipe v="dynv" />
+<reput s="gu" v="10" />
+</q>
+
+
+<q from="bafa" id="bafal" name="Un cadeau bien utile" cond="quest(bafaj)+!fx(slotq)">
+	<begin>Après tout ce que tu as fait, tu as bien mérité une récompense spéciale !</begin>
+	<talk did="bafala" />
+	<use o="Elt(11):3" zone="gubafa" title="Apporter 3 pépites d'or au BAFA pour récupérer une poche de ceinture." text="Attends, je recompte. Les bons comptes font les bons amis. Alors... 1 pépite. 2 pépites.... 3 pépites ! Le compte y est !" action="Donner 3 Pépites d'or" />
+	<end>Comme promis, voilà ta poche de ceinture. Elle te permet d'utiliser tes propres objets magiques pendant tes alchimies, notamment à la coupe des écoles. Fais-en bon usage !</end>
+	<xp v="18" />
+	<slot />
+	<reput s="gu" v="12" />
+</q>
+
+<q from="bafa" id="bafak" name="Une petite fête" repeat="1" cond="quest(bafaj)">
+	<begin>J'ai une petite fête ce soir, est-ce que tu pourrais me rapporter un pack de 6 Geminish Red ? Il faut que j'amène la boisson. Je crois qu'une boutique vend des potions vides à Sharrukin. </begin>
+	<collect o="QuestObj(geminishregular):6" title="Créer 6 bières Geminish Regular dans une alchimie. Pour chaque bière, assembler en jeu 2 potions jaunes, 1 rosée et une potion vide" />
+	<use o="Elt(9):12" qo="QuestObj(geminishregular):6" qgive="QuestObj(geminishred):6" title="Ajouter 12 Couivres aux Geminish Regular pour faire un pack de Geminish Red" text="Et hop, un pack de 6 garanti artisanal ! " action="Ajouter les 12 Couivres" />
+	<end>Parfait, juste à temps pour l'apéro !</end>
+	<xp v="22" />
+	<gold v="30" />
+	<reput s="gu" v="4" />
+</q>
+
+
+
+
+
+
+
+</quests>

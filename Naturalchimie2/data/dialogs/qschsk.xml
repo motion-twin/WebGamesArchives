@@ -1,0 +1,96 @@
+<d place="skmedi" name="Professeur Fili" gfx="skprofa">
+
+<a id="exit">Au revoir.</a>
+
+<phase id="begin" frame="happy" next="after:quest:noob:dude:cap:exit">
+Salut ! 
+</phase>
+
+<a id="noob" cond="sch(sk)+!quest(ska)">Ca y est, je suis inscrit ? </a>
+<a id="after" cond="quest(skj)" >Il y a d'autres quêtes à faire ?</a>
+<a id="quest" cond="quest(ska)|(!sch(sk)+reput(sk,1))">Je viens bosser mon alchimie.</a>
+<a id="dude" cond="quest(ska)|(!sch(sk)+reput(sk,1))">Ca fait plaisir de voir une alchimiste, y'a toujours que des super héros musclés dans les jeux d'habitude.</a>
+
+
+<phase id="after" frame="happy" next="afterb">
+Evidemment ! Le [parrain Vaarza] s'occupe des étudiants de l'école à partir du niveau 3. | Il est à l'école Tupuri. 
+</phase>
+
+<phase id="afterb" frame="normal">
+Sinon, il y plein d'autres personnes dans le royaume à aider. | N'hésite pas à discuter avec les gens que tu croises.
+</phase>
+
+
+<phase id="noob" quest="schsk" >
+Oui, ça y est. | %angry% Bon, je suis le professeur Edora Fili ! | On va voir ce que t'as dans le bide, apprenti.
+</phase>
+
+<phase id="quest" quest="schsk" frame="happy">
+Parfait, au travail !
+</phase>
+
+<phase id="dude" next="bhv:pnj" frame="angry">
+Si tu savais... J'ai dû me battre pour arriver où j'en suis ! La parité entre PNJ c'est pas encore ça ! 
+</phase>
+
+<a id="bhv">Oh ben vous exagérez, il y a Blancheflor Hostia Vargotte quand même. Ca compense.</a>
+<a id="pnj">PNJ ? C'est quoi un PNJ ? </a>
+
+<phase id="bhv" frame="angry" next="lesee">
+* Quoi ? Cette potiche ! ? Tu te moques de moi ?
+</phase>
+
+<a id="lesee">Euh... Euh... Il y a aussi l'étudiante de Jeezara, là, comment elle s'appelle...</a>
+
+<phase id="lesee" next="prisc">
+La petite Torniche ?... | Pitié, elle a à peine 15 ans et c'est déjà une pimbêche.
+</phase>
+
+<a id="prisc">Je sais ! La joueuse de croquet de Gémini ! Voilà un personnage féminin, un vrai ! </a>
+
+<phase id="prisc" frame="angry" next="keep">
+Non mais franchement, tu as vu ses mollets ? On dirait un arceau de croquet ! 
+</phase>
+
+<a id="keep">Bon ben je sais pas moi... Les gardiens du chaudron, c'est peut-être des filles. Ou alors tenez, les courges de l'ENFA ! On dit bien {UNE} courge ! </a>
+
+<phase id="keep" frame="angry">
+... | Tais-toi. Pitié, | tais-toi...
+</phase>
+
+
+
+
+<phase id="pnj" next="moi">
+C'est nous tous, les Personnages Non Joueurs, voyons ! D'où tu sors ? 
+</phase>
+
+<a id="moi">Mais je suis un PNJ aussi, alors.</a>
+
+<phase id="moi" frame="happy" next="enfin:noquest">
+Ben non, toi tu es justement un Joueur tout court. | | C'est facile, si la personne en face de toi ne donne pas de quêtes et ne fait pas toujours les mêmes blagues, c'est sûrement un Joueur et pas un PNJ....
+</phase>
+
+<a id="enfin">Pourtant sur les forums les gens font toujours les mêmes blagues.</a>
+<a id="noquest" cond="!sch(sk)+!reput(sk,1)">Ben pourtant vous me donnez pas de quêtes, là.</a>
+
+<phase id="enfin">
+Mmmh oui, oublie le critère des blagues en fait. | Reste sur {quêtes = PNJ, pas de quêtes = Joueur}. | C'est plus prudent.
+</phase>
+
+<phase id="noquest">
+C'est parce que tu n'as pas une réputation suffisante envers Shang-Kah. Si tu avais la réputation {Bien disposé} avec notre école, j'aurais des quêtes à te confier. 
+</phase>
+
+
+
+
+<a id="cap">Vous pouvez me dire comment je retourne vers la Grande Place et la salle des chaudrons ?</a>
+
+<phase id="cap" frame="normal">
+C'est facile, tu dois juste partir à pied vers l'Est : tu vas à l'école Tupuri, puis Chouettex. Tu arriveras ensuite à la capitale. | Tu ne peux pas te tromper !
+</phase>
+
+
+
+</d>

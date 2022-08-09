@@ -1,0 +1,26 @@
+﻿<!-- Gardien de la forêt -->
+
+<d place="garde" name="Guardián de la Jungla" gfx="arbre">
+
+	<phase id="begin" next="missions:shake" fast="1">
+		Un inmenso árbol se encuentra frente a ti... Es muy viejo y parece que posee una gran sabiduría. Muy lentamente,
+		sus hojas se bajan en tu dirección y crujen suavemente.
+	</phase>
+
+	<a id="missions" cond="fx(grdmis)">Consultar la lista de Misiones.</a>
+	<a id="shake" cond="!fx(grdmis)">Sacudir el árbol como puedas.</a>
+
+	<phase id="shake" next="item" fast="1">
+		Mientras lo sacudes (en la medida de lo posible), percibes un extraño y largo crujido proveniente del interior
+		del árbol. Algo cae bruscamente sobre tu cabeza: ¡Poc!		
+	</phase>
+
+	<a id="item">¡Ay! ¿Qué es esto?</a>
+
+	<phase id="item" next="missions" fast="1" effect="grdmis">
+		Es una especie de gran nuez rodeada por un pergamino. Y para más sorpresa, ¡constatas que contiene un mensaje!
+	</phase>
+
+	<phase id="missions" missions="arbre"></phase>
+
+</d>

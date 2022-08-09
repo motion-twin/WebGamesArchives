@@ -1,0 +1,58 @@
+<d place="chouet" name="Le Skat en peluche" gfx="guchxemp" auto="0">
+
+<phase id="begin" next="skat:skatb">
+Bonjour ! Que peut-on faire pour votre service, cher client ? 
+</phase>
+
+<a id="skat" cond="!quest(bhvd)+!quest(skate)">J'ai besoin de votre super cadeau promo : le sac à dos Skat en peluche.</a>
+<a id="skatb" cond="quest(bhvd)|quest(skate)">J'ai encore besoin d'un sac à dos Skat en peluche...</a>
+
+<!-- ########################## -->
+
+<phase id="skatb" frame="happy" next="prix">
+Tout tes amis ont trouvé ton sac tellement beau qu'ils veulent le même, hein ? Le tarif n'a pas changé.
+</phase>
+
+<a id="prix">Contre 5 Oxydes, c'est ça ? </a>
+
+<phase id="prix">
+Exactement. Et c'est un prix d'ami ! 
+</phase>
+
+
+<!-- ########################## -->
+
+<phase id="skat" frame="angry" next="flute">
+Ah. | Malheureusement notre splendide offre promotionnelle {30 carnets de Chouettes Timbres achetés, un sac à dos Skat en peluche offert}... est terminée depuis plus d'une semaine.
+</phase>
+
+<a id="flute">Flûte. Il vous en reste pas quelques-uns en stock  ?</a>
+
+<phase id="flute" next="bentiens">
+Eh biieeennnn... C'est possible. J'ai pu en récupérer quelques exemplaires. Mais ils ne sont pas gratuits, n'est-il pas... 
+</phase>
+
+<a id="bentiens">Ben tiens...</a>
+
+<phase id="bentiens" frame="happy" next="ouibon">
+Au vue de la valeur exceptionnelle du sac à dos Skat en peluche pour les collectionneurs sérieux, de l'extrême qualité du produit, des matières nobles qui le composent, de sa fabrication artisanale dans le plus pur respect des traditions...
+</phase>
+
+<a id="ouibon">Oui bon. C'est combien ? </a>
+
+<phase id="ouibon" frame="angry" next="argl">
+... [5 Oxydes]. 
+</phase>
+
+<a id="argl">Argl... C'est du vol !</a>
+
+<phase id="argl" frame="happy" url="/act">
+Un collector unique. Introuvable dans le commerce ! 
+</phase>
+
+
+
+
+
+
+</d>

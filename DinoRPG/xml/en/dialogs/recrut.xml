@@ -1,0 +1,57 @@
+﻿<d place="marche" name="Isabella" gfx="isabella">
+
+	<phase id="begin" next="intro:no:twin">
+		Hello there! How are you? I'm feeling GREAT today!
+	</phase>
+
+	<a id="intro" cond="!active(twinoid)" >Yeah, great thanks!</a>
+	<a id="no">No, I'm a little under the weather today</a>
+	<a id="twin" cond="active(twinoid)" >I want to be a sponsor!</a>
+
+	<phase id="no" fast="1" frame="stop">
+		The young girl wanders off. It would appear she has no time for unhappy people....
+	</phase>
+	
+	<phase id="twin">
+		[Ah, you want to sponsor a future Dinoz master?]
+		[It's awesome, but unfortunately you can't start right now, the sponsorship system is temporarily unavailable.
+		Don't worry, it'll be back soon, with an awesome surprise for Dinoz masters that take part!]
+ 	</phase>
+
+	<phase id="intro" next="start:no">
+		I've found a way to earn loads of gold coins!
+		Do you know how the *Sponsorship* system works? It's an easy way to become a millionaire in gold coins, like me!
+	</phase>	
+
+	<a id="start">Really? How does it work?</a>
+
+	<phase id="start" next="tix:win:how:no">
+		It's really simple: just ask to your friends to sign up to DinoRPG.
+		For each friend you refer who signs up and starts playing, you'll receive a "Sponsor Ticket" which will be placed in your inventory!
+		These tickets give you the possibility to win many treasures!
+	</phase>
+
+	<a id="tix">Sponsor Tickets?</a>
+	<a id="win">What can I win?!?</a>
+	<a id="how">How do I sponsor?</a>
+
+	<phase id="tix" next="win:how:no">
+		Yes, once you obtain a Sponsor Ticket you can go and use it in the Market Place.
+		You'll be able to *dig* one square per Ticket and maybe unearth a big *Treasure*!
+	</phase>
+
+	<phase id="win" next="tix:how:no">
+		Most Sponsor Tickets will give you gold coins, but some people say that there is a possibility of finding an extremely rare Dinoz Egg, which is especially powerful!
+		In any case, it's desired by all Dinoz Masters....
+	</phase>
+
+	<phase id="how" next="out:tix:win:no">
+		To learn how to sponsor other players, simply read the *Sponsor Manual* I wrote, you'll find all information you couls possibly need!
+	</phase>
+
+	<a id="out">Thanks, I'll take a look now!</a>
+
+	<phase id="out" url="/user/parrain">
+	</phase>
+
+</d>

@@ -1,0 +1,105 @@
+﻿<!-- ***************************************************************************** -->
+<!-- Freze, femme Dorogon, habitante de la cité Dorogon ----->
+
+
+
+<d place="ville1" name="Freze" gfx="freze" cond="scenario(nimba2,50-)">
+	<phase id="begin" fast="1" next="mlle:mlle2" frame="stop">
+		Una mujer Dorogón se presenta ante ti, es muy elegante y tiene modales muy refinados.
+		Va a ser algo difícil tratar con ella.
+	</phase>
+	<a id="mlle" cond="scenario(nimba2,30-)">Encantado, señorita.</a>
+	<a id="mlle2" cond="scenario(nimba2,32+)">Buenos días señorita.</a>
+	
+	<phase id="mlle" frame="blabla" next="ouech:gift">
+		[El placer es mío, joven criador de fieras exóticas.]
+		[Es muy raro ver extranjeros en nuestra bella ciudad, veo que el Príncipe Pistache te acompaña.]
+		[Me alegra saberlo, hubiera sido muy desagradable tener que llamar a los guardias.]
+	</phase>
+	<phase id="mlle2" frame="blabla" next="ouech:gift2">
+		[El placer es mío, joven criador de fieras exóticas.]
+		[Es muy raro ver extranjeros en nuestra bella ciudad, veo que el Príncipe Pistache te acompaña.]
+		[Que tengas una agradable estadía, y disfruta del aire puro que soplan nuestras calles.]
+	</phase>
+	
+	<a id="ouech">Muchas gracias, es usted muy amable.</a>
+	<a id="gift" cond="scenario(nimba2,29)">¿Hay algo que pueda hacer por usted?</a>
+	<a id="gift2" cond="scenario(nimba2,32)">¿Necesita algo?</a>
+	
+	<phase id="gift" next="nogot:got">
+		[¿Un regalo?]
+		[Qué maravillosa idea, hace tiempo que no recibía uno.
+		Si pudiera escoger, ¡elegiría un cono de chocolate!
+		Pero solo me gusta el chocolate de primera calidad y la originalidad de su presentación cuenta mucho para mí.]
+	</phase>
+	
+	<phase id="gift2" next="parfum">
+		Y como ves, aquí hay un Dorogón, que ni se ocupa de mí...
+		Me gustaría llamar su atención, pero no encuentro una manera...
+	</phase>
+	
+	<a id="nogot" cond="!hasingr(chas1)">¡Se lo traigo inmediatamente!</a>
+	
+	<phase id="nogot" fast="1" frame="stop">
+		Sus ojos brillan como reflejos de sol en el mar, de tanta emoción.
+		No le falles, podrías lamentarlo.
+	</phase>
+	
+	<a id="got" cond="hasingr(chas1)">¡Tengo chocolate!</a>
+	
+	<phase id="got" next="tx" useingr="chas1" scenario="nimba2:30" give="ptsage">
+		[Te agradezco mi joven amigo, hace mucho que no probaba esta delicias.]
+		[Tienes la suerte de vivir en la superficie y de poder disfrutar de todo lo que hay allí.
+		A veces tengo celos de vuestra libertad.]
+		[¡Para agradecerte te doy un punto de sabiduría!]
+	</phase>
+
+	<phase id="ouech" fast="1" frame="stop">
+		Te alejas de Freze, una palabra o un gesto torpe te hubiera costado la vida,
+		no olvidemos que es una Dorogón...!
+	</phase>
+	
+	<a id="tx">¡Gracias generosa dama!</a>
+	
+	<phase id="tx" frame="stop" fast="1">
+		¡Has ganado tu primer punto de sabiduría!
+		Ahora solo te queda encontrar al Archidorogón.
+	</phase>
+	
+	<a id="parfum">¿Y si usara un perfume que le agrade?</a>
+	
+	<phase id="parfum" next="noget2:get2">
+		¡Magnífica idea, mezclando los escencias que tengo con una energía agua,
+		podré elaborar una fragancia que pondrá a mis pies cualquier Dorogón!
+	</phase>
+	
+	<a id="noget2" cond="!hasingr(eneau)">¡Voy a buscar una energía agua en este momento!</a>
+	<a id="get2" cond="hasingr(eneau)">¡Ya tengo la energía agua!</a>
+	
+	<phase id="noget2" fast="1" frame="stop">
+		Freze espera con impaciencia la energía agua.
+		¿Su plan será realmente eficaz?
+		En todo caso no es tu problema.
+	</phase>
+	
+	<phase id="get2" next="tx2" useingr="eneau" scenario="nimba2:33" give="ptsage">
+		[Te agradezco mucho mi joven amigo, gracias a ti, podré atraer su mirada, como no deja de hablar de Caushemesh,
+		siempre fue difícil hablar de otra cosa.]
+		[Para recompensarte, ¡te doy otro punto de sabiduría!]
+	</phase>
+	
+	<a id="tx2">¡Gracias! (Pobre Paum, ahora tiene competencia.)</a>
+	
+	<phase id="tx2" frame="stop" fast="1">
+		¡Tu cuarto punto de sabiduría te viene como anillo al dedo!
+		¿Quién te podrá dar el que te falta?
+	</phase>
+</d>
+
+
+<d place="ville1" name="Freze" gfx="freze" cond="scenario(nimba2,51+)">
+	<phase id="begin" fast="1" frame="stop">
+		Hola aventurero, ¿cómo te va?
+		¿No te parece preciosa nuestra ciudad?
+	</phase>
+</d>

@@ -1,0 +1,193 @@
+<d place="jzboy" name="Mentor Mortgage" gfx="jzprof" cond="!curquest(borne)">
+
+<a id="exit">Bonnes recherches monsieur le mentor !</a>
+
+<phase id="begin" frame="back" next="quest:noquest:nojz:tps:don:exit">
+Une goutte de ceci... Un peu de ça... | Ah, il essaie de s'échapper ! Où sont mes aiguilles ? !
+</phase>
+
+<a id="quest" cond="sch(jz)+grade(jz,3)">Vous avez du travail pour moi ? </a>
+<a id="noquest" cond="sch(jz)+!grade(jz,3)">Vous avez du travail pour moi ? </a>
+<a id="nojz" cond="!sch(jz)">Vous avez du travail pour moi ? </a>
+<a id="tps">Je peux vous poser une question ? </a>
+
+
+<phase id="quest" quest="schjz" frame="angry">
+Grmblbll... Encore un étudiant qui ne sait pas se débrouiller tout seul ! 
+</phase>
+
+<!-- ########## -->
+
+<phase frame="angry" id="noquest">
+Mmmmh... Trop jeune. | * %normal% Ouste !
+</phase>
+
+
+<!-- ########## -->
+
+<phase id="nojz" frame="angry" >
+Ah ! Un moraliste ! | Qui t'a laissé entrer ici ?...
+</phase>
+
+
+<!-- ########## -->
+
+<phase id="tps">
+Pas le temps ! 
+</phase>
+
+
+<!-- ######### -->
+
+<a id="don">J'apporte des éléments pour Jeezara.</a>
+
+<phase id="don" frame="angry" next="da:db:dc:dd:de:exit">
+Hmm. | Oui. Bon. | Oh oh. | Tu peux donner certains éléments contre de la réputation envers Jeezara.
+</phase>
+
+<a id="da" cond="sch(jz)">Je veux donner des Valvéoles pour 1 point de réputation. </a>
+<a id="db">Je veux donner des Torrentines pour 2 points de réputation.</a>
+<a id="dc">Je veux donner des Pépites pour 3 points de réputation.</a>
+<a id="dd">Je veux donner des Abysonnes pour 5 points de réputation.</a>
+<a id="de">Je veux donner des Chroniums pour 60 points de réputation.</a>
+
+<a id="back">J'ai changé d'avis.</a>
+
+<phase id="back" frame="angry" next="don:exit">
+Hmpf. Vite. Tu veux donner quoi ? 
+</phase>
+
+<!-- #### -->
+<phase id="da" frame="normal" next="daa:ndaa:dab:ndab:back:exit">
+Chaque Valvéole te fait gagner 1 point envers l'école. Tu en as combien ? 
+</phase>
+
+<a id="daa" cond="hasobject(Elt(13):1)">Voilà 1 Valvéole.</a>
+<a id="dab"  cond="hasobject(Elt(13):5)">Voilà 5 Valvéoles.</a>
+<a id="ndaa"  cond="!hasobject(Elt(13):1)">Voilà 1 Valvéole.</a>
+<a id="ndab"  cond="!hasobject(Elt(13):5)">Voilà 5 Valvéoles.</a>
+
+
+<phase id="daa" frame="happy" dtake="Elt(13):1" dreput="jz:1" next="da:back:exit">
+Merci. Voici 1 point de réputation.
+</phase>
+
+<phase id="dab" frame="happy" dtake="Elt(13):5" dreput="jz:5" next="da:back:exit">
+Merci. Je te donne 5 points.
+</phase>
+
+
+<phase id="ndaa" frame="angry" next="back:exit">
+Tu n'as pas ce qu'il faut, on dirait.
+</phase>
+
+<phase id="ndab" frame="angry" next="back:exit">
+Tu n'as pas ce qu'il faut, on dirait.
+</phase>
+
+
+<!-- #### -->
+<phase id="db" frame="normal" next="dba:ndba:dbb:ndbb:back:exit">
+Chaque Torrentine fait gagner 2 points de réputation envers l'école. Combien tu en donnes ? 
+</phase>
+
+<a id="dba" cond="hasobject(Elt(14):1)">Voilà 1 Torrentine.</a>
+<a id="dbb"  cond="hasobject(Elt(14):5)">Voilà 5 Torrentines.</a>
+<a id="ndba"  cond="!hasobject(Elt(14):1)">Voilà 1 Torrentine.</a>
+<a id="ndbb"  cond="!hasobject(Elt(14):5)">Voilà 5 Torrentines.</a>
+
+
+<phase id="dba" frame="happy" dtake="Elt(14):1" dreput="jz:2" next="db:back:exit">
+Merci. Tu gagnes 2 points.
+</phase>
+
+<phase id="dbb" frame="happy" dtake="Elt(14):5" dreput="jz:10" next="db:back:exit">
+Merci. Tu gagnes 10 points.
+</phase>
+
+
+<phase id="ndba" frame="angry" next="back:exit">
+Tu n'as pas ce qu'il faut.
+</phase>
+
+<phase id="ndbb" frame="angry" next="back:exit">
+Tu n'as pas ce qu'il faut...
+</phase>
+
+
+<!-- #### -->
+<phase id="dc" frame="happy" next="dca:ndca:dcb:ndcb:back:exit">
+Chaque Pépite d'or te fait gagner 3 points envers l'école. Tu en as combien ? 
+</phase>
+
+<a id="dca" cond="hasobject(Elt(11):1)">Voilà 1 Pépite.</a>
+<a id="dcb"  cond="hasobject(Elt(11):5)">Voilà 5 Pépites.</a>
+<a id="ndca"  cond="!hasobject(Elt(11):1)">Voilà 1 Pépite.</a>
+<a id="ndcb"  cond="!hasobject(Elt(11):5)">Voilà 5 Pépites.</a>
+
+
+<phase id="dca"  frame="happy" dtake="Elt(11):1" dreput="jz:3" next="dc:back:exit">
+Merci. Tu gagnes 3 points.
+</phase>
+
+<phase id="dcb" frame="happy" dtake="Elt(11):5" dreput="jz:15" next="dc:back:exit">
+Merci. Tu gagnes 15 points.
+</phase>
+
+
+<phase id="ndca" frame="angry" next="back:exit">
+Tu n'as pas ce qu'il faut.
+</phase>
+
+<phase id="ndcb" frame="angry" next="back:exit">
+Tu n'as pas ce qu'il faut...
+</phase>
+
+<!-- #### -->
+<phase id="dd" frame="happy" next="dda:ndda:ddb:nddb:back:exit">
+Chaque Abyssonne te fait gagner 5 points de réputation envers l'école.
+</phase>
+
+<a id="dda" cond="hasobject(Elt(15):1)">Voilà 1 Abyssonne.</a>
+<a id="ddb"  cond="hasobject(Elt(15):5)">Voilà 5 Abyssonnes.</a>
+<a id="ndda"  cond="!hasobject(Elt(15):1)">Voilà 1 Abyssonne.</a>
+<a id="nddb"  cond="!hasobject(Elt(15):5)">Voilà 5 Abyssonnes.</a>
+
+
+<phase id="dda" frame="happy" dtake="Elt(15):1" dreput="jz:5" next="dd:back:exit">
+Merci. Voilà 5 points.
+</phase>
+
+<phase id="ddb" frame="happy" dtake="Elt(15):5" dreput="jz:25" next="dd:back:exit">
+Merci. Tu gagnes 25 points.
+</phase>
+
+
+<phase id="ndda" frame="angry" next="back:exit">
+Tu n'as pas ce qu'il faut.
+</phase>
+
+<phase id="nddb" frame="angry" next="back:exit">
+Tu n'as pas ce qu'il faut...
+</phase>
+
+
+<!-- #### -->
+<phase id="de" frame="happy" next="dea:ndea:back:exit">
+Chaque Chronium te fait gagner 60 points de réputation envers l'école.
+</phase>
+
+<a id="dea" cond="hasobject(Elt(28):1)">Voilà 1 Chronium.</a>
+<a id="ndea"  cond="!hasobject(Elt(28):1)">Voilà 1 Chronium.</a>
+
+
+<phase id="dea" dtake="Elt(28):1" dreput="jz:60" next="de:back:exit">
+Merci beaucoup. Tu gagnes 60 points de réputation.
+</phase>
+
+<phase id="ndea" frame="angry" next="back:exit">
+Tu n'as pas ce qu'il faut.
+</phase>
+
+
+</d>

@@ -1,0 +1,51 @@
+<!-- ***************************************************************************** -->
+<!-- Saul, Nimbao l'île volante ----->
+	
+<d place="ilac" name="Saula"  gfx="saul" cond="scenario(nimba2,50-)">
+	<phase id="begin" next="quoi:seul:mot" dialect="arbori" >
+		Hola, viajero.
+		Por favor, déjame sola. La ausencia de mi hermano es insoportable.
+	</phase>
+	
+	<a id="quoi" cond="!uvar(dicarb)">  No entiendo...</a>
+	<a id="seul" cond="uvar(dicarb)"> ¿Qué le ha pasado?</a>
+	<a id="mot" cond="scenario(nimbao,34)"> ¿vcbdr qpñbmc?</a>
+	
+	<phase id="seul" frame="cry" dialect="arboris" >
+		Los soldados de Grizorg se lo han llevado por haber robado en los jardines de los Dorogones.
+		Sabe que eso está prohibido...
+		Le echo tanto de menos... ¡Nunca más lo volveré a ver!
+	</phase>
+	<phase id="quoi" frame="cry" fast="1" >
+		Te alejas de esta joven. No has entendido nada de lo que dice.
+		Pero está claro que está muy triste.
+	</phase>
+	<phase id="mot" fast="1" frame="stop">
+		Ha entendido lo que ha dicho, pero no sabe cómo responderte.
+		Está claro que tus palabras no le dicen nada.
+	</phase>
+	
+</d>
+
+<d place="ilac" name="Saula" gfx="saul" frame="blabla2" cond="scenario(nimba2,51+)">
+	<phase id="begin" next="seul2">
+		Hola viajero.
+		Te reugo dejarme sola, la ausencia de mi hermano es muy dolorosa para mí.
+	</phase>
+	
+	<a id="seul2"> ¿Dónde está él?</a>
+	
+	<phase id="seul2" frame="blabla2" next="libere">
+		Encerrado en la prisión, por haber robado en los jardines de los Dorogones.
+		Quisiera tanto que recupere su libertad, pero los Dorogones renegados imponen su ley en Priranese...
+		Lo extraño tanto ...
+	</phase>
+	
+	<a id="libere">¡Debemos hacer algo!</a>
+	
+	<phase id="libere" frame="cry2" fast="1">
+		Saula no te oye, está inconsolable sollozando en la orilla de la isla.
+		Te mata la impotencia... ¿Cómo ayudarla?
+	</phase>
+	
+</d>

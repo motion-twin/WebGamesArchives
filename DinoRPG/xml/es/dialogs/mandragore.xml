@@ -1,0 +1,172 @@
+﻿<!-- Mandragore, une fois Nimbao2 terminée-->
+<!--On retrouve Mandragore en train de siroter son cocktail sur la plage de sa villa, visiblement, ça ne l'intéresse pas...
+-On peut lui demander s'il a toujours l'orbe noire du donjon des steppes, il répond qu'il s'en sert de boule de bowling, et qu'il est impossible qu'il s'en sépare (peut être un jour).
+-Mandragore nous apprend un peu le background des gardiens. Il avait été nommé gardien au moment de l'apparition du monde sombre,
+-->
+
+
+<d place="villa" gfx="mandragore" name="Mandrágora" frame="glou" cond="scenario(nimba2,51+)+!(scenario(caush,33+)+scenario(caush,42-))">
+	<phase id="begin" fast="1" next="forme:orbe:caush:gardien:merci:quetza:sofia:rebirth">
+		Mandrágora está de regreso en su casa, recostado cómodamente en su hamaca, mientras bebe un cóctel hecho por él mismo...
+	</phase>
+	<a id="forme">¿Hola, qué hay de nuevo?</a>
+	<a id="rebirth" cond="fx(lvlup3)">I can reach level 80!</a>
+	<a id="orbe">¿Aún tienes el orbe oscuro?</a> <!-- si possible mettre condition avoir fini cavmagnet -->
+	<a id="caush">¿Qué sabes de Caushemesh?</a>
+	<a id="gardien">¿Y los guardias?</a>
+	<a id="merci" cond="scenario(nimba2,51)">¡Gracias por todo!</a>
+	<a id="quetza" cond="collec(quetzu)">¿Competencias únicas?</a>
+	<a id="sofia" cond="scenario(caush,43+)">¿Cómo va la vida marital?</a>
+
+	<phase id="forme" next="orbe:caush:gardien:merci" frame="bla">
+		Todo bien, estaba muy tranquilo hasta que llegaste.
+	</phase>
+	
+	<phase id="rebirth" frame="bla" next="rebirth2">
+	[This is great! You were at the top of your game in one of your lives...]	
+	</phase>
+	<a id="rebirth2">One... of .. my lives?</a>
+	<phase id="rebirth2" next="rebirth3">
+		[Yes young master. You didn't believe that the perfection of a Dino stopped at the end of its first life did you?]
+		[The perfection and the power of our Dinoz is acquired through work, but also through experience. What's better than the experience of a lifetime?]
+		[One of the priveliges of those who have reached the ultimate level, is to be reborn even more powerful than before and relive the experiences to really perfection their skills.]
+		[But that... that's only for the bravest of men!]
+		_(I'm sorry what?  Oh yeah! Of course, or the bravest of women! Figure of speech you see...)_
+	</phase>
+	<a id="rebirth3" next="rebirth4">Rebirth??</a>
+	<phase id="rebirth3" next="rebirth4">
+		[Yep... The principle is simple, when your Dino sufferes a crushing defeat and finds itself at 0HP, you're not just going to save it with a potion, but give it the opportunity to rediscover a new path in life.]
+		[It's kind of like reincarnation in a way, But much more powerful because your Dino will retain a portion of the knowledge from its previous life.]
+		[But it's been a long time since I've taken an interest in such things, I really am too old for this kind of thing...]
+	</phase>
+	<a id="rebirth4">Ok... ok...</a>
+	<phase id="rebirth4" next="rebirth5">
+		[I see that you might not be ready right now, however it is the logical next step in the pursuite of perfection for your Dinoz.]
+		[Well, all this talking is making me thirsty... I'm a bit out of practice it seems. On that note, get out of here!]
+	</phase>
+	<a id="rebirth5">See you next time!</a>
+	<phase id="rebirth5" fast="1" frame="glou">
+		It's time to go, but this "Rebirth" business seems interesting... What could this mean for your Dinoz?
+	</phase>
+
+	<phase id="orbe" next="morceaux:forme:caush:gardien:merci" frame="bla">
+		[¿El orbe oscuro que encontré en las cavernas de Magnetitas?]
+		[Lo uso para jugar bolos, jeje, no me separo nunca de él.]
+		[De todos modos, ¿de qué te serviría?, no tienes ni idea del nivel de los monstruos del Mundo Sombra.
+		El día en que te pasearás por Caushemesh como Pedro en su casa... te prestaré el orbe...]
+
+		[¡Aprovecharemos para echarnos unas partidas de bolos!]
+	</phase>
+
+	<a id="morceaux" cond="fx(morsso)">¿Trozos de Orbe Oscuro?</a>
+
+	<phase id="morceaux" next="forme:caush:gardien:merci" frame="bla">
+		[¿Me preguntas cómo puede haber trozos del Orbe Oscuro dispersos en la natualeza?]
+		[Veamos, para jugar a los bolos, es necesario que tengan agujeros...]
+		[Como en esa época no los encontré por ninguna parte, tiré los 3 fragmentos a la basura...]
+	</phase>
+
+	<phase id="caush" next="forme:caush:gardien:merci" frame="bla">
+		[He estado ahí varias veces, se puede decir que conozco gente importante por allá...
+		Pero prefiero no hablar de eso, podría usarse contra mí...]
+		[Si un día vas por allí, te sorprenderá saber lo que realmente pasa.]
+
+		[Sea como sea, no es asunto mío, entonces, si me lo permites , ¡volveré a mi siesta!]
+	</phase>
+
+	<phase id="gardien" next="sombre" frame="bla">
+		[Ah, los guardias...]
+		[Ufff...]
+		[La historia debe datar de hace un siglo, era un jovenzuelo en esa época...
+		Hubo un tremendo problema en Dinoland.]
+		_(Que quede entre nosotros, pero vino del lado de Caushemesh... Ya sabes, ¡en boca cerrada no entran moscas!)_
+
+		[Ese fenómeno particular cambió para siempre la cara de Caushemesh,
+		como nadie jamás vio su primer rostro, no cambia nada...]
+	</phase>
+
+	<a id="sombre">¿El Mundo Sombra?</a>
+	<phase id="sombre" next="super" frame="bla">
+		[Exacto, por culpa de este fenómeno, una especie de falla se abrió sobre un mundo paralelo al nuestro , el Mundo Sombra...
+		En ese momento asistimos a una invasión masiva de monstruos y Dinos oscuros...]
+		[Y cuando se detuvo la invasión, los reyes y el mismo Archidorogón nombraron guardias,
+		personas capaces de vigilar y detener los futuros intentos de invasión en nuestro mundo.]
+		[Aún en nuestros días quedan 5 guardias que resguardan permanentemente la seguridad de Dinoland.]
+	</phase>
+	<a id="super">¡Yo conozco uno!</a>
+
+	<phase id="super" next="vous" frame="bla">
+		[¡Conoces más bien 2!]
+		[Bao es el actual guardián de la zona de las islas, una gran brecha se encuentra ahí, no es la más grande, pero lo suficiente para tener cuidado...]
+		[El segundo guardián era Grizorg, Nimbao no fue amenazado por el Mundo Sombra, por eso, el Archidorogón podía tranquilamente asumir esa tarea.]
+		[No estoy muy seguro que Pistache sea un buen guardián, ¡al menos para que no meta la pata!]
+	</phase>
+
+	<a id="vous">¿Tú no eras guardián?</a>
+
+	<phase id="vous" next="autre" frame="bla">
+		Incluso antes que Bao naciese, me encargaron la zona, por suerte, pude delegar la misión a mi discípulo, quien está como pez en el agua en ese trabajo...
+		jejeje...
+	</phase>
+
+	<a id="autre">¿Y los otros guardianes?</a>
+
+	<phase id="autre" next="forme:caush:orbe:merci" frame="bla">
+		[Y bien, hay uno en Caushemesh, seguramente el más poderoso de nosotros, después de todo, la falla que  hay allá es la más grande...
+		No sé nada de los otros dos, algunos dicen que uno se perdió en el Mundo Sombra...]
+		[Para ser sincero, me deja indiferente.
+		Prefiero quedarme tranquilo en casa a beber mi coctelito, mmm...]
+	</phase>
+
+	<phase id="merci" next="go" collection="quetzu" scenario="nimba2:52" frame="bla">
+		[No te preocupes, es normal, toda esta historia había comenzado hace mucho tiempo.]
+		[Por cierto, tengo un regalo para ti, ¿ya conoces a Lucrecio? Mi Dino es de la raza Quetzu, una casta originaria de Nimbao.
+		Dejé algunos en la tienda de Dinos, con el trofeo que te doy, *y con un poco de paciencia*, ¡podrás conseguir uno! Pero solamente pude conseguir 5 huevos, entonces piénsalo bien antes de elegir uno.]
+
+		[Disfruta de tus aventuras, vuelve cuando tengas un tiempo, ¡podría darte uno o dos consejos!
+		¡Nos vemos!]
+	</phase>
+	<a id="go">¡Hasta la próxima!</a>
+	<phase id="go" fast="1" frame="glou">
+		Es hora de ir por nuevas aventuras, ¿cuál será tu próximo destino, Caushemesh? ¿El Mundo Sombra?
+		¡Solo el tiempo nos lo dirá!
+	</phase>
+
+
+	<phase id="quetza" next="comp" frame="bla">
+		[El Quetzu es una raza llena de misterios, descubrirás fácilmente sus competencias en fuego y agua, pero posee también una competencia propia de su raza que te va a encantar...]
+		[Cada Dino tiene un potencial escondido que le permite recurrir a una divinidad en caso de peligro.
+		Los Dinos que habitan nuestro mundo han perdido, por desgracia, esta cualidad. Es posible que la recuperen un día, pero ese es otro tema.]
+ 	</phase>
+	<a id="comp" >¿Y el Quetzu?</a>
+	<phase id="comp" next="trouve" frame="bla">
+		[¡El Quetzu, no ha perdido el contacto con sus ancestros y puede invocarlos si es necesario!
+		Deberás encontrar esta competencia milenaria llamada *Invocación* en una de las familias de competencias que conoces.]
+		[Cuando el pacto con el Quetzalcoatl, gran ancestro del Quetzu, se haya completado, podrás devastar el terreno de combate con una fuerza prodigiosa.]
+		[¡Te deseo buena suerte en tu búsqueda!]
+	</phase>
+	<a id="trouve" >¡Parece que tendré que ajustarme bien los pantalones!</a>
+	<phase id="trouve" fast="1" frame="glou">
+		Es hora de partir hacia nuevas aventuras, ¿revelarás los misterios del Quetzu?
+	</phase>
+
+<!-- CAUSHEMESH -->
+	<phase id="sofia" next="vie">
+		[Haaaa, si supieras...]
+		[Todos los días es una experiencia nueva, una aventura...]
+		[Dicho sea de paso, debo recuperar los 50 años de retraso que he acumulado todo este tiempo...]
+		[¡Pero también tiene su lado bueno!]
+	</phase>
+	<a id="vie">¿Como cuál?</a>
+	<phase id="vie" next="parti" gfx="sofia" name="Sofía" frame="plage" background="2">
+		[¡Mandrichúúúúú!]
+		[Tráeme una copa por favor.]
+		[...]
+		[¡RÁPIDO!]
+	</phase>
+	<a id="parti">...</a>
+	<phase id="parti" fast="1">
+		Mandrágora no ha tenido tiempo de hablar contigo, está muy ocupado complaciendo caprichos.
+		Dejemos a esta pareja hacer su vida hogareña y alejémonos discretamente.
+	</phase>
+</d>

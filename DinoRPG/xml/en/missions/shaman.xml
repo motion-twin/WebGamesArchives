@@ -1,0 +1,177 @@
+﻿<missions>
+
+	<!-- ***************************************************************************** -->
+	<!-- SHAMAN , gain of the amulet ----->
+
+	<m group="shaman" id="init1" name="The Testing Ordeal" limit="20">
+		<begin>The Strategy Guide needs to be translated. Take it to the Ashpouk Ruins.</begin>
+		<goto v="rashpk"/>
+		<action v="Inspect the guide">Hmmm ... do you understand anything? I don't. If only we had a dictionary it would be easy!</action>
+		<goto v="univ" hide="1" title="Find the Dictionary"/>
+		<action v="Ashpouk Dictionary">You find an old mould-covered dictionary in the library shelves. It's titled "Ashpouk-Dinozish, Little Lamousse Edition".</action>
+		<goto v="rashpk"/>
+		<action v="Decipher the guide">You start to decipher the mysterious Ashpouk inscriptions. After many hours of hard work, you finally understand everything: it seems as though it's an ancient recipe.</action>
+		<end>Mmmm ... It looks like a recipe ... the famous legendary Archelion Merguez. Cool ... I'll cook some immediately. Congratulations on translating it, you really are skilled.</end>
+		<xp v="20"/>
+	</m>
+
+	<m group="shaman" id="init2" name="The Archelionscarer" limit="20" cond="mission(init1)">
+		<begin>Hmmm, these Archelion merguez really pack a punch! Well now that I know you're competent, if you do me one more favour I'll give you my Strategy Guide. The Big All-Hot is an ideal environment for Archelions of all sizes. Wild, very dry and constantly erupting!
+		But we have to stay away from them as long as we want to live, otherwise they'll eat us for supper. I want you to make me an Archelion scarecrow! It needs some Sharpened Claws.</begin>
+		<goto v="vener"/>
+		<kill v="barche" n="1"/>
+		<action v="Pick up the Claws">You pick up two large baby Archelion claws. They need to be sharpened.</action>
+		<goto v="forges"/>
+		<talk v="Smith">You need to sharpen some Archelion claws? You know that it's dangerous to walk around with those?! Even though it scares them slightly, it will attract ALL the other monsters!! Great job!! Some are already coming.</talk>
+		<kill n="6"/>
+		<talk v="Forges Guard">You're responsible for this mess?! Don't expect any kindness! What's that?! The Shaman rascal sent you? He wants an Archelionscarer? They're easy to make, you just have to ... OH! Watch out! Others are coming!!</talk>
+		<kill n="6"/>
+		<talk v="Forges Guard">Well give me your claws so I can get rid of them! To scare the Archelion, apply this strong ointment each morning. I warn you, it has a very strong smell.</talk>
+		<end>Oh! I didn't know the claws did that! I'm so sorry! I hope that the Forges Guard didn't make too much of a fuss. Anyway, thanks for the ointment. I'll go and see if it works. Meanwhile, take my Strategy Guide as a thank you.</end>
+		<fx v="amulst"/>
+		<xp v="60"/>
+	</m>
+
+	<m group="shaman" id="burn" name="Fire!" limit="10" cond="mission(init2)">
+		<begin>As you have probably noticed, this region is swarming with Flamelets. Even if their presence is necessary to complete the cosmic equilibrium, they have now over populated Dinoland and some need to be culled! We must hurry. Go to the Tunnel under the Branch passing alongside the crater. The place is swarming with them!</begin>
+		<goto v="tunel"/>
+		<kill v="flam" n="3"/>
+		<action v="Inspect the Pile of Ashes">The ashes left by these Flamelets have a strange smell, like ... barbecue. This needs to be investigated.</action>
+		<goto v="forges" hide="1"/>
+		<talk v="Forges Artisan">Flamelets that smell like barbecue you say? Sorry, I've got no idea. But the smell is stronger in the west. Try looking in that direction.</talk>
+		<goto v="rashpk"/>
+		<action v="Sniff">Sniff, sniff ... Yes! The smell of barbecue here is the same as the pile of Flamelet ashes. There's no time to waste. You have to fight them!</action>
+		<kill v="flam" n="5"/>
+		<action v="Search Around">It seems these flamelets came from the Merguez seller's barbecue. The Soft Shaman must be informed about this!</action>
+		<end>Your actions have restored the region's equilibrium.....for now. It's a good start, but we have to do something about this barbecue business. Until then, here's a little reward for all your help.</end>
+		<gold v="2000"/>
+		<xp v="40"/>
+	</m>
+
+	<m group="shaman" id="barbec" name="The Crazy Barbecue" limit="15" cond="mission(burn)">
+		<begin>It seems a certain merguez seller in the Ashpouk Ruins uses a special combustible which caused the influx of flamelets. Something must be done! However, we can't stop this poor merchant from doing his job, we will need to find a more subtle solution. Start by collecting some ingredients: a dry branch, a Dorogon scale and a piece of yellow basalt. Mix these ingredients up and grind them into a powder, then throw it onto the barbecue!</begin>
+		<goto v="tunel"/>
+		<action v="Pick up a Branch">You find a dry, almost burnt, branch on the ground.</action>
+		<goto v="vener"/>
+		<action v="Steal a Venerable Scale">You approach the huge Dorogon, but it gives you a dark-and-icy look. Better find another way to get a scale!</action>
+		<action v="Search on the ground">You search the lair, but you only find broken scales.</action>
+		<action v="Inspect the Lair Entrance">Just outside the Venerable's lair, you see a beautiful and shiny scale tucked away under a pile of rocks. That solves your problem nicely.</action>
+		<goto v="bslt"/>
+		<action v="Search for Basalt">You spend hours searching for a piece of yellow basalt. You finally find one on the slopes.</action>
+		<goto v="forges"/>
+		<action v="Grind the Ingredients into powder">You use your hammer to grind the ingredients into a fine powder. That'll do!</action>
+		<goto v="rashpk"/>
+		<action v="Use the Mix">As soon as you throw the mix into the flames, streaks of multicoloured lightning shoot out from every direction and crackle all around the barbecue. But as quickly as they appeared, the streaks of lightning disappear and the barbecue returns to normal. Only the sound of faint crackles and pops reminds you that anything happened.</action>
+		<end>Well done! The new mix should reduce the effects of the magic barbecue without altering the taste of the delicious Merguez. Take this tamed little Flamelet as a reward.</end>
+		<item v="flamch"/>
+		<xp v="40"/>
+	</m>
+
+	<m group="shaman" id="joke" name="Quarrel" limit="20" cond="mission(init2)">
+		<begin>For many years, University Professor Eugene and I have had an on-going quarrel. In fact, we never agree on a subject, no matter what the subject is! Help me play a trick on this old curmydgeon. First of all I want you to find something with a pungent smell. I think Frish Port will be a good place to look.</begin>
+		<goto v="port"/>
+		<action v="Take some leftover fish">You pick up the worst-smelling fish you can find, including a horrible-smelling Fetid-Fish!</action>
+		<goto v="univ"/>
+		<action v="Prank Professor">You place the foul-smelling fish leftovers in the drawers of the Professor Eugene's desk. Ha ha!</action>
+		<end>Yes! That's perfect! I never thought you would hide a Fetid-Fish in his office. How cunning!</end>
+		<gold v="1500"/>
+		<xp v="30"/>
+	</m>
+
+	<m group="shaman" id="defend" name="Defend The Forges" limit="20" cond="mission(init2)">
+		<begin>I saw some monsters moving towards the mountains this morning. It looked like they were heading for the forges of the Big All-Hot. Go and protect them!</begin>
+		<goto v="forges"/>
+		<talk v="Forges Guard">Attention soldier! We have to hold on! Hold your positions! Monsters incoming!</talk>
+		<kill n="15"/>
+		<talk v="Forges Guard">Thanks for your help soldier! I've seen many monsters hiding at the Slopes, we must pursue and kill them this time!</talk>
+		<goto v="bslt"/>
+		<talk v="Forges Scout">They're hiding in the caverns at the edge of the Basalt Slopes sir. You'll have to flush them out one by one!</talk>
+		<kill n="5"/>
+		<action v="Pick Up their Banner">You find the war banner worn by the monsters chief! This should please the Forges Guard....</action>
+		<goto v="forges"/>
+		<talk v="Forges Guard">Good job soldier! Thanks to your heroic efforts victory is ours. Give this recommendation letter to the Soft Shaman, he'll know how to reward you.</talk>
+		<end>The letter is very complementary about you. It seems you more than deserve your reward! As you found the Monsters' War Banner, I've added a little something as a bonus.</end>
+		<item v="hotpan"/>
+		<gold v="4000"/>
+		<xp v="60"/>
+	</m>
+
+	<m group="shaman" id="shipmt" name="The Disappearing Package" limit="10" cond="mission(defend)">
+		<begin>Some time ago, I ordered a new powder reserve for my rituals from Grandpa Joe, but my package never arrived! Maybe this is because of the recent attack on the Forges, it must be lost somewhere. The package is extremely important, Can you find it for me?</begin>
+		<goto v="bslt" hide="1"/>
+		<talk v="Dinotown Courier">Help!! I had to deliver an important package to the top of the volcano, but a group of aggressive goblins attacked me! They've stolen my package and I don't know what to do. I'll be fired unless I get the package back!</talk>
+		<kill v="goblin" n="4"/>
+		<talk v="Dinotown Courier">Thank you so much, you've saved my life! Hey! I think that my package is over there!</talk>
+		<action v="Pick Up the Package">You find the package near a goblin. Unfortunately it's empty! You have to find out what happened to it's contents.</action>
+		<talk v="Dinotown Courier">I saw loads of goblins running towards the north. Go and find them, then meet up with me again at the Lavapit once you have found the contents!</talk>
+		<goto v="tunel" hide="1"/>
+		<action v="Suspect Noises...">You hear noises coming from the shadows of the cavern. It must be the goblins you are searching for!</action>
+		<kill v="goblin" n="6"/>
+		<action v="Pick Up the Goods">You pick up some gourds of multicoloured powders, these must be the items that the Soft Shaman ordered from Grandpa Joe.</action>
+		<goto v="fosslv"/>
+		<talk v="Dinotown Courier">Ah you've found the contents of my package! Great! I don't know how to thank you. I will speak highly of you to the Soft Shaman!</talk>
+		<end>My courier just delivered my order. He explained that he wouldn't have been able to deliver the package without your help! Take this potion and a little reward as a token of my gratitude!</end>
+		<item v="angel"/>
+		<gold v="1000"/>
+		<xp v="25"/>
+	</m>
+
+	<m group="shaman" id="sales" name="(Un)Fair Trade" limit="20" cond="mission(init2)">
+		<begin>I sell little trinkets from time to time at the Dinotown market to make a little money. Unfortunately I'm really busy at the moment, do you think that you could go there for me and sell some souvenirs? I'll give you a nice percentage of the profits! You'll see, my souvenirs sell very well.</begin>
+		<goto v="rashpk"/>
+		<action v="Take the Trinkets">You get some old-looking objects from the ruins to flog as souvenirs at Dinotown market.</action>
+		<goto v="dnv"/>
+		<action v="Dinotown Market">You spend the next hour selling pieces of rubble and broken combat gear as souvenirs to the highest bidder. Everyone is bidding on the items! The Shaman was right, it seems you'll be able to sell all your stock without any difficulty at all.</action>
+		<end>Thanks, here's your cut!</end>
+		<gold v="3500"/>
+		<xp v="20"/>
+	</m>
+
+
+	<m group="shaman" id="ritual" name="Ridiculous Ritual" limit="20" cond="mission(init2)">
+		<begin>The Shamanic Congregation, where I learned my trade, wants me to perform a ritual each year to as a way of paying them back for all my training. Of course, I have better things to do than this stupid ritual! Can you take care of this for me? The instructions are in my mailbox.</begin>
+		<action v="Take the Instructions">You take the letter from the Congregation. The instructions state that you must begin the ritual by killing a Goblin in a single combat....</action>
+		<kill v="goblin" n="1" zone="1"/>
+		<action v="Follow the next Instruction">The letter says that you must chant: "SHAMANA MANA!"</action>
+		<action v="Chant Shamana Mana...">SHAMANA MANA! ... Ok, well, let's go on to the next instruction.</action>
+		<goto v="vener"/>
+		<kill v="goblin" n="3"/>
+		<action v="Chant Donga Donga...">DONGA! DONGAAA! ... All that's left now is to chant on the western face of the volcano.</action>
+		<goto v="tunel"/>
+		<kill v="goblin" n="3"/>
+		<action v="Chant waaah...">WAAAAAAAAH! ...</action>
+		<goto v="fosslv"/>
+		<action v="Throw a Stone in the Crater">You throw a stone into the huge crater to complete the Ridiculous Ritual.</action>
+		<end>Judging by the forelorn look on your face, you probably understand why I had no desire to do this stupid ritual. Anyway, thanks for the favour, here's something to make up for your trouble.</end>
+		<gold v="1500"/>
+		<item v="ppoiv"/>
+		<xp v="50"/>
+	</m>
+
+
+	<m group="shaman" id="hiero" name="Hieroglyphics" limit="6" cond="mission(init2)+mission(defend)+mission(barbec)">
+		<begin>I've heard that there are some hieroglyphics in the caverns to the west, en route to Grumhel Jungle. These hieroglyphics are very important for my mystical research! Go and copy them out for me. Be careful! To enter the caverns you will need to find something that will help you find your way back in the darkness!</begin>
+		<goto v="gorges"/>
+		<action v="Copy Out the Hieroglyphics">You copy out the Hieroglyphics using the scroll given to you by the Shaman.</action>
+		<end>Hmmm ... very interesting ... Hmmm ... Here's something that should gobsmack that old grumpy clown from the University! Thanks for your help!</end>
+		<item v="burger"/>
+		<xp v="20"/>
+	</m>
+
+	<m group="shaman" id="pigeon" name="Carrier Pigeon" limit="20" cond="mission(hiero)">
+		<begin>The recent discoveries in the caverns have provided me with an unhoped for occasion to prove my theories to Professor Eugene! Imagine that, some ancient handwriting that talks of current events! We can't waste any time! Take this letter to him!</begin>
+		<goto v="univ"/>
+		<talk v="Talk to Professor Eugene">I see that this crazy magician has found something else to bother me with! Hmm ... Hmm ... OH! Oh my god! It can't be! I have to be certain before I can comment any further. Show this letter to my dear friend Doctor Yolande on Waïkiki Island immediately!</talk>
+		<goto v="ilewkk"/>
+		<talk v="Doctor Yolande">Wow! This came from the caverns of Deep Gorges you say? It's incredible! You must show this to Mister Shovel, The Brutforce Archeologist.</talk>
+		<goto v="frcbrt"/>
+		<action v="Find the Archeologist">Archeologist Shovel doesn't seem to be here. Apparently he is working on a construction site in the Deep Gorges.</action>
+		<goto v="gorges"/>
+		<talk v="Archeologist Shovel">Oh ... That's funny, this looks a lot like the notes I left on the cavern walls. What's that you say? The Shaman thought it was ancient texts?! Of course not! I wrote those, they're my personal notes.</talk>
+		<end>Aargh! I was sure that we had stumbled upon a historical discovery! Don't worry ... thanks for your help in any case. Here, take this as a reward.</end>
+		<gold v="5500"/>
+		<item v="hotpan"/>
+		<xp v="100"/>
+	</m>
+
+</missions>

@@ -1,0 +1,467 @@
+﻿<missions>
+
+	<!-- ***************************************************************************** -->
+	<!-- BROC, construction folles
+		Broc reçoit des commandes de la pars de PNJ de Dinoland. Il doit concevoir des pièges,
+		des objets un peu fous.
+	
+		Rappel : limit correspond au nombre de jours pour réaliser cette mission
+	----->
+	
+	<m group="broc" id="bcasse" name="Explosion de boulons">
+		<begin>
+			Bon, je n'ai peut être pas encore trouvé les bons réglages...
+			Je travaille sur un nouveau moteur à haut rendement pour les prochaines générations de Flying Brocky mais j'ai encore des problèmes de dosage.
+			Il faudrait que tu me retrouves des pièces qui se sont éparpillées un peu partout après l'explosion :
+			|« Mon volant »
+			|« La courroie »
+			|« Deux pistons »
+			|« Le ventilateur »
+			|« La vanne EGR »
+		</begin>
+		<goto v="baobob"/>
+		<talk v="M. Bao Bob" gfx="baobob">
+			Si j'ai vu passer un objet volant dans le ciel récemment ? Oui, tu le trouveras derrière la maison. Si seulement Broc pouvait arrêter ses expérimentations, c'est que j'ai le sommeil léger, alors avec toutes ces explosions au beau milieu de la nuit... je commence à avoir une cerne sous l'oeil !
+		</talk>
+		<action v="Prendre le volant">
+			Et voilà un premier objet retrouvé. D'après M. Bao, il y en a un autre qui serait tombé en face de chez lui, du côté du Dôme Soulaflotte.
+		</action>
+		<goto v="dome" />
+		<actfight act="Ramasser la courroie" bg="dome" monsters="borg:anguil:kazka">
+			<begin>Alors que vous vous baissez pour ramasser la courroie, un groupe en embuscade se jette sur vous ! Ils se sont servis de cette courroie pour vous tendre un piège !</begin>
+			<win>Ouf, c'était moins une ! Etait-ce Broc qui était visé par ce groupe de brigands marins ? </win>
+		</actfight>
+		<action v="Ramasser la courroie">
+			Argh, elle est pleine d'Algue. Dire que les Atlantes utilisaient cette algue comme base de leur alimentation. Les pauvres !
+		</action>
+		<goto v="marais"/>
+		<talk v="Ramasseur d'algues">
+			Ah si j'm'en rappelle !! Deux pistons qui t'sortent du ciel comme ça, on peut pas  dire qu'c'est courant.
+			C'est qu'c'à a fait un gros trous comme ça, mais le sable et l'eau ont rempli l'trou aussitôt. C'qu'il va falloir creuser profond maintenant, Diou !
+		</talk>
+		<dig>
+			Après plusieurs essais, rien. Peut-être n'avez vous pas creusé assez profond ?
+		</dig>
+		<dig>
+			Vous êtes pourtant bien aux points d'impacts estimés par le ramasseur d'algues, mais toujours rien, est-t'il sûr qu'ils sont tombés là ? A moins que oui... bien sûr !
+		</dig>
+		<talk v="Ramasseur d'algues">
+			Didiou, mais c'vrai ça. Les objets sont tombés avec un angle important, c'qu'ils doivent être décalés par rapport au point d'impact tes objets.
+		</talk>
+		<dig>
+			En estimant l'angle d'impact vous creusez à quelques mètres du point d'impact et, Bingo !  Votre pelle rencontre un objet métallique, les deux pistons sont là, juste un peu rouillés par le sel.
+		</dig>
+		<goto v="chutes"/>
+		<talk v="Pêcheur de l'extrême">
+			Un ventilateur que vous dîtes ? Ouep, c'est justement ce que je viens de remonter ce matin ... Bein oui que je suis déçu, moi qui pensais avoir affaire à une nouvelle espèce de monstre, avoir de quoi raconter aux donzelles ce soir, de quoi j'ai l'air avec un ventilateur. Bien sur que tu peux le prendre, j'ai pas vraiment besoin de ça pour prendre des vents de toute façon.
+		</talk>
+		
+		<goto v="chbroc" hide="1" />
+		<talk v="Broc" gfx="broc">
+			Tu ne trouves pas la vanne EGR ? Oh tu sais quoi, après réflexion je crois bien qu'elle servait à rien cette foutue vanne, mais je trouvais ça joli Huhuhu.
+			_« pfffffff »_
+		</talk>
+		
+		<end>
+			Fantastique, tu as réussi à retrouver tous les composants manquants. C'est que tu ferais un bon chercheur d'or toi, Hahahaha.
+		</end>
+		<gold v="3000"/>
+		<xp v="40" />
+	</m>
+	
+	<!-- micro onde -->
+	<m group="broc" id="bchaud" name="Invention à chaud" cond="mission(bcasse)">
+		<begin>
+			La vie d'inventeur est difficile. A chaque nouvelle invention, je suis plongé dans mes idées à tel point que j'en oublie de manger et je n'ai jamais le temps de me délecter d'un bon plat chaud. C'est pas bon pour la digestion, et je suis sûr que je peux me fabriquer quelque chose. Pour ça, il faudrait que tu me trouves :
+			|« des plaques de matériau non conducteur »
+			|« des boulons »
+			|« une batterie »
+			|« un moteur rotatif pour faire tourner mon plat »
+		</begin>
+		<goto v="univ"/>
+		<action v="A la recherche de matériau" wait="1">
+			Après avoir demandé à quelques personnes ici et là, on vous dirige vers une salle derrière l'Université.
+			Vous ne savez que penser... Des montagnes de fils, de livres, de fioles, le tout disposé de manière tout à fait chaotique.
+			Il va vous falloir du temps pour trouver les pièces qu'il vous faut.
+		</action>
+		<action v="Les voilà">
+			Et voilà 4 belles plaques d'un métal non conducteur, quelque chose d'assez rare parait-t'il.
+		</action>
+		<goto v="dnv"/>
+		<talk v="Madame Seyche" place="dnv" hide="1">
+			Ooooohhhh bonjour mon petit, cela faisait longtemps. Commmeeennnnnnttt ? Si j'ai un vieux Tourne Disque ? En effet, j'en ai un qui ne me sert plus. Ahh mon petit, si tu avais pu écouter Luigi Marrant au piano.. c'etait si beau. Naaaa... Nanana..NANA NA...
+			_«fuuuuiiiiiir !!!  vite !!!»_
+		</talk>
+		<action v="Prendre le tourne disque">
+			Vous récupérez cette vieille chose dont vous ne connaissez pas la vraie utilité, peut-être une de ces machines pour communiquer avec les intra-terrestres ?
+		</action>
+		<goto v="marche" />
+		<action v="Acheter une batterie">
+			Ah ... le marché ! Lieu de discussions au milieu des douces odeurs des épices et autres ingrédients rares, ces discussions animées entre personnes cultivées. Tiens, vous apercevez au loin l'objet tant recherché !
+		</action>
+		<talk v="brocanteur">
+			_«Tiens fiston, regarde comment on fait pour embobiner un client.»_
+			[Bonjour monsieur.
+			Comment ? vous souhaitez acquérir cette sublime batterie ! Comme je vous comprends, mais vous voyez, je l'ai déjà promise à un client un peu avant vous. Je lui ai mise de côté et ce ne serai pas très bien de vous la céder.]
+			
+			[Bien que ... vous voyez, j'ai des enfants à nourrir et ce client ne m'a pas versé d'accompte, donc... si vous me faites une offre plus intéressante que lui, vous la céder serait justifié.
+			
+			A vous de voir, il me la prend pour 1.000 pièces d'or, donc si vous m'en offrez ... disons *1.500 pièces d'or*, elle est à vous !]
+		</talk>
+		<branch v="payer_ok" cond="uvar(brocan,0)"/>
+		<branch v="payer_ko" cond="uvar(brocan,1+)"/>
+		
+		<label v="payer_ok"/>
+			<action v="Marché conclu">
+				C'est la première fois que vous avez affaire à un brocanteur, et vous avez le sentiment de vous être fait arnaquer cette fois-ci. Leçon prise pour la prochaine fois !
+			</action>
+			<use v="gold" n="1500"/>
+			<branch v="objet_ok"/>
+			
+		<label v="payer_ko"/>
+			<action v="Chercher ailleurs" wait="1">Ouais ce coup là, on vous l'a déjà fait, alors voir ailleurs s'il n'y a pas une batterie de ce genre.</action>
+			<talk v="brocanteur">
+				Re-Bonjour monsieur.
+				Non il n'est toujours pas venu récupérer l'objet,
+				A vous de voir, il me la prend pour 1.000 pièces d'or, si vous m'en offrez ce prix, elle est à vous.
+			</talk>
+			<branch v="payer2_ok" cond="uvar(brocan,1)"/>
+			<branch v="payer2_ko" cond="uvar(brocan,2+)"/>
+			
+			<label v="payer2_ok"/>
+				<action v="Marché conclu">Voilà qui est mieux, vous commencez à comprendre comment fonctionne le marché... Mais ça vous semble toujours un peu cher.</action>
+				<use v="gold" n="1000"/>
+				<branch v="objet_ok"/>
+					
+			<label v="payer2_ko"/>
+				<action v="Attendre encore" wait="1">Il croit vraiment vous avoir avec cette technique, mais cette fois-ci, vous serez plus malin que lui !</action>
+				<talk v="brocanteur">
+				Ah c'est vous, écoutez... il n'est pas revenu la chercher... Donc, si vous la prenez pour 500 pièces d'or, elle est à vous.
+				</talk>
+				<action v="Marché conclu">Et voilà, une vraie bonne affaire réalisée !</action>
+				<use v="gold" n="500"/>
+				<branch v="objet_ok"/>
+	
+		<label v="objet_ok"/>
+		<goto v="bslt" />
+		<action v="Récuperer des boulons">
+			Et voilà de quoi commencer l'assemblage des pièces.
+		</action>
+		<end>
+			Ah voilà qui est parfait. Me voilà enfin en mesure de me réchauffer mes plats. Pour te récompenser, prends donc ces quelques pièces !
+		</end>
+		<gold v="2500" />
+		<uvar v="brocan"/>
+	</m>
+	
+	<!-- piège à mac gyver -->
+	<m group="broc" id="trapkg" name="Piège à Korgons grognons" cond="mission(bchaud)+fx(palmes)">
+		<begin>
+			Dian Korgsey est une grande femme, elle fait beaucoup pour la Jungle de Grumhel, mais ces derniers temps les Korgons du Sud lui posent de plus en plus de problèmes.
+			Elle m'a donc demandé si je peux construire un piège suffisamment habile pour capturer un de ces Korgons afin qu'elle puisse l'étudier et comprendre d'où vient cette agressivité.
+			En ce moment, je suis totalement pris par mon flying Brocky, mais avec ton aide nous allons lui fabriquer un piège pas piqué des hannetons !
+		</begin>
+		<action v="Examiner le plan de Broc">
+			La Jungle de Grumhel est un endroit assez sombre, la vue des Korgons y est donc assez faible.
+			Ce qu'il nous faut, c'est quelque chose de très fin pour que ce soit invisible et en même temps très résistant pour retenir un Korgon lancé.
+			Je ne sais pas vraiment ce qui pourrait faire l'affaire, mais je suis sûr que tu seras inspiré !
+		</action>
+		<goto v="port" hide="1" />
+		<talk place="port" v="Jovébozé" gfx="joveboze">
+			Ol'a el chti ga ! Té vi 'cor laté du viou Rasca ?
+			Ké, té vu ma fil dé pech' ? Y c'men j'y fé moé por grailler si ti m'prend mo fil ?
+			Y mé si tu laté du Pouascail' pour le mois entier, jé te don mi fil chti maître !
+		</talk>
+		<nogoto/>
+		<!-- Donner des poissons en ingrédient -->
+		<!-- dialogue à nouveau, où il dit qu'il lui faut du gros poisson, nourriture plus variée -->
+		<kill n="60" v="pira:kazka" zone="2" />
+		<kill v="anguil" rare="1" n="10" zone="2"/>
+		<goto v="chutes" />
+		<kill v="rasca" n="10" zone="2"/>
+		<goto v="port"/>
+		<talk place="port" v="Jovébozé" gfx="joveboze">
+			A ca c'té d'la pêche où j'y connai rien.
+			Ti vla le fil, m'en vais f're graillé cte marmaille.
+		</talk>
+		<action v="Prendre le fil">
+			Vous récupérez une grosse bobine de fil de pêche. Les pêcheurs du coin s'en servent pour attraper du Rascaphandre, donc il ne doit pas y avoir de soucis côté résistance.
+		</action>
+		<goto v="chbroc"/>
+		<talk v="Broc" gfx="broc">
+			Ah, du fil de pêche, voilà une brillante idée pleine de bon sens mon jeune ami !
+			Bon maintenant que nous avons de quoi le faire tomber, il nous faut quelque chose pour l'immobiliser.
+			J'ai mémoire que le venin du Cobra du Grand Tout Chaud mélangé aux Racines de Figonicia est un paralysant puissant pour les Korgons.
+			Dépêches-toi, Dian m'a envoyé une Fauve-Souris me disant que la pleine lune est proche, et c'est la période où les Korgons du Sud sèment la pagaille dans la Forêt.
+		</talk>
+		<nogoto/>
+		<kill n="10" v="cobra" zone="1" />
+		
+		<action v="Récolter tout le venin">Bravo, voilà qui devrait calmer ce Korgon !
+			Vous auriez bien proposé un autre plan consistant à l'assomer avec un gros coup sur la tête, mais vous êtes très curieux de voir si le piège de Broc va fonctionner.
+		</action>
+		<goto v="chbroc" />
+		<talk v="Broc" gfx="broc">
+			Et bien, on peut dire que tu es résistant mon jeune ami. Je crois que le piège est prêt maintenant. Tu ne m'en voudras pas si je te laisse le mettre en place au camp de Dian ? C'est que ce genre d'activité n'est plus vraiment de mon âge.
+		</talk>
+		<goto v="jungle" />
+		<talk v="Dian Korgsey" gfx="dian">
+			Chhhuuuuut, ne faites pas de bruit malheureux .....
+			Ah, fantastique, c'est que je commençais à m'inquiéter, Broc semble totalement dépassé ces derniers temps, j'imagine qu'il est encore sur un de ses projets fous dont il a le secret...
+			Enfin... je te propose d'installer le piège dans la clairière derrière toi, et on va attendre derrière ce bosquet à l'odeur nauséabonde, le Korgon à un odorat très fin, l'odeur du bosquet va masquer notre propre odeur.
+		</talk>
+		
+		<action v="Attendre" wait="2">
+			Vous attendez patiemment qu'un Korgon se fasse piéger, a moins qu'il y en ait un derrière vous ?
+		</action>
+		
+		<action v="Paralyser le Korgon">
+			_«Poc !»_  Alors que vous somnoliez, un bruit de collision entre une cavité creuse et le sol attire votre attention. Il s'agit bien d'un Korgon qui vient de chuter *lourdement* la tête la première après s'être pris les pieds dans le fil de pêche. Vous lui sautez dessus et lui injectez le venin derrière l'oreille sur recommandation de Dian. L'effet est immédiat, le Korgon se détend et se met à ronfler lourdement.
+		</action>
+		
+		<talk place="jungle" v="Dian Korgsey" gfx="dian">
+			Fantastique, ce Broc est un génie.... Ah oui, mais toi aussi tu es un valeureux Maître Dinoz !
+			Je n'ai plus qu'à le ramener au camp maintenant.
+			Hummmf ... Hummf ... !!! Ah mais c'est qu'il est imposant le petit père, tu veux bien m'aider ?
+		</talk>
+		
+		<action v="Transporter le korgon">Vous transportez le Korgon sous le bras en marchant en direction du camp.
+			Espérons que le ronflement assourdissant de ce Korgon n'alerte pas d'autres locataires de cette forêt, sûrement plus dangereux...
+		</action>
+		
+		<goto v="camp"/>
+		
+		<talk place="camp" v="Dian Korgsey" gfx="dian">
+			Je dois avouer que tu es très fort et ton Dinoz très valeureux. Je vous remercie de votre aide, je crois que j'aurai eu un peu de mal à le transporter toute seule.
+			L'essentiel est maintenant que j'ai de quoi pouvoir décrypter son comportement en l'observant. Peut-être que j'arriverai à comprendre d'où vient son traumatisme.
+		</talk>
+		
+		<goto v="chbroc"/>
+		
+		<talk place="chbroc" v="Broc" gfx="broc">
+			Voilà un superbe piège à Korgons réalisé. Je savais que je pouvais compter sur toi mon jeune apprenti ...   Ahahahaah, ne te vexe pas, *Maître Dinoz*.
+		</talk>
+		
+		<end>
+			Vous avez réussi à impressionner Broc, ce qui n'est pas rien.
+			Pour le moment la récompense peut sembler un peu maigre, mais qui sait, peut être qu'aider ce génie un peu pingre pourra vous rapporter !
+		</end>
+		
+		<gold v="3000"/>
+	</m>
+	
+	<m group="broc" id="leakjb" name="Fuite moteur" cond="mission(trapkg)">
+		<begin>
+			J'ai reçu une demande urgente ce matin de la part des pêcheurs du Port de Prêche, le moteur de leur bateau a une fuite qui leur faut vite colmater.
+		</begin>
+		<goto v="port"/>
+		<talk v="Pécheur">
+			B'jour petio !
+			C'est Broc qui t'envoie ? Mouais ... J'le reconnais bien là, envoyer un jeunot au casse pipe pour le tester...
+			Sais-tu au moins où tu as mis les petons ? Huh, il semble qu'il t'a bien eu.
+			Là c'est la période aux espèces amphidromes, et crois moi, fait pas bon d'naviguer sur les courants, surtout la nuit.
+			Le bateau lui est HS, et j'vois pas c'ment un marmot va les sortir de là, 'enfin, allons-y tu sembles être motivé.
+		</talk>
+		<goto v="itotem"/>
+		<action v="Inspecter le bateau">
+			Le moteur perd de l'huile, une belle fissure est visible sur le compartiment à huile moteur. Il suffirait simplement de la colmater et de faire le plein, mais le moteur semble être fait dans un métal étrange.
+		</action>
+		<talk v="Pêcheur">
+			C'qu'il faudrait pas trop traîner par ici la nuit l'marmot. Beaucoup de marins ont cru voir des monstres dans l'eau avant d'entrer en collision avec un énorme rocher qui a cassé le moteur.
+		</talk>
+		<goto v="chbroc" />
+		<talk v="Broc" gfx="broc">
+			Une fuite dans le compartiment à Huile ? Voilà qui tombe fort mal. J'ai grande habitude de ces problèmes avec la série des Flying Broky, mais en ce moment, j'ai épuise mon stock d'oxycombustibles.
+			C'est problématique, essaie toujours de chercher une solution de ton côté, il faut pas que leur bateau reste trop longtemps à cet endroit.
+		</talk>
+		<goto v="forges" hide="1" />
+		<talk v="Responsable">
+			Comment ça : "une garantie sur nos produits" ? Ahahahah, kuf kuf, voyons monsieur, pourquoi proposer une garantie alors que notre Forge produit un alliage incassable !! Rhoho ohohoh, il est pas né celui qui viendra briser un de nos moteurs.
+			Hum ..hein ? , kuf kuf, quoi ?!! Mais c'est impossible, aucun récif, kuf kuf, aucun animal marin connu ne peut mettre à mal la ductilité de notre alliage à ce point ! C'est I.M.P.O.S.S.I.B.L.E !
+			Enfin, si vous voulez qu'on vous répare votre fissure imaginaire, kuf kuf, oui, il faudra bien nous amener la pièce ici.
+		</talk>
+		<goto v="chbroc" />
+		<talk v="Broc" gfx="broc">
+			Ah c'est une très bonne idée que d'être allé voir aux forges ! Et que t'ont ils dit ?
+			....
+			D'accord. .. Hum... cela est étrange car, en effet, je n'ai pas connaissance d'objets pouvant abîmer l'alliage de nos forges. Mais il existe des légendes sur un animal marin "surnaturel", qu'ils nomment Nessie, beaucoup de pêcheurs racontent des histoires à ce sujet à la taverne... mais ils sont trop  bourrés à chaque fois, on a jamais la même version, ahahahah. Hum, bref !
+			Il ne reste plus qu'à tester une expérience de mon grand père Mac, colmater la fissure avec un oeuf. C'est une technique utilisée par nos anciens, mais je ne l'ai jamais expérimenté personnellement. Mais je ne vois plus que ça, vu l'urgence de la situation. Il te faut donc obtenir quelques oeufs bien frais !
+		</talk>
+		<goto v="marche" />
+		<talk v="Eleveur">
+			Bonjour, bonjour jeune maître Dinoz. As-tu déjà pensé à nourrir tes Dinoz aux bonnes protéïnes bio des oeufs de Coqdur ? Cela garantit une alimentation équilibrée, avec un apport protéïnique adapté qui rendra le poil de tes Dinoz aussi luisants qu'une carapace de Feross, l'oeil aussi vif et espiègle qu'une Fauve-Souris et ....
+			... Ah ... oui... ok ok d'accord... Je me tais... Vous voulez ?
+			Vous voulez des oeufs, frais ??! mais vous frappez à la bonne porte, avec mes oeufs, plus jamais vos Dinoz ne seront malheureux, leur endurance sera l'alliée de leur puissance, les oeufs bio, les oeufs qu'il vous faut !
+		</talk>
+		<action v="Faire taire l'éleveur">
+			Voilà qui devrait peut-être l'aider à se concentrer.
+		</action>
+		<talk v="Elef'eur">
+			Hum'f, mais f'é qu'il fape fort... On m'a touv'ours dit que j'parle f'trop.
+			F'oilà tes z'oeufs, f'a te fera 1.500 f'ièces d'or, mais comme je t'appréf'ie, je te fais un prix, 1.000, un prix d'ami, si tu pars vite d'ifi.
+		</talk>
+		<use v="gold" n="1000" />
+		<goto v="itotem"/>
+		<action v="Réparer">
+			Sans trop y croire, et malgré les railleries de vos nouveaux copains pêcheurs, vous disposez les oeufs cassés sur la fissure. En quelques minutes la chaleur du moteur et du soleil finissent par créer une fine couche obstruant la fissure. Vous tentez de mettre à nouveau de l'huile, et ... miracle, plus de fuite ! Grand-père Mac disait donc vrai, on a réussir à colmater une fuite avec des oeufs ...
+			Les pêcheurs peuvent maintenant remettre Gyver, leur bateau, à l'eau pour rentrer au plus vite au Port de Prêche.
+		</action>
+		<end>
+			Une nouvelle fois, Broc est impressionné par votre sens de l'initiative.
+			Vous venez peut-être de sauver la vie à ces marins, mais dommage que ce métier ne rapporte plus autant d'argent qu'il leur faudrait pour vivre correctement, cela les obligent à prendre de plus en plus de risques...
+			Broc et les pêcheurs tiennent malgré tout à vous récompenser à hauteur de leur moyens.</end>
+		<xp v="50"/>
+		<gold v="2000"/>
+	</m>
+	
+	<m group="broc" id="airpur" name="Analyse sanguinaire" cond="mission(leakjb)">
+		<begin>
+			Lors de ma dernière expédition dans la Forêt de Grumhel pour rendre visite à Dian, elle m'a fait part de son besoin d'analyser les données récupérées sur le Korgon piégé. Il faut donc aller chercher les échantillons et les faire analyser aux scientifiques de l'Université.
+		</begin>
+		<goto v="camp"/>
+		<talk v="Dian Korgsey" place="camp" gfx="dian">
+			Bonjour, tu viens chercher mes échantillons ? Je te remercie, je ne suis pas experte mais je commence à penser qu'il y a un problème environnemental autours de l'augmentation de l'agressivité des Korgons. Ces belles créatures ne sont pas méchantes en temps .... AHHHHHHAAAH
+		</talk>
+		<actfight act="Défendre le camp" monsters="ksudbs:ksudbs:korven">
+		</actfight>
+		<talk v="Dian Korgsey" gfx="dian">
+			Nom d'un Korgon, mais ça c'est pas .... ce n'est pas...normal.
+			Il faut se dépêcher de comprendre ce qui se passe ... Amène vite ces analyses à l'Université veux-tu ?
+			Et... si tu as le temps, si tu pouvais faire peur aux korgons qui trainent autours du camp ?
+		</talk>
+		<kill v="korgon" n="20" />
+		<goto v="univ" />
+		<talk v="Professeur Eugene" gfx="eugene">
+			Bonjour le jeunot, alors comment va la vie de grand aventurier ? Ah si seulement j'avais encore ton âge...
+			Oh mais qu'amènes-tu, des échantillons de Korgon ? Cela fait bien longtemps qu'jai pas eu l'occasion d'approcher ces bébètes.
+			Il faut une analyse complète dis-tu ? Je vais voir ce que je peux faire, mais je ne sais pas encore si nos machines sont assez précises.
+		</talk>
+		<action v="Attendre" wait="1">
+			Vous attendez que le professeur réalise l'analyse.
+		</action>
+		
+		<branch v="spectro_ok" cond="uvar(airpur,1+)" />
+		<branch v="spectro_ko" cond="!uvar(airpur,1+)" />
+		<!-- FAIRE BRANCH -->
+		<label v="spectro_ko"/>
+		<goto v="univ" />
+		<talk v="Professeur Eugene" gfx="eugene">
+			C'est bien ce que je craignais, mes appareils ne sont pas adaptés pour les analyses de ce genre. Mon spectromémètre de masse a du mal à comptabiliser les massifs isotopiques, il faudrait augmenter la gamme de notre appareil. Et je ne sais pas qui serait en mesure de faire ceci.
+		</talk>
+		<goto v="chbroc" hide="1" />
+		<talk v="Broc" gfx="broc">
+			Hein quoi ? Ah mais oui ça doit être possible... ça doit venir d'un manque d'énergie cinétique des lélectrons, ca semble évident. Maintenant comment booster ceci... bonne question gaston !
+			Hummm....
+			_(Il se met à parler tout seul... De toute façon vous ne compreniez déjà rien avant, autant aller profiter de la vue)_
+		</talk>
+		<action v="Attendre" wait="1">
+			Vous attendez que Broc trouve ce qu'il semble chercher désespérement dans son atelier.
+		</action>
+		<talk v="Broc" gfx="broc">
+			VOOIILLAAA, je l'ai retrouvée !!!....
+			_(«Mais... de quoi il parle ?!»)_
+			C'est une lentille  extrêmement rare, je l'avais reçue en échange d'un service il y a des années.. Pour un mec plutôt étrange d'ailleurs, enfin bref, la voici. Sa finesse et sa pureté en font une lentille plan convexe convergente parfaite pour le spectromémètre de l'Université. Cela va bien booster leur bidule, ça va fumer chez les lélectrons Ahahahahah!
+		</talk>
+		<action v="Prendre la lentille">
+			Vous récupérez cette fameuse lentille.
+			Elle semble très fragile, il ne faudrait pas se prendre de gros coups sur le retour, elle pourrait facilement se briser.
+		</action>
+		<goto v="univ"/>
+		<action v="Donner la lentille" wait="1">
+			Vous donnez la lentille au professeur, en espérant que lui comprenne à quoi ça pourra servir.
+			Il va lui falloir un peu de temps pour la monter et faire de nouveaux tests, alors attendons...
+		</action>
+		<label v="spectro_ok"/>
+		<goto v="univ" />
+		<talk v="Professeur Eugene" gfx="eugene">
+			Aaah ce Broc est incroyable, cette lentille est fantastique !!! Une vraie beauté, parfaite !
+			Heureusement que nous l'avons dans tous les cas, les analyses ne sont pas bonnes du tout.
+			Elles montrent une trop grande quantité de CO2, ce qui est vraiment inquiétant pour un animal vivant dans une forêt.
+			C'est bien environnemental, la mauvaise qualité de l'air fait que les Korgons deviennent plus irritables et par conséquent agressifs.
+		</talk>
+		<goto v="fleuve" />
+		<action v="Surveiller les lieux">
+			Vous surveillez les lieux, une intuition vous fait dire que la forêt ne peut devenir malade sans raison...
+			Le voilà !
+		</action>
+		<actfight act="Attaquer" monsters="cervel">
+			<begin m="cervel">
+				Mais... qui es-tu ? Tu ne devrais pas être là, je ne vais pas te laisser compromettre mes plans, non je ne peux pas, tu ne me laisses pas le choix ... YiiiiPaaaa !!
+			</begin>
+			<win>
+				Vous avez vaincu Cervelah l'empoisonneur, mais pourquoi cheche t'il à empoisonner le fleuve et rendre malade la forêt et ses habitants ?
+			</win>
+		</actfight>
+		
+		<end>
+			La ligue des Korgons extraordinaires vous remercie de votre aide et votre discretion qui n'a pas mis à mal la réputation des Korgons, elle vous fait parvenir une jolie récompense.
+		</end>
+		<gold v="5000"/>
+		<xp v="90"/>
+		<uvar v="airpur"/>
+	</m>
+
+	<m group="broc" id="suppel" name="Appel à la pelle" cond="mission(airpur)">
+		<begin>
+			Mon voisin le mineur coralien commence à en avoir marre de perdre les Corail Awards, il passe plus de temps à réparer son matériel qui se brise sur le corail qu'à s'entrainer. Il me demande donc de lui trouver une solution pour renforcer son matériel.
+		</begin>
+		<goto v="corail" />
+		<talk v="Mineur Coralien" gfx="mineur">
+			Hey comment tu vas ? Alors cette pelle, toujours en 2 morceaux hein ... Me le fais pas dire, c'est pas du matos pour des gars costauds comme nous.
+			Au corail Awards ce sont des pros, ils ont du vrai matos eux au moins. Comment voulez-vous que je j'améliore mon arrachée si je ne lève qu'une moitiée de pioche à chaque fois...
+			Tu vas t'en occuper avec Broc ? Ah mais voilà une bonne nouvelle, toi tu me comprends, tu peux pas me laisser comme ça et risquer de me faire ridiculiser par M. Statane.
+		</talk>
+		<action v="Prendre la pioche">
+			Vous empruntez la pioche réalisée dans un alliage peu convaincant en effet.
+		</action>
+		<goto v="forges" />
+		<talk v="Forgeron" >
+			C'men ? Renforcer une pioch' ? Bah sur que j'peux faire, mais l'gars il a intérêt à être costaud ! Huhu
+			Mais faudrai que tu m'rendes un service en faisant fuir c'brigands, ils piquent toutes nos merguez, c'qu'on a rien à grailler nous après !
+		</talk>
+		<goto v="rashpk"/>
+		<actfight act="Effrayer les voleurs" monsters="vol1:vol1:vol1">
+			<win>
+				Voilà qui devrait les avoir fait fuir pour quelque temps. De toute façon maintenant, sans dents il sera plus difficile de manger des merguez.
+			</win>
+		</actfight>
+		<goto v="forges" />
+		<talk v="Forgeron" >
+			Ah tu es efficace comme maître Dinoz ! Et vl'a le résultat pour ta pioche. Mais j'te préviens, ça ressemble à une ancre de b'teau maintenant. Huhuhuhu.
+		</talk>
+		<action v="Prendre la pioche">
+			Huf.... !!! GGgggGGNNNGnnnnnnn!!! Huf Huf.... Impossible de la soulever, cet alliage est vraiment trop lourd, il est impossible de manier un tel attirail. Vous avez une idée, mais il va falloir trainer cette $^*ù$^* d'enclume avec vous maintenant.
+		</action>
+		<goto v="fosslv" hide="1"/>
+		<action v="Tremper la pioche dans la lave">
+			Tant bien que mal, vous arrivez à tremper la pioche dans la lave sans tomber sous le poids. Vous en ressortez une pioche amincie, rongée par la lave, mais encore en fusion, il faut trouver un catalyseur maintenant pour arrêter la réaction.
+		</action>
+		<goto v="gorges" />
+		<talk v="Spélélélologue" gfx="spelele">
+			S'il me reste du Mazotte liquide... mais c'est à dire... oui bien entendu, mais son usage est réservé à mes travaux scientifiques, cela ne s'utilise pas n'importe comment. C'est tout un savoir faire, une maîtrise totale du protocole de sécurité.
+		</talk>
+		<action v="Montrer la pioche">
+			_«Ahhhhaahhhhhhahhhhh»_
+			Etrange, le spélélologue prend peur et part en glissant à toute vitesse au milieu d'une forêt de stalagmites.
+			Il ne doit plus être habitué à la chaleur ... A moins qu'il ait cru que vous le menaciez avec la pioche ?
+		</action>
+		<action v="Verser le Mazotte liquide">
+			Alors que vous versez le mazotte liquide sur la pioche toujours en fusion, une étrange fumée s'échappe dans un bruit de locomotive à vapeur. La fumée semble comme voler à la surface du sol, créant une couche de nuages à la surface de la grotte, c'est magnifique.
+		</action>
+		<action v="Prendre la pioche">
+			Après que l'objet ait fini de produire des bruits étranges, tout redevient silencieux dans la grotte (mis à part le claquement de dents de notre ami scientifique). La pioche devant vous est toute luisante, d'une forme parfaite, comme réalisée dans un matériau futuriste. Vous vous preparez toutefois à devoir la soulever, allez on se motive, 1 ... 2.... et  3 ! *VLOUM*
+		</action>
+		<action v="Se relever">
+			Incroyable ! L'objet est tellement plus léger maintenant que vous êtes tombé à la renverse. Bon et bien, il ne vous reste plus qu'à le ramener au mineur.
+		</action>
+		<end>
+			Vous avez brillament répondu au besoin du mineur coralien, celui ci précise qu'il vous dédiera sa victoire aux Corail Awards.
+			Pour vous remercier, il vous lègue une superbe pelle à la structure renforcée. Cette dernière ne se cassera pas systématiquement après chaque usage, mais c'est sans garantie non plus. Le mineur pourra toujours vous la réparer en cas de besoin.
+		</end>
+		
+		<nofx v="brkpel" />
+		<nofx v="pelle" />
+		<fx v="pelle2" />
+	</m>
+	
+</missions>

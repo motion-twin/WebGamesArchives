@@ -1,0 +1,42 @@
+<!-- ***************************************************************************** -->
+<!-- Agathe et Lechton, habitent l'acropole de Caushemesh --->
+
+<d place="cacrop" name="Gégé Lechton" gfx="lechton" cond="scenario(caush,42-)">
+	<phase id="begin" fast="1">
+		L'acropole est silencieuse. Les portes et fenêtres de chaque habitat sont condamnées.
+		Il règne une atmosphère lourde sur la ville. Vous sentez malgré tout des regards hostiles sur vous.
+		Vous distinguez un homme d'âge mûr se cachant dans une ruelle sombre, apeuré, il n'ose pas venir vers vous.
+	</phase>
+</d>
+
+<d place="cacrop" name="Crousti Chocotte" gfx="agathe" cond="scenario(caush,19+)+scenario(caush,42-)">
+	<phase id="begin" fast="1">
+		La fillette que vous avez sauvé reste auprès de son grand-père, elle vous salue de la main mais ne veut surtout pas se montrer.
+		Il va vous falloir encore un peu de temps avant de pouvoir pleinement discuter avec les autochtones de cette ville.
+	</phase>
+</d>
+
+<!-- Une fois la quête terminée, un des habitants ouvrira une boutique dans le village pour vendre de nouveaux objets. -->
+
+<d place="cacrop" name="Gégé Lechton" gfx="lechton" frame="sour" cond="scenario(caush,43+)">
+	<phase id="begin" fast="1" next="salut">
+		L'acropole a retrouvé ses couleurs, les habitants commencent petit à petit à sortir de chez eux.
+		Même si une génération entière passée à se cacher ne peut être balayé en si peu de temps.
+		Le vieil homme reste méfiant, mais vous salue tout de même.
+	</phase>
+	<a id="salut">Tout va pour le mieux ?</a>
+	<phase id="salut">
+		[Oui, nous ne te remercierons jamais assez pour ce que tu as fait pour nous tous.
+		Les cicatrices du passé vont mettre du temps à se refermer, mais nous avons regagné l'espoir qui nous permettra de reconstruire
+		notre pays.]
+	</phase>
+</d>
+
+<d place="cacrop" name="Crousti Chocotte" gfx="agathe" frame="normal" cond="scenario(caush,43+)">
+	<phase id="begin" fast="1">
+		La jeune fille a retrouvé son sourire.
+		Elle ne fait plus attention à vous et joue avec les autres enfants sur la place de l'acropole.
+		Le danger semble lointain quand on assiste à ce genre de scène.
+	</phase>
+</d>
+

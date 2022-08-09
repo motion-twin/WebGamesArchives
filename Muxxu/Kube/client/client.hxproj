@@ -1,0 +1,68 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<project version="2">
+  <!-- Output SWF options -->
+  <output>
+    <movie outputType="Application" />
+    <movie input="" />
+    <movie path="..\www\swf\kube.swf" />
+    <movie fps="40" />
+    <movie width="616" />
+    <movie height="320" />
+    <movie version="10" />
+    <movie minorVersion="0" />
+    <movie platform="Flash Player" />
+    <movie background="#FFFFFF" />
+  </output>
+  <!-- Other classes to be compiled into your SWF -->
+  <classpaths>
+    <!-- example: <class path="..." /> -->
+  </classpaths>
+  <!-- Build options -->
+  <build>
+    <option directives="" />
+    <option flashStrict="False" />
+    <option mainClass="Kube" />
+    <option enabledebug="False" />
+    <option additional="options.hxml&#xA;&#xA;--next&#xA;-swf ../www/swf/kube3d.swf&#xA;-swf-version 11.2&#xA;options.hxml&#xA;-main Kube&#xA;&#xA;--next&#xA;# Minimap&#xA;-swf ../www/swf/minimap.swf&#xA;-swf-lib gfx.swf&#xA;-main Minimap&#xA;-cp src&#xA;-swf-header 196:190:40&#xA;obfu.hxml&#xA;&#xA;&#xA;--next&#xA;# Map&#xA;-swf ../www/swf/map.swf&#xA;-swf-lib gfx.swf&#xA;-main Map&#xA;-swf-header 768:512:40&#xA;-cp src&#xA;-cp ../src&#xA;-cp ../../base/com&#xA;-cp ../tpl/fr&#xA;-lib tora&#xA;-lib format&#xA;obfu.hxml" />
+  </build>
+  <!-- haxelib libraries -->
+  <haxelib>
+    <!-- example: <library name="..." /> -->
+  </haxelib>
+  <!-- Class files to compile (other referenced classes will automatically be included) -->
+  <compileTargets>
+    <!-- example: <compile path="..." /> -->
+  </compileTargets>
+  <!-- Assets to embed into the output SWF -->
+  <library>
+    <!-- example: <asset path="..." id="..." update="..." glyphs="..." mode="..." place="..." sharepoint="..." /> -->
+  </library>
+  <!-- Paths to exclude from the Project Explorer tree -->
+  <hiddenPaths>
+    <hidden path="bench.swf" />
+    <hidden path="client.html" />
+    <hidden path="client.hxml" />
+    <hidden path="gfx.fla" />
+    <hidden path="gfx.swf" />
+    <hidden path="obfu.hxml" />
+    <hidden path="world.hxml" />
+    <hidden path="world.hxp" />
+    <hidden path="world.swf" />
+    <hidden path="obfu.cfg" />
+    <hidden path="game_gfx" />
+    <hidden path="bmp" />
+    <hidden path="options.hxml" />
+  </hiddenPaths>
+  <!-- Executed before build -->
+  <preBuildCommand />
+  <!-- Executed after build -->
+  <postBuildCommand alwaysRun="False" />
+  <!-- Other project options -->
+  <options>
+    <option showHiddenPaths="False" />
+    <option testMovie="OpenDocument" />
+    <option testMovieCommand="client.html" />
+  </options>
+  <!-- Plugin storage -->
+  <storage />
+</project>

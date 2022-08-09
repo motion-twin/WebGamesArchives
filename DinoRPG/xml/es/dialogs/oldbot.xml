@@ -1,0 +1,225 @@
+<!-- ***************************************************************************** -->
+<!-- Oldbot, Nimbao l'île volante ----->
+
+<d place="iroche" name="Robot viejo" gfx="oldbot">
+	<phase id="begin" fast="1" frame="stop" next="bzi1:bzi2:bzi3:bzi4:bzi5:bzi9:bzi6:bzi7:bzi8">
+		Ves un robot viejo con la mirada fija en el pico que sobresale en el horizonte.
+
+		Nadie sabe desde cuántos siglos se encuentra abandonado. Lo que es seguro es que habrá visto muchas cosas
+		a lo largo de tanto tiempo y tendrá información interesante.
+	</phase>
+
+	<a id="bzi1" cond="scenario(nimbao,23)"> Hola, ¿hay alguien ahí? </a>
+	<a id="bzi2" cond="scenario(nimbao,24+)"> ¿Qué tiempo hará mañana? </a>
+	<a id="bzi3" cond="scenario(nimbao,24+)"> ¿Has visto pasar a alguien últimamente? </a>
+	<a id="bzi4" cond="scenario(nimbao,24+)"> ¿Desde cuándo Grizorg es el Archidorogón?</a>
+	<a id="bzi5" cond="scenario(nimbao,25)"> ¿Cómo se puede atravesar la isla sin ser retenido? </a>
+	<a id="bzi9" cond="scenario(nimbao,33)"> ¡No entiendo el dialecto de los habitantes de Nimbao! </a>
+	<a id="bzi6" cond="scenario(nimbao,35)"> ¿Dónde se encuentra la Montaña Sagrada? </a>
+	<a id="bzi7" cond="scenario(nimbao,35+)"> ¿Tus pilas no se vacían nunca? </a>
+	<a id="bzi8" cond="scenario(nimbao,42+)"> ¿Cómo se puede ir al segundo nivel de la Isla?</a>
+
+<!-- Réponse à la 1ère question -->
+
+	<phase id="bzi1" next="gzi1" >
+		Sí, hay alguien.
+		Bziiii. Hola, extranjero. Bzziiiii...
+	</phase>
+	<a id="gzi1">
+		¡Uah! ¡Un tostador parlante!
+	</a>
+	<phase id="gzi1" next="tzi1">
+		No soy un tostador. Soy un robot, bzzzzziii, soy un robot. El modelo más reciente...
+		Bzoooooo... Bziiiii....
+	</phase>
+	<a id="tzi1">
+		Ah, sí, ya veo.
+	</a>
+	<phase id="tzi1" next="gzu1">
+		Mi trabajo consiste en aportar información gziii, PSHHH....PAF.
+		A las personas que la necesiten. Si tienes una pregunta, no dudes un instante.
+		Recuerda que sin embargo solo puedo responder a preguntas precisas. Gzzzziiiiiish....
+	</phase>
+	<a id="gzu1">
+		Me acordaré.
+	</a>
+	<phase id="gzu1" fast="1" frame="stop" scenario="nimbao:24">
+		El robot viejo se pone en pausa. ¿Podrá aportarte respuestas?
+	</phase>
+
+<!-- Réponse à la 2ème question -->
+
+	<phase id="bzi2" next="gzi2" >
+		Hará buen tiempo en el sur. Más frío en el noroeste y nubloso en el centro.
+		Como siempre, desde que estoy aquí... las temperaturas...
+		¡NO SOY UNA ESTACIÓN METEREOLÓGICA! Bziiiii....
+	</phase>
+	<a id="gzi2">
+		Ah, perdón. Solo era una pregunta.
+	</a>
+	<phase id="gzi2" fast="1" frame="stop">
+		El robot viejo se pone de nuevo en pausa. ¿Qué respuestas te aportará la próxima vez?
+	</phase>
+
+<!-- Réponse à la 3ème question -->
+
+	<phase id="bzi3" next="gzi3" >
+		Gzii, Bzii... Crash....
+		Así es. Vi pasar a alguien, pero no sabría decirte cuándo.
+		Los siglos acumulados han estropeado mi reloj interno...
+	</phase>
+	<a id="gzi3">
+		¿Podrías decirme más sobre esa persona que viste?
+	</a>
+	<phase id="gzi3" next="gzu3">
+		Gzii....Pshhhh...
+		[Era un hombre con mucha prisa. Estaba acompañado de un Dino gigantesco. Se separaron cuando llegaron a la isla.
+		Atravesó tan rápido el puente, que los guardias iban de un lado para otro como locos.]
+		[Desde entonces la seguridad fue intensificada y pasar el puente es tarea imposible.
+		Esto no cambia nada para mí de todos modos. Nadie va hasta la Cabeza del Dorogón.]
+	</phase>
+	<a id="gzu3">
+		Seguramente fue Mandrágora.
+	</a>
+	<phase id="gzu3" fast="1" frame="stop">
+		El robot se pone en pausa. ¿Tendrá más respuestas para ti?
+	</phase>
+
+	<!-- Réponse à la 4ème question -->
+
+	<phase id="bzi4" next="gzi4" >
+		Gzii, Bzii... Crunch....
+		Grizorg pasó a ser Archidorogón hace poco. Creo que hace 3 días de eso... ¿o quizás 30 años? ¿o 300? No lo sé.
+	</phase>
+	<a id="gzi4">
+		¿Y qué ocurrió entonces?
+	</a>
+	<phase id="gzi4" next="gzu4">
+		Gzii....Pshhhh...
+		[El anterior Archidorogón era muy tranquilo. Gobernaba serenamente con los miembros del consejo de los Dorogones.
+		Tenía dos discípulos por aquel entonces. Venían a menudo para meditar o perfeccionar su arte aquí. Uno era un Dorogón, el otro, humano.
+		Esta armonía no podría existir hoy en día.]
+		[La desaparición del viejo Archidorogón sigue siendo un misterio. Algunos dicen que su paso a mejor vida no fue precisamente fruto de la vejez...
+		Pero no sé nada más. Después de todo, nunca me he movido de aquí.]
+		Gziii, PSHHH... PAF.
+	</phase>
+	<a id="gzu4">
+		¿Quizás haya alguna relación con Mandrágora?
+	</a>
+	<phase id="gzu4" fast="1" frame="stop">
+		El robot viejo se pone en pausa. ¿Cuáles serán las siguientes respuestas?
+	</phase>
+
+	<!-- Réponse à la 5ème question -->
+
+	<phase id="bzi5" next="gzi5" >
+		Gzii, Bzii... Crunch....
+		[Los soldados de Grizorg montan guardia en cada rincón de la isla.]
+		[Es muy difícil desplazarse. Pero afortunadamente, hay una forma.
+		¡La única manera posible es de infiltrarse entre los puestos de los guardias!]
+	</phase>
+	<a id="gzi5">
+		¿Infiltrarse?
+	</a>
+	<phase id="gzi5" next="gza5">
+		Gzii... Pshhhh...
+		[////...Tutorial activado... ON...00100011111001010 ////]
+		[Cuando quieras *desplazarte*, utiliza la acción  *infiltrarse* que aparecerá en el menú de navegación.]
+		[////...Tutorial desactivado... OFF... 00100011111001010 ////]
+		Gzii... Pshhhh...
+	</phase>
+	<a id="gza5">
+		¿Qué ocurrirá en ese momento?
+	</a>
+	<phase id="gza5" next="gzu5">
+		[Deberías trazarte un camino que te lleve al lugar que deseas.]
+		[Pero ten cuidado con los guardias. Vigilan los alrededores y, si te encuentran, te conducen inmediatamente a la entrada del pasaje.]
+		[Afortunadamente, una vez realizada la infiltración con éxito, puedes desplazarte libremente de un lado a otro.]
+		Gzii, Bzii... Crunch...
+	</phase>
+	<a id="gzu5">
+		¡Gracias por la ayuda!
+	</a>
+	<phase id="gzu5" fast="1" frame="stop" scenario="nimbao:26">
+		El robot viejo se pone de nuevo en pausa. ¿Qué más podrá decirte?
+	</phase>
+
+	<!-- Réponse à la 6ème question -->
+
+	<phase id="bzi9" next="gzi9" >
+		Gzii, Bzii... Crunch....
+		Es normal. Bip... los habitantes de la isla hablan un idioma desaparecido en otros lugares.
+		Debe de haber alguien que hable este idioma en el lugar de donde provienes.
+		Podrías seguir esta pista.
+		Gzii... Pshhhh...
+	</phase>
+	<a id="gzi9">
+		¡Gracias por la ayuda!
+	</a>
+	<phase id="gzi9" fast="1" frame="stop">
+		El robot viejo se pone de nuevo en pausa. ¿Qué más podrá decirte?
+	</phase>
+
+
+	<!-- Réponse à la 7ème question -->
+
+	<phase id="bzi6" next="gzi6" >
+		Gzii, Bzii... Crunch...
+		¿La Montaña Sagrada?
+		Se encuentra en la parte blanca de la isla. Hace tanto frío que nadie va nunca allí. Se dice que el antiguo Archidorogón estableció allí un almacén donde conservaba las pociones que creaba.
+		Era una especie de cámara refrigerada.
+	</phase>
+	<a id="gzi6">
+		¿Cómo se puede ir?
+	</a>
+	<phase id="gzi6" next="gzu6">
+		Gzii... Pshhhh...
+		Existe un pasaje hacia las planicies nevadas. Se encuentra en la puerta del nivel superior...
+		Seguro que puedes encontrar un medio para ir a este lugar.
+		Atraviesa el Bosque de Escarcha para conseguir tu objetivo. Presta atención a no congelarte por el camino.
+	</phase>
+	<a id="gzu6">
+		De acuerdo, tendré cuidado. ¡Gracias!
+	</a>
+	<phase id="gzu6" fast="1" frame="stop" scenario="nimbao:36">
+		El robot viejo se pone en pausa. ¿Tendrá más respuestas que aportar?
+	</phase>
+
+	<!-- Réponse à la 8ème question -->
+
+	<phase id="bzi7" next="gzu7" >
+		Gzii, Bzii... Crunch...
+		Funciono con energía solar...
+		¡Soy fruto de la ecoenergía! Estaba muy de moda por aquel entonces...
+		Recargo mi batería en un solo día, pero me descargo de noche...
+		Afortunadamente, en esta altitud siempre hay sol. A veces pasa una nube y... me... p... aro en plena conversación.
+	</phase>
+	<a id="gzu7">
+		Ah, sí, lo había notado.
+	</a>
+	<phase id="gzu7" fast="1" frame="stop">
+		El robot viejo se pone en pausa. ¿Tendrá más respuestas que aportar?
+	</phase>
+
+	<!-- Réponse à la 9ème question -->
+
+	<phase id="bzi8" next="gza8" >
+		Gzii, Bzii... Crunch...
+		El segundo nivel de la isla está reservado a los Dorogones. Su ciudad es accesible exclusivamente desde esta puerta.
+		Algunos Arboris que han sido elegidos como sirvientes de Dorogones sí que pueden... La verdad es que no sé cómo se puede pasar esta puerta sin cumplir esta condición.
+	</phase>
+	<a id="gza8">
+		Entonces, nunca podré ir.
+	</a>
+	<phase id="gza8" next="gzu8" >
+		Hay también un tercer nivel en Nimbao. Reservado al Archidorogón y su guardia.
+		El palacio se encuentra en la cima de la isla. El Archidorogón actual solo recibe visitas en condiciones muy estrictas y especiales.
+	</phase>
+	<a id="gzu8">
+		Parece fuera de mi alcance.
+	</a>
+	<phase id="gzu8" fast="1" frame="stop">
+		El robot viejo se pone en pausa. ¿Tendrá más respuestas que aportar?
+	</phase>
+
+</d>

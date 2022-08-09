@@ -1,0 +1,188 @@
+﻿<missions>
+
+	<m group="skull" id="skul1" name="Vorabinformationen">
+		<begin>
+			Moulder wurde von meinem positiven Fluch getroffen, als wir gerade dabei waren, zusammen alt zu werden. Er hat mich mit einem Schlag vergessen und ist weit weg gezogen, dieser Abenteurer! Sein Neffe, der kleine Joe, hat bestimmt Neuigkeiten von ihm... Besuch ihn mal und halt mich auf dem Laufenden!
+		</begin>
+		<goto v="papy" hide="1"/>
+		<talk v="'Kleiner' Papy Joe" gfx="papy">
+			Onkel Moulder? Ach du meine Güte, das ist schon Jahre her, dass ich nichts mehr von ihm gehört habe... Wenn du mehr darüber wissen willst, dann bringe mir drei Würstchen von der Großen Dauerhitze!
+		</talk>
+		<use v="mergz" n="3"/>
+		<talk v="'Kleiner' Papy Joe" gfx="papy">
+			Danke!... (mampf, mampf)... Alles was ich weiß ist, dass Onkel Moulder seine Frau sehr liebte. Und dass er eine in den Jungbrunnen eingravierte Nachricht für sie hinterlassen hat.
+		</talk>
+		<goto v="fountj"/>
+		<action v="Die Nachricht lesen">
+			In einer der zahlreichen Gravuren des Jungbrunnens kann man folgende Nachricht lesen: "Ich warte an dem Ort auf dich, wo wir uns das erste Mal begegnet sind."
+		</action>
+		<end>
+			Danke, das sind wertvolle Informationen, die du mir da gebracht hast! Mein geliebter Moulder kann nicht sehr weit weg sein. Bald werden wir wieder vereint sein!
+		</end>
+		<xp v="10"/>
+	</m>
+
+	<m group="skull" id="skul2" name="Auf Moulders Spuren" cond="mission(skul1)">
+		<begin>
+			"Ich warte an dem Ort auf dich, wo wir uns das erste Mal begegnet sind". Oh oh oh oh! Wie romantisch er doch ist, mein geliebter Moulder! Ich hoffe, dass er dort noch immer auf mich wartet! Schnell, begib dich an diesen wunderbaren Ort, der süßlich nach Seerosen duftet, an dem wir uns das erste Mal getroffen haben, und bring mir meine Liebe wieder zurück!
+		</begin>
+		<goto v="marais" hide="1"/>
+		<talk v="Ein steckengebliebener Tourist">
+			Ich habe die NASE GESTRICHEN VOLL von diesem Sch.... Sumpf!!!! Das ist jetzt schon das dritte Mal, dass unser Campingwagen steckenbleibt. Was für eine besch..... Idee, seinen URLAUB IN EINEM SUMPF zu verbringen!!! Was?! Ob ich jemanden gesehen habe, der Moulder heißt? Ah! Ja, der ist losgezogen, um an einer Sitzung des Freundeskreises der Anonymen Aalos teilzunehmen! Pass auf dich auf, wenn du dorthin gehen solltest, denn sie sind etwas empfindlich...
+		</talk>
+		<actfight act="Versammlung des F.A.A." monsters="anguil:anguil">
+			<begin>Als du gerade dabei bist, dich der Gruppe zu nähern, wirst du von einigen Aalos entdeckt. Sie greifen dich sofort an!</begin>
+			<win>Kurz nachdem du die Aalos besiegt hast, entdeckst du am Boden ein paar Spuren, die gen Westen führen...</win>
+		</actfight>
+		<goto v="chutes" hide="1"/>
+		<talk v="Fischer">
+			Die beißen hier gut an. Die Fische kommen hierher, um den Mönchen beim Schweben zuzusehen... Ein Typ namens Moulder? Den kenne ich gut. Der ist zum Fischen zur Piranhoz-Bucht gegangen. Sei vorsichtig mein Junge, die Biester beißen...
+		</talk>
+		<actfight act="Piranhoz-Bucht" monsters="pira:pira:pira:pira:pira:pira">
+			<begin>
+				Kaum kommst du in der Piranhoz-Bucht an, da stürzen sich auch schon zahlreiche Piranhoz auf dich, um dich anzuknabbern... Wer hat denn Lust hier zu fischen???</begin>
+			<win>Nachdem du die Piranhoz besiegt hast schaust du dich ein wenig in der Umgebung um. Wenn Moulder zum Fischen hierher gekommen ist, dann ist er jetzt wohl schon wieder weg...</win>
+		</actfight>
+		<talk v="Fischer">
+			Moulder? Er hat gesagt, dass er zum Sumpf zurück wolle, um auf seine Frau zu warten...Armer Schlucker, er hat sie schon seit Jahren nicht mehr gesehen...Ich an seiner Stelle wäre eher froh...
+		</talk>
+		<goto v="marais"/>
+		<action v="Hinweisschild">
+			Ein Hinweisschild scheint vor kurzem in der Nähe eines Seerosenbeetes aufgestellt worden zu sein. Folgendes ist darauf zu lesen: "Habe die Schnauze voll von den Moskitos. Treff mich dort, wo ich dir meine Liebeserklärung gemacht habe. Moulder."
+		</action>
+		<end>
+			Ooohh oh oh oh oh! Moulder, mein Liebling! Ich fühl mich dir so nah wie nie zuvor!
+		</end>
+		<xp v="20"/>
+		<gold v="1000"/>
+	</m>
+
+	<m group="skull" id="skul3" name="Fräulein Bao" cond="mission(skul2)">
+		<begin>
+			Oh oh oh! Mir ist gerade etwas durch den Kopf gegangen... etwas Problematisches. Selbst wenn ich Moulder finde wird er unsere Begegnung wieder vergessen und erneut weggehen, um irgendwo auf mich zu warten. Du musst unbedingt eine Lösung für dieses Problem finden, bevor du Moulder aufsuchst. Besuche mal dieses liebe Fräulein Bao. Sie hat bestimmt eine Lösung!
+		</begin>
+		<goto v="baobob"/>
+		<talk v="Fräulein Bao???" gfx="baobob">
+			Wie bitte??? Fräulein Bao?? Aber nein... für wen hältst du mich eigentlich?.......... Aber wenn du meine Schwester suchst, die ist gerade beim Enkel des Erzdorogon: Dem "Ehrwürdigen", wie er jetzt genannt werden möchte... Übrigens, wenn das sein Vater erfährt, dann wird das ein Donnerwetter geben...
+		</talk>
+		<goto v="vener"/>
+		<talk v="Fräulein Bao" gfx="baobabe">
+			Wie bitte?!! Fräulein Bao?? Na gut... das ist jetzt schon eine Ewigkeit, dass man mich nicht mehr so genannt hat. Ich bitte dich, junger Mann, nenn mich doch einfach beim Vornamen: "Babe"...
+		</talk>
+		<talk v="Bao Babe" gfx="baobabe">
+			Du suchst also meinen Rat? Hör zu, ich muss zuerst meine Damenpartie mit dem Enkel des Erzdorogon zu Ende bringen. Ich musste seinem Großvater versprechen, ihm ab und zu Gesellschaft zu leisten... Was hältst du davon, ein paar Goblins zu jagen, bis ich hier fertig bin?
+		</talk>
+		<kill v="goblin" n="10" name="Ein paar Goblins jagen"/>
+		<talk v="Bao Babe" gfx="baobabe">
+			Nun denn! Ich bin fertig! Ich habe ihn vernichtend geschlagen hi hi hi! Ich liiiebe es, wenn er sich aufregt! Er ist so süß, wenn seine Nasenflügel vom Wasserdampf zu beben beginnen! Aber du wolltest mich doch um Rat fragen?
+		</talk>
+		<talk v="Bao Babe" gfx="baobabe">
+			..........Ach? Wirklich? ..... Die Lösung für diese Art von Fluch ist ganz einfach: Es genügt, dass jemand immer etwas von Skully bei sich trägt, um sie nicht zu vergessen... Bis bald, junger Mann!
+		</talk>
+		<end>
+			Oh oh oh oh oh! Das ist ja mal eine gute Lösung für meinen positiven Fluch! Hier, nimm das. So wirst du weder den Weg zum Friedhof noch deine geliebte Skully vergessen oh oh oh!
+		</end>
+		<xp v="10"/>
+		<gold v="500"/>
+		<fx v="skull"/>
+	</m>
+
+	<m group="skull" id="skul4" name="Die störenden Touristen" cond="mission(skul3)">
+		<begin>
+			"Triff mich dort, wo ich dir meine Liebeserklärung gemacht habe." Oh oh oh oh! Mein Moulder hat ein richtiges Herz aus Gold! Ich werde diesen köstlichen Ort, an den er uns geführt hat, als wir noch jung waren, nie vergessen... Und diesen Moment, als er mir eine gut gegrillte Bratwurst hingehalten und um meine Hand angehalten hat!
+		</begin>
+		<goto v="rashpk" hide="1"/>
+		<talk v="Würstchenverkäufer" gfx="merguez">
+			Ein seltsamer Kunde? Ja, ich habe einen ziemlich dürren Typen gesehen, der zum Essen hierher gekommen ist und dabei die ganze Zeit vor sich hingeseufzt hat... Er ist in die Ruinen gegangen, um dort spazieren zu gehen. Sei vorsichtig, wir haben etwas spezielle Touristen zur Zeit...
+		</talk>
+		<actfight act="Die Ruinen aufsuchen" monsters="baraba:bamboo">
+			<begin m="baraba">
+				Möge die Macht des Bambooz mit mir sein! Nieder mit den Ungläubigen!
+			</begin>
+			<win>Bevor er zusammenbricht haucht Barabor noch folgende Wörter: "Wir haben euren Freund gefangen. Er wird mit unserem Schiff in die Steppen gebracht, wo wir ihn als Sklave verkaufen werden!"</win>
+		</actfight>
+		<goto v="port"/>
+		<action v="Ein Verdächtiges Boot suchen">
+			Nach einigem Suchen findest du ein Boot am Kai, das definitiv komisch aussieht.
+		</action>
+		<actfight act="Das Boot betreten" bg="dome" monsters="baratr:bamboo">
+			<begin m="baratr">
+				Möge die Macht des Bambooz mit mir sein! Ich werde meinen Bruder rächen!!!
+			</begin>
+			<win>Nachdem du die Banditen besiegt hast befreist du einen gefesselten Mann an Bord...</win>
+		</actfight>
+		<talk v="Befreiter Mann">
+			Daaa Daaaanke!! Ich ich ich, ich hatte se-se-sehr große A-a-angst, wissen Sie! Moulder?? Nein, nein, ich heiße Jean-Claude...Ich ich bin ein Freund des Wü-Wü-Würstchenverkäufers! Da-danke jedenfalls für ih-ih-ihre Hilfe!
+		</talk>
+		<goto v="rashpk" hide="1"/>
+		<talk v="Würstchenverkäufer" gfx="merguez">
+			Du hast Jean-Claude gerettet? Ah! Vielen Dank. Diese Banditen aus der Steppe haben den Touristenaufschwung in den Ruinen wirklich gestört. Ich weiß nicht, wie ich Ihnen danken soll!...Moulder? Er hat mir versprochen zurückzukehren, wenn ich ihm ein paar Napalm-Garnelen zubereite, aber ich kenne das Rezept nicht...
+		</talk>
+		<end>Oh oh oh! Moulder ist nicht weit weg. Vielen Dank für deine Hilfe, mein junger Freund!</end>
+		<xp v="40"/>
+		<gold v="2000"/>
+	</m>
+
+	<m group="skull" id="skul5" name="Napalm-Garnelen" cond="mission(skul4)">
+		<begin>
+			Napalm-Garnelen? Oh oh oh oh! Was für eine angenehme Erinnerung ich an dieses köstliche Gericht habe! Also gut, du musst mir eine bestimmte Anzahl an Zutaten bringen, damit ich das zubereiten kann...
+		</begin>
+		<talk v="Skully" gfx="skully">
+			Also, zunächst brauche ich selbstverständlich gute Garnelen. Du findest welche auf dem Markt im Unterwasserdom! Beeil dich!
+		</talk>
+		<goto v="dome"/>
+		<talk v="Garnelenhändler">
+			Es tut mir Leid, aber aufgrund mehrerer Betrügereien nehme ich keine Goldmünzen für meine Garnelen mehr an. Sie müssen mir 3 Schatzgutscheine bringen...
+		</talk>
+		<use v="tix" n="3"/>
+		<talk v="Garnelenhändler">
+			Dankeschön. Hier sind Ihre Garnelen! Guten Appetit!
+		</talk>
+		<goto v="skull"/>
+		<talk v="Skully" gfx="skully">
+			Oh oh oh! Wun-der-bar! Diese Garnelen sind unglaublich frisch! Nun denn, machen wir weiter. Zweite unverzichtbare Zutat: Napalm. Um welches herzustellen brauchen wir richtig gute Lava.
+		</talk>
+		<goto v="fosslv"/>
+		<talk v="Lässiger Schamane" gfx="shaman">
+			Napalm? Hhmm... Dafür brauchst du eine Mischung halb Lava, halb Flamme. An Lava mangelt es hier nicht, darum bring mir 5 Dosen Flammen, damit ich die Mischung für dich herstellen kann...
+		</talk>
+		<use v="flamch" n="5"/>
+		<talk v="Lässiger Schamane" gfx="shaman">
+			A glu! A glu! A gadagagu glu! Hier hast du es, noch ganz warmes und nicht zu dickflüssiges Napalm für dich...
+		</talk>
+		<goto v="skull"/>
+		<talk v="Skully" gfx="skully">
+			Oh! Oh oh oh! Was für ein hervorragendes Napalm! Aber das Rezept ist erst dann vollständig, wenn man noch eine ab-so-lut notwendige Zutat hinzufügt... Die Haare von einem gut genährten Korgonen! Normalerweise müssten sich die bei der Großen Dauerhitze finden lassen. Aber pass auf, dass du nicht jemandem das Essen stiehlst. Du könntest es ansonsten bereuen!
+		</talk>
+		<goto v="vener" title="Einen Korgonen suchen"/>
+		<actfight act="Einen Korgonen suchen" monsters="korgon">
+			<begin m="korgon">Kwwiiiiiiik!!!</begin>
+			<win>Du hast einen richtig fetten Korgonen gefangen und hoffst, dass er nicht als Mahlzeit von jemand anderem bestimmt war!</win>
+		</actfight>
+		<goto v="skull"/>
+		<talk v="Skully" gfx="skully">
+			Oh oh oh oh! Ich rühre und rühre!!! Und voila! Eine köstliche Portion Napalm-Garnelen!
+		</talk>
+		<end>
+			Danke für deine Hilfe! Oh oh oh! Bald werde ich meinen zärtlichen Moulder wiedersehen!
+		</end>
+		<xp v="30"/>
+		<gold v="5000"/>
+	</m>
+
+	<m group="skull" id="skuend" name="Das Stelldichein" cond="mission(skul5)">
+		<begin>
+			Deine Mission nähert sich ihrem Ende... Bring dieses Napalm Garnelen-Gericht meinem lieben Moulder. Er wird meine Kochkunst wiedererkennen und zu mir zurückkommen! Oh oh oh!
+		</begin>
+		<goto v="rashpk"/>
+		<talk v="Würstchenverkäufer" gfx="merguez">
+			Ooooohh!! Das sind also die berühmten Napalm-Garnelen?!? Lass  mal kosten... hhmm... da fehlt etwas Fett, aber es ist sehr köstlich Keine Frage, Moulder wird bald hier aufkreuzen... Na, da ist er ja schon!
+		</talk>
+		<lock/>
+		<end>
+			Ooooooooh! Oh! Oh oh oh! Moulder ist zurückgekehrt!!! Vielen Dank!!
+		</end>
+		<xp v="10"/>
+	</m>
+
+</missions>

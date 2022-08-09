@@ -1,0 +1,49 @@
+﻿<!-- ***************************************************************************** -->
+<!-- Nox, Dorogon, habitant de la cité Dorogon ----->
+
+<d place="ville2" name="Nox" gfx="nox" cond="scenario(nimba2,50-)">
+	<phase id="begin" next="ramolo" fast="1" frame="stop">
+		Un imponente Dorogón se cruza en tu camino.
+		Más grande y más fuerte que los otros, te mira de arriba a abajo.
+	</phase>
+	
+	<a id="ramolo">Buenos días Maestro Dorogón.</a>
+	
+	<phase id="ramolo" next="ok:baston">
+		[Siempre estoy en búsqueda de un combatiente de élite para medir mi fuerza.]
+		[Debemos ser los más poderosos del mundo, la invasión de Caushemesh llegará tarde o temprano, ¡hay que estar preparados!]
+		[Pistache, si no haces un esfuerzo, serás débil toda la vida.
+		¡Hay que ser recio, si un día quieres ser mejor que tu padre y convertirte en un Archidorogón digno de ese nombre!]
+	</phase>
+	
+	<a id="ok">(Pistache, ¿Archidorogón? jaja...)</a>
+	
+	<phase id="ok" frame="stop" fast="1">
+		Te alejas, ese Dorogón, a diferencia de otros, es más agresivo.
+		Más vale no darle mucha cuerda.
+	</phase>
+	
+	<a id="baston" cond="scenario(nimba2,31)">¡Puedo desafiar tu fuerza!</a>
+	
+	<phase id="baston" next="bravo" give="ptsage" scenario="nimba2:32" fightgroup="dorou">
+		[Enhorabuena, has logrado doblegarme.]
+		[Tal vez vosotros, habitantes de la superficie podréis resistir mejor y más tiempo las turbas Caushemeshianas.
+		Un día lograremos deshacernos de esa plaga de una vez por todas.]
+		[De todos modos te entrego este punto de sabiduría.]
+	</phase>
+	
+	<a id="bravo">¡Muchas gracias!</a>
+	
+	<phase id="bravo" frame="stop" fast="1">
+		Te marchas, visiblemente no estima a los Caushemeshianos.
+		¿La situación es tan crítica como parece?
+		Ahora tienes 3 puntos de sabiduría, ¡solo te faltan 2!
+	</phase>
+</d>
+
+<d place="ville2" name="Nox" gfx="nox" cond="scenario(nimba2,51+)">
+	<phase id="begin" fast="1" frame="stop">
+		Hola Maestro de Dinos.
+		Soy el nuevo guardaespaldas del Archidorogón Pistache, a decir verdad, mi rol consiste principalmente a protegerlo de él mismo...
+	</phase>
+</d>

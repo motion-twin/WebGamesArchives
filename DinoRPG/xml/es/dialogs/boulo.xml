@@ -1,0 +1,59 @@
+<!-- ***************************************************************************** -->
+<!-- Boulo, Nimbao l'île volante ----->
+	
+<d place="ipont" name="Soldado de Grizorg" gfx="boulo" cond="scenario(nimba2,50-)">
+	<phase id="begin" next="non:non2:oui:mot" dialect="arbori">
+		[Hola. Me llamo Curro. ¡No es fácil tener este nombre cuando te pasas la vida currando!]
+		[Soy guardia desde hace 10 años. Ya se me está empezando a hacer un poco largo.
+		¡Espero tener un día de vacaciones pronto!]
+		En fin, no nos desviemos de tema. ¡El caso es que soy el guardia del puente y debo impedir el paso a todo el mundo!
+	</phase>
+	
+	<a id="non" cond="scenario(nimbao,24)">No entiendo lo que dice.</a>
+	<a id="non2" cond="scenario(nimbao,25+)">¿...?</a>
+	<a id="oui" cond="uvar(dicarb)">¿Nunca has dejado pasar a nadie?</a>
+	<a id="mot" cond="scenario(nimbao,34)"> ¿vcbdr QpObmc?</a>
+	
+	<phase id="oui" dialect="arbori">
+		Desde que Mandrágora regresó a la isla, todo el mundo está en alerta y se ha declarado un toque de queda.
+		Está prohibido desplazarse sin autorización. Lo malo de todo esto es que aquí no pasa nada y me aburro...
+	</phase>
+	
+	<phase id="non" fast="1" frame="stop" scenario="nimbao:25">
+		Le ignoras y continúas tu camino. Parece que no va a detenerte, pero no pretende dejarte continuar...
+	</phase>
+	
+	<phase id="non2" fast="1" frame="stop">
+		Le ignoras y continúas tu camino. Parece que no va a detenerte, pero no pretende dejarte continuar...
+	</phase>
+	<phase id="mot" fast="1" frame="stop">
+		Ha entendido lo que has dicho, pero no hay ninguna palabra coherente que salga de sus labios...
+	</phase>
+</d>
+
+<d place="icite" name="Soldado de Grizorg" gfx="boulo" cond="scenario(nimbao,28+)+scenario(nimbao,32-)">
+	<phase id="begin" next="non" dialect="arbori">
+		Hola:
+		[Me llamo Curro. ¡No es fácil tener este nombre cuando te pasas la vida currando!]
+		[Soy guardia desde hace 10 años. Ya se me está empezando a hacer un poco largo.
+		¡Espero tener un día de vacaciones pronto!]
+		En fin, no nos desviemos de tema. ¡El caso es que soy el guardia del puente y debo impedir el paso a todo el mundo!
+	</phase>
+	
+	<a id="non" >Entonces... no puedo pasar.</a>
+
+	<phase id="non" fast="1" frame="stop">
+		Le ignoras y continúas tu camino. Parece que no va a detenerte, pero no pretende dejarte continuar...
+	</phase>
+</d>
+
+
+<d place="ipont" name="Curro" gfx="boulo" frame="happy" cond="scenario(nimba2,51+)">
+	<phase id="begin">
+		Hola a todos
+		[Me llamo Curro, no es un nombre fácil de llevar, ¡pero el trabajo es salud!]
+		[Soy guardia desde hace 10 años, ahora soy oficial de bienvenida de los turistas que vienen a visitar nuestra bella isla.
+		¡Y a veces, se toman fotos conmigo!]
+	</phase>
+</d>
+	

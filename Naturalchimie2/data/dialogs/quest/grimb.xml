@@ -1,0 +1,41 @@
+<d place="kirvie" name="Demander un grimoire" gfx="gudkeeper" auto="0">
+
+<phase id="begin" next="grim">
+Ouuuiiiiii ? Que désires-tu ?
+</phase>
+
+<a id="grim">Euh, bonjoouuuu.. Pardon. Bonjour. Je viens chercher un grimoire. </a>
+
+<phase id="grim" next="app">
+Je voiiiiis, oouiiiii. Attends ici quelques iiiiinstants.
+</phase>
+
+<phase id="app" next="tenez" off="1" frame="hide">
+Après 10 minutes d'attente , vous entendez le drôle de type revenir.
+</phase>
+
+<phase id="tenez" next="vide" frame="happy" collection="book">
+Tiens. Voilàààààà pour toiiiii. 
+</phase>
+
+<a id="vide">Merci... * Eh ! * Mais ! C'est tout vide. Il n'y a que des  pages blanches ! </a>
+
+<phase id="vide" next="com">
+Bien sûûûr. C'est à toi de le rempliiiiir. C'est toooiiii l'alchimiste ici, nooooon ? 
+</phase>
+
+<a id="com">Ben il paraît. Mais on fait comment ? </a>
+
+<phase id="com" frame="happy" next="add">
+Ecouteeee, je n'ai pas le temps de t'expliqueeeeer tout ça. Prend cette [recette] et monteeee à la salle du chaudron.
+Tu pourras  essayeeeer ton grimoire et poser tes questiooooons aux gardiens. C'est leur boulooooot. 
+Au revoooiiiiir. 
+</phase>
+
+<phase id="add" recipe="feuila" off="1" frame="hide">
+La recette {Chlorophyzzz} a été ajoutée à ton grimoire ! Rends-toi à la [salle des chaudrons] pour la tester.
+</phase>
+
+</d>
+
+

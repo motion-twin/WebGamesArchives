@@ -1,0 +1,92 @@
+﻿<!--  QUETE DE l'appeau : permet l'accés au Dome Soulaflotte -->
+
+<d place="chutes" name="Garde Atlante" gfx="apostoph" cond="admin()|fx(bouee)">
+
+	<phase id="begin" next="rasca:thanks">
+		L'accès au Dôme Soulaflotte n'est possible qu'en utilisant un Rascaphandre.
+	</phase>
+
+	<a id="rasca"cond="!fx(rasca)">Un quoi ?!?</a>
+	<a id="thanks" cond="fx(rasca)">Ok, merci !</a>
+
+	<phase id="rasca" next="where:thanks">
+		Un Rascaphandre est un gros poisson avec des arêtes creuses. Il est capable de stocker une grande
+		quantité d'oxygène et ainsi d'emmener son maître jusqu'aux profondeurs où se situe le Dôme Soulaflotte,
+		sans que celui-ci ne meure asphyxié.
+	</phase>
+
+	<a id="where">Vous savez où je peux en trouver un ?</a>
+
+	<phase id="where" next="call:thanks">
+		Les Rascaphandres sont nombreux dans les eaux des alentours, il faut juste savoir les appeler.
+	</phase>
+
+	<a id="call">Super !... Heu... vous avez leur numéro ?</a>
+
+	<phase id="call" next="appeau:thanks">
+		(soupir)... En fait, il faut un objet particulier : un appeau à Rascaphandre. C'est une petite flûte que l'on plonge
+		dans l'eau et qui imite les ondes du grand requin noir maléfique des abysses pestilentielles, le repas préféré des Rascaphandres. Ils se précipitent alors et vous pouvez en utiliser un pour vous rendre au Dôme.
+	</phase>
+
+	<a id="appeau">Un Appeau...</a>
+
+	<phase id="appeau" next="old:thanks">
+		Oui. L'appeau à Rascaphandre est fabriqué avec des arêtes de vieux Rascaphandre. Mais plus ils sont vieux, plus
+		ils ont mauvais caractère et ils deviennent alors très dangereux...
+	</phase>
+
+	<a id="old">Uhm...</a>
+
+	<phase id="old" next="thanks" effect="jvbz">
+		J'ai un ami pêcheur au Port de Prêche, si vous n'avez pas peur du danger, je peux lui demander de vous emmener chasser
+		le vieux Rascaphandre géant... Allez le voir de ma part, il s'appelle Jovébozé.
+	</phase>
+
+	<phase id="thanks">
+		Je vous souhaite un bon séjour sur les Iles Atlantéinées.
+	</phase>
+
+</d>
+
+<d place="port" name="Jovébozé" gfx="joveboze" cond="fx(jvbz)">
+
+	<phase id="begin" next="trad:sry">
+		Ol'a el chti ga ! Té vi laté du viou Rasca ?
+	</phase>
+
+	<a id="sry">... pardon ?!?</a>
+	<a id="trad">Aller chercher un traducteur</a>
+
+	<phase id="trad" fast="1">
+		Personne ici ne semble comprendre ce que dit Jovébozé. D'après les informations que vous avez
+		recueillies, il s'agirait d'un dialecte local de Prêcheurs, voire d'un dialecte spécifique à
+		Jovébozé...
+	</phase>
+
+	<phase id="sry" next="go:trad">
+		Sité popré ven pa, sino mot'dan lobatou, k ?
+	</phase>
+
+	<a id="go">Suivre Jovébozé</a>
+
+	<phase id="go" next="attack:back" fast="1">
+		Jovébozé vous emmène en mer dans un coin que les bateaux semblent éviter... En vous approchant, vous voyez
+		ce qui semble être un énorme Rascaphandre à quelques dizaines de mètres de la barque. Si vous continuez dans cette
+		direction et si le Garde Atlante disait vrai, vous serez surement attaqué... Il faut faire vite !!!
+	</phase>
+
+	<a id="attack">Continuer</a>
+	<a id="back" target="attack">RECULER !!!</a>
+
+	<phase id="attack" fight="rasca" bg="rasca" noeffect="jvbz" effect="rasca" fast="1">
+		Bien entendu, Jovébozé n'a rien compris a vos instructions...
+		Après votre fier combat, il vous ramène au Port de Prêche. Il n'a pas décroché un mot depuis l'attaque du
+		Rascaphandre mais il vous observe du coin de l'oeil, l'air satisfait. Au moment de vous séparer, il vous
+		serre la main vivement, en guise d'encouragement pour la suite de vos aventures. Il vous confie un Appeau
+		a Rascaphandre qu'il a sculpté...
+	</phase>
+
+</d>
+
+
+

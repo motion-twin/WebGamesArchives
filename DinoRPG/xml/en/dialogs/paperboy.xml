@@ -1,0 +1,46 @@
+<d place="dnv" name="Newspaper Seller" gfx="paperboy" cond="active(gazette)+scenario(intro,1+)">
+
+	<phase id="begin" fast="1" next="talk:notalk" frame="stop">
+		On a random street corner in Dinotown, you see someone shouting and gesturing wildly,
+		it's impossible not to notice him, in fact it's tiring just watching him, what on earth could this maniac want ?
+		Maybe if you go a little closer, you might find out...
+	</phase>
+
+	<a id="talk">...Hello ?</a>
+	<a id="notalk">Flee! Far, far away from the nutcase !</a>
+	
+	<phase id="talk" next="cagaz">
+		READ ALL ABOUT IT, THE DINOTOWN GAZETTE IS OUT NOW !
+		READ THE DINOTOWN LINEN AND YOU'LL KNOW ALL ABOUT DINOLAND AND THE DINOZ MASTERS WHO EXPLORE IT !
+	</phase>
+	
+	<phase id="notalk" fast="1" frame="stop">
+		At least you've escaped, maybe he was going to swallow you in that gigantic north of his...
+	</phase>
+	
+	<a id="cagaz">A gazette ?</a>
+	
+	<phase id="cagaz" next="ok">
+		WRITTEN BY THE DINOZ MASTERS THEMSELVES, AND YES SIRREE BOB,
+		YOU'RE READING IT STRAIGHT FROM THE HORSES MOUTH -KINDA !
+		ALL YOU NEED TO DO IS CLICK ON THE "GAZETTE" BUTTON ON THE MENU ON THE RIGHT THERE !
+		IT'S NOT ROCKET SCIENCE !
+	</phase>
+	
+	<a id="ok">Any chance of you making just a little less noise ?</a>
+	
+	<phase id="ok" next="fin">
+		OK THEN, I'LL LEAVE YOU TO IT, DON'T FORGET, THERE'S A NEW EDITION EVERY MONTH,
+		EXCEPT WHEN THEY'RE ON STRIKE...
+	</phase>
+	
+	<a id="fin">THANKS ! Let's take a look at this...</a>
+	
+	<phase id="fin" fast="1" frame="stop">
+		Did you know that the DinoRPG gazette was available ? Well you do now,
+		so you've got no excuse for not making the most of it, just head over to the Gazette page.
+		See you there !
+	</phase>
+	
+</d>
+

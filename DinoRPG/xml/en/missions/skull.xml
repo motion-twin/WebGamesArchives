@@ -1,0 +1,222 @@
+﻿<missions>
+
+	<m group="skull" id="skul1" name="Prologue">
+		<begin>
+			Years ago when we were living together, Moulder was affected by my curse. He forgot me instantly. It's not my fault, I have no way of controlling the curse.
+			After he forgot me, Moulder moved far, far away, the ruffian! I'm sure he's still in contact
+			with his nephew Little Joe. Go and see him, make sure to keep me informed!
+		</begin>
+		<goto v="papy" hide="1"/>
+		<talk v="Grandpa Little Joe" gfx="papy">
+			Uncle Moulder? It's been a long time since I've heard from him.
+			If you want to know more, bring me three Goblin Merguez from the Big All-Hot!
+		</talk>
+		<use v="mergz" n="3"/>
+		<talk v="Grandpa Little Joe" gfx="papy">
+			Thanks! (munch, munch) all I know is that Uncle Moulder loved his
+			wife. He engraved a message for her on the Fountain of Youth.
+		</talk>
+		<goto v="fountj"/>
+		<action v="Read the Message">
+			On one of the engravings on the Fountain of Youth, you read the following message:
+			"I'll be waiting for you at the place we first met"
+		</action>
+		<end>
+			Thanks. This information is priceless. My dear Moulder can't be far away, we'll be together again soon!
+		</end>
+		<xp v="10"/>
+	</m>
+
+	<m group="skull" id="skul2" name="On Moulder's Trail" cond="mission(skul1)">
+		<begin>
+			"I'll be waiting for you at the place we first met" Oh oh oh oh! My Moulder is so romantic!
+			I hope he's still waiting there for me! Go quickly to the magnificient place filled
+			with the odour of waterillies where we first met and bring me back my love!
+		</begin>
+		<goto v="marais" hide="1"/>
+		<talk v="A Stuck Tourist">
+			I'm sick of this sh... Swamp!!!!! It's the third time our Motor-Home has got stuck here, what a dumb idea to come on VACATION IN A SWAMP!!! What? Have I seen someone called Moulder? Ah! Yes, he was going to an Anonymous Eeloz Association meeting! Be careful is you decide to go too, they can be very touchy....
+		</talk>
+		<actfight act="A.E.A. Assembly" monsters="anguil:anguil">
+			<begin>As you are approaching, some Eeloz notice your Dinoz and attack!</begin>
+			<win>After defeating the Eeloz, you notice some steep tracks heading towards the west....</win>
+		</actfight>
+		<goto v="chutes" hide="1"/>
+		<talk v="Fisherman">
+			This is a good place to fish. Fish come here to see the levitating monks ... A guy named Moulder?
+			I know him well: He went to Piranhoz Bay to go fishing. Take care man, those guys bite.
+		</talk>
+		<actfight act="Piranhoz Bay" monsters="pira:pira:pira:pira:pira:pira">
+			<begin>
+				After entering the bay, many Piranhoz rush to bite you. Who would want to fish here???</begin>
+			<win>Once you've defeated the Piranhoz, you take a look around. If Moulder was fishing here, he's certainly not here anymore.</win>
+		</actfight>
+		<talk v="Fisherman">
+			Moulder? He left, he told me he was going back to wait for his wife at the Swamp. Poor guy, he hasn't seen her in years. If I were him I'd be happy about that! Ha Ha!
+		</talk>
+		<goto v="marais"/>
+		<action v="Sign">
+			A sign seems to have been placed near a bed of waterlilies. The sign reads:
+			"I'm sick of these mosquitos, meet me where I declared my love for you. Moulder x."
+		</action>
+		<end>
+			Oh! My dear Moulder! I feel closer to you than ever!
+		</end>
+		<xp v="20"/>
+		<gold v="1000"/>
+	</m>
+
+	<m group="skull" id="skul3" name="Miss Bao" cond="mission(skul2)">
+		<begin>
+			Oh no! I've just realised something that could be a problem. Even if I find Moulder, he'll forget meeting me
+			again and will go somewhere else to wait for me. You must find a solution before
+			I see Moulder. Go and see Miss Bao, she should have a solution!
+		</begin>
+		<goto v="baobob"/>
+		<talk v="Miss Bao???" gfx="baobob">
+			What??? Miss Bao?? No ... don't you know who I am? .......... If you're looking for my sister,
+			she's with the grandson of the ArchDorogon: "The Venerable" as he likes to be called
+			nowadays. If his father finds out that he likes to be called that, there'll be trouble.
+		</talk>
+		<goto v="vener"/>
+		<talk v="Miss Bao" gfx="baobabe">
+			What??? Miss Bao?? It's been years since anybody has called me that.
+			Please call me by my first name young man, Babe.
+		</talk>
+		<talk v="Bao Babe" gfx="baobabe">
+			If you want my advice, I'm afraid you're going to have to wait for a while. I need to finish my game of Draughts with the ArchDorogon's grandson.
+			His grandfather made me promise to visit his grandson from time to time to keep him company. Why don't you go and hunt some goblins whilst you wait?
+		</talk>
+		<kill v="goblin" n="10" name="Hunt Goblins"/>
+		<talk v="Bao Babe" gfx="baobabe">
+			Finished! I beat him hands down. Hi hi hi! I love to make him lose his temper, he's so
+			cute when his nostrils flare and start to blow vapour! You said you needed some advice?
+		</talk>
+		<talk v="Bao Babe" gfx="baobabe">
+			Right. The solution to this kind of problem is really simple: Moulder must keep a piece of Skully with
+			him at all times so that he never forgets her. See you later young man!
+		</talk>
+		<end>
+			Oh! Here's a nice solution for my problem! Here, take this, now you'll never forget
+			the way to the cemetary, nor your dear Skully!
+		</end>
+		<xp v="10"/>
+		<gold v="500"/>
+		<fx v="skull"/>
+	</m>
+
+	<m group="skull" id="skul4" name="The Annoying Tourists" cond="mission(skul3)">
+		<begin>
+			"Meet me where I declared my love for you" Oh oh oh oh! My dear Moulder has
+			a heart of gold! I'll never forget the place where he
+			took us, while we were still young. Nor the moment
+			he gave me a well grilled merguez and asked me if I would marry him!
+		</begin>
+		<goto v="rashpk" hide="1"/>
+		<talk v="Merguez Seller" gfx="merguez">
+			A strange customer? Yeah, there was a thin-looking guy who was here a while ago,
+			he was letting out a lot of sighs. I remember he was on his way to the ruins.
+			Be careful! There are some strange tourists around.
+		</talk>
+		<actfight act="Visit the Ruins" monsters="baraba:bamboo">
+			<begin m="baraba">
+				May the Bambooz power be with me! Come on!
+			</begin>
+			<win>Before collapsing, Barababor whispers the following words: "We've captured your friend: he will be taken to our native steppes by boat, where he will be sold into slavery!"</win>
+		</actfight>
+		<goto v="port"/>
+		<action v="Search for the strange boat">
+			After searching for a while, you finally find a strange-looking boat that matches your description.
+		</action>
+		<actfight act="Board the Boat" bg="dome" monsters="baratr:bamboo">
+			<begin m="baratr">
+				May the Bambooz power be with me! I will avenge my brother!!!
+			</begin>
+			<win>After defeating the bandits, you free a hostage who was tied-up in the boat....</win>
+		</actfight>
+		<talk v="Freed Man">
+			Thhh Thhaannkksss!! I hahahave hahad fefefear you know! Moulder?? Nono, my nananame is Jean-Claude.
+			I am a friefriend of the mermerguez seller! Ththanks anayway fofor your help!
+		</talk>
+		<goto v="rashpk" hide="1"/>
+		<talk v="Merguez Seller" gfx="merguez">
+			You saved Jean-Claude? Ah!! Thanks a lot. Those steppes bandits ruined the Ruins' tourist industry
+			I don't know how to thank you! Moulder? He promised to come back if I prepared him some Napalm shrimps, but I don't know the recipe.
+		</talk>
+		<end>I can feel Moulder coming closer, thanks a lot for your help my young friend!</end>
+		<xp v="40"/>
+		<gold v="2000"/>
+	</m>
+
+	<m group="skull" id="skul5" name="Napalm Shrimp" cond="mission(skul4)">
+		<begin>
+			"Napalm Shrimp"? Oh! That brings back sweet memories, what a delicious dish!
+			You'll have to bring me specific ingredients so that I can properly prepare it.
+		</begin>
+		<talk v="Skully" gfx="skully">
+			Well, first of all, I need some shrimp. You can find some
+			at the Underwater Dome Market! Go quickly!
+		</talk>
+		<goto v="dome"/>
+		<talk v="Shrimp Merchant">
+			I'm sorry but following recent fraudulent transactions, I no longer accept gold coins as
+			payment for my shrimp. You'll have to bring me 3 Treasury Notes....
+		</talk>
+		<use v="tix" n="3"/>
+		<talk v="Shrimp Merchant">
+			Thanks, here are your shrimp! Bon appetit!
+		</talk>
+		<goto v="skull"/>
+		<talk v="Skully" gfx="skully">
+			Oh oh oh! Ma-gni-fi-cient! These shrimp are so fresh! Now that we've got some shrimp, we need to gather the next ingredient.
+			Some Napalm. To make it, we need some good quality lava.
+		</talk>
+		<goto v="fosslv"/>
+		<talk v="Soft Shaman" gfx="shaman">
+			Some Napalm? Mmmm ... you'll need to make a mixture of half-lava, half-flamelets.
+			We have loads of lava here, so all you need to get are 5 boxes of Flamelets in order to prepare the mixture.
+		</talk>
+		<use v="flamch" n="5"/>
+		<talk v="Soft Shaman" gfx="shaman">
+			Glou glou! Here you are, some low density Napalm is ready and waiting for you.
+		</talk>
+		<goto v="skull"/>
+		<talk v="Skully" gfx="skully">
+			Oh! Superb Napalm! But the recipe can't be completed without adding
+			a vitally important ingredient. Some fatty Korgon's hair! You can often find some
+			near the Big All-Hot, but make sure you don't end up stealing someone's dinner or else you'll live to regret it!
+		</talk>
+		<goto v="vener" title="Search for a Korgon"/>
+		<actfight act="Search for a Korgon" monsters="korgon">
+			<begin m="korgon">Kwwiiiiiiik !</begin>
+			<win>You've captured a fatty Korgon. Let's hope it wasn't someone else's dinner!</win>
+		</actfight>
+		<goto v="skull"/>
+		<talk v="Skully" gfx="skully">
+			Stir stir! Here we are! A magnificient dish of Napalm Shrimp!
+		</talk>
+		<end>
+			Thanks for your help! I can't wait to see my dear Moulder again!
+		</end>
+		<xp v="30"/>
+		<gold v="5000"/>
+	</m>
+
+	<m group="skull" id="skuend" name="The Reunion" cond="mission(skul5)">
+		<begin>
+			Your mission has reached it's conclusion. Take the Napalm Shrimp to my dear Moulder.
+			He will recognise my cooking and will come back to me immediately! Oh oh oh! I can't wait for him to return!
+		</begin>
+		<goto v="rashpk"/>
+		<talk v="Merguez Seller" gfx="merguez">
+			Ooooohh!! So these are the famous Napalm Shrimp?!? Let's see ... mmmm ... it's missing a bit of fat but
+			it's still incredibly succulent. Without a doubt Moulder sill arrive soon. Ahhhh! Look who's coming!
+		</talk>
+		<lock/>
+		<end>
+			Ooooooooooooooohhh! He's back, he's back! My dear Moulder is back!!! Thank you so much for all your help young man!!
+		</end>
+		<xp v="10"/>
+	</m>
+
+</missions>

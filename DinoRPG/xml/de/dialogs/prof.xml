@@ -1,0 +1,146 @@
+﻿<!--	QUETE DU PROFESSEUR : bouee & materiel d'escalade
+			+ infos sur les différentes zones
+			+ infos sur le gant des zors
+			+ transforme pierre en totem ashpouk
+ -->
+<d place="univ" name="Professor Eugen" gfx="eugene">
+	
+  <phase id="begin" next="talk" fast="1">In der Universitätsbibliothek triffst
+  du den berühmten Professor Eugen. Er ist für sein großes Interesse an den
+  Dinozmeistern bekannt. Er stellt dir oft viele Fragen, aber im Gegenzug kann er dir einige, für deine Dinoz sehr nützliche Techniken beibringen, und er kann dir sehr wichtige Informationen über das Dinoland geben.</phase>
+
+  <a id="talk">Mit Professor Eugen sprechen.</a>
+
+  <phase id="talk"
+  next="question:nothing:nothing2:learn:learn_water:learn_fire:learn_done">Guten
+  Tag junger Mann, na wie läuft's? Die Abenteuer sind bestimmt richtig
+  cool, was? Ach, ich erinnere mich, als ich noch in deinem Alter war, da bin
+  ich kilometerweit im Dinoland umhergeschweift! Zögere nicht, mir Fragen zu
+  stellen, wenn du Hinweise zu den großen Rätseln brauchst. Außerdem kann ich
+  deinem Dinoz einige nützliche Techniken beibringen. Natürlich nur unter der Voraussetzung, dass er bereit dafür ist. Denn meine Ausbildung ist alles
+  andere als gemütlich und dies könnte für deinen Dinoz tödlich enden, wenn er
+  nicht gut genug trainiert ist.</phase>
+
+  <a id="question">Eine Frage stellen</a>
+
+  <!-- APPRENTISSAGE -->
+
+  <a id="nothing" cond="!level(5)">Lernen</a>
+  <a id="learn" cond="level(5)+!fx(bouee)+!fx(matesc)">Lernen</a>
+  <a id="nothing2" cond="!level(7)+(fx(bouee)|fx(matesc))">Lernen</a>
+  <a id="learn_water" cond="level(7)+fx(matesc)+!fx(bouee)">Lernen</a>
+  <a id="learn_fire" cond="level(7)+fx(bouee)+!fx(matesc)">Lernen</a>
+  <a id="learn_done" cond="fx(bouee)+fx(matesc)">Lernen</a>
+
+  <phase id="nothing">Gut, setz dich hier hin und setz deinen Dinoz
+  dorthin...Voila, perfekt. (er holt eine kleine Lampe aus seiner Tasche
+  hervor)...Die Pupillen reagieren richtig...Lass mich mal einen Blick auf
+  sein Gebiss werfen, mach mal "Aaaahhh!"...Mmhhmm...dein Dinoz ist noch ein
+  wenig jung...Im Moment kann ich ihm noch nichts beibringen. Suche mich
+  wieder auf, sobald dein Dinoz Level 5 erreicht hat.</phase>
+
+  <phase id="nothing2">So, lass uns mal nachsehen...(er untersucht den
+  Dinoz...) Gut, es sieht so aus, als ob sich dein Dinoz im Vergleich zum letzten Mal
+  wirklich verbessert hat. Nichtsdestotrotz ist er noch nicht kräftig
+  genug, um eine zweite Technik zu erlernen...sein Körper würde das nicht
+  verkraften. Ich denke wir sollten Level bis 6 abwarten...Mhhmm, nein, Level 7,
+  das ist sicherer.</phase>
+
+  <phase id="learn" next="water:fire">Was soll das bitte heißen, dein Dinoz
+  möchte eine Technik erlernen? Dazu muss er erst mal gegen ein Monster
+  kämpfen. Ich werde ihn nur trainieren, wenn er diesen Kampf gewinnt. Und
+  überhaupt, welche Technik soll ich ihm beibringen?</phase>
+
+  <a id="water">Das Schwimmen mit einem Schwimmreifen</a>
+  <a id="fire">Das Klettern</a>
+
+  <phase id="water" next="water_fight:back">Sehr gut. Wenn dein Dinoz diesen
+  Kampf gewinnt, werde ich ihm beibringen, den Schwimmreifen zu benützen. 
+  Damit wird er in der Lage sein, kurze Entfernungen im Wasser
+  zurückzulegen.</phase>
+
+  <phase id="fire" next="fire_fight:back">Die Kletterei beherrscht man nicht
+  so leicht, und außerdem braucht man eine Kletterausrüstung, um damit anfangen zu können. Wenn dein Dinoz es schafft, dieses Monster zu besiegen, werde ich
+  ihm die Grundtechniken zeigen und ihm das entsprechende Material geben.
+  Damit dürfte er in der Lage sein, auf den Vulkan der Großen Dauerhitze zu
+  steigen. </phase>
+
+  <a id="water_fight">Kämpfen</a>
+  <a id="fire_fight">Kämpfen</a>
+  <a id="back" target="learn">Zurück</a>
+
+  <phase id="water_fight" fight="ewater" effect="bouee">Bravo, gut gekämpft!
+  Wie versprochen, habe ich deinem Dinoz soeben den Schwimmreifen übergeben.
+  Jetzt müsste er imstande sein, die Atlantinischen Inseln im Süden des Dinolandes zu erreichen. Viel Glück und sei vorsichtig!</phase>
+
+  <phase id="fire_fight" fight="efire" effect="matesc">Bravo, gut gekämpft!
+  Dein Dinoz ist nun im Besitz der Kletterausrüstung. Mit dieser Ausrüstung
+  dürfte er jetzt in der Lage sein, die steilen Vulkanhänge der Großen
+  Dauerhitze hinaufzusteigen. Die Monster dort sind sehr heiß, also pass auf, wenn du dich dort hin begibst!
+ </phase>
+
+  <phase id="learn_water" next="water_fight">Du bist gekommen um den
+  Schwimmreifen zu erhalten, richtig? Du musst zuerst gegen dieses Monster
+  kämpfen, bevor ich ihn deinem Dinoz geben kann.</phase>
+
+  <phase id="learn_fire" next="fire_fight">Du bist gekommen um die
+  Kletterausrüstung zu erhalten, richtig? Um sie zu bekommen, musst du zuerst
+  gegen dieses Monster hier kämpfen.</phase>
+
+  <phase id="learn_done">Ich kann deinem Dinoz nichts mehr beibringen. Aber
+  mach dir keine Sorgen, es gibt andere Personen im ganzen Dinolanduniversum,
+  die ihm eine Menge Techniken beibringen können.</phase>
+
+  <!-- QUESTIONS -->
+
+  <phase id="question" next="dinoville:gtc:atlante:stone:gant:noquestion">Aah,
+  ich liiiebe Fragen! Was willst du wissen, mein Kleiner?</phase>
+
+  <a id="dinoville">Das Königreich von Dinoville</a>
+  <a id="atlante" cond="level(8)">Die Atlantinischen Inseln</a>
+  <a id="gtc" cond="level(5)">Die Große Dauerhitze</a>
+  <a id="gant" cond="fx(gant)">Der Handschuh der Zors</a>
+  <a id="stone" cond="fx(astone)">Dieser Alte Stein?</a>
+  <a id="noquestion">Nichts von all dem</a>
+  <a id="menu" target="question">Zurück</a>
+
+  <phase id="dinoville" next="menu">Das Königreich von Dinoville ist seit den alten Zeiten mehrmals zerstört und wieder aufgebaut worden. Heute ist es ein wohlhabender und zivilisierter Ort, wenn man ihn mit den wilden Orten vergleicht, die an ihn angrenzen. Aus diesem Grund ist Dinoville der perfekte Ort für einen kleinen Dinomeister wie dich! Zögere nicht, deine Dinoz hier gut auszubilden, ehe du sie neue Abenteuer an anderen Orten im Dinoland bestreiten lässt, denn die Monster dort sind viel gefährlicher als hier. </phase>
+
+  <phase id="atlante" next="menu">Lange vor unserer Zeit gab es eine Insel im Süden des Dinolandes. Sie war infolge einer Unterwassereruption auf die Spitze eines Unterwasservulkans geschleudert worden, die sich mehrere hundert Meter über der Meeresoberfläche befand. Man nannte sie die "Jazzinsel"....Allerdings haben Meereswellen das Gestein im Laufe der Zeit nach und nach abgetragen, so dass sie schließlich versank. Ein gigantischer Tsunami hat daraufhin gut die Hälfte des Dinolands verschlungen, wobei ein Großteil der ehemaligen menschlichen Zivilisation ausgelöscht wurde. Nachdem inzwischen einige Jahrhunderte vergangen sind, beginnt Dinoland sich nach und nach wieder zu organisieren. Allerdings bleiben große Teile davon noch immer wild und gefährlich. Um wieder zum Hauptthema zurückzukehren: Die Atlantinischen Inseln sind die Überbleibsel der untergegangenen Jazzinsel. Man erzählt sich, dass sich nur der Klebrige Sumpf nicht verändert hätte. </phase>
+
+  <phase id="gtc" next="menu">Hey mein Kleiner, siehst du das kleine schwarze
+  Dreieck dort im Norden? Das ist ein riesiger Vulkan. Er wird "Große
+  Dauerhitze" genannt. Ich empfehle dir einen kleinen Ausflug dorthin zu
+  machen. Man kann dort sehr gute Würstchen essen, die genau richtig gegrillt
+  sind. Als ich noch jünger war, habe ich viel zu den Ruinen der alten
+  Zivilisationen geforscht. Wusstest du zum Beispiel, dass es auf dem Gipfel
+  der "Großen Dauerhitze" vor Tausenden von Jahren eine Zivilisation von
+  Aschpucks gab? Und dann eines Tages: Boom! Ein Vulkanausbruch, und alles
+  war weg! Findest du das nicht traurig? Jedenfalls empfehle ich dir ein
+  bisschen in den Ruinen herumzugraben. Manchmal findet man dort alte Reliquien.
+  Und vergiss nicht, von den Würstchen zu kosten! </phase>
+
+  <phase id="gant" next="menu">Oh! Der Handschuh der Zors! Das ist ein echt
+  seltener Gegenstand, den dein Dinoz da hat! Es wird erzählt, dass der
+  Handschuh der Zors etwas mit den Mutierenden Sturzfluten zu tun habe und
+  dass man mit ihm Zugang zum Grumhel-Wald bekäme, jedoch weiß niemand,
+  wie er zu gebrauchen ist.... </phase>
+
+  <phase id="stone" next="stone_yes:stone_no">Ohhhhh!! Na das ist ja mal
+  interessant! Mir scheint, es handelt sich um... mmmhh... ich bin mir nicht
+  sicher... (er schaut starr auf den Stein)... Kannst du mir diesen Stein
+  geben, damit ich ihn ein bisschen näher untersuchen kann?</phase>
+
+  <a id="stone_yes">Na klar, hier</a>
+  <a id="stone_no" target="question">Hey da! Nicht anfassen! Ich möchte zuerst
+  etwas wissen...</a>
+
+  <phase id="stone_yes" noeffect="astone" effect="totem">Ohhhhhh!! Ja... Es ist
+  genauso wie ich dachte... Sieh her! (er reinigt vorsichtig den Stein)... Das
+  ist ein Aschpuck-Totem! Der ist sehr viel wert, weißt du... Pass sehr gut
+  darauf auf!</phase>
+
+  <phase id="noquestion">Ach was, schade, zögere nicht, mich ab und zu zu besuchen, wenn du mehr über das Dinolanduniversum erfahren möchtest.
+  </phase>
+  
+</d>

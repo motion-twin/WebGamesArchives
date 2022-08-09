@@ -1,0 +1,100 @@
+<quests>
+
+<q from="prairiegub" id="skata" name="Le petit espionnage dans la prairie" cond="quest(quotd)+grade(,3)">
+	<begin>Il faut absolument que je sache ce que Blancheflor fait dans le coin ! Va la voir pour essayer de lui tirer les vers du nez. Je suis sûr qu'elle est là à cause des skats...</begin>
+	<fx fid="verext"  title="Aller parler à BHV sur la prairie infinie pour savoir ce qu'elle fait ici." />
+	<end>Une interview hein ? Sensibiliser l'opinion, pouah quelle gourde ! Ca se saurait si ce genre de truc fonctionnait ! N'empêche qu'on ne peut pas la laisser faire, je veux être tranquille moi.</end>
+	<gold v="30" />
+	<xp v="2" />
+	<reput s="gu" v="4" />
+</q>
+
+
+<q from="prairiegub" id="skatb" name="Le sabotage est dans le pré" cond="quest(skata)">
+	<begin>Le mieux à faire, c'est de saboter son interview... Ca la calmera un moment et avec un peu de chance, je serai tranquille pour mes prochaines missions.</begin>
+	<talk did="skatba" />
+	<create o="Elt(12):8" zone="gmprai" title="Créer 8 gouttes de rosée sur la prairie infinie. Chaque élément présent à la fin d'une partie sera collecté. " />
+	<talk did="skatbb" title="Se rendre à Tirésias pour échanger les 8 gouttes de rosée contre un charcleur à retardement" /> 
+	<use qo="Grenade(1):1" zone="gmprai" action="Donner le charcleur à retardement" text="Tu l'as eu ! Ah ah, avec ça on va refaire le portrait de BHV !" />
+	<end>Excellent travail, on peut passer à la phase 2 ! Ah tiens, avant que j'oublie voilà pour tes frais de déplacement. Avec les remerciements de la guilde des alchimistes.</end>
+	<gold v="110" />
+	<xp v="8" />
+	<reput s="gu" v="6" />
+</q>
+
+<q from="prairiegub" id="skatc" name="Un souvenir inoubliable" cond="quest(skatb)">
+	<begin>Il va falloir immortaliser cet instant : BHV qui fait BOUM ! tu peux aller me chercher mon appareil photo ? Je l'ai oublié au donjon K. Si on arrive à avoir un bon cliché, je l'encadrerai au dessus de mon lit.</begin>
+	<talk did="skatca" title="Aller chercher l'appareil photo de l'exterminateur au donjon K" step="1" />
+	<talk did="skatcb" title="Se rendre au BAFA pour remplir une demande de prêt d'appareil photo" step="1" />
+	<use o="Elt(11):1" zone="gubafa" action="Donner la pépite d'or" text="Merci bien. Voici le formulaire à remplir par l'agent assermenté de la guilde. Ramène le moi dès qu'il est complet. " title="Apporter une pépite d'or au BAFA pour la caution." />
+	<end>Quoi ? La guilde a réquisitionné mon appareil de fonction ? Ah les fourbes ! Les vils bureaucrates ! On va voir ce qu'on va voir ! Bon... qu'est-ce que c'est que ce papier ? Et où ai-je encore mis mes lunettes, moi ? </end>
+	<gold v="56" />
+	<xp v="10" />
+	<reput s="gu" v="4" />
+</q>
+
+
+<q from="prairiegub" id="skatd" name="Transmutation administrative" cond="quest(skatc)">
+	<begin>Ils t'ont donné un formulaire à rayures verticales, celui qui permet un prêt de 3 jours ! Comment veulent-ils que je fasse du bon travail en 3 jours seulement ? On va arranger ça, tu vas voir.</begin>
+	<talk did="skatda" />
+	<talk did="skatdb" title="Se rendre à la Potion Joyeuse avec le formulaire" step="1" />
+	<talk did="skatdc" title="Ramener 10 Foloeils à la potion joyeuse" />
+	<cauldron r="papera" collect="1" add="1" drop="1" title="Transformer le formulaire grâce à la recette Paperascal" />
+	<use qo="QuestObj(oblForm):1" zone="gubafa" action="Donner le formulaire à rayures obliques" text="Tout semble en règle... Voilà l'appareil photo demandé." title="Aller au Bafa récupérer l'appareil photo." />
+	<end>Mon appareil photo ! Enfin ! vu le mal qu'on s'est donné je suis pas prêt de le rendre, celui-là.</end>
+	<gold v="60" />
+	<xp v="14" />
+	<reput s="gu" v="7" />
+</q>
+
+
+<q from="prairiegub" id="skate" name="Juste un Skat de plus" cond="quest(skatd)">
+	<begin>Il est temps que je t'explique mon plan machiavélique... Sinon, ce dont j'ai besoin maintenant va vraiment te sembler bizarre.</begin>
+	<talk did="skatea" />
+	<talk did="bhvdb" step="1" title="Aller chercher un sac à dos Skat en peluche chez Chouettex" />
+	<use zone="chouet" o="Elt(8):5" text="Merci bien. C'est un plaisir de faire affaire. Voilà votre sac à dos Skat en magnifique peluche 100% naturelle." action="Donner les 5 Oxydes" title="Echanger 5 Oxydes contre le sac à dos Skat en peluche" />
+	<end>Voyons voir...Oui, le charcleur rentre pile à l'intérieur ! On dirait un vrai ! </end>
+	<gold v="65" />
+	<xp v="9" />
+	<reput s="gu" v="5" />
+</q>
+
+
+<q from="prairiegub" id="skatf" name="Hécatombe express" cond="quest(skate)">
+	<begin>On est presque prêt. Plus qu'un dernier détail et adieu BHV ! ! ! Ah ah ah !</begin>
+	<talk did="skatfa" />
+	<cauldron r="coliqf" add="1" drop="1" title="Faire la recette Rotavirus maxima" />
+	<talk did="skatfb" title="Aller vérifier le résultat au Guildian Express" />
+	<end>Ca a marché ! Je le savais ! Je suis un génie ! Ouh par contre j'ai un peu mal au ventre, d'un coup... Tu as pensé à te laver les mains après la recette, hein ? </end>
+	<gold v="90" />
+	<xp v="10" />
+	<randomrecipe v="300:260" />
+	<reput s="gu" v="6" />
+</q>
+
+
+<q from="prairiegub" id="skatg" name="Skats en péril : une interview exclusive !" cond="quest(skatf)+quest(bhvd)">
+	<begin>Tout est prêt, il est temps d'aller voir BHV. Prend le Skat en peluche, mais surtout ne lui appuie pas sur la tête ! </begin>
+	<talk did="skatga" title="Réaliser l'interview de BHV." />
+	<end>Une bonne chose de faite. </end>
+	<gold v="230" />
+	<xp v="15" />
+	<randomrecipe v="220:60" />
+	<reput s="gu" v="10" />
+</q>
+
+
+<q from="prairiegub" id="skath" name="Respecter les quotas" hideCond="quest(skatg)+fx(skatbo)" repeat="1">
+	<begin>Maintenant qu'on peut bosser tranquillement, je ne serais pas contre un petit coup de main de temps en temps.</begin>
+	<collect o="QuestObj(pickSkat):120" zone="gmprai" title="Détruire 120 Skats de la prairie infinie.">
+		<playMod replace="1" artft="Elts(2,null):700;Elts(2,QuestObj(pickSkat)):4300;QuestObj(pickSkat):500;Dynamit(0):30;Dynamit(1):15;Alchimoth:10" />
+	</collect>
+	<end>Merci ! Voilà un petit dédommagement, pour le temps que tu m'as fait gagner.</end>
+	<gold v="95" />
+	<xp v="5" />
+	<reput s="gu" v="3" />
+</q>
+
+
+
+</quests>

@@ -1,0 +1,217 @@
+<!-- ***************************************************************************** -->
+<!-- Sofia, gardien nde Caushesmesh --->
+
+<d place="cpyra2" name="Sofía" gfx="sofia" frame="nocare" cond="!scenario(caush,36)+!scenario(caush,37)+!scenario(caush,38)+scenario(caush,42-)">
+	<phase id="begin" fast="1" next="rah:niveau:ether">
+		A medida que ingresas al palacio,
+		una onda maléfica se hace sentir cada vez más fuerte, los rincones tenebrosos te ponen la piel de gallina...
+		Hay gritos al fondo del palacio, ¿qué será?
+		¿Un ogro?
+	</phase>
+	<a id="rah">Glups...</a>
+
+	<a id="niveau" cond="!fx(lvlup1)+level(50)+scenario(caush,28+)">¿Puedes hacer que mi Dino sea más fuerte?</a>
+	<a id="ether" cond="fx(lvlup1)+!fx(newski)+level(50)+scenario(caush,28+)">¿Qué pasaría si mi Dino cae en el lago de éter?</a>
+
+	<phase id="rah" next="dsl">
+		[Rrrrahhhh...]
+		[Grrrr, ¡estoy rodeada de incompetentes!]
+		[¿Dónde está mi licor favorito?, acabo de levantarme y no tengo lo que necesito, ¡es inaceptable!
+		¡Inconcebible! ¡Intolerable!]
+	</phase>
+	<a id="dsl">Eh, disculpe...</a>
+	<phase id="dsl" next="pardon" frame="silence">
+		[SILENCIO!]
+	</phase>
+	<a id="pardon">...perdón, lo siento...</a>
+	<phase id="pardon" next="rod:norod:ouille">
+		[Y para colmo estoy despeinada, que nadie me vea en estas fachas, ¿quién te dejó entrar?]
+		[¡Ya no se puede confiar en nadie!]
+		[...]
+		[No tengo ni fuerzas para patearte el trasero.]
+		[Tienes suerte que no te haga nada, pero ni te atrevas a molestarme o a hablarme.]
+	</phase>
+	<a id="norod" cond="!scenario(caush,22)">¡De acuerdo señora!</a>
+	<a id="rod" cond="scenario(caush,22)">¡De acuerdo señora!</a>
+
+	<phase id="norod" fast="1">
+		Mejor dejarla tranquila por ahora.
+		Esperemos que más tarde se le quite el mal humor...
+		¿Misión imposible?
+	</phase>
+
+	<phase id="rod" fast="1" next="tg">
+		Mientras te preparas a volver sobre tus pasos, fuertes ruidos escapan del pasillo que lleva hacia la sala del trono.
+	</phase>
+	<a id="tg">Ohoh eso me da mala espina...</a>
+	<phase id="tg" name="Merodeador Extraño" gfx="rodeur3" frame="wrap" background="3" next="oups">
+		[¡Amos, amos!]
+		[¡Estoy de vuelta!]
+		[¡Aaaaaaamoooooos!]
+	</phase>
+	<a id="oups">Ay, qué feo...</a>
+	<phase id="oups" name="Sofía" gfx="sofia" next="degage" frame="silence">
+		[¡SILENCIO!]
+	</phase>
+	<a id="degage">Ya se veía venir...</a>
+	<phase id="degage" name="Merodeador Extraño" gfx="rodeur3" frame="unwrap" background="3" next="mais">
+		[Pero..., soy yo, vuestro seguro servidor ¡Rodrigo Tortilla!]
+		[¿No me reconoce?...]
+		[¿Pero quién eres?]
+	</phase>
+	<a id="mais">¡Siento lástima por ti!</a>
+	<phase id="mais" fight="rodeur|sofia" name="Sofía" gfx="sofia" next="ouille" scenario="caush:23">
+		[¡Ahora desaparece de mi vista!]
+	</phase>
+	<a id="ouille" cond="scenario(caush,23)">...</a>
+	<phase id="ouille" name="Merodeador Extraño" gfx="rodeur3" frame="stun" background="3" next="pouf">
+		[Pero...]
+		[¿Qué les pasó a mis amos?]
+		[Todo está diferente, ¡ya no reconozco este lugar!]
+		[¡Me siento perdido!]
+		[¡Debo encontrar a mis amos!]
+	</phase>
+	<a id="pouf">Adiós y buen viaje...</a>
+	<phase id="pouf" name="Sofía" gfx="sofia" scenario="caush:24">
+		[A ti también, ¡déjame con mis cosas y lárgate!]
+		[Cuando tengas algo interesante que decirme estaré dispuesta a escucharte.]
+		[Mientras tanto, ¡fuera de mi vista!]
+	</phase>
+	<phase id="niveau" next="yes:no" frame="fixe">
+		[Es cierto que con tu nivel actual no llegarás muy lejos, y me parece que deberé esperar largas lunas para que pongas orden por aquí...]
+		[Bueno, soy capaz de romper el límite del nivel máximo de tu Dino, pero cuidado, ¡esta decisión será IRREVERSIBLE!]
+		[Cuando rompamos este límite, ¡podrás evolucionar hasta el nivel 60!]
+	</phase>
+
+	<a id="yes" confirm="1">Claro que estoy seguro, ¡mi Dino quiere evolucionar!</a>
+	<a id="no" confirm="1">No gracias, no deseo que mi Dino pase del nivel 50.</a>
+
+	<phase id="yes" effect="lvlup1" frame="fixe" next="ether">
+		[¡Que así sea!]
+		_(Sofía se levanta de un salto, concentra su energía... ¡y proyecta una enorme descarga sobre tu Dino!)_
+		_(Tu Dino parece sufrir y su organismo se transforma. Desarrolla una nueva fuerza, capaz de superar las duras pruebas que le esperan.)_
+		[Ya está, he elevado el tope de niveles que tu Dino puede alcanzar. Ese límite fue impuesto para evitar la superpoblación de Dinos demasiado poderosos...]
+		_(Tu Dino ha cambiado, ahora puede ser aún más fuerte, ¿pero cómo va a evolucionar?)_
+	</phase>
+
+	<phase id="ether" next="newskill:no2" frame="fixe">
+		[Seguramente morirá... Sin embargo, si se expone por un corto periodo al éter, ¡podrá desarrollar nuevas competencias que aumentarán su fuerza!]
+		[Pero cuidado, ya no tendrás acceso al antiguo árbol de competencias, por lo tanto no podrás aprender las competencias que te faltaban...
+		Antes de exponer tu Dino al éter, asegúrate de haber optimizado su árbol de competencias...]
+	</phase>
+
+	<a id="newskill" confirm="1">Estoy seguro, ¡mi Dino quiere aprender nuevas competencias!</a>
+	<a id="no2" confirm="1">No gracias, ¡mi Dino prefiere seguir aprendiendo las antiguas competencias!</a>
+
+	<phase id="newskill" effect="newski" skill="lvlup" frame="fixe">
+		[¡Que así sea!]
+		_(Sofía hace traer una cuba llena de éter ¡y sumerge a tu Dino de un tirón!)_
+		_(Fastidiado por la violencia de la acción, tu Dino emerge con un aire salvaje...)_
+		[Ya está. Tu Dino comprenderá pronto el porqué de este rito.]
+		_(Te acercas y miras a tu Dino con asombro, su pupila es más verde que antes. ¿Qué habrá pasado en su interior?)_
+	</phase>
+
+	<phase id="no">
+		[Bueno, si cambias de opinión, puedes venir a verme.]
+		[También puedes traerme cualquier Dino que haya alcanzado el nivel 50.]
+	</phase>
+
+	<phase id="no2">
+		[Bueno, si cambias de opinión, puedes venir a verme.]
+		[También puedes traerme cualquier Dino que haya sobrepasado el nivel 50.]
+	</phase>
+
+</d>
+
+
+<d place="villa" gfx="sofia" name="Sofía" frame="plage" background="2" cond="scenario(caush,43+)">
+	<phase id="begin" next="slurp" fast="1">
+		Recostada en la tumbona de Mandrágora, Sofía bebe un cóctel.
+		Disfruta del sol y se broncea en la playa...
+	</phase>
+	<a id="slurp">¡Buenos días!</a>
+	<phase id="slurp" next="troph:nouvelle:niveau:ether">
+		[Slurpp....]
+	</phase>
+	<a id="nouvelle">¿Todo va bien?</a>
+	<a id="troph" cond="scenario(caush,43)">¿Y Caushemesh?</a>
+
+	<phase id="nouvelle" next="bien">
+		[Sluuuuuuuuurpp....]
+		[No me puedo quejar, pero estaba bastante tranquila hasta que llegaste.]
+		[¿Por qué no vas a jugar por otro lugar?]
+		[Slurpp....]
+		[Y no molestes a mi marido, no le vayas a dar ideas extrañas...]
+	</phase>
+	<a id="bien">Eh... Por supuesto...</a>
+	<phase id="bien" fast="1">
+		Es mejor dejarla tranquila, si ni siquiera el mismísimo Mandrágora no se atreve a contrariarla, ¿quién sería tan tonto para hacerlo?
+	</phase>
+
+	<phase id="troph" next="palais">
+		[Slurpp....]
+		[Caushemesh no le teme a nada...]
+		[Le encargué a las chicas vigilar la grieta del Mundo Sombra.]
+		[En caso de problemas, enviaré a mi esposo a hacerse cargo.]
+	</phase>
+	<a id="palais">¿Y el palacio?</a>
+	<phase id="palais" next="retour">
+		[De todos modos no hay nada interesante por allá... Excepto por un objeto.]
+		[Hmm... No tengo ganas de ir a buscarlo... ¿Sabes qué?, te lo doy, ya no lo necesito, ahora que tengo el "verdadero", jeje...]
+		[Puedes quedarte con el como recompensa por haberme devuelto a mi marido.]
+	</phase>
+	<a id="retour">Bueno, gracias.</a>
+	<phase id="retour" scenario="caush:44">
+		[Ahora puedes irte, tengo asuntos pendientes...]
+		[...]
+		[¡¡Mandrichúúú!! Ven a masajearme...]
+		[¡RÁPIDO!]
+	</phase>
+
+	<a id="niveau" cond="!fx(lvlup1)+level(50)">¿Podrías hacer que mi Dino sea más poderoso?</a>
+	<a id="ether" cond="fx(lvlup1)+!fx(newski)+level(50)">¡Me gustaría sumergir a mi Dino en el éter!</a>
+
+	<phase id="niveau" next="yes:no" frame="plage">
+		[Es cierto que con tu nivel actual no llegarás muy lejos, y me parece que deberé esperar largas lunas para que pongas orden por aquí...]
+		[Bueno, soy capaz de romper el límite del nivel máximo de tu Dino, pero cuidado, ¡esta decisión será IRREVERSIBLE!]
+		[Cuando rompamos este límite, ¡podrás evolucionar hasta el nivel 60!]
+	</phase>
+
+	<a id="yes" confirm="1">¡Acepto, mi Dino quiere evolucionar!</a>
+	<a id="no" confirm="1">No gracias, mi Dino no necesita sobrepasar el nivel 50.</a>
+
+	<phase id="yes" effect="lvlup1" frame="plage" next="ether">
+		[¡Que así sea!]
+		_(Sofía se levanta de un salto, concentra su energía... ¡y proyecta una enorme descarga sobre tu Dino!)_
+		_(Tu Dino parece sufrir y su organismo se transforma. Desarrolla una nueva fuerza, capaz de superar las duras pruebas que le esperan.)_
+		[Ya está, he elevado el tope de niveles que tu Dino puede alcanzar. Ese límite fue impuesto para evitar la superpoblación de Dinos demasiado poderosos...]
+		_(Tu Dino ha cambiado, ahora puede ser aún más fuerte, ¿pero cómo va a evolucionar?)_
+	</phase>
+
+	<phase id="ether" next="newskill:no2" frame="plage">
+		[Pues sin duda morirá... Pero si se expone por un corto periodo al éter, ¡podrá desarrollar nuevas competencias que aumentarán su fuerza!]
+		[Pero cuidado, ya no tendrás acceso al antiguo árbol de competencias, por lo tanto no podrás aprender las competencias que te faltaban...
+		Antes de exponer tu Dino al éter, asegúrate de haber optimizado su árbol de competencias...]
+	</phase>
+
+	<a id="newskill" confirm="1">Estoy seguro, ¡mi Dino quiere aprender nuevas competencias!</a>
+	<a id="no2" confirm="1">No gracias, mi Dino quiere seguir aprendiendo las antiguas competencias.</a>
+
+	<phase id="newskill" effect="newski" skill="lvlup" frame="plage">
+		[¡Que así sea!]
+		_(Sofía hace traer una cuba llena de éter ¡y sumerge a tu Dino de un tirón!)_
+		_(Fastidiado por la violencia de la acción, tu Dino emerge con un aire salvaje...)_
+		[Ya está. Tu Dino comprenderá pronto el porqué de este rito.]
+		_(Te acercas y miras a tu Dino con asombro, su pupila es más verde que antes. ¿Qué habrá pasado en su interior?)_
+	</phase>
+
+	<phase id="no" frame="plage">
+		[Bueno, si cambias de opinión, puedes venir a verme.]
+		[También puedes traerme cualquier Dino que haya alcanzado el nivel 50.]
+	</phase>
+
+	<phase id="no2" frame="plage">
+		[Bueno, si cambias de opinión, puedes venir a verme.]
+		[También puedes traerme cualquier Dino que haya sobrepasado el nivel 50.]
+	</phase>
+</d>

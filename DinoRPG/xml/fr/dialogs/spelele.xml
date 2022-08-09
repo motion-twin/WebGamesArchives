@@ -1,0 +1,100 @@
+﻿<d place="gorges" name="Spélélélologue" gfx="spelele" cond="!fx(fspele)">
+
+	<phase id="begin" next="talk" fast="1">
+		Un récent tremblement de terre semble avoir créé une fissure dans la paroi. Un air glacé s'en échappe et vous apercevez un homme bizarre qui inspecte les alentours.
+	</phase>
+
+	<a id="talk">Lui Parler</a>
+
+	<phase id="talk" next="gla:bye">
+		Pfiiooooouuu !! Tu as vu cette fissure ? elle s'ouvre sur une gigantesque caverne dans laquelle règne un froid glacial !
+		Attention ! Si ton Dinoz y rentre, il sera entièrement congelé !
+	</phase>
+
+	<a id="gla">Glaglagla !</a>
+	<a id="bye">Dire au revoir</a>
+
+	<phase id="gla" next="ok:bye">
+		Tu vois !! Ça pèle dans le coin hein.... D'après mes études thermodynamiques, les courants de magma chaud du Grand Tout Chaud absorbent la chaleur des roches supraconductrices et créent donc dans le sous-sol un refroidissement par convection. Un véritable Frigo naturel en fait !
+	</phase>
+
+	<a id="ok">C'est... passionnant</a>
+
+	<phase id="ok" next="ok2:bye">
+		N'est-ce pas !? Je suis un grand explorateur des cavernes et autres souterrains étranges, c'est mon métier, je suis spélélélologue ! J'ai obtenu mon diplôme en Spélélologie à l'Université de Dinoville, option naturalgorithmie !
+	</phase>
+
+	<a id="ok2">C'est... génial</a>
+
+	<phase id="ok2" next="ok3:bye">
+		N'est-ce pas !? J'ai couru ici dés que j'ai entendu parler du tremblement de terre, et du coup j'ai été le premier à découvrir cette grotte ! Je lui ai déjà trouvé un nom : La Grotte du Zéro Relatif ! Ça te plaît ?
+	</phase>
+
+	<a id="ok3">C'est... magnifique</a>
+
+	<phase id="ok3" next="congel:bye">
+		N'est-ce pas !? Bon, tu m'es sympatique et je vais donc te donner une ASTUCE ! Si tu mets ton Dinoz dans la Grotte du Zéro Relatif, il sera congelé...
+	</phase>
+
+	<a id="congel">Congelé ?</a>
+
+	<phase id="congel" next="congel2:bye">
+		Oui ! Con-ge-lé ! Mais la température est tellement basse qu'il ne mourra pas ! Tu ne pourras plus te servir de ce Dinoz, mais du coup il ne comptera plus dans ta LIMITE de nombre de Dinoz, ce qui te permettra d'obtenir PLUS de Dinoz ! Il faudra par contre faire attention aux effets secondaires...
+	</phase>
+
+	<a id="congel2">Des effets secondaires ???</a>
+
+	<phase id="congel2" next="again:thanks">
+		Oui, à partir du moment où ton Dinoz est congelé, il ne compte plus dans ta LIMITE, mais tu ne peux le décongeler que si tu es à nouveau en dessous de la LIMITE, cela veut dire qu'il faudra congeler un autre Dinoz pour le remplacer... Et puis, ton Dinoz mettra de toute façon un jour entier à décongeler, il faudra donc un peu de patience... Tu as compris ?
+	</phase>
+
+	<a id="again" target="congel">Non, rien du tout !</a>
+	<a id="thanks">Oui, merci beaucoup !</a>
+
+	<phase id="thanks" effect="fspele">
+		De rien ! N'hésite pas a faire appel à moi si un jour tu as besoin de mon aide pour explorer un souterrain mystérieux !
+	</phase>
+
+	<phase id="bye">
+		Tchaw ! Et surtout fais attention à ne pas t'approcher de cette fissure !
+	</phase>
+
+</d>
+
+<d place="gorges" name="Spélélélologue" gfx="spelele" cond="scenario(magnet,8)+fx(fspele)+!fx(ice)">
+
+	<phase id="begin" next="talk">
+		Ah ! Tiens salut ! Il fait frais ici tu ne trouve pas ?
+	</phase>
+
+	<a id="talk">Glaglaglagla...</a>
+
+	<phase id="talk" next="next">
+		Je viens de passer quelques temps à explorer la Grotte du Zéro Relatif... savais tu que la glace qui la compose est extraordinaire ??? Elle est composée de 3% de Mazotte Solide, un ingrédient rarissime qui conserve une température stable...
+	</phase>
+
+	<a id="next">Mazotte ?</a>
+
+	<phase id="next" next="prof">
+		Cela permet à la glace de ne pas dégeler, même pendant l'été quand les flux de magma ralentissent le cycle de refroidissement de la grotte. Bien entendu, le Mazotte Solide est entièrement contraire à toutes les lois connues de la thermodynamique, mais malgré cela il continue d'exister... C'est d'ailleurs un grand casse-tête pour les professeurs de l'Université.
+	</phase>
+
+	<a id="prof">Effectivement...</a>
+
+	<phase id="prof" next="theo">
+		Oui ! Certains tels le fameux professeur Eugène ont même mis en place une théorie qui explique l'existence du Mazotte Solide. C'est un peu compliqué car cela nécessite de considérer que l'Univers est composé de 4,24 dimensions : trois dimensions pour le monde normal et 1,24 dimension utilisée uniquement par le Mazotte Solide.
+	</phase>
+
+	<a id="theo">Oulala...</a>
+
+	<phase id="theo" next="ok">
+		Oui, mais cette théorie a de très intéressantes applications, comme le fait de pouvoir prévoir la température d'ébulition d'un Archélion. Son principal défaut est qu'elle prévoit aussi l'existence d'un Monde Sombre parallèle à Dinoland... La communauté scientifique pense donc que le professeur Eugène se trompe, car un tel endroit ne peut pas exister... Tout du moins pas d'après la théorie du professeur Stinstanstein.
+	</phase>
+
+	<a id="ok">... effectivement....</a>
+
+	<phase id="ok" effect="ice">
+		Enfin, tout cela pour te dire que cette glace est géniale. Tiens, en voilà un petit bout, garde le avec toi pour te rafraîchir quand il fait chaud !
+	</phase>
+
+</d>

@@ -1,0 +1,101 @@
+<d place="skshar" name="Portes ouvertes Shang-Kah" cond="curquest(schoo)+disable()" gfx="skprofa" auto="1">
+
+<phase id="begin" next="po">
+Encore un ? ! Ca arrête pas aujourd'hui ! 
+C'est encore pour les portes ouvertes ? 
+</phase>
+
+<a id="po">Oui, j'arrive de la grande place. </a>
+
+<phase id="po" frame="angry" next="so">
+Bon, on va dire que c'est à moi de m'y coller. Mais après je passe mon tour, hein !
+</phase>
+
+<phase id="so" next="spe:hist:home:you:go">
+Alors... Qu'est-ce que tu veux savoir ?
+</phase>
+
+<a id="spe">On apprend quoi à Shang-Kah ? </a>
+<a id="hist">Vous pouvez me parler de l'école ? </a>
+<a id="home">On crève de chaud ! Il y a des glaces à la cantine ? </a>
+<a id="you">C'est joli chez vous. C'est ici que les étudiants vivent ?</a>
+<a id="go">Ok, j'ai plus de questions.</a>
+
+<!-- ###################### -->
+<phase id="spe" next="speb">
+On enseigne une alchimie pratique. De quoi être compétent dans pas mal de domaines, mais on est quand même pas mal porté sur la création d'objets magiques. 
+</phase>
+
+<a id="speb">Ah bon, pourquoi ? </a>
+
+<phase id="speb" next="spec">
+Ben, c'est indispensable si on veut réussir des gros scores d'alchimie. Et un truc qu'on aime à Shang-Kah, c'est bien les [GROS SCORES ! ! ! ]
+</phase>
+
+<phase id="spec" frame="happy" next="sped">
+La coupe des écoles autorise l'utilisation des objets magiques, donc on peut se faire plaisir ! Et battre les autres écoles, c'est encore plus cool ! 
+</phase>
+
+<a id="sped">Vous êtes des winners, comme on dit.</a>
+
+<phase id="sped" next="so">
+Voilà c'est ça. 
+</phase>
+
+<!-- ###################### -->
+<phase id="hist" next="histb">
+Ca va être rapide. On est pas complètement cinglés comme chez Jeezara. 
+</phase>
+
+<phase id="histb" frame="happy" next="histc">
+D'abord l'école est bien organisée. Il y a 3 écoles communales différentes. Les étudiants passent de l'une à l'autre quand ils gagnent des niveaux. 
+La dernière école est réservée aux professeurs. Les nouveaux étudiants sont à Tupuri, qui est la plus proche de la capitale. 
+</phase>
+
+<phase id="histc" next="so">
+Qu'est-ce que je peux te dire d'autre ?... Shang-Kah est dirigée par un conseil d'administration de 5 membres. Personne n'a jamais compris comment on y entrait. 
+Ah, et on a la plus belle bibliothèque du royaume. Les autres alchimistes en sont jaloux !
+</phase>
+
+<!-- ###################### -->
+<phase id="home" frame="happy" next="homeb">
+Des glaces ? C'est pas bête ça, des glaces pour se rafraîchir dans le désert... 
+Ah ! Mais il faudrait les garder au froid ! C'est pas possible ! 
+</phase>
+
+<a id="homeb">Avec un congélateur, non ?</a>
+
+<phase id="homeb" frame="angry" next="homec">
+Un congélateur ? N'importe quoi. Il faudrait trouver une recette alchimique qui, appliquée à un récipient quelconque, crée à l'intérieur une sorte de dépression frigorifique auto suffisante et... 
+</phase>
+
+<a id="homec">Oui. Un congélateur quoi. </a>
+
+<phase id="homec" next="so">
+Oui enfin pour le nom, on verra plus tard.
+</phase>
+
+<!-- ###################### -->
+<phase id="you" frame="happy" next="youb">
+Oui. Mais si tu rejoins Shang-Kah, tu ne seras pas là. 
+</phase>
+
+<a id="youb">Ah bon ? Mais ce sera pareil, au moins ? </a>
+
+<phase id="youb" next="youc">
+Hum. Pas tout à fait... Ici, c'est Shari. C'est pour les étudiants qui sont passés alchimistes certifiés. Les apprentis vivent à Tupuri, plus à l'Est. 
+C'est... comment dire... un peu plus rustique.
+</phase>
+
+<a id="youc">Vous savez comment attirer les gens, vous. </a>
+
+<phase id="youc" frame="angry" next="so">
+Roooh eh, tout de suite les grands mots...
+</phase>
+
+<!-- ###################### -->
+<phase id="go" url="/act?did=po2">
+Super. Bon, à plus !
+</phase>
+
+</d>

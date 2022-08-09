@@ -1,0 +1,19 @@
+<d place="gmoree" name="Donner les Pyropâtes" gfx="gmchoc" >
+
+<phase id="begin" next="ouia:ouib:exit">
+Tu as les éléments ? 
+</phase>
+
+<a id="ouia" cond="hasqobject(Elt(18):3)">Oui, c'est bon.</a>
+<a id="ouib" cond="!hasqobject(Elt(18):3)">Oui, c'est bon.</a>
+<a id="exit">A plus tard.</a>
+
+<phase id="ouia" qgive="QuestObj(lot)">
+Je salive d'avance ! Comme promis voilà ton lot.
+</phase>
+
+<phase id="ouib" next="exit">
+Uh oh, on dirait qu'il t'en manque quelques uns.
+</phase>
+
+</d>

@@ -1,0 +1,22 @@
+-cp ../../../twinBase/base
+-cp ../../lang/fr/tpl
+-cp ../engine
+-cp ../../com
+-cp ../explore/src
+-swf client.swf
+-swf-header 600:400:100:FFFFFF
+-swf-lib obj\clientResources.swf
+--flash-strict
+-swf-version 11
+-main Main
+-cp src
+-cp gfx
+-cp doc
+-lib tora
+-lib format
+-cmd "obfu9 %__file__% -o ..\..\www\swf\client_fr.swf -key g55"
+-cmd "obfu9 %__file__% -o ..\..\www\swf\client.swf -fake"
+-D haxe3
+-D binaryCodec
+-cp ../explore/gfx
+-swf-lib ../explore/obj/exploreResources.swf

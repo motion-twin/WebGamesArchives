@@ -1,0 +1,52 @@
+<div class="roomSign level_::_roomLevel::">::_roomName::</div>
+
+::if _isBedroom::
+
+	::if _client::
+		::_clientTpl::
+	::else::
+		::if _workEnd::
+			<p class="locked">
+				::if _repairing::
+					Votre employé aura réparé 1 point de dégât vers ::_workEnd::.
+				::else::
+					Votre employé aura terminé vers ::_workEnd::.
+				::end::
+			</p>
+		::end::
+		::if _constEnd::
+			<p class="locked">Les travaux seront terminés vers ::_constEnd::.</p>
+		::end::
+		<p class="misc">Cette chambre est inoccupée.</p>
+		::if _isDamaged::
+			<p>Pensez à envoyer un <strong>employé</strong> ici pour nettoyer tout le bazar...</p>
+		::end::
+		::if _itemToTake::
+			<p>Le client précédent a oublié un objet : <strong>::_itemToTake._name::</strong> !</p>
+		::end::
+	::end::
+	
+::else::
+
+	::if _constEnd::
+		<p class="locked">Les travaux seront terminés vers ::_constEnd::.</p>
+	::end::
+	::if _client::
+		<p class="time">::_client._name:: est en train de profiter de vos installations et devrait vous rapporter quelques <img src='/img/icons/money.png' alt=''/> !</p>
+	::end::
+	::if _research::
+		<p class="research">Avancée des recherches : ::_research::%.</p>
+	::end::
+	::if _isLobby::
+		<p class="time"><strong>Délai d'attente pour un client : ::_clientDelay::.</strong></p>
+	::end::
+	::if _lockEnd::
+		<p class="locked">Cet équipement sera de nouveau disponible vers ::_lockEnd::.</p>
+	::end::
+	::if _workEnd::
+		<p class="locked">Votre employé aura terminé vers ::_workEnd::.</p>
+	::end::
+	<p class="rule">::_roomTexts._rule::</p>
+	<p class="misc">::_roomTexts._ambiant::</p>
+	
+::end::

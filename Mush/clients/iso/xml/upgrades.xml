@@ -1,0 +1,194 @@
+
+<?xml version="1.0" encoding="utf-8" ?>
+<data>
+	<upgrades>
+		<!-- remplacer/améliorer un graph -->
+		<unlock targetTile="bay_window" room="SPACESHIP_BAY_A,SPACESHIP_BAY_AA" replace="bay_window_upgrade"
+			cond="ProjectUnlocked(BAY_DOOR_XXL)" />
+			
+		<unlock targetTile="bay_alpha_platform" room="SPACESHIP_BAY_A,SPACESHIP_BAY_AA" replace="bay_alpha_platform_upgrade"
+			cond="ProjectUnlocked(PATROL_SHIP_LAUNCHER)"  />
+			
+		<unlock targetTile="bay_beta_platform" room="SPACESHIP_BAY_B" replace="bay_beta_platform_upgrade"
+			cond="ProjectUnlocked(PATROL_SHIP_LAUNCHER)" debug="true" />
+			
+		<unlock targetTile="spaceship" room="SPACESHIP_BAY_A,SPACESHIP_BAY_AA,SPACESHIP_BAY_B" replace="spaceship_upgrade_a"
+			cond="ProjectUnlocked(PATROLSHIP_EXTRA_AMMO)"   />
+		
+		<unlock targetTile="spaceship" room="SPACESHIP_BAY_A,SPACESHIP_BAY_AA,SPACESHIP_BAY_B" replace="spaceship_upgrade_b"
+			cond="ProjectUnlocked(PATROLSHIP_BLASTER_GUN)"  />
+		
+		<unlock targetTile="spaceship" room="SPACESHIP_BAY_A,SPACESHIP_BAY_AA,SPACESHIP_BAY_B" replace="spaceship_upgrade_ab"
+			cond="ProjectUnlocked(PATROLSHIP_EXTRA_AMMO)&&ProjectUnlocked(PATROLSHIP_BLASTER_GUN)"   />
+		
+		<unlock targetTile="icarus" room="ICARUS" replace="icarus_upgrade_a"
+		cond="ProjectUnlocked(ICARUS_ANTIGRAV_PROPELLER)"  />
+		
+		<unlock targetTile="icarus" room="ICARUS" replace="icarus_upgrade_b"
+		cond="ProjectUnlocked(ICARUS_LARGER_BAY)"  />
+		
+		<unlock targetTile="icarus" room="ICARUS" replace="icarus_upgrade_ab"
+		cond="ProjectUnlocked(ICARUS_ANTIGRAV_PROPELLER)&&ProjectUnlocked(ICARUS_LARGER_BAY)"  />
+
+		<unlock targetTile="garden" room="HYDROPONIC_CENTER" replace="garden_upgrade_a"
+		cond="ProjectUnlocked(HYDROPONIC_INCUBATOR)"  />
+		
+		<unlock targetTile="garden" room="HYDROPONIC_CENTER" replace="garden_upgrade_b"
+		cond="ProjectUnlocked(HEAT_LAMP)" />
+		
+		<unlock targetTile="garden" room="HYDROPONIC_CENTER" replace="garden_upgrade_ab"
+		cond="ProjectUnlocked(HYDROPONIC_INCUBATOR)&&ProjectUnlocked(HEAT_LAMP)" />
+		
+		<unlock targetTile="neron" room="NEXUS_ROOM" replace="neron_upgrade"
+		cond="ProjectUnlocked(NERON_PROJECT_THREAD)"  debug="true" />
+		
+		<unlock targetTile="plasma_shield" room="MOTOR_ROOM" replace="plasma_shield_upgrade"
+		cond="ProjectUnlocked(PLASMA_SHIELD)"  />
+		
+		<unlock targetTile="auxiliary_terminal_neron" room="MOTOR_ROOM,SICK_BAY" replace="auxiliary_terminal_neron_upgrade_a"
+		cond="ProjectUnlocked(AUXILIARY_TERMINAL)"  />
+		
+		<unlock targetTile="auxiliary_terminal_neron" room="MOTOR_ROOM,SICK_BAY" replace="auxiliary_terminal_neron_upgrade_b"
+		cond="ProjectUnlocked(AUXILIARY_TERMINAL)&&ProjectUnlocked(NERON_PROJECT_THREAD)" />
+		
+		
+	
+		<!-- 
+		<unlock targetTile="beat_box" room="SPACESHIP_BAY_AA" replace="beat_box_a"
+		cond="ProjectUnlocked(BEAT_BOX)" />
+		 -->
+		
+		<unlock targetTile="shower" room="BEDROOM_A,BEDROOM_B" replace="thalasso"
+		cond="ProjectUnlocked(THALASSO)" />
+		
+		<unlock targetTile="radar_trans_void" room="MOTOR_ROOM" replace="radar_trans_void_upgrade"
+		cond="ProjectUnlocked(RADAR_TRANS_VOID)" />
+		
+		<unlock targetTile="coffee" room="REFECTORY" replace="coffee_upgrade_a" cond="ProjectUnlocked(FISSION_COFFEE_ROASTER)"   />
+		<unlock targetTile="coffee" room="REFECTORY" replace="coffee_upgrade_b" cond="ResearchUnlocked(GUARANA_CAPUCCINO)"  />
+		<unlock targetTile="coffee" room="REFECTORY" replace="coffee_upgrade_ab" cond="ProjectUnlocked(FISSION_COFFEE_ROASTER)&&ResearchUnlocked(GUARANA_CAPUCCINO)"   />
+		
+		<unlock targetTile="pilot_astro_left" room="COMMAND_CENTER" replace="pilot_astro_left_upgrade"
+		cond="ProjectUnlocked(CHIPSET_ACCELERATION)" debug="true" />
+		
+		<unlock targetTile="turret_alpha" room="LASER_TURRET_A_0,LASER_TURRET_A_1,LASER_TURRET_A_2" replace="turret_alpha_upgrade_a"
+		cond="ProjectUnlocked(TURRET_EXTRA_FIRERATE)"  />
+		
+		<unlock targetTile="turret_alpha" room="LASER_TURRET_A_0,LASER_TURRET_A_1,LASER_TURRET_A_2" replace="turret_alpha_upgrade_b"
+		cond="ResearchUnlocked(TESLA_SUP2X)"  />
+		
+		<unlock targetTile="turret_alpha" room="LASER_TURRET_A_0,LASER_TURRET_A_1,LASER_TURRET_A_2" replace="turret_alpha_upgrade_ab"
+		cond="ProjectUnlocked(TURRET_EXTRA_FIRERATE)&&ResearchUnlocked(TESLA_SUP2X)"  />
+		
+		<unlock targetTile="turret_beta" room="LASER_TURRET_B_0,LASER_TURRET_B_1,LASER_TURRET_B_2" replace="turret_beta_upgrade_a"
+		cond="ProjectUnlocked(TURRET_EXTRA_FIRERATE)"  />
+		
+		<unlock targetTile="turret_beta" room="LASER_TURRET_B_0,LASER_TURRET_B_1,LASER_TURRET_B_2" replace="turret_beta_upgrade_b"
+		cond="ResearchUnlocked(TESLA_SUP2X)"  />
+		
+		<unlock targetTile="turret_beta" room="LASER_TURRET_B_0,LASER_TURRET_B_1,LASER_TURRET_B_2" replace="turret_beta_upgrade_ab"
+		cond="ProjectUnlocked(TURRET_EXTRA_FIRERATE)&&ResearchUnlocked(TESLA_SUP2X)"  />
+		
+		
+		<unlock targetTile="spaceship" room="PATROL_SHIP_AA_1" replace="pasiphae"
+		cond="true()"/>
+	
+		<unlock targetTile="core_pilgred" room="MOTOR_ROOM" replace="core_pilgred_upgrade" cond="PilgredUnlocked()" />
+		
+		<unlock targetTile="kitchen_p0" room="REFECTORY"   replace="kitchen_p0_apero" cond="ProjectUnlocked(APERO_KITCHEN)" debug="true" />
+		<unlock targetTile="kitchen_p1" room="REFECTORY"   replace="kitchen_p1_apero" cond="ProjectUnlocked(APERO_KITCHEN)" debug="true" />
+		<unlock targetTile="table_kitchen" room="REFECTORY" replace="table_kitchen_apero" cond="ProjectUnlocked(APERO_KITCHEN)" debug="true" />
+		
+		<!-- ça bugge
+		<unlock targetTile="DOOR_L" room="*" replace="DOOR_L_UPGRADE" cond="ProjectUnlocked(DOOR_SENSOR)" debug="true" />-->
+		
+		<!-- faire apparaître ou pas -->
+		
+		<condVis room="MOTOR_ROOM" tile="quantum_sensors_upgrade" cond="ProjectUnlocked(QUANTUM_SENSORS)" />
+			
+		<condVis room="SPACESHIP_BAY_B" tile="magnetic_net" cond="ProjectUnlocked(MAGNETIC_NET)" />
+		
+		<condVis room="SPACESHIP_BAY_A,SPACESHIP_BAY_AA" tile="magnetic_net_2" cond="ProjectUnlocked(MAGNETIC_NET)" />
+		
+		<condVis room="*" tile="auto_watering" cond="ProjectUnlocked(AUTO_WATERING)"  />
+		
+		<condVis room="SPACESHIP_BAY_A,SPACESHIP_BAY_B,SPACESHIP_BAY_AA" tile="auto_watering_2_bay" cond="ProjectUnlocked(AUTO_WATERING)"   />
+		
+		<condVis room="ICARUS" tile="icarus" cond="Not(IcarusLanded())"  />
+		
+		<condVis room="ICARUS" tile="auto_watering_bay" cond="ProjectUnlocked(AUTO_WATERING)"  />
+		
+		<condVis room="ICARUS" tile="auto_return_icarus" cond="ProjectUnlocked(AUTO_RETURN_ICARUS)"  />
+		
+		<condVis room="ICARUS" tile="auto_return_icarus2" cond="ProjectUnlocked(AUTO_RETURN_ICARUS)"  />
+		
+		<condVis room="HYDROPONIC_CENTER" tile="food_retailer_garden" cond="ProjectUnlocked(FOOD_RETAILER)"  />
+		
+		<condVis room="REFECTORY" tile="food_retailer_refectory" cond="ProjectUnlocked(FOOD_RETAILER)"  />
+
+		<condVis room="*" tile="camera" cond="RoomItemHas(CAMERA)" />
+		<condVis room="*" tile="camera2" cond="RoomItemHas(CAMERA)"   />
+		
+		<condVis room="SPACESHIP_BAY_A" key="PATROL_SHIP_A_0" tile="spaceship" cond="TestPatrol(PATROL_SHIP_A_0)"   />
+		<condVis room="SPACESHIP_BAY_A" key="PATROL_SHIP_A_1" tile="spaceship" cond="TestPatrol(PATROL_SHIP_A_1)"   />
+		<condVis room="SPACESHIP_BAY_A" key="PATROL_SHIP_A_2" tile="spaceship" cond="TestPatrol(PATROL_SHIP_A_2)"   />
+		
+		<condVis room="SPACESHIP_BAY_B" key="PATROL_SHIP_B_0" tile="spaceship" cond="TestPatrol(PATROL_SHIP_B_0)"   />
+		<condVis room="SPACESHIP_BAY_B" key="PATROL_SHIP_B_1" tile="spaceship" cond="TestPatrol(PATROL_SHIP_B_1)"   />
+		<condVis room="SPACESHIP_BAY_B" key="PATROL_SHIP_B_2" tile="spaceship" cond="TestPatrol(PATROL_SHIP_B_2)"   />
+		
+		<condVis room="SPACESHIP_BAY_AA" key="PATROL_SHIP_AA_0" tile="spaceship" cond="TestPatrol(PATROL_SHIP_AA_0)"   />
+		<condVis room="SPACESHIP_BAY_AA" key="PATROL_SHIP_AA_1" tile="spaceship" cond="TestPatrol(PATROL_SHIP_AA_1)"   />
+		
+		<condVis room="LASER_TURRET_B_0" key="SOFA" tile="sofa" cond="RoomItemHas(SOFA)" />
+	
+		<condVis room="SPACESHIP_BAY_AA" tile="dynarcade" cond="ProjectUnlocked(CALL_OF_DIRTY)" />
+		<condVis room="SPACESHIP_BAY_AA" tile="spaceship_broken" cond="Not(ProjectUnlocked(CALL_OF_DIRTY))" />
+		shower
+		
+		<condVis room="NEXUS_ROOM"  tile="server" cond="Not(ResearchUnlocked(SUPER_CALC))" />
+		
+		
+		<condVis room="BEDROOM_A"  tile="thalasso" cond="RoomItemHas(SHOWER)" />
+		<condVis room="BEDROOM_B"  tile="thalasso" cond="RoomItemHas(SHOWER)" />
+		
+		<condVis room="BEDROOM_A"  tile="shower" cond="RoomItemHas(SHOWER)" />
+		<condVis room="BEDROOM_B"  tile="shower" cond="RoomItemHas(SHOWER)" />
+		
+	
+	
+		
+		
+	
+		<!-- pour équipements qui s'affichent pas par defaut -->
+					
+		<spawnEquipment
+		target="MYCOSCAN_ACCESS"
+		tile="mycoscan"
+		room="LABORATORY"
+		cond="ResearchUnlocked(MYCOSCAN)"
+		dir="up"
+		pos="20,20"
+		/>
+		
+		<spawnEquipment
+		target="DRUG_DISP"
+		tile="drug_dispenser"
+		room="SICK_BAY"
+		cond="ResearchUnlocked(DRUG_DISPENSER)"
+		dir="up"
+		pos="16,11"
+		 />
+		 
+		<spawnEquipment
+		target="SUPER_CALC"
+		tile="server_active"
+		room="NEXUS_ROOM"
+		cond="ResearchUnlocked(SUPER_CALC)"
+		dir="up"
+		pos="17,13"
+		 />
+		
+				
+	</upgrades>
+</data>

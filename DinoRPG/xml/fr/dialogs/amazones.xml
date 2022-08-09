@@ -1,0 +1,166 @@
+<!-- ***************************************************************************** -->
+<!-- Chrysanthe et Cassandre gardent l'entrée du palais de Caushesmesh --->
+	
+<d place="cpyra1" name="Chrysanthe" gfx="chrysanthe" cond="scenario(caush,42-)">
+	<phase id="begin" next="hein:mission:comin">
+		[Je me sens vide, il ne se passe rien, je n'ai envie de rien.]
+		[Va. Laisse moi. Si je me laissais tomber dans ce lac d'éther qu'arriverait-il ?]
+		[Qu'est ce que l'amour, qu'est ce que la vie ?]
+	</phase>
+	<a id="hein" cond="scenario(caush,25-)">...Euh...Bonjour...</a>
+	<phase id="hein" next="sieste">
+		[Personne ne peut entrer, le gardien fait sa sieste.]
+		[Elle a bien raison. A quoi bon rester éveillé dans un monde aussi triste.]
+		[J'espère qu'elle rêve de son amour perdu, et surtout, oui surtout...]
+	</phase>
+	<a id="sieste">surtout ?</a>
+	<phase id="sieste" next="bon:nobon:mission">
+		[Surtout qu'elle aura pas son humeur de chien au réveil !]
+		[...]
+		[Vous êtes encore là vous ?]
+	</phase>
+	<a id="bon" cond="scenario(caush,21)">Je voudrais entrer...</a>
+	<a id="nobon" cond="!scenario(caush,21)">Je voudrais entrer...</a>
+	
+	<phase id="nobon" fast="1">
+		L'amazone ne vous regarde déjà plus, elle se morfond, assise sur une marche de l'escalier.
+		Rien de ce que vous pourrez lui dire ne changera quoi que ce soit.
+	</phase>
+	
+	<phase id="bon" scenario="caush:22">
+		[L'hiver approche mais le froid règne toujours dans mon coeur.]
+		[Si vous voulez essuyez la colère de notre maîtresse, je ne vais pas vous en priver.]
+		[Pour une fois que ce ne sera pas moi...]
+		[Allez y, avant que la glace de mon coeur ne me dise le contraire.]
+	</phase>
+	
+	<a id="mission" cond="scenario(caush,25+)">Vous avez une mission pour moi ?</a>
+	<a id="comin" cond="scenario(caush,25+)">Je peux entrer ?</a>
+	
+	<phase id="comin">
+		[L'hiver approche mais le froid règne toujours dans mon coeur.]
+		[Si vous voulez essuyez la colère de notre maîtresse, je ne vais pas vous en priver.]
+		[Pour une fois que ce ne sera pas moi...]
+		[Allez y, avant que la glace de mon coeur ne me dise le contraire.]
+	</phase>
+	
+	<phase id="mission" missions="amazon"></phase>
+</d>
+
+<d place="cpyra1" name="Cassandre" gfx="cassandre" cond="scenario(caush,42-)">
+	<phase id="begin" next="quoi">
+		[OH MON DIEU !]
+	</phase>
+	<a id="quoi">Qu'est ce qui se passe ?</a>
+	<phase id="quoi" next="chic:mission:comin">
+		[Oh là là, j'ai perdu une boucle d'oreille hooooors de prix !]
+	</phase>
+	<a id="chic" cond="scenario(caush,25-)">Et c'est tout ?</a>
+	<phase id="chic" next="dodo">
+		[Comment ça c'est tout ?]
+		[Oh là là, c'est sûr que vous, avec toute votre compagnie de dinoz à vos trousses, on voit que vous êtes out !]
+		[C'est hyyyyper important, mon look doit être parfait, comment j'ai eu ce job à votre avis ?]
+	</phase>
+	<a id="dodo">Je ne préfère pas y penser.</a>
+	<phase id="dodo" next="bribe:nobribe:cadeau:mission">
+		[Oh là là, franchement, je vous plains, ne pas reconnaître le bon goût quand vous l'avez en face de vous...]
+		[...]
+		[Bon et vous voulez quoi sinon ?]
+	</phase>
+	<a id="bribe" cond="scenario(caush,20)">Je voudrais entrer...</a>
+	<a id="nobribe" cond="!scenario(caush,20)">Je voudrais entrer...</a>
+	<a id="cadeau" cond="scenario(caush,24)">Y a t'il un moyen de plaire au gardien ?</a>
+	
+	<phase id="bribe" next="got1:got2:got3:nogot">
+		[Notre maîtresse est réveillée... On l'entend suffisamment hurler d'ici...]
+		[Mais tu n'as rien fait pour mériter de la voir.]
+		[Ramène moi un beau bijou et je te laisserais peut-être passer !]
+	</phase>
+	
+	<a id="got1" target="got1" cond="hasingr(art1)">Lui donner un Anneau précieux.</a>
+	<a id="got2" target="got2" cond="hasingr(art2)">Lui donner un Calice ciselé.</a>
+	<a id="got3" target="got3" cond="hasingr(art3)">Lui donner un Collier Karat.</a>
+	<a id="nogot" cond="!hasingr(art1)">Vous n'avez rien qui peut la satisfaire.</a>
+	
+	<phase id="nogot">
+		[Oh là là, tu n'as vraiment rien pour plaire !]
+		[Reviens me voir quand tu seras digne de te présenter devant moi !]
+		[...Bzzzz]
+	</phase>
+	
+	<phase id="nobribe" next="nan">
+		[HIHIHIHI, tu rêves !]
+		[Déjà, tu es mal habillé, ensuite, tu fais trop de bruit, après tu ne connais rien à la dernière tendance Caushemeshenne.]
+		[Bon et accessoirement elle ne veut pas être dérangée.]
+		[Oh là là, et moi, je ne veux pas avoir à supporter son humeur.]
+		[Alors, bzzzz, disparaît !]
+	</phase>
+	<a id="nan">Mais...</a>
+	<phase id="nan">
+		[BZZZZZ !]
+	</phase>
+	
+	<phase id="got1" scenario="caush:21" fast="1" useingr="art1">
+		La farouche amazone ne s'intéresse plus du tout à vous, elle n'a d'yeux que pour le bijou que vous lui avez offert.
+		Il faut maintenant convaincre l'autre amazone pour pouvoir entrer dans le palais.
+	</phase>
+	
+	<phase id="got2" scenario="caush:21" fast="1" useingr="art2">
+		La farouche amazone ne s'intéresse plus du tout à vous, elle n'a d'yeux que pour le bijou que vous lui avez offert.
+		Il faut maintenant convaincre l'autre amazone pour pouvoir entrer dans le palais.
+	</phase>
+	
+	<phase id="got3" scenario="caush:21" fast="1" useingr="art3">
+		La farouche amazone ne s'intéresse plus du tout à vous, elle n'a d'yeux que pour le bijou que vous lui avez offert.
+		Il faut maintenant convaincre l'autre amazone pour pouvoir entrer dans le palais.
+	</phase>
+	
+	<phase id="cadeau" next="easy">
+		[Vous venez de voir la gardienne et vous êtes encore sur vos deux jambes...]
+		[Estimez vous déjà heureux !]
+		[On dit que c'est la plus puissante magicienne de tout Dinoland. Alors je serais vous, je me méfierais.]
+	</phase>
+	<a id="easy">Je voudrais en savoir plus sur Caushemesh !</a>
+	<phase id="easy" next="mission" scenario="caush:25">
+		[Oh là là, vous êtes vraiment pénible.]
+		[Mais au moins vous n'êtes pas sot. Effectivement, elle serait la mieux placé pour vous renseigner.]
+		[Ecoutez, voilà ce qu'on va faire, je vais vous donner une petite liste de missions à faire, je lui donnerais vos petits cadeaux petit à petit.]
+		[Avec un peu de chance, elle voudra bien vous écouter...!]
+	</phase>
+	
+	<a id="mission" cond="scenario(caush,25+)">Consulter la liste de missions !</a>
+	<a id="comin" cond="scenario(caush,25+)">Je peux entrer ?</a>
+	
+	<phase id="comin">
+		[Oh là là, vous êtes vraiment pénible.]
+		[Vous voyez bien que l'accès vous est ouvert, alors pourquoi me faîtes vous perdre mon temps à me demander.]
+		[BZZZZZZ !]
+	</phase>
+	
+	<phase id="mission" missions="amazon"></phase>
+</d>
+
+<d place="cpyra1" name="Chrysanthe" gfx="chrysanthe" cond="scenario(caush,43+)">
+	<phase id="begin" next="mission">
+		[Notre maîtresse nous a laissé seules ici.
+		Je suis partagée entre la joie de ne plus avoir à la supporter, et l'ennuie que me procure la tâche qui m'a été assignée...]
+		[Que veux-tu maître dinoz ?]
+	</phase>
+	<a id="mission">Consulter la liste des missions.</a>
+	<phase id="mission" missions="amazon"></phase>
+</d>
+
+<d place="cpyra1" name="Cassandre" gfx="cassandre" cond="scenario(caush,43+)">
+	<phase id="begin" next="mission">
+		[Oh là, là]
+		[Maintenant que les colosses ne sont plus, nous recevons de plus en plus la visite des habitants de l'Acropole.]
+		[Il faudrait que les marchands de Caushemesh pensent à renouveller leur stocks de fournitures. Je commence à tourner en rond moi !]
+		[Tu voulais me donner quelque chose ?]
+		[...]
+		[Non ? Ha dommage...]
+	</phase>
+	<a id="mission">Consulter la liste des missions.</a>
+	<phase id="mission" missions="amazon"></phase>
+</d>
+
+

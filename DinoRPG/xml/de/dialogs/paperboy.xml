@@ -1,0 +1,39 @@
+﻿<d place="dnv" name="Zeitungsjunge" gfx="paperboy" cond="active(gazette)+scenario(intro,1+)">
+	
+	<phase id="begin" fast="1" next="talk:notalk" frame="stop">
+		An einem der Hauptplätze Dinovilles erblickst du eine wild gestikulierende und schreiende Person. Schon aus der Ferne spürst du, dass das 'ne Nervensäge ist. Mal sehen, was der anzubieten hat...
+	</phase>
+
+	<a id="talk">... hallo!</a>
+	<a id="notalk">So schnell wie möglich abhauen!</a>
+	
+	<phase id="talk" next="cagaz">
+		KAUFT DIE NEUE GAZETTE, NUR 35 GOLDCENTS! DINOVILLES OFFIZIELLE GAZETTE! KAUFT DEN "KORGONENKURIER", UM ÜBER ALLES WICHTIGE AUF DEM LAUFENDEN ZU BLEIBEN!
+	</phase>
+	
+	<phase id="notalk" fast="1" frame="stop">
+		Okay, jetzt wird dir einiges klarer... Vielleicht solltest du etwas mehr Abstand einnehmen. Nicht dass er dich noch mit seinem Riesenmaul auffrisst...
+	</phase>
+	
+	<a id="cagaz">Eine Gazette?</a>
+	
+	<phase id="cagaz" next="ok">
+		KAUFT DIE ERSTE ZEITUNG, AN DER JEDER MITSCHREIBEN KANN! UND SIE, HABEN SIE SCHON EIN EXEMPLAR VOM BRANDNEUEN "KORGONENKURIER"?
+		NEIN? DANN KLICKEN SIE EINFACH AUF "GAZETTE" IN DER MENÜLEISTE OBEN RECHTS! SO SIMPEL, SO EINFACH!
+	</phase>
+	
+	<a id="ok">Müssen Sie denn so laut schreien?</a>
+	
+	<phase id="ok" next="fin">
+		VIELEN DANK! HIER IHR WECHSELGELD. UND VERGESSEN SIE NICHT: DER "KORGONENKURIER" ERSCHEINT AB SOFORT IN REGELMÄSSIG UNREGELMÄSSIGEM ABSTAND... ES SEI DENN DIE REDAKTION STREIKT...
+	</phase>
+	
+	<a id="fin">Vielen Dank! Na dann lass uns mal sehen...</a>
+	
+	<phase id="fin" fast="1" frame="stop">
+		Hast du das mit dieser DinoRPG Gazette schon gewusst? Jetzt weißt du es! ;)
+		Bis bald!
+	</phase>
+	
+</d>
+

@@ -1,0 +1,22 @@
+﻿<clanactions>
+
+	<clanact id="hopita" icon="construct" confirm="true" place="clinik" label="Krankenhaus bauen: ::progress::%" cond="scenario(clinik,6+)" give="Aktions:1" need="600" >
+		<desc><p>Dinoville braucht ein Krankenhaus. Du kannst mit deinem *Klan* beim Bau mithelfen.</p><p>Du musst für den Bau noch *::give::-Punkt* ausgeben.</p> <em>Es wurden bereits ::count:: von benötigten ::total:: Aktionen durchgeführt!</em></desc>
+		<message>Herzlichen Glückwunsch, du hast einen Stein zum Bau der Klinik beigetragen. Jetzt fehlen nur noch ::missing:: Steine.</message>
+		<finish>Mit diesem letzten Stein ist die Klinik nun endlich fertig geworden! Super!</finish>
+	</clanact>
+
+	<clanact id="tour" icon="construct" confirm="true" place="tourbt" label="Turm bauen ::progress::%" cond="scenario(nimba2,42+)" give="Aktion:1" need="500" >
+		<desc><p>Du musst einen Turm bauen, um nach Nimbao zu gelangen.</p><p>Spende *::give::*, um den Bau zu beginnen. </p> <em>Es wurden bereits ::count:: der benötigten ::total:: Aktionen durchgeführt!</em></desc>
+		<message>Du hast auf der Turmbaustelle erfolgreich einen Stein verbaut. Es fehlen noch ::missing:: Aktionen.</message>
+		<finish>Mit dem Einsetzen des letzten Steines hast du den Turmbau vollendet! Eindrucksvoll!</finish>
+	</clanact>
+	
+	<!-- todo -->
+	<clanact id="pompe" icon="construct" confirm="true" place="scaush" label="Pomper la brume ::progress::%" cond="scenario(caush,5+)" give="action:1" need="300" >
+		<desc><p>Il faut absorber un maximum de brume avant qu'elle ne se répende sur toutes les steppes.</p><p>Il vous faut donner *::give::* pour réaliser une action de pompage.</p> <em>::count:: actions sur ::total:: ont été faites !</em></desc>
+		<message>Merci, vous avez contribué à la sauvegarde des steppes, il n'en reste plus que ::missing:: à pomper.</message>
+		<finish>Vous avez fini d'absorber la brume, le nuage se lève, les steppes sont sauvées ! Fantastique !</finish>
+	</clanact>
+
+</clanactions>

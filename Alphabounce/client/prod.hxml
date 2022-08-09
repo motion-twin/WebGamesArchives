@@ -1,0 +1,23 @@
+# texts
+-cp src
+-neko preparetexts.n
+-main PrepareTexts
+-cmd neko preparetexts.n
+--next
+# swf
+-swf swf/client.swf
+-swf-lib swf/gfx.swf
+-main Manager
+-cp src
+-cp ../com
+-swf-version 8
+--flash-strict
+-D swf-mark
+-D prod
+-cmd swfmake
+-resource MissionInfo.data@MissionInfo
+-resource ZoneInfo.data@ZoneInfo
+-resource TextFr.data@TextFr
+-resource TextEn.data@TextEn
+-resource TextEs.data@TextEs
+-resource TextDe.data@TextDe

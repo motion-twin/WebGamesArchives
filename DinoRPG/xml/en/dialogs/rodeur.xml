@@ -1,0 +1,111 @@
+﻿<d place="forges" name="Strange Prowler" gfx="rodeur" cond="active(rodeur)+!mission(rodriz)+level(15)">
+
+	<phase id="begin" next="go:talk:talk2">
+		.........
+	</phase>
+
+	<a id="go">This guy seems dangerous... it's probably a good idea to move away from him</a>
+	<a id="talk" cond="!curmission(rodriz)">Talk to him</a>
+	<a id="talk2" cond="curmission(rodriz)">Talk to him</a>
+
+	<phase id="go" fast="1">
+		Pheeww! It's better to be careful when around strangers, you never know what's going to happen....
+	</phase>
+
+	<phase id="talk" next="go:yes">
+		What? You can see me? .... Argh! ....
+	</phase>
+
+	<a id="yes">Ummm .... yes</a>
+
+	<phase id="yes" next="go:read">
+		The guy who sold me this cape assured me that it would make me invisible! Can you take a look at the indicator on my back, is something written on it?
+	</phase>
+
+	<a id="read">Check the indicator</a>
+
+	<phase id="read" next="go:help">
+		What? "LOW BAT-RICE"? Ummm .... the seller told me to recharge something .... so I have to use .... rice? But where can I get rice from?
+	</phase>
+
+	<a id="help">Help The Prowler</a>
+
+	<phase id="help" missions="rodeur"></phase>
+
+	<phase id="talk2">
+		Hurry! I need the rice to recharge my cape. Quick! Hurry!!
+	</phase>
+
+</d>
+
+<!-- PART 2 -->
+
+<d place="forges" name="Strange Prowler" gfx="rodeur"  cond="mission(rodriz)+!mission(rodlif)+level(20)">
+
+	<phase id="begin" next="qual:qual2">
+		My cape ran out of rice again ... I'm starting to get sick of this...
+	</phase>
+
+	<a id="qual" cond="!curmission(rodlif)">It's probably a bad quality cape</a>
+	<a id="qual2" cond="curmission(rodlif)">It's probably a bad quality cape</a>
+
+	<phase id="qual2">
+		Instead of saying stupid things, maybe you should try and complete your mission...
+	</phase>
+
+	<phase id="qual" next="caush:ether">
+		What!? How dare you talk like that about Caushemesh technology! Do you know how many years of research it took our scientists to master the Ether?
+	</phase>
+
+	<a id="caush">Caushemesh?</a>
+	<a id="ether">Ether?</a>
+
+	<phase id="caush" next="ether:next">
+		Caushemesh is a large civilization in the Caushemesh Mountains, beyond the Magnetic Steppes. We're far more developed than these barbarians.
+	</phase>
+
+	<phase id="ether" next="caush:next">
+		After centuries of research, the Caushemeshians have mastered the power of Ether, a complex mix of the Air and Void elements. It's an extraordinary technoligical advancement, all thanks to Caushemesh engineers, the best in Dinoland!
+	</phase>
+
+	<a id="next">And...</a>
+
+	<phase id="next" next="more">
+		Your Dinoz are too weak. They're no match for ours..hahahaha! Make sure you train your Dinoz well, as the day will come when you are called upon to fight more powerful enemies!
+	</phase>
+
+	<a id="more">....</a>
+
+	<phase id="more" next="mission">
+		Enough of me talking .... what would you say about a little mission to convice you of the strength of our technology,?
+	</phase>
+
+	<a id="mission">Accept the mission</a>
+
+	<phase id="mission" missions="rodeur"></phase>
+
+</d>
+
+<!-- PHASE 3 -->
+
+<d place="forges" name="Strange Prowler" gfx="rodeur" cond="mission(rodlif)+!hasobject(regen)">
+	<phase id="begin" next="next">
+		I thought I should let you know that all the Dark Dinoz you have met up until now were only newbies that we train in this region of Dinoland ... the Dinoz of Caushemesh are far stronger. Even your Venerable will be no match for our strongest Dinoz masters!
+	</phase>
+
+	<a id="next">(...)</a>
+
+	<phase id="next" give="regen" nocheck="1">
+		I'm a man of my word. Here's a reward to convince you of the superiority of Caushemesh technology. I only have one copy, so use it well .... it's a bracelet made of tik, you can equip it on any Dinoz of your choice.
+	</phase>
+</d>
+
+<!-- PHASE 4 -->
+
+<d place="dplaza" name="Strange Prowler" gfx="rodeur3" frame="fixe" background="5" cond="scenario(caush,44+)">
+	<phase id="begin" fast="1">
+		Now freed from his spying obligations, the prowler has settled down not too far from dino plaza.
+		He's relaxing in the sun, fanning his toes in the breeze...
+		Better to see him here than conjuring up some elaborate swindle...
+	</phase>	
+</d>

@@ -1,0 +1,43 @@
+﻿<missions>
+
+	<m group="mbegin" id="mbegin" name="Ein fragwürdiger Dienst">
+		<begin>
+			Also ich würde dich gerne darum bitten, etwas für mich zu transportieren. Du wirst sehen, dass es vollkommen ohne Risiko ist. Du musst nur meinen Anweisungen Folge leisten...
+		</begin>
+		<goto v="mport"/>
+		<talk v="Zwielichtiger Mann" gfx="filou">
+			Gut. Nimm diesen schwarzen Handkoffer und bring ihn zu meinem Cousin am Marktplatz in Dinoville. Er gibt dir dann weitere Anweisungen...
+		</talk>
+		<action v="Schwarzer Koffer">
+			Du hast den schwarzen Handkoffer angenommen. Du möchtest gar nicht wissen was drin ist...
+		</action>
+		<goto v="marche"/>
+		<talk v="Zwielichtiger Mann" gfx="filou">
+			Na sieh mal an, ist das von meinem Cousin? Hat er also den richtigen Riecher gehabt... Du wirst hier ein paar Stunden brav auf mich warten, bis ich alles zusammen habe, was in dem Koffer wieder zurück muss, capito?
+		</talk>
+		<action v="Warten..." wait="3">
+			Du wartest bis der Cousin fertig ist...
+		</action>
+		<talk v="Zwielichtiger Mann" gfx="filou">
+			Hör zu, wir haben ein paar Probleme und die Kohle ist noch nicht da. Warte noch ein bisschen, damit ich mich darum kümmern kann, ok?
+		</talk>
+		<action v="Warten..." wait="2">
+			Du wartest bis der Cousin fertig ist...
+		</action>
+		<talk v="Zwielichtiger Mann" gfx="filou">
+			Ok, es ist alles fertig. Nimm diesen Koffer und bring ihn so schnell wie möglich zu meinem Cousin zurück. Ich habe keine Lust, mir wegen der Verspätung eine Kugel einzufangen...
+		</talk>
+		<action v="Schwarzer Koffer">
+			Du hast den schwarzen Koffer entgegen genommen. Er scheint leichter zu sein als auf dem Hinweg. Sein Inhalt muss inzwischen wohl ein anderer sein...
+		</action>
+		<goto v="mport"/>
+		<talk v="Zwielichtiger Mann" gfx="filou">
+			Danke. Siehst du, ich habe dir doch gesagt, dass es ohne Risiko sein würde.
+		</talk>
+		<end>
+			Na dann, wieder was Gutes geschafft...Ich werde dir den Durchgang öffnen, der dir erlauben wird, an den Wachen vorbeizukommen.
+		</end>
+		<xp v="5"/>
+	</m>
+
+</missions>

@@ -1,0 +1,59 @@
+﻿<d place="marche" name="Isabella" gfx="isabella">
+
+	<phase id="begin" next="intro:no:twin">
+		Salut toi ! Ca va ? Moi tout va bien !
+	</phase>
+
+	<a id="intro" cond="!active(twinoid)" >Ca va très bien merci !</a>
+	<a id="no">Bof, je ne suis pas très en forme aujourd'hui</a>
+	<a id="twin" cond="active(twinoid)" >Je voudrais devenir parrain !</a>
+
+	<phase id="no" fast="1" frame="stop">
+		La jeune fille part dans une autre direction, visiblement, elle aime les personnes qui ont la pêche...!
+	</phase>
+	
+	<phase id="twin">
+		[Tu as envie de parrainer un futur maître dinoz ?]
+		[C'est super, mais malheureusement, tu ne peux pas le faire pour le moment, le parrainage est temporairement indisponible.
+		Ne t'inquiète pas, il reviendra prochainement, avec une belle surprise pour les maîtres dinoz !]
+ 	</phase>
+
+	<phase id="intro" next="start:no">
+		J'ai trouvé un moyen de gagner plein de pièces d'or !
+		Tu connais le *Parrainage* ? C'est une façon très simple de devenir millionnaire en pièces d'or, comme moi !
+	</phase>
+
+	<a id="start">Ha, et il faut faire quoi ?</a>
+
+	<phase id="start" next="tix:win:how:no">
+		Le principe est très simple : tu demandes à tes amis de venir s'inscrire sur DinoRPG, et
+		pour chacun de tes amis qui s'incrit et joue tu gagnes un *ticket parrain*, directement dans ton Inventaire !
+		Ces tickets te permettent de gagner de nombreux trésors !
+	</phase>
+
+	<a id="tix">Des Tickets Parrain ?</a>
+	<a id="win">Que gagne-t-on ?!?</a>
+	<a id="how">Comment parrainer ?</a>
+
+	<phase id="tix" next="win:how:no">
+		Oui, une fois que tu as obtenu un Ticket Parrain tu peux revenir sur la Place du Marché pour l'utiliser.
+		Tu pourras *creuser* une case pour chaque Ticket et peut-être trouver un grand *Trésor* !
+	</phase>
+
+	<phase id="win" next="tix:how:no">
+		La plupart des Tickets te donneront des pièces d'or, mais on raconte qu'il y a la possibilité
+		de trouver un *Oeuf de Dinoz* extrêmement rare et surtout très puissant ! Il est en tout cas
+		très recherché par tous les Maîtres Dinoz...
+	</phase>
+
+	<phase id="how" next="out:tix:win:no">
+		Pour parrainer, il te suffit de lire le *Manuel du Parrain* que j'ai rédigé, tu y trouveras toutes
+		les informations pratiques !
+	</phase>
+
+	<a id="out">Merci, je vais y jeter un oeil tout de suite !</a>
+
+	<phase id="out" url="/user/parrain">
+	</phase>
+
+</d>

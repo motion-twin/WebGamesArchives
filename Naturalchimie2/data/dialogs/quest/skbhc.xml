@@ -1,0 +1,30 @@
+<d place="gubafa" name="Demander une analyse" gfx="gubafaa" auto="0">
+
+
+<phase id="begin" frame="normal" next="todo">
+Oui ? Que désires-tu ? 
+</phase>
+
+<a id="todo">Bonjour. Je viens pour faire analyser cet échantillon d'eau.</a>
+
+<phase id="todo" qgive="QuestObj(liquid):1" frame="happy" next="crea">
+Mmmh. | Oui, j'ai un créneau dans le planning du service des analyses. On va pouvoir s'occuper de ça aujourd'hui. Il y a une analyse particulière à effectuer ? 
+</phase>
+
+<a id="crea">Ben... C''est pour savoir ce qu'elle sent, cette eau. On arrive pas à deviner. </a>
+
+<phase id="crea" frame="normal" next="epil">
+Mmmh, Je note : odeur suspecte indéfinissable. | A définir.
+</phase>
+
+<phase id="epil" frame="normal" next="com">
+Bien. le coût de l'analyse est de [5 Mercurules].
+</phase>
+
+<a id="com">Hein ? c'est payant ? </a>
+
+<phase id="com" frame="angry">
+Bienvenue au B.A.F.A. ! | Bien sûr que c'est payant.
+</phase>
+
+</d>

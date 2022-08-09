@@ -1,0 +1,140 @@
+<d place="aphall" name="Portes ouvertes Audepint" cond="curquest(schoo)+disable()" gfx="approf" auto="1">
+
+<phase id="begin" next="so">
+... Au suivant ! |
+Bonjour. Bienvenue au manoir Audepint qui t'ouvre exceptionnellement ses portes.
+</phase>
+
+<phase id="so" next="spe:hist:home:qui:zone:go" frame="happy">
+Que désires-tu savoir exactement ? 
+</phase>
+
+<a id="spe">C'est quoi les spécialités enseignées ? </a>
+<a id="hist">Je voudrais en savoir plus sur l'histoire de l'école. </a>
+<a id="home">Où est-ce qu'on dort ? La cantine est bonne ? </a>
+<a id="zone">Dites il fait un peu froid chez vous, non ?</a>
+<a id="qui">Vous êtes qui ? </a>
+<a id="sub">Comment on s'inscrit à Audepint ? </a>
+<a id="go">C'est tout pour le moment. Merci.</a>
+
+<phase id="go" url="/act?did=po2">
+A plus tard, apprenti... 
+</phase>
+
+<!-- ############################ -->
+<phase id="spe" next="speb">
+Comme tout le monde le sait (sauf toi), Audepint est spécialisée dans l'aurification alchimique.
+Nous sommes la seule école capable de créer de l'or pur en grande quantité. C'est ce qui fait notre supériorité. 
+</phase>
+
+<a id="speb">Mais il n'y a pas que la richesse dans la vie, non ?</a>
+
+<phase id="speb" frame="happy" next="spec">
+Ah ! Point de vue d'ignorant ! L'or est indispensable au bon fonctionnement du royaume. 
+Si nous sommes l'école la plus puissante et la plus influente, ce n'est pas pour * rien !
+</phase>
+
+<a id="spec">L'école la plus puissante ? Ce n'est pas la guilde des alchimistes la plus puissante ?  </a>
+
+<phase id="spec" next="sped">
+La guilde contrôle l'alchimie et supervise les autres écoles. Nous aimons penser que nos relations avec elle sont plus proches du partenariat.
+</phase>
+
+<a id="sped">(Eh ben. Ca va les chevilles, hein.)</a>
+
+<phase id="sped" frame="angry" next="spee">
+%happy%Pardon ? Tu as dit quelque chose ? 
+</phase>
+
+<a id="spee">Non non. C'est le froid. Kof * Kof...</a>
+
+<phase id="spee" next="so">
+Ah. Très bien.
+</phase>
+
+<!-- ############################ -->
+<phase id="hist" next="histb:fam">
+Audepint est la plus jeune école du royaume. Elle a été créée par la famille Audepint, la plus illustre famille de Kringdam.
+L'école est située dans le manoir familial. Tous les étudiants y sont hébergés.
+</phase>
+
+<a id="histb">Pourquoi ils ont voulu créer une école supplémentaire ? </a>
+<a id="fam">C'est la famille Audepint qui dirige l'école ?  </a>
+
+<phase id="histb" next="histc">
+Les ancêtres Audepint n'étaient pas satisfaits de l'orentation de l'alchimie moderne. Pas assez pratique. Trop de folklore. 
+Ils ont donc créé leur propre école. Et puis à cette époque, ils avaient besoin de l'alchimie dans leur guerre contre Gemini. 
+</phase>
+
+<a id="histc">Une guerre contre Gemini ? Oua ! Qui a gagné ? </a>
+
+<phase id="histc" frame="happy" next="so">
+Personne n'a gagné, la guilde est arrivée et a imposé la paix. 
+C'était il y a longtemps. Mais même aujourd'hui, évite d'inviter un Audepint et un Gemini si tu fais une petite fête...
+</phase>
+
+<phase id="fam" next="chanc">
+Non. Un chancelier est nommé pour diriger l'école. Mais c'est vrai que les descendants Audepint donnent encore leur avis dans cette nomination.
+J'ai moi-même été chancelier il y a quelques années, ce fut un grand honneur...
+</phase>
+
+<a id="chanc">Ah ? Et pourquoi vous n'êtes plus chancelier ? </a>
+
+<phase id="chanc" frame="happy" next="so">
+Hum. Kof * Kof... Ce n'est pas le sujet du jour.
+</phase>
+
+
+<!-- ############################ -->
+<phase id="zone" next="snow">
+Eh bien tu es à {Kringdam}, on y trouve les plus hautes montagnes du royaume. 
+Notre hiver dure quand même plus de 10 mois. Ca forge le caractère. 
+</phase>
+
+<a id="snow">Quoi * ! Mais comment vous supportez ça ? Je peux pas venir étudier dans une région pareille !</a>
+
+<phase id="snow" next="snowb">
+Tout est prévu. Les uniformes des alchimistes Audepint sont tous doublés en poil de Rigud. 
+C'est autre chose que tes vêtements qui ont l'air de commencer à geler.
+</phase>
+
+<a id="snowb">Oui ben essayez de p-p-parler p-p-plus vite, que je retourne au chaud.</a>
+
+<phase id="snowb" frame="happy" next="so">
+Tous les apprentis disent ça.
+Dis-toi qu'on s'habitue. Et puis il n'y a qu'ici que tu peux faire des batailles de boule de neige toute l'année. Et je ne parle pas du vin chaud. 
+</phase>
+
+<!-- ############################ -->
+<phase id="qui" next="aud">
+Je suis Enguerrand, professeur supérieur de l'école Audepint. Tu peux m'appeler "maître".
+Tu seras amené à me revoir si tu rejoins la meilleure école du royaume. 
+</phase>
+
+<a id="aud">...Vous parlez d'Audepint, là ? </a>
+
+<phase id="aud" next="so">
+Voilà un apprenti perspicace...
+</phase>
+
+<!-- ############################ -->
+<phase id="home" next="homeb">
+Les étudiants disposent d'un dortoir commun dans le manoir. Sauf le chancelier qui dispose d'une chambre privée, évidemment. 
+La cantine est comparable à celles des autres écoles. 
+</phase>
+
+<a id="homeb">Comparable ? C'est-à-dire ? </a>
+
+<phase id="homeb" frame="happy" next="so">
+Pas bonne.
+</phase>
+
+
+<!-- ############################ -->
+<phase id="sub" next="so">
+Il te suffit de rejoindre le Manoir pour pouvoir commencer les cours. tu auras une place dans le dortoir des étuidiants dès ton arrivée. 
+La route de Kringdam est à l'Est de la grande place.
+</phase>
+
+
+</d>

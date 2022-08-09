@@ -1,0 +1,318 @@
+﻿<monsters>
+
+	<!--
+		NOTE EQUILIBRE :
+			bas niveau = lvl ~= 10pv / combat sans compétence
+			lvl ~= 4-5 tours
+	-->
+	<!--
+		Documentation :
+		special: active ce monstre que pour les events qui l'utilisent. Un monstre special ne peut etre présent qu'une seule fois (pas de groupe).
+	-->
+	<!-- DINOVILLE -->
+
+	<m id="goupi" name="Goupignon" zones="0" level="1" elts="0" life="20" proba="33"/>
+	<m id="goupi2" name="Goupignon" zones="0" level="1" elts="0" life="20" proba="33"/>
+	<m id="goupi3" name="Goupignon" zones="0" level="1" elts="0" life="20" proba="33"/>
+	<m id="wolf" name="Loup" zones="0" level="5" elts="1" life="30" groups="5:3:1" skills="bite" proba="80" />
+	<m id="gluon" name="Gluon" zones="0" level="7" elts="2:2:2:2:2" life="35" proba="20" skills="absorb" xp="25" fx="ground"/>
+	<m id="gvert" name="Géant Vert" zones="0" level="14" elts="3:6" life="70" skills="fregen"/>
+	<m id="coq" name="Coqdur" zones="0" level="21" elts="3:3:3:3:3" life="80" proba="50" skills="coqdur" fx="run"/>
+	
+	<m id="pirask" frame="piraos" name="Pirhan-os" places="skull" level="15" elts="50:30" life="15" groups="0:0:1" skills="envol2" balance="1" proba="5" />
+	
+	<!-- HUNT -->
+	
+	<m id="marca" name="Marcanglier" zones="0" level="5" elts="3:5" life="50" proba="0" xp="30" />
+	<m id="darkgh" frame="darkgp" name="Goupignon Sombre" level="30" elts="60:40" life="30" balance="1" dark="1" size="150"/>
+	<m id="piraoh" frame="piraos" name="Pirhan-os" zones="4" level="15" elts="30:20" life="15" groups="0:0:1" skills="envol2" balance="1"/>
+	
+	<!-- NOEL -->
+		
+	<m id="piglou" name="Piglounou" 	frame="piglou" zones="0" level="5" 	elts="5:3" 		proba="10" life="50" xp="40" balance="1" nocapture="1" special="1" />
+	<m id="piglo2" name="Pigloubi" 		frame="piglou" zones="0" level="10" elts="20:15" 	proba="10" life="50" xp="40" balance="1" nocapture="1" special="1" />
+	<m id="piglo3" name="Piglouglou" 	frame="piglou" zones="0" level="20" elts="40:30" 	proba="10" life="50" xp="40" balance="1" nocapture="1" special="1" />
+	<m id="piglo4" name="Super Piglou" 	frame="piglou" zones="0" level="30" elts="60:45" 	proba="10" life="50" xp="40" balance="1" nocapture="1" special="1" />
+	<m id="piglo5" name="Ultra Piglou" 	frame="piglou" zones="0" level="40" elts="80:50" 	proba="10" life="50" xp="40" balance="1" nocapture="1" special="1" />
+	
+	<!-- ST VALENTIN -->
+		
+	<m id="febrez" name="Febrez" frame="febrez" zones="0:1:2:3:4:5:6:7:8" elts="10:10" level="0" proba="30" life="30" xp="0" gold="0" nocapture="1" balance="1" skills="febrez" special="1"></m>
+	
+	<!-- GTC -->
+
+	<m id="flam" name="Flammèche" zones="1" level="3" elts="1:0:0:0:0" life="10" groups="0:3:1" skills="renfrt" xp="7"/>
+	<m id="goblin" name="Gobelin" zones="1" level="5" elts="2:1" life="60" skills="goblin"/>
+	<m id="barche" name="Bébé Archélion" zones="1" level="10" elts="3:1:2:1:1" life="70" proba="20" xp="15" fx="run"/>
+	<m id="cobra" name="Cobrasero" zones="1" level="20" elts="5:0:0:4:0" life="100" fx="grow"/>
+
+	<!-- ILES ATLANTEINEES -->
+	<m id="pira2" frame="pira" name="Pirhaloz" zones="2" level="1" elts="0" life="5" groups="1:1"/>
+	
+	<m id="pira" name="Pirhanoz" zones="2" level="6" elts="0:0:1:0:0" life="5" groups="0:0:1" skills="envol2" xp="5"/>
+	<m id="kazka" name="Kazkadine" zones="2" level="8" elts="3:7" life="50" skills="intang" fx="grow"/>
+	<m id="anguil" name="Anguilloz" zones="2" level="18" elts="2:0:4:0:0" life="120" proba="70" xp="15" skills="electr"/>
+	<m id="borg" name="Borg" zones="2" level="28" elts="10:40" life="100" proba="50" skills="resist" fx="grow" nocapture="1"/>
+
+	<!-- FORET DE GRUMHEL -->
+
+	<m id="korgon" name="Korgon Farceur" zones="3" level="7" elts="3:4:0:0:0" life="10" groups="0:2:1"/>
+	<m id="ronciv" name="Roncivore" zones="3" level="15" elts="6:15" life="70" skills="protct:sentin" fx="ground"/>
+	<m id="bat" name="Fauve Souris" zones="3" level="20" elts="25:18" life="50" balance="1" skills="envol2"/>
+	<m id="grdien" name="Gardien Arboricole" zones="3" level="25" elts="10:25" life="80" balance="1" skills="comet:sentin" proba="50" xp="15" fx="ground"/>
+
+	<!-- MONDE SOMBRE -->
+
+	<m id="piraos" name="Pirhan-os" zones="4" level="15" elts="50:30" life="15" groups="0:0:1" skills="envol2" balance="1" nocapture="1"/>
+	<m id="towgrd" name="Gardien de la Tour" level="30" elts="0:0" life="300" xp="40" skills="gtour" fx="fall" boss="1"/>
+	<m id="upgrd" name="Gardien supérieur" level="40" elts="0:0" group="1:0:0" life="500" xp="40" skills="gtour" fx="fall" boss="1"/>
+	<m id="updwn" name="Gardien inférieur" level="50" elts="0:0" group="1:0:0" life="600" xp="60" skills="gtour" fx="fall" boss="1"/>
+	<m id="fullgd" name="Alchimiste d'acier" level="60" elts="40:100" group="1:0:0" life="1000" xp="60" fx="fall" boss="1"/>
+	
+	<m id="garouz" name="Garouzore" zones="4" level="20" elts="30:30" life="30" balance="1" nocapture="1"/>
+	<m id="amanpe" name="Amenpenne" zones="4" level="25" places="fake" elts="50:20" group="1:3:2" life="30" fx="ground" xpBonus="5" balance="1" nocapture="1"/>
+	<m id="amanp2" frame="amanpe" name="Amenpenne" zones="4" level="25" elts="50:20" group="2:1:0" life="30" fx="ground" xpBonus="5" balance="1" nocapture="1"/>
+	<m id="feufol" name="Feu-Folle" zones="4" level="55" places="fake2" elts="60:30" group="2:1:0" life="80" xpBonus="10" balance="1" nocapture="1"/>
+
+	<!-- STEPPES MAGNETIQUES -->
+
+	<m id="worm2" name="Chtiver" zones="5" level="20" elts="6:10" life="50" balance="1" fx="ground" skills="worm2" nomove="1"/>
+	<m id="worm" name="Longbrik" zones="5" level="30" elts="0:0:10:15:0" life="60" balance="1" fx="ground" skills="worm" nomove="1" groundonly="1"/>
+	<m id="scorp" name="Scorpwink" zones="5" level="30" elts="0:0:0:9:0" life="50" balance="1" skills="scorp"/>
+	<m id="cactus" name="Kaktuz" zones="5" level="38" elts="40:130" life="20" balance="1" skills="cactus" xp="12"/>
+	<m id="brig1" name="Brigand Zaxa" level="25" elts="70:0" life="30" groups="0:1" balance="1" skills="brig1">
+		<p zones="5" proba="10"/>
+		<p places="sband1" proba="500"/>
+	</m>
+	<m id="brig2" name="Brigand Emmema" level="25" elts="0" life="5" groups="0:0:0:1" balance="1" skills="brig2" xp="6">
+		<p zones="5" proba="10"/>
+		<p places="sband2" proba="500"/>
+	</m>
+	<m id="brig3" name="Brigand Mattmût" level="25" elts="50:20" life="20" groups="0:0:1" balance="1" skills="brig3" xp="7">
+		<p zones="5" proba="10"/>
+		<p places="sband3" proba="500"/>
+	</m>
+	<m id="bamboo" name="Pousse de Bambooz" level="0" elts="0:4:0:4:0" life="30" xp="0" fx="fall" balance="1"/>
+
+	<!-- DINOVILLE WEST -->
+
+	<m id="gropi" name="Gropignon" zones="6" level="7" elts="12:25" life="10" balance="1" skills="ggoupi"/>
+	<m id="mimic" name="Mimic" zones="6" level="35" elts="35:50" life="30" balance="1"/>
+	<m id="mimic2" frame="mimic" name="Mimic" zones="6" level="35" elts="35:50" groups="3:1:0:0" life="30" balance="1"/>
+	<m id="earth2" name="Elémental jambes" zones="6" level="15" elts="10:40" life="30" balance="1"/>
+	
+	<!-- MISSIONS STEPPES -->
+
+	<m id="salami" frame="brig3" name="Sahalami le Trancheur" level="25" elts="0:0:10:10:0" balance="1" life="100" skills="vignes" xp="20"/>
+	<m id="tripou" frame="brig3" name="Tripou le Mou" level="30" elts="8:12:8:8:12" balance="1" life="80" skills="embuch:embuch:colere:aubefe" xp="20"/>
+	<m id="tripo2" frame="brig3" name="Tripou le Mou" level="25" elts="10:10:10:10:10" balance="1" life="9999" skills="escap:embuch:embuch:embuch:embuch:embuch:embuch" xp="1"/>
+	<m id="coward" frame="brig2" name="Brigand Emmema" level="25" elts="10:10:10:10:10" balance="1" life="9999" skills="escap:embuch:embuch:embuch:embuch:embuch:embuch" xp="1"/>
+	<m id="cowar2" frame="brig2" name="Brigand Emmema" level="25" elts="0" life="1" groups="0:0:0:1" balance="1" skills="embuch:embuch:embuch:embuch:embuch:embuch" xp="3"/>
+	<m id="boukan" frame="brig3" name="Boukané l'intuable" level="30" elts="15:15:0:0:0" balance="1" life="100" skills="focus:meteor:meteor:foudre:foudre:foudre:foudre" xp="20"/>
+	<m id="cervel" frame="brig3" name="Cervelah l'empoisonneur" level="30" elts="15:15:0:0:0" balance="1" life="100" skills="eclair:eclair:nuaget:nuaget:nuaget" xp="20"/>
+	<m id="pikouz" frame="scorp" name="Pikouz" level="25" elts="0:0:0:12:0" balance="1" life="50" size="50" skills="scorp"/>
+	<m id="wormom" frame="worm" name="Matriarche Longbrik" level="35" elts="0:0:15:20:0" life="160" balance="1" fx="ground" skills="coque:electr:worm:embuch:wormrf:wormrf" nomove="1" groundonly="1"/>
+	<m id="wormy" frame="worm" name="Bébé Longbrik" level="15" elts="0:0:5:10:0" life="30" balance="1" fx="ground" skills="foudre:worm" nomove="1" groundonly="1"/>
+	<m id="buildr" frame="brig3" name="Ouvrier de Caravoies" level="25" elts="2:10:0:2:6" life="9999" balance="1" skills="tenace"/>
+	<m id="thief" frame="scorp" name="Scorpwink chapardeur" level="20" elts="0:0:0:9:0" life="1000" balance="1" skills="brig3:eclair:celer:scorp:coward"/>
+	<m id="thief2" frame="scorp" name="Scorpwink chapardeur" level="20" elts="0:0:0:9:0" life="50" balance="1" skills="brig1:eclair:scorp"/>
+
+	<!-- SCENARIO STEPPES -->
+
+	<m id="wteam1" name="[TW]Destructeur" gfx="B9OyiKpiwfXdML00" level="20" elts="0:11:0:15:0" life="120" xp="40" skills="celer:vignes:focus:tenace:double" balance="1" boss="1"/>
+	<m id="wteam2" name="[TW]Nightmare" gfx="B9ZfndPKdEVihM00" level="25" elts="0:11:0:17:0" life="150" xp="40" skills="focus:vignes:agili:celer:eclair:griffe:double" balance="1" boss="1"/>
+	<m id="wteam3" name="[TW]Tonnerre" gfx="B9ceIUF05YYDcC00" level="30" elts="0:11:0:20:0" life="200" xp="40" skills="celer:double:agili:eclair:foudre" balance="1" boss="1"/>
+	<m id="wteamc" name="[TW]Capitaine" level="0" elts="0:0" life="100" xp="0" fx="run"/>
+	<m id="wbour1" name="[TW]Grobourin" gfx="Baq5OVIyhYmJ7U00" level="35" elts="0" life="300" xp="0" skills="off"/>
+	<m id="darkgp" name="Goupignon Sombre" level="30" elts="80:50" life="30" skills="renfrt:renfrt" balance="1" dark="1" size="150"/>
+	<m id="wbour2" name="[TW]Grobourin" gfx="Baq5OVIyhYmJ7U00" level="35" elts="0:11:0:20:0" life="300" xp="50" skills="celer:celer:celer:eclair:foudre:double:danse:resist" balance="1" boss="1"/>
+
+	<!-- SUIVANTS -->
+
+	<m id="rkrgns" name="Renforts Korgon" level="0" elts="1:3:1:1:1" life="10" xp="0" balance="1"/>
+	<m id="egrllz" name="Esprit Gorilloz" level="0" elts="5:8:3:3:3" life="40" xp="0" balance="1"/>
+
+	<!-- QUETES -->
+
+	<m id="ewater" name="Elémental d'Eau" level="5" elts="0:0:4:0:0" life="50" xp="50" fx="ground" boss="1"/>
+	<m id="efire" name="Elémental de Feu" level="5" elts="4:0:0:0:0" life="60" xp="50" fx="ground" boss="1"/>
+	<m id="eearth" name="Elémental de Terre" level="10" elts="2:8:2:2:2" life="100" xp="100" fx="ground" boss="1"/>
+	<m id="rasca" name="Vieux Rascaphandre" level="10" elts="1:2:8:1:2" life="60" xp="100" fx="fall" boss="1"/>
+	
+	<m id="vener" name="Le Vénérable" level="50" elts="0:60" life="1000" skills="vener" xp="1000" fx="stand" boss="1" nomove="1"/>
+	<m id="vener2" frame="vener" name="Le Vénérable" level="50" elts="0:60" life="1000" skills="vener" xp="0" fx="stand" boss="1" nomove="1"/>
+	<m id="vener3" frame="vener" name="Le Vénérable" level="20" elts="0:5" life="500" skills="vener" xp="0" gold="0" fx="stand" boss="1" nomove="1"/>
+	<m id="vener4" frame="vener" name="Le Vénérable" level="50" elts="0:40" life="700" skills="vener" xp="100" fx="stand" boss="1" nomove="1"/>
+	
+	<m id="pteroz" name="Pteroz" level="7" elts="4:1:0:2:3" life="70" skills="colere:force:focus:griffe:envol" xp="50" boss="1"/>
+	<m id="hippo" name="Hippoclamp" level="7" elts="2:4:3:1:1" life="70" skills="carapc:sauvag:canon:endur" xp="50" boss="1"/>
+	<m id="rocky" name="Rocky" level="12" elts="1:2:3:6:0" life="100" skills="foudre:focus:carapc:celer:double" xp="50" boss="1"/>
+
+	<!-- EXTRA MISSIONS -->
+
+	<m id="baraba" frame="brig2" name="Barababor" level="15" elts="0:3:6:6:3" balance="1" life="70" skills="double"/>
+	<m id="baratr" frame="brig1" name="Baratribor" level="15" elts="0:3:6:6:3" balance="1" life="70" skills="double"/>
+	<m id="megawf" frame="wolf" name="Mégaloup" level="10" elts="7" life="60" skills="double" balance="1" dark="1" size="150" boss="1"/>
+	<m id="elhelp" name="Elève-Elémentaire" gfx="D9cBoAXpDPOOdu00" level="0" life="200" elts="20" skills="elhelp" balance="1"/>
+	<m id="pign1" name="Fiodor Pignuit" gfx="19yZFtcIipAwiq00" level="15" life="50" size="150" elts="10:1:1:1:0" skills="braser" balance="1" boss="1"/>
+	<m id="pign2" name="Dmitri Pignuit" gfx="19DVYpUf3pkF3M00" level="15" life="50" size="150" elts="10:1:1:1:0" skills="detona" balance="1" boss="1"/>
+	<m id="korven" name="Korgon Vengeur" frame="kmask" level="8" life="20" size="50" elts="3:6:0:0:0" skills="launch:launch:launch" balance="1"/>
+	<m id="kvenbs" name="Korgon Masqué" frame="kmask" level="15" life="60" elts="6:12:0:0:0" skills="launch:launch:bmaudt" balance="1" boss="1"/>
+	<m id="ksudbs" name="Korgon du Sud" frame="kmask" level="35" life="150" elts="40:30" skills="launch:launch:bmaudt" balance="1" boss="1"/>
+	<m id="megoup" name="Megapignon Sombre" frame="gropi" level="7" elts="60:12" life="50" balance="1" skills="ggoupi" dark="1" size="200" boss="1"/>
+	<m id="darkg2" name="Goupignon Sombre" level="30" elts="80:50" life="30" balance="1" dark="1" size="200"/>
+	<m id="pirao2" frame="piraos" name="Pirhan-os" level="15" elts="50:30" life="10" skills="envol2" balance="1"/>
+	<m id="march1" frame="brig3" size="70" name="Marchand Louche" level="5" elts="0" life="30" balance="1"/>
+	<m id="march2" frame="brig2" size="50" name="Marchand en Colère" level="5" elts="2" life="30" balance="1"/>
+	<m id="gang1" frame="brig3" name="Jean-Hubert" level="10" elts="10" life="100" balance="1"/>
+	<m id="gang2" frame="brig3" name="Charles-Edouard" level="10" elts="10:1" life="100" balance="1"/>
+	<m id="gang3" frame="brig3" name="Louis-Stanislas" level="10" elts="10:1" life="100" balance="1"/>
+	<m id="gang4" frame="fuego" name="Don Fuego" level="30" elts="30:20" life="120" gold="0" xp="0" balance="1"/>
+	<m id="suspc" frame="brig1" name="Suspect" level="10" elts="3" life="40" balance="1"/>
+	<m id="suspc1" frame="brig2" name="Suspect Numéro Un" level="10" elts="3" life="40" balance="1"/>
+
+	<!-- SCENARIO KABUKI -->
+
+	<m id="yakuzi" name="Yakuzi" level="15" life="50" elts="22" skills="yakuzi:percep" balance="1" boss="1" />
+	<m id="yakkb1" name="???" gfx="E9ERKdJzrAYd5P00" level="10" life="100" elts="0:1:4:2:4" skills="ninja" balance="1"/>
+	<m id="yakkb2" name="Ninjutsu" gfx="E9ERKdJzrAYd5P00" level="10" life="100" elts="0:1:5:2:7" skills="ninja:disque:percep:agili" balance="1"/>
+	<m id="yakkb3" name="Kage" gfx="E9OI0HBqXBb9dH00" level="15" life="100" elts="0:1:7:2:8" skills="ninja:disque:disque:nuaget:percep:agili" balance="1"/>
+	<m id="igor" name="Pr.Igor" level="20" life="200" elts="20" skills="resist:igor" balance="1" boss="1"/>
+	<m id="tigor1" name="Barbara" gfx="C9twtwj1Qnx1rU00" level="20" life="100" elts="1:3:3:3:15" skills="tornad" balance="1" boss="1"/>
+	<m id="tigor2" name="Choupette" gfx="C9Sk5SB6gUNcIh00" level="20" life="100" elts="1:3:3:3:15" skills="tornad" balance="1" boss="1"/>
+	<m id="tigor3" name="Poupoule" gfx="A9vt0tsX7DwlRS00" level="20" life="100" elts="1:20:0:2:0" skills="prprec" balance="1" boss="1"/>
+
+	<!-- SCENARIO ALZAIMER -->
+		
+	<m id="rapaca" name="Rapacarapace" frame="rapaca"  level="40" life="150" elts="4:3:5:3:23" skills="rapaca"  fx="fall" balance="1" />
+	<m id="rapac2" name="Rapacarapace" frame="rapaca"  level="25" life="115" elts="5:2:4:3:10" skills="rapaca" fx="fall" balance="1" />
+	<m id="vol1" name="voleur de merguez" frame="brig2" level="35" elts="0" life="50" balance="1" skills="brig2" xp="10"/>
+	
+	<!-- ILE DES MONSTRES -->
+
+	<m id="minimo" frame="mosqui" size="50" name="Minimouk" zones="7" level="6" elts="0:20" life="10" balance="1" groups="0:1:6:2:1" skills="attall"/>
+	<m id="minim2" frame="mosqui" size="50" name="Minimouk" level="6" elts="0:20" life="10" balance="1" skills="attall" xp="3"/> <!-- invoc du Mouktiz -->
+	<m id="mantoo" name="Mantooze" zones="7" level="25" elts="40:10" life="50" balance="1" skills="mantoo:healg" fx="run"/>
+	<m id="mosqui" name="Mouktiz" zones="7" level="20" elts="0:60" life="30" balance="1" skills="mosqui:rminit"/>
+	<m id="mugard" name="Garde Végétox" level="22" elts="30:15" life="30" balance="1" skills="vignes:mugard" fx="ground">
+		<p places="mport:mvoutp:mvpalc:mcelit"/>
+	</m>
+	<m id="frutox" name="Garde Frutox" level="22" elts="30:20" life="50" balance="1" skills="frutox" fx="grow">
+		<p places="mport:mfoutp:mfpalc:mforst"/>
+	</m>
+	<m id="ffrutx" name="Frukoptère" zones="7" level="30" elts="40:15" life="70" balance="1" skills="ffrutx" fx="run"/>
+	<m id="veginf" frame="mugard" name="Garde Végétox" level="22" elts="30:15" life="30" balance="1" skills="mugard:infini" fx="ground"/>
+	<m id="singmu" name="Demyom" level="30" elts="40:15" life="100" balance="1" skills="singmu" fx="run">
+		<p places="mcuzco" p="10"/>
+		<p places="mforst:mcelit" p="5"/>
+	</m>
+	<m id="singm2" frame="singmu" name="Demyom" level="30" elts="40:15" life="30" balance="1" skills="singmu" fx="run"/>
+	<m id="cuzbos" frame="singmu" name="Gardien Demyom" size="500" level="30" xp="50" elts="10:20:10:10:10" life="300" boss="1" balance="1" skills="cuzbos" fx="fall"/>
+	<m id="frking" name="Grotox" level="30" elts="40:30" life="50" balance="1" boss="1" skills="grotox" fx="fall"/>
+	<m id="muking" name="Antraxov" level="30" elts="40:30" life="50" balance="1" boss="1" fx="ground"/>
+
+	<!-- NIMBAO L'ILE VOLANTE -->
+	
+		<!-- Scénario, île volante -->
+	<m id="mandra" frame="mandragore" name="Mandragore" level="80" nomove="1" elts="200:100" life="7000" skills="focus:double"/> <!-- Cheaté -->
+	<m id="mandr2" frame="mandragore" name="Mandragore" level="80" nomove="1" elts="100:100" life="7000" skills="friend:esquiv:focus:double"/> <!-- Cheaté -->
+	<m id="mandr3" frame="mandragore" name="Mandragore" level="80" nomove="1" elts="80:140" gold="0" xp="0" life="2000"/> <!--version pour scénario caushemesh -->
+	<m id="lucet" name="Lucette" level="200" elts="250:100" life="3000" xp="0" gold="0" skills="focus:celer:quetza" boss="1" /> <!-- Cheaté -->
+	<m id="morg" name="Morg" level="50" elts="60:90" life="500" xp="400" skills="stelme:focus:celer" boss="1" />
+	<m id="morgu" name="Morg" frame="morg" level="50" elts="60:90" life="500" xpBonus="10" skills="stelme:focus:celer" boss="1" />
+
+	<m id="morg2" name="Morg transmuté" level="60" elts="55:100" life="800" xp="500" skills="grizou:morph" fx="fall" boss="1" nomove="1" x="280" y="125"/>
+	<m id="grizor" name="Grizorg" level="80" elts="65:90" life="700" xp="0" gold="0" skills="grizou" boss="1" nomove="1" fx="fixed" x="300" y="150"/>
+	<m id="grizou" frame="grizor" name="Grizorg" level="80" elts="200:400" life="1000" xp="0" gold="0" skills="grizou" boss="1" nomove="1" fx="fixed" x="300" y="150"/> <!-- Cheaté -->
+	<m id="grizo2" name="Grizorg transmuté" level="90" elts="120:150" life="1200" xp="0" gold="0" skills="grizou" boss="1" nomove="1" fx="fixed" x="330" y="180"/>
+	<m id="grizo3" name="Grizorg ultime" level="99" elts="150:150" life="1800" xp="0" gold="0" skills="grizou:grizhs" boss="1" nomove="1" fx="fixed" x="350" y="250" />
+	
+	<m id="rhubar" name="Esprit de Rhubarbapapa" level="75" elts="100:120" life="1200" xp="800" gold="0" skills="bdefeu:focus:double:gromst:esquiv" boss="1" nomove="1"/>
+
+		<!-- Ennemies classiques, île volante -->
+	<m id="groms" name="Gromster" level="32" elts="55:45" life="40" xpBonus="3" places="iroche:ipont:icite:iporte:ilac:ilacro:toursk:voie:observ" skills="gromst:percep" group="0:3:5" balance="1" />
+	<m id="cyclo" name="Soldat" places="iroche:ipont:icite:iporte:ilac:ilacro" level="35" elts="55:30" life="50" xpBonus="4" skills="cyclo:percep" group="1:2"  nocapture="1" balance="1" />
+	<m id="ecu" name="Ecurenne" level="37" elts="60:40" life="65" places="iroche:ipont:ilac:ilacro:ilac2:imont:iplain:isnow2:voie:observ" xpBonus="3" skills="ecuren:percep" group="0:1:1" balance="1" />
+	<m id="grom2" name="Gromster rose" level="39" elts="60:55" places="ipont:ilac:ilacro:ilac2:ihaut" life="50" xpBonus="6" group="2:5" skills="gromst:percep:percep" balance="1"/>
+	<m id="lapouf" name="Lapouf" level="42" elts="65:40" life="50" places="iroche:ipont:ilac:ilacro:ilac2:imont:iplain:isnow2:ihaut:voie:observ" xpBonus="4" skills="lapouf:percep" group="0:5:3" balance="1" />
+	
+		<!-- Ennemies pour up, île volante -->
+	<m id="grom3" name="Gromster des neiges" places="imont:ihaut:isnow2:iplain" level="45" elts="75:55" life="120" xpBonus="5" proba="40" skills="gromst:double" balance="1" xp="18" nocapture="1"/>
+	<m id="doro" name="Dorogon" places="iporte:icite" level="45" elts="70:70" proba="50" life="120" xpBonus="5" skills="bdefeu:percep" balance="1" xp="15" nocapture="1" />
+	<m id="cyclo2" name="Capitaine" places="icite:iporte:prison" skills="cyclo:spitie" level="45" elts="85:45" life="70" xpBonus="5" group="0:4:2" balance="1" nocapture="1"/>
+	
+		<!-- Ennemies classiques, île volante part 2-->
+	<m id="dorolu" name="Doroloup" places="ville1:ville2:egout:sommet:palais" level="45" elts="75:65" life="90" balance="1" xp="10" nocapture="1"/>
+	<m id="dorou" name="Chef Dorogon" level="50"  elts="55:85" life="450" xpBonus="10" skills="stelme:focus:celer" boss="1"/>
+	<m id="doro2" name="Dorogon" frame="doro" places="ville1:ville2:egout:sommet:palais" level="45" elts="80:60" life="100" xpBonus="10" skills="bdefeu" balance="1" xp="15" nocapture="1" />
+	
+	<!-- CAUSHEMESH + INTRO -->
+	
+	<m id="bao" name="Baobob" level="70" elts="50:50:50:50:50"  life="6500" xp="0" gold="0" skills="mbao:celer:eclair:foudre:soufla:salama:deluge:bulle" balance="1" />
+	<m id="taurus" name="Taurus" level="90" elts="60:20:20:20:20"  life="2000" xp="0" gold="0" boss="1" skills="bdefeu:coulee:vulcan"  />
+	<m id="darki1" name="Moueffe Sombre" gfx="0A0A03B1917200000" level="50" size="250" life="500" elts="30:20:10:5:15" xp="0" gold="0" dark="1" boss="1"/>
+	<m id="darki2" name="Pigmou Sombre" gfx="1A054333407200000" level="50" size="250" life="600" elts="30:15:10:10:5" xp="0" gold="0" dark="1" boss="1"/>
+	<m id="darki3" name="Winks Sombre" gfx="2A0935B1627200000" level="50" size="350" life="700" elts="5:10:35:20:10" xp="50" gold="0" dark="1" boss="1"/>
+	
+	<m id="sofia" name="Sofia" level="85" nomove="1" fx="fixed" x="50" y="150" elts="250:100" life="5000" skills="grizou" boss="1"/> <!-- Cheaté -->
+	<m id="rodeur" name="Rodeur étrange" level="50" elts="70:30" life="400" xp="0" gold="0" balance="1" boss="1"/>
+	<m id="behemu" name="Behemotin" level="75" elts="90:100" skills="celer:sdevie:double" life="1000" groundonly="1" xp="500" boss="1"/>
+	<m id="serpe" name="Serpether" level="75" elts="60:110" life="1000" skills="grizou:celer:double:sdevie" xp="500" groundonly="1" fx="fixed" x="320" y="230" nomove="1" boss="1"/>
+	<m id="arcadu" name="Archelion adulte nain" level="75" skills="celer:sdevie:double" elts="80:120" life="1000" xp="500" boss="1"/>
+	<m id="behem2" name="Behemotin" frame="behemu" level="75" elts="80:120" life="500" skills="nodead" groundonly="1" boss="1"/>
+	<m id="serpe2" name="Serpether" frame="serpe" level="75" elts="70:120" life="1000" skills="grizou:nodead" groundonly="1" fx="fixed" x="320" y="230" nomove="1" boss="1"/>
+	
+	<m id="tauru2" frame="taurus" name="Taurus" level="90" elts="40:10:10:10:10"  life="2000" xp="0" gold="0" boss="1" skills="bdefeu:coulee:meteor:brave:acroba"/>
+	<m id="belius" name="Belius" level="90" elts="10:10:20:10:40" life="1000" boss="1" xp="1000" skills="sdevie:halein:rayonk:brave:acroba" />
+	<m id="beliu2" name="Belius" frame="belius" level="90" elts="10:10:20:10:40" life="1500" xp="0" gold="0" boss="1" skills="sdevie:halein:rayonk:brave:acroba"/>
+	
+	<m id="darki4" name="Pteroz Sombre" gfx="6A02088H9A2000000" places="ctecno:ccrane:cextra" proba="60" level="55" size="250" life="200" elts="30:15:10:5:15" xp="30" dark="1" nocapture="1"/>
+	<m id="darki5" name="Hippoclamp Sombre" gfx="9A0JEE2OFD2000000" places="ctecno:ccrane:cextra" level="52" size="250" life="200" elts="30:15:10:10:5" xp="40" dark="1" nocapture="1"/>
+	<m id="darkia" name="Rocky Sombre" gfx="5A0KEE2OFD0000000" places="ctecno:ccrane:cextra" proba="60" level="57" size="250" life="300" elts="5:10:35:30:10" xp="40" dark="1" nocapture="1"/>
+	<m id="darkib" name="Gorilloz sombre" gfx="AA04547L441000000" places="ctecno:ccrane:cextra" level="51" size="200" proba="60" life="400" elts="10:30:5:35:10" xp="30" dark="1" nocapture="1"/>
+	
+	<m id="chima" name="Chimachouille" places="cporte:cacrop:cpuits:ctecno:ccrane:cpyra1" level="55" elts="75:55" life="140" skills="gromst" balance="1" xp="40" nocapture="1"/>
+	<m id="groule" name="Groulem" places="cporte:cacrop:cgrav:cpuits:ccrane:cpyra2" level="54" elts="60:70" life="80" balance="1" xp="30" fx="ground" skills="electr" nocapture="1"/>
+	<m id="roking" name="Roking" places="cporte:cacrop:cgrav:cpuits:ccrane:cpyra2" level="56" elts="70:90" life="100" balance="1" xp="25" nocapture="1"/>
+	<m id="cranit" name="Cranite" places="cporte:cacrop:cpuits:ctecno:ccrane:cpyra1" level="52" elts="60:10" life="200" balance="1" xp="20" nocapture="1"/>
+	<m id="crokoc" name="Crokocroc" places="cporte:cacrop:cpuits:ctecno:ccrane" level="50" elts="70:30" life="60" balance="1" xp="20" nocapture="1"/>
+	
+	<!-- CHASSE AUX MONSTRES XP + -->
+	
+	<m id="pirao3" frame="piraos" name="Pirhan-os" level="15" elts="30:20" life="30" groups="0:0:1" xp="50" dark="1" size="150" skills="envol2" balance="1" boss="1"/>
+	<m id="mimic3" frame="mimic" name="Mimic" level="35" elts="35:50" groups="3:1:0:0" life="40" xp="80" dark="1" balance="1" size="150" boss="1"/>
+	<m id="megaw2" frame="wolf" name="Mégaloup" level="10" elts="7" life="80" skills="double" balance="1" xp="40" dark="1" size="200" boss="1"/>
+	<m id="garou2" name="Garouzore" level="20" elts="30:30" life="50" balance="1" nocapture="1" size="150" xp="90" boss="1" />
+	<m id="megou2" name="Megapignon Sombre" frame="gropi" level="7" elts="60:12" life="50" balance="1" skills="ggoupi" xp="60" dark="1" size="200" boss="1"/>
+	<m id="amanp3" frame="amanpe" name="Amenpenne" level="25" elts="50:20" group="2:1:0" life="50" fx="ground" xp="100" balance="1" nocapture="1"/>
+	<m id="marca2" name="Marcanglier" level="5" elts="3:5" dark="1" size="150" life="50" xp="70" />
+	
+	<!-- DINOZ SOMBRES XP lvl 60 à 70 -->
+	
+	<m id="darkic" name="Wanwan Sombre" gfx="BA0180B3141600100"   proba="40" groups="1:0:0" zones="4" places="villa:poste:chato" level="62" size="350" life="200" elts="15:25:5:25:15"  xp="55" dark="1" nocapture="1" skills="mudwal:sharig:maicol:berser:amazo2:percep" />
+	<m id="darkid" name="Soufflet Sombre" gfx="GJ02EOYoK98650000" proba="40" groups="1:0:0" zones="4" places="chutes:dome:ccrane" level="63" size="350" life="200" elts="10:20:20:25:25" xp="60" dark="1" nocapture="1" skills="doufac:maicol:lifstr:recthe:twino5:sharig:percep" />
+	<m id="darkie" name="Kabuki Sombre" gfx="EK02BDTkG90550000"   proba="30" groups="1:0:0" zones="4" places="poste:chato:cextra" level="64" size="450" life="200" elts="20:15:10:10:5"  xp="65" dark="1" nocapture="1" skills="doufac:twino5:berser:mutin:maicol:lifstr:percep"/>
+	<m id="darkif" name="Mahamuti Sombre" gfx="FA00A1RJG90790000" proba="20" groups="1:0:0" zones="4" places="dome:villa:ccrane" level="65" size="450" life="300" elts="5:10:20:20:10"  xp="70" dark="1" nocapture="1" skills="mueac:diete:clepto:bandie:abyss2:doufac:lifstr:percep"/>
+	<m id="darkig" name="Feross sombre" gfx="DK07HKYiQA8250000"   proba="20" groups="1:0:0" zones="4" places="dome:villa:poste:chato:cextra" level="66" size="400" life="250" elts="25:20:25:20:10" xp="75" dark="1" nocapture="1" skills="doufac:maicol:fiebru:phonix:percep" />
+	<m id="darkih" name="Quetzu sombre" gfx="IJ02BDTkG919H0000"   proba="10" groups="1:0:0" zones="4" places="chutes:dome:villa:poste:chato:cextra" level="68" size="400" life="300" elts="10:25:5:25:10"  xp="80" dark="1" nocapture="1" skills="flash:extenu:phonix:recroc:percep" />
+	
+	<!-- SMOG QUEST XP lvl 70+ -->
+	
+	<m id="darkii" name="Dark Smog" gfx="JA07UVd9Y4e1LT000" cond="scenario(smog,21+)" proba="40" groups="1:2:1" zones="2" level="70" size="200" life="300" elts="10:0:20:40:30"  xp="70" dark="1" nocapture="1" skills="percep" />
+	<m id="darkij" name="Mega Dark Smog" gfx="JA07RWd8R4e1LT000" cond="scenario(smog,21+)" boss="1" zones="2" level="80" size="400" life="800" elts="20:0:30:50:40"  xp="70" dark="1" nocapture="1" skills="percep" />
+	<m id="stroa"  name="The flying spaghetti monster" proba="60" cond="scenario(smog,21+)+!(war(clanbattle)|war(manawar))" groups="1:1:0" zones="0:2" level="75" xpBonus="15" xp="100" life="500" elts="20:5:30:20:30" nocapture="1" skills="percep" />
+	<m id="strob"  name="The flying fat spaghetti monster" boss="1" level="72" xpBonus="15" xp="300" life="1000" elts="20:5:30:20:30" nocapture="1" size="300" skills="percep"  frame="stroa" />
+	<m id="sangsa" name="Dark leech" groups="1:1:0"  cond="scenario(smog,17+)+!(war(clanbattle)|war(manawar))" zones="0:2" level="72" xpBonus="15" xp="50" life="200" elts="20:5:30:20:30" nocapture="1" skills="percep:renfrt" />
+	<m id="sangs2" name="Long legged leech" groups="1:0:0"  cond="scenario(smog,17+)+!(war(clanbattle)|war(manawar))" zones="0:2" level="75" xpBonus="15"  xp="70" life="300" elts="25:20:10:35:10" nocapture="1" skills="percep:renfrt" />
+	<m id="saboss" name="Bio-metalic leech" boss="1" level="80" xp="150" size="100" life="500" elts="20:5:30:20:30" nocapture="1" skills="percep:rminit" />
+	<m id="scorpu" name="Scorpious" level="90"cond="active(smog)+!(war(clanbattle)|war(manawar))" elts="40:30:20:0:30" life="1200" boss="1" xp="800" skills="percep:gtour:celer:double:focus:carapc:brave:zero:clone:sdevie" /> <!-- Winks infernal -->
+	
+	<!-- DINOZ INFERNAUX -->
+	
+	<m id="mcha" name="Master Cha" gfx="BA2byJe5CCFRlU211" level="80" elts="20:40:20:40:20" life="500" size="400" boss="1" xp="200" skills="brave:zero:clone:mudwal:sharig:maicol:berser:amazo2:percep:electr" /> <!-- Wanwan infernal -->
+	<!--<m id="sagita" name="Sagitarus" level="90" elts="40:30:20:0:30" life="1200" boss="1" xp="1000" skills="percep:gtour" /> <!-- Wanwan infernal -->
+	<!--<m id="gemin1" name="Gemini" level="90" elts="40:30:20:0:30" life="1200" boss="1" xp="1000" skills="percep:gtour" /> <!-- Pigmou infernal -->
+	<!--<m id="gemin2" name="Gemini" level="90" elts="40:30:20:0:30" life="1200" boss="1" xp="1000" skills="percep:gtour" /> <!-- Pigmou infernal -->
+	<!--<m id="aquari" name="Aquarius" level="90" elts="40:30:20:0:30" life="1200" boss="1" xp="1000" skills="percep:gtour" /> <!-- Gorilloz infernal -->
+	
+</monsters>

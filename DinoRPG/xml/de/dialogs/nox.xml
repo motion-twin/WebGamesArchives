@@ -1,0 +1,49 @@
+﻿<!-- ***************************************************************************** -->
+<!-- Nox, Dorogon, habitant de la cité Dorogon ----->
+
+<d place="ville2" name="Nox" gfx="nox" cond="scenario(nimba2,50-)">
+	<phase id="begin" next="ramolo" fast="1" frame="stop">
+		Ein imposanter Dorogon beobachtet dich.
+		Er ist größer und stärker als die anderen Einwohner und mustert dich in aller Ruhe.
+	</phase>
+	
+	<a id="ramolo">Hallo, werter Dorogon.</a>
+	
+	<phase id="ramolo" next="ok:baston">
+		[Ich suche nach einem außergewöhnlichen Krieger, mit dem ich meine Kräfte messen kann.]
+		[Wir müssen die stärksten Kreaturen auf der ganzen Welt werden. Denn wenn früher oder später die Caushemesh-Invasion stattfindet, müssen wir vorbereit sein!]
+		[Pistazie, wenn du dir nicht endlich mehr Mühe gibst, wirst du dein Leben lang schwach sein.
+		Du musst aber stark sein, wenn du eines Tages die Herrschaft deines Vaters übernehmen und ein würdiger Erzdorogon werden willst!]
+	</phase>
+	
+	<a id="ok">(Pistazie als Erzdorogon? haha...)</a>
+	
+	<phase id="ok" frame="stop" fast="1">
+		Du gehst weiter. Dieser Dorogon ist überaus aggressiv. Ganz anders als die anderen...
+		Wahrscheinlich ist es das beste, wenn du ihn nicht weiter belästigst.
+	</phase>
+	
+	<a id="baston" cond="scenario(nimba2,31)">Du kannst dich mit mir messen!</a>
+	
+	<phase id="baston" next="bravo" give="ptsage" scenario="nimba2:32" fightgroup="dorou">
+		[Gratuliere. Du hast es immerhin geschafft, dass ich ins Schwitzen gekommen bin.]
+		[Vielleicht kann ja der Rest von euch auf der Oberfläche den Horden aus Caushemesh eine Weile standhalten.
+		Aber glaubt ja nicht, dass wir euch zu Hilfe kommen werden!]
+		[Trotzdem hast du dir deinen Weisheitspunkt redlich verdient.]
+	</phase>
+	
+	<a id="bravo">Vielen Dank!</a>
+	
+	<phase id="bravo" frame="stop" fast="1">
+		Du verlässt diesen Dorogon. Er hat wirklich nicht gerade viel für das Volk der Caushemesh übrig.
+		Ist die Lage wirklich so ernst wie er sagt?
+		Du hast nun drei Weisheitspunkte, fehlen bloß noch zwei!
+	</phase>
+</d>
+
+<d place="ville2" name="Nox" gfx="nox" cond="scenario(nimba2,51+)">
+	<phase id="begin" fast="1" frame="stop">
+		Hallo Dinozmeister.
+		Ich bin der neue Leibwächter von Erzdorogon Pistazie. Auch wenn meine Aufgabe vor allem darin besteht, ihn vor sich selbst zu beschützen...
+	</phase>
+</d>

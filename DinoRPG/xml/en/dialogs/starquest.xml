@@ -1,0 +1,200 @@
+﻿µ<d place="fountj" name="Strange Creature" gfx="alien" cond="scenario(star,0)+(admin()|time(30))+active(starquest)">
+
+	<phase id="begin" next="yes:no">
+		. . . . . me . . . lost . . . . . without power . . stars . . . . never . . . . be able to go .... home . . . . help me?
+	</phase>
+
+	<a id="yes">Yes, I'll help you</a>
+	<a id="no">No way</a>
+
+	<phase id="no" fast="1">
+		It's better not to get involved with people who look like that!
+	</phase>
+
+	<phase id="yes" next="nothing">
+		........thanks..........a lot...........Ah! Finally! My simultaneous translator is fixed!
+		Luckily I had some spare strawberry batteries! Thanks for offering your help my friend!
+	</phase>
+
+	<a id="nothing">Please, don't mention it.</a>
+
+	<phase id="nothing" next="dom">
+		But it's all thanks to you! As I just told you, I have a little technicological problem.
+		My (SiAvUaEs) is completely broken, and I can't go back to (PuOsEniLa)!
+	</phase>
+
+	<a id="dom">That's very sad!</a>
+
+	<phase id="dom" next="star">
+		I need your help to recover some crystals from (TcEtCiNo)...
+		Let me think ... how can I describe them? They look like like shining stars!
+	</phase>
+
+	<a id="star">Stars?</a>
+
+	<phase id="star" next="how">
+		Yes! If you bring me seven stars. I'll be able to finish my journey, and maybe
+		reward you with a (CiLoJuAeDa) from my planet!
+	</phase>
+
+	<a id="how">And how do I find these stars?</a>
+
+	<phase id="how" next="ah">
+		It's relatively easy. All you have to do is complete missions which are listed
+		in the Eclectik Tourist Guide. Each time I read out a mission description, you'll have complete it!
+	</phase>
+
+	<a id="ah">"Ah"?</a>
+
+	<phase id="ah" scenario="star:1">
+		Hmmmm, ..., well! I'm going to get the Tourist Guide. Wait here, I'll be back in a minute....
+	</phase>
+
+</d>
+
+<d place="fountj" name="Strange Creature" gfx="alien" cond="scenario(star,1)">
+
+	<phase id="begin" next="et">
+		The Guide says: "A megawolf is waiting you in the capital!"
+	</phase>
+
+	<a id="et">And?</a>
+
+	<phase id="et">
+		And? That's all! You'll have to carry this mission out alone. Sorry to be so eclectic!
+	</phase>
+
+</d>
+
+<d place="fountj" name="Strange Creature" gfx="alien" cond="scenario(star,2+)+!scenario(star,8+)">
+
+	<phase id="begin" next="star2:star3:star4:star5:star6:star7">
+		Ah! I see that you're progressing with your quest! Let see what the Tourist Guide says next....
+	</phase>
+
+	<a id="star2" cond="scenario(star,2)">Listen</a>
+	<a id="star3" cond="scenario(star,3)">Listen</a>
+	<a id="star4" cond="scenario(star,4)">Listen</a>
+	<a id="star5" cond="scenario(star,5)">Listen</a>
+	<a id="star6" cond="scenario(star,6)">Listen</a>
+	<a id="star7" cond="scenario(star,7)">Listen</a>
+
+	<phase id="star2" next="end">
+		The guide says: "The enthusiastic greasy man would appreciate a transported cloud" ... does that mean anything to you?
+	</phase>
+
+	<phase id="star3" next="end">
+		Tourist Guide, page 879 indent B: "When you get stuck up to the neck, nothing is better than a nice cake". Does that mean anything to you?
+	</phase>
+
+	<phase id="star4" next="end">
+		The guide says: "The shaddy hole call will serve you" ... Do you have any ideas??
+	</phase>
+
+	<phase id="star5" next="end">
+		The next one is written in small text. It says: "The old bones like to watch a ... capsicum" , yup ... that's all it says ... I think
+	</phase>
+
+	<phase id="star6" next="end">
+		Appendix B of the Tourist Guide: "Visit the godman at noon at Pek-1". Mmmmmmm....
+	</phase>
+
+	<phase id="star7" next="end">
+		The last missing star! The Guide says: "At the country of Saru, you will return from the dead without firework". Sounds dangerous!
+	</phase>
+
+	<a id="end">...</a>
+
+	<phase id="end">
+		Your language is a bit strange ... I don't understand it!
+	</phase>
+
+</d>
+
+<d place="fountj" name="Strange Creature" gfx="alien" cond="scenario(star,8)">
+
+	<phase id="begin" next="ok">
+		.... Yeaaaahh!!! Thanks a lot! I'll finally be able to return to (PuOsEniLa)!
+		I have to hurry though, as the stars are aligning in the Rochechouart.
+	</phase>
+
+	<a id="ok">....</a>
+
+	<phase id="ok" next="give">
+		Can you give me the stars. I'll give you a (CiLoJuAeDa) in exchange,
+		plus a trinket I found in Dinoland!
+	</phase>
+
+	<a id="give">Hand over the 7 stars</a>
+
+	<phase id="give" use="star:7" collection="plume" give="cgold:1" fast="1" scenario="star:9">
+		The Stange Creature ran into some kind of a small house, then a lightning struck and the house disappeared. All that remains are
+		burned traces on the ground and column of smoke rising up into the sky ... He left you
+		one "Gold Napodino" and a strange epic item....
+	</phase>
+
+
+</d>
+
+<d place="rashpk" name="Merguez Seller (Quest)" gfx="merguez" cond="scenario(star,2)+equip(burger)">
+
+	<phase id="begin" next="ok">
+		Oh I see that your Dinoz is carrying a cloud burger! Did you know that they're bad for your health?
+		Unless you want your Dinoz to become a Sumo?!?
+	</phase>
+
+	<a id="ok">...</a>
+
+	<phase id="ok" next="star">
+		Throw away your Burger and taste my merguez instead! Take this item as a sign of loyalty. I found it on the ground!
+	</phase>
+
+	<a id="star">Ah?</a>
+
+	<phase id="star" fast="1" give="star" scenario="star:3">
+		Great! The merguez seller has given you one of the seven magic stars!
+	</phase>
+
+</d>
+
+<d place="skull" name="Skully (Quest)" gfx="skully" cond="scenario(star,5)+equip(ppoiv)">
+
+	<phase id="begin" next="ok">
+		Oh oh!! What do we have here!!! It's a magnificent "Capsicum annuum"! What colours, what odours, it's absolutely beau-ti-ful!
+	</phase>
+
+	<a id="ok">.....</a>
+
+	<phase id="ok" next="star">
+		Thank you so much! In exchange, I'm going
+		to give you this item. I found it while searching for a lost bone! Take it!
+	</phase>
+
+	<a id="star">Ah?</a>
+
+	<phase id="star" fast="1" give="star" scenario="star:6">
+		Congratulations! Thanks to Skully, you've found the 5th magic star! You only have 2 more to find!
+	</phase>
+
+</d>
+
+<d place="baobob" name="Bao Bob (Quest)" gfx="baobob" cond="scenario(star,6)+(admin()|hour(5)|hour(6)|hour(7))">
+
+	<phase id="begin" next="ok">
+		What are you doing in my house at this time in the morning?
+	</phase>
+
+	<a id="ok">I'm looking for something......</a>
+
+	<phase id="ok" next="star">
+		Sorry, I'm not fully awake yet. I had no idea. Here, take this, I've been keeping it for you.
+		I hope it won't cause you any problems...
+	</phase>
+
+	<a id="star">????</a>
+
+	<phase id="star" fast="1" give="star" scenario="star:7">
+		Bao Bob has entrusted you with the 6th magic star! Only one left!!!
+	</phase>
+
+</d>

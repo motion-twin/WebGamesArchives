@@ -1,0 +1,285 @@
+﻿<dungeons>
+
+	<!-- Money distributed = 1000~1500 per monster -->
+
+	<d id="stepp" name="Las Cavernas Magnéticas" gold="150000" monsters="worm2:worm:scorp:cactus:brig1:brig2:brig3" cond="active(cavmagnet)">
+
+		<enter place="spylon">
+			Penetras en las Cavernas Magnéticas con el violento crepitar de los rayos de los Pilares de Magnetita a tu espalda. Este lugar es muy misterioso y parece peligroso...
+		</enter>
+
+		<exit place="spylon">
+			La luz del día te ciega tras estas horas pasadas bajo tierra... Quizás no hayas encontrado lo que buscabas, pero al menos has aprendido algo sobre la misteriosa Mandrágora.
+		</exit>
+
+		<!---------------------------- désert 100x100x1 ---------------------------------------------->
+
+		<stage skin="desert">
+
+			<scenario icon="scroll" micon="misc">
+				Diario de Mandrágora, página 1: "Ya hacen varios años que busco la entrada a las Cavernas Magnéticas. Se dice que esconden el secreto de un mundo paralelo al nuestro. Soy un aventurero explorador de Dinoland y debo aprovechar esta oportunidad para descubrir este nuevo lugar..."
+			</scenario>
+
+			<scenario obj="hotpan" count="6">
+				Diario de Mandrágora, página 2: "Esta claro que los monstruos de esta caverna son débiles... Finalmente estas provisiones no eran necesarias. Voy a dejar algunas aquí. Así tendré menos peso". Encuentras 6 Panes Calientes!
+			</scenario>
+
+		</stage>
+
+
+		<!---------------------------- caverne 100x100x1 ---------------------------------------------->
+
+		<stage skin="cavern3">
+
+			<scenario obj="irma" count="10">
+				¡Encuentras un pequeño cofre con 10 Pociones de la Bruja Lola! ¿De verdad quieres adentrarte en las profundidades de estas cavernas?
+			</scenario>
+
+			<scenario obj="irma" count="10">
+				¡Encuentras un pequeño cofre con 10 Pociones de Irma! No está mal, pero quizás sea preferible tener algo con qué curar a tus Dinos.
+			</scenario>
+
+			<scenario icon="skel">
+				Encuentras restos de un esqueleto que parecen ser los de un aventurero... Seguramente no seas el primero en aventurarse por aquí. Según parece, nadie ha conseguido salir con vida de aquí.
+			</scenario>
+
+			<scenario icon="scroll" micon="misc">
+				Diario de Mandrágora, página 3: "Otro pasillo... Me pregunto si estos subterráneos han sido excavados por el ser humano, o si simplemente fueron utilizados como escondite. Claro está de que se trata de un laberinto. Según la información del Archidorogón, es aún más profundo..."
+			</scenario>
+
+		</stage>
+
+		<!---------------------------- crypte 50x50x4 ---------------------------------------------->
+
+		<stage skin="ruin4">
+
+			<scenario icon="scroll" micon="misc">
+				Diario de Mandrágora, página 4: "Creo que me estoy aproximando a mi objetivo... La arquitectura de esta cripta coincide con la descripción que conseguí en la Isla volante de los Dorogones... El Orbe Oscuro no debe de estar lejos..."
+			</scenario>
+
+			<scenario obj="irma" count="10">
+				¡Encuentras un pequeño cofre con 10 Pociones de la Bruje Lola! ¡Aquí tienes suficiente como para continuar explorando la cripta!
+			</scenario>
+
+			<scenario obj="irma" count="10" icon="skel">
+				Este aventurero parecía ser demasiado optimista... Tenía muchas pociones de la Bruja Lola, ¡pero había subestimado la necesidad de tener pociones de cura! Encuentras 10 Pociones de la Bruja Lola entre los huesos... esperemos no terminar como él.
+			</scenario>
+
+		</stage>
+
+		<!---------------------------- crype finale 30x30x1 ---------------------------------------------->
+
+		<stage skin="ruin4">
+
+			<scenario icon="scroll" micon="misc">
+				Diario de Mandrágora, página 5: "Lo que busco se encuentra en este nivel. ¡No pienso salir de aquí sin obtener el Orbe!"
+			</scenario>
+
+			<scenario obj="feregg" icon="chest" micon="misc">
+				Diario de Mandrágora, página 6: "¡Aquí está! ¡Estoy seguro de que se trata del Orbe! Si los escritos de los Antiguos son ciertos, ¡este Orbe Sombra me abrirá el acceso a un Mundo Paralelo! A lo largo de mi exploración he decidido dejar hojas de mi diario para que algún día otro aventurero pueda seguir mis pasos: dejaré aquí este Huevo de Dino raro para que al menos no se vaya sin nada...". ¡¡Obtienes un Huevo de Feros!!
+			</scenario>
+
+		</stage>
+
+	</d>
+
+	<!-- ********************************************************************************************************* -->
+
+	<d id="katak" name="Las Katatumbas" monsters="goupi:wolf:gluon:gvert:coq:piraos" gold="20000" cond="active(katatombs)">
+
+		<enter place="skull">
+			Te paseas por el cementerio y ves una tumba abierta... Una escalera desciende bajo la tierra y decides tomar este camino. Parece que son antiguas "Katatumbas"...
+		</enter>
+
+		<exit place="skull">
+			Sales de las Katatumbas. No se puede decir que el cementerio sea un lugar especialmente agradable, pero al menos sientes un soplo de aire fresco que cambia bastante del maloliente hedor de las Katatumbas.
+		</exit>
+
+		<stage skin="sewer">
+
+			<scenario icon="scroll" micon="misc">
+				Nota de Mandrágora: He dejado una copia del Pergamino del Demonio en estas Katatumbas. Espero que los Maestros Dinos que lo encuentren no lo utilicen con malas intenciones, pues los Dinos-Demonio son muy poderosos.
+			</scenario>
+
+			<scenario obj="cgold">
+				Encuentras y abres un cofre aparentemente abandonado desde hace cientos de años. Está vacío pero, intrigado, ¡descubres un doble fondo en el que encuentras un Napodino de Oro!
+			</scenario>
+
+			<scenario obj="irma" count="3">
+				Encuentras 3 Pociones de la Bruja Lola en un pequeño cofre. ¡Nunca viene mal!
+			</scenario>
+
+			<scenario collec="demon" icon="scroll" micon="misc">
+				Encuentras el Pergamino del Demonio. Indica el lugar de una extraña tienda de Dinos, llamada Tienda Demoniaca. Esta tienda se encuentra en la superficie del Cementerio del Crepúsculo. Tendrás que salir de las Katatumbas en primer lugar...
+			</scenario>
+
+		</stage>
+
+	</d>
+
+	<!-- ********************************************************************************************************* -->
+
+	<d id="mbegin" name="Las cloacas del Puerto Monstruoso" cond="mission(mbegin)" monsters="minimo:mosqui" gold="8000">
+		<enter place="mport">
+			Sigues las indicaciones del Hombre Raro y te deslizas por un acceso a las cloacas del Puerto Monstruoso. El lugar es oscuro, húmedo, maloliente y seguramente esté lleno de numerosos peligros.
+		</enter>
+
+		<stage skin="sewer2">
+
+			<scenario icon="scroll" micon="misc">
+				Estos antiguos documentos arqueológicos te indican que parece existir un misterioso tesoro en la Isla de los Monstruos.
+			</scenario>
+
+		</stage>
+
+
+		<exit place="mfoutp">
+			¡Por fin saliste de este lúgubre lugar! ¡Qué agradable es volver a ver la luz del día!
+		</exit>
+	</d>
+
+<d id="mquetz" name="El Templo de Quetzaco" cond="scenario(monisl,4+)" monsters="minimo:mosqui:mantoo:ffrutx" gold="40000">
+
+		<enter place="mforst">
+			Entras en el Templo de Quetzaco... ¡esperemos que vuelvas a salir un día!
+		</enter>
+
+		<stage skin="tomb">
+
+			<scenario monsters="singmu">
+				Te encuentras con un animal bastante particular. ¿Y si lo eliminas? A lo mejor te abre un pasaje...
+			</scenario>
+
+			<scenario monsters="singmu"/>
+			<scenario monsters="singmu"/>
+			<scenario monsters="singmu"/>
+
+			<scenario icon="scroll" micon="misc" reload="1">
+				Has encontrado un pergamino muy antiguo repleto de ilustraciones. Según indica, los monstruos como el que acabas de ver son los guardianes de este Templo. Tres nuevos guardianes deben ser eliminados para poder progresar hacia el interior del Templo...
+			</scenario>
+
+			<scenario block="1:2:3">
+				Oyes un ruido que parece proceder de la parte oeste de las ruinas. ¿Se habrá abierto un nuevo pasaje?
+			</scenario>
+
+			<scenario monsters="singmu:singmu:singmu"/>
+			<scenario monsters="singmu:singmu:singmu"/>
+			<scenario block="6:7">
+				Un ruido mecánico parece provenir de la parte oeste de las ruinas. ¿Un nuevo pasaje, quizás?
+			</scenario>
+
+			<scenario obj="surviv">
+				En un pequeño cofre encuentras un objeto desconocido pero muy simpático: ¡una Ración de Supervivencia!
+			</scenario>
+
+			<scenario icon="scroll" micon="misc">
+				Nota de Mandrágora: "Fue Grizorg el que encontró en primer lugar la información sobre la Isla Secreta de los Monstruos. ¡Ahora soy yo solo quien debe explorarlo! Y ese imbécil a punto de ser nombrado Archidorogón en la Isla de sus ancestros... Me habría gustado asistir a esa ceremonia... ¡se suele comer bien y encima desde allí arriba hay una vista excelente!"
+			</scenario>
+
+			<scenario block="0">
+				Oyes un pequeño clic: ¿se habrá abierto un pasaje? Es posible...
+			</scenario>
+
+			<scenario block="4">
+				Acabas de oír un ruidito: ¿habrá sido la apertura de un nuevo pasaje?
+			</scenario>
+
+			<scenario obj="irma" count="10">
+				Encuentras en este pequeño cofre 10 Pociones de la Bruja Lola, así como un pequeño esquema del Templo: en la parte norte donde te encuentras actualmente se halla una llave que permite acceder a la parte sur del templo, la cual protege el acceso a la capital de Cuzcús.
+			</scenario>
+
+		</stage>
+
+		<exit place="mcuzco">
+			¡Al fin encuentras la salida, el aire fresco y la luz! Apareces entre las enormes ruinas a cielo abierto de la capital de Cuzcús. Parece que nadie la ha visitado en siglos...
+		</exit>
+	</d>
+
+	<!-- ********************************************************************************************************* -->
+
+	<d id="mcuzco" name="Ruinas de Cuzcús" cond="scenario(monisl,5+)" monsters="minimo:mosqui:mantoo:ffrutx:singmu" gold="120000">
+
+		<enter place="mcuzco">
+			Entras en las ruinas de la antigua capital del Imperio de los Monstruos: ¡la poderosa Cuzcús!
+		</enter>
+
+		<stage skin="cuzco">
+
+			<scenario icon="scroll" micon="misc">
+				Historia de Cuzcús, Capítulo 1: la potente Cuzcús fue fundada en el año 1 del Imperio. Tras una conquista rápida de la isla-madre, el Imperio de Cuzcús se estableció también en el continente en el que residen extraños simios que se autodenominan "Humanos".
+			</scenario>
+
+			<scenario icon="scroll" micon="misc">
+				Historia de Cuzcús, Capítulo 2: la superioridad de la armada de Cuzcús es tal que a partir de entonces la casi totalidad del continente estuvo bajo nuestro dominio. Los primeros Emperadores de Cuzcús fueron designados y nombrados. Conformemente a nuestra ley, se trata de un Frutox y de un Vegetox quienes toman juntos el conjunto de decisiones.
+			</scenario>
+
+			<scenario icon="scroll" micon="misc">
+				Historia de Cuzcús, Capítulo 3: gracias a la Paz Cuzcusiana, el control del comercio permitió al Imperio acumular grandes riquezas. Los emperadores Cuzcús IV embellecieron la capital hasta convertirla en la más bella del mundo en comparación con las ciudades primitivas del continente.
+			</scenario>
+
+			<scenario icon="scroll" micon="misc">
+				Historia de Cuzcús, Capítulo 4: los Emperadores Cuzcús IX proclamaron la lucha contra los Demyos, unos monstruos nacidos del amor prohibido entre cuzcusianos y humanos. Los sacerdotes del Dios Quetzaco aprobaron esta decisión, pues luchan desde tiempos inmemorables contra este vicio.
+			</scenario>
+
+			<scenario icon="scroll" micon="misc">
+				Historia de Cuzcús, Capítulo 5: una enfermedad contagiosa y mortal apareció. Parece ser que fue propagada por los últimos Demyos supervivientes. El Imperio fue gravemente debilitado y tuvimos que abandonar la capital y refugiarnos en el Bosque. Los rumores dicen que los humanos del continente se rebelaron: ¿serían los últimos días del Imperio?
+			</scenario>
+
+		</stage>
+
+		<stage skin="crypt2">
+
+			<scenario obj="irma" count="24">
+				Encuentras en este cofre un maletín doble con 24 Pociones de la Bruja Lola, muy bien dispuestas y organizadas.
+			</scenario>
+
+			<scenario obj="hotpan" count="5">
+				¡Ah! Cinco buenos panes calientes (hay alguno un poco duro). Estupendo para sobrevivir y continuar la aventura.
+			</scenario>
+
+		</stage>
+
+		<stage skin="crypt2">
+
+			<scenario monsters="cuzbos"/>
+
+			<scenario icon="chest" micon="misc" reload="1">
+				Has encontrado una vieja tabla grabada. Los emblemas de Cuzcús se encuentran representados.
+			</scenario>
+
+			<scenario block="1">
+				Se oye un ruido de algo deslizando... como si hubiese abierto un pasaje. Sientes una corriente de aire fresco, ¿será la salida?
+			</scenario>
+
+		</stage>
+
+		<exit place="mcuzco">
+			Estás contento de por fin salir de este lugar. ¿Pero de qué maldición hablaba el Guardián?
+		</exit>
+
+	</d>
+	
+	<!--NEW DONGEON SMOGQUEST -->
+	
+	<d id="labo" name="The Corrupted Laboratory" cond="scenario(smog,26+)" monsters="darkii:stroa:sangsa:sangs2" gold="10000">
+		<enter place="labo2">
+			The laboratory is teeming with dark matter. Powerful monsters roam this place. Good luck !
+		</enter>
+		<stage skin="labo">
+			<scenario obj="irma" count="5">
+				In a little chest you discover 5 Madam Irmas potions
+			</scenario>
+			
+			<scenario obj="hotpan" count="5">
+				Ah ha! 5 slices of once Hot Bread, even if they're a bit stale, they'll keep you going on your adventure!
+			</scenario>
+			
+		</stage>
+		<exit place="labo3">
+			You've arrived in the depths of the underwater laboratory.
+			Look at that! An elevator that seems to go directly to the surface!
+			Handy!
+		</exit>
+	</d>
+
+</dungeons>

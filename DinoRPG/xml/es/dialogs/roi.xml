@@ -1,0 +1,252 @@
+﻿<!-- Roi de Dinoville-->
+	
+<!---
+Condition d’accès : avoir fait les missions de gulom.
+Le roi invite le joueur dans son château situé sur un plateau de dinoplaza par l’intermédiaire d’un de ses gardes, il veut enfin faire connaissance du sauveur de caushemesh.
+Arrivé au cinéma, le garde constate que l’accès au chateau est bloqué depuis son départ.
+Les expérimentations sur le mana, acquis grâce à l’effort de guerre, affecte les environs du château.
+
+il faut ensuite aller voir le shaman mou, constituer une potion en assemblant des ingrédients et en allant battre le vénérable (il la faut bien frappé)
+Une fois arrivé dans le palais, le roi reçoit le joueur.
+Il fait la connaissance du conseiller (aveugle) qui ne lui adresse pas un mot.
+Le roi demande de réaliser des missions:
+
+Récompense : item consommable permettant de booster x2 son xp lors d’un combat,
+durée nombre de combats 1,2,10 ?
+-->
+
+<d place="dnv" gfx="garde_dnv" name="Guardia del Rey" background="3" cond="(admin()|active(roi))+fx(morsso)+scenario(king,0)">
+	<phase id="begin" next="humpf" frame="stop" fast="1">
+		[Una mujer con un uniforme de la Guardia Real se acerca a ti en la calle.]
+		[Te mira con un aire enfadado. ¿Habrás hecho algo malo últimamente? ¿A qué se debe ese gesto?...]
+	</phase>
+	<a id="humpf">¿...?</a>
+	<phase id="humpf" next="pf" frame="talk">
+		[¡Maestro de Dinos!]
+		[¡Sí, tú! ¡El que va y viene con sus Dinos por las calles! ¿No te has puesto a pensar que esas bestias alteran el orden en Dinovilla?]
+		[Yo soy la capitana de la Guardia Real y te encerraría en las mazmorras del castillo en un dos por tres.]
+	</phase>
+	<a id="pf">¿Algún problema mi capi?</a>
+	<phase id="pf" next="chateau" frame="talk">
+		[¡Pero qué insolente!]
+		[Estos Maestros de Dinos ya no respetan a nadie.]
+		[Se dicen héroes, nada más falso... Salvan Dinovilla una vez, y luego la dejan llena de polvo con sus combates.]
+		[¡Unos bandidos, eso es lo que son!]
+	</phase>
+	<a id="chateau">¿Pero qué he hecho?</a>
+	<phase id="chateau" next="viens" frame="talk">
+		[La Guardia Real se encarga de velar por la seguridad en Dinovilla.]
+		[Mucho cuidado con lo que dices o haces, ¡te tengo en la mira!]
+		[Aún no entiendo por qué Su Majestad, el Rey, me pidió que venga a buscarte.]
+	</phase>
+	<a id="viens">¿Estoy invitado al castillo?</a>
+	<phase id="viens" next="go" frame="talk">
+		[¡A las mismísimas mazmorras, ahí te invitaría yo!]
+		[En fin, Su Majestad ha oído hablar mucho de ti y quiere reunirse contigo.]
+	</phase>
+	<a id="go">¿Y dónde se encuentra el castillo?</a>
+	<phase id="go" next="suis" frame="talk">
+		[Pfff, solo sigue el camino a Dinoplaza, pasando por el Cinema Paradino encontrarás un puesto de control para entrar al castillo.]
+		[No te pierdas en el camino, ¡no hagas esperar al Rey!]
+	</phase>
+	<a id="suis">¡Pues, allá voy!</a>
+	<phase id="suis" fast="1" scenario="king:1" frame="vide">
+		La Capitana camina delante de ti, y lo hace murmurando enfadada.
+		¡Pero qué cascarrabias! Ojalá la próxima vez esté de mejor humor.
+	</phase>
+</d>
+
+<d place="poste" gfx="garde_dnv" background="2" name="Capitana de la Guardia" cond="scenario(king,1)">
+	<phase id="begin" next="block" frame="vide" fast="1">
+		Ves un largo pasaje que lleva a la plataforma que domina todo Dinoplaza. ¡El castillo había estado ahí todo este tiempo!
+		Hay una gran cantidad de soldados custodiando la puerta de entrada.
+	</phase>
+	<a id="block">Veamos que sucede.</a>
+	<phase id="block" frame="talk" next="lichen">
+		[Ya era hora... ¡Te has tardado!]
+		[Tu cita con Su Majestad el Rey deberá esperar, el acceso al castillo ha sido bloqueado.]
+	</phase>
+	<a id="lichen">¿Bloqueado?</a>
+	<phase id="lichen" frame="lichen" next="why">
+		[Como puedes ver, una especie de liquen fosforescente nos impide ir más lejos.]
+	</phase>
+	<a id="why">¿Y cómo apareció esa planta?</a>
+	<phase id="why" next="how" frame="talk">
+		[Ahora están por todas partes. Ya le había recomendado al Rey de no almacenar tanto maná en su castillo.]
+		[Y como era de esperarse, la cantidad de maná recolectado durante vuestras Guerras de Maná alcanzó cantidades astronómicas.]
+		[¡Sí y todo gracias a vosotros Maestro de Dinos!]
+	</phase>
+	<a id="how">¡Yo podría hacer algo!</a>
+	<phase id="how" next="oue" frame="talk">
+		[Seguramente, ¡el Chamán Lacio debe tener la solución a nuestro problema!]
+		[Y apresúrate, ¡que al Rey no le gusta esperar!]
+	</phase>
+	<a id="oue">¡Vamos a Fosalava!</a>
+	<phase id="oue" frame="stop" scenario="king:2" fast="1">
+		La capitana mantiene un ojo sobre ti mientras le da instrucciones a los guardias del puesto.
+		Si quieres evitar ser el culpable de todas las desgracias del Rey, más vale resolver esto rápidamente.
+	</phase>
+</d>
+
+<d place="fosslv" name="Chamán Lacio" gfx="shaman" cond="scenario(king,2)">
+	<inject id="shaman:begin" next="potion"/>
+	<a id="potion">¡Tenemos un problema en el castillo!</a>
+	<phase id="potion" next="trankil">
+		[Moooment'o... calma amigo... caaalma...]
+		[Haz' m'cho que no s' le ve al Rey, ¿ya no se divie'te en su cahhtillo?]
+		[La ge'te diz' que tiene con qué, con to'o es' maná que vue'tros combateh produz'n...]
+	</phase>
+	<a id="trankil">Justamente, ¡esa abundancia parece haber tenido efectos secundarios!</a>
+	<phase id="trankil" next="alors">
+		[¿Ot'a vé ese liqu'n que crez' alrede'or del cahhtillo?]
+		[A mi no m' so'prende t'nto... El m'na no es una m'la cosa, pe'o no hay que abusssr, sino eso afe'ta al ecosi'temmma...]
+		[No se qué se t'ae el Rey, pe'o debe sabé lo que hace, deb' estar rodea'o de sabios y gente expe'ta...]
+	</phase>
+	<a id="alors">¡Eso espero! Pero, dime, ¿cómo resolvemos ese problema?</a>
+	<phase id="alors" next="remede" scenario="king:3">
+		[Bah, e'cucha, la poción no é muy difí'il de prep'rar, pe'o tiene que ser go'peada con fue'za, ¿entien'es a qué m' refie'o?]
+		[...]
+		[No, no sa'es de qué stoy hab'ando...]
+		[Pues el Vene'able sab'á que hacer. Yo te daré la p'ción y tu irásss a ve'le.]
+		[M' ima'ino que ya le venciste, si é así no debe'ías tener p'oblemas.]
+	</phase>
+	<a id="remede">¿El Venerable? Glup...</a>
+	<phase id="remede" popup="1" fast="1">
+		Obtienes una poción conteniendo una flama azul @/img/icons/fx_potio1.gif@, ¡parece que tiene que ser golpeada y muy fuerte!
+	</phase>
+</d>
+
+<d place="vener" name="El Venerable" gfx="dorogon" cond="!(scenario(nimbao,14+)+scenario(nimbao,41-))+scenario(king,3)+(fx(vkill)|admin())">
+	<inject id="venerable:begin" next="frappe"/>
+	<a id="frappe">Discúlpeme, tengo una poción...</a>
+	<phase id="frappe" next="grr:pasgrr">
+		[Grumpf... ¡¡¡GROOOOAAARRH!!!]
+		[¡Y te atreves a interrumpir mi siesta por una simple poción!]
+		[¡Prepárate a sufrir una golpiza! ¡¡¡GROOOOAAARRH!!!]
+	</phase>
+	<a id="grr">¡Ah pues justo eso es lo que necesitaba!</a>
+	<a id="pasgrr">Eh, creo que volveré más tarde.</a>
+	<phase id="pasgrr">
+		Te alejas del Venerable, es mejor estar bien preparado antes de enfrentarse a él.
+	</phase>
+	<phase id="grr" fightgroup="vener4" next="cayest" scenario="king:4">
+		[Grumpf, eres tan poderoso como siempre.]
+		[Bien, quieres que te haga un favor. Pídemelo.]
+	</phase>
+	<a id="cayest">En realidad, ¡ya está hecho!</a>
+	<phase id="cayest" next="done" scenario="king:5">
+		[Entonces desaparece, sabes que no me gustan tus visitas, siempre termino adolorido.]
+	</phase>
+	<a id="done">¡Bueno, hasta pronto!</a>
+	<phase id="done"popup="1" fast="1">
+		Obtienes una poción conteniendo una flama roja @/img/icons/fx_potio2.gif@, ¡ideal para quemar plantas mana-activas!
+	</phase>
+</d>
+
+<d place="poste" gfx="garde_dnv" frame="talk" background="2" name="Capitana de la Guardia" cond="scenario(king,4)|scenario(king,5)">
+	<phase id="begin" next="etvous">
+		[Ya era hora.]
+		[Espero que tengas la solución a nuestro problema.]
+	</phase>
+	<a id="etvous">¡Por supuesto mi Capitana!</a>
+	<phase id="etvous" next="lichenpouf">
+		[Hemos logrado detener la proliferación de ese liquen mana-activo.]
+		[Solo tienes que quemar el origen de esas plantas para acceder al castillo.]
+	</phase>
+	<a id="lichenpouf">Usar la poción</a>
+	<phase id="lichenpouf" next="gocastle" frame="pouf">
+		[...........]
+		[Bien. Esas plantas ya no son una amenaza, al menos por ahora.]
+	</phase>
+	
+	
+	<a id="gocastle">¡Rumbo al castillo!</a>
+	<phase id="gocastle" scenario="king:6" fast="1" frame="stop">
+		La capitana empieza a caminar delante de ti, al fin conocerás al Rey de Dinovilla.
+		Papy Jose estaría muy orgulloso de ti...
+	</phase>
+</d>
+
+<d place="chato" gfx="gardien" frame="stop" background="1" name="Consejero del Rey" cond="scenario(king,6)">
+	<phase id="begin" next="rien">
+		[...]
+		
+		[...]
+	</phase>
+	<a id="rien">Este consejero no habla mucho...</a>
+	<phase id="rien">
+		El consejero solo le habla al Rey y no te encuentra digno de su atención.
+		Esa banda roja sirve para ocultar su ceguera, pero aún así, es capaz de caminar por el castillo sin tropezarse... Bueno, sigamos con la misión.
+	</phase>
+</d>
+
+<d place="chato" gfx="garde_dnv" frame="talk" background="1" name="Capitana de la Guardia" cond="scenario(king,6)">
+	<phase id="begin" next="mission:end">
+		[¡Por favor, no decepciones a nuestro Rey! Demuéstrale que eres más que un criador de bestias salvajes.]
+	</phase>
+	<a id="mission" cond="tag(roi)">Consultar la lista de misiones</a>
+	<phase id="mission" missions="roi"></phase>
+	<a id="end" cond="mission(roif)">He terminado las misiones</a>
+	<phase id="end">
+		[Humpf, supongo que debo felicitarte.]
+		[No es motivo para que hagas tonterías en el castillo, ¡recuerda que te estoy vigilando!]
+	</phase>
+</d>
+
+<d place="chato" gfx="roi" background="1" name="Rey de Dinovilla"  cond="scenario(king,6)+!curmission(roif)">
+	<phase id="begin" next="leroi" frame="cottent">
+		Entras en un gran salón, y al centro, está el Rey, sentado en su trono, y junto a él, la capitanta y un personaje enigmático.
+		El Rey patalea de impaciencia por verte.
+	</phase>
+	<a id="leroi">Su Majestad...</a>
+	<phase id="leroi" next="story:end" frame="blabla">
+		[¡Oh, oh, oh!]
+		[¡Así que tu eres el Maestro de Dinos del que tanto me han hablado!]
+		[Debes tener muchas historias para contarme, por favor, ¡ponte cómodo muchacho y cuéntame!]
+	</phase>
+	<a id="story">¡Puedo contarle mi aventura en el Mundo Sombra!</a>
+	<phase id="story" next="toobad" gfx="gardien" frame="talk" name="Consejero del Rey">
+		[Su Majestad, no es razonable perder el tiempo en estas circunstancias.]
+		[Los asuntos del reino requieren vuestra atención...]
+	</phase>
+	<a id="toobad">(...UFF)</a>
+	<a id="end" cond="mission(roif)">Terminé las misiones</a>
+	<phase id="toobad" tag="roi" frame="blabla">
+		[Por desgracia, tienes razón, estimado consejero.]
+		[¡Maestro de Dinos!]
+		[¡El reino te necesita!]
+		[Te confiaré algunas misiones importantes, ¡serás recompensado a la altura de tus esfuerzos!]
+		[¡Ve con la capitana de mi guardia para que te indique lo que hay que hacer!]
+		[... Ya que lo mencionaste, me gustaría visitar el Mundo Sombra.]
+	</phase>
+	<phase id="end" frame="blabla">
+		[¡Felicitaciones Maestro de Dinos!]
+		[Nos has ayudado mucho.]
+		[Gracias a ti y a nuestra honorable capitana, Dinovilla está a salvo.]
+		[Y además, pude visitar el Mundo Sombra.]
+		[Qué mundo tan tenebroso, quién hubiese imaginado que existe un Dinoland paralelo... no dudo que nos seguirá dando más de una sorpresa...]
+	</phase>
+</d>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

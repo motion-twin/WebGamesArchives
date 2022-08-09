@@ -1,0 +1,155 @@
+<quests>
+
+
+<q from="major" id="apa" name="Rejoindre ses pénates" cond="sch(ap)">
+<begin>Commence par aller poser tes affaires au dortoir, tu pourras t'y reposer un peu si tu manques de points de déplacement. Dès que tu es prêt et en forme, reviens me voir. Il y a une montagne de travail ! </begin>
+<msg  zone="aphome" action="Poser ses affaires" text="Te voilà chez toi. Pourquoi ne pas faire un petit somme histoire de tester le matelas et de se reposer un peu ? " title="Aller poser ses affaires au dortoir des étudiants. Les dortoirs se trouvent derrière le grand hall du manoir." />
+<end>Bien. Maintenant on va pouvoir passer aux choses sérieuses, scrogneugneu.</end>
+<xp v ="5" />
+<reput s="ap" v="6" />
+</q>
+
+
+<q from="major" id="majora" name="Un peu de ménage" cond="quest(apa)|(!sch(ap)+reput(ap,1))">
+	<begin>Avec tous ces ravalements de façade et ces réparations, le manoir est un chantier pas possible ! Il faut absolument faire un peu de ménage !</begin>
+	<talk did="majoraa" />
+	<collect o="CountBlock(1):60" zone="apfbg" title="Détruire 60 blocs de pyrite pendant ses alchimies pour nettoyer le faubourg Audepint.">
+		<playMod replace="1" artft="Elts(2,null):1000;Elts(2,CountBlock(1)):1300;Elts(2,CountBlock(2)):1700;Elts(2,CountBlock(3)):1000;Dynamit(0):45;Dynamit(1):30;Alchimoth:10" >
+		</playMod>
+	</collect>
+	<end>Humpf. La zone a l'air propre et sécurisée. Un  travail honorable, alchimiste.</end>
+	<xp v ="10" />
+	<gold v="54" />
+	<reput s="ap" v="10" />
+</q>
+
+<q from="major" id="majorb" name="Courants ascendants dépoussiérants" cond="quest(majora)">
+<begin>
+J'ai enguirlandé le chef de chantier pour son travail bâclé ! 
+Après quelques coups de pied au derrière bien sentis, il m'a expliqué qu'ils ont une technique bizarre de "courants porteurs ascendants" pour éviter que la poussière de pyrite nous tombe dessus. Mais ils ne peuvent pas la mettre en oeuvre car ils manquent d'éléments du vent ! 
+On a conclu un cessez-le-feu provisoire : ils nettoient leur chantier eux-mêmes si tu t'occupes de leurs ramener les "Bouts de souffle" qui leur manquent.
+</begin>
+	<talk did="majorba" />
+	<create o="Elt(24):6" zone="scroad" title="Créer 6 bouts de souffle en jouant à la route scintillante. Chaque élément présent à la fin d'une partie sera collecté. ">
+	</create>
+	<end>Repos ! Je me charge de porter ces éléments à ce scrogneugneu de chef de chantier. Ah tiens il y en a un de trop, tu peux le garder. </end>
+	<xp v ="13" />
+	<gold v="68" />
+	<item v="Elt(24):1" />
+	<reput s="ap" v="6" />
+</q>
+
+<q from="major" id="majorc" name="C'est un peu mou" cond="quest(majorb)">
+<begin>
+Bon. Après quelques essais, les bouts de souffle ne sont pas suffisants pour que ça marche... On va essayer avec un peu de Slamine. Tu en trouveras sur la plaine de l'armée.
+</begin>
+	<create o="Elt(25):3" zone="aparmy" title="Créer 3 Slamines sur la plaine de l'armée. Chaque élément présent à la fin d'une partie sera collecté. ">
+	</create>
+	<end>Merci. Si avec ça ça ne fonctionne toujours pas, je mute cette bande d'incapables au fin fond des montagnes noires....</end>
+	<xp v ="16" />
+	<gold v="90" />
+	<randomrecipe v="300:240" />
+	<reput s="ap" v="9" />
+</q>
+
+
+<q from="major" id="majord" name="Réduction des stocks !" cond="quest(majora)">
+<begin>
+Les stocks de métal du manoir commencent à baisser à cause de tous ces travaux ! 
+Si ça continue on va devoir entamer les stocks d'or pour les échaffaudages... 
+Récupère le métal indiqué sur cette liste et apporte-le aux entrepôts de Vostok. 
+</begin>
+<create o="Elt(8):5;Elt(9):3;Elt(10):1" title="Collecter les éléments métalliques suivants (Chaque élément présent à la fin d'une partie sera collecté) :">
+</create>
+<msg zone="apvos" action="Donner le métal" text="Super, on attendait ce métal depuis un moment ! Les stocks n'avaient jamais été aussi bas." title="Apporter le métal récupéré à Vostok" />
+<end>Les stocks sont remplis ? Excellent travail, alchimiste !</end>
+<xp v ="18" />
+<gold v="105" />
+<reput s="ap" v="10" />
+</q>
+
+
+<q from="major" id="majore" name="Panne de chauffage" cond="quest(majora)">
+<begin>
+Il faut vraiment s'occuper de tout dans ce manoir ! 
+Le circuit de chauffage du grand hall a rendu l'âme, et évidemment il n'y a pas de budget pour appeler un réparateur ! 
+Va trouver maître Enguerrand pour voir ce qu'on peut faire.
+</begin>
+<talk did="majorea" title="Aller voir maître Enguerrand dans le grand hall" step="1"/>
+<msg zone="jzzig" action="Danser la gigue" text="Après votre petit spectacle traditionnel Kringdammois, rien ne se passe. Vous entendez juste quelques applaudissements sortir des buissons alentours." title="Monter votre réputation envers Jeezara pour accéder à la Ziggourat d'or. Danser ensuite la gigue de Kringdam devant la Ziggourat pour fêter ce succès." />
+<create o="Elt(17):4" zone="jzzig" title="Créer 4 étincelles à la Ziggourat d'or pour maître Enguerrand. Chaque élément présent à la fin d'une partie sera collecté. " />
+<msg zone="aphall" action="Donner les étincelles" text="Excellent. Avec ça je vais p-p-p-ouvoir réchauffer un peu l'atmosphère grâce à une petite recette de mon cr-cr-cr-cru." title="Retourner voir maître Enguerrand au grand hall avec les étincelles." />
+<end>Ah, maitre Enguerrand a dû terminer sa recette. On sent la chaleur des flammes jusqu'ici. </end>
+<xp v ="14" />
+<gold v="52" />
+<reput s="ap" v="15" />
+</q>
+
+
+<q from="major" id="majorf" name="Dopage surprise" cond="quest(majora)">
+<begin>
+Ils m'énervent ces ouvriers, le travail n'avance pas... S'ils étaient sous mes ordres ils auraient finis depuis longtemps !
+On va les faire s'activer un petit peu. J'ai un excellent stratagème pour booster les troupes, scrogneugneu.
+Ramène-moi 7 potions de vigueur. Avec ça dans leur tambouille de ce soir, je te promets qu'ils vont péter le feu !
+</begin>
+<use o="Pa:7" zone="apfbg" action="Donner les 7 potions de vigueur" text="Bon travail ! Je sens qu'ils vont faire plaisir à voir demain ! Si ça se trouve les travaux seront terminés en avance !" title="Ramener 7 potions de vigueur au Major Domou" />
+<end>Je viens de mettre les potions dans leur bouillon, j'ai hâte de voir ce que ça va donner !</end>
+<xp v ="12" />
+<gold v="78" />
+<reput s="ap" v="9" />
+</q>
+
+<q from="major" id="majorg" name="Skataphobia" cond="quest(majora)+grade(ap,2)">
+<begin>
+Depuis ce matin on entend Link le balayeur hurler à la mort ! Il a dû lui arriver quelque chose, va vite voir ce qu'il a à la route scintillante !
+</begin>
+<talk did="majorga" title="Se rendre à la route scintillante pour voir si Link est blessé." step="1" />
+<collect o="QuestObj(pickSkat):100" zone="scroad" title="Détruire 100 Skats pour sauver Link">
+	<playMod replace="1" artft="Elts(2,null):1000;Elts(2,QuestObj(pickSkat)):4000;QuestObj(pickSkat):500;Dynamit(0):30;Dynamit(1):15;Alchimoth:10;Detartrage:35">
+		<startGrid g="QuestObj(pickSkat):3:0;QuestObj(pickSkat):3:1"/>
+	</playMod>
+</collect>
+<end>Quoi ? Des skats ! Mais quel incapable celui-là ! Quand je pense que son père voulait que je le forme pour sauver le monde ! N'importe quoi, scrogneugneu...</end>
+<xp v ="16" />
+<gold v="45" />
+<randomrecipe v="300:270" />
+<reput s="ap" v="10" />
+</q>
+
+
+<q from="major" id="majorh" name="Un chancelier très casse-pied" cond="quest(majora)+grade(ap,2)">
+<begin>
+Le chancelier actuel est atroce ! La famille Audepint l'a à la bonne, et il en profite pour demander des trucs pas possibles ! Môssieur veut des éléments de premiere qualité ! Pff ! Si ça ne tenait qu'à moi il serait déjà au fond des oubliettes du manoir, elles sont de première qualité aussi !
+</begin>
+<create o="Elt(12):3" zone="jzdoor" title="Créer 3 rosées à l'entrée du boyau Jeezara (c'est là qu'elle est la plus fraîche) pour le chancelier. Chaque élément présent à la fin d'une partie sera collecté. " step="1">
+</create>
+<create o="Elt(16):3" zone="sktupu" title="Créer 3 charbonides à l'école Tupuri (la plus carbonisée du royaume !)" step="1">
+</create>
+<create o="Elt(20):3" zone="gmoree" title="Créer 3 glaises à l'orée du bois (la seule glaise garantie super collante)" step="1">
+</create>
+<create o="Elt(24):3" zone="scroad" title="Créer 3 bouts de souffle à la route scintillante (c'est là qu'il souffle le plus fort)">
+</create>
+<end>Tu as tout ? Bon j'envoie ça à la chancellerie. Mais s'il s'avise de réclamer encore un truc idiot, j'en fais mon affaire ! </end>
+<xp v ="20" />
+<gold v="70" />
+<randomrecipe v="300:250" />
+<reput s="ap" v="7" />
+</q>
+
+
+<q from="major" id="majori" name="Un chancelier très éparpillé" cond="quest(majorh)">
+<begin>
+Ca n'a pas loupé ! Sitôt que le chancelier a eu ses éléments, il a réclamé autre chose ! 
+Maintenant il veut une dizaine de wombats pour lui tenir compagnie ! Pourquoi pas une armée de Catz mignons tout plein ? ! 
+Ah mais ça ne va pas se passer comme ça !
+</begin>
+<talk did="majoria" step="1" />
+<use o="Dynamit(0):4" zone="apfbg" action="Donner les 4 bâtons de dynamite" text="Très bien ! je prépare le colis immédiatement. Voyons voir... où sont mes détonateurs ?  " title="Apporter 4 bâtons de dynamite horizontaux au Major Domou. Une recette disponible à Vostok pourrait être utile." />
+<end>Le livreur est parti à la chancellerie il y 5 minutes. On ne devrait pas tarder à entend... BOUUUUUUUM ! ! ! ! ! ... Repos ! Mission accomplie.</end>
+<xp v ="14" />
+<gold v="57" />
+<reput s="ap" v="6" />
+</q>
+
+
+</quests>

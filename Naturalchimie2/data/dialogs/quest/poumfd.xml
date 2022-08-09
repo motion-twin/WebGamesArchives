@@ -1,0 +1,14 @@
+<d place="gmsch" name="Demander un lot" gfx="gmprof" >
+
+<phase id="begin" next="oui:exit">
+Tu veux un lot ? Tu as le rang {On se débrouille} en élémentaire  ? 
+</phase>
+
+<a id="oui" cond="rank(elem,2)">Oui, on se débrouille.</a>
+<a id="exit">Euh mmmh... Eh bien.... Non.</a>
+
+<phase id="oui" qgive="QuestObj(lot)">
+Ok ça roule. Voilà ton lot.
+</phase>
+
+</d>

@@ -1,0 +1,107 @@
+﻿
+<d place="auree" name="Nicolás Mulot" gfx="hulot">
+
+	<phase id="begin" next="welcome:sick:sickstatus" fast="1">
+		Un hombre vestido de safari permanece de pie en la Entrada de la Jungla de Grumhel. Parece que espera algo...
+	</phase>
+	<a id="welcome" cond="!mission(toxic)|mission(hucure)">Hablar con él</a>
+	<a id="sick" cond="!curmission(hucure)+mission(toxic)+!mission(hucure)">Hablar con él</a>
+	<a id="sickstatus" cond="curmission(hucure)">Hablar con él</a>
+
+	<phase id="welcome" next="who:better:missions">
+		¡La Jungla de Grumhel! "Este espacio salvaje y aún virgen, protegido de toda agresión externa por su fauna
+		peligrosa, sigue siendo hoy en día un lugar de misterio y contraste que seduce cada año a
+		numerosos exploradores.". Capítulo 1 del documental "Descubrir un Mundo Salvaje".
+		(escalofrío) ¡Hoy es un gran día para mí!
+	</phase>
+
+	<a id="who" cond="!mission(hucure)">Ejem... ¿Quién es usted?</a>
+	<a id="better" cond="mission(hucure)">Parece que ya estás mejor...</a>
+	<a cond="fx(humiss)+(!mission(toxic)|mission(hucure))" id="missions">Consultar la lista de Misiones</a>
+
+	<phase id="who" next="role">
+		Un servidor Nicolás Mulot, periodista para la revista Ouïaïa y un enamorado de Dinoland.
+	</phase>
+
+	<a id="role">¿No crees que estamos en un lugar peligroso para un periodista?</a>
+
+	<phase id="role" next="flora:fauna:myst:missions">
+		No para un periodista de aventuras extremas como yo. Aquí tengo todo lo que buscaba:
+		un mundo inexplorado, una fauna y una flora ricas. ¡Tantas cosas fabulosas a descubrir
+		a cada paso!
+	</phase>
+	<a id="myst">¿Qué tipo de misterios hay aquí?</a>
+	<a id="fauna">Háblame de los animales de la Jungla...</a>
+	<a id="flora">¿Hay bonitas plantas por aquí?</a>
+	<a id="fear" cond="!fx(humiss)">Ah... ¿Quieres decir que no te atreves a entrar en la Jungla?</a>
+
+	<phase id="myst" next="fear:flora:fauna:missions">
+		Eso lo ignoro... pero... pero estoy convencido de que hay cosas fabulosas escondidas en esta jungla.
+		Solo hay que atreverse y entrar... Secuencia Miedo azul.
+	</phase>
+
+	<phase id="flora" next="whynot:fauna:myst:missions">
+		¡Estos árboles milenarios esconden incontables secretos maravillosos! Sin embargo, el que sabe mirar es 
+		capaz de apreciar muchas cosas para el mayor gozo. Olores exóticos, flores multicolores, vegetación
+		frondosa... La Jungla de Grumhel.
+		"Una Aventura en el país de la Madre Naturaleza", secuencia Exploración.		
+	</phase>
+
+	<a id="whynot">¿Y por qué no entras ya en la Jungla?</a>
+
+	<phase id="whynot" next="fear:other:missions">
+		Digamos que aquí hay algunas plantas compremetedoras... Como la 
+		"Toxicae Virulenta Negra" o la "Salvajina Gigante Devoradora de Hígados"...
+	</phase>
+
+	<phase id="fauna" next="flora:myst:missions">
+		Entre los roncivores, los korgones y los ratones-fiera, la Jungla de Grumhel acoge unos peligros
+		que depasan cualquier imaginación. Tierra hostil, Tierra prometida... este lugar de Dinoland
+		nunca se dejará dominar...
+	</phase>
+
+	<phase id="fear" next="explore:other">
+		Eh, cómo decirlo... digamos que se trata de un contratiempo técnico. Sería más prudente planificar en primer lugar una misión
+		de reconocimiento. Antes de introducirse en cuerpo y alma, ¡este tipo de acciones son necesarias!		
+	</phase>
+
+	<a id="explore">¿Puedo ayudarte?</a>
+	<a id="other">Tengo más preguntas...</a>
+
+	<phase id="explore" next="missions" effect="humiss">
+		¡Es una buena idea! A decir verdad, no hay mucha actividad por aquí... un poco de ayuda
+		vendría bien... secuencia acción.
+	</phase>
+
+	<phase id="other" next="flora:fauna:myst:missions">
+		¿Tendrías el valor de introducirte en los misterios insondables de la Jungla de Grumhel?
+	</phase>
+
+
+	<phase id="sick" next="problem" fast="1">
+		Cuando Nicolás Mulot se vuelve para responderte, ¡constatas con horror que tiene la cara
+		hinchada y cubierta de granos!
+	</phase>
+
+	<a id="problem">¡Guaaaa! ¿Qué te ha pasado?</a>
+
+	<phase id="problem" next="curesearch">
+		Faludos. No te lo tomes a mal pero creo que las plantaf que me haf dado
+		eran... cómo decirlo... tóxicaf...
+		Creo que mi alergia a las plantaf ha tomado cierta amplitud... ¿Podríaf ayudarme a encontrar un remedio?...
+	</phase>
+
+	<a id="curesearch">Bueno, veamos...</a>
+
+	<phase id="curesearch" missions="hulot"></phase>
+	<phase id="missions" missions="hulot"></phase>
+
+	<phase id="sickstatus" next="curesearch">
+		Entoncef, ¿haf encontrado un remedio?		
+	</phase>
+
+	<phase id="better" next="flora:fauna:myst:missions">
+		¡El remedio que me has traido ha sido muy eficaz! ¡Oh, mil gracias!
+	</phase>
+
+</d>

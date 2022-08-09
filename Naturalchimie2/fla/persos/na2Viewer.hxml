@@ -1,0 +1,34 @@
+# SWF
+-swf swf/viewer.swf
+-swf-version 8
+-main Viewer
+-cp src
+-cp ../lib/
+-D swf-mark
+-cmd swfmake -f src/make_viewer.xml
+-cmd cp swf/viewer.swf ../../../website/www/swf/
+
+
+# SWF
+--next
+-swf swf/viewerthumb.swf
+-swf-version 8
+-main ViewerThumb
+-cp src/
+-cp ../lib/
+-D swf-mark
+-cmd swfmake -f src/make_viewerthumb.xml
+-cmd cp swf/viewerthumb.swf ../../../website/www/swf/
+
+#SWF
+--next
+-swf swf/viewerforum.swf
+-swf-version 8
+-main ViewerForum
+-cp src/
+-cp ../lib/
+-D swf-mark
+-D forum
+-cmd swfmake -f src/make_viewerforum.xml
+-cmd cp swf/viewerforum.swf ../../../website/www/swf/
+

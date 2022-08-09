@@ -1,0 +1,159 @@
+﻿<!--	QUETE DU PROFESSEUR : bouee & materiel d'escalade
+			+ infos sur les différentes zones
+			+ infos sur le gant des zors
+			+ transforme pierre en totem ashpouk
+ -->
+
+<d place="univ" name="Professor Eugene" gfx="eugene">
+
+	<phase id="begin" next="talk" fast="1">
+		Once inside the University library, you meet the famous Professor Eugene. He's
+		well known for his interest in Dinoz Masters. He often asks you many questions
+		in exchange for useful techniques for your Dinoz, along with other important information about Dinoland.
+	</phase>
+
+	<a id="talk">Professor Eugene</a>
+
+	<phase id="talk" next="question:nothing:nothing2:learn:learn_water:learn_fire:learn_done">
+		Hello young Dinoz Master. So, how is everything going? I remember
+		when I was your age, I walked all over Dinoland! Don't hesitate to come back
+		if you want any help or clues to any of the mysteries that intrigue you.
+
+		On top of that, I can teach your Dinoz some very useful techniques. I can only make this offer
+		if your Dinoz is ready. My lessons are very dangerous and can be fatal if your Dinoz is not ready.
+	</phase>
+
+	<a id="question">Ask a question</a>
+
+	<!-- APPRENTISSAGE -->
+
+	<a id="nothing" cond="!level(5)">Learn</a>
+	<a id="learn" cond="level(5)+!fx(bouee)+!fx(matesc)">Learn</a>
+	<a id="nothing2" cond="!level(7)+(fx(bouee)|fx(matesc))">Learn</a>
+	<a id="learn_water" cond="level(7)+fx(matesc)+!fx(bouee)">Learn</a>
+	<a id="learn_fire" cond="level(7)+fx(bouee)+!fx(matesc)">Learn</a>
+	<a id="learn_done" cond="fx(bouee)+fx(matesc)">Learn</a>
+
+	<phase id="nothing">
+		Well then, let's see. Sit your Dinoz down there .... perfect. (he pulls out a small pocket light) ... Let's see your teeth. Say "Ahhhh!" ...  Mmmm ... it seems your Dinoz is still a bit too young ... I can't teach him anything at the moment.
+		Come back to me when your Dinoz reaches Level 5.
+	</phase>
+
+	<phase id="nothing2">
+		Let's see ... (he proceeds to examine your Dinoz ...) It seems that your Dinoz has improved since the last time I saw you. However, he isn't strong enough to learn the second technique ... his body won't be able to handle it. I think we should wait for him to reach level 6 ... Mmmm no, level 7, is safer.
+	</phase>
+
+	<phase id="learn" next="water:fire">
+		So your Dinoz wants to learn a new technique? Your Dinoz will have to fight a monster. I will only train him if he wins. Which technique would you like me to teach him?
+	</phase>
+
+	<a id="water">Swimming with a buoy</a>
+	<a id="fire">Climbing</a>
+
+	<phase id="water" next="water_fight:back">
+		Very well. If your Dinoz wins this challenge, I'll teach him how to use the Buoy. Your Dinoz will then be able to cross areas of water.
+	</phase>
+
+	<phase id="fire" next="fire_fight:back">
+		Climbing isn't an easy technique to master, you must be in possession of the Climbing Gear in order to learn it.
+		If your Dinoz wins the battle against this monster, I'll provide some equipment and teach him the basics.
+		Your Dinoz will then be able to climb the Big All-Hot.
+	</phase>
+
+	<a id="water_fight">Fight</a>
+	<a id="fire_fight">Fight</a>
+	<a id="back" target="learn">Go back</a>
+
+	<phase id="water_fight" fight="ewater" effect="bouee">
+		Well done! You were very impressive! As promised, I will give your Dinoz a buoy. Your Dinoz should now be able to access
+		the Atlanteid Islands to the south of Dinoland. Good luck, and be careful!
+	</phase>
+
+	<phase id="fire_fight" fight="efire" effect="matesc">
+		Well done! You were very impressive! As promised, I will give your Dinoz the Climbing Gear. Your Dinoz should now be able to climb up
+		the precipitous slopes of the Big All-Hot. The Monsters there are very warm, so be careful when you're climbing!
+	</phase>
+
+	<phase id="learn_water" next="water_fight">
+		You want the Buoy? First you're going to have to fight this monster!
+	</phase>
+
+	<phase id="learn_fire" next="fire_fight">
+		You want the Climbing Gear? First you're going to have to fight this monster!
+	</phase>
+
+	<phase id="learn_done">
+		I have nothing else to teach to your Dinoz. But don't worry, there are people throughout Dinoland
+		who will teach him new techniques!
+	</phase>
+
+	<!-- QUESTIONS -->
+
+	<phase id="question" next="dinoville:gtc:atlante:stone:gant:noquestion">
+		I love questions! What do you want to know,young Dinoz master?
+	</phase>
+
+	<a id="dinoville">Dinotown Kingdom</a>
+	<a id="atlante" cond="level(8)">Atlanteid Islands</a>
+	<a id="gtc" cond="level(5)">Big All-Hot</a>
+	<a id="gant" cond="fx(gant)">Zors Glove</a>
+	<a id="stone" cond="fx(astone)">This Old Stone?</a>
+	<a id="noquestion">Nothing at all</a>
+	<a id="menu" target="question">Go back</a>
+
+	<phase id="dinoville" next="menu">
+		The Dinotown Kingdom has been destroyed and rebuilt many times during ancient times.
+		Today, it's a civilized and developing place, compared with it's wild surroundings.
+		That's the reason why Dinotown is a perfect place for a young Dinoz Master such as yourself!
+
+		Make sure to train your Dinoz well before venturing to other regions of Dinoland as the monsters are far more dangerous!
+	</phase>
+
+	<phase id="atlante" next="menu">
+		A long time ago, there was an island to the south of Dinoland called Jazz island.
+		
+		Jazz Island was blasted into the air by an underwater eruption and landed on the plateau of a volcanic
+		peak 100 meters in the air. However, little by little the peak was eroded by the waves until
+		Jazz Island crashed into the ocean, causing a massive tsunami that wiped out a half of Dinoland and
+		destroyed most of the ancient human civilizations in the process.
+		
+		Today, after many centuries, things are starting to get back to normal,
+		but a large part of Dinoland is still wild and dangerous.
+		Anyway, the Atlanteid Islands are fragments of Jazz Island.
+		
+		People say that only Sticky Swamp remains in it's natural state.
+	</phase>
+
+	<phase id="gtc" next="menu">
+		Hey young Dinoz Master, do you see that small triangle up there? It's actually a huge volcano called
+		the Big All-Hot. I advise you to go there, you can eat some really tasty merguez, they're always perfectly grilled.
+
+		When I was younger, I studied the ruins of ancient civilizations. Did you know that thousands of years ago
+		on the top of the Big All-Hot, there was an entire civilization called Ashpouk?
+		And one day, boom! The volcano erupted and the entire civilization was destroyed! Sad isn't it?
+
+		In any case, I advice you to go excavate the ruins. You might find some ancient relics there, and don't forget to taste the merguez.
+	</phase>
+
+	<phase id="gant" next="menu">
+		The Zors Glove is a very rare item! People say that the Zors Glove must be used at the Mutant Falls
+		to access to Grumhel Forest, but no one knows how to use it.
+	</phase>
+
+	<phase id="stone" next="stone_yes:stone_no">
+		Ohhhhhh!!! This is really interesting, it seems to be the .... mmmmmmmmm ....
+		Actually I'm not too sure ... (he starts staring at the stone) ... can you show me this Stone, so I can examine it more closely?
+	</phase>
+
+	<a id="stone_yes">Of course, here it is.</a>
+	<a id="stone_no" target="question">Hey! Don't touch it!</a>
+
+	<phase id="stone_yes" noeffect="astone" effect="totem">
+		Ooooooohhhhh!!! Yes ... It's exactly what I thought ... Look! (he delicately cleans the stone) ... it's an Ashpouk Totem! It's very valuable ... take care of it!
+	</phase>
+
+	<phase id="noquestion">
+		That's a shame. Don't hesitate to come back from time-to-time to learn more about Dinoland!
+	</phase>
+
+</d>

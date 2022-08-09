@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="Windows-1252"?>
+<VisualStudioProject
+	ProjectType="Visual C++"
+	Version="7.10"
+	Name="mb2gen"
+	ProjectGUID="{DBD25F0D-F34A-4484-8957-CA11389872EE}"
+	SccProjectName=""
+	SccLocalPath=""
+	Keyword="MakeFileProj">
+	<Platforms>
+		<Platform
+			Name="Win32"/>
+	</Platforms>
+	<Configurations>
+		<Configuration
+			Name="Bytecode|Win32"
+			OutputDirectory="."
+			IntermediateDirectory="."
+			ConfigurationType="0"
+			UseOfMFC="0"
+			ATLMinimizesCRunTimeLibraryUsage="FALSE">
+			<Tool
+				Name="VCNMakeTool"
+				BuildCommandLine="ocamake mb2gen.dsp -g"
+				ReBuildCommandLine="ocamake mb2gen.dsp -g -all"
+				Output="mb2gen.exe"/>
+		</Configuration>
+		<Configuration
+			Name="Native code|Win32"
+			OutputDirectory="."
+			IntermediateDirectory="."
+			ConfigurationType="0"
+			UseOfMFC="0"
+			ATLMinimizesCRunTimeLibraryUsage="FALSE">
+			<Tool
+				Name="VCNMakeTool"
+				BuildCommandLine="ocamake -cp -unsafe -opt mb2gen.vcproj -o mb2gen.exe"
+				ReBuildCommandLine="ocamake -cp -unsafe -opt mb2gen.vcproj -o mb2gen.exe -all"
+				Output="mb2gen.exe"/>
+		</Configuration>
+	</Configurations>
+	<References>
+	</References>
+	<Files>
+		<Filter
+			Name="ML Files"
+			Filter="ml;mly;mll">
+			<File
+				RelativePath="assemble.ml">
+			</File>
+			<File
+				RelativePath="..\..\ext\others\bitCodec.ml">
+			</File>
+			<File
+				RelativePath="dungeon.ml">
+			</File>
+			<File
+				RelativePath="level.ml">
+			</File>
+		</Filter>
+		<Filter
+			Name="MLI Files"
+			Filter="mli">
+		</Filter>
+	</Files>
+	<Globals>
+	</Globals>
+</VisualStudioProject>

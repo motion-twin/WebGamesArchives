@@ -1,0 +1,42 @@
+﻿<d place="marche" name="Zwielichtiger Mann" gfx="filou" cond="active(market)|!scenario(nimba2,2)">
+	
+	<phase id="begin" next="listen:bye"> 
+	  Pssss.... pssss!! 
+	</phase>
+
+	<a id="listen">Sich dem Mann nähern.</a>
+	<a id="bye">Weggehen.</a>
+
+	<phase id="bye" fast="1">
+	  Du hast ganz recht. Besser, man hat mit solchen Typen nichts zu tun.
+	</phase>
+
+	<phase id="listen" next="yes:bye:convert:convert2">
+	  Sag, sag, sag... Brauchst du Gutscheine? Schatzgutscheine?
+	</phase>
+
+	<a id="yes">Ja, kann sein.</a>
+	<a id="convert" cond="uvar(elites,1+)+uvar(conver,1+)+active(abo)">Ich möchte mein Gold in Schatzgutscheine tauschen!</a>
+	<a id="convert2" cond="!uvar(elites,1+)+active(abo)">Ich möchte mein Gold in Schatzgutscheine tauschen.</a>
+
+	<phase id="yes" next="view:bye">
+		He, he (cool, ein Kunde)... Ich habe ein paar, weißt du! 
+		Schau mal, die sehen aus wie echt, nicht wahr? Ich verkaufe sie Dir zu einem guten Preis! 
+		Mit ein paar Gebühren selbstverständlich... Ich muss schließlich meine sieben Kinder ernähren. Du verstehst schon, mein Junge...
+	</phase>
+	
+	<phase id="convert" next="view">
+		Kein Problem. Ich seh schon, dass du eine königliche Erlaubnis hast. 
+		Ich kann dir aber nur einige Schatzgutscheine umtauschen. Nicht dass ich große Skrupel hätte... Aber sonst wären nicht mehr genug für andere Abenteurer übrig.
+	</phase>
+	
+	<phase id="convert2">
+		Tut mir leid, Kleiner. Ich hebe meine Schatzgutscheine nur für Privilegierte Abenteurer auf. Und zwar, weil... Nun, weil... Also... Ich hab's satt. Ständig werde ich das gefragt!
+	</phase>
+
+	<a id="view">Ansehen.</a>
+
+	<phase id="view" url="/dino/::did::/act/filou">
+	</phase>
+	
+</d>

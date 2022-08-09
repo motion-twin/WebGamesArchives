@@ -1,0 +1,29 @@
+-swf ../www/swf/kube.swf
+-swf-header 616:320:40:FFFFFF
+-swf-version 10
+-main Kube
+options.hxml
+--next
+-swf ../www/swf/kube3d.swf
+-swf-version 11.2
+options.hxml
+-main Kube
+--next
+-swf ../www/swf/minimap.swf
+-swf-lib gfx.swf
+-main Minimap
+-cp src
+-swf-header 196:190:40
+obfu.hxml
+--next
+-swf ../www/swf/map.swf
+-swf-lib gfx.swf
+-main Map
+-swf-header 768:512:40
+-cp src
+-cp ../src
+-cp ../../base/com
+-cp ../tpl/fr
+-lib tora
+-lib format
+obfu.hxml

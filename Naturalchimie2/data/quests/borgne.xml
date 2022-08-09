@@ -1,0 +1,64 @@
+<quests>
+
+
+
+<q from="borgne" id="borna" name="Installation cryptique" cond="sch(jz)">
+	<begin>Ta première tâche consiste à rejoindre le dortoir commun situé dans la crypte du Boyau. Pose tes affaires et repose toi si tu as besoin de points de déplacement. Rapproche toi ensuite d'un borgne d'information pour accéder à la seconde tâche.</begin>
+	<msg  zone="jzhome" action="Poser ses affaires" text="Te voilà chez toi, choisis ta niche funéraire. Pourquoi ne pas faire un petit somme histoire de tester le marbre et de se reposer un peu ? " title="Aller poser ses affaires au dortoir commun. C'est juste après le Boyau central." />
+	<end>Etudiant installé avec succès. Mise à jour de l'élève en cours...</end>
+	<xp v ="5" />
+	<reput s="jz" v="6" />
+</q>
+
+
+<q from="borgne" id="bornb" name="Requête urgente" cond="quest(borna)|(!sch(jz)+reput(jz,1))">
+	<begin>Le mentor Aj'ur a besoin d'éléments pour une recherche urgente : Il a eu une idée de recette au saut du lit et veut absolument la tester. Un étudiant est demandé pour remplir cette tâche.</begin>
+	<create o="Elt(7):5;Elt(16):2;Elt(12):2" title="Créer les éléments suivants. Chaque élément présent à la fin d'une partie sera collecté. On trouve des Charbonides à Tiresias et des Rosées à l'entrée du boyau." />
+	<end>Ces éléments semblent corrects. Requête complétée. Merci beaucoup.</end>
+	<xp v ="10" />
+	<gold v="96" />
+	<reput s="jz" v="8" />
+</q>
+
+
+<q from="borgne" id="bornc" name="Bazar au Boyau" cond="quest(bornb)">
+	<begin>Aïe. Aïe. Alerte !  La cage principale des cobayes skats de l'école a été brisée ! Ils se répandent partout dans le Boyau central ! On signale également des skats roses ! Une éradication totale est demandée ! </begin>
+	<collect o="QuestObj(pickSkat):50;QuestObj(pickRedSkat):12" zone="jzboy" title="Détruire 50 skats et 12 skats roses échappés au Boyau central. Attention, l'espèce rose est insensible à la transmutation des potions !">
+		<playMod replace="1" artft="Elts(2,null):2600;Elts(2,QuestObj(pickSkat)):1900;Elts(2,QuestObj(pickRedSkat)):500;QuestObj(pickRedSkat):150;QuestObj(pickSkat):175;Dynamit(0):30;Dynamit(1):15;Alchimoth:10;MentorHand:1;Protoplop(1):15;Grenade(0):10" />
+	</collect>
+	<end>Alerte terminée. Tous les étudiants peuvent reprendre leurs activités normales. Sauf celui dont la recette a liquéfié les barreaux de la cage des skats et qui est attendu par le mentor Mortgage au labo...</end>
+	<xp v ="12" />
+	<gold v="78" />
+	<randomrecipe v="300:240" />
+	<reput s="jz" v="10" />
+</q>
+
+
+<q from="borgne" id="bornd" name="Deux RazKrölls pour le mentor, deux ! " cond="quest(bornc)">
+	<begin>Le mentor Vorgoon recherche un étudiant pour une course à la salle des chaudrons. Il faut aller faire cette recette expérimentale et lui ramener les résultats. Il ajoute que l'étudiant qui s'en occupera aura droit à sa clémence expresse aux prochains examens. Il me charge aussi de te dire que la Glaise se trouve au Nord de la capitale. S'il te manque des ingrédients, le mieux est de jouer des parties d'alchimie pour les récupérer.</begin>
+	<cauldron r="qaraz" qty="1" collect="1" drop="1" add="1" title="Se rendre à la salle des chaudrons pour faire la recette Jeez-Contraulzhède. Rapporter les résultats au Boyau central." />
+	<end >Parfait. Je te note sur la liste des étudiants à ne pas saquer au prochain contrôle.</end>
+	<xp v ="10" />
+	<gold v="115" />
+	<reput s="jz" v="14" />
+</q>
+
+
+<q from="borgne" id="borne" name="Visite indésirable" cond="quest(bornc)">
+	<begin noeffect="borne">Le mentor Oxyss Mortgage vient de décréter l'état d'urgence ! Un contingent de touristes a pénétré dans l'école en déjouant tous les systèmes de sécurité ! Va voir le mentor Mortgage à l'entrée du Boyau, vite ! </begin>
+	<talk did="bornea" title="Aller voir le mentor Mortgage à l'entrée du Boyau." />
+	<fx fid="borne" title="Retrouver les touristes dans l'école et essayer de comprendre comment ils sont arrivés là." />
+	<talk did="bornec" title="Retourner voir le mentor Mortgage pour lui raconter ce que l'on a découvert." step="1" />
+	<cauldron r="qborne" qty="1" collect="1" drop="1" add="1" title="Faire la recette Tsunammifère pour créer une horde de Wombats." />
+	<use qo="Wombat:40" zone="jzdoor" action="Donner les 40 Wombats" text="Voilà une brave petite horde de Wombats. Le temps de les énerver un peu et je les balance dans le Labolodun. On devrait voir passer du touriste affolé dans pas longtemps. Je te retrouve au Boyau central juste après."  title="Apporter la horde de Wombats au mentor Oxyss Mortgage à l'entrée du Boyau" />
+	<end>Bon boulot, les touristes se sont enfuis dès que j'ai lâché la meute. Il en reste un ou deux dans les couloirs mais j'ai lancé le monstre gardien à leur poursuite. Vu comme je lui ai remonté les bretelles je pense qu'il ne va en faire qu'une bouchée ! </end>
+	<xp v ="18" />
+	<gold v="93" />
+	<reput s="jz" v="12" />
+</q>
+
+
+
+
+
+</quests>

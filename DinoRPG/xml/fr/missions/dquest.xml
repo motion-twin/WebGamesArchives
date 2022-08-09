@@ -1,0 +1,232 @@
+﻿<missions>
+
+	<!-- ***************************************************************************** -->
+	<!-- éclaireur rogue ----->
+
+	<m group="dquest" id="dexplo" name="Ouvrir la route" limit="35">
+		<begin>« RECHERCHE : mercenaire H ou F pour exploration désert et sécurisation des chemins. Candidats peu motivés s'abstenir.»</begin>
+		<goto v="scross"/>
+		<action v="Prendre des notes">Vous commencez à écrire votre rapport.</action>
+		<goto v="scanyo"/>
+		<action v="Prendre des notes">Vous ajoutez les détails de cette étape à votre rapport. Le défilé semble être plutôt calme...</action>
+		<action v="Grimper la paroi">Au prix d'un gros effort, vous parvenez au sommet d'un plateau de Toulaho. La vue est splendide !</action>
+		<actfight act="Prendre d'autres notes" bg="m_step_cliff" monsters="brig1:brig1:brig1">
+			<begin>Alors que vous vous installez pour prendre quelques notes en profitant de cette position stratégique, un groupe de brigands en embuscade ici se jète sur vous !</begin>
+			<win>Ouf, c'était moins une ! Il faut à tout prix signaler leur présence à l'Avant-Poste...</win>
+		</actfight>
+		<end>Tandis que vous lisez votre rapport, une inquiétude grandissante se lit sur le visage des marchands qui vous écoutent. Plusieurs d'entre eux s'empressent de rédiger de nouvelles annonces au Bureau.</end>
+		<xp v="70"/>
+		<gold v="1500"/>
+	</m>
+
+	<m group="dquest" id="dcarav" name="La caravane occidentale" limit="35" cond="mission(dexplo)">
+		<begin>« Association des Marchands recherche transporteur qualifié pour livraison de routine. S'adresser à l'intendant Soulef Moissa. Pillards du désert s'abstenir.»</begin>
+		<talk v="Intendant Soulef Moissa">Ordre de mission 51... Ok. Pour la caravane, allez prendre livraison des caisses de matériel à la Frontière crépitante. C'est au sud. Suivant !</talk>
+		<goto v="senter"/>
+		<talk v="Porteur">Voilà les caisses. C'est bizarre, j'aurais juré avoir entendu du bruit dedans... Emmenez-les aux Pylônes de Magnétite, tout au nord.</talk>
+		<action v="Caisses à livrer">Vous ramassez 4 petites caisses. </action>
+		<goto v="sking"/>
+		<action v="Faire une pause">C'est qu'elles sont lourdes ces caisses... Pfiou !</action>
+		<goto v="spylon"/>
+		<talk v="Service livraison">Ah parfait ! Mais je n'ai besoin que d'une caisse. Envoyez donc les autres à mon collègue de Toutemba. Mais passez par le lac, ça sera moins dangereux.</talk>
+		<goto v="slake"/>
+		<action v="Faire une pause">Le poids des caisses devient de plus en plus pénible ! Vous faites une petite pause histoire de souffler un peu.</action>
+		<actfight act="Bruit suspect" bg="st_syphon" monsters="korgon:korgon:korgon:korgon:korgon:korgon">
+			<begin>Les caisses se brisent soudainement dans un grand fracas ! Une marée de Korgons énervés en sort en hurlant !</begin>
+			<win>On dirait bien que cette livraison cache un traffic de Korgons... Vous devriez aller prévenir l'Intendant.</win>
+			<lost>Les Korgons se sont échappés ! Il va falloir les retrouver...</lost>
+		</actfight>
+		<goto v="svillg"/>
+		<talk v="Intendant Soulef Moissa">Des Korgons vous dites ? Hmmm... C'est bien noté, je vais faire le nécessaire. Allez chercher votre paie maintenant.</talk>
+		<end>Vous signez votre rapport de mission au Bureau pour empocher votre prime.</end>
+		<xp v="100"/>
+		<gold v="3000"/>
+	</m>
+
+	<m group="dquest" id="scorp1" name="Zeste de Scorpwink" limit="35" cond="mission(dexplo)">
+		<begin>« Apothicaire sans scrupule recherche Dard de scorpwink en bon état pour expériences douteuses. Une bonne connaissance des poisons sera un plus appréciable pour votre candidature. »</begin>
+		<talk v="Intendant Soulef Moissa">Des dards ? Encore ? Vous devriez aller près de la dévoreuse de l'Est. Ca pullule de scorpwinks dans les rochers là-bas.</talk>
+		<goto v="stowr1"/>
+		<actfight act="Chercher un scorpwink" bg="st_devor" monsters="scorp">
+			<begin>Il ne vous faut pas longtemps pour tomber nez à nez avec un scorpwink...</begin>
+			<win>Malheureusement, le dard de ce scorpwink n'a pas tenu le choc du combat. Il va falloir en trouver un autre en meilleur état...</win>
+		</actfight>
+		<actfight act="Chercher plus loin" bg="st_canyon" monsters="scorp:worm">
+			<begin>Vous parvenez, non sans mal, en haut de l'amas rocailleux... pour tomber sur un scorpwink en plein combat contre un Longbrik ! Ils se retournent tous deux dans votre direction et se jettent sur vous.</begin>
+		</actfight>
+		<action v="Récupérez le dard">Vous ramassez un dard de scorpwink.</action>
+		<end>Vous donnez le dard à l'Intendant, il se chargera de le livrer à l'apothicaire.</end>
+		<xp v="80"/>
+		<gold v="2000"/>
+		<item v="antip" n="2"/>
+	</m>
+
+	<m group="dquest" id="brig1" name="Sécuriser la croisée" limit="35" cond="mission(dexplo)">
+		<begin>« Le Consortium des Filous Associés recrute ! Si vous êtes jeune, en bonne santé et que vous aimez les rencontres enrichissantes, cette opportunité est pour vous. Adressez-vous à Ali Labah, l'éclaireur. »</begin>
+		<goto v="sking"/>
+		<talk v="Eclaireur Ali Labah">C'est vous qu'on envoie pour faire le ménage. Mouais. Bon. On attend de vous que vous nettoyiez les alentours de la Croisée des Nomades. Suivez la route au sud. Quand on vous attaquera, c'est que vous y serez.</talk>
+		<goto v="scross"/>
+		<kill v="brig1:brig2:brig3" name="Brigands à éliminer" n="15"/>
+		<end>Le Consortium sait reconnaître ses alliés. Voici pour votre peine !</end>
+		<xp v="80"/>
+		<gold v="3000"/>
+	</m>
+
+	<m group="dquest" id="kitchn" name="Le voleur gourmand" limit="35" cond="mission(dexplo)">
+		<begin>« Recherche dinoz rapide pour petit boulot à la Citadelle. Contacter cuisinère Malika Ramhel. »</begin>
+		<goto v="sking"/>
+		<talk v="Garde en faction">Malika se trouve aux cuisines du palais au fond à gauche.</talk>
+		<talk v="Malika Ramhel">Merci d'avoir répondu à mon annonce ! Depuis plusieurs jours, un petit malin s'amuse à piller tous nos stocks de nourriture... Il faudrait régler ce problème au plus vite !</talk>
+		<actfight act="Aller dans les réserves" bg="m_step_kitchen" monsters="">
+			<begin>Personne ici. Vous décidez de cacher votre Dinoz dans l'obscurité...</begin>
+		</actfight>
+		<actfight act="Attendre dans les ombres" bg="m_step_kitchen" monsters="thief">
+			<begin>Après seulement quelques minutes, vous entendez un bruit s'approcher... Un scorpwink ! Il tient de la nourriture entre ses pinces !</begin>
+			<win>Le scorpwink a fui dans les dédales de la Citadelle !</win>
+		</actfight>
+		<actfight act="Poursuivre le scorpwink" bg="m_step_wcavern" monsters="thief2:brig1:brig1:brig3:brig2:brig3">
+			<begin m="brig2">Pourquoi il revient sans rien ? ... Hé... Regardez là-bas ! Un intrus !</begin>
+		</actfight>
+		<talk v="Malika Ramhel">Hé beh. C'est vraiment plus ce que c'était notre bonne vieille Citadelle. Ca rentre et ça sort tout le temps, ça crie, ça se tape dessus... Bon bah merci quand même. Votre paie vous attend à l'Avant-Poste Rocky.</talk>
+		<end>Un agent du Bureau des Requêtes vous accueille sans un sourire et vous tend votre prime pour ce travail.</end>
+		<xp v="80"/>
+		<gold v="2500"/>
+		<item v="ration" n="3"/>
+	</m>
+
+	<m group="dquest" id="worms" name="Vermifuge" limit="35" cond="mission(dexplo)">
+		<begin>« L'entreprise Caravoies de l'Est recherche un agent de maintenance pour l'entretien de ses voiries. Contactez la contremaître Fadoua Al-Hépluvit au chantier de la Frontière Crépitante pour plus d'informations. »</begin>
+		<goto v="senter"/>
+		<talk v="Contremaître Fadoua Al-Hépluvit">Vous là ! Qu'est-ce que vous faîtes sans casque de protection sur mon chantier ?!</talk>
+		<action v="Prendre un casque">Vous enfilez un casque de chantier.</action>
+		<talk v="Contremaître Fadoua Al-Hépluvit">C'est vous l'agent de maintenance ? Bien. On a des problèmes sur la voie qui traverse les Pylônes de magnétite, au nord. Des attaques de Longbriks. Vous voulez nous rendre service ? Allez faire le ménage là-bas.</talk>
+		<goto v="spylon"/>
+		<talk v="Ouvrier de Caravoies">Ah, enfin de l'aide ! On a encore essuyé une attaque de Longbriks ce matin. Ca bloque l'avancée des travaux ! Pire, ils détruisent les routes qu'on construit avec les trous qu'ils laissent derrière eux...</talk>
+		<kill v="worm" n="5"/>
+		<talk v="Ouvrier de Caravoies">Merci pour le coup de main ! Mais... Qu'est-ce que c'est que ce bruit ?! Regardez ! Un trou énorme s'est ouvert dans le sol !</talk>
+		<actfight act="Sauter dans le trou" bg="m_step_hole" monsters="wormom" allies="buildr">
+			<begin m="buildr">Argh ! Une Matriarche Longbrik !</begin>
+		</actfight>
+		<talk v="Ouvrier de Caravoies">J'ai bien cru qu'on allait y rester... Merci pour votre aide, Caravoies saura vous récompenser ! A bientôt !</talk>
+		<goto v="senter" title="Retourner voir Fadoua Al-Hépluvit"/>
+		<talk v="Contremaître Fadoua Al-Hépluvit">Une Matriarche... Ca n'est pas bon signe. J'espère que votre intervention calmera un peu les choses. Merci pour le service rendu !</talk>
+		<end>L'entreprise Caravoies de l'Est vous remercie pour votre intervention sur nos chantiers. En vous souhaitant un bon voyage sur nos routes !</end>
+		<xp v="100"/>
+		<gold v="2500"/>
+		<item v="monoch"/>
+	</m>
+
+	<m group="dquest" id="brig2" name="On recherche: Sahalami le trancheur" limit="35" cond="mission(dexplo)">
+		<begin>« ON RECHERCHE : Sahalami dit "le Trancheur sans pitié". Individu TRÈS dangereux coupable d'innombrables actes de piraterie. Aucune piste concernant sa cachette. Forte récompense à la clé ! Dinoz de faible niveau s'abstenir ! »</begin>
+		<goto v="slake" hide="1" title="Retrouver la trace de Sahalami"/>
+		<action v="Caravane attaquée">Vous trouvez les restes d'une caravane qui a semble-t-il été attaquée récemment...</action>
+		<goto v="stowr3" hide="1" title="Trouver les pillards"/>
+		<action v="Caisses empilées">Vous remarquez la présence de divers objets entassés, volés de toute évidence, à l'entrée d'une caverne sombre... Peut-être que les coupables se cachent à l'intérieur ?</action>
+		<actfight act="Entrer dans le repaire" bg="m_step_cave1" monsters="brig2:brig1">
+			<begin m="brig2">Intrus ! ALEEEEEEERTE !</begin>
+			<win>Vous avez éliminé la patrouille de l'entrée.</win>
+		</actfight>
+		<actfight act="Explorer le repaire" bg="m_step_cave2" monsters="brig1:brig1:salami">
+			<begin m="salami">Tiens tiens... Regardez qui nous a suivi jusqu'ici... Attrapez-le !</begin>
+			<win>Vous avez vaincu Sahalami le Trancheur !</win>
+		</actfight>
+		<action v="Pendentif étrange">Sahalami portait un pendentif en forme de Couperet de cuisine. Etrange...</action>
+		<end>Sahalami ne terrorisera plus personne. Reste à élucider le mystère de ce pendentif...</end>
+		<xp v="80"/>
+		<gold v="2500"/>
+		<item v="hotpan"/>
+	</m>
+
+	<m group="dquest" id="hunt1" name="On recherche: Tripou le mou" limit="35" cond="mission(penden)">
+		<begin>« ON RECHERCHE : Tripou, le pillard mou des nuits sans lune. Les derniers rapports font état d'une attaque au pied de la Dévoreuse du nord. Mission très dangereuse, belle récompense à prévoir. »</begin>
+		<goto v="stowr2" hide="1"/>
+		<action v="Attendre une attaque">Vous vous installez au pied de la dévoreuse pour attendre une éventuelle attaque...</action>
+		<action v="Attendre...">Après un long moment... rien ne se passe.</action>
+		<talk v="Marchand de passage">Vous cherchez Tripou ? Ah non, pas vu aujourd'hui. Et j'en suis bien content !</talk>
+		<action v="Attendre encore...">Vous tournez en rond, tandis que rien ne vous arrive...</action>
+		<action v="Persister dans l'attente">De longues heures s'écoulent. Rien ne se produit.</action>
+		<talk v="Une aventurière qui passait par là">Tripou... Jamais entendu ce nom là, désolée. Bonne journée !</talk>
+		<action v="Tourner en rond">La fatigue vous gagne, mais c'est bien la seule chose d'intéressante qui se produit...</action>
+		<actfight act="Attendre un peu plus..." bg="m_step_fog" monsters="brig1:brig2:brig1:tripo2">
+			<begin m="tripo2">Allez les gars, détroussez-moi ce guignol !</begin>
+			<win>Vous apercevez Tripou, caché derrière ses hommes, à quelques pas de vous...</win>
+		</actfight>
+		<talk v="Tripou">Tu ne fais pas le poids ! Vas-t-en !</talk>
+		<actfight act="Hommes de main" bg="m_step_fog" monsters="brig1:brig1:brig1:tripo2">
+			<begin m="tripo2">Il ne doit pas passer !</begin>
+		</actfight>
+		<actfight act="Foncer sur Tripou !" bg="m_step_fog" monsters="brig1:brig1:brig1:tripou">
+			<begin m="tripou">Tu es courageux, mais ça ne te suffira pas... Finissons-en !</begin>
+			<win>Vous avez vaincu Tripou le pillard mou des nuits sans lune !</win>
+		</actfight>
+		<action v="Pendentif du Couperet">Tripou portait bien l'un des pendentifs que vous recherchez. Voilà une bonne chose de faite.</action>
+		<end>Vous avez réussi à vaincre Tripou ! Félicitations !</end>
+		<gold v="3000"/>
+		<xp v="90"/>
+	</m>
+
+	<m group="dquest" id="hunt2" name="On recherche: Boukané l'intuable" limit="35" cond="mission(penden)">
+		<begin>« ON RECHERCHE : Boukané, l'intuable tortionnaire des abîmes insondables ! Il se terre dans son repaire en Extrême Occident, mission hautement périlleuse ! »</begin>
+		<goto v="sband2"/>
+		<actfight act="Trouver Boukané" bg="m_step_cave2" monsters="coward">
+			<begin m="coward">Aaah ! Ce n'est pas moi ! Ce n'est pas moi ! Si vous cherchez Boukané, il est parti avec la bande à la Citadelle... Pitié, laissez-moi partir !</begin>
+			<win>Hmmm... Ce voleur a parlé de la Citadelle... Je devrais aller jeter un oeil là-bas.</win>
+		</actfight>
+		<goto v="sking"/>
+		<talk v="Garde en faction">Boukané ? Ici ? Non c'est impossible. Mais jetez un oeil si vous pensez qu'il est à l'intérieur.</talk>
+		<actfight act="Fouiller le hall" bg="m_step_citadel1" monsters="">
+			<begin>On dirait bien qu'il n'y a personne ici...</begin>
+		</actfight>
+		<actfight act="Monter sur le toit" bg="m_step_citadel2" monsters="">
+			<begin>Jolie vue ! Mais Boukané n'est pas ici non plus... Continuons à fouiller la Citadelle.</begin>
+		</actfight>
+		<talk v="Garde en faction">Vous l'avez trouvé ? Bah il reste les caves à vérifier à la limite. Personne n'y va jamais.</talk>
+		<actfight act="Descendre à la cave" bg="m_step_citadel3" monsters="boukan:brig2:brig2:brig1:brig1">
+			<begin m="boukan">Chut, quelqu'un vient... Raah, on est repérés ! Il ne faut pas les laisser s'enfuir !</begin>
+			<win>Vous avez vaincu Boukané l'intuable et ses hommes !</win>
+		</actfight>
+		<action v="Pendentif du Couperet">Boukané portait bien l'un des pendentifs que vous recherchez. Un chef de moins.</action>
+		<talk v="Garde en faction">Ca alors... Boukané.. Chez nous.. Heureusement que vous étiez là !</talk>
+		<end>Vous avez déjoué les plans de Boukané. De toutes évidences, il s'apprêtait à attaquer la Citadelle par son point faible...</end>
+		<gold v="3500"/>
+		<xp v="90"/>
+	</m>
+
+	<m group="dquest" id="hunt3" name="On recherche: Cervelah l'empoisonneur" limit="35" cond="mission(penden)">
+		<begin>« ON RECHERCHE : Cervelah, l'empoisonneur verdâtre. Grand, brun, porte une capuche et est toujours accompagné de Pikouz, son fidèle scorpwink. Individu extrêmement hostile. Forte prime offerte par le Consortium des Filous Associés ! Contactez Aboul Tonhor, marchand aux Pylônes. »</begin>
+		<goto v="spylon" hide="1"/>
+		<talk v="Aboul Tonhor">Cervelah ? Oui j'le connais ! Son scorpwink horrible m'a piqué alors qu'ils essayaient de me détrousser... J'en ai été malade pendant plusieurs semaines ! J'ai entendu dire que sa bande se cachait dans le sud...</talk>
+		<goto v="slake" hide="1" title="Retrouver les aggresseurs d'Aboul Tonhor"/>
+		<action v="Bruits derrière les rochers">Vous avancez prudemment jusqu'à la source des bruits et vous découvrez un petit groupe de pillards festoyant sur les bords du lac de sable-magnétite... Profitons-en !</action>
+		<actfight act="Attaquer le campement" bg="m_step_lake" monsters="brig3:brig3:brig2:brig3:brig2">
+			<begin m="brig3">Ciel !</begin>
+			<win>Aucune trace de Cervelah... Il doit pourtant se cacher dans les environs...</win>
+		</actfight>
+		<actfight act="Faire le tour du Syphon" bg="st_syphon" monsters="coward:brig1">
+			<begin m="coward">Retiens ce dinoz, je coure prévenir Cervelah !</begin>
+			<win>Il faut à tout prix retrouver ce brigand.</win>
+		</actfight>
+		<action v="Chercher le fuyard">Personne. Mais vous remarquez des traces de pas allant vers les plateaux de Toulaho...</action>
+		<goto v="scanyo" hide="1" title="Trouver où est parti le fuyard"/>
+		<actfight act="Grimper" bg="m_step_cliff" monsters="cowar2:cervel:pikouz">
+			<begin m="cowar2">Chef ! Chef ! Il est là ! Il nous a retrouvé... Tuons-le !</begin>
+			<win>Quel combat ! Vous avez vaincu Cervelah l'empoisonneur et son fidèle Pikouz.</win>
+		</actfight>
+		<action v="Pendentif du Couperet">Cervelah portait l'un des pendentifs du Couperet que vous recherchiez...</action>
+		<end>Le Consortium des Filous Associés vous remercie pour votre aide précieuse. Voilà une belle prime pour votre efficacité.</end>
+		<gold v="3500"/>
+		<xp v="90"/>
+		<item v="antip" n="2"/>
+	</m>
+
+	<m group="dquest" id="penden" name="Un collier bien mystérieux" limit="35" cond="mission(brig2)">
+		<begin>Le pendentif en forme de Couperet de cuisine trouvé sur Sahalami est quand même très étrange... Vous devriez mener l'enquête à son sujet.</begin>
+		<talk v="Intendant Soulef Moissa">Ce pendentif ne me dit rien. Désolé.</talk>
+		<goto v="sking" hide="1"/>
+		<talk v="Eclaireur Ali Labah">C'est très intéressant... J'ai déjà vu ce pendentif au cou de certains chefs au cours de mes expéditions. On dirait bien que certains clans de voleurs se sont associés ! Voici la liste des noms des chefs en question.</talk>
+		<action v="Prendre la liste">Vous obtenez les noms de plusieurs chefs brigands. Ils sont probablement liés à cette association de voleurs !</action>
+		<end>Vous avez obtenu les informations qu'il vous fallait. </end>
+		<xp v="90"/>
+	</m>
+
+</missions>

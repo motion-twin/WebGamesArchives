@@ -1,0 +1,191 @@
+﻿<missions>
+
+	<m group="mmex" id="mmex1" name="El maletín negro">
+		<begin>
+			Anoche llegó un barco al Puerto de Santa Moría con un maletín negro para mí. ¿Puedes ir a buscármelo al Puerto? ¡No lo vayas a abrir!
+		</begin>
+		<goto v="port"/>
+		<action v="Coger el Maletín Negro">Le has cogido el Maletín Negro a un hombre con una gabardina. ¡Qué fácil parece esta misión!</action>
+		<goto v="frcbrt"/>
+		<talk v="Señora X" gfx="mmex">Qué raro... Este maletín... ¡es una TRAMPA!</talk>
+		<actfight act="¡Trampa!" monsters="gluon">
+			<begin>Un Gluón se había escurrido en el maletín. ¡Sin duda para atacar a la Señora X!</begin>
+			<win>¡La Señora X está encantada de que te hayas ocupado de la trampa en su lugar!</win>
+		</actfight>
+		<end>
+			Gracias por tu preciada ayuda. Toma, ¡una recompensa para ti!
+		</end>
+		<xp v="10"/>
+		<gold v="300"/>
+	</m>
+
+	<m group="mmex" id="mmex2" name="El Mercader Traidor">
+		<begin>
+			Parece que hay un traidor en la corte del Rey. Pasa informaciones gracias a un mercader que se presenta de vez en cuando en Dinovilla. Detén a este mercader y tráemelo para que pueda interrogarlo.
+		</begin>
+		<goto v="dnv"/>
+		<action v="Buscar al Mercader">Has encontrado un mercader sospechoso que corresponde a la descripción de la Señora X...</action>
+		<actfight act="¡Al ataque!" monsters="march1">
+			<begin m="march1">¡¡¡Ayudaaaaa!!!</begin>
+			<win>Tras un estudio más detallado, ¡te das cuenta de que este mercader no es el que buscabas! Pobrecito, qué susto...</win>
+		</actfight>
+		<action v="Buscar al Mercader">Al fin encuentras al Mercader. Se corresponde exactamente con la descripción de la Señora X... No debe de haber error en esta ocasión (en principio).</action>
+		<actfight act="¡Al ataque!" monsters="march1">
+			<begin m="march1">¡¡¡Aarrrgg!!!</begin>
+			<win>¡Has capturado al Mercader! Habrá que llevárselo a la Señora X.</win>
+		</actfight>
+		<goto v="frcbrt"/>
+		<end>
+			Gracias por haber traído este traidor al Reino. No te preocupes, ya sé yo cómo hacerle hablar. Espero que no te hayas equivocado de persona...
+		</end>
+		<item v="ration"/>
+	</m>
+
+	<m group="mmex" id="mmex3" name="La Carrera-persecución" cond="mission(mmex1)+mission(mmex2)">
+		<begin>
+			He recibido un informe de policía sobre un Dino que ha atacado mercaderes de Dinovilla últimamente. ¿Podrías investigar este extraño asunto?
+		</begin>
+		<goto v="dnv"/>
+		<action v="Retrato robot">Te das cuenta de que el retrato robot del Dino acusado de haber atacado los mercaderes se parece a tu Dino. ¿Simple coincidencia o complot?</action>
+		<actfight act="Investigar" monsters="march2:march2:march2">
+			<begin>
+				Te encuentras tranquilamente buscando pistas e indicios, ¡cuando mercaderes en cólera reconocen a tu Dino y lo atacan!
+			</begin>
+			<win>
+				La situación parece complicada de explicar... Habrá que informar a la Señora X, ¿no?
+			</win>
+		</actfight>
+		<goto v="frcbrt"/>
+		<talk v="Señora X" gfx="mmex">
+			.... (le explicas la historia) ... ¡¿Qué?! ¿Entonces el sospechoso se trata de tu Dino?
+			Uhmm... entiendo. Voy a necesitar tiempo para poder enterrar este asunto. Mientras tanto, ¡ve a esconderte a las Colinas Escarpadas!
+		</talk>
+		<goto v="colesc"/>
+		<action v="Esperar" wait="3">
+			Esperas a que la señora X contacte contigo.
+		</action>
+		<action v="Mensaje SX">
+			Un mensaje firmado "SX" para ti. Precisa sólo lo siguiente: "Vuelve a Dinovilla lo más rápido posible"
+		</action>
+		<goto v="dnv"/>
+		<talk v="Mercader">
+			¡Oh! ¿No eres tú el maestro del gemelo? ¡Ja, ja, ja! Es verdad que tu Dino se parece mucho al que atrapamos ayer. No te preocupes, el verdadero culpable fue capturado y ejecutado por la Policía de Élite Real. ¡Así que no te preocupes por nada!
+		</talk>
+		<end>
+			He conseguido cubrirte por esta vez. Gracias a mis relaciones. Si vuelves a cometer una falta tan grave, tendré que hacer que no te conozco y nunca habrás trabajado para mí. ¿Capito?
+		</end>
+		<gold v="50"/>
+	</m>
+
+	<m group="mmex" id="mmex4" name="Las Islas son guay/chévere" cond="mission(mmex3)">
+		<begin>
+			Hemos aislado un grupo de individuos que cultivan hierbas ilegales en el Pantano Pegajoso y los exporta a la capital. Debemos enviar un agente. Evidentemente es necesario que tu Dino pueda desplazarse a las Islas Atlanteidas.
+		</begin>
+		<goto v="marais"/>
+		<action v="Investigar">
+			El olor, bastante fuerte, y los sonidos del yembe que se oyen desde muy lejos, te permiten fácilmente localizar una banda de individuos de aspecto desaliñado.
+		</action>
+		<actfight act="Neutralizarlos" allies="gang1:gang2:gang3" monsters="borg">
+			<begin m="gang2">
+				¡¡Aarrg!! ¡Un Borg! ¡Creo que por esta vez tendremos que luchar todos juntos!
+			</begin>
+			<win>
+				Tras tu victoria, tres de estos delincuentes se acercan para hablar contigo.
+			</win>
+		</actfight>
+		<talk v="Juan-Humberto">
+			¡Ey tú! Entiendo que no te guste mucho esto que hacemos aquí. ¡Pero es tan guay, tan chévere! ¡Por favor no nos hagas nada!
+		</talk>
+		<talk v="Carlos-Eduardo">
+			¡Oye amigo! ¡Has peleado como un loco! ¡Eres brutal! Por favor, no nos denuncies. Aquí se está tan bien con la música y la playa...
+		</talk>
+		<talk v="Luis-Stanislas">
+			Mis dos asociados querrían explicar su gratitud por tu visita. Te solicitan humildemente si se podría llegar a un acuerdo para evitar los tormentos de la prisión y no perder los mejores años de su vida. Gracias por tu comprensión.
+		</talk>
+		<goto v="frcbrt"/>
+		<talk v="Señora X" gfx="mmex">
+			¿QUÉ? ¿Has simpatizado con los fuera de la ley?... No estoy segura de que seas un buen agente después de todo... En fin. Han incumplido la ley, e incluso si son muy simpáticos no por ello son menos culpables.
+		</talk>
+		<talk v="Señora X" gfx="mmex">
+			Puesto que insistes, voy a arreglármelas para que las circunstancias atenuantes sean consideradas. Tendrán que hacer algunas tareas de interés público, como la organización de la biblioteca de la Universidad. ¡Y vas a ayudarlos ya que te caen tan bien!
+		</talk>
+		<goto v="marais"/>
+		<talk v="Luis-Stanislas">
+			Te agradezco por habernos ayudado a evitar lo peor. Estaremos encantados de organizar la biblioteca de la Universidad, ¡sobre todo si estás con nosotros para mantener alta la moral durante esas largas horas de trabajo!
+		</talk>
+		<goto v="univ"/>
+		<action v="Ordenar" wait="30">
+			Tu Dino ayuda a Juan-Humberto, a Carlos-Eduardo y a Luis-Stanislas a organizar la gran biblioteca de la Universidad...
+		</action>
+		<talk v="Juan-Humberto">
+			¡Qué bien, amigo! Volvemos a las Islas, allí se está mejor. Prometido, ya no hacemos más locuras. ¡Chao!
+		</talk>
+		<end>
+			La ley es la ley, y toda infracción merece una sanción.
+		</end>
+		<xp v="30"/>
+		<gold v="1000"/>
+	</m>
+
+	<m group="mmex" id="mmex5" name="El Complot Ashpuk" cond="mission(mmex3)">
+		<begin>
+			Parece ser que hay un tráfico de falsas reliquias de la civilización Ashpuk. Además, hay "peces gordos" implicados. Tenemos que enviar un agente para investigar. Para esto es necesario que tu Dino pueda desplazarse al Gran-Señor-Todo-Quema.
+		</begin>
+		<goto v="fosslv"/>
+		<talk v="El indicador">
+			Hola. Soy responsable de la recolección de información para la Señora X en este barrio. Nos han dicho que ocurren cosas extrañas durante la noche en las Ruinas Ashpuk.
+		</talk>
+		<goto v="rashpk"/>
+		<action v="Ocultarse" wait="10">
+			Tu Dino se oculta en un escondrijo y se prepara para vigilar a los sospechosos que vienen a traficar por la zona.
+		</action>
+		<action v="¡Sospechosos!">
+			Tu Dino observa a unos sospechosos. Parece que cogen tierra de las Ruinas y la almacenan en grandes sacos. ¿Por qué harán eso? Decides seguirles.
+		</action>
+		<goto v="forges"/>
+		<action v="Continuar vigilancia">Los sospechosos se alejan en dirección norte</action>
+		<goto v="tunel"/>
+		<action v="Continuar vigilancia">
+			Aparentemente los sospechosos intuyen algo ya que aceleran el paso y acto seguido desaparece en la naturaleza...
+		</action>
+		<goto v="fosslv" hide="1"/>
+		<action v="¡Sospechosos!">
+			¡Acabas de reconocer a uno de los sospechosos en una calle de Fosalava!
+		</action>
+		<actfight act="¡Acabar con él!" monsters="suspc1">
+		</actfight>
+		<action v="Cachear">
+			Tras vencer al sospechoso, lo cacheas y encuentras varias bolsitas de tierra proveniente de las ruinas así como de una tarjeta de visita al nombre de "El Señor Don Fuego". Ya va siendo hora de llevarle un informe a la Señora X!
+		</action>
+		<goto v="frcbrt"/>
+		<talk v="Señora X" gfx="mmex">
+			¿El Señor Don Fuego? Qué coincidencia... es un mercader que está en boca de todos en Fosalava. Dispone de numerosos apoyos en la Corte. ¡Para hacerle caer habrá que encontrar pruebas que lo impliquen directamente!
+		</talk>
+		<goto v="rashpk" hide="1"/>
+		<action v="Esconderse" wait="5">
+			"Los zulos son siempre la parte más aburrida en la profesión..." Es lo que siempre contaba el abuelo Der'hik. Sabes lo que quiero decir...
+		</action>
+		<action v="¡Sospechosos!">
+			Llegan algunos hombres que te recuerdan a los sospechosos. Hablan con el vendedor de salchichas y se marchan...
+		</action>
+		<talk v="Vendedor de salchichas" gfx="merguez">
+			¿Que qué querían esos turistas? Querían usar mi nuevo horno de pan para hacer unas vasijas de barro. Sí, ése con el que quiero hacer mis bocadillos de goblin. Han regresado a Fosalava para llevarlas a su jefe.
+		</talk>
+		<goto v="fosslv"/>
+		<action v="¡Sospechosos!">
+			Reconoces a los tres sospechosos en una calle de Fosalava.
+		</action>
+		<actfight act="¡Atacarles!" monsters="suspc:suspc:suspc">
+			<win>
+				Tras vencer a los sospechosos, éstos confiesan fabricar falsas reliquias con tierra de las Ruinas Ashpuk. Más vale llevárselas a la Señora X...
+			</win>
+		</actfight>
+		<goto v="frcbrt"/>
+		<end>
+			¡Excelente! Estos tipos no tienen muchas luces, ¡me las arreglaré para que testifiquen contra Don Fuego! Qué bien me ha venido esto. Empezaba justamente a hacerse demasiado rico y era demasiado popular como para poder deshacerse de él por los medios clásicos... ¡Gracias por la ayuda!
+		</end>
+		<xp v="30"/>
+		<gold v="1000"/>
+	</m>
+
+</missions>

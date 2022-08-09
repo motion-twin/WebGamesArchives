@@ -1,0 +1,125 @@
+﻿<missions>
+
+	<!-- ***************************************************************************** -->
+	<!-- BAO BOB , rallies ----->
+
+	<m group="bob" id="kilpir" name="El regalo de cumpleaños" limit="15">
+		<begin>Pronto será el aniversario de la pequeña Sofía de la Isla Waikiki. Su plato preferido es la Piranta del Pantano Pegajoso. ¿Le puedes llevar unas cuantos de mi parte?</begin>
+		<goto v="marais"/>
+		<kill v="pira" n="6"/>
+		<goto v="ilewkk"/>
+		<talk v="La pequeña Sofía">¡Oh! ¡Gracias! ¡Es muy simpático por tu parte de haberme traído esta deliciosa Piranta por mi cumpleaños! ¡Dale muchos besos a Don Bao de mi parte!</talk>
+		<end>Me gusta hacer regalos... ten, te doy esto.</end>
+		<xp v="30"/>
+	</m>
+
+	<m group="bob" id="troc" name="El Trueque de las Islas Atlanteidas" limit="30">
+		<begin>Hay un gran mercado en las Islas. Allí se puede intercambiar lo que uno quiera. Me gustaría obtener un perchero a cambio de este plátano. ¿Crees que puedes ayudarme?</begin>
+		<goto v="corail" hide="1"/>
+		<talk v="Un Mercader">Este plátano parece delicioso, te lo cambio por esta cometa.</talk>
+		<goto v="ilewkk" hide="1"/>
+		<talk v="Un Enamorado">Pfff... me voy a la Fuente de la Juventud, y si quieres te cambio esta cometa por este anillo de compromiso... nunca utilizado....</talk>
+		<goto v="chutes" hide="1"/>
+		<talk v="Un Joyero">¡¿Qué?! ¡¿Pero qué estoy viendo?! ¡Este Anillo forma parte de una antigua colección real! Te lo cambio por lo más caro del mundo: mi residencia en la Isla del Tótem. Aquí tienes las llaves, ¡no lo puedes rechazar!</talk>
+		<goto v="marais" hide="1"/>
+		<talk v="Un Turista Atascado">¡¡¡¡Ya estoy harto de este Pantano Pegajoso de M.....!!!! Ya van 3 las veces que nuestra caravana de camping se queda atrapada, ¡¡menuda idea la de venir de vacaciones a un PANTANO!! ¿Qué? ¿Una residencia en la Isla del Tótem? Buena idea. Te la cambio por nuestra caravana.</talk>
+		<goto v="corail" hide="1"/>
+		<talk v="Un Artista Entusiasta">¡¡S.u.p.e.r.!! ¡Estoy hipercontento! Mira esos rostros, ¡es una gran composición ar-tís-ti-ca! ¿Qué dices? ¿que es un rollo? ¡Tú que sabes! No entiendes el arte. Por cierto, mi obra vale tanto como una caravana de camping. ¡Te lo cambio!</talk>
+		<goto v="baobob" hide="1"/>
+		<talk v="Una Vieja Señora">He oído que buscabas un perchero. Te lo cambio por lo que quieras... ¿qué se supone que es eso? ¿caras?... bueno, no creo que valga mucho. Picassi no es para nada conocido. Anda venga, ¡toma este perchero a cambio!</talk>
+		<end>¿Has encontrado mi perchero? ¡Espero que en este viaje hayas aprendido cuán efímeras son las grandes riquezas!</end>
+		<xp v="100"/>
+		<gold v="2000"/>
+	</m>
+
+	<m group="bob" id="kilksk" name="A la caza de Kaskadinos" limit="10" cond="mission(kilpir)+canfight(kazka)">
+		<begin>He recibido una llamada urgente desde Sulaflota. Los Atlanteidos se inquietan por la repentina aparición de un gran número de Kaskadinos provenientes de las Profundidades. ¿Podrías llevar a tu Dino para hacer un poco de limpieza? Cuidado con las descargas eléctricas.</begin>
+		<goto v="dome"/>
+		<kill v="kazka" n="6"/>
+		<end>Estupendo, una misión ejecutada con clase y elegancia, ¿no es así?</end>
+		<xp v="30"/>
+		<gold v="2000"/>
+	</m>
+
+	<m group="bob" id="kilang" name="Anguilos en vinagre" limit="12" cond="mission(kilksk)+canfight(anguil)">
+		<begin>¿Conoces el plato tradicional de los Anguilos en Vinagre? ¡Es realmente delicioso! Por favor, ¿puedes conseguirme unos Anguilos Frescos y vinagre y llevárselos a mi amigo en el Puerto de Santa Moría? ¡Es para hacerle un regalo!</begin>		
+		<kill v="anguil" n="10" zone="2"/>
+		<goto v="dnv" hide="1"/>
+		<talk v="Mercader del Vino">¿Uhm? ¿Vienes de la parte de Don Bao? ¿Buscas vinagre? Ten, tengo esta vieja botella Chateau Fuerzabruta, te vendrá bien para la cocina.</talk>
+		<goto v="port"/>
+		<talk v="Pescador">¿Buscas al amigo de Don Bao? Me parece que se marchó para visitar a Doña Seyche en Dinovilla</talk>
+		<goto v="dnv"/>
+		<talk v="Doña Seyche">¡¡¡Ooooh qué Dino más lindo!!! ¿Qué? ¿Buscas al amigo de Don Bao? Fue a ver al viejo Papy Jose, tienen cosas de hombres de las que hablar me parece.</talk>
+		<goto v="papy"/>
+		<talk v="Adam Nature">¡Uhmmm! ¡¡Anguilos en Vinagre!! Me encanta. Siento no haber estado en el Puerto de Santa Moría, voy a decirle a Bob que te recompense como es debido!</talk>
+		<end>¿Ah y entonces uno se pasea como a uno le apetece durante una misión? Adam me lo contó todo. Toma, esto es para ti.</end>
+		<xp v="50"/>
+		<gold v="5000"/>
+	</m>
+
+	<m group="bob" id="bigpch" name="La Gran Caza" limit="10" cond="mission(kilksk)">
+		<begin>Estoy un poco molesto. Prometí al Archisabio de Sulaflota que exterminaría 150 monstruos en las Islas Atlanteidas en apenas 10 días, pero me rompí el brazo y no puedo desplazarme. ¿Podrías matarme 30 para mí? ¡Me las arreglaré solo para el resto!</begin>		
+		<kill n="30" zone="2"/>
+		<end>¡Super! Finalmente he exterminado el resto yo mismo. ¡Sólo con mis pies! Gracias por tu ayuda: aquí tienes.</end>
+		<xp v="150"/>
+		<gold v="1500"/>
+	</m>
+
+	<m group="bob" id="rally1" name="El Rally de las Sardinas" limit="10">
+		<begin>¡Participa en el Rally de las Sardinas! Únete a nosotros en el Puerto de Santa Moría lo más rápido posible.</begin>
+		<goto v="port"/>
+		<action v="Etapa del Rally">Has franqueado una etapa del Rally. Ahora debes ir a ver a Don Bao Bob.</action>
+		<end>Enhorabuena por el Rally. Aquí tienes tu premio.</end>
+		<xp v="10"/>
+	</m>
+
+	<m group="bob" id="rally2" name="El Rally de los Pescados" limit="10" cond="mission(rally1)">
+		<begin>¡Participa en el Rally de las Pescados! Ve al Puerto de Santa Moría lo más rápido posible.</begin>		
+		<goto v="port"/>
+		<action v="Etapa del Rally">Has franqueado la primera etapa del Rally. Ahora debes ir a la Universidad.</action>
+		<goto v="univ"/>
+		<action v="Etapa del Rally">Has franqueado la segunda etapa del Rally. Ahora debes ir a ver a Don Bao Bob.</action>
+		<end>Enhorabuena por el Rally. Aquí tienes tu premio.</end>
+		<xp v="20"/>
+	</m>
+
+	<m group="bob" id="rally3" name="El Rally de los Tiburones" limit="10" cond="mission(rally2)+fx(matesc)">
+		<begin>¡Participa en el Rally de las Tiburones! Ve a las Minas de Coral lo más rápido que puedas.</begin>		
+		<goto v="corail"/>
+		<action v="Etapa del Rally">Has franqueado la primera etapa del Rally. Ahora debes ir a Fuerzabruta.</action>
+		<goto v="frcbrt"/>
+		<action v="Etapa del Rally">Has franqueado la primera etapa del Rally. Ahora debes ir a las Pendientes de Basalto.</action>
+		<goto v="bslt"/>
+		<action v="Etapa del Rally">Has franqueado la última etapa del Rally. Ahora debes ir a ver a Don Bao Bob.</action>
+		<end>Enhorabuena por el Rally. Aquí tienes tu premio.</end>
+		<xp v="30"/>
+	</m>
+
+	<m group="bob" id="rally4" name="El Rally de las Ballenas" limit="10" cond="mission(rally3)+fx(matesc)">
+		<begin>¡Participa en el Rally de las Ballenas! Ve a Fosalava lo más rápido que puedas.</begin>				
+		<goto v="fosslv"/>
+		<action v="Etapa del Rally">Has franqueado la última etapa del Rally. Ahora debes ir a ver a Don Bao Bob.</action>
+		<end>Enhorabuena por el Rally. Aquí tienes tu premio.</end>
+		<xp v="40"/>
+	</m>
+
+	<m group="bob" id="tour" name="La Vuelta a Dinoland" limit="10" cond="mission(rally4)+fx(palmes)">
+		<begin>¡La vuelta a Dinoland más famosa! Da la vuelta a Dinoland en menos de 10 días. La primera etapa se sitúa en la Isla Waïkiki.</begin>
+		<goto v="ilewkk"/>
+		<action v="Etapa de la vuelta">Enhorabuena por haber franqueado la primera etapa de la Vuelta a Dinoland. La siguiente etapa se encuentra en Fuerzabruta. ¡Ánimo!</action>
+		<goto v="frcbrt"/>
+		<action v="Etapa de la vuelta">Enhorabuena por haber franqueado la segunda etapa de la Vuelta a Dinoland. La siguiente etapa se encuentra en las Colinas Escarpadas. ¡Ánimo!</action>		
+		<goto v="colesc"/>
+		<action v="Etapa de la vuelta">Enhorabuena por haber franqueado la tercera etapa de la Vuelta a Dinoland. La siguiente etapa se encuentra en Fosalava. ¡Ánimo en la escalada del Gran Señor-Todo-Quema!</action>		
+		<goto v="fosslv"/>
+		<action v="Etapa de la vuelta">Enhorabuena por haber franqueado la cuarta etapa de la Vuelta a Dinoland. La siguiente etapa se encuentra en el Campamento Korgón de la Jungla de Grumhel. ¡Que esas bestias no retarden tu destino!</action>		
+		<goto v="camp"/>
+		<action v="Etapa de la vuelta">Enhorabuena por haber franqueado la quinta etapa de la Vuelta a Dinoland. La siguiente etapa se encuentra en la Entrada de la Jungla. Ten cuidado con no perderte en el Camino Tenebroso.</action>
+		<goto v="auree"/>
+		<action v="Etapa de la vuelta">Enhorabuena por haber franqueado la sexta etapa de la Vuelta a Dinoland. La siguiente etapa consiste en ir a ver a Don Bao Bob para obtener tu recompensa</action>
+		<end>¡Enhorabuena! Ha sido una vuelta magnífica por todo Dinoland. ¡Aquí tienes una recompensa digna de tu hazaña!</end>
+		<xp v="100"/>
+		<collec v="tour"/>
+	</m>
+
+</missions>

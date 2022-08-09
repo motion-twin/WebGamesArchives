@@ -1,0 +1,68 @@
+﻿<!-- Quete du charme de feu, se débloque en parlant au Vénérable -->
+<!-- Quete de l'amulette de stratégie -->
+
+<d place="fosslv" name="Chamán Lacio" gfx="shaman">
+
+	<phase id="begin" next="vener:souvenir:missions:charm">
+		H'la joven av'nturero, bienven'do a Fosalava, la capital del Gran S'Quema...
+		No dude' en admirar nuestras esculturas de basalto. Tamb'en están los baños de magma, por allí... no veas, eso sí que va a relaj'rte... es genial...
+		Si tien's hambr', puedes probar nuest' especialid': las salchichas de Goblin. No sabes, yuuuuujuuuu, lo buenas que están...
+	</phase>
+
+	<a id="vener">El Venerable...</a>
+	<a id="souvenir" cond="!fx(shflag)">¿Se puede comprar recuerdos por aquí?</a>
+	<a id="missions" cond="fx(shflag)">Consultar la lista de Misiones</a>
+	<a id="charm" cond="fx(fflag)">Me han hablado de un Talismán...</a>
+
+	<phase id="charm" next="boost:nothing">
+	Ah sí, es verdad... parece que tengo que ayud'rt'... Ten, un Talismán de Fuego... te será útil.
+	</phase>
+
+	<a id="boost" cond="!fx(fcharm)">Aceptar el Talismán</a>
+	<a id="nothing" cond="fx(fcharm)">Aceptar el Talismán</a>
+
+	<phase id="boost" effect="fcharm">
+	No te muevas, te voy a encantar con la magia de los Chamanes... heee, heee.... zZZZZZzzz... Ya está, ya te puedes ir. Tu Dino está bien fuerte ahora.
+	</phase>
+
+	<phase id="nothing">
+		Oye, sin abusar. Tu Dino ya tiene un Talismán... ven a verme más tarde.
+	</phase>
+
+	<phase id="vener" next="force:merci">
+		Uhm... ¿El venerable?... ese sí que es un bruto... ayer por poco me come... y todo porque dice que soy muy nervioso y que no le dejo dormir... ¿De verdad quieres ir? Bah, eso es asunto tuyo... Coge la primera a la derecha en las Fraguas, y luego ve todo recto.
+	</phase>
+
+	<a id="force">¿Ah? ¿Y es fuerte?</a>
+	<a id="merci">Gracias, tendré en cuenta tus consejos.</a>
+
+	<phase id="merci">
+		Chao coleguilla, hasta la próxima...
+	</phase>
+
+	<phase id="force" next="merci">
+		¿Fuerte? El gran daragon Vener'bl... pues sí un poquillo sí... es la primera causa de mortalidad de los turistas, justo antes de las crisis cardíacas causadas por las salchichas... ja ja ja, qué graciosos estos turistas...
+	</phase>
+
+	<phase id="souvenir" next="more:merci">
+		¿Recue'dos?... bah... tengo mi pequeña pila de hojas de encantamientos en retraso, pero no sé si eso te interesa... Te puedo dar un autógrafo, firmado con mi verdadero nombre, Baston Labaf... ¿eh? ¿no?, bueno pues nada... También hay objetos de combate en las Fraguas... ...  quizás haya a'go chulo para ti.
+	</phase>
+
+	<a id="more">¿Eso es todo?</a>
+
+	<phase id="more" next="accept">
+		Uhmm.... Si tu Dino acepta cumplir algunas misiones para mí, le confiaré mi Guía de Estrategia. Es supe' pra'tica...
+	</phase>
+
+	<a id="accept">Aceptar</a>
+
+	<phase id="accept" effect="shflag" next="missions">
+		De acuerdo.
+	</phase>
+
+	<!--missions="shaman"-->
+	<phase id="missions" missions="shaman">
+		(Bientot disponible)
+	</phase>
+
+</d>

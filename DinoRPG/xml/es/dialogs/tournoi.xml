@@ -1,0 +1,31 @@
+﻿<d place="frcbrt" name="Organizador del Torneo" gfx="torga" cond="!fx(tourna)">
+
+	<phase id="begin" next="yes:ok:no">
+		¡Hola! ¡Oh mi gran Maestro de Dinos! El Gran Torneo de Fuerzabruta está abierto a todos los que 
+		quieran medir las fuerzas de sus Dinos contra las de los Dinos de los otros jugadores. ¿Te inscribo?
+	</phase>
+
+	<a id="yes" cond="!fx(totem)">Sí, ¡buena idea!</a>
+	<a id="ok" cond="fx(totem)">Sí, ¡gracias!</a>
+	<a id="no">Esto... no, gracias... Mis Dinos necesitan entrenamiento.</a>
+
+	<phase id="yes">
+		Desafortunadamente, como precisa el reglamento interno, párrafo 15.48, el acceso al Torneo
+		está abierto únicamente a los Dinos que tengan en su posesión una reliquia de una civilización
+		antigua. Es la única condición para participar... No dudes en volver cuando tu Dino encuentre una.
+		¡Que tengas un buen día! ¡Disfruta de tu estancia en Fuerzabruta!
+	</phase>
+
+	<phase id="ok" effect="tourna">
+		¡Oh! Veo que tu Dino posee un {Tótem Ashpuk}. Muy bien, te voy a inscribir ahora mismo en la lista
+		de participantes del Torneo. A partir de ahora podrás acceder a este lugar directamente.
+		¡Que tengas un buen día señor Maestro de Dinos!
+	</phase>
+
+	<phase id="no">
+		Muy bien. No pasa nada. No estás obligado a inscribirte, sobre todo si crees que tus Dinos no están listos todavía
+		para enfrentarse a poderosos adversarios. Es cierto que el Torneo puede resultar peligroso para los Dinos inexperimentados. 
+		¡Hasta pronto y buena estancia en Fuerzabruta!
+	</phase>
+
+</d>

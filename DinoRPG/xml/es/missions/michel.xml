@@ -1,0 +1,33 @@
+﻿<missions>
+
+	<!-- ***************************************************************************** -->
+	<!-- Guide Michel Tutorial ----->
+
+	<m group="michel" id="move" name="Descubrimiento bucólico" limit="10">
+		<begin>Bienvenido a Dinoland, voy a enseñarte a recorrer los vastos territorios de Dinoland, ¿listo?... Bien, ¡intenta llegar a la Universidad y háblame desde allí!</begin>
+		<goto v="univ"/>
+		<talk v="El Guía Michel" gfx="michel">Bravo, ahora que llegaste aquí, solo te queda validar la misión volviendo a verme en Dinovilla.</talk>
+		<goto v="dnv"/>
+		<talk v="Doña Seyche">¡Perfecto! Pasemos a lo siguiente.</talk>
+		<end>El Guía Michel parece satisfecho, te da una Poción de la Bruja Lola como regalo, ¡con ella podrás desplazarte una vez más!</end>
+		<item v="irma" />
+	</m>
+
+	<m group="michel" id="atk" name="Batalla peligrosa" limit="20" cond="mission(move)">
+		<begin>Has debido combatir anteriormente para llegar a la Universidad, ahora, ¡vas a iniciar el combate aquí mismo!</begin>
+		<kill v="goupi" n="2" name="Monstruos salvajes"/>
+		<end>Bravo, has vencido al monstruo, ¡tu Dino comienza a mostrar su alma de guerrero! Encontrarás muchos personajes y aventuras en tu camino, ¡mientras más combates realices, más fuerte será tu Dino!</end>
+		<item v="tartev"/>
+		<gold v="2000"/>
+	</m>
+
+	<m group="michel" id="boutik" name="Salvar a tu Dino" limit="20" cond="mission(atk)">
+		<begin>En algún momento tendrás que salvar a tu Dino de morir después de una batalla, para eso necesitarás una Poción de Ángel en la tienda voladora, 
+		Para obtener una, haz clic en el botón "Tienda" arriba a la derecha de la pantalla, y despúes me mostrarás el objeto que compraste.</begin>
+		<use v="angel" n="1" />
+		<end>¡Felicitaciones! ya sabes utilizar la tienda, será accesible desde cualquier parte del juego, ¡no dudes en acudir a ella cuando lo necesites!</end>
+		<gold v="1000"/>
+		<item v="angel"/>
+	</m>
+	
+</missions>

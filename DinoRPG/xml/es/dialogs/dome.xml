@@ -1,0 +1,89 @@
+﻿<!--  QUETE DE l'appeau : permet l'accés au Dome Soulaflotte -->
+
+<d place="chutes" name="Guardia Atlanteido" gfx="apostoph" cond="admin()|fx(bouee)">
+
+	<phase id="begin" next="rasca:thanks">
+		El acceso al Estadio de Sulaflota solo es posible si usas un Rascafandro.
+	</phase>
+
+	<a id="rasca"cond="!fx(rasca)">¡¿Un qué?!</a>
+	<a id="thanks" cond="fx(rasca)">¡Ok, gracias!</a>
+
+	<phase id="rasca" next="where:thanks">
+		Un Rascafandro es un pescado muy grande que tiene muchas espinas. Es capaz de almacenar una gran cantidad
+		de oxígeno y así llevar a su maestro hasta las profundidades en las que se sitúa el Estadio de Sulaflota.
+	</phase>
+
+	<a id="where">¿Sabes dónde me puedo conseguir uno?</a>
+
+	<phase id="where" next="call:thanks">
+		Los Rascafandros son muy numerosos en las aguas que nos rodean. Solo hay que saber llamarlos.
+	</phase>
+
+	<a id="call">¡Estupendo!... Hmm... ¿tienes su número?</a>
+
+	<phase id="call" next="appeau:thanks">
+		(suspiro)... Necesitas un objeto en particular: un reclamo de Rascafandro. Es una pequeña flauta que se mete en el agua
+		y que imita las ondas del gran tiburón maléfico de los abismos pestilentes, el plato preferido de los Rascafandros. Se precipitarán sobre ti y entonces podrás aprovechar para colarte en uno de ellos.
+	</phase>
+
+	<a id="appeau">Una flauta...</a>
+
+	<phase id="appeau" next="old:thanks">
+		Sí. La flauta de Rascafandro se fabrica con espinas de viejos Rascafandros. Pero cuanto más viejos son, peor carácter tienen
+		y entonces más peligrosos son...
+	</phase>
+
+	<a id="old">Uhm...</a>
+
+	<phase id="old" next="thanks" effect="jvbz">
+		Tengo un amigo pescador en el Puerto de Santa Moría. Si no temes el peligro, le puedo pedir que te lleve a cazar
+		al viejo Rascafandro gigante... Ve a verlo de mi parte. Se llama Jovebozé.
+	</phase>
+
+	<phase id="thanks">
+		Te deseo una buena estancia en las Islas Atlanteidas.
+	</phase>
+
+</d>
+
+<d place="port" name="Jovebozé" gfx="joveboze" cond="fx(jvbz)">
+
+	<phase id="begin" next="trad:sry">
+		Ho-ho-ho-la, ¡chavalico! ¿Te pi la ves Rasca?
+	</phase>
+
+	<a id="sry">... ¡¿perdón?!</a>
+	<a id="trad">Ir a buscar un traductor</a>
+
+	<phase id="trad" fast="1">
+		Nadie aquí parece comprender lo que dice Jovebozé. Según la información que has obtenido, parece
+		que habla un dialecto local de Santa Moría, más bien un dialecto propio a Jovebozé...
+	</phase>
+
+	<phase id="sry" next="go:trad">
+		Site popre ven pa, sino mot'dan lobatou, k?
+	</phase>
+
+	<a id="go">Seguir a Jovebozé</a>
+
+	<phase id="go" next="attack:back" fast="1">
+		Jovebozé te lleva al mar, a una parte que parece ser evitada por los otros barcos... Al acercarte, ves
+		lo que parece ser un enorme Rascafandro a algunas decenas de metros del barco. Si continúas en esta dirección y si el
+		Guardia Atlanteido llevaba razón, vas a ser atacado de un momento a otro... ¡¡cuanto más rápido pase esto mejor!!
+	</phase>
+
+	<a id="attack">Continuar</a>
+	<a id="back" target="attack">¡¡¡REGRESAR!!!</a>
+
+	<phase id="attack" fight="rasca" bg="rasca" noeffect="jvbz" effect="rasca" fast="1">
+		Era de esperar: Jovebozé no ha entendido nada de tus instrucciones...
+		Tras un fiero combate, Jovebozé te lleva al Puerto de Santa Moría. No ha dicho una sola palabra desde el
+		ataque del Rascafandro pero te observa por el rabillo del ojo con satisfacción. En el momento en el que os separáis
+		te estrecha la mano con fuerza. Te confía un Reclamo de Rascafandro que él mismo ha esculpido...
+	</phase>
+
+</d>
+
+
+

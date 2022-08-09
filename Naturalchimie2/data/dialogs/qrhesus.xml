@@ -1,0 +1,79 @@
+<d place="jzcata" name="Rhésus" gfx="jzrhesus" auto="0">
+
+<a id="exit" url="/act">Je m'en vais.</a>
+
+<phase id="begin" frame="angry" next="entrer:vous:cat:nocat:exit">
+Hé, qui va là ? 
+</phase>
+
+<a id="entrer">Je dois aller aux catacombes.</a>
+<a id="vous">Euh bonjour. Vous.... vous êtes qui ? </a>
+<a id="cat" cond="fx(catrhe)+hasobject(Catz:1)">J'ai un Catz pour vous, m'sieur Rhésus.</a>
+<a id="nocat" cond="fx(catrhe)+!hasobject(Catz:1)">J'ai un Catz pour vous, m'sieur Rhésus.</a>
+
+<phase id="entrer" next="pep:exit">
+Mmmh... Encore un visiteur qui vient tout déranger... | Tu peux entrer, mais ne mets pas le bazar ! 
+</phase>
+
+<a id="pep">Le bazar ? Mais c'est déjà le bazar ici, non ? </a>
+
+<phase id="pep" frame="angry" next="mais:trouv">
+Quoi ? Mais pas du tout ! | Tout est trié selon mon mode de classement spécial ! Je peux mettre la main sur n'importe quoi en quelques secondes ! 
+</phase>
+
+<a id="mais">Mais au fait, c'est quoi ces 'Catacombes du Marawu' ? On est où là ? </a>
+<a id="trouv">Oua, vous pouvez me trouver un truc alors ? Style une vieille Pépite d'or ou une recette secrète qui traîne ? </a>
+
+<phase id="mais" frame="happy" next="poua">
+C'est ici qu'arrivent tous les rebuts du laboratoire de l'école. Les catacombes sont sûrement le plus grand tas de déchets alchimiques du royaume !
+</phase>
+
+<a id="poua">Pouah ! C'est dégueu...</a>
+
+<phase id="poua" next="exit">
+Pas tant que ça... Les catacombes sont une mine d'or pour les alchimistes ! | Il y a toujours plein d'étudiants et de mentors qui préfèrent creuser un peu au lieu de travailler.
+</phase>
+
+<phase id="trouv" frame="angry" next="exit">
+Ah non ! Je garde les catacombes, je ne fouille pas pour les visiteurs. | C'est une règle ! | Si tu cherches quelque chose, remonte tes manches...
+</phase>
+
+
+<!-- ##################" -->
+
+<phase id="vous" frame="angry" next="mescat">
+Ah... Un nouveau. | Je suis [Rhésus], le gardien des catacombes du Marawu. Et tu as intérêt à t'en souvenir ! 
+</phase>
+
+<phase id="mescat" next="com">
+Soyons clair : je laisse entrer les alchimistes, mais en contrepartie... | Je ne suis jamais contre un petit cadeau, n'est-ce pas.
+</phase>
+
+<a id="com">Un petit cadeau ? Quel genre de petit cadeau ? </a>
+
+<phase id="com" next="ok">
+Un cadeau... Un Catz, par exemple ! | J'aime beaucoup les Catz. | | Avec des fines herbes. 
+</phase>
+
+<a id="ok">D'accord, je reviendrai peut-être vous voir.</a>
+
+
+<phase id="ok" frame="happy" effect="catrhe" url="/act">
+N'oublies pas mon cadeau hein ! !
+</phase>
+
+<!-- ################ -->
+
+
+<phase id="cat" take="Catz:1" dreput='jz:2' url="/act">
+Ah ! Un sale Catz ! Merci bien, voilà un peu de réputation en échange...
+</phase>
+
+<phase id="nocat" url="/act">
+Mais oui, c'est ça... Allez ouste, reviens plus tard !
+</phase>
+
+</d>
+
+
+

@@ -1,0 +1,48 @@
+<!-- ***************************************************************************** -->
+<!-- Saul, Nimbao l'île volante ----->
+	
+<d place="icite" name="Palmera" gfx="palmier" cond="!curmission(sos2)+scenario(nimba2,50-)">
+	<phase id="begin" next="non:mot" dialect="arbori">
+		Grrr. Estoy harto, ¡todo me enfada!
+		[Este collar nos impide hacer lo que queremos.]
+		[La gente no hace nada por que las cosas cambien. ¡Los Dorogones se creen nuestros señores!
+		Y en esta isla, ¡siempre es lo mismo... qué aburrido!]
+	</phase>
+	
+	<a id="non" cond="!uvar(dicarb)">¿Eh?</a>
+	<a id="mot" cond="scenario(nimbao,34)">¿vcbdr Qpobmc?</a>
+	
+	<phase id="non" frame="stop" fast="1">
+		Te alejas de él. Parece muy enfadado, pero no sabes por qué...
+	</phase>
+	
+	<phase id="oui" next="clair" dialect="arbori">
+		¡Me gustaría explorar el mundo!
+		¡Sé que hay algo ahí abajo!
+	</phase>
+	<a id="clair">
+		¡Hay muchos lugares donde ir!
+	</a>
+	<phase id="clair" next="go" dialect="arbori">
+		¡Un día me marcharé de esta maldita isla y exploraré el mundo entero!
+		¡Seré el mayor aventurero de todos los tiempos!
+	</phase>
+	<a id="go">
+		¡Buena suerte!
+	</a>
+	<phase id="go" fast="1" frame="stop">
+		A pesar de tus ánimos, Palmera parece encolerizado.
+		¿A lo mejor es que está en su edad rebelde?
+	</phase>
+	<phase id="mot" fast="1" frame="stop">
+		Ha oído lo que has dicho, pero tú no entiendes su respuesta y parece que de todos modos no ha comprendido tus palabras.
+	</phase>
+</d>
+
+<d place="icite" name="Palmera" gfx="palmier" frame="happy" cond="!curmission(sos2)+scenario(nimba2,51+)">
+	<phase id="begin">
+		Grrr. Estoy harto, ¡todo me enfada!
+		[Claro, es muy fácil decir que somos libres, pero si no podemos salir de la isla, ¡la libertad no sirve de nada!]
+		[¡...la calle, la calle es nuestra!]
+	</phase>
+</d>

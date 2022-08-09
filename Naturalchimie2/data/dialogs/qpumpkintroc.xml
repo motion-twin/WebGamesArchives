@@ -1,0 +1,65 @@
+<d place="" name="Parler au Troc Trotteur" gfx="gutroc" cond="worldmod(halow)">
+
+<a id="exit">Au revoir.</a>
+
+<phase id="begin" frame="happy" next="offera:offerb:exit">
+Bonjour, et bonne fête des courgesprits ! 
+</phase>
+
+<a id="offera" cond="hasavatar(0,8)|hasavatar(0,9)|hasavatar(0,10)">Dites, j'ai vu dans le journal une histoire d'offre spéciale. Qu'est-ce que c'est ?</a>
+<a id="offerb" cond="!(hasavatar(0,8)|hasavatar(0,9)|hasavatar(0,10))">Dites, j'ai vu dans le journal une histoire d'offre spéciale. Qu'est-ce que c'est ?</a>
+
+<!-- ################ -->
+
+<phase id="offerb" frame="normal" next="master">
+Eh bien, je propose un troc spécial pendant la fête des courgesprits. Il y a des affaires à faire pendant cette période ! | Mais attention, il est réservé aux [maîtres des courges]. 
+</phase>
+
+<a id="master">Ah ah oui, très bien. Mais euh... Comment être un maître des courges ?</a>
+
+<phase id="master" frame="angry" next="shop">
+Hum... Voilà typiquement le genre de question qu'un maître des courges n'aurait pas besoin de poser. 
+</phase>
+
+<phase id="shop" frame="happy">
+Lorsque tu auras trouvé la réponse à cette question, l'offre spéciale sera visible dans ma boutique. Ne traîne pas, l'offre est valable uniquement pendant la fête des courgesprits ! 
+</phase>
+
+<!-- ################ -->
+
+<phase id="offera" frame="normal" next="mok">
+Je propose un troc spécial pendant la fête des courgesprits, réservé aux [maîtres des courges]. | Et tu sembles correspondre parfaitement à un véritable maître des courges, on dirait. 
+</phase>
+
+<a id="mok">Ah ? Qu'est-ce qui vous fait dire ça ? </a>
+
+<phase id="mok" frame="happy" next="what">
+Seuls les alchimistes les plus endurcis dans la collecte des courgesprits finissent avec une tête pareille ! | Pas de doute, tu peux m'aider et profiter de mon offre spéciale ! 
+</phase>
+
+<a id="what">Chouette ! Et c'est quoi cette offre, concrètement ?</a>
+
+<phase id="what" frame="normal" next="chouet"> 
+Je profite de la fête pour faire des stocks de courgesprits... | J'échange donc aux maîtres des courges une chouette d'or contre leur stock de courges. 
+</phase>
+
+<a id="chouet">Oh, une chouette d'or ! Mais que voulez-vous faire de toutes ces courgesprits ?</a>
+
+<phase id="chouet" frame="happy" next="argl">
+Ah ah ! C'est que dans d'autres royaumes on fête aussi les courges ! | On fait un trou dedans, on leur vide la tête et on met une bougie à l'intérieur. Je fais de l'import-export, en somme. Je profite des courges d'ici pour alimenter les traditions de là-bas.
+</phase>
+
+<a id="argl">Beuh. C'est... C'est ignoble... </a>
+
+<phase id="argl" frame="angry">
+Pour les coeurs sensibles, je peux proposer un troc de 3 potions vertes contre une feuille menthol... Garanti sans douleur et sans intérêt.
+</phase>
+
+
+
+
+
+
+</d>
+
+

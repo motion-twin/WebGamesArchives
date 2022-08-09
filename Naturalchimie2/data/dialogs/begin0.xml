@@ -1,0 +1,66 @@
+<d place="grenie" name="" gfx="gualtus" auto="1" cond="!fx(welcom)+!firstplaydone()+!fx(goplay)">
+
+<phase id="begin" next="enfa">
+Ah tiens, voilà quelqu'un... | | |
+Laisse-moi deviner : %happy%Toi tu es un apprenti alchimiste !
+</phase>
+
+<a id="enfa">Oui. je cherche l'[E]cole [N]ormale de [F]ormation [A]lchimique. C'est bien ici ? </a>
+
+<phase id="enfa" next="enfab">
+Eh non. Perdu ! Tu es dans le grenier personnel d'Altus l'alchimiste ici. Et Altus l'alchimiste,  | c'est moi.
+</phase>
+
+<a id="enfab">Euh... Enchanté. Mais c'est écrit [ENFA] sur la porte. C'est quoi ce bazar ? </a>
+
+<phase id="enfab" next="oups:scand">
+%fhappy%Oui c'est encore écrit [ENFA], mais ça fait 237 ans qu'ils ont changé de locaux. C'est derrière maintenant, au fond des jardins. 
+</phase>
+
+<a id="oups">Ah euh... Je vais vous laisser alors. Merci pour l'info.</a>
+<a id="scand">* Quoi ? ! Mais c'est un * scandale ! Que fait le service d'entretien ? C'est * honteux !</a>
+
+<phase id="oups" next="alchi">
+Non non, reste. Je vais m'occuper de ton inscription. %happy%Tu viens bien t'inscrire pour devenir alchimiste ? 
+</phase>
+
+<!-- ################### -->
+<phase id="scand" next="alchi">
+%angry%Oula tu es un nerveux, toi.... Bon. On se calme. Tu viens pour apprendre l'alchimie, non ?
+</phase>
+
+<a id="alchi">Oui, je suis en ville pour m'inscrire et choisir mon école. </a>
+
+<phase id="alchi" next="super:vieux:pro">
+%happy%Eh ben voilà. On va le faire ensemble, ça ira plus vite ! 
+C'est quand même moi, le graaaannnd formateur Altus, qui m'occupais de ça avant qu'ils refilent ce boulot à %angry%ces vieilles courges de l'[ENFA] !
+</phase>
+
+<a id="super">Super, merci.</a>
+<a id="vieux">Vous êtes pas un peu vieu.. euh... un peu âgé pour vous occuper de mon inscription ?</a>
+<a id="pro">Vous pourriez aller plus vite ? Je suis un gros pro de NaturalChimie depuis des années, je veux juste jouer et être premier du classement !</a>
+
+<phase id="vieux" next="super">
+Ah ah, c'est pas parce que je suis un peu poussiéreux que je ne suis plus bon à rien. %happy%Je suis bien plus efficace que tous ces jeunes qui ont pris ma place ! 
+</phase>
+
+<!-- ##################### -->
+
+<phase id="super" effect="goplay" url="/act/play" >
+Allez ! Si ça n'a pas trop changé en 237 ans, il faut déjà que tu me prouves que tu maîtrises les bases de l'alchimie. %happy%Vas-y, lance une partie et essaie de créer un [oeil]. 
+</phase>
+
+<!-- ##################### -->
+
+<phase id="pro" next="prob"> 
+Ah oui j'ai entendu parler de cette mode en ce moment chez les nouveaux étudiants... 
+Le trip %angry%{"ouh je suis un grand maître alchimiste depuis des années, j'ai été chancelier Audepint 3 fois, je fais des millions de points gna gna gna..."}
+</phase>
+
+
+<phase id="prob" effect="goplay" url="/act/play">
+%angry%...Il faut arrêter de prendre les gens pour des idiots hein. Personne n'y croit !
+Allez hop ! Créé un [oeil] en jeu pour me montrer que tu connais les bases de l'alchimie !
+</phase>
+	
+</d>

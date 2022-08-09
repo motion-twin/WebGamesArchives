@@ -1,0 +1,191 @@
+﻿<missions>
+
+	<m group="mmex" id="mmex1" name="Der Schwarze Aktenkoffer">
+		<begin>
+			Ein Boot ist gestern Nacht im Predigerhafen angekommen und hat für mich einen kleinen schwarzen Aktenkoffer abgegeben. Kannst du mir den herbringen? Du darfst ihn aber auf keinen Fall öffnen!
+		</begin>
+		<goto v="port"/>
+		<action v="Den Schwarzen Aktenkoffer nehmen">Du hast den Schwarzen Aktenkoffer von einem Mann mit langem Regenmantel erhalten. Diese Mission ist wirklich einfach!</action>
+		<goto v="frcbrt"/>
+		<talk v="Madame X" gfx="mmex">Das ist komisch...Dieser Koffer hier...IST MIT EINER FALLE VERSEHEN WORDEN!</talk>
+		<actfight act="Falle!" monsters="gluon">
+			<begin>Ein Gluon wurde in den Koffer gesteckt, zweifelsohne mit der Absicht, Madame X anzugreifen!</begin>
+			<win>Madame X freut sich, dass du den Koffer für sie entschärft hast!</win>
+		</actfight>
+		<end>
+			Danke für deine wertvolle Hilfe. Hier ist deine Belohnung!
+		</end>
+		<xp v="10"/>
+		<gold v="300"/>
+	</m>
+
+	<m group="mmex" id="mmex2" name="Der Verräterische Händler">
+		<begin>
+			Es sieht so aus, als ob es einen Verräter am Hofe des Königs gäbe. Er schmuggelt seine Informationen mittels eines Händlers heraus, der von Zeit zu Zeit in Dinoville auftaucht. Halte diesen Händler auf und bringe ihn mir, damit ich ihn befragen kann!
+		</begin>
+		<goto v="dnv"/>
+		<action v="Den Händler suchen">Du hast einen äußerst zwielichtigen Händler gefunden, der auf die Beschreibung zu passen scheint...</action>
+		<actfight act="Aaaangriff!" monsters="march1">
+			<begin m="march1">Hiilfeeee!!!</begin>
+			<win>Nachdem du ihn überprüft hast, stellt sich dieser Händler als unschuldig heraus! Der Arme...</win>
+		</actfight>
+		<action v="Den Händler suchen">Du hast genau DEN Händler gefunden, der exakt auf die Beschreibung passt...Daran kann es diesmal keinen Zweifel geben! (auf den ersten Blick)</action>
+		<actfight act="Aaaangriff!" monsters="march1">
+			<begin m="march1">Arrrghh!!!</begin>
+			<win>Du hast den Händler gefangen! Jetzt musst du ihn zu Madame X bringen!</win>
+		</actfight>
+		<goto v="frcbrt"/>
+		<end>
+			Danke, dass du mir diesen Landesverräter gebracht hast! Mach dir keine Gedanken, ich weiß schon, wie ich ihn zum sprechen bringen werde! Ich hoffe jedoch, dass du dich nicht in der Person getäuscht hast...
+		</end>
+		<item v="ration"/>
+	</m>
+
+	<m group="mmex" id="mmex3" name="Die Verfolgungsjagd" cond="mission(mmex1)+mission(mmex2)">
+		<begin>
+			Ich habe einen Polizeibericht erhalten, in dem es heißt, dass ein Dinoz vor kurzem ein paar Händler in Dinoville angegriffen hätte. Könntest Du in dieser seltsamen Angelegenheit ermitteln?
+		</begin>
+		<goto v="dnv"/>
+		<action v="Phantombild">Das Phantombild des beschuldigten Dinoz sieht seltsamerweise deinem Dinoz ähnlich. Ist das reiner Zufall oder eine Verschwörung?</action>
+		<actfight act="Untersuchen" monsters="march2:march2:march2">
+			<begin>
+				Während du dabei bist nach Hinweisen zu suchen, erspähen aufgebrachte Händler deinen Dinoz und greifen ihn sofort an!
+			</begin>
+			<win>
+				Die Situation wird etwas schwierig zu erklären sein...vielleicht ist es besser Madame X davon in Kenntnis zu setzen?
+			</win>
+		</actfight>
+		<goto v="frcbrt"/>
+		<talk v="Madame X" gfx="mmex">
+			.... (Du erzählst die ganze Geschichte) ... Was! Dann war es tatsächlich dein Dinoz, den sie gesucht haben?!?
+			Hhmm... Ich verstehe. Das wird ne Zeit lang brauchen, bis etwas Gras über die Sache gewachsen ist. Versteck dich solange in den Steilen Hügeln!
+		</talk>
+		<goto v="colesc"/>
+		<action v="Warten" wait="3">
+			Du wartest bist Madame X Kontakt zu dir aufnimmt...
+		</action>
+		<action v="Nachricht  MX">
+			Eine mit "MX" unterschriebene Nachricht wartet auf dich. Darin steht lediglich: "Kehre so schnell wie möglich nach Dinoville zurück."
+		</action>
+		<goto v="dnv"/>
+		<talk v="Händler">
+			Oh, dann sind Sie also der Meister des berühmten Zwillings?!? Ha ha ha! In der Tat, dein Dinoz sieht dem Dinoz, der gestern gefangen wurde, verblüffend ähnlich! Aber machen Sie sich keine Sorgen, der wahre Schuldige wurde gestern von der Königlichen Elitepolizei gefangen genommen und hingerichtet. Sie haben also nichts mehr zu befürchten!
+		</talk>
+		<end>
+			Dieses Mal habe ich es dank meiner Beziehungen geschafft, dich zu decken. Aber wenn du so einen Fehler auch nur ein einziges Mal in einer Mission begehst, dann werde ich gezwungen sein, dich fallen zu lassen und du wirst nie für mich gearbeitet haben. Capito?
+		</end>
+		<gold v="50"/>
+	</m>
+
+	<m group="mmex" id="mmex4" name="Die Inseln sind Kool" cond="mission(mmex3)">
+		<begin>
+			Wir haben eine Gruppe von Individuen ausfindig gemacht, die im Klebrigen Sumpf illegale Kräuter anbaut und diese dann in die Hauptstadt exportiert. Wir brauchen einen Agenten vor Ort. Dein Dinoz muss selbstverständlich in der Lage sein auf die Atlantinischen Inseln gehen zu können.
+		</begin>
+		<goto v="marais"/>
+		<action v="Untersuchung durchführen">
+			Ein ziemlich starker Geruch und die Klänge der Djembe, die man schon von weitem hört, machen es dir leicht, eine kriminelle Bande mit langen, fettigen Haaren ausfindig zu machen.
+		</action>
+		<actfight act="Sie ausschalten" allies="gang1:gang2:gang3" monsters="borg">
+			<begin m="gang2">
+				Aaarghh!! Ein Borg! Ich glaube, dieses Mal ist es besser wenn wir zusammen kämpfen!!
+			</begin>
+			<win>
+				Nach deinem Sieg sieht es so aus, als ob die drei Kriminellen mit dir reden wollten...
+			</win>
+		</actfight>
+		<talk v="Jean-Hubert">
+			Hey Alter! Ich verstehe voll, dass dir das, was wir hier machen, nicht gefällt, aber es ist zu cool. Also bleib mal locker, Alter!
+		</talk>
+		<talk v="Karl-Edward">
+			He Kumpel! Du hast dich ja richtig fett geschlagen! Echt lässig! Zeig uns nicht an, die Bullen gehen mir auf'n Sack und der Strand hier is' zu cool!
+		</talk>
+		<talk v="Ludwig-Stanislaw">
+			Meine beiden Partner wollten nur ihre Dankbarkeit zum Ausdruck bringen und Sie demütig fragen, ob wir nicht eine Abmachung treffen könnten, um einer Gefängnisstrafe zu entgehen. Wir möchten das, was alle großen Dichter gemeinhin "die besten Lebensjahre" nennen, nicht sinnlos vergeuden. Vielen Dank für ihr Verständnis.
+		</talk>
+		<goto v="frcbrt"/>
+		<talk v="Madame X" gfx="mmex">
+			Was? Du hast mit diesen Gesetzesbrechern sympathisiert?...Ich bin mir nicht sicher, ob du einen guten Agenten abgibst... Sie haben gegen Gesetze verstoßen und selbst wenn sie sehr freundlich sind, heißt das noch lange nicht, dass wir sie deswegen freisprechen können!
+		</talk>
+		<talk v="Madame X" gfx="mmex">
+			Da du darauf bestehst, werde ich es einrichten, dass ihnen mildernde Umstände zugebilligt werden. Nichstdestotrotz werden sie gemeinnützige Arbeit verrichten müssen. Sie könnten zum Beispiel die Universitätsbibliothek aufräumen! Und da du sie so gern hast, wirst du ihnen dabei helfen!
+		</talk>
+		<goto v="marais"/>
+		<talk v="Ludwig-Stanislaw">
+			Ich danke Ihnen, dass Sie uns geholfen haben, das Schlimmste zu verhindern. Wir freuen uns darauf, die Universitätsbibliothek aufzuräumen, vor allem wenn Sie dabei sind. Sie könnten uns doch während dieser schweren Arbeit bei Laune zu halten!
+		</talk>
+		<goto v="univ"/>
+		<action v="Die Bibliothek aufräumen" wait="30">
+			Dein Dinoz hilft Jean-Hubert, Karl-Edward und Ludwig-Stanislaw die große Universitätsbibliothek aufzuräumen...
+		</action>
+		<talk v="Jean-Hubert">
+			Echt lässig Mann! Wir gehen wieder auf die Inseln zurück, da ist es zu cool! Aber wir bauen keinen Scheiß mehr - versprochen! Tschau, Mann!
+		</talk>
+		<end>
+			Gesetz ist Gesetz und jedes Verbrechen verlangt eine Strafe.
+		</end>
+		<xp v="30"/>
+		<gold v="1000"/>
+	</m>
+
+	<m group="mmex" id="mmex5" name="Die Aschpuck-Verschwörung" cond="mission(mmex3)">
+		<begin>
+			Es sieht ganz danach aus, als ob es einen Handel mit falschen Reliquien der Aschpuck-Zivilisation geben würde, und es könnte sein, dass ranghohe Persönlichkeiten darin verwickelt sind. Wir müssen einen Agenten vor Ort schicken, um eine Untersuchung einzuleiten. Dein Dinoz muss selbstverständlich in der Lage sein auf die Große Dauerhitze zu steigen.
+		</begin>
+		<goto v="fosslv"/>
+		<talk v="Der Spitzel">
+			Ich bin der Kontaktmann von Madame X und zuständig für die Informationsbeschaffung in diesem Viertel. Man hat uns gemeldet, dass sich nachts seltsame Dinge in den Aschpuck-Ruinen abspielen würden...
+		</talk>
+		<goto v="rashpk"/>
+		<action v="Sich verstecken" wait="10">
+			Dein Dinoz legt sich auf die Lauer und bereitet sich darauf vor, Verdächtige zu beschatten, die hier in der Gegend Schwarzhandel treiben.
+		</action>
+		<action v="Verdächtige!">
+			Dein Dinoz hat einige Verdächtige entdeckt, die, wie es scheint, Erde aus den Ruinen abtragen, um sie in große Säcke zu füllen...Aus was für einem Grund? Du beschließt ihnen zu folgen.
+		</action>
+		<goto v="forges"/>
+		<action v="Observation">Die Verdächtigen entfernen sich in Richtung Norden.</action>
+		<goto v="tunel"/>
+		<action v="Observation">
+			Offensichtlich sind die Verdächtigen misstrauisch geworden, denn sie haben ihr Schritttempo erhöht und ihre Spur hat sich im Freien verloren...
+		</action>
+		<goto v="fosslv" hide="1"/>
+		<action v="Verdächtige!">
+			Du erkennst einen der Verdächtigen auf einer Straße in Lavaloch wieder!
+		</action>
+		<actfight act="Sich auf ihn stürzen!" monsters="suspc1">
+		</actfight>
+		<action v="Durchsuchen">
+			Nachdem du den Verdächtigen besiegt hast, findest du mehrere mit Erde gefüllte Beutel bei ihm, die aus den Ruinen stammen. Zudem findest du eine Visitenkarte mit dem Namen "El Señor Don Fuego". Es ist höchste Zeit, Madame X Bericht zu erstatten!
+		</action>
+		<goto v="frcbrt"/>
+		<talk v="Madame X" gfx="mmex">
+			El Señor Don Fuego, sagst du? Das kann ja wohl nicht wahr sein! Don Fuego ist einer der bekanntesten Händler in Lavaloch. Er verfügt über exzellente Kontakte zum Hofe. Wenn du den auffliegen lassen möchtest, brauchst du Beweise, die seine Beteiligung an diesem Handel eindeutig belegen!
+		</talk>
+		<goto v="rashpk" hide="1"/>
+		<action v="Sich auf die Lauer legen" wait="5">
+			"Das Auflauern ist immer der langweiligste Teil dieses Berufs...". Das pflegte Großvater Derrick immer zu sagen. Jetzt weißt du, was er damit meinte...
+		</action>
+		<action v="Verdächtige!">
+			Ein paar Männer, die seltsamerweise den Verdächtigen ähneln, tauchen auf. Sie reden mit dem Würstchenverkäufer und gehen dann wieder... 
+		</action>
+		<talk v="Würstchenverkäufer" gfx="merguez">
+			Was diese Touristen von mir wollten? Sie wollten nur meinen neuen Backofen benutzen, mit dem ich in Kürze hoffentlich meine Goblin-Sandwichs herstellen kann... Offensichtlich haben sie darin Tongefäße gebrannt. Sie sind nach Lavaloch zurückgegangen, um sie ihrem Chef zu bringen. 
+		</talk>
+		<goto v="fosslv"/>
+		<action v="Verdächtige!">
+			Du erkennst die drei Verdächtigen auf einer Straße in Lavaloch wieder!
+		</action>
+		<actfight act="Sich auf sie stürzen!" monsters="suspc:suspc:suspc">
+			<win>
+				Nachdem du die Verdächtigen besiegt hast, gestehen sie dir, mit der Erde aus den Aschpuck-Ruinen falsche Reliquien hergestellt zu haben!! Es ist besser, du bringst sie zu Madame X...
+			</win>
+		</actfight>
+		<goto v="frcbrt"/>
+		<end>
+			Super, ein paar Komplizen! Ich werde dafür sorgen, dass sie gegen Don Fuego aussagen. Das trifft sich gut. Der hat in letzter Zeit viel zu viel Geld verdient und durch seine Popularität am Hofe hätten wir uns seiner durch klassische Methoden nicht entledigen können...Danke für deine Hilfe!
+		</end>
+		<xp v="30"/>
+		<gold v="1000"/>
+	</m>
+
+</missions>

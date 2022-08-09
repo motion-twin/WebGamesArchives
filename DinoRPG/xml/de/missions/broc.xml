@@ -1,0 +1,500 @@
+﻿<missions>
+
+	<!-- ***************************************************************************** -->
+	<!-- BROC, construction folles
+		Broc reçoit des commandes de la pars de PNJ de Dinoland. Il doit concevoir des pièges,
+		des objets un peu fous.
+	
+		Rappel : limit correspond au nombre de jours pour réaliser cette mission
+	----->
+	
+	<m group="broc" id="bcasse" name="Eine explosive Suche">
+		<begin>
+			Scheint so, als hätte ich die richtigen Einstellungen immer noch nicht gefunden...
+			Ich arbeite an einem Hochleistungs-Motor für die nächste Generation der Brieftaube und habe noch einige Probleme mit der Feinabstimmung.
+			Hilf mir doch bitte und sammle all die Teile wieder ein, die bei der letzten Explosion in alle 4 Himmelsrichtungen verstreut wurden:
+			|"Mein Lenkrad"
+			|"Der Sicherheitsgurt"
+			|"Zwei Kolben"
+			|"Der Lüfter"
+			|"Das EGR-Ventil"
+		</begin>
+		<goto v="baobob"/>
+		<talk v="Bao Bob" gfx="baobob">
+			[Ob ich in letzter Zeit fliegende Gegenstände am Himmel gesehen habe? Aber sicher, sieh doch mal hinter meinen Haus nach.]
+			[Ich wünschte, Toll Patsch würde endlich mit seinen Experimenten aufhören. Ich habe einen leichten Schlaf. Und von all diesen Explosionen mitten in der Nacht hab ich schon Augenringe!]
+		</talk>
+		<action v="Lenkrad nehmen">
+			Du hast den ersten Gegenstand geborgen. Laut Bao soll ein weiterer Gegenstand gegenüber von seinem Haus, neben dem Unterwasser-Dome, heruntergekommen sein.
+		</action>
+		<goto v="dome" />
+		<actfight act="Sicherheitsgurt einsammeln" bg="dome" monsters="borg:anguil:kazka">
+			<begin>Als du dich hinunterbeugst, um den Sicherheitsgurt aufzuheben, überfällt dich aus dem Hinterhalt eine Gruppe Räuber! Sie haben dir mit dem Sicherheitsgurt eine Falle gestellt!</begin>
+			<win>Die sind erledigt! Bleibt die Frage, ob deine Angreifer es auf dich oder Toll Patsch abgesehen hatten?</win>
+		</actfight>
+		<action v="Sicherheitsgurt einsammeln">
+			Bäh... Er ist über und über mit Algen bedeckt. Scheinbar benutzen die Atlantiner dieses Zeug für ihre Diäten. Arme Leute!
+		</action>
+		<goto v="marais"/>
+		<talk v="Algensammler">
+			[Ah ja, ich erinnere mich! Zwei Kolben fielen vom Himmel, ganz recht. Ich kann nicht sagen, dass so etwas ständig vorkommt.]
+			[Beim Aufschlag entstand ein riesiges Loch. Aber es wurde sofort von Sand und Wasser füllt. Du wirst danach graben müssen, mein Freund!]
+		</talk>
+		<dig>
+			Auch nach mehreren Versuchen hast du immer noch nichts gefunden. Vielleicht hast du noch nicht tief genug gegraben?
+		</dig>
+		<dig>
+			Laut dem Algensammler bist du am richtigen Ort. Doch das ist wahrlich kein Vergnügen. Ist er wirklich sicher, dass sie hier gelandet sind? Es sei denn... aber natürlich!
+		</dig>
+		<talk v="Algensammler">
+			Ich Idiot! Es ist ja offensichtlich! Die Gegenstände sind in einem bestimmten Winkel aufgeschlagen und wurden dann entsprechend wieder weggeschleudert!
+		</talk>
+		<dig>
+			Du schätzt den Einschlagwinkel ab und fängst einige Meter von der Einschlagstelle entfernt noch einmal an zu graben... Bingo! Deine Schaufel stößt auf einen metallischen Gegenstand! Die beiden Kolben liegen genau hier und sind durch das Salzwasser nur ein wenig angerostet.
+		</dig>
+		<goto v="chutes"/>
+		<talk v="Extremfischer">
+			[Einen Lüfter sagst du? Genau so was hatte ich heute Morgen an der Angel... Was für eine Enttäuschung, das sage ich dir. Ich dachte schon, da hätte ich einen kapitalen Brocken am Haken! ]
+			[Hach, was wäre das für eine großartige Geschichte für all die Ladies am Abend gewesen. Und dann ist es nur ein Lüfter. Du kannst ihn natürlich haben, ich brauche ihn nicht mehr.]
+		</talk>
+		
+		<goto v="chbroc" hide="1" />
+		<talk v="Toll Patsch" gfx="broc">
+			Du hast das EGR-Ventil nicht gefunden? Ach weißt du, ich glaube, dass eh es zu nichts nütze war... Ich fand einfach, dass es ziemlich cool aussah! Haha!
+			_"Pfffffff"_
+		</talk>
+		
+		<end>
+			Fantastisch, du hast alle verschwundenen Gegenstände gefunden! Du würdest einen richtig guten Schatzsucher abgeben, hahaha!
+		</end>
+		<gold v="3000"/>
+		<xp v="40" />
+	</m>
+	
+	<!-- micro onde -->
+	<m group="broc" id="bchaud" name="Eine heiße Erfindung" cond="mission(bcasse)">
+		<begin>
+			Das Leben eines Erfinders ist hart. Bei jeder Erfindung vertiefe ich mich so sehr in meine Ideen, dass ich sogar vergesse zu essen. Nie finde ich die Zeit, mir eine leckere warme Mahlzeit zuzubereiten. 
+			Das ist nicht gut für die Verdauung. Dabei bin ich sicher, dass ich etwas Passendes erfinden könnte. Und dafür brauche ich deine Hilfe! Besorge mir bitte:
+			|"Platten aus elektrisch nicht leitfähigem Metall"
+			|"Schrauben"
+			|"Eine Batterie"
+			|"Einen Drehmotor zum Drehen meiner Mahlzeit"
+		</begin>
+		<goto v="univ"/>
+		<action v="Auf Materialsuche gehen" wait="1">
+			Nachdem du hie und da mehrere Personen gefragt hast, schickt man dich zu einem Raum hinter der Universität.
+			Sowas hast du noch nicht gesehen... Berge von Kabeln, Büchern, Phiolen und alles ausnahmslos chaotisch übereinandergestapelt.
+			Es wird einige Zeit dauern, bis du die benötigten Teile hier zusammengefunden haben wirst.
+		</action>
+		<action v="Geschafft">
+			Schließlich hast du 4 Platten aus elektrisch nicht leitfähigem Metall zusammen. Das scheint hier sehr selten zu sein.
+		</action>
+		<goto v="dnv"/>
+		<talk v="Madame Seyche" place="dnv" hide="1">
+			[Ooooohhhh, guten Tag mein Kleiner. Wir haben uns ja sein einer Ewigkeit nicht mehr gesehen. Wieeeeee bitteeeeeee?]
+			[Ob ich ich einen alten Plattenspieler habe? Also, ich habe einen, der funktioniert allerdings nicht mehr richtig.]
+			[Ach mein Kleiner, wenn du nur Luigi Larrant am Klavier hören könntest,... Das ist ja so schön. Naaaa... Nanana..NANA NA...]
+			_"Lauffffff wegggggg!!! Schnellllll!!!"_
+		</talk>
+		<action v="Plattenspieler nehmen">
+			Du nimmst dieses alte Stück, auch wenn du nicht weißt, wozu es eigentlich von Nutzem ist. Wird diesr Apparat vielleicht dazu benutzt, um mit Außerirrdischen in Kontakt zu treten?
+		</action>
+		<goto v="marche" />
+		<action v="Eine Batterie kaufen">
+			Ah... der Markt! Ein Ort für gepflegte, angeregte Diskussionen. Dabei umgeben von den Gerüchen feiner Aromen und exotischer Gewürze. Gespräche zwischen kultivierten Personen.
+			Nun, dieser Ort hier ist MEILENWEIT davon entfernt!
+		</action>
+		<talk v="Trödelhändler">
+			_"Komm Kleiner, ich zeig dir mal wie man einen Kunden einwickelt."_
+			[Guten Tag der Herr!
+			Wie bitte? Sie wünschen diese wunderbare Batterie zu kaufen! Das kann ich gut verstehen. Nur schauen sie, ich habe diese Batterie vor 5 Minuten bereits einem anderen Kunden versprochen.
+			Ich habe sie für ihn zur Seite gelegt. Es wäre darum nicht gerecht, wenn ich sie nun einfach so euch verkaufen würde.]
+			[Anderseits... Schauen sie, ich habe Kinder zu versorgen und dieser Kunde hat noch nicht einmal angezahlt. Deshalb... Falls ihr mir ein besseres Angebot machen würdet, wäre es nur gerecht, wenn ihr den Zuschlag erhieltet.
+			Mal schauen, er hat mir 1000 Goldstücke geboten. Falls ihr mir, sagen wir, *1500 Goldstücke* dafür bietet, dann gehört die Batterie euch!]
+		</talk>
+		<branch v="payer_ok" cond="uvar(brocan,0)"/>
+		<branch v="payer_ko" cond="uvar(brocan,1+)"/>
+		
+		<label v="payer_ok"/>
+			<action v="Handel besiegeln">
+				Das ist das erste Mal, dass du mit einem Trödelhändler zu tun hast und du wirst das Gefühl nicht los, dass er dich über's Ohr gehauen hat. Lass dir das für's nächste Mal eine Lektion sein!
+			</action>
+			<use v="gold" n="1500"/>
+			<branch v="objet_ok"/>
+			
+		<label v="payer_ko"/>
+			<action v="Andwerswo suchen" wait="1">
+				Du wirst dich woanders umsehen, ob es nich noch eine solche Batterie gibt.</action>
+			<talk v="Trödelhändler">
+				[Seid noch einmal gegrüßt, mein Herr.]
+				[Nein, er hat diesen Gegenstand noch nicht abgeholt.]
+				[Mal schauen, er hat mir 1000 Goldstücke dafür geboten. Falls ihr mir denselben Preis bietet, gehört sie euch.]
+			</talk>
+			<branch v="payer2_ok" cond="uvar(brocan,1)"/>
+			<branch v="payer2_ko" cond="uvar(brocan,2+)"/>
+			
+			<label v="payer2_ok"/>
+				<action v="Handel besiegeln">
+				So allmählich kommst du dahinter, wie der Markt funktioniert... Doch es kam dir immer noch ein wenig teuer vor.</action>
+				<use v="gold" n="1000"/>
+				<branch v="objet_ok"/>
+					
+			<label v="payer2_ko"/>
+				<action v="Noch warten" wait="1">
+				Er glaubt tatsächlich, dass er mit dieser Masche durchkommt. Doch diesmal bist du gerissener als er!</action>
+				<talk v="Trödelhändler">
+					Ah, ihr seid es... Hört zu... Er ist noch nicht gekommen, um die Batterie abzuholen. Wenn ihr mir 500 Goldstücke gebt, dann gehört sie euch.
+				</talk>
+				<action v="Handel besiegeln">
+				Bittesehr, hat mich gefreut, mit ihnen Geschäfte zu machen!</action>
+				<use v="gold" n="500"/>
+				<branch v="objet_ok"/>
+	
+		<label v="objet_ok"/>
+		<goto v="bslt" />
+		<action v="Schrauben einsammeln">
+			Jetzt müssen alle Teile nur noch richtig zusammengesetzt werden.
+		</action>
+		<end>
+			So ist es perfekt. Nun kann ich endlich meine Gerichte wieder aufzuwärmen. Hier hast du als Belohnung einige Goldstücke!
+		</end>
+		<gold v="2500" />
+		<uvar v="brocan"/>
+	</m>
+	
+	<!-- piège à mac gyver -->
+	<m group="broc" id="trapkg" name="Die Korgonenfalle" cond="mission(bchaud)+fx(palmes)">
+		<begin>
+			Dian Korgsey ist eine großartige Frau. Sie tut viel für den Grumhel-Dschungel. Doch in letzter Zeit stellen die Korgonen des Südens sie vor immer größere Probleme.
+			Sie hat mich darum gefragt, ob ich nicht eine Falle entwerfen könnte, um einen dieser Korgonen zu fangen. Sie möchte sie studieren und so verstehen, warum sie so aggressiv sind.
+			Ich bin im Moment allerdings komplett mit meiner Brieftaube beschäftigt. Doch mit deiner Hilfe werden wir ihr eine ordentliche Falle bauen!
+		</begin>
+		<action v="Toll Patschs Plan ansehen">
+			Der Grumhel-Dschungel ist ein ziemlich dunkler Ort, die Korgonen können dort darum nicht besonders gut sehen.
+			Wir brauchen etwas, das einerseits fast unsichtbar, aber gleichzeitig auch stark genug ist, um einen gefangenen Korgonen zu halten.
+			Ich weiß grad wirklich nicht wie das zu bewerkstelligen ist. Aber du findest schon einen Weg. Da bin ich sicher!
+		</action>
+		<goto v="port" hide="1" />
+		<talk place="port" v="Jové Bozé" gfx="joveboze">
+			[Moin mien Jung! Büst du kom de faang noch een Rasca?]
+			[Haas seen min Lein fo fang de Fisch? Watt wüt ich nu duhn oone mien Lein.]
+			[Nim mien Jung! Do breng mi Fisch fo een Mon un ick jeeb te moi Lein, nech woi?]
+		</talk>
+		<nogoto/>
+		<!-- Donner des poissons en ingrédient -->
+		<!-- dialogue à nouveau, où il dit qu'il lui faut du gros poisson, nourriture plus variée -->
+		<kill n="60" v="pira:kazka" zone="2" />
+		<kill v="anguil" rare="1" n="10" zone="2"/>
+		<goto v="chutes" />
+		<kill v="rasca" n="10" zone="2"/>
+		<goto v="port"/>
+		<talk place="port" v="Jové Bozé" gfx="joveboze">
+			[Good jack, mien Jung!] 
+			[Hi, mien Kleena, ni mien Lein. Ick weeh nu gon futt mej Kinna.]
+		</talk>
+		<action v="Angelschnur nehmen">
+			Du nimmst eine große Rolle mit Angelschnur. Die Angler um die Ecke benutzen das, um Rascaphander zu fangen. Um ihre Haltbarkeit brauchst du dir darum keine Sorgen zu machen.
+		</action>
+		<goto v="chbroc"/>
+		<talk v="Toll Patsch" gfx="broc">
+			[Ah, Angelschnur. Eine brilliante Idee, mein junger Freund!]
+			[Jetzt wo wir wissen, woraus wir die Falle herstellen, lass uns über ihren Aufbau nachdenken.]
+			[Wenn ich mich recht erinnere, ist Kobragift von der großen Dauerhitze, gemischt mit Figonicia-Wurzeln ein wirksames Mittel, um Korogonen ruhig zu stellen.]
+			[Beeil dich, Dian hat mir eine Fledermaus geschickt, um mir zu sagen, dass bald Vollmond ist. Das ist die Zeit, in der die Korgonen des Südens im Wald immer besonders unruhig sind.]
+		</talk>
+		<nogoto/>
+		<kill n="10" v="cobra" zone="1" />
+		
+		<action v="Das Gift besorgen">
+			Bravo, das sollte diese Korogonen beruhigen! Du hättest ja einen anderen Plan vorgeschlagen. Einer, bei dem ein kräftiger Schlag auf den Kopf eine Rolle spielt. Aber jetzt bist du doch neugierig, ob die Falle von Toll Patsch funktionieren wird.
+		</action>
+		<goto v="chbroc" />
+		<talk v="Toll Patsch" gfx="broc">
+			Damit wissen wir nun auch, dass du resistent bist, mein kleiner Freund. Die Falle ist nun bereit, denke ich. Du glaubst doch nicht etwa, dass ich sie in das Camp von Dian bringe? Solche Ausflüge sind einfach nichts mehr für jemanden in meinem Alter.
+		</talk>
+		<goto v="jungle" />
+		<talk v="Dian Korgsey" gfx="dian">
+			[Pssssssst! Mach doch nicht so einen furchtbaren Lärm.......]
+			[Ah, fantastisch. Ich habe mir schon Sorgen gemacht. Toll Patsch scheint in letzter Zeit ziemlich durcheinander zu sein. ...noch mehr als sonst, meine ich. Vermutlich ist er wieder in eines seiner Geheimprojekte vertieft...]
+			[Endlich... ich schlage vor, du stellst die Falle auf der Lichtung hinter dir auf. Wir können uns dann hinter hinter dieser Gruppe stinkender Bäume verstecken und warten.
+			Korgonen haben eine sehr feine Nase, der Geruch dieser Baumgruppe wird unseren eigenen Geruch überdecken.]
+		</talk>
+		
+		<action v="Warten" wait="2">
+			Ihr wartet geduldig, bis ein Korgone in die Falle geht. Hoffentlich lauert keiner hinter euch!
+		</action>
+		
+		<action v="Den Korgonen ruhigstellen">
+			_"Tschak!"_ Als ihr gerade wegdöst, werdet ihr von einem ohrenbetäubendem Radau aufgeschreckt! Offenbar ist euch ein Korgone in die Falle gegangen. Er muss kopfüber in die Falle geplumpst sein, nachdem er über die Angelschnur gestolpert ist. 
+			Ihr beugt euch zu ihm herunter und verpasst ihm auf Anweisung von Dian die Beruhigungsspritze direkt hinter's Ohr. Das Gift wirkt sofort. Der Korgone beruhigt sich und fängt an, laut zu schnarchen.
+		</action>
+		
+		<talk place="jungle" v="Dian Korgsey" gfx="dian">
+			[Fantastisch, dieser Toll Patsch ist ein wahres Genie... Äh, du bist aber auch ein ganz toller Dinozmeister!]
+			[Ich brauche ihn jetzt nur noch zum Camp zu bringen.]
+			[Hummmf ... Hummf ...!!! Das ist wirklich ein ganz schöner Brocken. Kannst du mir vielleicht helfen?]
+		</talk>
+		
+		<action v="Den Korgonen transportieren">
+			Ihr tragt den Korgonen unter dem Arm bis zum Camp.
+			Hoffentlich lockt das ohrenbetäubende Schnarchen des Korgonen nicht noch weitere Waldbewohner herbei. Das wäre nicht ungefährlich...
+		</action>
+		
+		<goto v="camp"/>
+		
+		<talk place="camp" v="Dian Korgsey" gfx="dian">
+			[Ich muss zugeben, dass du wirklich kräftig bist und deine Dinoz sehr wertvoll sind. Ich danke dir für deine Hilfe. Ich denke, ich hätte alleine große Probleme beim Tragen gehabt.]
+			[Das Wichtigste ist nun aber, dass ich diesen Korgonen beobachte und sein Verhalten entschlüssele. Vielleicht finde ich so den Grund für sein Trauma heraus.]
+		</talk>
+		
+		<goto v="chbroc"/>
+		
+		<talk place="chbroc" v="Toll Patsch" gfx="broc">
+			Da haben wir ja eine vortreffliche Korgonenfalle gebaut. Ich wusste, dass ich auf deine Hilfe bauen konnte, mein junger Schüler... Hahahaha, guck doch nicht gleich so beleidigt, *Dinozmeister*.
+		</talk>
+		
+		<end>
+			Du hast Toll Patsch beeindruckt und das soll was heißen. Im Moment kommt dir die Belohnung ein wenig mager vor. Aber wer weiß, vieleicht lohnt es sich ja, diesem etwas geizigen Genie zu helfen!
+		</end>
+		
+		<gold v="3000"/>
+	</m>
+	
+	<m group="broc" id="leakjb" name="Nur ein Motorschaden" cond="mission(trapkg)">
+		<begin>
+			Ich habe heute Morgen eine dringende Anfrage von den Anglern am Predigerhafen erhalten. Der Motor ihres Bootes hat ein Leck und sie müssen es so schnell wie möglich stopfen.
+		</begin>
+		<goto v="port"/>
+		<talk v="Angler">
+			[Hallo Kleiner!]
+			[Toll Patsch hat dich geschickt? Hahahaha... Das sieht ihm wieder mal ähnlich. Einen Jungspund so ins kalte Wasser zu werfen...]
+			[Weißt du denn wenigstens, worum es geht, hm? Da hat er dir was eingebrockt.]
+			[Also, wir haben gerade die Zeit der Amphidrome. Und glaub mir, da kommt es vor allem drauf an, dass du gut navigieren kannst, besonders nachts.]
+			[Unser Boot ist aber kaputt und liegt auf der Toteminsel fest. Ich wüsst nicht, wie ein Jungspund wie du da helfen sollte. Na, zumindest wirkst du motiviert.]
+		</talk>
+		<goto v="itotem"/>
+		<action v="Schiffsinspektor">
+			Der Motor verliert Öl. Und am Öltank des Motors ist ein schöner Riss zu sehen. Es würde vollkommen reichen, ihn abzudichten und neu zu befüllen. Doch der Motor scheint aus einem seltsamen Metall zu bestehen.
+		</action>
+		<talk v="Angler">
+			[Nachts sollte man hier draußen nicht unbedingt rumlungern, Kleiner.]
+			[Viele Seeleute sagen nämlich, sie hätten Monster im Wasser gesehen, ehe das Boot mit einem gewaltigen Felsen zusammenstieß. Dabei wurde der Motor beschädigt.]
+		</talk>
+		<goto v="chbroc" />
+		<talk v="Toll Patsch" gfx="broc">
+			[Ein Riss im Öltank? Das hört sich nicht gut an. Ich hatte solche Probleme auch mit der Baureihe meiner Brieftaube. Doch mein Vorrat an Ersatzteilen ist im Moment leider aufgebraucht. ]
+			[Das ist schwierig. Versuch weiter, eine Lösung zu finden. Ihr Boot darf nicht zu lange an diesem Ort bleiben.]
+		</talk>
+		<goto v="forges" hide="1" />
+		<talk v="Anwalt der Schmiede">
+			[Wie bitte, eine "Eine Garantie auf unsere Produkte"? Hahaha! Schauen sie, mein Herr. Warum sollten wir eine Garantie auf unsere Schmiedeprodukte geben, wenn die doch unzerstörbar sind?!]
+			[Hohoho... Das Lebewesen, das unsere Motoren beschädigen könnte, wurde noch nicht geboren.]
+			[Hm... Wie bitte? Was? Aber das ist unmöglich! Kein Riff oder uns bekanntes Meerestier könnte unseren Schmiedeprodukten so einen Schaden zufügen. Das ist U.N.M.Ö.GL.I.C.H.!]
+			[Nun gut. Wenn sie darauf bestehen, dass wir diesen angeblichen Riss für sie reparieren, dann müssen sie uns dieses Teil schon herbringen.]
+		</talk>
+		<goto v="chbroc" />
+		<talk v="Toll Patsch" gfx="broc">
+			[Es war eine sehr gute Idee, mit den Schmieden zu reden! Was haben sie gesagt?]
+			[....]
+			[Ich verstehe... Hm... Das ist in der Tat seltsam. Ich kenne keine Gegenstände, die die Legierung unserer Schmiedeprodukte beschädigen könnten.]
+			[Es gibt allerdigns Legenden über ein *unternatürliches* Meerestier, dass sie Nessie getauft haben. Viele Angler erzählen solche Geschichten in der Taverne... Doch sie sind jedesmal sturzbetrunken. Darum hört man niemals dieselbe Version, hahahaha! Äh, ja. Schon gut.]
+			[Dann bleibt uns nur noch, den Trick meines Großvaters Mac auszuprobieren und den Riss mit einem Ei abzudichten.]
+			[Diese Technik kannten schon unsere Urahnen. Ich selber habe sie aber noch nie angewandt. Angesichts dieser Notlage, sehe ich aber keine andere Möglichkeit. Du musst also einige frische Eier kaufen!]
+		</talk>
+		<goto v="marche" />
+		<talk v="Züchter">
+			[Guten Tag, junger Dinozmeister. Habt ihr schon einmal daran gedacht, eure Dinoz mit den gesunden Proteinen von Gockelharts Bio-Eiern zu füttern?]
+			[Gockelharts Bio-Eier garantieren eine ausgewogene Ernährung und ausreichende Versorgung mit Proteinen. Die Haare eurer Dinoz werden glänzen wie ein Feross-Panzer! Ihre Augen vor Lebenskraft und Vitalität leuchten wie die einer Raubtierfledermaus und...]
+			[.... Ah... Aber ja doch... Gut, ich verstehe... Ich schweige... Sie wollen... ?]
+			[Sie wollen Eier, wirklich??! Da sind sie bei mir genau richtig. Mit meinen Eiern werden ihre Dinoz niemals wieder unglücklich sein! Sie werden ebenso stark wie ausdauernd werden. Bio-Eier, das ist es was sie brauchen!]
+		</talk>
+		<action v="Dem Züchter den Mund stopfen">
+			Das sollte ihm vielleicht dabei helfen, sich zu konzentrieren.
+		</action>
+		<talk v="Füchter">
+			[Hmf, so ift es nun mal... Man fagt mir immerfu, daff ich fu viel rede.]
+			[Da hafft du die Eier. Daff macht 1500 Goldftücke. Weil du mir aber symphatiff bifft, geb iff fie dir für 1000. Freundfafftfpreif.]
+		</talk>
+		<use v="gold" n="1000" />
+		<goto v="itotem"/>
+		<action v="Reparieren">
+			[Ohne groß darüber nachzudenken und trotz des Spotts deiner neuen Anglerfreunde, zerschlägst du die Eier über dem Riss.]
+			[Innerhalb von Minuten bewirkt die Hitze des Motors und der Sonne, dass sich eine feine Eikruste bildet, die den Riss abdichtet.]
+			[Du füllst Öl in den Tank und... oh Wunder... diesmal läuft es nicht aus!]
+			[Großvater Mac hat also Recht damit, dass man mit Eiern sogar einen Riss zuspachteln könnte...]
+			[Die Angler können nun Gyver, so heißt ihr Boot, wieder flottmachen. Ab ins Wasser und dann so schnell wie möglich zurück zum Predigerhafen.]
+		</action>
+		<end>
+			Ein weiteres Mal ist Toll Patsch beeindruckt von deinem Einsatz und deinem Erfindergeist.
+			Du hast vielleicht das Leben dieser Seeleute gerettet. Doch leider bringt dieses Metier gerade so viel ein, um mit Ach und Krach über die Runden zu kommen. Darum müssen sie auch immer größere Risiken eingehen...
+			Toll Patsch und die Angler können dir darum trotz allem was du getan hast, keine bessere Belohnung geben.
+		</end>
+		<xp v="50"/>
+		<gold v="2000"/>
+	</m>
+	
+	<m group="broc" id="airpur" name="Die Blutprobe" cond="mission(leakjb)">
+		<begin>
+			Bei meiner letzten Expedition in den Grumhel-Wald habe ich wieder Dian besucht. Sie sagte mir, dass die Daten, die sie aus der Korogonenfalle gewonnen hat, analysiert werden müssen.
+			Man muss Proben davon nehmen und sie von Wissenschaftlern der Universität untersuchen lassen.
+		</begin>
+		<goto v="camp"/>
+		<talk v="Dian Korgsey" place="camp" gfx="dian">
+			[Guten Tag! Bist du hier, um die Proben abzuholen? Ich danke dir. Ich bin ja kein Experte auf dem Gebiet, aber ich fange an zu glauben, dass es ein Umweltproblem gibt, dass die Korgonen aggressiver werden lässt.]
+			[Diese possierlichen Kreaturen sind eigentlich gar nicht böse...AHHHHHHAAAH]
+		</talk>
+		<actfight act="Das Camp verteidigen" monsters="ksudbs:ksudbs:korven">
+		</actfight>
+		<talk v="Dian Korgsey" gfx="dian">
+			[Bei allen Korgonen! Das ist nicht... das ist nicht.... normal.]
+			[Wir müssen schnell herausfinden, was hier vor sich geht... Bringst du bitte schnell diese Analysen zur Universtät, tust du das?]
+			[Und... Falls du noch die Zeit dafür hast, könntest du vorher bitte den Korgonen rund um das Camp noch ein bisschen Angst einjagen?]
+		</talk>
+		<kill v="korgon" n="20" />
+		<goto v="univ" />
+		<talk v="Professor Eugen" gfx="eugene">
+			[Hallo mein Junge, wie läuft das Leben als großer Abenteurer so? Ach wenn ich doch nur noch in deinem Alter wäre...]
+			[Oh, was hast du mir denn da mitgebracht? Korgonenproben? Es ist lange her, dass ich die Gelegenheit hatte, mir diese Tiere genauer anzusehen.]
+			[Das muss komplett analysiert werden, sagst du? Ich werde tun was ich kann. Doch ich weiß nicht, ob unsere Gerätschaften dafür genau genug sind.]
+		</talk>
+		<action v="Warten" wait="1">
+			Du wartest, bis der Professor die Analyse abgeschlossen hat.
+		</action>
+			
+		<branch v="spectro_ok" cond="uvar(airpur,1+)" />
+		<branch v="spectro_ko" cond="!uvar(airpur,1+)" />
+		<!-- FAIRE BRANCH -->
+		<label v="spectro_ko"/>
+		<goto v="univ" />
+		<talk v="Professor Eugen" gfx="eugene">
+			[Genau wie ich befürchtet hatte... Meine Gerätschaften sind für solche Analysen nicht geeignet.]
+			[Mein Massenspektrometer hat Probleme damit, die vielen Isotope korrekt zu erfassen. Wenn man die Strahlung unseres Apparates doch nur erhöhen könnte!]
+			[Leider kenne ich niemanden, der dazu etwas in der Lage wäre.]
+		</talk>
+		<goto v="chbroc" hide="1" />
+		<talk v="Toll Patsch" gfx="broc">
+			[Was sagst du? Aber das sollte doch wohl möglich sein... Es ist doch offensichtlich, dass es den Elektronen an kinetischer Energie mangelt. Wie sich das verbessern lässt? Gute Frage!]
+			[Hm... Mal nachdenken...]
+			_(Er scheint mit sich selbst zu diskutieren... Du verstehst nicht ein Wort von dem was er sagt und gehst nach draußen, um zu warten.)_
+		</talk>
+		<action v="Warten" wait="1">
+			Du wartest vor der Werkstatt, bis Toll Patsch eine Lösung gefunden hat.
+		</action>
+		<talk v="Toll Patsch" gfx="broc">
+			[HEUREKAAAA! Ich hab es!!!]
+			_("Nur... Wovon spricht er?)_
+			[Das hier ist eine extrem seltene Linse. Ich habe sie vor einigen Jahren als Lohn für einen Dienst bekommen.]
+			[Von einem ziemlich seltsamen Kerl übrigens. Aber schau her: Durch ihre Reinheit und ihren Schliff ist diese plan-konvexe Linse perfekt zum Bündeln von Strahlen geeignet und damit ideal für das Massenspektrometer der Universität.]
+			[Das wird diesem Apparat Beine machen, er wird den Elektronen so richtig einheizen. Hahahaha!]
+		</talk>
+		<action v="Die Linse nehmen		Prendre la lentille">
+			Du nimmst diese kostbare Linse an dich.
+			Sie wirkt sehr zerbrechlich. Dir darf auf deiner Reise nicht viel zustoßen, sie könnte sonst leicht zerbrechen.
+		</action>
+		<goto v="univ"/>
+		<action v="Die Linse übergeben" wait="1">
+			Du gibst dem Professor die Linse und hoffst, dass er weiß, was damit zu tun ist.
+			Es wird trotzdem eine Weile brauchen, bis er sie verbaut und einige Test damit gemacht hat...
+		</action>
+		<label v="spectro_ok"/>
+		<goto v="univ" />
+		<talk v="Professor Eugen" gfx="eugene">
+			[Ah, dieser Toll Patsch ist unglaublich, diese Linse ist einfach fan-tas-tisch!!! Ein echtes Prachstück, perfekt!]
+			[Es ist ein Glück, dass wir sie haben. Die Ergebnisse der Analysen sind übrigens überhaupt nicht gut. ]
+			[Sie zeigen eine zu große Menge an CO2. Das ist wirklich beunruhigend für ein Tier, das in einem Wald lebt.]
+			[Es liegt eindeutig an der schlechten Luftqualität ihrer Umwelt, was die Korgonen reizbarer und so aggressiv macht.]
+		</talk>
+		<goto v="fleuve" />
+		<action v="Die Gegend untersuchen">
+			Du untersuchst die Gegend. Deine Intuition sagt dir, dass der Wald nicht ohne Grund krank geworden ist...
+			Ah... Voila!
+		</action>
+		<actfight act="Angreifen" monsters="cervel">
+			<begin m="cervel">
+				Aber... Wer bist du? Du hast hier nichts zu suchen! Ich werde nicht zulassen, dass du meine Pläne durchkreuzt, oh nein! Du lässt mir keine andere Wahl... YiiiiPaaaa!!!
+			</begin>
+			<win>
+				Du hast Zervelat den Giftmischer besiegt. Doch warum hat er versucht, den Fluss zu vergiften und den Wald und seine Bewohner krank zu machen?
+			</win>
+		</actfight>
+		
+		<end>
+			Die Liga der außergewöhnlichen Korgonen dankt euch für eure Hilfe und eure Diskretion, mit der ihr den Ruf Korgonen bewahrt habt. Nehmt zum Dank diese Belohnung.
+		</end>
+		<gold v="5000"/>
+		<xp v="90"/>
+		<uvar v="airpur"/>
+	</m>
+
+	<m group="broc" id="suppel" name="Hacke, Spitze, 1-2-3" cond="mission(airpur)">
+		<begin>
+			Mein Nachbar, der Korallenbergarbeiter, hat die Nase voll, beim Korallen-Cup ständig zu verlieren. Die meiste Zeit verbringt er damit, sein Material zu reparieren, dass beim Training immerzu kaputt geht.
+			Er bitte mich darum, ihn zu besuchen und einen Weg zu finden, sein Material zu verstärken.
+		</begin>
+		<goto v="corail" />
+		<talk v="Korallenbergarbeiter" gfx="mineur">
+			[Hey, wie geht's? Alles klar mit deiner Schaufel?... Zerbricht ständig in 2 Stücke, nicht wahr... Ich sage dir, für so harte Kerle wie uns ist das einfach nicht das Richtige.]
+			[Wie beim Korallen-Cup. Da machen nur Profis mit und die haben alle richtig gutes Material. Wie soll ich da nur jemals was reißen, wenn ich nicht mehr als eine halbe Spitzhacke habe...]
+			[Toll Patsch und du werdet euch der Sache annehmen? Das sind gute Nachrichten. Du verstehst mich, Freund. Du lässt nicht zu, dass ich von M. Statan lächerlich gemacht werde.]
+		</talk>
+		<action v="Die Spitzhacke nehmen">
+			Du leihst dir die Spitzhacke aus, deren Legierung einen wenig überzeugenden Eindruck macht.
+		</action>
+		<goto v="forges" />
+		<talk v="Schmied" >
+			[Was willst du? Eine Spitzhacke verstärken? Klar kann ich das machen, eine Kleinigkeit für einen Schmied wie mich. Hehe.]
+			[Doch vorher möchte ich, dass du etwas wegen diesen Dieben unternimmst. Ständig klauen sie unsere Goblinwürste und lassen uns nichts übrig!]
+		</talk>
+		<goto v="rashpk"/>
+		<actfight act="Die Diebe verängstigen" monsters="vol1:vol1:vol1">
+			<win>
+				Das sollte ihnen für eine Weile einen ordentlichen Schrecken einjagen. Ohne Zähne dürfte es zumindest schwieriger sein, Goblinwürste zu essen.
+			</win>
+		</actfight>
+		<goto v="forges" />
+		<talk v="Schmied" >
+			Ah, du bist ein wahrhaft mächtiger Dinozmeister! Und hier ist deine Spitzhacke zurück. Aber ich sag's dir gleich, sie ähnelt nun eher einem Bootsanker. Huhuhuhu.
+		</talk>
+		<action v="Die Spitzhacke nehmen">
+			Huf....!!! GGgggGGNNNGnnnnnnn!!! Huf Huf.... Unmöglich, sie hochzuheben. Diese Legierung ist wirklich schwer. Damit ist die Spitzhacke im wahrsten Sinne unhandlich!
+		</action>
+		<goto v="fosslv" hide="1"/>
+		<action v="Die Spitzhacke in die Lava tauchen">
+			Schon besser. Es gelingt dir, die Spitzhacke in die Lava zu tauchen, ohne dass es dich von den Beinen holt.
+			Die Spitzhacke ist nun deutlich schlanker. Ausgedünnt von der Lava, ist sie aber immer noch schmelzflüssig. Nun musst du nur noch einen Katalysator finden, um die chemische Reaktion zu beenden.
+		</action>
+		<goto v="gorges" />
+		<talk v="Höhöhlenforscher" gfx="spelele">
+			[Ob ich flüssigen Stickstoff übrig habe... Also, weißt du... Ja natürlich, aber der ist ausschließlich meinen wissenschaftlichen Untersuchungen vorbehalten und für sonst gar nichts.]
+			[So wollen es die Sicherheitsvorschriften.]
+		</talk>
+		<action v="Die Spitzhacke zeigen">
+			_"Ahhhhaahhhhhhahhhhh"_
+			[Seltsam, der Höhöhlenforscher erschrickt und rennt so schnell er kann in einen Wald voller Stalakmiten.]
+			[Er scheint eine solche Hitze nicht gewohnt zu sein... Oder er dachte, du würdest ihn mit dieser Spitzhacke bedrohen.]
+		</action>
+		<action v="Mit flüssigem Stickstoff übergießen">
+			Du gießt flüssigen Stickstoff über die immer noch schmelzflüssige Spitzhacke. PFFFFSSSTTT! Seltsamer Rauch steigt auf und es macht Krach wie bei einer Dampflokomotive.
+			Der Rauch breitet sich weiter aus und lässt in der Grotte Wolken entstehen. Ein atemberaubender Spektakel.
+		</action>
+		<action v="Die Spitzhacke nehmen">
+			Nachdem der Gegenstand keinen Ton und Gestank mehr von sich gibt, kehrt wieder Ruhe in die Grotte ein. (Abgesehen vom Zähneklappern deines forschenden Freundes.)
+			Die Spitzhacke vor dir hat eine perfekte Forum und sie glänzt als wäre sie aus einem futuristischen Material gefertigt. Du machst dich bereit, sie erneut hochzuheben. Also dann... 1... 2... 3! *PLUMPS*
+		</action>
+		<action v="Aufstehen">
+			Unglaublich! Die Spitzhacke ist nun so viel leichter, dass du glatt hintenüber gefallen bist. Du brauchst sie jetzt nur noch dem Korrallenbergarbeiter zu bringen.
+		</action>
+		<end>
+			Du hast den Wunsch des Korrallenbergarbeiters glänzend erfüllt. Mit dieser Spitzhacke ist ihm der Sieg beim Korallen-Cup sicher.
+			Um dir zu danken, vermacht er dir eine "Verbesserte Schaufel". 
+			Deutlich robuster, zerbricht diese Schaufel nicht gleich bei jeder Benutzung (freilich ohne Garantie).
+			Der Korrallenbergarbeiter wird sie dir weiterhin gerne reparieren, wenn du möchtest.
+		</end>
+		
+		<nofx v="brkpel" />
+		<nofx v="pelle" />
+		<fx v="pelle2" />
+	</m>
+	
+</missions>

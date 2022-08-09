@@ -1,0 +1,27 @@
+﻿<d place="frcbrt" name="Turnierorganisator" gfx="torga" cond="!fx(tourna)">
+	
+  <phase id="begin" next="yes:ok:no">
+	  Hallo Großer Dinozmeister! Das Turnier von Rohkraft steht jedem offen, der seine Dinoz mit den Dinoz
+  anderer Spieler messen möchte. Soll ich dich anmelden? </phase>
+
+  <a id="yes" cond="!fx(totem)">Hey, gute Idee!</a>
+  <a id="ok" cond="fx(totem)">Ja, danke!</a>
+  <a id="no">Äh, nein danke....meine Dinoz brauchen noch ein wenig
+  Training.</a>
+
+  <phase id="yes">Wie das interne Reglement, Paragraph 15.48, Buchstabe H,
+  klar stellt, ist die Teilnahme am Turnier leider nur den Dinoz gestattet, die
+  im Besitz einer Reliquie einer alten Zivilisation sind. Das ist die einzige
+  Bedingung um teilnehmen zu können. Schau wieder vorbei, wenn dein Dinoz eine
+  gefunden hat. Ich wünsche noch einen schönen Tag und einen schönen
+  Aufenthalt in Rohkraft!</phase>
+
+  <phase id="ok" effect="tourna">Oh, wie ich sehe besitzt dein Dinoz ein
+  Aschpuck-Totem! Sehr schön, dann setzte ich ihn also auf die Teilnehmerliste
+  für das Turnier. Von nun an kann er also ohne weiteres daran teilnehmen. Einen schönen Tag noch, Herr Dinozmeister!</phase>
+
+  <phase id="no">Sehr gut. Du bist in keiner Weise dazu verpflichtet dich
+  anzumelden. Insbesondere wenn deine Dinoz noch nicht soweit sind, sich mit mächtigen Gegnern zu messen.
+  Es ist richtig, dass das Turnier für unerfahrene Dinoz sehr gefährlich sein kann. Ich wünsche noch einen schönen
+  Tag und einen schönen Aufenthalt in Rohkraft!</phase>
+</d>

@@ -1,0 +1,51 @@
+::if _client::
+
+	<div class="monsterName">
+		::if _vipJob::<img src="/img/icons/vip.png" alt="VIP"/>::end::
+		::_client._name::
+		::if _vipJob::<img src="/img/icons/vip.png" alt="VIP"/>::end::
+		::if _item::(<img src="/img/icons/item_::_item::.png" alt="::_item::"/>)::end::
+		::if _vipJob::<div class="vipJob">::_vipJob::</div>::end::
+	</div>
+	::if _vipJob::
+	<div class="vip">Dieser Gast ist ein VIP! Beherberge ihn gut, um viel Ansehen zu gewinnen..</div>
+	::end::
+	
+	::if !_spectator::
+		::if _death::
+			<p class="danger">
+				ACHTUNG: Dieser Gast ist instabil geworden! Wenn du nichts unternimmst, wird dieser Gast um ::_death:: explodieren!
+			</p>
+		::end::
+		::if _workEnd::
+			<p class="locked">Dein Angestellter wird ::_workEnd:: fertig sein.</p>
+		::end::
+		
+		::if _hasService::
+			<p class="time">Ein Gast verlangt nach Zimmerservice! Verliere keine Zeit und sieh nach was ::_client._name:: will...</p>
+		::end::
+	::end::
+	
+	<p class="likes">::_likes::</p>
+	<p class="spread">::_spreads::</p>
+	
+	::if _inQueue::
+		::if !_spectator::
+			<p class="time">
+				Dieser Gast bleibt voraussichtlich <strong>::_stayDays::&nbsp;Nacht/Nächte</strong>.
+				Wenn er bis Mitternacht kein Zimmer hat, reist er wieder ab.
+			</p>
+			<p class="rule">::_mrule::</p>
+			<p>Zufriendenheit: ::_happyness::</p>
+		::end::
+	::else::
+		::foreach _happyLog::
+			<p class="happyLine">::__current__::</p>
+		::end::
+		::if _sad::
+			<p class="happyTotal negative">::_happyness::</p>
+		::else::
+			<p class="happyTotal positive">::_happyness::</p>
+		::end::
+	::end::
+::end::

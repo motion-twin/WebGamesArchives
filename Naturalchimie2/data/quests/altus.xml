@@ -1,0 +1,57 @@
+<quests>
+
+<q from="altus" id="first" name="Prouver sa valeur" protect="1">
+	<begin>La première chose à faire, c'est vérifier que tu connais les bases de l'alchimie. Pour ça, lance une partie et crée un Foloeil.</begin>
+	<create o="Elt(5):1" title="Créer un Foloeil dans une partie d'alchimie.">
+			<playMod mode="Tutorial" obj="-1" artft="Elts(2,null):700" replace="1">
+			</playMod>
+	</create>
+	<end zone="grenie" auto="1">Parfait !</end>
+	<item v="Elt(0):1" />
+</q>
+
+<q from="altus" id="bours" name="La bourse d'étude" cond="quest(first)" protect="1">
+	<begin>La formation d'alchimiste donne droit à une bourse, mais ça fait longtemps que j'ai plus un sou à donner aux étudiants... Il faut que tu ailles la chercher à l'ENFA.</begin>
+	<talk did="boursa" />
+	<talk did="boursb" title="Aller à l'ENFA récupérer la bourse d'étude." step="1" />
+	<create o="Elt(8):1" zone="enfagu" title="Créer un Oxyde dans une partie d'alchimie, à l'ENFA.">
+		<playMod mode="Tutorial" obj="-1" >
+		</playMod>
+	</create>
+	<talk did="boursc" title="Prendre la bourse" />
+	<end>C'est tout ce qu'ils t'ont donné ? Ils sont de plus en plus radins chaque année à l'ENFA, dis donc. Heureusement qu'il y a la boule à papote dans le paquet. De mon temps ça valait cher ce machin... Maintenant tout le monde en a une.</end>
+	<gold v="95" />
+</q>
+
+<q from="altus" id="grim" name="Mon grimoire, mon meilleur ami" cond="quest(bours)" protect="1">
+	<begin>Il faut que tu ailles chercher ton grimoire ! Pas de grimoire, pas d'alchimie sérieuse possible !</begin>
+	<talk did="grima" />
+	<talk did="grimb" title="Se rendre au donjon K et demander un grimoire" step="1" />
+	<cauldron r="feuila" title="Monter à la salle des chaudrons pour tester la recette Chlorophyzzz" />
+	<end>Tu as vu la salle des chaudrons ? Impressionnant, hein ? Maintenant que tu as ton grimoire, prends cette recette. Moi je la connais par coeur.</end>
+	<recipe v="aapat" />
+	<gold v="55" />
+</q>
+
+<q from="altus" id="siflex" name="Un sifflet super chouette" cond="quest(bours)" protect="1">
+	<begin>Il y a un truc qui te serait très utile, c'est un sifflet Chouettex ! En plus j'ai un colis à aller chercher chez eux, alors si tu pouvais en profiter pour me le ramener...</begin>
+	<talk did="siflea" />
+	<talk did="sifleb" title="Aller chercher un sifflet au siège de Chouettex, sur la côte Ouest." />
+	<talk did="siflec" title="Récupérer le colis d'Altus" />
+	<end>Mon colis ! Super ! Quoi ? ...50 kubors ? Eh ben heureusement que tu étais là, vu comme je suis à sec j'étais pas prêt de l'avoir tout seul ce colis. Tiens, voilà tout ce que j'ai.</end>
+	<gold v="34" />
+</q>
+
+<q from="altus" id="schoo" name="Les 4 écoles alchimiques" cond="quest(grim)+quest(siflex)+sch(gu)" protect="1">
+	<begin>Tu as tout ton matériel, il est de temps de choisir ton école d'alchimie. Les choses sérieuses commencent !</begin>
+	<talk did="schooa" />
+	<nofx fid="chsch" step="1"  title="Aller à la Grande Place pour participer aux portes ouvertes et rejoindre une école." />
+	<msg title="Rejoindre une école" text="Félicitations ! Tu viens de t'inscrire à une école d'alchimie ! Quête accomplie." action="Inscription réussie" auto="1" />
+	<end auto="1">Parfait. j'espère pour tes professeurs que tu feras honneur à ton école.</end>
+	<xp v="5" />
+</q>
+
+
+
+
+</quests>

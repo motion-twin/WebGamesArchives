@@ -1,0 +1,14 @@
+-cp src
+-cp ../../src/com
+-cp ../../../base/com
+-swf9 ../../www/swf/map.swf
+-swf-header 660:400:40:FFFFFF
+--flash-strict
+-swf-version 10
+-main Main
+-swf-lib swf/gfx.swf
+-swf-lib swf/ui.swf
+-cmd "obfu9 -key odys %__file__% -o %__file__%"
+-cp ../../../mtBaseFB/src
+-D client
+-lib format

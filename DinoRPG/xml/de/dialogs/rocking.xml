@@ -1,0 +1,422 @@
+﻿<!-- Roi des Rockys -->
+
+<d place="sking" name="Zitadellenwächter" gfx="sgarde" cond="scenario(magnet,0)">
+	<phase id="begin">
+		Guten Tag, Fremder... Der König ist momentan viel zu sehr mit diesem Magnetitvorfall beschäftigt. Er kann dich derzeit nicht empfangen!
+	</phase>
+</d>
+
+<d place="sking" name="König der Rockys" gfx="rocking" cond="scenario(magnet,1)">
+
+	<phase id="begin" fast="1" next="enter">
+		Du erzählst, dass du von den wilden Wanwans angegriffen wurdest... Nachdem dich die Wachen verhört haben, gewähren sie dir schließlich eine Audienz beim König, seine Eminenz Rocky IV.
+	</phase>
+
+	<a id="enter">Den Palast betreten.</a>
+
+	<phase id="enter" next="events">
+		Herzlich Willkommen, werter Dinozmeister... Wir sehen, dass Sie nicht gebürtig aus den Magnetischen Steppen sind. Sie müssen eine lange Reise hinter sich haben. Verzeihen Sie bitte, wenn wir Sie nicht mit der für unser Volk üblichen Gastfreundschaft empfangen konnten. Die kürzlich stattgefundenen Ereignisse haben uns sehr zu schaffen gemacht...
+
+	</phase>
+
+	<a id="events">Was ist denn passiert?</a>
+
+	<phase id="events" next="magnet">
+		Als rechtmäßiger Erbe der königlichen Familie der Rockys, habe ich die Verantwortung für alle meine Untertanen. Diese Macht wurde unserer Familie vor vielen Generationen vom Geschärften Großstein, dem Magnetitenbändiger übertragen...
+	</phase>
+
+	<a id="magnet">Magnetit?</a>
+
+	<phase id="magnet" next="magnet2">
+		Der Magnetit ist ein Stein, den man nur in den Steppen findet. Sie verdanken ihm auch ihren Namen... Es ist ein Stein, der unter der Reibewirkung des Windes und des Sandes elektrische Energie erzeugt!
+
+	</phase>
+
+	<a id="magnet2">...</a>
+
+	<phase id="magnet2" next="events2">
+		In seinem natürlichen Zustand ist der Magnetit äußerst instabil und deshalb schwer beherrschbar. Allerdings hat der Geschärfte Großstein in seiner Jugend einen Stein von einmaliger Reinheit gefunden. Es handelt sich um den Engelsstein. Die Erben der königlichen Familie müssen ihn beschützen, damit er nicht in die falschen Hände gerät.
+	</phase>
+
+	<a id="events2">Und?</a>
+
+	<phase id="events2" next="again:me">
+		Und vor kurzem... hat jemand versucht, den Engelsstein zu stehlen!!! Wir tragen eine große Verantwortung und wir werden dies zu verhindern wissen, koste es was es wolle! Die Ehre der königlichen Familie steht auf dem Spiel... Haben Sie das alles verstanden?
+	</phase>
+
+	<a id="again" target="events">Können Sie das noch einmal wiederholen?</a>
+	<a id="me">Was hat das mit mir zu tun?
+	</a>
+
+	<phase id="me" next="team">
+		Dazu kommen wir gleich... Eine Räuberbande hat sich im äußersten Westen der Magnetischen Steppen breit gemacht. Wir haben einige von ihnen schon öfters in der Nähe des Schlosses herumstreifen sehen. Es waren sicherlich dieselben, die Sie in der Nähe des Pfeiffenden Abflusses angegriffen haben. Sie nennen sich das "W-Team"...
+
+	</phase>
+
+	<a id="team">Das W-Team?</a>
+
+	<phase id="team" next="team2">
+		Ja... Das W-Team ist eine Gruppe von seltsam aussehenden Nomaden, die ein paar Wanwans kontrollieren. Wir glauben, dass sie unseren Engelsstein stehlen wollen. Wir haben unsere besten Soldaten gesendet, um nach ihnen zu suchen. Ihren Anführer konnten wir verwunden, aber wir wissen nicht, wo sich der Rest versteckt hält..
+	</phase>
+
+	<a id="team2">Hhmm...</a>
+
+	<phase id="team2" next="again2:accept:refuse">
+		Jetzt mussten wir unsere Soldaten zurückrufen, um eben jenen Engelsstein zu beschützen und wir wissen nicht, wann und wo sie das nächste Mal zuschlagen werden... Könnten Sie dieses W-Team für uns aufspüren und ausschalten? Ich würde Sie fürstlich belohnen!
+	</phase>
+
+	<a id="again2" target="me">Könnten Sie das wiederholen?</a>
+	<a id="accept">Einverstanden!</a>
+	<a id="refuse">Ich kann den Auftrag im Moment nicht annehmen.</a>
+
+	<phase id="refuse">
+		Gut, gut... Ich verstehe... Ich möchte Sie nicht in eine Geschichte hineinziehen, mit der Sie nichts zu tun haben. Ich wünsche Ihnen noch einen guten Aufenthalt in den Magnetischen Steppen. Schauen Sie wieder vorbei, falls Sie ihre Meinung ändern sollten....
+	</phase>
+
+	<phase id="accept" next="leave">
+		Wirklich? Wie soll ich Ihnen nur danken? Unsere Hofberater werden Ihnen ein paar geheime Wege zeigen, die Sie direkt in den äußersten Westen, dem Unterschlupf der Steppenräuber, führen... Ich wünsche Ihnen viel Glück und hoffe, schon bald gute Neuigkeiten von Ihnen zu hören!
+	</phase>
+
+	<a id="leave">Dem König danken.</a>
+
+	<phase id="leave" scenario="magnet:2" fast="1">
+		Ein Berater des Königs erklärt dir den Weg, wie du vom Abfluss zum Lager der Räuber in den äußersten Westen gelangst. Bereite dich gut vor!
+	</phase>
+
+</d>
+
+<d place="slake" name="Seltsamer Herumtreiber" gfx="rodeur2" cond="scenario(magnet,2)+!fx(rodtmp)">
+	<phase id="begin" next="view">
+		......... hmm, hat man mich etwa entdeckt??? .....
+	</phase>
+
+	<a id="view">Den Herumtreiber beobachten</a>
+
+	<phase id="view" fast="1" effect="rodtmp">
+		Bevor du dich ihm nähern konntest, war er auch schon weg. Was der hier wohl ausgeheckt hat... ?
+	</phase>
+</d>
+
+<d place="scampw" name="Anführer" gfx="wteamc" cond="scenario(magnet,6)">
+
+	<phase id="begin" next="who">
+		..... Warum hast du uns angegriffen? Wolltest du dich etwa für unseren vorangegangenen Angriff rächen? Ich dachte, ich hätte mich entschuldigt...
+	</phase>
+
+	<a id="who">Wer sind Sie?</a>
+
+	<phase id="who" next="dont:tell">
+		Ja, ich habe mich nicht vorgestellt. Ich bin Mulder, der Anführer des W-Teams... Wer schickt dich zu uns und warum hast du uns angegriffen?
+	</phase>
+
+	<a id="dont">Nichts erzählen.</a>
+	<a id="tell">Erzählen, dass dich der König der Rockys geschickt hat.</a>
+
+	<phase id="dont" next="dont2:tell">
+		Ich verstehe... du willst uns nichts erzählen... dann bist du also einer SEINER Spione! Ich frage dich ein letztes Mal: Wer hat dich geschickt?
+	</phase>
+
+	<a id="dont2">Schweigen.</a>
+
+	<phase id="dont2">
+		Ok... ich verstehe... Verschwinde, wenn du mir nichts zu sagen hast! Wir haben hier viele Monate lang den Angriffen des Königs getrotzt. Nichts wird uns dazu bringen, unsere Mission aufzugeben!
+	</phase>
+
+	<phase id="tell" fast="1" next="hist1">
+		In der folgenden Stunde erzählst Du dem Anführer alles, was dir seit deiner Ankunft in den Magnetischen Steppen wiederfahren ist. Der Angriff seines W-Teams, deine Unterredung mit dem König und natürlich auch der Diebstahlversuch des Magnetiten...
+	</phase>
+
+	<a id="hist1">Weiter.</a>
+
+	<phase id="hist1" next="hist2">
+		...... jetzt verstehe ich... Vor ein paar Tagen wurde unser stärkster Wanwan, "Großrüpel", mit einer seltsamen Substanz vergiftet... es handelt sich um den gleichen Wanwan, gegen den du bereits gekämpft hast.
+	</phase>
+
+	<a id="hist2">Weiter</a>
+
+	<phase id="hist2" next="hist3">
+		Wir haben selbstverständlich Nachforschungen angestellt, um herauszufinden, wer zu so etwas imstande ist. Eine Spur führte uns direkt in die Zitadelle des Königs. Deshalb haben wir beschlossen, uns die Vorgänge dort aus nächster Nähe anzusehen. Doch in Wahrheit haben wir lediglich nach einem Heilmittel für "Großrüpel" gesucht...
+	</phase>
+
+	<a id="hist3">Weiter.</a>
+
+	<phase id="hist3" next="hist4">
+		...allerdings hatten wir zu keinem Zeitpunkt vor, den "Magnetiten" zu stehlen! Dieser Stein hat keinerlei Bedeutung für uns Nomaden. Die Steppen bieten uns alles, was wir zum Überleben brauchen...
+	</phase>
+
+	<a id="hist4">Weiter.</a>
+
+	<phase id="hist4" next="hist5">
+		Man hält uns für Diebe, aber das kommt daher, dass wir oft mit den Räubern im äußersten Westen der Magnetischen Steppen verwechselt werden! Wir haben mit denen nichts am Hut... sie hassen uns und wir hassen sie. Unsere einzige Hilfe sind die Einwohner. Der werte Herr König hat in diese Gegend noch keinen einzigen Soldaten geschickt, denn die haben viel zu viel Schiss, vor diesem "Großen Wurm"... Die Realität sieht anders aus: Das Volk der Nomaden wurde vom König im Stich gelassen!
+	</phase>
+
+	<a id="hist5">Weiter.</a>
+
+	<phase id="hist5" next="ask:again">
+		Das ist alles. Ich habe dir alles erzählt. Möchtest du, dass ich es wiederhole?
+	</phase>
+
+	<a id="ask">Nein danke! Ich habe alles verstanden!</a>
+	<a id="again" target="hist1">Ich bin nicht ganz mitgekommen...</a>
+
+	<phase id="ask" next="yes:no">
+		Was vorgefallen ist, tut uns wirklich leid, aber du musst verstehen, dass wir Großrüpel unbedingt heilen müssen... er wird von Tag zu Tag schwächer und wir befürchten das Schlimmste... Stehst du in Kontakt mit dem König? Könntest du uns helfen, indem du mit ihm sprichst? Es handelt sich um ein Missverständnis und ich denke, dass uns der König bei dieser Vergiftung helfen kann...
+	</phase>
+
+	<a id="yes">Ja.</a>
+	<a id="no">Nein.</a>
+
+	<phase id="no">
+		Ich verstehe... letztendlich kennen wir uns nicht und du bist nicht verpflichtet, uns zu glauben... Besuch mich wieder, wenn Du deine Meinung änderst.
+	</phase>
+
+	<phase id="yes" scenario="magnet:7">
+		...wirklich? Du würdest das für uns machen, und das, obwohl wir dich angegriffen haben? ...möge der "Große Wurm" auf dich aufpassen! Pass auf deinem Weg auf die Räuber auf ...wir warten ungeduldig auf deine Neuigkeiten!
+	</phase>
+
+</d>
+
+<d place="scampw" name="Anführer" gfx="wteamc" cond="scenario(magnet,7)">
+
+	<phase id="begin">
+		Hast du den König getroffen? Weiß du wie man Großrüpel heilen kann? ...wir zählen auf dich. Komm wieder mit guten Nachrichten vorbei!
+	</phase>
+
+</d>
+
+<d place="sking" name="König der Rockys" gfx="rocking" cond="scenario(magnet,7)|scenario(magnet,8)">
+
+	<phase id="begin" next="next">
+		Unser werter Dinozmeister ist schon zurück? Ich hoffe von ganzem Herzen, dass du gute Neuigkeiten für uns hast...
+	</phase>
+
+	<a id="next">Ah... äh... ja...</a>
+
+	<phase id="next" next="talk">
+		Das freut mich! Jetzt erzähle mir etwas von deinen großen Taten...
+	</phase>
+
+	<a id="talk">Erzählen.</a>
+
+	<phase id="talk" next="cont" fast="1">
+		Du erzählst dem König von deiner Begegnung mit dem Anführer des W-Teams, von "Großrüpels" Vergiftung und auch von den Unschuldsbeteuerungen des Anführers. Der König hört dir geduldig zu.
+
+	</phase>
+
+	<a id="cont">Weiter</a>
+
+	<phase id="cont" next="serv">
+		Fein, fein... Sie verstehen sicherlich, dass wir diesen seltsamen Personen nicht sofort trauen können. Wir möchten die ganze Angelegenheit zuerst selbst untersuchen und mit den Bewohnern der Niederen Steppen sprechen... Bis dahin möchte ich Sie um einen weiteren Gefallen bitten... natürlich nur, wenn Sie damit einverstanden sind.
+
+	</phase>
+
+	<a id="serv">Einen Gefallen?</a>
+
+	<phase id="serv" next="sehd">
+		Ja, ganz genau. Es ist wie folgt: Die Gerüchte von dieser seltsamen Vergiftung beunruhigen uns. Wir müssen uns gegebenenfalls auf das Schlimmste einstellen. Wenn unsere Informationen korrekt sind, dann könnte es sich um das sogenannte "Sed Aktivum" handeln...
+	</phase>
+
+	<a id="sehd">Um was? ...</a>
+
+	<phase id="sehd" next="control">
+		Das "Sed" ist ein sehr starkes Gift, das man nur in den Magnetischen Steppen findet. Man gewinnt es, indem man das Gift des Scorpiowink konzentriert und ihm dann eine geheime Zutat hinzufügt. Die Mischung dieser beiden Zutaten  verleiht ihm seine sagenumwobene Kraft. Unsere Streitkräfte haben die Herstellung von "Sed" vor langer Zeit verboten. Der Grund dafür war, dass man mit dem Sed in der Lage ist, die vollständige Kontrolle über einen Menschen oder einen Dinoz zu erlangen... eine schreckliche Vorstellung.
+	</phase>
+
+	<a id="control">Wie kann man denn genau Kontrolle über jemanden erlangen?</a>
+
+	<phase id="control" next="serv2">
+		Ja, in der Tat. Wer unter dem Einfluss des "Sed" steht, der kann nicht mehr klar denken. Es kann sogar soweit kommen, dass er seine eigenen Freunde verrät. Dieses "Sed" wurde von unseren Vorfahren nicht umsonst verboten. Sollte es sich in dem vorliegenden Fall wirklich um "Sed" handeln, müssen wir den Giftmischer so schnell wie möglich ausschalten...
+	</phase>
+
+	<a id="serv2">Sie sprachen von einem Gefallen...</a>
+
+	<phase id="serv2" next="ingr">
+		Wir würden Sie bitten, ein paar Zutaten für uns zu suchen. Sobald wir diese Zutaten haben, können wir einen "Anti-Sed-Trank" brauen. Mit dem Trank lässt sich die Wirkung des Giftes neutralisieren.
+
+	</phase>
+
+	<a id="ingr">Was für Zutaten?</a>
+
+	<phase id="ingr" next="sage">
+		Nun. Der Legende nach benötigt man für den "Anti-Sed-Trank" drei mythische Zutaten: "Die Koralle, die niemals bricht", ein Stück von dem "Eis, das niemals schmilzt" und einen "Zweig, der niemals welkt". Wenn Sie diese drei Zutaten haben, müssen Sie am Schluss dann noch einen "Antiken Affe" finden...
+	</phase>
+
+	<a id="sage">Einen "Antiken Affen", was ist denn das?</a>
+
+	<phase id="sage" next="face">
+		Äh... ja... vielleicht war es auch ein "Antiker Weiser". Wir wissen es nicht mehr genau. Jedenfalls handelt es sich um ein Lebewesen, das besondere Fähigkeiten besitzt und das, sofern die Gerüchte wahr sind, mehrere hundert Jahre alt werden kann! Man kann sie an ihrem dritten Auge erkennen. Mit diesem Auge sind sie imstande, die andere Seite des Dinolandes zu sehen...
+	</phase>
+
+	<a id="face">Die andere Seite... ?</a>
+
+	<phase id="face" next="end">
+		Ja... Den Legenden nach besitzt Dinoland eine andere, "finstere" Seite. Dieser Ort wird auch die "Dunkle Welt" genannt. Selbstverständlich ist bisher noch niemand von diesem Ort zurückgekehrt... außer eben jener Weise (oder war es vielleicht doch ein Affe?). "Antike" können sich in der Dunklen Welt frei herumbewegen. Ich hoffe, dass Sie mit dieser vagen Information dieses mythische dreiäugige Wesen finden können...
+	</phase>
+
+	<a id="end">......</a>
+
+	<phase id="end" next="bye">
+		Wir setzen auf ihre Bemühungen, diese Zutaten und den "Antiken Affen" zu finden und uns anschließend diesen "Anti-Sed-Trank" zu bringen. Was die Nomaden betrifft, werden wir unsere eigenen Nachforschungen anstellen und ihre Aussagen überprüfen... Die Audienz ist hiermit beendet. Auf Wiedersehen...
+	</phase>
+
+	<a id="bye">Aufbrechen.</a>
+
+	<phase id="bye" fast="1" scenario="magnet:8">
+		Ehrgeizig brichst du zu neuen Abenteuern auf!
+	</phase>
+
+</d>
+
+<d place="sking" name="Zitadellenwächter" gfx="sgarde" cond="scenario(magnet,10)">
+
+	<phase id="begin" next="fight:no">
+		Fremder!! Schnell! Der König wird von mächtigen Kreaturen angegriffen! Sie versuchen, ihn zu vergiften und in den Besitz des Königlichen Steins zu gelangen!!! Kannst du uns helfen, sie zu bekämpfen?
+	</phase>
+
+	<a id="fight">Angriff!</a>
+	<a id="no">Ich muss mich vorher kurz vorbereiten...</a>
+
+	<phase id="no">
+		Beeilen Sie sich! Die Situation ist kritisch!
+	</phase>
+
+	<phase id="fight" scenario="magnet:11" fightgroup="wbour2" next="ok" name="Anführer" gfx="wteamc">
+		Vielen Dank für deine Hilfe... Kurz nachdem du gegangen bist, haben diese Finsteren Gupignons Großrüpel wieder mitgenommen. Es sieht so aus, als ob sie ihn mit diesem Gift gefügig machen würden...
+	</phase>
+
+	<a id="ok">Ich verstehe...</a>
+
+
+	<phase id="ok" next="thanks" name="Anführer" gfx="wteamc">
+		Sie haben Großrüpel verwendet, um die Königliche Zitadelle anzugreifen und versucht, den Magnetiten zu stehlen... Wir sind zum Glück rechtzeitig eingetroffen...
+	</phase>
+
+	<a id="thanks">Vielen Dank für eure Hilfe!</a>
+
+	<phase id="thanks" next="how" name="Anführer" gfx="wteamc">
+		Ja, das ist doch selbverständlich! Wir konnten nicht zulassen, dass Großrüpel auf diese Weise alles zerstört. Dank deines Zaubertrankes konnten wir ihn wieder zur Vernunft bringen...
+	</phase>
+
+	<a id="how">Und wie geht es ihm jetzt?</a>
+
+	<phase id="how" next="not" name="Anführer" gfx="wteamc">
+		Wir haben ihn in unser Lager zurückgebracht. Er sieht übel aus, aber er wird es überleben... Dank dir...
+	</phase>
+
+	<a id="not">Das war doch nicht der Rede wert...</a>
+
+	<phase id="not" next="thanks2" name="Anführer" gfx="wteamc">
+		Ne, ne, so ganz ohne war das Ganze nicht... Der Große Wurm scheint dich beschützt zu haben... Besuch uns doch in unserem Lager! Wir werden dir selbstverständlich Zutritt zu unserem Geheimen Geschäft gewähren....
+	</phase>
+
+	<a id="thanks2">Bis bald!</a>
+
+	<phase id="thanks2" fast="1" scenario="magnet:12" name="Anführer" gfx="wteamc">
+		Der Anführer ist wieder ins Lager des W-Teams aufgebrochen...
+	</phase>
+
+</d>
+
+
+<d place="sking" name="Anführer" gfx="wteamc" cond="scenario(magnet,11)">
+
+	<phase id="begin" next="ok">Danke für deine Hilfe... Nach deiner Abreise haben diese dunklen Goupignons Großrüpel überwältigt. Wie es scheint konnten sie ihn mit dem Gift kontrollieren...
+	</phase>
+
+	<a id="ok">Ich verstehe...</a>
+
+	<phase id="ok" next="thanks" name="Anführer" gfx="wteamc">Sie haben dann die Macht von Großrüpel genutzt, um die Königliche Zitadelle anzugreifen und versucht, den Magnetiten zu stehlen... Wir sind zum Glück rechtzeitig eingetroffen...
+	</phase>
+
+	<a id="thanks">Danke für deine Unterstützung im Gefecht!</a>
+
+	<phase id="thanks" next="how" name="Anführer" gfx="wteamc">Ja, das ist doch selbverständlich! Wir konnten nicht zulassen, dass Großrüpel auf diese Weise alles zerstört. Dank deines Zaubertrankes konnten wir ihn wieder zur Vernunft bringen...
+	</phase>
+
+	<a id="how">Und wie geht es ihm jetzt?</a>
+
+	<phase id="how" next="not" name="Anführer" gfx="wteamc">Wir haben ihn in unser Lager zurückgebracht. Er sieht übel aus, aber er wird es überleben... Dank dir...
+	</phase>
+
+	<a id="not">Das war doch nicht der Rede wert...</a>
+
+	<phase id="not" next="thanks2" name="Anführer" gfx="wteamc">Ne, ne, so ganz ohne war das Ganze nicht... Der Große Wurm scheint dich beschützt zu haben... Besuch uns doch in unserem Lager! Wir werden dir selbstverständlich Zutritt zu unserem Geheimen Geschäft gewähren....
+	</phase>
+
+	<a id="thanks2">Bis bald!</a>
+
+	<phase id="thanks2" fast="1" scenario="magnet:12" name="Anführer" gfx="wteamc">
+		Der Anführer ist wieder ins Lager des W-Teams aufgebrochen...
+	</phase>
+
+</d>
+
+
+<d place="sking" name="König der Rockys" gfx="rocking" cond="scenario(magnet,12)+!collec(magnet)">
+	<phase id="begin" next="not">
+		Mein lieber Freund! Wir sind sehr froh darüber, wie dieser Konflikt entschärft werden konnte. Wir möchten Ihnen für die zahlreichen Dienste, die Sie der königlichen Familie erwiesen haben, von ganzem Herzen danken! Sie haben sogar ihr Leben riskiert...
+	</phase>
+
+	<a id="not">Ach, das war doch nichts...</a>
+
+	<phase id="not" next="not2">
+		Das glauben Sie! Dank Ihnen haben wir uns wieder mit den Nomaden des äußersten Westens versöhnt... Es scheint, als ob wir die Nomaden zu Unrecht vorverurteilt hätten. So etwas darf und wird nie wieder vorkommen! 
+	</phase>
+
+	<a id="not2">Ach, das war doch nichts...</a>
+
+	<phase id="not2" next="plan">
+		Doch, doch! Wir bestehen darauf und möchten Sie dafür belohnen. Dank Ihnen konnten wir diese fiesen Finsteren Gupignons fangen, die den Diebstahl des Magnetiten, die Herstellung des Sed Aktivums, die Vergiftung Großrüpels und den Angriff auf die Zitadelle zu verantworten haben... Was für ein niederträchtiger Plan!!
+	</phase>
+
+	<a id="plan">In der Tat...</a>
+
+	<phase id="plan" next="ok">
+		Aber machen Sie sich keine Sorgen, alle Schuldigen wurden in unsere tiefsten Kerker gesperrt und werden auf längere Sicht kein Tageslicht mehr zu sehen bekommen. Darauf gebe ich Ihnen mein königliches Ehrenwort!
+	</phase>
+
+	<a id="ok">....</a>
+
+	<phase id="ok" next="accept">
+		Für ihre Dienste sollen Sie nun also eine Belohnung erhalten... eine königliche Belohnung! Ich hoffe, Sie werden sie annehmen...
+	</phase>
+
+	<a id="accept">Ich nehme es an (cool!).</a>
+
+	<phase id="accept" next="thanks">
+		Das ist für Sie... Ich überreiche Ihnen diesen Splitter aus Negativem Magnetit. Er hat die Eigenschaft, die Wirkungen des Magnetiten an bestimmten Orten außer Kraft zu setzen. Es handelt sich um einen sehr seltenen Gegenstand. Ich hoffe, dass er Ihnen bei Ihren zukünftigen Abenteuern behilflich sein wird...
+	</phase>
+
+	<a id="thanks">Vielen Dank!</a>
+
+	<phase id="thanks" collection="magnet" fast="1">
+		Der König der Rockys hat dir soeben den Gegenstand "Splitter aus Negativem Magnetit" übergeben. Wozu der wohl gut sein mag?
+	</phase>
+
+</d>
+
+<d place="scaush" name="Seltsamer Herumtreiber" gfx="rodeur2" cond="scenario(magnet,12)">
+
+	<phase id="begin" next="ask">
+		Dann warst das also du...
+	</phase>
+
+	<a id="ask">Ich?</a>
+
+	<phase id="ask" next="euh">
+		Ja! Nicht nur, dass du meinen Plan vereitelst, nein, du verfolgst mich auch noch! Denkst du wirklich, dass du mich aufhalten kannst?
+	</phase>
+
+	<a id="euh">Äh...</a>
+
+	<phase id="euh" next="end">
+		Sei dir bewusst, dass ich dich nicht vergessen werde! Ich muss jetzt zu den Caushemesh-Meistern zurückkehren, um Bericht zu erstatten. Du hast wirklich Glück, dass ich es so eilig habe. Das nächste Mal bist du aber dran!
+	</phase>
+
+	<a id="end">...</a>
+
+	<phase id="end" scenario="magnet:13" fast="1">
+		Der Herumtreiber ist auf mysteriöse Art verschwunden... er scheint sehr wütend auf dich gewesen zu sein...
+	</phase>
+
+</d>

@@ -1,0 +1,92 @@
+﻿<!-- QUETE DE LA PERLE : perle de la fontaine de jouvence -->
+<!-- 	+ révélation de l'utilisation du Gant			  -->
+
+<d place="chutes" name="Meister Hydargol" gfx="hydargol" cond="admin()|fx(bouee)">
+
+	<phase id="begin" next="talk" fast="1">
+		Die Mutierenden Sturzfluten sind einer der Großen Meditationsorte der Zenzen-Mönche. Deshalb trifft man in der Gegend auch oft welche. Indem sie sich auf große Seerosenblätter setzen, versuchen sie, so lange wie möglich zu meditieren... Die Kunst besteht darin, sich nicht von der Strömung wegtreiben zu lassen! Zahlreiche Mönche, die dabei ein wenig eingedöst sind, haben sich einen Abstieg in die Sturzfluten gegönnt. Auf jeden Fall, hat sie kein Mensch je wieder gesehen.
+	</phase>
+
+	<a id="talk">Mit Meister Hydargol reden.</a>
+
+	<phase id="talk" next="hello:help:give:act">
+		.........Guten Tag......
+	</phase>
+
+	<a id="hello" target="talk">Guten Tag!</a>
+	<a id="help" cond="!fx(nenuph)+!collec(perle)">Kann ich dir helfen?</a>
+	<a id="give" cond="fx(nenuph)+!fx(chutes)">Die Seerosenblätter hergeben.</a>
+	<a id="act" cond="collec(perle)">Und was gibt`s Neues?</a>
+
+	<phase id="help" next="get">
+		....Ah? Äh... ja... kannst du... mir....bringen...Zzzz... zzz...
+	</phase>
+
+	<a id="get">Ihnen was bringen...?</a>
+
+	<phase id="get" next="where">
+		...Ah? Äh...ja...mir...ein...Blatt...Seerosenblatt...bringen...
+	</phase>
+
+	<a id="where">Und wo soll ich das finden?</a>
+
+	<phase id="where" effect="zenbro">
+		...finde... mein... pada-one Lehrling... Zzz... zzz...
+	</phase>
+
+	<phase id="give" noeffect="nenuph" collection="perle">
+		...danke.... ich werde.... endlich...auf den Sturzfluten meditieren...können!!! Ich schenke dir diese Perle als Gegenleistung...sie wird sich zu deiner Sammlung an Gegenständen gesellen!
+	</phase>
+
+	<phase id="act" next="gant">
+		Juhuuu!!! Es ist genial! Schau mal...ich schwebe!
+	</phase>
+
+	<a id="gant" cond="fx(gant)+!fx(chutes)">Den Handschuh der Zors herzeigen.</a>
+
+	<phase id="gant" next="why">
+		Oohh!!! Ist das ein Zorhandschuh, den du da hast? GENIAL!!!
+	</phase>
+
+	<a id="why">Aha, warum?</a>
+
+	<phase id="why" next="super">
+		Ich werd’s dir erklären... Der Handschuh der Zors besitzt die Macht, die Strömung der Sturzfluten um dich herum außer Kraft zu setzen. Auf diese Weise kannst du mit Hilfe eines Seerosenblattes die Sturzfluten umfahren und zum Grumhel-Wald gelangen, der sich jenseits davon befindet.
+	</phase>
+
+	<a id="super">Super!</a>
+
+	<phase id="super" next="ok:no">
+		Ok, wenn du mir versprichst, mir ab und zu deinen Handschuh zu leihen, dann leihe ich dir die Seerosenblätter. Mit ihnen wirst du in der Lage sein, die Sturzfluten zu durchqueren...abgemacht?
+	</phase>
+
+	<a id="ok">Ok</a>
+	<a id="no" target="why">Kommt nicht in Frage.</a>
+
+	<phase id="ok" effect="nenuph:chutes">
+		Hier hast du die Seerosenblätter...Jetzt bist du imstande, die Sturzfluten zu durchqueren. Viel Glück für deine weiteren Abenteur! Und pass gut auf, der Wald auf der anderen Seite ist sehr gefährlich!
+	</phase>
+
+</d>
+
+<!-- APPRENTIS -->
+
+<d cond="fx(zenbro)" place="port" name="Pada-one Lehrling" gfx="bemol">
+
+	<phase id="begin" next="help">
+		Guten Tag, ich bin...äh...Bemol, der Pada-one von Meister Hydargol. Und äh...ich muss ihm diese Seerosenblätter bringen. Das Problem ist, äh...dass ich soeben festgestellt habe, dass ich seekrank bin...aber ich muss dennoch irgendwie auf die Atlantinischen Inseln kommen! Was soll ich da bloß machen???
+	</phase>
+
+	<a id="help">Da muss ich auch gerade hin. Ich kann ihm das bring...</a>
+
+	<phase id="help" next="get">
+		Ist das wahr? Du würdest mir helfen?? Vielen Dank!
+	</phase>
+
+	<a id="get">Äh... nichts zu danken.</a>
+
+	<phase id="get" noeffect="zenbro" effect="nenuph">
+		Du siehst vertrauenswürdig aus. Hier, ich gebe dir diese Seerosenblätter. Und dass die Heilige Macht mit dir sei!
+	</phase>
+
+</d>

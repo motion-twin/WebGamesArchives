@@ -1,0 +1,210 @@
+﻿<d place="skull" name="Skully" gfx="skully" cond="life(10-)+!fx(skull)">
+
+	<phase id="begin" next="arg:bye:shortcut">
+		Oh oh oh oh oh oh oh! Your Dinoz seems to be in a bad state!!
+	</phase>
+
+	<a id="arg">Argh! A ghost!</a>
+	<a id="bye">Run away</a>
+	<a id="shortcut" target="missions" cond="admin()">(admin)</a>
+
+	<phase id="arg" next="bye:arg2">
+		A ghost? Aaaah! Where?
+	</phase>
+
+	<a id="arg2">You!</a>
+
+	<phase id="arg2" next="diff:bye">
+		What? Me? Excuse me! A bit of respect please! You won't last long here if you keep saying silly things like that!
+
+		I'm a SKELETON thank you very much! A skeleton yes! I may look a bit dishevelled, but I'm no ghost!!!
+	</phase>
+
+	<a id="diff">What's the difference?</a>
+
+	<phase id="diff" next="free:bye">
+		First of all, a ghost is dead, and me, I'm just ... a bit tired, I should have rings under my eyes, that's all ...
+		a ghost haunts people. Me? I'm free to do what I please!
+		... well almost....
+	</phase>
+
+	<a id="free">Almost free? What does that mean?</a>
+
+	<phase id="free" next="haunt:bye">
+		It's a bit ... mmmm ... complicated ... I have a few technical problems to resolve.
+		Firstly, only Dinoz close to death and their masters can see me, secondly
+		I can't leave this shady place....
+	</phase>
+
+	<a id="haunt">So you do haunt this place?!</a>
+
+	<phase id="haunt" next="do:bye">
+		Haunt this place?!? You must be joking! Ooooooooo! Just imagining it
+		gives me the creeps! I have much more important things to do!
+	</phase>
+
+	<a id="do">Like what?!</a>
+
+	<phase id="do" next="uhm:bye">
+		Shhhhh! Keep quiet! Ok, I'll tell you .... I have a LOVER!
+		It may seem weird to think that but when I was much younger I had wonderful legs!
+	</phase>
+
+	<a id="uhm">Mmmm....</a>
+
+	<phase id="uhm" next="bonne:bye">
+		I promise! It doesn't matter anyway, I've got a
+		curse that will make you forget everything about me!
+	</phase>
+
+	<a id="bonne">A curse?</a>
+
+	<phase id="bonne" next="reset:next:bye">
+		Yes! It's like a curse but in fact it's better! I'm protected by the curse. It helps to prevent nightmares and to keep scientists away.
+		Because they would examine me all the time. But thanks to the curse, people forget me instantly after having met me!
+	</phase>
+
+	<a id="reset" target="forgot">I don't believe you</a>
+	<a id="next">It's not very helpful is it?</a>
+
+	<phase id="next" next="help:nohelp:bye">
+		Exactly! I can't leave this place, so I have no way of finding my lover, Moulder!
+	</phase>
+
+	<a id="nohelp">Who's Moulder?</a>
+	<a id="help">Maybe I can help you.</a>
+
+	<phase id="nohelp" next="forgot">
+		You can't help me! Leave me alone. I'm going to sit here and think about him, don't forget to forget me!
+	</phase>
+
+	<a id="forgot">...</a>
+
+	<phase id="forgot" fast="1">
+		You are certain that you were just talking to someone, but you can't remember who or what you were talking about. Very strange, you feel like you've just seen a ghost! No, that's not possible.
+	</phase>
+
+	<phase id="help" next="question:accept:maybe">
+		Really!? You would do that for me? It's not going to be easy, and every time you see me you'll forget our meeting instantly!
+		Are you sure you want to help me???
+	</phase>
+
+	<a id="question" target="forgot">I won't forget anything!</a>
+	<a id="accept">Yes! Defintely!</a>
+	<a id="maybe" target="forgot">Let me think about it</a>
+
+	<phase id="accept" next="missions">
+		Help me to find Moulder and I'll handsomely reward you!
+	</phase>
+
+	<a id="missions">What should I do now?</a>
+
+	<phase id="missions" missions="skull">
+	</phase>
+
+	<phase id="bye" fast="1">
+		The scary skeleton looks at you disapprovingly. You turn back and see that she is close to tears,
+		but you continue to run away as far away as possible.
+	</phase>
+
+</d>
+
+<d place="skull" name="Skully" gfx="skully" cond="fx(skull)+!mission(skuend)">
+
+	<phase id="begin" next="missions">
+		Aha! My curse has disappeared! Can you now help me find Moulder!
+	</phase>
+
+	<a id="missions">What should I do now?</a>
+
+	<phase id="missions" missions="skull">
+	</phase>
+
+</d>
+
+<d place="skull" name="Skully" gfx="skully" cond="mission(skuend)">
+
+	<phase id="begin" next="pda:dinoz">
+		Thanks for all your help! Moulder and I now live happily in this magnificient location with a glorious view
+		of the sea! We're so happy together! We can't thank you enough!
+	</phase>
+
+	<a id="dinoz" cond="!collec(pda)+!dinoz(15)">Don't mention it, you're welcome</a>
+	<a id="pda" cond="!collec(pda)+dinoz(1)">Don't mention it, you're welcome</a>
+
+	<phase id="dinoz">
+		Don't be so modest! We wouldn't be back together if it wasn't for you and all your help. Come back to me when you have more Dinoz. I'll give you a gift
+		that will help you in your future quests!
+	</phase>
+
+	<phase id="pda" collection="pda">
+		Don't be so modest! We wouldn't be back together if it wasn't for you and all your help! Here this is for you ... take this Planner. It'll help you
+		handle many Dinoz. It will be added to your collection of items. Make sure you take care of it!
+	</phase>
+
+</d>
+
+
+<d place="rashpk" name="Moulder" gfx="mouldeur" cond="curmission(skuend,2)">
+
+	<phase id="begin" next="you">
+		Mmmm....These Napalm Shrimp smell delicious! They remind me of my wife's cooking!
+	</phase>
+
+	<a id="you">Are you Moulder?</a>
+
+	<phase id="you" next="explain">
+		Yes I am! Pleased to meet you! Did you know that there are strange burned circles in the ruins? I've studied these phenomenons
+		for a long time and have arrived at a conclusion: there are two explanations for these strange marks....
+	</phase>
+
+	<a id="explain">So?</a>
+
+	<phase id="explain" next="other">
+		They may have been made by strange creatures from outer space who landed in remote places to study
+		human kind. It could be that they create these strange burned circles when they return to their own planet!
+		The King may be hiding this information because he is plotting with them! Amazing, isn't it?
+	</phase>
+
+	<a id="other">And the other explanation?</a>
+
+	<phase id="other" next="ok">
+		Mmmmm, the other explanation seems to be far less plausible, but according to the Merguez Seller, the strange burned circles may be caused
+		by tourists who set campfires when they visit the ruins. I know! Crazy idea isn't it?
+	</phase>
+
+	<a id="ok">....</a>
+
+	<phase id="ok" next="ok2">
+		Mmmm....these Napalm Shrimp are delicious! They instantly remind me of my wife! We were so
+		in love ... I miss her so much, it hurts even more knowing that she's dead....
+	</phase>
+
+	<a id="ok2">What, you too!</a>
+
+	<phase id="ok2" next="skully">
+		What? I hope you're joking. I'm still in my youth! Look how smooth my bones are:
+		no wrinkles! Ah ah ah ah ah!
+	</phase>
+
+	<a id="skully">Skully is searching everywhere for you!</a>
+
+	<phase id="skully" next="exp">
+		What? You know Skully?
+	</phase>
+
+	<a id="exp">(You explain the full story)</a>
+
+	<phase id="exp" next="end">
+		............. Thanks! That means that my suspicions of her cheating were wrong! I've been right not to look for another woman
+		even after all these years! I can't thank you enough, you have no idea what this means to me!
+	</phase>
+
+	<a id="end">Don't mention it, you're welcome</a>
+
+	<phase id="end" unlock="skuend">
+		Don't be stupid! This would never have happened if it wasn't for you! Come with me to meet my wife again. I'm longing to see her again, I can't wait to look into her beautiful eyes!
+	</phase>
+
+</d>
+

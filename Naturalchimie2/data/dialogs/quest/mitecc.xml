@@ -1,0 +1,26 @@
+<d place="apvos" name="Donner les Mercurules" gfx="apsellfbg">
+
+<a id="end">Au revoir.</a>
+
+<phase id="begin" next="ech:noech">
+Bien le bonjour. La pépite dorée a sûrement ce que tu cherches ! 
+</phase>
+
+<a id="ech" cond="hasobject(Elt(10):8)">Voilà vos 8 Mercurules.</a>
+<a id="noech" cond="!hasobject(Elt(10):8)">Voilà vos 8 Mercurules.</a>
+
+<phase id="ech" take="Elt(10):8" qgive="QuestObj(vortex):1">
+Parfait ! Voilà votre bouteille de jus de coeur de vortex, cher client. C'est un plaisir ! 
+</phase>
+
+
+<phase id="noech" next="exit">
+Hum. On dirait qu'il t'en manque quelques-unes. Reviens me voir quand tu auras bien 8.
+</phase>
+
+<a id="exit">Je repasserai.</a>
+
+
+
+
+</d>

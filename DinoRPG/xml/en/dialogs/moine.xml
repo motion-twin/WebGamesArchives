@@ -1,0 +1,102 @@
+﻿<!-- QUETE DE LA PERLE : perle de la fontaine de jouvence -->
+<!-- 	+ révélation de l'utilisation du Gant			  -->
+
+<d place="chutes" name="Master Hydargol" gfx="hydargol" cond="admin()|fx(bouee)">
+
+	<phase id="begin" next="talk" fast="1">
+		The Mutant Falls are one of the most popular places for Zenzen monks to meditate. That's
+		why you can often find them walking around here. They often sit on large waterlily pads,
+		and try to meditate for as long as possible ... without being swept away by the current!
+		Many monks who fall asleep often fall in and are never seen again.
+	</phase>
+
+	<a id="talk">Talk to Master Hydargol</a>
+
+	<phase id="talk" next="hello:help:give:act">
+		Hello......
+	</phase>
+
+	<a id="hello" target="talk">Hello!</a>
+	<a id="help" cond="!fx(nenuph)+!collec(perle)">Can I help you?</a>
+	<a id="give" cond="fx(nenuph)+!fx(chutes)">Give the waterlily pads</a>
+	<a id="act" cond="collec(perle)">What's up?</a>
+
+	<phase id="help" next="get">
+		Ah? Uh ... yes ... can you ... bring me ...Zzzz ... zzz....
+	</phase>
+
+	<a id="get">Bring you... ?</a>
+
+	<phase id="get" next="where">
+		Ah? Uh ... yes ... bring me ... a... waterlily.....pad.....
+	</phase>
+
+	<a id="where">Where can I find one?</a>
+
+	<phase id="where" effect="zenbro">
+		Find ... my ... apprentice padamonk ... Zzz ... zzz....
+	</phase>
+
+	<phase id="give" noeffect="nenuph" collection="perle">
+		Thanks... at last...I'll be able to......meditate at... the Falls!!!!
+		I would like to offer you this Pearl as a reward.  It has been added to your collection of items!
+	</phase>
+
+	<phase id="act" next="gant">
+		Youhouhhh!!! That's great! Look ... I'm levitating!
+	</phase>
+
+	<a id="gant" cond="fx(gant)+!fx(chutes)">Show Zors Glove</a>
+
+	<phase id="gant" next="why">
+		Oooh!!! You have a Zors Glove, that's incredible!
+	</phase>
+
+	<a id="why">Why?</a>
+
+	<phase id="why" next="super">
+		Let me explain. The Zors glove has the ability to stop the Falls from flowing.
+		This means that, with the help of the waterlily pad, you'll be able to go around the Falls and
+		access Grumhel Forest.
+	</phase>
+
+	<a id="super">That's great news!</a>
+
+	<phase id="super" next="ok:no">
+		Well, if you promise to let me use your Glove from time-to-time, I lend you my waterlily
+		pad which will allow you to pass through the Falls ... Do we have a deal?
+	</phase>
+
+	<a id="ok">Ok</a>
+	<a id="no" target="why">No way</a>
+
+	<phase id="ok" effect="nenuph:chutes">
+		Here's your waterlily pad ... Now you'll be able to pass through the Falls. Good luck
+		for the rest of your adventure! And take care, the Forest is very dangerous!
+	</phase>
+
+</d>
+
+<!-- APPRENTIS -->
+
+<d cond="fx(zenbro)" place="port" name="Apprentice padamonk" gfx="bemol">
+
+	<phase id="begin" next="help">
+		Hello! I'm Damper, padamonk of Master Hydargol. I've been sent to fetch these waterlily pads for him.
+		The problem is that, I just realised that I get seasick... and I need to take the waterlily pads to the Atlanteid Islands.
+		I don't know what to do!!!
+	</phase>
+
+	<a id="help">I'm going there too. I can take them with me if you would like?</a>
+
+	<phase id="help" next="get">
+		Really, you'll help me?? Thank you so much!
+	</phase>
+
+	<a id="get">You're welcome</a>
+
+	<phase id="get" noeffect="zenbro" effect="nenuph">
+		I'm so glad that I can count on you! Here, take the waterlily pads. Thank you again!
+	</phase>
+
+</d>

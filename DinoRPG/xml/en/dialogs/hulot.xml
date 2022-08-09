@@ -1,0 +1,105 @@
+﻿
+<d place="auree" name="Nicolas Mulot" gfx="hulot">
+
+	<phase id="begin" next="welcome:sick:sickstatus" fast="1">
+		A man dressed in safari clothing is standing at the Edge of the Grumhel Jungle. He seems to be waiting for something....
+	</phase>
+	<a id="welcome" cond="!mission(toxic)|mission(hucure)">Talk to him</a>
+	<a id="sick" cond="!curmission(hucure)+mission(toxic)+!mission(hucure)">Talk to him</a>
+	<a id="sickstatus" cond="curmission(hucure)">Talk to him</a>
+
+	<phase id="welcome" next="who:better:missions">
+		Grumhel Jungle! This wild yet tranquil place is protected from agressors by its dangerous wildlife.
+		Today the Jungle has a mysterious aura that charms hundreds of explorers every year!
+	</phase>
+
+	<a id="who" cond="!mission(hucure)">But ... who are you?</a>
+	<a id="better" cond="mission(hucure)">You seem to be much better...</a>
+	<a cond="fx(humiss)+(!mission(toxic)|mission(hucure))" id="missions">Check missions list</a>
+
+	<phase id="who" next="role">
+		Nicolas Mulot! journalist for Ouïaïa magazine and lover of Dinoland!
+	</phase>
+
+	<a id="role">Isn't it a bit dangerous for a journalist to be here?</a>
+
+	<phase id="role" next="flora:fauna:myst:missions">
+		Not for an extreme journalist like me. I'm here to discover all things wild! 
+		An undiscovered world, beautiful wildlife, wonderous plants in all their glory,
+		there are so many fabulous things to discover at every turn!
+	</phase>
+	<a id="myst">What kind of mysteries exist here?</a>
+	<a id="fauna">Tell me about the Jungle wildlife...</a>
+	<a id="flora">Are there nice plants around here?</a>
+	<a id="fear" cond="!fx(humiss)">Ah ... you're scared? Is it that you don't want to enter the jungle alone?</a>
+
+	<phase id="myst" next="fear:flora:fauna:missions">
+		I don't know for the moment ... But ... I am sure that there are a lot of fabulous things
+		hidden in this jungle! You just have to be daring enough to enter ....
+	</phase>
+
+	<phase id="flora" next="whynot:fauna:myst:missions">
+		The beauty of these millenium trees is hidden to most, but
+		for those who know where to look, they're a sensual delight. Exotic scents,
+		multicoloured flowers, luxurious vegetation, Grumhel Jungle really is a wonder of Mother Nature!
+	</phase>
+
+	<a id="whynot">Why haven't you entered the jungle then?</a>
+
+	<phase id="whynot" next="fear:other:missions">
+		Let's just say that there are some pretty dangerous plants in the jungle ... like the
+		"Black Virulent Toxicae" or the "Giant Liver-Eating Lily"....
+	</phase>
+
+	<phase id="fauna" next="flora:myst:missions">
+		Between Bramble Eaters, Korgons and Tawny-Bats. The Grumhel Jungle contains many hidden dangers
+		beyond your wildest dreams! Much like Hostile Land and Promised Land, this part of Dinoland
+		cannot be so easily travelled....
+	</phase>
+
+	<phase id="fear" next="explore:other">
+		I think it would be a good idea to first plan a reconnaissance mission before choosing to delve into depths
+		of Grumhel Jungle!
+	</phase>
+
+	<a id="explore">I can help you if you want?</a>
+	<a id="other">I have another question!</a>
+
+	<phase id="explore" next="missions" effect="humiss">
+		That would be an excellent idea! The jungle is difficult to explore single-handedly,
+		a helping hand would be very welcome indeed. Thanks young man!
+	</phase>
+
+	<phase id="other" next="flora:fauna:myst:missions">
+		Are you sure you want to enter the mysterious Grumhel Jungle?
+	</phase>
+
+
+	<phase id="sick" next="problem" fast="1">
+		While Nicolas Mulot is talking you notice, with horror, that his face is puffing up and is beginning
+		to become covered with warts and spots!!
+	</phase>
+
+	<a id="problem">Wooaaww! What's happening to your face!?!</a>
+
+	<phase id="problem" next="curesearch">
+		Ehmm ... Hellow. I don't meen two bwe roode, but I fink that the plwaants you have bwought were
+		 a bit... ehmm tofic ...
+		I fink fhat my plwaant allergies are plwaying up ... Can
+		you maybe felp me to fwind a rwemedy? ...
+	</phase>
+
+	<a id="curesearch">Let's see...</a>
+
+	<phase id="curesearch" missions="hulot"></phase>
+	<phase id="missions" missions="hulot"></phase>
+
+	<phase id="sickstatus" next="curesearch">
+		So, have you fwound a rebedy?
+	</phase>
+
+	<phase id="better" next="flora:fauna:myst:missions">
+		The remedy you gave me worked perfectly!
+	</phase>
+
+</d>

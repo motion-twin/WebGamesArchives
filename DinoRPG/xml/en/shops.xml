@@ -1,0 +1,129 @@
+﻿<shops>
+
+	<shop id="dnv" gfx="shop" name="Dinoland Flying Shop">
+		<item i="irma" v="450"/>
+		<item i="angel" v="1000"/>
+		<item i="burger" v="350"/>
+		<item i="tartev" v="1000"/>
+		<item i="hotpan" v="3000"/>
+		<item i="ration" v="500"/>
+		<desc>The Dinoland Flying Shop is always accessible. Just whistle (loudly - the shop can be a little hard of hearing) and the store will arrive, allowing you to purchase a variety of basic items. As you explore Dinoland, you'll come across other Shops in Dinoland with more interesting items.</desc>
+	</shop>
+
+	<shop id="forges" place="forges" gfx="forges" name="Forges Shop">
+		<item i="combi" v="150"/>
+		<item i="zippo" v="150"/>
+		<item i="ppoiv" v="150"/>
+		<item i="flamch" v="150"/>
+		<item i="hlmsos" v="150"/>
+		<desc>The Forges are where items made from the fire of the Big All-Hot are sold. You can find lots of useful items for battle here.</desc>
+	</shop>
+
+	<shop id="gshop" place="garde" gfx="gshop" name="Fruity Shop" cond="fx(gshop)">
+		<item i="fruit" v="900"/>
+		<desc>« If you leave some gold in the bucket hanging up in the old tree, a fruit will fall! »</desc>
+	</shop>
+
+	<shop id="filou" place="marche" name="Shady Man" hidden="1">
+		<item i="tix" v="11" ingr="fish"/>
+		<item i="tix" v="18" ingr="fruitc"/>
+		<item i="tix" v="4" ingr="enfdr"/>
+		<item i="tix" v="6" ingr="art"/>
+		<item i="tix" v="4" ingr="chasc"/>
+		<item i="tix" v="1250"/>
+		<desc>It's quite expensive. But it seems there is no other way to obtain it easily....</desc>
+	</shop>
+
+	<shop id="nomad1" gfx="desert" place="svillg" name="Razad's Shop">
+		<item i="amour" v="150"/>
+		<item i="antip" v="450"/>
+		<desc>Razad is an old nomad who has fled from the occidental steppes. These steppes became too dangerous for him to do business. Today, his shop is far more modest than before, but at least he is safe in the Rocky Outpost.</desc>
+	</shop>
+
+	<shop id="nomad2" gfx="desert_pylon" place="spylon" name="Souk «lightning sales»">
+		<item i="fuca" v="500"/>
+		<item i="monoch" v="7500"/>
+		<desc>The souk is located near the Lodestone Pylons, which offer a beautiful view of the electric arcs. Unfortunatly, this shop is not out of the arcs' range, which can cause problems!</desc>
+	</shop>
+
+	<shop id="nomad3" gfx="desert_canyon" place="scanyo" name="Purveyor of Neerhel">
+		<item i="antip" v="150"/>
+		<item i="fuca" v="1500"/>
+		<desc>The Purveyor's small shop is hidden in the depths of the Neerhel canyons, in a well protected creek. Very useful when you sense you are in danger.</desc>
+	</shop>
+
+	<shop id="nomad4" gfx="desert_barbare" place="sband2" name="Barbarian trader">
+		<item i="confus" v="200"/>
+		<item i="amour" v="450"/>
+		<desc>« The prices are non-negotiable! Do not touch the merchandise!. I SAID DO NOT TOUCH! If you touch anything, I will CRUSH you!»</desc>
+	</shop>
+
+	<shop id="teamwc" gfx="desert_camp" place="scampw" name="Secret Shop" cond="scenario(magnet,12+)">
+		<item i="amour" v="160"/>
+		<item i="antip" v="160"/>
+		<item i="confus" v="225"/>
+		<item i="fuca" v="550"/>
+		<item i="monoch" v="2600"/>
+		<desc>« Team-W's secret shop. It contains all the items from the Magnetic Steppes in one place, and all at reasonable prices! »</desc>
+	</shop>
+
+	<shop id="magshp" gfx="magic" place="dnv" name="Magic Shop" cond="hasobject(cgold)">
+		<item i="mbann" o="cgold" v="3"/>
+		<item i="mbeli" o="cgold" v="5"/>
+		<item i="mbrais" o="cgold" v="5"/>
+		<item i="mbalan" o="cgold" v="7"/>
+		<item i="mbeer" o="cgold" v="3"/>
+		<item i="mencly" o="cgold" v="6"/>
+		<item i="mantic" o="cgold" v="4"/>
+		<item i="mantip" o="cgold" v="5"/>
+		<item i="mtime" o="cgold" v="5"/>
+		<item i="mpdim" o="cgold" v="6"/>
+		<item i="mbaget" o="cgold" v="7"/>
+		<item i="mhelp" o="cgold" v="8"/>
+		<item i="plandc" o="cgold" v="9"/>
+		<item i="dampt" o="cgold" v="5"/>
+		<item i="tearlf" o="cgold" v="6"/>
+		<item i="mindim" o="cgold" v="8"/>
+		<item i="agrav" o="cgold" v="6"/>
+		<item i="stero" o="cgold" v="6"/>
+		<item i="loking" o="cgold" v="4"/>
+		<item i="trouil" o="cgold" v="8"/>
+		<desc>Hidden away in a small Dinotown street, adventurers sometimes get lost and thus find the Magic Shop. Only extremely rare and powerful items are sold here. They can't be bought with common or garden gold coins. Furthermore, these items are enchanted: once equipped by a Dinoz, they can't be removed for several days!</desc>
+	</shop>
+
+	<shop id="maudit" place="rashpk" name="Cursed Shop" cond="fx(maudit)">
+		<item i="odemon" v="3000"/>
+		<item i="piran" v="600"/>
+		<desc>The Cursed Shop sells extemely rare items, only to be found here. There are people who say that whoever enters the shop will be cursed for life. Only those who are already cursed dare enter...</desc>
+	</shop>
+	
+	<shop id="elit" place="mcelit" name="Elite Boutique">
+		<item i="costve" v="500"/>
+		<item i="costgb" v="500"/>
+		<item i="danger" v="2000"/>
+		<item i="surviv" v="1250"/>
+		<desc>Here you'll find many different objects used by the Vegetox special forces during their dangerous missions.</desc>
+	</shop>
+	
+	<shop id="cmpshp" place="icite" gfx="chen" name="Chen's Skillshack" cond="scenario(nimbao,42+)">
+		<item i="cendre" v="1500"/>
+		<item i="abysse" v="1500"/>
+		<item i="amazon" v="1500"/>
+		<item i="stelme" v="1500"/>
+		<item i="ourano" v="1500"/>
+		<item i="remed2" v="5000" cond="mission(morgu)|mission(dorou)" />
+		<item i="cofee" v="1500"/>
+		<item i="ptime" v="2000"/>
+		<desc>Chen has given you access to some temporary skills, which are so powerful that they self-destruct after use. They are to be used sparingly.</desc>
+	</shop>
+	
+	<!--
+	<shop id="caushp" place="cacrop" gfx="acrop" name="Boutique de Gégé" cond="scenario(caush,43+)">
+		<item i="parfum" o="cgold" v="1"/>
+		<item i="sterod" v="600"/>
+		<item i="aspiru" v="1200"/>
+		<desc>Gégé met à votre disposition les objets qu'il a trouvé aux ruines du technodôme englouti. Mais attention, il ne risque pas sa peau pour de simple pièces d'or, il aime surtout les napodinoz !
+		Aucune reconnaissance envers son sauveur ce Gégé ! Heureusement, il a aussi des objets plus abordables !</desc>
+	</shop>
+	-->
+</shops>

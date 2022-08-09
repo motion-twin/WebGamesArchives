@@ -1,0 +1,257 @@
+<quests>
+	<!-- ATTENTION : en cas de décalage, penser à vérifier les appels à reachedQuest() partout dans le code ! -->
+	
+	<!-- 0 -->
+	<q>
+		<d>Installez un client (confortablement) dans une chambre. Pour cela, cliquez sur un client du rez-de-chaussée, puis cliquez sur une chambre libre.</d>
+		<g id="AddClient"/>
+		<r id="Money(50)"/>
+		<r id="Client"/>
+	</q>
+	
+	<q step="beginning">
+		<d>Maintenant, installez le second client judicieusement, en tenant compte de ce qu'il aime. Passez votre souris sur un client pour afficher son profil dans le panneau de droite.</d>
+		<g id="AddClient"/>
+		<r id="Item(stink_bomb)"/>
+		<r id="Item(radiator)"/>
+	</q>
+
+	<q>
+		<d>Placez des équipements dans une chambre : choisissez en fonction de ce que vos clients apprécient ! L'inventaire est disponible juste au-dessus de votre hôtel.</d>
+		<g id="InstallItem"/>
+		<g id="InstallItem"/>
+		<r id="Item(randpaintwarm)"/>
+		<r id="Item(randtexture)"/>
+	</q>
+
+	<q>
+		<d>Changez la déco d'un étage en utilisant un objet de votre inventaire (disponible au dessus de votre hôtel).</d>
+		<g id="ChangeDeco"/>
+		<g id="ChangeDeco"/>
+		<r id="Money(100)"/>
+	</q>
+
+	<q>
+		<d>Recrutez un employé depuis la section Supermarché du site.</d>
+		<g id="BuyStaff"/>
+	</q>
+	
+	<!-- 5 -->
+
+	<q>
+		<d>Placez un employé à l'accueil pour réduire le délai d'attente avant l'arrivée du prochain client. Pour cela, cliquez sur l'employé à gauche de votre hôtel puis placez-le dans l'accueil.</d>
+		<g id="StaffLobby"/>
+	</q>
+	
+
+	<q step="rename">
+		<d>Apportez une petite touche personnelle : changez le nom de votre hôtel depuis la section Bureau.</d>
+		<g id="Rename"/>
+		<r id="Money(300)"/>
+	</q>
+
+	<q step="expand">
+		<d>Agrandissez votre hôtel : cliquez sur l'icône "Agrandir" située en haut à gauche de votre hôtel.</d>
+		<g id="ExtendAny"/>
+	</q>
+
+	<q>
+		<d>Aménagez une nouvelle CHAMBRE. Pour cela, cliquez sur le mur du nouvel emplacement créé et choisissez "Chambre".</d>
+		<g id="BuildRoom"/>
+		<r id="Client"/>
+		<r id="Client"/>
+		<r id="Item(Present)"/>
+	</q>
+
+	<q>
+		<d>Attendez la fin des travaux. Pour connaître l'heure de fin des travaux, placez votre souris sur une pièce en chantier. Ils ne durent généralement que quelques minutes.</d>
+		<g id="EndConstruction"/>
+		<r id="Item(RandDeco)"/>
+	</q>
+	
+	<!-- 10 -->
+
+	<q>
+		<d>Ouvrez les cartons de décoration depuis votre inventaire, puis installez les objets de décoration dans votre hôtel. Utilisez le bouton "Changer le mobilier" disponible en haut à gauche.</d>
+		<g id="PlaceDeco"/>
+		<r id="Client"/>
+		<r id="Research"/>
+	</q>
+	
+	<q>
+		<d>Utilisez votre "Point de recherche" dans la section Labo du site.</d>
+		<g id="UseResearch"/>
+		<r id="Item(RandDeco)"/>
+		<r id="Item(RandDeco)"/>
+		<r id="Item(RandPaint)"/>
+		<r id="Money(25)"/>
+	</q>
+
+	<q step="night">
+		<d>Passez une nuit : vos clients payent chaque soir à minuit (heure française) en fonction de leur satisfaction. Ils quittent l'hôtel à 10:00 le jour de leur départ.</d>
+		<g id="Midnight"/>
+		<r id="Item(Repair)"/>
+		<r id="Item(RandPaint)"/>
+		<r id="Item(RandPaint)"/>
+		<r id="Money(300)"/>
+		<r id="Research"/>
+	</q>
+
+	<q>
+		<d>Utilisez votre second Point de Recherche dans la section Labo du site.</d>
+		<g id="UseResearch"/>
+	</q>
+
+		
+	<q>
+		<d>Faites plaisir à 5 clients (minimum 8 points de satisfaction au moment de leur départ).</d>
+		<g id="Satisfy(8)"/>
+		<g id="Satisfy(8)"/>
+		<g id="Satisfy(8)"/>
+		<g id="Satisfy(8)"/>
+		<g id="Satisfy(8)"/>
+		<g id="RoomLevel(2)"/>
+		<r id="Item(RandDeco)"/>
+		<r id="Item(RandDeco)"/>
+		<r id="Research"/>
+	</q>
+	
+	<!-- 15 -->
+	
+	<q>
+		<d>Récupérez (qui a dit "volez" ?) des objets au départ des clients.</d>
+		<g id="PickItem"/>
+		<g id="PickItem"/>
+		<g id="PickItem"/>
+		<g id="PickItem"/>
+		<g id="PickItem"/>
+		<r id="Item(RandDeco)"/>
+		<r id="Item(RandDeco)"/>
+		<r id="Item(RandPaint)"/>
+		<r id="Item(RandPaint)"/>
+		<r id="Research"/>
+	</q>
+	
+	<q>
+		<d>Obtenez 3 points de recherche (vous pouvez construire un Institut du Bonheur pour cela).</d>
+		<g id="DropResearch"/>
+		<g id="DropResearch"/>
+		<g id="DropResearch"/>
+		<r id="Item(RandDeco)"/>
+		<r id="Item(RandDeco)"/>
+		<r id="Money(100)"/>
+	</q>
+	
+	<q>
+		<d>Comblez totalement 5 clients (minimum 10 points de satisfaction au moment de leur départ).</d>
+		<g id="SatisfyMax"/>
+		<g id="SatisfyMax"/>
+		<g id="SatisfyMax"/>
+		<g id="SatisfyMax"/>
+		<g id="SatisfyMax"/>
+		<r id="Item(RandDeco)"/>
+		<r id="Item(RandDeco)"/>
+		<r id="Item(RandDeco)"/>
+		<r id="Money(100)"/>
+		<r id="Research"/>
+	</q>
+	
+	<q>
+		<d>Améliorez le niveau de vos chambres.</d>
+		<g id="RoomLevel(2)"/>
+		<g id="RoomLevel(2)"/>
+		<g id="RoomLevel(2)"/>
+		<g id="RoomLevel(2)"/>
+		<r id="Item(Mattress)"/>
+		<r id="Item(Mattress)"/>
+		<r id="Item(RandDeco)"/>
+		<r id="Item(RandDeco)"/>
+	</q>
+
+	
+	<!-- Quêtes répétables -->
+	
+	<q repeatable="1">
+		<d>Faites progresser la science</d>
+		<g id="PickItem"/>
+		<g id="PickItem"/>
+		<g id="Satisfy(8)"/>
+		<g id="Satisfy(8)"/>
+		<g id="Satisfy(8)"/>
+		<g id="Midnight"/>
+		<g id="Midnight"/>
+		<g id="DropResearch"/>
+		<g id="DropResearch"/>
+		<r id="Fame"/>
+	</q>
+	
+	<q repeatable="1">
+		<d>Faites le bonheur de vos clients</d>
+		<g id="SatisfyMax"/>
+		<g id="SatisfyMax"/>
+		<g id="SatisfyMax"/>
+		<g id="SatisfyMax"/>
+		<g id="SatisfyMax"/>
+		<g id="InstallItem"/>
+		<g id="InstallItem"/>
+		<g id="InstallItem"/>
+		<g id="Service"/>
+		<g id="Service"/>
+		<g id="Service"/>
+		<g id="Service"/>
+		<g id="PickItem"/>
+		<r id="Fame"/>
+	</q>
+	
+	<q repeatable="1">
+		<d>Récupérez des objets au départ de vos clients.</d>
+		<g id="Midnight"/>
+		<g id="Midnight"/>
+		<g id="Midnight"/>
+		<g id="Satisfy(8)"/>
+		<g id="Satisfy(8)"/>
+		<g id="Satisfy(8)"/>
+		<g id="PickItem"/>
+		<g id="PickItem"/>
+		<g id="PickItem"/>
+		<g id="PickItem"/>
+		<g id="PickItem"/>
+		<g id="PickItem"/>
+		<r id="Fame"/>
+	</q>
+	
+	<q repeatable="1">
+		<d>Rendez service à vos clients.</d>
+		<g id="Service"/>
+		<g id="Service"/>
+		<g id="Service"/>
+		<g id="Service"/>
+		<g id="Service"/>
+		<g id="Service"/>
+		<g id="Service"/>
+		<g id="Service"/>
+		<g id="Service"/>
+		<g id="Service"/>
+		<g id="SatisfyMax"/>
+		<g id="SatisfyMax"/>
+		<r id="Fame"/>
+	</q>
+	
+	<q repeatable="1">
+		<d>Développez votre hôtel</d>
+		<g id="PickItem"/>
+		<g id="PickItem"/>
+		<g id="SatisfyMax"/>
+		<g id="SatisfyMax"/>
+		<g id="InstallItem"/>
+		<g id="InstallItem"/>
+		<g id="BuildRoom"/>
+		<g id="BuildRoom"/>
+		<g id="Midnight"/>
+		<g id="Midnight"/>
+		<g id="Midnight"/>
+		<g id="DropResearch"/>
+		<r id="Fame"/>
+	</q>
+
+</quests>

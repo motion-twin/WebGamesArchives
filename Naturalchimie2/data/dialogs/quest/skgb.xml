@@ -1,0 +1,27 @@
+<d place="gmkrom" name="Donner les 1500 kubors" gfx="cadkeeper3" auto="0">
+
+<a id="exit">Je reviens.</a>
+
+<phase id="begin" next="oui:ouib:non">
+Tu as l'argent ? 
+</phase>
+
+<a id="oui" cond="hasgold(1500)">Oui.</a>
+<a id="ouib" cond="!hasgold(1500)">Oui.</a>
+<a id="non">Non.</a>
+
+<phase id="oui" frame="happy" gold="-1500">
+Très bien ! Voilà ta recette pour retrouver Kevin Sonnette, elle s'appelle [Prapradel].
+</phase>
+
+<phase id="ouib" frame="angry" next="exit">
+Le compte n'y est pas, apparemment... Dépêche-toi de réunir la somme, j'ai pas toute la journée ! 
+</phase>
+
+<phase id="non" next="exit">
+Dépêche-toi de réunir la somme alors, j'ai pas toute la journée ! 
+</phase>
+
+
+
+</d>

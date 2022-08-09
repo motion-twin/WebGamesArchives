@@ -1,0 +1,132 @@
+﻿<missions>
+
+	<m group="capture" id="mcapt1" name="El Recorrido del Combatiente">
+		<begin>
+			¡¡Vamos a empezar por reforzar los músculos de este MOLUSCO!! ¿Pasas el día sentado jugando al World of Dinos o qué? Mira estos bíceps, ¡indignos de un SOLDADO! ¡Una pequeña SERIE de ejercicios te VENDRÁ BIEN!
+		</begin>
+		<goto v="mport"/>
+		<actfight act="¡Hacer 100 flexiones!">
+			<begin>Vas por la tercera flexión y ya sientes un agudo dolor en tus músculos. Encima, ¡vienen unos monstruos y te atacan!</begin>
+		</actfight>
+		<goto v="mfpalc"/>
+		<action v="¡Dar 30 vueltas al Palacio corriendo!">
+			A la quinta vuelta, unos monstruos intrigados por ti se acercan y hacen comentarios que te obligan a pararte...
+		</action>
+		<actfight act="¡Atacarlos!">
+			<win>¡Ja, ja! Ya no se ríen tanto estos monstruos...</win>
+		</actfight>
+		<goto v="mcuzco"/>
+		<action v="Levantar 50 Piedras gigantes">
+			Las piedras aquí son enormes, así que prefieres coger una pequeñita que no exija demasiado esfuerzo. Sin embargo te sientes espiado...
+		</action>
+		<actfight act="Buscar alrededor..." monsters="mugard:mugard:mugard:mugard">
+			<begin>¡Te encuentras frente a frente con un grupo de Guardias Vegetox que te espiaban!</begin>
+			<win>Los guardias habían sido enviados por el Sargento Pepper. Te aportan la continuación del recorrido...</win>
+		</actfight>
+		<goto v="mcelit"/>
+		<action v="¡Hacer 100 flexiones!">
+			Alcanzas las 100 flexiones y decides parar por hoy. ¡El día ha sido muy completo!
+		</action>
+		<end>
+			¡Ajá! ¡Entonces consideras que mi ENTRENAMIENTO es demasiado difícil! Ah, estos JÓVENES, ya no tienen sentido del esfuerzo. Te lo advierto, la continuación será aún más difícil. ¡Te vas a ENTERAR!
+		</end>
+		<xp v="40"/>
+	</m>
+
+	<m group="capture" id="mcapt2" name="Territorio minado" cond="mission(mcapt1)">
+		<begin>
+			Ahora que hemos finalizado el CALENTAMIENTO, ¡vamos a pasar a cosas SERIAS! Me han informado que hay MINAS ANTIPERSONALES enterradas en el lado del Puesto de Vanguardia. ¡Ve allí y asegúrate de que la ZONA no es peligrosa para los CIVILES!
+		</begin>
+		<goto v="mfoutp"/>
+		<talk v="Artificiero">
+			¡Jefe! Hemos encontrado 5 minas enterradas alrededor del Campo base, jefe. Seguro que esto proviene de los Vegetox, ¡jefe! Vamos a necesitar un Detector de Peligro para localizarlos, ¡jefe!
+		</talk>
+		<use v="danger" n="1"/>
+		<actfight act="Levantar campo de minas" monsters="minim2:minim2:minim2:minim2:minim2:minim2:minim2:minim2">
+			<begin>¡Unos minimosks habían creado su nido en el lugar donde se encontraban las minas!</begin>
+		</actfight>
+		<action v="Levantar campo de minas">
+			La operación es más compleja de lo previsto. Para neutralizarla, tendrás que usar un mechero para quemar sin riesgo el mecanismo de activación.
+		</action>
+		<use v="zippo" n="1"/>
+		<action v="Levantar campo de minas">
+			¡Has conseguido neutralizar las minas antipersonales! Afortunadamente, ¡la explosión ha sido evitada!
+		</action>
+		<end>
+			¡EN GUARDIA, CADETE! Entonces, parece que te las arreglas para levantar un campo de minas y que eres HÁBIL con las MANOS. ¡Pero eso no te hace un SOLDADO!
+		</end>
+		<xp v="50"/>
+	</m>
+
+	<m group="capture" id="mcapt3" name="Desmoktización" cond="mission(mcapt2)">
+		<begin>
+			Por aquí, ¡CADETE! ¡Estamos en periodo de PAZ pero hay que ayudar a los CIVILES! Unos sucios MOSKITS han atravesado el mar y empiezan a instalarse en el Reino de Dinovilla. Encuéntralos y EXTERMINA los nidos antes de que invadan el continente.
+		</begin>
+		<goto v="frcbrt" hide="1"/>
+		<actfight act="Matar los Moskits" monsters="mosqui:mosqui"/>
+		<goto v="univ" hide="1"/>
+		<actfight act="Matar los Moskits" monsters="mosqui"/>
+		<goto v="colesc" hide="1"/>
+		<actfight act="Matar los Moskits" monsters="mosqui:mosqui"/>
+		<goto v="marche" hide="1"/>
+		<actfight act="Matar los Moskits" monsters="mosqui:mosqui:mosqui:mosqui"/>
+		<goto v="dplaza" hide="1"/>
+		<actfight act="Matar los Moskits" monsters="mosqui"/>
+		<end>
+			Qué bella EXTERMINACIÓN, CADETE, empiezo a creer que tienes dotes para el COMBATE, ¡el de VERDAD!
+		</end>
+		<gold v="3000"/>
+	</m>
+
+	<m group="capture" id="mcapt4" name="La iniciación" cond="mission(mcapt3)">
+		<begin>
+			Qué tenemos aquí, CADETE, parece que habrá que enseñarte a CAPTURAR monstruos, ¿no? ¡Empecemos con las BASES!
+		</begin>
+		<goto v="mvoutp"/>
+		<talk v="Instrucciones del Sargento">
+			¡BIEN! Para empezar, la CAPTURA permite a tu Dino atrapar MONSTRUOS. ¡Esto no funciona con TODOS los monstruos pero sí con la MAYORÍA de ellos! Cuando captures un MONSTRUO, éste se quedará con tu DINO durante los combates hasta que el monstruo muera. Los monstruos no pueden ser curados fuera del combate, por lo que en general MUEREN RÁPIDAMENTE. ¡No te encariñes demasiado!
+		</talk>
+		<talk v="Instrucciones del Sargento">
+			¡OH! Lo olvidaba: solo TRES monstruos capturados son admitidos como máximo para ayudar a cada uno de tus DINOS. Si uno de tus Dinos tiene más de TRES MONSTRUOS capturados y todavía VIVOS, los participantes en el combate serán elegidos al AZAR.
+		</talk>
+		<talk v="Instrucciones del Sargento">
+			Vamos a comenzar por algo SIMPLE: ¡intenta capturar un GUPIÓN en DINOVILLA y un PIRANTA en el Pantano Pegajoso!
+		</talk>
+		<goto v="dnv"/>
+		<actfight act="Capturar un Gupión" monsters="goupi">
+			<begin m="goupi">¡¡Socorro!!</begin>
+			<win>Tu Dino no ha conseguido capturar a este pobre Gupión...</win>
+		</actfight>
+		<goto v="marais"/>
+		<actfight act="Instrucciones del Sargento" monsters="pira:pira:pira:pira">
+			<begin m="pira">¡¡¡Piedad!!!</begin>
+			<win>Parece que ningún Pirhano ha permitido la captura...</win>
+		</actfight>
+		<goto v="mvoutp"/>
+		<talk v="Instrucciones del Sargento">
+			¡BUENO! ¡Tu entrenamiento es un FRACASO! CADETE, pareces INCAPAZ de CAPTURAR incluso los monstruos más DÉBILES. Normalmente, si respetas bien mis instrucciones, esto NO debería PASAR... a menos que hayas desatentido tu PREPARACIÓN FÍSICA... ¡Es una etapa FUNDAMENTAL!
+		</talk>
+		<end>
+			¡Ninguna recompensa para los NULOS! No tengo nada más que enseñarte.
+		</end>
+		<gold v="0"/>
+	</m>
+
+	<m group="capture" id="mcapt5" name="El Guante de Captura" cond="mission(mcapt4)+scenario(monisl,18)">
+		<begin>
+			¡AH! Hola de nuevo, ¡CADETE! El Gran Antraxov - ¡EN GUARDIA! - me ha pedido que te someta a una prueba antes de OBTENER un GUANTE DE CAPTURA. Te lo advierto: esta MISIÓN no es para los ENCLENQUES!
+		</begin>
+		<goto v="mvoutp"/>
+		<talk v="Instrucciones del Sargento">
+			¡Una HORDA de Demyos heridos se ha congregado en CUZCÚS! ¡Bajo ningún CONCEPTO vamos a dejarles pulular de esa manera! ¡Al TRABAJO! Te aconsejo que vayas en GRUPO, ¡va a ser DURO!
+		</talk>
+		<goto v="mcuzco"/>
+		<actfight act="Horda de Demyos" monsters="singm2:singm2:singm2:singm2:singm2"/>
+		<end>
+			¡Has hecho un GRAN COMBATE, CADETE! Te doy este GUANTE DE CAPTURA. Tu Dino podrá CAPTURAR MONSTRUOS a partir de ahora. ¡Buena suerte en tus AVENTURAS!
+		</end>
+		<fx v="mcapt"/>
+		<xp v="100"/>
+	</m>
+
+</missions>

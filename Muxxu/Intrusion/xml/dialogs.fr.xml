@@ -1,0 +1,207 @@
+t_intro
+	Bonjour, ::tname:: à l'appareil ? > h_intro
+	::tname::, j'écoute. > h_intro
+	::tname::, bonjour ? > h_intro
+
+h_intro
+	bonjour, ici ::hname::, du service ::commservice::.
+	bonjour, ::hname:: du service ::techservice::.
+
+t_afterIntro
+	::hname:: ? Que puis-je faire pour vous ?
+	je vous écoute ?
+	vous cherchiez à me joindre ? >yes
+	en quoi puis-je vous être utile ?
+
+h_thema
+	nous avons un petit soucis technique sur les bras avec le ::techitem::.
+
+POUETPOUET
+	NICE
+	EXCUSE
+	AGGRESSIVE
+	CONFUSING
+	HIERARCHY
+	MENACE
+
+t_generic
+	que puis-je faire pour vous exactement ? +CONFUSING+ /MENACE/ >complicated
+	ce qui signifie ? +CONFUSING+ >complicated
+	je ne crois pas que je puisse vraiment vous aider... +NICE,MENACE+ /CONFUSING/ >contrary
+	je suis un peu pressé là... +MENACE,NICE+ /CONFUSING/ >sorry
+	je ne comprends pas très bien... +CONFUSING+ >explain
+
+t_correct
+	d'accord...
+	en effet...
+	hmm, effectivement...
+	effectivement.
+	oh, d'accord.
+	ok,
+	je vois.
+	je comprends...
+	hmm je comprends.
+
+t_incorrect
+	bon écoutez.
+	bon excusez moi, mais
+	hein ?
+	pardon ?
+	en clair ?
+	attendez,
+	je vous demande pardon ?
+
+POEUT
+	Ah ? > yes
+	%hesitate% Comment ça ? >complicated
+	%hesitate% c'est à dire ? >complicated
+	D'accord... >good
+	%hesitate% qu'entendez-vous par là ? >complicated
+	C'est à dire ? >complicated
+	Pardon ? >complicated
+	::techitem::, vous dites ?
+
+h_assert
+	+NICE+ c'est un peu la panique ici, j'ai vraiment besoin de votre aide.
+	+NICE+ je suis vraiment désolé(e) de vous déranger avec ça.
+	+NICE+ le %xml_texts:boss% insiste vraiment pour que je règle le problème...
+	+AGGRESSIVE+ écoutez, je dois absolument résoudre ce problème rapidement.
+	+CONFUSING+ %xml_texts:tech% a provoqué %xml_texts:techFailure%.
+	+CONFUSING+ %xml_texts:techFailure% complique vraiment %xml_texts:techSujet%.
+	+CONFUSING+ nous devons relancer ::techitem:: pour éviter %xml_texts:techFailure%, mais il faudrait que vous interveniez.
+	+MENACE+ vous ne voudriez pas être responsable de toute cette histoire.
+	+MENACE+ j'aimerais autant ne pas à avoir à faire intervenir %xml_texts:yourBoss%.
+
+t_generic_bad
+	certes...>Yes
+	hmm... Attendez une minute... > cut
+	pardon ?
+	hein ?
+	je vous demande pardon ?
+	ça n'a pas de sens. > contrary
+	une minute... >cut
+	hmm.
+	hein ? Mais... >cut
+	je ne comprends pas vraiment. >complicated
+	%hesitate% ce n'est pas vraiment mon problème... > contrary
+
+t_generic_good
+	oh, ::techitem::... %hesitate%, je vois... > good
+	vraiment ? > yes
+	je vois. > good
+	%hesitate% oui, je crois comprendre... >good
+	oh, je vois. > good
+	ok. > good
+	%hesitate% d'accord. > good
+
+t_generic_confused
+	une minute, ce n'est pas très clair. >oops
+	attendez, vous parlez de quoi en fait ? >oops
+	je suis un peu perdu là. >oops
+	vous voulez me parler de quoi en fait ? > oops
+	qui est à l'appareil exactement ? > oops
+	%hesitate% une chose à la fois... Qui êtes-vous déjà ? > oops
+
+t_fail
+	%hesitate% qui êtes-vous exactement ?
+	%hesitate% minute, ce n'est pas clair du tout, tout ça !
+	%hesitate% écoutez, je ne sais pas qui vous êtes. %hesitate% en fait, non. %bye%
+	%hesitate% non.. Attendez. Écoutez, j'ai vraiment à faire là. %bye%
+	%hesitate% j'ignore à quel jeu vous jouez là, mais je suis occupé. %bye%
+
+pouet
+	_TECH_ d'ici, impossible d'intervenir directement sur ::techitem::.
+	_TECH_ plutôt que d'envoyer un technicien, on pourrait se débrouiller autrement.
+	_TECH_ le plantage était moins grave que prévu, mais il faut régler ça rapidement.
+	_WORK_ ça risque de perturber le travail dans notre service.
+	_WORK_ nous ne pouvons rien valider si toute la documentation n'est pas en règle.
+	_WORK_ certains dossiers urgents sont en attente.
+	_WORK_ il faut que je boucle ce rapport pour notre client japonais.
+	_FEAR_ il faut régler le problème rapidement.
+	_FEAR_ le conseil de direction aimerait régler ça vite.
+	_FEAR_ vous êtes au coeur du problème.
+	_FEAR_ je vous appelle pour vous prévenir.
+
+h_assertBegin
+	comme vous pouvez l'imaginer,
+	vous comprendrez que
+	pour faire simple,
+	sans trop entrer dans les détails,
+	l'idée est la suivante
+	en fait,
+	hmm.. attendez... on me précise que
+	je vérifie... en fait,
+	alors attendez... *fait semblant de chercher*
+
+complicated
+	c'est un peu compliqué à expliquer.
+	hmmm... comment dire...
+	le problème est complexe :
+	c'est assez complexe :
+	le problème n'est pas simple.
+
+cut
+	écoutez,
+	écoutez, c'est simple :
+
+oops
+	%hesitate% ce que je voulais dire c'est que
+	%hesitate% à vrai dire
+	%hesitate%
+
+yes
+	oui tout à fait
+	oui
+	exactement
+	à vrai dire, oui
+
+no
+	non
+	non pas du tout
+	pas vraiment, non
+	je ne pense pas
+
+good
+	très bien.
+	parfait,
+	c'est parfait :
+	bien.
+	nickel,
+
+bye
+	Au revoir.
+	Rappelez plus tard.
+	Je ne peux pas vous parler maintenant.
+
+end
+	[ la communication est interrompue ]
+
+hesitate
+	hmm...
+	ok...
+	vous...
+	euh...
+	hein ?
+	ah ?
+	je...
+	ah.
+	euh,
+	hmm ?
+
+contrary
+	au contraire,
+	contrairement à ce que vous pensez,
+	justement, si :
+	si :
+
+sorry
+	je comprends, mais
+	je suis désolé(e),
+	désolé(e) mais
+	j'en suis désolé(e). Toutefois,
+	j'imagine, mais
+
+explain
+	pour faire simple,
+	tout simplement,
+	en fait,

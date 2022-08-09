@@ -1,0 +1,41 @@
+<d place="jzboy" name="Libérons les borgnes" gfx="jzborgne" auto="1" cond="quest(bornd)+!fx(revolt)">
+
+<phase id="begin" next="lib:hein">
+Bonjour. Si vous souhaitez participer à une révolution pour la liberté d'une espèce opprimée, dites "Liberté". Pour terminer, dites {"fin"}. | A vous.
+</phase>
+
+<a id="lib">Euh... Liberté ?</a>
+<a id="hein">Hein ? C'est quoi ce truc ? Vous pouvez répéter ? </a>
+
+<phase id="hein" frame="normal3" next="begin">
+Je répète : 
+</phase>
+
+<phase id="lib" next="cool">
+Bravo, tu fais désormais partie du mouvement révolutionnaire secret pour la libération des borgnes d'information. Tu as été choisi parmi des milliers d'étudiants pour ton courage, ta bravoure et ta droiture. 
+</phase>
+
+<a id="cool">Oua, cool.</a>
+
+<phase id="cool" next="notre" frame="normal4" >
+Le mouvement a pour objectif la libération de tous les borgnes d'information de Jeezara. Nous, les borgnes, nous vivons un esclavage moderne que nous n'avons pas choisi ! Nous aspirons à une vie libre au soleil et à une retraite bien méritée. 
+</phase>
+
+<phase id="notre" next="oui:sinon">
+Tu es des nôtres ? 
+</phase>
+
+<a id="oui">Evidemment ! Vive la liberté ! </a>
+<a id="sinon">Sinon, il m'arrive quoi ? </a>
+
+<phase id="sinon" frame="normal5" next="notre">
+Nous te réduirons au silence pour le bien du mouvement révolutionnaire, bien sûr. | Alors ? 
+</phase>
+
+<phase id="oui" frame="normal2" effect="revolt">
+Excellente nouvelle. Pour participer au mouvement, tu peux dire {vive les borgnes libres ! } au message d'accueil d'un borgne d'information, c'est notre code secret.
+</phase>
+
+</d>
+
+

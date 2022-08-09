@@ -1,0 +1,76 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<project>
+  <!-- Output SWF options -->
+  <output>
+    <movie disabled="False" />
+    <movie input="" />
+    <movie path="..\..\www\swf\fruit.swf" />
+    <movie fps="40" />
+    <movie width="880" />
+    <movie height="424" />
+    <movie version="9" />
+    <movie background="#FFFFFF" />
+  </output>
+  <!-- Other classes to be compiled into your SWF -->
+  <classpaths>
+    <class path="src" />
+    <class path="..\..\..\..\..\bumdum\lib" />
+    <class path="..\com" />
+    <class path="..\arene\gfx" />
+    <class path="..\..\src\com" />
+    <class path="..\..\tpl\fr" />
+    <class path="..\..\..\base\com" />
+  </classpaths>
+  <!-- Build options -->
+  <build>
+    <option directives="" />
+    <option flashStrict="True" />
+    <option mainClass="Main" />
+    <option enabledebug="False" />
+    <option additional="-lib format&#xA;-resource data.ods&#xA;-D de" />
+  </build>
+  <!-- haxelib libraries -->
+  <haxelib>
+    <!-- example: <library name="..." /> -->
+  </haxelib>
+  <!-- Class files to compile (other referenced classes will automatically be included) -->
+  <compileTargets>
+    <compile path="src\Main.hx" />
+  </compileTargets>
+  <!-- Assets to embed into the output SWF -->
+  <library>
+    <asset path="gfx\tiles.png" bitmap="True" id="GfxTiles" />
+    <asset path="gfx\interface.png" bitmap="True" id="GfxInterface" />
+    <asset path="gfx\fx.png" bitmap="True" id="GfxFx" />
+    <asset path="gfx\map.png" bitmap="True" id="GfxMap" />
+    <asset path="gfx\ent.png" bitmap="True" id="GfxEnt" />
+    <asset path="gfx\pal.png" bitmap="True" id="GfxPal" />
+    <asset path="gfx\ispots.png" bitmap="True" id="GfxISpots" />
+    <asset path="gfx\mapdev.png" bitmap="True" id="GfxMapdev" />
+    <asset path="gfx\arts.png" bitmap="True" id="GfxArts" />
+    <asset path="gfx\fruits.png" bitmap="True" id="GfxFruits" />
+    <asset path="gfx\main.png" bitmap="True" id="GfxMain" />
+    <asset path="gfx\font.png" bitmap="True" id="GfxFont" />
+    <asset path="gfx\palette.png" bitmap="True" id="GfxPal" />
+    <asset path="gfx\bg.png" bitmap="True" id="GfxBg" />
+    <asset path="gfx\bonus.png" bitmap="True" id="GfxBonus" />
+    <asset path="gfx\ariblk.ttf" id="Arial Black" glyphs="0123456789" />
+    <asset path="..\arene\gfx\fruits.png" bitmap="True" id="GfxFruits" />
+    <asset path="..\com\fonts\04B_03__.TTF" id="04b03" />
+    <asset path="..\com\fonts\nokiafc22.ttf" id="nokia" glyphs="ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz '-&quot;'%,?!$+:*.éèêëàäâïîüç0123456789+=&gt;&lt;()/âàäéèêëîïôöùûüçáéíóúÁÉÍÓÚÑñ¡¿äÄÖÜß" />
+  </library>
+  <!-- Paths to exclude from the Project Explorer tree -->
+  <hiddenPaths>
+    <hidden path="..\..\bumdum9\save" />
+  </hiddenPaths>
+  <!-- Executed before build -->
+  <preBuildCommand />
+  <!-- Executed after build -->
+  <postBuildCommand alwaysRun="False">obfu9 ..\..\www\swf\fruit.swf -o ..\..\www\swf\fruit.swf</postBuildCommand>
+  <!-- Other project options -->
+  <options>
+    <option showHiddenPaths="False" />
+    <option testMovie="OpenDocument" />
+    <option testMovieCommand="bin\index.html" />
+  </options>
+</project>

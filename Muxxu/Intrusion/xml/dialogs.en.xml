@@ -1,0 +1,207 @@
+t_intro
+	Hello, ::tname:: speaking. > h_intro
+	::tname::, I'm listening. > h_intro
+	::tname::, Hello? > h_intro
+
+h_intro
+	Hello, ::hname:: here, from ::commservice::.
+	Good day, this is ::hname:: from ::techservice::.
+
+t_afterIntro
+	::hname::? What can I do for you?
+	I'm listening.
+	Were you looking for me? >yes
+	How can I be of help?
+
+h_thema
+	We've got something of a technical problem on our hands with the ::techitem::.
+
+POUETPOUET
+	NICE
+	EXCUSE
+	AGGRESSIVE
+	CONFUSING
+	HIERARCHY
+	MENACE
+
+t_generic
+	what can I do for you exactly? +CONFUSING+ /MENACE/ >complicated
+	which means? +CONFUSING+ >complicated
+	I really don't think I can help you... +NICE,MENACE+ /CONFUSING/ >contrary
+	I'm really in kind of a hurry... +MENACE,NICE+ /CONFUSING/ >sorry
+	I don't really understand... +CONFUSING+ >explain
+
+t_correct
+	ok...
+	pretty much...
+	hmm, more or less...
+	exactly.
+	oh, okay.
+	sure,
+	I see.
+	I understand...
+	hmm, I get you.
+
+t_incorrect
+	Ok listen.
+	well excuse me, but
+	huh?
+	pardon?
+	sorry, what?
+	wait,
+	run that by me again?
+
+POEUT
+	Ah! > yes
+	%hesitate% How's that? >complicated
+	%hesitate% What do you mean? >complicated
+	OK... >good
+	%hesitate% what do you mean by that? >complicated
+	I don't follow you. >complicated
+	Sorry? >complicated
+	::techitem::, you say?
+
+h_assert
+	+NICE+ all hell's breaking loose here, I could really use your help.
+	+NICE+ I'm sorry to bother you with this.
+	+NICE+ the %xml_texts:boss% is insisting that get this problem fixed...
+	+AGGRESSIVE+ listen, I 've really got to fix this situation pronto.
+	+CONFUSING+ %xml_texts:tech% has caused a %xml_texts:techFailure%.
+	+CONFUSING+ %xml_texts:techFailure% is really complicating %xml_texts:techSujet%.
+	+CONFUSING+ we need the ::techitem:: back online to avoid a %xml_texts:techFailure%, but you'll need to make it happen.
+	+MENACE+ you wouldn't want to be held accountable for all this.
+	+MENACE+ I'd really rather not get %xml_texts:yourBoss% involved.
+
+t_generic_bad
+	admittedly...>Yes
+	hmm... Wait a minute... > cut
+	sorry?
+	what?
+	what did you say?
+	that doesn't make any sense. > contrary
+	one minute... >cut
+	hmm.
+	huh? But... >cut
+	I really don't understand. >complicated
+	%hesitate% it's really not my problem... > contrary
+
+t_generic_good
+	oh, ::techitem::... %hesitate%, I see... > good
+	really? > yes
+	I see. > good
+	%hesitate% yeah, I think I understand... >good
+	oh, I see. > good
+	ok. > good
+	%hesitate% no worries. > good
+
+t_generic_confused
+	hang on, it's not very clear. >oops
+	hold on, what are you actually talking about? >oops
+	I'm a bit lost if I'm being honest. >oops
+	look, what is it you want to talk to me about? > oops
+	who am I speaking to exactly? > oops
+	%hesitate% one thing at an time... Who are you? > oops
+
+t_fail
+	%hesitate% who are you exactly?
+	%hesitate% hold on, all this isn't making any sense at all!
+	%hesitate% listen, I don't know who you are. %hesitate% no idea. %bye%
+	%hesitate% no. Wait. Listen, I'm really busy. %bye%
+	%hesitate% I don't know what you're playing at, but I'm busy. %bye%
+
+pouet
+	_TECH_ it's impossible to access the ::techitem:: directly from here.
+	_TECH_ rather than sending a technician, surely we can figure something else out.
+	_TECH_ the crash was less serious than we'd feared, but we need to fix it quickly.
+	_WORK_ there's a chance this could affect our ability to function as a company.
+	_WORK_ we can't authorise anythig if the paperwork isn't in order.
+	_WORK_ some urgent documents are pending.
+	_WORK_ I really need to get this report squared away for our Japanese client.
+	_FEAR_ this problem needs fixing, and quickly.
+	_FEAR_ the directors would like this resolved asap.
+	_FEAR_ you are at the heart of the problem.
+	_FEAR_ I'm calling to warn you.
+
+h_assertBegin
+	as you can imagine,
+	you understand that
+	in a nutshell,
+	without going into all the details,
+	here's the idea
+	ok, so,
+	hmm.. hang on... I was told that
+	I'll check... well,
+	ok wait... *pretend to look*
+
+complicated
+	it's quite complicated to explain.
+	hmmm... how to explain...
+	the problem is complicated:
+	it's quite complex:
+	the problem doesn't seem simple.
+
+cut
+	listen,
+	listen, it's simple:
+
+oops
+	%hesitate% what I wanted to say is
+	%hesitate% in truth
+	%hesitate%
+
+yes
+	yes, absolutely
+	yes
+	exactly
+	in truth, yes
+
+no
+	no
+	no, not at all
+	not really, no
+	I don't think so
+
+good
+	very good.
+	perfect,
+	that's perfect:
+	ok.
+	awesome,
+
+bye
+	Bye.
+	Call back later.
+	I can't talk to you right now.
+
+end
+	[ communication interrupted ]
+
+hesitate
+	hmm...
+	ok...
+	you...
+	...
+	huh?
+	ah?
+	I...
+	ah.
+	erm,
+	hmmm ?
+
+contrary
+	not at all,
+	contrary to what you might think,
+	prety much, yes:
+	indeed:
+
+sorry
+	I understand, but
+	I am sorry,
+	sorry, but
+	sorry about that. Nonetheless,
+	so I'd imagine, but
+
+explain
+	long story short,
+	here's the deal,
+	well,

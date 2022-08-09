@@ -1,0 +1,20 @@
+# Noms de Touches a proteger contre l'obfu
+Retour
+TAB
+Supprimer
+Entrée
+Majuscule
+Controle
+Alt
+Echappe
+Espace
+Fin
+Début
+Gauche
+Haut
+Droite
+Bas
+Insérer
+Supprimer
+Aide
+VerrNum

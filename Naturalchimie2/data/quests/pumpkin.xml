@@ -1,0 +1,39 @@
+<quests>
+
+<q from="pumpkin" id="pka" name="Esprit es-tu là ? " repeat="1">
+	<begin>Pendant la fête, nous célébrons tour à tour nos différents ancêtres. Pour commencer, il nous faut réunir suffisamment de Courgesprits orange.</begin>
+	<collect o="Pumpkin(0):100" title="Récupérer 100 Courgesprits orange pour le recueillement des cucurbitacées. On les trouve en faisant des alchimies dans le royaume, pendant la fête des Courgesprits.">
+		 <!--<playMod artft="Elts(2,Pumpkin(0)):480;Pumpkin(0):400" /> -->
+	</collect>
+	<end>Avec autant de Courgesprits autour de nous ce soir, la célébration va être grandiose. Merci de ton aide.</end>
+	<xp v="15" />
+</q>
+
+<q from="pumpkin" id="pkb" name="Des vertes et des pas mûres" repeat="1">
+	<begin>Ce soir nous fêtons les cucurbitacées vertes, réputées les plus intelligentes. Et ce n'est pas parce que j'en suis une que je dis ça, c'est prouvé ! </begin>
+	<collect o="Pumpkin(1):130" title="Récupérer 130 Courgesprits vertes pour le recueillement des cucurbitacées. On les trouve en faisant des alchimies dans le royaume, pendant la fête des Courgesprits.">
+		<!-- <playMod artft="Elts(2,Pumpkin(1)):480;Pumpkin(1):400" /> -->
+	</collect>
+	<end>Bon travail, je... Hé mais ! Cet esprit, là... On dirait mon arrière-grand-père ! </end>
+	<xp v="15" />
+</q>
+
+<q from="pumpkin" id="pkc" name="Des patissons par millions" repeat="1">
+	<begin>Les courgesprits blanches sont réputées pour être les plus curieuses. On essaie donc d'en avoir beaucoup pour les fêtes ! </begin>
+	<collect o="Pumpkin(2):180" title="Récupérer 180 Courgesprits blanches pour le recueillement des cucurbitacées. On les trouve en faisant des alchimies dans le royaume, pendant la fête des Courgesprits.">
+		<!-- <playMod artft="Elts(2,Pumpkin(2)):480;Pumpkin(2):400" /> -->
+	</collect>
+	<end>Félicitations, il y a le compte. </end>
+	<xp v="15" />
+</q>
+
+<q from="pumpkin" id="pkd" name="Le banquet final" cond="quest(pka)+quest(pkb)+quest(pkc)">
+	<begin>Pour le grand final de la fête des Courgesprits, chaque cucurbitacée prend conscience que les esprits de ses ancêtres continuent de vivre à travers elle ! Pour cela, nous organisons un grand banquet avec... Hum... Avec de la soupe. De la soupe de potiron... </begin>
+	<collect o="Pumpkin(0):100;Pumpkin(1):100;Pumpkin(2):100" title="Récupérer 100 Courgesprits de chaque couleur pour la soupe du banquet final. On les trouve en faisant des alchimies dans le royaume, pendant la fête des Courgesprits.">
+		<!-- <playMod artft="Elts(2,Pumpkin(0)):480;Elts(2,Pumpkin(1)):480;Elts(2,Pumpkin(2)):480;Pumpkin(0):250;Pumpkin(1):250;Pumpkin(2):250" /> -->
+	</collect>
+	<end>Merci pour ton aide, grâce à toi le banquet sera une réussite. Même si j'avoue que la soupe de potiron, c'est bon mais... Ca a toujours un peu de mal à passer.</end>
+	<xp v="20" />
+</q>
+
+</quests>

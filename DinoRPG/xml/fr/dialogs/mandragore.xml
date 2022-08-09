@@ -1,0 +1,172 @@
+﻿<!-- Mandragore, une fois Nimbao2 terminée-->
+<!--On retrouve Mandragore en train de siroter son cocktail sur la plage de sa villa, visiblement, ça ne l'intéresse pas...
+-On peut lui demander s'il a toujours l'orbe noire du donjon des steppes, il répond qu'il s'en sert de boule de bowling, et qu'il est impossible qu'il s'en sépare (peut être un jour).
+-Mandragore nous apprend un peu le background des gardiens. Il avait été nommé gardien au moment de l'apparition du monde sombre,
+-->
+	
+	
+<d place="villa" gfx="mandragore" name="Mandragore" frame="glou" cond="scenario(nimba2,51+)+!(scenario(caush,33+)+scenario(caush,42-))">
+	<phase id="begin" fast="1" next="forme:orbe:caush:gardien:merci:quetza:sofia:rebirth">
+		Mandragore est de retour chez lui...
+		Allongé tranquillement dans son transat, il sirote un coktail de sa fabrication...
+	</phase>
+	<a id="forme">Salut, quoi de neuf ?</a>
+	<a id="rebirth" cond="fx(lvlup3)">Je peux être level 80 !</a>
+	<a id="orbe">Vous avez encore l'orbe sombre ?</a> <!-- si possible mettre condition avoir fini cavmagnet -->
+	<a id="caush">Que savez vous de Caushemesh ?</a>
+	<a id="gardien">Que sont les gardiens ?</a>
+	<a id="merci" cond="scenario(nimba2,51)">Merci pour tout !</a>
+	<a id="quetza" cond="collec(quetzu)">Compétences uniques ?</a>
+	<a id="sofia" cond="scenario(caush,43+)">Alors, la vie maritale ?</a>
+	
+	<phase id="forme" next="orbe:caush:gardien:merci" frame="bla">
+		Ca va pas trop mal, j'étais plutôt tranquille avant que tu n'arrives.
+	</phase>
+	
+	<phase id="rebirth" frame="bla" next="rebirth2">
+	[Voilà qui est super ! Tu auras au moins été au top dans une de tes vies.]	
+	</phase>
+	<a id="rebirth2">Une.. de .. mes vies ?</a>
+	<phase id="rebirth2" next="rebirth3">
+		[Oui jeune maître. Ne croyais-tu pas tout de même que la perfection d'un Dino s'arrêtait à sa première vie ?]
+		[La perfection et la puissance de nos Dinoz s'acquiert par le travail, mais aussi par l'expérience. Et quoi de mieux que l'expérience de la vie hein?]
+		[Un  des privilèges à ceux qui ont atteint le niveau ultime, c'est d'avoir l'opportunité de renaître pour revivre une nouvelle vie, plus puissante.]
+		[Mais ça... c'est pour les vrais bonhommes !]
+		_(Quoi ma belle ?  Oui oui, pour les vraies femmes aussi, bien sûr !)_
+	</phase>
+	<a id="rebirth3" next="rebirth4">Renaître ??</a>
+	<phase id="rebirth3" next="rebirth4">
+		[Et bien oui mon cher... Le principe est simple, lorsque ton Dino subit une défaite et en vient à être en état de mort, tu vas non pas le sauver avec une potion, mais bien le laisser retrouver son chemin vers la vie.]
+		[Cela ressemble à la réincarnation en un sens, mais en beaucoup plus puissant puisqu'une partie de son savoir va être conservé.]
+		[Mais cela fait longtemps que je ne m'y suis plus intéressé, c'est plus de mon âge ces folies...]
+	</phase>
+	<a id="rebirth4">Ok... ok...</a>
+	<phase id="rebirth4" next="rebirth5">
+		[Je vois que tu n'es peut être pas encore prêt, pourtant c'est bien l'étape nécéssaire pour améliorer le destin de ton Dino.]
+		[Bon, parler autant me désèche la bouche... Je dois manquer d'habitude. Sur ce, tu m'ennuis.]
+	</phase>
+	<a id="rebirth5">A la prochaine !</a>
+	<phase id="rebirth5" fast="1" frame="glou">
+		Il est temps de partir, cette histoire de renaissance suscite votre intérêt... qu'est-ce que cela peut bien être ?
+	</phase>
+	
+	<phase id="orbe" next="morceaux:forme:caush:gardien:merci" frame="bla">
+		[L'orbe noire que j'ai trouvé dans les cavernes de Magnétites ?]
+		[Je m'en sers de boule de bowling, il est impossible que je m'en sépare.]
+		[De toute façon, que voudrais-tu en faire, tu n'as eu qu'un petit aperçu du niveau des monstres du monde sombre.
+		Le jour où tu te balladeras tranquillement sur les terres de Caushemesh... je te prêterais peut-être l'orbe...]
+		
+		[On fera à ce moment là de belles parties de bowling !]
+	</phase>
+	
+	<a id="morceaux" cond="fx(morsso)">Morceaux de l'Orbe Sombre ?</a>
+	
+	<phase id="morceaux" next="forme:caush:gardien:merci" frame="bla">
+		[Tu me demandes comment il peut y avoir des morceaux d'Orbe Sombre qui se baladent dans la nature ?]
+		[C'est évident voyons, pour jouer avec une boule de bowling, il faut qu'il y ait des trous dedans...]
+		[Tu vas avoir du mal à les trouver en revanche, j'ai mis les trois fragments à la poubelle à l'époque...]
+	</phase>
+	
+	<phase id="caush" next="forme:caush:gardien:merci" frame="bla">
+		[J'y suis allé pas mal de fois, on peut dire que je connais du monde influent là-bas...
+		Mais je ne préfère pas en parler, ça pourrait se retourner contre moi...]
+		[En tous cas, si un jour tu y vas, je pense que tu seras très surpris d'apprendre ce qui s'y passe.]
+		
+		[Quoiqu'il en soit, ce n'est absolument pas mon problème, donc si tu le permets, je reprend ma sieste !]
+	</phase>
+	
+	<phase id="gardien" next="sombre" frame="bla">
+		[Ha, les gardiens...]
+		[C'est plutôt vieux comme truc...]
+		[L'histoire doit remonter à une centaine d'années, j'étais un petit jeunôt à l'époque...
+		Il y a eu un phénomène qui secoua tout Dinoland.]
+		_(Que ça reste entre nous, mais ça venait de Caushemesh... Je dis ça, je dis rien, hein !)_
+		
+		[Ce phénomène un peu particulier a changé à jamais le visage de Caushemesh,
+		mais vu que personne n'a jamais vu son premier visage, ça ne changera pas ta vie...]
+	</phase>
+	
+	<a id="sombre">Le monde sombre ?</a>
+	<phase id="sombre" next="super" frame="bla">
+		[Exact, à cause de ce phénomène, une sorte de faille s'est ouvert sur un monde parallèle au notre, le monde sombre...
+		On assista à ce moment à une invasion massive de monstres et dinoz sombres ...]
+		[Et donc une fois l'invasion stoppée, les différents Rois ainsi que l'Archidorogon nommèrent des gardiens,
+		des personnes capable de surveiller et d'arrêter toute tentative d'invasion dans notre monde.]
+		[Il y a encore à l'heure actuelle cinq gardiens qui veillent en permanence sur la sécurité de Dinoland.]
+	</phase>
+	<a id="super">J'en connais un !</a>
+	
+	<phase id="super" next="vous" frame="bla">
+		[Tu en connaissais même deux !]
+		[Bao est le gardien actuel de la zone des îles, une belle brêche se trouve là-bas, pas la plus grande, mais suffisamment ouverte pour empêcher le gardien de trop s'éloigner...]
+		[Le deuxième gardien était Grizorg, Nimbao n'est pas vraiment concerné par le monde sombre, du coup, l'Archidorogon pouvait tout à fait endosser le rôle.]
+		[Je suis sûr que Pistache fera un bon gardien, du moins un gardien qui ne fera rien de dangeureux !]
+	</phase>
+	
+	<a id="vous">Vous n'étiez pas gardien ?</a>
+	
+	<phase id="vous" next="autre" frame="bla">
+		Bien avant que Bao ne naisse, on m'a attribué la charge des îles, heureusement, j'ai pu m'en débarrasser grâce à mon disciple qui s'est fait une joie de me reprendre le bébé...
+		héhéhé...
+	</phase>
+	
+	<a id="autre">Et les autres gardiens ?</a>
+	
+	<phase id="autre" next="forme:caush:orbe:merci" frame="bla">
+		[Et bien, il existe un gardien à Caushemesh, sûrement le plus puissant d'entre nous, après tout, la faille qu'il y a là-bas est la plus importante...
+		Je ne sais rien des deux derniers gardiens, certains disent qu'un d'eux se serait perdu dans le monde sombre...]
+		[Honnêtement, ça me laisse de marbre.
+		Je préfère rester tranquillement chez moi à siroter mon coktail.]
+	</phase>
+	
+	<phase id="merci" next="go" collection="quetzu" scenario="nimba2:52" frame="bla">
+		[Ne t'inquiète pas, c'est normal, toute cette histoire avait commencé il y a déjà trop longtemps.]
+		[J'ai d'ailleurs un cadeau pour toi, tu connais déjà Lucette ? Mon dinoz est de la race des Quetzu, une race originaire de Nimbao.
+		J'ai ramené des oeufs que j'ai laissé dans la boutique de Dinoz, si tu montres le trophée que je t'offre, *et avec un peu de patience*, tu pourras en acheter un ! Mais je n'ai pu obtenir que 5 oeufs, donc choisi bien avant de jeter ton dévolu sur l'un d'eux.]
+		
+		[Amuse toi bien dans tes aventures, reviens me voir de temps en temps, je pourrai peut-être te donner deux ou trois conseils !
+		A plus !]
+	</phase>
+	<a id="go">A la prochaine !</a>
+	<phase id="go" fast="1" frame="glou">
+		Il est temps de partir pour de nouvelles aventures, quelle sera votre prochaine destination, Caushemesh ? Le monde Sombre ?
+		Seul le temps nous le dira !
+	</phase>
+	
+	<phase id="quetza" next="comp" frame="bla">
+		[Le Quetzu est une race pleine de mystères, tu trouveras facilement ses compétences uniques en feu et eau, mais il possède également une compétence
+		raciale qui pourrait te plaire...]
+		[Chaque dinoz a un potentiel caché qui lui permet de recourir à une divinité en cas de danger.
+		Les dinoz habitant notre monde ont malheureusement perdu cette faculté, peut-être la retrouveront-ils un jour, mais là n'est pas le sujet.]
+ 	</phase>
+	<a id="comp" >Et le Quetzu ?</a>
+	<phase id="comp" next="trouve" frame="bla">
+		[Le Quetzu lui, n'a pas oublié ses ancêtres et peut faire appel à eux en cas de besoin !
+		Il te faudra trouver cette compétence classique appelée *Invocation* dans un des arbres de compétences que tu dois bien connaître.]
+		[Une fois le pacte établi avec le Quetzalcoatl, grand ancêtre du Quetzu, tu pourras envahir la surface du combat d'un orage destructeur.]
+		[Je te souhaite bonne chance pour trouver cette compétence !]
+	</phase>
+	<a id="trouve" >Il va falloir que je me retrousse les manches !</a>
+	<phase id="trouve" fast="1" frame="glou">
+		Il est temps de partir pour de nouvelles aventures, saurez-vous percer tous les mystères du Quetzu ?
+	</phase>
+	
+	<phase id="sofia" next="vie">
+		[Haaaa, si tu savais...]
+		[Tous les jours, c'est une expérience nouvelle, une aventure au quotidien directement chez soi...]
+		[Faut dire, je dois rattraper les 50 années de retard que j'ai accumulé depuis le temps...]
+		[Mais il y a des bons côtés aussi !]
+	</phase>
+	<a id="vie">Comme quoi ?</a>
+	<phase id="vie" next="parti" gfx="sofia" name="Sofia" frame="plage" background="2">
+		[Mandrachou !]
+		[Apporte moi un autre verre s'il te plaît.]
+		[...]
+		[VITE !]
+	</phase>
+	<a id="parti">...</a>
+	<phase id="parti" fast="1">
+		Mandragore n'a pas eu le temps de vous répondre, il se dépêche de remplir sa tâche avec application.
+		Laissons ce petit couple vaquer à ses occupations et éloignons nous discrètement.
+	</phase>
+</d>

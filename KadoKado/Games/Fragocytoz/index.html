@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+	<meta http-equiv="content-type" value="text/html; charset=utf-8"/>
+	<title>nouveau jeu kadokado</title>
+	<style type="text/css">
+		@font-face {
+		font-family: "nokia";
+		src: url("gfx/nokiafc22.ttf");
+		}
+		body {
+		font-family: "nokia", "Courier", fixed;
+		font-size: 12px;
+		color: #777;
+		}
+		h1 {
+		border-bottom: 2px solid #777;
+		}
+	</style>
+	<body>
+		<h1>nouveau jeu kadokado</h1>
+		
+		<object type="application/x-shockwave-flash" id="haxePath" data="../api/loader9.swf" width="300" height="320">
+			<param name="allowScriptAccess" value="always"/>
+			<param name="allowFullScreen" value="true"/>
+			<param name="scale" value="noscale"/>
+			<param name="salign" value="lt"/>
+			<param name="quality" value="high"/>
+			<param name="flashvars" value="swf=swf/game.swf&amp;lang=fr"/>
+		</object>
+		
+<script type="text/javascript">
+	double = false;
+	function toggleDouble() {
+		double = !double;
+		if (double)
+			document.body.className += " fullscreen";
+		else
+			document.body.className.replace("fullscreen","");
+		var fl = window.document["haxePath"];
+		var x = double ? 2 : 1;
+		fl.width = 300 * x;
+		fl.height = 320 * x;
+		fl.setDouble(double);
+	}
+</script>
+
+	<p>
+		<a href="#" onclick="toggleDouble(); return false;">Double</a>
+	</p>
+
+
+	
+	</body>
+</html>

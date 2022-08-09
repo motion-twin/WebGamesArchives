@@ -1,0 +1,39 @@
+<d place="gmfal" name="Donner les 500 Skats" gfx="gmbhv" auto="0">
+
+<a id="exit">A plus tard.</a>
+
+<phase id="begin" frame="normal" next="va:vb">
+Alors, tu as mes 500 Skats ? 
+</phase>
+
+<a id="va" cond="hasqobject(QuestObj(pickSkat),500)">Oui. Les voilà.</a>
+<a id="vb" cond="!hasqobject(QuestObj(pickSkat),500)">Oui. Les voilà.</a>
+
+<!-- ##################### -->
+
+<phase id="vb" frame="angry" next="exit">
+Hum... On dirait qu'il n'y en a pas 500... | Reviens me voir quand tu auras le compte.
+</phase>
+
+<!-- ##################### -->
+
+<phase id="va" frame="happy" next="oh">
+Super ! Ils sont vraiment trop mignons ! Je vais les apporter à ma société protectrice pour qu'on leur donne un bon bain chaud ! 
+</phase>
+
+<a id="oh">En parlant de bain chaud... Je peux avoir votre t-shirt, maintenant ? </a>
+
+<phase id="oh" frame="normal" next="vor">
+Ah oui bien sûr. | Hop, %bhappy% voilà ! | 
+</phase>
+
+<a id="vor">M... M... merci. </a>
+
+<phase id="vor" frame="bnormal" qtake="QuestObj(pickSkat):500" qgive="QuestObj(tshirt):1">
+Tiens, je te l'ai mis dans un sac pour que les gens ne soient pas jaloux. | C'est que mon t-shirt est très demandé ! 
+</phase>
+
+
+
+
+</d>

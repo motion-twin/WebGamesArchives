@@ -1,0 +1,126 @@
+﻿<!-- ***************************************************************************** -->
+<!--
+set de mission de l’ermite, uniquement dispo si le dinoz a atteint le niveau 60 :
+-apporter de la mousse de la forêt pour soulager le dos de l’ermite
+-un ingrédient commun de chaque zone
+-attendre 2h sans fermer la fenêtre web (pour les gros naifs)
+-combattre un monstre de niveau 60
+-?
+-->
+
+<missions>
+
+	<m group="rhubar" id="rhub1" name="Une petite mousse ?" cond="level(30)">
+		<begin>Mes os me font mal, ils grincent, ce qui est très désagréable. Peux tu aller me chercher de la mousse dans les Collines hantées de la forêt de Grumhel.
+		Si tu pouvais en profiter pour me ramener un peu de glace des gorges profondes... Sans insister bien sûr !</begin>
+		<goto v="collin"/>
+		<action v="prélever de la mousse">
+			Vous avez prélevé un peu de mousse sur les grands arbres sombres.
+		</action>
+		<goto v="gorges"/>
+		<action v="extraire de la glace">Vous trouvez une pioche sur le sol et commencez à piocher de la glace.</action>
+		<actfight act="combattre l'Archelion adulte nain" monsters="arcadu">
+			<begin m="arcadu">
+				Le bruit, amplifié par toutes les cavités de la grotte, s'est répandu partout. l'écho a fait venir une vieille connaissance.
+			</begin>
+			<win>
+				l'Archélion a compris la leçon, vous aller pouvoir continuer à extraire la glace tranquillement.
+			</win>
+		</actfight>
+		<end>
+			Haaa, je me sens beaucoup mieux maintenant, dommage que cette mousse sèche et devienne rapidement inutilisable.
+			Je te remercie, mes articulations se reposent enfin...
+			Tu peux aller chercher ta récompense dans la salle du trésor derrière moi.
+		</end>
+		<item v="tix" n="20"/>
+		<ingr v="art1" n="1"/>
+		<ingr v="art2"n="1"/>
+	</m>
+	
+	<m group="rhubar" id="rhub2" name="Une petite goutte d'ether ?" cond="mission(rhub1)+level(40)">
+		<begin>Mon énergie ectoplasmique faiblit de siècle en siècle, bientôt, je ne pourrais plus transmettre mon savoir...
+		Toi qui es allé au-delà des steppes, pourrais tu me ramener de l'éther, cette substance me permettrait de recharger mes batteries.</begin>
+		<goto v="cextra"/>
+		<action v="Utiliser l'extracteur">Vous commencez l'extraction d'un peu d'éther.</action>
+		<actfight act="combattre le Serpether" monsters="serpe">
+			<begin m="serpe">
+				L'extraction a réveillé un vieil ami... Il faut absolument s'en débarrasser si vous voulez continuer l'extraction.
+			</begin>
+			<win>
+				L'extraction est terminée, il ne reste plus qu'à rejoindre le sage Rhubarbapapa...
+			</win>
+		</actfight>
+		<end>Voilà qui devrait me permettre de garder la flamme encore quelque temps. Merci beaucoup, tu peux te servir dans la salle du trésor pour ta récompense.</end>
+		<item v="tix" n="30"/>
+		<ingr v="art3" n="1"/>
+	</m>
+	
+	<m group="rhubar" id="rhub3" name="Eclat de magnétite" cond="mission(rhub2)+collec(magnet)+level(50)">
+		<begin>L'éther que tu m'as ramené s'évapore plus vite que je ne le pensais, il faudrait utiliser un éclat de magnétite pour le fossiliser.
+		Je sens que tu en possèdes un, mais il ne doit pas être assez chargé pour accomplir cette action. Peux tu aller le recharger et revenir ici ?</begin>
+		<goto v="spylon"/>
+		<action v="Déposer l'éclat de Magnétite">
+			Vous venez de déposer l'éclat de magnétite sur une stèle constamment frappée par la foudre.
+			Il ne reste plus qu'à attendre...
+		</action>
+		<actfight act="combattre le Behemotin" monsters="behemu">
+			<begin m="behemu">
+				Jamais deux sans trois, vous vous en doutiez, il était écrit que vous deviez à nouveau faire face au 3ème colosse...
+			</begin>
+			<win>
+				Espérons qu'il vous laisse tranquille désormais.
+			</win>
+		</actfight>
+		<goto v="temple"/>
+		<action v="Fossiliser l'éther">En approchant l'éclat de l'éther, celui-ci se rétracte et se durcit. Mission accomplie !</action>
+		<end>
+			Merci, L'éther ne devrait plus s'évaporer grâce à ton aide. Je peux maintenant me focaliser sur ton initiation.
+			Tu peux aller chercher ta récompense dans la salle du trésor.
+		</end>
+		<ingr v="artr1" n="1"/>
+		<ingr v="artr2" n="1"/>
+	</m>
+	
+	<m group="rhubar" id="rhub4" name="Qu'est devenu Dinoland ?" cond="mission(rhub3)+level(50)">
+		<begin>Maintenant que mon petit confort est assuré... Il est temps de me prouver que tu as fait le tour de Dinoland.
+		Ramène moi un objet de chaque monde que tu as visité, j'en apprendrais plus sur ce qui s'est passé durant les siècles passés.</begin>
+		<use v="irma" n="1"></use>
+		<use v="tartev" n="1"></use>
+		<use v="ration" n="1"></use>
+		<use v="mergz" n="1"></use>
+		<use v="hlmsos" n="1"></use>
+		<use v="monoch" n="1"></use>
+		<use v="danger" n="1"></use>
+		<use v="odemon" n="1"></use>
+		<use v="cendre" n="1"></use>
+		<use v="riz" n="1"></use>
+		<end>Tu m'as fourni de nombreux objets, à moi de te récompenser avec un objet rare que j'ai ramassé depuis quelques siècles.</end>
+		<ingr v="dgrain" n="1"/>
+	</m>
+	
+	<m group="rhubar" id="rhub5" name="Méditation" cond="mission(rhub4)+level(50)">
+		<begin>Il est temps de se préparer pour le rituel. Tu dois maintenant rester immobile pendant 10 heures...
+		Tu ne dois plus toucher ton navigateur web, il ne faut pas non plus que tu le fermes, sinon tu devras recommencer.</begin>
+		<goto v="temple"/>
+		<action wait="10" v="Commencer la méditation">Vous commencez votre méditation... PAS BOUGER !</action>
+		<end>Bravo, tu as réussi à atteindre la paix intérieur... Au fait, tu as vraiment tenu sans fermer ton navigateur ? Tu n'étais pas vraiment obligé en fait ! Hahahaha !</end>
+		<xp v="80"/>
+	</m>
+	
+	<m group="rhubar" id="rhuba" name="Combat de l'esprit" cond="mission(rhub5)+level(50)">
+		<begin>Maintenant que tu as eu le temps de méditer, tu as bientôt terminé ta préparation.
+		Il ne reste que l'ultime test, je vais utiliser ma force pour matérialiser une projection de mon corps d'antan.</begin>
+		<goto v="temple"/>
+		<actfight act="combattre L'esprit de Rhubarbapapa" monsters="rhubar">
+			<begin m="rhubar">
+				Prépare toi à subir mes assauts. Seras-tu assez puissant ?
+			</begin>
+			<win>
+				Je te félicite. Tu m'as vaincu. Tu es digne de recevoir ma récompense ultime.
+			</win>
+		</actfight>
+		<end>Félicitations, ton initiation est maintenant terminée.</end>
+		<item v="tix" n="50"/>
+	</m>
+	
+</missions>

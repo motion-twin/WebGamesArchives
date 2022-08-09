@@ -1,0 +1,135 @@
+﻿<d place="dnv" name="El guía Michel" gfx="michel">
+	
+	<phase id="begin" fast="1" next="p1:p2:p3:p4:p5:p6:p7:p8:p9:p10:p11:p12:p13">
+		Michel dice que ha sido contratado por el Reino de Dinovilla para guíar a los jóvenes Maestros de Dinos
+		en sus aventuras, pero no se sabe si es verdad o si simplemente le gusta que vengan a verlo...
+		en todo caso, ¡sus consejos son siempre útiles!
+	</phase>
+
+	<a id="p1" cond="!level(5)+!scenario(intro,0)">Hablar con Michel</a>
+	<a id="p2" cond="level(5)+!(fx(bouee)|fx(matesc))">Hablar con Michel</a>
+	<a id="p3" cond="fx(bouee)+!fx(matesc)">Hablar con Michel</a>
+	<a id="p4" cond="fx(matesc)+!fx(bouee)">Hablar con Michel</a>
+	<a id="p5" cond="fx(matesc)+fx(bouee)+!fx(plaza)">Hablar con Michel</a>
+	<a id="p6" cond="fx(plaza)+!fx(rasca)">Hablar con Michel</a>
+	<a id="p7" cond="fx(plaza)+fx(rasca)+!fx(gant)">Hablar con Michel</a>
+	<a id="p8" cond="fx(plaza)+fx(gant)+!fx(chutes)">Hablar con Michel</a>
+	<a id="p9" cond="fx(plaza)+fx(chutes)+!fx(palmes)">Hablar con Michel</a>
+	<a id="p10" cond="fx(plaza)+fx(palmes)+!fx(sylkey)">Hablar con Michel</a>
+	<a id="p11" cond="fx(plaza)+fx(sylkey)+!collec(magnet)">Hablar con Michel</a>
+	<a id="p12" cond="fx(plaza)+fx(sylkey)+collec(magnet)">Hablar con Michel</a>
+	<a id="p13" cond="!scenario(intro,0)">¡Ya no sé qué hacer!</a>
+	
+	<phase id="p13" >
+		Ay, ay. ¿Estás perdido, Maestro de Dinos?
+		¿Por qué no ir al foro a pedir ayuda?
+		Cientos de Maestros de Dinos han pasado también por aquí. Su experiencia te será muy útil. ¡Quizás un día seas tú mismo quien comparta tus conocimientos sobre DinoRPG!
+	</phase>
+
+	<phase id="p1" next="p1b">
+		¡Hola Maestro de Dinos! Ooooh, veo que tu Dino sigue siendo joven... lo mejor por el momento es que vayas
+		al noreste para hablar con Papy Jose. Obtendrás algunas misiones y ganarás experiencia...
+	</phase>
+
+	<a id="p1b">(continuación)</a>
+
+	<phase id="p1b">
+		Estas misiones te permitirán descubrir el Reino de Dinovilla, pero también numerosos nuevos mundos serán accesibles
+		una vez avances en tus exploraciones... Vuelve a verme cuando tu Dino haya alcanzado el nivel 5 y te contaré
+		más cosas.
+	</phase>
+
+	<phase id="p2" next="p2b">
+		¡Enhorabuena! Tu Dino ha alcanzado el nivel 5. Podrías ir a ver al Profesor Eugenio en la Universidad, te propondrá
+		un desafío... Ten cuidado pues es bastante peligroso... si tu Dino no está en forma, te aconsejo que esperes un poco
+		antes de aceptar este desafío.
+	</phase>
+
+	<a id="p2b">(continuación)</a>
+
+	<phase id="p2b">
+		Una vez que hayas obtenido una victoria y una de las dos recompensas del Profesor Eugenio, vuelve a verme: te explicaré
+		para qué te puede servir... ¡buena suerte!
+	</phase>
+
+	<phase id="p3" next="p3b">
+		¡Oh! ¡Estupendo! Tu Dino ha obtenido el salvavidas... Es un objeto valioso que te permitirá acceder a las Islas Atlanteidas.
+		Para usarlo es muy simple: ve al Puerto de Santa Moría en el sur y en el momento en el que se desplace, tu Dino podrá nada hasta
+		las islas.
+	</phase>
+
+	<a id="p3b">(continuación)</a>
+
+	<phase id="p3b">
+		Ya verás, las Islas son magníficas, ¡es un nuevo mundo a descubrir! Pero no lo olvides, cuando tu Dino haya alcanzado el nivel
+		7, regresa a ver al Profesor Eugenio en la universidad para obtener nuevos desafíos...
+	</phase>
+
+	<phase id="p4">
+		¡Ajá! ¡Estupendo! Tu Dino ha obtenido el Material de Escalada... gracias al material, podrás acceder al Gran Señor-Todo-Quema.
+		Para usarlo es muy simple: ve a las Colinas Escarpadas en el norte y, en el momento de desplazarte, tu Dino podrá escalar hasta el Gran Señor-Todo-Quema.
+	</phase>
+
+	<phase id="p4b">
+		Verás el calor que hace por allí... ¡es un mundo nuevo a descubrir!
+		Pero no olvides que, cuando tu Dino llegue al nivel 7, puedes volver a ver al Profesor para aceptar nuevos desafíos.
+		à l'Université pour un deuxième défi...
+	</phase>
+
+	<phase id="p5" next="p5n:p5y">
+		¡Oh! Veo que tu Dino tiene el salvavidas y el material de escalada. Estos dos objetos te permiten acceder a las Islas Atlanteidas desde el Puerto de Santa Moría y al Gran Señor-Todo-Quema desde las Colinas Escarpadas. ¿Ya has visitado estos nuevos mundos?
+	</phase>
+
+	<a id="p5n">No, todavía no.</a>
+	<a id="p5y">Sí, ya me he dado una vuelta por allí.</a>
+
+	<phase id="p5n">
+		¿De veras? No sabes lo que te pierdes... intenta nadar desde el Puerto de Santa Moría o de escalar desde las Colinas Escarpadas para poder llegar a estos nuevos lugares: ¡podrás encontrar numerosas misiones para tu Dino!
+	</phase>
+
+	<phase id="p5y" next="secret">
+		¿De veras? ¡Reconozco en ti el alma de un gran aventurero! Sigue habiendo numerosos secretos que no conoces todavía...
+	</phase>
+
+	<a id="secret">¿Ah sí? ¿El qué, por ejemplo?</a>
+
+	<phase id="secret" next="secret2">
+		Veamos... ¿sabías que por ejemplo si pasas por las pequeñas calles del barrio antiguo de Dinovilla puedes acceder a la segunda parte del Reino? Se trata de un barrio poco habitado, pero en gran desarrollo estos últimos tiempos. ¡Se llama Dinoplaza!
+	</phase>
+
+	<a id="secret2">¡Uaaa!</a>
+
+	<phase id="secret2" effect="plaza">
+		¡Te dije que todavía quedaban muchas cosas que descubrir! Ve a visitar Dinoplaza, ¡y vuelve a verme más tarde cuando tengas tiempo!
+	</phase>
+
+	<phase id="p6">
+		¿No sabes muy bien qué más hacer? En ese caso te aconsejo que vayas a la caza del Rascafandro. Encontrarás algunos indicios en las Islas Atlanteidas. Te permitirán acceder al Estadio Sulaflota, ¡donde un próximo enigma te espera!
+	</phase>
+
+	<phase id="p7">
+		¡Enhorabuena por haber matado al Rascafandro! Para poder atravesar las Caídas Mutantes, te hará falta obtener un objeto particular.
+		Puede que el Archisabio del Estadio Sulaflota pueda decirte algo más...
+	</phase>
+
+	<phase id="p8">
+		¡Oh! ¡Has obtenido el Guante de Zors! ¡Enhorabuena! Pero todavía te falta algo para poder atravesar las Caídas Mutantes. Un Monje ZenZen podría serte útil si no me equivoco.
+	</phase>
+
+	<phase id="p9">
+		A partir de ahora puedes acceder al Bosque de Grumhel. Espero que vivas numerosas aventuras en aquel lugar. Vuelve a verme más tarde cuando hayas obtenido el objeto de los Korgones.
+	</phase>
+
+	<phase id="p10">
+		Las palmas de Korgones te permitirá descubrir el desafío de Bao Bob. Pero te aconsejo estar bien preparado pues no va a ser fácil.
+	</phase>
+
+	<phase id="p11">
+		Ahora que has obtenido la llave de la puerta de Sylvanegra, ¡podrás al fin a las Estepas Magnéticas! Numerosos peligros te esperan allí, espero que sobrevivas...
+	</phase>
+
+	<phase id="p12">
+		Ya formas parte de los Grandes Aventureros. Seguro que hay aún más secretos que descubrir en Dinoland, pero no tengo más que aconsejarte por el momento.
+	</phase>
+
+</d>

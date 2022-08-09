@@ -1,0 +1,220 @@
+﻿<missions>
+
+	<m group="skull" id="skul1" name="Informaciones preliminares">
+		<begin>
+			Muldero fue encantado por mi bonedicción, mientras que hacíamos viejos huesos juntos. Me olvidó
+			y se marchó, ¡el rufián! Seguro que su sobrino el pequeño Jose sabe algo... ¡ve a verlo y tenme al corriente!
+		</begin>
+		<goto v="papy" hide="1"/>
+		<talk v="Papy 'Pequeño' Jose" gfx="papy">
+			¿Tío Muldero? Oh sí, ya hace años que no oía nada sobre él...
+			¡Si quieres saber más, tráeme 3 salchichas del Gran Señor-Todo-Quema!
+		</talk>
+		<use v="mergz" n="3"/>
+		<talk v="Papy 'Pequeño' Jose" gfx="papy">
+			¡Gracias! (crunch crunch) Todo lo que sé es que el tío Muldero amaba mucho a su mujer y le dejó un mensaje
+			grabado en la Fuente de la Juventud.
+		</talk>
+		<goto v="fountj"/>
+		<action v="Leer el mensaje">
+			Entre las muchas palabras grabadas en la Fuente de la Juventud, se puede leer el mensaje siguiente:
+			"Te buscaré en el lugar donde nos conocimos".
+		</action>
+		<end>
+			¡Gracias por tan preciada información! ¡Mi Muldero querido no debe de estar muy lejos, pronto estaremos juntos!
+		</end>
+		<xp v="10"/>
+	</m>
+
+	<m group="skull" id="skul2" name="Tras la pista de Muldero" cond="mission(skul1)">
+		<begin>
+			"Te buscaré en el lugar donde nos conocimos" ¡Oh oh oh oh! ¡Es tan romáaaaantico mi Muldero querido!
+			¡Espero que siga esperándome allí! Rápido, ve a aquel magnífico lugar de dulces olores de nenúfares
+			donde nos conocimos y tráeme a mi amor.
+		</begin>
+		<goto v="marais" hide="1"/>
+		<talk v="Turista Atascado">
+			Estoy HARTO de este pantano pegajoso de ... Ya van 3 las veces que nuestra caravana se queda aquí atascada... menuda idea la de venir aquí a pasar las vacaciones. ¿Qué? ¿Que si he visto un tal Muldero? ¡Ah! sí, se fue a una reunión de Amigos de los Anguilos Anónimos. Si vas para allá, ten cuidado con ellos y su humor sensible...
+		</talk>
+		<actfight act="Reunión de los A.A.A." monsters="anguil:anguil">
+			<begin>Mientras tu Dino se acerca, algunos Anguilos se dan cuenta de tu presencia ¡y te atacan!</begin>
+			<win>Tras la derrota de los Anguilos, observas rastros de pasos que se alejan en dirección hacia el oeste...</win>
+		</actfight>
+		<goto v="chutes" hide="1"/>
+		<talk v="Pescador">
+			Éste es un buen lugar para pescar: los peces vienen a ver a los monjes que levitan... ¿Un tipo llamado Muldero?
+			Sí, le conozco bien. Se fue a pescar a la bahía de los Pirantas. Ten cuidado con esos bichos, amigo.
+		</talk>
+		<actfight act="Bahía de las Pirantas" monsters="pira:pira:pira:pira:pira:pira">
+			<begin>
+				Apenas entras en la bahía y numerosos monstruos se precipitan sobre ti para morderte... ¿Quién puede tener ganas de venir a pescar aquí?</begin>
+			<win>Una vez que has vencido tus enemigos, miras a tu alrededor. Si Muldero ha venido a pescar aquí, ya tiene que haberse marchado...</win>
+		</actfight>
+		<talk v="Pescador">
+			¿Muldero? Dijo que se iba al pantano a esperar a su mujer... Pobre chico, ya hace años que no la ha visto... Aunque yo en su lugar, estaría contento...
+		</talk>
+		<goto v="marais"/>
+		<action v="Panel indicador">
+			Parece que hace poco se ha levantado este panel, aquí cerca de los nenúfares. Se puede leer lo siguiente:
+			"¿Harto de los mosquitos? Únete a mí donde encontré el amor. Muldero."
+		</action>
+		<end>
+			¡Ooohh oh oh oh oh! ¡Muldero querido! ¡Te siento más cerca de mí!
+		</end>
+		<xp v="20"/>
+		<gold v="1000"/>
+	</m>
+
+	<m group="skull" id="skul3" name="Señorita Bao" cond="mission(skul2)">
+		<begin>
+			¡Oh oh! Se me ha ocurrido una cosa un tanto... problemática. Incluso si me reencuentro con Muldero, seguro que olvida
+			que nos hemos visto y se va a buscarme a algún otro lugar. Tienes que encontrar una solución antes de ir a buscar a Muldero.
+			Ve a buscar a la señorita Bao, seguramente tendrá una solución.
+		</begin>
+		<goto v="baobob"/>
+		<talk v="¿¿¿Señorita Bao???" gfx="baobob">
+			¿¿¿Qué??? ¿¿Señorita Bao?? Pero... ¿por quién me tomas? .......... Si buscas a mi hermana, debe de estar con el nieto
+			de ArchiDorogon: "el Venerable" (como le gusta que le llamen ahora).... Por cierto, si un día su padre se entera, se va
+			a enterar de lo que es bueno...
+		</talk>
+		<goto v="vener"/>
+		<talk v="Señorita Bao" gfx="baobabe">
+			¿¿¿Qué??? ¿¿Señorita Bao?? Pero vamos... hacía una eternidad que no me llamaban así.
+			Te lo ruego, joven hombre, usa mi nombre corriente, llámame Babe...
+		</talk>
+		<talk v="Bao Babe" gfx="baobabe">
+			¿Quieres mi consejo? Escucha, debo primero terminar mi partida de damas con el nieto de ArchiDorogon.
+			Su abuelo me hizo prometer que viniera a hacerle compañía de vez en cuando... ¿qué dirías de ir a cazar algunos
+			goblins mientras termino?
+		</talk>
+		<kill v="goblin" n="10" name="Cazar los Goblins"/>
+		<talk v="Bao Babe" gfx="baobabe">
+			¡Ya está! ¡Terminé! Lo he vencido sin problemas. ¡Me encanta cabrearlo! Se pone tan mono cuando sus fosas nasales empiezan
+			a soplar vapor. Bueno, ¿no querías pedirme consejo?
+		</talk>
+		<talk v="Bao Babe" gfx="baobabe">
+			.......... ¿Oh? ¿de veras? ..... La solución a este tipo de bonedicción es muy simple: es suficiente con que alguien guarde
+			una parte de Calaveri con él para no olvidar nada... ¡Hasta pronto amigo!
+		</talk>
+		<end>
+			¡Oh oh oh oh oh! ¡Ya tenemos la solución para mi bonedicción! Ten, toma eso, de esta manera no olvidarás el camino al Cementerio,
+			¡ni a tu querida Calaveri!
+		</end>
+		<xp v="10"/>
+		<gold v="500"/>
+		<fx v="skull"/>
+	</m>
+
+	<m group="skull" id="skul4" name="Los turistas que molestan" cond="mission(skul3)">
+		<begin>
+			"Únete a mí donde encontré el amor. Muldero." ¡Oh oh oh oh! Mi Muldero tiene
+			un corazón de orooooo. No olvidaré nunca ese bonito lugar donde nos llevó, cuando
+			aún éramos bien jóvenes... ¡y ese mágico momento en el que me dio una salchicha y me pidió
+			que me casara con él!
+		</begin>
+		<goto v="rashpk" hide="1"/>
+		<talk v="Vendedor de Salchichas" gfx="merguez">
+			¿Un cliente raro? Sí, hubo uno, canijillo, que vino a comerse unas salchichas suspirando nostálgicamente...
+			Se fue a dar una vuelta a las ruinas. Presta atención, hay unos turistas muy pesados en este momento...
+		</talk>
+		<actfight act="Visitar las Ruinas" monsters="baraba:bamboo">
+			<begin m="baraba">
+				¡Que el poder del Bambú esté conmigo! ¡A por los infieles!
+			</begin>
+			<win>Antes de derrumbarse, Barababor te dice las siguientes palabras: "Hemos capturado a tu amigo: ¡será llevado en barco a nuestras estepas natales donde será vendido como esclavo!"</win>
+		</actfight>
+		<goto v="port"/>
+		<action v="Buscar un barco raro">
+			Tras alguna que otra búsqueda, observas un barco muy raro en el puerto.
+		</action>
+		<actfight act="Entrar en el barco" bg="dome" monsters="baratr:bamboo">
+			<begin m="baratr">
+				¡Que el poder del Bambú esté conmigo! ¡¡Me vengaré de mi hermano!!
+			</begin>
+			<win>Tras vencer a los bandidos, liberas a un hombre atado situado en la bodega del barco...</win>
+		</actfight>
+		<talk v="Hombre liberado">
+			¡¡Ggggr gggggracias!! ¡¡Tenía muuuuuucho mied mied mied miedo! ¿sab sab sabes? ¿¿Muldero?? No, no. Me lla lla llamo Jose Carlos...
+			Soy un colega del vendedor de salchichas. ¡Gra gra gracias por tu tu tu ayu ayu ayuda!
+		</talk>
+		<goto v="rashpk" hide="1"/>
+		<talk v="Vendedor de Salchichas" gfx="merguez">
+			¿Salvaste a Jose Carlos? ¡¡Ah!! Muchas gracias. Estos bandidos de las Estepas molestaban mucho al turismo en las ruinas.
+			¡No sé cómo agradecértelo! .... ¿Muldero? Prometió que volvería si le hacía gambas al Napalm, pero no conozco la receta...
+		</talk>
+		<end>¡Oh oh oh! Muldero no está muy lejos, gracias por tu ayuda joven amigo.</end>
+		<xp v="40"/>
+		<gold v="2000"/>
+	</m>
+
+	<m group="skull" id="skul5" name="Gambas al Napalm" cond="mission(skul4)">
+		<begin>
+			¿"Gambas al Napalm"? ¡Oh oh oh oh! ¡Qué buenos recuerdos de ese delicioso plato!
+			Bien, tendrás que traerme un cierto número de ingredientes para que pueda preparar este plato.
+		</begin>
+		<talk v="Calaveri" gfx="skully">
+			En primer lugar, hacen falta unas buenas gambas. Podrás encontrarlas en el Mercado de Sulaflota. Ve, ¡rápido!
+		</talk>
+		<goto v="dome"/>
+		<talk v="Mercader de Gambas">
+			Lo siento pero debido a los fraudes ya no acepto ninguna moneda de oro como pago de mis gambas.
+			Vas a tener que traerme 3 Bonos del tesoro...
+		</talk>
+		<use v="tix" n="3"/>
+		<talk v="Mercader de gambas">
+			Gracias, aquí tienes tus gambas. ¡Buen provecho!
+		</talk>
+		<goto v="skull"/>
+		<talk v="Calaveri" gfx="skully">
+			¡Oh oh oh! ¡Mag-ní-fi-co! ¡Estas gambas son muy frescas! Bueno, pasemos a lo siguiente.
+			Segundo ingrediente indispensable: Napalm. Para fabricarlo, necesitamos lava de buena
+			calidad...
+		</talk>
+		<goto v="fosslv"/>
+		<talk v="Chamán lacio" gfx="shaman">
+			¿Napalm? Uhmm... vas a necesitar una mezcla mitad Lava - mitad Flamachas. Por aquí no falta de nada, así
+			que tráeme 5 Cajas de Flamachas para que te prepare la mezcla...
+		</talk>
+		<use v="flamch" n="5"/>
+		<talk v="Chamán lacio" gfx="shaman">
+			¡A glu! ¡A glu! ¡A gadagagu glu! Y ya está, el Napalm a baja densidad, perfecto para ti....
+		</talk>
+		<goto v="skull"/>
+		<talk v="Calaveri" gfx="skully">
+			¡Oh! ¡oh oh oh! ¡Qué buen Napalm! Pero la receta no estará completa a no ser añadamos un ingrediente ab-so-lu-ta-men-te necesario...
+			Los pelos de un Korgón bien grasiento. Debe de haber por el Gran Señor-Todo-Quema, pero presta atención en no robarle la comida a otro, ¡pues te arrepentirás!
+		</talk>
+		<goto v="vener" title="Buscar un korgón"/>
+		<actfight act="Buscar un korgón" monsters="korgon">
+			<begin m="korgon">¡Kwwiiiiiiik!</begin>
+			<win>Has capturado un korgón bien grasiento... ¡esperemos que no fuera la cena de ningún otro!</win>
+		</actfight>
+		<goto v="skull"/>
+		<talk v="Calaveri" gfx="skully">
+			¡Oh oh oh oh! Removemos, removemos... ¡ya está! ¡un magnífico plato de Gambas al Napalm!
+		</talk>
+		<end>
+			¡Gracias por tu ayuda! ¡oh oh oh! ¡Pronto me encontraré con mi querido Muldero!
+		</end>
+		<xp v="30"/>
+		<gold v="5000"/>
+	</m>
+
+	<m group="skull" id="skuend" name="El reencuentro" cond="mission(skul5)">
+		<begin>
+			Tu misión se acerca al final... llévale este plato de gambas al Napalm a mi querido Muldero.
+			Reconocerá mi cocina y regresará a por mí. ¡Oh oh oh!
+		</begin>
+		<goto v="rashpk"/>
+		<talk v="Vendedor de salchichas" gfx="merguez">
+			¡¡Ooooohh!! ¡¿Se trata de las famosas gambas al Napalm?! Veamos... uhmm.... le falta un poco de
+			grasa pero resulta un bocado bastante suculento. No hay duda de que Muldero no debe tardar en aparecer... Pero mira, ¡ahí está!
+		</talk>
+		<lock/>
+		<end>
+			¡OOooooooh! ¡oh! ¡oh oh oh! ¡¡¡Muldero ha vuelto!!! ¡¡Muchas gracias!!
+		</end>
+		<xp v="10"/>
+	</m>
+
+</missions>

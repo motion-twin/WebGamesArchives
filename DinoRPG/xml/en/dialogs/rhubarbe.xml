@@ -1,0 +1,119 @@
+<!-- Quête du médaillon à trois yeux -->
+
+<d place="temple" name="..." gfx="rhubarbe" frame="vide" cond="scenario(fmedal,14)">
+	<phase id="begin" next="ohe">
+		The interior of the temple seems deserted
+		Immortal flames crackle in front of an immense headstone.
+		There's not a soul her... Suddenly you hear a voice.
+	</phase>
+	
+	<a id="ohe">Who said that?</a>
+	
+	<phase id="ohe" next="lvl:nolvl">
+		[Whooo daaaares to interrupt my eternal rest?]
+	</phase>
+	
+	<a id="nolvl" cond="!level(51)">Erm, me!</a>
+	<a id="lvl" cond="level(51)">That'll be me...?</a>
+	
+	<phase id="nolvl">
+		[You' are unworthy of my time right now.
+		Retuen once your dinoz has broken through to attain it's true potential...]
+	</phase>
+	
+	<phase id="lvl" next="yo">
+		[Well then, come closer...]
+		[Do not be afraid...]
+	</phase>
+	
+	<a id="yo">Are you Sage Rhubabao'riley?</a>
+	
+	<phase id="yo" name="Sage Rhubabao'riley" next="limite" frame="blabla">
+		[...]
+		[And you, who would you be?]
+		[...]
+		[...Hum, I see you have achieved many things, that you have explored numerous places.]
+		[Your dinoz are admittedly powerful, but they have not reached their true potential...]
+		[I suppoooooose you have come here seeking to increase their limit...]
+	</phase>
+	
+	<a id="limite">I wan to be more powerful!</a>
+	
+	<phase id="limite" next="fight:nofight" frame="blabla">
+		[I do not doubt your intentions, however you are not the first to come to see me.]
+		[I can make you stronger, however you must be willing to pay the price.]
+		[Firstly, you must demonstrate to me that you are powerful enough.]
+		[Are your skills sufficient to defeat me?]
+	</phase>
+	
+	<a id="fight">Yes!</a>
+	<a id="nofight">I don't think so.</a>
+	
+	<phase id="nofight" frame="blabla">
+		[Come back and see me when you're ready.]
+	</phase>
+	
+	<phase id="fight" fightgroup="rhubar" frame="blabla" scenario="fmedal:15">
+		[Bien... You have proven yourself worthy.]
+		[The initiation may begin...]
+	</phase>
+</d>
+
+<d place="temple" name="Sage Rhubabao'riley" gfx="rhubarbe" frame="stop" cond="scenario(fmedal,15)+!mission(rhuba)">
+	<phase id="begin" next="yo">
+		The skeleton of a dorogon is trapped in the rock in front of you.
+		A spirit still lives within, its eyes watch you intently.
+	</phase>
+	<a id="yo">Sage Rhubabao'riley?</a>
+	<phase id="yo" next="mission" frame="blabla">
+		[.... IF you wish to break your dinoz' limits, you must undergo the initiation.]
+		[Are you ready?]
+	</phase>
+	<a id="mission">show missions</a>
+	<phase id="mission" missions="rhubar"></phase>
+</d>
+
+<d place="temple" name="Sage Rhubabao'riley" frame="blabla" gfx="rhubarbe" cond="mission(rhuba)+!fx(lvlup2)">
+	<phase id="begin" next="oui:non:notyet">
+		[Your dinoz has successfully stayed alive throughout the initiation. I congratulate you on leading him along this path.]
+		[With your agreement, I will now proceed to increase its maximum limit.]
+	</phase>
+	<a id="oui" cond="level(60)">My dinoz is ready!</a>
+	<a id="non">Wait a minute please.</a>
+	<a id="notyet" cond="!level(60)">My dinoz is ready!</a>
+	
+	<phase id="non">
+		[very well, come back to see me when you are ready.]
+	</phase>
+	<phase id="oui" next="up">
+		[Let it be thus!]
+		[Let this dinoz unleash its potential talent. May it break the shackles it has been cursed with for all these years!]
+	</phase>
+	<a id="up">Let's do this!</a>
+	<phase id="up" effect="lvlup2" frame="stop" next="off">
+		_(The spirit of the Sage enters the dinoz... A bright flash appears...)_
+		_(Your dinoz is freed, an aura emanating from within. With its limits broken once again, who knows how it will evolve?)_
+	</phase>
+	<a id="off">Incredible</a>
+	<phase id="off">
+		[Your dinoz can now go far beyond its current skillset. Use this new power carefully.
+		try not to be distracted by your base warrior instinct.]
+	</phase>
+	<phase id="notyet">
+		[Unfortunately your dinoz is not at a level where a second limit break can be carried out.]
+		[Come back and see me when the dinoz can advance no further!]
+	</phase>
+</d>
+
+<d place="temple" name="Sage Rhubabao'riley" frame="stop" gfx="rhubarbe" cond="fx(lvlup2)">
+	<phase id="begin" next="yo">
+		The skeleton of a dorogon is trapped in the rock in front of you.
+		A spirit still lives within, its eyes watch you intently.
+	</phase>
+	<a id="yo">Sage Rhubabao'riley?</a>
+	<phase id="yo" frame="blabla">
+		[it would appear though I am no longer of use to you, dinoz master.]
+		[Come back and see me if you have another dinoz which has not yet undergone its second limit break.]
+	</phase>
+</d>
+

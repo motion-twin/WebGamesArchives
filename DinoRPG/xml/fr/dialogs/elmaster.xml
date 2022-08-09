@@ -1,0 +1,113 @@
+﻿<d place="fosslv" name="Maître Elémentaire" gfx="elmaster" cond="active(elmaster)+((mission(pigeon)+mission(ritual)+mission(shipmt))|admin())">
+
+	<phase id="begin" fast="1" next="talk:talk2:talk3">
+		Vous avez entendu parler du Maître Elémentaire lors de vos études de Maître Dinoz. Il s'agit d'un Maître très respecté, expert dans la compréhension et la manipulation des éléments. De nombreux jeunes Maîtres Dinoz recherchent ses conseils pour pouvoir progresser, mais il est connu pour être plutôt sec et ne se laisse pas facilement approcher...
+	</phase>
+
+	<a id="talk" cond="!mission(elma)">Parler au Maître Elémentaire</a>
+	<a id="talk2" cond="mission(elma)+!mission(elma5)">Parler au Maître Elémentaire</a>
+	<a id="talk3" cond="mission(elma5)">Parler au Maître Elémentaire</a>
+
+	<phase id="talk" next="ask">
+		Uh ? Tiens, voilà encore un emmmm...aître qui vient me faire ch...auffer pour que je l'aide. Je commence en a avoir ras-le-c...ortex de ces histoires... Enfin bref... qu'est-ce qu'il veut ?
+	</phase>
+
+	<a id="ask">J'aimerais progresser !</a>
+
+	<phase id="ask" next="ask2">
+		Ben voyons.... Ca veut progresser, mais sans pour autant travailler. Ca veut faire des miracles, sans lever le petit doigt. S'il veut mon conseil, le voilà : bouge-toi-le-c...iboulot !!!
+	</phase>
+
+	<a id="ask2">Et c'est tout ?</a>
+
+	<phase id="ask2" next="miss">
+		.... et en plus ça insiste... Voyons voir... S'il veut vraiment apprendre quelque chose, il va falloir qu'il rende bien service d'abord. Ensuite on verra s'il est digne de nos conseils !
+	</phase>
+
+	<a id="miss">Liste des Missions</a>
+
+	<phase id="miss" missions="elmaster">
+	</phase>
+
+	<phase id="talk2" next="miss:maudit">
+		Bon, alors, il avance comment dans son apprentissage de la vie ? J'ai bien peur qu'on ne puisse pas faire grand chose de lui...
+	</phase>
+
+	<phase id="talk3" next="maudit:sphere">
+		La formation est terminée... Je ne suis pas du genre à faire des compliments, mais la plupart des Dinoz n'arrivent pas au bout, donc... c'est pas mal.
+	</phase>
+
+	<a id="maudit" cond="fx(maudit)">Malédiction ?</a>
+	<a id="sphere">Récompense...</a>
+
+	<phase id="maudit" next="maudit2">
+		Quoi ? Une malédiction ? Ne me dit pas qu'il a encore été se frotter à ma Baguette de Bois-Maudit ???? Je lui avais pourtant dit de ne surtout pas y toucher !!
+	</phase>
+
+	<a id="maudit2">....</a>
+
+	<phase id="maudit2" next="maudit3">
+		Et bien entendu, maintenant qu'il a fait sa con.... bétise, il veut que je l'aide ! Comme si je n'avais que ça à faire ! Enfin bon... ce qui est fait est fait... Pour lever la malédiction, il faut utiliser un Onguent du Démon. Le seul problème, c'est que la dernière boutique qui en vendait a fait faillite...
+	</phase>
+
+	<a id="maudit3">....</a>
+
+	<phase id="maudit3" next="maudit4">
+		Cependant, j'ai entendu dire qu'une boutique cachée existait, et qu'elle vendait des objets quasi-introuvables ailleurs. Le prix s'en ressent, mais vu les circonstances je ne pense pas qu'il ait le choix...
+	</phase>
+
+	<a id="maudit4">....</a>
+
+	<phase id="maudit4">
+		D'après les dernières rumeurs, la boutique apparaîtrait aux Ruines Ashpouk à ceux qui sont maudits...
+	</phase>
+
+	<phase id="sphere" next="sphere2">
+		Alors comme ça il veut sa récompense ?!? ..... C'est vrai qu'il a fait preuve d'une certaine persévérance dans sa formation aux cinq éléments... une persévérance proche de la stupidité, mais bon pourquoi pas...
+	</phase>
+
+	<a id="sphere2">...</a>
+
+	<phase id="sphere2" next="sphere3">
+		En tant que professeur, j'espère au moins qu'il aura appris quelque chose pendant ce temps, et qu'il sera reconnaissant envers les gens qui ont gaspillé leur temps en essayant de lui faire rentrer des évidences dans le crâne, et tout particulièrement envers moi !
+	</phase>
+
+	<a id="sphere3">Merci</a>
+
+	<phase id="sphere3" next="sphere4">
+		Ah ! Au moins, il est poli ! C'est une qualité qui se perd ces temps-ci... Pour la peine, je vais lui offrir une belle récompense. Sait-il au moins ce qu'est une Sphère Elémentaire ?
+	</phase>
+
+	<a id="sphere4">Une quoi ?</a>
+
+	<phase id="sphere4" next="sphere5">
+		.... C'est malheureusement bien ce que je pensais.... Je me demande parfois pourquoi je dois tout le temps expliquer la même chose.... Enfin bref, une Sphère Elémentaire est un objet magique chargé de la puissance d'un élément.
+	</phase>
+
+	<a id="sphere5">...</a>
+
+	<phase id="sphere5" next="sphere6">
+		Il existe donc cinq types de sphères, une pour chaque élément. Quand un Dinoz en absorbe une, il apprend directement une nouvelle compétence liée à cet élément... C'est donc un objet assez puissant...
+	</phase>
+
+	<a id="sphere6">...</a>
+
+	<phase id="sphere6" next="again:sphere7:already">
+		Mais ce n'est pas tout ! En cumulant plusieurs Sphères du même élément, le Dinoz peut apprendre des compétences encore plus puissantes ! Il y a ainsi trois niveaux sphériques par élément, soit en tout quinze compétences sphériques... A-t-il bien tout compris ce que je viens de lui dire ?
+	</phase>
+
+	<a id="again" target="sphere4">Répéter</a>
+	<a id="sphere7" cond="fx(sphere)">J'ai bien compris</a>
+	<a id="already" cond="!fx(sphere)" target="end">J'ai bien compris</a>
+
+	<phase id="sphere7" next="end" rnditem="spher1:spher2:spher3:spher4:spher5" noeffect="sphere">
+		Bien ! S'il a tout compris, je lui confie une de mes Sphères ! Attention, comme mon coffre-à-sphères n'est pas très bien rangé, je ne sais jamais sur laquelle je vais tomber...
+	</phase>
+
+	<a id="end">Super !</a>
+
+	<phase id="end">
+		Qu'il réfléchisse bien avant d'utiliser sa Sphère, car elle est très précieuse. De nombreux Maîtres-Dinoz seraient d'ailleurs prêts à donner une petite fortune pour en obtenir une, ce qui fait qu'on en trouve parfois en vente à la Place du Marché !
+	</phase>
+
+</d>

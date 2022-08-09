@@ -1,0 +1,206 @@
+﻿<d place="skull" name="Calaveri" gfx="skully" cond="life(10-)+!fx(skull)">
+
+	<phase id="begin" next="arg:bye:shortcut">
+		¡Oh oh oh oh oh oh oh! ¡Tu Dino tiene muy mal aspecto!
+	</phase>
+
+	<a id="arg">¡Ahhhh! ¡Un fantasma!</a>
+	<a id="bye">Salir corriendo</a>
+	<a id="shortcut" target="missions" cond="admin()">(admin)</a>
+
+	<phase id="arg" next="bye:arg2">
+		¿¿¿Un FANTASMA??? ¡¡Aaaahh! ¿Dónde? ¿¿Dónde??
+	</phase>
+
+	<a id="arg2">¡¡¡Aquí mismo!!! ¡¡¡Tú!!!</a>
+
+	<phase id="arg2" next="diff:bye">
+		¿¿QUÉ?? ¿¿Yo?? Pero pero pero pero pero pero... ¡vamos! ¡un poco de respeto, ¡eh!
+		¡Soy un E.S.Q.U.E.L.E.T.O! ¡Un esqueleto, sí! Un poco despeinada, quizás, ¡pero no un fantasma!
+	</phase>
+
+	<a id="diff">¿Y cuál es la diferencia?</a>
+
+	<phase id="diff" next="free:bye">
+		En primer lugar, un fantasma está muerto, y yo estoy... un poco cansada, eso es todo. Tengo ojeras, y eso dice mucho.
+		Un fantasma se pasa el día asustando y encantando mientras que yo soy libre de hacer lo que quiera... bueno, casi.
+	</phase>
+
+	<a id="free">¿Casi libre? ¿Qué quieres decir?</a>
+
+	<phase id="free" next="haunt:bye">
+		Es un pelín... complicado. Digamos que tengo dos cosillas técnicas que resolver.
+		Por un lado, solo los Dinos al borde de la muerte y sus maestros pueden verme, por otro lado,
+		no puedo abandonar este lúgubre lugar...
+	</phase>
+
+	<a id="haunt">¡Entonces estás atada a este lugar por un encantamiento!</a>
+
+	<phase id="haunt" next="do:bye">
+		¿¿Encantamiento?? ¿Pero estás de BROMA? ¡Oh oh oh oh oh oh oh! ¡Nada más pensarlo me pone la piel de gallina!
+		Tengo mejores cosas en qué pensar, VAMOS HOMBRE...
+	</phase>
+
+	<a id="do">¿Ah, sí? ¿Entonces de qué se trata?</a>
+
+	<phase id="do" next="uhm:bye">
+		Uhm... es muy... INDISCRETO por tu parte. ¡Oh oh oh oh! ..... Pero te lo cuento de todos modos (una vez
+		más no me hará daño). ¡Tengo un... MARIDO! Nadie lo diría, pero cuando era joven tenía unas tibias muy lindas.
+	</phase>
+
+	<a id="uhm">¿Ah, sí?</a>
+
+	<phase id="uhm" next="bonne:bye">
+		¿Qué hago yo contándote todo esto? ¡oh oh oh! No tiene ninguna importancia, pues de todos modos tengo una
+		bonedicción que te hará olvidar lo que te acabo de contar.
+	</phase>
+
+	<a id="bonne">Una... ¿bonedicción?</a>
+
+	<phase id="bonne" next="reset:next:bye">
+		Sí, ¡oh! ¡oh oh oh ! Es como una maledicción pero en mejor. Estoy protegida por una bonedicción para evitar problemas como los que me suponen los científicos. Estarían encantados de
+		descubrir cómo me alimento. Ni siquiera presto atención a mi colesterol. Lo dicho, poco después de verme, ¡la gente olvida mi existencia!
+	</phase>
+
+	<a id="reset" target="forgot">No te creo...</a>
+	<a id="next">No parece muy práctico...</a>
+
+	<phase id="next" next="help:nohelp:bye">
+		¿No te parece? Encima como no puedo alejarme de aquí, ¿cómo quieres que lo encuentre? ¡¡Mi Muldero querido!!
+	</phase>
+
+	<a id="nohelp">¿Muldero es tu marido?</a>
+	<a id="help">Podría ayudarte...</a>
+
+	<phase id="nohelp" next="forgot">
+		No puedes ayudarme de todos modos... ¡oh oh oh! Déjame sola ahora. Voy a pensar en él. No olvides olvidarme...
+	</phase>
+
+	<a id="forgot">Estoooo...</a>
+
+	<phase id="forgot" fast="1">
+		Te ha parecido haber estado hablando con alguien hace poco, pero ya no te acuerdas de los detalles...
+	</phase>
+
+	<phase id="help" next="question:accept:maybe">
+		¿¿DE VERDAD?? ¡¡OH OH OH OH OH!! ¿Harías eso por míiiiii? Pero va a ser complicado para ti, y cada vez que nos encontremos no
+		te acordarás de casi nada. ¿Estás seguro de que me quieres ayudar?
+	</phase>
+
+	<a id="question" target="forgot">No te preocupes, ¡no me olvidaré de nada!</a>
+	<a id="accept">¡Claro! ¡Sin lugar a dudas!</a>
+	<a id="maybe" target="forgot">Tengo que pensarlo...</a>
+
+	<phase id="accept" next="missions">
+		¡¡OH OH OH OH OH!! Entonces, ¡porfi Señor Maestro de Dinos! ¡Ayúdame a encontrar a Muldero y te recompensaré como te mereces!
+	</phase>
+
+	<a id="missions">¿Qué puedo hacer por ti, entonces?</a>
+
+	<phase id="missions" missions="skull">
+	</phase>
+
+	<phase id="bye" fast="1">
+		El esqueleto te mira partir con decepción. Si te volvieras verías que está llorando, pero
+		continúas corriendo lo más rápido que puedes; seguro que haces bien.
+	</phase>
+
+</d>
+
+<d place="skull" name="Calaveri" gfx="skully" cond="fx(skull)+!mission(skuend)">
+
+	<phase id="begin" next="missions">
+		¡¡oh oh Oh Oh OH!! ¡La bonedicción se ha levantado! ¡Ahora me ayudarás a encontrar a Muldero!
+	</phase>
+
+	<a id="missions">¿Qué debo hacer ahora?</a>
+
+	<phase id="missions" missions="skull">
+	</phase>
+
+</d>
+
+<d place="skull" name="Calaveri" gfx="skully" cond="mission(skuend)">
+
+	<phase id="begin" next="pda:dinoz">
+		¡Gracias por todo los que has hecho por nosotros! ¡Muldero y yo disfrutamos al fin de nuestro amor en este magnífico lugar
+		con vistas al mar! ¡Qué felicidad tenerte a mi lado cada día!
+	</phase>
+
+	<a id="dinoz" cond="!collec(pda)+!dinoz(15)">No ha sido nada</a>
+	<a id="pda" cond="!collec(pda)+dinoz(1)">No ha sido nada</a>
+
+	<phase id="dinoz">
+		¡Que sí, que sí! Ven a verme cuando tengas más Dinos y te daré un regalo.
+	</phase>
+
+	<phase id="pda" collection="pda">
+		Sí, ¡has hecho mucho! Ten, para ti... te doy este magnífico Planificador que te ayudará en tu aventura para
+		gestionar tus Dinos. Será añadido a tus objetos de colección.
+	</phase>
+
+</d>
+
+
+<d place="rashpk" name="Muldero" gfx="mouldeur" cond="curmission(skuend,2)">
+
+	<phase id="begin" next="you">
+		Uhmm.... ¡Qué delicioso olor a Gambas al Napalm! Me recuerda a la cocina de mi querida mujer.
+	</phase>
+
+	<a id="you">¿Eres Muldero?</a>
+
+	<phase id="you" next="explain">
+		Sí. ¡Encantado! ¿Sabías que en estas ruinas se pueden encontrar marcas de extraños círculos quemados? Estudio este fenómeno desde
+		hace tiempo, y he llegado a la conclusión de que existen 2 explicaciones sobre estas marcas...
+	</phase>
+
+	<a id="explain">Ah... ¿y cuáles son?</a>
+
+	<phase id="explain" next="other">
+		Todo parece apuntar a que se trata de unas criaturas extrañas provenientes del espacio exterior. Cuando vienen a estudiar a los
+		humanos, se posan en lugares discretos...  Como sus naves escupen fuego, al partir de nuevo a su planeta de origen, dejan estas extrañas marcas.
+		Y por supuesto, el Rey esconde estas informaciones y conspira con ellas. ¿No te parece extraordinario?
+	</phase>
+
+	<a id="other">¿Y la otra explicación?</a>
+
+	<phase id="other" next="ok">
+		¿Ah? ... uhm... la otra explicación me parece mucho más verosímil. Según el vendedor de salchichas, se trata de marcas de fuego dejadas por los turistas
+		que visitan las ruinas.
+	</phase>
+
+	<a id="ok">Es muy posible.</a>
+
+	<phase id="ok" next="ok2">
+		¡Uhm! ¡Qué suculentas estas Gambas al Napalm! ¡Y saber que no veré nunca más a mi encantadora esposa! Oh, ¡cuánto nos amábamos!
+		Por desgracia, está muy muerta mi querida.
+	</phase>
+
+	<a id="ok2">Pero... ¡tú también!</a>
+
+	<phase id="ok2" next="skully">
+		¿Qué? ¿No estarás bromeando? Sigo en mi juventud... mira qué lisos están mis huesos: ¡ni una arruga!
+	</phase>
+
+	<a id="skully">Calaveri te busca...</a>
+
+	<phase id="skully" next="exp">
+		¿Cómo? ¡¿Conoces a Calaveri?!
+	</phase>
+
+	<a id="exp">(Explicas toda la historia)</a>
+
+	<phase id="exp" next="end">
+		¡............. Gracias! Esto quiere decir que mi intuición no me engañaba y que he hecho bien en no buscar
+		a otra mujer para reemplazarla. ¡Oooh! ¡Gracias! ¡Mil gracias por tu ayuda!
+	</phase>
+
+	<a id="end">No es nada...</a>
+
+	<phase id="end" unlock="skuend">
+		¡Sí! ¡¡¡Es una auténtica hazaña!!! Acompáñame hasta mi mujer, ¡qué ganas de volver a verla con mis propios ojos!
+	</phase>
+
+</d>
+

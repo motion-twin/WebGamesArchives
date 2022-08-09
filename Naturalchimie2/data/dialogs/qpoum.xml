@@ -1,0 +1,146 @@
+<d place="agoraa" name="Local du POUM" gfx="jzpouma" cond="(grade(,4)|curquest(ylasc))+!curquest(pouma,1)">
+
+<phase id="begin" frame="angry" next="prolog:quest:card:nocard:exit">
+Bienvenue au POUM. Aide le POUM, le POUM t'aidera ! 
+</phase>
+
+<a id="prolog">Le POUM ? Qu'est-ce que c'est, le POUM ?</a>
+<a id="quest" cond="fx(dipoum)+grade(,4)">Je veux aider le POUM ! </a>
+<a id="card" cond="fx(dipoum)+!hascollection(cpoum)+grade(,4)">Ca me dirait bien d'être un membre actif du POUM...</a>
+<a id="nocard" cond="hascollection(cpoum)+grade(,4)">Je démissionne !</a>
+<a id="exit">Au revoir.</a>
+
+<phase id="quest" frame="happy" quest="poum">
+Formidable, un membre actif dans nos locaux !
+</phase>
+
+
+<!-- ############### -->
+
+<phase id="card" next="ava">
+Ohoh, un nouveau membre frappe à la porte du POUM ! | Laisse-moi te présenter tous les avantages des membres actifs : 
+</phase>
+
+<phase id="ava" frame="angry" next="avb">
+[Avantage * numéro 1 !] Une carte de membre strictement personnelle en plastique inoxydable inusable ! 
+</phase>
+
+<phase id="avb" frame="happy" next="avc">
+[Avantage * numéro 2 !] Un accès VIP à des lieux chargés d'histoire et à l'intérêt alchimique certain !
+</phase>
+
+<phase id="avc" next="form">
+[Avantage * numéro 3 !] Une réduction permanente à la boutique de souvenirs de la Ziggourat d'or ! 
+</phase>
+
+<phase id="form" frame="happy" next="hum">
+Alors, qu'en penses-tu ? Formidable non ? Rejoindre le POUM, c'est rejoindre l'élite du modernisme ! C'est être au top ! Quitter les miasmes et la loose de l'alchimie plan-plan ! 
+</phase>
+
+<a id="hum">Hum... Ah oui, ça a l'air bien. Mais la cotisation est de combien ? </a>
+
+<phase id="hum" next="mok:nmok:argl">
+La cotisation est une formalité pour un membre de l'élite ! {2500 kubors} seulement. 
+</phase>
+
+<a id="mok" cond="hasgold(2500)">Ca marche, je veux rejoindre l'élite du POUM ! Voilà vos 2500 kubors.</a>
+<a id="nmok" cond="!hasgold(2500)">Ca marche, je veux rejoindre l'élite du POUM ! Voilà vos 2500 kubors.</a>
+<a id="argl">Oula... non merci... </a>
+
+<phase id="mok" collection="cpoum" gold="-2500">
+Voilà ta carte de membre ! C'est formidable, tu es notre première cotisation de l'année, ça renfloue bien notre trésorerie ! 
+</phase>
+
+<phase id="nmok" frame="happy">
+Désolé mais tu n'as pas assez de kubors pour rejoindre le POUM pour l'instant. 
+</phase>
+
+<phase id="argl">
+Tant pis. Le POUM continuera son chemin seul... quels que soient les dangers qui le guettent. 
+</phase>
+
+<!-- ###############"" -->
+
+<phase id="nocard" next="doui:dnon">
+Arrrh, quelle tristesse. Tu es sûr ? 
+</phase>
+
+<a id="doui">Oui, je quitte le POUM. Je rends ma carte de membre.</a>
+<a id="dnon">Euh non, je vais réfléchir en fait.</a>
+
+<phase id="doui" nocollection="cpoum">
+Soit. | Adieu, cher ex-membre. 
+</phase>
+
+<phase id="dnon" frame="happy" >
+Ouf, je suis rassuré.
+</phase>
+
+
+
+<!-- ###############"" -->
+
+<phase id="prolog" frame="angry" next="proa">
+{Partage et Ouverture Universelle aux Moralistes : POUM ! } | Nous sommes une assocation jeezariste à but non lucratif. | %normal% Notre local est ici, sur la Grande Place. 
+</phase>
+
+<phase id="proa" next="zzz">
+Notre objectif est d'oeuvrer pour une meilleure entente et une meilleure compréhension entre jeezaristes et moralistes. La connaissance et le respect de l'autre sont les mamelles d'un monde meilleur, libéré de l'obscurantisme et des sales blagues de potaches !
+</phase>
+
+<a id="zzz">ZzZZZzzz... Ah euh, pardon. Mais euh... Les jeezaristes je vois bien, mais les molaristes, c'est qui ? </a>
+
+<phase id="zzz" frame="happy" next="moi:moijz">
+{"Moralistes"}, on dit "moralistes". Eh bien, c'est assez simple. En gros, on appelle moralistes... | tous les alchimistes qui ne sont pas jeezaristes ! 
+</phase>
+
+<a id="moi" cond="!sch(jz)">Mais ! Je suis moraliste, alors ! </a>
+<a id="moijz" cond="sch(jz)">Ah ouais ? Ah ben je suis bien content de pas être un sale moraliste, tiens. </a>
+
+<phase id="moi" next="expl">
+Eh oui ! | Mais ce n'est pas grave ! 
+</phase>
+
+<phase id="moijz" frame="happy" next="expl">
+Voilà ! Voilà exactement le comportement jeezariste typique que nous essayons de changer ! En quoi les moralistes sont-ils forcément des "sales moralistes"  ? C'est idiot ! 
+</phase>
+
+<phase id="expl" next="prq">
+En fait, le problème vient du culte du secret de l'école Jeezara (et de son goût pour les expériences dégueulasses, aussi). Les jeezaristes n'aiment pas les gens qui ne sont pas de Jeezara, ils les appellent les moralistes. 
+Et les moralistes ont peur de Jeezara car ils trouvent l'école bizarre....
+</phase>
+
+<a id="prq">Ok, mais pourquoi "moraliste" ? </a>
+
+<phase id="prq" next="com">
+Contrairement aux autres écoles, Jeezara fait de l'alchimie sans s'inquiéter de l'avis de la ménagère de moins de 50 ans, de l'anesthésie... | ou encore de la morale. | D'où les moralistes ! A Jeezara, on dit aussi "chochotte" ou "petit rigolo" à la place.
+</phase>
+
+<a id="com">Mouais. Communautarisme primaire, en somme. Et le POUM, dans tout ça ? </a>
+
+<phase id="com" frame="happy" next="comb">
+Ohhh, tu parles déjà comme un vrai membre du POUM ! Tu iras loin ! 
+</phase>
+
+<phase id="comb" next="act">
+Bref . Le POUM regroupe des membres de Jeezara qui veulent que ce clivage obscurantiste cesse ! Nous organisons des activités pour ouvrir l'esprit des uns et des autres. 
+</phase>
+
+<a id="act">Des activités comme quoi ? </a>
+
+<phase id="act" frame="angry" next="bing">
+Des activités ludiques et stimulantes ! Ouvertes à tous ! Visites guidées, soirées débats, édition de plaquettes informatives... et bien sûr nos célèbres bingos mensuels qui rameutent toute la capitale ! 
+</phase>
+
+<a id="bing">Ouah des soirées bingos. Ca fait rêver. </a>
+
+<phase id="bing" effect="dipoum">
+N'est-ce pas ? J'espère que tu seras des nôtres la prochaine fois ! En attendant, le POUM a toujours besoin de bras et de cotisations supplémentaires pour l'aider dans sa lourde tâche ! Si tu veux participer, n'hésite pas ! 
+</phase>
+
+
+
+
+
+
+</d>

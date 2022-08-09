@@ -1,0 +1,91 @@
+<!-- ***************************************************************************** -->
+<!-- Urma, Vieille sorcière, soeur jumelle d'irma ----->
+	
+<d place="dnv" name="Urma" gfx="irma" cond="active(urma)+uvar(paques,300+)+promo(easter)">
+	
+	<phase id="begin" >
+		[Greetings Dinoz master.]
+		[I'm sorry, I've no more eggs to sell you, you have already bought all the eggs I had put aside for you.]
+		[I hope you were lucky enough to find some objects which will be useful in your quest.]
+	</phase>
+	
+</d>	
+<d place="dnv" name="Urma" gfx="irma" cond="active(urma)+uvar(paques,299-)+promo(easter)">
+
+	<phase id="begin" next="suivant:irma:oui2:oui3:non">
+		[Greetings Dinoz master.]
+		[I'm sure you've heard of my sister Irma, but please try not to get us mixed up!
+		I'm a lot more powerful, and I'm going to prove it to you!]
+	</phase>
+
+	<a id="suivant" cond="!tag(urma)">
+		What are you going to do? Turn me into a Wanwan?
+	</a>
+	<a id="irma" cond="!tag(urma)">
+		Are you Irma? Is it you that makes the potions?
+	</a>
+	<a id="non" target="bof">
+		No thanks.
+	</a>
+	
+	<phase id="suivant" next="oeuf">
+		Tempting, but first I need to get rid of these eggs I've been collecting...
+	</phase>
+	<phase id="irma" next="popo">
+		[Humpff, I knew it, that old trout stealing my thunder again...]
+		[She always needs to be the centre of attention.
+		She only knows how to make one potion, I've created something infinitely more exciting!]
+	</phase>
+	
+	<a id="popo">
+		Can you give me some potions?
+	</a>
+	
+	<phase id="popo" next="bof:oeuf">
+		I've already told you I'm not IRMA!
+		Maybe I won't even sell you any eggs now!
+	</phase>
+	
+	<a id="bof">No thanks, I prefer potions.</a>
+	<a id="oeuf">Eggs?</a>
+	
+	<phase id="oeuf" next="oui:bof">
+		[Very special eggs!]
+		[*Urma's eggs*, beat every other object going in Dinoland!]
+		[You could find an authentic warm bread, a monochromatic, or even a Dinoz inside!
+		It's just down to luck whether you find the object of your dreams... or not.]
+		[They only cost *1000 gold coins*!]
+	</phase>
+	
+	<a id="oui" confirm="1">Did you say 1000 gold coins? That's a bargain. I'll take one!</a>
+	<a id="oui2" cond="tag(urma)" confirm="1">I'd like to buy an Urma's egg for 1000 gold coins!</a>
+	<a id="oui3" cond="tag(urma)+uvar(paques,290-)" confirm="1">I'd like to buy 10 Urma's eggs for 10000 gold coins!</a>
+	
+	<phase id="oui" next="bye" usegold="1000" give="paques" nocheck="1" tag="urma" gvar="paques:1" uvar="paques:1">
+		Thank you Dinoz master, I hope you find what you're looking for in the egg.
+		Come and see me whenever you like, I'll be here for a while.
+	</phase>
+	
+	<a id="bye">
+		See you next time!
+	</a>
+	
+	<phase id="oui2" next="bye" usegold="1000" give="paques" nocheck="1" gvar="paques:1" uvar="paques:1">
+		Thank you Dinoz master, I hope you find what you're looking for in the egg.
+		Come and see me whenever you like, I'll be here for a while.
+	</phase>
+	
+	<phase id="oui3" next="bye" usegold="10000" give="paques:10" nocheck="1" gvar="paques:10" uvar="paques:10">
+		Thank you Dinoz master, I hope you find what you're looking for in the egg.
+		Come and see me whenever you like, I'll be here for a while.
+	</phase>
+	
+	<phase id="bye" fast="1" frame="stop">
+		You head off, and look back to see Urma rubbing her hands together. You wonder if she's really getting what she wants from her egg sale?
+	</phase>
+	
+	<phase id="bof" fast="1" frame="stop">
+		You head off, but old Urma looks somewhat disappointed, maybe she should have sold potions like her sister?
+	</phase>
+	
+</d>

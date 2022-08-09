@@ -1,0 +1,42 @@
+﻿<d place="marche" name="Homme Louche" gfx="filou" cond="active(market)|!scenario(nimba2,2)">
+
+	<phase id="begin" next="listen:bye">
+		Pssss.... pssss !!
+	</phase>
+
+	<a id="listen">S'approcher de l'homme</a>
+	<a id="bye">S'en aller</a>
+
+	<phase id="bye" fast="1">
+		Vous avez eu raison, il ne vaut mieux pas avoir a faire avec ce genre de type...
+	</phase>
+
+	<phase id="listen" next="yes:bye:convert:convert2">
+		Dis dis dis... tu cherches des bons ? des bons du trésor ?
+	</phase>
+
+	<a id="yes">Oui, ca peut m'interesser</a>
+	<a id="convert" cond="uvar(elites,1+)+uvar(conver,1+)+active(abo)">Je voudrais convertir mon or en bons !</a>
+	<a id="convert2" cond="!uvar(elites,1+)+active(abo)">Je voudrais convertir mon or en bons.</a>
+
+	<phase id="yes" next="view:bye">
+		Eh eh (chouette, un client) ... j'en ai quelques uns tu sais ! Regarde, ils ont l'air vrais hein !
+		Je te les vends pour un bon prix ! Avec des taxes bien entendu... faut bien que je nourrisse mes sept enfants,
+		tu comprends mon gars...
+	</phase>
+	
+	<phase id="convert" next="view">
+		Pas de problème, je vois que tu as une autorisation du Roi pour ce genre de pratique.
+		Je ne peux t'échanger que quelques bons, sinon j'aurai trop de scrupules... euh, sinon il n'y en aura pas pour tout le monde.
+	</phase>
+	
+	<phase id="convert2">
+		Désolé mon gars, je garde mes bons pour les maîtres privilégiés.... C'est que, ...,  je suis assez demandé figure toi !
+	</phase>
+	
+	<a id="view">Regarder</a>
+
+	<phase id="view" url="/dino/::did::/act/filou">
+	</phase>
+
+</d>

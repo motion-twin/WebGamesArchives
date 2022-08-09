@@ -1,0 +1,31 @@
+<d place="grenie" name="" gfx="gualtus" auto="1" cond="!fx(welcom)+firstplaydone()+fx(demosu)">
+
+<a id="begin">Tenez, voilà votre papier d'inscription. </a>
+
+<phase id="begin" next="cool:short">
+Merci. Alors tu t'appelles {::user::}. C'est euh... original. 
+Bon, en tout cas voilà tes [8 Pyrams], %happy%ils te permettent de jouer 8 parties quand tu veux. 
+</phase>
+
+<a id="cool">Cool. Je fais quoi maintenant, sinon ?</a>
+<a id="short">On peut jouer plus souvent dans ce jeu ? Vous parlez beaucoup, non ? </a>
+
+
+<phase id="short" effect="welcom" quest="altus">
+Hum. C'est vrai que si j'ai été mis à la retraite, c'est peut-être parce que j'étais toujours un peu long...
+%angry%On va accélérer : voilà la liste de ce que tu as encore besoin. Tu peux te débrouiller, maintenant. 
+</phase>
+
+<phase id="cool" next="listea">
+Maintenant, il faut que tu ailles récupérer les objets indispensables à ta formation. J'avais une vieille liste quelque part, attends un peu...
+</phase>
+
+<phase id="listea" next="listeb" frame="hide">
+J'espère que les souris ne me l'ont pas boulotée... | | | Ah ! Je l'ai ! 
+</phase>
+
+<phase id="listeb" effect="welcom" quest="altus">
+Tiens, tout est indiqué. Tu pourras revenir la consulter quand tu veux.
+</phase>
+
+</d>

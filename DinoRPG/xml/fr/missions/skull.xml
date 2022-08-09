@@ -1,0 +1,231 @@
+﻿<missions>
+
+	<m group="skull" id="skul1" name="Informations Préliminaires">
+		<begin>
+			Mouldeur a été touché par ma bonnédiction, alors que l'on faisait de vieux os ensemble,
+			il m'a tout à coup oubliée et s'en est allé loin d'ici, le ruffian ! Il a sûrement dû
+			donner des nouvelles à son neveu le ptit'Joe... Va le voir et tiens moi au courant !
+		</begin>
+		<goto v="papy" hide="1"/>
+		<talk v="Papy 'Ptit' Joe" gfx="papy">
+			Oncle Mouldeur ? Ohlala ca fait des années que je n'ai pas entendu parler de lui...
+			Si tu veux en savoir plus, ramène-moi trois merguez du Grand Tout Chaud !
+		</talk>
+		<use v="mergz" n="3"/>
+		<talk v="Papy 'Ptit' Joe" gfx="papy">
+			Merci ! (crounch crounch) tout ce que je sais, c'est qu'oncle Mouldeur aimait beaucoup
+			sa femme et a laissé un message pour elle gravé sur la Fontaine de Jouvence.
+		</talk>
+		<goto v="fountj"/>
+		<action v="Lire le message">
+			Dans une des nombreuses gravures de la Fontaine de Jouvence, on peut lire le message suivant :
+			"Je t'attendrai sur le lieu de notre rencontre"
+		</action>
+		<end>
+			Merci, ce sont de précieuses informations que tu m'as rapporté là ! Mon Mouldeur chéri ne doit pas
+			être très loin, nous serons bientôt réunis !
+		</end>
+		<xp v="10"/>
+	</m>
+	
+	<m group="skull" id="skul2" name="Sur les trâces de Mouldeur" cond="mission(skul1)">
+		<begin>
+			"Je t'attendrai sur le lieu de notre rencontre" Oh oh oh oh ! Comme c'est roooomantique
+			mon Mouldeur chéri ! J'espère en tout cas qu'il m'attend encore là-bas ! Vite, rends toi
+			dans ce magnifique lieu aux douces odeurs de nénuphars où nous nous sommes rencontrés, et
+			ramène-moi mon amour !
+		</begin>
+		<goto v="marais" hide="1"/>
+		<talk v="Un Touriste Enlisé">
+			J'en ai RAZ LE BOL de ce Marais de M...... !!!!! Ca fait trois fois que notre Camping-Car s'enlise, quelle idée à la c... de venir passer des VACANCES DANS UN MARAIS !!! Quoi ? Si j'ai vu un dénommé Mouldeur ? Ah ! oui, il est parti assister à une réunion de l'Amicale des Anguilloz Anonymes ! Fait attention si tu vas là-bas car elles sont du genre susceptible...
+		</talk>
+		<actfight act="Réunion des A.A.A." monsters="anguil:anguil">
+			<begin>Alors que votre Dinoz s'approche, certaines Anguilloz se rendent compte de sa présence et l'attaquent !</begin>
+			<win>Aprés la défaite des Anguilloz, vous observez des traces de pas qui s'éloignent en direction de l'ouest...</win>
+		</actfight>
+		<goto v="chutes" hide="1"/>
+		<talk v="Pêcheur">
+			Ca mord bien dans l'coin : les poissons viennent voir les moines qui lévitent... Un gars qui s'appelle
+			Mouldeur ? J'le connais bien : il est parti pêcher dans la baie aux Piranhoz. Fait gaffe mon gars, ça
+			mordille ces saletés...
+		</talk>
+		<actfight act="Baie aux Piranhoz" monsters="pira:pira:pira:pira:pira:pira">
+			<begin>
+				A peine vous entrez dans la baie que de nombreux Piranhoz se précipitent pour vous mordiller... Qui peut bien avoir envie de venir pêcher ici ???</begin>
+			<win>Une fois les Piranhoz vaincus, vous regardez aux alentours. Si Mouldeur est venu pêcher ici, il est déjà reparti...</win>
+		</actfight>
+		<talk v="Pêcheur">
+			Mouldeur ? Il a dit qu'il retournait attendre sa femme au Marais... Pauv'gars, ça fait des années qu'il ne l'a pas revu... Remarquez à sa place je serais plutôt content...
+		</talk>
+		<goto v="marais"/>
+		<action v="Panneau Indicateur">
+			Un panneau semble avoir été récemment dressé près d'un parterre de nénuphars. On peut y lire le message suivant :
+			"Marre des moustiques, rejoins moi là où je t'ai déclaré ma flamme. Mouldeur."
+		</action>
+		<end>
+			Ooohh oh oh oh oh ! Mouldeur chéri ! Je te sens plus proche de moi que jamais !
+		</end>
+		<xp v="20"/>
+		<gold v="1000"/>
+	</m>
+
+	<m group="skull" id="skul3" name="Mademoiselle Bao" cond="mission(skul2)">
+		<begin>
+			Oh oh oh ! J'ai pensé à quelque chose de... problématique. Même si je retrouve Mouldeur, il va oublier à nouveau
+			nos retrouvailles et repartir m'attendre quelque part. Il faut absolument que tu trouves une solution à ce
+			problème avant d'aller voir Mouldeur. Va trouver cette chère Mademoiselle Bao, elle aura certainement une solution !
+		</begin>
+		<goto v="baobob"/>
+		<talk v="Mademoiselle Bao ???" gfx="baobob">
+			Quoi ??? Mademoiselle Bao ?? Non mais... tu me prends pour qui au juste ? .......... Si tu cherches ma soeur, et bien
+			elle se trouve en ce moment auprès du petit fils de l'ArchiDorogon : "le Vénérable" comme il aime se faire
+			appeller maintenant... D'ailleurs si un jour son père l'apprend, il va passer un sale quart-d'heure...
+		</talk>
+		<goto v="vener"/>
+		<talk v="Mademoiselle Bao" gfx="baobabe">
+			Quoi ??? Mademoiselle Bao ?? Mais voyons.... celà fait une éternité que l'on ne m'a pas appellée comme celà.
+			Je t'en prie, jeune homme, utilise mon prénom, appelle-moi Babe...
+		</talk>
+		<talk v="Bao Babe" gfx="baobabe">
+			Tu cherches mon conseil ? Ecoute, je dois d'abord finir ma partie de dames avec le petit-fils de l'ArchiDorogon.
+			Son grand-père m'a fait promettre de venir lui tenir compagnie de temps-en-temps... Que dirais-tu d'aller chasser
+			quelques gobelins en attendant que je finisse ?
+		</talk>
+		<kill v="goblin" n="10" name="Chasser les Gobelins"/>
+		<talk v="Bao Babe" gfx="baobabe">
+			Voilà ! J'ai fini ! Je l'ai battu à plate couture hi hi hi ! J'adooore le mettre en colère, il est tellement
+			mignon quand ses narines commencent à souffler de la vapeur d'eau ! Mais tu voulais me demander un conseil ?
+		</talk>
+		<talk v="Bao Babe" gfx="baobabe">
+			.......... Oh ? Vraiment ? ..... La solution à ce genre de bonnédiction est très simple : il suffit que quelqu'un
+			garde une partie de Skully toujours avec lui pour ne rien oublier... A bientôt, jeune homme !
+		</talk>
+		<end>
+			Oh oh oh oh oh ! En voilà une bonne solution pour ma bonnédiction ! Tiens, prends ça, de cette façon tu n'oublieras
+			plus ni le chemin du Cimetière, ni ta chère Skully oh oh oh !
+		</end>
+		<xp v="10"/>
+		<gold v="500"/>
+		<fx v="skull"/>
+	</m>
+
+	<m group="skull" id="skul4" name="Les touristes génants" cond="mission(skul3)">
+		<begin>
+			"Rejoins moi là où je t'ai déclaré ma flamme" Oh oh oh oh ! Mon Mouldeur a
+			vraiment un coeur en oooor ! Je n'oublierai jamais ce lieu délicieux où il
+			nous avait emmenés, alors que nos os étaient encore tous jeunes... Et ce
+			moment où il m'a tendu une merguez bien grillée et m'a demandé de l'épouser !
+		</begin>
+		<goto v="rashpk" hide="1"/>
+		<talk v="Vendeur de Merguez" gfx="merguez">
+			Un client bizarre ? Oui, j'ai bien vu un type maigrichon qui est venu manger
+			en lançant de grands soupirs... Il est parti se promener dans les ruines.
+			Faites attention, on a des touristes d'un genre un peu particulier en ce moment...
+		</talk>
+		<actfight act="Visiter les Ruines" monsters="baraba:bamboo">
+			<begin m="baraba">
+				Que le pouvoir du Bambooz soit avec moi ! Sus aux infidèles !
+			</begin>
+			<win>Avant de s'écrouler, Barababor vous souffle les mots suivants : "Nous avons capturé votre ami : il sera emmené en bateau dans nos steppes natales où il serra vendu comme esclave !"</win>
+		</actfight>
+		<goto v="port"/>
+		<action v="Chercher un Bateau Louche">
+			Après quelques recherches, vous trouvez un Bateau définitivement bizarre sur les quais.
+		</action>
+		<actfight act="Entrer dans le Bateau" bg="dome" monsters="baratr:bamboo">
+			<begin m="baratr">
+				Que le pouvoir du Bambooz soit avec moi ! Je vengerais mon frère !!!
+			</begin>
+			<win>Après avoir vaincu les Bandits, vous libérez un homme ligoté dans le bateau...</win>
+		</actfight>
+		<talk v="Homme Libéré">
+			Mmmerr mmerrciii !! Jejejej'ai eu trtrtrès pepeupeur vous sasavez ! Mouldeur ?? Nonon, je m'apeppelle Jean-Claude...
+			Jeje susuis un ami du vendeur dede merguez ! Mermerci en tout cas de vovotre aide !
+		</talk>
+		<goto v="rashpk" hide="1"/>
+		<talk v="Vendeur de Merguez" gfx="merguez">
+			Vous avez sauvé Jean-Claude ? Ah !! Merci beaucoup. Ces bandits des steppes génaient
+			vraiment l'émergence du tourisme de masse dans ces ruines. Je ne sais pas comment vous
+			remercier ! .... Mouldeur ? Il a promis de revenir si je lui préparais des crevettes au
+			Napalm, mais je ne connais pas la recette...
+		</talk>
+		<end>Oh oh oh ! Mouldeur n'est pas très loin, merci beaucoup de ton aide mon jeune ami !</end>
+		<xp v="40"/>
+		<gold v="2000"/>
+	</m>
+
+	<m group="skull" id="skul5" name="Des crevettes au Napalm" cond="mission(skul4)">
+		<begin>
+			Des "Crevettes au Napalm" ? Oh oh oh oh ! Quel doux souvenir que ce plat délicieux !
+			Bien, il va falloir que tu me rapportes un certain nombre d'ingrédients pour que je
+			puisse préparer tout celà...
+		</begin>
+		<talk v="Skully" gfx="skully">
+			Bien, tout d'abord, il me faut bien entendu de bonnes crevettes. Tu pourras en trouver
+			au Marché du Dôme Soulaflotte ! Fais-vite !
+		</talk>
+		<goto v="dome"/>
+		<talk v="Marchand de Crevettes">
+			Je suis désolé mais suite à des fraudes je n'accepte aucune pièce d'or en paiement de
+			mes crevettes. Il va falloir me ramener 3 Bons du Trésor...
+		</talk>
+		<use v="tix" n="3"/>
+		<talk v="Marchand de Crevettes">
+			Merci, voici vos crevettes ! Bon appétit !
+		</talk>
+		<goto v="skull"/>
+		<talk v="Skully" gfx="skully">
+			Oh oh oh ! Ma-gni-fi-que ! Ces crevettes sont d'une fraicheur incomparable ! Bon, passons
+			à la suite. Deuxième ingrédient indispensable : du Napalm. Pour en fabriquer il nous faut
+			de la lave de bonne qualité...
+		</talk>
+		<goto v="fosslv"/>
+		<talk v="Shaman Mou" gfx="shaman">
+			Du Napalm ? Uhmm... Pour cela, il va te falloir faire un mélange moitié Lave
+			- moitié Flammèches. On ne manque pas de Lave par ici, alors apporte-moi 5 Boites de Flammèche
+			pour que je te prépare le mélange...
+		</talk>
+		<use v="flamch" n="5"/>
+		<talk v="Shaman Mou" gfx="shaman">
+			A glou ! A glou ! A gadagagou glou ! Et voilà, du Napalm à faible densité tout chaud pour toi....
+		</talk>
+		<goto v="skull"/>
+		<talk v="Skully" gfx="skully">
+			Oh ! oh oh oh ! Quel superbe Napalm ! Mais la recette ne peut être complète sans que l'on y rajoute
+			un ingrédient ab-so-lu-ment nécessaire... Les poils d'un Korgon bien gras ! Normalement, il devrait y en avoir
+			du coté du Grand Tout Chaud, mais fait attention à ne pas voler le repas de quelqu'un d'autre ou tu pourrais bien le regretter !
+		</talk>
+		<goto v="vener" title="Chercher un Korgon"/>
+		<actfight act="Chercher un Korgon" monsters="korgon">
+			<begin m="korgon">Kwwiiiiiiik !</begin>
+			<win>Vous avez capturé un Korgon bien gras... en espérant qu'il n'était pas destiné au diner de quelqu'un !</win>
+		</actfight>
+		<goto v="skull"/>
+		<talk v="Skully" gfx="skully">
+			Oh oh oh oh ! Je touille je touille !!! Et voilà ! Un magnifique plat de Crevettes au Napalm !
+		</talk>
+		<end>
+			Merci pour ton aide ! oh oh oh ! Bientôt mes retrouvailles avec mon tendre Mouldeur !
+		</end>
+		<xp v="30"/>
+		<gold v="5000"/>
+	</m>
+
+	<m group="skull" id="skuend" name="Les retrouvaillages" cond="mission(skul5)">
+		<begin>
+			Ta mission touche à sa fin... Apporte ce plat de crevettes au Napalm auprès de mon cher Mouldeur. Il
+			reconnaitra ma cuisine et reviendra à moi ! Oh oh oh !
+		</begin>
+		<goto v="rashpk"/>
+		<talk v="Vendeur de Merguez" gfx="merguez">
+			Ooooohh !! Il s'agit donc des fameuses crevettes au Napalm ?!? Voyons voir.... uhmm.... cela manque un peu
+			de graisse mais c'est succulent. Nul doute que Mouldeur devrait bientôt se montrer... Mais regarde qui voilà !
+		</talk>
+		<lock/>
+		<end>
+			OOooooooh ! oh ! oh oh oh ! Mouldeur est revenu !!! Merci beaucoup !!
+		</end>
+		<xp v="10"/>
+	</m>
+
+</missions>

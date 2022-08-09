@@ -1,0 +1,50 @@
+﻿<d place="bslt" name="Etrange Dinoz" gfx="pteroz" cond="!collec(pteroz)+level(8)">
+	<phase id="begin" next="fight:leave" fast="1">
+		Un étrange Dinoz à l'allure menaçante est apparu sur votre chemin. Ses yeux rouges vous fixent intensément, il a l'air très féroce !
+	</phase>
+	<a id="fight">Le combattre !</a>
+	<a id="leave">S'enfuir !</a>
+	<phase id="fight" fight="pteroz" collection="pteroz" fast="1">
+		Vous avez vaincu un Ptéroz ! Vous obtenez le Trophée des ptéroz qui vous permettra désormais d'acheter
+		ce Dinoz dans la Boutique des Dinoz !
+	</phase>
+	<phase id="leave">
+		Ouf ! Un pas de plus et ce Dinoz vous attaquait !
+	</phase>
+</d>
+
+<d place="ilewkk" name="Etrange Dinoz" gfx="hippo" cond="!collec(hippo)+level(8)">
+	<phase id="begin" next="fight:leave" fast="1">
+		Un étrange Dinoz est apparu sur votre chemin, puis s'enfuit... Que désirez-vous faire ?
+	</phase>
+	<a id="leave">Attendre.</a>
+	<a id="fight">Le poursuivre.</a>
+	<phase id="fight" fight="hippo" collection="hippo" fast="1">
+		Vous avez vaincu un Dinoz rare : un Hippoclamp ! Vous obtenez le Trophée des Hippoclamps qui vous permettra
+		désormais d'acheter ce Dinoz dans la Boutique des Dinoz !
+	</phase>
+	<phase id="leave">
+		On dirait qu'il ne revient pas... Mais de quelle espèce pouvait-il bien s'agir ?
+	</phase>
+</d>
+
+<d place="frcbrt" name="Etrange Pierre" gfx="rocky" cond="!collec(rocky)+level(13)">
+	<phase id="begin" next="touch:fight:grave:leave" fast="1">
+		Une étrange pierre se dresse au milieu du chemin, Son emplacement ne semble pas très naturel... Que désirez vous faire ?
+	</phase>
+	<a id="touch">La toucher</a>
+	<a id="fight">Essayer de la faire basculer</a>
+	<a id="grave" target="fight">Graver quelque chose</a>
+	<a id="leave">Continuer votre route</a>
+	<phase id="touch" fast="1">
+		C'est étrange... la pierre semble chaude au toucher. Il n'y a rien d'autre de spécial... Peut-être vaut-il mieux ne pas insister...
+	</phase>
+	<phase id="leave" fast="1">
+		Vous avez raison, après-tout ce n'est qu'un simple caillou....
+	</phase>
+	<phase id="fight" fight="rocky" collection="rocky" fast="1">
+		Oooops !! La pierre en question était un Rocky, un Dinoz moitié animal moitié minéral assez rare dans le
+		Royaume de Dinoville... En l'ayant vaincu, vous obtenez le Trophée des Rockys, qui vous permettra désormais
+		d'obtenir des Rockys dans la Boutique des Dinoz. Bravo !
+	</phase>
+</d>

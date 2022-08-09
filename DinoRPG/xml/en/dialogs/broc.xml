@@ -1,0 +1,310 @@
+<!-- *************************************
+ Etape 21 du scénario inutilisé
+****************************************** -->
+<!-- Broc, Sommet du mont Broky ----->
+<d place="chbroc" name="Klutz" gfx="broc" background="5" cond="scenario(nimba2,50-)+(!hourrand(24,4+)|tag(brocport)|tag(brocbslt)|tag(brocilewkk))">
+	<phase id="begin" frame="parti" fast="1">
+		Hum... Klutz doesn't seem to be in his workshop. He must have broken down somewhere in Dinoland (well, that's the best-case-scenario, given his harebrained ventures!).
+		Best come back later on.
+	</phase>
+</d>	
+
+<d place="chbroc" name="Klutz" gfx="broc" background="5" cond="scenario(nimba2,50-)+(hourrand(24,4+)+!(tag(brocport)|tag(brocbslt)|tag(brocilewkk)))">
+	<phase id="begin" next="missions:voyage:voyage2" rmtag="brocport:brocbslt:brocilewkk">
+		Klutz, perpetually perplexed inventor, at your service,
+		what can I do for you?
+	</phase>
+	<a id="missions" cond="active(mbroc)">Consult the list of missions</a>
+	<phase id="missions" missions="broc"></phase>
+
+
+	<a id="voyage" cond="scenario(nimbao,19)">
+		I'd like to go on a journey into the clouds, they say that you're the man to speak to...!
+	</a>
+	<a id="voyage2" cond="(scenario(nimbao,20)|scenario(nimbao,22)|scenario(nimbao,23+))+scenario(nimba2,37-)">
+		Could you take me to Nimbao in your Flying Klutzo?
+	</a>
+	
+	<!-- INTRODUCTION -->
+	<phase id="voyage" next="gloups">
+		I am just the man for the job!
+		Take a look at my trusty charger "Flying Klutzo 5" which patiently awaits its maiden voyage!
+	</phase>
+	<a id="gloups">
+		Maiden voyage? Flying Klutzo 5?
+	</a>
+	<phase id="gloups" next="go">
+		Let's just say that the previous Klutzos will will never get the chance to fly in the clouds!
+	</phase>
+	<a id="go">
+		Ha, well at least we know the risks...
+	</a>
+	<phase id="go" next="nrj:tantpis">
+		[In any case, It's a 100% satisfaction or your money back kind of deal!
+		As the trip is gratis, I wouldn't owe you a penny, but I guess that's not really the point.]
+		[I just need to find a way to breathe life into the poor beast.
+		She needs some lightning energy, just to fill her batteries to the gunnels!]
+		[Then she's ready to go when you are!]
+	</phase>
+	<a id="nrj">Give him some Lightning energy.</a>
+	<a id="tantpis">I'll come back later.</a>
+	
+	<phase id="nrj" next="fin" useingr="enfdr:1" scenario="nimbao:20" >
+		Great, with this my little dove will fly around the world!
+		When you're ready, don't hesitate to come and see me.
+	</phase>
+	<a id="fin">
+		Thanks a lot!
+	</a>
+	<phase id="fin" fast="1" frame="stop">
+		Klutz is waiting for the green light to set off on this adventure to the skies.
+		It is time to think seriously about your future...
+	</phase>
+	<phase id="tantpis" frame="stop">
+		You leave somewhat deflated, you need that energy source to go beyond the clouds...
+	</phase>
+	
+	<!-- DEPART NIMBAO -->
+	<phase id="voyage2" next="noroute:depart_1:depart_2:depart_3:depart_4:depart_5">
+		Do you want to take a trip in my magnificent Flying Klutzo 5?
+		All you have to do is ask!
+	</phase>
+	
+	<a id="noroute">No thanks, I'm not ready to die just yet!</a>
+	<a id="depart_1" cond="drand(6,1)">Nimbao here we come!</a>
+	<a id="depart_2" cond="drand(6,2)">Nimbao here we come!</a>
+	<a id="depart_3" cond="drand(6,3)">Nimbao here we come!</a>
+	<a id="depart_4" cond="drand(6,4+)+(scenario(nimbao,20)|scenario(nimbao,22))">Nimbao here we come!</a>
+	<a id="depart_5" cond="drand(6,4+)+scenario(nimbao,23+)">Nimbao here we come!</a>
+	
+	<phase id="depart_1" fast="1" tag="brocilewkk" moveAll="ilewkk">
+		You are finally ready for the off, Klutz gets you settled into the gondola, in the front, no doubt to ensure a quick death! 
+		You close your eyes........
+		Thee Flying Klutzo 5 has lift-off, the game is afoot!!!!!
+		.............
+		Huh? what? What's up already?!!!
+		AAAAAHAHHHHHHHHHHH!!!!!!!!!
+	</phase>
+	<phase id="depart_2" fast="1" tag="brocbslt" moveAll="bslt">
+		You are finally ready for the off, Klutz gets you settled into the gondola, in the front, no doubt to ensure a quick death! 
+		You close your eyes........
+		Thee Flying Klutzo 5 has lift-off, the game is afoot!!!!!
+		.............
+		I think I see something coming through the clouds!  What??? AAAAAHAHHHHHHHHHHH!!!!!!!!!
+	</phase>
+	<phase id="depart_3" fast="1" tag="brocport" moveAll="port">
+		You are finally ready for the off, Klutz gets you settled into the gondola, in the front, no doubt to ensure a quick death! 
+		You close your eyes........
+		Thee Flying Klutzo 5 has lift-off, the game is afoot!!!!!
+		.............
+		??? Klutz, you DID remember to fill her up, right?....
+		AAAAAHAHHHHHHHHHHH!!!!!!!!!
+	</phase>
+	<phase id="depart_4" fast="1" scenario="nimbao:22" moveAll="iroche">
+		You are finally ready for the off, Klutz gets you settled into the gondola, in the front, no doubt to ensure a quick death! 
+		You close your eyes........
+		Thee Flying Klutzo 5 has lift-off, the game is afoot!!!!!
+		.............
+	</phase>
+	<phase id="depart_5" fast="1" moveAll="iroche">
+		You are finally ready for the off, Klutz gets you settled into the gondola, in the front, no doubt to ensure a quick death! 
+		You close your eyes........
+		Thee Flying Klutzo 5 has lift-off, the game is afoot!!!!!
+		.............
+	</phase>
+	<phase id="noroute" fast="1" frame="stop">
+		It's probably best not to, life is indeed a precious commodity, and trying to fly is considered by most to be hazardous for your health...
+	</phase>
+	
+</d>
+	
+<!-- arrivée sur NIMBAO -->
+<d place="iroche" name="Klutz" gfx="broc" background="4" cond="scenario(nimbao,22)">
+	<phase id="begin" next="wouhou">
+		Now this is what you call a carefree voyage!
+		What skill, my goodness! What talent!
+		.........I tell you what, it's beautiful up here, don't you think?
+	</phase>
+	<a id="wouhou">
+		It's the first time I've seen it too.
+	</a>
+	<phase id="wouhou" next="fin">
+		At the very least, I'm confident in saying that things are seldom dull when you're involved!
+		I'll stay in the area if you need me, so don't hesitate to ask, the Flying Klutzo still has plenty travelling left in her!
+	</phase>
+	<a id="fin">
+		Thanks!
+	</a>
+	<phase id="fin" fast="1" scenario="nimbao:23" frame="stop">
+		It is time to explore the celestial island, who knows what surprises await you in this new world?
+	</phase>
+</d>	
+
+<!-- DEPART DE NIMBAO -->
+<d place="iroche" name="Klutz" gfx="broc" background="4" cond="scenario(nimbao,23+)">
+	<phase id="begin" next="retour:noretour">
+		Hello again, friend!
+		Are you ready to go back to the surface on board my fantastic Flying Klutzo 5?
+		All you have to do is ask!
+	</phase>
+	<a id="retour">I'd love to!</a>
+	<a id="noretour">Not right now.</a>
+	
+	<phase id="retour" fast="1" frame="stop" moveAll="chbroc:port">
+		You are finally ready for the off, Klutz gets you settled into the gondola, in the front, no doubt to ensure a quick death! 
+		You close your eyes........
+		Thee Flying Klutzo 5 has lift-off, the game is afoot!!!!!
+		.............
+	</phase>
+	
+	<phase id="noretour" fast="1" frame="stop">
+		Klutz stays put, he is clearly inspired by the view from the top of the celestial island.
+	</phase>
+</d>
+
+<!-- ARRIVEES ALEATOIRES -->
+<d place="ilewkk" name="Klutz" gfx="broc" background="1" cond="scenario(nimbao,20)+tag(brocilewkk)">
+	<phase id="begin" next="oups" frame="nue">
+		Ok, let's just say that was a trial run.
+		But look on the bright side....
+		WE'RE STILL ALIVE!
+	</phase>
+	<a id="oups">
+		......
+	</a>
+	<phase id="oups" fast="1" frame="stop" rmtag="brocilewkk"> 
+		From here onwards, you'll need to go to the top of Mount Klutzo to try again...
+		Maybe you'll have better luck next time...
+	</phase>
+</d>
+
+<d place="bslt" name="Klutz" gfx="broc" background="3" cond="scenario(nimbao,20)+tag(brocbslt)">
+	<phase id="begin" next="oups" frame="nue">
+		Ok, let's just say that was a trial run.
+		But look on the bright side....
+		WE'RE STILL ALIVE!
+	</phase>
+	<a id="oups">
+		......
+	</a>
+	<phase id="oups" fast="1" frame="stop" rmtag="brocbslt">
+		From now on, you'll need to go to the top of Mount Klutzo to try again...
+		Maybe you'll have better luck next time...
+	</phase>
+</d>
+
+<d place="port" name="Klutz" gfx="broc" background="2" cond="scenario(nimbao,20)+tag(brocport)">
+	<phase id="begin" next="oups" frame="nue">
+		[Ok, let's just say that was a trial run.
+		But look on the bright side....
+		WE'RE STILL ALIVE!]
+		[.............]
+		[Wow, it's incredible that you landed here, it's as though my Flying Klutzo read my mind...
+		How about a swift pint for some Dutch courage!]
+	</phase>
+	<a id="oups">
+		......
+	</a>
+	<phase id="oups" fast="1" frame="stop" rmtag="brocport">
+		From now on, you'll need to go to the top of Mount Klutzo to try again...
+		Maybe you'll have better luck next time...
+	</phase>
+</d>
+
+<!-- Broc, rencontre sans avoir voyagé, on lui définit une position aléatoire qui change tous les jours (global à tous les joueurs) ----->
+<!-- rencontre aléatoires seulement hors scénario nimbao, principalement aux étapes clés! -->
+<d place="ilewkk" name="Klutz" gfx="broc" background="1" cond="hourrand(24,1)+(active(mbroc)|active(nimbao))">
+	<phase id="begin" next="oups">
+		Hello, friend!
+		As you can see, I still haven't quite reached my destination...
+		but if you want to be fired into the air for a while, don't hesitate to come and see me in my workshop.
+	</phase>
+	<a id="oups">
+		Thanks!
+	</a>
+	<phase id="oups" fast="1" frame="stop"> 
+		Klutz is taking advantage of this brief distraction to stretch out and relax on the beach.
+		You sneak away, as you never know what's going on inside his head.
+	</phase>
+</d>
+
+<d place="bslt" name="Klutz" gfx="broc" background="3" cond="hourrand(24,2)+(active(mbroc)|active(nimbao))">
+	<phase id="begin" next="oups">
+		Hello, friend!
+		As you can see, I still haven't quite reached my destination...
+		but if you want to be fired into the air for a while, don't hesitate to come and see me in my workshop.
+	</phase>
+	<a id="oups">
+	Erm ok, sure - I'll do that!
+	</a>
+	<phase id="oups" fast="1" frame="stop">
+		Klutz gathers the remains of his Flying Klutz and tries to reassemble it.
+		How many trips will his engine be able to endure?
+	</phase>
+</d>
+
+<d place="port" name="Klutz" gfx="broc" background="2" cond="hourrand(24,3)+(active(mbroc)|active(nimbao))">
+	<phase id="begin" next="oups">
+		Hello, friend!
+		No no, I didn't fail to get there...
+		I promise, I just wanted to go for a drink!
+		But still, anytime you want to be fired into the air for a while, don't hesitate to come and see me in my workshop.
+	</phase>
+	<a id="oups">
+		......
+	</a>
+	<phase id="oups" fast="1" frame="stop">
+		Klutz seems in his element...
+		Don't disturb him any more, he's disturbed enough already, and he might ask you to join him!
+	</phase>
+</d>
+
+<!-- ***************************************
+  Fin du scénario Nimbao2
+******************************************** -->
+<!--
+-L'atelier de Broc est désormais réparé, il permet dorénavant au joueur d'aller sur nimbao facilement.
+-->
+
+
+<d place="chbroc" name="Broc" gfx="broc" background="5" cond="scenario(nimba2,51+)+!scenario(smog,6)+(hourrand(24,4+)+!(tag(brocport)|tag(brocbslt)|tag(brocilewkk)))">
+	<phase id="begin" next="missions:voyage3">
+		[Klutz, perpetually frustrated inventor, at your service.
+		My workshop has finally been repaired, I can take you to the head of the Celestial island whenever you please!]
+		
+		[I have several new missions for you if you're interested!]
+	</phase>
+	<a id="missions" cond="active(mbroc)">Check the list of missions</a>
+	<phase id="missions" missions="broc"></phase>
+
+	<a id="voyage3">
+		Could you take me to Nimbao in the Flying Klutzo?
+	</a>
+	<phase id="voyage3" next="noroute:depart">
+		Do you want to go for a trip in the superb Flying Klutzo 6?
+		All you have to do is ask!
+	</phase>
+	
+	<a id="noroute">Hmmm... let me think about it... how about no, I'm too young to die horribly!</a>
+	<a id="depart">Welcome to Nimbao!</a>
+	
+	<phase id="depart" fast="1" moveAll="iroche">
+		You are finally ready for the off, Klutz gets you settled into the gondola, in the front, no doubt to ensure a quick death! 
+		You close your eyes........
+		
+		The Flying Broky 6 has lift off. Game on!!!!!
+		.............
+	</phase>
+	<phase id="noroute" fast="1" frame="stop">
+		Perhaps it's for the best, life is indeed precious, being catapulted through the air is generally not recommended by the suregeon general...
+	</phase>
+</d>	
+	
+<d place="chbroc" name="Klutz" gfx="broc" background="5" cond="scenario(nimba2,51+)+scenario(smog,6)+(!hourrand(24,4+)|tag(brocport)|tag(brocbslt)|tag(brocilewkk))">
+	<phase id="begin" frame="parti" fast="1">
+		Hum... Klutz doesn't seem to be in his workshop. He must have broken down somewhere in Dinoland (...he doesn't have much luck!).
+		Come back later!
+	</phase>
+</d>
+
+

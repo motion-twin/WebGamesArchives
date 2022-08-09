@@ -1,0 +1,49 @@
+<d place="gmprai" name="L'exterminateur" gfx="gmexterm" cond="quest(quotd)+grade(,3)+!(fx(skatsa)+quest(skatg))">
+
+<a id="end">Il faut que j'y aille.</a>
+
+<phase id="begin" next="quest:questb:back">
+Bien le bonjour.
+</phase>
+
+<a id="questb" cond="fx(skatbo)">Je peux vous aider ? </a>
+<a id="quest" cond="fx(dibext)+!fx(skatbo)">Si vous avez encore besoin de moi, je suis prêt !</a>
+<a id="back" cond="!fx(skatbo)">Vous êtes de retour dans le coin ?</a>
+
+
+<phase id="questb" quest="prairiegub">
+Bien sûr ! On s'est débarassé de la vieille BHV, mais j'ai encore ma mission à remplir. Et c'est du boulot !  
+</phase>
+
+
+<phase id="quest" quest="prairiegub">
+%happy%C'est pas les travaux d'extermination qui manquent, par ici.
+</phase>
+
+<phase id="back" next="prob">
+%angry%Oui. Mon rapport a été très apprécié à la guilde. Grâce à notre action d'extermination, les skats sont revenus à une population à peu près normale, mais je suis de retour pour surveiller leur évolution.
+</phase>
+
+<phase id="prob" next="quoi">
+Il y a juste un petit problème...
+</phase>
+
+<a id="quoi">Ah bon ? Quel problème ? </a>
+
+<phase id="quoi" next="bhv">
+%happy%Regarde le petit groupe là-bas ! ...C'est BHV ! Cette vieille pimbêche de BHV ! Qui a été mise au courant de ma mission je ne sais pas comment, et qui rôde sûrement dans le coin pour me casser les pieds ! 
+</phase>
+
+<a id="bhv">BHV ? Blancheflor machin ? La potiche super connue ?</a>
+
+<phase id="bhv" next="bhvb">
+%angry%Oui ! Blancheflor Hostia Vargotte ! Initiales BHV ! La pseudo alchimiste qui a fait plus de couvertures de magazines que de transmutations depuis qu'elle est née... 
+</phase>
+
+<phase id="bhvb" effect="dibext">
+%happy%Elle préside la {société protectrice géminite du vivant poilu et cromignon} ! C'est une calamité pour moi ! L'ennemie jurée des exterminateurs ! %normal%Il va falloir que tu m'aides à savoir ce qu'elle mijote. Je suis sûr qu'elle me prépare un mauvais coup, cette fourbasse ! 
+</phase>
+
+
+	
+</d>

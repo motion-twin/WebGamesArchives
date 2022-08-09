@@ -1,0 +1,115 @@
+﻿<missions>
+
+	<!-- ***************************************************************************** -->
+	<!-- Papy Jose, petits jobs ----->
+
+	<m group="papy" id="fish" name="Pescado fresco" limit="10">
+		<begin>Doña Seyche, habitante de Dinovilla, necesita pescado fresco para hacer una cena a sus amigos. ¿Podrías recogerle el pescado en el Puerto de Santa Moría situado al sur? El Mercader ha sido avisado y está esperándote.</begin>
+		<goto v="port"/>
+		<talk v="Mercader de Pescado">Hola pequeño, ¿vienes a por el Pescado? Aquí tienes. Llévalo a Dinovilla lo más rápido posible.</talk>
+		<goto v="dnv"/>
+		<talk v="Doña Seyche">¡Ooooohhhh gracias mi pequeño, esta cena va a ser todo un éxito gracias a ti! Vuelve rápido a casa de Papy Jose para obtener tu recompensa...</talk>
+		<end>Doña Seyche está muy contenta contigo. ¡Aquí tienes tu recompensa!</end>
+		<xp v="20"/>
+	</m>
+
+	<m group="papy" id="dog" name="El perro perdido" limit="20">
+		<begin>La Vieja Ducraft ha perdido a su caniche cuando visitaba a su hijo en las Colinas Escarpadas, ¿podrías encontrarlo?</begin>
+		<goto v="colesc"/>
+		<talk v="Jacqueline Ducraft">¡Hola jovencito! ¡Mi pequeño caniche Ghocu ha desaparecido! Lo había castigado porque hizo una travesura y ahora... ohh, ¡no sabes cuánto me arrepiento! Rápido, encuéntralo por favor. Estoy segura de que no ha podido subir las montañas con sus patitas tan cortas, seguro que se ha ido hacia el sur.</talk>
+		<goto v="port" hide="1"/>
+		<action v="Ghocu">¡Has encontrado a Ghocu! ¡Llévalo rápido a su dueña!</action>
+		<goto v="colesc"/>
+		<talk v="Jacqueline Ducraft">¡¡Mi queridísimo Ghocu!! Perdóname, ¡tu mami ha sido muy mala contigo! Gracias jovencito, vuelve a ver a ese viejillo para que te dé tu recompensa.</talk>
+		<end>Uhmm... Tampoco habría sido una gran pérdida. Bueno, lo importante es que ha salido bien. ¡Aquí tienes!</end>
+		<xp v="15"/>
+		<item v="angel"/>
+	</m>
+
+	<m group="papy" id="kilgou" name="Los Gupiones de las Colinas" limit="20" cond="mission(fish)">
+		<begin>Hay muchos Lobos y Gupiones en las Colinas Escarpadas al norte de Dinovilla. El jefe de un pueblo vecino busca alguien para matar algunos y meterles miedo para que se calmen. ¿Sabrás mostrarte lo suficientemente fuerte?</begin>
+		<goto v="colesc"/>
+		<kill v="goupi:goupi2:goupi3:wolf" n="6" name="Lobos y Gupiones"/>
+		<end>¡Estupendo! Gracias a ti las Colinas Escarpadas han vuelto a la calma. ¡Enhorabuena!</end>
+		<xp v="30"/>
+		<gold v="500"/>
+	</m>
+
+	<m group="papy" id="kilwlf" name="La caza de lobos" limit="15" cond="mission(kilgou)">
+		<begin>Últimamente los paisanos tienen muchos problemas con los grupos de Lobos que atacan sus cabras. ¿Podrías dar una vuelta y matar unos cuantos para alejarlos?</begin>
+		<goto v="frcbrt"/>
+		<kill v="wolf" n="2"/>
+		<goto v="fountj"/>
+		<kill v="wolf" n="2"/>
+		<goto v="dnv"/>
+		<kill v="wolf" n="2"/>
+		<goto v="univ"/>
+		<kill v="wolf" n="2"/>
+		<end>¡Bien hecho! ¡Eso les mantendrá alejados por un tiempo!</end>
+		<xp v="30"/>
+		<gold v="2000"/>
+	</m>
+
+	<m group="papy" id="fflow" name="El rosal en peligro" limit="15" cond="mission(fish)">
+		<begin>El rosal preferido de Doña Seyche está en muy mal estado por culpa de la sequía. ¿Podrías ir a buscar Agua Pura en la Fuente de la Juventud y traerle un poco?</begin>
+		<goto v="fountj"/>
+		<action v="Agua Pura">Obtienes un poco de Agua Pura, aconsejada para regar las flores...</action>
+		<goto v="dnv"/>
+		<talk v="Doña Seyche">Ooohhh gracias jovencito. Gracias a ti mi rosal va a recuperar sus bellos colores. Vuelve a ver a Papy Jose para que te dé tu merecida recompensa...</talk>
+		<end>La encantadora Doña Seyche me ha felicitado por tu trabajo. ¡Ten tu recompensa!</end>
+		<xp v="20"/>
+	</m>
+
+	<m group="papy" id="kbook" name="El libro de recetas" limit="15" cond="mission(fflow)">
+		<begin>He recibido de nuevo una solicitud de la radiante Doña Seyche. Le gustaría consultar un libro de recetas que se encuentra en la Universidad. ¿Podrías buscárselo?</begin>
+		<goto v="univ"/>
+		<action v="Libro de Recetas">Obtienes "100 Maneras de cocinar un Korgon", escrito e ilustrado por Gorak el Tuerto</action>
+		<goto v="dnv"/>
+		<talk v="Doña Seyche">¡OOOooooooh gracias jovencito! Voy a experimentar diferentes recetas de Korgones, no dudes en venir a probar mis platos de vez en cuando.</talk>
+		<end>Estupendo. Gracias a ti Doña Seyche me ha enviado un plato de Korgón asado. ¡Una auténtica delicia!</end>
+		<xp v="20"/>
+	</m>
+
+	<m group="papy" id="msg" name="Los Sellos" limit="30" cond="mission(kbook)">
+		<begin>Tengo muchas ganas de escribir una carta a una persona muy importante para mí. Desafortunadamente mis Sellos han sido robados por unos Gupiones ladronzuelos. Tienen por costumbre frecuentar la Fuente de la Juventud. Si los matas, te dejaré usar algunos de mis Sellos. ¿Qué te parece?</begin>
+		<goto v="fountj"/>
+		<kill v="goupi:goupi2:goupi3" n="15" name="Gupiones Ladronzuelos"/>
+		<action v="Coger los Sellos">Estupendo, has encontrado los Sellos. ¡Llévalos rápido a Papy Jose!</action>
+		<end>Gracias, ¡al fin podré escribir mi carta! Ten, te mereces estos Sellos...</end>
+		<collec v="msg"/>
+		<xp v="20"/>
+	</m>
+
+	<m group="papy" id="lettre" name="La carta confidencial" limit="2" cond="mission(msg)">
+		<begin>Uhm... Esta vez la misión te la encomiendo yo mismo... Necesito tu ayuda para que me lleves URGENTEMENTE esta carta a una persona en Dinovilla. ¡Tienes que ser rápido!</begin>
+		<goto v="dnv"/>
+		<talk v="Doña Seyche">Oohhhh jovencito, ¿qué me traes esta vez? ¿el qué? ¿Una carta de Papy? .... ..... Llévale rápido esta respuesta.</talk>
+		<end>¡Uhm! Ehm... ¡¿Una respuesta?! ¡¿Tan pronto?! ¡GENIAL! Acepta mi invitación a cenar. ¡La tengo en el bolsillo!</end>
+		<xp v="20"/>
+	</m>
+
+	<m group="papy" id="kilglu" name="Un monstruo extraño" limit="10" cond="mission(kilwlf)+canfight(gluon)">
+		<begin>Un extraño monstruo ha aparecido últimamente en el Reino de Dinovilla. Es muy tenaz y puede infligir mucho daño en un combate. ¿Podrías matar uno y traérmelo para que pueda estudiarlo?</begin>
+		<kill v="gluon" n="1"/>
+		<end>Gracias, es un buen ejemplar. ¡Ahí tienes tu recompensa!</end>
+		<xp v="30"/>
+		<gold v="500"/>
+	</m>
+
+	<m group="papy" id="kilgnt" name="Los Gigantes" limit="10" cond="mission(kilglu)+canfight(gvert)">
+		<begin>No sé si te has dado cuenta, pero el Reino de Dinovilla ha sido invadido por unos inmensos Gigantes Verdes que se alimentan de verduras. ¿Puedes eliminar una docena? Son órdenes del Rey, ¡así que hay que ser rápido!</begin>
+		<kill v="gvert" n="12" zone="0"/>
+		<end>¡Uf! ¡Por poquito! Gracias por tu ayuda, voy a hablar de esta hazaña al Rey mañana mismo en nuestra partida de golf.</end>
+		<xp v="100"/>
+		<gold v="5000"/>
+	</m>
+
+	<m group="papy" id="kilcoq" name="El desafío del mes" limit="20" cond="mission(kilgnt)+canfight(coq)">
+		<begin>Uhm... Tengo otra partida de golf prevista con el Rey el mes que viene... y fíjate que aún quiere oír historias sobre tus hazañas... ¿Te parece si eliminas unos cuantos Cocdur rápidamente? ¡Serás bien recompensado!</begin>
+		<kill v="coq" n="20" zone="0"/>
+		<end>¡Ah! ¡Bien! ¡Voy a ver si le añado un aire épico a la historia para que el Rey esté contento!</end>
+		<xp v="200"/>
+		<gold v="8000"/>
+	</m>
+
+</missions>

@@ -1,0 +1,188 @@
+	<d place="fountj" name="Seltsames Wesen" gfx="alien" cond="scenario(star,0)+(admin()|time(30))+active(starquest)">
+
+	<phase id="begin" next="yes:no">
+		. . . . . Ich . . . verloren . . . . . ohne Kraft . . Sterne. . . . niemals . . . . nach Hause zurückkehren . . . . mich helfen?
+	</phase>
+
+	<a id="yes">Äh... ja?</a>
+	<a id="no">Kommt nicht in Frage.</a>
+
+	<phase id="no" fast="1">
+		In der Tat, bei diesen bizarren Leuten, ist es besser, sich keine Probleme einzuhandeln!
+	</phase>
+
+	<phase id="yes" next="nothing">
+		. . . . . Thank you . . . . very . . . Bziiiiiiiiiiiiiiiiiiit! Ah! Da haben wir`s! Mein Simultanübersetzer ist repariert! Glücklicherweise hatte ich noch ein paar Ersatzerdbeerbatterien dabei! Danke, mein liebster Freund, danke für deine so liebenswürdig angebotene Hilfe...
+	</phase>
+
+	<a id="nothing">Gern geschehen...</a>
+
+	<phase id="nothing" next="dom">
+		Die Ehre der Behaarung gebührt Ihnen! Wie ich Ihnen gerade eben bereits versucht habe zu sagen, habe ich ein kleines technikologisches Problem. Mein (SiAvUaEs) ist kaputt gegangen wie eine Haselnuss und ich kann deswegen nicht mehr nach Hause zurückkehren, nach (PuOsEniLa)!
+	</phase>
+
+	<a id="dom">In der Tat, wie schade!</a>
+
+	<phase id="dom" next="star">
+		So ist es. Ich brauche deshalb ihre freundliche Hilfe, um für mich Kristalle aus (TcEtCiNo) zu finden...
+	Mal sehen...in ihrer Sprache müsste das kleinen, glitzernden Sterne ähneln, die sehr lecker aussehen!
+	</phase>
+
+	<a id="star">Sterne?</a>
+
+	<phase id="star" next="how">
+		Ja, ganz genau! Wenn Sie mir genau sieben Stück bringen, könnte ich meine Durchreise fortsetzen. Ich wäre sogar bereit, Sie mit einem (CiLoJuAeDa) aus meiner Heimat zu belohnen!
+	</phase>
+
+	<a id="how">Und wie finde ich diese Sterne?</a>
+
+	<phase id="how" next="ah">
+		Das ist relativ einfach. Dazu werden wir eine gewisse Anzahl spektakulärer Vorhersagen erraten müssen. Sie stehen alle im Reiseführer des ideenlosen Touristen. Ich werde Ihnen jedes Mal eine Stelle vorlesen, danach müssen Sie selbst selbst zuschlechtkommen! Ah!
+	</phase>
+
+	<a id="ah">"Ah"?</a>
+
+	<phase id="ah" scenario="star:1">
+		Ja, also, so ist es! Ich geh mal kurz den Touristenreiseführer holen. Gehen Sie nicht weg, ich bin gleich wieder zurück...
+	</phase>
+
+</d>
+
+<d place="fountj" name="Seltsames Wesen" gfx="alien" cond="scenario(star,1)">
+
+	<phase id="begin" next="et">
+		Der Führer hat gesagt: "Ein Megawolf wartet auf dich in der Hauptstadt!"
+	</phase>
+
+	<a id="et">Und?</a>
+
+	<phase id="et">
+		Wie "und"? Das ist alles! Sie müssen sich nun ganz allein zuschlechtfinden. Tut mir leid, dass ich so fantasielos bin!
+	</phase>
+
+</d>
+
+<d place="fountj" name="Seltsames Wesen" gfx="alien" cond="scenario(star,2+)+!scenario(star,8+)">
+
+	<phase id="begin" next="star2:star3:star4:star5:star6:star7">
+		Ah! Wie ich sehe, kommen Sie in ihrer Mission voran! Mal sehen, was uns der Touristenführer jetzt sagt...
+	</phase>
+
+	<a id="star2" cond="scenario(star,2)">Zuhören.</a>
+	<a id="star3" cond="scenario(star,3)">Zuhören.</a>
+	<a id="star4" cond="scenario(star,4)">Zuhören.</a>
+	<a id="star5" cond="scenario(star,5)">Zuhören.</a>
+	<a id="star6" cond="scenario(star,6)">Zuhören.</a>
+	<a id="star7" cond="scenario(star,7)">Zuhören.</a>
+
+	<phase id="star2" next="end">
+		Ich lese im Führer: "Der fettige Enthusiast wird eine mitgeführte Wolke zu schätzen wissen"... sagt Ihnen das was?	</phase>
+
+	<phase id="star3" next="end">
+		Touristenführer, Seite 879, Absatz b: "Wenn man bis zum Hals in klebriger Masse steckt, ist nichts besser als ein Kuchen." - Alles klar, oder?
+	</phase>
+
+	<phase id="star4" next="end">
+		Ich zitiere: "Der Appel an das schwarze Loch wird dir helfen"... haben Sie eine Idee??
+	</phase>
+
+	<phase id="star5" next="end">
+		Es ist ganz klein gedruckt. Ich werde versuchen, die Wörter richtig zu lesen: "Die alten Knochen schätzen, so scheint es, den Anblick eines...capsicum", ja...so muss es heißen...(zumindest glaube ich das).
+	</phase>
+
+	<phase id="star6" next="end">
+		Hmmm...Anhang B des Touristenführers: "Suche den Halbgott auf, wenn es in Pek-1 Mittag ist". Das ist ja ein ganzes Programm...
+	</phase>
+
+	<phase id="star7" next="end">
+		Es fehlt nur noch der letzte Stern! Der Führer sagt: "Im Land des Saru wirst du ungekünstelt von den Toten zurückkehren." Viel Glück!
+	</phase>
+
+	<a id="end">...</a>
+
+	<phase id="end">
+		Ihre lokale Sprache ist trotzdem ziemlich komisch...ich zumindest verstehe
+	jedenfalls nichts davon!
+	</phase>
+
+</d>
+
+<d place="fountj" name="Seltsames Wesen" gfx="alien" cond="scenario(star,8)">
+
+	<phase id="begin" next="ok">
+		....Jaaaa!! Danke! Danke! Danke! Dank dir werde ich endlich nach (PuOsEniLa) zurückkehren können! Mir bleibt nur noch wenig Zeit, solange die Sterne am Roschuart ausgerichtet sind...
+	</phase>
+
+	<a id="ok">...</a>
+
+	<phase id="ok" next="give">
+		Könntest du mir die Sterne geben und ich werde dir dann im Gegenzug - wie versprochen - einen (CiLoJuAeDa) geben. Zusätzlich bekommst du noch eine Kleinigkeit, die ich in deiner Welt gefunden habe.
+	</phase>
+
+	<a id="give">Die 7 Sterne überreichen.</a>
+
+	<phase id="give" use="star:7" collection="plume" give="cgold:1" fast="1" scenario="star:9">
+		Das Seltsame Wesen rennt in eine Art kleines Haus, dann entsteht ein großer Blitz und das Haus verschwindet. Ein paar Brandspuren am Boden und eine Rauchsäule, die sehr hoch in den Himmel hinaufragt, sind alles, was übrig bleibt... Er hat dir einen "Goldenen Napodino" und einen komischen Sammelgegenstand dagelassen.
+	</phase>
+
+
+</d>
+
+<d place="rashpk" name="Würstchenverkäufer (Mission)" gfx="merguez" cond="scenario(star,2)+equip(burger)">
+
+	<phase id="begin" next="ok">
+		Ohhh, wie ich sehe, trägt dein Dinoz einen Wolkenburger mit sich! Wusstest du, dass der sehr schlecht für die Gesundheit ist? Oder möchtest du etwa, dass dein Dinoz so dick wie ein Sumoringer wird?!?
+	</phase>
+
+	<a id="ok">...</a>
+
+	<phase id="ok" next="star">
+		Lass diesen hässlichen Burger verschwinden und probiere stattdessen lieber meine Würstchen! Hier, als Treuegeschenk erhältst du dieses Dingsbums, das ich am Boden gefunden habe!
+	</phase>
+
+	<a id="star">Ah?</a>
+
+	<phase id="star" fast="1" give="star" scenario="star:3">
+		Fabelhaft! Der Würstchenverkäufer hat dir einen der sieben magischen Sterne überreicht!
+	</phase>
+
+</d>
+
+<d place="skull" name="Skully (Mission)" gfx="skully" cond="scenario(star,5)+equip(ppoiv)">
+
+	<phase id="begin" next="ok">
+		Oh oh oh oh oh oh oh oh oh oh oh oh oh oh !! Ja, was sehe ich denn da! Ist das nicht ein wunderbares Exemplar eines "Capsicum annuum"?! Was für eine Farbe, welch ein Duft, das ist wun-der-bar!
+	</phase>
+
+	<a id="ok">...</a>
+
+	<phase id="ok" next="star">
+		Ich danke dir wirklich sehr! Oh oh oh! Dafür dass du mir diesen prächtigen Anblick geboten hast, werde ich dir etwas geben, die ich bei der Suche
+	nach einem verloren gegangenen Knochen gefunden habe! Hier!
+ 	</phase>
+
+	<a id="star">Ah?</a>
+
+	<phase id="star" fast="1" give="star" scenario="star:6">
+		Herzlichen Glückwunsch! Dank Skully hast du den fünften magischen Stern gefunden! Jetzt sind es nur noch zwei!
+	</phase>
+
+</d>
+
+<d place="baobob" name="Bao Bob (Mission)" gfx="baobob" cond="scenario(star,6)+(admin()|hour(5)|hour(6)|hour(7))"> 
+
+	<phase id="begin" next="ok">
+		Was machst du zu dieser frühen Stunde bei mir?</phase>
+
+	<a id="ok">Ich suche...</a>
+
+	<phase id="ok" next="star">
+		Ah! Ja, ich bin noch ganz benebelt, das hatte ich gar nicht bemerkt. Hier, das hatte ich für dich aufgehoben. Ich hoffe jedenfalls, dass dir das nicht zu viele Probleme einbrockt...	</phase>
+
+	<a id="star">???</a>
+
+	<phase id="star" fast="1" give="star" scenario="star:7">
+		Mit diesen seltsamen Worten überreicht dir Bao Bob den sechsten magischen Stern! Jetzt fehlt nur noch der letzte!!!
+	</phase>
+
+</d>

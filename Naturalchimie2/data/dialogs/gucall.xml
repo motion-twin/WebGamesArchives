@@ -1,0 +1,25 @@
+<d place="" name="Appel Guilde rang 4" gfx="guchx" auto="1" cond="grade(,4)+!fx(gucall)">
+
+<phase id="begin" frame="start" next="lis">
+Vous avez un message spécial de la guilde des alchimistes !
+</phase>
+
+<phase id="lis" next="msg">
+Rouh ! Je vous le lis : | Hum... brum brum. 
+</phase>
+
+<phase id="msg" next="msgb">
+[Bravo vous venez d'obtenir votre 4e niveau d'alchimiste, vous voilà petit apprenti. Vous êtes assez expérimenté pour participer à la coupe des écoles ! ]
+</phase>
+
+<phase id="msgb" next="msgc">
+[Le] {Chambelland Lapin} [vous attend au palais de Stime Pounke pour vous expliquer tout cela. Il a aussi quelques menus travaux à vous confier pour la Guilde des alchimistes. Ne le faites pas attendre ! Signé : La Guilde des alchimistes]
+</phase>
+
+<phase id="msgc" effect="gucall">
+Rouh ! | Voilà. Bonne journée.
+</phase>
+
+
+	
+</d>

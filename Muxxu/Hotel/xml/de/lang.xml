@@ -1,0 +1,306 @@
+<lang>
+	<!-- Website -->
+	<t id="BuySuccessful">*Der Handel wurde besiegelt*, MonsterHotel dankt dir für deine Dienste!</t>
+	<t id="BuyCampaignSuccessful">*::sponsor::* dankt dir für dein Vertrauen!</t>
+	<t id="UnknownHotel">Das Hotel, das du anschauen möchtest, existiert nicht.</t>
+	<t id="UnknownCampaign">Tut uns leid, aber diese Werbekampagne ist nicht mehr verfügbar.</t>
+	<t id="TimeFormat">%H:%M</t>
+	<t id="DateFormat">%d.%B.%Y</t>
+	<t id="AddPointFailed">Du kannt keinen Punkt in diese Fähigkeit investieren.</t>
+	<t id="TreeMaxed">Du kannt *nicht mehr als ::n:: Punkte* in dieser Fähigkeit investieren.</t>
+	<t id="CantRetreat">Du hast noch nicht alle nötigen „Anforderungen“ erfüllt, um dein Hotel zu hinterlassen.</t>
+	<t id="Forbidden">Das ist nicht erlaubt.</t>
+	<t id="IntroMonsterName"><strong>::name::</strong>, ::age:: Jahre, ::job:: mit <em>::company::</em></t>
+	<t id="Fame">Ansehen</t>
+	<t id="MuxxuProfileFame"><span style="font-weight:bold; color:#ce4300;">::n:: <img style="vertical-align:-15%" src="http://::host::/img/icons/fame.png" alt=""/></span></t>
+	
+	<!-- Flash -->
+	<t id="Currency">M€</t>
+	<t id="DefaultHotelName">MonsterHotel</t>
+	<t id="FlashUpdateRequired">Aktualisiere deinen Adobe Flashplayer, damit das Spiel reibungslos funktioniert.<br/><br/>Letzte Version (kostenlos) : *http://www.adobe.com/go/getflash*</t>
+	
+	<t id="CancelStaff">Angestellten abziehen</t>
+	<t id="MoveClient">Gast verlegen</t>
+	<t id="ClientInfos">Untersuchen</t>
+	<t id="Build">::name:: bauen</t>
+	<t id="TakeItem">::item:: nehmen</t>
+	<t id="DoService">Zimmerservice!</t>
+	<t id="RemoveItem">::item:: zerstören!</t>
+	<t id="NextClient">Der nächste Gast wird voraussichtlich gegen *::time::* ankommen. Versammle alle deine Angestellten an der Rezeption, um diese Zeitspanne zu verkürzen.</t>
+	<t id="UnderService">Dieses Projekt wird voraussichtlich gegen ::time:: abgeschlossen sein.</t>
+	<t id="WorkingStaff">Diese Ausstattung wird voraussichtlich gegen ::time:: wieder verfügbar sein.</t>
+	<t id="WaitingService">Dieser Gast hat *Zimmerservice* bestellt: Reagiere schnell, um seine Zufriedenheit zu vergrößern.</t>
+	<t id="ClientQueueDate">Falls dieser Gast nicht bis ::time:: versorgt ist, wird er wieder abreisen.</t>
+	<t id="NextClock">Diese Uhr zeigt dir an, *um welche Zeit die nächsten Gäste kommen werden*. Bringe *einen Angestellten zur Rezeption*, um die Wartezeit zu verkürzen. Beachte: Zwischen Mitternacht und ::wakeUp:: gibt es keine neuen Gäste.</t>
+	<t id="StaffHelp"><p>Ein Angestellter kann in jedes Hotelzimmer gesteckt werden:</p><p>- ein *leeres, beschädigtes Zimmer* wird er reparieren,</p><p>- in einem *belegten Zimmer* wird er sich um den Zimmergast kümmern,</p><p>- an der *Rezeption* wird er die Wartezeit auf neue Gäste verkürzen.</p></t>
+	<t id="Equipment">Ausstattung:</t>
+	<t id="DecoButtonTitle">Einrichtung ändern</t>
+	<t id="DecoButton">Klicke hier, um die Dekoration in deinem Hotel zu ändern.</t>
+	<t id="DecoButtonNotice">Du änderst gerade die Ausstattung. *Drücke diesen Knopf noch einmal, um zum Spiel zurückzukehren.*</t>
+	<t id="DecoTip">Klicke auf den Gegenstand, um ihn zu bewegen. Halte beim Klicken SHIFT gedrückt und ziehe den Gegenstand in dein Inventar.</t>
+	<t id="EnlargeButtonTitle">Hotel ausbauen</t>
+	<t id="EnlargeButton">Drücke diesen Knopf, um dein Hotelgebäude mit Ausbauten zu erweitern!</t>
+	<t id="EnlargeButtonNotice">Du baust gerade dein Hotel aus. *Drücke diesen Knopf noch einmal, um zum Spiel zurückzukehren.*</t>
+	<t id="EnlargeCost">Kosten: *::money:: ::currency::*</t>
+	<t id="EnlargeHotelNextCost">Der nächste Ausbau kostet: *::money:: ::currency::*.</t>
+	<t id="QueueLeaveDate">Dieser Gast möchte für ::day:: Übernachtung(en) bleiben. Wenn du ihm bis Mitternacht kein Zimmer gibst, wird er wieder abreisen.</t>
+	<t id="LevelUpLobbyTitle">Rezeption verbessern</t>
+	<t id="LevelUpLobby">Mit jeder Verbesserung kannst du *einen weiteren Angestellten* an die Rezeption setzen.</t>
+	<t id="LevelUpTitle">Zimmer verbessern</t>
+	<t id="LevelUp">Gäste, die in verbesserten Zimmern übernachten, werden dir *mehr Geld* bezahlen. Kehrseite der Medaille: *Reparaturen werden ebenfalls mehr Geld kosten*.</t>
+	<t id="Level">Level ::n::</t>
+	<t id="Confirm">BESTÄTIGEN</t>
+	<t id="Cancel">Abbrechen</t>
+	<t id="ConfirmAction">Willst du das wirklich tun?</t>
+	<t id="ConfirmReplacement">*WARNUNG!* Diese/s *::old::* wird zerstört und durch das ausgewählte Zimmer ersetzt! Willst du das wirklich tun?</t>
+	<t id="ConfirmEquipLoss">WARNUNG! *Jede Ausstattung* in dem Zimmer wird dabei *zerstört*!</t>
+	<t id="ConfirmLevelLoss">WARNUNG! Das *Zimmerlevel* geht dabei auch *verloren*!</t>
+	<t id="ScrollTip">Du kannst auch das "Mausrad" und die "Pfeiltasten" benutzen, um dich in deinem Hotel umzusehen.</t>
+	<t id="Loading">Lädt...</t>
+	<t id="LabProgress">Forschung: *::pct::%*</t>
+	<t id="LabInfos">Opfere hier weitere Gäste, um weiterzuforschen und "Forschungspunkte" zu erhalten.</t>
+	<t id="NoClientHere">Weit und breit kein Gast...</t>
+	<t id="BandLabel">Letztes Update:</t>
+	
+	<t id="DateToday">heute, um %H:%M</t>
+	<t id="DateTomorrow">morgen (gegen %H:%M)</t>
+	<t id="DateDayAfter">übermorgen</t>
+	<t id="DateFar">in ::days:: Tagen</t>
+	<t id="DateYesterday">gestern, um %H:%M</t>
+	<t id="DateLongAgo">am %d/%m, um %H:%M</t>
+	
+	<t id="LikeMissing">Abwesend</t>
+	<t id="LikePresent">Präsent</t>
+	
+	<t id="HappyBase">Grundzufriedenheit</t>
+	<t id="HappyBonus">Kleine Aufmerksamkeiten</t>
+	<t id="HappyMalus">Kleine Störungen</t>
+	<t id="HappyMove">Zimmerverlegungen</t>
+	<t id="HappyRoomState">Zimmerzustand</t>
+	<t id="HappyHystery">Noch ein schreiender Gast!</t>
+	
+	<t id="LikeNEIGHBOR">Nachbarn</t>
+	<t id="LikeWATER">Nässe</t>
+	<t id="LikeFIRE">Hitze</t>
+	<t id="LikeNOISE">Lärm</t>
+	<t id="LikeODOR">Gerüche</t>
+	<t id="LikeFOOD">Nahrung</t>
+	<t id="LikeJOY">Zombie</t>
+	<t id="LikeLUX_ROOM">Luxus-Zimmer</t>
+	
+	<!-- Règles des familles de monstres -->
+	<t id="Rule_AQUA">Dieses Monster ist ein *Dummfisch*: Jede erbrachte kleine Aufmerksamkeit dauert bei solchen Gästen 3 Stunden länger.</t>
+	<t id="Rule_FIRE">Dieses Monster ist ein *Pyromane*: Diese Monster ZERSTÖREN beim Verlassen das Zimmer mitsamt der Ausstattung.</t>
+	<t id="Rule_BLOB">Dieses Monster ist ein *Blob*: Sie bezahlen praktisch nichts. Wenn sie allerdings MAXIMAL zufrieden (überglücklich) sind, zahlen sie fürstlich.</t>
+	<t id="Rule_GHOST">Dieses Monster ist ein *Geist*: Sie haben keinen Effekt auf ihre Umgebung und zählen auch nicht als Nachbar bei solchen Gästen, die stark auf Nachbarn reagieren.</t>
+	<t id="Rule_SM">Dieses Monster ist ein *Hysteriker*: Wenn seine Zufriedenheit weniger als 5 beträgt, kriegen sie eine Schrei-Attacke und stören damit alle anderen Hotelgäste.</t>
+	<t id="Rule_BOMB">Dieses Monster ist eine *Emotionale Zeitbombe*: Wenn seine Zufriedenheit *0 oder 10* beträgt, explodieren sie!</t>
+	<t id="Rule_VEGETAL">Dieses Monster ist eine *Riesenpflanze*: Statt wie üblich einem, haben sie zwei Effekte (z.B. Feuchtigkeit + Lärm).</t>
+	<t id="Rule_BUSINESS">Dieses Monster ist ein *Kapitalist*: Es lässt beim Verlassen des Hotels häufiger einen Gegenstand zurück als andere Monster.</t>
+	<t id="Rule_FRANK">Dieses Monster ist eine *Abnormität*: Wird es im *Institut der Freude* geopfert, bringt es die Forschung schneller voran als das bei anderen Monster der Fall ist.</t>
+	<t id="Rule_GIFT">Dieses Monster ist ein *Verdächtiges Paket*: Es wurde dir von einem Freund geschickt! Behandele es gut, und du wirst gutes Geld damit verdienen. Behandele es hervorragend, und du kannst eine besondere Belohnung erhalten.</t>
+	<t id="Rule_BASIC">Dieses Monster ist eine *Langweilige Hexe*: Nicht(s) der Rede wert. </t>
+	<t id="Rule_ZOMBIE">Dieses Monster ist ein *Freundlicher Zombie*: Er bringt gute Laune und Lebensfreude in die Herzen seiner Nachbarn und verhilft ihnen so zu *einem Bonuspunkt Zufriedenheit*.</t>
+	<t id="Rule_FLYING">Dieses Monster ist eine *Hypnose-Katze*: Wenn du sie ein Zimmer steckst und ihre Zufriedenheit dabei mindestens 8 beträgt, wird augenblicklich ein weiterer Gast im Hotel ankommen.</t>
+	
+	<!-- Messages spécifiques du serveur -->
+	<t id="InvalidRoom">Diese Aktion kann nicht auf dieses Zimmer angewendet werden.</t>
+	<t id="UnknownClient">Dieser Gast ist nirgends zu finden: Hat er das Hotel vielleicht schon verlassen?</t>
+	<t id="InvalidClient">Der Gast, den du vorbeischicken willst, ist nicht gültig.</t>
+	<t id="GotFriendClient">Diesen Gast hat dir ein *Freund* geschickt!</t>
+	<t id="GotFriendClients">*Einige Freunde* haben dir Gäste geschickt!</t>
+	<t id="CantHostHere">*Dieser Ort ist unpassend für einen Gast!* Klicke noch einmal auf deinen Gast und dann auf ein freies Zimmer.</t>
+	<t id="BuildBedroomFirst">Ehe du das tust, *baue hier ein Zimmer*. Klicke dazu auf die leere Wand und wähle *Zimmer bauen*.</t>
+	<t id="RoomDirty">Du *kannst* das nicht an einem *schmutzigen oder beschädigten* Zimmer ausführen.</t>
+	<t id="RoomNotDirty">Du kannst das *nur an einem schmutzigen oder beschädigtem Zimmer* ausführen. </t>
+	<t id="UselessCleaning">Dieses Zimmer muss *nicht gereinigt oder repariert* werden.</t>
+	<t id="RoomUnderConstruction">Du kannst das nicht mit einem Zimmer machen, an dem *gerade gebaut wird*. Warte bis die Bauarbeiten beendet sind.</t>
+	<t id="RoomUnderService">Die Ausstattung dieses Zimmers *wird gerade genutzt*.</t>
+	<t id="RoomNotVacant">*Dieses Zimmer ist nicht frei*: Es ist bereits von einem Gast oder einem Angestellten belegt.</t>
+	<t id="CantEquipOccupiedRoom">Du kannst *diesen Ausstattungsgegenstand* nicht in einem Zimmer anbringen, das gerade *mit einem Gast belegt* ist.</t>
+	<t id="TooManyEquipments">Du kannst nicht noch mehr Austattung an diesem Raum anbringen: Entferne zuerst vorhandene Austattung.</t>
+	<t id="RoomCountLimit">Du kannst *nicht mehr als ::n:: Zimmer dieses Typs* bauen.</t>
+	<t id="EquipmentAlreadyInstalled">Du kannst an einem Zimmer nicht zweimal dieselbe Ausstattung anbringen.</t>
+	<t id="OnlyOneStaff">Hier arbeitet bereits ein Angestellter.</t>
+	<t id="ItemToPick">Hebe zuerst *den Gegenstand* auf, den der letzte Gast zurückgelassen hat.</t>
+	<t id="TooManyLobby">Du hast nicht genug Platz für eine weitere Rezeption: Baue dein vorher Hotel entsprechend aus.</t>
+	<t id="NotEnoughStaffForLobby">*Du brauchst im Moment keine weitere Rezeption.* <br/>Jede Rezeption bietet Platz für bis zu ::n:: Angestellte. Du hast im Moment nicht genug Angestellte, damit sich der Bau einer weiteren Rezeption lohnen würde.</t>
+	<t id="NoJob">*Es gibt nichts, was dein Angestellter hier tun könnte*. Wenn du gerade nichts für ihn zu tun hast, schicke ihn an die Rezeption.</t>
+	<t id="NoJobInSpecial">Du kannst deinen Angestellten nicht hierherschicken. Wenn du deinen Gästen den Aufenthalt versüßen möchtest, *dann schicke deinen Angestellten lieber in ihr Zimmer*.</t>
+	<t id="CantSwapLobby">Der Empfangsbereich kann nicht zu einem anderen Bereich umgebaut werden.</t>
+	<t id="LobbyFull">*Diese Rezeption kann nicht noch mehr Angestellte aufnehmen!* Du kannst dieses Problem lösen, indem du die Rezeption verbesserst (dazu musst du einmalig alle Angestellten von der Rezeption abziehen).</t>
+	<t id="NotEnoughMoney">Diese Aktion kostet *::money:: ::currency::*. Du hast nicht genug Geld.</t>
+	<t id="NotEnoughToken">Diese Aktion kostet *::money:: Muxxu Jetons*: Du kannst mehr *“Muxxu Jetons“* über den Shop rechts oben auf dieser Seite kaufen.</t>
+	<t id="CantMoveOnLastDay">Du kannst einen Gast *am Abreisetag* nicht mehr verlegen.</t>
+	<t id="TooLateToAttend">Dieser Gast sitzt bereits auf gepackten Koffern. Es ist zu spät, einen Angestellten vorbeizuschicken.</t>
+	<t id="HotelTooLarge">Du kannst dein Hotel nicht noch mehr *verbreitern*. Fülle die Lücken oder baue nach oben!</t>
+	<t id="HotelTooHigh">Dein Hotel hat seine maximale Höhe erreicht!</t>
+	<t id="NeedServiceRoom">Du brauchst einen *::room::*, um diese Aktion auszuführen! Bau ihn oder warte, bis er wieder frei wird.</t>
+	<t id="NeedXp">Deine *Forschungspunkte* reichen nicht aus.</t>
+	<t id="BuildReset">Deine Fähigkeiten wurden zurückgesetzt.</t>
+	<t id="BuildResetChanged">Deine Fähigkeiten wurden wegen Änderungen am Labor zurückgesetzt.</t>
+	<t id="Useless">Du musst das nicht tun.</t>
+	<t id="NewDeco">Du hast einen neuen Dekorationsgegenstand erhalten: *::name::*! Klicke auf "Einrichtung ändern", um es in deinem Hotel zu verwenden.</t>
+	<t id="GotResearchPoint">Deine Forschung war erfolgreich: Hebe den *Forschungspunkt* beim "Institut der Freunde" auf.</t>
+	<t id="GotResearchMaxed">Deine Forschung hat Früchte getragen: du hast eine *goldene Phiole* erhalten (du hast bereits die maximale Anzahl an Forschungspunkten, darum erhältst du keine weiteren Forschungspunkte).</t>
+	<t id="GotDeco">Deine Forschung hat dir einen neuen Dekorationsgegenstand eingebracht.</t>
+	<t id="TooManyFriendClients">Dieser Spieler hat bereits ::n:: Gäste von Freunden geschickt bekommen: Weitere kann er erst wieder erhalten, wenn er eine Bleibe für die bestehenden gefunden hat.</t>
+	<t id="ClientSent">Du hast einen Gast zu deinem Freund geschickt!</t>
+	<t id="PresentForbidden">Du kannst einem Gast kein *Geschenk* machen, wenn du ihm bereits eine *kleine Aufmerksamkeit* gebracht hast.</t>
+	<t id="Retreat">*Glückwunsch! Du hast dein Hotel jemandem hinterlassen!* Als Dankeschön erhältst du einen *weiteren Stern* und *::fame:: Punkte Ansehen*!</t>
+	<t id="RoomNumber">Nr. ::n::</t>
+	
+	<t id="EventRoomFailure">In Zimmer ::n:: gibt es ein Problem: *::event::*!</t>
+	<t id="EventFloorFailure">Argh!<br/>Es gab einen furchtbaren Zwischenfall: *::event::*!<br/>Alle Gäste in der *::f::. Etage* haben es gesehen.</t>
+	<t id="EventTheft">Haltet den Dieb!<br/>Der Gast aus Zimmer ::room::, *::name::*, hat sich in unserer Kasse bedient und auf und davon gemacht! Du hast *::loss:: ::currency::* verloren!</t>
+	<t id="EventLove">Der Gast aus Zimmer *::room::* hat alle Gäste auf seiner Etage umarmt und jedem ::gift:: geschenkt! Sie alle haben *+::gain:: Punkte an Zufriedenheit gewonnen*.</t>
+	<t id="EventSad">Der Gast aus Zimmer *::room::* hatte einen kleinen Unfall: *::accident::*. Seine Zufriedenheit ist um *::loss:: gefallen*!</t>
+	<t id="EventHappy">Der Gast aus Zimmer *::room::* erlebte eine schöne Überraschung: *::event::*. Bei soviel Glück stieg seine Zufriedenheit um *+::gain:: Punkte*!</t>
+	<t id="EventVip">Un-glaub-lich! Ein Angestellter fand heraus, dass der Gast aus Zimmer *::room::* in Wahrheit eine *berühmte Persönlichkeit* ist! Ab sofort zählt er daher als *VIP*.</t>
+	<t id="EventSblurb">Ein *blurb* hat den Gast in Zimmer *::room::* angegriffen! Das Opfer ist völlig neben sich und hat seinen Verstand verloren. *Seine Vorlieben und Abneigungen haben sich dadurch komplett geändert!*</t>
+	
+	<t id="CE_Vip">Dieser außergewöhnliche Kontakt wird dir *::n:: VIP(s) vorbeischicken*! (ab ::time:: in der Frühe)</t>
+	<t id="CE_Client">Dieser Kontakt wird dir *::n:: zusätzliche Gäste* vorbeischicken! (ab ::time:: in der Frühe)</t>
+	<t id="CE_Tomorrow">wenn morgen die Tore öffnen.</t>
+	<t id="CE_Soon">zur Öffnungszeit.</t>
+	
+	<t id="Monday">Montag</t>
+	<t id="Tuesday">Dienstag</t>
+	<t id="Wednesday">Mittwoch</t>
+	<t id="Thursday">Donnerstag</t>
+	<t id="Friday">Freitag</t>
+	<t id="Saturday">Samstag</t>
+	<t id="Sunday">Sonntag</t>
+	
+	<!-- Log Muxxu -->
+	<t id="MuxxuBuyMisc">Einkauf beim Hotelausstatter (::item::)</t>
+	<t id="MuxxuBuildReset">Forschung zurücksetzen</t>
+	<t id="MuxxuBuyClient">Gäste anwerben</t>
+	
+	<!-- Messages divers du serveur au flash -->
+	<t id="MoneyFound">Du hast *::money:: ::currency::* gefunden, die ein Gast "vergessen" hat!</t>
+	<t id="ResearchFameFound">Durch deine Forschungen im "Institut der Freude" hast du *::fame:: Punkte an Ansehen* gewonnen.</t>
+	<t id="ItemFound">Du hast den Gegenstand *::item::* gefunden, den irgendwer vergessen haben muss... Nun gehört er dir!</t>
+	
+	<!-- Log de jeu -->
+	<t id="LEndActivity">::room::: ::name:: (+::gain::{money}).</t>
+	<t id="LEndActivityHappy">::room::: ::name:: (+::happy:: satisfaction, +::gain::{money}).</t>
+	<t id="LRepair">*Zimmer ::n:: wird gerade repariert (-::money::{money}).*</t>
+	<t id="LEndRepair">*Die Reparaturen in Zimmer ::n:: wurden soeben abgeschlossen (-::money::{money}).*</t>
+	<t id="LEndConstruction">++Fertig gebaut: ::room::++</t>
+	<t id="LRegisterClient">*::name:: wurde in Zimmer ::n:: gesteckt.*</t>
+	<t id="LMoveClient">--::name:: wurde von Zimmer ::from:: nach Zimmer ::to:: verlegt.--</t>
+	<t id="LSacrified">--::name:: wurde ins "Institut der Freude" gesteckt. Es ist nur zu seinem Besten...--</t>
+	<t id="LPopClient">*Neuer Gast: ::name::*</t>
+	<t id="LPopClientVip">*VIP: {vip} ::name::*</t>
+	<t id="LMidnight">Nacht von ::date1:: auf ::date2::</t>
+	<t id="LNightPayment">++Nachtbericht: ::gain::{money} von ::clients:: Gästen.++</t>
+	<t id="LClientNightGain">++::name:: (*Zufriedenheit: ::happy::*) zahlte ::gain::{money}.++</t>
+	<t id="LClientNightLoss">--::name:: (*Zufriedenheit: ::happy::*) verlor ::gain::{money}.--</t>
+	<t id="LClientNightNull">--::name:: (*Zufriedenheit: ::happy::*) zahlte *nichts.--</t>
+	<t id="LClientLeaveAngry">--Abreise: ::name:: ging - rot vor Zorn -  *ohne zu zahlen* und demolierte die gesamte Einrichtung!--</t>
+	<t id="LClientLeaveHappyLow">--Abreise: ::name:: fand den Service so lala...--</t>
+	<t id="LClientLeaveHappyNormal">++Abreise: ::name:: war ganz zufrieden mit dem Aufenthalt.++</t>
+	<t id="LClientLeaveHappyMaxed">++Abreise: ::name:: war entzückt vom Aufenthalt in deinem Hotel!++</t>
+	<t id="LClientGains">Einnahmen:</t>
+	<t id="LClientMoney">::gain::{money}</t>
+	<t id="LClientFame">::fame::{fame}</t>
+	<t id="LClientLeaveItem">++Vergessener Gegenstand: ::item:: (von ::name::)++</t>
+	<t id="LClientBreakItem">--Einrichtung zerstört: ::item:: (Zimmer ::number::)--</t>
+	<t id="LClientItemNotBroken">++Der Gegenstand ::item:: (Zimmer ::number::) wurde nicht zerstört.++</t>
+	<t id="LBecameUnstable">--WARNUNG: ::name:: ist instabil geworden! Wenn du nichts unternimmst, wird dieser Gast explodieren.--</t>
+	<t id="LBecameStable">++::name:: hat sich schließlich beruhigt. Sein Zustand ist wieder stabil. ++</t>
+	<t id="LExplodedAngry">--::name:: war so verärgert, dass er explodiert ist!--</t>
+	<t id="LExplodedHappy">--::name:: konnte mit soviel Zufriedenheit nicht umgehen und ist explodiert!--</t>
+	<t id="LStartHysteria">--::name:: hat die Nase von deinem Hotel voll. Er hat angefangen, rumzuheulen und wie eine Furie herumzuschreien! Das macht auf deine anderen Gäste keinen guten Eindruck...--</t>
+	<t id="LEndHysteria">++::name:: hat sich letzlich beruhigt und mit dem Rumgeheule aufgehört...++</t>
+	<t id="LAttendingSuccess">++Kleine Aufmerksamkeit geglückt: ::name::, Zufriedenheit +::gain::, ::money::{money}++</t>
+	<t id="LAttendingFail">--Kleine Aufmerksamkeit missglückt: ::name::, ::money::{money}--</t>
+	<t id="LServiceFail">--Ruf nach Zimmerservice storniert: ::name::--</t>
+	
+	
+	<!-- Quêtes -->
+	<t id="Welcome1">*Willkommen in deinem Hotel!* Du bist der Hotelmanager. Es ist also deine Aufgabe, deine Gäste so zufrieden wie möglich zu machen, auf dass sie dir maximal Geld zahlen.“</t>
+	<t id="Welcome2">Du willst gleich gut loslegen? *Dann befolge die Anweisungen, die über dem Hotel erscheinen*.</t>
+	<t id="QuestComplete">*Du hast deinen Vertrag erfüllt!* Du erhältst:</t>
+	<t id="NewQuest">Neuer *Auftrag*</t>
+	<t id="R_Money">*::money::* ::currency::</t>
+	<t id="R_Item">ein Gegenstand: "*::item::*"</t>
+	<t id="R_Client">ein neuer *Gast* wartet an der Rezeption</t>
+	<t id="R_Research">1 Forschungspunkt</t>
+	<t id="R_Fame">::fame:: Punkte Ansehen</t>
+	<t id="G_AddClient">Gast eingecheckt</t>
+	<t id="G_BuyStaff">Angestellter hinzugefügt</t>
+	<t id="G_InstallItem">Einrichtung installiert</t>
+	<t id="G_ChangeDeco">Dekoration geändert</t>
+	<t id="G_StaffLobby">Angestellten zur Rezeption</t>
+	<t id="G_BuildRoom">Neues Zimmer gebaut</t>
+	<t id="G_Rename">Hotelname geändert</t>
+	<t id="G_ClientPop">Warte auf den nächsten ankommenden Gast (die Uhr über der Hoteltür zeigt dir wann der nächste Gast eintrifft)</t>
+	<t id="G_Midnight">Nacht verbracht</t>
+	<t id="G_ExtendAny">Hotel ausgebaut</t>
+	<t id="G_EndConstruction">Arbeit beendet</t>
+	<t id="G_Level">Steuer bezahlt</t>
+	<t id="G_Satisfy">Zufriedener Gast (::n::+ Pkt)</t>
+	<t id="G_SatisfyMax">Überglücklicher Gast (10 Pkt)</t>
+	<t id="G_PickItem">Vergessene Gegenstände</t>
+	<t id="G_DropResearch">Forschungspunkt erworben</t>
+	<t id="G_UseResearch">Forschungspunkt eingesetzt</t>
+	<t id="G_RoomLevel">Zimmerlevel ::n::</t>
+	<t id="G_PlaceDeco">Angebrachte Deko</t>
+	<t id="G_Service">Zimmerservice erledigt</t>
+	
+	<!-- OBJETS -->
+	<t id="BUFFET">Schlemmerkorb | Ein riesiger Korb voller Leckereien, der keine kulinarischen Wünsche offen lässt. | Versorgt ein Zimmer mit *Nahrung*.</t>
+	<t id="RADIATOR">Überhitzter Radiator | Er ist so heiß, dass man Spiegeleier darauf braten könnte. | Erzeugt im Zimmer *Hitze*.</t>
+	<t id="FRIEND">Teddybär | Jedermann ist beim Anblick dieser treuen Augen und des süßen Gesichts sofort verzückt. Außerdem riecht er nach Schokolade. | Gäste, die Nachbarn mögen, werden diesen Teddybären lieben.</t>
+	<t id="STINK_BOMB">Mumie im Wandschrank | Es stinkt furchtbar und wird scheinbar jeden Tag schlimmer... | Sorgt für einen furchtbaren *Gestank* im Zimmer.</t>
+	<t id="HUMIDIFIER">Luftbefeuchter | Diese spezielle Modell bringt die Luftfeuchtigkeit ruckzuck auf 100%. | Erzeugt im Zimmer *Feuchtigkeit*.</t>
+	<t id="HIFI_SYSTEM">HiFi-Anlage | BOOM BOOM BOOM SHAKE THE ROOM! | Macht ordentlich *Lärm* im Zimmer.</t>
+	<t id="OLD_BUFFET">Alter Käse | Dieser Harzer Käse konnte viele Jahre „reifen“. Sein Gerucht treibt jedem Gast die Tränen in die Augen... | Verströmt *Gestank* im Zimmer.</t>
+	<t id="DJ">Hot Rod | Der Junge ist ein Versager erster Klasse, aber er hat Musik im Blut. | Erzeugt *Lärm* und *Hitze* im Zimmer.</t>
+	<t id="PRESENT">Begrüßungsgeschenk | Ein großes, plastenes Etwas, um deine besten Kunden zu beeindrucken. | Erhöht die *Zufriedenheit eines Gastes +1*. Das Geschenk wird dabei verbraucht. Es kann nicht bei Gästen angewendet werden, die bereits eine kleine Aufmerksamkeit erhalten haben.</t>
+	<t id="PRESENT_XL">Großer Willkommenskorb | Wenn kleine Geschenke nichts bringen, müssen eben große Geschütze aufgefahren werden: Bestickte Servietten, Badeperlen, Parfüm, eine handgenähte Ledertasche. | Erhöht die *Zufriedenheit eines Gastes +2*. Das Geschenk wird dabei verbraucht. Es kann nicht bei Gästen angewendet werden, die bereits eine kleine Aufmerksamkeit erhalten haben.</t>
+	<t id="LABY_CUPBOARD">Kleiderschrank „Labyrinth“ | Dieses besondere Möbelstück wurde so kompliziert wie nur irgend möglich entworfen. Form follows function? Weder noch! Gäste werden unweigerlich etwas darin vergessen. | *Vergrößert erheblich die Chance*, dass ein Gast beim Verlassen einen Gegenstand zurücklässt.</t>
+	<t id="MATTRESS">Wohlfühlmatratze | Diese Matratze singt Schlaflieder, bietet eine „Ganzkörpermassage“ und flüstert einem sogar liebliches Blabla ins Ohr wenn man das richtige Progamm wählt. | Gibt jede Nacht einen *Zufriedenheitsbonus*.</t>
+	<t id="FIREWORKS">Zimmerfeuerwerk | Ein unbeschreibliches Spektakel vor dem Zu-Bett-Gehen, das man einmal erlebt haben muss! Allerdings muss man danach das Zimmer neu streichen. | Gibt einen *gewaltigen Zufriedenheitsbonus* in der ersten Nacht. Dabei wird der Gegenstand zerstört. Genau wie das Zimmer...</t>
+	<t id="WALLET">Diamantenbett | Dieses Diamant-besetzte Bett ist ideal, um Gäste zu beeindrucken und zu ermuntern, ruhig etwas mehr springen zu lassen. | Steigert die Einnahmen des Zimmers *um 25% pro Nacht*. Der Gegenstand wird beim Verlassen des Zimmers zerstört.</t>
+	<t id="REPAIR">Reparaturset | Einige Nägel, etwas Dichtmasse und reichlich Farbe an den richtigen Stellen und schon sieht das Zimmer wieder wie neu aus. | Behebt sofort *alle Schäden* an einem Zimmer.</t>
+	<t id="MONEY">Eine Geldbörse | ??? | ???</t>
+	<t id="ISOLATION">Gummizelle | Bei den richtig schwierigen Fällen hilft nur ein stahlverstärkter und mit dicken Gummimatten ausgekleideter Schutzschirm. | Schirmt ein Zimmer komplett *gegen alle inneren und äußeren Effekte* ab (Hitze, Gestank,...). Der Gegenstand wird beim Verlassen des Zimmers zerstört.</t>
+	<t id="RANDPAINT">Farbtopf | Streiche drauf los, die Farbe kannst du aber nicht selber bestimmen! | Mit diesem Farbtopf kannst du die Wände des ausgewählten Flurs *in einem wahllos ausgesuchten Farbton* neu streichen.</t>
+	<t id="RANDPAINTWARM">Topf mit heller Farbe | Ein Topf mit heller Farbe, bloß welche Farbe genau? | Mit diesem Farbtopf kannst du die Wände des ausgewählten Flurs *in einem wahllos ausgesuchten hellen Farbton* neu streichen.</t>
+	<t id="RANDPAINTCOOL">Topf mit cooler Farbe | Ein Topf mit cooler Farbe, bloß welche Farbe genau? | Mit diesem Farbtopf kannst du die Wände des ausgewählten Flurs *in einem wahllos ausgesuchten coolen Farbton* neu streichen.</t>
+	<t id="RANDBOTTOM">Wanddeko „Surprise“ | Panele, Nägel und einfach alles was zum Verändern der Wanddeko nötig ist! | Mit diesem Set kannst du die *untere Wand* des ausgewählten Flurs mit einem wahllos ausgesuchtem Stil versehen.</t>
+	<t id="RANDTEXTURE">Wahllos-Tapete | Dicke Tapeten-Rollen zum Dekorieren deiner Wände | Mit diesem Set kann du die Wände des ausgewählten Flurs mit einer *wahllos ausgesuchten Tapete* bekleben.</t>
+	<t id="RANDDECO">Wahllos-Deko | Ich liebe Überraschungen! | Dieser Karton enthält einen zufällig *ausgewählten Dekorationsgegenstand*, mit dem du dein Hotel verschönern kannst.</t>
+	<t id="RESEARCH">Forschungspunkt | Das Opfern von „freiwilligen“ Gästen im „Institut der Freude“ bringt deine Forschung voran | Verwende deine *Forschungspunkte* im *Labor*!</t>
+	<t id="RESEARCH_GOLD">Phiole mit Gold | Mit dem Opfern von Gäster kannst du ein wahres Vermögen verdienen. | ???</t>
+	<t id="ShopPack">Dieses Set enthält *jeweils einen Gegenstand der Kategorie „%“*. Der Setpreis ist niedriger als der Preis für ein einzelnes Objekt der Kategorie.</t>
+	
+	<t id="DecoPlantSmall">seltsame Topfpflanze</t>
+	<t id="DecoPlantLarge">große, sperrige Topfpflanze</t>
+	<t id="DecoPaintSmall">kleiner Farbtopf</t>
+	<t id="DecoLight">Designer-Lampe</t>
+	<t id="DecoFurniture">rustikale Dada-Möbel</t>
+	<t id="DecoSofa">feuchtwarmes Sofa</t>
+	
+	<t id="TR_NONE">Platz... | Ein hübsches Plätzchen, für das du sicher schon bald etwas passendes finden wirst... | An diesem Ort kannst du ein *neues Zimmer* bauen.</t>
+	<t id="TR_BEDROOM">Zimmer | Gäste sind ja manchmal sowas von anspruchsvoll: einige wollen einfach nicht auf dem Flurboden schlafen... | In Zimmern kannst du deine Gäste einquartieren.</t>
+	<t id="TR_LOBBY">Rezeption | Ein polierter Empfangstresen mit Schlüsselregal (natürlich nur eine Imitation) wirkt professionell und schindet Eindruck bei neuen Gästen.| Platziere deine Angestellten an der Rezeption, um die Wartezeit auf neue Gäste zu verkürzen.</t>
+	<t id="TR_LOBBY_SLOT">Ein freier Platz für einen weitere Rezeptionstheke. | Böse Zungen behaupten, dass deine Gäste hier die meiste Zeit verbringen. | Du kannst hier eine weitere Rezeption errichten.</t>
+	<t id="TR_RESTAURANT">Astro-Gastro | Das einzige was hier astronomisch ist, das sind die Preise. | Gäste, die *Nahrung* über alles lieben, können hier Geld gegen Kalorien tauschen.</t>
+	<t id="TR_BIN">Müllschlucker | Sein Geheimnis besteht darin, dass wir immer nur Dinge hinzufügen, aber nie wieder herausnehmen. | Gäste, die auf *Gestank* stehen, werden sich hier wohl fühlen.</t>
+	<t id="TR_DISCO">Disko | Niemand versteht auch nur ein Sterbenswort davon was ein anderen erzählt. Aber irgendwie ist das auch nicht schlimm. | Gäste mit einer Leidenschaft für *Lärm* können selbiger hier gegen Gebühr frönen.</t>
+	<t id="TR_FURNACE">Krematofen | Ein feuerisolierter Raum. Darin ein großer bestuhlter Ofen mit Schwingtür. | Gäste, die von *Hitze* nicht genug bekommen, können hier ihr Geld ausgeben.</t>
+	<t id="TR_POOL">Whirlpool | Das Wasser in diesem Whirlpool ist doppelt so nass wie normales Wasser! Dank HighTech ist jeder Wassertropfen mit einem feinen Ring von Wassertröpfchen ummantelt. | Gäste mit einer Vorliebe für *Feuchtigkeit* werden sich hier prächtig amüsieren. ...natürlich gegen Bezahlung.</t>
+	
+	<t id="TR_SERV_WASH">Waschvollautomat A38 | Dieses Stück HighTech kann Kleidung nicht nur waschen, sondern sie auch nach Farbe und Fleckentyp sortieren, trocknen, bügeln und zusammenlegen. | Damit kannst du auf Anfrage die schmutzige Wäsche deiner Gäste waschen.</t>
+	<t id="TR_SERV_SHOE">Schuhputzer | Ein Apparat zum Desinfizieren, Putzen und Polieren aller Arten von Schuhen. | Ein Gast möchte seine Schuhe reinigen lassen? Damit kannst du ihm helfen.</t>
+	<t id="TR_SERV_ALCOOL">SchluckSpecht | Ein komplexes Geflecht von Röhren und Schläuchen versorgt die Gästezimmer mit diesem Kessel, der mit Industriealkohol und Parfüm gefüllt ist. ...auf der Karte ist von Champagner die Rede. | Damit kannst du die Minibar von Gästen mit Hang zu starken Drinks wieder auffüllen.</t>
+	<t id="TR_SERV_FRIDGE">MehrFutter-Mat| Die zeitgemäße Lösung für ein altes Problem: den leeren Kühlschank. Dieser Apparat liefert in Windeseile genug Nahrung, um ein ganzes Heer von Gästen zu beköstigen. | Ermöglicht das Wiederauffüllen des Kühlschranks besonders hungriger Gäste.</t>
+	
+	<t id="TR_LAB">Institut der Freude | Der beste Weg zum besseren Verständnis deiner künftigen Gäste führt über ihr genaues Studium. Am besten scheibchenweise... | Durch das Opfern von Gästen im "Institut der Freude" erwirbst du *Forschungspunkte*.</t>
+	
+</lang>
+

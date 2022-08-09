@@ -1,0 +1,99 @@
+﻿<!-- QUETE DE LA PERLE : perle de la fontaine de jouvence -->
+<!-- 	+ révélation de l'utilisation du Gant			  -->
+
+<d place="chutes" name="Maestro Hydargol" gfx="hydargol" cond="admin()|fx(bouee)">
+
+	<phase id="begin" next="talk" fast="1">
+		Las Caídas Mutantes son uno de los Grandes Lugares de meditación para los monjes Zenzen. Es por
+		esta razón por la que se ven muchos monjes por aquí. Se instalan en las grandes hojas de nenúfares
+		y meditan el máximo de tiempo que pueden... y todo eso sin ser arrastrados por la corriente.
+		Muchos monjes adormecidos han desaparecido en el abismo...
+	</phase>
+
+	<a id="talk">Hablar con el Maestro Hydargol</a>
+
+	<phase id="talk" next="hello:help:give:act">
+		.........ho.la......
+	</phase>
+
+	<a id="hello" target="talk">¡Hola!</a>
+	<a id="help" cond="!fx(nenuph)+!collec(perle)">¿Te puedo ayudar en algo?</a>
+	<a id="give" cond="fx(nenuph)+!fx(chutes)">Darle hojas de nenúfar</a>
+	<a id="act" cond="collec(perle)">¿Qué hay de nuevo?</a>
+
+	<phase id="help" next="get">
+		....¿Ah? Eh... sí... podrías... traerme...Zzzz... zzz...
+	</phase>
+
+	<a id="get">¿Traerte... ?</a>
+
+	<phase id="get" next="where">
+		...¿Ah? Eh... sí... traerme... una hoja... de nenúfar...
+	</phase>
+
+	<a id="where">¿Y dónde encuentro eso?</a>
+
+	<phase id="where" effect="zenbro">
+		...encuentra... mi... aprendiz padamonje... Zzz... zzz...
+	</phase>
+
+	<phase id="give" noeffect="nenuph" collection="perle">
+		...gracias.... voy a poder.... al fin... meditar sobre... ¡¡¡las Caídas!!!!
+		Te ofrezco esta Perla como recompensa... ¡se añadirá a tu Colección de objetos!
+	</phase>
+
+	<phase id="act" next="gant">
+		¡¡Yuju!! ¡genial! Mira... ¡floto!
+	</phase>
+
+	<a id="gant" cond="fx(gant)+!fx(chutes)">Enseñar el Guante de Zors</a>
+
+	<phase id="gant" next="why">
+		¡Oh! ¿Eso que tienes ahí es un Guante de Zors? ¡¡GENIAL!!
+	</phase>
+
+	<a id="why">¿Ah? ¿Por qué?</a>
+
+	<phase id="why" next="super">
+		Verás, te explico: el Guante de Zors tiene el poder de anular las corrientes de las Caídas.
+		De este modo, con una hoja de nenúfar, puedes pasar junto a las Caídas y acceder sin riesgos a la Jungla de Grumhel.
+	</phase>
+
+	<a id="super">¡Bien!</a>
+
+	<phase id="super" next="ok:no">
+		Bueno, si me prometes dejarme usar tu Guante de vez en cuando, te presto las hojas de nenúfar para que
+		puedas pasar por las Caídas Mutantes... ¿te vale?
+	</phase>
+
+	<a id="ok">Ok.</a>
+	<a id="no" target="why">Ni en sueños.</a>
+
+	<phase id="ok" effect="nenuph:chutes">
+		¡Venga! aquí tienes las hojas de nenúfar... ya puedes pasar junto a las Caídas Mutantes sin arriesgar tu vida.
+		Ten cuidado porque la Jungla que vas a encontrar después es muy peligrosa.
+	</phase>
+
+</d>
+
+<!-- APPRENTIS -->
+
+<d cond="fx(zenbro)" place="port" name="Aprendiz padamonje" gfx="bemol">
+
+	<phase id="begin" next="help">
+		Hola, ejem... soy Bemol, el padamonje del Maestro Hydargol. Le tengo que llevar estas hojas de nenúfar. Pero, ejem... tengo un grave problema: siempre me pongo enfermo cuando estoy en el mar... ¡lo peor es que tengo que ir esas Islas Atlanteidas! ¿Qué puedo hacer?
+	</phase>
+
+	<a id="help">Precisamente tengo que ir allí. Si quieres, puedo llev...</a>
+
+	<phase id="help" next="get">
+		¿De verdad? ¿Me vas a ayudar? ¡Gracias!
+	</phase>
+
+	<a id="get">Esto... de nada</a>
+
+	<phase id="get" noeffect="zenbro" effect="nenuph">
+		Pareces digno de confianza. Ten, te confío estas hojas de nenúfar, y ¡que la Santa Fuerza esté contigo!
+	</phase>
+
+</d>

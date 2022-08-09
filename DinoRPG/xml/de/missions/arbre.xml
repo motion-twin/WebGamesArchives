@@ -1,0 +1,103 @@
+﻿<missions>
+
+	<!-- ***************************************************************************** -->
+	<!-- gardien de le forêt ----->
+
+	<m group="arbre" id="unmute" name="Der Waldwächter" limit="35">
+		<begin>Die Pergamentrolle, die auf dich gefallen ist, enthält folgende Nachricht: "Finde 1 Einheit fließendes Wasser, dann 1 Einheit modriges Wasser, dann 1 Einheit reines Wasser und schließlich 1 Einheit kochendes Wasser". Kaum hast du die Nachricht zu Ende gelesen, fällt dir wiederum etwas aus dem Blätterwerk auf den Kopf! Pock!</begin>
+		<goto v="fleuve" hide="1"/>
+		<action v="Wasser aus dem Jumin-Fluss">Du füllst die Feldflasche des alten Baumes mit ein wenig Wasser aus dem Jumin-Fluss auf. Somit hättest du schonmal das fließende Wasser!</action>
+		<goto v="marais" hide="1"/>
+		<action v="Trübes Wasser">Du gibst etwas Wasser aus dem Klebrigen Sumpf in die Feldflasche 
+	des alten Baumes. Es riecht wirklich eklig...</action>
+		<goto v="fountj" hide="1"/>
+		<action v="Erfrischendes Wasser">Du befüllst die Feldflasche des alten Baumes mit ein wenig klarem
+	Brunnenwasser. Gleichzeitig nutzt du die Gelegenheit, um dich ein wenig zu erfrischen.</action>
+		<goto v="gorges" hide="1"/>
+		<action v="Kochendes Wasser">Du vervollständigst den Inhalt der Feldflasche mit ein wenig
+	kochendem Wasser aus den Schluchten. Es ist heiß!</action>
+		<goto v="garde"/>
+		<action v="Den Inhalt der Feldflasche auf die Wurzeln schütten.">Die Blätter des alten Baumes schütteln sich urplötzlich in alle Richtungen und ein beruhigendes Licht breitet sich um dich herum im Dschungel aus...</action><end>Der alte Baum senkt sich raschelnd in deine Richtung...Er schüttelt langsam sein Laubwerk und lässt ein paar schöne Früchte vor deine Füße fallen. </end>
+		<xp v="110"/>
+		<item v="fruit" n="3"/>
+	</m>
+
+	<m group="arbre" id="orchid" name="Die grüne Hand" limit="20" cond="mission(unmute)">
+		<begin>Eine Pergamentrolle baumelt an einem Ast. Du kannst darauf lesen: |"Gehe und gieße die Orchidee Quide, die am Rande des Dschungels steht" .| Irgendetwas im Blätterwerk wirft dir daraufhin eine leere Feldflasche auf den Kopf. Pock!</begin>
+		<goto v="fleuve"/>
+		<action v="Wasser schöpfen.">Du füllst die Feldflasche mit Wasser aus dem Jumin-Fluss auf.</action>
+		<goto v="auree"/>
+		<action v="Die Orchidee gießen.">Du gießt den gesamten Inhalt deiner Feldflasche auf eine wunderschöne Blume, bei der es sich bestimmt um die Orchidee Quide handeln muss. Diese erstrahlt sofort in tausenden Farben, wobei hübsche Tautröpfchen von ihren graziösen Blättern kullern.</action>
+		<talk v="Sprechende Orchidee Quide">Was?! Was schaust du mich so an? Hast du noch nie eine Orchidee wachsen sehen?! Hast nicht was anderes zu tun? Los hau ab, lass mich in Ruhe, und gehe mir aus der Sonne!!</talk>
+		<end>Du stellst die leere Feldflasche am Fuße des Baumes ab. Eine große Frucht löst sich daraufhin aus den oberen Ästen und schlägt neben dir mit einem dumpfen Geräusch auf.</end>
+		<xp v="30"/>
+		<item v="fruit" n="1"/>
+	</m>
+
+	<m group="arbre" id="licens" name="Erlaubnis zum Schneiden" limit="20" cond="mission(unmute)">
+		<begin>Eine Pergamentrolle (die du bisher nicht bemerkt hattest) ist an eine Wurzel gebunden. Du kannst darauf lesen: "Die Korgonen und die Brombeerstrauchfresser aus dem Süden übertreffen bei weitem die Baumfällquoten, die ich für den Grumhel-Dschungel erlaubt habe. Gehe und weise sie in ihre Schranken." </begin>
+		<goto v="chemin"/>
+		<kill v="korgon:ronciv" n="8" name="Brombeerstrauchfresser oder Korgone"/>
+		<end>Ein paar Früchte fallen vom Baum nebenan...</end>
+		<xp v="40"/>
+		<item v="fruit" n="3"/>
+	</m>
+
+	<m group="arbre" id="king" name="Der König des Dschungels" limit="20" cond="mission(unmute)+mission(orchid)">
+		<begin>Eine Nachricht ist auf einem Kleiderfetzen geschrieben, der an einem Ast hängt: "Wir verbreiten seit mehreren Jahren eine Legende, die von einem König des Dschungels erzählt, um uns etwaige Touristen vom Hals zu halten. Begebe dich auf die Verfluchten Hügel, um diesen Mythos weiterzuerzählen..."</begin>
+		<goto v="collin"/>
+		<action v="Den Schrei des Dschungelkönigs nachmachen.">Du stößt einen extrem lächerlichen Schrei aus, der wahrscheinlich nicht mal einen Korgonen erschrecken würde... Du musst dir was besseres einfallen lassen!</action>
+		<goto v="auree" hide="1"/>
+		<talk v="Sprechende Orchidee Quide">Schon wieder dieser Trottel aus dem Dschungel?! Was schaut der
+	mich schon wieder so an?</talk>
+		<action v="Die Orchidee pflücken.">Schonungslos reißt du die Orchidee aus und nimmst sie mit dir. Sie schreit, überhäuft dich mit Beschimpfungen und ringt mit dir so gut es geht...</action>
+		<goto v="collin"/>
+		<action v="Die Orchidee einpflanzen.">Du pflanzt die Orchidee Quide kurzerhand wieder ein. Diese lässt es sich nicht entgehen, dich dabei anzubrüllen. Während du schon den Rückzug angetreten hast, kannst du aus der Ferne noch hören, wie sie dir die übelsten Schimpfwörter an den Kopf wirft...DAS dürfte jedenfalls reichen, um Touristen abzuschrecken!</action><end>Eine Frucht ist neben dir auf den Boden gefallen. Als du dich bückst um sie aufzuheben, fällt dir wie aus dem
+	Nichts ein großer Beutel voller Goldmünzen auf den Kopf! AUTSCH!
+</end>
+		<gold v="2500"/>
+		<xp v="35"/>
+		<item v="fruit" n="1"/>
+	</m>
+
+	<m group="arbre" id="wishes" name="Wünsch dir was" limit="20" cond="mission(unmute)">
+		<begin>Auf einem Ast eingraviert steht geschrieben: |"Man erzählt sich, dass die Sturzfluten im Süden magische Eigenschaften hätten...Gehe und wirf eine Münze in den Abgrund der Mutierenden Sturzfluten und wünsche dir, dass die Population der Korgonen und Brombeerstrauchfresser im Dschungel abnimmt." »| Ein Kupfermünze rollt daraufhin einen Ast entlang und fällt gegen deinen Fuß.
+</begin>
+		<goto v="chutes"/>
+		<action v="Eine Münze hineinwerfen.">Du wirfst eine Münze mitten in die Sturzfluten und wartest ein paar Minuten...Offensichtlich tut sich nichts, worauf du beschließt, den Wunsch, die Monsterpopulationen zu verringen, selbst zu erfüllen.</action>
+		<goto v="auree"/>
+		<kill v="korgon:ronciv" n="2" name="Brombeerstrauchfresser oder Korgone"/>
+		<goto v="chemin"/>
+		<kill v="korgon:ronciv" n="3" name="Brombeerstrauchfresser oder Korgone"/>
+		<goto v="fleuve"/>
+		<kill v="korgon:ronciv" n="3" name="Brombeerstrauchfresser oder Korgone"/>
+		<goto v="jungle"/>
+		<kill v="korgon:ronciv" n="6" name="Brombeerstrauchfresser oder Korgone"/>
+		<end>Ein paar Früchte fallen vom Baum nebenan...</end>
+		<xp v="60"/>
+		<item v="fruit" n="4"/>
+	</m>
+
+	<m group="arbre" id="newplt" name="Eine Hebebühne für den Wald" limit="20" cond="mission(unmute)">
+		<begin>Eine lange Stoffrolle ist um den alten Baum gewickelt: |" Unsere Bemühungen, den Wald um die Große Dauerhitze zu vergrößern, sind vor kurzem von einem gewaltigen Erdrutsch nahe der Aschpuckruinen zunichte gemacht worden. Nimm diese Hebebühne. Sie wird dir helfen, die Pflanzen von dem Steingeröll zu befreien."| Sogleich prallt eine schwere Hebebühne aus Eisen genau neben dir auf.
+	</begin>
+		<goto v="rashpk"/>
+		<talk v="Freiwilliger des 'Grünen Friedens'">Guten Tag! Kommst du auch, um zu helfen, diesen Felsen aus dem Weg zu räumen? Momentan habe ich ein großes Problem an der Backe... Monster aller Art kommen regelmäßig und hindern mich am Arbeiten... Kannst du da was machen?</talk>
+		<kill n="3"/>
+		<action v="Die Felsen hochheben">Du bringst die Hebebühne an und beginnst damit, die auf den Wald gefallenen Felsen hochzuheben und wegzudrücken... Doch während du denkst, endlich in Ruhe arbeiten zu können, hörst du hinter dir ein beunruhigendes Fauchen...</action>
+		<kill n="6"/>
+		<talk v="Freiwilliger des 'Grünen Friedens'">Du darfst keine Sekunde mehr verlieren, auf geht`s, weiter!</talk>
+		<action v="Die Felsen hochheben">Die ganze Sache hält dich trotz Hebebühne noch mehrere Stunden auf Trab. Aber dennoch gelingt es dir, zahlreiche unter dem Geröll begrabene Bäume und Pflanzen freizulegen</action>
+		<talk v="Freiwilliger des 'Grünen Friedens'">Ich werde hier bleiben, um die überlebenden Pflanzen zu gießen. Geh du für mich bitte zum Waldwächter und erstatte ihm Bericht!</talk><end>Zwei große Früchte lösen sich und fallen in das Gebüsch neben dir...</end>
+		<xp v="75"/>
+		<item v="fruit" n="2"/>
+	</m>
+
+	<m group="arbre" id="gshop" name="Affengeld" limit="20" cond="mission(unmute)+mission(orchid)+mission(licens)+mission(king)+mission(wishes)+mission(newplt)">
+		<begin>Ein hölzernes Hinweisschild und ein kleiner Eimer aus Weißblech hängen an einem Ast :|"Lege etwas Gold für deine tägliche Ration in den Eimer."</begin>
+		<action v="Den Eimer untersuchen.">Du findest einen kleinen blühenden Ast im Eimer......</action><end>Der Text auf dem hölzernen Hinweisschild hat sich geändert! Dort steht nun: "Bewahre diesen blühenden Ast als Zeichen unserer Dankbarkeit auf."</end>
+		<fx v="gshop"/>
+		<xp v="5"/>
+	</m>
+
+</missions>

@@ -1,0 +1,133 @@
+﻿<d place="scaush" name="Jerónimo K." gfx="trader" cond="!hasobject(bamboo)+!uvar(tradok)">
+
+	<phase id="begin" next="ask">
+		Déjame.... quiero morir.....
+	</phase>
+
+	<a id="ask">No parece que te vayan muy bien las cosas...</a>
+
+	<phase id="ask" next="ask2">
+		Eso sí que es cierto... ¡lo tenía todo! ¡todo! Todo: la riqueza, las mujeres, la fama... El mundo entero me pertenecía...
+	</phase>
+
+	<a id="ask2">¿Y qué pasó?</a>
+
+	<phase id="ask2" next="ask3">
+		Pfff... no quiero ni pensarlo... pero voy a responderte... lo perdí todo... en la calle Warp...
+	</phase>
+
+	<a id="ask3">¿¿¿La calle Warp???</a>
+
+	<phase id="ask3" next="deriv">
+		Sí... quizás no la conozcas... pero la calle Warp es una pequeña calle de Dinovilla... Es un mercado reservado a la élite: se venden y compran Productos Disfrazados.
+	</phase>
+
+	<a id="deriv">¿El qué?</a>
+
+	<phase id="deriv" next="deriv2">
+		¡Productos Disfrazados! Sabes, cuando la demanda de Polvorones aumenta, el precio del producto disfrazado que está enlazado al Polvorón baja. A menos que el Feros aumente también, entonces eso depende de las demanda del Arroz Amnésico del mes anterior... Bueno, el caso es que con los Productos Disfrazados, ¡puedes ganar mucho dinero rápidamente!
+	</phase>
+
+	<a id="deriv2">¿Como tú?</a>
+
+	<phase id="deriv2" next="ask4">
+		Sí, ¡exactamente! En fin, hasta hace algunos días...
+	</phase>
+
+	<a id="ask4">¿Qué te pasó?</a>
+
+	<phase id="ask4" next="ask5">
+		Es simple... no vi venir la crisis mobiliaria...
+	</phase>
+
+	<a id="ask5">Quieres decir inmobiliaria, ¿no?</a>
+
+	<phase id="ask5" next="ask6">
+		¡No! ¡Nada que ver! Eso es para la construcción, funciona perfectamente en este momento. ¡Como todos esos castillos de la guerra de los clanes! Hay quienes hacen una fortuna en pocos días.		
+	</phase>
+
+	<a id="ask6">Entonces, ¿qué pasa con la crisis mobiliaria?...</a>
+
+	<phase id="ask6" next="ask7">
+		Sí. ¡Antes el mobiliario era el futuro! Todo el mundo quería su escritorio de Madera de Grumhel. Pero ahora, con el calentamiento del planeta, la guerrilla Gorilos que ataca a los que cortan los árboles... vaya, la destrucción del mercado, y mi ruina...
+	</phase>
+
+	<a id="ask7">¿Cuánto has perdido?</a>
+
+	<phase id="ask7" next="ask8">
+		¿Cuánto? Pues.... unos 4 mil millones de piezas de oro...
+	</phase>
+
+	<a id="ask8">¿¿¿CUÁNTO???</a>
+
+	<phase id="ask8" next="ask9">
+		Ya te digo, 4 mil millones... Sí, ya sé que eso es mucho para alguien que no pertenece a la élite como yo. Pero créeme, con 4 mil millones hoy en día ya no haces nada...
+	</phase>
+
+	<a id="ask9">Puf bueno pero algo sí, ¡qué menos!...</a>
+
+	<phase id="ask9" next="ask10">
+		En fin, lo más duro ya ha pasado. Voy a rehacer mi vida, ¡eso es 100% seguro! He encontrado un gran nuevo negocio. Necesito un nuevo socio... ¿te interesa?
+	</phase>
+
+	<a id="ask10">¿A mí?</a>
+
+	<phase id="ask10" next="ask11">
+		Si, ¡a ti! Pareces un Maestro Dino muy fuerte. Por eso, te propongo un negocio: tú te ocupas de la logística y yo de la venta. Juntos podremos ganar millones... ¿y quién no quiere ganar millones?
+	</phase>
+
+	<a id="ask11">¿Qué tengo que hacer?</a>
+
+	<phase id="ask11" next="yes:no">
+		Es fácil: me traes 100 Semillas de la Devorosa, las encontrarás en las Estepas. Recuerda, necesito 100 como mínimo. A cambio te daré una cosa super rara que he encontrado. Después, me das unos días para venderlo todo en la calle Warp y compartimos los beneficios, ¿qué te parece?
+	</phase>
+
+	<a id="yes">¡Ok!</a>
+	<a id="no">Ni lo sueñes.</a>
+
+	<phase id="no">
+		Vale, como quieras, ¡peor para ti!
+	</phase>
+
+	<phase id="yes" next="ok">
+		¡Bien! Ve a por las 100 Semillas y vuelve. Te espero aquí.
+	</phase>
+
+	<a id="ok">Vale, hasta luego.</a>
+
+	<phase id="ok" useingr="dgrain:100" effect="trader" give="bamboo" nocheck="1">
+		¡Muy bien! ¡Eres fantástico! Ten, te dejo mi objeto raro. Nos vemos más tarde en Dinovilla, ¡cuando haya vendido todo lo tengo!
+	</phase>
+
+</d>
+
+<d place="dnv" name="Jerónimo K." gfx="trader2" cond="fx(trader)+!uvar(tradok)">
+
+	<phase id="begin" next="ask">
+		Déjame solo.... quiero morir.....
+	</phase>
+
+	<a id="ask">¿¿Otra vez?? ¿¿¿Pero qué ha pasado???</a>
+
+	<phase id="ask" next="ask2">
+		Todo iba bien... al principio las Semillas se vendían super bien, a precios enormes. ¡Todo el mundo quería!
+	</phase>
+
+	<a id="ask2">¿¿¿Y después???</a>
+
+	<phase id="ask2" next="ask3">
+		Después, fue una pesadilla... alguien hizo correr el rumor de que las semillas contienen xylofón, un producto peligroso que hace unos ruidos muy raros en el estómago de aquél que las coma... Cundió el pánico en el mercado y tuve que venderlas a precios irrisorios para no llegar a la catástrofe...
+	</phase>
+
+	<a id="ask3">¿Y mi dinero?</a>
+
+	<phase id="ask3" next="ask4">
+		Ten, ésta es tu parte... es todo lo que he podido obtener... 800 bonos del tesoro...
+	</phase>
+
+	<a id="ask4">¿Eso es todo?</a>
+
+	<phase id="ask4" give="tix:800" noeffect="trader" uvar="tradok:1" nocheck="1">
+		Sí... puedes guardar el objeto raro que te di... ¡pero no te preocupes por mí! Voy a encontrar algo nuevo, ¡funcionará de escándalo!
+	</phase>
+</d>

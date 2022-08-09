@@ -1,0 +1,36 @@
+<d place="apfbg" name="Major Domou" gfx="apmajor" cond="!curquest(skh)">
+
+<a id="exit">Je dois vous laisser.</a>
+
+<phase id="begin" frame="angry" next="after:quest:noob:cap:exit">
+Alchimiste au rapport ! 
+</phase>
+
+<a id="after" cond="quest(majori)">Il y a d'autres quêtes à faire ?</a>
+<a id="noob" cond="sch(ap)+!quest(apa)">Euh... Prêt pour commencer ma formation, major ! Je m'appelle ::user:: ! Nouvel alchimiste Audepint !  </a>
+<a id="quest" cond="quest(apa)|(!sch(ap)+reput(ap,1))">Vous avez du travail pour les étudiants ? </a>
+
+<phase id="after" frame="normal" next="afterb">
+Evidemment ! Va voir [maître Enguerrand] au grand Hall, il a du travail pour les alchimistes de niveau 3. 
+</phase>
+
+<phase id="afterb" frame="angry">
+Il y aussi plein d'autres personnes dans le royaume à aider, ça ne sert à rien de rester planté là ! 
+</phase>
+
+
+<phase id="noob" frame="normal" quest="major">
+Oui bon. | Peu importe. | Il est temps de se mettre au travail. Voyons voir ce qu'on va faire de toi. 
+</phase>
+
+<phase id="quest" frame="normal" quest="major">
+Affirmatif ! Voici ton ordre de mission ! 
+</phase>
+
+<a id="cap">Vous pouvez me dire comment je retourne vers la Grande Place et la salle des chaudrons ?</a>
+
+<phase id="cap" frame="normal">
+Humpf. | Simple : il faut que tu repartes à pied jusqu'à la capitale. Tu te diriges vers Vostok au sud puis tu suis la route. | Elle arrive directement à la Grande Place.
+</phase>
+
+</d>

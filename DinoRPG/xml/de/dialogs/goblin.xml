@@ -1,0 +1,230 @@
+<!-- ANIMATION DE NOEL 2011 SERVEUR INT-->
+
+
+<d place="fountj" name="Itchin" gfx="lutin" cond="(active(goblinavent)|admin())+gvar(xavent,0)+event(xmasavent)+!uvar(xmasev)">
+	<phase id="begin" frame="atchoz" background="1" next="gift">
+		[Seid gegrüßt, Meister!]
+		[Du hast mich also gefunden, bravo! Hat mir Spaß gemacht, dich dabei zu beobachten, wie du hinter jedem Busch geschaut hast.]
+ 		[Du hast dir deine Belohnung redlich verdient.]
+	</phase>	
+	<a id="gift">Oh, vielen Dank!!</a>
+	<phase id="gift" give="irma:2" nocheck="1" next="cool" uvar="xmasev:1" frame="atchoz" background="1">
+		[Hier hast du zwei *Tränke von Madame Irma*. Mit denen kannst du in ganz Dinoland herumreisen.]
+		[Morgen kannst du versuchen, einen meiner Freunde zu finden und so ein weiteres Geschenk zu ergattern.]
+		[Viel Glück!]
+	</phase>
+	<a id="cool">Danke für die Tränke. Ich werde deine Freunde schon finden!</a>
+	<phase id="cool" fast="1" frame="atchoz" background="1">
+		Glücklich und mit zwei Tränken von Madame Irma im Gepäck ziehst du wieder deiner Wege.
+		Wo treiben sich nur die anderen Goblins herum?
+	</phase>
+</d>
+
+<d place="dnv" name="Simplin" gfx="lutin" cond="gvar(xavent,1)+event(xmasavent)+!uvar(xmasev)">
+	<phase id="begin" frame="simploz" background="2" next="gift">
+		[Hallo Dinozmeister!!]
+		[Ich bin Simplin. Itchin hat mir gestern erzählt, dass du nach mir suchen würdest. Hätte aber nicht gedacht, dass du so fix bist.]
+		[Gut gemacht - du hast dir eine Belohnung verdient!]
+	</phase>	
+	<a id="gift">Wirklich? Wunderbar!</a>
+	<phase id="gift" give="tartev:1" nocheck="1" next="cool" uvar="xmasev:1" frame="simploz" background="2">
+		[Hier hast du eine *Fleischtorte*. Äußerst praktisch und lecker, falls du mal eine Stärkung brauchst.]
+		[Versuche morgen wieder, einer meiner Freunde zu finden und du kriegst ein weiteres Geschenk.]
+		[Viel Glück!]
+	</phase>
+	<a id="cool">Danke für das Geschenk. Ich werde die Augen offen halten!</a>
+	<phase id="cool" fast="1"  frame="simploz" background="2">
+		Glücklich über die Fleischtorte ziehst du wieder deiner Wege.
+		Wo treiben sich nur die anderen Goblins herum?
+	</phase>
+</d>
+
+<d place="port" name="Snoblin" gfx="lutin" cond="gvar(xavent,2)+event(xmasavent)+!uvar(xmasev)">
+	<phase id="begin" frame="neigeoz" background="3" next="gift">
+		[Hohoh, junger Dinozmeister!!]
+		[Nenn mich Snoblin. Simplin hat mir schon gesagt, dass du nach mir suchen würdest.]
+		[Gratuliere, du hast dir eine Belohnung verdient!]
+	</phase>
+	<a id="gift">Wunderbar!</a>
+	<phase id="gift" give="ration:3" nocheck="1" next="cool" uvar="xmasev:1" frame="neigeoz" background="3">
+		[Nimm diese drei *Kampfrationen*. Die können dir das Leben retten, falls du mal in Schwierigkeiten gerätst.]
+		[Du willst noch mehr Geschenke? Dann halte ab morgen nach einem meiner Freunde Ausschau.]
+		[Viel Glück!]
+	</phase>
+	<a id="cool">Das werde ich tun. Hab Dank für die Geschenke und die Ratschläge!</a>
+	<phase id="cool" fast="1" frame="neigeoz" background="3">
+		Glücklich und drei Kampfrationen im Gepäck ziehst du wieder deiner Wege.
+		Wo treiben sich nur die anderen Goblins herum?
+	</phase>
+</d>
+
+<d place="frcbrt" name="Joblin" gfx="lutin" cond="gvar(xavent,3)+event(xmasavent)+!uvar(xmasev)">
+	<phase id="begin" frame="joyoz" background="3" next="gift">	
+		[Sei gegrüßt, junger Dinozmeister!]
+		[Hast du mich also doch gefunden. Unser Versteckspiel hat mir aber großen Spaß gemacht.]
+		[Als Belohnung werde ich dir ein Geschenk machen!]
+	</phase>
+	<a id="gift">Wow! Unglaublich!</a>
+	<phase id="gift" give="irma:3" nocheck="1" next="cool" uvar="xmasev:1" frame="joyoz" background="3">
+		[Hier, nimm dieses *Warme Brot*. Vorsicht, es ist noch heiß. Kommt frisch aus der Weihnachtsbäckerei!]
+		[Und es wird noch besser. Wenn du morgen einen meiner Freunde findest, wird er dir noch etwas geben!]
+		[Ich wünsch dir viel Glück!]
+	</phase>
+	<a id="cool">Danke, du bist wirklich zu freundlich!</a>
+	<phase id="cool" fast="1" frame="joyoz" background="3">
+		Glücklich und mit einem angenehm warmen und duftenden Brot ziehst du wieder deiner Wege.
+		Wo treiben sich nur die anderen Goblins herum?
+	</phase>	
+</d>
+
+<d place="papy" name="Problin" gfx="lutin" cond="gvar(xavent,4)+event(xmasavent)+!uvar(xmasev)">
+	<phase id="begin" frame="proz" background="4" next="gift">
+		[Moinmoin...]
+		[Ich bin Problin. Und viel zu beschäftigt, um mit dir den ganzen Tag zu vertrödeln. Große Taten erledigen nicht von selbst, weißt du...]
+		[Ich schätze mal, du bist auch so ein materialistischer Nimmersatt. Oder warum bist du sonst hier? Etwa wegen eines guten Gesprächs?]
+	</phase>	
+	<a id="gift">Äh...</a>
+	<phase id="gift" give="hotpan:1" nocheck="1" next="cool" uvar="xmasev:1" frame="proz" background="4">
+		[Ich mach nur Spaß, junger Dinozmeister. Alter Bankiers-Scherz, verstehst du? Profit hält unsere Welt doch auf Touren, nicht wahr?]
+		[Hier, ich gebe dir diese beiden *Wolkenburger*. Wenn du noch mehr willst, dann versuch, morgen Grinchin zu finden.]
+		[Ich sag's aber gleich, er ist nicht grad der freundlichste Goblin!]
+	</phase>
+	<a id="cool">Danke für den Tipp... und die Wolkenburger natürlich!</a>
+	<phase id="cool" fast="1" frame="proz" background="4">
+		Glücklich verstaust du die beiden Wolkenburger in deinem Gepäck und ziehst du wieder deiner Wege.
+		Wo treiben sich nur die anderen Goblins herum?
+	</phase>
+</d>
+
+<d place="colesc" name="Grinchin" gfx="lutin" cond="gvar(xavent,5)+event(xmasavent)+!uvar(xmasev)">
+	<phase id="begin" frame="grinchoz" background="8" next="gift">
+		[Oh, du bist es...]
+		[Ich bin Grinchin. Ich weiß alles von dir. Du suchst ganz Dinoland nach meinen Freunden ab. ...als ob ich nichts besseres zu tun hätte.]
+		[Aber gut, Regeln sind Regeln. Du hast eine Belohnung verdient!]
+	</phase>	
+	<a id="gift">Großartig, ich liebe Belohnungen!!</a>
+	<phase id="gift" give="burger:2" nocheck="1" next="cool" uvar="xmasev:1" frame="grinchoz" background="8">
+		[Natürlich tust du das. Hier, zwei *Tränke von Madame Irma*. Die führen dich überall hin.]
+		[Ich nehme an, dass du schon weißt, dass im Moment noch mehr von uns herumlaufen. Wenn du die Augen aufhältst und morgen einen meiner Freunde entdeckst, bekommst du noch ein Geschenk!]
+		[Und nun fort mit dir - es nervt mich, wenn mir Leute wie du so auf die Pelle rücken!]
+	</phase>
+	<a id="cool">Ist ja schon gut. Danke nochmals für das Geschenk.</a>
+	<phase id="cool" fast="1" frame="grinchoz" background="8">
+		Glücklich über die beiden Tränke ziehst du wieder deiner Wege.
+		Wo treiben sich nur die anderen Goblins herum?
+	</phase>
+</d>
+
+<d place="univ" name="Magicklin" gfx="lutin" cond="gvar(xavent,6)+event(xmasavent)+!uvar(xmasev)">
+	<phase id="begin" frame="magiciendoz" background="4" next="gift">
+		[Junger Dinomeister, seid gegrüßt!]
+		[Ich bin Magicklin. Wie's aussieht muss ich bei dem Unsichtbarkeitszauber nochmal von vorne anfangen... Der Überfall auf die Bank in Dinoville muss damit wohl auch noch warten... *äh*, bitte? Ich hab nichts gesagt...]
+		[Ach ja, du erwartest nun sicher eine Belohnung, nicht wahr?]
+	</phase>	
+	<a id="gift">Gern... Was ist das?</a>
+	<phase id="gift" give="irma:2" nocheck="1" next="cool" uvar="xmasev:1" frame="magiciendoz" background="4">
+		[Ein *Engelstrank*. Sehr praktisch, wenn du mal in einem Kampf "ein wenig Pech hattest".]
+		[Und nun hurtig, mein junger Freund. Ich muss dringend zurück in mein Labor... Dabei hatte ich mich so auf die Weihnachtsferien gefreut...]
+		[Oh, und versuche morgen Kiplin zu finden, falls du noch ein Geschenk haben willst.]
+	</phase>
+	<a id="cool">Danke und viel Erfolg!</a>
+	<phase id="cool" fast="1" frame="magiciendoz" background="4">
+		Glücklich und mit einem Engelstrank in deinen Händen ziehst du wieder deiner Wege.
+		Wo treiben sich nur die anderen Goblins herum?
+	</phase>			
+</d>
+
+
+<d place="dnv" name="Kiplin" gfx="lutin" cond="gvar(xavent,7)+event(xmasavent)+!uvar(xmasev)">
+	<phase id="begin" frame="dormoz" background="5" next="gift">
+		[Nicht auszuhalten... Was fällt dir ein, meinen Schlummer zu stören?]
+		[Ernsthaft, du und dieses ständigen Telefonklingeln bringen mich noch um den Verstand.]
+		[Wenn ich dir ein Geschenk gebe, kann ich dann weiterschlafen?]
+	</phase>	
+	<a id="gift">Aber sicher!</a>
+	<phase id="gift" give="angel:1" nocheck="1" next="cool" uvar="xmasev:1" frame="dormoz" background="5">
+		[Abgemacht. Hier hast du eine *Kampfration*, nein, nimm besser gleich zwei. Dann lässt du mich aber wirklich in Ruhe.]
+		[Kampfrationen sind wirklich nützlich für einen jungen Dinozmeister wie dich, der viel unterwegs ist! Apropos, wolltest du nicht gehen?]
+		[Ich werd mich wieder auf's Ohr legen. Falls du ein weiteres Geschenk willst, suche morgen nach Y.]
+	</phase>
+	<a id="cool">Danke für deine Hilfe. Ich hoffe, dass du etwas Ruhe findest!</a>
+	<phase id="cool" fast="1" frame="dormoz" background="5">
+		Ganz leise verstaust du die beiden Kampfrationen in deinem Gepäck und ziehst wieder deiner Wege.
+		Wo treiben sich nur die anderen Goblins herum?
+	</phase>
+</d>
+
+<d place="fountj" name="Timidlin" gfx="lutin" cond="gvar(xavent,8)+event(xmasavent)+!uvar(xmasev)">
+	<phase id="begin" frame="timidoz" background="6" next="gift">
+		[Hallo junger Dinozmeister!]
+		[Ich bin Timidlin. Ich denke, ich bin doch nicht so gut im Verstecksielen wie ich dachte. 3 Tage ist nun wirklich schwach.]
+		[Du hast mich also gefunden. Gut gemacht.]
+	</phase>	
+	<a id="gift">Wie wäre es mit einer Belohnung?</a>
+	<phase id="gift" give="ration:2" nocheck="1" next="cool" uvar="xmasev:1" frame="timidoz" background="6">
+		[Aber ja doch. Hier hast du 2 *Fleischtorten*. Schling sie nicht alle auf einmal runter. Das macht sonst dick!]
+		[Ach ja, falls du einen meiner Freunde morgen findest, kannst du ein weiteres Geschenk bekommen.]
+		[Viel Glück!]
+	</phase>
+	<a id="cool">Danke für die Torten!</a>
+	<phase id="cool" fast="1" frame="timidoz" background="6">
+		Glücklich und mit zwei leckeren Fleischtorten im Gepäck ziehst du wieder deiner Wege.
+		Wo treiben sich nur die anderen Goblins herum?
+	</phase>		
+</d>
+
+<d place="marche" name="Joblin" gfx="lutin" cond="gvar(xavent,9)+event(xmasavent)+!uvar(xmasev)">
+	<phase id="begin" frame="joyoz" background="3" next="gift">	
+		[Hallo, junger Dinozmeister!]
+		[Wir sollten wirklich mit diesem Versteckspiel aufhören... Du bist vielversprechendes Talent und für die habe ich immer ein Geschenk übrig!]
+	</phase>
+	<a id="gift">Wirklich? Danke!</a>
+	<phase id="gift" give="tartev:2" nocheck="1" next="cool" uvar="xmasev:1" frame="joyoz" background="3">
+		[Hier, nimm diese 3 *Tränke*, hergestellt von Madame Irma höchstpersönlich. Ich hoffe, du kannst sie gut gebrauchen!]
+		[Einige meiner Freunde sind immer noch in Dinoland unterwegs. Finde sie morgen und du bekommst weitere Geschenke!]
+		[Viel Glück!]
+	</phase>
+	<a id="cool">Toll! Ich werde sie suchen.</a>
+	<phase id="cool" fast="1" frame="joyoz" background="3">
+		Glücklich und mit drei Tränken von Madame Irma in deinen Händen ziehst du wieder deiner Wege.
+		Wo treiben sich nur die anderen Goblins herum?
+	</phase>	
+</d>
+
+<d place="port" name="Problin" gfx="lutin" cond="gvar(xavent,10)+event(xmasavent)+!uvar(xmasev)">
+	<phase id="begin" frame="proz" background="4" next="gift">
+		[Ah. Seid gegrüßt, junger Dinozmeister...]
+		[Hast du dich überhaupt von der Stelle bewegt seit unserem letzten Treffen? Ich mag keinen Stillstand...]
+		[Ich nehme mal an, dass du nun eine weitere Gabe von mir erwartest.]
+	</phase>	
+	<a id="gift">Ich hab immerhin ganz Dinoland abgesucht und mir dabei fast meine Stiefel ruiniert!</a>
+	<phase id="gift" give="irma:4" nocheck="1" next="cool" uvar="xmasev:1" frame="proz" background="4">
+		[Jaja, ist ja schon gut.]
+		[Apropos, meine Bank ist auch ruiniert und nun muss ich von einer jährlichen Pension von 1000.000 Engelstränken zehren. Ich denke, auf zwei davon kann ich verzichten.]
+		[Hier nimm diese 2 *Engelstränke*! Mehr kriegst du aber nicht von mir. Merk dir das!]
+	</phase>
+	<a id="cool">Sehr nobel von dir. Vielen Dank für die Tränke!</a>
+	<phase id="cool" fast="1" frame="proz" background="4">
+		Glücklich und mit zwei Engelstränken in deinen Händen ziehst du wieder deiner Wege.
+		Wo treiben sich nur die anderen Goblins herum?
+	</phase>
+</d>
+
+<d place="papy" name="Porcelin" gfx="lutin" cond="gvar(xavent,11)+event(xmasavent)+!uvar(xmasev)">
+	<phase id="begin" frame="blanchoz" background="3" next="gift">
+		[Glllllückwunsch, junger Dinozmeister!]
+		[Ich bin Porcelin und ich habe schon viel von dir gehört!]
+		[Ich hoffe, du weißt die Großzügigkeit meiner Freunde zu schätzen!]
+	</phase>	
+	<a id="gift">Danke, das ist sehr freundlich. Mal abgesehen von Grinchin - Wow! Der braucht dringend Entspannung!</a>
+	<phase id="gift" give="xmtix:1" nocheck="1" next="cool" uvar="xmasev:1" frame="blanchoz" background="3">
+		[Gut zu hören. Ich habe hier ein *Weihnachtsticket* für dich. Es ist dein, wenn du mir dafür 200 Goldstücke gibst...]
+		[Haha, du müsstest dein Gesicht sehen! Ich mache nur Spaß, junger Dinozmeister. Nimm das Ticket und nimm damit am Spiel in Dinoville teil. Mit etwas Glück kannst du wertvolle Preise gewinnen.]
+		[Frohes Fest von Glottis und den Jungs bei Motin Twin. Viel Glück!]
+	</phase>
+	<a id="cool">Danke Porcelin!</a>
+	<phase id="cool" fast="1" frame="blanchoz" background="3">
+		Glücklich und mit einem Weihnachtsticket in deiner Jackentasche ziehst du wieder deiner Wege. Nichts wie hin nach Dinoville!
+		Was auch immer in die Jungs von Motion Twin gefahren ist... Es hält hoffentlich noch lange an!
+	</phase>
+</d>

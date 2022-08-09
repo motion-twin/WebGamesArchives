@@ -1,0 +1,119 @@
+<!-- Quête du médaillon à trois yeux -->
+
+<d place="temple" name="..." gfx="rhubarbe" frame="vide" cond="scenario(fmedal,14)">
+	<phase id="begin" next="ohe">
+		L'intérieur du temple paraît désert.
+		Des flammes immortelles crépitent devant une stèle immense.
+		Il n'y a pas âme qui vive... Soudain une voix se fait entendre.
+	</phase>
+	
+	<a id="ohe">Qui me parle ?</a>
+	
+	<phase id="ohe" next="lvl:nolvl">
+		[Qui ooose troubler mon repoooos éternel ?]
+	</phase>
+	
+	<a id="nolvl" cond="!level(51)">C'est moi !</a>
+	<a id="lvl" cond="level(51)">Ce doit être moi...?</a>
+	
+	<phase id="nolvl">
+		[Tu n'es pas digne pour le moooooment de venir me voir.
+		Reviens quand un de tes dinoz aura dépassé la limite de son poooootentiel...]
+	</phase>
+	
+	<phase id="lvl" next="yo">
+		[Bien, approche donc par iciiiii...]
+		[N'ai paaaaas peur...]
+	</phase>
+	
+	<a id="yo">Vous êtes le sage Rhubarbapapa ?</a>
+	
+	<phase id="yo" name="Rhubarbapapa le sage" next="limite" frame="blabla">
+		[...]
+		[Et toi, qui est tuuuu ?]
+		[...]
+		[...Hum, je vois que tuuuuu as fait de grandes choses, que tu as parcouruuuuu de nombreux lieux.]
+		[Tes dinoz sont puissants mais ils n'ont pas atteint leur vrai potentiel...]
+		[Je suppoooooose que tu viens pour lever cette limite...]
+	</phase>
+	
+	<a id="limite">Je veux devenir plus fort !</a>
+	
+	<phase id="limite" next="fight:nofight" frame="blabla">
+		[Je n'en doute pas, tu n'es pas le premier à venir me voir iciiiii.]
+		[Je peux te rendre plus fort... Mais il faudra en payer le priiiiiix.]
+		[Montre moi d'abord si tu es assez puissant.]
+		[Tes capaciiiités sont elles suffisantes pour pouvoir me battre ?]
+	</phase>
+	
+	<a id="fight">Oui !</a>
+	<a id="nofight">Je ne pense pas.</a>
+	
+	<phase id="nofight" frame="blabla">
+		[Reviens me voir quand tu seras prêt.]
+	</phase>
+	
+	<phase id="fight" fightgroup="rhubar" frame="blabla" scenario="fmedal:15">
+		[Bien... Tu as su prouver ta valeur.]
+		[L'initiation peut commencer...]
+	</phase>
+</d>
+
+<d place="temple" name="Rhubarbapapa le sage" gfx="rhubarbe" frame="stop" cond="scenario(fmedal,15)+!mission(rhuba)">
+	<phase id="begin" next="yo">
+		Un squelette de dorogon pris dans la roche vous fait face.
+		Un esprit l'habite encore, ses yeux vous scrutent avec la plus grande attention.
+	</phase>
+	<a id="yo">Sage Rhubarbapapa ?</a>
+	<phase id="yo" next="mission" frame="blabla">
+		[Siiiiii tu veux briser les limites de ton dinoz, il te faudra subir mooooon initiation.]
+		[Es-tu prêt ?]
+	</phase>
+	<a id="mission">accéder aux missions</a>
+	<phase id="mission" missions="rhubar"></phase>
+</d>
+
+<d place="temple" name="Rhubarbapapa le sage" frame="blabla" gfx="rhubarbe" cond="mission(rhuba)+!fx(lvlup2)">
+	<phase id="begin" next="oui:non:notyet">
+		[Ainsi ton dinoz a réussi à terminer mon initiation. Je te félicite de l'avoir conduit sur cette voie.]
+		[Je vais dès à présent, avec ton accord, lever la limite de son niveau maximum.]
+	</phase>
+	<a id="oui" cond="level(60)">Mon dinoz est prêt !</a>
+	<a id="non">Attendez encore un instant s'il vous plait.</a>
+	<a id="notyet" cond="!level(60)">Mon dinoz est prêt !</a>
+	
+	<phase id="non">
+		[Très bien, reviens me voir quand tu seras sûr de toi.]
+	</phase>
+	<phase id="oui" next="up">
+		[Qu'il en soit ainsi !]
+		[Que ton dinoz révèle son potentiel latent. Que se brise le verrou que j'ai depuis longtemps posé !]
+	</phase>
+	<a id="up">C'est parti !</a>
+	<phase id="up" effect="lvlup2" frame="stop" next="off">
+		_(L'esprit du sage pénètre le dinoz... Un flash lumineux apparait...)_
+		_(Votre dinoz est libéré, une aura émane de lui, ses limites sont une nouvelle fois brisées, comment va t'il évoluer ?)_
+	</phase>
+	<a id="off">Incroyable</a>
+	<phase id="off">
+		[Ton dinoz peut désormais aller au delà de ses capacités. Utilise son nouveau pouvoir avec sagesse.
+		Et ne te laisse pas trop emporter par les bas instincts de la guerre.]
+	</phase>
+	<phase id="notyet">
+		[Malheureusement, ton dinoz n'a pas encore la force requise pour voir sa 2ème limite brisée.]
+		[Reviens me voir quand il sera à son niveau maximal !]
+	</phase>
+</d>
+
+<d place="temple" name="Rhubarbapapa le sage" frame="stop" gfx="rhubarbe" cond="fx(lvlup2)">
+	<phase id="begin" next="yo">
+		Un squelette de dorogon pris dans la roche vous fait face.
+		Un esprit l'habite encore, ses yeux vous scrutent avec la plus grande attention.
+	</phase>
+	<a id="yo">Sage Rhubarbapapa ?</a>
+	<phase id="yo" frame="blabla">
+		[Je ne peux plus t'être d'une grande utilité.]
+		[Reviens me voir avec un dinoz quiiii n'aura pas encore brisé sa limite.]
+	</phase>
+</d>
+

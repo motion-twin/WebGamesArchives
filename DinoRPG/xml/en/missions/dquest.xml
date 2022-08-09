@@ -1,0 +1,233 @@
+﻿<missions>
+
+	<!-- ***************************************************************************** -->
+	<!-- rogue scout ----->
+
+	<m group="dquest" id="dexplo" name="Secure The Road" limit="35">
+		<begin>« WANTED: Mercenary to explore the desert and secure paths. Un-motivated candidates need not apply.»</begin>
+		<goto v="scross"/>
+		<action v="Take notes">You start write your report.</action>
+		<goto v="scanyo"/>
+		<action v="Take notes">You add the details of this stage to your report. The gorge seems very quiet....</action>
+		<action v="Climb the rock face">After hours of climbing, you finally reach the Nerheeven plateau. The view is magnificient!</action>
+		<actfight act="Take more notes" bg="m_step_cliff" monsters="brig1:brig1:brig1">
+			<begin>While you are sitting down taking some more notes, a group of bandits ambushes you!</begin>
+			<win>Woooh, that was close! You have to report the bandits to the Outpost....</win>
+		</actfight>
+		<end>While you are reading your report, you notice a worried look on the merchants' faces. Some rush to write down new announcements at the Office.</end>
+		<xp v="70"/>
+		<gold v="1500"/>
+	</m>
+
+	<m group="dquest" id="dcarav" name="Western Caravan" limit="35" cond="mission(dexplo)">
+		<begin>« The Merchants Association are looking for a transporter to make a routine delivery, Desert raiders need not apply. Contact the quatermaster Kalift Medat for more information.»</begin>
+		<talk v="Quatermaster Kalift Medat">Mission order 51.... Ok. For the caravan, take delivery of the tool crate at the Crakling Frontier. It's south of here. Next!</talk>
+		<goto v="senter"/>
+		<talk v="Carrier">Here are the crates. That's strange, I swear I heard a noise coming from inside the crates .... Take them to the Lodestone Pylons in the north!</talk>
+		<action v="Crates to deliver">You pick up 4 small crates. </action>
+		<goto v="sking"/>
+		<action v="Take a break">Wow, these crates are really heavy!</action>
+		<goto v="spylon"/>
+		<talk v="Delivery service">Perfect! But I only need one crate. Send the others to my colleague in Neerhel. Take the route that passes by the lake, it'll be much safer.</talk>
+		<goto v="slake"/>
+		<action v="Take a break">The weight of the crates is unbearable! You decide to take a little break so you can rest.</action>
+		<actfight act="Suspicious noise" bg="st_syphon" monsters="korgon:korgon:korgon:korgon:korgon:korgon">
+			<begin>The crates break open with a loud bang! A swarm of angry Korgons come out screaming!</begin>
+			<win>It seems that this delivery was smuggling Korgons ... you must inform the Quatermaster right away.</win>
+			<lost>The Korgons are running away! Find them first....</lost>
+		</actfight>
+		<goto v="svillg"/>
+		<talk v="Quatermaster Kalift Medat">Korgons you say? Hmmm ... I'll make a note of it and take the necessary actions. Go and get your reward.</talk>
+		<end>Sign your mission report at the Office to get your reward.</end>
+		<xp v="100"/>
+		<gold v="3000"/>
+	</m>
+
+	<m group="dquest" id="scorp1" name="Zest of Scorpwink" limit="35" cond="mission(dexplo)">
+		<begin>« A daring Pharmacist is looking for Scorpwink Stingers in good condition for use in scientific experiments. A good knowledge of fish would be a big plus.»</begin>
+		<talk v="Quatermaster Kalift Medat">Stingers? Again? Go to the Devourer of the East. Scorpwinks breed there amongst rocks.</talk>
+		<goto v="stowr1"/>
+		<actfight act="Search for a Scorpwink" bg="st_devor" monsters="scorp">
+			<begin>It doesn't take long to come face to face with a Scorpwink....</begin>
+			<win>Unfortunately, the stinger did not survive the battle shock. You'll need to find another one in better condition.</win>
+		</actfight>
+		<actfight act="Search again" bg="st_canyon" monsters="scorp:worm">
+			<begin>With difficulty you finally reach the top of the rock heap ... but then fall on a Scorpwink fighting an Earthworm! They both turn and jump on you!</begin>
+		</actfight>
+		<action v="Pick up the stinger">You pick up a Scorpwink stinger.</action>
+		<end>You give the stinger to the Quatermaster. He will take it to the pharmacist.</end>
+		<xp v="80"/>
+		<gold v="2000"/>
+		<item v="antip" n="2"/>
+	</m>
+
+	<m group="dquest" id="brig1" name="Secure The Crossroads" limit="35" cond="mission(dexplo)">
+		<begin>« The Consortium of Rascals is recruiting! If you're young, in good health and like rewarding missions, this quest is for you. Speak to Ali Babwa, the scout. »</begin>
+		<goto v="sking"/>
+		<talk v="Scout Ali Babwa">So you're the one they've sent to clean up this mess. We want you to make sure that the Nonmagus Crossroads is safe. Follow the road to south. Once you're attacked, you'll know you're in the right place!</talk>
+		<goto v="scross"/>
+		<kill v="brig1:brig2:brig3" name="Eliminate the bandits" n="15"/>
+		<end>The Consortion knows how to reward their allies. Here's a reward for your troubles!</end>
+		<xp v="80"/>
+		<gold v="3000"/>
+	</m>
+
+	<m group="dquest" id="kitchn" name="The Greedy Thief" limit="35" cond="mission(dexplo)">
+		<begin>« Fast Dinoz wanted for a small job at the Citadel. Please contact Malika Ramhel, the cook. »</begin>
+		<goto v="sking"/>
+		<talk v="Guard on duty">Malika is in the palace kitchens at the back, on the left.</talk>
+		<talk v="Malika Ramhel">Thanks for replying to my post! A sly dog has been stealing all our food for the past several days ... this must stop, you must find the culprit.</talk>
+		<actfight act="Go to the stockroom" bg="m_step_kitchen" monsters="">
+			<begin>No one here. You decide to hide your Dinoz in the shadows....</begin>
+		</actfight>
+		<actfight act="Wait in the shadows" bg="m_step_kitchen" monsters="thief">
+			<begin>After a couple of minutes, you hear a noise coming closer ... it's a scorpwink! He's holding some food between his claws!</begin>
+			<win>The scorpwink fled into the Citadel maze!</win>
+		</actfight>
+		<actfight act="Follow the scorpwink" bg="m_step_wcavern" monsters="thief2:brig1:brig1:brig3:brig2:brig3">
+			<begin m="brig2">Why does he come back without anything? ... Hey! ... Look! An intruder!</begin>
+		</actfight>
+		<talk v="Malika Ramhel">Wow. Our Citadel isn't what it once was. Everybody comes and goes as they please! Either they're crying or they're fighting, it's just not what it once was ... thanks anyway. GO and get your reward from the Rocky Outpost.</talk>
+		<end>An agent at the outpost welcomes you without a smile and gives you your reward, things really aren't what they used to be.</end>
+		<xp v="80"/>
+		<gold v="2500"/>
+		<item v="ration" n="3"/>
+	</m>
+
+	<m group="dquest" id="worms" name="Dewormer" limit="35" cond="mission(dexplo)">
+		<begin>« The East Carapaths Company is looking for a maintenance worker to take care of their public roads. Contact supervisor Yousshoud Go'qwuik at the Crakling Frontier construction site for more information. »</begin>
+		<goto v="senter"/>
+		<talk v="Supervisor Yousshoud Go'qwuik">You there! What are you doing on my construction site without a protective helmet?!</talk>
+		<action v="Take a helmet">You put on a work helmet.</action>
+		<talk v="Supervisor Yousshoud Go'qwuik">You're the maintenance worker? Well. We have some problems up north with Earthwork attacks on the path to the Lodestone Pylons. You want to do me a favour? Go and clean up the area.</talk>
+		<goto v="spylon"/>
+		<talk v="Carapaths worker">Ah, at last some help! We suffered another Earthworm attack this morning. It stops us from working! On top of that, they destroy the roads we've built with the holes that they leave behind....</talk>
+		<kill v="worm" n="5"/>
+		<talk v="Carapaths worker">Thanks for your help! But ... What's that noise?! ... Look! A huge hole has opened up in the ground!</talk>
+		<actfight act="Jump in the hole" bg="m_step_hole" monsters="wormom" allies="buildr">
+			<begin m="buildr">Argg! An Earthworm Matriarch !</begin>
+		</actfight>
+		<talk v="Carapaths worker">I thought we were going to die! ... Thanks for your help, the Carapaths will reward you! See you later!</talk>
+		<goto v="senter" title="Return to Yousshoud Go'qwuik"/>
+		<talk v="Supervisor Yousshoud Go'qwuik">A Matriarch ... that isn't a good sign. I hope your intervention will have calmed the situation...... for now. Thanks for your help!</talk>
+		<end>The East Carapaths Company thanks you for your help on our contruction site.</end>
+		<xp v="100"/>
+		<gold v="2500"/>
+		<item v="monoch"/>
+	</m>
+
+	<m group="dquest" id="brig2" name="Wanted: Sahalami The Slicer" limit="35" cond="mission(dexplo)">
+		<begin>« WANTED: Sahalami "the Slicer". This person is EXTREMELY DANGEROUS. He's wanted for countless acts of piracy. There are no clues about his whereabouts. This mission comes with a HUGE REWARD! Low-level Dinoz need not apply! »</begin>
+		<goto v="slake" hide="1" title="Find evidence of Sahalami"/>
+		<action v="Damaged caravan">You find the rest of a caravan that seems to have been recently attacked....</action>
+		<goto v="stowr3" hide="1" title="Find the raider near the Syphon"/>
+		<action v="Stacked crates">You notice various objects, which appear to be stolen, stacked at the entrance of a murky cavern ... Maybe the culprits are hiding inside?</action>
+		<actfight act="Enter the den" bg="m_step_cave1" monsters="brig2:brig1">
+			<begin m="brig2">Intruder! Intruder!</begin>
+			<win>You have eliminated the guards.</win>
+		</actfight>
+		<actfight act="Explore the den" bg="m_step_cave2" monsters="brig1:brig1:salami">
+			<begin m="salami">Hey hey? ... Look who followed us! ... Get him!</begin>
+			<win>You have defeated Sahalami the Slicer!</win>
+		</actfight>
+		<action v="Strange pendant">Sahalami wore a pendant shaped like a cleaver. Strange....</action>
+		<end>Sahalami won't scare anyone anymore. But you must solve the mystery of this pendant....</end>
+		<xp v="80"/>
+		<gold v="2500"/>
+		<item v="hotpan"/>
+	</m>
+
+	<m group="dquest" id="hunt1" name="Wanted: Trip The Wimp" limit="35" cond="mission(penden)">
+		<begin>« Wanted: Trip, the wimpy raider of the moonless nights. The latest reports talk of an attack at the bottom of the north Devourer. This mission is HIGHLY DANGEROUS, a generous reward can be expected. »</begin>
+		<goto v="stowr2" hide="1"/>
+		<action v="Wait for an attack">You decide to set a trap at the bottom of the Devourer and wait....</action>
+		<action v="Wait....">You wait for hours but nothing happens.</action>
+		<talk v="Passing merchant">Are you looking for Trip? I haven't seen him today, which is a good thing!</talk>
+		<action v="Wait again....">You start to walk in circles to pass the time........nothing has happened</action>
+		<action v="Continue to wait">More hours pass, yet still nothing!</action>
+		<talk v="A passing adventurer">Trip? ... Never heard of him, sorry. Have a good day!</talk>
+		<action v="Walk in a circle">You start to become exhausted, and that's the only interesting thing that has happened so far....</action>
+		<actfight act="Wait a bit longer ..." bg="m_step_fog" monsters="brig1:brig2:brig1:tripo2">
+			<begin m="tripo2">Go!! rob this buffoon!</begin>
+			<win>You spot Trip, hiding behind his men a few feet away from you....</win>
+		</actfight>
+		<talk v="Trip">You are no match for me! Go away!</talk>
+		<actfight act="Henchmen" bg="m_step_fog" monsters="brig1:brig1:brig1:tripo2">
+			<begin m="tripo2">Don't let him pass!</begin>
+		</actfight>
+		<actfight act="Attack Trip!" bg="m_step_fog" monsters="brig1:brig1:brig1:tripou">
+			<begin m="tripou">You are brave, but not brave enough ... It's time to end this!</begin>
+			<win>You defeat Trip the Wimp, raider of the moonless nights!</win>
+		</actfight>
+		<action v="Cleaver pendant">Trip was wearing one of the pendants you were looking for.</action>
+		<end>You have defeated Trip! Congratulations!</end>
+		<gold v="3000"/>
+		<xp v="90"/>
+	</m>
+
+	<m group="dquest" id="hunt2" name="Wanted: Boukanee The Immortal" limit="35" cond="mission(penden)">
+		<begin>« Wanted: Boukanee, the immortal torturer of the abyss! He is hiding in his lair in the Far West. This mission is EXTREMELY DANGEROUS! »</begin>
+		<goto v="sband2"/>
+		<actfight act="Find Boukanee" bg="m_step_cave2" monsters="coward">
+			<begin m="coward">Aaah! It's not me! It's not me! If you are looking for Boukanee, he left with his gang for the Citadel ... Please, let me go!</begin>
+			<win>Hmmm ... This thief talked of the Citadel ... I should go and have a look there myself.</win>
+		</actfight>
+		<goto v="sking"/>
+		<talk v="Guard on duty">Boukanee? Here? Nope it's impossible. Feel free to take a look if you think he's here.</talk>
+		<actfight act="Search the hall" bg="m_step_citadel1" monsters="">
+			<begin>It seems that there's nobody here....</begin>
+		</actfight>
+		<actfight act="Go up to the roof" bg="m_step_citadel2" monsters="">
+			<begin>Nice sight! But Boukanee isn't here either ... We should continue to search the Citadel.</begin>
+		</actfight>
+		<talk v="Guard on duty">You've found him? Bah, you can check the caves if you want but nobody goes there.</talk>
+		<actfight act="Enter the cave" bg="m_step_citadel3" monsters="boukan:brig2:brig2:brig1:brig1">
+			<begin m="boukan">Shhhht, someone is coming ... Raah, we've been spotted! We can't let them get away!</begin>
+			<win>You have defeated Boukanee the immortal and his gang!</win>
+		</actfight>
+		<action v="Cleaver pendant">Boukanee wore one of the pendants you are searching for. Another one down!.</action>
+		<talk v="Guard on duty">Gee ... Boukanee ... Here ... Luckily you were here!</talk>
+		<end>You have foiled Boukanee's plans. It seems he was planning to attack the Citadel.</end>
+		<gold v="3500"/>
+		<xp v="90"/>
+	</m>
+
+	<m group="dquest" id="hunt3" name="Wanted: Cervelah The Poisoner" limit="35" cond="mission(penden)">
+		<begin>« WANTED: Cervelah, the green poisoner. Tall with brown-hair, Cervelah wears a hood and is always accompanied by Stingoz, his loyal Scorpwink. Cervelah is extremely hostile. The Consortium of Rascals have put a HUGE BOUNTY on his head! Contact merchant Gimal Yurqoins at the pylons. »</begin>
+		<goto v="spylon" hide="1"/>
+		<talk v="Gimal Yurqoins">Cervelah? Yup, I know him! His horrible Scorpwink bit me when they tried to rob me ... I was sick for weeks! I've heard that he and his gang hide somewhere in the south.</talk>
+		<goto v="slake" hide="1" title="Find the attacker of Gimal Yurqoins"/>
+		<action v="Noise behind the rocks">You move forward towards the noise source and discover a small group of raiders feasting on the lakeside ... Get into position for an attack!</action>
+		<actfight act="Attack the camp" bg="m_step_lake" monsters="brig3:brig3:brig2:brig3:brig2">(t
+			<begin m="brig3">Goodness!</begin>
+			<win>No traces of Cervelah ... he must be nearby....</win>
+		</actfight>
+		<actfight act="Take a look around the Syphon" bg="st_syphon" monsters="coward:brig1">
+			<begin m="coward">Hold this dinoz, I'm going to inform Cervelah !</begin>
+			
+			<win>You have to find this bandit.</win>
+		</actfight>
+		<action v="Search for the coward">Nobody here. But you notice steep tracks heading toward the Neerheeven plateau....</action>
+		<goto v="scanyo" hide="1" title="Find where the coward went"/>
+		<actfight act="Climb" bg="m_step_cliff" monsters="cowar2:cervel:pikouz">
+			<begin m="cowar2">Chief! Chief! He's here! He found us ... Kill him!</begin>
+			<win>What a fight! You've defeated Cervelah the poisoner and his loyal Stingoz.</win>
+		</actfight>
+		<action v="Cleaver pendant">Cervelah wore one of the cleaver pendants you were searching for....</action>
+		<end>The Consortium of Rascals thanks you for your help. Here's a nice reward for your efforts.</end>
+		<gold v="3500"/>
+		<xp v="90"/>
+		<item v="antip" n="2"/>
+	</m>
+
+	<m group="dquest" id="penden" name="A Mysterious Pendant" limit="35" cond="mission(brig2)">
+		<begin>The cleaver-shaped pendant found on Sahalami is very mysterious ... you should look into it.</begin>
+		<talk v="Quatermaster Kalift Medat">This pendant means nothing to me. Sorry.</talk>
+		<goto v="sking" hide="1"/>
+		<talk v="Scout Ali Babwa">Ah!! I've seen this pendant before on the neck of certain chiefs on my travels. It seems that some thief clans joined their forces! Here is the list of the chief names in question.</talk>
+		<action v="Take the list">You obtain the names of many bandit chiefs. They are probably related to this thieves association!</action>
+		<end>You have obtained the information you needed. </end>
+		<xp v="90"/>
+	</m>
+
+</missions>

@@ -1,0 +1,959 @@
+<futureReleases ::ignore::>
+	<!--
+	<future major="1" name="Les veilleurs" icon="item_watergun_opt_3">
+		Formez les rangs, ouvrez l'oeil, faîtes vos prières, vous êtes en première ligne pour résister à l'attaque
+		des zombies ! Tous saluent votre héroïsme, la plupart du temps à titre posthume...
+		Devenez veilleurs dans la saison 6 de Hordes !
+	</future>
+	-->
+	<future icon="r_explor" name="Les évènements majeurs"/>
+	<future icon="r_surgrp" name="Les spécialités"/>
+	<future icon="r_buildr" name="De nouveaux chantiers"/>
+</futureReleases>
+
+<releases ::ignore::>
+	<release version="4.8" name="Pandé-Mania">
+		<item major="1" name="Nouveautés">
+			<p>Les mises à jour Hordiennes sont maintenant fortement facilitées, et seront donc plus régulières !</p>
+			<p>Système de jump revu ! Maintenant il faut 500 pts d'âmes pour aller en Pandémonium mais aussi en RNE pour les joueurs expérimentés.
+			Le jump en coa vérifie que l'ensemble des joueurs ont accès à la ville choisie.</p>
+			<p>Le mode pandémonium est maintenant plus cohérent.  Plus de ghoule, plus difficile d'accès (500pts d'âme), et un super titre & picto pour ceux qui savent vraiment survivre. La mort ultime est elle aussi plus difficile d'accès.</p>
+			<p>L'atelier est maintenant plus utile et puissant avec des dernières évolutions permettant des réparations moins chères !</p>
+			<p>Vous ne serez plus oubliés lors des animations des fêtes !</p>
+		</item>
+		<item name="Améliorations">
+			<p></p>
+			<ul>
+				<li>L'API est complétée, uniformisée et corrigée.</li>
+				<li>Equilibrage des plans dans les ruines.</li>
+				<li>Correction du bug avec les PDC et le Guide.</li>
+				<li>Correction du bug avec les élections.</li>
+				<li>Le pouvoir du veilleur pro est allégé du problème d'arrondi qui le pénalisait.</li>
+			</ul>
+		</item>
+	</release>
+	
+	<release version="4.7" name="Le Guide du voyageur désertique">
+		<item major="1" name="Nouveautés">
+			<p>Alors que vous étiez à peine habitué à voter pour votre Chaman, vous êtes une nouvelle fois sollicité à la démocratie !</p>
+			<p>Votez pour le Guide de l'Outre-Monde! Cet nouveau rôle vous sera des plus utile car en plus de permettre d'organiser des expéditions, il permet d'obtenir un point de contrôle supplémentaire par personne sur la zone.</p>
+			<p>Fin de la limitation de Jump. (pour cette saison au moins)</p>
+			<p>Retour du Feu d'Artifice. Cette fois-ci en permanent, il saura vous en mettre plein les yeux, et plus encore.</p>
+			<p>Nouvelle récompense pour le classement 15 à 35.</p>
+		</item>
+		
+		<item name="Améliorations">
+			<p></p>
+			<ul>
+				<li>Le technicien peut utiliser ses points de chantier pour améliorer son habitation.</li>
+				<li>Le technicien peut utiliser un point de chantier pour ouvrir un container même sans outil.</li>
+				<li>Suppression de l'agression liée à l'alcool quand on écrit sur les forums.</li>
+			</ul>
+		</item>
+		
+		<item name="Mineur">
+			<ul>
+				<li>Le système de vote est revu. Afin de donner plus de contrôle aux électeurs, c'est le citoyen qui aura reçu le plus de vote qui sera élu systématiquement (les non votants voient toujours leur vote réparti aléatoirement).</li>
+				<li>Le vote citoyen est maintenant dans votre liste des tâches quotidiennes.</li>
+				<li>Ajustement sur le pouvoir Veilleur Pro (moins de bonus de survie, mais meilleure résistance à la fatigue)</li>
+				<li>Meilleure protection de la balise {habitant}</li>
+			</ul>
+		</item>
+		
+		<item name="BugFixes">
+			<p>Dans le désordre général : </p>
+			<ul>
+				<li>Le technicien récupère bien des distinctions dès qu'il utilise ses points de chantier.</li>
+				<li>Prise d'objet en escorte amélioré, notamment avec la potion chamanique.</li>
+				<li>Malus de nuit sur les zones épuisées correctement appliqué.</li>
+				<li>âme torturée prise en compte dans le coffre des morts.</li>
+				<li>Amélioration CSS diverses</li>
+				<li>Affichage gazette depuis l'OM complet.</li>
+			</ul>
+		</item>
+	</release>
+		
+	<release version="4.6" name="Démoncratie !">
+		<item major="1" name="Nouveautés">
+			<p>Le chaman est un personnage attachant, mais c'est bien d'avoir quelqu'un de confiance. Un nouveau lieu prend place, en débris et cadavres : le bureau de vote !</p>
+			<p>Attention de bien penser à voter ! Les votes blancs n'existent pas et sont répartis de façon aléatoire entre les survivants.</p>
+			<p>Les héros quant à eux pourront voter à distance !</p>
+			<p>Le chaman et les âmes ne seront pas présents en RNE.</p>
+		</item>
+		
+		<item name="Améliorations">
+			<p></p>
+			<ul>
+				<li>Les héros avec le pouvoir Maire peuvent désormais créer des villes privées plus originales : customiser complètement les modes de jeux !</li>
+				<li>Les âmes torturées ne devront toujours pas être laissées dehors mais leur impact sera moins violent sur les attaques.</li>
+				<li>Les âmes sont dorénavant générées à des distances plus maîtrisables.</li>
+				<li>Les âmes purifiées rapportent des points de défense à votre ville.</li>
+				<li>Les âmes conservées chez soi rapportent un peu de défense personnelle.</li>
+				<li>La potence devient prioritaire face à la Cage à viande.</li>
+				<li>Un citoyen sous l'emprise de l'alcool "pourrait" agresser un concitoyen lorsqu'il s'exprime sur le forum (utilise un PA).</li>
+				<li>On ne peut plus réparer un chantier si le projet parent est détruit.</li>
+				<li>Retour de la balise {habitant} sur les forums de ville !</li>
+				<li>Rajout des smileys :pc:, :pm: et :def: </li>
+			</ul>
+		</item>
+		
+		<item name="Mineur">
+			<ul>
+				<li>Les estimations de l'attaque sont plus... précises.</li>
+				<li>Amélioration de l'API externe avec l'ajout d'un accès direct à une zone.</li>
+				<li>La qualité du soin du chaman un peu revue à la hausse.</li>
+				<li>Rajout d'un message explicatif lorsqu'un joueur est élu chaman.</li>
+				<li>Rajout d'un message explicatif lorsqu'un joueur dépasse les 100 points d'âme.</li>
+				<li>Suppression de l'affichage rapide de la page des chantiers.</li>
+				<li>Légère modification au niveau de l'arbre de chantier.</li>
+				<li>Correction d'un problème en veille avec les risques de blessure et terreur.</li>
+				<li>Distribution des pictos en cas de blessure en veille.</li>
+			</ul>
+		</item>
+		
+		<item name="BugFixes">
+			<p>Dans le désordre général : </p>
+			<ul>
+				<li>Onglet “Évolution” de l'âme accessible même pour la v4.4</li>
+				<li>Si un joueur devient terrorisé ou blessé dans une ruine, il est éjecté immédiatement.</li>
+				<li>Rajout du registre général en J1 dans la gazette.</li>
+				<li>Picto “Point de Mysticisme”, devient “Mysticisme.</li>
+				<li>Amélioration du système créant les post-it sur les forums villes. Si leur création échoue, une nouvelle tentative pour les ajouter à lieu plus tard.</li>
+				<li>Ame en banque qui se dédoublait parfois.</li>
+				<li>Potion du chaman qui disparait après avoir été bue.</li>
+				<li>Fin du pré-vote de la muraille.</li>
+				<li>Règle du J8 affinée : Il faut atteindre l’attaque du J7 à J8 et ne pas mourir d’autre chose que de “L’attaque en ville” (Veille, dévoré par un cadavre non sorti, dévoré lors d'un débordement).</li>
+				<li>La règle du J8 en RNE prend en compte les points d’âme du début de la ville.</li>
+				<li>Le pointeur laser ne se décharge plus tout seul.</li>
+				<li>Légère revue sur le comptage des points de classement.</li>
+				<li>Fin de la perte des objets des citoyens qui meurent en fouille automatique sans se reconnecter.</li>
+			</ul>
+		</item>
+	</release>
+	
+	<release version="4.5" name="I âme Back !">
+		<item major="1" name="Le charlatan revient en ville">
+			<p>Les âmes errantes font leur grand retour dans l'Outre-Monde. Et quoi de plus normal de voir le Chaman repointer le bout de son nez dans ces conditions.</p>
+			<p>Mais attention, il n'est plus tout à fait le même. Ce changement de gameplay va permettre de réveiller le charlantan qui sommeille en vous. Simple citoyen ou héro, chacun d'entre vous pourra goûter, avec de la chance, aux plaisirs chamaniques !</p>
+		</item>
+		<item major="1" name="Classement">
+			<p>Nous vous proposons un changement sur la méthode de comptabilisation des cadavres pour le classement des villes.</p>
+			<p>Etre inactif sur le jeu, c'est parfois une contrainte personnelle, mais aussi un gros handicap pour vos concitoyens en quête de gloire. C'est pourquoi seuls les 35 meilleurs citoyens de votre ville seront maintenant comptabilisés pour le classement des villes.</p>
+		</item>
+		<item name="Pandémonium">
+			<p>Oui, ce mode de jeu est réservé aux joueurs qui savent jouer, et qui aiment les conditions de survie extrêmes. Nous vous avons entendus !</p>
+			<ul>
+				<li>On le sait, les joueurs passionnés, sont capables de tout. Mais leur santé nous portant peine, nous avons décidé d'ouvrir l'API aux villes pandémoniums librement (API Twinoid seulement)</li>
+				<li>Veiller est par contre un acte un peu plus risqué !</li>
+				<li>Jouer à l'explorateur dans les ruines va vous demander encore plus de rapidité !</li>
+				<li>Ne jamais, jamais, laisser des âmes torturées se balader dans l'Outre-Monde après minuit.</li>
+				<li>L'agression est moins onéreuse !</li>
+			</ul>
+		</item>
+		<item name="Vaille qui veille">
+			<p>Les veilleurs n'ont pas été oubliés. Il incombera dorénavant à la ville de construire un petit chantier pour donner accès aux citoyens à la garde de nuit. (Allez savoir ce que cela réservera pour plus tard...)</p>
+			<p>Les armes des veilles ont été légèrement rééquilibrés.</p>
+		</item>
+		
+		<item name="Améliorations">
+			<ul>
+				<li>Oh le picto message est à nouveau disponible depuis le forum ville !</li>
+				<li>L'utilisation des objets de défense sont plus facilement accessibles avec un chantier de base.</li>
+				<li>Les ruines à explorer sont maintenant moins éloignées de la ville, donc bien plus accessibles aux villes moins organisées.</li>
+			</ul>
+		</item>
+		
+		<item name="Mineur">
+			<ul>
+				<li>Correctifs sur les villes privées</li>
+				<li>Ajout d'un attribut pour désactiver le flux API pour les villes qui le souhaitent (villes privées)</li>
+				<li>Légers ajustements sur certains plans</li>
+				<li>Quelques améliorations/corrections visuelles</li>
+				<li>Correction de bug sur certains objets durant la veille</li>
+				<li>Améliorations de certains textes</li>
+				<li>Correction de petites failles</li>
+				<li>D'autres toutes petites choses pour vous faire plaisir</li>
+			</ul>
+		</item>
+	</release>
+	
+	<release version="4.4" name="Dev's not dead">
+		<item major="1" name="Changement de gameplay !">
+			Les débordements seront plus violents. Plus de pitié dès les premiers jours, moins d’immunités pour les lâches qui se cachent.
+		</item>
+		<item name="Simplification des Régions Non Eloignées">
+			<ul>
+				<li>un peu moins de zombies.</li>
+				<li>bâtiments plus éloignés (distance = 3).</li>
+				<li>pas de zonzons à proximité de la ville.</li>
+				<li>pas de ruines avancées (explorables).</li>
+				<li>réduction du nombre de bâtiments.</li>
+				<li>pas de camping.</li>
+			</ul>
+		</item>
+		<item name="Nouvelle évolution héros">
+			<p>Devenez Veilleur Pro et augmentez vos chances de survie lors d'une veille.</p>
+		</item>
+		<item name="Aide actualisée">
+			<p>L'aide du jeu a été dépoussiérée et mis à jour, elle redevient le guide indispensable de survie dans l'outremonde.</p>
+		</item>
+		<item name="De nouveaux écrits à trouver">
+			<p>Les chroniques de hordes s'étoffent une nouvelle fois avec une dizaine de nouvelles chroniques à trouver.</p>
+		</item>
+		<item name="De nouveaux titres à débloquer">
+			<p>Les titres liés aux merveilles viennent s'enrichir de nouveaux paliers, arriverez vous à les atteindre ?</p>
+		</item>
+		<item name="Pandémonium">
+			<ul>
+				<li>Le mode Hardcore impacte désormais les veilles.</li>
+				<li>Le vol en Banque est de retour en pandémonium (mêmes règles qu’en RE).</li>
+			</ul>
+		</item>
+		<item name="BigBroth'Hordes">
+			Après la disparition de Pict'Hordes, BigBroth'Hordes prend la relève dans le classement des pictos.
+			(Voir Votre âme - Classement - Picto)
+		</item>
+		<item name="Plein de petits bugs ont été corrigés">
+			<ul>
+				<li>veilles : ajout de la notion de fatigue cumulée. Perte de 10% de chance de survie par nuit en veilleur. Récupération de 5% par nuit de repos.</li>
+				<li>Retour des ODD en alternative de défense. FDD propose de meilleurs taux de conversion au cours des 5 évolutions.</li>
+				<li>baisse des solutions de protection face à la terreur lors de l’attaque (= douches moins puissantes par ex).</li>
+				<li>chantier Architectoire évolutif.</li>
+				<li>vol en Banque de retour en pandémonium (mêmes règles qu’en RE).</li>
+				<li>ajustements sur les chantiers (non détaillé ici car encore évolutif).</li>
+				<li>correction du CAS en RNE qui posait soucis dans certains cas.</li>
+				<li>amélioration et corrections de fautes dans les logs des veilleurs.</li>
+				<li>réutilisation des boules quiès  réduction risque terreur (Effet non cumulable).</li>
+				<li>correction Paillasson piégé.</li>
+				<li>correction de l’état immunisé.</li>
+				<li>correction et amélioration des objets Grand Bâton Sec ET bâton Cassé.</li>
+				<li>corrections CSS et affichage en général...</li>
+			</ul>
+		</item>
+	</release>
+
+	<release version="4.3" name="Villa nostra">
+		<item major="1" name="Les villes privées évoluent !">
+			Dorénavant, le corbeau pourra configurer d'avantages les villes privées demandées par la communauté des citoyens !
+			Attention à vos foies en revanche, le corbeau pourra supprimer chaque existence qu'il jugera non conforme aux bonnes moeurs de l'outre-monde.
+		</item>
+		<item name="Equilibrage des veilles">
+			Les veilles ont été légèrement revues à la baisse pour favoriser la construction des chantiers.
+			La courbe des attaques a été légèrement revue pour éviter un trop plein de zombies aux murs de la ville.
+		</item>
+		<item name="De nouveaux écrits à trouver">
+			<p>Les chroniques de hordes s'étoffent une nouvelle fois avec une dizaine de nouvelles chroniques à trouver.</p>
+		</item>
+		<item name="Plein de petits bugs ont été corrigés">
+			<ul>
+				<li>le pointeur laser indique désormais le nombre de charge qu'il possède.</li>
+				<li>la conserve empoisonnée ne peut plus être reconnue grâce aux veilles.</li>
+				<li>les fusées éclairantes ne buggent plus quand tous les bâtiments ont déjà été découverts.</li>
+				<li>les boutons + du classement des villes privées fonctionnent et donnent accès.</li>
+				<li>il est désormais possible de partager un lien vers l'aide du jeu.</li>
+				<li>Ainsi que d'autres corrections mineures...</li>
+			</ul>
+		</item>
+	</release>
+
+	<release version="4.2" name="Evil's back">
+		<item major="1" name="Applications Twinoid">
+			Les développeurs en herbes seront ravis d'apprendre que Hordes profitera désormais du moteur d'application Twinoid pour créer des applications dédiées à Hordes.
+			La validation faîte par l'architectoire sera beaucoup plus rapide et les applications bien mieux maintenues.
+
+			Aucunes applications utilisant le flux XML ne seront validées à partir de maintenant et nous encourageaons autant que cela est possible les développeurs à effectuer la transition de leur application.
+			La documentation de ce nouveau moteur d'application est disponible ici : <a href="http://twinoid.com/developers/api">http://twinoid.com/developers/api</a> et <a href="http://hordes.fr/tid/api">http://hordes.fr/tid/api</a>
+		</item>
+		<item name="De nouveaux objets à trouver">
+			De nouveaux objets feront petit à petit leur apparition dans les terres arides de l'outre-monde.
+			Ces objets pourront se combiner avec d'autres pour créer des effets incroyables, arriverez-vous à trouver toutes ces combinaisons ?
+		</item>
+		<item name="Plein de petits bugs ont été corrigés">
+			<ul>
+				<li>La viande indéfinissable ne goulifie plus.</li>
+				<li>Le bug d'inversion des défenses en veille n'est plus.</li>
+				<li>La double mort, les blessures, les chances négatives de survie en veille sont corrigées.</li>
+				<li>La Kalachin'keau fonctionne dans l'outre-monde.</li>
+				<li>Le bug lié à la consommation d'alcool sur le forum est corrigé.</li>
+				<li>Le devastator a désormais le même comportement que le Lance-pile MARK II.</li>
+				<li>Il n'est plus possible de blesser plusieurs fois un même citoyen lors d'une agression.</li>
+				<li>Les ruines donnent 2 fois plus de plan.</li>
+				<li>Le technicien gagne bien des points de statistiques quand il répare des chantiers. </li>
+				<li>Les villes RNE commencent avec l'atelier, la tour de guet et le portail.</li>
+				<li>Une goule ivre qui mange un citoyen ivre aura une double gueule de bois !</li>
+			</ul>
+		</item>
+	</release>
+
+	<release version="4.1" name="Corps vidés">
+		<item major="1" name="Les forums de hordes font peau neuve">
+			<p>Le forum est restructuré, les corbeaux veillent, les citoyens craignent :</p>
+			<ul>
+				<li><strong>Aide :</strong> ouvert à tous.<br/>
+				<em>Pas d'avertissement, pas de négociations, un écart, un foie en moins.</em></li>
+				<li><strong>Discussions :</strong> ouvert à tous.<br/>
+				<em>Les corbeaux veilleront à ce que personne ne vienne troubler ces lieux, et se repaîtront du foie des coupables.</em></li>
+				<li><strong>Saloon :</strong> ouvert à tous.<br/>
+				<em>Les corbeaux toléreront quelques écarts, mais resteront à l'affût du moindre faux pas.</em></li>
+				<li><strong>Dictature des héros :</strong> accessible uniquement aux héros.<br/>
+				<em>Les corbeaux regarderont ces pathétiques héros se vautrer dans leur complaisance sans trop intervenir.</em></li>
+				<strong>CROOAAAA...</strong>
+			</ul>
+		</item>
+		<item major="1" name="De nouveaux écrits à trouver">
+			<p>Les chroniques de hordes s'étoffent une nouvelle fois avec une dizaine de nouvelles chroniques à trouver.</p>
+		</item>
+		<item major="1" name="Les veilleurs restent à leur poste">
+			<p>Les bugs concernant les veilles ont été résolus.
+			Certains objets s'assemblaient lors d'une veille ou d'autres disparaissaient sans avoir de point de défense.
+			Les objets en coffre ne sont plus supprimés après une veille.</p>
+			<p>La défense suivant l'état des veilleurs est bien comptabilisée avant l'attaque.</p>
+		</item>
+		<item name="Modification de chantiers">
+			<p>Certains chantiers ont subi de légères modifications :</p>
+			<ul>
+				<li>Le chantier douve n'est plus temporaire.</li>
+				<li>Le chantier Potence n'est plus temporaire.</li>
+				<li>Le chantier cage à viande fait désormais partie des plans de base.</li>
+				<li>Le chantier Tourelle à eau apporte 20% de bonus sur les armes à eau lors d'une veille.</li>
+				<li>Le chantier Lance-bête apporte 20% de bonus sur les animaux, il empêche aussi les veilleurs d'être terrifiés lors d'une veille.</li>
+			</ul>
+		</item>
+		<item name="Plans de chantiers">
+			<p>les ruines de l'outre-monde offriront désormais plus de plans aux citoyens assez vertueux pour en explorer les moindres recoins.</p>
+		</item>
+		<item name="Objets goulifiants">
+			<p>Les objets communs suspects ne goulifient plus les citoyens affamés, le cadavre du voyageur a tout de même 90% de goulifier un citoyen.
+			Gare où vous plantez vos dents...</p>
+		</item>
+		<item name="Chasseurs de pictos">
+			<p>Certains joueurs ont exploité sans vergogne une faille du jeu permettant de se suicider et ainsi récolter des pictos facilement dès le premier jour.
+			<em>Ces joueurs ont gagné le droit de ne pas avoir la nouvelle distinction <img src="/gfx/icons/r_goodg.gif" alt=""/> good guy.</em><br/>
+			L'arroseur arrosé n'est-il pas ?</p>
+		</item>
+	</release>
+
+
+	<release version="4.0" name="Veillée funèbre">
+		<item major="1" name="Les Veilleurs">
+			<p>Vous avez désormais la possibilité de vous mettre en première ligne au moment de l'attaque !
+			Essayez d'en ressortir vivant !</p>
+			<p>Pour vous aider, de nombreuses armes et protections sont à votre disposition, un matelas, une porte de voiture, un pistolet à eau ? Tout est possible !</p>
+		</item>
+		<item major="1" name="Rééquilibrage des plans">
+			<p>La rareté de certains plans a été revue, certains sont maintenant disponibles de base dans les villes.</p>
+		</item>
+		<item major="1" name="Rééquilibrage des chantiers">
+			<p>Les ressources des chantiers ont été revues, elles devraient être désormais plus cohérentes.</p>
+		</item>
+		<item major="1" name="Retour des coalitions">
+			<p>la limite fixée à 15 joueurs coalisées dans une même ville augmente à 25 dans les régions éloignées !</p>
+		</item>
+		<item name="Le retour des Goules">
+			<p>Les goules reviennent sur Hordes après un rééquilibrage de sa voracité !<br/>
+			Vous ne deviendrez pas une goule par hasard, mais attention, vous pouvez en devenir une en mangeant un cadavre de voyageur ou d'autres nourritures étranges...
+			Tenterez-vous votre chance ?
+			</p>
+		</item>
+		<item name="Evolution du Gardien">
+			<p>Le gardien a plus de chance de survivre à une nuit de veille que ses autres congénères, il apporte aussi plus de défense à la ville !<br/>
+			Assumez votre vraie place, celle du gardien de la ville, détenteur de la sécurité de tous les citoyens !
+			</p>
+		</item>
+
+		<item name="Le Chaman était poussière et redevient poussière">
+			<p>Le Chaman ne fait plus partie du choix des métiers.<br/>
+			les âmes s'évanouïront désormais et rejoindront les abîmes infinies au lieu de vagabonder dans le désert.
+			Les titres en rapport avec le Chaman et les âmes existent toujours mais ne donnent plus aucuns points Twinoid.
+			</p>
+		</item>
+		<item name="Impitoyable Outre-monde">
+			<p>Les chances de trouver des ressources permettant de se nourrir ou de boire dans le désert s'amenuiseront au fil des jours.
+			Personne ne résiste à l'implacabilité du désert de l'Outre-monde, une fois votre ville dévastée, votre sort sera scellé !
+			</p>
+		</item>
+		<item name="Ruines du pandémonium">
+			Deux ruines feront maintenant forcement leur apparition dans le désert de l'Outre-monde dans les villes du Pandémonium.
+			Le cauchemar n'en sera que plus long !
+		</item>
+	</release>
+
+	<release version="3.2.1" name="Un peu d'hordres">
+		<item major="1" name="Le Chaman évolue">
+			<p>Il peut soigner n'importe quelle blessure d'un autre citoyen une fois par jour, attention, le mal pourra ne pas être soigné, voir même être transmis au Chaman !</p>
+			<p>Il peut provoquer une pluie sur la ville ou sur n'importe quelle partie de l'outre-monde pour purifier les lieux et éliminer quelques zombies.</p>
+			<div class="helpLink"><a href="/#help?id=job_shaman" alt="">En savoir plus...</a></div>
+		</item>
+		<item name="Plein de petits bugs ont été corrigés">
+			<ul>
+				<li>Quelque soit la manière de mourir, une âme apparaîtra dans le désert.</li>
+				<li>Les âmes ne se déplacent plus autant dans l'outre-monde.</li>
+				<li>Les citoyens non incarnés n'ont plus accès au forum ville.</li>
+				<li>Les chantiers de décharge découlent bien de la décharge de base.</li>
+				<li>Le bug sur la collecte d'âme est corrigé, les compteurs de la distinction seront remis à zéro prochainement.</li>
+				<li>En mode Chaos, les coordonnées des citoyens ne sont plus affichées sur les forums.</li>
+				<li>L'annuaire et l'horloge de la ville sont maintenant disponibles sur les pages forum.</li>
+				<li>Le registre complet de la ville refait son apparition sous la gazette.</li>
+				<li>Ainsi que d'autres corrections mineures...</li>
+			</ul>
+		</item>
+	</release>
+
+	<release version="3.2" name="I'm a Soul man">
+		<item major="1" name="Les âmes perdues">
+			<p>Lorsqu’un citoyen meurt, son âme apparaît dans le désert de l'Outre-monde.
+			Un habitant de la ville, s'il la retrouve et la ramène en ville, pourra la déposer en banque.
+			Ces âmes rapportent des points à la ville à la fin du dernier jour.</p>
+			<p>Les âmes peuvent aussi être converties en chantier de défenses temporaires si un Chaman est dans la ville.</p>
+			<div class="helpLink"><a href="/#help?id=soul" alt="">En savoir plus...</a></div>
+		</item>
+		<item major="1" name="Le Chaman">
+			<p>Un nouveau métier fait son apparition !<br/> Le Chaman a la capacité de connaître les directions où l’on peut retrouver les âmes grâce à son masque,
+			qui révèle sur la carte les âmes errantes des citoyens décédés..</p>
+			<p>Il a la faculté :</p>
+			<ul>
+				<li>de transporter autant d'âme qu'il veut.</li>
+				<li>de transformer les âmes bleues en âmes rouges nécessaires à la construction de chantiers temporaires.</li>
+			</ul>
+			<div class="helpLink"><a href="/#help?id=job_shaman" alt="">En savoir plus...</a></div>
+		</item>
+		<item major="1" name="Nouveau classement">
+			<p>Un classement des points d’âmes sur chaque saison sera disponible en plus du classement global. Il montrera qui est le plus grand survivant sur chaque saison.</p>
+			<p>Le classement global affiche aussi désormais toutes les âmes.</p>
+			<div class="helpLink"><a href="/#help?id=seasons" alt="">En savoir plus...</a></div>
+		</item>
+		<item major="1" name="Eradications des goules">
+			<p>Ce mode de jeu sera en pause jusqu'à nouvel ordre : les goules ne séviront donc plus pour le moment. Mais ce n'est que partie remise !</p>
+		</item>
+ 		<item name="Evolution de l’Apprivoiseur">
+			Le Bichon, fidèle compagnon de l'Apprivoiseur, indique à son maître la direction de la sortie dans les ruines, une flèche bleue permettra à chaque apprivoiseur de ne jamais perdre son sens de l'orientation.
+		</item>
+		<item name="Evolution du Technicien">
+			Le Technicien peut utiliser ses Points de chantiers pour réparer les chantiers et transformer des objets dans l'atelier.
+		</item>
+		<item name="Restriction de l'Ermite">
+			L'Ermite, étant un accariâtre psychologique névropathe à tendance socio-pathologique, ne trouvera de l'eau ou de la nourriture qu'une fois qu'il se sera éloigné à plus de 3km de la ville.
+		</item>
+		<item name="Modification du chantier Décharge">
+			La décharge de base est constructible grâce à un plan de chantier commun.
+			Elle permettra d'utiliser toutes les ressources comme défense. Les nouveaux plans de décharge serviront à améliorer le rendement de défenses du type de ressources utilisées.
+		</item>
+		<item name="Une nouvelle manière de jouer en RNE">
+			Les distinctions ne seront disponibles qu'à partir du 8ème jour pour les joueurs expérimentés, ils gagneront en revanche une nouvelle distinction s'ils font durer une ville le plus longtemps possible.
+			<div class="helpLink"><a href="/#help?id=rne" alt="">En savoir plus...</a></div>
+		</item>
+		<item name="Des nouveautés à la pelle">
+			<ul>
+				<li>La courbe d'attaque des zombies a été revue</li>
+				<li>De nouveaux chantiers temporaires liée au Chaman</li>
+				<li>De nouveaux titres à débloquer</li>
+			</ul>
+		</item>
+	</release>
+
+	<release version="3.1" name="Crimes et Bâtiments">
+		<item major="1" name="Les bâtiments abandonnés">
+			<p>Vous pourrez dorénavant explorer 3 types de bâtiments disséminés dans l'Outre-monde :</p>
+			<ul>
+				<li>Les Bunkers, anciens centres d'expérimentation sur la menace zombie, ces lieux ne sont plus que des dédales infestés regorgeant de ressources utiles !</li>
+				<li>Les Hôpitaux, quand les humains se souciaient encore de leur espérance de vie, ils édifiaient des bâtiments à la pointe de la technologie sanitaire. Pris d'assaut par les hordes, ces endroits fourmillent d'objets en tous genres !</li>
+				<li>Les Motels, de grands hôtels de luxe où les personnes aisées ont cru échapper à leur sort inéluctable, ces zones sauront récompenser les explorateurs téméraires.</li>
+			</ul>
+			<em>Vous trouverez un bâtiment disposé aléatoirement sur la carte dans les villes proches, et jusqu'à 2 bâtiments dans les zones éloignées et pandémonium.
+			Chacun de ces bâtiments contient des plans qui seront très utiles pour les villes.</em>
+			<div class="helpLink"><a href="/aide/exploration_avancee">En savoir plus...</a></div>
+		</item>
+		<item major="1" name="Rééquilibrage des chantiers">
+			Des chantiers ont été rééquilibrés, une majorité demande maintenant moins de ressources pour être construit !<br/>
+			La défense de certains chantiers a aussi été modifiée.<br/>
+			La rareté du chantier Manufacture passe de 'non habituel' à 'banal'.
+		</item>
+		<item major="1" name="Le Technicien">
+			Un nouveau métier fait son apparition, le technicien possède des points d'action supplémentaires dédiés à la construction des chantiers, il possède aussi un matériel perfectionné de camb...
+			bricoleur qui lui permettra de venir en aide aux explorateurs bloqués dans les ruines.
+			<div class="helpLink"><a href="/aide/technicien">En savoir plus...</a></div>
+		</item>
+
+ 		<item name="Evolution du Fouineur">
+			Le fouineur possède un nouvel avantage. <br/>Possédant 50% de plus d'oxygène que les autres citoyens,
+			il pourra explorer plus en profondeur les bâtiments abandonnés et ramener plus de ressources pour la communauté.
+		</item>
+		<!--
+		<item name="Vaccin de Goule">
+			Si vous avez la chance de trouver hôpital abandonné dans le désert, fouillez bien les fonds de tiroirs, il est possible que vous dénichiez un vaccin expérimental pour contrer les effets de la goule...
+		</item>
+		-->
+		<item name="Corrections de bug">
+			Beaucoup de bugs liés à la version 3 ont été corrigés :
+			<ul>
+				<li>Bug lié à la décharge piégée.</li>
+				<li>Correction du problème d'évolution du chantier muraille évolutive.</li>
+				<li>Correction du bug permettant de faire durer une ville avec la défense personelle.</li>
+				<li>Les coordonées affichées dans les appels à l'aide sont dorénavant correctes.</li>
+				<li>Correction du problème d'affichage des actions héroïques aux portes de la ville.</li>
+				<li>Don de jour héros.</li>
+				<li>Drop des plans de bâtiments en RNE maintenant en accord avec l'aide de jeu.</li>
+				<li>Descriptif des évolutions des aqua-tourelles à jour.</li>
+				<li>Suppression des messages d'erreur en escorte avec un joueur qui n'a pas de métier sélectionné.</li>
+				<li>Et d'autres...</li>
+			</ul>
+		</item>
+	</release>
+
+	<release version="3.0" name="Truelles intentions">
+
+		<item major="1" name="Le mode héros moins cher">
+			Les offres du mode héros ont été uniformisées et sauvagement tirées vers le bas ! Désormais, vous pouvez jouer
+			dans la cour des grands pour <strong>9,90 € par mois</strong>. Les achats groupés (3 mois et 6 mois) vous permettront de bénéficier
+			de jours supplémentaires offerts. <a href="/#hero">En savoir plus...</a>
+		</item>
+
+		<item major="1" name="Les plans de bâtiments" help="bplans">
+			Un vent de renouveau souffle sur les chantiers poussiéreux de Hordes... Découvrez les plans de chantiers, une
+			vaste collection de près de 140 chantiers aux effets très variés ! Les plans peuvent être trouvés de multiples façon :
+			dans l'Outre-monde, en camping, grace à certaines constructions... De nombreuses nouvelles stratégies s'offrent à vous !
+		</item>
+
+		<item major="1" name="Ajustement des métiers">
+			L'éclaireur peut maintenant examiner les bâtiments non-révélés de l'Outre-Monde pour connaître leur nature exacte.
+			Le gardien apporte plus de défense à la ville (et peut en apporter encore plus avec les chantiers adaptés).
+		</item>
+
+		<item major="1" name="Ajustement des attaques">
+			La puissance des attaques de la Horde a été totalement modifiée. Les premiers assauts devraient être moins meurtriers, tandis que les
+			attaques des jours 15 et plus voient leur difficulté fortement accrue. Un nouveau système de calcul des attaques réduit fortement
+			l'impact d'une "porte ouverte" ou d'un débordement de zombies pour la plupart des villes. Il sera donc tout à fait envisageable
+			pour une ville d'encaisser une attaque trop puissante au prix de quelques vies humaines.
+		</item>
+
+		<item major="1" name="Les villes privées" help="customMap">
+			Les héros expérimentés peuvent dorénavant créer des "villes privées" en définissant eux-mêmes les règles (goule, type de carte, ...)
+			et en y invitant d'autres joueurs. Ces villes sont toutefois soumises à certaines restrictions.
+		</item>
+
+		<item name="Limitations de saut">
+			De nouvelles limitations font leur apparition lorsque vous rejoignez une ville. Chaque carte dispose de 15 places
+			dites de "citoyens coalisés". Un emplacement est retiré à chaque fois que : un citoyen rejoint la ville avec sa coalition (au hasard ou non),
+			un héros choisi la ville volontairement dans la liste.
+		</item>
+
+		<item name="Nouvelle interface de chantiers">
+			la page des chantiers de votre ville a subi un large ravalement. Plus pratique et offrant une meilleure vue des stocks de
+			ressources disponibles si vous activez le mode "détaillé" (lien en bas de la page Chantiers).
+		</item>
+		<item name="Pouvoir de héros (Dictateur v2.0)">
+			Le pouvoir de héros "Dictateur" permet maintenant aux héros de partager leurs bons conseils aux joueurs débutants en
+			"recommandant" un chantier chaque jour. Le chantier ayant reçu le plus de recommandations de ce type apparaîtra en
+			tête de liste, afin de guider les citoyens inexpérimentés. <strong>Ce pouvoir reste disponible après seulement 1 mois d'expérience.</strong>
+		</item>
+		<item name="Pouvoir de héros (Architecte)">
+			Ce pouvoir permet de démarrer chaque ville avec un plan de chantier "commun" dans son sac.
+		</item>
+		<item name="Région non-éloignées">
+			Les régions non-éloignées bénéficient de plusieurs "traitements de faveur" pour faciliter l'intégration de nouveaux joueurs :
+			chantiers pré-construits, recommandations automatiques, ...
+		</item>
+		<item name="Ajustements du camping" help="camp">
+			Les chances de survie sont maintenant réduites sur les zones de rase campagne (ie. sans bâtiment) et si la ville est dévastée.
+			Un camping réussi sur un bâtiment permet d'obtenir un plan de chantier (inhabituel sur les bâtiments proches, rare sur les plus éloignés).
+		</item>
+		<item name="Ajustements du Pandémonium">
+			Le registre de la banque n'est plus masqué.
+		</item>
+		<item name="Ajustements de la goule">
+			Une goule ne peut plus dévorer une autre goule. En contrepartie, les fréquences d'apparition d'une goule ont été ajustées.
+			L'apparition d'une goule n'est plus annoncée sur la page d'accueil de la ville.
+		</item>
+		<item name="Coalitions & absences">
+			Dorénavant, un joueur absent du jeu passera automatiquement en mode Indisponible pour sa coalition.
+		</item>
+		<item name="Des brouettes d'ajustements">
+			Beaucoup d'ajustements et de corrections de bugs parmi lesquels : une nouvelle distinction "Réparation de chantiers",
+			la portée du Retour du héros est maintenant limité à 11km, les coûts des maisons personnelles ont été largement revus.
+		</item>
+	</release>
+
+
+
+	<release version="2.8" name="Super Ghouls'n'Hordes">
+		<item major="1" name="Les goules" help="ghoul">
+			Elles se cachent au sein de la population... Il peut s'agir de n'importe qui : votre voisin, votre ami... ou vous-même !
+			Elles en veulent à votre foie et n'attendent qu'une occasion pour se repaître de vos délicieux organes vitaux... Les goules
+			débarquent sur Hordes ! (notez que vous pouvez vous protéger de la malédiction des goules : le paracétoïde a gagné en
+			puissance)
+		</item>
+		<item major="1" name="Nouvelle page d'accueil">
+			Pour accueillir la saison 2, Hordes fait peau neuve ! Une nouvelle page d'accueil plus complète et pratique vous permet
+			de découvrir en un clin d'oeil les nouveautés du jeu.
+		</item>
+		<item major="1" name="Fin de la saison 1" help="sitting">
+			Félicitations aux vainqueurs de la saison 1 ! Les citoyens des meilleurs villes ont reçu une distinction unique,
+			un objet spécial (obtenu lors de chaque réincarnation) et une visibilité accrue de leurs messages sur les forums mondes ET de villes !
+			Toutefois, un grand nombre de villes ont été exclues du classement suite à des abus de sitting. Pour cette saison, aucun
+			compte n'a été supprimé. Néanmoins, dès la saison 2, nous supprimerons les comptes concernés par ces abus (les autres citoyens de la ville
+			n'ayant pas triché ne seront pas supprimés).
+		</item>
+		<item major="1" name="Agression brutale">
+			La puissance de l'agression a été considérablement renforcée : ses chances de blesser sont plus élevées que jamais mais son coût
+			a été également revu à la hausse. En Pandémonium, ces chances sont encore plus élevées. Toutefois, pour les régions non-éloignées
+			(villes débutantes), l'agression n'est plus possible s'il n'y a aucune goule en ville.
+		</item>
+		<item name="L'enfer pour tous" major="1">
+			Les citoyens non-héros pourront dorénavant choisir s'ils veulent ou non rejoindre une ville du Pandémonium !
+		</item>
+		<item name="Cadavres violents" major="1">
+			Un bug majeur concernant les cadavres non détruits en ville a été corrigé.  Les morts en ville non recyclés pourront dorénavant s'attaquer
+			à n'importe qui en ville, quelque soit le niveau de sa maison ! Les risques encourus avec un cadavre non recyclé
+			sont donc maintenant très importants...
+		</item>
+		<item major="1" name="Récompense du FJV 2010">
+			La distinction spéciale FJV 2010 a été distribuée ! Merci à tous les joueurs venus nous faire un petit coucou (plus de 400 personnes !)
+			et toutes nos excuses pour le retard dans la distribution de cette récompense.
+		</item>
+ 		<item name="Pouvoir de héros (Camé prévoyant)">
+			Peur des goules ? Bah. Vous avez un paracétoïde dès le premier jour en ville.
+		</item>
+		<item name="Règles de la saison 2">
+			Les villes non-éloignées ou événementielles ne seront plus intégrées aux classements.
+			De plus, seul le classement du Pandémonium permettra dorénavant de gagner la "visibilité accrue" sur les forums.
+		</item>
+		<item name="Chaos chaotique">
+			Les coordonnées des citoyens qui sont dans le désert ne sont plus révélées en mode Chaos.
+		</item>
+ 		<item name="Ajustements du Pandémonium">
+			Les dégâts subis par les bâtiments ont été sensiblement rehaussés et certains chantiers ont été rendus indestructibles.
+		</item>
+ 		<item name="Nouvel objet (Fumigènes)">
+			Pour les amateurs de petites blagues dans le désert (meurtre, vol, attaque, ...), un nouvel objet permet de masquer
+			son forfait, même en groupe.
+		</item>
+		<item name="Bugs et ajustements">
+			De nombreux bugs ont été corrigés et quelques ajustements mineurs ont été apportés aux règles.
+		</item>
+		<item name="Mailing-list des développeurs">
+			Les développeurs de sites externes peuvent se retrouver sur la nouvelle mailing-list :
+			<a href="http://groups.google.com/group/mt_hordes" target="_blank">http://groups.google.com/group/mt_hordes</a>.
+		</item>
+
+	</release>
+
+
+
+	<release version="2.7" name="Rise of the Bichon" img="/gfx/screen/rankingScreenshot.png">
+		<item major="1" name="Nouveau système de classement" help="seasons">
+			Avec ce classement tout beau tout neuf, la compétition entre un peu plus dans la vie des citoyens de
+			Hordes. Des classements des meilleures villes en terme de temps de survie globale sont désormais
+			disponibles. Ces classements, remis à zéro à chaque saison, permettront de récompenser les citoyens de
+			la ville qui aura réussi à aller le plus loin possible. Motivez vos co-citoyens pour
+			résister aux zombies au delà de quelques jours, les récompenses en valent la peine !
+		</item>
+		<item major="1" name="Nouveau métier Apprivoiseur" help="job_tamer">
+			 Ami des animaux réjouissez vous. L'apprivoiseur, grâce à son fidèle Bichon maltais estropié,
+			 sera un allié de choix pour partir faire une balade avec vos co-citoyens dans l'Outre-Monde.
+			 Plus de place dans votre sac ? Pas de soucis, votre chien (si on peut encore appeler ça un chien...)
+			 ramènera le contenu de votre sac en ville. Un cochon malodorant à ramener ? Hop un petit remontant
+			 à votre cabot et sa force se verra décuplée. Avoir une mule pour vous décharger c'est dépassé,
+			 votez Bichon maltais !
+		</item>
+		<item  major="1" name="Parrainage">
+			des distinctions seront attribuées ainsi que 20% des jours héros achetés par votre filleul. De plus, la création
+			de coalitions est maintenant gratuite pour tous !
+		</item>
+		<item  major="1" name="Anniversaire de Hordes">
+			Du matériel pour un feu d'artifices traînerait dans l'Outre-Monde. Un feu d'artifices en plein désert ? Pourquoi pas, ça peut avoir des effets surprenants... Nous n'avons pas dit "agréables".
+		</item>
+		<item name="Ajustements du Pandémonium" help="hardcore">
+			<ul>
+				<li>Le coût des réparations de chantiers a été sensiblement augmenté</li>
+				<li>Si un chantier à évolutions est détruit, alors tous les niveaux d'évolutions seront également perdus. Il faudra les réaliser à nouveau une fois le chantier reconstruit.</li>
+				<li>Les bâtiments de défense endommagés perdent en efficacité</li>
+				<li>Une partie des objets de défense en banque peut être détruite lors de l'attaque de la Horde</li>
+				<li>Le camping est plus difficile</li>
+				<li>Les villes du Pandémonium seront facilement identifiables dans l'âme (de façon non rétro-active)</li>
+			</ul>
+		</item>
+		<item name="Ajustements divers">
+			<ul>
+				<li>La pénalité pour les fouilles de nuit peut être réduite si on pose une quelconque source de lumière par terre dans la zone. Pour accompagner cette règle, quelques modifications ont eu lieu.</li>
+				<li>L'objet "lampe de chevet allumée" s'épuise dorénavant à minuit et doit être rechargée chaque jour avec une pile. Elle apporte désormais 3 points de décoration au lieu de 4.</li>
+				<li>L'objet "lampe de chevet éteinte" devient un objet légèrement plus rare.</li>
+			</ul>
+		</item>
+		<item name="Bug">les améliorations permanentes en camping ne comptaient pas pour les jours suivants, c'est maintenant corrigé.</item>
+		<item name="Bug">le bug de la Pompe hydraulique qui redonnait de l'eau en Pandémonium est fixé.</item>
+		<item name="Bug">certains bâtiments ne subiront plus de dégâts lors de l'attaque de minuit.</item>
+		<item name="Bug">le plus vieux bug de Hordes a été corrigé ! Les points de décoration, l'action "nettoyer son uniforme" ou "ranger sa maison" auront bien des répercutions en jeu.</item>
+	</release>
+
+
+
+	<release version="2.6" name="Pandémermite" img="/gfx/art/hunterBook.png">
+		<item major="1" name="Nouveau métier Ermite" help="job_hunter">
+			La langue de l'ermite s'engourdit de jour en jour. Est-ce le fait de ne parler à personne pendant des
+			jours ? Ou bien est-ce à cause de toutes ces choses étranges qu'il a ingurgitées ces derniers temps ?
+			Néanmoins, personne ne sait aussi bien que lui trouver à manger et où se planquer dans l'Outre-Monde.
+		</item>
+		<item major="1" name="Les villes du pandémonium" help="hardcore">
+			survivant de la 1ère heure, il est temps de vous frotter au mode <strong>difficile</strong> de Hordes.
+			Une ville du Pandémonium sera proposée parmi la liste des villes disponibles.
+			Préparez vous à un séjour qui ne sera pas de tout repos !
+		</item>
+		<item major="1" name="Dégâts des chantiers" help="hardcore">
+			sortez vos pelles, retroussez vos manches et préparez-vous à réparer vos chantiers quotidiennement pour résister aux
+			attaques des Hordes ! Chaque attaque subie infligera des dégâts aléatoirement à tous les chantiers terminés.
+			Bonne nouvelle toutefois, seules les villes du Pandémonium sont concernées par cette nouvelle règle. Pour l'instant :)
+		</item>
+		<item major="1" name="Modificateurs de nuit" help="night">
+			Lorsque la nuit tombe sur l'Outre-Monde certaines choses deviennent plus faciles ou au contraire plus difficiles...
+		</item>
+		<item name="Ajustement du camping" help="camp">
+			L'utilisation des objets de défense permettant d'améliorer significativement le campement nécessite maintenant 1 PA.
+			Les chances supplémentaires apportées par toutes les améliorations manuelles de campement sont plafonnées.
+			L'aide sur le camping a été mise à jour.
+		</item>
+		<item name="Correction de bugs">
+			divers problèmes ont été corrigés. Entre autres, le système des probabilités des bâtiments rares ne fonctionnait
+			pas dans certains cas. Ce bug est corrigé, la fréquence des Relais Autoroutiers devrait donc diminuer significativement
+			et certains bâtiments seront beaucoup moins fréquents dans l'Outre-Monde.
+		</item>
+	</release>
+
+
+
+	<release version="2.5" name="Camping Sauvage" img="/gfx/art/nightCamping.png">
+		<item major="1" name="Le camping sauvage" help="camp">
+			Le voilà qui pointe enfin son nez. Le camping permet au
+			citoyen de se cacher dans l’Outre-Monde pour passer une nuit à la belle
+			étoile. Que vous ayez prévu ou non de dormir dehors, vous trouverez toujours une petite
+			place entre une chèvre en décomposition et une motte de terre pour espérer passer à travers
+			l’assaut des zombies.
+		</item>
+
+		<item major="1" mod="NIGHTMODS" name="Angoisses nocturnes" help="night">
+			parce que la nuit, tous les chats sont gris, certaines
+			règles changent quand le soleil se couche, sur Hordes.
+		</item>
+
+		<item major="1" name="Nouvelle catapulte primitive" help="catapult">
+			jeter des machines à laver pour
+			écraser du zombie, c'est maintenant dépassé ! Profitez des joies de la nouvelle catapulte
+			pour envoyer les rations dont vos concitoyens auront besoin pour vous ramener leurs
+			trouvailles de l'Outre-Monde. Si l'envie vous en dit vous pourrez aussi choisir de les
+			laisser se dessécher au soleil...
+		</item>
+
+		<item major="1" name="Les villes dévastées" help="devast">
+			Si tous les citoyens de la ville ont eu la joyeuse idée de sortir tous ensemble découvrir
+			les joies du camping ou que les citoyens restés en ville se sont laissés déborder par les
+			zombies la ville passe en mode "Ville dévastée". Ce n'est pas la fin mais ça y ressemble...
+		</item>
+
+		<item name="Campeur professionnel">
+			Les héros pourront disposer d'un nouveau pouvoir grâce à leur expérience.
+		</item>
+
+		<item name="Objets">de nouveaux objets font leur apparition pour agrémenter le camping sauvage.</item>
+
+		<item name="Nouveau chantier">
+			la <em>Catapulte bien calibrée</em>. Cette amélioration de la
+			catapulte primitive permettra de diminuer les PA d’un lancer de catapulte.
+		</item>
+
+		<item name="Interface">
+			Pour faciliter la gestion des distances une nouvelle indication est marquée sous la carte.
+			Notez que <strong>1 case = 1 kilomètre</strong>.
+			Exemple : <em>Ville à XX km vers l'ouest, soit à XX PA.</em>
+		</item>
+
+		<item name="Ajustement">
+			Modification du pouvoir <em>Retour Des Héros</em> : la portée du pouvoir a été limitée.
+		</item>
+
+		<item name="Ajustement">
+			Les titres liés à "Exploration très avancée" ont été pour la plupart changés pour plus d’originalité.
+		</item>
+
+		<item name="Bugs">Correction de divers bugs</item>
+	</release>
+
+
+
+	<release version="2.4" name="Le vaste monde">
+		<item major="1" name="Le Vaste Monde">
+			une véritable révolution est en marche dans le monde
+			chaotique de Hordes. Les régions éloignées bénéficient d'une refonte majeure : taille des
+			cartes multipliée par 2 et ajustement de quelques règles mineures pour refléter ce
+			changement (nouveaux bâtiments à explorer, régénération des zones à minuit, ...).
+		</item>
+		<item major="1" name="Nouveaux bâtiments dans l'Outre-Monde">
+			plus de 15 nouveaux lieux à explorer dans les zones les plus reculées de la carte !
+		</item>
+		<item major="1" name="Améliorations de Anthrax GPS">
+			les possesseurs de téléphones mobile modernes
+			(iPhone, GooglePhone, BlackBerry, ...) disposent d'améliorations notables pour la version
+			mobile de Hordes ! Vous pouvez toujours y accéder depuis l'URL :
+			<strong>http://www.hordes.fr/m</strong>. D'autres améliorations sont à prévoir :)
+		</item>
+		<item name="Règles de vol">
+			de nouvelles mesures anti-abus sont maintenant effectives sur
+			Hordes, limitant les vols en période de Chaos.
+		</item>
+		<item name="Corrections de bugs">
+			un grand nombre de problèmes ont été corrigés lors de cette mise à jour.
+		</item>
+	</release>
+
+
+
+	<release version="2.3" name="Complot des bannis">
+		<item major="1" name="La Grande Paranoïa">
+			pour fêter l'avènement des bannis, ils ont tous reçu une
+			petite fiole de poison dans leur sac à dos. Allez savoir ce qu'ils en feront.
+		</item>
+		<item major="1" name="Complots des bannis">
+			les parias qui peuplent nos villes ont décidé de
+			reprendre leur vie en main. Ils disposeront dorénavant de diverses capacités destinées à leur
+			assurer des chances de survie un peu plus satisfaisantes. Ajouté à cela, ces pouilleux ont trouvé
+			le moyen de cacher leurs objets dans le désert, cachettes auxquelles les autres bannis auront
+			accès. Méfiez-vous donc de votre voisin, on ne sait jamais de quoi ces gens sont capables.
+		</item>
+		<item name="Les Oracles">
+			ils sont des joueurs sélectionnés sur le forum pour la qualité de leurs réponses et leur dévouement
+			à la communauté. Les Oracles sont la voix de la sagesse.
+		</item>
+		<item name="Nouveau forum Discussions">
+			ce nouvel espace est destiné à recevoir les
+			discussions autour des règles du jeu, les débats, les suggestions...etc.
+		</item>
+		<item name="Vengeance sordide">
+			ce nouveau pouvoir de héros vous offre une occasion de choix
+			de vous venger si la communauté décide de vous bannir. Vos voisins réfléchiront à deux fois avant de
+			vous embêter !
+		</item>
+		<item name="Ajustements divers">
+			divers petits ajustements ont été apportés aux règles du jeu. Le
+			changement le plus notable concerne l'action <em>Déposer un objet discrètement</em> dont les chances de
+			détection ont été fortement diminuées !
+		</item>
+		<item name="Corrections de bugs">
+			divers problèmes ont été corrigés. Vous pourrez notamment
+			rejoindre plus facilement une coalition si vous étiez jusqu'à maintenant bloqué(e) par la détection
+			de multi-comptes.
+		</item>
+		<item name="Signalement de bugs">
+			afin de mieux traiter vos rapports de bugs, ceux-ci se
+			feront dorénavant directement sur le site de support technique ! Vous trouverez un lien en bas de page
+			sur Hordes.fr pour y accéder directement. Vous pouvez utiliser cet espace pour discuter des problèmes d'autres
+			joueurs, à la façon de l'ancien forum Bugs.
+		</item>
+	</release>
+
+
+
+	<release version="2.2" name="Escortes citoyennes">
+		<item major="1" name="Escortes citoyennes" help="escort">
+			cet outil permet aux citoyens de s'organiser pour mener à bien des expéditions
+			de grande envergure sans être nécessairement présents pendant toute la journée. Les escortes citoyennes vous permettront
+			également de diriger plus facilement des sauvetages en cas de blocage dans l'outre-monde...
+		</item>
+		<item name="État Clair(e)">
+			tant que vous ne consommez aucune drogue, vous bénéficiez de l'état Clair(e). Ce statut
+			spécial débloque une distinction spéciale si vous tenez bon jusqu'à votre mort ainsi qu'un puissant pouvoir (Corps saint)
+			pour les héros de plus de 70 jours. Ce dernier vous permet de bénéficier de <strong>1 point de contrôle supplémentaire permanent</strong>
+			tant que vous êtes Clair(e).
+			<em>Oui, oui, un gardien qui aura su se passer des drogues apportera donc bien 5pts de contrôle...</em>
+		</item>
+		<item name="Balise Habitant" help="rp">
+			Une nouvelle balise roleplay "Habitant" vous permet de tirer le nom d'un citoyen au hasard dans votre ville !
+		</item>
+		<item name="Ajustements">
+			De nombreuses corrections de bugs et des ré-équilibrages !
+		</item>
+	</release>
+
+
+
+	<release version="2.0" name="Armageddon" help="upgrades" img="/gfx/art/attack.png">
+		<item major="1" name="Chantiers et évolutions">
+			un ré-équilibrage complet de tous les chantiers et l'apparition
+			des évolutions quotidiennes.
+		</item>
+		<item major="1" name="La tour de guet">
+			soyez très attentif, étudiez les mouvements des hordes pour mieux anticiper
+			les attaques du soir, voire du lendemain !
+		</item>
+		<item major="1" name="Les tempêtes du désert">
+			de nouveaux phénomènes météorologiques surviennent la nuit dehors...
+			Des zones épuisées ne le sont plus, des cohortes de zombies se déplacent, il va falloir redoubler de prudence !
+		</item>
+		<item major="1" name="Mode Héros à prix réduit" help="hero">
+			pour célébrer comme il se doit le débarquement de la 2.0, tous
+			les abonnements au mode Héros sont en promotion !
+		</item>
+		<item name="Instinct des fouineurs">
+			les fouineurs disposent d'une nouvelle capacité leur permettant
+			de repérer les zones non-épuisées à proximité.
+		</item>
+		<item name="Insurrection des bannis" help="banned">
+			s'ils sont en grand nombre, les bannis peuvent maintenant s'insurger
+			et prendre le contrôle d'une ville... Portez plainte avec discernement.
+		</item>
+		<item name="Carte" help="map">
+			votre carte du monde fait l'objet de plusieurs améliorations notables.
+		</item>
+		<item name="Changement divers" help="ghost">
+			les distinctions gagnées dans la journée sont perdues si vous mourrez le soir,
+			vous pouvez signaler les comportements abusifs ou insultants, la gazette offre plus
+			d'informations utiles..etc.
+		</item>
+	</release>
+
+
+	<release version="1.4" name="Chroniques citoyennes" img="/gfx/art/books.png">
+		<item major="1" name="Chroniques citoyennes">
+			découvrez les vestiges du passé au travers des écrits perdus dans l'outre-monde...
+		</item>
+		<item major="1" name="Maisons et Travaux">
+			améliorez votre quotidien en aménageant à votre convenance votre maison.
+			Faites face aux petits imprévus, aux zombies, voire à vos voisins... Endossez un rôle secondaire en tant que
+			pharmacien officiel ou encore cuistot !
+		</item>
+		<item name="Amélioration des héros">
+			les héros voient leur pouvoir Uppercut Sauvage
+			grandement amélioré !
+		</item>
+		<item name="Nouveaux objets">
+			plus d'une dizaine de nouveaux objets à découvrir et offrant de nouvelles stratégies !
+		</item>
+		<item name="Nouveau Moteur de Forum">
+			le moteur du forum a été amélioré afin de pouvoir intégrer très prochainement de nouvelles fonctionnalités.
+		</item>
+		<item name="Optimisations et équilibrage">
+			des transformations profondes (à coups de pelle) pour
+			améliorer les performances du site aux heures de pointe.
+		</item>
+	</release>
+
+
+
+	<release version="1.2" name="Petites coalitions">
+		<item major="1" name="Petites coalitions" help="team">
+			invitez vos amis à vous rejoindre au sein d'une même coalition puis
+			démarrez très facilement une nouvelle ville ensembles&nbsp;!
+		</item>
+		<item name="Section Évolutions">
+			Une page pour découvrir les derniers changements majeurs
+			de Hordes et pour en savoir un peu plus sur ce que l'avenir vous réserve...
+		</item>
+		<item name="Equilibrage et objets">
+			amélioration et correction de divers objets, comme le café ou le Kit de réparation.
+			Divers autres objets font leur apparition dans le désert (tels que la Balise Radius Mark II)&nbsp;!
+		</item>
+		<item name="Optimisations">
+			de nouvelles technologies au fioul et à la vapeur au service de l'internet de demain,
+			pour de meilleures performances et un site plus rapide.
+		</item>
+	</release>
+
+
+</releases>

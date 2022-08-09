@@ -1,0 +1,388 @@
+﻿<d place="port" name="Mysterious Punk" gfx="yakuzi" cond="scenario(kabuki,0)+(admin()|utime(6))+active(kabuki)">
+
+	<phase id="begin" next="welcome:quit">
+		Hey! Psssst... Come here!
+	</phase>
+	<a id="welcome">Approach the punk and see what he wants</a>
+	<a id="quit">Ignore him, better to stay away from strangers.</a>
+
+	<phase id="welcome" next="hear:ref:leave">
+		Listen, I've got an interesting proposition for you.
+	</phase>
+
+	<a id="hear">I'm listening!</a>
+	<a id="ref">You remind me of someone...</a>
+	<a id="leave" target="quit">Excuse me! I thought you were talking to me! Goodbye</a>
+
+	<phase id="hear" next="mission">
+		Shhhht!!! Not so loud! Someone might hear us....
+	</phase>
+
+	<a id="mission"> Ooops, sorry? Why does it matter if someone hears us?</a>
+
+
+	<phase id="ref" next="mission">
+		Shhhht!!! Not so loud! Someone might see us....
+	</phase>
+
+	<phase id="mission" next="ok:no">
+		Ok. I have a passport for Totem Island. What do you say to a little bet to see if you can win it from me? You must bet 10.000 gold coins. If you win, you can leave with passport and your money. If you lose, I keep the passport and you'll owe me 10.000 gold coins. What do you say?
+	</phase>
+
+	<a id="ok"> Why not. It seems like a fair deal.</a>
+	<a id="no"> What!? Are you crazy! Where will I get all that money from?</a>
+
+
+	<phase id="ok" next="compris:not">
+			Ok. Listen carefully the rules: Each coin has two different sides. The side with the value on it is called "tails". The second with the head of a moueffe on it is called "heads". All you have to do is choose a side. Do you understand?
+	</phase>
+	<a id="compris"> All I have to do is choose heads or tails?</a>
+	<a id="not"> Uh, I didn't understand anything, what do I have to do?</a>
+
+
+	<phase id="no">
+		Too bad ... Come back if you change your mind, I'll stay here.
+	</phase>
+	<phase id="compris" next="pile:face">
+		Ha, you understand? It seems that you've played this kind of game before. So, which side do you choose,  "heads" or "tails"?
+	</phase>
+	<a id="pile"> Tails</a>
+	<a id="face"> Heads</a>
+
+	<phase id="not" fast="1">
+		Each coin has two different sides. The side with the value is called "tails". The second representing a moueffe face is called "heads". You just have to choose one side. After we toss the coin, we'll check who has won. So, "heads" or "tails"?
+	</phase>
+
+
+
+
+	<phase id="pile" next="suite">
+		You lose! Ha ha ha! I'm unbeatable. You owe me 10.000 gold coins.
+	</phase>
+	<a id="suite"> But ... you didn't even toss the coin!</a>
+
+	<phase id="suite" next="end">
+		Don't be so mad? Money is far too precious to play with! If you bring me my 10.000 gold coins, maybe I'll offer you another deal ... and next time, maybe we'll toss a coin.
+	</phase>
+
+	<a id="end"> If I want this passport, it seems I don't have much of a choice</a>
+
+	<phase id="end" scenario="kabuki:1">
+		Ha ha! Find the money and then come back. My code name is "Yakuzi", I'll stay here and wait for you.
+	</phase>
+
+	<phase id="face" next="suite">
+		You lose! Ha ha ha! I'm unbeatable. You owe me 10.000 gold coins.
+	</phase>
+
+	<phase id="quit" fast="1">
+		You disregard his calls and move away ... maybe he had something important to tell you.
+	</phase>
+
+</d>
+
+<d place="port" name="Yakuzi" gfx="yakuzi" cond="scenario(kabuki,1)">
+
+	<phase id="begin" next="welcome:quit">
+		Hey! Psssst ... Come here!
+	</phase>
+	<a id="welcome">Approach him and see what he wants</a>
+	<a id="quit">Ignore him, and run away quickly.</a>
+
+	<phase id="welcome" next="yes:leave">
+		So? You have the money?
+	</phase>
+
+	<a id="yes"> Yep, 10.000 gold coins.</a>
+	<a id="leave" target="quit"> Yes, but I'll never give it to a cheater like you!</a>
+
+	<phase id="yes" usegold="10000" scenario="kabuki:2">
+		Ha ha! Thanks, come back whenever you want!
+	</phase>
+
+	<phase id="quit">
+		Hey, wait. Where do you think you're going!
+	</phase>
+
+</d>
+
+
+<d place="port" name="Yakuzi" gfx="yakuzi" cond="scenario(kabuki,2)+(admin()|swait(kabuki,48))">
+
+	<phase id="begin" next="welcome:quit">
+		Hey! Psssst ... Come here!
+	</phase>
+
+	<a id="welcome">Approach him</a>
+	<a id="quit">Ignore him, and run away quickly.</a>
+
+	<phase id="welcome" next="give:nop:lock">
+		Here's my deal, we bet 100.000 this time. If you win, you can take all my money and the passport. If you lose, I'll keep it and you'll owe me 100.000 gold coins. If you accept the deal, give me a coin that I can toss....
+	</phase>
+
+	<a id="give"> Ok, here's a coin, but no tricks this time!</a>
+	<a id="nop"> Ok, I accept the bet, but I want to toss the coin myself!</a>
+	<a id="lock"> No way! I don't trust you anymore. Goodbye.</a>
+
+	<phase id="give" next="pile:face">
+		Ok, "Heads" or "Tails"?
+	</phase>
+
+	<a id="pile" target="start">Tails</a>
+	<a id="face" target="start">Heads</a>
+
+	<phase id="start" fast="1" next="end">
+		Ting! Yakuzi tosses the coin up in the air. It falls on the ground, still spinning. The suspense is unbearable.
+	</phase>
+
+	<phase id="nop" next="lance">
+		Ok, I choose tails, no wait! heads!
+	</phase>
+
+	<a id="lance">Toss the coin</a>
+
+	<phase id="lance" fast="1" next="end">
+		Ting! You toss the coin up in the air. It falls on the ground, still spinning. The suspense is unbearable.
+	</phase>
+
+	<a id="end">(Next)</a>
+
+	<phase id="end" next="reend">
+		Impossible ... I've lost ... Oh no! It's mine! You'll never catch me, ha ha ha ha!
+	</phase>
+
+	<a id="reend"> Hey! Wait!</a>
+
+	<phase id="reend" fast="1" scenario="kabuki:3">
+		Yakuzi has run away with your reward, maybe you should run after him....
+	</phase>
+
+	<phase id="quit">
+		Hey wait!
+	</phase>
+
+	<phase id="lock">
+		Hey you! Wait!
+	</phase>
+
+</d>
+
+
+<d place="forges" name="Disguised Yakuzi" gfx="yakuziDisguise" cond="scenario(kabuki,3)">
+
+	<phase id="begin" fast="1" next="hello">
+		You pass someone who you think you recognise....
+	</phase>
+	<a id="hello"> Hey Yakuzi! I thought I recognised you. Give me my reward!</a>
+
+	<phase id="hello" next="block:burn">
+		Sorry? I think that you've made a mistake. My name is Benedito Pacifico Juan Mawia Ramirez. Excuse me, I have to leave. I have urgent things to attend to.
+	</phase>
+
+	<a id="block"> You won't esacpe this time! My Dinoz have surrounded you</a>
+	<a id="burn"> Ha, seems that I made a mistake ... Hurry up, or you'll miss it</a>
+
+	<phase id="block" next="ready">
+		Very well ... it seems I have no choice. En garde!
+	</phase>
+
+	<a id="ready"> Dinoz! Attack!</a>
+
+	<phase id="ready" fast="1" scenario="kabuki:4" fight="yakuzi">
+		Yakuzi has disappeared before the end of the fight. There are too many tracks to see which way he has gone.
+	</phase>
+
+	<phase id="burn">
+		See you again soon Yakuzi! Grrrr!
+	</phase>
+
+</d>
+
+
+<d place="gorges" name="Frozen Yakuzi" gfx="yakuziFreeze" cond="scenario(kabuki,4)">
+
+	<phase id="begin" next="hello">
+		I'm ... fro ... zen....
+	</phase>
+	<a id="hello"> That's strange, it sounds like you're...</a>
+
+	<phase id="hello" next="block:help">
+		I ... am ... an ... ordinary ... person ... complet ... ely ... frozen ... ... You ... can ... lea... ve...
+	</phase>
+		<a id="block"> Give me my reward, or I'll ask my Dinoz to melt you!</a>
+		<a id="help"> Don't move, I'm going to go and get some help!</a>
+
+	<phase id="block" next="fight">
+		No, don't worry. I was only pretending to be frozen. You're hard to convince aren't you aren't you?
+	</phase>
+		<a id="fight">Give me my reward!</a>
+
+
+	<phase id="fight" next="combat">
+		Not so fast! First I have to take revenge. Prepare your Dinoz, I will defeat them this time!
+	</phase>
+
+	<a id="combat"> Let's fight!</a>
+
+	<phase id="help">
+		Uh, yea thanks ... hmm, I wanted to say: than ... ks ... stran ... ger....
+	</phase>
+
+	<phase id="combat" fast="1" scenario="kabuki:5" fight="yakuzi">
+		Once more Yakuzi has fled ... but whilst escaping he dropped a strange scroll!
+		Maybe you can find someone who can decipher it for you....
+	</phase>
+
+</d>
+
+<d place="itotem" name="Yakuzi" gfx="yakuziSerious" background="2" cond="scenario(kabuki,21)">
+
+	<phase id="begin" next="know">
+		Phew! What a fight! Professor Igor was really strong!
+	</phase>
+
+	<a id="know">You know him?</a>
+
+	<phase id="know" next="start">
+		Yup, but it's a long story ... Where do I begin....
+	</phase>
+
+	<a id="start">Why not at the beginning?</a>
+
+	<phase id="start" next="herit">
+		Indeed, that's a good idea! On my 18th birthday, I received
+		the heirloom of my Grandfather, which had been passed down through generation to generation in my family.
+		Until then, I was only a little thug, but this heirloom changed everything for me!
+	</phase>
+
+	<a id="herit">Heirloom?</a>
+
+	<phase id="herit" next="parch">
+		Yes. It wasn't about the money, but a unique item that we call the Kabuki Aura, as well as a scroll
+		showing how to build another one.
+	</phase>
+
+	<a id="parch">A scroll...</a>
+
+	<phase id="parch" next="totem">
+		Yup, I lost it fighting against you, and Professor Igor apparently used it to build
+		an Aura and travel to the Totem Island...
+	</phase>
+
+	<a id="totem">What happens on this island?</a>
+
+	<phase id="totem" next="why">
+		It's simple: many centuries ago, my ancestor the Grand Judoki saved a group of Kabukis at the moment of the Huge Cataclysm.
+		He then moved to the island and built a Totem that protected it from intruders....
+	</phase>
+
+	<a id="why">Why did he do that?</a>
+
+	<phase id="why" next="ok">
+		Although they are great fighters, the Kabukis can only give birth in a very quiet place.
+		As they're so rare, my ancestor wanted to them to survive here in peace....
+	</phase>
+
+	<a id="ok">I understand...</a>
+
+	<phase id="ok" next="see">
+		When I inherited my grandfather's possessions, Professor Igor came to me and offered me millions
+		of gold coins in exchange for the Aura of the scroll. Fearing the worst, I refused.
+		He seemed very strange and I knew his intentions weren't good....
+	</phase>
+
+	<a id="see">Mmmm, I understand</a>
+
+	<phase id="see" next="nice">
+		So I went to Totem Island myself and discovered the Kabukis.
+		They're so likeable that I decided to rear two of them myself. They're the same ones which helped me during our fights!
+	</phase>
+
+	<a id="nice">They're beautiful!</a>
+
+	<phase id="nice" next="see2">
+		Yes, I'm very proud of them! But to raise them, I had to become a thug again,
+		organising some scam....sorry, games of chance, so that the pig... sorry, tourists can relax a bit, you see?
+	</phase>
+
+	<a id="see2">... I think so</a>
+
+	<phase id="see2" next="end">
+		In any case, take this. Thanks to you, I was able to prevent a disaster. I don't know how to thank you....
+	</phase>
+
+	<a id="end">Oh! You don't need to thank me!</a>
+
+	<phase id="end" next="yes:no">
+		Really? But let me give you this Kabuki Egg as reward! Take care of it,
+		it's a very rare item! Unlike other Dinoz, the Kabukis only produce a small amount of eggs!
+	</phase>
+
+	<a id="yes">Take the Egg</a>
+	<a id="no">I can't accept this...</a>
+
+	<phase id="no">
+		Ah ... Well ... Come back if you change your mind....
+	</phase>
+
+	<phase id="yes" give="kabegg" scenario="kabuki:22">
+		Here, it's yours! You can keep the Kabuki Aura that the Professor Igor have made,
+		it'll help you to come back here from time to time. See you soon my friend!
+	</phase>
+
+</d>
+
+<d place="itotem" name="Yakuzi" background="2" gfx="yakuzi" cond="scenario(kabuki,22)">
+
+	<phase id="begin" next="egg:noegg">
+		Hello my friend! How are you?
+	</phase>
+
+	<a id="egg" cond="utime(100)">What's up?</a>
+	<a id="noegg" cond="!utime(100)">What's up?</a>
+
+	<phase id="noegg" scenario="kabuki:23">
+		Nothing to report! But come back later, maybe I'll have something for you!
+	</phase>
+
+	<phase id="egg">
+		I've already given you one Kabuki Egg, please come back later to get another one!
+	</phase>
+
+</d>
+
+<d place="itotem" name="Yakuzi" background="2" gfx="yakuzi" cond="scenario(kabuki,23)">
+
+	<phase id="begin" next="egg:noegg:maxegg">
+		Hello my friend! How are you?
+	</phase>
+
+	<a id="egg" cond="scenario(kabegg,1-)+utime(100)">What's up?</a>
+	<a id="noegg" cond="scenario(kabegg,1-)+!utime(100)">What's up?</a>
+	<a id="maxegg" cond="scenario(kabegg,2+)">What's up?</a>
+
+	<phase id="noegg">
+		Nothing to report! But come back later, maybe I'll have something for you!
+	</phase>
+
+	<phase id="egg" next="buy:no">
+		Oh! A new Kabuki Egg is available, I'm selling it for 50.000 coins if you're interested!
+		The money isn't for me though, it's for a good deed ... this fund will allow me to continue to help the surviving Kabukis!
+	</phase>
+
+	<a id="buy">OK!</a>
+	<a id="no">It's too expensive for me...sorry</a>
+
+	<phase id="no">
+		I understand, but if you change your mind, come back soon as this kind of offer won't last long!
+	</phase>
+
+	<phase id="buy" usegold="50000" give="kabegg" scenario="kabuki:22" scenarioIncr="kabegg">
+		THANKS! Here you go! Don't forget to take good care of it!
+	</phase>
+	
+	<phase id="maxegg">
+		Kabukis are close to extinction because so many Dinoz Masters buy their eggs. I'm really sorry but I can't give you any more eggs ... I have to protect their future!
+	</phase>
+
+</d>

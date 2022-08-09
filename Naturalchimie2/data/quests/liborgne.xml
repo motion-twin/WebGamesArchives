@@ -1,0 +1,65 @@
+<quests>
+
+<q from="liborgne" id="libora" name="En avant vers la liberté !" cond="fx(revolt)">
+	<begin>Merci d'avoir accepté de nous rejoindre ! Grâce à toi, l'espoir d'un monde meilleur renaît dans nos coeurs... enfin...  dans notre oeil de borgne d'information ! </begin>
+	<talk did="liboraa" />
+	<talk did="liborab" title="Se rendre à la Pépite dorée, à Vostok." />
+	<create o="Elt(25):5" zone="apfbg" title="Créer 5 Slamines au Faubourg Audepint pour le vendeur de la Pépite dorée. Chaque élément présent à la fin d'une partie sera collecté. " />
+	<use qo="Elt(25):5" qgive="QuestObj(vertForm):1" zone="apvos" action="Donner les Slamines" text="Comme convenu, voilà ton formulaire d'emprunt de matériel pour un magnétophone. Vivent les borgnes libres ! " title="Echanger les Slamines contre un formulaire de contrebande à la Pépite dorée." />
+	<talk did="liborac" title="Aller  au B.A.F.A. pour récupérer le magnétophone." />
+	<use o="Elt(10):1" qgive="QuestObj(magneto):1" zone="gubafa" action="Donner la Mercurule" text="Merci pour la caution, voici le magnétophone. Je te rappelle qu'il s'agit d'un prêt de 3 jours ! " title="Donner 1 Mercurule pour la caution." />
+	<msg action="Débuter l'enregistrement" zone="jzboy" text="blablabla... pour poser une question, dites 'autre'... blablabla... réponse trouvée. Le sens de la vie est... blablabla... pour quitter, dites 'fin'. Ouf. On a terminé. Tu peux couper le magnéto." title="Réaliser l'enregistrement des textes d'information au Boyau central." />
+	<end>Bravo, sauveur ! La première étape de notre plan s'est parfaitement déroulée ! </end>
+	<xp v ="14" />
+	<gold v="230" />
+</q>
+
+
+<q from="liborgne" id="liborb" name="Duplication massive" cond="quest(libora)" >
+	<begin>L'étape 2 débute maintenant. Pour l'instant, personne ne se doute de rien à Jeezara, tout va bien.</begin>
+	<talk did="liborba" />
+	<collect o="QuestObj(k7):40" zone="guexpr" title="Aller au siège du Guildian Express et récupérer 40 vieilles cassettes pendant vos alchimies.">
+		<playMod replace="1" artft="Elts(2,null):2200;Elts(2,QuestObj(k7)):1200;Elts(3,null):1000;Elts(3,QuestObj(k7)):600;QuestObj(k7):250;Grenade(1):20;Dynamit(0):30;Dynamit(1):15;Alchimoth:10" />
+	</collect>
+	<end>Il y a le compte. On va pouvoir commencer la copie des enregistrements ce soir, pendant notre réunion secrète.</end>
+	<xp v ="11" />
+	<gold v="120" />
+</q>
+
+
+<q from="liborgne" id="liborc" name="Plein les mirettes" cond="quest(liborb)" >
+	<begin>Evidemment, il nous faut aussi l'élément indispensable pour créer des faux borgnes d'information de qualité. On a déjà un stock de bocaux, il faudrait juste 40 Foloeils.</begin>
+	<use o="Elt(5):40" zone="jzboy" action="Donner les Foleils" text="Notre plan se déroule sans accroc. Tu es notre sauveur, ô sauveur !" title="Apporter 40 Foloeils au Boyau central pour fabriquer les faux borgnes d'information." />
+	<end>Plus qu'une étape et nous aurons terminé les faux borgnes. Je sens le vent de la liberté sur ma cornée !</end>
+	<xp v ="12" />
+	<gold v="86" />
+</q>
+
+
+<q from="liborgne" id="libord" name="Les rois de la bricole" cond="quest(liborc)" >
+	<begin>Pour finir les faux borgnes, nous avons besoin de quelques éléments  métalliques... et de bras pour un peu de bricolage. </begin>
+	<talk did="liborda" />
+	<create o="Elt(8):10;Elt(9):2;Elt(10):2" title="Créer 10 Oxydes, 2 Couivres et 2 Mercurules pour fabriquer des détecteurs mécaniques. Chaque élément présent à la fin d'une partie sera collecté. " />
+	<talk did="libordb" title="Aider les borgnes d'information à fabriquer les détecteurs." />
+	<end>Il nous reste à finaliser le plan d'évasion définitif ! Synchronisons nos montres pour cette nuit ! </end>
+	<xp v ="14" />
+	<gold v="105" />
+</q>
+
+
+<q from="liborgne" id="libore" name="Lâché de borgnes" cond="quest(libord)" >
+	<begin>Debout sauveur ! L'évasion commence maintenant ! </begin>
+	<talk did="liborea" />
+	<talk did="liboreb" title="Déposer une colonie de borgnes à la Médina Shaka Shaka, dans le désert de Sharrukin." />
+	<talk did="liborec" title="Déposer une colonie de borgnes au Faubourg Audepint, à Kringdam." />
+	<talk did="libored" title="Déposer une colonie de borgnes à l'orée du bois, dans le comté du Penkrack." />
+	<talk did="liboree" title="Déposer une colonie de borgnes à l'entrée du Boyau, dans la province de Yoruba." />
+	<end>Bravo sauveur, mission accomplie... Mais tu t'es trompé, tu as emmené tous les borgnes sauf moi ! Tu as pris un faux borgne à la place ! Je suis condamné à rester ici ! Boouuuh...</end>
+	<xp v ="16" />
+	<randomrecipe v="250:180" />
+	<gold v="75" />
+</q>
+
+
+
+</quests>

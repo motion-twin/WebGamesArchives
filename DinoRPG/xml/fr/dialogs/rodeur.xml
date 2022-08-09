@@ -1,0 +1,111 @@
+﻿<d place="forges" name="Rôdeur Etrange" gfx="rodeur" cond="active(rodeur)+!mission(rodriz)+level(15)">
+
+	<phase id="begin" next="go:talk:talk2">
+		.........
+	</phase>
+
+	<a id="go">Ce personnage a l'air dangereux... s'éloigner !</a>
+	<a id="talk" cond="!curmission(rodriz)">Lui parler</a>
+	<a id="talk2" cond="curmission(rodriz)">Lui parler</a>
+
+	<phase id="go" fast="1">
+		Ouf ! Il vaut mieux faire attention en rencontrant des étrangers...
+	</phase>
+
+	<phase id="talk" next="go:yes">
+		Uh ?!??? Quoi ?? Vous pouvez me VOIR ?!? ..... Grrrrr....
+	</phase>
+
+	<a id="yes">Euh... Oui</a>
+
+	<phase id="yes" next="go:read">
+		Uhm... bien... je vois... on m'avait pourtant certifié que cette cape rendait invisible ! Est-ce que tu peux regarder l'indicateur dans le dos, il y a marqué quelque chose ?
+	</phase>
+
+	<a id="read">Lire l'indicateur</a>
+
+	<phase id="read" next="go:help">
+		Quoi ?!? "L'EAU BATTE-RIZ" ? Uhm... le vendeur parlait effectivement de recharger quelque chose... il va donc falloir que j'utilise du... riz !?! Mais où vais-je pouvoir trouver cela ?!?
+	</phase>
+
+	<a id="help">Aider le Rôdeur</a>
+
+	<phase id="help" missions="rodeur"></phase>
+
+	<phase id="talk2">
+		Vite ! J'ai BESOIN de ce Riz !
+	</phase>
+
+</d>
+
+<!-- PART 2 -->
+
+<d place="forges" name="Rôdeur Etrange" gfx="rodeur"  cond="mission(rodriz)+!mission(rodlif)+level(20)">
+
+	<phase id="begin" next="qual:qual2">
+		Ma cape est à nouveau en panne... je commence à en avoir un peu marre...
+	</phase>
+
+	<a id="qual" cond="!curmission(rodlif)">Surement de la mauvaise qualité...</a>
+	<a id="qual2" cond="curmission(rodlif)">Surement de la mauvaise qualité...</a>
+
+	<phase id="qual2">
+		Au lieu de dire des conneries, tu ferrais mieux d'essayer de remplir ta mission...
+	</phase>
+
+	<phase id="qual" next="caush:ether">
+		QUOI ?!? Comment oses-tu parler ainsi de la grande technologie Caushemeshenne ! Sais-tu simplement combien d'années recherches il a fallu à nos scientifiques pour maîtriser l'Ether ?!?
+	</phase>
+
+	<a id="caush">Caushemesh ?</a>
+	<a id="ether">L'Ether ?</a>
+
+	<phase id="caush" next="ether:next">
+		Oui ! Tout à fait, la grande civilisation des Montagnes de Caushemesh, bien au delà des Steppes Magnétiques. Nous sommes bien plus développés que les barbares de Dinoville...
+	</phase>
+
+	<phase id="ether" next="caush:next">
+		Aprés des centaines d'années de recherche, les Caushemeshens ont maîtrisés la puissance de l'Ether, un savant mélange des éléments Air et Vide. Celà nous donne une puissance technologique hors du commun, et les ingénieurs de Caushemesh sont les meilleurs de tout Dinoland !
+	</phase>
+
+	<a id="next">Et...</a>
+
+	<phase id="next" next="more">
+		Vos Dinoz sont bien faibles comparés à ceux de Caushemesh, ils ne font pas le poids ahahahah ah ! Entraîne bien tes Dinoz, jeune maître, car un jour viendra où tu devras affronter des dangers bien plus grands !
+	</phase>
+
+	<a id="more">...</a>
+
+	<phase id="more" next="mission">
+		Mais j'en ai déjà trop dit... Pour te convaincre de la technologie de Caushemesh, que dirais-tu d'une petite mission ?
+	</phase>
+
+	<a id="mission">Accepter une Mission</a>
+
+	<phase id="mission" missions="rodeur"></phase>
+
+</d>
+
+<!-- PHASE 3 -->
+
+<d place="forges" name="Rôdeur Etrange" gfx="rodeur" cond="mission(rodlif)+!hasobject(regen)">
+	<phase id="begin" next="next">
+		Pour ton information, les Dinoz Sombres que tu as rencontré jusqu'à présent n'étaient que des débutants que nous venons faire entraîner dans cette partie de Dinoland... La puissance des Dinoz de Caushemesh va bien au delà, et même votre Vénérable ne ferait pas le poids contre nos meilleurs maîtres Dinoz !
+	</phase>
+
+	<a id="next">(...)</a>
+
+	<phase id="next" give="regen" nocheck="1">
+		Enfin bon, je tiens ma promesse. Voici une récompense pour te convaincre de la supériorité de la  technologie de Caushemesh. Je n'en ai qu'un exemplaire, alors fais-en bon usage... Il s'agit d'un Bracelet en Tik, que tu pourras équiper sur le Dinoz de ton choix...
+	</phase>
+</d>
+
+<!-- PHASE 4 -->
+
+<d place="dplaza" name="Rôdeur étrange" gfx="rodeur3" frame="fixe" background="5" cond="scenario(caush,44+)">
+	<phase id="begin" fast="1">
+		Maintenant libéré de sa mission d'espionnage, le rôdeur s'est installé tranquillement non loin de dinoplaza.
+		Les doigts de pied en éventail, il se détend au soleil...
+		Mieux vaut le voir ici qu'en train de manigancer quelque chose de louche...
+	</phase>
+</d>

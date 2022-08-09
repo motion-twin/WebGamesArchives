@@ -1,0 +1,37 @@
+<d place="guexpr" name="Emile le crieur" gfx="gubiactol">
+
+<a id="exit">A plus tard.</a>
+
+<phase id="begin" frame="normal" next="goquest:cava:exit">
+Guiiiildian Express ! Quiiiiii veut le Guildian Expreeeess ?  | Salut ! Un Guildian Express ? 
+</phase>
+
+<a id="goquest" cond="quest(biaca)">Je voudrais donner un coup de main contre un abonnement, c'est possible ? </a>
+<a id="cava">Euh... C'est vraiment utile de le vendre au pied des locaux du journal ? On peut le consulter gratuitement, ici.</a>
+
+<phase id="goquest" frame="happy" quest="biactol">
+Pas de soucis, ça m'arrange. 
+</phase>
+
+<phase id="cava" frame="angry" next="taf">
+Ouais ouais, je sais. | Mais si je m'éloigne trop avec mon stock de journaux, je fatigue... 
+</phase>
+
+<phase id="taf" frame="normal" next="oui:non">
+En plus j'ai plein d'autres trucs à faire, rhalala. | Tiens, d'ailleurs tu pourrais peut-être me donner un coup de main ? Je peux t'offrir un truc en échange. 
+</phase>
+
+<a id="oui">D'accord ! </a>
+<a id="non">Bof, pas envie.</a>
+
+<phase id="oui" frame="happy" quest="biactol">
+Super, je vais t'expliquer le boulot.
+</phase>
+
+<phase id="non" frame="angry">
+Ok, pas grave. | Guiiiiildian Expreeeess ! Qui veut un Guildian tout beau tout neuuuf ? 
+</phase>
+
+</d>
+
+

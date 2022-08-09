@@ -1,0 +1,65 @@
+﻿F<missions>
+
+	<!-- ***************************************************************************** -->
+	<!-- DIAN KORGSEY, aider les korgons ! ----->
+
+	<m group="dian" id="kswim" name="Wie ein Korgone im Wasser" limit="15">
+		<begin>Der Grumhel-Dschungel ist ein faszinierender Ort! Nimm zum Beispiel die Korgonen. Sie haben sich perfekt an ihre Umgebung angepasst! Wusstest du zum Beispiel, dass sie ihre eigenen Schwimmflossen herstellen? Damit überqueren sie den Jumin-Fluss. Nein? Ich möchte dir gerne ein Paar schenken. Allerdings benötige ich ein paar Gegenstände...</begin>
+		<action v="Die Beschaffungsliste ansehen">Dian Korgseys Liste zeigt, dass sie vor allem bestimmte Werkzeuge braucht, die man in den Schmieden der Großen Dauerhitze bekommt.</action>
+		<goto v="forges"/>
+		<action v="Die Werkzeuge nehmen">Du nimmst einen Werkzeugkoffer mit. Auf der Liste steht ferner: "Äste aus dem Vulkanwald"...</action>
+		<goto v="rashpk" hide="1"/>
+		<action v="Holz schneiden">Du nimmst ein paar abgebrannte Äste mit. Die Beschaffungliste endet mit "einem grigri"...</action>
+		<goto v="fosslv" hide="1"/>
+		<action v="Nach einem Grigri fragen">Der Schamane grinst dich mit einem breiten Lächeln an und überreicht dir einen seiner Glücksbringer-"Grigri". Danke!</action>
+		<end>Das ist alles, was ich gebraucht habe! Das ist perfekt. Hier sind, wie versprochen, deine Korgonenflossen!</end>
+		<fx v="palmes"/>
+		<xp v="20"/>
+	</m>
+
+	<m group="dian" id="rivals" name="Korgonen des Nordens und des Südens" limit="15" cond="mission(kswim)">
+		<begin>Wenn die Korgonen in diesem Teil des Dschungels fast schon hilfsbereit sind, so gibt es im Süden welche, am Rande des Graugrünen Wegs, die weniger freundlich sind. Ich bin mir sicher, dass uns die Korgonen hier weitaus mehr schätzen würden, wenn du mir einen Beweis bringen könntest, dass du die Korgonen im Süden besiegt hast.</begin>
+		<goto v="chemin"/>
+		<kill v="korgon" n="10" name="Korgonen des Südens"/>
+		<action v="Eine Trophäe finden">Du nimmst ein paar Korgonenklauen mit, die dir als Trophäe für die Korgonen aus dem Norden dienen...</action>
+		<end>Ah, das war eine gute Idee, das mit den Klauen! Die Korgonen hier scheinen sie zu schätzen...Hier, das ist für deine Mühe.</end>
+		<gold v="2000"/>
+		<xp v="40"/>
+	</m>
+
+	<m group="dian" id="kfood" name="Holzsteak" limit="15" cond="mission(kswim)">
+		<begin>Es gibt hier irgendwo im Grumhel eine seltene Baumart, die die Korgonen abgöttisch lieben. Es ist der Aschfarbene Fikoia! Ich weiß nicht, wo man ihn finden kann, aber wenn du mir welchen bringst, werde ich dich fürstlich dafür entlohnen!</begin>
+		<goto v="garde" hide="1"/>
+		<action v="Komischer Baum">Du entdeckst einen komischen Baum mit grauen Blätter, der nach abgestandenem Tabakrauch riecht...Das ist bestimmt ein Aschfarbener Fikoia! Aber während du im Begriff bist, ein paar Äste abzubrechen, hörst du Geräusche aus dem Gestrüpp hinter dir...</action>
+		<kill n="6"/>
+		<action v="Ein paar Äste mitnehmen">Es ist besser hier nicht länger als nötig zu verweilen. Du schnürst ein großes Holzbündel und entfernst dich von den Gebüschen...</action>
+		<end>Das werden sie sich aber schmecken lassen! Vielen Dank!</end>
+		<gold v="2000"/>
+		<xp v="40"/>
+	</m>
+
+	<m group="dian" id="poison" name="Korgonesische Rivalitäten" cond="mission(kfood)+mission(rivals)" limit="20">
+		<begin>Der Aschfarbene Fikoia, den du entdeckst hast, wird ziemlich schnell zu einem strategischen Punkt für die Korgonen aus dem Süden werden...Jetzt muss schnell gehandelt werden! Wir werden ein paar Äste dieses Baumes "präparieren", um die Korgonen aus dem Süden davon abzuhalten, sie zu fressen... Wir werden selbstverständlich wissen, welche Äste man besser nicht anfasst… Hi hi hi.</begin>
+		<goto v="collin"/>
+		<action v="Saft einsammeln">Du sammelst etwas Nässenden Mordicus ein. Das ist ein Baumsaft mit einem unbeschreiblichen Geschmack. Die perfekte Falle für diesen Job.</action>
+		<goto v="garde"/>
+		<action v="Den Fikoia präparieren">Na sowas! Der Fikoia ist verschwunden! Die Korgonen aus dem Süden waren wahrscheinlich vor uns da...</action>
+		<goto v="jungle" hide="1"/>
+		<action v="Hinterhalt">Während du durch den Wilden Dschungel ziehst, wirst du plötzlich von einer Korgonengruppe umzingelt! Du musst sie loswerden, bevor du weitergehen kannst...</action>
+		<kill v="korgon" n="3" name="Versteckte Korgonen"/>
+		<goto v="fleuve" hide="1"/>
+		<action v="Spuren am Boden">Große Spuren am Boden lassen eindeutig darauf schließen, dass hier etwas sehr Schweres vom Jumin-Fluss geschleift wurde...Die Spuren führen in den Süden.</action>
+		<goto v="chemin" hide="1"/>
+		<action v="Spuren am Boden">Die Spur verliert sich hier...Aber dem Gegrunze in den Büschen nach zu urteilen, wartet man hier schon gut vorbereitet auf dich!</action>
+		<kill v="korgon:ronciv" n="8" name="Korgonen oder Verbündete"/>
+		<action v="Aschfarbener Fikoia">Der Fikoia ist unter einem Haufen Bananenbaumblätter versteckt. Du wirst ihn bis zum Lager ziehen müssen...</action>
+		<goto v="fleuve"/>
+		<talk v="Dian Korgsey">Ah, da bist du ja! Echt schade, dass sie diesen Aschafarbenen Fikoia zerteilt haben...Das ist in der Tat die Arbeit südlicher Korgonen...Also, es wird unmöglich sein, den Fluss damit wieder hochzufahren. Verstecke ihn hier, das wird für`s erste reichen. Wir sehen uns im Lager wieder.</talk>
+		<action v="Den Fikoia verstecken">Du versteckst den Baum unter ein paar Bananenbaumblätter.</action>
+		<end>Es ist echt schade um dieses Fikoia-Exemplar. Sie sind so selten! Danke für all deine Hilfe, wir werden dich nicht vergessen...</end>
+		<gold v="3500"/>
+		<item v="hotpan"/>
+		<xp v="100"/>
+	</m>
+
+</missions>

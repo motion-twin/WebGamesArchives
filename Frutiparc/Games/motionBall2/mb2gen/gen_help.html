@@ -1,0 +1,51 @@
+<html>
+
+<head>
+<title>MotionBall2 Generator Help</title>
+</head>
+
+<html>
+
+<h3>MotionBall2 Generator Help :</h3>
+
+<ul>
+	<li>Creer les levels avec mb2edit
+	<li>Les mettre dans un fichier pour assemblage (voir format ci dessous)
+	<li>Lancer <code>mb2gen.exe <i>fichier_dungeon.txt</i></code> pour générer le dungeon
+</ul>
+
+<b>Format du fichier d'assemblage :</b><br>
+<br>
+<ul>
+	<li>Une ligne par salle
+	<li>64 lignes en tout (8x8)
+	<li>Données sur les lignes :
+		<ul>
+			<li><code>DATA=</code><i>mb2edit data</i> : données d'une salle
+			<li><code>START=<i>...</i></code> : indique la salle d'entrée du dungeon
+			<li><code>END</code> : indique la salle de sortie du dungeon
+			<li><code>NONE</code> : salle vide (sans portes)
+			<li><code>ITEM=<i>...</i></code> : object a ramasser<br>
+		</ul>
+	<li>Liste des objets :
+		<code>
+		<ul>
+			<li>KEY
+			<li>ORANGE
+			<li>BLUE
+			<li>METAL
+			<li>VIOLET
+			<li>GREEN
+			<li>RED
+			<li>MAP
+			<li>RADAR
+			<li>SMALLTIME
+			<li>BIGTIME
+		</ul>
+		</code>
+</ul>
+
+Les portes des salles <code>ITEM</code> sont déterminées a partir ce celles des salles <code>DATA</code> environnante.
+=> Pas deux salles d'ITEM qui correspondent par une porte !
+
+</html>

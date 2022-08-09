@@ -1,0 +1,84 @@
+﻿<missions>
+
+	<!-- ***************************************************************************** -->
+	<!-- Gulom, aide à un survaïvor ----->
+<!--
+	<m group="gullom" id="remed" name="Soin d'urgence" limit="2">
+		<begin>Même s'il endure en silence, on voit bien que Gulom peut tomber dans les limbes d'une minute à l'autre. Il faut vite lui donner un remède pour guérir ses blessures.</begin>
+		<goto v="chutes"/>
+		<use v="remed2" n="1"/>
+		<end>Merci, je n'aurai pu aller beaucoup plus loin sans ton aide !</end>
+		<xp v="30"/>
+	</m>
+-->
+	<m group="gullom" id="truci1" name="Ménage autour du camp">
+		<begin>Le monde Sombre est envahi de monstres en tout genre, je vais rester quelque temps par ici. 
+		Pour monter le campement tranquillement, peux-tu me débarasser des quelques bêtes féroces qui traine dans le coin ?</begin>
+		<goto v="dkchut"/>
+		<kill n="10" v="piraos" zone="4" />
+		<goto v="dktow"/>
+		<kill n="10" v="piraos" zone="4" />
+		<goto v="dkbao"/>
+		<kill n="5" v="garouz" zone="4" />
+		<end>Merci, grâce à toi, je peux me reposer en sécurité !</end>
+		<xp v="40"/>
+	</m>
+	
+	<!-- Le maître est un ermite aveugle, il ne peut donc voir les ouvertures du portail-->
+	
+	<m group="gullom" id="ouestu" name="Maître, où es-tu ?" cond="mission(truci1)">
+		<begin>Pourrais-tu m'aider à chercher mon maître, il doit sûrement m'attendre près d'ici, vu la lumière dégagée par l'ouverture du portail, il est peu probable qu'il ne l'ai pas vu.</begin>
+		<goto v="dkbao"/>
+		<talk v="gulom" gfx="survivor">Maître, êtes-vous là ?</talk>
+		<goto v="dktow"/>
+		<talk v="gulom" gfx="survivor">Youhou, Maître, me voyez-vous ?</talk>
+		<goto v="fake"/>
+		<talk v="gulom" gfx="survivor">Arrêtez de jouer à cache-cache ! Au bout de dix ans, ce n'est plus drôle ! ...Euh, oups, je n'ai rien dit !</talk>
+		<end>
+			Euh, je suis désolé de t'avoir fait perdre ton temps, j'ai complétement oublié, mon maître est aveugle ! 
+			Il ne peut donc pas voir la lumière émise par les fragments d'Orbe Sombre... Rentrons au campement, ça ne sert à rien de chercher...
+		</end>
+		<gold v="1000"/>
+	</m>
+	
+	<m group="gullom" id="truci2" name="Lieu hanté" cond="mission(ouestu)">
+		<begin>J'ai beau être habitué à l'obscurité, figure toi que j'ai toujours peur dans le noir,
+		j'ai apercu des ombres menacantes en pleine nuit la dernière fois que je suis allé au petit coin. Pourrais-tu jeter un oeil ?</begin>
+		<goto v="fake"/>
+		<kill n="10" v="amanpe" zone="4" />
+		<end>Merci, je n'aurai plus à me retenir la nuit !</end>
+		<xp v="40"/>
+		<gold v="500"/>
+	</m>
+	
+	<m group="gullom" id="monte" name="Tour Sombre" cond="mission(truci2)">
+		<begin>Au sommet de la tour veille un gardien plus puissant encore que celui que tu as affronté auparavant. Il observe en silence le monde sombre,
+		Il saura peut-être quelque chose sur la disparition de mon maître ! Peux-tu aller lui demander gentiment ?</begin>
+		<goto v="dktow2"/>
+		<goto v="dktow3"/>
+		<goto v="dktow4"/>
+		<actfight act="Combattre le gardien du sommet" monsters="upgrd"/>
+		<talk v="Gardien du sommet">.....</talk>
+		<action v="ramasser le casque">Impossible d'interroger qui que ce soit, il ne reste qu'un vieux casque vide...</action>
+		<goto v="dkchut"/>
+		<talk v="gulom" gfx="survivor">Alors, il a dit quelque chose ?... Rien ? Ce n'est qu'un casque ?... Bon, tant pis, il faudra que je trouve autre chose...</talk>
+		<end>Au moins, il arrêtera de me regarder me faire mordre les jambes par les piranh'os...</end>
+		<xp v="50"/>
+		<gold v="2000"/>
+	</m>	
+	
+	<m group="gullom" id="lumi" name="lumièreeee" cond="mission(monte)">
+		<begin>Je me demande si on ne pourrait pas allumer un feu à quelques endroits stratégiques pour y voir un peu plus
+		clair dans ce trou paumé. En tous cas, je t'en serais reconnaissant, je verrais enfin ce que je mange !</begin>
+		<goto v="dktow"/>
+		<useingr v="enfeu" n="1"/>
+		<goto v="dkbao"/>
+		<useingr v="enfeu" n="1"/>
+		<goto v="fake"/>
+		<useingr v="enfeu" n="1"/>
+		<end>Merci, grâce à toi, on y voit un peu mieux ! Le problème maintenant c'est que je vois ce que j'ai dans mon assiette, et ça ne donne pas envie...</end>
+		<xp v="60"/>
+		<gold v="6000"/>	
+	</m>
+	
+</missions>

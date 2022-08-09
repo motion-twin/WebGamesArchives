@@ -1,0 +1,69 @@
+﻿<!-- Quete du charme de feu, se débloque en parlant au Vénérable -->
+<!-- Quete de l'amulette de stratégie -->
+
+<d place="fosslv" name="Shaman Mou" gfx="shaman">
+
+	<phase id="begin" next="vener:souvenir:missions:charm">
+		B'jour jeune av'turier, bienv'nue à Fosselave... la capitale du Grand T'chaud...
+		Hésite pô à admirer nos super sculptures en basalte. Y'a aussi les bains de magma, là bas... Ca va te relaxer, tu verras c'est coooool...
+		Si t'as faim, t'peux goûter not' spécialité : les merguez de Gobelin... Ca te ravigore, youuuhouuu, tu peux pas imaginer...
+	</phase>
+
+	<a id="vener">Le Vénérable...</a>
+	<a id="souvenir" cond="!fx(shflag)">On peut acheter des souvenirs dans le coin ?</a>
+	<a id="missions" cond="fx(shflag)">Consulter la liste des Missions</a>
+	<a id="charm" cond="fx(fflag)">On m'a parlé d'un charme...</a>
+
+	<phase id="charm" next="boost:nothing">
+	Ah ouais, c'est vrai... y parait que j'dois t'aider... Tiens, un Charme de Feu... ça aidera bien ton dinoz dans ses prochains combats.
+	</phase>
+
+	<a id="boost" cond="!fx(fcharm)">Accepter le Charme</a>
+	<a id="nothing" cond="fx(fcharm)">Accepter le Charme</a>
+
+	<phase id="boost" effect="fcharm">
+	Bouge pas, j'vais t'enchanter de la magie des Shamans... Oyééé, oyééé ! ZZZZzzzzzz... ... C'est bon, tu peux y'aller, t'es un balaise maintenant.
+	</phase>
+
+	<phase id="nothing">
+		Hey, essaye pas d'me rouler, ton dinoz a déjà un charme... Reviens me voir plus tard.
+	</phase>
+
+	<phase id="vener" next="force:merci">
+	
+		Uhmm... ? Le V'nérable ?... Quel bourrin celui là... hier il a failli me bouffer... tout ça parce qu'il me trouve trop agité, et que ça l'empêche de dormir... Tu veux vraiment y aller ? Boah... c'est toi qui voit... Tourne à droite aux Forges, et c'est tout droit.
+	</phase>
+
+	<a id="force">Ah ? Et il est fort ?</a>
+	<a id="merci">Merci, je tiendrai compte de vos conseils !</a>
+
+	<phase id="merci">
+		Tchao mon pote... à la prochaine...
+	</phase>
+
+	<phase id="force" next="merci">
+		Fort ? le gros dorogon Vener' là ?... bah ouais un peu... C'est la première cause de mortalité chez les touristes, juste devant les crises cardiaques causées par nos merguez... Ha la la, qué p'tites natures ces touristes... 
+	</phase>
+
+	<phase id="souvenir" next="more:merci">
+	Des souv'nirs ?... Bah... j'ai bien ma pile de feuilles d'incantations en retard là, mais je sais pas si ça t'interesse... J'peux te filer un autographe aussi, signé de mon vrai nom, Baston Labaf... non ? Ok tant pis... Sinon y'a des trucs de combats aux Forges... des équipements de combat, et tout ça là... Y'aura p'têt un truc cool pour toi.
+	</phase>
+
+	<a id="more">Et c'est tout ?</a>
+
+	<phase id="more" next="accept">
+		Uhmm.... Si ton Dinoz accepte de remplir quelques missions pour moi, j'lui confierai mon Guide de Stratégie. C'est super pratique...
+	</phase>
+
+	<a id="accept">Accepter</a>
+
+	<phase id="accept" effect="shflag" next="missions">
+		Marché conclu...
+	</phase>
+
+	<!--missions="shaman"-->
+	<phase id="missions" missions="shaman">
+		(Bientot disponible)
+	</phase>
+
+</d>

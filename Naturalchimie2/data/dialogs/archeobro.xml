@@ -1,0 +1,32 @@
+<d place="jzclai" name="Archéologue" gfx="jzarcheo" auto="0" cond="(!sch(jz)+!grade(,6))|(sch(jz)+!quest(jzh)+!curquest(jzh))">
+
+
+<phase id="begin" frame="angry" next="euh">
+* Attention ! Interdiction de marcher sur ma zone de travail ! Ne passe pas les barrières ! 
+</phase>
+
+<a id="euh">Vous faites quoi ? </a>
+
+<phase id="euh" frame="normal" next="plus">
+Je suis l'archéologue en charge de cette zone ! Le {"X"} que tu peux voir est une des plus grandes énigmes du royaume. Quand j'aurai résolu son mystère, je serai célèbre ! 
+</phase>
+
+<a id="plus">Et vous allez le résoudre comment ? </a>
+
+<phase id="plus" frame="happy" next="main">
+Méthode archéologique professionnelle ! Après avoir quadrillé et sécurisé le secteur de fouilles, eh bien... je fouille ! A la brosse pour ne rien abîmer, évidemment !
+</phase>
+
+<a id="main">Oua, ça va être super long, non ?</a>
+
+<phase id="main" frame="happy" next="quest">
+Bien sûr, mais c'est la seul méthode sûre. Et puis l'archéologie, c'est une passion avant tout ! 
+</phase>
+
+
+<phase id="quest" frame="normal">
+En plus j'ai une bonne moyenne d'environ 2,5cm de fouille par jour. En travaillant en cercle concentrique, je devrais arriver au "X" central bien avant ma retraite !
+</phase> 
+
+
+</d>

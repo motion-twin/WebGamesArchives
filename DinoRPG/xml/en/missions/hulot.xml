@@ -1,0 +1,96 @@
+﻿<missions>
+
+	<!-- ***************************************************************************** -->
+	<!-- NICOLAS MULOT ----->
+
+	<m group="hulot" id="seqact" name="The Perilous Road" limit="10" cond="!mission(toxic)|mission(hucure)">
+		<begin>To enter the jungle, you must take the Sinister Path ... it's a dangerous road that leads north. Can you make sure it's safe?</begin>
+		<goto v="chemin"/>
+		<kill n="6"/>
+		<end>I can't hear any more growling coming from the path ... that's a good sign, isn't it?</end>
+		<gold v="1500"/>
+		<xp v="40"/>
+	</m>
+
+	<m group="hulot" id="toxic" name="Allergies" limit="15">
+		<begin>I'm allergic to certain plants that are found in the jungle ... but I don't know which ones! Can you gather some suspicious-looking plants for me so I can carry out some tests?</begin>
+		<goto v="chemin"/>
+		<action v="Furuncle Figonicia">You pick a blistered and sticky flower....</action>
+		<goto v="collin"/>
+		<action v="Black Purulent">The Purulent emits a small cloud of suspicious, foul-smelling pollen....mmmm....very strange, better pick this one.</action>
+		<goto v="fleuve"/>
+		<action v="Mud Viscous">You find a big greenish water lily lying in a puddle of stagnant water.</action>
+		<goto v="auree"/>
+		<end>These are perfect! ... I'll try to find out which one causes my allergies ... Take this as a thank you.</end>
+		<gold v="1500"/>
+		<xp v="20"/>
+	</m>
+
+	<m group="hulot" id="map" name="Cartography" limit="20" cond="!mission(toxic)|mission(hucure)">
+		<begin>A good map always helps. The only problem is there's no map available for the Grumhel Jungle! Can you head north and take some notes for me? The hills are located to the east, they'll provide you with the perfect viewpoint!</begin>
+		<goto v="collin" title="Find a high place"/>
+		<action v="Draw a Map">You set up on an old tree stump to start drawing the map of the surrounding area ... Suddenly, a hideous Tawny-Bat comes out of nowhere and grabs your notepad with its jaws! It flies away immediately and sits on a high branch....</action>
+		<action v="Catch the Tawny-Bat">You are sure you hear the bat giggling on it's perch ... you shake a branch to make the Bat fall, but it flies away and escapes into the jungle!</action>
+		<goto v="chemin" title="Find the Tawny-Bat"/>
+		<action v="Tawny-Bat">The tawny-bat finally settles on the top of a huge tree! It calmly stares down at you.</action>
+		<action v="Throw a Stone">You've hit the bull's eye! The Tawny-Bat cries and your notepad falls to the bottom of the tree. Irritated, the bat crawls to your feet and glares at you....</action>
+		<kill v="bat" n="1" name="Mischievous Tawny-Bat"/>
+		<action v="Pick Up the Note Pad">You've finally got your notepad back!</action>
+		<goto v="collin" title="Return to the Haunted Hills"/>
+		<action v="Draw the Map">You finish drawing the map, making sure to keep your guard up this time!</action>
+		<end>It's not bad at all! I'll study this map in order to prepare my extreme expedition.</end>
+		<gold v="2500"/>
+		<xp v="60"/>
+	</m>
+
+	<m group="hulot" id="hucure" name="Remedy" limit="25" cond="mission(toxic)">
+		<begin>Vat's is nice from you ... I vink the Bonks from mutant valls can help me ... Take the blants you brought me and go to see them on my vehalf ... Sniff....</begin>
+		<goto v="auree"/>
+		<action v="Take the Plants">You take Nicolas' toxic plants. It seems that he tried to infuse them....</action>
+		<goto v="chutes"/>
+		<talk v="Monk Doctor">You gave him a Furuncle Figonicia? A Black Purulent?! A Mud Viscous!! Woaw ... We have to hurry! Bring me some coral powder immediately!</talk>
+		<goto v="corail"/>
+		<action v="Coral Piece">You pick up a piece of broken coral: that should do.</action>
+		<goto v="chutes" title="Take coral back to the monk"/>
+		<talk v="Monk Doctor">Bring me some Korgon fangs from the Sinister Path and some Tawny-Bat wings from the north.</talk>
+		<goto v="chemin"/>
+		<kill v="korgon" n="4"/>
+		<action v="Pick up the Fangs">You pick up some Korgon fangs.</action>
+		<goto v="fleuve"/>
+		<kill v="bat" n="5"/>
+		<action v="Pick up the Wings">You pick up a nice pair of Tawny-Bat wings....</action>
+		<goto v="chutes" title="Take the Ingredients back to the Falls"/>
+		<talk v="Monk Doctor">Perfect! I can cook a delicious meal. Hmmm, sorry? Ahh! That's right you came for a remedy didn't you. Worry not, I have a crate full of remedy, take what you need. Shall I keep some soup for you?</talk>
+		<action v="Remedy Crates">You take with you a few antidote vials for Nicolas Mulot, we never know....</action>
+		<end>Glou glou! Fanks ... Jwust hopfe it wiwll work ... Take fis pofion aws aw szign of gratifuwde.</end>
+		<item v="angel"/>
+		<xp v="60"/>
+	</m>
+
+	<m group="hulot" id="bckpck" name="Adventurer's Kit" limit="20" cond="mission(hucure)+mission(map)">
+		<begin>Before starting my long and dangerous journey, there's one more thing I need, a good backpack. I lost mine when I was travelling through the Mutant Falls ... Can you find it for me?</begin>
+		<goto v="chutes"/>
+		<talk v="Extreme Fisherman">A bag pack y'say? Nope I don't remember fishing dat! Ya should mayb'see if it was carried away toward the swamp by the current?</talk>
+		<goto v="marais"/>
+		<talk v="Seaweed Harvester">Ah, I remember!! It was a very nice backpack, it was stuck in a bog! I gave it to one of my cousins so that he could carry his stones, it's really practical! Gosh!</talk>
+		<goto v="corail"/>
+		<action v="Interrogate the Miners">You ask the miners some questions, they point to another miner....</action>
+		<talk v="Miner taking a break">Yup. I know what you're talking about. But I don't have it anymore. (He spits on the ground) Yup. I only had it for a couple of days. I sent it to my cousin in Frish Port. I thought he could use it as a good fishing net. (He spits again)</talk>
+		<goto v="port"/>
+		<talk v="Busy Fisherman">The bag? I still have it! But it's in terrible condition! I can fix it for you if you would like ... but I need a bobbin of thread and sewing needles. You can buy these items in Dinotown I think.</talk>
+		<goto v="dnv"/>
+		<action v="Find a Bobbin">You check all the Dinotown shops to find the Sewing Material. You finally find a sewing shop....</action>
+		<talk v="Dressmaker">Good day to you Dinoz Master, welcome to my shop! Needle and thread? Yes I have some, but they're not cheap ... if I agree to give it to you, will you do me a favour? I live near the fountain and every evening my house is attacked by monstrous Giant Chickens! If you help me I'll give you the material for free.</talk>
+		<goto v="fountj"/>
+		<kill v="coq" n="2" name="Fierce Giant Chickens"/>
+		<goto v="dnv" title="Report back to Dinotown" />
+		<talk v="Dressmaker">Thank you so much for all your help! Here's the material as I promised....</talk>
+		<goto v="port"/>
+		<talk v="Busy Fisherman">Ah, you brought exactly what I need to patch up your bag. (One hour later..........) Done!</talk>
+		<end>You won't believe this, I just received a spare backpack! I ordered it in anticipation of my journey ... No problem, I have a great idea! I'll take back my old backpack and give you the new one! It's a deal?</end>
+		<fx v="bckpck"/>
+		<xp v="40"/>
+	</m>
+
+
+</missions>

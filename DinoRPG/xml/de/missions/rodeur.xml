@@ -1,0 +1,33 @@
+﻿<missions>
+
+	<m group="rodeur" id="rodriz" name="Der Amnesische Reis" limit="15">
+		<begin>
+		Ich brauche Reis, um meinen magischen Umhang aufzuladen. Es gibt scheinbar welchen im Klebrigen Sumpf auf den Atlantinischen Inseln. Kannst du mir genügend davon bringen, damit ich mich wieder unsichtbar machen kann? Schnell, es ist dringend!
+		</begin>
+		<goto v="marais"/>
+		<action v="Reis suchen">
+		Nach einigem Suchen findest du einen kleinen Fleck im Sumpf, in dem der Amnesischer Reis wächst, eine sehr seltene Art mit erstaunlichen Eigenschaften. Das einzige Problem ist, dass dutzende Piranhoz den Zugang überwachen. Du musst sie zuerst aus dem Weg räumen müssen!
+		</action>
+		<kill v="pira" n="30"/>
+		<action v="Den Reis mitnehmen">Herzlichen Glückwunsch! Du hast soeben den Amnesischen Reis erhalten!</action>
+		<end>
+		Ah! Äh.. hmm, wie soll ich sagen... Ich glaube, ich habe das falsch verstanden. Es war nur ein kleines bisschen Blitzenergie nötig, um meinen Umhang wieder aufzuladen... Hier, das ist für dich, und du kannst den Reis behalten, den brauche ich nicht.
+		</end>
+		<gold v="5000"/>
+		<item v="riz"/>
+	</m>
+
+	<m group="rodeur" id="rodlif" name="Die Finsteren Dinoz" limit="15" cond="mission(rodriz)">
+		<begin>
+		Drei Finstere Dinoz aus Caushemesh warten bei den Mutierenden Sturzfluten auf dich. Geh sie besiegen und komm danach wieder zu mir zurück, um dir deine Belohung abzuholen... Ich rate dir, deinen Dinoz nicht allein angreifen zu lassen, er könnte dabei sterben!
+		</begin>
+		<goto v="chutes"/>
+		<fight v="pteroz:hippo:rocky"/>
+		<end>
+		Nicht schlecht für so einen schwachen Dinoz aus Dinoville...Hier, das ist für dich!
+		</end>
+		<gold v="5000"/>
+		<xp v="250"/>
+	</m>
+
+</missions>

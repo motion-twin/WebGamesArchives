@@ -1,0 +1,197 @@
+<html>
+
+<head>
+<title>Multii Game</title>
+<script type="text/javascript" src="../loader/loader.js"></script>
+<style type="text/css">
+
+body {
+	background : #403B42;
+	color : white;
+}
+
+input {
+	color				: white;
+	cursor				: pointer;
+	border				: none;
+	-moz-border-radius	: 7px;
+	background-color: #56505A;
+}
+
+.trace_box {
+	width : 350px;
+	height : 200px;
+	overflow : auto;
+	border : 1px solid black;
+	padding : 5px;
+	background-color: #56505A;
+}
+
+.print_box {
+	height : 100px;
+	overflow : auto;
+}
+
+.color {
+    padding : 5px;
+    font-size : 0;
+    border : 1px solid black;
+    background : red;
+    display : inline;
+}
+
+/* infos box */
+
+.infos_box  {
+	font-family			: "Trebuchet MS", arial, sans-serif;
+	font-size			: 12pt;
+	border				: 1px solid black;
+	padding-left		: 3px;
+	padding-right		: 3px;
+	margin-bottom		: 2px;
+	text-align			: left;
+	width				: 236px;
+	height				: 73px;
+	margin-left			: 2px;
+	overflow			: hidden;
+}
+
+.infos_box .score0,
+.infos_box .score1 {
+	float				: left;
+	position			: relative;
+	text-align			: center;
+	font-size			: 12pt;
+	font-weight			: bold;
+	width				: 115px;
+}
+
+.infos_box .score0 a,
+.infos_box .score1 a {
+	display				: block;
+	text-align			: center;
+	font-size			: 9pt;
+	margin-bottom		: -5px;
+}
+
+.infos_box .score1 {
+	float				: right;
+}
+
+.infos_box p {
+	margin 				: 0;
+	padding 			: 0;
+	clear				: both;
+	text-align			: left;
+	font-size			: 9pt;
+	border-top			: 1px solid black;
+}
+
+.infos_box p.help {
+	text-align			: center;
+	border				: none;
+	margin				: 0px;
+}
+
+</style>
+</head>
+
+
+<body bgcolor="#f0f0f0">
+
+<object
+	classid="clsid:d27cdb6e-ae6d-11cf-96b8-444553540000"
+	codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=7,0,0,0"
+	width="700"
+	height="300"
+	id="client"
+>
+
+<param name="movie" value="../loader/loader.swf"/>
+<param name="FlashVars" value="swf=swf/game.swf"/>
+
+<param name="allowScriptAccess" value="sameDomain" />
+<param name="quality" value="high" />
+<param name="salign" value="lt" />
+<param name="scale" value="noscale" />
+<param name="menu" value="true" />
+<param name="bgcolor" value="#f0f0f0"/>
+<embed
+	src="../loader/loader.swf"
+	FlashVars="swf=swf/game.swf"
+	quality="high"
+	salign="lt"
+	width="700"
+	height="300"
+	align="middle"
+	scale="noscale"
+	menu="true"
+	bgcolor="#403B42"
+	name="client"
+	swLiveConnect="true"
+	allowScriptAccess="sameDomain"
+	type="application/x-shockwave-flash"
+	pluginspage="http://www.macromedia.com/go/getflashplayer"
+/>
+</object>
+
+<table>
+<tr>
+<td width="400">
+	<div id="print:m" class="print_box"></div>
+</td>
+<td width="400">
+	<div id="print:c" class="print_box"></div>
+</td>
+</tr>
+<tr>
+<td>
+	<div id="infos:m" class="infos_box"></div>
+</td>
+<td>
+	<div id="infos:c" class="infos_box"></div>
+</td>
+</tr>
+<tr>
+<td>
+	<div id="time:m" class="time_box"></div>
+</td>
+<td>
+	<div id="time:c" class="time_box"></div>
+</td>
+</tr>
+<tr>
+<td>
+	<input type="submit" onclick="return JSLoader.p1.reconnect()" value="Reconnect"/>
+	<input type="submit" onclick="return JSLoader.p1.toggle()" value="Toggle"/>
+	<input type="submit" onclick="return JSLoader.p1.clearTrace()" value="Clear"/>
+	<div id="color1:m" class="color"></div>
+	<div id="color2:m" class="color"></div>
+</td>
+<td>
+	<input type="submit" onclick="return JSLoader.p2.reconnect()" value="Reconnect"/>
+	<input type="submit" onclick="return JSLoader.p2.replay(false)" value="Replay"/>
+	<input type="submit" onclick="this.style.display = 'none'; return JSLoader.p2.autoReplay()" value="AutoReplay"/>
+	<input type="submit" onclick="return JSLoader.p2.replay(true)" value="View"/>
+	<input type="submit" onclick="return JSLoader.p2.toggle()" value="Toggle"/>
+	<input type="submit" onclick="return JSLoader.p2.clearTrace()" value="Clear"/>
+	<div id="color1:c" class="color"></div>
+	<div id="color2:c" class="color"></div>
+</td>
+</tr>
+<tr>
+<td>
+	<div id="haxe:trace:m" class="trace_box">
+	</div>
+</td>
+<td>
+	<div id="haxe:trace:c" class="trace_box">
+	</div>
+</td>
+</tr>
+</table>
+
+<div id="haxe:trace"></div>
+
+</body>
+</html>

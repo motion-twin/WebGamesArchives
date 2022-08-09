@@ -1,0 +1,74 @@
+﻿<!-- ***************************************************************************** -->
+<!-- Paum, Dorogon, habitant de la cité Dorogon ----->
+
+<d place="ville1" name="Paum" gfx="paum" cond="scenario(nimba2,50-)">
+	<phase id="begin" fast="1" frame="stop" next="salut">
+		Un Dorogón se cruza en tu camino.
+		Aunque es más grande que un humano o un Arboris ordinario, es más pequeño que sus congéneres.
+
+		</phase>
+	<a id="salut" >Buenos días Maestro Dorogón.</a>
+
+	<phase id="salut" next="derien:service" frame="bla">
+		[Buenos días joven domador de criaturas.]
+		[Hace mucho que no veíamos alguien de tu especie en Nimbao.]
+		[Veo que a el Príncipe Pistache le gusta rodearse de criaturas insólitas.]
+	</phase>
+
+	<a id="derien">(¿Insolitas?)</a>
+
+	<phase id="derien" frame="stop" fast="1">
+		Te alejas de Paum, no te da mucha confianza.
+		Los habitantes tienen una actitud particular en la ciudad superior.
+	</phase>
+
+	<a id="service" cond="scenario(nimba2,30)">¿Puedo hacer algo por ti?</a>
+
+	<phase id="service" next="nodon:don:fdon">
+		[¿Quieres hacerme un favor?]
+		[Tu sirviente parece audaz Pistache, veamos...
+		Te daré un punto de sabiduría si me traes unas flores y unas especias de la superficie. Eso será muy original.]
+	</phase>
+
+	<a id="fdon" cond="(hasingr(fruit1,1+)|hasingr(fruit3,1+))+!(hasingr(fruit1,3+)+hasingr(fruit3,3+))">¡Con esto haré un ramo único!</a>
+	<a id="don" cond="hasingr(fruit1,3+)+hasingr(fruit3,3+)">¡Qué buen ramo haré con esto!</a>
+	<a id="nodon" cond="!(hasingr(fruit1,3+)+hasingr(fruit3,3+))">¡Volveré con flores de la superficie!</a>
+
+	<phase id="fdon">
+		[Sadicaes, orquídeas, ¡qué buena idea!]
+		[Pero le falta algo, necesito algo más para impresionar.]
+		[Espero el resto con impaciencia!]
+	</phase>
+
+	<phase id="don" next="trente" useingr="fruit1:3,fruit3:3" give="ptsage" scenario="nimba2:31">
+		[Sadicaes y orquídeas, buena idea, este ramo será maravilloso.]
+		[Conquistaré su corazón con este ramo si agregamos unas Flaureolas, ¡si son treinta estaría bien!]
+		[¿Qué te parece?]
+	</phase>
+
+	<a id="trente">(¡¿30 Flaureolas?!)</a>
+
+	<phase id="trente" next="job">
+		[Hahaha, no te preocupes, ya tengo las Flaureolas que necesito.
+		¡Bien mereces tu punto de sabiduría!]
+		[¡Ahora me armaré de coraje para ir a verla!]
+	</phase>
+
+	<phase id="nodon" frame="stop" fast="1">
+		Necesitas una flor especial para ganar la confianza del Dorogón.
+	</phase>
+
+	<a id="job">¡Muchas gracias!</a>
+
+	<phase id="job" frame="stop" fast="1">
+		¡Ya tienes tu segundo punto de sabiduría!
+		¡Ahora faltan tres!
+	</phase>
+</d>
+
+<d place="ville1" name="Paum" gfx="paum" cond="scenario(nimba2,51+)">
+	<phase id="begin" fast="1" frame="stop" >
+		Qué alegría, desde la liberación de los Arboris y de nuestras fronteras, la exportación de las riquezas de nuestras tierras es todo un éxito.
+		¿Qué te trae por aquí Maestro de Dinos?
+	</phase>
+</d>

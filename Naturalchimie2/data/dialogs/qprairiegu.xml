@@ -1,0 +1,85 @@
+<d place="gmprai" name="L'exterminateur" gfx="gmexterm" cond="!quest(quotd)">
+
+<a id="end">Je dois vous laisser.</a>
+
+<phase id="begin" next="quest:hello">
+Ah du renfort de la guilde ! Pas trop tôt ! 
+</phase>
+
+<a id="quest" cond="fx(diaext)">Je suis prêt à vous aider.</a>
+<a id="hello" cond="!quest(quotd)">Du renfort ? Où ça ?</a>
+
+<phase id="quest" quest="prairiegu">
+Formidable ! On a des milliards de choses à faire !
+</phase>
+
+<phase id="hello" next="ahnon">
+Eh bien toi là ! Devant moi ! Tu es bien envoyé par la guilde pour m'aider dans ma mission, non ? 
+</phase>
+
+<a id="ahnon">Ah non désolé. Je fais que passer, moi.</a>
+
+<phase id="ahnon" next="quoi">
+%angry%Ahhhrrrr... Encore raté ! Comment voulez-vous qu'on s'en sorte si la main d'oeuvre demandée n'est jamais envoyée... 
+</phase>
+
+<a id="quoi">Allez allez ça va aller. Racontez-moi ce qui vous arrive ça va vous soulager. Monsieur... ? </a>
+
+<phase id="quoi" next="gloups">
+%happy%Appelle moi {l'exterminateur}. C'est mon poste officiel. Je suis l'exterminateur de la guilde des alchimistes !
+</phase>
+
+<a id="gloups">(Gloups) Un... ? Un exterminateur d'alchimiste ?</a>
+
+<phase id="gloups" next="ok">
+Quoi ? Mais non pas un exterminateur d'alchimiste. J'extermine les parasites. De la faune et de la flore exclusivement.
+D'ailleurs , tu n'es pas venu exprès mais je suis sûr que tu pourrais m'aider, non ? 
+</phase>
+
+<a id="ok">Euh il faut voir. Ca consiste en quoi ? </a>
+
+<phase id="ok" next="eq">
+%angry%C'est très simple. Il y a dans le royaume des espèces qui prolifèrent de façon anormale. Ce qui peut mettre l'équilibre du royaume en péril !
+C'est à ce moment là que j'interviens.
+</phase>
+
+<a id="eq">Et vous rétablissez l'équilibre ? Mais comment ? </a>
+
+<phase id="eq" next="eqb">
+Eh bien, en exterminant ce qui est en trop. La guilde détermine des quotas maximums pour les parasites, je détruis ce qui dépasse.
+</phase>
+
+<a id="eqb">Wow, c'est atroc... euh c'est très intéressant. Mais comment vous savez ce qui est un parasite et ce qui ne l'est pas ? </a>
+
+<phase id="eqb" next="skat">
+%happy%Oula j'en sais rien moi. J'ai des quotas. J'extermine. C'est simple. Pour tout ce qui est compliqué va voir les responsables en ville. 
+Mon problème actuel sur ma liste, c'est les [Skats]. Et tout porte à croire qu'ils viennent d'ici !
+</phase>
+
+<a id="skat">Les skats ? </a>
+
+<phase id="skat" next="skat2">
+Oui ! Tu sais, des petits machins gris avec un air benêt, qui ne font que gêner les alchimies. ils disparaissent à la moindre transmutation un peu violente.
+C'est actuellement le parasite numéro un !
+</phase>
+
+<phase id="skat2" next="help" effect="diaext">
+%angry%La guilde a constaté que leur nombre n'a pas arrêté de grossir ces dernières années. Mon enquête m'a montré que la plus grosse colonie de skats vient d'ici. De la prairie infinie.
+C'est horrible. On ne peut pas faire d'alchimie tranquillement dans le coin, les skats sont partout !
+</phase>
+
+<a id="help">Et donc vous avez besoin d'aide pour nous sauver de cette menace parasitaire et proliférante. C'est ça ? </a>
+
+<phase id="help">
+%happy%Exactement ! Si tu veux m'aider dans ma tâche, n'hésite surtout pas à revenir me voir ! 
+</phase>
+
+
+
+
+
+
+
+
+	
+</d>

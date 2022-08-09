@@ -1,0 +1,78 @@
+<d place="apterr" name="Choper la chouette" gfx="apeliot" auto="1">
+
+<phase id="begin" frame="normal2" next="go">
+Te voilà ! Vite vite ! | La chouette arrive ! On voit les listes de scores ! 
+Il faut qu'on la chope ! 
+</phase>
+
+<a id="go">Bon vas-y, j'ai mon bâton. Lance l'anticycloniteur.</a>
+
+<phase id="go" frame="happy2" next="pouf">
+J'appuie sur le bouton ! 
+</phase>
+
+<phase id="pouf" off="1" next="ben">
+{Pet pet pet pet pet tchoc... pffffllglglgfffffffffffffffffffff....}
+</phase>
+
+<phase id="ben" frame="angry2" next="sifl">
+Eh ben ? Ca marche pas ?...
+</phase>
+
+<a id="sifl">Euh... et si on utilise un sifflet Chouettex, elle viendra peut-être ? </a>
+
+<phase id="sifl" frame="happy2" next="pfit">
+Excellente idée ! | Attends, je siffle ! | Laisse moi siffler ! 
+</phase>
+
+<phase id="pfit" off="1" next="come">
+{Pffffffiiiiiiiiiiiiiiiiiiiiiiiitttt ! ! !} | | | | 
+</phase>
+
+<phase id="come" frame="normal2" next="hum">
+Elle a tourné... || |  Elle s'approche ! Je suis trop fort ! 
+</phase>
+
+<a id="hum">Hum... c'était un peu mon idée hein.</a>
+
+<phase id="hum" off="1" frame="chx:start" next="poc">
+Elle se pose ! | Vas-y ! | Tape ! 
+</phase>
+
+<phase id="poc" off="1" frame="hide" next="nickel">
+[POC ! *]
+</phase>
+
+<phase id="nickel" frame="happy2" next="eliot">
+Parfait,  tu l'as eue ! | Bon, j'ajoute mon nom sur la liste. Alors....
+</phase>
+
+<phase id="eliot" frame="normal2" next="pos">
+Nom : {E | li | ot | 23}.
+Profession : {Tri | mi | lliar | daire}
+Score : [3|0|0|0|0|0|0|0|0|0} | Voilà ! 
+</phase>
+
+<a id="pos">Je sais pas si c'est possible de faire 3 milliards pile, hein...</a>
+
+<phase id="pos" frame="happy2" next="fin">
+Ca fait encore plus impressionnant, c'est tout. | Ca y est, je suis * trimilliardaire !
+</phase>
+
+<phase id="fin" frame="normal2" next="balai">
+Je redescends, il faut que je me prépare pour l'arrivée des journalistes !
+</phase>
+
+<a id="balai">Bon, ben j'ai plus qu'à ramener son balai à Link, moi...</a>
+
+<phase id="balai" frame="hide" url="/act">
+Attention, le plus grand alchimiste de tous les temps va prendre l'escalier ! 
+Ecartez-vous ! Attention ! Prenez garde ! 
+</phase>
+
+</d>
+
+
+
+
+

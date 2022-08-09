@@ -1,0 +1,25 @@
+<d place="aphall" name="Confirmer son rang en transmutation" gfx="approf" auto="0">
+
+<a id="exit">D'accord.</a>
+
+<phase id="begin" frame="normal" next="oui:noui:non" >
+Te voilà {pas très doué} en transmutations élémentaires ? 
+</phase>
+
+<a id="oui" cond="rank(elem,1)">Oui, c'est bon.</a>
+<a id="noui" cond="!rank(elem,1)">Oui, c'est bon.</a>
+<a id="non">Non.</a>
+
+<phase id="oui" frame="happy">
+Bien. | Bon travail, alchimiste.
+</phase>
+
+<phase id="noui" frame="angry" next="exit">
+Bizarre, on ne dirait pas... | Un peu de nerfs ! * Il suffit de faire des [recettes élémentaires] au chaudron jusqu'à ce que la fiole correspondante soit remplie sur ta page personnelle !
+</phase>
+
+<phase id="non" frame="normal" next="exit">
+Dépêche-toi un peu. Un vrai Audepint aurait déjà fini !
+</phase>
+
+</d>

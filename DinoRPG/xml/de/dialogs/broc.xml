@@ -1,0 +1,306 @@
+<!-- ***************************************
+  Etape 21  du scénario  inutilisée
+******************************************** -->
+
+<!-- Broc, Sommet du mont Broky ----->
+<d place="chbroc" name="Toll Patsch" gfx="broc" background="5" cond="scenario(nimba2,50-)+(!hourrand(24,4+)|tag(brocport)|tag(brocbslt)|tag(brocilewkk))">
+	<phase id="begin" frame="parti" fast="1">
+		Hm... Toll Patsch scheint nicht in seiner Werkstatt zu sein. Er ist sicher irgendwo in Dinoland unterwegs. Du solltest später wiederkommen.
+	</phase>
+</d>
+
+<d place="chbroc" name="Toll Patsch" gfx="broc" background="5" cond="scenario(nimba2,50-)+(hourrand(24,4+)+!(tag(brocport)|tag(brocbslt)|tag(brocilewkk)))">
+	<phase id="begin" next="missions:voyage:voyage2" rmtag="brocport:brocbslt:brocilewkk">
+		Ich bin Toll Patsch, nur gelegentlich verwirrter Erfinder. Was kann ich für dich tun?
+	</phase>
+	<a id="missions" cond="active(mbroc)">Auf der Missionsliste nachsehen.</a>
+	<phase id="missions" missions="broc"></phase>
+
+
+	<a id="voyage" cond="scenario(nimbao,19)">
+		Ich möchte eine Reise zu den Wolken unternehmen. Mir ist zu Ohren gekommen, dass du mir vielleicht helfen kannst... !
+	</a>
+	<a id="voyage2" cond="(scenario(nimbao,20)|scenario(nimbao,22)|scenario(nimbao,23+))+scenario(nimba2,37-)">
+		Kannst du mich mit deiner Brieftaube nach Nimbao bringen?
+	</a>
+	
+	<!-- INTRODUCTION -->
+	<phase id="voyage" next="gloups">
+		Toll! Da bist du genau an den Richtigen geraten!
+		Wirf nur einen Blick auf meine treue "Brieftaube 5". Sie wartet schon sehnsüchtig auf ihren Jungfernflug!
+	</phase>
+	<a id="gloups">
+		Jungfernflug? Brieftaube 5?
+	</a>
+	<phase id="gloups" next="go">
+		Am Rande sei noch erwähnt, dass die Brieftauben 1-4 wohl niemals die Wolken aus der Nähe sehen werden!
+	</phase>
+	<a id="go">
+		Äh, nun, zumindest kennen wir das Risiko...
+	</a>
+	<phase id="go" next="nrj:tantpis">
+		[Egal wie das hier ausgeht: Es gibt eine 100% Geld-zurück-Garantie! Toll, nicht wahr?
+		Hm,... Aber da die Reise ja eh gratis ist, würde ich dir sowieso nichts schulden.]
+		[Es geht sofort los. Ich muss nur noch rausfinden, wie ich der Kleinen Leben einhauche.
+		Sie braucht Blitzenergie, um ihre Batterien voll aufzuladen.]
+		[Danach ist sie startklar.]
+	</phase>
+	<a id="nrj">Gib ihm eine Blitzenergie.</a>
+	<a id="tantpis">Ich komme später noch einmal wieder.</a>
+	
+	<phase id="nrj" next="fin" useingr="enfdr:1" scenario="nimbao:20" >
+		Toll! Mit dieser kleinen Taube wirst du um die ganze Welt fliegen!
+		Komm zu mir, wenn du bereit bist.
+	</phase>
+	<a id="fin">
+		Vielen Dank!
+	</a>
+	<phase id="fin" fast="1" frame="stop">
+		Toll Patsch wartet auf das grüne Signal, damit er dich auf dein Abenteuer in die Wolken schicken kann.
+		Es ist wirklich an der Zeit, dass du über deine Zukunft nachdenkst...
+	</phase>
+	<phase id="tantpis" frame="stop">
+		Ein wenig enttäuscht ziehst du wieder von dannen. Du brauchst diese Energiequelle, um zu den Wolken reisen zu können.
+	</phase>
+	
+	<!-- DEPART NIMBAO -->
+	<phase id="voyage2" next="noroute:depart_1:depart_2:depart_3:depart_4:depart_5">
+		Willst du mit meiner Brieftaube 5 reisen?
+		Du brauchst nur zu fragen...
+	</phase>
+	
+	<a id="noroute">Nein danke, ich bin noch nicht bereit zu sterben!</a>
+	<a id="depart_1" cond="drand(6,1)">Auf nach Nimbao!</a>
+	<a id="depart_2" cond="drand(6,2)">Auf nach Nimbao!</a>
+	<a id="depart_3" cond="drand(6,3)">Auf nach Nimbao!</a>
+	<a id="depart_4" cond="drand(6,4+)+(scenario(nimbao,20)|scenario(nimbao,22))">Auf nach Nimbao!</a>
+	<a id="depart_5" cond="drand(6,4+)+scenario(nimbao,23+)">Auf nach Nimbao!</a>
+	
+	<phase id="depart_1" fast="1" tag="brocilewkk" moveAll="ilewkk">
+		Du bist bereit für die große Reise. Toll Patsch hilft dir, in die Gondel zu steigen. Du rechnest mit einem schnellen Tod!
+		Du schließt deine Augen...
+		Brieftaube 5 hat Startfreigabe. Es kann losgehen!!!
+		.............
+		Nanu? Aber... Was ist das denn?
+		AAAAAHAHHHHHHHHHHH!!!!!!!!!
+	</phase>
+	<phase id="depart_2" fast="1" tag="brocbslt" moveAll="bslt">
+		Du bist bereit für die große Reise. Toll Patsch hilft dir, in die Gondel zu steigen. Du rechnest mit einem schnellen Tod!
+		Du schließt deine Augen...
+		Brieftaube 5 hat Startfreigabe. Es kann losgehen!!!
+		.............
+		Ich glaube, da kommt was durch die Wolken auf mich zu! Was zum... ??? AAAAAHAHHHHHHHHHHH!!!!!!!!!
+	</phase>
+	<phase id="depart_3" fast="1" tag="brocport" moveAll="port">
+		Du bist bereit für die große Reise. Toll Patsch hilft dir, in die Gondel zu steigen. Du rechnest mit einem schnellen Tod!
+		Du schließt deine Augen...
+		Brieftaube 5 hat Startfreigabe. Es kann losgehen!!!
+		.............
+		Toll Patsch? Du hast sie auch WIRKLICH aufgeladen? ...
+		AAAAAHAHHHHHHHHHHH!!!!!!!!!
+	</phase>
+	<phase id="depart_4" fast="1" scenario="nimbao:22" moveAll="iroche">
+		Du bist bereit für die große Reise. Toll Patsch hilft dir, in die Gondel zu steigen. Du rechnest mit einem schnellen Tod!
+		Du schließt deine Augen...
+		Brieftaube 5 hat Startfreigabe. Es kann losgehen!!!
+		.............
+	</phase>
+	<phase id="depart_5" fast="1" moveAll="iroche">
+		Du bist bereit für die große Reise. Toll Patsch hilft dir, in die Gondel zu steigen. Du rechnest mit einem schnellen Tod!
+		Du schließt deine Augen...
+		Brieftaube 5 hat Startfreigabe. Es kann losgehen!!!
+		.............
+	</phase>
+	<phase id="noroute" fast="1" frame="stop">
+		Wahrscheinlich ist es besser so, wenn du es bleiben lässt. Das Leben ist ein wertvolles Gut. Und der Traum vom Fliegen hat schon vielen den Kopf gekostet...
+	</phase>
+	
+</d>
+	
+<!-- arrivée sur NIMBAO -->
+<d place="iroche" name="Toll Patsch" gfx="broc" background="4" cond="scenario(nimbao,22)">
+	<phase id="begin" next="wouhou">
+		Toll! Das nenn ich doch mal eine 1A-Reise.
+		Mein Gott, was für eine fantastische Maschine. Welche Ingenieurskunst!
+		........ Es ist wunderschön hier oben, findest du nicht auch?
+	</phase>
+	<a id="wouhou">
+		Wahrhaft. Ich sehe es auch zum ersten Mal.
+	</a>
+	<phase id="wouhou" next="fin">
+		Letztlich bin ich überzeugt davon, dass Dinge selten verrückt sind. Zumindest wenn du selber betroffen bist!
+		Ich bleibe hier. Falls du mich brauchst, komm einfach vorbei. Die Brieftaube hat noch für ein paar Flüge genug Energie im Tank!
+	</phase>
+	<a id="fin">
+		Danke!
+	</a>
+	<phase id="fin" fast="1" scenario="nimbao:23" frame="stop">
+		Es ist Zeit, die fliegende Insel zu erforschen. Wer weiß, was dich in dieser neuen Welt alles erwarten wird?
+	</phase>
+</d>	
+
+<!-- DEPART DE NIMBAO -->
+<d place="iroche" name="Toll Patsch" gfx="broc" background="4" cond="scenario(nimbao,23+)">
+	<phase id="begin" next="retour:noretour">
+		Hallo, mein alter Freund!
+		Bist du bereit, an Bord der Brieftaube 5 wieder zur Oberfläche zurückzukehren?
+		Sag einfach Bescheid!
+	</phase>
+	<a id="retour">Liebend gern!</a>
+	<a id="noretour">Noch nicht.</a>
+	
+	<phase id="retour" fast="1" frame="stop" moveAll="chbroc:port">
+		Du bist bereit für den Rückflug. Toll Patsch hilft dir, in die Gondel zu steigen. Du rechnest wieder mit einem schnellen Tod!
+		Du schließt deine Augen...
+		Brieftaube 5 hat Startfreigabe. Es kann losgehen!!!
+		.............
+	</phase>
+	
+	<phase id="noretour" fast="1" frame="stop">
+		Toll Patsch verharrt. Er ist sichtbar verzaubert von der Aussicht von der fliegenden Insel.
+	</phase>
+</d>
+
+<!-- ARRIVEES ALEATOIRES -->
+<d place="ilewkk" name="Toll Patsch" gfx="broc" background="1" cond="scenario(nimbao,20)+tag(brocilewkk)">
+	<phase id="begin" next="oups" frame="nue">
+		Nun, sehen wir es doch einfach als Probelauf an.
+		Aber sieh es mal positiv...
+		WIE SIND IMMER NOCH AM LEBEN!	
+	</phase>
+	<a id="oups">
+		......
+	</a>
+	<phase id="oups" fast="1" frame="stop" rmtag="brocilewkk"> 
+		Für einen weiteren Versuch musst du noch einmal rauf zum Berg von Toll Patsch steigen.
+		Vielleicht hast du beim nächsten Mal mehr Glück...	
+	</phase>
+</d>
+
+<d place="bslt" name="Toll Patsch" gfx="broc" background="3" cond="scenario(nimbao,20)+tag(brocbslt)">
+	<phase id="begin" next="oups" frame="nue">
+		Nun, sehen wir es doch einfach als Probelauf an.
+		Aber sieh es mal positiv...
+		WIE SIND IMMER NOCH AM LEBEN!
+	</phase>
+	<a id="oups">
+		......
+	</a>
+	<phase id="oups" fast="1" frame="stop" rmtag="brocbslt">
+		Für einen weiteren Versuch musst du noch einmal rauf zum Berg von Toll Patsch steigen.
+		Vielleicht hast du beim nächsten Mal mehr Glück...
+	</phase>
+</d>
+
+<d place="port" name="Toll Patsch" gfx="broc" background="2" cond="scenario(nimbao,20)+tag(brocport)">
+	<phase id="begin" next="oups" frame="nue">
+		[Nun, sehen wir es doch einfach als Probelauf an.
+		Aber sieh es mal positiv...
+		WIE SIND IMMER NOCH AM LEBEN!]
+		[.............]
+		[Wow, es ist unglaublich, dass du genau hier gelandet bist. Als würde meine Brieftaube GEdanken lesen können...
+		Los, lass uns auf den Schrecken erst einmal einen Schluck trinken.]
+	</phase>
+	<a id="oups">
+		......
+	</a>
+	<phase id="oups" fast="1" frame="stop" rmtag="brocport">
+		Für einen weiteren Versuch musst du noch einmal rauf zum Berg von Toll Patsch steigen.
+		Vielleicht hast du beim nächsten Mal mehr Glück...
+	</phase>
+</d>
+
+<!-- Broc, rencontre sans avoir voyagé, on lui définit une position aléatoire qui change tous les jours (global à tous les joueurs) ----->
+<!-- rencontre aléatoires seulement hors scénario nimbao, principalement aux étapes clés! -->
+<d place="ilewkk" name="Toll Patsch" gfx="broc" background="1" cond="hourrand(24,1)+(active(mbroc)|active(nimbao))">
+	<phase id="begin" next="oups">
+		Hallo mein Freund!
+		Wie du siehst, habe ich mein Ziel noch nicht erreicht...
+		Aber wenn du möchtest, dass ich dich in die Luft schieße, besuche mich einfach in meiner Werkstatt.hop.
+	</phase>
+	<a id="oups">
+		Danke!
+	</a>
+	<phase id="oups" fast="1" frame="stop"> 
+		Toll Patsch streckt sich genüsslich am Strand aus und ruht sich aus.
+		Du schleichst dich davon. Wer weiß schon, was in seinem Kopf vorgeht.
+	</phase>
+</d>
+
+<d place="bslt" name="Toll Patsch" gfx="broc" background="3" cond="hourrand(24,2)+(active(mbroc)|active(nimbao))">
+	<phase id="begin" next="oups">
+		Hallo mein Freund!
+		Wie du siehst, habe ich mein Ziel noch nicht erreicht...
+		Aber wenn du möchtest, dass ich dich in die Luft schieße, besuche mich einfach in meiner Werkstatt.
+	</phase>
+	<a id="oups">
+		Äh, okay. Sicher. Werd ich machen!
+	</a>
+	<phase id="oups" fast="1" frame="stop">
+		Toll Patsch sammelt die verstreuten Teile seiner Brieftaube ein und versucht, sie wieder zusammenzusetzen.
+		Wie viele Flüge wird sein Apprat wohl noch aushalten?
+	</phase>
+</d>
+
+<d place="port" name="Toll Patsch" gfx="broc" background="2" cond="hourrand(24,3)+(active(mbroc)|active(nimbao))">
+	<phase id="begin" next="oups">
+		Hallo Freund!
+		Nein, mir mir ist alles bestens.
+		Ehrlich, ich habe wirklich nur auf einen kurzen Drink hier vorbeigeschaut!
+		Aber wenn du wieder mal in die Luft geschossen werden möchtest, besuche mich einfach in meiner Werkstatt.
+	</phase>
+	<a id="oups">
+		......
+	</a>
+	<phase id="oups" fast="1" frame="stop">
+		Toll Patsch scheint in seinem Element zu sein...
+		Störe ihn nicht weiter. Er wurde schon genug abgelenkt und wer weiß... Am Ende will er noch, dass du ihn bgeleitest!
+	</phase>
+</d>
+
+<!-- ***************************************
+  Fin du scénario Nimbao2
+******************************************** -->
+<!--
+-L'atelier de Broc est désormais réparé, il permet dorénavant au joueur d'aller sur nimbao facilement.
+-->
+
+
+<d place="chbroc" name="Toll Patsch" gfx="broc" background="5" cond="scenario(nimba2,51+)+(hourrand(24,4+)+!(tag(brocport)|tag(brocbslt)|tag(brocilewkk)))">
+	<phase id="begin" next="missions:voyage3">
+		[Ich bin Toll Patsch, nur gelegentlich verwirrter Erfinder. Zu deinen Diensten.
+		Meine Werkstatt ist wieder vollkommen repariert. Ich kann dich zur fliegenden Insel bringen, wannimmer du willst!]
+		
+		[Falls es dich interessiert... Du könntest mir vielleicht etwas zur Hand gehen, ich habe einige Aufträge für dich.]
+	</phase>
+	<a id="missions" cond="active(mbroc)">Auf der Missionsliste nachsehen.</a>
+	<phase id="missions" missions="broc"></phase>
+
+	<a id="voyage3">
+		Kannst du mich mit deiner Brieftaube nach Nimbao bringen?
+	</a>
+	<phase id="voyage3" next="noroute:depart">
+		Willst du vielleicht eine Reise mit der Brieftaube 6 machen?
+		Falls ja, brauchst du es nur zu sagen!
+	</phase>
+	
+	<a id="noroute">Hm... lass mich kurz darüber nachdenken... nein, ich bin noch nicht bereit zu sterben!</a>
+	<a id="depart">Auf nach Nimbao!</a>
+	
+	<phase id="depart" fast="1" moveAll="iroche">
+		Du bist bereit zum Abflug. Toll Patsch hilft dir, in die Gondel zu steigen. Du rechnest wie immer mit dem sicheren Tod!
+		Du schließt deine Augen...
+		Brieftaube 6 hat Startfreigabe. ES GEHT LOS!!!
+		.............
+	</phase>
+	<phase id="noroute" fast="1" frame="stop">
+		Wahrscheinlich ist es besser so, dass du es bleiben lässt. Das Leben ist ein wertvolles Gut. Und der Traum vom Fliegen hat schon vielen den Kopf gekostet...
+	</phase>
+</d>	
+	
+<d place="chbroc" name="Toll Patsch" gfx="broc" background="5" cond="scenario(nimba2,51+)+(!hourrand(24,4+)|tag(brocport)|tag(brocbslt)|tag(brocilewkk))">
+	<phase id="begin" frame="parti" fast="1">
+		Hm... Toll Patsch scheint nicht in seiner Werkstatt zu sein. Er ist sicher irgendwo in Dinoland unterwegs. 
+		Du solltest später wiederkommen.
+	</phase>
+</d>

@@ -1,0 +1,151 @@
+﻿<!-- Gulom, survivor of the Dark World -->
+	
+<!---on rencontre un échappé du monde sombre, qui est tombé dans les chutes il y a bien longtemps,
+il était l'assistant du gardien disparu qui était parti combattre la source des ténèbres.
+Il est resté trop longtemps dans le monde sombre, sa peau et ses yeux ne peuvent plus supporter le soleil, 
+il est condamné à vivre dans le monde sombre. 
+
+Il demande au joueur de lui rapporter des ingrédients pour pouvoir survivre.
+Une fois les objets donnés, il propose aux joueurs de retourner dans le monde sombre grâce à un fragment de l'orbe sombre 
+qu'il a obtenu de la part du gardien qu'il assistait, celui-ci avait trouvé ces fragment par hasard un jour ou il fouillait 
+les poubelles en quête de nourriture. 
+
+Le joueur bat une version amélioré du gardien de la tour et obtient le droit d'y retourner quand il veut.
+-->
+
+<d place="chutes" gfx="survivor" name="Gulom" cond="active(gulom)+(admin()|fx(bouee))">
+	<phase id="begin" fast="1" frame="ombrestop" background="2" next="rescape:soin">
+		A strange, haggard man is looking all around. he is hiding under the foliage of the largest tree, as if sheltering from the sun's rays. His gaze is inexpressive, and even though his eyes are open,
+		he struggles to make you out.
+	</phase>
+	
+	<a id="rescape" cond="!tag(soin)">Sir? Hello... no, I'm over here!</a>
+	<a id="soin" cond="tag(soin)" target="vavient">Are you going back to the Dark World?</a>
+	
+	<phase id="rescape" next="soleil" frame="ombre" background="2">
+		Eeuuuuuuh....
+		Heuullooo... Sorry, I'm not very well, all this sunshine, I can't handle it...
+	</phase>
+	<a id="soleil">It's always sunny here...!</a>
+	<phase id="soleil" next="aide" frame="ombre" background="2">
+		Yes, but bear in mind that I'm not from here, and when you spend too much time in the Dark World, you quickly become disoriented.
+	</phase>
+	<a id="aide">Where do you come from?</a>
+	<phase id="aide" next="clef:noclef" frame="ombre" background="2">
+		You people, who live on the surface, should be spared this problem, and it's doubtless for the best that it stays that way.
+	</phase>
+	
+	<a id="clef" cond="fx(sylkey)">Do you want to talk about the Dark World?</a>
+	<a id="noclef">Maybe I can help you?</a> 
+	
+	<phase id="noclef" next="out:clef" frame="ombre" background="2">
+		Thank you, but I don't want to involve innocent people in my problems...
+		The situation could quickly get completely out of hand, the balance is so delicate...
+	</phase>
+	<a id="out">very well then, goodbye...</a>
+	<phase id="out" fast="1" frame="ombrestop" background="2">
+		You set off, what could he be waiting for...?
+	</phase>
+	
+	<phase id="clef" next="quefaire" frame="ombre" background="2">
+		[You know the Dark World then? maybe you're ther person I'm looking for...]
+		[I've lost touch with the fellow I was travelling with. Several long years ago, my master and I set off for the very depths of the Dark World to seal off that evil world forever.]
+		[We had never imagined that it could be so huge, we got lost, and in the end I lost sight of him. That was over ten years ago now...]
+		[I finally found the way out of that labyrinth, but unfortunately I can no longer live on the surface, as my eyes have become too fragile after all that time adapting to see in the shadows...]
+	</phase>
+	<a id="quefaire">You do look pretty dreadful!</a>
+	<phase id="quefaire" next="soigne:nomed" frame="ombre" background="2">
+		[You're right, I don't think I can stay here for very long, I need to return to the Dark World.]
+		[Could you give me some Nimbao elixir? It's the only remedy which has any effect when you've spent as much time in the Dark World as I have.]
+	</phase>
+	
+	<a id="soigne" cond="hasobject(remed2)">You can use this one!</a>
+	<a id="nomed" cond="!hasobject(remed2)">I'm sorry, I don't have any.</a>
+	
+	<phase id="nomed" fast="1" frame="ombrestop" background="2"> 
+		Gulom starts to turn away, he seems really tired, at risk of sunstroke... get into the shade!
+	</phase>
+	
+	<phase id="soigne" next="vavient" use="remed2" tag="soin" nocheck="1" frame="ombre" background="2">
+		[Thanks, that's much better!]
+		[Thanks to you, I can return to the Dark World.
+		I must complete the task given to me by my master, I have to find him, and help him to rid Dinoland of this menace.]
+	</phase>
+	
+	<a id="vavient">How do you manage to travel to and from the Dark World?</a>
+	
+	<phase id="vavient" next="super" frame="ombre" background="2">
+		[i have a fragment of the dark Orb which my master gave me, it's a powerful artefact which can open a small portal between this world and that.]
+		[There are only 3 Orb fragments in the world, and the orb itself is hidden far from peering eyes...]
+		[My master was fortunate enough to find these pieces, after a long spell of total abstinence, while searching for food.]
+		[I am honoured to have been the disciple of such a great hermit, who was capable of tracking prey for hours at a time, and being at one with nature...]
+	</phase>
+	
+	<a id="super">Will you manage it on your own?</a>
+	<phase id="super" next="warpzone" frame="ombre" background="2">
+		As you've already been to the Dark World, you can come with me if you so wish.
+	</phase>
+	
+	<a id="warpzone">I'll come with you!</a>
+	
+	<phase id="warpzone" fast="1" moveAll="dkchut" frame="ombrestop" background="2">
+		Gulom uses his fragment and opens a breach at the bas of the falls. It is very narrow and thus impossible for everyone to fit through at the same time.
+		He turns towards you, smiles, and takes out another fragment, which reacted with the other the very second he struck them together. 
+		The breach opens even further, all you have to now is to leap into the void!
+	</phase>
+</d>
+
+<d place="dkchut" gfx="survivor" name="Gulom" cond="active(gulom)+!mission(lumi)+fx(sylkey)">
+	<phase id="begin" next="missions:natal" frame="blabla" background="1">
+		[I assume you're already pretty familiar with this place, so whatever you do, don't get lost. 
+		One false step onto unknown territory could be fatal!]
+	</phase>
+	
+	<a id="missions">Consult the Mission list</a>
+	<a id="natal">You seem more relaxed</a>
+	
+	<phase id="missions" missions="gullom"></phase>
+	<phase id="natal" next="but" frame="blabla" background="1">
+		[It breaks my heart to admit it, but I genuinely feel at home in this remote place.
+		I can see perfectly in the darkness...]
+		_(Stop picking your nose!)_
+	</phase>
+	<a id="but">Argh...</a>
+	<phase id="but" fast="1" frame="stop">
+		Gulom starts to set up camp, the terrifying noises coming from all around don't disturb him at all.
+	</phase>
+</d>
+
+<d place="dkchut" gfx="survivor" name="Gulom" cond="active(gulom)+mission(lumi)+fx(sylkey)">
+	<phase id="begin" fast="1" next="missions:mieux" frame="stop" background="1">
+		The fires in various places gradually allow you to see a little better in the darkness of the Dark World, but the shadows here don't give up quite as easily as others.
+	</phase>
+	
+	<a id="missions">Consult the Mission list</a>
+	<a id="mieux">We can see better all of a sudden!</a>
+	
+	<phase id="missions" missions="gullom"></phase>
+	
+	<phase id="mieux" next="sortie" frame="blabla" background="1">
+		[The Dark World has revealed a little more of its nature! The shadows retreat, but I don't know if you've noticed, but they don't disappear... Worse still, they densify, and become even blacker and deeper.]
+		[That cannot be a good thing...]
+	</phase>
+	<a id="sortie">What more can we do?</a>
+	<phase id="sortie" next="finish:fragment" frame="blabla" background="1">
+		[I'm going to be able to go and search for my master.]
+		[Despite being one of those elected to receive the title of guardian, he took it upon himself to journey to the Dark World and put an end to the evil lurking in its depths.]
+		[As a wandering, hermitic monk, he gave his all for this mission. However, he is prone to bouts of forgetfulness. He forgets even the most basic things, like eating and sleeping... I hope I find him in time,
+		the last time I left him alone for several months, I'd seen more flesh on a butcher's pencil!]
+	</phase>
+	
+	<a id="finish">I'll be able to go back to the surface!</a>
+	<a id="fragment" cond="!fx(morsso)">How can I come back to help you?</a>
+	
+	<phase id="fragment" next="sortie" effect="morsso" frame="blabla" background="1">
+		[I don't need this fragment, so I want you to take it. Your Dinoz can now come to the Dark World any time they wish.]
+		[Be careful when you return, I might not be around to help you!]
+	</phase>
+	<phase id="finish" fast="1" frame="stop" background="1">
+		It is time to return to the surface, the Dark World seems stable for the time being, but the day will come when you'll need to explore this unknown world...
+	</phase>
+</d>

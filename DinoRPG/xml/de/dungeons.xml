@@ -1,0 +1,264 @@
+﻿<dungeons>
+
+	<!-- Money distributed = 1000~1500 per monster -->
+
+	<d id="stepp" name="Die Magnetischen Höhlen" gold="150000" monsters="worm2:worm:scorp:cactus:brig1:brig2:brig3" cond="active(cavmagnet)">
+
+		<enter place="spylon">
+			Während die auf die Pylonen einschlagenden Blitzeinschläge langsam verstummen, dringst du in die Magnetischen Höhlen ein. Ein seltsamer Ort und bestimmt gefährlich...
+		</enter>
+
+		<exit place="spylon">
+			Nachdem du Stunden unter der Erde verbracht hast, blendet dich das Tageslicht... Du hast vielleicht nicht das gefunden, wonach du gesucht hast, aber du hast zumindest mehr über diesen geheimnisvollen Mandragore erfahren...
+		</exit>
+
+		<!---------------------------- désert 100x100x1 ---------------------------------------------->
+			
+		<stage skin="desert">
+
+			<scenario icon="scroll" micon="misc">
+				Tagebucheintrag von Mandragore, Seite 1: "Ich suche jetzt schon seit mehreren Jahren den Eingang zu den Magnetischen Höhlen. Es wird erzählt, dass sie das Geheimis einer Parallelwelt enthielten. Als Abenteurer, der alle Ecken des Dinolandes erforscht hat, ist das die einzige Chance, noch neue Orte zu entdecken..."
+			</scenario>
+
+			<scenario obj="hotpan" count="6">
+				Tagebucheintrag von Mandragore, Seite 2: "Die Monster in dieser Höhle sind in der Tat ziemlich schwach... Ich hätte diese ganzen Vorräte nicht mitzunehmen brauchen, deshalb werde ich ein paar von ihnen hier lassen, dann muss ich nicht so viel tragen. Du findest 6 (nicht mehr ganz) Warme Brote!
+			</scenario>
+
+		</stage>
+
+
+		<!---------------------------- caverne 100x100x1 ---------------------------------------------->
+
+		<stage skin="cavern3">
+
+			<scenario obj="irma" count="10">
+				Du findest eine kleine Truhe mit 10 von Irmas Zaubertränken! Aber hast du wirklich Lust, noch weiter in die Tiefen dieser Höhlen vorzudringen?
+			</scenario>
+
+			<scenario obj="irma" count="10">
+				Du findest eine kleine Truhe mit 10 von Irmas Zaubertränken! Klasse, aber vielleicht hättest du lieber was gefunden, um deine Dinoz zu heilen?
+			</scenario>
+
+			<scenario icon="skel">
+				Du stößt auf Gebeine, die einem Abenteurer zu gehören scheinen... Offensichtlich bist du nicht der Erste, der sich hier hinein wagt. Doch soviel du weißt, hat sich bisher noch niemand damit gerühmt, jemals dort wieder herausgekommen zu sein...
+			</scenario>
+
+			<scenario icon="scroll" micon="misc">
+				Tagebucheintrag von Mandragore, Seite 3: "Und wieder eine Sackgasse... Ich frage mich, ob diese Höhlen wirklich von einem Menschen gegraben wurden oder ob sie einfach als Versteck dienten... Jedenfalls ist das ein richtiges Labyrinth und nach den Informationen, die mir der Erzdorogon gegeben hat, geht das hier noch einige Stockwerke tiefer..."
+			</scenario>
+
+		</stage>
+
+		<!---------------------------- crypte 50x50x4 ---------------------------------------------->
+
+		<stage skin="ruin4">
+
+			<scenario icon="scroll" micon="misc">
+				Tagebucheintrag von Mandragore, Seite 4: "Sieht so aus, als ob ich meinem Ziel immer näherkommen würde... Die Architektur dieser Krypta ähnelt den Beschreibungen, die ich auf der fliegenden Insel der Dorogon gefunden habe... Der Dunkle Orb muss ganz in der Nähe sein!
+			</scenario>
+
+			<scenario obj="irma" count="10">
+				Du findest eine kleine Truhe mit 10 von Irmas Zaubertränken! Das ist ja schon mal was, um diese Krypta hier zu erforschen!</scenario>
+
+			<scenario obj="irma" count="10" icon="skel">
+				Dieser Abenteurer war anscheinend allzu optimistisch... Er hatte zwar reichlich Tränke von Madame Irma dabei, Erste Hilfe-Tränke aber offenbar vergessen! Du findest in dem Knochenhaufen 10 von Irmas Zaubertränken. ...und hoffst, nicht so wie er zu enden.
+			</scenario>
+
+		</stage>
+
+		<!---------------------------- crypte finale 30x30x1 ---------------------------------------------->
+
+		<stage skin="ruin4">
+
+			<scenario icon="scroll" micon="misc">
+				Tagebucheintrag von Mandragore, Seite 5: "Was ich suche, befindet sich auf diesem Stockwerk. Ich darf hier nicht eher raus, bevor ich den Orb gefunden habe!"
+			</scenario>
+
+			<scenario obj="feregg" icon="chest" micon="misc">
+				Tagebucheintrag von Mandragore, Seite 6: "Ich habe ihn! Ich bin mir sicher, dass er es ist! Wenn sich die Schriften der Alten als wahr herausstellen, dann wird mir dieser Dunkle Orb den Zugang zu einer Parallelwelt eröffnen! Während meines ganzen Erkundungsgangs habe ich immer wieder Seiten meines Tagebuchs hinterlassen, damit andere Abenteurer eines Tages meinen Spuren folgen können. Ich werde ihnen zumindest dieses seltene Dinoz-Ei hinterlassen, damit sie nicht mir leeren Händen wieder nach Hause gehen..." Du hast ein Feross-Ei gefunden!!!
+			</scenario>
+
+		</stage>
+
+	</d>
+
+	<!-- ********************************************************************************************************* -->
+
+	<d id="katak" name="Die Katakomben" monsters="goupi:wolf:gluon:gvert:coq:piraos" gold="20000" cond="active(katatombs)">
+
+		<enter place="skull">
+			Als du auf dem Friedhof spazieren gehst, entdeckst du ein Grab, das geöffnet zu sein scheint. Du folgst einer Treppe, die unter die Erde führt, und zwar in etwas, das aussieht wie alte Katakomben...
+		</enter>
+
+		<exit place="skull">
+			Du steigst aus den Katakomben... Man kann wirklich nicht sagen, dass dieser Friedhof besonders angenehm wäre. Aber wenigstens spürst du eine leichte Brise, die schon mal eine Abwechslung zu dem Gestank unter der Erde ist.
+		</exit>
+
+		<stage skin="sewer">
+
+			<scenario icon="scroll" micon="misc">
+				Notiz von Mandragore: Ich habe die Dämonische Pergamentrolle in den Katakomben zurückgelassen, nachdem ich eine Kopie davon gemacht habe. Ich hoffe, dass die Dinozmeister, die sie finden werden, sie nicht mit bösen Absichten verwenden, denn die Dämonischen Dinoz sind immerhin sehr mächtig...
+			</scenario>
+
+			<scenario obj="cgold">
+				Du öffnest eine scheinbar seit Jahrhunderten verlassene Truhe. Sie ist leer. Aber, von Neugier angetrieben, entdeckst du einen doppelten Boden, unter dem sich ein Goldener Napodino gut versteckt hat!
+			</scenario>
+
+			<scenario obj="irma" count="3">
+				Du findest in einer kleinen Truhe 3 von Irmas Zaubertränken. Na immerhin etwas!
+			</scenario>
+
+			<scenario collec="demon" icon="scroll" micon="misc">
+				Du findest die Dämonische Pergamentrolle. Sie nennt dir den Standort eines seltsamen Ladens... - das "Teuflische Geschäft". Das Geschäft muss sich irgendwo oberhalb des Friedhofs zum Sonnenuntergang befinden. Erst einmal musst du aber aus den Katakomben rausfinden...
+			</scenario>
+
+		</stage>
+
+	</d>
+
+	<!-- ********************************************************************************************************* -->
+
+	<d id="mbegin" name="Die Kanalisation des Monsterhafens" cond="mission(mbegin)" monsters="minimo:mosqui" gold="8000">
+		<enter place="mport">
+			Du befolgst die Anweisungen des Zwielichtigen Mannes und schließlich gelingt es dir, in die Kanalisation des Monsterhafens vorzudringen. Ein finsterer und feuchter Ort ist das... und bestimmt voller Gefahren!
+		</enter>
+		
+		<stage skin="sewer2">
+
+			<scenario icon="scroll" micon="misc">
+				Antike archäologische Dokumente lassen vermuten, dass es einen geheimnisvollen Schatz unter der Monsterinsel gibt...
+			</scenario>
+
+		</stage>
+
+
+		<exit place="mfoutp">
+			Letztendlich hast du es wieder aus diesem bedrückenden Ort rausgeschafft! Es tut so gut, wieder helles Tageslicht zu sehen!
+		</exit>
+	</d>
+
+	<!-- ********************************************************************************************************* -->
+
+	<d id="mquetz" name="Der Tempel von Quetzaco" cond="scenario(monisl,4+)" monsters="minimo:mosqui:mantoo:ffrutx" gold="40000">
+
+		<enter place="mforst">
+			Du betrittst den Temptel von Quetzaco... hoffentlich schaffst du es auch wieder zurück an die Oberfläche!
+		</enter>
+
+		<stage skin="tomb">
+
+			<scenario monsters="singmu">
+				Du triffst auf ein wahrhaft ungewöhnliches Tier... Ob es dich weiterbringt, wenn du es tötest?
+			</scenario>
+
+			<scenario monsters="singmu"/>
+			<scenario monsters="singmu"/>
+			<scenario monsters="singmu"/>
+
+			<scenario icon="scroll" micon="misc" reload="1">
+				Unter altertümlichen Zeichnungen entdeckst du eine antike Pergamentrolle. Wie es scheint waren die Monster, denen du begegnet bist, einst die Wächter dieses Tempels. Du musst noch 3 Wächter besiegen, ehe du weiter in den den Tempel vordringen kannst...
+			</scenario>
+
+			<scenario block="1:2:3">
+				Du hörst ein Geräusch aus dem westlichen Bereich der Ruinen... Sollte sich ein neuer Durchgang geöffnet haben?
+			</scenario>
+
+			<scenario monsters="singmu:singmu:singmu"/>
+			<scenario monsters="singmu:singmu:singmu"/>
+			<scenario block="6:7">
+				Du hörst ein Geräusch aus dem westlichen Bereich der Ruinen... Sollte sich ein neuer Durchgang geöffnet haben?
+			</scenario>
+
+			<scenario obj="surviv">
+				In einer kleinen Truhe findest du einen interessanten Gegenstand, den du noch nie zuvor gesehen hast: eine Überlebensration!
+			</scenario>
+
+			<scenario icon="scroll" micon="misc">
+				Tagebucheintrag von Mandragore: "Grizorg war der erste, der das Geheimnis der Monsterinsel lüftete. Und nun finde ich es selber heraus! 
+				Wenn ich daran denke, dass dieser Idiot auf der Insel seiner Vorfahren zum Erzdorogon ernannt werden soll... Ich wäre so gerne dabei. Bei solchen Zeremonien gibt es immer ausgezeichnetes Essen und die Aussicht von da oben ist einfach überwältigend!"
+			</scenario>
+
+			<scenario block="0">
+				Du hörst ein Geräusch: Hat sich da vielleicht ein neuer Durchgang geöffnet?
+			</scenario>
+
+			<scenario block="4">
+				Du hörst ein Geräusch: Hat sich da vielleicht ein neuer Durchgang geöffnet?
+			</scenario>
+
+			<scenario obj="irma" count="10">
+				In einer kleinen Truhe findest du 10 von Irmas Tränken und eine kleine Karte des Tempels: Du bist gerade im Norden und irgendwo hier gibt es einen Schlüssel zum südlichen Teil des Tempels. Dort befindet sich der Durchgang zur Hauptstadt Cuzcous.
+			</scenario>
+
+		</stage>
+
+		<exit place="mcuzco">
+			Du entdeckst einen Spalt in den Ruinen. Als du hindurchschaust, siehst du den Himmel. Wie es scheint, war hier schon seit Jahrhunderten niemand mehr...
+		</exit>
+	</d>
+
+	<!-- ********************************************************************************************************* -->
+
+	<d id="mcuzco" name="Cuzcous-Ruinen" cond="scenario(monisl,5+)" monsters="minimo:mosqui:mantoo:ffrutx:singmu" gold="120000">
+
+		<enter place="mcuzco">
+			Du betrittst die Ruinen der ehemaligen Hauptstadt des Reichs der Monster: Cuzcous!
+		</enter>
+
+		<stage skin="cuzco">
+
+			<scenario icon="scroll" micon="misc">
+				Die Geschichte von Cuzcous, Kapitel 1: Die mächtige Stadt Cuzcous wird im ersten Jahr des Reichs gegründet. Nachdem das Hauptland schnell erobert wurde, wendet sich das Cuzcous-Reich nach dem Festland. Dort leben seltsame affenähnliche Kreaturen, die "Menschen" genannt werden.
+			</scenario>
+
+			<scenario icon="scroll" micon="misc">
+				Die Geschichte von Cuzcous, Kapitel 2: Dank der militärischen Überlegenheit der Cuzcous kontrollieren wir nun den Großteil des Festlands. Die ersten Herrscher der Cuzcous werden gekürt. In Übereinstimmung mit unserem Gesetz treffen von nun an ein Frutox und ein Vegetox alle Entscheidungen.
+			</scenario>
+
+			<scenario icon="scroll" micon="misc">
+				Die Geschichte von Cuzcous, Kapitel 3: Dank der "Pax Cuzcous" genannten Regulierung des Handels gelangt das Reich zu großem Reichtum. Die 4. Herrscher der Cuzcous machen die Hauptstadt damit zur schönsten Stadt auf der ganzen Welt, noch schöner sogar als die Städte auf dem Festland.
+			</scenario>
+
+			<scenario icon="scroll" micon="misc">
+				Die Geschichte von Cuzcous, Kapitel 4: Die 9. Herrscher der Cuzcous schwören, die Demyoms auszulöschen. Demyoms sind die unerlaubten Kinder aus Beziehungen zwischen Menschen und Einwohnern von Cuzcous. Jene, die zum Gott Quetzaco beten, hatten schon lange dagegen gekämpft und heißen diese Entscheidung gut.
+			</scenario>
+
+			<scenario icon="scroll" micon="misc">
+				Die Geschichte von Cuzcous, Kapitel 5: Eine hochansteckende, tödliche Seuche ist aufgetreten. Man sagt, sie breitet sich über die letzten überlebenden Demyoms aus. Das Reich ist ernsthaft geschwächt. Wir müssen aus der Stadt fliehen und wieder im Wald leben. Es geht das Gerücht um, dass die Menschen auf dem Festland rebellieren: Ob das Reich das überstehen wird?
+			</scenario>
+
+		</stage>
+
+		<stage skin="crypt2">
+
+			<scenario obj="irma" count="24">
+				So ordentlich wie diese 24 Tränke von Madame Irma in dieser Truhe aufgeschichtet sind, scheinen sie nur auf dich gewartet zu haben!
+			</scenario>
+
+			<scenario obj="hotpan" count="5">
+				Ah, 5 warme Brote! Und selbst wenn sie etwas fad schmecken, das ist genau das was du gebraucht hast, um dieses Abenteuer zu bestehen!
+			</scenario>
+
+		</stage>
+
+		<stage skin="crypt2">
+
+			<scenario monsters="cuzbos"/>
+
+			<scenario icon="chest" micon="misc" reload="1">
+				Du findest eine alte gravierte Platte mit den Wappen des Cuzcous-Reiches.
+			</scenario>
+
+			<scenario block="1">
+				Du hörst ein schabendes Geräusch. ...ganz so als würde sich ein Durchgang öffnen. Du spürst einen Schwall frischer Luft. Ist das endlich der Weg nach draußen?
+			</scenario>
+
+		</stage>
+
+		<exit place="mcuzco">
+			Es fühlt sich fantastisch an, wieder unter freiem Himmel zu sein. Doch was genau hatte der Wächter mit dem Fluch gemeint?
+		</exit>
+
+	</d>
+
+</dungeons>

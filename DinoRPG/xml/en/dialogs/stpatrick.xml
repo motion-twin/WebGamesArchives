@@ -1,0 +1,139 @@
+<!-- ANIMATION DE ST.PATRICK 2013 SERVEUR EN-->
+
+<d place="port" name="Shaun DeLear" gfx="leprechaun" cond="active(leprechaun)+gvar(xavent,0)+event(xstpatrick)+!uvar(xmasev)">
+	<phase id="begin" background="1" next="gift">
+		[Top o' the mornin' to ye!]
+		[Ah sure it's the calm before the storm today lad... it's a big weekend!]
+		[Ah come on now, don't be tellin' me ye didn't know St. Patrick's day is this weekend?]
+		[Haha yer windin' me up 'der sure? Ah ye nearly got me 'der! Here ye go, here's a gift for ye!]
+	</phase>	
+	<a id="gift">Wow, 3 Irma's potions! Thanks very much!!</a>
+	<phase id="gift" give="irma:3" nocheck="1" next="cool" uvar="xmasev:1" background="1">		
+		[Well then, I'll be off... Gots to get ready for de drinkin' an' de partyin' sure, there's a few of us gettin on it!]
+		[Be well!]
+	</phase>
+	<a id="cool">Thanks for the potions Shaun!</a>
+	<phase id="cool" fast="1" frame="atchoz" background="1">
+		You head off, over the moon, with the Irma's Potions in your hand!
+		I thought leprechauns were evil... maybe I've just been watching too many low-budget horror movies!
+	</phase>
+</d>
+
+<d place="fosslv" name="Al O'Moaney" gfx="leprechaun" cond="(active(leprechaun)|admin())+gvar(xavent,1)+event(xstpatrick)+!uvar(xmasev)">
+	<phase id="begin" background="2" next="gift">
+		[Hi diddle dee dee, a... Oh! Hello there - nice weather for ducks, eh fella?]
+		[I hear ye met me brother Shaun yesterday, me name's Al O'Moaney, but Betty when you call me you can call me Al!]
+		[I'm full o' the joys today to be sure, although I might just be full of the Guinness! Have a grand St. Patrick's day weekend!]
+	</phase>	
+	<a id="gift">What's this? More gifts? Sweet!!</a>
+	<phase id="gift" give="xmtix:1" nocheck="1" next="cool" uvar="xmasev:1" background="2">
+		[Der ye go! Take this *Xmas Ticket*, I found a wheen o them in me oul' strides - get yersel' up te Dinotown - get in about the snowplough game der!]
+		[Now be off wit ye, sure it's Oireland France in Paris today, an' I'm not missin' that sure!]
+		[*singing* From the mighty glens of Antrim, from the rugged hills of Galway...]
+	</phase>
+	<a id="cool">Thanks for the ticket Al, I'll be seeing you!</a>
+	<phase id="cool" fast="1"  frame="simploz" background="2">
+		You head off, over the moon, with the ticket in your hand!
+		I thought leprechauns were miserly... maybe I should stop reading graphic novels!
+	</phase>
+</d>
+
+<d place="svillg" name="Pat MacGroyne" gfx="leprechaun" cond="(active(leprechaun)|admin())+gvar(xavent,2)+event(xstpatrick)+!uvar(xmasev)">
+	<phase id="begin" background="3" next="affts">	
+		[...*singing*: Oh I used to work in Killarney, in de ol' department store, I used to work in Killarney, I don't work der any more!]
+		[A man came into de store one day an' he asked me for some a light snack he did.]
+	</phase>
+	<a id="affts">A light snack from the store?</a>
+	<phase id="affts" next="gift">
+		[A light snack from the store. A light snack he wanted, A Cloud Burger he got! I don't work there any more.]
+	</phase>
+	<a id="gift">Haha! I hope this isn't your day job!</a>
+	<phase id="gift" give="burger:2" nocheck="1" next="cool" uvar="xmasev:1" background="3">
+		[There ye are! Some burgers fer me favourite master!]
+		[Right handy them there fer perkin' yer dinoz up lively boy...]
+		[Sure you might bump into my second cousin twice removed if you're around tomorrow...]
+	</phase>
+	<a id="cool">Thanks, that's really kind of you!</a>
+	<phase id="cool" fast="1" frame="joyoz" background="3">
+		You head off, over the moon, with the burgers in your bag!
+		It's a shame Pat wasn't staying longer - I was really getting to like him!
+	</phase>	
+</d>
+
+<d place="corail" name="Paddy O'Furniture" gfx="leprechaun" cond="(active(leprechaun)|admin())+gvar(xavent,3)+event(xstpatrick)+!uvar(xmasev)">
+	<phase id="begin" background="3" next="gift">
+		[Ah helloow there, Happy St Paddy's Day! What a day we had yesterday fella!]
+		[Just back from the Hairy Lemon for breakfast der - it's better than the coffee and the coffee's massive!]
+		[I found these in my coat this morning when I woke up in the hedge der - take 'em, they're yours! I say my coat, I found it in the hedge. Anyways...]
+	</phase>
+	<a id="gift">Awesome! I love digging up Joe's garden!</a>
+	<phase id="gift" give="tictac:2" nocheck="1" next="cool" uvar="xmasev:1" background="3">
+		[Joe's a good man sure, just don't go breakin' his shovels!]
+		[Right, dinner at Bear fir me me lad, ye should come, de craic'll be noinety!]
+		[Good luck te ye!]
+	</phase>
+	<a id="cool">Thanks for everything, especially the tickets - they're really useful!</a>
+	<phase id="cool" fast="1" frame="neigeoz" background="3">
+		You head off, over the moon, with tickets burning holes in your pockets!
+		Maybe it's not true what they say about leprechauns - this one seems pretty likeable!
+	</phase>
+</d>
+
+<!--
+<d place="iroche" name="Rick O'Shea" gfx="leprechaun" cond="active(leprechaun)+gvar(xavent,4)+event(xstpatrick)+!uvar(xmasev)">
+	<phase id="begin" background="1" next="gift">
+		[Ah hello hello 'der master!]
+		[I hope yer as excited as we are for the weekend now!]
+		[There'll be dancin' in the streets of Dinotown this Sunday to be sure!]
+		[If yer not there, ye'll be missin' out there so! Take this bread to keep the wolf from the door!]
+	</phase>	
+	<a id="gift">Authentic bread? Brilliant, this will definitely come in handy!!</a>
+	<phase id="gift" give="hotpan:1" nocheck="1" next="cool" uvar="xmasev:1" background="1">		
+		[OK, I can't hang around all day... If you're doing some travelling, you might bump into my cousin Phil tomorrow!]
+		[If you do, tell 'im he'd better not be late for Sunday!]
+	</phase>
+	<a id="cool">Thanks for the bread Rick!</a>
+	<phase id="cool" fast="1" frame="atchoz" background="1">
+		You head off happy to have met Mr O'Shea and aven happier with the free bread!!
+		There I thought St. Paddy's day was just for the Irish... seems everyone is invited!
+	</phase>
+</d>
+
+<d place="cpuits" name="Phil McCracken" gfx="leprechaun" cond="(active(leprechaun)|admin())+gvar(xavent,5)+event(xstpatrick)+!uvar(xmasev)">
+	<phase id="begin" background="3" next="gift">
+		[Mornin' mornin' mornin'!]
+		[You've just caught me, I'm off down the Old Storehouse fir a couple before stockin' up for tomorrow... the big day!]
+		[Got to go, but take this and top o' the mornin' to ya...]
+	</phase>
+	<a id="gift">And the rest o' the day to yourself Phil!! (Where did THAT come from?) Erm... Thanks, I love Magic Fuses</a>
+	<phase id="gift" give="petard:2" nocheck="1" next="cool" uvar="xmasev:1" background="3">
+		[Head over to Dinotown and try yer luck on the grid!]
+		[I'm not goin' to need them this weekend... sur I'll have forgotten I gave you them by tomorrow!]
+		[All the best sir!]
+	</phase>
+	<a id="cool">Thanks for the fuses Phil - fingers crossed!</a>
+	<phase id="cool" fast="1" frame="neigeoz" background="3">
+		You head off, over the moon, with the fuses nesteld in your hip pocket!
+		I could really get used to these little guys hanging around you know...
+	</phase>
+</d>
+
+<d place="dnv" name="Ronan O'Haha" gfx="leprechaun" cond="(active(leprechaun)|admin())+gvar(xavent,6)+event(xstpatrick)+!uvar(xmasev)">
+	<phase id="begin" background="3" next="gift">	
+		[Hello der Dinoz Master!]
+		[Sure ye just caught me - I'm headin' back to Ireland tonight.
+		It's been a pleasure sure, here - take these!]
+	</phase>
+	<a id="gift">Wow! Awesome!!</a>
+	<phase id="gift" give="tictac:2" nocheck="1" next="cool" uvar="xmasev:1" background="3">
+		[There you go! A couple o' tickets for the big game at Joe's!]
+		[Best get up there before the place is all dug up sure!]
+		[Ye'll not be seein' me for a while - Take care!]
+	</phase>
+	<a id="cool">Thanks, that's really kind of you!</a>
+	<phase id="cool" fast="1" frame="joyoz" background="3">
+		You head off, over the moon, with the tickets in your hand!
+		St. Paddy's day is almost gone... maybe we'll see you next year!
+	</phase>	
+</d>
+-->

@@ -1,0 +1,47 @@
+<!-- TO-DO   dialogue menthos fin de nimbao 2 -->
+
+	
+<d place="observ" gfx="sage_mentos" name="Sabio Menthos" cond="scenario(nimba2,51+)">
+	<phase id="begin" next="sage">
+		Gracias a mi rol de consejero conozco el palacio como la palma de mi mano.
+		Ahora que no hay fronteras, desplazarse en Nimbao se ha vuelto muy fácil...
+	</phase>
+
+	<a id="sage">Inclinarse respetuosamente</a>
+	
+	<phase id="sage" gfx="sage_mentos" name="Sabio Menthos" background="1" next="ques3:ques4">
+		Que el Sol esté contigo, Maestro de Dinos.
+		Pregúntame lo que desees.
+	</phase>
+
+	<a id="ques3">¡Hay muchos libros aquí!</a>
+	<a id="ques4">¿Puedes contarme la historia de Dinoland?</a>
+	
+	<phase id="ques3" next="ques3:ques4:merc"  gfx="sage_mentos" name="Sabio Menthos" background="1">
+		[Este observatorio sirve de bibilioteca para nosotros los dorogones. Anotamos aquí todo lo que acontece en la superficie, incluso acerca de la separación de la isla.]
+		[¿Sabías por ejemplo que Nimbao no es más que la cima del Gran Todo Quema? Fue expulsada a los aires hace miles de años, mucho antes de la caída de la isla de Jazz.]
+		[Flota gracias a una propiedad física especial de la roca que constituye su suelo. Desde entonces tenemos una vista privilegiada.]
+	</phase>
+	
+	<phase id="ques4" next="ques3:ques4:merc"  gfx="sage_mentos" name="Sabio Menthos" background="1">
+		[En el inicio de los tiempos, le enseñamos al hombre los conceptos básicos de la supervivencia, a hacer fuego y muchas otras cosas, como a domar animales salvajes.]
+		[Toda la historia está registrada en los archivos del Observatorio. Pero todos han sido escritos en el idioma dorogón antiguo, y solo los más expertos saben descifrarlos.]
+		[Yo me encargo de traducirlos para que las generaciones futuras conozcan y transmitan la historia de Dinoland.]
+	</phase>
+	
+	<a id="merc">Gracias por esas informaciones.</a>
+	
+	<phase id="merc" fast="1" frame="stop">
+		El viejo sabio vuelve a sus ocupaciones, su tarea es incansable.
+	</phase>
+</d>
+
+<d place="palais" gfx="sage_mentos" name="Sabio Menthos" background="2" cond="scenario(nimba2,51+)">
+	<phase id="begin">
+		[Mandrágora ha rechazado el puesto de Archidorogón, le encontrarás en su casa, le oí hablar de una recompensa.]
+		[Me quedo junto a Pistache, ahora que el consejo de dorogones le ha nombrado Archidorogón, necesitará de nuestra ayuda para cumplir su misión. Confío en él. ¡Todo ira bien!]
+	</phase>
+</d>
+
+
+

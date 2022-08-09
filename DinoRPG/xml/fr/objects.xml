@@ -1,0 +1,615 @@
+﻿<objects>
+	<!------------------------------- TEMPORAIRE SCENARIO ------------------------------>
+
+	<o id="ptsage" name="point de sagesse" max="5">
+		<desc>Un point de sagesse donné par un Dorogon dans la cité supérieure. En avoir 5 en sa possession permet de rencontrer l'Archidorogon.</desc>
+	</o>
+	
+	<o id="remede" name="Elixir de vie" max="1">
+		<desc>Un remède capable de soigner le vénérable du mal qui le ronge. Obtenu grâce à l'extrait de sève d'une plante que l'on ne trouve que sur l'île Céleste,
+		il est désormais presque impossible d'en trouver un autre exemplaire.</desc>
+	</o>
+	
+	<o id="fmedaa" icon="fmedal" name="Fragment de médaillon" max="1" limit="1">
+		<desc>Vous avez retouvé le premier fragment du médaillon à 3 yeux. D'après l'archidorogon, si vous arrivez à le reconstituer, vous pourrez accèder au "lieu de recueil en terre sainte (?)".</desc>
+	</o>
+	
+	<o id="fmedab" icon="fmedal" name="Fragment de médaillon" max="1" limit="1">
+		<desc>Vous avez retouvé le deuxième fragment du médaillon à 3 yeux. D'après l'archidorogon, si vous arrivez à le reconstituer, vous pourrez accèder au "lieu de recueil en terre sainte (?)".</desc>
+	</o>
+	
+	<o id="fmedac" icon="fmedal" name="Fragment de médaillon" max="1" limit="1">
+		<desc>Vous avez retouvé troisième fragment du médaillon à 3 yeux. D'après l'archidorogon, si vous arrivez à le reconstituer, vous pourrez accèder au "lieu de recueil en terre sainte (?)".</desc>
+	</o>
+	
+	<o id="fmedad" icon="fmedal" name="Fragment de médaillon" max="1" limit="1">
+		<desc>Vous avez retouvé quatrième fragment du médaillon à 3 yeux. D'après l'archidorogon, si vous arrivez à le reconstituer, vous pourrez accèder au "lieu de recueil en terre sainte (?)".</desc>
+	</o>
+	
+	<o id="fmedae" icon="fmedal" name="Fragment de médaillon" max="1" limit="1">
+		<desc>Vous avez retouvé cinquième fragment du médaillon à 3 yeux. D'après l'archidorogon, si vous arrivez à le reconstituer, vous pourrez accèder au "lieu de recueil en terre sainte (?)".</desc>
+	</o>
+	
+	<o id="fmedaf" icon="fmedal" name="Fragment de médaillon" max="1" limit="1">
+		<desc>Vous avez retouvé sixième fragment du médaillon à 3 yeux. D'après l'archidorogon, si vous arrivez à le reconstituer, vous pourrez accèder au "lieu de recueil en terre sainte (?)".</desc>
+	</o>
+	
+	<o id="fmedag" icon="fmedal" name="Fragment de médaillon" max="1" limit="1">
+		<desc>Vous avez retouvé septième fragment du médaillon à 3 yeux. D'après l'archidorogon, si vous arrivez à le reconstituer, vous pourrez accèder au "lieu de recueil en terre sainte (?)".</desc>
+	</o>
+	
+	<o id="metal" icon="metal" name="Bout de métal" max="3" limit="3">
+		<desc>Le métal des steppes est réputé pour être de très bonne qualité, il faut toutefois le confier à un bon artisan pour en tirer le meilleur parti.</desc>
+	</o>
+	
+	<o id="icepie" icon="icepie" name="Morceau de glace" max="1" limit="1">
+		<desc>Ce glaçon fond très lentement, idéal pour les climatiseurs !</desc>
+	</o>
+	
+	<o id="pile" icon="icedoc" name="Pile sous-marine" max="1" limit="1">
+		<desc>Une pile chargée à bloc, ne peut servir que dans les laboratoires high-tech !</desc>
+	</o>
+	
+	<!------------------------------- EVENT SPECIAUX ------------------------------>
+	
+	<o id="paques" name="Oeuf de Madame Urma" max="300">
+		<desc>Un oeuf d'Urma permet d'obtenir un objet parmi tous ceux qui existent à Dinoland. Objet Rare ou commum, la chance sera-t-elle de votre côté ?</desc>
+		<effect>Vous avez gagné quelque chose, vérifiez vite votre inventaire pour savoir quoi !</effect>
+	</o>
+	
+	<!------------------------------- BASE OBJECTS + SOINS ------------------------------>
+		
+	<o id="gold" name=" pièces d'or" max="10000">
+		<desc></desc>
+	</o>
+
+	<o id="irma" name="Potion de Madame Irma" max="100">
+		<desc>La fameuse Potion de Madame Irma permet au Dinoz qui la boit de *jouer une nouvelle action immédiatement* sans devoir attendre le lendemain.</desc>
+		<effect>*::name::* a bu la Potion de Madame Irma et peut donc faire une nouvelle action immédiatement !</effect>
+	</o>
+	
+	<o id="irma2" name="Potion de Madame Irma spéciale" max="3">
+		<desc>La fameuse Potion de Madame Irma permet au Dinoz qui la boit de *jouer une nouvelle action immédiatement* sans devoir attendre le lendemain. Mais vous ne pouvez en porter que 3.</desc>
+		<effect>*::name::* a bu la Potion de Madame Irma et peut donc faire une nouvelle action immédiatement !</effect>
+	</o>
+
+	<o id="angel" name="Potion d'Ange" max="10">
+		<desc>Si votre Dinoz est mort, utilisez une Potion d'Ange pour le *ressusciter sans pénalité d'expérience*.</desc>
+		<effect>Vous avez soigné *::name::* grâce à une Potion d'Ange ! Il est revenu à la vie et se repose.</effect>
+	</o>
+
+	<o id="burger" name="Nuage Burger" max="30">
+		<desc>Un bon Burger permet de rendre *10 points de vie* à votre Dinoz. A base de Nuage, il ne pèse pas trop sur l'estomac, donc aucun risque d'indigestion !</desc>
+		<effect>*::name::* a regagné ::pv:: points de vie ! Il est très heureux et vous remercie.</effect>
+		<fight proba="50" priority="1"/>
+	</o>
+
+	<o id="hotpan" name="Pain Chaud Authentique" max="10">
+		<desc>En cas de petit coup de blues, un bon pain chaud va rendre *100 points de vie* à votre Dinoz ! Parfait avant de partir vaincre les dragons et autres affreux monstres.</desc>
+		<effect>*::name::* a regagné ::pv:: points de vie d'un coup ! Avec ça, il va pouvoir écraser des monstres pendant un bon moment !</effect>
+	</o>
+	
+	<o id="remed2" name="Elixir" max="5">
+		<desc>Un remède surpuissant utilisé par les plus puissants maîtres Dinoz pour guérir leurs fidèles compagnons. un elixir va rendre *200 points de vie*</desc>
+		<effect>*::name::* a regagné ::pv:: points de vie d'un coup ! Avec ça, il va pouvoir continuer son aventure !</effect>
+	</o>
+
+	<o id="tartev" name="Tarte à la Viande" max="20">
+		<desc>Si votre Dinoz a un gros appétit, rien de mieux qu'une bonne Tarte à la Viande. Elle lui rendra *30 points de vie* instantanément.</desc>
+		<effect>*::name::* a récupéré ::pv:: points de vie ! Miam, il s'est bien régalé.</effect>
+	</o>
+
+	<o id="ration" name="Ration de Combat" max="10">
+		<desc>En cas de gros pépin, la ration de combat peut vous rendre *jusqu'à 20 points de vie* lors d'un combat.</desc>
+		<fight proba="50" priority="1"/>
+	</o>
+	
+	<o id="surviv" name="Ration de Survie" max="10">
+		<desc>En cas de blessures graves, la ration de combat peut vous rendre *entre 10 et jusqu'à 40 points de vie* lors d'un combat.</desc>
+		<fight proba="50" priority="1"/>
+	</o>
+	
+	<o id="mergz" name="Merguez de Gobelin" max="5">
+		<desc>La spécialité du Grand-Tout-Chaud. A consommer avec beaucoup de modération !</desc>
+		<fight proba="20" priority="1"/>
+	</o>
+	
+	<o id="fruit" name="Pampleboum" max="10">
+		<desc>Ce beau fruit appétissant n'attend qu'un grand coup de dent pour vous rendre 15 points de vie !</desc>
+		<effect>*::name::* a récupéré ::pv:: points de vie. Vous récupérez un *Noyau de Pampleboum* ! Attention à ne pas mordre dedans par accident...</effect>
+	</o>
+
+	<!------------------------------- GTC OBJECTS ------------------------------>
+
+	<o id="hlmsos" name="Casque de Secours" max="15">
+		<desc>Augmente l'armure de votre Dinoz de 1 point quand il est utilisé.</desc>
+		<fight proba="50" priority="1"/>
+	</o>
+
+	<o id="ppoiv" name="Petit Poivron" max="15">
+		<desc>Augmente de 10 points le prochain assaut de votre Dinoz.</desc>
+		<fight proba="50" priority="1"/>
+	</o>
+
+	<o id="zippo" name="Briquet" max="15">
+		<desc>Votre Dinoz s'enflamme !</desc>
+		<fight proba="50" priority="1"/>
+	</o>
+	
+	<o id="flamch" name="Flammèche de Secours" max="15">
+		<desc>Rien de tel qu'une Flammèche de Secours pour venir vous aider pendant un combat.</desc>
+		<fight proba="50" priority="1"/>
+	</o>
+	
+	<o id="combi" name="Bouclier réfrigéré" max="15">
+		<desc>Augmente la défense contre le Feu de 20.</desc>
+		<fight proba="50" priority="1"/>
+	</o>
+	
+	<!------------------------------- OBJETS UTILES ------------------------------>
+	
+	<o id="fuca" name="Dragée Fuca" max="5" trade="1000">
+		<desc>Augmente de 50% la vitesse des attaques de votre Dinoz.</desc>
+		<fight proba="20" priority="3"/>
+	</o>
+	
+	<o id="monoch" name="Monochromatique" max="5" trade="5000">
+		<desc>Les assauts de votre Dinoz deviennent tous de la couleur de son meilleur élément.</desc>
+		<fight proba="15" priority="5"/>
+	</o>
+	
+	<o id="antip" name="Piqûre de Poisonite" max="10" trade="300">
+		<desc>Protège votre Dinoz des effets du poison.</desc>
+		<fight proba="0" priority="0"/>
+	</o>
+	
+	<o id="confus" name="Costume de Lorie" max="10" trade="400" family="abus">
+		<desc>Un ennemi attaque un de ses compagnons.</desc>
+		<fight proba="30" priority="4"/>
+	</o>
+	
+	<o id="costve" name="Costume de Garde Végétox" max="5" trade="1000">
+		<desc>Ce costume permet de déguiser votre Dinoz en Garde Végétox pendant le combat. Attention, il résiste assez mal au feu...</desc>
+		<fight proba="0" priority="0"/>
+	</o>
+	
+	<o id="costgb" name="Costume de Gobelin" max="5" trade="1000">
+		<desc>Ce costume permet de déguiser votre Dinoz en Gobelin pendant le combat. Attention, il résiste assez mal au feu...</desc>
+		<fight proba="0" priority="0"/>
+	</o>
+	
+	<o id="noyau" name="Noyau de Pampleboum" max="15">
+		<desc>Le noyau du Pampleboum est particulièrement fragile et peut se briser au moindre choc. Son contenu est particulièrement toxique ! C'est la raison pour laquelle certains l'utilisent en combat pour s'assurer un petit avantage lors d'un assaut.</desc>
+		<fight proba="50" priority="1"/>
+	</o>
+ 
+	<o id="amour" name="Amour Portable" max="10" trade="300">
+		<desc>L'amour donne des ailes... votre Dinoz pourra attaquer les ennemis volants.</desc>
+		<fight proba="70" priority="1"/>
+	</o>
+
+	<o id="danger" name="Détecteur de Danger" max="5" trade="4000">
+		<desc>Cet objet permet de protéger une fois votre Dinoz contre un effet indirect entraînant la perte de plus de 25PV.</desc>
+		<fight proba="0" priority="0"/>
+	</o>
+	
+	<o id="bamboo" name="Ami Bambooz" max="1" lock="1">
+		<desc>Un ami Bambooz viendra aider votre Dinoz pendant les combats !</desc>
+		<fight proba="0" priority="0"/>
+	</o>
+
+	<!------------------------------- MAUDIT SHOP OBJECTS ------------------------------>
+
+	<o id="odemon" name="Onguent du Démon" max="5" trade="5000">
+		<desc>Un puissant onguent, pâteux, de couleur sombre, et à l'odeur extrêmement désagréable. Il faut s'en enduire le corps pour faire disparaître certaines malédictions !</desc>
+		<effect>Les Malédictions de ::name:: ont été éliminées, mais l'odeur de l'Onguent devrait le suivre pendant quelques temps...</effect>
+	</o>
+
+	<o id="piran" name="Pirhanoz-en-Sachet" max="10">
+		<desc>Un Pirhanoz enfermé dans son sachet, prêt à être déployé en combat quand on a besoin de lui !</desc>
+		<fight proba="50" priority="1"/>
+	</o>
+	
+	<!------------------------------- NIMBAO ISLAND OBJECTS ------------------------------>
+	
+	<o id="cendre"	name="Pays de cendre" max="1" trade="2000" family="nimbao">
+		<desc>Cet objet plonge la zone de combat dans une fournaise suffocante.
+		*Tous les dinoz* n'ayant pas au moins *10 points en élément feu* n'utilisent plus de compétences A et E pendant les 3 prochains tours du lanceur.</desc>
+		<fight proba="100" priority="1"/>
+	</o>
+		
+	<o id="abysse"	name="Abysse" max="1" trade="2000" family="nimbao">
+		<desc>Cet objet plonge la zone de combat dans les abysses.
+		*Tous les dinoz* n'ayant pas au moins *10 points en élément eau* voient la puissance de leurs attaques et assauts diminuer de 25% pendant les 3 prochains tours du lanceur.</desc>
+		<fight proba="100" priority="1"/>
+	</o>
+	
+	<o id="amazon"	name="Amazonie" max="1" trade="2000" family="nimbao">
+		<desc>Cet objet plonge la zone de combat en pleine jungle tropicale.
+		*Tous les dinoz* n'ayant pas au moins *10 points en élément bois* s'endorment durant les 3 prochains tours du lanceur à moins qu'ils subissent une attaque faisant perdre plus de 10 PV.</desc>
+		<fight proba="100" priority="1"/>
+	</o>
+		
+	<o id="stelme"	name="Feu de St Elme" max="1" trade="2000" family="nimbao">
+		<desc>Cet objet plonge la zone de combat dans un champ magnétique puissant.
+		*Tous les dinoz* n'ayant pas au moins *10 points en élément foudre* subissent 5% PV pendant les 3 prochains tours du lanceur.</desc>
+		<fight proba="100" priority="1"/>
+	</o>
+	
+	<o id="ourano"	name="Ouranos" max="1" trade="2000" family="nimbao">
+		<desc>Cet objet plonge la zone de combat dans un ouragan dévastateur.
+		*Tous les dinoz* n'ayant pas au moins *10 points en élément air* voient leur vitesse diminuer de 50% pendant les 3 prochains tours du lanceur.</desc>
+		<fight proba="100" priority="1"/>
+	</o>
+	
+	<!------------------------------- NEW OBJECTS ------------------------------>
+	
+	<o id="boost"	name="Graine d'expérience" max="10">
+		<desc>La graine d'expérience permet au dinoz qui l'utilise de gagner le double d'expérience à la fin du combat.</desc>
+	</o>
+
+	<o id="sterod"	name="Stérodino" max="10">
+		<desc>Le stérodino permet au dinoz qui l'utilise de récupérer 50 points d'énergie pendant le combat.</desc>
+	</o>
+	
+	<o id="parfum"	name="Parfum d'oubli" max="6" trade="25000">
+		<desc>Cet objet, utilisable uniquement par des dinoz ayant dépassé le niveau 50, lui permet de revenir à ce niveau en oubliant les compétences apprises entre temps.</desc>
+	</o>
+	
+	<o id="cofee" name="Thé concentré" max="10" trade="2000">
+		<desc>Ce thé ultra concentré, préparé par Chen elle-même, vous permet d'annuler les effets de l'objet bière sur votre équipe.</desc>
+		<fight proba="60" priority="1"/>
+	</o>
+	
+	<o id="ptime" name="Stabilisateur temporel" max="10" trade="3000">
+		<desc>La technologie Dorogon a permis de mettre au point un objet capable de briser l'objet manipulateur temporel. Malheureusement, il est trop fragile pour supporter plus d'une utilisation.</desc>
+		<fight proba="0" priority="1"/>
+	</o>
+	
+	<!--
+	<o id="compri"	name="Aspirune" max="10">
+		<desc>L'Aspirune permet au dinoz qui l'utilise de booster son taux de récupération d'énergie pendant le combat.</desc>
+	</o>
+	-->
+	<!------------------------------- MAGIC SHOP OBJECTS ------------------------------>
+
+	<o id="mbann" name="Bannissement" max="5" lock="1">
+		<desc>Empêche tous les Dinoz d'appeler des renforts pendant le combat</desc>
+		<fight proba="0" priority="0"/>
+	</o>
+
+	<o id="mbeli" name="Bélier" max="5" lock="1">
+		<desc>Le Dinoz attaque deux fois le château adverse en cas de victoire</desc>
+		<fight proba="0" priority="0"/>
+	</o>
+
+	<o id="mbrais" name="Braise" max="5" lock="1">
+		<desc>Augmente les assauts de feu de tous les combattants de 30%</desc>
+		<fight proba="0" priority="0"/>
+	</o>
+
+	<o id="mbalan" name="Balance" max="5" lock="1">
+		<desc>Un Dinoz adverse est tué si votre Dinoz meurt pendant le combat</desc>
+		<fight proba="0" priority="0"/>
+	</o>
+
+	<o id="mbala2" name="Balance" max="5" lock="1">
+		<desc>Un Dinoz adverse est tué si votre Dinoz meurt pendant le combat *(Rechargement en Cours)*</desc>
+		<fight proba="0" priority="0"/>
+	</o>
+
+	<o id="mbeer" name="Bière" max="5" lock="1">
+		<desc>Empêche tous les Dinoz de regagner des points de vie pendant le combat</desc>
+		<fight proba="0" priority="0"/>
+	</o>
+
+	<o id="mencly" name="Encyclopédie" max="5" lock="1">
+		<desc>Augmente le gain d'experience en fin de combat de 15%</desc>
+		<fight proba="0" priority="0"/>
+	</o>
+
+	<o id="mantic" name="Antichromatique" max="5" lock="1">
+		<desc>Annule l'effet des Monochromatiques utilisés par l'adversaire</desc>
+		<fight proba="0" priority="0"/>
+	</o>
+
+	<o id="mantip" name="Antipoison" max="5" lock="1">
+		<desc>Immunise le Dinoz au Poison de façon permanente</desc>
+		<fight proba="0" priority="0"/>
+	</o>
+
+	<o id="mtime" name="Manipulateur Temporel" max="5" lock="1">
+		<desc>Plus aucun Dinoz ne peut utiliser de compétence de type Evénement</desc>
+		<fight proba="0" priority="0"/>
+	</o>
+
+	<o id="mpdim" name="Poudre dimensionnelle" max="5" lock="1">
+		<desc>Dés qu'un Dinoz arrive en dessous de 10 PV, il est envoyé dans un trou noir et quitte le combat.</desc>
+		<fight proba="0" priority="0"/>
+	</o>
+
+	<o id="mbaget" name="Baguette du Sorcier" max="5" lock="1">
+		<desc>Diminue les points de vie d'un Dinoz au hasard présent dans la zone de combat de 30% au lieu d'effectuer un assaut, la baguette ne fonctionne pas contre les monstres.</desc>
+		<fight proba="0" priority="0"/>
+	</o>
+
+	<o id="mhelp" name="Sifflet Amical" max="5" lock="1">
+		<desc>Quand votre Dinoz effectue un assaut contre un autre Dinoz, ses amis qui n'ont pas de sifflet viennent lui prêter main-forte</desc>
+		<fight proba="0" priority="0"/>
+	</o>
+	
+	<!-- Nouveaux objets magiques -->
+	<o id="plandc" name="Dinoz cube" max="5" lock="1">
+		<desc>Le dinoz peut relancer une fois le tirage de la grille d'élément lors du passage d'un niveau jusqu'au niveau 10.</desc>
+		<fight proba="0" priority="0"/>
+	</o>
+
+	<o id="dampt" name="Amortisseur temporel" max="5" lock="1">
+		<desc>Réduit les bonus et malus d'initiative sur le dinoz équipé de 50%.</desc>
+		<fight proba="0" priority="0"/>
+	</o>
+	
+	<o id="tearlf" name="Larme de vie" max="5" lock="1">
+		<desc>Donne aux clones du porteur de la larme 10% de sa vie.</desc>
+		<fight proba="0" priority="0"/>
+	</o>
+	
+	<o id="mindim" name="Masque Cuzcous" max="5" lock="1">
+		<desc>Empêche les membres de l'équipe du porteur d'être hypnotisés.</desc>
+		<fight proba="0" priority="0"/>
+	</o>
+
+	<o id="agrav" name="Combinaison anti-grave" max="5" lock="1">
+		<desc>Annule les aspirations dans les trous noirs de toute l'équipe du dinoz porteur de l'objet.</desc>
+		<fight proba="0" priority="0"/>
+	</o>
+
+	
+	<o id="stero" name="Stéroïde féérique" max="5" lock="1">
+		<desc>Protège le porteur contre tous les malus visant le maximum d'endurance. Son maximum de points d'endurance ne peut pas baisser.</desc>
+		<fight proba="0" priority="0"/>
+	</o>
+	
+	<o id="loking" name="Cadenas maudit" max="5" lock="1">
+		<desc>Bloque au hasard un dinoz adverse sur son élément le plus faible durant 3 cycles.</desc>
+		<fight proba="0" priority="0"/>
+	</o>
+	
+	<o id="trouil" name="Trouillomètre" max="5" lock="1">
+		<desc>Un dinoz ayant acquis la compétence brave et portant cet objet, pourra se grouper avec des dinoz ayant la même affinité élémentaire que lui.</desc>
+		<fight proba="0" priority="0"/>
+	</o>
+	
+	<!-- Objets rares (non achetables) -->
+	<o id="vlife" name="Voleur de vie" max="5" lock="1">
+		<desc>Lorsque le dinoz passe en dessous des 20 points de vie, il vole 30 points de vie à un adversaire aléatoire et se les attribue.</desc>
+		<fight proba="0" priority="0"/>
+	</o>
+	
+	<!------------------------------- SPHERES DE COMPETENCES ------------------------------>
+
+	<o id="spher1" name="Sphère de Feu" max="100" trade="10000">
+		<desc>Une Sphère Elémentaire permet à votre Dinoz d'apprendre directement une des compétences sphériques !</desc>
+		<effect>*::name::* a appris la compétence sphérique *::skill::* !</effect>
+	</o>
+
+	<o id="spher2" name="Sphère de Bois" max="100" trade="10000">
+		<desc>Une Sphère Elémentaire permet à votre Dinoz d'apprendre directement une des compétences sphériques !</desc>
+		<effect>*::name::* a appris la compétence sphérique *::skill::* !</effect>
+	</o>
+
+	<o id="spher3" name="Sphère d'Eau" max="100" trade="10000">
+		<desc>Une Sphère Elémentaire permet à votre Dinoz d'apprendre directement une des compétences sphériques !</desc>
+		<effect>*::name::* a appris la compétence sphérique *::skill::* !</effect>
+	</o>
+
+	<o id="spher4" name="Sphère de Foudre" max="100" trade="10000">
+		<desc>Une Sphère Elémentaire permet à votre Dinoz d'apprendre directement une des compétences sphériques !</desc>
+		<effect>*::name::* a appris la compétence sphérique *::skill::* !</effect>
+	</o>
+
+	<o id="spher5" name="Sphère d'Air" max="100" trade="10000">
+		<desc>Une Sphère Elémentaire permet à votre Dinoz d'apprendre directement une des compétences sphériques !</desc>
+		<effect>*::name::* a appris la compétence sphérique *::skill::* !</effect>
+	</o>
+	
+	<!------------------------------- TICKETS ------------------------------>
+		
+	<o id="tictac" name="Tickets Taque" max="36" trade="5000">
+		<desc>Ces Tickets Taque vous permettront de fouiller dans le jardin de Papy Joe, à la recherche des trésors enfouis par son arrière grand-père.</desc>
+	</o>
+
+	<o id="xmtix" name="Ticket de Noël" max="5000" trade="5000">
+		<desc>Ce Ticket de Noël vous permet d'accéder au jeu du chasse-neige à Dinoville !</desc>
+	</o>
+
+	<o id="ptix" name="Ticket Parrain" max="100">
+		<desc>Ce Ticket Parrain vous a été donné suite à l'inscription d'un joueur parrainé. Vous pouvez l'utiliser sur la Place du Marché !</desc>
+	</o>
+
+	<o id="demtix" name="Ticket-Démon" max="8000">
+		<desc>Les Tickets Démons sont obtenus en sacrifiant des Dinoz à la Boutique Démoniaque. Vous pouvez les échanger contre des Dinoz-Démons une fois que vous en aurez suffisamment.</desc>
+	</o>
+
+	<o id="bougie" name="Bougie d'Anniversaire" max="5000" trade="5000">
+		<desc>Cette carte d'Anniversaire vous permet d'accéder au jeu du château de sable au port de Prêche !</desc>
+	</o>
+	
+	<o id="petard" name="Pétard magique" max="5000" trade="5000">
+		<desc>Ce pétard vous permet de déclencher un feu d'artice à Dinoville pour gagner des trésors !</desc>
+	</o>
+	
+	<o id="tix" name="Bon du Trésor" max="9999">
+		<desc>Un Bon du Trésor vaut *1.000 Pièces d'Or* et permet d'enchérir sur des Offres de la Place du Marché. Il suffit de l'utiliser pour le convertir en pièces.</desc>
+		<effect>Votre Bon du trésor a été converti en *1.000* pièces d'or.</effect>
+	</o>
+
+	<!------------------------------- OEUF DE DINOZ ------------------------------>
+		
+	<o id="tufufu" name="Bébé Toufufu" max="2" trade="30000">
+		<desc>Ce bébé Toufufu commence déjà à gigoter, il veut absolument se défouler sur les champs de bataille ! </desc>
+		<effect>Félicitations ! Vous avez obtenu un magnifique *Toufufu* !</effect>
+	</o>
+	
+	<o id="kabegg" name="Oeuf de Kabuki" max="10" trade="30000">
+		<desc>Cet oeuf étrange semble tout près de se transformer en un joli Dinoz...</desc>
+		<effect>Félicitations ! Vous avez obtenu un magnifique *Kabuki* !</effect>
+	</o>
+	
+	<o id="stzegg" name="Oeuf de Santaz" max="10" trade="30000">
+		<desc>Cet oeuf étrange semble tout près de se transformer en un joli Dinoz...</desc>
+		<effect>Félicitations ! Vous avez obtenu un magnifique *Santaz* !</effect>
+	</o>
+	
+	<o id="feregg" name="Oeuf de Feross" max="10" trade="30000">
+		<desc>Cet oeuf étrange semble tout près de se transformer en un joli Dinoz...</desc>
+		<effect>Félicitations ! Vous avez obtenu un magnifique *Feross* !</effect>
+	</o>
+
+	<o id="mamegg" name="Bébé Mahamuti" max="10" trade="30000">
+		<desc>Au travers de la glace, vous distinguez une forme étrange, une boule de poil cornue...?</desc>
+		<effect>Félicitations ! Vous avez obtenu un magnifique *Mahamuti* !</effect>
+	</o>
+	
+	<o id="rocky2" name="Oeuf de Rocky rare" max="10" trade="30000">
+		<desc>Un bloc en pierre dur comme l'acier, on sent une vibration à l'intérieur, un coeur vaillant près à se lancer dans l'aventure !</desc>
+		<effect>Félicitations ! Vous avez obtenu un magnifique *Rocky*, sa couleur est différente de celle des autres Rockys !</effect>
+	</o>
+
+	<o id="casti2" name="Oeuf de Castivore rare" max="10" trade="30000">
+		<desc>Une boule de poil, quand on la chatouille, elle gigote, ce compagnon sera surement d'une grande aide à l'avenir !</desc>
+		<effect>Félicitations ! Vous avez obtenu un magnifique *Castivore*, sa couleur est différente de celle des autres Castivores !</effect>
+	</o>
+	
+	<o id="nuago2" name="Oeuf de Nuagoz rare" max="10" trade="30000">
+		<desc>Un petit nuage, mais mieux vaut se méfier de son calme, la tempête n'en est que plus violente !</desc>
+		<effect>Félicitations ! Vous avez obtenu un magnifique *Nuagoz*, sa couleur est différente de celle des autres Nuagoz !</effect>
+	</o>
+	
+	<o id="winks2" name="Oeuf de Winks rare" max="10" trade="30000">
+		<desc>Un oeuf recouvert d'une carapace incassable, seul la créature qu'il y a dedans peut percer cette coquille ! </desc>
+		<effect>Félicitations ! Vous avez obtenu un magnifique *Winks*, sa couleur est différente de celle des autres Winks !</effect>
+	</o>
+	
+	<o id="fereg2" name="Oeuf de Feross rare" max="10" trade="30000">
+		<desc>Cet oeuf de Feross n'est pas comme les autres, ce dinoz semble taillé pour la guerre !</desc>
+		<effect>Félicitations ! Vous avez obtenu un magnifique *Feross rare* !</effect>
+	</o>
+	
+	<o id="fereg3" name="Oeuf de Feross de Noel" max="10" trade="30000">
+		<desc>Cet oeuf de Feross n'est pas comme les autres, tout droit sorti de l'équipe du Père Noël, il semble capable de distribuer autre chose que des paquets cadeaux!</desc>
+		<effect>Félicitations ! Vous avez obtenu un magnifique *Feross de Noël* !</effect>
+	</o>
+	
+	<o id="stzeg2" name="Oeuf de Santaz rare" max="10" trade="30000">
+		<desc>Cet oeuf de Santaz n'est pas comme les autres, à quoi va-t'il bien pouvoir ressembler ?</desc>
+		<effect>Félicitations ! Vous avez obtenu un magnifique *Santaz rare* !</effect>
+	</o>
+		
+	<o id="pigm" name="Oeuf de Pigmou rare" max="10" trade="30000">
+		<desc>Ce bébé pigmou est prêt à en découdre, ces rayures de bagnard effraient ses ennemis sur les champs de bataille.</desc>
+		<effect>Félicitations ! Vous avez obtenu un magnifique *Pigmou rare* !</effect>
+	</o>
+	
+	<o id="sirain" name="Oeuf de Sirain rare" max="10" trade="30000">
+		<desc>Cet oeuf de Sirain est mystérieux, à quoi va-t'il bien pouvoir ressembler ?</desc>
+		<effect>Félicitations ! Vous avez obtenu un magnifique *Sirain rare* !</effect>
+	</o>
+	
+	<o id="soufle" name="Oeuf de Soufflet" max="10" trade="30000">
+		<desc>Cet oeuf de Soufflet est sur le point d'éclore, à quoi va-t'il bien pouvoir ressembler ?</desc>
+		<effect>Félicitations ! Vous avez obtenu un magnifique *Soufflet* !</effect>
+	</o>
+	
+	<o id="kabeg2" name="Oeuf de Kabuki rare" max="10" trade="30000">
+		<desc>Cet oeuf étrange semble tout près de se transformer en un Dinoz exceptionnel...</desc>
+		<effect>Félicitations ! Vous avez obtenu un magnifique *Kabuki rare* !</effect>
+	</o>
+	
+	<o id="tufeg2" name="Oeuf de Toufufu rare" max="10" trade="30000">
+		<desc>Cet oeuf étrange semble tout près de se transformer en un Dinoz exceptionnel...</desc>
+		<effect>Félicitations ! Vous avez obtenu un magnifique *Toufufu rare* !</effect>
+	</o>
+	
+	<o id="quetzu" name="Oeuf de Quetzu rare" max="10" trade="30000">
+		<desc>Cet oeuf étrange semble tout près de se transformer en un Dinoz exceptionnel...</desc>
+		<effect>Félicitations ! Vous avez obtenu un magnifique *Quetzu rare* !</effect>
+	</o>
+	
+	<o id="smegg" name="Oeuf de Smog de noël" max="10" trade="30000">
+		<desc>Cet oeuf étrange semble tout près de se transformer en un Dinoz exceptionnel...</desc>
+		<effect>Félicitations ! Vous avez obtenu un magnifique *Smog de noël* !</effect>
+	</o>
+	
+	<o id="smegg2" name="Oeuf de Smog" max="10" trade="30000">
+		<desc>Cet oeuf étrange semble tout près de se transformer en un Dinoz exceptionnel...</desc>
+		<effect>Félicitations ! Vous avez obtenu un magnifique *Smog* !</effect>
+	</o>
+	
+	<o id="smegg3" name="Oeuf de Smog Anniversaire" max="10" trade="30000">
+		<desc>Cet oeuf bien étrange semble tout près de se transformer en un Dinoz exceptionnel...</desc>
+		<effect>Félicitations ! Vous avez obtenu un magnifique *Smog Anniversaire* !</effect>
+	</o>
+	
+	<o id="smegg4" name="Oeuf de Smog de Noel" max="10" trade="30000">
+		<desc>Cet oeuf de Smog n'est pas comme les autres, tout droit sorti de l'équipe du Père Noël, il semble capable de distribuer autre chose que des paquets cadeaux!</desc>
+		<effect>Félicitations ! Vous avez obtenu un magnifique *Smog de Noël* !</effect>
+	</o>
+	
+	<o id="mameg2" name="Bébé Mahamuti rare" max="10" trade="30000">
+		<desc>Au travers de la glace, vous distinguez une forme étrange, une boule de poil cornue...?</desc>
+		<effect>Félicitations ! Vous avez obtenu un magnifique *Mahamuti rare* !</effect>
+	</o>
+	
+	<o id="mouef2" name="Bébé Moueffe rare" max="10" trade="30000">
+		<desc>Cet oeuf étrange semble tout près de se transformer en un Dinoz exceptionnel !</desc>
+		<effect>Félicitations ! Vous avez obtenu un magnifique *Moueffe rare* !</effect>
+	</o>
+	
+	<o id="wan2" name="Bébé Wanwan rare" max="10" trade="30000">
+		<desc>Cet oeuf étrange semble tout près de se transformer en un Dinoz exceptionnel !</desc>
+		<effect>Félicitations ! Vous avez obtenu un magnifique *Wanwan rare* !</effect>
+	</o>
+	
+	<o id="plan2" name="Bébé Planaile rare" max="10" trade="30000">
+		<desc>Cet oeuf étrange semble tout près de se transformer en un Dinoz exceptionnel !</desc>
+		<effect>Félicitations ! Vous avez obtenu un magnifique *Planaile rare* !</effect>
+	</o>
+	
+	<o id="triceg" name="Bébé Triceragnon" max="10" trade="30000">
+		<desc>Cet oeuf étrange semble tout près de se transformer en un Dinoz exceptionnel !</desc>
+		<effect>Félicitations ! Vous avez obtenu un magnifique *Triceragnon* !</effect>
+	</o>
+	
+	<o id="xmase1" name="Oeuf de Noël" max="10" trade="30000">
+		<desc>Cet oeuf de Noël vous réserve la surprise de se transformer soit en Santaz soit en Tricéragnon. Ce sera la surprise ! </desc>
+		<effect>Félicitations ! Vous avez obtenu un magnifique Dinoz :)!</effect>
+	</o>
+	
+	<o id="goegg1" name="Oeuf de Gorilloz rare" max="10" trade="30000">
+		<desc>Cet oeuf étrange semble tout près de se transformer en un Dinoz exceptionnel !</desc>
+		<effect>Félicitations ! Vous avez obtenu un magnifique Dinoz :)!</effect>
+	</o>
+	
+	<!------------------------------- OBJETS DE FIN D'INVENTAIRE ------------------------------>
+
+	<o id="riz" name="Riz Amnésique" max="5" trade="5000">
+		<desc>Cette variété trés rare de Riz rend amnésique. En le mangeant, un Dinoz oublie son nom et perd aussi l'expérience accumulée depuis son dernier niveau...</desc>
+		<effect>Votre Dinoz ne se rappelle plus son nom ! C'est le bon moment pour en choisir un autre...</effect>
+	</o>
+	
+	<o id="regen" name="Bracelet en Tik" max="1">
+		<desc>Cet objet issu de la technologie de Caushemesh peut redonner chaque jour jusqu'à 10 points de vie au Dinoz qui le porte !</desc>
+		<fight proba="0" priority="0"/>
+	</o>
+
+	<o id="star" name="Etoile Magique" max="7">
+		<desc>Ces mystérieuses étoiles sont réparties un peu partout dans le monde de Dinoland. Saurez-vous rassembler les 7 ?</desc>
+	</o>
+
+	<o id="cgold" name="Napodino d'or" max="100">
+		<desc>Les Napodino d'or sont des pièces en or massif datant d'une civilisation pré-dinovillienne. Ils ont une très grande valeur auprès des collectionneurs, et on raconte qu'ils portent chance aux Dinoz qui les transportent.</desc>
+		<fight proba="0" priority="0"/>
+	</o>
+
+</objects>

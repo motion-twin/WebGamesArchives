@@ -1,0 +1,335 @@
+<virus>
+	<!-- *** BASE *** -->
+	<cat name="hidden" id="hidden">
+		<v id="connec" pr="500" size="0" cc="0" t="_net" name="Connexion">
+			CONNECT TO NETNODE
+		</v>
+
+		<v id="cd" pr="500" size="0" cc="0" t="_folder" name="Ouverture">
+			OPEN FOLDER
+		</v>
+
+		<v id="exit" pr="500" size="0" cc="0" t="_none" name="Déconnexion">
+			QUIT SYSTEM
+		</v>
+
+		<v id="target" pr="500" size="0" cc="0" t="_file" name="Ciblage">
+			TARGET A FILE
+		</v>
+
+		<v id="extrac" pr="500" size="0" cc="0" name="Extraction" recom="1">
+			Analyse, récupère et exploite le contenu d'un fichier PACK.
+		</v>
+	</cat>
+
+	<cat name="specials" id="specials">
+		<v id="debug" pr="-1" size="1" cc="0" t="_none">
+			DEBUG !
+		</v>
+
+		<v id="fdebug" pr="-1" size="1" cc="0">
+			DEBUG FILE !
+		</v>
+
+		<v id="cust" pr="-1" size="1" cc="10" use="1" name="CUSTOM">
+			CUSTOM MISSION VIRUS
+		</v>
+	</cat>
+
+
+	<!-- *** DEGATS *** -->
+	<cat name="Dégâts" id="damage">
+		<v id="dmgs" start="1" pr="700" size="1" cc="3" p="3" name="Dégâts minimes">
+			Inflige ::p:: dégâts.
+		</v>
+
+		<v id="dmgm" pr="3000" size="1" cc="5" p="6" name="Dégâts légers" recom="1" l="4">
+			Inflige ::p:: dégâts.
+		</v>
+
+		<v id="dmgl" pr="12000" size="1" cc="8" p="10" name="Dégâts moyens" l="6">
+			Inflige ::p:: dégâts.
+		</v>
+
+		<v id="dmgxl" pr="25000" size="1" cc="20" p="30" name="Dévastation" l="8">
+			Inflige ::p:: dégâts.
+		</v>
+
+		<v id="zone" pr="-1" size="1" cc="20" p="5" name="Dégâts anti-viraux nova" t="_none" l="6">
+			Inflige ::p:: dégâts à tous les anti-virus du dossier.
+		</v>
+
+		<v id="clone" pr="8500" size="1" cc="8" p="8" name="Dégâts anti-viraux clônés" l="6">
+			Inflige ::p:: dégâts à tous les anti-virus du même type que celui que vous visez et qui se trouvent dans le même dossier.
+		</v>
+
+		<v id="avdmg1" pr="5000" size="1" cc="3" p="4" name="Dégâts anti-viraux 1.0" l="6" date="2010/01/10">
+			Inflige ::p:: dégâts, mais ne fonctionne QUE sur les anti-virus.
+		</v>
+
+		<v id="avdmg2" pr="15000" size="1" cc="5" p="6" name="Dégâts anti-viraux 2.0" l="8" date="2010/01/10">
+			Inflige ::p:: dégâts, mais ne fonctionne QUE sur les anti-virus.
+		</v>
+
+		<v id="fdmg" pr="5000" size="1" cc="2" p="1" name="Dégâts Lambdas" l="5">
+			Inflige ::p:: dégât(s), ne fonctionne PAS sur les anti-virus.
+		</v>
+
+		<v id="dshld" pr="15000" size="1" cc="8" p="3" name="Attaque DoS" l="6">
+			Inflige ::p:: dégât(s), ignore les protections fournies par les anti-virus SHIELD et les fichiers GARDIEN.
+		</v>
+
+		<v id="dot1" pr="-1" size="1" cc="6" p="3" info="3" name="Frappe décalée 1.0" l="6">
+			Inflige ::p:: dégât(s) toutes les 5 secondes, ::info:: fois. Ce virus ne fonctionne QUE sur les anti-virus. Cet effet est perdu si vous vous déconnectez du système.
+		</v>
+
+		<v id="dot2" pr="-1" size="1" cc="9" p="5" info="3" name="Frappe décalée 2.0" l="8">
+			Inflige ::p:: dégât(s) toutes les 5 secondes, ::info:: fois. Ce virus ne fonctionne QUE sur les anti-virus. Cet effet est perdu si vous vous déconnectez du système.
+		</v>
+
+
+<!--
+		<v id="dcore" pr="10000" size="1" cc="5" p="15" name="Sabotage Kernel">
+			Inflige ::p:: dégât(s), ne fonctionne que sur les fichiers COEUR et GARDIENS.
+		</v>
+-->
+
+		<v id="dsilen" pr="15000" size="1" cc="30" p="10" name="Morsure silencieuse 1.0" l="5" date="2010/01/10">
+			Inflige ::p:: dégât(s), ne déclenche pas les anti-virus REPURGATOR et SYSDEF.
+		</v>
+
+		<v id="dsile2" pr="22000" size="1" cc="20" p="8" name="Morsure silencieuse 2.0" l="6" date="2010/02/22">
+			Inflige ::p:: dégât(s), ne déclenche aucun anti-virus.
+		</v>
+
+		<v id="libxpl" pr="15000" size="1" cc="10" p="50" name="Librairie piégée" l="7" date="2010/01/10">
+			Si le fichier LIB ciblé subit des dégâts qui provoquent sa destruction, tous les anti-virus, fichiers COEUR et fichiers GARDIEN du répertoire subissent à leur tour ::p::% de ces derniers dégâts.
+		</v>
+
+	</cat>
+
+
+	<!-- *** AFFLICTIONS *** -->
+	<cat name="Afflictions" id="debuff">
+		<v id="stun1" pr="5000" size="1" cc="4" p="2" name="Assommer 1.0" l="4">
+			Bloque les ::p:: prochaines attaques de l'anti-virus ciblé.
+		</v>
+
+		<v id="stun2" pr="10000" size="1" cc="6" p="5" name="Assommer 2.0" l="6">
+			Bloque les ::p:: prochaines attaques de l'anti-virus ciblé.
+		</v>
+
+		<v id="pbomb" pr="20000" size="1" cc="100" use="1" name="Bombe:P" t="_none" l="7">
+			Plante immédiatement le système ciblé.
+		</v>
+
+		<v id="cbomb" pr="30000" size="1" cc="50" use="1" name="Bombe:C" t="_none"  l="7">
+			Corrompt immédiatement le système ciblé.
+		</v>
+
+		<v id="reveng" pr="10000" size="1" cc="12" p="15" name="Vengeance" l="6">
+			Si l'anti-virus ciblé vous inflige des dégâts, il subira ::p:: dégâts à son tour (une seule fois).
+		</v>
+
+		<v id="tag1" pr="15000" size="1" cc="4" use="5" p="75" name="Link 1.0" l="6">
+			Place un marqueur LINK sur le fichier ciblé. Par la suite, si vous infligez des dégâts à un autre fichier marqué du même système, chacun des autres fichiers marqués subit aussitôt ::p::% de ces dégâts.
+		</v>
+
+		<v id="tag2" pr="25000" size="1" cc="5" use="10" p="75" name="Link 2.0" l="8">
+			Place un marqueur LINK sur le fichier ciblé. Par la suite, si vous infligez des dégâts à un autre fichier marqué du même système, tous les fichiers marqués subissent chacun ::p::% de ces dégâts.
+		</v>
+
+		<v id="tag3" pr="20000" size="1" cc="5" use="3" p="95" name="Link 1.5" l="8">
+			Place un marqueur LINK sur le fichier ciblé. Par la suite, si vous infligez des dégâts à un autre fichier marqué du même système, tous les fichiers marqués subissent chacun ::p::% de ces dégâts.
+		</v>
+
+		<v id="unshld" pr="7500" size="1" cc="4" name="Faille : ouverture" l="6">
+			L'anti-virus ciblé perd un marqueur SHIELD.
+		</v>
+
+		<v id="exploi" pr="5000" size="1" cc="4" name="Faille : amplification" l="5">
+			Les dégâts subis par le fichier ciblé sont multipliés par 1,5 (non cumulable).
+		</v>
+
+		<v id="weak1" pr="5000" size="1" cc="3" p="5" name="Faiblesse 1" l="5">
+			L'anti-virus ciblé vous inflige ::p::x moins de dégâts (non cumulable).
+		</v>
+
+		<v id="weak2" pr="10000" size="1" cc="8" p="10" name="Faiblesse 2" l="6">
+			L'anti-virus ciblé vous inflige ::p::x moins de dégâts (non cumulable).
+		</v>
+
+
+		<v id="disabl" pr="15000" size="1" cc="10" use="3" name="Neutralisation 1.0" l="6">
+			Fait planter l'anti-virus ciblé : il cesse totalement de fonctionner.
+		</v>
+		<v id="disab2" pr="25000" size="1" cc="10" use="5" name="Neutralisation 2.0" l="7" date="2010/02/22">
+			Fait planter l'anti-virus ciblé : il cesse totalement de fonctionner.
+		</v>
+	</cat>
+
+	<!-- *** UTILITAIRES -->
+	<cat name="Utilitaires" id="utils">
+
+		<v id="copy" start="1" pr="500" size="1" cc="15" name="Copie">
+			Copie le fichier dans votre propre terminal.
+		</v>
+
+		<v id="dec1" pr="2500" size="1" cc="15" p="1" name="Décodage 1.0" l="4">
+			Décode le contenu d'un fichier protégé par un encodage de niveau ::p:: (au maximum)
+		</v>
+
+		<v id="dec2" pr="7500" size="1" cc="20" p="2" name="Décodage 2.0" l="5">
+			Décode le contenu d'un fichier protégé par un encodage de niveau ::p:: (au maximum)
+		</v>
+
+		<v id="dec3" pr="15000" size="1" cc="30" p="3" name="Décodage 3.0" l="5">
+			Décode le contenu d'un fichier protégé par un encodage de niveau ::p:: (au maximum)
+		</v>
+
+		<v id="unmask" pr="5000" size="1" cc="3" name="Démasquer" l="5">
+			Démasque le nom d'un fichier.
+		</v>
+
+		<v id="scan1" start="1" pr="0" size="1" cc="0" t="_none"  name="Scanner standard">
+			Affiche la carte du système.
+		</v>
+
+		<v id="scan2" pr="2500" size="1" cc="0" t="_none" name="Scanner AV-1" recom="1" l="4">
+			Affiche la carte du système ainsi que la liste des anti-virus.
+		</v>
+
+		<v id="scan3" pr="7500" size="1" cc="0" t="_none" name="Scanner AV-2" l="5">
+			Affiche la carte du système ainsi que la liste des anti-virus. Les dossiers contenant des anti-virus sont indiqués en rouge.
+		</v>
+
+		<v id="scan4" pr="25000" size="1" cc="4" t="_none" name="Scanner AV-Ultra" l="7" date="2010/02/22">
+			Affiche la carte du système ainsi que la liste des anti-virus et leur position dans le système.
+		</v>
+
+		<v id="scan42" pr="17000" size="1" cc="6" t="_none" name="Scanner AV-Omniscience" l="7">
+			Affiche la carte du système ainsi que la liste des anti-virus. Ce scanner n'est pas perturbé par les anti-virus BROUILLEUR.
+		</v>
+
+		<v id="hunt" pr="7500" size="1" cc="0" t="_none" name="Scanner Traqueur" l="5">
+			Affiche la carte du système et révèle la position des fichiers PACK.
+		</v>
+
+		<v id="panic1" pr="2000" size="1" cc="3" t="_none" name="Panique 1.0" l="4">
+			Déconnexion rapide du système.
+		</v>
+
+		<v id="panic2" pr="7500" size="1" cc="10" t="_none" name="Panique 2.0" l="6" date="2010/01/10">
+			Déconnexion rapide du système, aucun anti-virus ne pourra détecter cette action.
+		</v>
+
+		<v id="rolbck" pr="-1" size="1" cc="15" t="_none" name="Retour">
+			Vous renvoie dans le dossier "parent", aucun anti-virus ne pourra détecter cette action.
+		</v>
+
+		<v id="heal1" pr="7500" size="1" cc="0" use="1" p="50" t="_none" name="Réparations 1.0" l="5">
+			Récupère ::p:: points d'Armure.
+		</v>
+
+		<v id="heal2" pr="20000" size="1" cc="0" use="2" p="40" t="_none" name="Réparations 2.0" l="7">
+			Récupère ::p:: points d'Armure ; ce virus peut être utilisé plusieurs fois par mission.
+		</v>
+
+		<v id="mana1" pr="4000" size="1" cc="0" use="1" p="50" t="_none" name="Réserves 1.0" l="4">
+			Récupère ::p:: points de Ressources.
+		</v>
+
+		<v id="mana2" pr="10000" size="1" cc="0" use="3" p="40" t="_none" name="Réserves 2.0" l="6">
+			Récupère ::p:: points de Ressources ; ce virus peut être utilisé plusieurs fois par mission.
+		</v>
+
+		<v id="mana3" pr="20000" size="1" cc="0" use="3" p="80" t="_none" name="Réserves 3.0" l="7" date="2010/02/22">
+			Récupère ::p:: points de ressources ; ce virus peut être utilisé plusieurs fois par mission.
+		</v>
+
+		<v id="chrge2" pr="10000" size="1" cc="15" name="Charge x2" t="_none" l="5">
+			Les dégâts de votre prochain virus d'attaque seront multipliés par 2.
+		</v>
+
+		<v id="chrge3" pr="20000" size="1" cc="25" name="Charge x3" t="_none" l="6">
+			Les dégâts de votre prochain virus d'attaque seront multipliés par 3.
+		</v>
+
+		<v id="shld1" pr="2500" size="1" cc="15" p="25" name="Bouclier 1.0" t="_none" l="4">
+			Absorbe les ::p:: prochains dégâts que vous subirez.
+		</v>
+
+		<v id="shld2" pr="10000" size="1" cc="20" p="50" name="Bouclier 2.0" t="_none" l="6">
+			Absorbe les ::p:: prochains dégâts que vous subirez.
+		</v>
+
+		<v id="rconv" pr="10000" size="1" cc="0" info="2" p="5" name="Sacrifice" t="_none" l="6" date="2010/01/20">
+			Converti ::info:: point(s) d'armure en ::p:: point(s) de ressources (dégâts non-bloquables).
+		</v>
+
+		<v id="fmove1" pr="10000" size="1" cc="5" p="2" t="_none" name="Ninja 1.0" l="6" date="2010/01/10">
+			Vos ::p:: prochains changements de dossier ne seront pas détecté par les anti-virus. Cet effet est perdu si vous vous déconnectez du système en cours.
+		</v>
+
+		<v id="fmove2" pr="30000" size="1" cc="13" use="1" p="6" t="_none" name="Ninja 2.0" l="8" date="2010/02/22">
+			Vos ::p:: prochains changements de dossier ne seront pas détecté par les anti-virus. Cet effet est perdu si vous vous déconnectez du système en cours.
+		</v>
+
+		<v id="invis" pr="15000" size="1" cc="20" p="2" t="_none" name="Invisibilité numérique" l="6" date="2010/01/10">
+			Vos ::p:: prochaines actions ne seront pas détectées par les anti-virus (le lancement de ce virus est lui-même indétectable).
+		</v>
+
+		<v id="corrup" pr="500" size="1" cc="5" name="Corruption 1.0" recom="1" l="4">
+			Corrompt le fichier CONTROL ciblé. Affectez tous les fichiers CONTROL pour obtenir les droits d'accès "administrateur" sur le système.
+		</v>
+
+		<v id="corru2" pr="9500" size="1" cc="4" name="Corruption 2.0" l="7" date="2010/02/22">
+			Corrompt le fichier CONTROL ciblé. Affectez tous les fichiers CONTROL pour obtenir les droits d'accès "administrateur" sur le système. Cette version améliorée de la Corruption affiche le nombre de fichiers CONTROL restant sur ce système.
+		</v>
+
+		<v id="dckswi" pr="10000" size="1" cc="5" t="_none" name="Multi-Deck Pro 1.0" use="1" l="5" date="2010/01/10">
+			Vous permet de changer de deck lorsque vous êtes connecté(e) à un système.
+		</v>
+
+		<v id="dcksw2" pr="27000" size="1" cc="5" t="_none" name="Multi-Deck Pro 2.0" use="2" l="8" date="2010/01/10">
+			Vous permet de changer de deck lorsque vous êtes connecté(e) à un système (utilisable plusieurs fois).
+		</v>
+		
+		<v id="reboo1" pr="25000" size="1" cc="40" t="_none" name="Cold-Reboot 1.0" l="7">
+			Force le redémarrage du système. Tous les anti-virus du système sont retardés dans leur lancement, les 3 prochaines attaques infligeant des dégâts seront bloquées.
+		</v>
+
+		<v id="reboo2" pr="50000" size="1" cc="100" t="_none" name="Cold-Reboot 2.0" l="9">
+			Force le redémarrage du système. Tous les anti-virus du système sont retardés dans leur lancement, les 3 prochaines attaques infligeant des dégâts seront bloquées. De plus, ils sont tous affectés par un effet "amplification des dégâts subis".
+		</v>
+	</cat>
+
+
+	<!-- *** COMBO -->
+	<cat name="Combo" id="combo">
+		<v id="cevi" pr="15000" size="1" cc="7" p="10" name="Combo : burst" t="_none" l="6">
+			Vos N prochaines attaques infligent ::p:: dégâts de plus chacune, N étant votre nombre de points de combo.
+		</v>
+
+		<v id="cstun" pr="5000" size="1" cc="5" p="2" name="Combo : pacification" l="6">
+			Bloque ::p:: attaques de l'anti-virus ciblé par point de combo.
+		</v>
+
+		<v id="cshld" pr="12500" size="1" cc="5" p="6" name="Combo : bouclier 1.0" t="_none" l="5">
+			Absorbe ::p:: dégâts par point de combo[ (::pcombo:: au total)].
+		</v>
+		
+		<v id="cshld2" pr="25000" size="1" cc="10" p="15" name="Combo : bouclier 2.0" t="_none" l="7">
+			Absorbe ::p:: dégâts par point de combo[ (::pcombo:: au total)].
+		</v>
+		
+		<v id="cshld3" pr="50000" size="1" cc="20" p="25" name="Combo : bouclier 3.0" t="_none" l="9">
+			Absorbe ::p:: dégâts par point de combo[ (::pcombo:: au total)].
+		</v>
+
+		<v id="cchrge" pr="15000" size="1" cc="10" p="1" name="Combo : amplification" t="_none" l="6">
+			Votre prochaine attaque infligera N fois plus de dégâts, N étant votre nombre de points de combo.
+		</v>
+	</cat>
+
+</virus>

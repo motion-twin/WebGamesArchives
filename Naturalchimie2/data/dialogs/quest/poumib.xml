@@ -1,0 +1,46 @@
+<d place="aphall" name="Demander un lot" gfx="approf">
+
+<phase id="begin" next="poum">
+Que désires-tu ? 
+</phase>
+
+<a id="poum">Bonjour, c'est le POUM ! Vous auriez un lot ou deux pour le bingo du mois ?</a>
+
+<phase id="poum" frame="angry" next="pyro">
+... 
+</phase>
+
+<a id="pyro">Euh... Je recommence : Bonjour, c'est le POUM ! Vous auriez un lot ou deux pour le bingo du mois ?</a>
+
+<phase id="pyro" frame="angry" next="rec">
+... | Major * ! 
+</phase>
+
+<phase id="rec" frame="apmajor:normal" next="pia">
+Maître Enguerrand ? Un problème ? 
+</phase>
+
+<phase id="pia" frame="approf:happy" next="pib">
+Major Domou, je vous présente une nouvelle recrue du POUM. Il semblerait que notre système de sécurité ne la connaisse pas encore... 
+</phase>
+
+<phase id="pib" frame="apmajor:angry" next="pic">
+Attendez voir. | Mmmmh c'est vrai, il n'est pas dans mon fichier. Je le rajoute. | Dorénavant, les pièges du manoir s'activeront pour lui aussi.
+</phase>
+
+<phase id="pic" frame="approf:normal" next="moi">
+Bien. | Merci major. La famille Audepint a mieux à faire que perdre son temps avec le POUM.
+</phase>
+
+<a id="moi">Euh... Sinon, pour mon lot ? </a>
+
+<phase id="moi" frame="approf:happy" next="balai">
+Ah oui ! | Le lot ! | Vu que ce membre du POUM est arrivé jusqu'ici sans se faire... démembrer, si j'ose dire, on pourrait lui offrir un petit quelque chose. Vous en pensez quoi, major ? 
+</phase>
+
+<phase id="balai" frame="apmajor:normal">
+J'ai justement encore des problèmes de pyrite au faubourg... Si notre gentil membre du POUM a envie de balayer un peu, il aura droit à un lot quand la cour sera propre. 
+</phase>
+
+
+</d>

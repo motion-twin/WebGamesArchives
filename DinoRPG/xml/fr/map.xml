@@ -1,0 +1,1303 @@
+﻿<map>
+	<!--------------------------------- DINOVILLE ------------------------------------------------->
+
+	<place id="dnv" zone="0" name="Dinoville" pre="à " inf="100:230:castle" gather="fo:xmas:fete">
+		<desc>
+			Bienvenue à Dinoville ! Cette ville a été créée par des éleveurs de Dinoz il y a bien longtemps.
+			Après de nombreux siècles d'existence, elle est aujourd'hui la capitale des Humains de Dinoland
+			et le lieu d'entraînement idéal pour les jeunes Maîtres Dinoz. N'hésitez pas à bien visiter
+			les alentours avant de vous aventurer dans des contrées plus sauvages.
+		</desc>
+		<move to="univ" cond="uvar(tuto,0)|!uvar(ptuto,186861)" />
+		<move to="fountj"/>
+		<move to="goplaz" cond="fx(plaza)"/>
+	</place>
+
+	<place id="univ" zone="0" name="L'Université" pre="à " inf="120:150:church" gather="cu">
+		<desc>
+			L'Université de Dinoville est un lieu rempli de professeurs barbus et d'élèves à l'air sérieux
+			portant la plupart du temps de grosses lunettes rondes. Impossible de comprendre quoi que ce soit
+			à leurs discussions, si ce n'est que la survie du monde dépend de leurs recherches. On croise
+			néanmoins de temps en temps à l'Université un professeur un peu moins agité que les autres qui
+			accepte de vous enseigner quelque chose d'important.
+		</desc>
+		<move to="dnv"/>
+		<move to="papy"/>
+		<move to="colesc"/>
+	</place>
+
+	<place id="fountj" zone="0" name="La Fontaine de Jouvence" pre="à " inf="185:245:fount" gather="cu">
+		<desc>
+			La Fontaine de Jouvence a deux visages. Le jour, c'est un endroit agréable où viennent se reposer
+			les Maîtres Dinoz fatigués par leurs longs voyages. La nuit, c'est un endroit hanté par les amoureux
+			éconduits qui observent les reflets de la Lune dans l'eau de la fontaine en poussant de grands soupirs
+			et en versant de temps en temps quelques larmes. On dit que souvent le matin, l'eau est légèrement salée.
+		</desc>
+		<move to="dnv" cond="uvar(tuto,0)|!uvar(ptuto,674288)"/>
+		<move to="papy" cond="uvar(tuto,0)|!uvar(ptuto,674288)"/>
+		<move to="frcbrt" cond="uvar(tuto,0)|!uvar(ptuto,674288)"/>
+		<move to="port"/>
+	</place>
+
+	<place id="papy" zone="0" name="Chez Papy Joe" pre="" inf="225:80:house" gather="ch:papjar">
+		<desc>
+			Papy Joe est un vieux baroudeur qui a voyagé dans sa jeunesse aux quatre coins de Dinoland. Il est
+			aujourd'hui à la retraite mais continue de raconter ses exploits aux Maîtres Dinoz qui veulent bien
+			l'écouter. Aux plus patients, il propose des petites Missions dans les environs.
+		</desc>
+		<move to="univ"/>
+		<move to="fountj"/>
+		<move to="frcbrt"/>
+	</place>
+
+	<place id="frcbrt" zone="0" name="Forcebrut" pre="à " inf="280:215:cavern" gather="en">
+		<desc>
+			Le Tournoi de Forcebrut est l'un des lieux les plus fréquentés par les éleveurs de Dinoz. Ici,
+			les Dinoz les plus puissants s'affrontent dans des combats spectaculaires pour le plaisir de tous
+			les spectacteurs. Heureusement, le Tournoi n'est pas réservé qu'à l'élite et de jeunes éleveurs
+			peuvent aussi venir y entraîner leurs Dinoz.
+		</desc>
+		<move to="papy"/>
+		<move to="fountj"/>
+		<move to="marche"/>
+	</place>
+
+	<place id="colesc" zone="0" name="Collines Escarpées" pre="aux " inf="110:95:default" gather="ch">
+		<desc>
+			Les Collines Escarpées auraient presque mérité le titre de Montagnes, mais comme juste après elles se
+			trouve le volcan nommé "Le Grand Tout Chaud", elles paraissent bien minuscules à côté. Leurs pentes
+			n'en sont pas moins impossibles à gravir sans le matériel d'escalade approprié.
+		</desc>
+		<move to="univ"/>
+		<move to="gogtc" cond="fx(matesc)"/>
+	</place>
+
+	<place id="port" zone="0" name="Port de Prêche" pre="au " inf="230:370:house" gather="pe:anniv">
+		<desc>
+			Créé par des moines quelques dizaines d'années auparavant, le Port de Prêche est rapidement devenu florissant
+			grâce aux échanges avec les Iles Atlantéinées. Comme le poisson s'y trouve en grande quantité, aucun bateau
+			n'est jamais disponible pour emmener les Dinoz jusqu'à la première île. Il vous faudra donc soit apprendre
+			à nager à votre Dinoz soit au moins lui trouver une bouée avant de pouvoir traverser.
+		</desc>
+		<move to="fountj"/>
+		<move to="goiles" cond="fx(bouee)"/>
+		<move to="skull" cond="(life(10-)|fx(skull))+active(skull)"/>
+		<move to="gomisl" cond="fx(monisl)"/>
+	</place>
+
+	<place id="gogtc" zone="1" name="Escalader les montagnes" pre="" goto="bslt" inf="70:40:north" bg="bslt">
+		<desc>
+			Grâce à son matériel d'escalade tout neuf, votre Dinoz arrive à gravir les montagnes et arrive ainsi au pied
+			du Grand Tout Chaud, sur les Pentes de Basalte.
+		</desc>
+	</place>
+
+	<place id="goiles" zone="2" name="Traverser à la Nage" pre="" goto="ilewkk" inf="190:410:swim" bg="go_swim">
+		<desc>
+			Après avoir attendu le moment de la journée où les courants marins se calment, votre Dinoz se jette à l'eau et, muni
+			de sa bouée, il traverse à la nage la distance qui sépare le Port de l'île la plus proche. Il arrive épuisé sur une
+			plage bordée de palmiers violets, signe distinctif que vous êtes bien sur l'Ile Waïkiki.
+		</desc>
+	</place>
+
+	<place id="marche" zone="0" name="Place du Marché" pre="a la " inf="340:270:house" gather="parr">
+		<desc>
+			Ce lieu est un grand marché à ciel ouvert ou tout s'achète et se vend. On y trouve de nombreux marchands venus
+			des quatre coins de Dinoland, ce qui permet parfois d'obtenir des raretés à un prix très réduit ! Faites attention,
+			c'est aussi parfois le repère de personnages peu scrupuleux qui n'hésiteront pas à vous extorquer vos pièces d'or
+			durement gagnées.
+		</desc>
+		<move to="frcbrt"/>
+	</place>
+
+	<place id="skull" zone="0" name="Cimetière du Crépuscule" pre="au " inf="340:360:default" hide="1">
+		<desc>
+			Dans un coin isolé du Royaume de Dinoville se tient le Cimetière perdu du Crépuscule. C'est un lieu
+			très mystérieux qui est la cible de multiples rumeurs : fantômes, étranges apparitions ou disparitions,
+			monstres difformes ou êtres magiques... au cours de temps les phénomènes se sont tant multipliés que
+			certains se sont demandés s'il n'était pas possible que le Cimetière soit connecté à un autre monde...
+		</desc>
+		<move to="port"/>
+	</place>
+	
+	<place id="goplaz" zone="6" name="Aller à Dinoplaza" pre="" goto="dplaza" inf="30:230:west" bg="dw_plaza">
+		<desc>
+			Vous passez enfin les catacombes pour entrer dans la partie Ouest du Royaume de Dinoville.
+			Bien que moins peuplé que la capitale, il semble se passer beaucoup de choses ici...
+		</desc>
+	</place>
+
+	<place id="gomisl" zone="2" name="Naviguer vers l'Ile des Monstres" pre="" goto="mport" inf="280:410:east" bg="go_swim">
+		<desc>
+			Jovébozé vous emmène à bord de son bateau en chantonnant un air étrange.
+			Il navigue avec un talent inatendu et franchit les récifs avant d'aborder sur la mystérieuse et inexplorée Ile des Monstres...
+			Il vous indique qu'il attendra votre retour... à condition que vous surviviez aux dangers qui vous attendent !
+		</desc>
+	</place>
+
+	<!--------------------------------- GRAND TOUT CHAUD ------------------------------------------------->
+
+	<place id="bslt" zone="1" name="Pentes de Basalte" pre="aux " inf="122:344:default" gather="en">
+		<desc>
+			Entre le sol et le sommet du Grand Tout Chaud s'étendent les Pentes de Basalte. Ce sont de grandes étendues
+			formées de roches volcaniques enchevêtrées. Un chemin s'y dessine, serpentant jusqu'au sommet. Les embuscades y
+			sont faciles et fréquentes, il faudra donc faire attention à bien vous défendre en empruntant ce chemin.
+		</desc>
+		<move to="gocol"/>
+		<move to="forges"/>
+	</place>
+
+	<place id="forges" zone="1" name="Forges du Grand Tout Chaud" pre="aux " inf="233:245:castle" gather="cu">
+		<desc>
+			Proches du sommet du Grand Tout Chaud, les Forges fonctionnent grâce au magma en fusion prélevé directement
+			dans le volcan. Il s'écoule lentement sur le bas-côté des rues principales, approvisionnant les forgerons qui
+			travaillent jour comme nuit à la fabrique d'objets en métal, les plus solides de Dinoland paraît-il.
+		</desc>
+		<move to="bslt"/>
+		<move to="rashpk" pow="2"/>
+		<move to="fosslv"/>
+		<move to="vener" pow="2"/>
+	</place>
+
+	<place id="rashpk" zone="1" name="Ruines Ashpouk" pre="aux " inf="109:275:house" gather="fo">
+		<desc>
+			Les Ashpouk sont une très ancienne civilisation qui s’était installée au sommet du Grand Tout Chaud. Cependant,
+			une éruption volcanique a détruit leur cité, et il n’en reste plus que ces ruines désertes. Les humains locaux
+			sont très superstitieux et ne s’en approchent jamais, par crainte de la malédiction qui y aurait été jetée.
+		</desc>
+		<move to="forges"/>
+	</place>
+
+	<place id="fosslv" zone="1" name="Fosselave" pre="à " inf="185:124:default" gather="fo">
+		<desc>
+			Le plateau de Fosselave se situe tout au sommet du Grand Tout Chaud. La vue y est magnifique car on peut apercevoir Dinoville,
+			les Iles Altantéinées, la Grande Forêt de Grumhel et même parfois les beaux jours les sommets de Caushemesh.
+			Au centre du plateau se dresse un Temple Shaman, qui doit être presque entièrement reconstruit à chaque tremblement
+			de terre, fréquents au sommet du volcan.
+		</desc>
+		<move to="forges"/>
+		<move to="tunel"/>
+	</place>
+
+	<place id="vener" zone="1" name="Repaire du Vénérable" pre="au " inf="312:130:cavern" gather="ch">
+		<desc>
+			Dans un des endroits les plus dangereux du Grand Tout Chaud on peut trouver le Repaire du Vénérable. Il s'agit d'une
+			caverne obscure dans laquelle vit un très vieux Dorogon cracheur de feu, et qui en plus a très mauvais caractère et
+			horreur d'être dérangé. On raconte qu'il aime bien les petits Korgons... bien grillés et avec un peu de sel.
+		</desc>
+		<move to="forges"/>
+		<move to="tourbt" cond="scenario(nimba2,42+)"/>
+	</place>
+
+	<place id="tunel" zone="1" name="Tunnel sous la Branche" pre="au " inf="58:89:door" type="en">
+		<desc>
+			A l'écart de Fosselave se dresse un très vieil arbre. Son écorce est tellement épaisse que même les coulées de laves
+			n'ont pas pu le faire brûler, ce qui lui a sûrement permis de survivre à de nombreuses éruptions volcaniques. Récemment,
+			une coulée de lave a libéré l'entrée d'un Tunnel au pied de l'arbre. Ce Tunnel semble s'enfoncer très loin dans les
+			profondeurs du Grand Tout Chaud. Pour l'explorer, il vous faudrait au moins une Lanterne pour éclairer le chemin.
+		</desc>
+		<move to="fosslv"/>
+		<move to="etunel" cond="!fx(lantrn)"/>
+		<move to="stunel" cond="fx(lantrn)"/>
+	</place>
+
+	<place id="etunel" zone="1" name="Entrer dans le Tunnel" pre="" goto="tunel" inf="53:134:cavern" bg="gorges_fail">
+		<desc>
+			Après plusieurs heures de marche dans les ténèbres du Tunnel, une lumière est enfin visible et indique une sortie. Vous
+			êtes un moment ébloui par le soleil avant de vous rendre compte que vous êtes revenu à l'entrée du Tunnel ! Quel gâchis,
+			tout ce temps perdu... A l'intérieur de ce Tunnel, cela doit être un véritable labyrinthe !
+		</desc>
+	</place>
+
+	<place id="stunel" zone="1" name="Entrer dans le Tunnel" pre="" goto="gorges" inf="53:154:cavern" bg="gorges">
+		<desc>
+			La Lanterne vous permet de ne pas tourner en rond dans le Tunnel. Après une descente de plusieurs centaines de mètres,
+			suivi de nombreux kilomètres de marche dans un couloir sombre, le tunnel s'ouvre sur une grande vallée emplie d'eau.
+		</desc>
+	</place>
+
+	<place id="gorges" zone="1" name="Gorges Profondes" pre="aux " inf="35:213:mountain" type="pe">
+		<desc>
+			Les Gorges Profondes sont un étroit couloir rocheux qui s'est creusé sur le flanc du Grand Tout Chaud. Après une
+			succession de vallées inondées, les gorges débouchent sur une vaste Forêt. Vous pouvez voir le Fleuve Jumin couler au sud.
+			Aucun doute, vous pouvez ainsi accéder à la partie Nord de la Forêt de Grumhel !
+		</desc>
+		<move to="tunel"/>
+		<move to="gocamp" pow="2"/>
+	</place>
+
+	<place id="gocol" zone="0" name="Descendre aux Collines Escarpées" pre="" goto="colesc" inf="170:387:south" bg="colesc">
+		<desc>
+			Au fur et à mesure que votre Dinoz descend le Grand Tout Chaud, la chaleur s'estompe peu à peu. Vous arrivez
+			enfin sur les plaines du Royaume de Dinoville. Cela fait plaisir d'être de retour à la maison !
+		</desc>
+	</place>
+
+	<place id="gocamp" zone="3" name="Voyager vers le camp des Korgons" pre="" goto="camp" inf="20:250:west" bg="camp">
+		<desc>
+			La fournaise du volcan laisse petit à petit place à une humidité tout aussi pénible à supporter. Vous vous
+			enfoncez progressivement dans la Jungle de Grumhel. Au détour d'un sentier, vous découvrez un campement
+			improvisé par des Korgons ! Il va falloir être très prudent.
+		</desc>
+	</place>
+
+	<place id="tourbt" zone="1" name="Tour de Karinbao" pre="à la " inf="314:113:default" bg="tourbt" hide="1">
+		<desc>
+			Une tour gigantesque se dresse fièrement sur le Grand Tout chaud. Elle perce les nuages vous empêchant de voir son sommet.
+			la route sera longue pour arriver au sommet mais la vue vaut le détour.
+		</desc>
+		<move to="vener" pow="2"/>
+		<move to="toursk" cond="scenario(nimba2,43+)" />
+	</place>
+	
+	<place id="toursk" zone="8" name="Aller vers l'île céleste" pre="" goto="voie" inf="314:10:default" bg="toursk" hide="1">
+		<desc>
+			Une tour gigantesque se dresse fièrement sur le Grand Tout Chaud. Vous êtes pratiquement arrivé au sommet de la tour.
+			Vous survolez la mer du nuage, seul le Grand Tout Chaud arrive à surmonter l'altitude. Vous approchez de Nimbao à grand pas.
+		</desc>
+		<move to="tourbt"/>
+	</place>
+	
+	<!--------------------------------- ILES ATLANTEINEES ------------------------------------------------->
+
+	<place id="ilewkk" zone="2" name="L'Ile Waïkiki" pre="à " inf="492:89:default" gather="pe">
+		<desc>
+			L'Ile Waïkiki est une petite île de l'archipel des Iles Atlantéinées. Elle se distingue par ses palmiers violets, dont
+			les longues feuilles sont utilisées pour donner des couleurs vives à beaucoup de vêtements sur Dinoland. Les humains locaux
+			pratiquent aussi un Art Martial très réputé, le Waïkikidô.
+		</desc>
+		<move to="goport"/>
+		<move to="marais"/>
+		<move to="corail" cond="fx(bouee)"/>
+	</place>
+
+	<place id="marais" zone="2" name="Marais Collant" pre="au " inf="336:124:default" bg="swamp_clear" gather="cu">
+		<desc>
+			Ce marais qui occupe le milieu de l'archipel est un véritable problème pour les voyageurs ! Suivant les jours, il change
+			d'état. On dit qu'il existe depuis plusieurs millénaires, et certains pensent même qu'il s'agit d'un gigantesque être vivant
+			doué d'un très mauvais sens de l'humour.
+		</desc>
+		<move to="ilewkk"/>
+		<move to="corail" cond="fx(bouee)" />
+		<move to="chutes"/>
+		<move to="chbroc" cond="scenario(nimba2,38-)|scenario(nimba2,50+)" />
+		<move to="chbro2" cond="scenario(nimba2,38+)+scenario(nimba2,49-)" />
+	</place>
+
+	<place id="marok" zone="2" name="Marais Collant" pre="au " inf="356:104:default" real="marais" goto="marais" bg="swamp_clear">
+		<desc>
+			Aujourd'hui, les eaux sont basses : vous pouvez vous déplacer normalement.
+		</desc>
+	</place>
+
+	<place id="marfog" zone="99" name="Marais Collant" pre="au " inf="316:104:default" real="marais" goto="marais" bg="swamp_fog">
+		<desc>
+			Aujourd'hui, le marais est perdu dans la brume... Vous n'y trouverez surement aucun monstre à combattre.
+		</desc>
+	</place>
+
+	<place id="marfld" zone="2" name="Marais Collant" pre="au " inf="336:104:default" real="marais" goto="marais" bg="swamp_flood">
+		<desc>
+			Aujourd'hui, le marais est totalement inondé ! Vous ne pouvez pas vous y déplacer. Il vous faudra attendre demain
+			pour sortir de ce bourbier.
+		</desc>
+	</place>
+
+	<place id="corail" zone="2" name="Mines de Corail" pre="aux " inf="479:145:cavern" gather="fo">
+		<desc>
+			Jadis enfouies sous l'eau, de grandes quantités de corail se sont retrouvées un jour propulsées à la surface.
+			Leur extraordinaire solidité fait du Corail un matériel très utilisé à Dinoland. C'est pour cette raison que cet
+			endroit est désormais une immense mine où travaillent des centaines de personnes.
+		</desc>
+		<move to="ilewkk"/>
+		<move to="marais"/>
+		<move to="itlost" cond="scenario(kabuki,19)"/>
+		<move to="itotem" cond="collec(kaura)|scenario(kabuki,20)|curmission(leakjb)" pow="3"/>
+		<move to="iceisl" cond="scenario(smog,8+)+scenario(smog,14-)"/>
+		<move to="iceis2" cond="scenario(smog,14+)"/>
+		
+	</place>
+
+	<place id="itlost" zone="2" name="Se lancer à la poursuite d'Igor" goto="corail" pre="" inf="587:236:default">
+		<desc>
+			Grâce à l'Aura de Yakuzi, vous pouvez retourner aux Mines de Corail. Vite ! Il faut rejoindre l'Ile du Totem cette fois !
+		</desc>
+	</place>
+
+	<place id="baobob" zone="2" name="Chez M. Bao Bob" pre="" inf="207:80:house" gather="ch">
+		<desc>
+			Bao Bob est un étrange personnage. Il affirme être l'un des représentant d'un ancien peuple de géants disparus de la surface de Dinoland depuis des centaines d'années.
+			Son oeil a probablement été témoin des secrets les mieux cachés de Dinoland. Les histoires qu'il raconte sont extraordinaires et amusent beaucoup les enfants.
+		</desc>
+		<move to="chutes"/>
+	</place>
+
+	<place id="chutes" zone="2" name="Chutes Mutantes" pre="aux " inf="103:88:default" gather="pe">
+		<desc>
+			Les Chutes Mutantes sont certainement l'un des plus grands mystères de Dinoland.
+			En effet, l'eau de l'océan s'engouffre à longueur de journée dans cet immense trou sans pour autant que son niveau baisse.
+			De grands scientifiques ont imaginé qu'il existe un endroit très loin où l'eau retourne dans l'océan, mais personne ne les a jamais crus.
+		</desc>
+		<move to="rasca" cond="fx(rasca)" pow="2"/>
+		<move to="baobob" cond="fx(bouee)"/>
+		<move to="marais"/>
+		<move to="gogrum" cond="fx(chutes)"/>
+		<move to="gosomb" cond="fx(morsso)"/>
+	</place>
+
+	<place id="rasca" zone="2" name="Appeler un Rascaphandre" pre="" goto="dome" inf="110:127:rasca" bg="rasca">
+		<desc>
+			Votre Appeau attire un Rascaphandre et vous permet ainsi de rejoindre le Dôme Soulaflotte.
+		</desc>
+	</place>
+
+	<place id="dome" zone="2" name="Dôme Soulaflotte" pre="au " inf="87:172:castle" bg="dome" gather="en">
+		<desc>
+			Véritable ville sous-marine, le Dôme Soulaflotte abrite les derniers survivants de la civilisation des Atlantes.
+			Jadis ils dominaient les Iles Altantéinées mais une étrange maladie les a presque entièrement exterminés. Le Dôme
+			reste néanmoins magnifique malgré les nombreux siècles qui se sont passés.
+		</desc>
+		<move to="chutes"/>
+	</place>
+
+	<place id="itotem" zone="2" name="Ile du Totem" pre="à l'" inf="587:236:default">
+		<desc>
+			L'Ile du Totem est un lieu où survit un groupe de Kabukis ayant été miraculeusement sauvés par un homme étrange
+			lors du Grand Cataclysme. Leur bienfaiteur a ensuite dressé un immense Totem au centre de l'île, qui empêche
+			les personnes ne possédant pas l'Aura Kabuki d'y accéder...
+		</desc>
+		<move to="corail"/>
+	</place>
+
+	<place id="goport" zone="0" name="Nager jusqu'au Port de Prêche" pre="" goto="port" inf="519:54:swim" bg="go_swim">
+		<desc>
+			Sans hésiter, votre Dinoz se jette à l'eau muni de sa bouée. La mer est calme, ce qui rend le trajet du retour
+			agréable, bien que très long... Après plusieurs heures d'effort, les côtes apparaissent enfin et votre
+			Dinoz parvient, épuisé mais sain et sauf, au Port de Prêche.
+		</desc>
+	</place>
+
+	<place id="gogrum" zone="3" name="Contourner les Chutes" pre="" goto="auree" inf="163:38:water" bg="go_auree">
+		<desc>
+			Grâce au Gant des Zors et aux Feuilles de Nénuphars, votre Dinoz parvient à contourner les Chutes
+			Mutantes sans être entraîné par le violent courant marin. Il arrive ainsi sur le rivage de l'océan, à l'aurée
+			de la Forêt de Grumhel.
+		</desc>
+	</place>
+	
+	<place id="gosomb" zone="4" name="Plonger dans les Chutes" pre="" goto="dkchut" inf="70:40:water" bg="dk_baobob">
+		<desc>
+			Grâce au morceau d'Orbe Sombre que votre dinoz possède, vous pouvez accéder aux lieux du Monde Sombre que vous
+			avez déjà visité. L'obscurité est omniprésente, il paraît difficile de croire que vous allez rencontrer quelqu'un.
+		</desc>
+	</place>
+
+	<place id="chbroc" zone="2" name="Atelier de Broc" pre="à l'" inf="267:227:default" bg="atelier" hide="1">
+		<desc>
+			Au sommet du roc des îles atlantéinées se trouve un atelier.
+			Certains disent que l'inventeur qui a élu domicile à cet endroit s'est isolé pour ne pas entendre les ricanements des autres,
+			mais celui-ci semble avoir un but bien précis...
+		</desc>
+		<move to="marais"/>
+	</place>
+	
+	<place id="chbro2" zone="2" name="Atelier de Broc détruit" pre="à l'" inf="268:228:default" bg="atelier2" hide="1">
+		<desc>
+			l'atelier de Broc est entièrement détruit, le fidèle Flying Brocky n'est plus qu'une épave !
+			Les soldats de Grizorg a réduit à néant vos seules chances de retourner sur l'île céleste...
+		</desc>
+		<move to="marais"/>
+	</place>
+	
+	<place id="iceisl" zone="2" name="Iceberg" pre="à l'" inf="402:254:default" hide="1">
+		<desc>
+			Autrefois une île paisible de l'archipel, cet endroit a complétement changé de visage depuis qu'un énorme iceberg est remonté à la surface.
+			Il fait bien froid par ici maintenant.
+		</desc>
+		<move to="corail"/>
+		<move to="labo" cond="scenario(smog,14)"/>
+	</place>
+	
+	<place id="iceis2" zone="2" name="Iceberg" pre="à l'" inf="402:254:default" hide="1">
+		<desc>
+			Autrefois une île paisible de l'archipel, cet endroit a complétement changé de visage depuis qu'un énorme iceberg est remonté à la surface.
+			Il fait bien froid par ici maintenant. Un laboratoire a été construit en hauteur.
+		</desc>
+		<move to="corail"/>
+		<move to="labo"  cond="scenario(smog,14+)+scenario(smog,17-)"/>
+		<move to="labo2" cond="scenario(smog,19+)"/>
+	</place>
+	
+	<place id="labo" zone="2" name="Laboratoire" pre="au " inf="443:250:clinik" hide="1">
+		<desc>
+			Le laboratoire du Professeur Henderson est grand, il y a des tuyaux et des cabines d'incubation partout.
+			Il est à la pointe de la technologie !
+		</desc>
+		<move to="iceis2"/>
+	</place>
+	
+	<place id="labo2" zone="2" name="Laboratoire" pre="au " inf="443:250:clinik" hide="1">
+		<desc>
+			Le laboratoire du Professeur Henderson a été contaminé par le monde sombre, il ne fait pas bon rester dans les parages.
+		</desc>
+		<move to="iceis2"/>
+	</place>
+	
+	<place id="labo3" zone="2" name="fond du Laboratoire" pre="au " inf="443:300:default" hide="1">
+		<desc>
+			A 6000 lieux sous les mers, le laboratoire est plongé dans un silence macabre. Mieux vaut retrouver la surface au plus vite !
+		</desc>
+		<move to="labo2" _cond="!hasobject(pile)"/>
+	</place>
+	
+	<!--------------------------------- FORET DE GRUMHEL ------------------------------------------------->
+	
+	<place id="auree" zone="3" name="L'Orée de la Forêt" pre="à " inf="339:330:cavern" gather="cu">
+		<desc>
+			Au delà de ce point s'étend la plus profonde, la plus mystérieuse, et surtout la plus
+			dangereuse des forêts de Dinoland. Les plus grands aventuriers
+			y ont souvent laissé leur vie, alors préparez bien votre Dinoz avant d'y entrer.
+		</desc>
+		<move to="gochut"/>
+		<move to="chemin"/>
+	</place>
+	
+	<place id="chemin" zone="3" name="Chemin Glauque" pre="sur le " inf="320:248:default" gather="cu">
+		<desc>
+			Au travers de cette immense Forêt, un chemin se dessine. Il s'agit certainement de l'endroit qu'utilisent les
+			éleveurs de Dinoz pour traverser la forêt. En tout cas, mieux vaux ne pas s'en écarter, car sinon, les risques
+			de se perdre et de finir dévoré par des Korgons est très grand.
+		</desc>
+		<move to="auree"/>
+		<move to="collin" pow="3"/>
+		<move to="fleuve"/>
+	</place>
+	
+	<place id="collin" zone="3" name="Collines hantées" pre="dans les " inf="390:210:mountain" gather="fo">
+		<desc>
+			Ces collines se dressent à l'extrême Est de la Forêt, elles sont couvertes de gros arbres sombres qui paraissent
+			parfois vivants et semblent se déplacer pendant la nuit, quand personne ne les observe. Quel mystère ces étranges
+			collines peuvent-elles bien cacher ?
+		</desc>
+		<move to="fleuve"/>
+		<move to="chemin"/>
+	</place>
+
+	<place id="fleuve" zone="3" name="Fleuve Jumin" pre="au " inf="335:118:default" gather="pe">
+		<desc>
+			Le Fleuve Jumin est le plus grand cours d'eau de Dinoland. Il traverse et abreuve la grande Forêt de Grumhel à
+			lui tout seul. Au vu de sa largeur et de la force de son courant, il est impossible de le traverser sans équipement
+			de natation avancé. En tout cas, une simple bouée ne suffira pas...
+		</desc>
+		<move to="camp" cond="fx(palmes)"/>
+		<move to="jungle" cond="fx(palmes)"/>
+		<move to="collin" pow="3"/>
+		<move to="chemin"/>
+	</place>
+
+	<place id="camp" zone="3" name="Camp Korgon" pre="au " inf="235:53:house" gather="ch">
+		<desc>
+			Cette partie de la Forêt est a moitié dévorée par de petites créatures nommé les Korgons. Ils ont très mauvais caractère
+			et passent leur temps à harceler les différentes créatures de la Forêt. Par chance, ce groupe de Korgons semble avoir
+			suffisamment dévoré de bois, et ils ne s'interessent donc pas trop à vos mollets.
+		</desc>
+		<move to="gogorg"/>
+		<move to="fleuve" cond="fx(palmes)"/>
+	</place>
+
+	<place id="jungle" zone="3" name="Jungle Sauvage" pre="dans la " inf="83:174:forest" gather="ch">
+		<desc>
+			Jadis dans cette partie de la forêt qui ressemble plus à une Jungle, vivaient d'étranges créatures ressemblant d'après
+			les rares témoignages à des sortes de Singes-Ninjas. Mais depuis maintenant des dizaines d'années, aucune de ces créatures
+			n'a été aperçue, au point que beaucoup doutent aujourd'hui qu'elles aient jamais existés.
+		</desc>
+		<move to="fleuve"/>
+		<move to="garde" pow="2"/>
+	</place>
+
+	<place id="garde" zone="3" name="Porte de Sylvenoire" pre="à la " inf="54:40:door" gather="en">
+		<desc>
+			Cette partie de la Jungle est certainement l'une des plus méconnues de Dinoland. Peu de maîtres dinoz s'y sont aventurés,
+			moins encore en sont revenu vivants... La végétation y est si dense qu'elle forme un véritable mur infranchissable
+			sur plusieurs kilomètres ! La seule ouverture praticable est un petit portail aménagé au bord de la forêt de Sylvenoire et
+			protégé par une créature étrange connue sous le nom de «Gardien de la Forêt».
+		</desc>
+		<move to="jungle" pow="2"/>
+		<move to="gostep" cond="fx(sylkey)"/>
+	</place>
+
+
+	<place id="gochut" zone="2" name="Retourner vers les Chutes" pre="" goto="chutes" inf="326:371:water" bg="go_swim">
+		<desc>
+			Grâce au Gant des Zors et aux Feuilles de Nénuphars, votre Dinoz parvient à contourner les Chutes
+			Mutantes sans être entraîné par le violent courant marin. Il débarque ainsi à nouveau sur les îles
+			proches des Chutes.
+		</desc>
+	</place>
+
+	<place id="gogorg" zone="1" name="Retourner aux Gorges profondes" pre="" goto="gorges" inf="325:20:north" bg="gorges">
+		<desc>
+			Votre dinoz retrouve le chemin des gorges après une longue et pénible marche dans la jungle épaisse entourant le
+			campement des Korgons.
+		</desc>
+	</place>
+
+	<place id="gostep" zone="5" name="Passer la Porte de Sylvenoire" pre="" goto="senter" inf="10:10:door" bg="st_enter">
+		<desc>
+			La Clé de Sylvenoire vous ouvre les portes d'un nouveau pays : les Steppes Magnétiques. Quelles incroyables aventures attendent votre Dinoz au-delà ?
+		</desc>
+	</place>
+
+	<!--------------------------------- MONDE SOMBRE ------------------------------------------------->
+
+	<place id="dkbao" zone="4" name="Portail" pre="au " inf="207:80:house" bg="dk_baobob">
+		<desc>
+			De l'autre coté du portail se dresse un lieu inconnu et pourtant étrangement familier.
+			Des hurlements se font entendre au loin. Il va falloir que votre Dinoz reste sur ses gardes s'il veut survivre.
+		</desc>
+		<move to="dkchut"/>
+		<move to="fake2" cond="curmission(roid)|mission(roid)"/>
+	</place>
+
+	<place id="dkchut" zone="4" name="Le gouffre des âmes perdues" pre="dans " inf="113:78:default" bg="dk_chutes">
+		<desc>
+			A travers l'épais brouillard, on entend comme un lointain grondement, de l'eau qui s'écoule violemment.
+			Il vaut mieux ne pas aller nager très loin, le courant est très violent...
+		</desc>
+		<move to="dkbao"/>
+		<move to="dktow"/>
+		<move to="rechut" cond="active(gulom)" />
+		<move to="fake" cond="curmission(ouestu)|curmission(lumi)|curmission(truci2)|fx(morsso)" />
+	</place>
+
+	<place id="dktow" zone="4" name="La Tour Sombre" pre="au pied de " inf="316:154:default" bg="dk_tower">
+		<desc>
+			Une grande Tour Noire se dresse dans ce lieu. A première vue elle semble inhabitée mais de nombreux ossements de Dinoz sont entassés à l'entrée.
+			La grand porte sombre qui permet de rentrer dans la Tour semble entrouverte. Il vaut sûrement mieux ne pas s'aventurer plus loin pour l'instant, car entrer dans la Tour serait suicidaire !
+		</desc>
+		<move to="dkchut"/>
+		<move to="gotow" cond="!curmission(monte)|!curmission(roif)|!scenario(smog,15)"/>
+		<move to="dktow2" cond="curmission(monte)|curmission(roif)|scenario(smog,15)|scenario(smog,16)"/>
+	</place>
+	
+	<place id="dktow2" zone="4" name="La Tour Sombre 1er étage" pre="à " inf="336:134:door" bg="dk_toweret" hide="1">
+		<desc>
+			Les murs assemblés grossièrement se ressemblent tous, il en faudrait peu pour que vous vous perdiez, heureusement, il n'existe qu'un seul chemin vers le sommet.
+		</desc>
+		<move to="dktow"/>
+		<move to="dktow3"/>
+	</place>
+	
+	<place id="dktow3" zone="4" name="La Tour Sombre 2ème étage" pre="à " inf="340:100:default" bg="dk_toweret" hide="1">
+		<desc>
+			La longue ascension continue, cette Tour peu hospitalière héberge des habitants peu disposé à vous laisser tranquillement aller au sommet.
+		</desc>
+		<move to="dktow2"/>
+		<move to="dktow4"/>
+	</place>
+	
+	<place id="dktow4" zone="4" name="1er donjon Sombre" pre="au " inf="342:75:default" bg="dk_towerIn" hide="1">
+		<desc>
+			Premier donjon de la tour sombre, son accès vient de se révèler, le monde sombre est toujours en constante évolution...
+		</desc>
+		<move to="dktow3"/>
+		<move to="dktowa"/>
+		<move to="dktowb"/>
+	</place>
+	
+	<place id="dktowa" zone="4" name="2ème donjon Sombre" pre="au " inf="325:60:default" bg="dk_towerIn" hide="1">
+		<desc>
+			Deuxième donjon de la tour sombre, son accès vient de se révèler, le monde sombre est toujours en constante évolution...
+		</desc>
+		<move to="dktow4"/>
+		<move to="dktows"/>
+	</place>
+	
+	<place id="dktowb" zone="4" name="3ème donjon Sombre" pre="au " inf="365:60:default" bg="dk_towerIn" hide="1">
+		<desc>
+			Troisième donjon de la tour sombre, son accès vient de se révèler, le monde sombre est toujours en constante évolution...
+		</desc>
+		<move to="dktow4"/>
+		<move to="dktows"/>
+	</place>
+	
+	<place id="dktows" zone="4" name="dernier donjon sombre" pre="au " inf="345:55:default" bg="dk_towerIn" hide="1">
+		<desc>
+			Dernier donjon de la tour sombre, son accès vient de se révèler, le monde sombre est toujours en constante évolution...
+		</desc>
+		<move to="dktowa"/>
+		<move to="dktowb"/>
+	</place>
+	
+	<place id="fake" zone="4" name="???" pre="à " inf="119:190:default" bg="dk_damne">
+		<desc>Une île déserte communément appelé l'île de la damnation, où quelques âmes en peine viennent s'échouer. Il fait particulièrement sombre par ici...</desc>
+		<move to="dkchut"/>
+	</place>
+
+
+	<place id="fake2" zone="4" name="????" pre="" inf="329:36:default" bg="dk_damne" gather="cu4">
+		<desc>Une île déserte communément appelé l'île des feu-folles, ces esprits errants sèment le désespoir et la mort. Il fait particulièrement sombre par ici...</desc>
+		<move to="dkbao"/>
+	</place>
+
+
+	<place id="gotow" zone="4" name="Entrer dans la Tour Sombre" pre="" inf="336:134:door" bg="dk_towerIn" goto="dktow">
+		<desc></desc>
+	</place>
+	
+	<place id="rechut" zone="2" name="Retourner vers la surface" pre="" goto="chutes" inf="70:40:water" bg="go_swim">
+		<desc>
+			Grâce au morceau d'Orbe Sombre que votre dinoz possède, vous pouvez revenir à la surface.
+			La lumière omniprésente vous aveugle quelques minutes, il vaut mieux ne pas rester trop longtemps dans le Monde Sombre.
+		</desc>
+		<move to="chutes" cond="fx(morsso)"/>
+	</place>
+
+	<!--------------------------------- STEPPES MAGNETIQUES ------------------------------------------>
+
+	<place id="gosylv" zone="3" name="Retourner à la Forêt de Grumhel" pre="" inf="850:485:forest" bg="garde" goto="garde">
+		<desc>
+			Aprés la chaleur, les éclairs, et la forte lumière des Steppes Magnétiques, ça fait du bien de retrouver enfin
+			la fraîcheur de la Forêt de Grumhel et la gentillesse de ses monstres...
+		</desc>
+	</place>
+
+	<place id="senter" zone="5" name="Frontière crépitante" pre="à la " inf="801:464:forest" bg="st_enter" gather="cu">
+		<desc>
+			Le sentier qui traverse la Porte de Sylvenoire débouche directement sur une immense steppe de sable
+			brûlant s'étendant à perte de vue... Des arcs électriques déchirent le ciel régulièrement dans un
+			grondement menaçant, résultat du frottement de la Magnétite, la roche qui se trouve en grande quantité
+			dans cette région...
+		</desc>
+		<move to="scross" pow="2"/>
+		<move to="svillg"/>
+		<move to="gosylv"/>
+	</place>
+
+	<place id="scross" zone="5" name="Croisée des nomades" pre="à la " inf="795:325:default" bg="st_cross">
+		<desc>
+			Le profond sentier qui serpente ici a été creusé depuis des générations par des esclaves Rocky
+			transportant les cargaisons de Magnétite entre la Citadelle du nord et la forêt de Grumhel. Cette
+			route est aujourd'hui devenue trop dangereuse pour être praticable seul. Une voie alternative,
+			plus sûre, a été tracée par delà le "Sabot", à l'est.
+		</desc>
+		<move to="senter" pow="2"/>
+		<move to="sking" pow="2"/>
+		<move to="scanyo" pow="2"/>
+	</place>
+
+	<place id="svillg" zone="5" name="Avant-poste Rocky" pre="à l'" inf="945:370:house" bg="st_todo" gather="ch">
+		<desc>
+			L'Avant-poste est un point de relais pour les marchands venus de Grumhel. Plus sûr que la
+			Croisée, cette étape est aussi le dernier havre de paix avant les dangers qui peuplent
+			les Steppes Magnétiques.
+		</desc>
+		<move to="senter"/>
+		<move to="sking"/>
+	</place>
+
+	<place id="sking" zone="5" name="Citadelle du Roi" pre="à la " inf="775:226:castle" bg="st_king" gather="fo">
+		<desc>
+			Au centre des steppes se dresse un grand rocher à l'air étrange. C'est à l'intérieur de cet
+			endroit que se niche la Citadelle du Roi Rocky. Depuis des générations, la famille royale -
+			mi-humaine mi-minérale - contrôle les Rockys des alentours et exerce son autorité sur la
+			quasi-totalité des Steppes Magnétiques.
+		</desc>
+		<move to="scross" pow="2"/>
+		<move to="stowr1"/>
+		<move to="svillg"/>
+		<move to="spylon"/>
+	</place>
+
+	<place id="spylon" zone="5" name="Pylônes de Magnétite" pre="aux " inf="580:190:default" bg="st_pylon" gather="en">
+		<desc>
+			Au beau milieu du désert s'élèvent les Pylônes, formation naturelle de Magnétite qui crée
+			continuellement de puissants et dangereux arcs électriques ! Mieux vaut ne pas s'y attarder,
+			on a vite fait d'y être foudroyé.
+		</desc>
+		<move to="sking"/>
+		<move to="slake"/>
+		<move to="stowr2"/>
+	</place>
+
+	<place id="slake" zone="5" name="Syphon siffleur" pre="au " inf="410:270:default" bg="st_syphon" gather="pe">
+		<desc>
+			Les sables mouvants des environs sont extrêmement dangereux : trés riches en Magnétite, ils prennent
+			un reflet qui ressemble à s'y mépendre à de l'eau. De nombreux aventuriers assoiffés s'y sont laissés
+			prendre et se sont fait aspirer vivant. On raconte qu'à chaque victime, le Syphon emmet un sifflement
+			mélodique, d'où son nom.
+		</desc>
+		<move to="spylon"/>
+		<move to="scanyo"/>
+		<move to="stowr3"/>
+		<move to="sband1" cond="scenario(magnet,2+)" pow="2"/>
+		<move to="sinto1" cond="!collec(magnet)"/>
+		<move to="sinto2" cond="collec(magnet)"/>
+	</place>
+
+	<place id="scanyo" zone="5" name="Sentiers de Toutemba" pre="aux " inf="616:356:default" bg="st_canyon" gather="en">
+		<desc>
+			Entre les haut-plateaux de Toulaho sillonnent les Sentiers de Toutemba, connus pour les nombreux
+			dinoz disparus dans les éboulements de Magnétite. Le sol est couvert de cailloux tranchants
+			et brûlants, et les parois en Magnétite génèrent régulièrement des arcs électriques
+			mortels en travers de la route.
+		</desc>
+		<move to="scross" pow="2"/>
+		<move to="slake"/>
+	</place>
+
+	<place id="stowr1" zone="5" name="Dévoreuse de l'Est" pre="à la " inf="950:146:forest" bg="st_devor">
+		<desc>
+			"Qui cultive la dévoreuse deviendra riche". Depuis une éternité, les Maîtres Dinoz combattent pour
+			garder ou prendre le contrôle de la production quotidienne des précieuses graînes de la Devoreuse.
+			Il existe trois Dévoreuses dans les Steppes Magnétiques, mais on raconte qu'elles ont toutes la
+			même racine unique. Seul un Grand Seigneur serait capable de conserver le contrôle des trois Dévoreuses !
+		</desc>
+		<move to="sking"/>
+	</place>
+
+	<place id="stowr2" zone="5" name="Dévoreuse du Nord" pre="à la " inf="496:70:forest" bg="st_devor">
+		<desc>
+			"Qui cultive la dévoreuse deviendra riche". Depuis une éternité, les Maîtres Dinoz combattent pour
+			garder ou prendre le contrôle de la production quotidienne des précieuses graînes de la Devoreuse.
+			On dit que celui qui en rassemble 100 verra son voeu exaucé. En attendant, les graînes se revendent
+			pour un très bon prix auprés du Marchand Ambulant.
+		</desc>
+		<move to="spylon"/>
+	</place>
+
+	<place id="stowr3" zone="5" name="Dévoreuse de l'Ouest" pre="à la " inf="353:416:forest" bg="st_devor">
+		<desc>
+			"Qui cultive la dévoreuse deviendra riche". Depuis une éternité, les Maîtres Dinoz combattent pour
+			garder ou prendre le contrôle de la production quotidienne des précieuses graînes de la Devoreuse.
+			D'aprés les légendes nomades, les Dévoreuses se nourissent du sang versé par les victimes cherchant
+			à s'emparer d'elles.
+		</desc>
+		<move to="slake"/>
+	</place>
+
+	<place id="sband1" zone="5" name="Taudis des Zaxa" pre="près des " inf="156:276:cavern" bg="st_camp">
+		<desc>Les Zaxa sont des pillards de père en fils et sont fort logiquement appréciés pour leur travail propre et sans bavure.
+		Leurs attaques de convois sont même recommandées par les guides touristiques de la région...</desc>
+		<move to="slake" pow="2"/>
+		<move to="sband2"/>
+		<move to="sband3" pow="3"/>
+	</place>
+
+	<place id="sband2" zone="5" name="Camp des Emmemma" pre="au " inf="70:176:cavern" bg="st_camp">
+		<desc>Les Emmemma sont des mercenaires sans pitié bien connus pour leur technique d'embuscade "à l'ancienne" :
+		le gros rocher dans le ravin d'abord, puis les coups de massue jusqu'à ce que ça ne bouge plus. Ensuite seulement on ramasse. Pas de tracas ni de blabla.</desc>
+		<move to="sband3"/>
+ 		<move to="sband1"/>
+ 		<move to="sporte" cond="active(caush)+scenario(caush,6+)+clanact(pompe)" />
+	</place>
+
+	<place id="sband3" zone="5" name="Campement des Mattmût" pre="au " inf="40:356:cavern" bg="st_camp">
+		<desc>Les Mattmût sont les spécialistes de la filouterie et des jeux pipés.
+		Moins aggressifs que leurs voisins, ils n'en restent pas moins dangereux, pour peu que vous teniez à votre or.
+		Leur technique consiste à épuiser l'adversaire avec leurs chants traditionnels.</desc>
+		<move to="sband1" pow="3"/>
+		<move to="sband2"/>
+		<move to="scampw" cond="scenario(magnet,5+)"/>
+	</place>
+
+	<place id="scampw" zone="5" name="Repaire de la Team-W" pre="au " inf="26:463:house" bg="st_campw" gather="fo">
+		<desc>
+			Le repaire caché de la Team-W... Ils s'y réfugient en cas de grand danger, de façon à soigner
+			leurs blessures et à préparer leur contre-attaque ! Ces nomades ont une volonté d'acier et ne
+			s'avouent jamais vaincus. Nombreux sont leurs ennemis à avoir péri pour avoir relaché leur
+			attention, croyant les avoir terrassés pour de bon...
+		</desc>
+		<move to="sband3"/>
+	</place>
+
+	<place id="sinto1" zone="5" name="S'approcher du Syphon" pre="" inf="390:250:default" bg="st_syphon" goto="slake">
+		<desc>
+			Aprés vous être approché du syphon, votre Dinoz commence à s'enfoncer dans les sables mouvants... malgré ses
+			efforts il ne peut pas s'en sortir et meurt dans d'atroces souffrances... La prochaine fois, faîtes attention
+			aux avertissements que vous donne les Guides Touristiques de la région...
+		</desc>
+	</place>
+
+	<place id="sinto2" zone="5" name="S'approcher du Syphon" pre="" inf="390:250:default" bg="st_syphon" goto="scaush">
+		<desc>
+			Aprés vous être approché du syphon, votre Dinoz commence à s'enfoncer dans les sables mouvants...
+			A ce moment là, la Magnétite Négative commence à s'illuminer et le sable riche en magnétite s'écarte
+			de lui... Grâce à ce miracle, vous pouvez traverser jusqu'à l'autre rive du Syphon...
+		</desc>
+	</place>
+
+	<place id="scaush" zone="5" name="Confins des Steppes" pre="aux " inf="250:20:default" bg="st_caush" gather="cu">
+		<desc>
+			Aux confins des Steppes se dresse une barrière rocheuse infranchissable... on peut appercevoir au loin
+			une chaîne de montagnes, la patrie des Santaz : les monts de Caushemesh. Qui sait quels dangers
+			et quelles aventures vont vous attendre là-bas, si toutefois vous parvenez un jour à y accéder...
+		</desc>
+		<move to="slake" cond="collec(magnet)" />
+		<move to="sporte" cond="active(caush)+scenario(caush,6+)+clanact(pompe)" />
+	</place>
+	
+	<place id="sporte" zone="5" name=" Portes de Caushemesh" pre="aux" inf="70:30:door" bg="sporte" active="caush" gather="fo">
+		<desc>
+			Caché la plupart du temps par les tempêtes de sables, une imposante porte se dresse dans le désert des steppes, au pied des monts de Caushesmesh.
+			Unique point d'entrée dans ce royaume mystérieux, elle empêche quiconque d'y entrer, ou serait-ce d'en sortir ?
+		</desc>
+		<move to="gotoca" cond="scenario(caush,17+)"/>
+		<move to="sband2"/>
+		<move to="scaush" />
+	</place>
+	
+	
+	<place id="gotoca" zone="9" name="Gravir le mont Caushemesh" pre="" inf="10:10:mountain" bg="cporte" goto="cporte" active="caush">
+		<desc>
+			Les contrées mystérieuses de Caushemesh vont enfin révèler leur formes.
+		</desc>
+	</place>
+
+	
+	<!--------------------------------- DINOVILLE OUEST ------------------------------------------------->
+
+	<place id="dplaza" zone="6" name="Dinoplaza" pre="à " inf="340:391:house" bg="dw_plaza">
+		<desc>
+			Ce quartier tout nouveau est encore peu accessible, mais de nombreux habitants viennent régulièrement s'y installer pour fuir la surpopulation de la capitale.
+			On y trouve de tout et c'est récemment devenu un endroit très à la mode, où fleurissent de nouvelles attractions tels le Concours de Dinoz.
+		</desc>
+		<move to="godnv"/>
+		<move to="dcine" cond="active(cinema)"/>
+		<move to="clinik" cond="scenario(clinik,5+)" />
+		<move to="villa" cond="scenario(nimbao,3+)" />
+
+	</place>
+
+	<place id="villa" zone="6" name="Villa" pre="à la " inf="185:385:house" bg="villa">
+		<desc>
+			Une soi-disante villa, ressemblant plus à un cabanon à roulette, paraît échoué sur la plage, on peut lire sur un panneau :
+			"Attention, dinoz méchant". Peut-être vaut-il mieux passer son chemin...?
+		</desc>
+		<move to="dcine" cond="active(cinema)+!scenario(nimbao,4)" />
+		<move to="dplaza" cond="!scenario(nimbao,4)" />
+	</place>
+
+	<place id="dcine" zone="6" name="Cinéma Paradino" pre="au " inf="260:320:cavern" bg="dw_cine">
+		<desc>
+			Sur les contreforts du Petit Canyon, une caverne de l'ère Prédinozienne a été aménagée en magnifique Cinéma.
+			Ici s'y projetent les derniers films à la mode, et de nombreux réalisateurs en herbe viennent s'essayer à la réalisation de scénarios plus ou moins farfelus.
+		</desc>
+		<move to="dplaza"/>
+		<move to="clinik" cond="scenario(clinik,5+)" />
+		<move to="villa" cond="scenario(nimbao,3+)" />
+		<move to="poste" cond="scenario(king,1+)" />
+	</place>
+	
+	<place id="clinik" zone="6" name="Clinique de Dinoville" pre="à la " inf="405:260:clinik" bg="dw_clini1" >
+		<desc>C'est dans ce lieu que va se construire la nouvelle clinique de Dinoville...</desc>
+		<move to="dplaza"/>
+		<move to="dcine" cond="active(cinema)"/>
+	</place>
+	
+	<place id="clini2" zone="6" name="Clinique de Dinoville" pre="à la " inf="405:260:clinik" real="clinik" goto="clinik" bg="dw_clini2" >
+		<desc>C'est dans ce lieu que s'est construite la nouvelle clinique de Dinoville, les traitements prodigués aux patients sont réputés pour être les meilleurs de Dinoland.</desc>
+	</place>
+	
+	<place id="godnv" zone="0" name="Retourner à Dinoville" pre="" goto="dnv" inf="380:347:east" bg="dnv">
+		<desc>Dinoplaza est un peu trop isolé... Cela fait toujours plaisir d'en sortir et de retrouver le bon air pollué de Dinoville !</desc>
+	</place>
+	
+	<place id="poste" zone="6" name="Poste de garde" pre="au " inf="290:180:default" bg="dw_chato">
+		<desc>Ce poste de garde permet aux soldats du château de pouvoir réguler les entrées et sortie autour du domaine royal. On a une jolie vue du château du Roi de cet endroit.
+		Le poste est très bien gardé et il ne vaut mieux pas embêter les soldats, il parait que leur capitaine est impitoyable !</desc>
+		<move to="dcine"/>
+		<move to="chato" cond="scenario(king,6+)" />
+		<move to="portal" cond="scenario(fmedal,13+)" />
+	</place>
+
+	<place id="chato" zone="6" name="Château de Dinoville" pre="au " inf="290:120:castle" bg="dw_trone">
+		<desc>Une fois la massive porte passée, la salle du trône se trouve droit devant vous. Vous voyez quelques gardes par-ci par-là, certains parlent du dernier jeu à la mode, d'autres font sécher leurs vêtements sur des
+		étendoirs, ambiance... décontracté. Le roi, toujours de bonne humeur vous attend dans la salle du trône.</desc>
+		<move to="poste"/>
+	</place>
+	
+	
+	<place id="portal" zone="6" name="Voie du temple céleste" pre="sur la " inf="338:170:default" bg="dw_portal" cond="scenario(fmedal,13+)" hide="1">
+		<desc>Le pentacle dessiné au sol projette une lumière vive qui dissipe les nuages de Nimbao. Malheureusement, le faisceau n'est pas assez puissant pour vous transporter dans les cieux. Il va falloir se débrouiller seul.</desc>
+		<move to="poste"/>
+	</place>
+
+	<!--------------------------------- ILE DES MONSTRES ------------------------------------------------->
+
+	<place id="mport" zone="7" name="Port Monstreux" pre="au " inf="102:85:default" bg="m_port">
+		<desc>
+			Le Port Monstreux mérite bien son nom... on y trouve toutes sortes de monstres habitant sur l'Ile.
+			Mais quelquechose semble bizarre dans son organisation, comme si le port était séparé en deux parties distinctes.
+		</desc>
+		<move to="bkport"/>
+		<move to="mfoutp" cond="dungeon(mbegin)"/>
+		<move to="mvoutp"/>
+	</place>
+
+	<place id="mfoutp" zone="7" name="Avant-Poste Frutox" pre="à l'" inf="167:108:default" bg="m_outfrutox">
+		<desc>
+			La zone frontalière entre Frutox et Végétox est surveillée avec attention par chaque camp.
+			Cet avant-poste contrôlé par les Frutox est un endroit stratégique puisqu'il permet d'espionner les mouvements Végétox tout en protégeant le Palais royal.
+		</desc>
+		<move to="mport"/>
+		<move to="mfpalc"/>
+		<move to="mforst"/>
+		<move to="mvoutp"/>
+	</place>
+
+	<place id="mfpalc" zone="7" name="Palais du Grotox" pre="au " inf="210:85:default" bg="m_grotox">
+		<desc>
+			Le Roi des Frutox se fait appeller le Grotox. On le présente souvent comme le plus puissant de son peuple, et il règne d'une main de fer sur la partie de l'Ile des Monstres qui est sous son contrôle.
+		</desc>
+		<move to="mfoutp"/>
+		<move to="mforst"/>
+	</place>
+
+	<place id="mforst" zone="7" name="Forêt Kaze Kami" pre="à la " inf="225:135:default" bg="m_forest">
+		<desc>
+			La forêt sacrée Kaze Kami est connue pour être le lieu où sont entérés les anciens Grotox,
+			mais on y trouve aussi de nombreuses ruines très anciennes, qui renferment surement de nombreux trésors car peu de fouilles y ont été effectuées...
+		</desc>
+		<move to="mfpalc"/>
+		<move to="mfoutp"/>
+		<move to="mcuzco" cond="dungeon(mquetz)"/>
+	</place>
+
+	<place id="bkport" zone="2" name="Retourner au Port de Prêche" pre="" goto="port" inf="35:25:west" bg="go_swim">
+		<desc>
+			Après une traversée calme, Jovébozé vous ramène au Port de Prêche sans encombre. C'est agréable de se retrouver enfin à la maison...
+		</desc>
+	</place>
+
+	<place id="mvoutp" zone="7" name="Avant-Poste Végétox" pre="à l'" inf="145:145:default" bg="m_outvegetox">
+		<desc>
+			L'Avant-Poste Végétox est caché au sein d'une luxuriante forêt. Il est occupé par les forces spéciales Végétox qui sont formées au Camp d'Elit, et on y trouve des spécialistes en stratégie militaire.
+		</desc>
+		<move to="mport"/>
+		<move to="mvpalc"/>
+		<move to="mfoutp"/>
+	</place>
+
+	<place id="mvpalc" zone="7" name="Palais d'Antraxov" pre="au " inf="185:190:default" bg="m_antraxov">
+		<desc>
+			Véritable forteresse abritant le roi des Végétox, le Palais d'Antraxov est manifestement un lieu très bien gardé :
+			de multiples gardes patrouillent autour et un intru aura bien du mal à s'y infiltrer. Le Palais est magnifique :
+			il s'agit d'un immense arbre sculté de décorations qui vous rappellent des symboles Cuzcoussiens.
+		</desc>
+		<move to="mvoutp"/>
+		<move to="mcelit"/>
+	</place>
+
+	<place id="mcuzco" zone="7" name="Ruines de Cuzcous" pre="aux " inf="265:175:default" bg="m_cuzcous" hide="1">
+		<desc>
+			Dans cet endroit isolé de l'Ile des Monstres se dressent les ruines de l'ancienne capitale de l'Empire des Montres :
+			la puissante Cuzcous n'est plus aujourd'hui qu'un tas de pierres envahie par la végétation, mais les bâtiments encore debout témoignent d'une grande civilisation.
+			Sous ces vieilles pierres doivent dormir de nombreux trésors...
+		</desc>
+		<move to="mforst"/>
+		<move to="mcelit" cond="scenario(monisl,10+)"/>
+	</place>
+
+	<place id="mcelit" zone="7" name="Camp d'Elit" pre="au " inf="260:210:cavern" bg="m_elit" hide="1">
+		<desc>
+			Au coeur du territoire Végétox se dresse le camp d'entrainement secret des forces spéciales Végétox : le Camp d'Elit !
+			Dans ce lieu barricadé, les meilleurs soldats Végétox s'entrainent pour pouvoir un jour remporter la Guerre contre les Frutox.
+			Même si celle-çi dure déjà depuis des temps mémoriaux, le moral des soldats reste intact.
+		</desc>
+		<move to="mcuzco"/>
+		<move to="mvpalc"/>
+	</place>
+
+
+
+	<!--------------------------------- NIMBAO L'ILE CELESTE ------------------------------------------------->
+
+
+	<place id="iroche" zone="8" name="Tête de l'île" pre="sur la " inf="95:360:default" bg="i_rocher" gather="fo">
+		<desc>
+			Vous êtes sur un bout de l'île céleste de Nimbao, de larges rochers émergent du sol, Certains les appellent les cornes du dragon.
+			Peu de personnes viennent en ce lieu, probablement parce qu'il n'y a rien à y faire à part contempler le vide...
+		</desc>
+		<move to="ipont"/>
+	</place>
+
+	<place id="ipont" zone="8" name="Pont" pre="sur le " inf="180:295:default" bg="i_pont">
+		<desc>
+			L'unique moyen de franchir ce précipice est de traverser ce pont, un vent violent souffle, mieux vaut ne pas glisser.
+			En raison de cet unique accès au reste de l'île, ce pont est souvent gardé par les soldats de Grizorg.
+		</desc>
+		<move to="iroche"/>
+		<move to="iporte" cond="scenario(nimbao,27+)" />
+	</place>
+	
+	<place id="iporte" zone="8" name="Porte du niveau supérieur" pre="à la " inf="322:260:cavern" bg="i_porte">
+		<desc>
+			Une stèle indique que seuls les élus peuvent passer par cette porte.
+		</desc>
+		<move to="ipont"/>
+		<move to="icite" cond="scenario(nimbao,28+)"/>
+		<move to="iplain" cond="scenario(nimbao,37+)"/>
+		<move to="ilac" cond="scenario(nimbao,33+)"/>
+		<move to="ville1" cond="scenario(nimba2,27+)"/>
+	</place>
+	
+	<place id="icite" zone="8" name="Cité Arboris" pre="à la " inf="460:210:castle" bg="i_cite">
+		<desc>
+			Les cités Arboris sont creusées dans la roche. Ce peuple de nature pacifique est réuni à cet endroit, chaque génération doit apporter sa contribution
+			à la communauté, bien que la majorité des hommes soit assignée à la garde de Grizorg sans contestation possible.
+		</desc>
+		<move to="iporte" cond="!(scenario(nimbao,30)|scenario(nimbao,31)|scenario(nimbao,32))"/>
+		<move to="ilacro" cond="scenario(nimbao,31+)"/>
+		<move to="prison" cond="scenario(nimba2,26+)"/>
+		<move to="voie" cond="scenario(nimba2,43+)"/>
+	</place>
+	
+	<place id="ilacro" zone="8" name="Lac céleste" pre="au " inf="392:343:default" bg="i_lacroc" gather="ch">
+		<desc>
+			Un rocher émerge du lac céleste, l'eau y est pure et fraîche, c'est un lieu très prisé des Arboris.
+			La baignade est désormais interdire, les plus anciens le regrettent amèrement.
+		</desc>
+		<move to="icite" />
+		<move to="ilac" cond="scenario(nimbao,32+)"/>
+		<move to="ilac2" cond="curmission(sos)|curmission(sos2)|scenario(nimba2,24+)"/>
+	</place>
+	
+	<place id="ilac" zone="8" name="Chutes du nirvana" pre="aux " inf="310:410:default" bg="i_lac" gather="en2">
+		<desc>
+			L'eau du lac céleste semble se déverser inlassablement dans le vide, pourtant les chutes continuent de couler en abondance.
+			Serait-ce la condensation des nuages qui permet à l'île d'avoir une aussi grande quantité d'eau à disposition...
+		</desc>
+		<move to="ilacro"/>
+		<move to="iporte" cond="scenario(nimbao,33+)"/>
+	</place>
+	
+	<place id="iplain" zone="8" name="Plaines enneigées" pre="aux " inf="160:180:default" bg="i_plaine">
+		<desc>
+			Une large plaine blanche s'étend à l'horizon, on ne trouve de la neige que sur la partie nord de l'île.
+		</desc>
+		<move to="isnow2" cond="scenario(nimbao,38+)"/>
+		<move to="iporte"/>
+	</place>
+	
+	<place id="isnow2" zone="8" name="Bois givrés" pre="aux " inf="130:150:forest" bg="snow2" gather="cu2">
+		<desc>
+			Une forêt enneigée se dresse au milieu du blanc uniforme des plaines, un calme intemporel envoûte quiconque songe traverser ses bois...
+		</desc>
+		<move to="iplain"/>
+		<move to="imont" cond="scenario(nimbao,39+)"/>
+	</place>
+	
+	<place id="imont" zone="8" name="Mont sacré d'Everouest" pre="au " inf="90:150:mountain" bg="i_mont">
+		<desc>
+			Considéré par tous comme un mont sacré, l'Everouest est un pic abrupte que peu de personne peuvent se vanter d'avoir escalader.
+			Il est devenu sacré en raison de l'attachement du précédent Archidorogon à venir se recueillir en son sommet.
+		</desc>
+		<move to="isnow2"/>
+		<move to="ihaut"/>
+	</place>
+
+	<place id="ihaut" zone="8" name="Sommet du Mont sacré" pre="au " inf="90:100:cavern" bg="snow4" gather="labo">
+		<desc>
+			Une caverne semble creusée au sommet du Mont sacré d'Everouest, on trouve au fond de cette caverne un laboratoire.
+			Sont entreposés là de nombreuses fioles aux couleurs étranges. Quels genres de recherches l'ancien Archidorogon faisait-il là-bas...
+		</desc>
+		<move to="imont"/>
+	</place>
+	
+	<place id="ilac2" zone="8" name="Aile Ouest du dragon" pre="sur l'" inf="550:380:default" bg="i_lac2" hide="1" >
+		<desc>
+			Derrière ces lacs se profile une partie gigantesque en forme d'aile, il n'y a rien d'autre à l'horizon que de vertes plaines baignées par la lumière du soleil.
+			Vous sentez le vent extrême qui balaie cette large étendue paisible, vous distinguez le bout de l'aile, peut de personne pourrait regarder par dessus bord...
+		</desc>
+		<move to="prison"/>
+		<move to="ilacro"/>
+	</place>
+	
+	<place id="prison" zone="8" name="Priranèse" pre="à " inf="580:305:cavern" bg="i_prison" hide="1" >
+		<desc>
+			La prison infernale de Priranèse n'ouvre ses portes qu'une seule fois pour ses visiteurs, personne n'en est jamais ressorti.
+			Ici sont emprisonnées toutes les personnes ayant contesté l'autorité de l'Archidorogon Grizorg.
+		</desc>
+		<move to="ilac2" cond="!(scenario(nimba2,22+)+scenario(nimba2,25-))|scenario(nimba2,26+)"/>
+		<move to="icite" cond="!(scenario(nimba2,22+)+scenario(nimba2,25-))|scenario(nimba2,26+)"/>
+	</place>
+	
+	<place id="voie" zone="8" name="chemin vers l'Observatoire" pre="au " inf="465:132:default" bg="i_voie" active="nimba2">
+		<desc>
+			De loin, l'immense observatoire impose sa silhouette sur le panorama qui s'expose à tous. Il est situé sur la queue de Nimbao.
+			Il pointe son objectif vers la surface, l'étude des étoiles est surement moins intéressantes que la surveillance des monts de Caushemesh.
+		</desc>
+		<move to="icite"/>
+		<move to="observ"/>
+		<move to="tourup" cond="clanact(tour)" />
+	</place>
+	
+	<place id="tourup" zone="1" name="Aller vers le Sommet de la Tour de Karinbao" pre="" inf="425:120:default" goto="tourbt" bg="toursk" active="nimba2">
+		<desc>
+			Le sommet de la Tour traverse les nuages comme promis par Broc.
+			Vous survolez la mer du nuage, seul le Grand Tout Chaud arrive à surmonter l'altitude. Vous approchez de Nimbao à grand pas.
+		</desc>
+		<move to="voie"/>
+	</place>
+
+	<place id="observ" zone="8" name="Observatoire" pre="vers l'" inf="550:70:church" bg="i_observ" active="nimba2">
+		<desc>
+			L'observatoire est aussi une grande bibliothèque qui recueille en son sein une quantité impressionnante d'ouvrages relatant l'histoire de Dinoland.
+			Malheureusement, les livres sont écrits dans le language des anciens Dorogons, impossible donc d'en apprendre davantage.
+		</desc>
+		<move to="voie"/>
+	</place>
+	
+	
+	<place id="ville1" zone="8" name="Quartier luxuriant" pre="vers le " inf="322:200:default" bg="i_ville1" active="nimba2">
+		<desc>
+			La ville des Dorogons est riche et luxuriante, les habitants semblent paisible contrairement aux soldats qui patrouillent en ville.
+		</desc>
+		<move to="iporte"/>
+		<move to="ville2"/>
+		<move to="egout" cond="scenario(nimba2,45+)"/>
+	</place>
+	
+	<place id="ville2" zone="8" name="Quartier exubérant" pre="vers le " inf="340:140:default" bg="i_ville2" active="nimba2">
+		<desc>
+			Ce quartier de la ville des dorogons offre une vue imprenable sur Nimbao, un énorme pilier soutenant l'arche menant vers le palais de l'Archidorogon traverse la ville.
+		</desc>
+		<move to="ville1"/>
+		<move to="sommet" cond="scenario(nimba2,35+)+scenario(nimba2,38-)|scenario(nimba2,49+)"/>
+	</place>
+	
+	<place id="sommet" zone="8" name="chemin vers le Palais" pre="sur le " inf="270:90:default" bg="i_sommet" active="nimba2">
+		<desc>
+			Le panorama offert est splendide, vous êtes au sommet de l'île céleste de Nimbao, au loin vous apercevez le palais de L'archidorogon, baigné de lumière, il représente bien
+			l'égémonie de la puissante civilisation dorogone.
+		</desc>
+		<move to="ville2" cond="!scenario(nimba2,46)"/>
+		<move to="palais"/>
+		<move to="egout" cond="scenario(nimba2,46+)"/>
+	</place>
+	
+	<place id="palais" zone="8" name="Palais de l'Archidorogon" pre="dans le " inf="320:55:castle" bg="i_palais" active="nimba2">
+		<desc>
+			Le palais de L'Archidorogon est le fleuron de l'architecture dorogone, technologie ancestrale se servant de l'eau pure abondante en ce lieu.
+			Le palais est malgré tout immense, et parfois labyrinthique pour les néophytes...
+		</desc>
+		<move to="sommet"/>
+	</place>
+	
+	<place id="egout" zone="8" name="Egouts du palais" pre="dans les " inf="270:180:cavern" bg="i_egout" hide="1" active="nimba2">
+		<desc>
+			L'intérieur du pilier soutenant le palais de l'Archidorogon recelle toute une structure servant à acheminer l'eau pure dans les différentes parties de la ville Dorogon.
+		</desc>
+		<move to="sommet" cond="scenario(nimba2,46+)"/>
+		<move to="ville1"/>
+	</place>
+	
+	<place id="temple" zone="8" name="Temple céleste" pre="au " inf="45:280:cavern" bg="i_temple" hide="1" scenario="fmedal:12">
+		<desc>
+			Un temple, taillé dans la roche de Nimbao, se dresse devant vous.
+			Longtemps caché par une masse nuageuse, celui-ci offre désormais le spectacle de ses murs aux voyageurs imprudents.
+			
+		</desc>
+		<move to="godw"/>
+	</place>
+	
+	<place id="godw" zone="6" name="Retourner à la surface" pre="" goto="portal" inf="45:420:south" bg="dw_portal">
+		<desc>D'ici vous pouvez descendre au portail de Dinoville Ouest, la chute sera ralentie par la lumière du pentacle.</desc>
+	</place>
+	
+	
+	<!--------------------------------- CAUSHEMESH ------------------------------------------------->
+	
+	<place id="gotost" zone="5" name="Retourner aux Steppes Magnétiques" pre="270:90:default" inf="765:575:east" bg="sporte" goto="sporte" active="caush">
+		<desc>
+			Il est peut-être temps de quitter cette étuve fluorescente, cette lumière peut être aveuglante pour ceux qui n'ont pas l'habitude.
+			Rien ne vaut un bon désert aride, et ses tornades électromagnétiques.
+		</desc>
+	</place>
+	
+	<place id="cporte" zone="9" name=" Seuil de Caushemesh" pre="au" inf="730:530:door" bg="cporte" active="caush">
+		<desc>
+			Voilà enfin le visage de Caushemesh, cette nation si mystérieuse.
+			Il est difficile de se rendre compte de ce qui fut autrefois le plus puissant état de Dinoland. Caushemesh ressemble désormais à un cratère explosé,
+			baigné dans l'éther, source d'énergie infinie qui aura conduit à la catastrophe, donnant ce visage à ce monde.
+		</desc>
+		<move to="cacrop"/>
+		<move to="gotost" cond="scenario(caush,17+)" />
+	</place>
+	
+	<place id="cacrop" zone="9" name="Acropole Caushemeshenne" pre="à l'" inf="650:450:house" bg="cacrop" active="caush">
+		<desc>
+			Une ville surplombe une fosse gigantesque rempli d'éther.
+			L'Acropole est déserte, toutes les habitations sont condamnées, pourtant, les murs cloisonnées laissent échapper des bruits suspects, signe qu'il y a encore des habitants.
+		</desc>
+		<move to="cporte"/>
+		<move to="cgrav" cond="caushrock(3)|admin()"/>
+	</place>
+	
+	<place id="cgrav" zone="9" name="Rocher de la gravité" pre="au " inf="445:355:default" bg="cgrav" active="caush">
+		<desc>
+			Il fut un temps où des recherches étaient menées dans une usine de cette île.
+			Un petit accident a pulvérisé la surface de cet îlot, le condensateur de gravité étant désormais hors de contrôle, un noyau s'est formé, recréant une nouvelle gravité artificielle.
+			Ronde comme une petite planète, l'île flotte au gré des flux d'éther, il lui faut une heure pour faire le tour de toutes les destinations possibles.
+		</desc>
+		<move to="ctecno" cond="caushrock(0)" />
+		<move to="cpuits" cond="caushrock(1)" />
+		<move to="cpyra1" cond="caushrock(2)" />
+		<move to="cacrop" cond="caushrock(3)" />
+	</place>
+	
+	<place id="cpuits" zone="9" name="Puits éthéral" pre="au " inf="368:475:default" bg="cpuits" active="caush" gather="cu3">
+		<desc>
+			Cette installation, en roue libre désormais, permet de pomper l'éther et de le transformerer en énergie.
+			L'éther ainsi collecté, permet d'alimenter grâce à d'épais tuyaux le besoin en énergie des différents complexes caushemeshens, dont le palais, qui consomme à lui seul plus de 80% de l'éther extrait.
+		</desc>
+		<move to="cgrav" cond="caushrock(1)|admin()"/>
+	</place>
+	
+	<place id="ctecno" zone="9" name="Technodôme englouti" pre="au " inf="510:250:church" bg="ctecno" active="caush">
+		<desc>
+			Des recherches sur des mutations chimériques ont eu lieu ici. Croiser des monstres, des dinoz afin d'obtenir une force capable de faire trembler Dinoland, n'était pas la meilleure chose à faire.
+			Maintenant en ruine, l'usine s'enfonce inexorablement dans la mer d'éther, assurément pour que ce lieu d'interdit disparaisse une bonne fois pour toute.
+		</desc>
+		<move to="cgrav" cond="caushrock(0)|admin()"/>
+		<move to="ccrane"/>
+	</place>
+	
+	<place id="ccrane" zone="9" name="Ile du crâne du démon" pre="sur l'" inf="595:150:default" bg="ccrane" active="caush" gather="ch">
+		<desc>
+			Certains caushemeshens pensent que ce crâne appartiendrait à un antique démon qui aurait voulu se réchauffer les pieds dans de l'éther.
+			Malheureusement, s'étant endormie pendant ce moment de détente, il aurait été pris dans la roche et serait mort d'ennui...
+			Ce bout de roche flotte maintenant pour toujours au-dessus de la mer d'éther.
+		</desc>
+		<move to="ctecno"/>
+		<move to="cextra"/>
+	</place>
+	
+	<place id="cextra" zone="9" name="Complexe d'extraction" pre="au " inf="420:170:default" bg="cextra" active="caush" gather="en">
+		<desc>
+			la grande catastrophe prend ses origines en ce lieu. Voulant absorber un maximum d'éther du monde sombre, les scientifiques de Caushemesh se sont lancés dans la surexploitation en créant une brêche.
+			Ne pouvant gérer un débit toujours croissant d'éther secoulant du monde sombre sur Caushemesh, le laboratoire a explosé, ouvrant la première faille vers le monde sombre.
+		</desc>
+		<move to="ccrane"/>
+	</place>
+	
+	<place id="cpyra1" zone="9" name="Entrée de la Pyramide" pre="à l'" inf="330:275:default" bg="cpyra1" active="caush">
+		<desc>
+			De ce point de vue, on peut remarquer que Caushemesh bien qu'évolué technologiquement, est un monde à l'agonie.
+			Villes détruites, usines englouties, laboratoire en ruines... Quelles surprises vous réservent l'intérieur du palais...
+		</desc>
+		<move to="cgrav" cond="caushrock(2)|admin()"/>
+		<move to="cpyra2" cond="scenario(caush,22+)" />
+	</place>
+	
+	<place id="cpyra2" zone="9" name="Intérieur de la Pyramide" pre="à l'" inf="265:170:castle" bg="cpyra2" active="caush">
+		<desc>
+			L'entretien laisse à désirer dans ce palais, les couloirs sont déserts, il n'y a pas âmes qui vivent.
+			Les salles sont richement décorés, on devine l'extraordinaire beauté des lieux sous l'épaisse couche de poussière. Une beauté qui fut bien éphémère visiblement.
+			Seule la salle du trône est éclairée...
+		</desc>
+		<move to="cpyra1"/>
+	</place>
+	
+</map>

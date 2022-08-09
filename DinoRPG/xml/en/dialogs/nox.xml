@@ -1,0 +1,49 @@
+﻿<!-- ***************************************************************************** -->
+<!-- Nox, Dorogon, habitant de la cité Dorogon ----->
+
+<d place="ville2" name="Nox" gfx="nox" cond="scenario(nimba2,50-)">
+	<phase id="begin" next="ramolo" fast="1" frame="stop">
+		An imposing Dorogon is watching you.
+		Bigger and stronger than all the other inhabitants, he is silently sizing you up.
+	</phase>
+	
+	<a id="ramolo">Hello Master Dorogon.</a>
+	
+	<phase id="ramolo" next="ok:baston">
+		[I'm still searching for an elite warrior against whom I can test my might.]
+		[We must be the strongest in the world, and given that the Caushemesh invasion will happen sooner or later, we must be ready!]
+		[Pistachio, if you don't put any effort in, you'll be weak your entire life.
+		You must be strong if one day you wish to surpass the legacy of your father and become an Archdorogon worthy of the name!]
+	</phase>
+	
+	<a id="ok">(Pistachio, Archdorogon? haha...)</a>
+	
+	<phase id="ok" frame="stop" fast="1">
+		You set off, this Dorogon, unlike the others, is overtly aggressive.
+		It's probably best not to bug hime for stories.
+	</phase>
+	
+	<a id="baston" cond="scenario(nimba2,31)">I can try to test your strength!</a>
+	
+	<phase id="baston" next="bravo" give="ptsage" scenario="nimba2:32" fightgroup="dorou">
+		[Congratulations, you managed to make me drop to one knee.]
+		[Perhaps the rest of you that live on the surface, will be able to resist the Caushemesh hordes for a while.
+		Fortunately enough for you, we won't hang around in coming to help.]
+		[In any case, you've definitely earned this point of wisdom.]
+	</phase>
+	
+	<a id="bravo">Thanks very much!</a>
+	
+	<phase id="bravo" frame="stop" fast="1">
+		You head off from the Dorogon, clearly he doesn't have much of a soft spot for the Caushemesh people.
+		Is the situation as critical as it seems to be?
+		You now have three points of wisdom, just two left to go!
+	</phase>
+</d>
+
+<d place="ville2" name="Nox" gfx="nox" cond="scenario(nimba2,51+)">
+	<phase id="begin" fast="1" frame="stop">
+		Hello Dinoz Master.
+		I am the Archdorogon Pistachio's new bodyguard, even if my role largely consists of protecting him from himself...
+	</phase>
+</d>

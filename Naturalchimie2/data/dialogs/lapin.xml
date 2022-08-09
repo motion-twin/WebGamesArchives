@@ -1,0 +1,64 @@
+<d place="stimpk" name="Chambelland Lapin" gfx="guoporg" cond="grade(,4)">
+
+
+<phase id="begin" next="quest:todo:coupe:coupeb:exit">
+Bienvenue au palais ! Que désires-tu ? 
+</phase>
+
+<a id="quest" cond="grade(,5)">J'ai eu votre message. Vous avez besoin d'un coup de main ? </a>
+<a id="todo">Il paraît que la Guilde a du travail pour moi.</a>
+<a id="coupe" cond="!beta()">Je viens pour me renseigner sur la coupe des écoles.</a>
+<a id="coupeb" cond="beta()">Je viens pour me renseigner sur la coupe des écoles.</a>
+<a id="exit">Je dois y aller.</a>
+
+<!-- ################################## -->
+
+<phase id="quest" quest="lapin">
+Oui ! | Je viens de trouver un tract publicitaire plutôt inquiétant...
+</phase>
+
+
+<!-- ################################## -->
+
+
+<phase id="todo" next="todob">
+%happy%Bien sûr, la Guilde a toujours besoin d'un alchimiste consciencieux. Administrer le royaume est une tâche énorme !
+</phase>
+
+<phase id="todob" next="todoc">
+Tu peux te rendre au [BAFA], les fonctionnaires y ont toujours des tâches à accomplir. 
+Je crois aussi que le [POUM] cherche quelqu'un à l'agora, et j'ai entendu parler d'une requête bizarre qui viendrait du grenier aux alchimites. 
+Tu dois pouvoir commencer par ça. 
+</phase>
+
+<a id="todoc">Ah oui, quand même.</a>
+
+<phase id="todoc" next="begin">
+%happy%Je t'avais bien dit qu'il y avait plein de choses à faire ! | Sans oublier qu'un alchimiste de ton niveau participe sûrement déjà à la [Coupe des écoles].
+</phase>
+<!--Quand tu seras plus gradé, n'hésite pas à aller voir l'[ENFA] ou [Chouettex]. 
+J'aurai aussi besoin de toi quand tu seras {alchimiste certifié}. -->
+
+
+<!-- ################################## -->
+
+<phase id="todoq" next="todo">
+
+</phase>
+
+
+<!-- ################################## -->
+
+<phase id="coupeb" next="begin">
+%angry%Oula... la coupe des écoles n'est pas disponible en beta test. Tu imagines le bazar sinon ? 
+</phase>
+
+<!-- ################################## -->
+
+<phase id="coupe" next="begin">
+Le lieu où se déroule la coupe des écoles est indiqué dans le Guidian Express. Tu peux aussi le voir sur ta carte, normalement. Tu y trouveras le commissaire de la Coupe qui pourra tout t'expliquer.
+</phase>
+
+
+
+</d>

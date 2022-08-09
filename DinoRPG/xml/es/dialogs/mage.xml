@@ -1,0 +1,43 @@
+﻿<!--  QUETE DE L'ARCHISAGE : trouver les 3 ingrédients avec la pelle => gant des zors -->
+
+<d place="dome" name="Archisabio" gfx="archis" cond="!fx(gant)">
+
+	<phase id="begin" next="enigm" fast="1">
+		Cerca del Estadio Sulaflota se encuentra la residencia del Archisabio. 
+		Se trata de un título honorífico dado a este anciano, quien debido a su edad, es actualmente incapaz de usar
+		sus poderes mágicos. A pesar de ello, posee una gran sabiduría de la que se puede sacar provecho. Aunque a veces parece que tiene extrañas intenciones...
+	</phase>
+
+	<a id="enigm">Esto... ¿hay alguien ahí?</a>
+
+	<phase id="enigm" next="next">
+		¡Hola hola hola hola! ¿Qué vienes a buscar aquí? ¿Quieres algo? ¿Te puedo ayudar?
+	</phase>
+
+	<a id="next">Me gustaría preguntarle por...</a>
+
+	<phase id="next" next="tresor">
+		¡Ah! ¡No digas nada! Lo sé... ¡buscas un GRAN TESORO!
+	</phase>
+
+	<a id="tresor">(¡¿Un tesoro ?!) Esto... sí, ¡eso mismo!</a>
+
+	<phase id="tresor" next="quoi">
+		Entonces escúchame bien. Te voy a decir algo. Escúchame. Te lo cuento. Si me traes algo. Todo eso.
+		¿Qué quieres saber? 
+	</phase>
+
+	<a id="quoi">... ¿cómo?</a>
+
+	<phase id="quoi" next="show">
+		Bueno escucha. El primero es pegadizo, el segundo es basáltico, el tercero es agua pura. Necesitarás una herramienta.
+		Sí, eso está claro. Una herramienta. Vuelve a verme y te diré lo del tesoro. ¡Aunque cuidado con el peligro! ¡F-O-E !
+	</phase>
+
+	<a id="show" cond="fx(marais)+fx(wpure)+fx(basalt)">Enseñar los ingredientes</a>
+
+	<phase id="show" fight="eearth" noeffect="marais:wpure:basalt" effect="gant">
+		¡Oh! ¡Estupendo! ¡Genial! Gracias por todo. Ea, ya está, ¡tu Dino posee un GRAN TESORO!
+	</phase>
+
+</d>

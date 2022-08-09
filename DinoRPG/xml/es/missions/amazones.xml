@@ -1,0 +1,96 @@
+﻿<missions>
+
+	<!-- ***************************************************************************** -->
+	<!-- CAUSHEMESH Amazones, Garde du palais de Caushemesh ----->
+	
+	<m group="amazon" id="gift1" name="Primer favor">
+		<begin>El pozo de éter atrae muchos monstruos. La energía del palacio proviene de los pozos. ¿Podrías eliminar algunos mostruos que andan por allí?
+		Aprovecharás para activar la bomba que permite extraer el éter y convertirla en energía.</begin>
+		<goto v="cpuits"/>
+		<kill v="groule:roking:groule" n="3" zone="9"/>
+		<action v="Reactivar la bomba" wait="1">Necesitarás algo de tiempo para reiniciar el mecanismo. Esperemos que esta acción no atraiga a monstruos más poderosos...</action>
+		<kill v="groule:roking:groule" n="9" zone="9"/>
+		<end>Bien, el jacuzzi va a poder funcionar algunos días más. ¡Gracias!</end>
+		<xp v="50"/>
+		<gold v="3000"/>
+	</m>
+	
+	<m group="amazon" id="gift2" name="Segundo favor" cond="mission(gift1)">
+		<begin>Los Dinos sombra provenientes del tecnódromo siguen aterrorizando nuestros días. Es imposible detener la invasión de esos Dinos, por suerte, no llegan en grandes grupos.
+		Si eliminas algunos, tendremos suficiente tiempo para ir de compras a la acrópolis.</begin>
+		<goto v="ctecno"/>
+		<kill v="darki4:darki5" n="2" zone="9"/>
+		<kill v="darkia:darkib" n="3" zone="9"/>
+		<kill v="darki3" n="1" zone="9"/>
+		<end>Perfecto, ¡hoy los monstruos nos dejaron en paz!</end>
+		<xp v="30"/>
+		<gold v="5000"/>
+	</m>
+	
+	<m group="amazon" id="gift3" name="Tercer favor" cond="mission(gift2)">
+		<begin>Tenemos un poco de tiempo, pero preferimos ir al jacuzzi.
+		¿Puedes ir a hacer algunas compras para nosotros? Ya que vienes desde lejos, ¿puedes traernos objetos del Gran Todo-Quema? Y un poco de vino de Dinovilla. Te estoy haciendo una lista.
+		¡Y de prisa por favor!</begin>
+		<goto v="cacrop"/>
+		<talk v="Mercader de la acrópolis">Hola, ¿vienes por el pedido del palacio? ¡Son 2000 monedas de oro por favor!</talk>
+		<use v="gold" n="2000"/>
+		<action v="Mirar entre los objetos" wait="1">Tomas la situación con mucha paciencia, entre los objetos hay desde un simple peine hasta calzones de lujo... ¿Quién necesita todas esas cosas?</action>
+		<goto v="fosslv"/>
+		<talk v="Mercader de Fosalava">Buenos días, veamos esa lista... Muy bien, ¡Todo eso hace 4000 monedas de oro!</talk>
+		<use v="gold" n="4000"/>
+		<goto v="dplaza"/>
+		<talk v="Mercader de vino" gfx="sommelier">Hola, ¿buscas buen vino? Veamos, oh, muy buena elección, tienes un gusto exquisito... Chic, chic, chic... Son 5000 monedas de oro, señor.</talk>
+		<use v="gold" n="5000"/>
+		<end>¿Me trajiste todo? Te felicito. ¡Pero olvidé darte el dinero para pagar las compras!... Ten, puedes quedarte con el cambio. </end>
+		<xp v="60"/>
+		<gold v="18000"/>
+	</m>
+	
+	<m group="amazon" id="gift4" name="Cuarto favor" cond="mission(gift3)">
+		<begin>Tenemos un gravísimo problema que resolver. ¡La batería que calentaba el agua de la piscina está vacía!
+		Contamos contigo para extraerla y encontrar un lugar para recargarla.</begin>
+		<goto v="cpyra2"/>
+		<action v="Extraer la batería">Mientras sacabas la batería del generador, hiciste un gran esfuerzo para que la guardiana no te vea.</action>
+		<goto v="spylon" hide="1"/>
+		<action v="Dejar cargar la batería" wait="2">Así como la magnetita, ¡nada mejor que una pequeña tormenta electromagnética para recargar cualquier fuente de energía!</action>
+		<actfight act="Proteger la batería" monsters="baraba:baratr">
+			<begin m="baraba">Danos ese objeto brillante, ¡en este mismo instante!</begin>
+			<win>Esos bribones ya no te molestarán más.</win>
+			<lose>Bah, es una baratija sin importancia. ¡Dejemos a este pobre diablo y vayamos a buscar otro "cliente"!</lose>
+		</actfight>
+		<action v="Dejar la batería recargarse de nuevo" wait="3">Así como la magnetita, ¡nada mejor que una pequeña tormenta electromagnética para recargar cualquier fuente de energía!</action>
+		<goto v="cpyra2"/>
+		<action v="Colocar la batería">Vuelves a colocar la batería en el generador de agua caliente.</action>
+		<end>Muchas gracias, ¡ahora podremos seguir dándonos esos deliciosos chapuzones!</end>
+		<xp v="50"/>
+		<gold v="3000"/>
+	</m>
+	
+	<m group="amazon" id="gift5" name="Quinto favor" cond="mission(gift4)">
+		<begin>No hemos tenido tiempo de darnos un chapuzón, ¿puedes reemplazarnos durante algunas horas? Necesitamos un descanso.</begin>
+		<goto v="cpyra1"/>
+		<action v="Montar la guardia" wait="9">Sin quererlo te encuentras realizando el trabajo de otros. Parece que los demás ya se están acostumbrando...</action>
+		<actfight act="Hacer el trabajo de un guardián..." monsters="darki5:darkia" zone="9"></actfight>
+		<action v="Volver a montar la guardia" wait="1">Otra vez haciendo el trabajo de otros. Felizmente el relevo llega pronto, o al menos eso esperas...</action>
+		<end>Haaaa, ese baño estuvo muy relajante, ¿puedes reemplazarnos más seguido?</end>
+		<xp v="20"/>
+		<gold v="1000"/>
+	</m>
+
+	<m group="amazon" id="gifta" name="Sexto favor" cond="mission(gift5)">
+		<begin>¡Necesitamos algunos ingredientes para preparar un elixir indispensable para nuestra supervivencia!
+		Para encontrarlos deberas explorar nuestro mundo. Solo en Caushemesh se encuentran esporas etéreas y rocas radioactivas.</begin>
+		<goto v="cpyra1"/>
+		<useingr v="fruit1" n="1"/>
+		<goto v="cpyra1"/>
+		<useingr v="enair" n="1"/>
+		<goto v="cpyra1"/>
+		<useingr v="chas5" n="2"/>
+		<goto v="cpyra1"/>
+		<useingr v="fruit5" n="5"/>
+		<end>Estupendo, gracias a ti, podemos preparar el perfume especial de Caushemesh. ¡Es imposible salir de casa sin unas gotas de ese magnífico aroma! La vida no sería igual...</end>
+		<xp v="40"/>
+		<gold v="6000"/>
+	</m>
+	
+</missions>

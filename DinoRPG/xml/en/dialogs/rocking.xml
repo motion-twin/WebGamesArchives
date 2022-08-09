@@ -1,0 +1,465 @@
+﻿<!-- Roi des Rockys -->
+
+<d place="sking" name="Citadel Guard" gfx="sgarde" cond="scenario(magnet,0)">
+	<phase id="begin">
+		Hello Stranger ... Unfortunately the King can't see you at the moment
+		he's too busy trying to steal some lodestone,
+	</phase>
+</d>
+
+<d place="sking" name="Rockies King" gfx="rocking" cond="scenario(magnet,1)">
+
+	<phase id="begin" fast="1" next="enter">
+		You explain that you've been attacked by ferocious Wanwans ... After questioning you, the guards
+		finally grant you an audience with the King, his highness Rocky IV.
+	</phase>
+
+	<a id="enter">Enter the Palace</a>
+
+	<phase id="enter" next="events">
+		Welcome Dinoz Master ... It appears you are not a native of the Magnetic Steppes. We appreciate you taking
+		such a long journey to come and see us. Please forgive us for not welcoming you with the usual level of hospitality as the rest of our
+		guests, but recent events have left us exhausted.
+	</phase>
+
+	<a id="events">What happened?</a>
+
+	<phase id="events" next="magnet">
+		It's no secret that the Royal Family controls all of this region.
+		The power was bestowed on us by previous generations of the Grand-Heavy-Sharp,
+		The Lodestone Tamer.
+	</phase>
+
+	<a id="magnet">Lodestone?</a>
+
+	<phase id="magnet" next="magnet2">
+		Lodestone is a type of stone which can only be found at the Steppes ...
+		When combined with wind and sand, lodestone can produce electricity!
+	</phase>
+
+	<a id="magnet2">....</a>
+
+	<phase id="magnet2" next="events2">
+		In it's natural state, Lodestone is very unstable and hard to control. The Grand-Heavy-Sharp has
+		discovered a perfectly pure stone: The Angel Stone. The heirs to the Royal Family
+		must protect it in order to keep it away of villains.
+	</phase>
+
+	<a id="events2">And?</a>
+
+	<phase id="events2" next="again:me">
+		Recently ... someone tried to steal the Angel Stone!!! It's a difficult job, but we must
+		protect it at all costs! The Royal Family's honour is at stake ... Do you understand?
+	</phase>
+
+	<a id="again" target="events">Can you repeat it for me?</a>
+	<a id="me">What's it got to do with me?</a>
+
+	<phase id="me" next="team">
+		Hold on! I'm getting there! You see, bandits are running wild in the Lodestone Steppes. We've seen
+		some of them prowling around the castle. They're the same ones which 
+		attacked you near the Syphon. They call themselves Team-W.
+	</phase>
+
+	<a id="team">Team-W?</a>
+
+	<phase id="team" next="team2">
+		Yes ... Team-W are a strange-looking group of nomads who are controlling some Wanwans. We think	
+		they are the same ones who tried to steal our Angel Stone. We've sent our soldiers to look for them, and 
+		managed to injure their leader, but we don't know where they're hiding....
+	</phase>
+
+	<a id="team2">Mmmm...</a>
+
+	<phase id="team2" next="again2:accept:refuse">
+		We had to recall our soldiers in order to protect the Angel Stone. We don't know where or when the enemy
+		will strike time ... Can we trust you with finding and destroying Team-W? You'll be royally rewarded for your efforts!
+	</phase>
+
+	<a id="again2" target="me">Can you repeat?</a>
+	<a id="accept">Yes! it would be an honour!</a>
+	<a id="refuse">Not right now</a>
+
+	<phase id="refuse">
+		We understand, there's no need to involve you in something which you are not responsible for.
+		We wish you a safe journey in the Magnetic Steppes, come back if you change your mind....
+	</phase>
+
+	<phase id="accept" next="leave">
+		Really? You will be of great help to us young Dinoz Master! Our counsellors will show you
+		the secret path. This will allow you to access to the Extreme West where the Bandit's lair is located.
+		Our Highness wishes you good luck. We hope to hear some good news soon!
+	</phase>
+
+	<a id="leave">Thank the King</a>
+
+	<phase id="leave" scenario="magnet:2" fast="1">
+		One of the King's counsellors shows you the path, granting you access to the bandits' lair.
+		He warns you about the dangers which may await you. Be well prepared!
+	</phase>
+
+</d>
+
+<d place="slake" name="Strange Prowler" gfx="rodeur2" cond="scenario(magnet,2)+!fx(rodtmp)">
+	<phase id="begin" next="view">
+		Have I been spotted??? .....
+	</phase>
+
+	<a id="view">Watch the Prowler</a>
+
+	<phase id="view" fast="1" effect="rodtmp">
+		Before you have approached, the Prowler has misteriously disappeared. What is he up to....
+	</phase>
+</d>
+
+<d place="scampw" name="Captain" gfx="wteamc" cond="scenario(magnet,6)">
+
+	<phase id="begin" next="who">
+		Why did you attack us? Were you trying to get your revenge? I thought we already apologised for attacking you?
+	</phase>
+
+	<a id="who">Who are you?</a>
+
+	<phase id="who" next="dont:tell">
+		Sorry, you're right, I haven't introduced myself. My name is Muldern, I'm the captain of Team-W ... Who sent you and why did you attack us?
+	</phase>
+
+	<a id="dont">Say nothing</a>
+	<a id="tell">Tell him that the Rockies King sent you</a>
+
+	<phase id="dont" next="dont2:tell">
+		I see ... you don't want to talk ... you must be one of his spies! I'm going to ask you for the last time:
+		Who sent you? and why are we being targetted by the King?
+	</phase>
+
+	<a id="dont2">Stay silent</a>
+
+	<phase id="dont2">
+		I see ... if you have nothing to say, leave!
+		We can withstand the King's attacks for months, nothing is going to make us surrender!
+	</phase>
+
+	<phase id="tell" fast="1" next="hist1">
+		You spend the next hour telling the captain everything that has happened since you entered the Magnetic Steppes. 
+		You tell him about Team-W's attack, the audience with the King and of course the plot to take some Lodestone.
+	</phase>
+
+	<a id="hist1">Continue</a>
+
+	<phase id="hist1" next="hist2">
+		Ah, now I understand. Some days ago, our strongest Wanwan, Bigbeastly - the one you tried to fight outside - was poisoned by a strange substance.
+	</phase>
+
+	<a id="hist2">Go on</a>
+
+	<phase id="hist2" next="hist3">
+		Of course we investigated to see how it happened. We found a secret path during our investigation which led us all the way to the Rockies King's Citadel. That's why we're watching it so closely: we were searching for a way to cure Bigbeastly.
+	</phase>
+
+	<a id="hist3">Continue</a>
+
+	<phase id="hist3" next="hist4">
+		I can swear that we never planned to take any Lodestone. This stone
+		is of no importance for us nomads, we already have everything we right here at the steppes....
+	</phase>
+
+	<a id="hist4">Continue</a>
+
+	<phase id="hist4" next="hist5">
+		We're often treated like thieves, often because people mix us up with the bandits of the Extreme West!
+		We often find them here and end up fighting ... although they hate us, the inhabitants often help us
+		as the King never sends any soldiers here ... they're too scared by the Huge Worm ...
+		It seems the Nomads have been abandoned by the King.
+	</phase>
+
+	<a id="hist5">Continue</a>
+
+	<phase id="hist5" next="ask:again">
+		That's everything I have to tell you. Do you need me to repeat it?
+	</phase>
+
+	<a id="ask">No thanks, I understood everything!</a>
+	<a id="again" target="hist1">Yes please, I didn't understand a single thing</a>
+
+	<phase id="ask" next="yes:no">
+		I'm very sorry for everyhting that has happened ... but you must understand, we have to cure Bigbeastly ... he 
+		is getting weaker by the day and we fear the worst for him. You're in contact with the King, do you think you could help us plead
+		our cause? It's simply a big misunderstanding, and he'll be able to help us find the cause of the poisoning.
+	</phase>
+
+	<a id="yes">Yes</a>
+	<a id="no">No</a>
+
+	<phase id="no">
+		I understand ... come back if you change your mind though.
+	</phase>
+
+	<phase id="yes" scenario="magnet:7">
+		... Really? You'll do that for us, even though we attacked you? ... may the Huge Worm watch over you!
+		Take care, there may be bandits on the road ... we look forward to hearing from you!
+	</phase>
+
+</d>
+
+<d place="scampw" name="Captain" gfx="wteamc" cond="scenario(magnet,7)">
+
+	<phase id="begin">
+		Have you seen the King? Do you know how to cure Bigbeastly? ... We're all counting on you, make sure youn return with some good news!
+	</phase>
+
+</d>
+
+<d place="sking" name="Rockies King" gfx="rocking" cond="scenario(magnet,7)|scenario(magnet,8)">
+
+	<phase id="begin" next="next">
+		You're already back young Dinoz Master? We hope you return with good news.
+	</phase>
+
+	<a id="next">Mmmm ... yes....</a>
+
+	<phase id="next" next="talk">
+		Well then! tell us of your travels.
+	</phase>
+
+	<a id="talk">Explain</a>
+
+	<phase id="talk" next="cont" fast="1">
+		You explain to the Rockies King your meeting with the Team-W Captain, his story concerning Bigbeastly's poisoning, 
+		and his innoncence for the Lodestone thefts. The King listens to you in silence ....
+	</phase>
+
+	<a id="cont">Continue</a>
+
+	<phase id="cont" next="serv">
+		Well well ... You'll understand if we can't trust these strange people immediately.
+		It requires further investigation.
+		Meanwhile, we'd like you to carry out another service for us, if you have enough time.
+	</phase>
+
+	<a id="serv">A service?</a>
+
+	<phase id="serv" next="sehd">
+		Yes exactly. A service. These rumours of someone being poisoned worry us greatly. 
+		We must be prepared for the worse. If our information is right, it can be SEDH Active.
+	</phase>
+
+	<a id="sehd">Who?</a>
+
+	<phase id="sehd" next="control">
+		SEDH is a very strong poison that can only be found at the Magnetic Steppes. It is created by concentrating
+		Scorpwink poison and adding a secret ingredient which activates hidden powers.
+		Our army has been forbidden from producing Sehd, as once activated one can use it to take control of the poisoned man or Dinoz....
+	</phase>
+
+	<a id="control">Take control?</a>
+
+	<phase id="control" next="serv2">
+		Yes, that's right. Whoever is under control of SEDH Active can't think normally and 
+		even betrays his friends... SEDH was banned from the kingdom a long time ago by our ancestors. 
+		If it is SEDH Active, we must find out who is producing it and stop them as soon as possible.
+	</phase>
+
+	<a id="serv2">You spoke about a service...</a>
+
+	<phase id="serv2" next="ingr">
+		We would like you to go and gather some ingredients for us.
+		Once these ingredients have been gathered together, you will be able to concoct   
+		an Anti SEDH Potion that will cure the effects of the poison.
+	</phase>
+
+	<a id="ingr">Some ingredients?</a>
+
+	<phase id="ingr" next="sage">
+		Yes. According to our legends, three ingredients are needed: Coral that never breaks,
+		Ice that never melts, and Branch that never fade. Once this three ingredients have been gathered together, you must find an Antique Monkey....
+	</phase>
+
+	<a id="sage">An Antique Monkey?</a>
+
+	<phase id="sage" next="face">
+		It was either an Antique Sage or an Antique Monkey, we can't remember than well. In any case, they are very powerful people
+		who can live for many centuries! We recognise them because of their third eye that they use to look at the other side of Dinoland....
+	</phase>
+
+	<a id="face">The other side?</a>
+
+	<phase id="face" next="end">
+		Yes ... legend tells that Dinoland has another side, a dark side.
+		We call this place the Dark World. No one has ever returned after venturing there ... but Antique Sages (or Monkeys?)
+		can freely travel in the Dark World ... but we doubt this information can be used to find this person....
+	</phase>
+
+	<a id="end">......</a>
+
+	<phase id="end" next="bye">
+		Anyway, his Highness is counting on you to gather these three ingredients, find the Antique Monkey,
+		and bring us the Anti SEDH Potion as soon as possible, which will protect us against the poison ... 
+		As for the nomads, we will investigate and verify their words ... Your audience with the King has ended. Goodbye.
+	</phase>
+
+	<a id="bye">Leave</a>
+
+	<phase id="bye" fast="1" scenario="magnet:8">
+		You are on the road again for new adventures....
+	</phase>
+
+</d>
+
+<d place="sking" name="Captain " gfx="sgarde" cond="scenario(magnet,10)">
+
+	<phase id="begin" next="fight:no">
+		Stranger!! Quick! The King is being attacked by strong creatures, they are trying to poison him and take control of the Royal Stone! Can you help us defeat them?
+	</phase>
+
+	<a id="fight">Fight!</a>
+	<a id="no">I need to prepare first</a>
+
+	<phase id="no">
+		Be quick! We really need your help!
+	</phase>
+
+	<phase id="fight" scenario="magnet:11" fightgroup="wbour2" next="ok" name="Captain" gfx="wteamc">
+		Thanks for your help... After you left, the dark Smashrooms took Bigbeastly away. It looks like the poison they were using allowed them to control him...
+	</phase>
+
+	<a id="ok">I understand...</a>
+
+	<phase id="ok" next="thanks" name="Captain" gfx="wteamc">
+		They then used Bigbeastly's strength to attack the Royal Citadel and make off with the magnetite... Fortunately we got there just in time...
+	</phase>
+
+	<a id="thanks">Thanks for your help in the battle!</a>
+
+	<phase id="thanks" next="how" name="Captain" gfx="wteamc">
+		No problem, that"s just how I roll, we couldn't just let Bigbeastly destroy everything. It's all thanks to your potion  that we managed to do it...
+	</phase>
+
+	<a id="how">How is he?</a>
+
+	<phase id="how" next="not" name="Captain" gfx="wteamc">
+		We took him back to our campsite. He's in some mess, but he'll make it though... thanks to you...
+	</phase>
+
+	<a id="not">It was nothing, really...</a>
+
+	<phase id="not" next="thanks2" name="Captain" gfx="wteamc">
+		It was above and beyond the call of duty. It seems the Great Worm was watching over you... Come and see us any time at the campsite, we'll let you use our secret shop...
+	</phase>
+
+	<a id="thanks2">See you soon!</a>
+
+	<phase id="thanks2" fast="1" scenario="magnet:12" name="Captain" gfx="wteamc">
+		The captain sets off towards the Team-W campsite...
+	</phase>
+
+</d>
+
+<d place="sking" name="Captain" gfx="wteamc" cond="scenario(magnet,11)">
+
+	<phase id="begin" next="ok">
+		Thanks for your help... After you left, the dark Smashrooms took Bigbeastly away. It looks like the poison they were using allowed them to control him...
+	</phase>
+
+	<a id="ok">I understand...</a>
+
+	<phase id="ok" next="thanks" name="Captain" gfx="wteamc">
+		They then used Bigbeastly's strength to attack the Royal Citadel and make off with the magnetite... Fortunately we got there just in time...
+	</phase>
+
+	<a id="thanks">Thanks for your help in the battle!</a>
+
+	<phase id="thanks" next="how" name="Captain" gfx="wteamc">
+		No problem, that"s just how I roll, we couldn't just let Bigbeastly destroy everything. It's all thanks to your potion that we managed to do it...
+	</phase>
+
+	<a id="how">How is he?</a>
+
+	<phase id="how" next="not" name="Captain" gfx="wteamc">
+		We took him back to our campsite. He's in some mess, but he'll make it though... thanks to you...
+	</phase>
+
+	<a id="not">It was nothing, really...</a>
+
+	<phase id="not" next="thanks2" name="Captain" gfx="wteamc">
+		It was above and beyond the call of duty. It seems the Great Worm was watching over you... Come and see us any time at the campsite, we'll let you use our secret shop...
+	</phase>
+
+	<a id="thanks2">See you soon!</a>
+
+	<phase id="thanks2" fast="1" scenario="magnet:12" name="Captain" gfx="wteamc">
+		The captain sets off towards the Team-W campsite...
+	</phase>
+
+</d>
+
+<d place="sking" name="Rockies King" gfx="rocking" cond="scenario(magnet,12)+!collec(magnet)">
+	<phase id="begin" next="not">
+		Young Dinoz master! We're very happy that this problem has now been solved ... we want to thank you for the many
+		services you have done for the Royal Family, whilst risking your own life....
+	</phase>
+
+	<a id="not">That was nothing ...</a>
+
+	<phase id="not" next="not2">
+		With these events, we were able to reconcile with the extreme West nomads ...
+		We will be more attentive to our distant subjects, because it seems that our mind on them was a bit hasty.
+	</phase>
+
+	<a id="not2">It was an honour.</a>
+
+	<phase id="not2" next="plan">
+		We insist that we must reward you correctly. Thanks to you, we've captured some infamous dark Smashrooms who, it seems, were responsible for stealing the Lodestone, making SEDH Active, Bigbeastly poisoning and the Citadel attack ... what a machiavellian plan!!
+	</phase>
+
+	<a id="plan">Indeed...</a>
+
+	<phase id="plan" next="ok">
+		But don't worry, all the suspects have been locked up in our jail, and they won't be released for a long time, you have our Royal word....
+	</phase>
+
+	<a id="ok">....</a>
+
+	<phase id="ok" next="accept">
+		Well well, as a thank you for all your services, we have prepared a little reward ... a royal one! We hope that you accept it as a sign of our gratitude....
+	</phase>
+
+	<a id="accept">Of course I accept it, thanks very much</a>
+
+	<phase id="accept" next="thanks">
+		Here you go ... we entrust you with this Negative Lodestone Shard. It can cancel the Lodestone effect in certain areas. It's a very rare item and we hope that it helps you in your future journeys.
+	</phase>
+
+	<a id="thanks">Thanks a lot!</a>
+
+	<phase id="thanks" collection="magnet" fast="1">
+		The Rockies King has entrusted you with the following item: "The Negative Lodestone Shard". But what is it used for?
+	</phase>
+
+</d>
+
+<d place="scaush" name="Strange Prowler" gfx="rodeur2" cond="scenario(magnet,12)">
+
+	<phase id="begin" next="ask">
+		So that was you.......
+	</phase>
+
+	<a id="ask">Me?</a>
+
+	<phase id="ask" next="euh">
+		Yes! More than foiling my plan, you've pursues me and now you think you can stop me?
+	</phase>
+
+	<a id="euh">Mmmm...</a>
+
+	<phase id="euh" next="end">
+		I won't forget about this! Now I have to return to report to the Caushmesh Masters ...
+		You're lucky I'm in such a hurry, next time we meet, I'll make you pay for your acts!
+	</phase>
+
+	<a id="end">...</a>
+
+	<phase id="end" scenario="magnet:13" fast="1">
+		The Prowler has mysteriously disappeared ... he seemed extremely angry with you....
+	</phase>
+
+</d>

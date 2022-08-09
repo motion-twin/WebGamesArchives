@@ -1,0 +1,25 @@
+<d place="sktupu" name="Confirmer son rang en transmutation" gfx="skprofb" auto="0">
+
+<a id="exit">D'accord.</a>
+
+<phase id="begin" frame="back" next="oui:noui:non" >
+Ca y est ? | Tu es {pas très doué} en transmutations vestimentaires ? 
+</phase>
+
+<a id="oui" cond="rank(cloth,1)">Oui, c'est bon.</a>
+<a id="noui" cond="!rank(cloth,1)">Oui, c'est bon.</a>
+<a id="non">Non.</a>
+
+<phase id="oui" frame="happy">
+Bon travail ! N'hésite pas à persévérer dans cette voie. 
+</phase>
+
+<phase id="noui" frame="angry" next="exit">
+Mmmh, on ne dirait pas... | Un peu de courage ! * Il suffit de faire des [recettes vestimentaires] au chaudron jusqu'à ce que la fiole correspondante soit remplie sur ta page personnelle...
+</phase>
+
+<phase id="non" frame="happy" next="exit">
+Il faut persévérer, voyons.
+</phase>
+
+</d>

@@ -1,0 +1,27 @@
+﻿<d place="frcbrt" name="Tournament Organizer" gfx="torga" cond="!fx(tourna)">
+
+	<phase id="begin" next="yes:ok:no">
+		Hello Grand Dinoz Master! The Great Tournament of BrutForce is open to all those who want to test their Dinoz against other players. Would you like to register?
+	</phase>
+
+	<a id="yes" cond="!fx(totem)">Yes, definitely!</a>
+	<a id="ok" cond="fx(totem)">Yes, thanks!</a>
+	<a id="no">Hmmm, no thanks ... I need to train my Dinoz</a>
+
+	<phase id="yes">
+		Unfortunately, it is specified in the official rules, paragraph 15.48 indent H:
+		Only Dinoz who possess an ancient relic can access to the tournament.
+		It is the only condition of participation ... don't hesitate to come back once your Dinoz has found one. Have a good day and a nice stay in BrutForce!
+	</phase>
+
+	<phase id="ok" effect="tourna">
+		Oh! I see that your Dinoz has an {Ashpouk Totem}! Very well, I'll register him
+		and he'll be included on the Tournament fighter list.
+		Have a good day Dinoz Master!
+	</phase>
+
+	<phase id="no">
+		Very well. No one is forcing you to register - especially if your Dinoz aren't ready to fight against stronger opponents. The Tournament can be very dangerous for ill-prepared Dinoz. Have a good day and enjoy your stay in BrutForce!
+	</phase>
+
+</d>

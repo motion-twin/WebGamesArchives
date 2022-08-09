@@ -1,0 +1,335 @@
+<virus>
+	<!-- *** BASE *** -->
+	<cat name="hidden" id="hidden">
+		<v id="connec" pr="500" size="0" cc="0" t="_net" name="Connection">
+			CONNECT TO NETNODE
+		</v>
+
+		<v id="cd" pr="500" size="0" cc="0" t="_folder" name="Open">
+			OPEN FOLDER
+		</v>
+
+		<v id="exit" pr="500" size="0" cc="0" t="_none" name="Log Out">
+			QUIT SYSTEM
+		</v>
+
+		<v id="target" pr="500" size="0" cc="0" t="_file" name="Target">
+			TARGET A FILE
+		</v>
+
+		<v id="extrac" pr="500" size="0" cc="0" name="Extraction" recom="1">
+			Analyse, recover, and exploit the contents of a PACK file.
+		</v>
+	</cat>
+
+	<cat name="specials" id="specials">
+		<v id="debug" pr="-1" size="1" cc="0" t="_none">
+			DEBUG !
+		</v>
+
+		<v id="fdebug" pr="-1" size="1" cc="0">
+			DEBUG FILE !
+		</v>
+
+		<v id="cust" pr="-1" size="1" cc="10" use="1" name="CUSTOM">
+			CUSTOM MISSION VIRUS
+		</v>
+	</cat>
+
+
+	<!-- *** DEGATS *** -->
+	<cat name="Damage" id="damage">
+		<v id="dmgs" start="1" pr="700" size="1" cc="3" p="3" name="Minimal damage">
+			Inflicts ::p:: damage.
+		</v>
+
+		<v id="dmgm" pr="3000" size="1" cc="5" p="6" name="Light damage" recom="1" l="4">
+			Inflicts ::p:: damage.
+		</v>
+
+		<v id="dmgl" pr="12000" size="1" cc="8" p="10" name="Medium damage" l="6">
+			Inflicts ::p:: damage.
+		</v>
+
+		<v id="dmgxl" pr="25000" size="1" cc="20" p="30" name="Devastation" l="8">
+			Inflicts ::p:: damage.
+		</v>
+
+		<v id="zone" pr="-1" size="1" cc="20" p="5" name="Anti-virus nova damage" t="_none" l="6">
+			Inflicts ::p:: damage against all anti-virus systems in the folder.
+		</v>
+
+		<v id="clone" pr="8500" size="1" cc="8" p="8" name="Anti-virus clone damage" l="6">
+			Inflicts ::p:: damage against all anti-virus systems of the same type as the target as long as they are also in the same folder.
+		</v>
+
+		<v id="avdmg1" pr="5000" size="1" cc="3" p="4" name="Anti-virus damage 1.0" l="6" date="2010/01/10">
+			Inflicts ::p:: damage, but works ONLY against anti-virus systems.
+		</v>
+
+		<v id="avdmg2" pr="15000" size="1" cc="5" p="6" name="Anti-virus damage 2.0" l="8" date="2010/01/10">
+			Inflicts ::p:: damage, but works ONLY against anti-virus systems.
+		</v>
+
+		<v id="fdmg" pr="5000" size="1" cc="2" p="1" name="Lambda damage" l="5">
+			Inflicts ::p:: damage, but doesn't work against anti-virus systems.
+		</v>
+
+		<v id="dshld" pr="15000" size="1" cc="8" p="3" name="Attaque DoS" l="6">
+			Inflicts ::p:: damage, ignores protection provided by SHIELD anti-virus systems and by GUARDIAN files.
+		</v>
+
+		<v id="dot1" pr="-1" size="1" cc="6" p="3" info="3" name="Delayed strike 1.0" l="6">
+			Inflicts ::p:: damage every 5 seconds, ::info:: times. This virus ONLY works against anti-virus systems. This effect is lost if you disconnect from the system.
+		</v>
+
+		<v id="dot2" pr="-1" size="1" cc="9" p="5" info="3" name="Delayed strike 2.0" l="8">
+			Inflicts ::p:: damage every 5 seconds, ::info:: times. This virus ONLY works against anti-virus systems. This effect is lost if you disconnect from the system.
+		</v>
+
+
+<!--
+		<v id="dcore" pr="10000" size="1" cc="5" p="15" name="Kernel Sabotage">
+			Inflicts ::p:: damage, only works against CORE and GUARDIAN files.
+		</v>
+-->
+
+		<v id="dsilen" pr="15000" size="1" cc="30" p="10" name="Silent Bite 1.0" l="5" date="2012/01/10">
+			Inflicts ::p:: damage, doesn't trigger REPURGATOR or SYSDEF anti-virus systems.
+		</v>
+
+		<v id="dsile2" pr="22000" size="1" cc="20" p="8" name="Silent Bite 2.0" l="6" date="2012/02/22">
+			Inflicts ::p:: damage, will not trigger any anti-virus systems.
+		</v>
+
+		<v id="libxpl" pr="15000" size="1" cc="10" p="50" name="Booby-trapped library" l="7" date="2012/01/10">
+			If the targeted LIB file takes enough damage to destroy it, all anti-virus systems, CORE files, and GUARDIAN files in the folder will also take ::p::% of the damage inflicted on the target.
+		</v>
+
+	</cat>
+
+
+	<!-- *** AFFLICTIONS *** -->
+	<cat name="Afflictions" id="debuff">
+		<v id="stun1" pr="5000" size="1" cc="4" p="2" name="Knock-Out 1.0" l="4">
+			Blocks the next ::p:: attacks from the targeted anti-virus syatem.
+		</v>
+
+		<v id="stun2" pr="10000" size="1" cc="6" p="5" name="Knock-Out 2.0" l="6">
+			Blocks the next ::p:: attacks from the targeted anti-virus syatem.
+		</v>
+
+		<v id="pbomb" pr="20000" size="1" cc="100" use="1" name="P-Bomb" t="_none" l="7">
+			Immediately crashes the targeted system.
+		</v>
+
+		<v id="cbomb" pr="30000" size="1" cc="50" use="1" name="C-bomb" t="_none"  l="7">
+			Immediately corrupts the targeted system.
+		</v>
+
+		<v id="reveng" pr="10000" size="1" cc="12" p="15" name="Revenge" l="6">
+			If an anti-virus system inflicts damage on you, it will take ::p:: damage in turn (one time only).
+		</v>
+
+		<v id="tag1" pr="15000" size="1" cc="4" use="5" p="75" name="Link 1.0" l="6">
+			Places a LINK marker on the targeted file. Subsequently, if you inflict damage on any file marked in the same way, each of the marked files will take ::p::% of this damage.
+		</v>
+
+		<v id="tag2" pr="25000" size="1" cc="5" use="10" p="75" name="Link 2.0" l="8">
+			Places a LINK marker on the targeted file. Subsequently, if you inflict damage on any file marked in the same way, each of the marked files will take ::p::% of this damage.
+		</v>
+
+		<v id="tag3" pr="20000" size="1" cc="5" use="3" p="95" name="Link 1.5" l="8">
+			Places a LINK marker on the targeted file. Subsequently, if you inflict damage on any file marked in the same way, each of the marked files will take ::p::% of this damage.
+		</v>
+
+		<v id="unshld" pr="7500" size="1" cc="4" name="Exploit: Open" l="6">
+			The targeted anti-virus will lose a SHIELD marker.
+		</v>
+
+		<v id="exploi" pr="5000" size="1" cc="4" name="Exploit: Amplify" l="5">
+			Damage sustained by the target will be multiplied by 1,5 (non-cumulable).
+		</v>
+
+		<v id="weak1" pr="5000" size="1" cc="3" p="5" name="Weakness 1" l="5">
+			The targeted anti-virus system will inflict ::p::x less damage (non-cumulable).
+		</v>
+
+		<v id="weak2" pr="10000" size="1" cc="8" p="10" name="Weakness 2" l="6">
+			The targeted anti-virus system will inflict ::p::x less damage (non-cumulable).
+		</v>
+
+
+		<v id="disabl" pr="15000" size="1" cc="10" use="3" name="Neutralizer 1.0" l="6">
+			Crashes the targeted anti-virus: it will stop working completely.
+		</v>
+		<v id="disab2" pr="25000" size="1" cc="10" use="5" name="Neutralizer 2.0" l="7" date="2010/02/22">
+			Crashes the targeted anti-virus: it will stop working completely
+		</v>
+	</cat>
+
+	<!-- *** UTILITAIRES -->
+	<cat name="Utilities" id="utils">
+
+		<v id="copy" start="1" pr="500" size="1" cc="15" name="Copy">
+			Copies the targeted file to your terminal.
+		</v>
+
+		<v id="dec1" pr="2500" size="1" cc="15" p="1" name="Decode 1.0" l="4">
+			Decodes the contents of a file protected by level ::p:: encoding or lower.
+		</v>
+
+		<v id="dec2" pr="7500" size="1" cc="20" p="2" name="Decode 2.0" l="5">
+			Decodes the contents of a file protected by level ::p:: encoding or lower.
+		</v>
+
+		<v id="dec3" pr="15000" size="1" cc="30" p="3" name="Decode 3.0" l="5">
+			Decodes the contents of a file protected by level ::p:: encoding or lower.
+		</v>
+
+		<v id="unmask" pr="5000" size="1" cc="3" name="Reveal" l="5">
+			Reveals a filename.
+		</v>
+
+		<v id="scan1" start="1" pr="0" size="1" cc="0" t="_none"  name="Standard scanner">
+			Displays a system map.
+		</v>
+
+		<v id="scan2" pr="2500" size="1" cc="0" t="_none" name="AV-1 Scanner" recom="1" l="4">
+			Displays a system map and a list of all anti-virus systems present.
+		</v>
+
+		<v id="scan3" pr="7500" size="1" cc="0" t="_none" name="AV-2 Scanner" l="5">
+			Displays a system map and a list of all anti-virus systems present. Folders containing anti-virus systems are indicated in red.
+		</v>
+
+		<v id="scan4" pr="25000" size="1" cc="4" t="_none" name="Scanner AV-Ultra" l="7" date="2010/02/22">
+			Displays a system map and the location of all anti-virus systems present.
+		</v>
+
+		<v id="scan42" pr="17000" size="1" cc="6" t="_none" name="AV-Omniscient Scanner" l="7">
+			Displays a system map and a list of all anti-virus systems present. This scanner is unaffected by the SCRAMBLER virus.
+		</v>
+
+		<v id="hunt" pr="7500" size="1" cc="0" t="_none" name="Tracker Scanner" l="5">
+			Displayes a system map and reveals the location of all PACK files.
+		</v>
+
+		<v id="panic1" pr="2000" size="1" cc="3" t="_none" name="Panic 1.0" l="4">
+			Rapid disconnection from the system.
+		</v>
+
+		<v id="panic2" pr="7500" size="1" cc="10" t="_none" name="Panic 2.0" l="6" date="2010/01/10">
+			Rapid disconnection from the system, no anti-virus system will detect this action.
+		</v>
+
+		<v id="rolbck" pr="-1" size="1" cc="15" t="_none" name="Return">
+			Sends you back to the "parent" folder, no anti-virus system will detect this action.
+		</v>
+
+		<v id="heal1" pr="7500" size="1" cc="0" use="1" p="50" t="_none" name="Repair 1.0" l="5">
+			Restores ::p:: Armor points.
+		</v>
+
+		<v id="heal2" pr="20000" size="1" cc="0" use="2" p="40" t="_none" name="Repair 2.0" l="7">
+			Restores ::p:: Armor points; this virus can be used several times during a mission.
+		</v>
+
+		<v id="mana1" pr="4000" size="1" cc="0" use="1" p="50" t="_none" name="Reserves 1.0" l="4">
+			Restores ::p:: Resource points.
+		</v>
+
+		<v id="mana2" pr="10000" size="1" cc="0" use="3" p="40" t="_none" name="Reserves 2.0" l="6">
+			Restores ::p:: Resource points; this virus can be used several times during a mission.
+		</v>
+
+		<v id="mana3" pr="20000" size="1" cc="0" use="3" p="80" t="_none" name="Reserves 3.0" l="7" date="2010/02/22">
+			Restores ::p:: Resource points; this virus can be used several times during a mission.
+		</v>
+
+		<v id="chrge2" pr="10000" size="1" cc="15" name="Charge x2" t="_none" l="5">
+			The damage caused by your next attack virus will be multiplied by 2.
+		</v>
+
+		<v id="chrge3" pr="20000" size="1" cc="25" name="Charge x3" t="_none" l="6">
+			The damage caused by your next attack virus will be multiplied by 3.
+		</v>
+
+		<v id="shld1" pr="2500" size="1" cc="15" p="25" name="Shield 1.0" t="_none" l="4">
+			Absorbs your next ::p:: points of damage.
+		</v>
+
+		<v id="shld2" pr="10000" size="1" cc="20" p="50" name="Shield 2.0" t="_none" l="6">
+			Absorbs your next ::p:: points of damage
+		</v>
+
+		<v id="rconv" pr="10000" size="1" cc="0" info="2" p="5" name="Sacrifice" t="_none" l="6" date="2010/01/20">
+			Converts ::info:: armor point(s) to ::p:: resource point(s) (unavoidable damage).
+		</v>
+
+		<v id="fmove1" pr="10000" size="1" cc="5" p="2" t="_none" name="Ninja 1.0" l="6" date="2010/01/10">
+			Your next ::p:: folder changes will not be detected by any anti-virus systems. This effect is lost if you disconnect from the current system.
+		</v>
+
+		<v id="fmove2" pr="30000" size="1" cc="13" use="1" p="6" t="_none" name="Ninja 2.0" l="8" date="2010/02/22">
+			Your next ::p:: folder changes will not be detected by any anti-virus systems. This effect is lost if you disconnect from the current system.
+		</v>
+
+		<v id="invis" pr="15000" size="1" cc="20" p="2" t="_none" name="Digital Invisibility" l="6" date="2010/01/10">
+			Your next ::p:: folder changes will not be detected by any anti-virus systems (the deployment of this virus is also undetectable).
+		</v>
+
+		<v id="corrup" pr="500" size="1" cc="5" name="Corruption 1.0" recom="1" l="4">
+			Corrupts the targeted CONTROL file. Affects all CONTROL files to obtain "administrator" access to the system.
+		</v>
+
+		<v id="corru2" pr="9500" size="1" cc="4" name="Corruption 2.0" l="7" date="2010/02/22">
+			Corrupts the targeted CONTROL file. Affects all CONTROL files to obtain "administrator" access to the system. This upgraded version of Corruption displays the number of CONTROL files remaining on the system.
+		</v>
+
+		<v id="dckswi" pr="10000" size="1" cc="5" t="_none" name="Multi-Deck Pro 1.0" use="1" l="5" date="2010/01/10">
+			Allows you to change deck while connected to a system.
+		</v>
+
+		<v id="dcksw2" pr="27000" size="1" cc="5" t="_none" name="Multi-Deck Pro 2.0" use="2" l="8" date="2010/01/10">
+			Allows you to change deck while connected to a system (multiple times).
+		</v>
+		
+		<v id="reboo1" pr="25000" size="1" cc="40" t="_none" name="Cold-Reboot 1.0" l="7">
+			Forces the system to reboot. All anti-virus systems present will be delayed in starting up, the next 3 attacks which would otherwise inflict damage will be blocked.
+		</v>
+
+		<v id="reboo2" pr="50000" size="1" cc="100" t="_none" name="Cold-Reboot 2.0" l="9">
+			Forces the system to reboot. All anti-virus systems present will be delayed in starting up, the next 3 attacks which would otherwise inflict damage will be blocked. Furthermore, they will all be subjected to "received damage amplification".
+		</v>
+	</cat>
+
+
+	<!-- *** COMBO -->
+	<cat name="Combo" id="combo">
+		<v id="cevi" pr="15000" size="1" cc="7" p="10" name="Combo: burst" t="_none" l="6">
+			Your next N attacks will each inflict ::p:: more damage, N is your number of combo points.
+		</v>
+
+		<v id="cstun" pr="5000" size="1" cc="5" p="2" name="Combo: pacifier" l="6">
+			Blocks ::p:: anti-virus attacks per combo point.
+		</v>
+
+		<v id="cshld" pr="12500" size="1" cc="5" p="6" name="Combo: shield 1.0" t="_none" l="5">
+			Absorbs ::p:: damage per combo point [ (::pcombo:: in total)].
+		</v>
+		
+		<v id="cshld2" pr="25000" size="1" cc="10" p="15" name="Combo: shield 2.0" t="_none" l="7">
+			Absorbs ::p:: damage per combo point [ (::pcombo:: in total)].
+		</v>
+		
+		<v id="cshld3" pr="50000" size="1" cc="20" p="25" name="Combo: shield 3.0" t="_none" l="9">
+			Absorbs ::p:: damage per combo point [ (::pcombo:: in total)].
+		</v>
+
+		<v id="cchrge" pr="15000" size="1" cc="10" p="1" name="Combo: amplification" t="_none" l="6">
+			Your next attack will inflict N times more damage, N is your combo point total.
+		</v>
+	</cat>
+
+</virus>

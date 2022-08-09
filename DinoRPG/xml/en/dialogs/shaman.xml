@@ -1,0 +1,69 @@
+﻿<!-- Quete du charme de feu, se débloque en parlant au Vénérable -->
+<!-- Quete de l'amulette de stratégie -->
+
+<d place="fosslv" name="Soft Shaman" gfx="shaman">
+
+	<phase id="begin" next="vener:souvenir:missions:charm">
+		Hey there young master! Welcome to the Lavapit ... capital of the Big All-Hot ...
+		Don't hesitate to admire our magnificient basalt sculptures. There are magma baths here too. Relax, chill out.
+		If you're hungry why don't you try our local speciality: Goblin Merguez ... it'll give you a little boost, give it a try ..... you'll see.
+	</phase>
+
+	<a id="vener">The Venerable?</a>
+	<a id="souvenir" cond="!fx(shflag)">Buy some souvenirs</a>
+	<a id="missions" cond="fx(shflag)">Check missions list</a>
+	<a id="charm" cond="fx(fflag)">Someone told me about a charm...</a>
+
+	<phase id="charm" next="boost:nothing">
+	Oh yeah, that's right. Take this, it's a Fire Charm ... it'll help your Dinoz in future fights.
+	</phase>
+
+	<a id="boost" cond="!fx(fcharm)">Accept the Charm</a>
+	<a id="nothing" cond="fx(fcharm)">Accept the Charm</a>
+
+	<phase id="boost" effect="fcharm">
+	Don't move, I am going to enchant you with Shaman magic ... Oyeee, oyeee! ZZZZzzzzzz... It's done, you can go now, you will find that you are stronger now.
+	</phase>
+
+	<phase id="nothing">
+		Hey, don't try and scam me, your Dinoz already has a charm ... Come back later.
+	</phase>
+
+	<phase id="vener" next="force:merci">
+	
+		Uhmm ... ? The Venerable? ... He's a real monster ... he nearly ate me yesterday just because he said I was being annoying and disturbing his sleep. WHAT?! You really want to visit the Venerable? Bah ... do what you want ... take the path on your right at the Forges, and it's straight ahead.
+	</phase>
+
+	<a id="force">Is he strong?</a>
+	<a id="merci">Thanks, I'll take your advice into consideration!</a>
+
+	<phase id="merci">
+		See you next time my friend!
+	</phase>
+
+	<phase id="force" next="merci">
+		Strong? Who? The Venerable? Yeah he's strong. He's listed as the most common cause of death for tourists, just ahead of heart attacks caused by our Goblin Merguez ... Ha ha, tourists are so delicate!
+	</phase>
+
+	<phase id="souvenir" next="more:merci">
+		Some souvenirs? ... Bah ... I've got a pile of incantation pages here, but I don't know if you're interested in them ... I can also give you an autograph if you want, I'll sign it using my real name, Bomer Boof... Interested? No? I didn't think you would be, not many people are. If you're really looking for some souvenirs you should go to the Forges ... there's a lot of combat gear there... maybe you'll find something interesting.
+	</phase>
+
+	<a id="more">And that's all?</a>
+
+	<phase id="more" next="accept">
+		Uhmm .... if you carry out some missions for me, I'll give you my Strategy Guide. It's extremely useful....
+	</phase>
+
+	<a id="accept">Accept</a>
+
+	<phase id="accept" effect="shflag" next="missions">
+		It's a deal....
+	</phase>
+
+	<!--missions="shaman"-->
+	<phase id="missions" missions="shaman">
+		(Avaliable soon)
+	</phase>
+
+</d>

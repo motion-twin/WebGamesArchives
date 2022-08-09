@@ -1,0 +1,255 @@
+<links>
+
+	<tags>
+		<tag name="village"		did="0" lid="0"/>
+		<tag name="main02"		did="0" lid="2"/>
+		<tag name="main03"		did="0" lid="3"/>
+		<tag name="main06"		did="0" lid="6"/>
+		<tag name="main11"		did="0" lid="11"/>
+		<tag name="main13"		did="0" lid="13"/>
+		<tag name="main15"		did="0" lid="15"/>
+		<tag name="main16"		did="0" lid="16"/>
+		<tag name="main23"		did="0" lid="23"/>
+		<tag name="main25"		did="0" lid="25"/>
+		<tag name="main26"		did="0" lid="26"/>
+		<tag name="main33"		did="0" lid="33"/>
+		<tag name="main42"		did="0" lid="42"/>
+		<tag name="main43"		did="0" lid="43"/>
+		<tag name="main46"		did="0" lid="46"/>
+		<tag name="main51"		did="0" lid="51"/>
+		<tag name="main54"		did="0" lid="54"/>
+		<tag name="main55"		did="0" lid="55"/>
+		<tag name="main62"		did="0" lid="62"/>
+		<tag name="main63"		did="0" lid="63"/>
+		<tag name="main64"		did="0" lid="64"/>
+		<tag name="main72"		did="0" lid="72"/>
+		<tag name="main74"		did="0" lid="74"/>
+		<tag name="main77"		did="0" lid="77"/>
+		<tag name="main82"		did="0" lid="82"/>
+		<tag name="main86"		did="0" lid="86"/>
+		<tag name="main92"		did="0" lid="92"/>
+		<tag name="main97"		did="0" lid="97"/>
+
+		<!-- deepnight -->
+		<tag name="d_temple"	did="1" lid="0"/>
+		<tag name="d_mario"		did="1" lid="12"/>
+		<tag name="d_bubble"	did="1" lid="14"/>
+		<tag name="d_sonic"		did="1" lid="24"/>
+		<tag name="d_bonus"		did="1" lid="33"/>
+		<tag name="d_hard"		did="1" lid="35"/>
+		<tag name="d_bois"		did="1" lid="41"/>
+		<tag name="d_base"		did="1" lid="55"/>
+		<tag name="d_cavavin"	did="1" lid="59"/>
+		<tag name="d_room"		did="1" lid="68"/>
+		<tag name="d_ice"		did="1" lid="70"/>
+		<tag name="d_iceTrap"	did="1" lid="76"/>
+		<tag name="d_forest1"	did="1" lid="78"/>
+		<tag name="d_blob"		did="1" lid="80"/>
+		<tag name="d_protect"	did="1" lid="86"/>
+		<tag name="d_forest2"	did="1" lid="88"/>
+		<tag name="d_alt"		did="1" lid="97"/>
+		<tag name="d_spdbonus"	did="1" lid="108"/>
+		<tag name="d_firstZone"	did="1" lid="110"/>
+		<tag name="d_mirror"	did="1" lid="119"/>
+		<tag name="d_flipzone"	did="1" lid="125"/>
+		<tag name="d_beko"		did="1" lid="127"/>
+		<tag name="d_dojo"		did="1" lid="134"/>
+		<tag name="d_hell"		did="1" lid="141"/>
+		<tag name="d_hellboss"	did="1" lid="154"/>
+		<tag name="d_hellmetal"	did="1" lid="157"/>
+		<tag name="d_framzone"	did="1" lid="168"/>
+		<tag name="d_egypt"		did="1" lid="188"/>
+		<tag name="d_egyptgate"	did="1" lid="206"/>
+		<tag name="d_tomb"		did="1" lid="211"/>
+		<tag name="d_kingtomb"	did="1" lid="217"/>
+
+		<!-- hiko -->
+		<tag name="hiko"		did="2" lid="0"/>
+
+		<!-- ayame -->
+		<tag name="a_easy1"		did="3" lid="0"/>
+		<tag name="a_irish"		did="3" lid="6"/>
+		<tag name="a_cat"		did="3" lid="12"/>
+		<tag name="a_kanji"		did="3" lid="18"/>
+		<tag name="a_skull"		did="3" lid="24"/>
+		<tag name="a_temple"	did="3" lid="30"/>
+		<tag name="a_easy2"		did="3" lid="36"/>
+		<tag name="a_medium"	did="3" lid="42"/>
+		<tag name="a_indian"	did="3" lid="48"/>
+	</tags>
+
+
+
+	<!-- note: portal ID -1 means "blur transition" instead of horizontal scrolling -->
+
+
+	<ways>
+
+		<!-- ---------------------------------------------
+		DEEPNIGHT
+		----------------------------------------------- -->
+
+		<!-- forêt exterieure -->
+		<oneway from="village"			to="d_forest1(-1)"/>
+		<twoway from="d_forest1"		to="d_forest2(0)"/>
+		<twoway from="d_forest2(1)"		to="d_forest2+1(1)"/>
+		<twoway from="d_forest2+1(0)"	to="d_forest2+2(0)"/>
+		<oneway from="d_forest2+7"		to="village(-1)"/>
+
+		<!-- premiers niveaux alternatifs -->
+		<oneway from="main02"			to="d_alt(-1)"/>
+		<oneway from="d_alt+9"			to="main02+9(-1)"/>
+
+		<!-- cave de Beko -->
+		<oneway from="main03"			to="d_beko(-1)"/>
+		<oneway from="d_beko+3"			to="d_beko+5(-1)"/>
+		<oneway from="d_beko"			to="main03(-1)"/>
+		<oneway from="d_beko+5"			to="main03+2(-1)"/>
+
+		<!-- bonus room -->
+		<oneway from="main06"			to="d_bonus(-1)"/>
+		<oneway from="d_bonus"			to="main06+1(-1)"/>
+
+		<!-- medium -->
+		<oneway from="main15"			to="d_bois(-1)"/>
+		<oneway from="d_bois+12"		to="main15+5(-1)"/>
+
+		<!-- bonus: mario -->
+		<oneway from="main16"			to="d_mario(-1)"/>
+		<oneway from="d_mario"			to="main16+1(-1)"/>
+
+		<!-- bonus: mario -->
+		<oneway from="main25"			to="d_protect(-1)"/>
+		<oneway from="d_protect"		to="main25+2(-1)"/>
+
+		<!-- La cavavin -->
+		<twoway from="main33"			to="d_cavavin+1 (0)" />
+		<twoway from="d_cavavin+1 (1)"	to="d_cavavin+2" />
+		<twoway from="d_cavavin+3"		to="d_cavavin+5" />
+		<twoway from="d_cavavin+4 (0)"	to="d_cavavin+6 (0)" />
+		<twoway from="d_cavavin+4 (1)"	to="d_cavavin+6 (2)" />
+		<twoway from="d_cavavin+6 (1)"	to="d_cavavin" />
+		<oneway from="d_cavavin+7"		to="d_cavavin+6 (-1)" />
+
+		<!-- bonus: bubble bobble -->
+		<oneway from="main43"			to="d_bubble(-1)"/>
+		<oneway from="d_bubble+7"		to="main43+1(-1)"/>
+		<oneway from="d_bubble+8"		to="main43+1(-1)"/>
+
+		<!-- first zone -->
+		<oneway from="main46"			to="d_firstZone(-1)"/>
+		<oneway from="d_firstZone+7"	to="main46+4(-1)"/>
+
+		<!-- temple -->
+		<oneway from="main51"			to="d_temple"/>
+		<oneway from="d_temple"			to="main51(-1)"/>
+		<oneway from="d_temple+10"		to="main51+1(-1)"/>
+
+		<!-- sonic -->
+		<oneway from="main62"			to="d_sonic(-1)"/>
+		<oneway from="d_sonic+3"		to="main62+1(-1)"/>
+		<oneway from="d_sonic+7"		to="main62+7(-1)"/>
+
+		<!-- base -->
+		<oneway from="main63"			to="d_base(-1)"/>
+		<oneway from="d_base+2"			to="main63+2(-1)"/>
+
+		<!-- ice -->
+		<oneway from="main64"			to="d_ice(-1)"/>
+		<oneway from="d_ice+4"			to="main64+1(-1)"/>
+
+		<!-- ice -->
+		<oneway from="main74"			to="d_room(-1)"/>
+		<oneway from="d_room"			to="main74+2(-1)"/>
+
+		<!-- blob -->
+		<oneway from="main77"			to="d_blob(-1)"/>
+		<oneway from="d_blob+4"			to="main77+3(-1)"/>
+
+		<!-- hard -->
+		<oneway from="main82"			to="d_hard(-1)"/>
+		<oneway from="d_hard+4"			to="main82+1(-1)"/>
+
+		<!-- iceTrap -->
+		<oneway from="main55"			to="d_iceTrap(-1)"/>
+		<oneway from="d_iceTrap"		to="main55+1(-1)"/>
+
+		<!-- speed bonus -->
+		<oneway from="main86"			to="d_mirror(-1)"/>
+		<oneway from="d_mirror+4"		to="main86(-1)"/>
+
+		<!-- flipzone -->
+		<oneway from="main97"			to="d_flipzone(-1)"/>
+		<oneway from="d_flipzone"		to="main97+2(-1)"/>
+
+		<!-- speed bonus -->
+		<oneway from="main92"			to="d_spdbonus(-1)"/>
+		<oneway from="d_spdbonus"		to="main92+1(-1)"/>
+
+		<!-- ninjutsu dojo -->
+		<oneway from="main23"			to="d_dojo(-1)"/>
+		<oneway from="d_dojo+5"			to="main23+1(-1)"/>
+
+
+		<!-- hell part 1 -->
+		<oneway from="main54"			to="d_hell(-1)"/>
+		<oneway from="d_hell"			to="main54+1(-1)"/>
+		<oneway from="d_hell+10"		to="main54+1(-1)"/>
+		<oneway from="d_hell+12"		to="d_hellboss(-1)"/>
+		<oneway from="d_hellboss+1(0)"	to="d_hellmetal(-1)"/>
+		<oneway from="d_hellboss+1(1)"	to="d_framzone(-1)"/>
+
+		<!-- hell metal -->
+		<oneway from="d_hellmetal+9(0)"	to="d_egyptgate(-1)"/>
+		<oneway from="d_hellmetal+9(1)"	to="main54+1(-1)"/>
+
+		<!-- framboise zone -->
+		<oneway from="d_framzone+17(0)"	to="main54+1(-1)"/>
+		<oneway from="d_framzone+18(0)"	to="d_tomb(-1)"/>
+
+		<!-- egypt gate -->
+		<oneway from="d_egyptgate+3(0)"	to="d_egypt(-1)"/>
+
+		<!-- egypt -->
+		<oneway from="d_egypt+10(0)"	to="d_kingtomb(-1)"/>
+		<oneway from="d_egypt+16(0)"	to="main54+1(-1)"/>
+
+		<!-- king tomb -->
+		<oneway from="d_kingtomb+9(0)"	to="d_egypt+11(-1)"/>
+
+		<!-- tomb -->
+		<oneway from="d_tomb+4(0)"		to="main54+1(-1)"/>
+
+
+		<!-- ---------------------------------------------
+		HIKO
+		----------------------------------------------- -->
+
+		<oneway from="village"			to="hiko(-1)"/>
+
+		<!-- ---------------------------------------------
+		AYAME
+		----------------------------------------------- -->
+		<oneway from="main11"			to="a_easy1(-1)"/>
+		<oneway from="a_easy1+4"		to="main11+3(-1)"/>
+
+		<oneway from="main13"			to="a_irish(-1)"/>
+		<oneway from="a_irish+4"		to="main13+3(-1)"/>
+
+		<oneway from="main26"			to="a_cat(-1)"/>
+		<oneway from="a_cat+4"			to="main26+3(-1)"/>
+
+		<oneway from="main42"			to="a_medium(-1)"/>
+		<oneway from="a_medium+4"		to="main42+3(-1)"/>
+
+		<oneway from="main72"			to="a_kanji(-1)"/>
+		<oneway from="a_kanji+1"		to="a_easy2(-1)"/>
+		<oneway from="a_kanji+4"		to="main72+3(-1)"/>
+		<oneway from="a_easy2+4"		to="a_kanji+2(-1)"/>
+
+		<oneway from="d_bois+11"		to="a_indian(-1)"/>
+		<oneway from="a_indian+9"		to="d_bois+12(-1)"/>
+
+	</ways>
+
+</links>

@@ -1,0 +1,132 @@
+﻿<missions>
+
+	<m group="capture" id="mcapt1" name="Le Parcours du Combattant">
+		<begin>
+			Nous allons commencer par renforcer les muscles de ce MOLLUSQUE ! Tu passes ta journée assis à jouer à World-of-Dinoz ou quoi ? Regarde-moi ces petits biceps, indignes d'un HOMME ! Un petit PARCOURS du combattant devrait déjà te FAIRE LES PIEDS !
+		</begin>
+		<goto v="mport"/>
+		<actfight act="Faire 100 Pompes !">
+			<begin>Alors que vous en êtes à la troisième pompe et que vous avez déjà mal aux abdos, des monstres viennent vous déranger !</begin>
+		</actfight>
+		<goto v="mfpalc"/>
+		<action v="Faire 30 tours du Palais !">
+			Au bout de cinq tours, des monstres intrigués viennent vous regarder en faisant des commentaires désobligeants sur votre vitesse...
+		</action>
+		<actfight act="Les attaquer !">
+			<win>Pour le coup, les monstres ne rigolent plus...</win>
+		</actfight>
+		<goto v="mcuzco"/>
+		<action v="Soulever 50 Grosses Pierres">
+			Les pierres ici sont énormes, vous préférez en choisir des plus petites qui ne demandent presque aucun effort... Mais vous vous sentez épié...
+		</action>
+		<actfight act="Chercher Autour !" monsters="mugard:mugard:mugard:mugard">
+			<begin>Vous tombez nez-à-nez avec un groupe de Gardes Végétox qui vous espionnaient !</begin>
+			<win>Les gardes avaient en fait été envoyés par le Sergent Pepper... Ils vous apportent la suite du parcours...</win>
+		</actfight>
+		<goto v="mcelit"/>
+		<action v="Faire 100 Pompes !">
+			Vous allez jusqu'à dix, puis vous décidez d'arrêter là pour aujourd'hui, la journée a déjà été bien remplie !
+		</action>
+		<end>
+			Alors comme ça tu trouves mon ENTRAÎNEMENT trop difficile ! Ah ces JEUNES, plus aucun sens de l'effort ! Je te préviens, la suite sera encore plus difficile, tu vas en BAVER !
+		</end>
+		<xp v="40"/>
+	</m>
+	
+	<m group="capture" id="mcapt2" name="Terrain Miné" cond="mission(mcapt1)">
+		<begin>
+			Maintenant que nous avons fini avec cet ÉCHAUFFEMENT nous allons passer aux choses SÉRIEUSES ! On m'a informé que des MINES ANTIPERSONNELLES avaient été enterrées du côté de l'Avant-Poste Frutox. Va là-bas et assure-toi que la ZONE est sans risque pour les CIVILS !
+		</begin>
+		<goto v="mfoutp"/>
+		<talk v="Démineur">
+			Chef ! Nous avons trouvé cinq mines enfouies aux alentours du Camp, Chef ! Sûrement un coup des Végétox, Chef ! Il va falloir un Détecteur de Danger pour les localiser exactement, Chef !
+		</talk>
+		<use v="danger" n="1"/>
+		<actfight act="Déminer" monsters="minim2:minim2:minim2:minim2:minim2:minim2:minim2:minim2">
+			<begin>Des Minimouk avaient fait leur nid à l'endroit où se situaient les mines !</begin>
+		</actfight>
+		<action v="Déminer">
+			Le déminage est plus complexe que prévu. Pour les neutraliser, il vous faudra un briquet pour brûler le mécanisme de déclenchement sans risque.
+		</action>
+		<use v="zippo" n="1"/>
+		<action v="Déminer">
+			Vous avez réussi à neutraliser les mines antipersonnelles ! Heureusement, l'explosion a été évitée !
+		</action>
+		<end>
+			GARDE À VOUS LE BLEU ! Alors comme ça, on arrive a bien déminer et on est HABILE de ses MAINS ? Mais ça ne fait pas pour autant de toi un SOLDAT !
+		</end>
+		<xp v="50"/>
+	</m>
+	
+	<m group="capture" id="mcapt3" name="La dé-Mouktization" cond="mission(mcapt2)">
+		<begin>
+			Par ici LE BLEU ! On a beau être des SOLDATS, c'est désormais la PAIX et il faut qu'on aide les CIVILS ! Des saletés de MOUKTIZ ont traversé la mer sur un rafiot et commencent à s'installer dans le Royaume de Dinoville. Trouve-les et EXTERMINE les nids avant qu'ils n'envahissent le continent !
+		</begin>
+		<goto v="frcbrt" hide="1"/>
+		<actfight act="Tuer les Mouktiz" monsters="mosqui:mosqui"/>
+		<goto v="univ" hide="1"/>
+		<actfight act="Tuer les Mouktiz" monsters="mosqui"/>
+		<goto v="colesc" hide="1"/>
+		<actfight act="Tuer les Mouktiz" monsters="mosqui:mosqui"/>
+		<goto v="marche" hide="1"/>
+		<actfight act="Tuer les Mouktiz" monsters="mosqui:mosqui:mosqui:mosqui"/>
+		<goto v="dplaza" hide="1"/>
+		<actfight act="Tuer les Mouktiz" monsters="mosqui"/>
+		<end>
+			Belle EXTERMINATION, le BLEU, je commence à croire que tu es un minimum doué pour le COMBAT, le VRAI !
+		</end>
+		<gold v="3000"/>
+	</m>
+
+	<m group="capture" id="mcapt4" name="L'Initiation" cond="mission(mcapt3)">
+		<begin>
+			Dis-donc, LE BLEU, il va peut-être falloir commencer à te former à la CAPTURE des monstres, non ? Commençons par les BASES !
+		</begin>
+		<goto v="mvoutp"/>
+		<talk v="Instructions du Sergent">
+			BIEN ! Pour commencer, la CAPTURE permet à ton DINOZ d'attraper des MONSTRES. Cela ne marchera PAS avec TOUS les monstres mais avec LA PLUPART d'entre eux ! Une fois un MONSTRE capturé, il restera avec ton DINOZ pendant les COMBATS jusqu'à ce que le monstre soit tué. Les monstres ne peuvent pas être soignés en dehors du combat, donc en général ils MEURENT assez RAPIDEMENT, ne t'y attache donc pas trop !
+		</talk>
+		<talk v="Instructions du Sergent">
+			OH ! J'oubliais de te DIRE : seuls trois MONSTRES capturés MAXIMUM pourront aider CHACUN des tes Dinoz. Si un de tes Dinoz a plus de TROIS MONSTRES capturés encore VIVANTS, ceux qui combattront seront choisis au HASARD à chaque COMBAT !
+		</talk>
+		<talk v="Instructions du Sergent">
+			Nous allons commencer par quelquechose de SIMPLE : essaie de capturer un GOUPIGNON à DINOVILLE et un PIRHANOZ au Marais Collant !
+		</talk>
+		<goto v="dnv"/>
+		<actfight act="Capturer un Goupignon" monsters="goupi">
+			<begin m="goupi">Au secours !!!</begin>
+			<win>Votre Dinoz n'a pas réussi a capturer ce pauvre Goupignon...</win>
+		</actfight>
+		<goto v="marais"/>
+		<actfight act="Capturer un Pirhanoz" monsters="pira:pira:pira:pira">
+			<begin m="pira">Pitié !!!!!!</begin>
+			<win>Apparemment aucun Pirhanoz n'a accepté de se faire capturer par votre Dinoz...</win>
+		</actfight>
+		<goto v="mvoutp"/>
+		<talk v="Instructions du Sergent">
+			BON ! Ton entraînement est un ÉCHEC ! LE BLEU semble INCAPABLE de CAPTURER même les monstres les plus FAIBLES ! Normalement, si tu as bien respecté mes instructions, cela ne devrait PAS arriver... à moins que tu aies négligé ta PRÉPARATION PHYSIQUE ? C'était une étape VITALE !
+		</talk>
+		<end>
+			Aucune récompense pour les tire-au-flanc ! Je n'ai plus RIEN à t'apprendre !
+		</end>
+		<gold v="0"/>
+	</m>
+
+	<m group="capture" id="mcapt5" name="Le Gant de Capture" cond="mission(mcapt4)+scenario(monisl,18)">
+		<begin>
+			AH ! Revoilà LE BLEU ! Le Grand Antraxov - GARDE À VOUS ! - m'a demandé de te mettre à l'épreuve avant d'OBTENIR un GANT de CAPTURE ! Je te préviens, cette MISSION n'est PAS pour les MAUVIETTES !
+		</begin>
+		<goto v="mvoutp"/>
+		<talk v="Instructions du Sergent">
+			Une HORDE de Demyon blessés se sont rassemblés à CUZCOUS ! Pas QUESTION de les laisser pulluler ainsi ! Au BOULOT ! Je te conseille d'y aller en GROUPE, ça va SAIGNER !
+		</talk>
+		<goto v="mcuzco"/>
+		<actfight act="Horde de Demyon" monsters="singm2:singm2:singm2:singm2:singm2"/>
+		<end>
+			Tu as fait un BEAU COMBAT, LE BLEU ! Je te donne ce Gant de Capture, ton Dinoz pourra désormais CAPTURER des MONSTRES. Bonne chance dans tes AVENTURES !
+		</end>
+		<fx v="mcapt"/>
+		<xp v="100"/>
+	</m>
+
+</missions>

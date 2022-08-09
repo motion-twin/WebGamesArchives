@@ -1,0 +1,129 @@
+﻿<shops>
+
+	<shop id="dnv" gfx="shop" name="Boutique volante de Dinoland">
+		<item i="irma" v="450"/>
+		<item i="angel" v="1000"/>
+		<item i="burger" v="350"/>
+		<item i="tartev" v="1000"/>
+		<item i="hotpan" v="3000"/>
+		<item i="ration" v="500"/>
+		<desc>La Boutique volante de Dinoland est accessible à tout endroit et permet à tout moment à votre Dinoz de se procurer des objets de base. En général, il suffit de siffler très fort pour qu'elle arrive. Il existe aussi de nombreuses autres Boutiques dans Dinoland, qui vendent chacune des objets spéciaux.</desc>
+	</shop>
+
+	<shop id="forges" place="forges" gfx="forges" name="Boutique des Forges">
+		<item i="combi" v="150"/>
+		<item i="zippo" v="150"/>
+		<item i="ppoiv" v="150"/>
+		<item i="flamch" v="150"/>
+		<item i="hlmsos" v="150"/>
+		<desc>La Boutique des Forges est le lieu où sont vendus les objets construits grâce au feu du Grand Tout Chaud. On y trouve de nombreux objets utiles pour le Combat.</desc>
+	</shop>
+
+	<shop id="gshop" place="garde" gfx="gshop" name="Boutique Fruitée" cond="fx(gshop)">
+		<item i="fruit" v="900"/>
+		<desc>« Si vous laissez de l'or dans le seau pendu au vieil arbre, un fruit tombera ! »</desc>
+	</shop>
+
+	<shop id="filou" place="marche" name="Homme Louche" hidden="1">
+		<item i="tix" v="11" ingr="fish"/>
+		<item i="tix" v="18" ingr="fruitc"/>
+		<item i="tix" v="4" ingr="enfdr"/>
+		<item i="tix" v="6" ingr="art"/>
+		<item i="tix" v="4" ingr="chasc"/>
+		<item i="tix" v="1250"/>
+		<desc>C'est assez cher, mais a priori, il n'existe pas d'autre façon d'en avoir facilement...</desc>
+	</shop>
+
+	<shop id="nomad1" gfx="desert" place="svillg" name="Chez Razad">
+		<item i="amour" v="150"/>
+		<item i="antip" v="450"/>
+		<desc>Razad est un vieux nomade ayant fui les steppes occidentales, devenues trop dangereuses pour son commerce. Aujourd'hui, sa boutique est bien plus modeste qu'avant, mais au moins il est installé en sécurité à l'Avant-Poste Rocky.</desc>
+	</shop>
+
+	<shop id="nomad2" gfx="desert_pylon" place="spylon" name="Souk «ventes éclair»">
+		<item i="fuca" v="500"/>
+		<item i="monoch" v="7500"/>
+		<desc>Le souk est installé un peu à l'écart des Pylônes de Magnétite, offrant une très jolie vue sur les arcs électriques qui se forment régulièrement dans cette région. Malheureusement, la boutique n'est pas hors d'atteinte de ces éclairs, ce qui pose quelques soucis évidents...</desc>
+	</shop>
+
+	<shop id="nomad3" gfx="desert_canyon" place="scanyo" name="Pourvoyeur de Toutemba">
+		<item i="antip" v="150"/>
+		<item i="fuca" v="1500"/>
+		<desc>La petite boutique du Pourvoyeur est cachée au fin fond des canyons de Toutemba dans une crique bien protégée. Normal quand on connaît les dangers que recelle la région...</desc>
+	</shop>
+
+	<shop id="nomad4" gfx="desert_barbare" place="sband2" name="Barbare troqueur">
+		<item i="confus" v="200"/>
+		<item i="amour" v="450"/>
+		<desc>« Prix pas négociables. Vous pas toucher marchandises. PAS TOUCHER J'AI DIS ! Si vous toucher, moi BROYER vous !»</desc>
+	</shop>
+
+	<shop id="teamwc" gfx="desert_camp" place="scampw" name="Boutique Secrète" cond="scenario(magnet,12+)">
+		<item i="amour" v="160"/>
+		<item i="antip" v="160"/>
+		<item i="confus" v="225"/>
+		<item i="fuca" v="550"/>
+		<item i="monoch" v="2600"/>
+		<desc>« La boutique secrète de la Team-W, contiens tous les objets des Steppes Magnétiques en un seul endroit, et surtout à prix très raisonnable ! »</desc>
+	</shop>
+
+	<shop id="magshp" gfx="magic" place="dnv" name="Boutique Magique" cond="hasobject(cgold)">
+		<item i="mbann" o="cgold" v="3"/>
+		<item i="mbeli" o="cgold" v="5"/>
+		<item i="mbrais" o="cgold" v="5"/>
+		<item i="mbalan" o="cgold" v="7"/>
+		<item i="mbeer" o="cgold" v="3"/>
+		<item i="mencly" o="cgold" v="6"/>
+		<item i="mantic" o="cgold" v="4"/>
+		<item i="mantip" o="cgold" v="5"/>
+		<item i="mtime" o="cgold" v="5"/>
+		<item i="mpdim" o="cgold" v="6"/>
+		<item i="mbaget" o="cgold" v="7"/>
+		<item i="mhelp" o="cgold" v="8"/>
+		<item i="plandc" o="cgold" v="9"/>
+		<item i="dampt" o="cgold" v="5"/>
+		<item i="tearlf" o="cgold" v="6"/>
+		<item i="mindim" o="cgold" v="8"/>
+		<item i="agrav" o="cgold" v="6"/>
+		<item i="stero" o="cgold" v="6"/>
+		<item i="loking" o="cgold" v="4"/>
+		<item i="trouil" o="cgold" v="8"/>
+		<desc>Au coeur d'une petite ruelle de Dinoville, les aventuriers se perdent parfois et trouvent alors la Boutique Magique... Les objets extrêmement rares et puissants qu'elle vend ne peuvent être achetés avec de vulgaires pièces d'or. Par contre, ces objets sont ensorcelés : une fois équipés sur un Dinoz, ils ne peuvent plus être enlevés avant plusieurs jours !</desc>
+	</shop>
+
+	<shop id="maudit" place="rashpk" name="Boutique Maudite" cond="fx(maudit)">
+		<item i="odemon" v="3000"/>
+		<item i="piran" v="600"/>
+		<desc>La Boutique Maudite vend des objets rarisissimes introuvables ailleurs. Comme on raconte que quiconque y rentre est maudit à vie, seuls ceux qui le sont déjà osent s'y aventurer...</desc>
+	</shop>
+
+	<shop id="elit" place="mcelit" name="Boutique d'Elit">
+		<item i="costve" v="500"/>
+		<item i="costgb" v="500"/>
+		<item i="danger" v="2000"/>
+		<item i="surviv" v="1250"/>
+		<desc>Vous trouverez dans cette Boutique divers objets que les forces spéciales Végétox utilisent souvent au cours de leurs dangereuses missions.</desc>
+	</shop>
+
+	<shop id="cmpshp" place="icite" gfx="chen" name="Boutique de Chen" cond="scenario(nimbao,42+)">
+		<item i="cendre" v="1500"/>
+		<item i="abysse" v="1500"/>
+		<item i="amazon" v="1500"/>
+		<item i="stelme" v="1500"/>
+		<item i="ourano" v="1500"/>
+		<item i="remed2" v="5000" cond="mission(morgu)|mission(dorou)" />
+		<item i="cofee" v="1500"/>
+		<item i="ptime" v="2000"/>
+		<desc>Chen met à votre disposition des compétences consommables, elles sont tellement puissantes qu'elles se détruisent après utilisation. Elles sont à utiliser avec parcimonie.</desc>
+	</shop>
+	
+	<!--
+	<shop id="caushp" place="cacrop" gfx="acrop" name="Boutique de Gégé" cond="scenario(caush,43+)">
+		<item i="parfum" o="cgold" v="1"/>
+		<item i="sterod" v="600"/>
+		<item i="aspiru" v="1200"/>
+		<desc>Gégé met à votre disposition les objets qu'il a trouvé aux ruines du technodôme englouti. Mais attention, il ne risque pas sa peau pour de simple pièces d'or, il aime surtout les napodinoz !
+		Aucune reconnaissance envers son sauveur ce Gégé ! Heureusement, il a aussi des objets plus abordables !</desc>
+	</shop>
+	-->
+</shops>

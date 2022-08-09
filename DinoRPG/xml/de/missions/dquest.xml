@@ -1,0 +1,229 @@
+﻿<missions>
+
+	<!-- ***************************************************************************** -->
+	<!-- éclaireur rogue ----->
+
+	<m group="dquest" id="dexplo" name="Den Weg zeigen" limit="35">
+		<begin>"SUCHE : Söldner (m/w) zur Erforschung der Wüste und zur Wegesicherung. Nur für motivierte Bewerber."</begin>
+		<goto v="scross"/>
+		<action v="Notizen machen">Du machst die ersten Notizen in deinem Bericht.</action>
+		<goto v="scanyo"/>
+		<action v="Notizen machen">Du fügst die Einzelheiten dieser Etappe deinem Bericht hinzu. Der Marsch scheint eher ruhig zu verlaufen...  </action>
+		<action v="Die Mauer hochklettern">Nur mit großer Mühe erklimmst du das Plateau von Ganzdortoben. Die Aussicht ist herrlich!</action>
+		<actfight act="Weitere Notizen machen" bg="m_step_cliff" monsters="brig1:brig1:brig1">
+			<begin>Als du dich gerade niederlässt, um an dieser strategisch wichtigen Stelle ein paar Notizen zu machen, wirst du von einer Räuberbande angegriffen, die hier auf der Lauer lag!</begin>
+			<win>Uff, das war knapp! Ich muss ihre Position unbedingt dem Vorposten melden...</win>
+		</actfight>
+		<end>Während du deinen Bericht vorliest, macht sich eine zunehmende Beklommenheit in den Gesichtern der zuhörenden Händler bemerkbar. Mehrere von ihnen beeilen sich, neue Arbeitsangebote einzureichen.</end>
+		<xp v="70"/>
+		<gold v="1500"/>
+	</m>
+
+	<m group="dquest" id="dcarav" name="Die westliche Karawane" limit="35" cond="mission(dexplo)">
+		<begin>"Händlervereinigung sucht qualifizierten Spediteur für regelmäßige Lieferungen. Interessierte wenden sich bitte an den Büroleiter Deha El. Wüstenplünderer bitte nicht bewerben."</begin>
+		<talk v="Büroleiter Deha El">Auftrag Nummer 51...Ok. Für die Karawane holst du bitte an der Krachenden Grenze eine Materialkistenlieferung ab. Das ist im Süden. Der Nächste, bitte!</talk>
+		<goto v="senter"/>
+		<talk v="Träger">Hier sind die Kisten. Es ist echt komisch, ich könnte schwören ein Geräusch in ihnen gehört zu haben...Bring sie zu den Magnetitpylonen, ganz im Norden.</talk>
+		<action v="Zu liefernde Kisten">Du nimmst 4 kleine Kisten auf.</action>
+		<goto v="sking"/>
+		<action v="Eine Pause machen">Wie schwer diese Kisten doch sind ...whooo!</action>
+		<goto v="spylon"/>
+		<talk v="Anlieferungsservice">Ah perfekt! Allerdings brauche ich nur eine Kiste. Bring die andere Kisten bitte meinem Kollegen von Ganzdortunten. Nimm jedoch den Weg über den See, der ist nicht so gefährlich.</talk>
+		<goto v="slake"/>
+		<action v="Eine Pause machen">Das Gewicht der Kisten wird immer schwerer! Du legst eine kleine Pause ein, um mal ein bisschen durchzuschnaufen.</action>
+		<actfight act="Verdächtiges Geräusch" bg="st_syphon" monsters="korgon:korgon:korgon:korgon:korgon:korgon">
+			<begin>Plötzlich zerspringen die Kisten mit einem lauten Krach! Dabei schleudert es haufenweise genervte und brüllende Korgonen heraus!</begin>
+			<win>Sieht so aus, als handle es sich bei dieser Lieferung um einen verdeckten Korgonenhandel ...Du solltest das dem Büroleiter melden.</win>
+			<lost>Die Korgonen sind geflüchtet! Du musst sie wieder finden...</lost>
+		</actfight>
+		<goto v="svillg"/>
+		<talk v="Büroleiter Deha El">Korgonen sagst du? Hmmm...Ich habs mir aufgeschrieben. Ich werde alles Nötige dazu veranlassen. Hol' dir jetzt dein Gehalt ab.</talk>
+		<end>Du unterschreibst im Büro deinen Missionsbericht und erhältst deine Prämie:</end>
+		<xp v="100"/>
+		<gold v="3000"/>
+	</m>
+
+	<m group="dquest" id="scorp1" name="Scorpwinkstachel" limit="35" cond="mission(dexplo)">
+		<begin>"Skrupeloser Apotheker sucht einen Scorpwinkstachel in gutem Zustand für zweifelhafte Experimente. Einschlägige Erfahrung mit Giften von Vorteil."</begin><talk v="Büroleiter Deha El">Einen Stachel? Schon wieder? Schau dich mal bei der Verschlingerin im Ostens um. In den Felsen dort wimmelt es nur so von Scorpwinks.</talk>
+		<goto v="stowr1"/>
+		<actfight act="Einen Scorpwink suchen" bg="st_devor" monsters="scorp">
+			<begin>Es vergeht kaum Zeit, da begegnest du schon einem Scorpwink...</begin><win>Leider hat der Stachel dieses Scorpwinks den Schock des Kampfes nicht überstanden. Du musst dir einen neuen suchen, der in einem besseren Zustand ist...</win>
+		</actfight>
+		<actfight act="Weiter weg suchen" bg="st_canyon" monsters="scorp:worm">
+			<begin>Nicht ohne Mühe gelangst du auf die Spitze eines Steinhaufens... und stößt dort auf einen Scorpwink, der sich gerade mitten im	Kampf miteinem Langstein befindet! Beide drehen sich in deine Richtung und	stürzen auf dich los.</begin>
+		</actfight>
+		<action v="Den Stachel einsammeln">Du sammelst einen Scorpwinkstachel ein.</action>
+		<end>Du übergibst dem Büroleiter den eingesammelten Stachel. Er wird sich darum kümmern, ihn dem Apotheker zu geben.</end>
+		<xp v="80"/>
+		<gold v="2000"/>
+		<item v="antip" n="2"/>
+	</m>
+
+	<m group="dquest" id="brig1" name="Die Kreuzung sichern" limit="35" cond="mission(dexplo)">
+		<begin>"Das Konsortium der Vereinigten Gauner stellt ein! Wenn Sie jung und gesund sind und etwas erleben möchten, ist das genau das Richtige für Sie! Wenden Sie sich bitte an Ali Laber, den Aufklärer."</begin>
+		<goto v="sking"/>
+		<talk v="Aufklärer Ali Laber">Du bist also hergekommen, um hier mal ein bisschen "aufzuräumen"? Hmm, ok.... Also gut. Dann kümmere dich mal um die Gegend an der Nomadenkreuzung. Folge der Route in den Süden. Wenn du angegriffen wirst, weißt du, dass du richtig bist. </talk>
+		<goto v="scross"/>
+		<kill v="brig1:brig2:brig3" name="Räuber ausschalten" n="15"/>
+		<end>Das Konsortium bedankt sich bei dir. Hier, das ist für deine Mühen!</end>
+		<xp v="80"/>
+		<gold v="3000"/>
+	</m>
+
+	<m group="dquest" id="kitchn" name="Der gefräßige Dieb" limit="35" cond="mission(dexplo)">
+		<begin>"Suche schnellen Dinoz für kleine Arbeit in der Zitadelle. Kontaktieren Sie bitte Malika Ramhel."</begin>
+		<goto v="sking"/>
+		<talk v="Wachhabender">Malika befindet sich in den Küchenräumen des Palastes, ganz am Ende links.</talk>
+		<talk v="Malika Ramhel">Danke, dass Sie sich auf meine Anzeige gemeldet haben! Ein kleines Schlitzohr macht sich seit mehreren Tagen einen Spaß daraus, unsere ganzen Lebensmittelvorräte zu plündern...Das Problem muss so schnell wie möglich gelöst werden! </talk>
+		<actfight act="In die Vorratskammer gehen" bg="m_step_kitchen" monsters="">
+			<begin>Niemand hier. Du beschließt deinen Dinoz in der Dunkelheit zu verstecken...</begin>
+		</actfight>
+		<actfight act="Im Schatten warten" bg="m_step_kitchen" monsters="thief">
+			<begin>Nach nur wenigen Minuten hörst du ein näher kommendes Geräusch...es ist ein Scorpwink! Er hält Lebensmittel zwischen seinen Zangen!</begin>
+			<win>Der Scorpwink ist in die verzweigten Gänge der Zitadelle geflüchtet!</win>
+		</actfight>
+		<actfight act="Den Scorpwink verfolgen" bg="m_step_wcavern" monsters="thief2:brig1:brig1:brig3:brig2:brig3">
+			<begin m="brig2">Warum kommt er mit leeren Händen zurück?... Hey...Schaut mal da hinten! Ein Eindringling!</begin>
+		</actfight>
+		<talk v="Malika Ramhel">Herrje. Sie ist wirklich nicht mehr so wie sie einmal war, unsere gute alte Zitadelle. Jeder kommt und geht, wann es ihm gerade passt, es wird geschrien, man schlägt sich die Köpfe ein...Nun gut, danke trotzdem. Hole dir deinen Lohn am Rocky Vorposten ab.</talk>
+		<end>Du wirst von einem Angestellten des Arbeitsamts steif und humorlos empfangen. Wortlos überreicht er dir deine Prämie.</end>
+		<xp v="80"/>
+		<gold v="2500"/>
+		<item v="ration" n="3"/>
+	</m>
+
+	<m group="dquest" id="worms" name="Wurmmittel" limit="35" cond="mission(dexplo)">
+		<begin>"Das Unternehmen 'Karawanenwege des Ostens' sucht einen Wartungsmeister für den Unterhalt seiner Straßen. Wenden Sie sich bitte für mehr Informationen an den Polier La'af Schnella auf der Baustelle an der Krachenden Grenze."</begin>
+		<goto v="senter"/>
+		<talk v="Polier La'af Schnella">Da bischd ja! Was machsch du ohne Helm uff meinr Bauschdell?</talk>
+		<action v="Einen Helm aufsetzen">Du setzt einen Baustellenhelm auf.</action>
+		<talk v="Polier La'af Schnella">Bisch du de Wartungsmeischdr? Gud. Mir ham Probleme mit der Schdroß, die d' Magnetidpylonen im Norde durchkreuzd. A baar Langsteine führe Ogriffe durch. Würdsch du uns a G'falle dun und dord mol a bissle aufräume? </talk>
+		<goto v="spylon"/>
+		<talk v="Arbeiter der Karawanenwege">Ah, da kommt endlich Hilfe! Wir haben heute morgen wieder eine Attacke durch die Langsteine erlitten. Das hält die Bauarbeiten ungemein auf! Was noch schlimmer ist: Sie zerstören die von uns gebauten Straßen durch Löcher, die sie hinterlassen...</talk>
+		<kill v="worm" n="5"/>
+		<talk v="Arbeiter der Karawanenwege">Danke für deine Hilfe! Aber...Was ist denn das für ein Geräusch?! Schau! Ein riesiges Loch hat sich am Boden aufgetan!</talk>
+		<actfight act="In das Loch springen" bg="m_step_hole" monsters="wormom" allies="buildr">
+			<begin m="buildr">Argh! Eine Langstein Matriarchin!</begin>
+		</actfight>
+		<talk v="Arbeiter der Karawanenwege">Ich dachte schon, dass wir für immer da bleiben würden... Danke für	deine Hilfe! Karawanenwege wir dich zu entlohnen wissen! Bis bald!</talk>
+		<goto v="senter" title="Polier La'af Schnella wieder aufsuchen"/>
+		<talk v="Polier La'af Schnella">A Matriarchin... Des isch koi guds Zeiche. I hoff, dass d' Oisatz a weng für Ruhe sorge wird. Dankschee für doi Dienschtleischdung!</talk>
+		<end>Die Firma "Karawanenwege des Ostens" dankt Ihnen für ihren Einsatz auf der Baustelle. Wir wünschen Ihnen noch eine gute Reise auf unseren Straßen!</end>
+		<xp v="100"/>
+		<gold v="2500"/>
+		<item v="monoch"/>
+	</m>
+
+	<m group="dquest" id="brig2" name="Gesucht wird: Sahalami der Abschneider" limit="35" cond="mission(dexplo)">
+		<begin>"GESUCHT WIRD: Sahalami, genannt der "Gnadelose Abschneider". Es handelt sich um eine SEHR gefährliche Person, die für zahlreiche Raubüberfälle verantwortlich ist. Hohe Belohnung bei erfolgreicher Auftragserfüllung! Schwache Dinoz bitte nicht melden!"</begin>
+		<goto v="slake" hide="1" title="Sahalamis Spur finden"/>
+		<action v="Überfallene Karawane">Du stößt auf die Überreste einer Karawane, die, wie es scheint, erst vor kurzem angegriffen wurde...</action>
+		<goto v="stowr3" hide="1" title="Die Räuber in der Nähe des Abflusses suchen"/>
+		<action v="Gestapelte Kisten">Du entdeckst am Eingang einer düsteren Höhle einen Haufen Gegenstände, bei denen es sich offensichtlich um Diebesgut handelt... Vielleicht verstecken sich die Täter ja im Inneren?</action>
+		<actfight act="Die Höhle betreten" bg="m_step_cave1" monsters="brig2:brig1">
+			<begin m="brig2">ALAAAARM! Ein Eindringling!</begin>
+			<win>Du hast die Wachtruppe ausgeschaltet.</win>
+		</actfight>
+		<actfight act="Die Höhle erkunden" bg="m_step_cave2" monsters="brig1:brig1:salami">
+			<begin m="salami">Na sieh mal einer an...Schaut her, wer uns bis hierher gefolgt ist...Greift ihn!</begin>
+			<win>Du hast Sahalami den Abschneider besiegt!</win>
+		</actfight>
+		<action v="Seltsamer Anhänger">Sahalami trug einen Anhänger in Form eines Küchenbeils. Komisch...</action>
+		<end>Sahalami wird niemanden mehr terrorisieren. Jetzt muss nur noch das Geheimnis dieses Anhängers gelüftet werden...</end>
+		<xp v="80"/>
+		<gold v="2500"/>
+		<item v="hotpan"/>
+	</m>
+
+	<m group="dquest" id="hunt1" name="Gesucht wird: Gederm der Weiche" limit="35" cond="mission(penden)">
+		<begin>"GESUCHT WIRD: Gederm, der weiche Plünderer der mondlosen Nächte. Den letzten Berichten zufolge, hat ein Angriff am Fuße der Verschlingerin des Nordens stattgefunden. Es handelt sich um eine sehr gefährliche Mission. Es darf mit einer stattlichen Belohnung gerechnet werden."</begin>
+		<goto v="stowr2" hide="1"/>
+		<action v="Einen Angriff abwarten">Du lässt dich am Fuße der Verschlingerin nieder, um auf einen eventuellen Angriff zu warten...</action>
+		<action v="Warten...">Nach langem Warten...geschieht nichts.</action>
+		<talk v="Vorbeiziehender Händler">Sie suchen Gederm? Nein, den habe ich heute noch nicht gesehen und darüber bin ich ziemlich froh!</talk>
+		<action v="Weiter warten...">Du gehst im Kreis und nichts passiert...</action>
+		<action v="Immer weiter warten">Weitere zähe Stunden vergehen. Nichts geschieht.</action>
+		<talk v="Eine vorbeigehende Abenteuerin">Gederm...Den Namen habe ich noch nie gehört, tut mir leid. Schönen Tag noch!</talk>
+		<action v="Im Kreis gehen">Müdigkeit übermannt dich. Das ist auch schon das Einzige was passiert...</action>
+		<actfight act="Noch ein bisschen warten..." bg="m_step_fog" monsters="brig1:brig2:brig1:tripo2">
+			<begin m="tripo2">Los Jungs, nehmt mir diesen Kasperl aus!</begin>
+			<win>Du bemerkst wie Gederm sich hinter seinen Männern zu verstecken versucht!</win>
+		</actfight>
+		<talk v="Gederm">Du kommst gegen mich nicht an! Hau ab!</talk>
+		<actfight act="Handlanger" bg="m_step_fog" monsters="brig1:brig1:brig1:tripo2">
+			<begin m="tripo2">Er darf hier nicht vorbei!</begin>
+		</actfight>
+		<actfight act="Sich auf Gederm stürzen!" bg="m_step_fog" monsters="brig1:brig1:brig1:tripou">
+			<begin m="tripou">Du bist mutig, aber das wird nicht reichen!...Bringen wir es hinter uns!</begin>
+			<win>Du hast Gederm, den weichen Plünderer der mondlosen Nächte besiegt!</win>
+		</actfight>
+		<action v="Hackbeilanhänger">Gederm trug tatsächlich einen der Anhänger, die du gesucht hast. Das ist mal ne gute Nachricht.</action>
+		<end>Dir ist es gelungen Gederm, den Weichen zu besiegen! Herzlichen Glückwunsch!</end>
+		<gold v="3000"/>
+		<xp v="90"/>
+	</m>
+
+	<m group="dquest" id="hunt2" name="Gesucht wird: Bukan der Unbesiegbare" limit="35" cond="mission(penden)">
+		<begin>"GESUCHT WIRD: Bukan, der unbesiegbare Folterknecht der unergründlichen Tiefen! Er hat sich in seiner Höhle im Äußersten Westen eingegraben. Es handelt sich um eine hochgefährliche Mission!"</begin>
+		<goto v="sband2"/>
+		<actfight act="Bukan finden" bg="m_step_cave2" monsters="coward">
+			<begin m="coward">Aah! Ich bin es nicht! Ich bin es nicht! Wenn Du Bukan suchst, er is mit seiner Bande zur Zitadelle aufgebrochen...Hab Erbarmen und lass mich gehen!</begin>
+			<win>Hmmm... Dieser Dieb sprach von der Zitadelle... Ich sollte da mal hingehen und selbst nachsehen.</win>
+		</actfight>
+		<goto v="sking"/>
+		<talk v="Wachhabender">Bukan? Hier? Nein, das ist unmöglich. Aber du kannst ja mal reingehen und selbst nachsehen...</talk>
+		<actfight act="Die Eingangshalle durchsuchen" bg="m_step_citadel1" monsters="">
+			<begin>Sieht so aus, als ob hier niemand wäre...</begin>
+		</actfight>
+		<actfight act="Auf’s Dach steigen" bg="m_step_citadel2" monsters="">
+			<begin>Hübsche Aussicht! Aber Bukan ist auch hier nicht...Suchen wir weiter die Zitadelle ab.</begin>
+		</actfight>
+		<talk v="Wachhabender">Hast du ihn gefunden? Tja, du kannst höchstens noch im Keller nachsehen. Da geht nie einer rein.</talk>
+		<actfight act="In den Keller gehen" bg="m_step_citadel3" monsters="boukan:brig2:brig2:brig1:brig1">
+			<begin m="boukan">Pst, da kommt jemand... Aah, man hat uns entdeckt! Wir dürfen ihn nicht entkommen lassen!</begin>
+			<win>Du hast Bukan, den Unbesiegbaren und seine Männer besiegt!</win>
+		</actfight>
+		<action v="Hackbeilanhänger">Bukan trug tatsächlich einen der Anhänger, die du gesucht hast. Ein Boss weniger.</action>
+		<talk v="Wachhabender">Na sowas...Bukan...bei uns...Zum Glück warst du da!</talk><end>Du hast Bukans Pläne vereitelt. Ganz offentsichtlich hatte er vor, die Zitadelle an ihrem schwachen Punkt anzugreifen.</end>
+		<gold v="3500"/>
+		<xp v="90"/>
+	</m>
+
+	<m group="dquest" id="hunt3" name="Gesucht wird: Zervelat der Giftmischer" limit="35" cond="mission(penden)">
+		<begin>"GESUCHT WIRD: Zervelat, der grünliche Giftmischer. Er ist groß gewachsen, braunhaarig, trägt eine Kapuze und ist immer in Begleitung von Piksoz, seinem treuen Begleiter. Es handelt sich um eine äußerst feindselige Person. Das Konsortium der Vereinigten Gauner hat ein hohes Kopfgeld ausgelobt! Kontaktieren sie bitte Gibbs Goldherr bei den Pylonen."</begin>
+		<goto v="spylon" hide="1"/>
+		<talk v="Gibbs Goldherr">Zervelat? Ja, den kenn ich! Sein schrecklicher Scorpwink hat mich gestochen, als sie versuchten, mich auszunehmen... Ich war daraufhin mehrere Wochen krank! Ich habe gehört, dass sich seine Bande im Süden versteckt hält...</talk>
+		<goto v="slake" hide="1" title="Die Angreifer von Gibbs Goldherr finden"/>
+		<action v="Geräusch hinter dem Felsen...">Du näherst dich vorsichtig der Geräuschquelle und entdeckst eine kleine Gruppe von Plünderern, die gerade festlich am Rande des Magnetitsandsees speist...Das lassen wir uns nicht entgehen!</action>
+		<actfight act="Das Lager angreifen" bg="m_step_lake" monsters="brig3:brig3:brig2:brig3:brig2">
+			<begin m="brig3">Gütiger Himmel!</begin>
+			<win>Keine Spur von Zervelat... aber er muss sich hier irgendwo in der Gegend aufhalten...</win>
+		</actfight>
+		<actfight act="Einmal um den Abfluss laufen" bg="st_syphon" monsters="coward:brig1">
+			<begin m="coward">Halte diesen Dinoz auf, ich lauf schnell, um Zervelat zu warnen!</begin>
+			<win>Du musst unbedingt diesen Räuber wiederfinden.</win>
+		</actfight>
+		<action v="Dem Flüchtenden hinterherlaufen">Niemand hier. Dennoch bemerkst du ein paar Spuren, die in Richtung der Plateaus von Ganzdortoben führen...</action>
+		<goto v="scanyo" hide="1" title="Die Spur des Flüchtenden aufnehmen"/>
+		<actfight act="Klettern" bg="m_step_cliff" monsters="cowar2:cervel:pikouz">
+			<begin m="cowar2">Chef! Chef! Er ist da! Er hat uns gefunden...Bringen wir ihn um!</begin>
+			<win>Was für ein Kampf! Du hast Zervelat den Giftmischer und seinen treuen Piksoz getötet.</win>
+		</actfight>
+		<action v="Hackbeilanhänger">Zervelat trug einen der Hackbeilanhänger, die du gesucht hast...</action>
+		<end>Das Konsortium der Vereinigten Gauner dankt Ihnen für ihre wertvolle Hilfe. Hier, ein schönes Kopfgeld für ihre Tüchtigkeit.</end>
+		<gold v="3500"/>
+		<xp v="90"/>
+		<item v="antip" n="2"/>
+	</m>
+
+	<m group="dquest" id="penden" name="Ein sehr geheimnisvolles Halsband" limit="35" cond="mission(brig2)">
+		<begin>Der Hackbeilanhänger, den du bei Sahalami gefunden hast ist doch ganz schön komisch...Du solltest ein paar Nachforschungen dazu anstellen.</begin>
+		<talk v="Büroleiter Deha El">Dieser Anhänger sagt mir gar nichts. Tut mir leid.</talk>
+		<goto v="sking" hide="1"/>
+		<talk v="Aufklärer Ali Laber">Das ist höchst interessant...Ich habe diesen Anhänger auf meinen Expeditionen schon bei verschiedenen Chefs baumeln sehen. Man könnte fast meinen, dass sich bestimmte Diebesbanden zusammengeschlossen hätten! Hier, nimm! Das ist eine Liste aller Bandenchefs, die in Frage kommen...</talk>
+		<action v="Die Liste entgegennehmen">Du erhälst die Namen mehrerer Räuberanführer. Sie haben bestimmt alle etwas mit dieser Diebesbande zu tun!</action>
+		<end>Du hast die Informationen erhalten, die du gebraucht hast.</end>
+		<xp v="90"/>
+	</m>
+
+</missions>

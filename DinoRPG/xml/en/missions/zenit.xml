@@ -1,0 +1,148 @@
+<!--
+<d place="frcbrt" name="Maître Zenit" background="2" gfx="zenit" cond="(active(dojo)|admin())">
+
+	<phase id="begin" fast="1" next="talk:talk2:aide" frame="stop">
+		Un vieil homme immobile médite dans un coin.
+		Il vous regarde avec attention en trifouillant sa fine barbichette...
+		Vous regarder tourner en rond semble beaucoup l'amuser...
+	</phase>
+-->
+<missions>
+	
+	<m group="zenit" id="zenit1" name="Infusion à fusion" cond="(admin()|(active(lvlup3)+level(69)))">
+		<begin>
+			It's important to meditate before the rising of the sun, in odrer to take advantage of the power of the first rays of light, fill one's self with the light to attai... . . ... .    .    .
+			|"zzzzZZZZZ  zzzzzZZZZZZ….. zzzzzzZZZZZ…. zzzzzZZZZZZ" 
+			|Ho ha, erm eh her!! Terribly sorry. I seem to be overly tired these days... I'm not really sure why.
+			|I need to prepare a special draught for deep meditation. Would you be able to help me procure a few ingredients by any chance?
+			
+			I'll be needing: 
+			|"Some frosty ginger grown only in the purest air, in association with some vigin forest leaves, only the finest affair, and of course some ice clear, white and fair. 
+			| I'll be waiting… and dont' forget to infuse all that for 5 minutes at 350 degrees!
+		</begin>
+		
+		<goto v="imont" hide="1"/>
+		<action v="Racine gelée">
+			You harvest a root of frosty ginger.
+		</action>
+		
+		<goto v="jungle" hide="1"/>
+		<action v="Feuillage Primaire">
+			You collect a couple of leaves from a fine looking tree.
+		</action>
+		
+		<goto v="gorges" hide="1"/>
+		<action v="Découper des glaçons">
+			You place the ice from this fair glacier in the gord.
+		</action>
+		
+		<label v="bouill"/>
+		<goto v="fosslv" hide="1"/>
+		<action v="Faire bouillir">
+			You boil the infusion and let it simmer for 5 minutes. This is going to be one wretched brew.
+		</action>
+		
+		<end>
+			There you go, this seems like just the thing for my morning meditation. Thank you for your diligence young master.
+			
+			Did this mission set you back much?
+			Young master… Learn well then this lesson: "The man with much earns esteem through much giving, the man with little increases his wealth at the expense of his esteem."
+		</end>
+		<gold v="2000"/>
+	</m>
+	
+	<m group="zenit" id="zenit2" name="Le Cha" cond="mission(zenit1)">
+		<begin>
+			You have proved your worth, and reached a level of excellence hitherto unknown, know that this is just the first step in the grand awakening. 
+			| You need not only to know the energy of the body, *your Cha*, as you learned with the elemental master, but also of the environment. More powerful again!
+			| Feel the elements, their vibration, this is what you need in order to take full advantage of your *Cha*.
+		</begin>
+		
+		<goto v="fosslv" />
+		<label v="fire_ko"/>
+		<action v="Ressentir le Feu" wait="10">You settle your Dino down on the floor and encourage it to relaxe as much as possible. A long day of meditation awaits you both. Will it be enough?</action>
+		<branch v="fire_ok" cond="hourrand(2,1+)"/>
+		<branch v="fire_ko" cond="!hourrand(2,1+)"/>
+		
+		<label v="fire_ok"/>
+		<label v="water_ko"/>
+		<goto v="chutes" />
+		<action v="Ressentir l'Eau" wait="10">You settle your Dino down on the floor and encourage it to relaxe as much as possible. A long day of meditation awaits you both. Will it be enough?</action>
+		<branch v="water_ok" cond="hourrand(2,1+)"/>
+		<branch v="water_ko" cond="!hourrand(2,1+)"/>
+		
+		<label v="water_ok"/>
+		<label v="earth_ko"/>
+		<goto v="collin" />
+		<action v="Ressentir la Terre" wait="10">You settle your Dino down on the floor and encourage it to relaxe as much as possible. A long day of meditation awaits you both. Will it be enough?</action>
+		<branch v="earth_ok" cond="hourrand(2,1+)"/>
+		<branch v="earth_ko" cond="!hourrand(2,1+)"/>
+		
+		<label v="earth_ok"/>
+		<label v="thunder_ko"/>
+		<goto v="scaush" />
+		<action v="Ressentir la Foudre" wait="10">You settle your Dino down on the floor and encourage it to relaxe as much as possible. A long day of meditation awaits you both. Will it be enough?</action>
+		<branch v="thunder_ok" cond="hourrand(2,1+)"/>
+		<branch v="thunder_ko" cond="!hourrand(2,1+)"/>
+		
+		<label v="thunder_ok"/>
+		<label v="air_ko"/>
+		<goto v="iplain" />
+		<action v="Ressentir l'Air" wait="10">You settle your Dino down on the floor and encourage it to relaxe as much as possible. A long day of meditation awaits you both. Will it be enough?</action>
+		<branch v="air_ok" cond="hourrand(2,1+)"/>
+		<branch v="air_ko" cond="!hourrand(2,1+)"/>
+		
+		<label v="air_ok"/>
+		<end>
+			Congtratulations young master.  
+			| Did you feel the power of the elements? The tingling of this power in your body...
+			| It is only on a long and arduous journey that we truley come to know our strength. With time we come to know the heart of a man.
+		</end>
+		<gold v="2000"/>
+	</m>
+	
+	<m group="zenit" id="zenit3" name="L'affrontement" cond="mission(zenit2)">
+		<begin>
+			After having felt the power, one needs to understand how to harness it at all times, training without pause.
+			| As my master once said: "You cannot stop the birds from flying languidly overhead, but you can stop them from nesting in your hair."
+		</begin>
+		
+		<actfight act="Combattre les éléments" monsters="ewater:efire:eearth:earth2">
+			<begin>
+				Show me your new found strength. Let me feel your Cha.
+			</begin>
+			<win>
+				This is very promising. We can now proceed to the next step.
+			</win>
+		</actfight>
+		
+		<actfight act="Combattre les éléments" monsters="ewater:efire:eearth:earth2">
+			<begin>
+				Show me your new found strength. Let me feel your Cha.
+			</begin>
+			<win>
+				This is very promising. We can now proceed to the next step.
+			</win>
+		</actfight>
+		
+		<actfight act="Affronter un expert du Cha" monsters="mcha">
+			<begin>
+				Challenge my disciple, trained in the art of extreme Cha! 
+			</begin>
+			<win>
+				Impressive.
+			</win>
+		</actfight>
+		
+		<end>
+			Incredible, there is no more room for doubt. You Dino is ready to know the final level of elemental and energetic conciousness. You are ready for level 80!
+			
+			By the way, why not go and speak to Mandragore. I believe that what he has to say ay interest you once you have reached the final level.
+			
+			Good day, Master.
+		</end>
+		
+		<fx v="lvlup3"/>
+	</m>
+	
+</missions>

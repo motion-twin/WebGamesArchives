@@ -1,0 +1,228 @@
+﻿<!-- Quête d'introduction -->
+
+<!--
+-Le joueur croise Bao au port de prêche.
+-Le joueur est attaqué par un dinoz sombre, Bao intervient pour le secourir.
+-Il était en train de boire un coup au bar quand il a vu une ouverture de la faille du monde sombre chez lui dans les îles.
+-Bao propose au joueur de se joindre à lui.
+-Il emmène le joueur et lui fait traverser les îles sans bouée, jusqu'aux chutes mutantes
+-Sur le trajet, ils affrontent des dinoz sombres tous de niveaux 50.
+
+-Un puissant moueffe infernal, faisant parti de la famille des grands anciens (futur boss que l'on retrouvera à la fin de Caushemesh) fait son apparition.
+-Bao, son dinoz et le joueur font front pour le repousser dans le monde sombre.
+
+-Une fois le combat terminé, le joueur s’évanouit, et se retrouve de nouveau à Dinoville,
+-le guide Michel lui explique que Bao l'a laissé là et qu'il est temps qu'il parte à l'aventure seul.
+-->
+
+<d place="dnv" name="Guide Michel" gfx="michel" cond="scenario(intro,0)+(admin()|active(intro))">
+	<inject id="guide:begin" next="pub"/>
+	<a id="pub">Ich will Abenteuer erleben!	</a>
+	<phase id="pub" scenario="intro:1">
+		[Ich sehe, dass du die Welt entdecken willst.]
+		[Ich rate dir, gehe am Jungbrunnen vorbei zum Predigerhafen.]
+		[Du erfährst dort bestimmt interessante Sachen über Dinoland...]
+	</phase>
+</d>
+
+<!--
+Kneipengänger
+Hr. Bao Bob
+-->
+
+<d place="port" name="Kneipengänger" gfx="pilier" cond="scenario(intro,1)">
+	<phase id="begin" next="poivrot">
+		Was willst'n du Knirps von uns?
+		Kannste uns nicht einfach in Ruhe was trinken lassen.
+	</phase>
+	<a id="poivrot">Ich will der mächtigste Dinozmeister aller Zeiten werden!</a>
+	<phase id="poivrot" next="bao">
+		[Hahaha, ach wie niedlich!]
+		Wir ham schon viele wie dich gesehn, Kleiner. Ungestüm und voller Tatendrang. Ich lach mich schief.
+		Nicht wahr, Bao?
+	</phase>
+	<a id="bao">Bao? Etwa DER Bao Bob?</a>
+	<phase id="bao" next="guerre" gfx="baobob" name="Hr. Bao Bob" background="2" frame="blabla">
+		[Jeder hat in unserer Welt dieselben Chancen.]
+		[Es gibt genug Platz für alle Dinozmeister. Das betrifft vor allem die kühnsten unter ihnen.
+		Man weiß nie wann der nächste große Krieg gegen die dunklen Monster ausbricht...!]
+	</phase>
+	<a id="guerre">Mir ist schon aufgefallen, dass es sehr viele Monster in der Umgebung gibt.</a>
+	<phase id="guerre" gfx="baobob" name="Hr. Bao Bob"  frame="blabla" background="2" next="boit">
+		[In der Tat, die Gegenden von Dinoland sind wunderschön. Aber sie sind deswegen noch lange nicht ungefährlich.]
+	</phase>
+	<a id="boit">Ich hab keine Angst!</a>
+	<phase id="boit" name="Kneipengänger" gfx="pilier" next="glop">
+		Haha, wenn du das ernst meinst, bist du verrückt. Total gaga! Du Spaßvogel!... *hicks*
+	</phase>
+	<a id="glop">Darf man sowas denn auf einer Spielseite sagen?</a>
+	<phase id="glop" next="raison" gfx="baobob" name="Hr. Bao Bob" background="2" frame="blabla">
+		[Nein, an sich darf man das nicht!]
+		...
+		...
+		_(versteckt seinen Bierkrug)_
+		[Also, junger Dinozmeister. Was erwartest du von deinem Abenteuer?]
+	</phase>
+	<a id="raison">Ich möchte den heißen Atem des Schicksals spüren!</a>
+	<phase id="raison" next="gloups" name="Kneipengänger" gfx="pilier">
+		[Hört, hört! Das möchte ich auch, hehe. Mittlerweile warte ich aber schon 10 Jahre darauf, huhuhu!]
+	</phase>
+	<a id="gloups">Ich muss hoffentlich nicht so lange warten...</a>
+	<phase id="gloups" next="explo" gfx="baobob" name="Hr. Bao Bob" background="2" frame="boom">
+		[Ein Abenteuer beginnt meistens immer dann, wenn man es am wenigsten erwartet!]
+		[...]
+		[_(KRAChhhhh RUMMMsssss, FAAAUUUCHhhhhhhhHHHHHIIIIEE, KnarrrZZZZ...)_]
+	</phase>
+	<a id="explo">Wo kam der Blitz her? Und dieses Beben?</a>
+	<phase id="explo" next="fight" gfx="baobob" name="Hr. Bao Bob" background="2" frame="blabla">
+		[Ach das?]
+		[Das ist nur der Spalt bei den Mutierenden Sturzfluten, der gerade in die Luft geflogen ist...]
+		[Ha, das ist ein Fall für mich. Denn ich bin es, der diesen Spalt überwachen muss!]
+		[Nicht mal die Zeit für einen kleinen Drink hat man... Ich verfluche meinen Meister, ihn und sein vergiftetes Geschenk...]
+	</phase>
+	<a id="fight">Ein Monster hat es bis zum Predigerhafen geschafft!</a>
+	<phase id="fight" gfx="baobob" name="Hr. Bao Bob"  frame="blabla" fightgroup="darki1|bao" scenario="intro:2" background="2" next="fin">
+		[Das ist ungewöhnlich. Die dunklen Monster sind normalerweise nicht so mächtig...]
+		[Ich hoffe nur, dass keines der alten Monster beschlossen hat, seine Nase in unsere Welt zu stecken. Das wäre wirklich ein Grund zur Sorge...]
+	</phase>
+	<a id="fin">Wir müssen etwas unternehmen!</a>
+	<phase id="fin" gfx="baobob" name="Hr. Bao Bob" frame="blabla" moveAll="ilewkk" background="2">
+		Auf geht's. Ich werde dich zu den Atlantinischen Inseln bringen. Du wirst schon sehen, wie ich diesen Monstern in den Hintern trete!
+	</phase>
+</d>
+
+<d place="port" gfx="baobob" name="Hr. Bao Bob" frame="blabla" background="2" cond="(scenario(intro,2+)+scenario(intro,5-))">
+	<phase id="begin" next="go">Also los, folge mir zu den Mutierenden Sturzfluten! Wir müssen diesen Spalt unbedingt wieder verschließen!</phase>
+	<a id="go">Ich komme!</a>
+	<phase id="go" frame="stop" fast="1" moveAll="ilewkk">Die Mutierenden Sturzfluten befinden sich im Osten der Atlantinischen Inseln. Viel Glück!</phase>
+</d>
+
+<d place="ilewkk" gfx="baobob" name="Hr. Bao Bob" frame="blabla" background="3" cond="scenario(intro,2)">
+	<phase id="begin" next="pop">Da sind wir!</phase>
+	<a id="pop">Und wohin sollen wir nun gehen?</a>
+	<phase id="pop" next="combat" >
+		[Nach Westen, durch den Klebrigen Sumpf.]
+		[Achtung, da ist ein weiterer dunkler Dinoz!]
+	</phase>
+	<a id="combat">Ich bin bereit!</a>
+	<phase id="combat" fightgroup="darki2|bao" next="papy" scenario="intro:3">
+		[Gut gemacht, das erinnert mich an meine eigene Jugend...]
+		[Immerhin bin ich noch nicht so alt wie Papy Joe... Kennst du ihn?]
+	</phase>
+	<a id="papy">Nicht dass ich wüsste...</a>
+	<phase id="papy" gfx="papy" name="BaoBob" background="2" frame="flou" next="papy2">
+		[Papy Joe war früher ein Surfmeister von Aalos und ein weitbekannter Frauenheld. Doch heuzutage vergisst er bis auf seine Brille alles, sogar seine glorreische Vergangenheit.]
+		[Vor 40 Jahren hat er geschworen, sich nie wieder zu rasieren. Der Legende nach war das sein Einsatz in einer verlorenen Wette. Er hatte gewettet, dass er es schafft, sich ein Nasenhaar auszureisen, ohne dabei zu weinen.]
+		[Er ist trotz allem noch immer eine hochangesehene Persönlichkeit von Dinoland. Du solltest ihn regelmäßig besuchen.]
+	</phase>
+	<a id="papy2">Ich werde ihn besuchen!</a>
+	<phase id="papy2" frame="stop" >
+		Nur noch ein kleines Stück, wir sind fast am Ziel!
+	</phase>
+</d>
+
+<d place="marais" gfx="baobob" name="Hr. Bao Bob" frame="blabla" background="3" cond="scenario(intro,3)">
+	<phase id="begin" next="baston">
+		[Ich sehe, dass du mich aufmerksam beobachtest. Hast du vielleicht eine Frage zum Kämpfen?]
+	</phase>
+	<a id="baston">Mein Dinoz schlägt nicht immer mit derselben Stärke zu!</a>
+	<phase id="baston" next="battle">
+		[Alle Angriffe deines Dinoz verursachen Elementarschaden. Und bei jedem Angriff ändert sich das Element. Falls dein Dinoz ein Meister des Feuerelements ist, wird er seine meiste Kraft in seinen ersten Angriff stecken.]
+		[Feuer, Wasser, Holz, Blitz, und schließlich Luft - das ist die Reihenfolge der Elemente. Es ist also normal, dass du nicht jedesmal mit der gleichen Stärke angreifst.]
+		[Nur jene Monster, die keinen Elementarschaden austeilen, schlagen immmer mit der gleiche Stärke zu.]
+	</phase>
+	<a id="battle">Ich verstehe nun besser.</a>
+	<phase id="battle" next="fight">
+		Jetzt, wo du das verstanden hast, versuche, den dunklen Dinoz hinter dir anzugreifen...
+	</phase>
+	<a id="fight">Aber ich habe nicht sein Level! Hoppla!</a>
+	<phase id="fight" next="zenith" fightgroup="darki3:darki2|bao" scenario="intro:4">
+		[Haha, zum Glück war ich da!]
+		[Ich rate dir, geh zu Meister Zenith, wenn du nach Dinoville zurückgekehrt bist.]
+	</phase>
+	<a id="zenith">Ich habe ihn noch nie getroffen.</a>
+	<phase id="zenith" gfx="zenit" name="Hr. Bao bob" background="3" frame="flou" next="zenith2">
+		[Er ist eine Person, dessen *exotische* Kleidung noch schrecklicher ist, als dieses Heißgetränk aus aufgebrühten Blättern, das er immerzu trinkt.]
+		[Er hat von seiner Mutter eine einzigartige und sehr wirkungsvolle Kampfkunst geerbt.]
+		[Er versucht, diese Kunst zu verbreiten und sie den Dinozmeistern beizubringen. Er hilft dir auch dabei, deinen eigenen Dojo zu gründen.]
+	</phase>
+	<a id="zenith2">Ein wahrer Heiliger, also...</a>
+	<phase id="zenith2" frame="stop">
+		Lass uns unsere Reise fortsetzen.
+	</phase>
+</d>
+
+<d place="chutes" gfx="baobob" name="Hr. Bao Bob" frame="blabla" background="4" cond="scenario(intro,4)">
+	<phase id="begin" next="shaman">
+		[Alles in Ordnung? Kannst du mir noch folgen?]
+		[Sieh immer die guten Seiten des Lebens. Ich bin sicher, dass der Lässige Schamane dir zeigen kann, wie du deine Kräfte einteilst.
+		Darin ist er Spezialist...]
+	</phase>
+	<a id="shaman">Der Lässige Schamane?</a>
+	<phase id="shaman" gfx="shaman" name="Bao Bob" background="4" frame="flou" next="gard">
+		[Als Erbe eines alten Stammes, besitzt der Schamane einzigartige Kräfte.]
+		[Es ist allerdings nicht ganz leicht, von ihm Hilfe zu erhalten. Du musst schon all deine psychologischen Kenntnisse einsetzen, um seine zauberhafte "entspannte Redeweise" zu verstehen.]
+	</phase>
+	<a id="gard">Es gibt ja wirklich viele Leute hier!</a>
+	<phase id="gard" next="aura">
+		[Du machst dir keine Vorstellungen, was für seltsame Gestalten diese Welt bewohnen.]
+		[So, wir sind fast am Spalt angekommen. Normalerweise hindert ein Siegel die dunklen Monster daran, die Oberfläche zu betreten. 
+		Allerdings könnte es einem mächtigen Dämonen gelingen, diese Barriere zu überwinden.]
+		[In so einem Fall muss ich, einer der Wächter von Dinoland, einschreiten!]
+	</phase>
+	<a id="aura">Ich spüre eine monströse Aura!</a>
+	<phase id="aura" scenario="intro:5" frame="grr">
+		[Ja, mach dich bereit! Hinter einer so intensiven Aura kann nur ein wahrhaft furchtbares Monster stecken!]
+	</phase>
+</d>
+
+<d place="chutes" gfx="taurus" name="???" frame="stop" cond="scenario(intro,5)" background="4">
+	<phase id="begin" next="taurus">
+		Ein gigantisches Monster, das aussieht wie ein riesiger Moueffe direkt aus der Hölle. Eine giftige Aura umgibt seinen dunklen Körper!
+	</phase>
+	<a id="taurus">Ich kann mich nicht bewegen. Seine Macht ist zu groß!</a>
+	<phase id="taurus" name="Taurus" frame="blabla" next="vade">
+		[Ihr Einfaltspinsel! Die Welt der Oberfläche ist dem Untergang geweiht...]
+		[Gufufufu....]
+	</phase>
+	<a id="vade">Wir müssen etwas unternehmen... ARGH...</a>
+	<phase id="vade" gfx="baobob" name="Hr. Bao Bob" background="4" next="demon" frame="grr">
+		Lass mich das übernehmen, dieser Knabe ist wirklich zäh!
+	</phase>
+	<a id="demon">Ich kann doch nicht einfach bloß rumstehen! WAAAAAHHHH!</a>
+	<phase id="demon" frame="blabla" fightgroup="taurus|bao" next="ouf" scenario="intro:6">
+		[Keuch... Schnauf...]
+		[Glaub bloß nicht, dass du den großen Taurus, den höllischen Moueffe, los wärst... Ich komme wieder...
+		Eure Welt wird noch ihr blaues Wunder erleben.]
+		[Für den Moment ziehe ich mich zurück...]
+	</phase>
+	<a id="ouf">Kehre zurück in die dunkle Welt und bleibe dort für immer!</a>
+	<phase id="ouf" next="move" gfx="baobob" background="4" name="Hr. Bao Bob" frame="blabla" collection="taurus">
+		[Heiliger Bimbam!...]
+		[Alle Achtung, Kleiner. Du stehst zwar erst am Anfang deines Weges. Aber eines Tages, da bin ich mir sicher, wirst du stärker sein als ich.
+		Und dann liegt es an dir, Dinoland zu retten. Bis dahin musst du aber noch stärker werden!]
+	</phase>
+	<a id="move">Ich... fühle mich so müde...</a>
+	<phase id="move" moveAll="dnv">
+		Erschöpft vom Kampf, brichst du zusammen. Bao bringt dich zurück nach Dinoville.
+		Alles ist wieder wie vorher, als wäre nichts geschehen...
+	</phase>
+</d>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

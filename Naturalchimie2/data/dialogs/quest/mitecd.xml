@@ -1,0 +1,87 @@
+<d place="kirvie" name="Un petit cocktail ?" gfx="gudkeeper">
+
+<a id="exit">Au revoir.</a>
+
+<phase id="begin" next="nocock:ca:cb:cc">
+Que veux-tuuuuu ?
+</phase>
+
+<a id="nocock" cond="!hasobject(Dalton:1)">Il paraît que vous êtes le roi de la piste ? </a>
+
+<a id="ca" cond="hasqobject(Dalton:1)">Euh... un petit cocktail, gardien ? </a>
+<a id="cb" cond="hasqobject(Dalton:1)">Bonjour ! Vous connaissez le {"Hot Skat, Twist  & Chachacha"}, le nouveau club à la mode de la capitale ? </a>
+<a id="cc" cond="hasqobject(Dalton:1)">Vous n'auriez pas une petite soif, par hasard ? </a>
+
+<phase id="nocock" frame="angry" >
+... | | Cette infooormation est Secret Defeeeeennnnse. Circulez. 
+</phase>
+
+
+<!--################ -->
+<phase id="ca" next="cam">
+Un cocktaiiiil ? En quel honneuuuur ? 
+</phase>
+
+<a id="cam">En l'honneur de... euh... notre franche camaraderie naissante ! Depuis le temps que je vous passe sous le nez 3 fois par jour, ça crée des liens ! | Non ? </a>
+
+<phase id="cam" frame="angry" next="exit">
+Nooon.
+</phase>
+
+
+
+<!--################ -->
+<phase id="cb" next="mand">
+Noooon. | Pourquooiii ? 
+</phase>
+
+<a id="mand">Je suis mandaté par le Hot Skat pour inviter les VIPs les plus VIPs de la ville, pour notre grande soirée d'ouverture ! </a>
+
+<phase id="mand" frame="happy" next="vip">
+Et je suuuuis un VIP très VIIIIP ? 
+</phase>
+
+<a id="vip">Assurément l'un des plus VIIIIIIP ! Nous n'envisageons pas cette grande soirée sans votre présence ! </a>
+
+<phase id="vip" next="test">
+Biiiieeeen. | Je serai là, je peeeeense. 
+</phase>
+
+<a id="test">Merveilleux ! J'aurais aussi besoin que vous goûtiez le cocktail spécial créé spécialement pour la soirée ! Pour savoir s'il est à votre goût.</a>
+
+<phase id="test" frame="angry" next="bois">
+Huuuum.... Je ne devrais pas pendant le serviiiice...
+</phase>
+
+<a id="bois">Ne vous inquiétez pas, c'est un cocktail alchimique spécial garanti sans gueule de bois !</a>
+
+<phase id="bois" frame="happy" next="sec">
+Parfaaaiiiit. Sans alcoooool, la fête est plus fooolle, n'est-ce paaaas ?
+</phase>
+
+<a id="sec">Ah ben je suis bien d'accord avec vous. Tenez. Cul sec ! </a>
+
+<phase id="sec" next="beuh">
+Glou | Glou | Glou. | 
+</phase>
+
+<phase id="beuh" frame="angry" next="ok" qtake="Dalton:1"> 
+C'eeeest... | inbuvaaaable. Il va falloir changer çaaa pour demaiiiin.
+</phase>
+
+<a id="ok">Ah mince. Très bien, je file le dire à mon manager. Au revoir ! </a>
+
+<phase id="ok" frame="angry" >
+Eurgl... Beuuuark... !
+</phase>
+
+
+<!--################ -->
+<phase id="cc" next="exit">
+Non... Je ne ressens pas la sooooif. 
+</phase>
+
+
+
+
+</d>

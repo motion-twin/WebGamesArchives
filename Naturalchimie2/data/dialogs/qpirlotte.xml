@@ -1,0 +1,28 @@
+<d place="gubafa" name="Albéric Pirlotte" gfx="gubafab" cond="quest(bafal)">
+
+<phase id="begin" frame="happy" next="work:exit">
+A-a-ah ben tiens ! T-tu tombes bien. Ca... Ca t-t-te dirais d'me sauver la vie ?
+</phase>
+
+<a id="work" >Vous sauver la vie ? Carrément ?  </a>
+<a id="exit">Pardon, je dois y aller.</a>
+
+
+<phase id="work" frame="normal" next="perd:exit">
+Ah ouais, c-c-carrément. | Je suis pas t-trèèès concentré ces derniers jours, et t-t-tous mes dossiers importants ont d-d-disparu ! | P-pfouit ! D-d-disparu ! 
+</phase>
+
+<a id="perd">Vous les auriez pas juste perdus, par hasard ? </a>
+
+<phase id="perd" frame="angry" next="ok:exit">
+P-p-pas du tout ! * | Ils ont d-disparuu j'te dis... Si mon b-b-boss s'en rend compte, je suis m-m-mort ! 
+</phase>
+
+<a id="ok">Ok, je vais vous aider... </a>
+
+<phase id="ok" frame="happy" quest="pirlotte">
+F-f-formidable !  
+</phase>
+
+
+</d>

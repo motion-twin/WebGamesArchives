@@ -1,0 +1,157 @@
+﻿
+<!--	QUETE DU PROFESSEUR : bouee & materiel d'escalade
+			+ infos sur les différentes zones
+			+ infos sur le gant des zors
+			+ transforme pierre en totem ashpouk
+ -->
+
+<d place="univ" name="Profesor Eugenio" gfx="eugene">
+
+	<phase id="begin" next="talk" fast="1">
+		En la biblioteca de la Universidad te encuentras con el famoso profesor Eugenio. Es conocido por su 
+		gran interés en los Maestros de Dinos. Es un tipo muy curioso que no dudará en preguntarte muchas cosas pero a cambio te puede enseñar
+		algunas técnicas muy útiles para tus Dinos y desvelarte información importante.
+	</phase>
+
+	<a id="talk">Hablar con el Profesor Eugenio</a>
+
+	<phase id="talk" next="question:nothing:nothing2:learn:learn_water:learn_fire:learn_done">
+		Hola chavalito, ¿cómo te va? De aventuras y todo eso, ¿no? ¡Ja! Me recuerda a cuando yo tenía tu edad. 
+		Me he recorrido kilómetros alrededor de todo Dinoland. No dudes en venir a preguntarme lo que quieras
+		sobre las historias que te intriguen en Dinoland.
+		
+		Además, puedo enseñarle algunas cosas útiles a tu Dino. A condición de que esté listo, pues 
+		mi aprendizaje no es para nada tranquilo y podría serle fatal si no está lo suficientemente preparado.
+	</phase>
+
+	<a id="question">Preguntar</a>
+
+	<!-- APPRENTISSAGE -->
+
+	<a id="nothing" cond="!level(5)">Aprender</a>
+	<a id="learn" cond="level(5)+!fx(bouee)+!fx(matesc)">Aprender</a>
+	<a id="nothing2" cond="!level(7)+(fx(bouee)|fx(matesc))">Aprender</a>
+	<a id="learn_water" cond="level(7)+fx(matesc)+!fx(bouee)">Aprender</a>
+	<a id="learn_fire" cond="level(7)+fx(bouee)+!fx(matesc)">Aprender</a>
+	<a id="learn_done" cond="fx(bouee)+fx(matesc)">Aprender</a>
+
+	<phase id="nothing">
+		Bien. Siéntate ahí y pon a tu Dino aquí... Vale. Perfecto. (Saca una pequeña linterna de su bolsillo)... la pupila reacciona correctamente... Veamos la dentadura, di "¡aaaa!"...  Mmmm... tu Dino sigue siendo un poco joven... De momento no puedo enseñarle nada.
+		Vuelve a verme cuando haya alcanzado el nivel 5.
+	</phase>
+
+	<phase id="nothing2">
+		Vamos a ver... (examina tu Dino...) Bien, yo diría que tu Dino ha mejorado mucho desde la última vez. Sin embargo, no es lo suficientemente fuerte para aprender la segunda técnica... su cuerpo no lo soportaría. Yo diría que hay que esperar al nivel 6... Mmmm no, el nivel 7 mejor. Es más seguro.
+	</phase>
+
+	<phase id="learn" next="water:fire">
+		¿Entonces parece que tu Dino quiere aprender una nueva técnica? Para ello tu Dino tiene que combatir un monstruo. Lo entrenaré sólo si gana el combate. ¿Qué técnica quieres que le enseñe?
+	</phase>
+
+	<a id="water">Nadar con un salvavidas</a>
+	<a id="fire">La Escalada</a>
+
+	<phase id="water" next="water_fight:back">
+		Muy bien. Si tu Dino supera este desafío, le enseñaré a nadar con un salvavidas. Gracias a eso, tu Dino podrá atravesar cortas distancias por agua.
+	</phase>
+
+	<phase id="fire" next="fire_fight:back">
+		La Escalada no es fácil de dominar, y además necesitas Material de Escalada para poder iniciarse.
+		Si consigue ganar a este monstruo, le enseñaré las bases a tu Dino y le daré el material que le permitirá escalar el volcán del Gran Señor-Todo-Quema.
+	</phase>
+
+	<a id="water_fight">Combatir</a>
+	<a id="fire_fight">Combatir</a>
+	<a id="back" target="learn">Volver</a>
+
+	<phase id="water_fight" fight="ewater" effect="bouee">
+		Increíble, ¡qué belleza de combate! Como te prometí, le enseño a nadar con un salvavidas, y de paso os regalo el salvavidas. Ahora podrá acceder a las Islas Atlanteidas al sur de Dinoland.
+		Buena suerte, ¡y sé prudente!
+	</phase>
+
+	<phase id="fire_fight" fight="efire" effect="matesc">
+		Bien, ¡un combate muy bello! Tu Dino acaba de aprender la capacidad de escalar; os cedo el Material de Escalada también. Ya debe de poder
+		escalar las Colinas Escarpadas del volcán del Gran Señor-Todo-Quema. Los monstruos allí son muy calurosos, ¡presta atención!
+	</phase>
+
+	<phase id="learn_water" next="water_fight">
+		¿Vienes para llevarte un flotador salvavidas? Tendrás que combatir este monstruo antes que nada...
+	</phase>
+
+	<phase id="learn_fire" next="fire_fight">
+		¿Has venido por el Material de Escalada? Para ello, tendrás que derrotar a este monstruo.
+	</phase>
+
+	<phase id="learn_done">
+		No tengo nada que enseñar a tu Dino. Pero no te preocupes, hay otras personas en Dinoland que podrán enseñarle numerosas técnicas.
+	</phase>
+
+	<!-- QUESTIONS -->
+
+	<phase id="question" next="dinoville:gtc:atlante:stone:gant:noquestion">
+		Ah, ¡me encaaaaaaantan las preguntas! ¿Qué quieres saber, chavalín?
+	</phase>
+
+	<a id="dinoville">El Reino de Dinovilla.</a>
+	<a id="atlante" cond="level(8)">Las Islas Atlanteidas.</a>
+	<a id="gtc" cond="level(5)">El Gran Señor-Todo-Quema.</a>
+	<a id="gant" cond="fx(gant)">El Guante de Zors.</a>
+	<a id="stone" cond="fx(astone)">¿Esta Vieja Piedra?</a>
+	<a id="noquestion">Nada de nada.</a>
+	<a id="menu" target="question">Volver</a>
+
+	<phase id="dinoville" next="menu">
+		El Reino de Dinovilla ha sido destruido y reconstruido varias veces desde hace mucho tiempo.
+		Hoy en día es un lugar próspero y civilizado, especialmente comparado con los otros lugares que lo rodean.
+		¡Es por ello que Dinovilla es un lugar perfecto para un pequeño Maestro de Dinos como tú!
+		
+		No dudes en entrenar a tu Dino antes de llevarlo a otros lugares de Dinoland, ¡pues los monstruos de
+		por allí son más peligrosos que aquí!
+	</phase>
+
+	<phase id="atlante" next="menu">
+		Hace mucho tiempo, existió una isla al sur de Dinoland. Había sido propulsada a la cima del pico 
+		de una roca volcánica, a varias centenas de metros de altura por encima del océano. Se le llamó
+		la Isla de Jazz...
+
+		Sin embargo, poco a poco, las olas del océano erosionaron el pilar de roca y finalmente la isla se hundió en 
+		el océano. Poco después, un gigantesco tsunami engulló una buena mitad de Dinoland, llevándose con él una gran parte de las
+		antiguas civilizaciones humanas. Hoy en día, después de varios cientos de años, las cosas empiezan al fin a organizarse,
+		pero una gran parte de Dinoland sigue siendo salvaje y peligrosa.
+
+		Las Islas Atlanteidas son fragmentos de la Isla de Jazz. Se dice que sólo el Pantano Pegajoso no ha cambiado.
+	</phase>
+
+	<phase id="gtc" next="menu">
+		Ey chavalín, ¿ves el pequeño triángulo negro allí, en el norte? Es un inmenso volcán que se llama el Gran Señor-Todo-Quema.
+		Te aconsejo que te des una vuelta por allí. Ponen buenas salchichas.
+
+		Cuando era joven estudié mucho las ruinas de las antiguas civilizaciones. ¿Sabías que en la cima del Gran Señor-Todo-Quema
+		existía una civilización llamada Ashpuk? Y un día, ¡bum! una erupción volcánica y, ¡todo desaparecido! ¿No te parece triste?
+		
+		En todo caso, te aconsejo que vayas a rebuscar un poquito en las ruinas. Seguro que encuentras una antigua reliquia. Y no
+		olvides probar las salchichas, ¡eh!
+	</phase>
+
+	<phase id="gant" next="menu">
+		¡¡Oh!! ¡¡El Guante de Zors!! ¡Es un objeto muy raro lo que tu Dino tiene ahí! Se dice que el Guante de Zors tiene una relación
+		con las Caídas Mutantes y que permite acceder a la Jungla de Grumhel, aunque no se sabe cómo usarlos...
+	</phase>
+
+	<phase id="stone" next="stone_yes:stone_no">
+		¡¡¡Ohhhhhh!!! Pero mira qué cosa más interesante, me parece que se trata de .... uhmmuhu....
+		no estoy seguro... (mira la piedra fijamente)... ¿Puedes enseñarme esta Piedra para examinarla?
+	</phase>
+
+	<a id="stone_yes">Sí claro, toma.</a>
+	<a id="stone_no" target="question">Oye ¿pero qué dices? ¡Ni pensarlo! Antes me gustaría saber algo...</a>
+
+	<phase id="stone_yes" noeffect="astone" effect="totem">
+		¡¡Ooooooohhhhh!! Sí.... es lo que pensaba.... ¡Mira! (limpia la piedra con delicadeza)... ¡es un Tótem Ashpuk! Esto tiene mucho valor... ¡cuídalo bien!
+	</phase>
+
+	<phase id="noquestion">
+		Ah bueno, qué lástima, no dudes en volver de vez en cuando para aprender más sobre el universo de Dinoland.
+	</phase>
+
+</d>

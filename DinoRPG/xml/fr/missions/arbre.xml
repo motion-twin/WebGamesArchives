@@ -1,0 +1,99 @@
+﻿<missions>
+
+	<!-- ***************************************************************************** -->
+	<!-- gardien de le forêt ----->
+
+	<m group="arbre" id="unmute" name="Le Gardien de la Forêt" limit="35">
+		<begin>Le parchemin qui vous est tombé dessus comporte ce message : |« Trouvez 1 mesure d'eau filante, puis 1 mesure d'eau croupie, puis 1 mesure d'eau pure et enfin 1 mesure d'eau Bouillonnante. » |A peine avez-vous fini de lire ce message qu'une petite gourde vide tombe à son tour du feuillage sur votre tête ! Poc !</begin>
+		<goto v="fleuve" hide="1"/>
+		<action v="Eau du Fleuve Jumin">Vous remplissez la gourde du vieil arbre avec un peu d'eau du Fleuve Jumin. Voila pour l'eau filante !</action>
+		<goto v="marais" hide="1"/>
+		<action v="Eau trouble">Vous ajoutez dans la gourde du vieil arbre un peu d'eau du Marais Collant. Elle sent vraiment mauvais...</action>
+		<goto v="fountj" hide="1"/>
+		<action v="Eau rafraichissante">Vous ajoutez dans la gourde du vieil arbre de l'eau claire de la Fontaine et vous en profitez pour vous y rafraîchir.</action>
+		<goto v="gorges" hide="1"/>
+		<action v="Eau bouillonnante">Vous complétez le contenu de la gourde avec un peu de l'eau bouillonnante qui inonde les Gorges. C'est chaud !</action>
+		<goto v="garde"/>
+		<action v="Verser la gourde sur les racines">Les feuillages du vieil arbre s'agitent brusquement dans tous les sens et une lumière apaisante emplit la jungle tout autour de vous...</action>
+		<end>Le vieil arbre se penche vers vous dans un bruissement... Il secoue alors lentement son feuillage, faisant tomber quelques beaux fruits à vos pieds.</end>
+		<xp v="110"/>
+		<item v="fruit" n="3"/>
+	</m>
+
+	<m group="arbre" id="orchid" name="La main verte" limit="20" cond="mission(unmute)">
+		<begin>Un parchemin pendouille à une branche. Vous pouvez y lire : |« Partez arroser l'Orchidée Quidée plantée à l'Aurée de la Jungle ».| Quelque chose dans les feuillages vous jette alors une gourde vide. Poc !</begin>
+		<goto v="fleuve"/>
+		<action v="Prendre de l'eau">Vous remplissez la gourde d'eau du Fleuve Jumin.</action>
+		<goto v="auree"/>
+		<action v="Arroser l'Orchidée">Vous versez tout le contenu de la gourde sur une magnifique fleur qui doit être l'Orchidée Quidée. Aussitôt, celle-ci s'illumine de mille feux et de jolis gouttelettes de rosées perlent sur ses feuilles gracieuses.</action>
+		<talk v="Orchidée Quidée parlante">Quoi ?! Qu'est-ce que tu r'gardes comme ça ? T'as jamais vu une Orchidée pousser ?! T'as rien à faire ailleurs ? Allez du vent, laisse moi, tu m'fais de l'ombre !!</talk>
+		<end>Vous déposez la gourde vide au pied de l'arbre. Un gros fruit se décroche des branches supérieures et tombe à côté de vous avec un bruit mat.</end>
+		<xp v="30"/>
+		<item v="fruit" n="1"/>
+	</m>
+
+	<m group="arbre" id="licens" name="Permis de couper" limit="20" cond="mission(unmute)">
+		<begin>Un parchemin (que vous n'aviez pas remarqué jusque là) est ficelé à une racine. Vous pouvez y lire : |« Les Korgons et les Roncivores du Sud dépassent de loin les quotas de coupe de bois que j'ai autorisé dans la Jungle de Grumhel. Allez réguler leur travail. »</begin>
+		<goto v="chemin"/>
+		<kill v="korgon:ronciv" n="8" name="Roncivores ou Korgons"/>
+		<end>Quelques fruits tombent de l'arbre autour de vous...</end>
+		<xp v="40"/>
+		<item v="fruit" n="3"/>
+	</m>
+
+	<m group="arbre" id="king" name="Le roi de la Jungle" limit="20" cond="mission(unmute)+mission(orchid)">
+		<begin>Un message est inscrit sur un bout de tissu accroché à une branche : |« Nous entretenons depuis des années une légende parlant d'un Roi de la Jungle pour éloigner les éventuels touristes. Rendez-vous aux Collines Hantées pour entretenir ce mythe... »</begin>
+		<goto v="collin"/>
+		<action v="Pousser le cri du Roi de la Jungle">Vous poussez un cri particulièrement ridicule, qui n'effraierait probablement même pas un Korgon... Il va falloir trouver mieux !</action>
+		<goto v="auree" hide="1"/>
+		<talk v="Orchidée Quidée parlante">Encore là l'empaffé de la jungle ?! Qu'est-ce qu'il a l'autre à m'regarder comme ça ?</talk>
+		<action v="Cueillir l'Orchidée">Sans ménagement, vous arrachez l'orchidée et vous l'emmenez avec vous. Celle-ci crie, vous insulte copieusement et se débat autant qu'elle peut...</action>
+		<goto v="collin"/>
+		<action v="Planter l'Orchidée">Vous replantez d'un coup sec l'Orchidée Quidée qui ne manque pas de vous hurler dessus. Tandis que vous vous éloignez, vous pouvez encore entendre celle-ci crier des atrocités à votre égard... Voilà qui fera bien l'affaire pour effrayer les touristes !</action>
+		<end>Un fruit tombe à côté de vous. Tandis que vous vous penchez pour le ramasser, une grosse bourse pleine d'or tombée de nulle part s'écrase droit sur votre tête ! SCHLING !</end>
+		<gold v="2500"/>
+		<xp v="35"/>
+		<item v="fruit" n="1"/>
+	</m>
+
+	<m group="arbre" id="wishes" name="Faites vos voeux" limit="20" cond="mission(unmute)">
+		<begin>Vous pouvez lire, gravé sur une branche : |« On raconte que les Chutes au sud auraient des propriétés magiques... Partez jeter une pièce dans le gouffre des Chutes Mutantes pour faire le voeu de réduire la population Korgon et Roncivore dans la jungle. »| Une pièce de cuivre roule alors le long d'une branche et vient buter contre votre pied.</begin>
+		<goto v="chutes"/>
+		<action v="Jeter une pièce">Vous jetez une pièce au coeur des chutes et vous attendez quelques minutes... Evidemment rien ne se produit et vous décidez d'aller exaucer le voeu de réduire la population des monstres par vous même.</action>
+		<goto v="auree"/>
+		<kill v="korgon:ronciv" n="2" name="Roncivores ou Korgons"/>
+		<goto v="chemin"/>
+		<kill v="korgon:ronciv" n="3" name="Roncivores ou Korgons"/>
+		<goto v="fleuve"/>
+		<kill v="korgon:ronciv" n="3" name="Roncivores ou Korgons"/>
+		<goto v="jungle"/>
+		<kill v="korgon:ronciv" n="6" name="Roncivores ou Korgons"/>
+		<end>Quelques fruits tombent de l'arbre autour de vous...</end>
+		<xp v="60"/>
+		<item v="fruit" n="4"/>
+	</m>
+
+	<m group="arbre" id="newplt" name="Un cric pour la forêt" limit="20" cond="mission(unmute)">
+		<begin>Une longue bande de tissu est enroulée autour du vieil arbre: |« Nos efforts pour développer les forêts autour du Grand Tout-Chaud ont récemment été compromis par un important éboulement près des Ruines Ashpouk. Prenez ce cric pour vous aider à dégager les plantes des amas rocheux. »| Aussitôt, un lourd cric en fer s'écrase juste à côté de vous.</begin>
+		<goto v="rashpk"/>
+		<talk v="Bénévole «Paix Verte»">Bonjour ! Toi aussi tu viens pour aider à déblayer toute cette roche ? Pour le moment, j'ai un gros problème sur les bras... Des monstres en tous genres viennent régulièrement m'empêcher de travailler... Tu peux faire quelque chose ?</talk>
+		<kill n="3"/>
+		<action v="Soulever les rochers">Vous installez le cric puis commencez à soulever et pousser les rochers tombés sur la forêt... Mais tandis que vous pensiez être enfin au calme, un grognement inquiétant se fait entendre derrière vous...</action>
+		<kill n="6"/>
+		<talk v="Bénévole «Paix Verte»">Il ne faut plus perdre une seconde, continuons !</talk>
+		<action v="Soulever les rochers">L'opération vous occupe encore plusieurs heures, même avec le cric, mais vous parvenez tout de même à dégager de nombreux arbres et plantes ensevelies sous les rochers.</action>
+		<talk v="Bénévole «Paix Verte»">Je vais rester ici pour arroser les plantes survivantes. Vas faire un rapport pour moi auprès du Gardien de la Forêt !</talk>
+		<end>Deux gros fruits se décrochent et tombe dans un buisson près de vous...</end>
+		<xp v="75"/>
+		<item v="fruit" n="2"/>
+	</m>
+
+	<m group="arbre" id="gshop" name="Monnaie de singe" limit="20" cond="mission(unmute)+mission(orchid)+mission(licens)+mission(king)+mission(wishes)+mission(newplt)">
+		<begin>Un écriteau de bois et un petit seau en fer blanc sont pendus à une branche :|« Déposez de l'or dans le seau pour votre ration quotidienne. »</begin>
+		<action v="Examiner le seau">Vous trouvez une petite branche fleurie dans le seau...</action>
+		<end>Le texte de l'écriteau en bois a changé ! Il est écrit : « Conservez cette branche fleurie en gage de notre gratitude. »</end>
+		<fx v="gshop"/>
+		<xp v="5"/>
+	</m>
+
+</missions>

@@ -1,0 +1,59 @@
+<quests>
+
+<q from="prairiegu" id="quota" name="Respecter les quotas">
+	<begin>Les skats prolifèrent dans le secteur ! Notre première mission est de réduire leur nombre à la source. Détruis-en le plus possible pendant tes alchimies.</begin>
+	<collect o="QuestObj(pickSkat):40" zone="gmprai" title="Détruire 40 skats sur la prairie infinie">
+		<playMod replace="1" artft="Elts(2,null):1000;Elts(2,QuestObj(pickSkat)):4000;QuestObj(pickSkat):500;Dynamit(0):30;Dynamit(1):15;Alchimoth:10">
+			<startGrid g="QuestObj(pickSkat):0:0;QuestObj(pickSkat):1:0;QuestObj(pickSkat):0:1;QuestObj(pickSkat):4:0"/>
+		</playMod>
+	</collect>
+	<end>Excellent travail ! L'alchimie sera désormais plus simple dans le coin. Tiens, pour te remercier de ton aide.</end>
+	<gold v="56" />
+	<xp v="6" />
+	<reput s="gm" v="4" />
+</q>
+
+<q from="prairiegu" id="quotb" name="Prévenir la contagion : au Sud !" cond="quest(quota)">
+	<begin>Règle numéro 2 d'un bon exterminateur : endiguer les flux de parasites ! Pars vers le Sud pour détruire les skats qui ont dû essayer de fuir par là. Ils ont déjà dû arriver à la Grande Place !</begin>
+	<collect o="QuestObj(pickSkat):60" zone="agoraa" title="Détruire 60 skats sur la grande place">
+		<playMod replace="1" artft="Elts(2,null):500;Elts(2,QuestObj(pickSkat)):4500;QuestObj(pickSkat):500;Dynamit(0):30;Dynamit(1):15;Alchimoth:10">
+		<startGrid g="QuestObj(pickSkat):0:0;QuestObj(pickSkat):1:0;QuestObj(pickSkat):5:0;QuestObj(pickSkat):5:1;QuestObj(pickSkat):5:2;QuestObj(pickSkat):5:3;QuestObj(pickSkat):5:4"/>
+		</playMod>
+	</collect>
+	<end>Heureusement qu'on s'y est pris à temps. S'ils étaient arrivés jusqu'au donjon K je me serais pris un sacré savon, moi.</end>
+	<gold v="78" />
+	<xp v="8" />
+	<reput s="gm" v="5" />
+</q>
+
+
+<q from="prairiegu" id="quotc" name="Prévenir la contagion : au Nord !" cond="quest(quota)">
+	<begin>Règle numéro 3 de l'exterminateur : ne pas oublier de faire l'autre côté !</begin>
+	<collect o="QuestObj(pickSkat):60" zone="gmoree" title="Détruire 60 skats à l'orée du bois">
+		<playMod replace="1" artft="Elts(2,null):500;Elts(2,QuestObj(pickSkat)):4500;QuestObj(pickSkat):500;Dynamit(0):30;Dynamit(1):15;Alchimoth:10">
+		</playMod>
+	</collect>
+	<end>Parfait. Je pense que la menace Skat est circonscrite pour un petit moment. Je vais juste rester dans le coin pour surveiller l'évolution.</end>
+	<gold v="60" />
+	<xp v="8" />
+	<randomrecipe v="300:260" />
+	<reput s="gm" v="5" />
+</q>
+
+
+<q from="prairiegu" id="quotd" name="Les Skats contre-attaquent" cond="quest(quotb)+quest(quotc)+grade(,2)">
+	<begin>Arrrggllll un nouveau type de skat rose est apparu ! Sûrement une mutation pour mieux nous résister ! Il faut les exterminer mais la transmutation des potions de base ne leur fait rien ! </begin>
+	<collect o="QuestObj(pickRedSkat):40" zone="gmprai" title="Détruire 40 skats roses sur la prairie infinie. Attention, ils sont insensibles à la transmutation des potions !">
+		<playMod replace="1" artft="Elts(2,null):1000;Elts(2,QuestObj(pickRedSkat)):3600;Elts(2,Neutral):1300;QuestObj(pickRedSkat):200;Dynamit(0):30;Dynamit(1):15;Alchimoth:10">
+		<startGrid g="QuestObj(pickRedSkat):0:0;QuestObj(pickRedSkat):1:0"/>
+		</playMod>
+	</collect>
+	<end>Ouf, on a eu chaud mais on dirait qu'on a vaincu cette mutation démoniaque. Il faut que je fasse mon rapport à la guilde. Je reviendrai m'occuper des parasites suivants plus tard.</end>
+	<gold v="230" />
+	<xp v="12" />
+	<randomrecipe v="300:250" />
+	<reput s="gm" v="10" />
+
+</q>
+
+</quests>

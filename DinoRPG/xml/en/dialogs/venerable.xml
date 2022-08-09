@@ -1,0 +1,137 @@
+﻿<d place="vener" name="The Venerable" gfx="dorogon" cond="!(scenario(nimbao,14+)+scenario(nimbao,41-))"> 
+
+	<phase id="begin" next="moi:moi2:bye">
+		ARGH! Who dares to wake me?
+	</phase>
+
+	<a id="moi" cond="!fx(vmem)">Uh... It's me</a>
+	<a id="moi2" cond="fx(vmem)">Uh... It's me</a>
+	<a id="bye">Leave quietly</a>
+
+	<phase id="bye" fast="1">
+		You're right, there are times in life when it's better to leave quickly and quietly rather than being brave....
+	</phase>
+
+	<phase id="moi" next="perdu:chasse:deal:korgon:auto">
+		What do you want!? I hope you have a good reason for being here, or else I'll COOK your Dinoz and have them for BREAKFAST!!!
+	</phase>
+
+	<a id="perdu" target="fight">I'm lost....</a>
+	<a id="chasse" target="fight">I'm a Great Dorogon Hunter. I've come here to defeat you!</a>
+	<a id="deal" target="fight">I have a business opportunity for you!</a>
+	<a id="korgon">I was running after a Korgon and...</a>
+	<a id="auto" target="fight">Can I have an autograph?</a>
+
+	<phase id="korgon" next="next0:next1">
+		A KORGON, you say??? Where? I'm hungry, bring him to me!
+	</phase>
+
+	<a id="next0" target="fight">I've caught him</a>
+	<a id="next1">He's escaped</a>
+
+	<phase id="next1" next="next2" effect="vmem">
+		Argh! He got away? That's so IRRITATING! Don't worry, I can symphathise.
+		In my youth, I often let breakfast escape from me like that. Now
+		I cook them immediately, so they don't have time to escape!
+	</phase>
+
+	<a id="next2" target="question">That's a good idea...</a>
+
+	<phase id="fight" fight="vener" collection="vener" effect="vmem:vkill">
+		GROOOOAAARRH!!! You may have won this time! But we will meet again!
+	</phase>
+
+	<phase id="moi2" next="question">
+		I remember your Dinoz. What do you want again?
+	</phase>
+
+	<a id="question">Uh...</a>
+
+	<phase id="question" next="force:fight:fight2">
+		So, Korgon eater, can I GRILL something for you? Or maybe I can do you another favour?
+		Don't ask for too much, or else I'll CUT you into small crispy pieces.
+		It would be perfect for my BREAKFAST!!!
+	</phase>
+
+	<a id="force">I'd like my Dinoz to be stronger!</a>
+	<a id="fight" cond="!fx(vkill)">I'm going to CRUSH you!</a>
+	<a id="fight2" cond="fx(vkill)">I'm going to CRUSH you!</a>
+
+	<phase id="force" effect="fflag">
+		Stronger you say? Well then, you should follow my advice, go and see the SHAMAN at Lavapit,
+		he'll help you GRILL your enemies!
+	</phase>
+
+	<phase id="fight2">
+		I'm really hungry at the moment, would you mind if I did it later?
+	</phase>
+
+</d>
+
+<d place="vener" name="The Venerable" gfx="dorogon" cond="scenario(nimbao,14+)+scenario(nimbao,41-)"> 
+	<phase id="begin" frame="hurt" next="ok:ko:ko2:force2">
+		GRRrrrr....Grouph...Croaakkk.....I'm still waiting for your help.
+		I'm counting on you.
+	</phase>
+	
+	<a id="ok">You can count on me!</a>
+	<a id="ko" cond="!fx(vmem)+!friend(mandr2)">I need to get in shape!</a>
+		<a id="ko2" cond="fx(vmem)+!friend(mandr2)">I need to get in shape!</a>
+	<a id="force2">I'd like my Dinoz to be stronger first!</a>
+	
+	<phase id="ok" fast="1" frame="hurt">
+		You leave, having made up your mind to save the venerable.
+	</phase>
+	<phase id="ko" frame="hurt" next="comb">
+		Very well, get ready!
+	</phase>
+	<a id="comb" cond="!fx(vkill)">Charge!</a>
+
+	<phase id="force2" effect="fflag" frame="hurt">
+		UHHMM??? STRONGER you say? Well then... follow my advice : go and see the SHAMAN at the Lavapit,
+		he will help you GRILL your enemies!
+	</phase>	
+	<phase id="comb" fight="vener" collection="vener" effect="vmem:vkill" frame="hurt">
+		Well done, you are ready to challenge the dorogons on Nimbao.
+	</phase>
+	
+	<phase id="ko2" frame="hurt">
+		Well done, you are ready to challenge the dorogons on Nimbao. Good luck!
+	</phase>	
+</d>
+
+<!-- Soldat blessé -->
+
+<d place="dnv" name="Injured Soldier" gfx="soldat" cond="fx(vmem)+!fx(ccard)">
+
+	<phase id="begin" fast="1" next="talk">
+		You pass an Injured Soldier sprawled out on the side of the street. He appears to be in a very bad state, but it seems he's still conscious........barely.
+	</phase>
+
+	<a id="talk">Talk to him</a>
+
+	<phase id="talk" next="give:no">
+		Some.........bread .......please!
+	</phase>
+
+	<a id="give">Give the soldier a warm bread</a>
+	<a id="no">Keep walking</a>
+
+	<phase id="no" fast="1">
+		You don't stop, but instead keep walking, it's dangerous to talk to strangers!
+	</phase>
+
+	<phase id="give" next="derien">
+		.....yum.....yum...THANKS!!! I feel much better already, you're my saviour!
+	</phase>
+
+	<a id="derien">Please, don't mention it. I'm glad you're feeling better!</a>
+
+	<phase id="derien" effect="ccard" use="hotpan">
+		WAIT!!! I want to reward you! You see, I wasn't always like this.
+		I took part in special training at the Lavapit Caves.
+		It's very hard and very expensive, but it makes you very strong. HERE! Take this Membership Card for your Dinoz, I don't need it anymore...
+	</phase>
+
+</d>
+

@@ -1,0 +1,21 @@
+#
+# variables protégéés du loader
+#
+swf
+php
+sid
+gid
+score
+key
+p
+mid
+url
+swfsize
+lsize
+ch
+tok
+con
+gtime
+ptime
+cheat
+stime

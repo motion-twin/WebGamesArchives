@@ -1,0 +1,134 @@
+﻿<d place="scaush" name="Jasper K." gfx="trader" cond="!hasobject(bamboo)+!uvar(tradok)">
+
+	<phase id="begin" next="ask">
+		Leave me alone ... I just want to die.....
+	</phase>
+
+	<a id="ask">You don't seem too well, are you ok?</a>
+
+	<phase id="ask" next="ask2">
+		Of course not. I had it all, the money, the women, the cars, the house, EVERYTHING!
+	</phase>
+
+	<a id="ask2">What happened to you?</a>
+
+	<phase id="ask2" next="ask3">
+		I'd rather not talk about it anymore............ Argh! If you must know, I lost it all on Warp Street!
+	</phase>
+
+	<a id="ask3">Warp Street?</a>
+
+	<phase id="ask3" next="deriv">
+		Yup ... you haven't heard of it? Warp Street is a small street in Dinotown ... it's reserved to the elite. Disguised Products are bought and sold there!
+	</phase>
+
+	<a id="deriv">Some ... what?</a>
+
+	<phase id="deriv" next="deriv2">
+		Some Disguised Products! You see, when the price of Santaz goes up, the disguised product linked to Santaz goes down. Except, of course, if the price of Feross goes up too, in which case it depends on what the price of Amnesiac Rice was last month ... In any case, you can make a lot of money in a short period of time on Warp Street!
+	</phase>
+
+	<a id="deriv2">Like you?</a>
+
+	<phase id="deriv2" next="ask4">
+		Yes, exactly! Until just a few days ago...
+	</phase>
+
+	<a id="ask4">What happened?</a>
+
+	<phase id="ask4" next="ask5">
+		It's simple ... I didn't see the real statue crisis coming...
+	</phase>
+
+	<a id="ask5">Don't you mean real estate crisis?</a>
+
+	<phase id="ask5" next="ask6">
+		Nope! it's not the same. The Dinoland real estate market is booming right now. Mainly due to all the castles that are being built during the Clan Wars! Some people are earning a fortune in a single day!
+	</phase>
+
+	<a id="ask6">So what's the real statue crisis?</a>
+
+	<phase id="ask6" next="ask7">
+		Real statues were the future! Everybody wanted a bust of the Rockies King! But then global warming started to affect the market, Guerilla Piranhoz started to attack the people who were harvesting the clay. This eventually led to the market crashing and me filing for bankruptucy....
+	</phase>
+
+	<a id="ask7">How much did you lose?</a>
+
+	<phase id="ask7" next="ask8">
+		How much did I lose? Phew! Around 4 billion gold coins.
+	</phase>
+
+	<a id="ask8">What?</a>
+
+	<phase id="ask8" next="ask9">
+		Yep, 4 billion gold coins. I know it seems a lot to someone who isn't part of the elite. But believe me, 4 billions isn't that much....
+	</phase>
+
+	<a id="ask9">Yes, but still...</a>
+
+	<phase id="ask9" next="ask10">
+		The worst of it is over. I'm going to recover, I'm sure of it! I have a fantastic business idea. It's incredible and it's never been done before, all I need is a partner ... are you interested?
+	</phase>
+
+	<a id="ask10">Who....me?</a>
+
+	<phase id="ask10" next="ask11">
+		Yes, you! You seems to be a powerful and capable Dinoz Master. Here's my offer: you manage the logistical part of the business and I'll handle the sales. Together, we are going to earn millions ... and who doesn't want to earn millions of gold coins?
+	</phase>
+
+	<a id="ask11">What do I have to do?</a>
+
+	<phase id="ask11" next="yes:no">
+		It's simple, here's the plan: Bring me 100 Devourer Seeds. You can find them at the Steppes. It's important that you bring me 100 seeds, no fewer. In exchange, I'll give you a very rare item I found recently. Give me a few days and I'll sell the seeds on Warp Street and we'll then share the profits, what do you think?
+	</phase>
+
+	<a id="yes">Ok</a>
+	<a id="no">No thanks</a>
+
+	<phase id="no">
+		Ok, it's your loss!
+	</phase>
+
+	<phase id="yes" next="ok">
+		Great! Here's what we'll do next. Go and get the seeds and then come back here? I'll be waiting for you ok?
+	</phase>
+
+	<a id="ok">Ok!</a>
+
+	<phase id="ok" useingr="dgrain:100" effect="trader" give="bamboo" nocheck="1">
+		Great! Take this, it's the rare item i told you about earlier. We'll meet later in Dinotown, just in time for me to sell the stock!
+	</phase>
+
+</d>
+
+<d place="dnv" name="Jasper K." gfx="trader2" cond="fx(trader)+!uvar(tradok)">
+
+	<phase id="begin" next="ask">
+		Leave me alone ... I just want to die.....
+	</phase>
+
+	<a id="ask">Again?? What happened???</a>
+
+	<phase id="ask" next="ask2">
+		Everything was going so well. Everyone was bidding on the seeds, they were so popular.
+	</phase>
+
+	<a id="ask2">So what happened?</a>
+
+	<phase id="ask2" next="ask3">
+		Some competitors started a vicious rumour that our seeds contained xylophone, a dangerous substance that makes strange noises in your stomach once you've eaten them. The price plummeted and everyone started to panic so i had to sell the rest of the stock at any price I could get....
+	</phase>
+
+	<a id="ask3">And my gold?</a>
+
+	<phase id="ask3" next="ask4">
+		Take this ... it's your share ... it's all I managed to save during the panic ... 800 treasure notes ...
+	</phase>
+
+	<a id="ask4">That's all?</a>
+
+	<phase id="ask4" give="tix:800" noeffect="trader" uvar="tradok:1" nocheck="1">
+		Yes ... you can keep the rare item I gave to you ... but don't worry about me! I'll find something else to do next, and next time it will work!!!
+	</phase>
+
+</d>

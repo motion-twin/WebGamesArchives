@@ -1,0 +1,180 @@
+<sneaks>
+	
+	<s id="sneaka" level="1" scenario="nimbao" name="First infiltration" cond="scenario(nimbao,26)">
+
+		<enter place="ipont" />
+		<fail place="ipont" />
+		<exit place="iporte" />
+		<monsters>cyclo</monsters>
+
+		<messages>
+		<success>You have successfully bypassed the security and crossed the bridge, Well played !
+		Now you can cross the bridge in peace whenever you like.</success>
+		<fightStart>You have been discovered ! Travelling around the island is forbidden , and tourists are not permitted. You will be chased from here like a plague-carrier !</fightStart>
+		<fightWon>Wow, safe ! Really need to be careful here, the guards don't seem to be the sharpest tools in the box, but all the same !!</fightWon>
+		<fightLost>Your evasion attempt has failed... Will you ever see your mother again ? Nobody knows !</fightLost>
+		</messages>
+				
+	</s>
+	
+	<s id="sneakb" level="2" scenario="nimbao" name="Basic Infiltration" cond="scenario(nimbao,27)">
+
+		<enter place="iporte" />
+		<fail place="iporte" />
+		<exit place="icite" />
+
+		<monsters>cyclo:cyclo</monsters>
+		<messages>
+			<success>You have successfully evaded the security guards, Bravo !
+			From now on you will be able to go to the city of Arboris much more easily.</success>
+			<fightStart>You have been discovered! Travelling around the island is forbidden , and tourists are not permitted. You will be chased from here like a plague-carrier !</fightStart>
+			<fightWon>This place is full of guards, maybe it's better to flee this time.</fightWon>
+			<fightLost>Your evasion attempt has failed... Will you ever see your mother again? Nobody knows!</fightLost>
+		</messages>
+				
+	</s>
+	
+	<s id="sneakc" level="3" scenario="nimbao" name="Standard Infiltration" cond="scenario(nimbao,30)">
+
+		<enter place="icite" />
+		<fail place="icite" />
+		<exit place="ilacro" />
+		<monsters>cyclo:cyclo</monsters>		
+
+		<messages>
+			<success>You have successfully crossed the city, you can now move around much more easily.</success>
+			<fightStart>You have been discovered ! Travelling around the island is forbidden , and tourists are not permitted. You will be chased from here like a plague-carrier !</fightStart>
+			<fightWon>This place is full of guards, maybe it's better to flee this time.</fightWon>
+			<fightLost>Your evasion attempt has failed... Will you ever see your mother again ? Nobody knows !</fightLost>
+		</messages>
+				
+	</s>
+	
+	<s id="sneakd"  level="4" scenario="nimbao" name="Advanced Infiltration" cond="scenario(nimbao,31)">
+
+		<enter place="ilacro" />
+		<fail place="ilacro" />
+		<exit place="ilac" />
+		<monsters>cyclo:cyclo</monsters>
+
+		<messages>
+			<success>You approach the edge of the island, where the water from the lake disperses into the atmosphere. From now on you can return here without any problems.</success>
+			<fightStart>You have been discovered ! Travelling around the island is forbidden , and tourists are not permitted. You will be chased from here like a plague-carrier !</fightStart>
+			<fightWon>This place is full of guards, maybe it's better to flee this time.</fightWon>
+			<fightLost>Your evasion attempt has failed... Will you ever see your mother again ? Nobody knows !</fightLost>
+		</messages>
+				
+	</s>
+	
+	<s id="sneake"  level="5" scenario="nimbao" name="Repeat Infiltration" cond="scenario(nimbao,32)">
+
+		<enter place="ilac" />
+		<fail place="ilac" />
+		<exit place="iporte" />
+		<monsters>cyclo:cyclo</monsters>
+
+		<messages>
+			<success>Bravo, your infiltration attempt was successful.
+			Now why not make the most of the countryside and do some tourism...</success>
+			<fightStart>You have been discovered ! Travelling around the island is forbidden , and tourists are not permitted. You will be chased from here like a plague-carrier !</fightStart>
+			<fightWon>This place is full of guards, maybe it's better to flee this time.</fightWon>
+			<fightLost>Your evasion attempt has failed... Will you ever see your mother again ? Nobody knows !</fightLost>
+		</messages>
+				
+	</s>
+
+	<s id="sneakf"  level="6" scenario="nimbao" name="Complex Infiltration" cond="scenario(nimbao,36)">
+
+		<enter place="iporte" />
+		<fail place="iporte" />
+		<exit place="iplain" />
+		<monsters>cyclo:cyclo</monsters>
+
+		<messages>
+			<success>You have found the path leading to the far-off snowy plains. You can now travel around them freely.</success>
+			<fightStart>You have been discovered ! Travelling around the island is forbidden , and tourists are not permitted. You will be chased from here like a plague-carrier !</fightStart>
+			<fightWon>We should press on, it's really cold around here.</fightWon>
+			<fightLost>Your evasion attempt has failed... Will you ever see your mother again ? Nobody knows !</fightLost>
+		</messages>
+	
+	</s>
+
+	<s id="sneakg" level="7" scenario="nimbao" name="Tough Infiltration" cond="scenario(nimbao,37)">
+
+		<enter place="iplain"/>
+		<fail place="iplain" />
+		<exit place="isnow2" />
+		<monsters>cyclo:cyclo</monsters>
+
+		<messages>
+			<success>Bravo, you managed to cross the plains without freezing to death.
+			Now you must cross the frozen forest.</success>
+			<fightStart>You have been discovered ! Travelling around the island is forbidden , and tourists are not permitted. You will be chased from here like a plague-carrier !</fightStart>
+			<fightWon>A glacial wind blows on these plains, best not to hang around here.</fightWon>
+			<fightLost>Your evasion attempt has failed... Will you ever see your mother again ? Nobody knows !</fightLost>
+		</messages>
+				
+	</s>
+	
+	<s id="sneakh"  level="8" scenario="nimbao" name="Master Infiltration" cond="scenario(nimbao,38)">
+
+		<enter place="isnow2" />
+		<fail place="isnow2" />
+		<exit place="imont" />
+		<monsters>cyclo:cyclo</monsters>
+
+		<messages>
+			<success>Crossing the frozen forest was tricky, but you made it, all that remains is to climb the holy mountain.</success>
+			<fightStart>You have been discovered ! Travelling around the island is forbidden , and tourists are not permitted. You will be chased from here like a plague-carrier !</fightStart>
+			<fightWon>This forest has earned its name, if you don't want to be a permanent ice sculpture here, you'd best not hang around.</fightWon>
+			<fightLost>Your evasion attempt has failed... Will you ever see your mother again ? Nobody knows !</fightLost>
+		</messages>
+				
+	</s>
+
+	<s id="sneaki"  level="9" scenario="nimba2" name="Evade the Priranese" cond="scenario(nimba2,24)">
+
+		<enter place="prison" />
+		<fail place="prison" />
+		<exit place="prison" />
+		<monsters>cyclo:cyclo2</monsters>
+		<messages>
+			<success>You have managed to escape from the terrible Priranese prison, you would love to never have to go down this road again, but there are still so many prisoners left inside.</success>
+			<fightStart>You have been discovered! Nobody has ever tried to escape from Priranese before, you're going to have a tough time of it now!</fightStart>
+			<fightWon>These guards won't be a problem any more, you must continue on your way if you ever want to see the light of day again!</fightWon>
+			<fightLost>Your escape attempt has failed... Will you ever see your mother again? Nobody knows!</fightLost>
+		</messages>
+				
+	</s>
+	
+	<s id="sneakj"  level="10" scenario="nimba2" name="Cross the Pillers" cond="scenario(nimba2,45)">
+
+		<enter place="egout" />
+		<fail place="egout" />
+		<exit place="sommet" />
+		<monsters>doro2:dorolu</monsters>
+		<messages>
+			<success>You have made it across the pillers leading to the Archdorogon's palace, but these sewers are even more labyrinthian than we'd first thought!</success>
+			<fightStart>You have been discovered! Nobody passes by here normally, but security has been doubled to ensure no unwelcome visitors make it into the palace!</fightStart>
+			<fightWon>These guards won't be a problem any more, you must continue on your way if you ever want to see the light of day again!</fightWon>
+			<fightLost>You have failed in your attempt to make it across to the palace... Will you ever see your mother again? Nobody knows!</fightLost>
+		</messages>
+				
+	</s>
+
+	<s id="sneakk"  level="11" scenario="nimba2" name="The Archdorogon's Palace" cond="scenario(nimba2,47)">
+		
+		<enter place="palais" />
+		<fail place="palais" />
+		<exit place="palais" />
+		<monsters>doro2:dorolu</monsters>
+		<messages>
+		<success>You are finally going to meet Grizorg, it is high time to put an end to this story!</success>
+			<fightStart>You have been discovered! it is forbidden to wander around the palace, things are going to get a bit tricky around here now!</fightStart>
+			<fightWon>These guards won't be a problem any more, you must continue on your way if you ever want to make it to grizorg's throne!</fightWon>
+			<fightLost>Grizorg is really close now, you must persevere if you want to reach him! Be strong!</fightLost>
+		</messages>
+				
+	</s>
+	
+</sneaks>

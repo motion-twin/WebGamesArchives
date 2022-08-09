@@ -1,0 +1,29 @@
+﻿<d place="frcbrt" name="Organisateur du Tournoi" gfx="torga" cond="!fx(tourna)">
+
+	<phase id="begin" next="yes:ok:no">
+		Bonjour, ô Grand Maître Dinoz ! Le Grand Tournoi de Forcebrut est ouvert à tous ceux qui
+		désirent mesurer leurs Dinoz à ceux des autres joueurs. Je vous y inscris ?
+	</phase>
+
+	<a id="yes" cond="!fx(totem)">Ho, bonne idée !</a>
+	<a id="ok" cond="fx(totem)">Oui, merci !</a>
+	<a id="no">Heu, non merci... Mes Dinoz ont encore besoin d'entrainement</a>
+
+	<phase id="yes">
+		Malheureusement, comme le précise le règlement intérieur, paragraphe 15.48 alinéa H,
+		l'accès au Tournoi est ouvert uniquement aux Dinoz ayant en leur possession une relique d'une
+		civilisation ancienne. C'est l'unique condition pour participer... N'hésitez pas
+		à revenir quand votre Dinoz en aura trouvé une. Bonne journée et bon séjour à Forcebrut !
+	</phase>
+
+	<phase id="ok" effect="tourna">
+		Oh ! Je vois que votre Dinoz possède un {Totem Ashpouk} ! Très bien, je l'inscris donc
+		sur la liste des participants au Tournoi, il pourra donc désormais y accéder directement.
+		Bonne journée monsieur le Maître Dinoz !
+	</phase>
+
+	<phase id="no">
+		Très bien, vous n'êtes nullement obligé de vous inscrire, surtout si vos Dinoz ne sont pas prêts à se mesurer à de puissants adversaires. C'est vrai que le Tournoi peut être très dangereux pour les Dinoz inexpérimentés. Bonne journée et bon séjour à Forcebrut !
+	</phase>
+
+</d>

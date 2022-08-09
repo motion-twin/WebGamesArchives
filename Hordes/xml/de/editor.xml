@@ -1,0 +1,91 @@
+﻿<config>
+	<icons url="/gfx/forum/smiley/::img::.gif">
+		<i tag=":)" img="h_smile"/>
+		<i tag=":(" img="h_sad"/>
+		<i tag=";)" img="h_blink"/>
+		<i tag=":O" img="h_surprise"/>
+		<i tag=":D" img="h_lol"/>
+		<i tag=":hmm:" img="h_exas"/>
+		<i tag=":|" img="h_neutral"/>
+		<i tag=":grr:" img="h_rage"/>
+		<i tag=":zzz:" img="h_sleep"/>
+		<i tag=":wink:" img="h_wink"/>
+		<i tag=":horreur:" img="h_horror"/>
+		<i tag=":zhead:" img="h_zhead"/>
+		<i tag=":erk:" img="h_sick"/>
+		<i tag=":home:" img="h_home"/>
+		<i tag=":porte:" img="h_door"/>
+		<i tag=":eau:" img="h_water"/>
+		<i tag=":zombie:" img="h_zombie"/>
+		<i tag=":humain:" img="h_human"/>
+		<i tag=":soin:" img="h_heal"/>
+		<i tag=":drogue:" img="h_drug"/>
+		<i tag=":dig:" img="h_dig"/>
+		<i tag=":mort:" img="h_death"/>
+		<i tag=":gard:" img="h_guard"/>
+		<i tag=":eclair:" img="h_ranger"/>
+		<i tag=":collec:" img="h_collec"/>
+		<i tag=":hab:" img="h_basic"/>
+		<i tag=":os:" img="h_bone"/>
+		<i tag=":fleche:" img="h_arrow"/>
+		<i tag=":sac:" img="h_bag"/>
+		<i tag=":ame:" img="h_ghost"/>
+		<i tag=":atelier:" img="h_refine"/>
+		<i tag=":!!:" img="h_warning"/>
+		<i tag=":pa:" img="h_pa" mode="fr"/>
+		<i tag=":pc:" img="h_pc" mode="fr"/>
+		<i tag=":ap:" img="h_ap" mode="de"/>
+		<i tag=":ap:" img="h_ap" mode="en"/>
+		<i tag=":*:" img="h_middot"/>
+		<i tag=":ban:" img="h_ban"/>
+		<i tag=":chat:" img="h_chat"/>
+		<i tag=":calim:" img="h_calim"/>
+		<i tag=":annu:" img="h_sites"/>
+		<i tag=":evo:" img="h_city_up"/>
+		<i tag=":arma:" img="h_arma"/>
+		<i tag=":deco:" img="h_deco"/>
+		<i tag=":camp:" img="h_camp"/>
+		<i tag=":ermit:" img="h_hunter"/>
+		<i tag=":bichon:" img="h_tamer"/>
+		<i tag=":tech:" img="h_tech"/>
+		<i tag=":ghoul:" img="h_ghoul"/>
+		<i tag=":iloveu:" img="h_iloveu"/>
+		<i tag=":plan:" img="h_plan"/>
+		<i tag=":explo:" img="h_exploration"/>
+		<i tag=":chaussette:" img="h_socks"/>
+		<!--temp halloween
+		<i tag=":halloween:" img="h_pumpkin"/>
+		-->
+	</icons>
+	<buttons >
+		<b title="Fett" node="g" html="strong"/>
+		<b title="Kursiv" node="i" html="em"/>
+		<b title="Zitat" node="cite" html="cite"/>
+		<b title="Verräter" node="bad" html="big"/>
+		<b title="Rollen" node="rp" span="rp"/>
+		<b title="Spoiler" node="spoil" span="spoil"/>
+		<b title="[ADM] Warn" node="warning" span="official_admin"/>
+		<b title="[HLP] Helfer" node="h" span="official_helper"/>
+		<b title="Link" link="Gib bitte die Linkadresse ein" text="Gib bitte den Titel deines Links ein" node="lien"/>
+		<!-- AUTOLINK -->
+<!--		<b ereg='([^@=>\]"])(http:\/\/[a-zA-Z0-9/%_.-]+)' text='$1<a href="$2" target="_blank">$2</a>'/>-->
+<!--		<b ereg='^(http:\/\/[a-zA-Z0-9/%_.-]+)' text='<a href="$1" target="_blank">$1</a>'/>-->
+		<!-- BRS -->
+		<b ereg="\n" text="<br/>"/>
+	</buttons>
+	<disabled>
+		<b title="Zitieren" node="cite" html="cite"/>
+		<b title="Spoiler" node="spoiler" span="spoiler"/>
+		<!-- ADVANCED -->
+		<b node="b" html="strong"/>
+		<b node="s" span="underline"/>
+		<b ereg="\*(.*?)\*" text="<strong>$1</strong>"/>
+		<b ereg="__(.*?)__" text='<span class="underline">$1</span>'/>
+		<b link="" text="" node="link"/>
+		<b link="" text="" node="url"/>
+		<!-- IMAGES -->
+		<b ereg="@(http://.*?)@" text='<img src="$1" alt=""/>'/>
+		<b ereg="\[(img|image)\](http://.*?)\[\/\1\]" text='<img src="$2" alt=""/>'/>
+		<b ereg="\[(img|image)=(http://.*?)\](.*?)\[\/\1\]" text='<img src="$2" title="$3"/>'/>
+	</disabled>
+</config>

@@ -1,0 +1,50 @@
+﻿<d place="bslt" name="Dino raro" gfx="pteroz" cond="!collec(pteroz)+level(8)">
+	<phase id="begin" next="fight:leave" fast="1">
+		Un Dino raro de pinta amenazante aparece en tu camino.
+		Sus ojos rojos se quedan fijos sobre ti, ¡parece muy feroz!
+	</phase>
+	<a id="fight">¡Combatirlo!</a>
+	<a id="leave">¡Huir!</a>
+	<phase id="fight" fight="pteroz" collection="pteroz" fast="1">
+		¡Has vencido un Teroz! Obtienes el Trofeo de los Teroz, ¡el cual te permitirá comprar Teroz en la Tienda de Dinos!
+	</phase>
+	<phase id="leave">
+		¡Uf! ¡Un paso más y te ataca!
+	</phase>
+</d>
+
+<d place="ilewkk" name="Dino raro" gfx="hippo" cond="!collec(hippo)+level(8)">
+	<phase id="begin" next="fight:leave" fast="1">
+		Un Dino raro aparece en tu camino, y se escapa... ¿Qué quieres hacer?
+	</phase>
+	<a id="leave">Esperar.</a>
+	<a id="fight">Perseguirlo.</a>	
+	<phase id="fight" fight="hippo" collection="hippo" fast="1">
+		Has vencido un Dino raro: ¡un Hippoclamp! Obtienes el Trofeo de los Hippoclamps que te permitirá comprar este tipo de Dinos
+		en la Tienda de Dinos.
+	</phase>
+	<phase id="leave">
+		Parece que no vuelve... ¿qué clase de raza era ésa?		
+	</phase>
+</d>
+
+<d place="frcbrt" name="Piedra extraña" gfx="rocky" cond="!collec(rocky)+level(13)">
+	<phase id="begin" next="touch:fight:grave:leave" fast="1">
+		Una extraña piedra se planta en medio del camino. El lugar donde está puesta no parece muy natural. ¿Qué deseas hacer?
+	</phase>
+	<a id="touch">Tocarla</a>
+	<a id="fight">Intentar volcarla</a>
+	<a id="grave" target="fight">Rasparla</a>
+	<a id="leave">Seguir el camino</a>
+	<phase id="touch" fast="1">
+		Es extraño... la piedra está caliente. No tiene nada más de especial... Pero más vale no insistir...
+	</phase>
+	<phase id="leave" fast="1">
+		Si al final va a ser verdad que no es más que una simple piedra....
+	</phase>
+	<phase id="fight" fight="rocky" collection="rocky" fast="1">
+		¡Oooh! La piedra en cuestión era un Rokky, un Dino mitad mineral muy raro en el Reino de Dinovilla...
+		Gracias a tu victoria, ganas el Trofeo de los Rokkys, que te permitirá comprar Rokkys en la Tienda de los Dinos.
+		¡Enhorabuena!
+	</phase>
+</d>

@@ -1,0 +1,33 @@
+﻿<missions>
+
+	<m group="rodeur" id="rodriz" name="Le Riz Amnésique" limit="15">
+		<begin>
+		J'ai besoin de Riz pour recharger ma cape magique. On en trouve paraît-il dans le Marais Collant des Iles Atlantéinées. Peux-tu m'en rapporter suffisamment pour que je puisse à nouveau devenir invisible ? Vite, c'est urgent !
+		</begin>
+		<goto v="marais"/>
+		<action v="Chercher du Riz">
+		Aprés quelques recherches, vous trouvez un coin du Marais où pousse du Riz Amnésique, une variété trés rare de Riz aux propriétés étonnantes. Le seul problème c'est que des dizaines de Pirhanoz protègent l'accés. Il va falloir d'abord nettoyer le chemin !
+		</action>
+		<kill v="pira" n="30"/>
+		<action v="Ramasser le Riz">Félicitations ! Vous obtenez du Riz Amnésique !</action>
+		<end>
+		Ah ! Uhm euh... En fait, j'avais mal compris. Un petit peu d'énergie foudre était seulement nécessaire pour recharger ma cape... Tiens, voilà pour toi, et tu peux garder le riz, je n'en ai pas besoin.
+		</end>
+		<gold v="5000"/>
+		<item v="riz"/>
+	</m>
+
+	<m group="rodeur" id="rodlif" name="Les Dinoz Sombres" limit="15" cond="mission(rodriz)">
+		<begin>
+		Trois Dinoz Sombres de Caushemesh t'attendent aux Chutes Mutantes. Va les vaincre et reviens me voir pour obtenir ta récompense... Je te conseille de ne pas tenter de les battre tout seul, car tu pourrais y laisser la vie de ton Dinoz !
+		</begin>
+		<goto v="chutes"/>
+		<fight v="pteroz:hippo:rocky"/>
+		<end>
+		Pas mal pour un Dinoz faible de Dinoville... Tiens, voilà pour toi !
+		</end>
+		<gold v="5000"/>
+		<xp v="250"/>
+	</m>
+
+</missions>

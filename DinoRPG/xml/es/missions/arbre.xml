@@ -1,0 +1,99 @@
+﻿<missions>
+
+	<!-- ***************************************************************************** -->
+	<!-- gardien de le forêt ----->
+
+	<m group="arbre" id="unmute" name="El Guardián de la Jungla" limit="35">
+		<begin>El pergamino que te ha caído encima tiene este mensaje: |«Encuentra 1 medida de agua fluyente, 1 medida de agua estancada, 1 medida de agua pura y 1 medida de agua hirviente. » |¡Apenas terminas de leer este mensaje y una pequeña cantimplora vacía proveniente de las hojas del árbol cae sobre tu cabeza! ¡Poc!</begin>
+		<goto v="fleuve" hide="1"/>
+		<action v="Agua del Río Jumin">Rellenas la cantimplora del viejo árbol con un poco de agua del Río Jumin. ¡Ya tienes el agua fluyente!</action>
+		<goto v="marais" hide="1"/>
+		<action v="Agua Turbia">Añades en la cantimplora del viejo árbol un poco de agua del Pantano Pegajoso. Huele muy mal...</action>
+		<goto v="fountj" hide="1"/>
+		<action v="Agua Refrescante">Añades a la cantimplora del viejo árbol agua clara de la Fuente y aprovechas para refrescarte.</action>
+		<goto v="gorges" hide="1"/>
+		<action v="Agua Hirviente">Completas el contenido de la cantimplora con un poco de agua hirviente que inunda las Gargantas. ¡Está caliente!</action>
+		<goto v="garde"/>
+		<action v="Derramar la cantimplora">Las hojas del viejo árbol se agitan bruscamente en todos los sentidos y una luz tranquilizadora inunda la jungla a tu alrededor...</action>
+		<end>El viejo árbol se inclina hacia ti en un crujido... Sacude lentamente su follaje hasta dejar caer unas bonitas frutas a tus pies.</end>
+		<xp v="110"/>
+		<item v="fruit" n="3"/>
+	</m>
+
+	<m group="arbre" id="orchid" name="La mano verde" limit="20" cond="mission(unmute)">
+		<begin>Un pergamino cuelga de una rama. Puedes leer: |«Ve a regar la Orquídea Quidea plantada en la Entrada de la Jungla».| Algo en la vegetación te lanza una cantimplora vacía. ¡Poc!</begin>
+		<goto v="fleuve"/>
+		<action v="Coger agua">Llenas la cantimplora con el agua del Río Jumin.</action>
+		<goto v="auree"/>
+		<action v="Regar la Orquídea">Derramas el contenido de la cantimplora sobre una magnífica flor que debe ser la Orquídea Quidea. Tan pronto como se ilumina en mil colores, bonitas gotas de rocío aparecen sobre las verdes hojas.</action>
+		<talk v="Orquídea Quidea que habla">¡¿Qué?! ¿Qué haces mirándome así? ¿Nunca has visto una Orquídea crecer?! ¿No tienes otra cosa que hacer? ¡No te chulees, vete de aquí, que me haces sombra!</talk>
+		<end>Posas la cantimplora vacía al pie del árbol. Una fruta grande cae de las ramas superiores y cae junto a ti en un ruido seco.</end>
+		<xp v="30"/>
+		<item v="fruit" n="1"/>
+	</m>
+
+	<m group="arbre" id="licens" name="Permiso para talar" limit="20" cond="mission(unmute)">
+		<begin>Un pergamino (que no habías visto hasta ahora) está atado a una raíz. Puedes leer: |« Los Korgones y los Roncivores del sur están rebasando los límites de tala autorizada en la Jungla de Grumhel. Ve a ponerles a raya.»</begin>
+		<goto v="chemin"/>
+		<kill v="korgon:ronciv" n="8" name="Roncivores o korgones"/>
+		<end>Algunas frutas caen del árbol junto a ti...</end>
+		<xp v="40"/>
+		<item v="fruit" n="3"/>
+	</m>
+
+	<m group="arbre" id="king" name="El rey de la Jungla" limit="20" cond="mission(unmute)+mission(orchid)">
+		<begin>Un mensaje está escrito sobre un trozo de tela atado a una rama: |«Mantenemos desde hace años la propagación de una leyenda sobre el Rey de la Jungla para alejar a los posibles turistas. Ve a las Colinas Encantadas para mantener este mito... »</begin>
+		<goto v="collin"/>
+		<action v="Hacer el grito del Rey de la Jungla">Gritas de una forma particularmente ridícula... no asustarías un solo Korgon así... Tendrás que hacerlo mejor.</action>
+		<goto v="auree" hide="1"/>
+		<talk v="Orquídea Quidea que habla">¡¿Otra vez aquí el loco de la Jungla?! ¿Qué tiene ése mirándome así?</talk>
+		<action v="Coger la Orquídea">Arrancas la Orquídea sin miramientos y te la llevas contigo. Te grita, te insulta y se sacude todo lo que puede...</action>
+		<goto v="collin"/>
+		<action v="Plantar la Orquídea">Plantas en un golpe seco la Orquídea Quidea, quien no para de gritarte. A medida que te alejas, la oyes gritar atrocidades sobre ti... ¡Eso sí que espantará los turistas!</action>
+		<end>Una fruta cae a tus pies. Mientras te dispones a recogerla, una gran bolsa llena de oro cae de ninguna parte sobre tu cabeza! ¡CLIN!</end>
+		<gold v="2500"/>
+		<xp v="35"/>
+		<item v="fruit" n="1"/>
+	</m>
+
+	<m group="arbre" id="wishes" name="Pide un deseo" limit="20" cond="mission(unmute)">
+		<begin>Puedes leer grabado en una rama: |«Se cuenta que las Caídas del sur tienen propiedades mágicas... Ve a echar una moneda en el abismo de las Caídas Mutantes para pedir la reducción de población de korgones y roncivores en la jungla.»|Una moneda de cobre gira a lo largo de una rama y se detiene al chocar contra tu pie.</begin>
+		<goto v="chutes"/>
+		<action v="Echar una moneda">Echas una moneda en el corazón de las Caídas y esperas algunos minutos... Evidentemente no pasa nada y decides ejecutar el deseo de reducir la población de monstruos por ti mismo.</action>
+		<goto v="auree"/>
+		<kill v="korgon:ronciv" n="2" name="Roncivores o korgones"/>
+		<goto v="chemin"/>
+		<kill v="korgon:ronciv" n="3" name="Roncivores o korgones"/>
+		<goto v="fleuve"/>
+		<kill v="korgon:ronciv" n="3" name="Roncivores o korgones"/>
+		<goto v="jungle"/>
+		<kill v="korgon:ronciv" n="6" name="Roncivores o korgones"/>
+		<end>Algunas frutas caen del árbol a tu alrededor...</end>
+		<xp v="60"/>
+		<item v="fruit" n="4"/>
+	</m>
+
+	<m group="arbre" id="newplt" name="Una ayuda para el bosque" limit="20" cond="mission(unmute)">
+		<begin>Una banda de tela está enrollada alrededor del viejo árbol: |«Nuestros esfuerzos para desarrollar los bosques alrededor del Gran Señor-Todo-Quema han sido seriamente amenazados por un importante desprendimiento cerca de las Ruinas Ashpuk. Coge esta herramienta para despejar los restos rocosos de las plantas.»| De repente oyes un ruido metálico y ves una herramienta de hierro junto a ti.</begin>
+		<goto v="rashpk"/>
+		<talk v="Voluntario «Paz Verde»">¡Hola! ¿Tú también vienes a despejar la zona? La verdad es ahora tengo un buen problema... hay monstruos por todos lados y me impiden trabajar... ¿Podrías hacer algo?</talk>
+		<kill n="3"/>
+		<action v="Levantar las rocas">Instalas la herramienta y empiezas a levantar y empujar las rocas caídas en el bosque... Sin embargo, cuando crees que todo empieza a volver a la normalidad, oyes un inquietante gruñido detrás de ti...</action>
+		<kill n="6"/>
+		<talk v="Voluntario «Paz Verde»">¡No hay que perder un segundo, sigamos!</talk>
+		<action v="Levantar las rocas">La operación te lleva bastantes horas, pero finalmente te las arreglas para despejar numerosos árboles y plantas enterradas bajo las rocas.</action>
+		<talk v="Voluntario «Paz Verde»">Voy a quedarme aquí para regar las siguientes plantas. ¡Hazme un informe para enviárselo al Guardián de la Jungla!</talk>
+		<end>Dos grandes frutas se descuelgan y caen en un arbusto cerca de ti...</end>
+		<xp v="75"/>
+		<item v="fruit" n="2"/>
+	</m>
+
+	<m group="arbre" id="gshop" name="Moneda de sabio" limit="20" cond="mission(unmute)+mission(orchid)+mission(licens)+mission(king)+mission(wishes)+mission(newplt)">
+		<begin>Un escrito grabado en madera y un pequeño cubo de hierro blanco están colgados de una rama :|«Echa un poco de oro en el cubo para recibir tu ración cotidiana.»</begin>
+		<action v="Examinar el cubo">Encuentras una pequeña rama con flores en el cubo...</action>
+		<end>¡El texto del letrero ha cambiado! Ahora pone: «Conserva esta rama con flores en señal de nuestra gratitud.»</end>
+		<fx v="gshop"/>
+		<xp v="5"/>
+	</m>
+
+</missions>

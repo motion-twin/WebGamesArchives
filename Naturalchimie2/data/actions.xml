@@ -1,0 +1,122 @@
+<actions>
+	<a id="play" text="Jouer">
+		Faire une partie de Naturalchimie
+	</a>
+
+	<a id="map" text="Se déplacer" link="javascript:js.App.switchMap();">
+		Afficher la carte
+	</a>
+
+	<a id="score" text="Classement" link="/newspaper?p=2&t=1&su=2&mid=::mid::">
+		Voir le classement du lieu
+	</a>
+	
+	<a id="dialog" text="" icon="dialog" link="javascript:js.App.startDialog('::did::');">
+		Commencer une discussion.
+	</a>
+	
+	<a id="buyRecipe" text="" icon="buyRecipe" link="javascript:js.App.startDialog('::did::');">
+		Commencer une discussion.
+	</a>
+	
+	<a id="validQuest" text="Valider la quête" link="/act/quest/done">
+		Valider la quête en cours
+	</a>
+	
+	<a id="questMsg" type="action" text="Faire quelque chose" link="/act/quest/doAction">
+	</a>
+	
+	<a id="questUse" type="action" text="Faire quelque chose"  link="/act/quest/doUse">
+	</a>
+	
+	<a id="questAction" type="action" text="Faire quelque chose" link="">
+	</a>
+	
+	<a id="forum" text="Discuter" link="/tid/forum/#!key/na2school_">
+	</a>
+	
+	
+	<a id="shop" text="Marchand" link="/act/shop/" confirm="1">
+		Aller voir le marchand
+	</a>
+	
+	<a id="refill" text="Boire" link="/act/do?a=refill" confirm="1">
+	</a>
+	
+	<a id="open" text="Ouvrir" link="/act/do?a=open" confirm="1">
+	</a>
+	
+	<a id="sopen" text="Ouvrir" link="/act/do?a=sopen" confirm="1">
+	</a>
+	
+	<a id="gopen" text="Ouvrir" link="/act/do?a=gopen" confirm="1">
+	</a>
+	
+	<a id="bopen" text="Ouvrir" link="/act/do?a=bopen" confirm="1">
+	</a>
+	
+	<a id="throw" text="Lancer" special="throw" confirm="1">
+	</a>
+	
+	<a id="ceat" text="Manger" link="/act/do?a=ceat" confirm="1">
+	</a>
+	
+	<a id="rest" text="Se reposer" link="/act/do?a=rest" confirm="0">
+	</a>
+	
+	<a id="freege" text="Archives du journal" link="/newspaper/archives" confirm="0">
+	</a>
+	
+	<a id="gwrite" text="Articles et petites annonces" link="/newspaper/article" confirm="0">
+	</a>
+	
+	<a id="gocaul" text="Monter à la salle des chaudrons" link="/act/move?to=gucaul" confirm="0" type="actionUp">
+	</a>
+	
+	
+	<a id="caul" text="Utiliser le chaudron" link="/cauldron" confirm="0" type="action">
+	</a>
+	
+	<a id="race" text="Descendre au puits hermétique" link="/cauldron" confirm="0" type="actionDown">
+	</a>
+	
+	<a id="caulex" text="Sortir" link="/act" confirm="0" type="action">
+	</a>
+	
+	<a id="raceex" text="Remonter à la surface" link="/act" confirm="0" type="actionUp">
+	</a>
+
+	<a id="kexplode" text="Briser en 2 éléments rares" link="/act/do?a=kexplode" confirm="1">
+	</a>
+
+
+	<!-- KNOWLEDGES SPECIAL ACTIONS -->
+	<a id="kexch" text="Echanger rouage/savoir" link="/sct/kAction?id=exch" confirm="1" type="knowledge">
+	</a>
+
+	<a id="kbours" text="Acheter un rouage" link="/sct/kAction?id=bours" confirm="1" type="knowledge">
+	</a>
+
+	<a id="kactpl" text="Trip menthol" link="/sct/kAction?id=actpl" confirm="1" type="knowledge">
+	</a>
+
+	<a id="kactrec" text="Dollyxomatic" link="/sct/kAction?id=actrec" confirm="1" type="knowledge">
+	</a>
+
+	<a id="ktp" text="Se téléporter au puits" link="/sct/kAction?id=tp" confirm="1" type="knowledge">
+	</a>
+
+
+	<a id="kcancel" text="Supprimer cet ingrédient" link="document.location='/sct/kAction?id=cancel&ing=::ING::'" confirm="1" type="knowledge">
+	</a>
+
+	<a id="kgugive" text="Diviser par 2 (guilde)" link="document.location='/sct/kAction?id=gugive&ing=::ING::'" confirm="1" type="knowledge"> 
+	</a>
+	<a id="kscgive" text="Supprimer (école)" link="document.location='/sct/kAction?id=scgive&ing=::ING::'" confirm="1" type="knowledge">
+	</a>
+
+	<a id="sctdis" text="Distribuer" link="javascript:js.App.sctDistrib('::id::');" confirm="0" type="knowledge">
+		Choisir les membres de la classe à qui distribuer cette récompense.
+	</a>
+	
+</actions>

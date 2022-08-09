@@ -1,0 +1,76 @@
+﻿<!-- QUETE DU MINEUR : pelle utilisable une fois et réparable -->
+	
+<d place="corail" name="Korallenbergarbeiter" gfx="mineur" cond="fx(bouee)">
+	
+  <phase id="begin" next="yes:nothing:repair:nothing2:repair2:give:no">Pling! Pling! Pling!
+  Ufff, diese Korallen sind härter als Stein. Wusstest du das?</phase>
+
+  <a id="yes" cond="!fx(pelle)+!fx(brkpel)+!fx(pelle2)+!fx(brkpe2)">Ja.</a>
+	<a id="nothing" cond="fx(pelle)">Ja</a>
+	<a id="repair" cond="fx(brkpel)">Ja</a>
+	<a id="nothing2" cond="fx(pelle2)">Ja</a>
+	<a id="repair2" cond="fx(brkpe2)">Ja</a>
+  <a id="give" cond="scenario(magnet,8)+!fx(corail)">Das ist genial!</a>
+  <a id="no">Nein.</a>
+
+  <phase id="yes" next="thanks" effect="pelle">Ach echt? Das wusstest du
+  schon? Hier, ich leihe dir eine alte Schaufel, damit du auch graben kannst.
+  Sie ist in einem sehr schlechten Zustand, weswegen sie bei erstem Gebrauch
+  kaputt gehen wird. Aber es ist meine Glücksbringerschaufel! Mit ihr wirst du die
+  größten Schätze im Dinoland finden! Na, wie sagt man?</phase>
+
+  <phase id="nothing" next="thanks">Und gefällt sie dir, meine Schaufel? Was
+  sagt man?</phase>
+
+  <phase id="repair" next="thanks" effect="pelle" noeffect="brkpel"> Ah, bist
+  du's? Du hast also, mir nichts, dir nichts, meine Schaufel kaputt gemacht?
+  Beweg dich nicht....da schau, ich hab sie dir repariert! Hop! Hast du nicht
+  etwas vergessen?</phase>
+  
+  <phase id="nothing2" next="thanks">
+		Und? Wie gefällt dir meine Schaufel mit diesem ergonomischen Stiel gegen Sehnenzerrungen? Darfst dich ruhig bedanken!
+  </phase>
+
+  <phase id="repair2" next="thanks" effect="pelle2" noeffect="brkpe2">
+		Ach du bist es? Du hast also einfach meine Schaufel zerstört? Warte mal kurz... hier, ich hab sie dir wieder repariert! Wie sagt man gleich nochmal...?
+  </phase>
+
+  <a id="thanks">Danke!</a>
+
+  <phase id="thanks">Du bist sympathisch! Schau wieder vorbei, wenn deine
+  Schaufel wieder kaputt geht. Ich werde sie dir reparieren.</phase>
+
+  <phase id="no" next="next">Pfff, ja, das Graben ist sehr, sehr anstrengend.
+  Deswegen brauchst du für diesen Job auch kräftige Jungs wie mich. </phase>
+
+  <a id="next">Na sowas...</a>
+
+  <phase id="next" next="next2">Ja, tatsächlich! Schau dir mal diese Muskeln
+  an! Ich bin für den Korallen-Award nominiert. Dieses Jahr für die Kategorie
+  "Starkarmiger Minenarbeiter".</phase>
+
+  <a id="next2">Wirklich...</a>
+
+  <phase id="next2" next="next3">Ja, wenn ich es dir doch sage! Ich muss noch
+  viel arbeiten, wenn ich eines Tages wie mein Idol aussehen will....</phase>
+
+  <a id="next3">...</a>
+
+  <phase id="next3" next="qui">Was los?!!? Fragst mich nich mal wer mein Idol
+  ist?</phase>
+
+  <a id="qui">Äh... und wer ist ihr Idol?</a>
+
+  <phase id="qui" next="ok">Jetzt schlägt's aber Neune! Sylverter Stalin
+  natürlich! Dreimaliger Gewinner des Korallen-Awards in den Kategorien
+  "Grenzwertige Muskeln" und "Schlagfertiges Antworten". Er ist wirklich zuuu geil, und er hat es immer geschafft seine Gegner zu besiegen!</phase>
+
+  <a id="ok">Der macht einen starken Eindruck!</a>
+
+  <phase id="ok">Ja, er ist der Stärkste! Oh Mann, die guten alten Zeiten...ich
+  könnte stundenlang davon erzählen....Aber gut, jetzt lass mich mal in Ruhe, ich muss arbeiten! Pling! Pling! Pling! </phase>
+
+  <phase id="give" effect="corail">Ah! Wie ich sehe, liebst du auch dieses
+  steinharte Korallenmaterial! Hier, ich gebe dir eine Probe. Das habe ich
+  gerade eben herausgehauen!</phase>
+</d>

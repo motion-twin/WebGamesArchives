@@ -1,0 +1,790 @@
+<map>
+
+//#################################################################################################################################
+//### REGION 0 : LA GUILDE
+
+
+<place id="stimpk" region="0" name="Palais de Stime Pounk" align="gu" inf="840.3:344.5" bg="steampunk" bginf="-10:-50:0">
+<pre>quest(bours)|curquest(bours)</pre>
+<game chain="8;9;10;11" chainknown="9" obj="0" artft="default;Dynamit(0):30;Dynamit(1):15;Alchimoth:10" bg="305:-10:steampunk" modWeight="Elt(3):2" />
+<desc>
+Le palais de Stime Pounk est le lieu le plus chic de la capitale. Les jardins sont accessibles aux visiteurs, mais il ne faut pas espérer pénétrer dans le palais. 
+Siège des hauts responsables de la Guilde des alchimistes, l'entrée est interdite à toute personne non autorisée [p](Ca veut dire "Ouste")[/p].
+</desc>
+<noway bg="steampunk" cond="!quest(bours)+!curquest(bours)">Je devrais peut-être discuter avec [Altus] avant de partir je sais pas où...</noway>
+
+<move to="enfagu" road="840.3:344.5,827:329,822:324,794:320,771.8:319.1"/>
+<move to="agoraa" road="791:404.1,827:380,832:366,840.3:344.5" />
+<move to="grenie" pa="0" />
+</place>
+
+
+<place id="agoraa" region="0" name="Grande Place" align="gu" inf="791:404.1" bg="agora" bginf="-10:-10">
+<pre>quest(bours)</pre>
+<game chain="8;9;10;11" chainknown="9" obj="0" artft="default;Dynamit(0):30;Dynamit(1):15;Alchimoth:10" bg="70:-10:agora" />
+<desc>
+Située au centre exact de la capitale, la Grande Place est le lieu de rendez-vous de tout le royaume. Vendeurs véreux, alchimistes désoeuvrés... Tout le monde s'y retrouve à un moment de la journée pour passer le temps et papoter tranquillement. 
+Le marché couvert de la place est un miracle d'équilibre architectural. Tellement miraculeux que personne n'a jamais osé passer en dessous.
+</desc>
+<noway bg="agora" cond="!quest(bours)">Hum. Altus a dit que l'ENFA était "au fond des jardins"... ça a pas l'air d'être par là.</noway>
+<move to="stimpk" road="791:404.1,827:380,832:366,840.3:344.5"/>
+<move to="guexpr" road="791:404.1,805:419,829:445,885:473"/>
+<move to="kirvie" road="690.5:465.9,731:457,747:431,791:404.1" />
+<move to="gmprai" road="791:404.1,785:355,762:350,694:348,675:338,675:294,696:270,687:232,659:222,579.5:204.1" />
+</place>
+
+
+<place id="enfagu" region="0" name="E.N.F.A." align="gu" inf="771.8:319.1" bg="enfa" bginf="-5:-5">
+<game chain="8;9;10;11" obj="0" chainknown="9" artft="Elts(2,null):5000;Grenade(1):20;Dynamit(0):25;Dynamit(1):10;Alchimoth:5" bg="250:0:enfa" />
+<desc>
+L'Ecole Normale de Formation Alchimique. C'est ici qu'il faut venir pour devenir étudiant en signant quelques formulaires.
+A force d'agrandir les jardins pour le confort des hauts responsables, l'ENFA qui était juste à coté a fini par se retrouver dedans. La Guilde leur a bien demandé de déménager, mais vu que les courges de l'ENFA n'ont ni bras, ni jambes...
+</desc>
+<move to="stimpk" pa="1" road="840.3:344.5,827:329,822:324,794:320,771.8:319.1"/>
+</place>
+
+
+<place id="grenie" region="0" name="Grenier aux alchimites" align="gu" inf="856.5:316.9" bg="grenier" bginf="-5:-5">
+<game chain="8;9;10;11" obj="0" chainknown="9" artft="Elts(2,null):5000;Dynamit(0):30;Dynamit(1):15;Alchimoth:20" modWeight="Elt(0):2" />
+<desc>
+Ce vieux grenier isolé est sombre et poussiéreux. Et on dirait qu'il y a plein de bestioles qui grouillent partout !
+A se demander qui pourrait bien vouloir habiter ici. 
+</desc>
+<move to="stimpk" pa="0" />
+</place>
+	
+
+<place id="chouet" region="0" name="Chouettex" align="gu" inf="542.4:432.8" bg="chouettex" bginf="-5:-5:1">
+<game chain="8;9;10;11" chainknown="9" obj="0" artft="Elts(2,null):3600;Elts(2,Neutral):1400;Dynamit(0):20;Dynamit(1):15;PearGrain(0):6;Protoplop(1):3;Destroyer(0):8;Destroyer(1):8;Destroyer(2):8;Destroyer(3):8;Grenade(0):20;Grenade(1):6" bg="270:-10:chouettex" />
+<desc>
+Besoin d'un envoi postal ? d'une livraison rapide ? Ne cherchez plus ! Chouettex est là pour vous !
+L'engagement Chouettex ? Vous satisfaire ! 
+Les objectifs Chouettex ? Vous satisfaire !
+La stratégie Chouettex ? Vous satisfaire !
+Bienvenue au siège de Chouettex ! Chouette chouette chouettex!
+</desc>
+<move to="kirvie" road="690.5:465.9,666:453,665:437,634:425,614:432,586:413,542.4:432.8" />
+<move to="sktupu" road="542.4:432.8,516:456,503:481,527:498,532:513,505:524,486:556,476:561,461.0:585.6" />
+</place>
+
+
+<place id="kirvie" region="0" name="Donjon K" align="gu" inf="690.5:465.9" bg="kirvie" bginf="-5:-25:1">
+<game chain="8;9;10;11" obj="0" chainknown="9" artft="default;Dynamit(0):30;Dynamit(1):15;Dalton:6" bg="240:-10:kirvie" />
+<cauldron forced="0" type="race" bg="guwell" bginf="-10:-24:1" size="no">
+<desc>
+Creusé par la Guilde jusqu'au plus profond du royaume, le puits hermétique est le seul moyen de stopper la rotation de la planète.
+[g]Protégez le royaume ! Participez à la lutte des classes ![/g]
+Les éléments alchimiques jetés dans le puits assurent notre avenir à tous !
+</desc>
+</cauldron>
+<desc>
+Bienvenue au Donjon K, le bâtiment de haute sécurité de la Guilde. Pour la réalisation d'une recette, rendez-vous à la salle des chaudrons au premier étage. Pour toute autre demande, adressez vous à l'accueil.
+Veuillez ne pas sortir des chemins balisés pour relier le mur d'enceinte à l'entrée du donjon. Tout arrêt prolongé ou attroupement d'alchimistes est susceptible de déclencher une procédure de sécurité de niveau AA-6. 
+</desc>
+<extraaction aid="gocaul" />
+<move to="gubafa" road="690.5:465.9,665:485,661:531,681:539,663:550,688:556,679:565,725.9:592.4" />
+<move to="chouet" road="690.5:465.9,666:453,665:437,634:425,614:432,586:413,542.4:432.8"/>
+<move to="agoraa" road="690.5:465.9,731:457,747:431,791:404.1"/>
+<move to="gucaul" pa="0" />
+</place>
+
+
+<place id="guexpr" region="0" name="Guildian Express" align="gu" inf="889.4:473" bg="guildian" bginf="0:-20">
+<pre>quest(siflex)+quest(grim)</pre>
+<game chain="8;9;10;11" chainknown="9" obj="1" artft="Elts(2,null):3700;Elts(3,null):1300;Grenade(1):20;Dynamit(0):30;Dynamit(1):15;Alchimoth:10" bg="255:-10:guildian" />
+<desc>
+La rédaction du Guildian Express a été entièrement reconstruite peu après l'arrivée de la Guilde à la tête du royaume. 
+Ces travaux ont coïncidé avec de nombreuses embauches et la nouvelle formule du journal : "Moins d'infos, plus de ragots" qui a écrasé tous les journaux concurrents. 
+Tout le royaume s'accorde à dire que tout ça est très louche et que cette architecture moderne, c'est vraiment laid. 
+</desc>
+<noway bg="guildian" cond="!(quest(siflex)+quest(grim))">Oulala mais je suis où là ? Je vais plutôt faire demi-tour pour l'instant.</noway>
+<extraaction aid="gwrite" />
+<extraaction aid="freege" />
+<move to="agoraa" road="791:404.1,805:419,829:445,889.4:473" />
+<move to="scroad" road="889.4:473,984:440,1032:408,1073:389,1072:367,1081:348,1113.8:339.1" />
+</place>
+
+
+<place id="gubafa" region="0" name="B.A.F.A." align="gu" inf="725.9:592.4" bg="bafa" bginf="0:-30:0">
+<pre>quest(siflex)+quest(grim)</pre>
+<game chain="8;9;10;11" chainknown="9" obj="0" artft="Elts(2,null):5000;Dynamit(0):20;Dynamit(1):20;Alchimoth:10;Jeseleet(0):15;Jeseleet(1):20" bg="50:-10" />
+<desc>
+Le Bureau d'Attribution des Formulaires Agnostiques est ouvert au public en continu. Merci de vous référer aux tranches  horaires de chaque service selon vos besoins :
+[p]- Autorisations et laisser-passer : de 11h à 14h18, tous les jours.[/p]
+[p]- Homologations diverses : horaire continu, chaque lendemain de pleine lune.[/p]
+[p]- Contestations et accidents alchimiques : de 14h à 18h les jours pairs. Le jeudi 11h à 12h.[/p]
+[p]- Autres services : Voir informations à l'étage concerné.[/p]
+</desc>
+<noway bg="bafa" cond="!(quest(siflex)+quest(grim))">Hum... il est peut-être plus prudent de rester en ville pour l'instant. </noway>
+<move to="kirvie" road="690.5:465.9,665:485,661:531,681:539,663:550,688:556,679:565,725.9:592.4" />
+<move to="jztire" road="725.9:592.4,760:582,821:585,845:594,880.5:605.2" />
+</place>
+
+
+
+<place id="gucaul" special="cauldron" region="0" name="Salle des chaudrons" align="gu" inf="690.5:409.9"  bg="cauldron" bginf="0:-20:0">
+<game chain="8;9;10;11" chainknown="9" obj="0" artft="default;Dynamit(0):30;Dynamit(1):15;Alchimoth:7" bg="200:5:cauldron" />
+<cauldron forced="1" size="no" />
+<desc>La salle des chaudrons est le lieu le plus important du royaume. C'est aussi le plus sécurisé ! </desc>
+<move to="kirvie" pa="0" />
+</place>
+
+
+
+//#################################################################################################################################
+//### REGION 1 : AUDEPINT
+
+<place id="scroad" region="1" name="La route scintillante" align="ap" inf="1113.8:339.1" bg="scroad" bginf="0:-20:1" music="ap1">
+<game chain="24;9;10;11" chainknown="9" obj="1" artft="default;Dynamit(0):30;Dynamit(1):15;Alchimoth:10;Detartrage:35" />
+<desc>
+Aussi appelée "route de Quadrantide" par les anciens, la route scintillante doit son nom actuel à la politique de balayage systématique mise en place par la famille Audepint ces dernières années. 
+Unique route reliant Kringdam au reste du royaume, le maître balayeur s'est vite montré indispensable. Son travail permet d'assurer le commerce des marchandises malgré les chutes de neige de la saison froide... soit toute l'année à Kringdam.
+</desc>
+<move to="guexpr" road="889.4:473,984:440,1032:408,1073:389,1072:367,1081:348,1113.8:339.1" />
+<move to="apvos" road="1113.8:339.1,1149:343,1141:367,1153:379,1160:376,1171:370,1207.6:380.8" />
+</place>
+
+	
+<place id="apvos" region="1" name="Vostok" align="ap" inf="1207.6:380.8" bg="apvos" bginf="0:-50:1" music="ap1">
+<pre>reput(ap,-1)</pre>
+<game chain="8;9;10;11" chainknown="8" obj="0" artft="default;Dynamit(0):30;Dynamit(1):15;Alchimoth:10;Delorean(0):7" modWeight="Elt(2):2" bg="230:0" />
+<desc>
+Petit village typique de la région de Kringdam, Vostok est  une étape obligée sur la route qui mène à l'école Audepint. C'est en effet l'unique zone habitée entre la capitale et l'école.
+Au début simple auberge pour voyageur fourbu, le village tient son nom de l'ancien aubergiste, Vladimir Liep Vostok. 
+Les Vostokiens sont réputés très sédentaires. La légende raconte d'ailleurs que le village est composé de tous les gens trop fainéants pour aller au bout de la route scintillante. 
+</desc>
+<noway cond="!reput(ap,-1)">Ta réputation envers Audepint n'est pas suffisante ! Réputation [Condescendant] requise.</noway>
+<move to="scroad" road="1113.8:339.1,1149:343,1141:367,1153:379,1160:376,1171:370,1207.6:380.8" />
+<move to="apfbg" road="1207.6:380.8,1240:373,1248:362,1255:350,1239:340,1233:327,1248:311,1244:300,1251:295,1221:282,1219:270,1220.1:244.2" />
+<move to="apcata" cond="disable()" hidden="disable()" road="1207.6:380.8,1249:386,1277:367,1293:342" />
+</place>
+
+
+<place id="apfbg" region="1" name="Faubourg Audepint" bg="apfbg" align="ap" inf="1220.1:244.2" bginf="0:-30:1" music="ap1">
+<pre>reput(ap,-1)</pre>
+<game chain="8;25;10;11" chainknown="8" obj="0" bg="260:0" artft="Elts(2,null):1000;Elts(2,Block(1)):500;Elts(2,Block(2)):800;Elts(2,Block(3)):500;Dynamit(0):45;Dynamit(1):30;Alchimoth:10" />
+<desc>
+Situé juste en dessous du manoir, le faubourg a été créé il y a plusieurs siècles pour héberger les employés de la famille Audepint.
+Avec la réputation de faiseur d'or de l'école Audepint, beaucoup de migrants sont venus s'installer au faubourg. Mais pas de chance pour eux, engelures et orteils congelés y sont plus courants que les pépites d'or. 
+</desc>
+<noway cond="!reput(ap,-1)">Ta réputation envers Audepint n'est pas suffisante ! Réputation [Condescendant] requise.</noway>
+<move to="aphall" pa="1" road="1220.1:244.2,1304:212,1323.8:202.8"  />
+<move to="apvos" road="1207.6:380.8,1240:373,1248:362,1255:350,1239:340,1233:327,1248:311,1244:300,1251:295,1221:282,1219:270,1220.1:244.2" />
+
+<move to="aparmy" road="1220.1:244.2,1169:214,1151:170,1121:143,1166:127,1168:109,1218:83" />
+</place>
+
+
+<place id="aphall" region="1" name="Manoir Audepint : grand hall" bg="aphall" bginf="0:-40:1" align="ap" inf="1323.8:202.8" randevent="2" music="ap3">
+<pre>((reput(ap,0)+(sch(gu)|sch(ap)))|reput(ap,1))+!curquest(schoo)</pre>
+<game chain="24;25;10;11" chainknown="8" obj="0" artft="Elts(2,null):1000;Elts(2,Block(1)):1300;Elts(2,Block(2)):1700;Elts(2,Block(3)):1000;Dynamit(0):45;Dynamit(1):30;Alchimoth:10" bg="80:0" />
+<desc>
+Le grand Hall du manoir ! Admirez la magnificence des parements ! La grandeur des volumes ! L'indicible beauté des façades ! 
+C'est dans ce hall que l'école d'alchimie Audepint a été créée en 1538 par dame Volodia Audepint, fille d'Abélard dit le 3e. 
+Gloire  ! Gloire à Audepint la puissante, et n'oubliez pas le guide bien sûr.
+</desc>
+<noway bg="aphall" did="poap" cond="curquest(schoo)" />
+<noway cond="!curquest(schoo)+sch(gu)+!reput(ap,0)">Deux gardes vous barrent le passage. Votre réputation auprès d'Audepint n'a pas l'air au beau fixe. Réputation [Neutre] requise.</noway>
+<noway cond="!curquest(schoo)+sch(ap)+!reput(ap,0)">Il va falloir améliorer ta réputation si tu veux rentrer au manoir ! Tes mauvaises fréquentations ne sont pas bonnes pour tes études ! Réputation [Neutre] requise.</noway>
+<noway cond="!curquest(schoo)+!sch(gu)+!sch(ap)+!reput(ap,1)">Ouste. Ta mauvaise réputation est parvenue jusqu'aux oreilles de la famille Audepint, tu n'as rien à faire ici ! Réputation [Bien disposé] requise.</noway>
+<move to="apfbg" road="1220.1:244.2,1304:212,1323.8:202.8" />
+<move to="apterr" hidden="(sch(ap)+reput(ap,0))|(!sch(ap)+reput(ap,1))" road="1323.8:202.8,1371:217,1380:208,1389.2:202.9" />
+<move to="aphome" hidden="sch(ap)" pa="0" />
+<move to="aplib" road="1323.8:202:8,1333:224,1348:250,1366:262,1386:264,1400:276,1416:286,1424:296,1433.8:281.9" />
+</place>
+
+
+
+<place id="aplib" region="1" name="Bibliothèque de glace" bg="aplib" align="ap" inf="1433.8:281.9" randevent="0" music="ap3">
+	<pre>(sch(ap)+reput(ap,3))|(!sch(ap)+reput(ap,4))</pre>
+	<game chain="24;13;26;27" chainknown="8" obj="0" artft="default;Pistonide:350;Alchimoth:45" bg="63:0" modWeight="Elt(27):1.3" />
+	<desc>
+	Lieu le plus mystérieux d'Audepint, on accède à la bibliothèque de glace par un souterrain secret creusé sous la montagne.
+	C'est ici qu'est stocké tout le savoir de l'école : imaginez le nombre de recettes oubliées stockées dans ces livres anciens !
+	Mais voilà... Les livres sont gelés. On ne peut pas les ouvrir...
+	</desc>
+	<noway cond="sch(ap)+!reput(ap,3)">Ta réputation envers Audepint n'est pas suffisante ! Réputation [A bras ouverts] requise.</noway>
+	<noway cond="!sch(ap)+!reput(ap,4)">Ta réputation envers Audepint n'est pas suffisante ! Réputation [Chouchou] requise.</noway>
+	<move to="aphall" road="1323.8:202:8,1333:224,1348:250,1366:262,1386:264,1400:276,1416:286,1424:296,1433.8:281.9" />
+</place>
+
+
+
+<place id="aphome" region="1" name="Dortoirs des internes" align="ap" inf="1266.8:163.2" bg="aphome" bginf="0:-30" randevent="0" music="ap3">
+<pre>sch(ap)+reput(ap,0)</pre>
+<game chain="24;9;10;11" chainknown="8" obj="0" bg="220:0" artft="Elts(2,null):2300;Elts(2,Block(1)):1000;Elts(2,Block(2)):1200;Elts(2,Block(3)):500;Dynamit(0):40;Dynamit(1):25;Alchimoth:10" />
+<desc>
+Au départ salle commune avec 5 lits et un poêle à bois, les dortoirs d'Audepint ont vite dû grandir avec l'arrivée de nouveaux étudiants. Au point qu'ils ont été séparés de l'enceinte du manoir pour intégrer un complexe super moderne dont l'architecture laisse tout le monde perplexe.
+Une chose qui n'a pas changé, c'est que les batailles de charcleur au prisonnier y sont toujours interdites. Ordre du Major Domou.
+</desc>
+<noway cond="sch(ap)+!reput(ap,0)">Tes mauvaises fréquentations ne sont pas bonnes pour tes études ! Réputation [Neutre] requise pour accéder aux dortoirs.</noway>
+<noway cond="!sch(ap)">Tu n'as rien à faire dans ces dortoirs ! Hors d'ici immédiatement !</noway>
+<extraaction aid="rest" cond="sch(ap)" />
+<move to="aphall" pa="0" />
+<move to="apchl" pa="0" />
+</place>
+	
+<place id="apchl" region="1" name="Chancellerie" align="ap" inf="1310.5:89.1" bg="apchl" randevent="0" bginf="0:0:1" music="ap2">
+<pre>sch(ap)+fx(apchl)</pre>
+<game chain="24;25;26;11" chainknown="8" obj="1" artft="Elts(2,null):2300;Elts(2,Block(1)):1000;Elts(2,Block(2)):1200;Elts(2,Block(3)):500;Dynamit(0):35;Dynamit(1):20;Alchimoth:10" modWeight="Elt(26):2" />
+<desc>
+Bien le bonjour Chancelier. Prenez vos aises, ces appartements sont les vôtres. 
+Tout le personnel de maison espère vous revoir la semaine prochaine et vous souhaite bonne chance dans vos alchimies.
+</desc>
+<noway bg="apchl">
+Ces appartements privés sont réservés au Chancelier de l'école. 
+Il paraît qu'il y a tout le confort moderne à l'intérieur, même un chaudron pour soi. 
+</noway>
+<move to="aphome" pa="0" />
+</place>
+
+
+<place id="apterr" region="1" name="Terrasse du Troisième" align="ap" inf="1389.2:202.9" bg="apterr" bginf="0:-35:1" randevent="3" music="ap2">
+<pre>(sch(ap)+reput(ap,1))|(!sch(ap)+reput(ap,2))</pre>
+<game chain="24;9;26;11" bg="235:0" chainknown="8" obj="0" artft="default;Dynamit(0):30;Dynamit(1):15;Alchimoth:10;Pistonide:35;Delorean(0):30" />
+<desc>
+La terrasse du manoir est l'endroit préféré de Régis Abélard, l'actuel chef de famille Audepint. Passionné depuis tout petit par la fin tragique de son arrière arrière etc grand-père, Audepint le 3e, on peut le voir scruter toutes la journée les montagnes décapitées en marmonnant des trucs et des machins. 
+Tout le monde s'accorde pour dire qu'il est un peu toqué... Mais gloire ! Gloire à Régis Abélard Audepint ! 
+</desc>
+<noway cond="sch(ap)+!reput(ap,1)" redir="/reputInfo">Ta réputation envers Audepint n'est pas suffisante ! Réputation [Bien disposé] requise.</noway>
+<noway cond="!sch(ap)+!reput(ap,2)" redir="/reputInfo">Ta réputation envers Audepint n'est pas suffisante ! Réputation [On se rappelle] requise.</noway>
+<move to="aphall" road="1323.8:202.8,1371:217,1380:208,1389.2:202.9" />
+</place>
+
+<place id="aparmy" region="1" name="La plaine de l'armée" align="ap" inf="1222.6:89.3" bg="aparmy" bginf="0:-10:1" randevent="2" music="ap3">
+<pre>reput(ap,1)</pre>
+<game chain="24;25;10;11"  bg="110:0" chainknown="8" obj="0" artft="Elts(2,null):3600;Elts(2,PolarBomb):1400;PolarBomb:40;Alchimoth:10" />
+<desc>
+Grande tradition de l'école, tout nouvel alchimiste certifié d'Audepint vient ici pour faire son bonhomme de neige personnel, avant d'aller se saoûler au faubourg avec ses nouveaux collègues.
+Vus de loin, tous ces bonhommes ont eu un effet dissuasif certain lors de la guerre contre Gemini, même si c'était pas fait exprès... d'où le nom étrange de Plaine de l'armée. 
+</desc>
+<noway cond="!reput(ap,1)">Hors d'ici, la famille Audepint n'aime pas voir des freluquets dans ton genre sous ses fenêtres ! Une réputation [Bien disposé] envers Audepint est requise pour venir ici.</noway>
+<move to="apfbg" road="1220.1:244.2,1169:214,1151:170,1121:143,1166:127,1168:109,1218:83" />
+<move to="apcol" hidden="(sch(ap)+reput(ap,1))|(!sch(ap)+reput(ap,2))" pa="1" road="1218:83,1262:72,1279:53,1321:49,1346:42,1359:68,1376:81,1397:76,1401:114,1417:116,1402:132,1388:154,1429:160,1455:158,1475:139,1438:143,1422:138,1444:137,1465:123,1446:113" />
+</place>
+	
+	
+<place id="apcol" region="1" name="Col du Talweg" align="ap" inf="1447.1:114.5" bg="apcol" bginf="0:-25:1" randevent="0" music="ap2">
+<pre>((sch(ap)+reput(ap,2))|(!sch(ap)+reput(ap,3)))</pre>
+<game chain="24;25;26;27" bg="190:0"  mode="ice" chainknown="8" obj="0" artft="Elts(2,null):2800;Elts(2,Block(2)):1000;Elts(2,Block(3)):800;Elts(2,Block(4)):50;Dynamit(0):35;Dynamit(1):20;Alchimoth:10;Grenade(0):20" modWeight="Elt(11):2" />
+<desc>
+Montagne la plus haute de Kringdam, le Talweg est aussi la plus visitée. 
+La température très basse de l'endroit en fait un lieu très difficile pour l'alchimie. Du coup, le col du Talweg est particulièrement apprécié pour les devoirs ardus, les bizutages et les paris idiots.
+</desc>
+
+<noway cond="sch(ap)+!reput(ap,2)">Ta réputation envers Audepint n'est pas suffisante ! Réputation [On se rappelle] requise.</noway>
+<noway cond="!sch(ap)+!reput(ap,3)">Ta réputation envers Audepint n'est pas suffisante ! Réputation [A bras ouverts] requise.</noway>
+<move to="aparmy" pa="1" road="1218:83,1262:72,1279:53,1321:49,1346:42,1359:68,1376:81,1397:76,1401:114,1417:116,1402:132,1388:154,1429:160,1455:158,1475:139,1438:143,1422:138,1444:137,1465:123,1446:113" />
+</place>
+	
+<place id="apcata" region="1" name="Trebuchet d'Albigeois" align="ap" inf="1293:342" bg="todo" bginf="0:-50:1" randevent="0" music="ap2">
+	<!-- TODO : QUEST ACCESS -->
+	<pre>disable()+reput(ap,5)</pre> 
+	<game chain="8;25;26;11" chainknown="8" obj="0" artft="default;Grenade(0):25;Grenade(1):15" />
+	<desc>
+	Attention, chutes de pierres.
+	</desc>
+	<move to="apvos" road="1207.6:380.8,1249:386,1277:367,1293:342" />
+	<move to="apgouf" cond="disable()" hidden="disable()" road="" />
+</place>
+
+<place id="apgouf" region="1" name="Le Bouffe-Gouffre" align="ap" inf="1414:341" bg="todo" bginf="0:-50" randevent="0" music="ap2">
+	<pre>disable()+sch(ap)+reput(ap,4)</pre>
+	<game chain="24;9;26;28" chainknown="8" obj="0" artft="default" />
+	<desc>
+	Ah mon dieu, c'est énorme !
+	</desc>
+	<move to="apcata" road="" />
+</place>
+
+
+//#################################################################################################################################
+//### REGION 2 : JEEZARA
+	
+	<place id="jztire" region="2" name="Bourg de Tirésias" align="jz" inf="880.5:605.2" bg="jztire" bginf="0:-50" music="jz1">
+		<game chain="16;9;10;11" chainknown="9" obj="1" bg="50:-10" artft="default;Grenade(0):30;Grenade(1):20;Alchimoth:10" />
+		<desc>
+		Avant 1575, Jeezara était encore taxée d'hérésie... Son alchimie plutôt obscure et sanglante était très mal vue par les habitants du village tout proche, Tirésias.
+		Le marketing et les campagnes de com' étant des notions inconnues à Jeezara, beaucoup de mentors ont fini sur le bûcher de la place du village.
+		L'entrée officielle de Jeezara dans l'ordre des alchimistes a vite mis fin à tout cela. Depuis, la peur des représailles a vidé Tirésias de ses habitants. On n'y croise plus guère que des étudiants Jeezara venus se défouler un peu.
+		</desc>
+		<move to="gubafa" road="725.9:592.4,760:582,821:585,845:594,880.5:605.2" />
+		<move to="jzzig" road="880.5:605.2,903:616,945:610,981:622,1026:613,1057:610,1053.5:580.9" />
+		<move to="jzdoor" road="880.5:605.2,869:619,860:630,830:638,824:655,814:679" />
+	</place>
+	
+	<place id="jzzig" region="2" name="Ziggourat d'or" align="jz" inf="1053.5:580.9" bg="jzzig" bginf="-10:-50" randevent="2" music="jz1">
+		<pre>reput(jz,1)</pre>
+		<game chain="16;17;10;11" chainknown="8" obj="0" artft="default;Dynamit(0):15;Dynamit(1):10;Teleport:20;Catz:4" modWeight="Elt(16):2" bg="200:-10" />
+		<desc>
+		De nombreuses hypothèses existent sur l'origine de la Ziggourat d'or, mais aucune n'a pu être vérifiée avec certitude.
+		Selon le guide Alchimichelin, la Ziggourat est le monument le plus utilisé dans les légendes et les histoires pour faire peur aux enfants (devant l'école Jeezara, si si). Elle est aussi le monument touristique le plus visité du royaume. 
+		Tout le monde est d'accord pour dire qu'elle abrite un grand pouvoir ou un gros tas de pognon. mais jusqu'à maintenant, nul n'a encore percé le secret de la Ziggourat d'or. 
+		</desc>
+		<noway cond="!reput(jz,1)">Ta réputation envers Jeezara n'est pas suffisante ! Réputation [Bien disposé] requise.</noway>
+		<move to="jztire" road="880.5:605.2,903:616,945:610,981:622,1026:613,1057:610,1053.5:580.9" />
+		<move to="jzvent" road="1053.5:580.9,1062:602,1063:605,1124:612,1168:608,1198:601,1207:593,1234:596,1232:593,1212:584,1217:583,1237:584,1242:583,1249:581,1262:576,1276:568,1270:561" />
+	</place>
+	
+	<place id="jzdoor" region="2" name="Entrée du boyau" align="jz" inf="814:679" bg="jzdoor" bginf="0:-50" music="jz1">
+		<pre>reput(jz,-1)|hascollection(cpoum)</pre>
+		<game chain="12;9;10;11" chainknown="9" obj="0" artft="default;Dynamit(0):30;Dynamit(1):15;Alchimoth:10" bg="240:-10" />
+		<desc>
+		Ici se trouve l'ancienne entrée secrète de l'école souterraine Jeezara, aussi appelée "le Boyau". 
+		Depuis que Jeezara est devenue école officielle d'alchimie, plus besoin de se cacher. Des panneaux de signalisation ont donc été installés pour trouver l'entrée secrète facilement. 
+		Par contre, il semblerait que les anciens pièges mortels n'aient pas tous été retrouvés... Jeezara les désactive donc chaque fois qu'un visiteur imprudent met la main (ou le pied) dessus.
+		</desc>
+		<noway cond="!reput(jz,-1)+!hascollection(cpoum)" did="nowaymonster" />
+		<move to="jztire" road="880.5:605.2,869:619,860:630,830:638,824:655,814:679" />
+		<move to="jzboy" road="814:679,830:712,842:718,826:728,848:730,829:743,834:748,851.8:753.2" />
+		<move to="jzclai" hidden="(sch(jz)+reput(jz,0))|(!sch(jz)+reput(jz,1))" road="814:679,786:688,769:678,751:681,717:703,720:750,696:754,693:762,683.4:782.4" />
+	</place>
+	
+	<place id="jzboy" region="2" name="Boyau central" align="jz" inf="851.8:753.2" bg="jzboy" bginf="-10:-50" randevent="2" music="jz2">
+		<pre>(sch(jz)+reput(jz,0))|(!sch(jz)+reput(jz,1))</pre>
+		<game chain="16;13;10;11" chainknown="8" obj="0" artft="default;Dynamit(0):30;Dynamit(1):15;Grenade(1):10;MentorHand:2;Protoplop(1):15;Grenade(0):15"  bg="100:-10"  modWeight="Elt(5):2" />
+		<desc>
+		Carrefour principal de Jeezara, le boyau central est un passage obligé pour aller d'un bout à l'autre de l'école. 
+		Au fil du temps beaucoup d'alchimistes ont fait installer des ponts au dessus du gouffre, pour gagner du temps dans leurs déplacements. Mais l'entretien n'est pas une notion bien maîtrisée chez Jeezara, il est donc souvent plus prudent de faire le tour de la corniche au lieu d'emprunter un des - rares - ponts encore debouts. 
+		</desc>
+		<noway cond="sch(jz)+!reput(jz,0)">Ta réputation envers Jeezara n'est pas suffisante ! Réputation [Neutre] requise.</noway>
+		<noway cond="!sch(jz)+!reput(jz,1)">Ta réputation envers Jeezara n'est pas suffisante ! Réputation  [Bien disposé] requise.</noway>
+		<move to="jzdoor" road="814:679,830:712,842:718,826:728,848:730,829:743,834:748,851.8:753.2" />
+		<move to="jzlabo" hidden="curquest(borne,1)|(sch(jz)+reput(jz,1))|(!sch(jz)+reput(jz,2))" road="851.8:753.2,880:738,900:724,912:725,925:720,930:722,937:741,950:744,970:734,980:726,990:727,1002:745,1019:751,1033:752,1058:770,1087:780,1105:785,1120.8:754" />
+		<move to="jzsaka" hidden="(sch(jz)+reput(jz,0))|(!sch(jz)+reput(jz,1))" road="851.8:753.2,857:770,869:772,867:783,879:777,897:769,901:774,911:771,904:779,916:780,925:786.9" />
+		<move to="jzhome" hidden="sch(jz)" road="782:797.5,799:814,805:806,814:813,814:786,797:764,800:754,808:746,811:755,818:765,831:769,851.8:753.2" />
+		<move to="jzamph" cond="disable()" hidden="disable()" road="851.8:753.2,854:750,823:767,786:789,765:773,793:766,784:751" />
+	</place>
+	
+	
+	<place id="jzlabo" region="2" name="Labolodun" align="jz" inf="1120.8:754" bg="jzlabo" bginf="-10:-50" randevent="0" music="jz2">
+		<pre>((reput(jz,2)+sch(jz))|reput(jz,3))+!curquest(schoo)+!curquest(borne,1)</pre>
+		<game chain="16;13;18;15" chainknown="8" obj="1" bg="75:-10" artft="moreneutral;Dynamit(0):20;Dynamit(1):15;Alchimoth:5;Destroyer(null):10;Dynamit(2):10;PearGrain(0):10;Protoplop(0):5;Dalton:5;Wombat:7;MentorHand:1;Jeseleet(0):6;Jeseleet(1):4;Delorean(0):8;Dollyxir(0):8;Detartrage:6;Grenade(0):15;Grenade(1):10;Teleport:7;Tejerkatum:5;Pistonide:7" />
+		<noway bg="jzlabo" did="pojz" cond="curquest(schoo)" />
+		<noway bg="jzlabo" did="borneb" cond="curquest(borne,1)" />
+		<noway cond="!curquest(schoo)+sch(jz)+!reput(jz,2)">Ta réputation envers Jeezara n'est pas suffisante ! Réputation [On se rappelle] requise.</noway>
+		<noway cond="!curquest(schoo)+!sch(jz)+!reput(jz,3)">Ta réputation envers Jeezara n'est pas suffisante ! Réputation [A bras ouverts] requise. </noway>
+		<desc>
+		Le véritable coeur de Jeezara ! Le Labolodun est le laboratoire de recherche principal de l'école. Ames sensibles s'abstenir. 
+		Agencé selon la doctrine jeezariste dite "open-space", chaque étudiant dispose de sa paillasse individuelle dans la grande salle commune. Idéal pour piquer les idées du voisin ! On peut noter que les mentors les plus éminents, grands défenseurs de l'open-space, ont droit à des bureaux fermés individuels. 
+		Les alchimies au Labolodun sont réputées difficiles. Les activités plus ou moins dangereuses des voisins peuvent faire apparaître des objets parfois un peu perturbants...
+		</desc>
+		<move to="jzboy" road="851.8:753.2,880:738,900:724,912:725,925:720,930:722,937:741,950:744,970:734,980:726,990:727,1002:745,1019:751,1033:752,1058:770,1087:780,1105:785,1120.8:754" />
+	</place>
+	
+	
+	<place id="jzsaka" region="2" name="Sakapata" align="jz" inf="925:786.9" bg="jzsaka" bginf="-10:-50" randevent="3" music="jz2">
+		<pre>(sch(jz)+reput(jz,1))|(!sch(jz)+reput(jz,2))|hascollection(cpoum)</pre>
+		<game chain="8;9;14;11" chainknown="8" obj="0" artft="default;Dynamit(0):30;Dynamit(1):15;Alchimoth:10;Jeseleet(0):20;Jeseleet(1):15" modWeight="Elt(8):2" bg="2:-10" />
+		<desc>
+		Sakapata : nom masculin du patois Yoruba. Littéralement "salle de bruits" ou "salade de bruits" (les avis divergent). 
+		Le Sakapata est la salle d'étude. Il a été créé pour tester un lieu studieux, bien loin du bazar permanent jeezariste. Les jeunes étudiants sont encouragés à y faire leurs devoirs pour que les mentors puissent analyser l'intérêt de l'ordre et du calme dans les études. 
+		Finalement, tout le monde vient ici pour raconter des blagues sur Shang-Kah et jouer à la belote. L'expérience a donc conclu que l'ordre et le calme ne présentaient aucun intérêt pour l'alchimie.
+		</desc>
+		<noway cond="sch(jz)+!reput(jz,1)">Ta réputation envers Jeezara n'est pas suffisante ! Réputation [Bien disposé] requise.</noway>
+		<noway cond="!sch(jz)+!reput(jz,2)">Ta réputation envers Jeezara n'est pas suffisante ! Réputation [On se rappelle] requise.</noway>
+		<move to="jzboy" road="851.8:753.2,857:770,869:772,867:783,879:777,897:769,901:774,911:771,904:779,916:780,925:786.9" />
+		<move to="jzcata" hidden="(sch(jz)+reput(jz,1))|(!sch(jz)+reput(jz,2))" road="925:786.9,938:788,953:786,965:787,979:789,989:790,1000:818,1024:847,1026:840,1035:830,1044.6:812.8" />
+	</place>
+	
+	<place id="jzcata" region="2" name="Catacombes de Marawu" align="jz" inf="1044.6:812.8" bg="jzcata" bginf="-10:-50" randevent="0" music="jz3">
+		<pre>(sch(jz)+reput(jz,2))|(!sch(jz)+reput(jz,3))</pre>
+		<game chain="8;9;10;15" mode="dig" chainknown="8" obj="0" artft="moreneutral;Dynamit(0):20;Dynamit(1):10;Alchimoth:5;Grenade(0):20;Grenade(1):4" bg="80:-10" />
+		<desc>
+		Les catacombes sont directement connectées aux tables du Labolodun. Toute expérience ratée est balancée dans les tuyaux pour atterrir ici.
+		Bizarrement, on croise beaucoup de monde au Marawu : élèves qui cherchent un truc pas trop pourri pour un devoir oublié, fiestas étudiantes, mentors en mal d'inspiration et j'en passe.
+		</desc>
+		<noway cond="sch(jz)+!reput(jz,2)">Ta réputation envers Jeezara n'est pas suffisante ! Réputation [On se rappelle] requise.</noway>
+		<noway cond="!sch(jz)+!reput(jz,3)">Ta réputation envers Jeezara n'est pas suffisante ! Réputation [A bras ouverts] requise.</noway>
+		<move to="jzsaka" road="925:786.9,938:788,953:786,965:787,979:789,989:790,1000:818,1024:847,1026:840,1035:830,1044.6:812.8" />
+	</place>
+	
+	
+	<place id="jzhome" region="2" name="Dortoir commun" align="jz" inf="782:797.5" bg="jzhome" bginf="-10:-50" randevent="0" music="jz2">
+		<pre>sch(jz)+reput(jz,0)</pre>
+		<game chain="12;17;10;11" chainknown="8" obj="0" artft="default;Dynamit(0):30;Dynamit(1):15;Alchimoth:10;Protoplop(1):15;Grenade(0):10" bg="165:-5"/>
+		<desc>
+		A la fondation de l'école Jeezara, l'excavation du boyau central a mis au jour une antique salle funéraire. Les mentors de l'époque l'ont trouvée très pratique : les petites niches faisaient des lits pas trop inconfortables, il y avait même un lavabo ancestral pour se laver les dents au milieu de la pièce. 
+		Ni une ni deux, cette pièce est devenue le dortoir commun de Jeezara, et personne n'a trouvé à s'en plaindre depuis toutes ces années. La déco est même très appréciée des étudiants.
+		</desc>
+		<noway cond="sch(jz)+!reput(jz,0)">
+		Le dortoir est réservé aux étudiants qui bossent un minimum. Réputation [Neutre] envers Jeezara requise.
+		</noway>
+		<noway cond="!sch(jz)">
+		Tu n'as rien à faire dans ce dortoir ! Hors d'ici immédiatement !
+		</noway>
+		<extraaction aid="rest" cond="sch(jz)" />
+		<move to="jzboy" road="782:797.5,799:814,805:806,814:813,814:786,797:764,800:754,808:746,811:755,818:765,831:769,851.8:753.2" />
+	</place>
+	
+	<place id="jzamph" region="2" name="Amphithéâtre des Orishas" align="jz" inf="784:751" bg="todo" bginf="-10:-50" randevent="0" music="jz3">
+		<pre>disable()+((sch(jz)+reput(jz,3))|(!sch(jz)+reput(jz,4)))</pre>
+		<game chain="12;17;14;19" chainknown="8" obj="0" artft="default;Dollyxir(0):15;Dollyxir(1):1" modWeight="Elt(14):1.5" />
+		<noway>Intrus détecté ! ALERTE ! ALERTE !</noway>
+		<desc>
+		Cours magistraux.
+		</desc>
+		<move to="jzboy" road="851.8:753.2,854:750,823:767,786:789,765:773,793:766,784:751" />
+	</place>
+	
+	<place id="jzclai" region="2" name="Clairière X" align="jz" inf="683.4:782.4" bg="jzclai" bginf="-10:-50" randevent="3" music="jz1">
+		<pre>(sch(jz)+reput(jz,1))|(!sch(jz)+reput(jz,2))</pre>
+		<game chain="12;13;10;11" chainknown="8" obj="0" artft="Elts(2,null):5000" modWeight="Elt(12):2" bg="310:-10" />
+		<desc>
+		La clairière X est un haut lieu de l'archéologie. Elle doit bien sûr son nom à la mystérieuse lettre X visible en son centre. 
+		Emplacement d'un trésor pirate ? Marque de soucoupe volante d'une autre galaxie ? Centre de l'univers autoproclamé ? Nul ne le sait pour l'instant. 
+		Heureusement, une équipe archéologique est sur les dents depuis plusieurs années : la marque est bien protégée, et l'étude de la clairière est en cours. Une autre équipe recherche les clairières A, B, C, etc... Mais pour l'instant : rien.
+		</desc>
+		<noway cond="sch(jz)+!reput(jz,1)">Ta réputation envers Jeezara n'est pas suffisante ! Réputation [Bien disposé] requise.</noway>
+		<noway cond="!sch(jz)+!reput(jz,2)">Ta réputation envers Jeezara n'est pas suffisante ! Réputation [On se rappelle] requise.</noway>
+		<move to="jzdoor" road="814:679,786:688,769:678,751:681,717:703,720:750,696:754,693:762,683.4:782.4" />
+		<move to="jzbaba" pa="0" cond="disable()" hidden="disable()" />
+	</place>
+	
+	<place id="jzbaba" region="2" name="Baba-Yaga Project X34" align="jz" inf="656:755" bg="todo" bginf="-10:-50" randevent="0" music="jz3">
+		<pre>disable()+sch(jz)+reput(jz,4)</pre>
+		<game chain="8;13;18;28" chainknown="8" obj="0" artft="default" />
+		<noway>Tu n'es jamais venu ici. Cette porte n'existe pas. Regarde bien la lumière... Tes paupières sont lourdes... </noway>
+		<desc>
+		Accès sécurisé. Secret défense. 
+		</desc>
+		<move to="jzclai" pa="0" />
+	</place>
+	
+	
+	<place id="jzvent" region="2" name="Plateau des thèses" align="jz" inf="1270:561" bg="jzvent" bginf="-10:-50"  randevent="0" music="jz3">
+		<pre>(sch(jz)+reput(jz,3))|(!sch(jz)+reput(jz,4))</pre>
+		<game chain="8;9;14;15" chainknown="8" obj="0" artft="default;Dollyxir(0):325;Dynamit(1):35" modWeight="Elt(15):1.3" bg="10:0" />
+		<desc>
+		Au contrefort des montagnes noires, le plateau des thèses est ce qui se rapproche le plus, s'il devait en exister une, d'une tradition jeezariste. 
+		Chaque pilier a été planté ici par un alchimiste passé au rang de mentor de Jeezara. Sur chaque pilier, c'est une thèse alchimique complète qui se dessine. Le seul jury de Jeezara, c'est la volonté d'écrire ses découvertes dans le granit, et la force de le porter jusqu'ici. 
+		Libre à chacun de se proclamer mentor avec une recette de potion jaune... Mais il sera moqué pour des siècles et des siècles.
+		</desc>
+		<noway cond="sch(jz)+!reput(jz,3)">Ta réputation envers Jeezara n'est pas suffisante ! Réputation [A bras ouverts] requise.</noway>
+		<noway cond="!sch(jz)+!reput(jz,4)">Ta réputation envers Jeezara n'est pas suffisante ! Réputation [Chouchou] requise.</noway>
+		<move to="jzzig" road="1053.5:580.9,1062:602,1063:605,1124:612,1168:608,1198:601,1207:593,1234:596,1232:593,1212:584,1217:583,1237:584,1242:583,1249:581,1262:576,1276:568,1270:561" />
+	</place>
+
+
+	
+//#################################################################################################################################
+//### REGION 3 : GEMINI
+
+	<place id="gmprai" region="3" name="Prairie infinie" align="gm" inf="566.6:200.1" bg="gmprai" bginf="-10:-50:1" music="gm1">
+		<pre>quest(siflex)+quest(grim)</pre>
+		<game chain="12;9;10;11" chainknown="9" obj="0"  bg="270:-10" artft="Elts(2,null):2400;Elts(2,Neutral):2600;Dynamit(0):30;Dynamit(1):15;Alchimoth:10" />
+		<desc>
+		La prairie infinie est la plus grande zone herbeuse du royaume. 
+		Un cauchemar pour tout jardinier si la faune locale ne s'occupait pas de la tonte. Friandes d'herbe fraîche, plusieurs espèces animales assurent un gazon parfait, digne d'un jardin Perfidalbionais.
+		Les nuits de pleine lune, il n'est pas rare d'y croiser d'éminents alchimistes géminites qui profitent de la fraîcheur nocturne en se faisant un petit golf entre collègues.
+		</desc>
+		<noway bg="gmprai" cond="!(quest(siflex)+quest(grim))">Hum... il est peut-être plus prudent de rester en ville pour l'instant. </noway>
+		<move to="agoraa"  road="791:404.1,785:355,762:350,694:348,675:338,675:294,696:270,687:232,659:222,566.6:200.1" />
+		<move to="gmoree" road="656.8:131.2,654:161,610:156,588:184,585:191,566.6:200.1" />
+		<move to="gmorac" cond="disable()" hidden="disable()" road="566.6:200.1,643:178,606:188,586:204,556:200,503:212,455:213,437:226,420:238" />
+	</place>
+	
+	<place id="gmoree" region="3" name="L'orée du bois" align="gm" inf="656.8:131.2" bg="gmoree" bginf="-5:-40" music="gm1">
+		<pre>reput(gm,-1)</pre>
+		<game bg="220:-10" chain="20;9;10;11" chainknown="9" obj="0" artft="moreneutral;Dynamit(0):30;Dynamit(1):15;Alchimoth:10;PearGrain(0):25;PearGrain(1):1" modWeight="Elt(4):2" />
+		<desc>
+		Voilà l'entrée de la grande forêt géminite qui abrite l'école du même nom. 
+		Au fil des siècles, de nombreux promoteurs immobiliers ont tenté de la raser pour construire des résidences de standing (un peu comme les dortoirs Audepint), mais les enchantements mis en place par l'école leur ont vite fait manger les pissenlits par la racine. 
+		La Guilde des alchimistes a décrété que la forêt était officiellement "réserve naturelle protégée" pour couper court aux projets immobiliers et  par conséquent protéger les promoteurs d'une mort violente. 
+		</desc>
+		<noway cond="!reput(gm,-1)">Ta réputation envers Gemini n'est pas suffisante ! Réputation [Condescendant] requise.</noway>
+		<move to="gmprai" road="656.8:131.2,654:161,610:156,588:184,585:191,566.6:200.1" />
+		<move to="gmsch" road="656.8:131.2,663:86,613:82,586.1:54" />
+		<move to="gmclim" hidden="(sch(gm)+reput(gm,1))|(!sch(gm)+reput(gm,2))" road="675:124,699:102,733:90,761:74,829:72,857:94,862.8:70.2" />
+		<move to="gmkrom" road="380.1:143.8,427:139,479:134,532:121,584:133,609:142,630:133,656.8:131.2" />
+	</place>
+	
+	
+	<place id="gmsch" region="3" name="Ecole Didi-Wan Gemini" align="gm" inf="586.1:54" bg="gmsch" bginf="-0:-30" randevent="2" music="gm3">
+		<pre>(((sch(gm)|sch(gu))+reput(gm,0))|reput(gm,1))+!curquest(schoo)</pre>
+		<game chain="20;13;10;11" chainknown="8" obj="0" artft="moreneutral;Dynamit(0):30;Dynamit(1):15;Alchimoth:10;PearGrain(0):35;PearGrain(1):7" modWeight="Elt(13):2" bg="70:-10" />
+		<desc>
+		Gemini est l'école reine de l'herboristerie et des exploits sportifs. Elle a aussi une bonne réputation en breuvages fermentés à base d'éléments alchimiques. 
+		Didi-Wan Gemini est le nom complet de l'école, mais tout le monde dit Gemini pour faire court. Dans un excès de logique inutile un ancien Korki de l'école, le Korki Ocom'Ak, avait proposé d'utiliser le raccourci "Didi" à la place. Sa proposition a disparu en même temps que lui, avalé par une autre dimension lors d'une recette loupée. 
+		</desc>
+		<noway bg="gmsch" did="pogm" cond="curquest(schoo)" />
+		<noway cond="!curquest(schoo)+sch(gu)+!reput(gm,0)">
+		Ta réputation envers Gemini n'a pas l'air au beau fixe. Réputation [Neutre] requise.
+		</noway>
+		<noway cond="!curquest(schoo)+sch(gm)+!reput(gm,0)">
+		Il va falloir améliorer ta réputation si tu veux entrer dans l'école ! Tes mauvaises fréquentations ne sont pas bonnes pour tes études ! Réputation [Neutre] requise.
+		</noway>
+		<noway cond="!curquest(schoo)+!sch(gm)+!sch(gm)+!reput(gm,1)">
+		Ta réputation envers Gemini n'est pas suffisante ! Réputation [Bien disposé] requise.
+		</noway>
+		<move to="gmoree" road="656.8:131.2,663:86,613:82,586.1:54" />
+		<move to="gmhome" hidden="sch(gm)" pa="0" />
+	</place>
+		
+	<place id="gmhome" region="3" name="Dortoir du Ker-pennti" align="gm" inf="515.1:18.1" bg="gmhome" bginf="0:-35" randevent="0" music="gm3">
+		<pre>sch(gm)+reput(gm,0)</pre>
+		<game chain="20;13;10;11" chainknown="8" obj="0" artft="moreneutral;Dynamit(0):30;Dynamit(1):15;Alchimoth:10;PearGrain(0):35;PearGrain(1):7" bg="15:-10" />
+		<desc>
+		Les dortoirs de Gemini sont un exemple d'intégration architecturale dans un milieu naturel. En gros, chaque étudiant dispose d'un hamac qu'il peut accrocher où il veut dans la forêt. 
+		Certains élèves ont fait beaucoup d'efforts : bibliothèque intégrée dans un tronc d'arbre, toilettes privées à 30 mètres de haut... 
+		</desc>
+		<noway cond="sch(gm)+!reput(gm,0)">Ta réputation envers Gemini n'est pas suffisante ! Réputation [Neutre] requise.</noway>
+		<noway cond="!sch(gm)">Le dortoir est réservé aux élèves Gemini ! </noway>
+		<extraaction aid="rest" cond="sch(gm)" />
+		<move to="gmsch" pa="0" />
+	</place>
+	
+	
+	<place id="gmclim" region="3" name="Climatex" align="gm" inf="862.8:70.2" bg="gmclim" bginf="-10:-10" randevent="0" music="gm2">
+		<pre>((sch(gm)+reput(gm,2))|(!sch(gm)+reput(gm,3)))</pre>
+		<game bg="110:0" chain="8;9;22;23" mode="mission" chainknown="8" obj="0" artft="Elts(2,null):2500;Elts(2,Neutral):2500;Dynamit(0):30;Dynamit(1):15;Alchimoth:10;Protoplop(1):0;Tejerkatum:7" modWeight="Elt(21):2" />
+		<desc>
+		Le Climatex était le projet le plus ambitieux de Gemini : réunir et conserver au même endroit toutes les espèces végétales aux vertus alchimiques connues.
+		Hélas, l'énorme concentration de puissance alchimique rassemblée a entraîné des mutations plutôt malheureuses : de nombreux alchimistes ont été dévorés par des ficus déchaînés et des pissenlits  sans scrupules.
+		Le sauvetage du Climatex est une des priorités de Gemini, mais les alchimistes assez inconscients pour y pénétrer se comptent sur les coussinets d'un wombat.
+		</desc>
+		<noway cond="sch(gm)+!reput(gm,2)">Ta réputation envers Gemini n'est pas suffisante ! Réputation [On se rappelle] requise.</noway>
+		<noway cond="!sch(gm)+!reput(gm,3)">Ta réputation envers Gemini n'est pas suffisante ! Réputation [A bras ouverts] requise.</noway>
+		<move to="gmoree" road="656.8:131.2,699:102,733:90,761:74,829:72,857:94,862.8:70.2" />
+		<!-- <move to="gmkgw" cond="disable()" hidden="disable()" road="862.8:70.2,928:90,968:66,992:40,1020:43,1044:68,1073:82" /> -->
+		<move to="gmnama" cond="disable()" hidden="disable()" road="862.8:70.2,902:116,881:132,888:157,901:177,918:210" />
+	</place>
+	
+	<place id="gmkrom" region="3" name="Kromlech du Penkrack" align="gm" inf="380.1:143.8" bg="gmkrom"  bginf="0:-40" randevent="2" music="gm1">
+		<pre>reput(gm,1)</pre>
+		<game bg="200:0" chain="12;21;10;11" chainknown="8" obj="1" artft="default;Dynamit(0):30;Dynamit(1):15;Alchimoth:10" modWeight="Elt(7):2" />
+		<desc>
+		Le kromlech est le lieu number one de rendez-vous des étudiants géminites. C'est ici qu'ont lieu les petites fêtes estivales, les matchs amicaux de sports virils, la drague estudiantine et la préparation des antisèches.
+		Les assemblages granitiques du kromlech sont très appréciés pour les parties de Gemini Croquet : une version plus musclée de ce sport perfidalbionien, à base de balle en fonte de mercurule et d'arceaux inébranlables.
+		</desc>
+		<noway cond="!reput(gm,1)">Ta réputation envers Gemini n'est pas suffisante ! Réputation [Bien disposé] requise.</noway>
+		<move to="gmoree" road="380.1:143.8,427:139,479:134,532:121,584:133,609:142,630:133,656.8:131.2" />
+		<move to="gmfal" hidden="(sch(gm)+reput(gm,0))|(!sch(gm)+reput(gm,1))" road="380.1:143.8,358:140,330:140,315:158,311:172,285:164,256.3:184.8" />
+		<move to="gmkork" road="380.1:143.8,371:121,350:109,333:92,310:83,305:72,311:65,319:58,330:42" /> 
+	</place>
+	
+	<place id="gmfal" region="3" name="Falaises anamentholées" align="gm" inf="256.3:184.8" bg="gmfal"  bginf="0:-40" randevent="3" music="gm3">
+		<pre>(sch(gm)+reput(gm,1))|(!sch(gm)+reput(gm,2))</pre>
+		<game bg="160:0" chain="8;13;14;11" chainknown="8" obj="1" artft="moreneutral;Dynamit(0):30;Dynamit(1):15;Alchimoth:10;Dalton:20" modWeight="Elt(9):2" />
+		<desc>
+		Les falaises anamentholées doivent leur nom à une vieille querelle entre deux chercheurs géminites. C'est en effet ici que s'est déroulée la bien connue course de cormorans chargés aux anabolisants mentholés, organisée pour départager les créations des étudiants Cyrilik Mahasse et Germain Lecoussin.
+		La course a bien fait rire le royaume à l'époque,  les deux cormorans explosant tous les deux au top départ.
+		Aujourd'hui professeurs à Gemini, Cyrilik et Germain continuent leurs rivalités dopantes. S'ils vous proposent un truc à boire, courez ! 
+		</desc>
+		<noway cond="sch(gm)+!reput(gm,1)">Ta réputation envers Gemini n'est pas suffisante ! Réputation [Bien disposé] requise.</noway>
+		<noway cond="!sch(gm)+!reput(gm,2)">Ta réputation envers Gemini n'est pas suffisante ! Réputation [On se rappelle] requise.</noway>
+		<move to="gmkrom" road="380.1:143.8,358:140,330:140,315:158,311:172,285:164,256.3:184.8" />
+	</place>
+	
+	
+	<place id="gmkork" region="3" name="Prieuré Korki" align="gm" inf="330:42" bg="gmkork" bginf="-10:0" randevent="0" music="gm2">
+		<pre>(sch(gm)+reput(gm,3))|(!sch(gm)+reput(gm,4))</pre>
+		<game chain="20;21;22;23" chainknown="8" obj="0" artft="default;Teleport:350;Grenade(0):50" bg="120:0" modWeight="Elt(23):1.3"/>
+		<desc>
+		Sur les rives du Penkrack, fleuve qui donne son nom à cette verdoyante contrée, se trouve le prieuré des vénérables Korkis. Dirigeants officiels de l'école Gémini, les Korkis vivent en ermite pour assurer leurs fonctions spirituelles au plus proche de la terre et de l'eau. 
+		Retirés en hauteur et très maigres, les Korkis sont difficiles à apercevoir. Mais on dit que leur regard bienveillant favorise les gros scores au Prieuré. 
+		</desc>
+		<noway cond="sch(gm)+!reput(gm,3)">Ta réputation envers Gemini n'est pas suffisante ! Réputation [A bras ouverts] requise.</noway>
+		<noway cond="!sch(gm)+!reput(gm,4)">Ta réputation envers Gemini n'est pas suffisante ! Réputation [Chouchou] requise.</noway>
+		<move to="gmkrom" road="380.1:143.8,371:121,350:109,333:92,310:83,305:72,311:65,319:58,330:42" />
+	</place>
+
+
+
+	<place id="gmnama" region="3" name="Arbre Namaguer" align="gm" inf="918:210" bg="todo" bginf="-10:-50" randevent="0" music="gm2">
+		<pre>disable()+sch(gm)+reput(gm,4)</pre>
+		<game chain="8;9;14;28" obj="0" artft="default" />
+		<noway>Il semblait y avoir un chemin par là, mais après quelques mètres la forêt devient impénétrable. Mieux vaut faire demi tour.</noway>
+		<desc>
+		
+		</desc>
+		<move to="gmclim" />
+	</place>
+	
+
+	<place id="gmorac" region="3" name="Oracle de la Bernique " align="gm" inf="420:238" bg="todo" bginf="-10:-50" randevent="0" music="gm2">
+		<!-- QUEST ACCESS -->
+		<pre>disable()+sch(gm)+reput(gm,5)</pre>
+		<noway>Le chemin s'arrête brutalement au bord de la falaise... bizarre.</noway>
+		<game chain="12;9;22;11" chainknown="8" obj="0" artft="moreneutral;Delorean(0):35;Delorean(1):5" modWeight="Elt(22):1.5" />
+		<desc>
+		
+		</desc>
+		<move to="gmprai" road="668:190,643:178,606:188,586:204,556:200,503:212,455:213,437:226,420:238" />
+	</place>
+
+
+//#################################################################################################################################
+//### REGION 3 : SHANG-KAH
+
+	<place id="sktupu" region="4" name="Ecole communale Tupuri" align="sk" inf="461.0:585.6" bg="sktupu" bginf="0:-40" music="sk1">
+		<pre>quest(siflex)+quest(grim)</pre>
+		<game chain="16;9;10;11" chainknown="9" obj="0" artft="default;Dynamit(0):30;Dynamit(1):15;Alchimoth:10;Dynamit(2):15" bg="205:-10" />
+		<desc>
+		L'école Shang-Kah se divise en 3 écoles communales dans le désert de Sharrukin. Chacune d'elles correspond à un niveau d'enseignement. Tupuri, à l'entrée du désert, est l'école des débutants. 
+		Les étudiants se plaignent beaucoup de son confort très rudimentaire, mais les professeurs Shang-Kah assurent  que c'est fait exprès : Les cafards, l'eau froide et la literie en sable sont censés motiver les étudiants à bien travailler pour vite changer de locaux. C'est vrai que d'après les statistiques de la Guilde, Shang-Kah est l'école avec le plus faible taux de redoublement en première année. 
+		</desc>
+		<noway bg="sktupu" cond="!(quest(siflex)+quest(grim))">Il fait chaud ici, j'ai dû m'égarer... Demi-tour !</noway>
+		<move to="chouet" road="557:426,516:456,503:481,527:498,532:513,505:524,486:556,476:561,461.0:585.6" />
+		<move to="skmedi" road="461.0:586.7,439:588,410:577,393:580,380:589,349.9:600.4502:540" />
+		<move to="skhoma" hidden="sch(sk)" pa="0" />
+	</place>
+	
+	<place id="skhoma" region="4" name="Dortoir Tupuri" align="sk" inf="393.2:531.7" bg="skhoma" bginf="-10:-50" randevent="0" music="sk1">
+		<pre>sch(sk)+(!grade(sk,8)|curquest(ska))</pre>
+		<game chain="16;9;10;11" chainknown="8" obj="0" artft="default;Dynamit(0):30;Dynamit(1):15;Alchimoth:10;Dynamit(2):15" bg="305:-8" />
+		<desc>
+		Les tentes de l'école Tupuri ne sont pas très accueillantes... Elles assurent pourtant le confort indispensable en plein désert : une nuit à l'abri du froid et une matinée à l'abri du très chaud. Idéal pour la grasse matinée ! 
+		Les jeunes étudiants qui râlent et préfèrent dormir à la belle étoile pour époustoufler leurs collègues comprennent vite leur erreur : doigts gelés puis coups de soleil passé 9h du mat'. Ainsi va l'apprentissage à Shang-Kah : on ne fait une idiotie qu'une seule fois.
+		</desc>
+		<noway bg="skhoma" cond="sch(sk)+grade(sk,8)+!curquest(ska)">Vous êtes un trop grand alchimiste pour dormir ici, voyons ! Votre place est dans les chambres Shari, à l'ouest.</noway>
+		<extraaction aid="rest" cond="sch(sk)+!grade(sk,8)" />
+		<move to="sktupu" pa="0" />
+	</place>
+	
+	<place id="skmedi" region="4" name="Medina Shaka Shaka" align="sk" inf="349.9:600.4" bg="skmedi" bginf="-10:-50" music="sk1">
+		<pre>reput(sk,-1)</pre>
+		<game chain="8;9;10;11" chainknown="8" obj="0" artft="default;Dynamit(0):30;Dynamit(1):15;Wombat:6" modWeight="Elt(1):2" bg="185:-7" />
+		<desc>
+		Peu d'alchimistes le savent, mais la Médina Shaka Shaka a été construite en 1160 pour être la station balnéaire la plus luxueuse du royaume. Sauf que pas de bol, l'océan a charrié tellement de sable au fil des siècles que Sharrukin est devenu un vrai désert... Avec la Médina au milieu ! 
+		En demandant gentiment à la Super Supérette vous pourrez peut-être avoir des palmes ou une planche de surf à très bas prix, sortis du vieux stock des arrières-arrières-arrières-arrières-propriétaires.
+		</desc>
+		<noway cond="!reput(sk,-1)">Ta réputation envers Shang-Kah n'est pas suffisante ! Réputation [Condescendant] requise.</noway>
+		<move to="sktupu" road="461.0:586.7,439:588,410:577,393:580,380:589,349.9:600.4" />
+		<move to="skshar" road="349.9:600.4,298:620,243:630" />
+		<move to="skoasi" hidden="(sch(sk)+reput(sk,0))|(!sch(sk)+reput(sk,1))" road="349.9:600.4,336:634,316:644,320:652,339:657,340:680,313:717.7" />
+	</place>
+
+	<place id="skshar" region="4" name="Ecole communale Shari" align="sk" inf="240.1:624.6" bg="skshar" bginf="-5:-30" randevent="2" music="sk2">
+		<pre>(((sch(sk)|sch(gu))+reput(sk,0))|reput(sk,1))+!curquest(schoo)</pre>
+		<game chain="8;17;10;11" chainknown="8" obj="0" artft="default;Dynamit(0):30;Dynamit(1):15;Dynamit(2):20;Destroyer(0):10;Destroyer(1):10" modWeight="Elt(6):2" bg="55:-10" />
+		<noway bg="skshar" did="posk" cond="curquest(schoo)" />
+		<noway cond="!curquest(schoo)">Ta réputation envers Shang-Kah n'est pas suffisante ! Réputation [Bien disposé] requise.</noway>
+		<desc>
+		Shari est la seconde école de Shang-Kah. C'est ici que travaillent les étudiants qui ont obtenu le 8e niveau d'enseignement, celui qui valide leur statut d'alchimiste officiel.
+		Place en plus, matelas neufs, fauteuils confortables... le contraste avec Tupuri est saisissant ! Shang-Kah constate d'ailleurs une nette baisse de motivation chez les nouveaux alchimistes à leur arrivée à Shari. Une des solutions proposées pour la rentrée prochaine est de mettre un lit de moins que le nombre de pensionnaires.
+		</desc>
+		<move to="skmedi" road="349.9:600.4,298:620,243:630" />
+		<move to="skhomb" hidden="sch(sk)" pa="0" />
+		<move to="skguic" road="240.1:624.6,240:590,227:580,208:568,221:557,208:554,189:555,182:547,191:527,214:514,184:501,161.3:500.6" />
+		<move to="skobs" hidden="(sch(sk)+reput(sk,1))|(!sch(sk)+reput(sk,2))" road="240.1:624.6,213:630,180:637,150:632,143:627,146:618,121:615,107:620,85:612,63:607,47:602,65:598,50:592,64:582" />
+	</place>
+	
+	<place id="skhomb" region="4" name="Chambres Shari" align="sk" inf="207.9:659.3" bg="skhomb" bginf="-10:-40" randevent="0" music="sk2">
+		<pre>sch(sk)+grade(sk,8)</pre>
+		<game chain="8;17;10;11" chainknown="8" obj="0" artft="default;Dynamit(0):30;Dynamit(1):15;Dynamit(2):20;Destroyer(0):10;Destroyer(1):10" bg="170:0" />
+		<desc>
+		Les alchimistes de Shari sont très contents de leurs tentes tout confort... jusqu'à ce qu'on leur parle des chambres de Kali où dorment les professeurs. Des pétitions sont alors faites pour réclamer des coussins plus moelleux, des têtes de lit moins pointues, des tapis plus massants pour les orteils.... Alors qu'aucun alchimiste qui dort ici n'a jamais vu les chambres de Kali, finalement.
+		</desc>
+		<extraaction aid="rest" cond="sch(sk)+grade(sk,8)" />
+		<move to="skshar" pa="0" />
+	</place>
+	
+	<place id="skguic" region="4" name="Guichet emprunts et retours" align="sk" inf="162.3:499.8" bg="skguic" bginf="-10:-35" randevent="2" music="sk2">
+		<pre>(sch(sk)+reput(sk,0))|(!sch(sk)+reput(sk,1))</pre>
+		<game chain="8;17;10;11" chainknown="8" obj="0" artft="Elts(2,null):1850;Elts(2,Neutral):1850;Elts(3,null):650;Elts(3,Neutral):650;Grenade(0):25;Grenade(1):10;Patchinko:3;Dynamit(2):17" bg="227:-5" />
+		<desc>
+		Au fin fond du désert, "Al et Xandra" est la plus grande bibliothèque du royaume ! Elle abrite des trésors inestimables : manuscrits alchimiques anciens, recettes interdites... Mais étrangement, la plupart des visiteurs ne s'intéressent qu'aux livres de cuisines, aux romans d'amour et aux manuels ne-pas-rater-sa-vie-en-10-leçons.
+		Pour tous ces livres, la bibliothèque a créé un guichet d'emprunt séparé, ouvert à tous. Les chercheurs de la bibliothèque ne sont plus dérangés par des demandes casse-pieds, les emprunteurs ont moins à marcher. Tout le monde est content ! 
+		</desc>
+		<noway cond="sch(sk)+!reput(sk,0)">Ta réputation envers Shang-Kah n'est pas suffisante ! Réputation [Neutre] requise.</noway>
+		<noway cond="!sch(sk)+!reput(sk,1)">Ta réputation envers Shang-Kahn'est pas suffisante ! Réputation [Bien disposé] requise.</noway>
+		<move to="skshar" road="240.1:624.6,240:590,227:580,208:568,221:557,208:554,189:555,182:547,191:527,214:514,184:501,161.3:500.6" />
+		<move to="skbibl" cond="disable()" hidden="disable()" pa="0" />
+	</place>
+	
+	<place id="skbibl" region="4" name="Bibliothèque d'Al & Xandra" align="sk" inf="136:444" bg="todo" bginf="-10:-30" randevent="0" music="sk3">
+		<pre>disable()+((sch(sk)+reput(sk,2))|(!sch(sk)+reput(sk,3)))</pre>
+		<game chain="16;17;10;11" chainknown="8" obj="1" artft="Elts(2,null):1850;Elts(2,Neutral):1850;Elts(3,null):650;Elts(3,Neutral):650;Dynamit(0):30;Dynamit(1):15;Alchimoth:10" />
+		<desc>
+		Biliothèque d'Al et Xandra, la plus grande du royaume !
+		</desc>
+		<move to="skguic" pa="0" />
+	</place>
+	
+	<place id="skobs" region="4" name="Observatoire d'Arun Daworld" align="sk" inf="64:582" bg="skobs" bginf="-5:-30" randevent="0" music="sk3">
+		<pre>(sch(sk)+reput(sk,2))|(!sch(sk)+reput(sk,3))</pre>
+		<game chain="16;9;10;19" mode="wind" chainknown="8" modWeight="Elt(17):2" artft="default;Teleport:25;Pistonide:25" bg="220:0" />
+		<desc>
+		Oh comètes scintillantes, planètes langoureuses, voie lactée upérisée ! Qu'Arun Daworld soit le révélateur de vos mystères, l'observatoire de votre savoir ! Qu'à travers le Grand Téléscope, la connaissance alchimique galactique nous parvienne dans toute sa pureté ! 
+		...
+		- Eh, mais qui je vois là-bas chez Gémini, par cette fenêtre ouverte ? Mais c'est Blancheflor Hostia Vargotte ! En chemise de nuit ! Roooh...
+		- A mon tour ! Laisse-moi voir ! A moi ! 
+		</desc>
+		<noway cond="sch(sk)+!reput(sk,2)">Ta réputation envers Shang-Kah n'est pas suffisante ! Réputation [On se rappelle] requise.</noway>
+		<noway cond="!sch(sk)+!reput(sk,3)">Ta réputation envers Shang-Kahn'est pas suffisante ! Réputation [A bras ouverts] requise.</noway>
+		<move to="skshar" road="240.1:624.6,213:630,180:637,150:632,143:627,146:618,121:615,107:620,85:612,63:607,47:602,65:598,50:592,64:582" />
+	</place>
+	
+	<place id="skoasi" region="4" name="Oasis Bogdan" align="sk" inf="313:717.7" bg="skoasi" bginf="-10:-50" randevent="3" music="sk2">
+		<pre>(sch(sk)+reput(sk,1))|(!sch(sk)+reput(sk,2))</pre>
+		<game chain="12;17;18;11" chainknown="8" obj="0" artft="default;Dynamit(0):15;Dynamit(1):10;Alchimoth:10;Wombat:22" modWeight="Elt(10):1.5" bg="175:-10" />
+		<desc>
+		L'oasis Bogdan est la seule source d'eau potable connue de Sharrukin. Pas de chance, l'action combinée du soleil et de l'algue Vegeta Vicophyllum découverte dans le lac donne à l'eau un goût prononcé d'huile de friture. Les habitants de la médina disent qu'on s'y habitue, mais on se souvient à jamais de la première gorgée...
+		Beaucoup d'animaux viennent s'abreuver malgré la proximité de la médina. Lorsqu'il s'agit de mulots de Sharrukin ou d'antiloupes du désert, pas de problème... Mais il semblerait qu'un tigre Shaar ait pris ses habitudes dans le coin. Méfiance ! 
+		</desc>
+		<noway cond="sch(sk)+!reput(sk,1)">Ta réputation envers Shang-Kah n'est pas suffisante ! Réputation [Bien disposé] requise.</noway>
+		<noway cond="!sch(sk)+!reput(sk,2)">Ta réputation envers Shang-Kah n'est pas suffisante ! Réputation [On se rappelle] requise.</noway>
+		<move to="skmedi" road="349.9:600.4,336:634,316:644,320:652,339:657,340:680,313:717.7" />
+		<move to="skflak" road="313:717.7,355:718,366:720,404:720,400:727,411:724,431:735,472:732,482:727" />
+		<move to="skkali" cond="disable()" hidden="disable()" road="313:717.7,344:738,368:754,384:786" />
+		<move to="skbabi" cond="disable()" hidden="disable()" road="313:717.7,307:724,279:724,266:719,279:701,247:707,255:724,281:740,285:756,278:757,260:754,251:739,239:745,232:699,213:685,194:692,176:705,214:723;223:734,216:748,189:745,183:731,174:724,153:721,165:736,174:750,183:760,227:762,248:761,256:782,238:779,216:791,179:769,151:767,165:785,147:794" />
+	</place>
+
+	<place id="skflak" region="4" name="Mines du Volkor" align="sk" inf="544:698" bg="skflak" bginf="-10:-50" randevent="3" music="sk3">
+		<pre>(sch(sk)+reput(sk,3))|(!sch(sk)+reput(sk,4))</pre>
+		<game chain="8;9;18;19" chainknown="8" obj="0" artft="default;Dynamit(2):20;Grenade(1):450" modWeight="Elt(19):1.3" bg="305:-5" />
+		<desc>
+		Dans les tréfonds du mont Volkor, dernier volcan en activité de la chaîne sharrukinoise, se trouvent les mines les mieux gardées de tout le royaume. Et pour cause : c'est ici qu'on extrait les kubors, taillés directement dans la paroi du cratère ! 
+		Depuis toujours, les voleurs s'y sont cassés les dents. Il n'y a pourtant ni gardes, ni système de sécurité... Le magma en fusion se charge des importuns. 
+		A noter qu'il se charge aussi des mineurs... Le Volkor est la fabrique de monnaie avec le taux de renouvellement du personnel le plus élevé du monde.
+		</desc>
+		<noway cond="sch(sk)+!reput(sk,3)">Ta réputation envers Shang-Kah n'est pas suffisante ! Réputation [A bras ouverts] requise.</noway>
+		<noway cond="!sch(sk)+!reput(sk,4)">Ta réputation envers Shang-Kah n'est pas suffisante ! Réputation [Chouchou] requise.</noway>
+		<move to="skoasi" road="313:717.7,355:718,366:720,404:720,400:727,411:724,431:735,472:732,482:727" />
+	</place>
+	
+	
+	<place id="skkali" region="4" name="Ecole communale Kali" align="sk" inf="384:786" bg="todo" bginf="-10:0" randevent="0" music="sk3">
+		<pre>disable()+((sch(sk)+reput(sk,3))|(!sch(sk)+reput(sk,4)))</pre>
+		<game chain="16;17;10;11" chainknown="8" obj="0" artft="default;Dynamit(2):15" />
+		<desc>
+		Institut des maîtres.
+		</desc>
+		<move to="skoasi" road="330:706,344:738,368:754,384:786" />
+		<move to="skhomc" hidden="sch(sk)" pa="0" />
+		<move to="sksanc" cond="disable()" hidden="disable()" road="384:786,384:805,367:818,348:824,305:837,279:835,253:826" />
+	</place>
+	
+	<place id="skhomc" region="4" name="Auberge Kali" align="sk" inf="405:798" bg="todo" bginf="-10:-50" randevent="0" music="sk3">
+		<pre>sch(sk)+grade(sk,13)</pre>
+		<game chain="16;17;10;11" chainknown="8" obj="0" artft="default;Dynamit(2):15" />
+		<desc>
+		Auberge des maîtres.
+		</desc>
+		<extraaction aid="rest" cond="sch(sk)+grade(sk,13)" />
+		<move to="skkali" pa="0" />
+	</place>
+	
+	
+	<place id="skbabi" region="4" name="Tour de Babiloon" align="sk" inf="147:794" bg="todo" bginf="-10:-50" randevent="0" music="sk3">
+		<pre>disable()+sch(sk)+reput(sk,4)</pre>
+		<game chain="16;9;18;28" chainknown="8" obj="0" artft="default" />
+		<desc>
+		Sans ascenseur bien évidemment.
+		</desc>
+		<move to="skoasi" road="330:706,307:724,279:724,266:719,279:701,247:707,255:724,281:740,285:756,278:757,260:754,251:739,239:745,232:699,213:685,194:692,176:705,214:723;223:734,216:748,189:745,183:731,174:724,153:721,165:736,174:750,183:760,227:762,248:761,256:782,238:779,216:791,179:769,151:767,165:785,147:794" />
+	</place>
+	
+	
+	<place id="sksanc" region="4" name="Sanctuaire d'Erewan Krinoby" align="sk" inf="253:826" bg="todo" bginf="-10:-50" randevent="0">
+		<pre>disable()+((sch(sk)+reput(sk,3))|(!sch(sk)+reput(sk,4)))</pre>
+		<game chain="16;17;18;19"chainknown="8" obj="0" artft="default;Tejerkatum:20;Wombat:20" />
+		<desc>
+		
+		</desc>
+		<move to="skkali" road="384:786,384:805,367:818,348:824,305:837,279:835,253:826" />
+	</place>
+
+</map>
+

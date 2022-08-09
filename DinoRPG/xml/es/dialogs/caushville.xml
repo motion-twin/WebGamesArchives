@@ -1,0 +1,41 @@
+<!-- ***************************************************************************** -->
+<!-- CAUSHEMESH  Agathe et Lechton, habitent l'acropole de Caushemesh --->
+
+<d place="cacrop" name="Pepe Lechuga" gfx="lechton" cond="scenario(caush,42-)">
+	<phase id="begin" fast="1">
+		La acrópolis está silenciosa. Las puertas y ventanas de las casas están clausuradas.
+		Una atmósfera pesada domina el lugar. A pesar de eso sientes miradas hostiles alrededor de ti.
+		Distingues a un hombre mayor escondiéndose en una calle oscura, temeroso, no se atreve a venir hacia ti.
+	</phase>
+</d>
+
+<d place="cacrop" name="Cruji Chocota" gfx="agathe" cond="scenario(caush,19+)+scenario(caush,42-)">
+	<phase id="begin" fast="1">
+		La niña a la que salvaste se queda cerca a su abuelo, ella te saluda con la mano y no quiere mostrarse.
+		Pasará mucho tiempo antes de poder conversar abiertamente con los autóctonos de esta ciudad.
+	</phase>
+</d>
+
+<!-- Une fois la quête terminée, un des habitants ouvrira une boutique dans le village pour vendre de nouveaux objets. -->
+
+<d place="cacrop" name="Pepe Lechuga" gfx="lechton" frame="sour" cond="scenario(caush,43+)">
+	<phase id="begin" fast="1" next="salut">
+		La acrópolis ha recuperado sus colores, sus habitantes comienzan a salir de sus casas.
+		Una generación de personas que pasó su vida escondiéndose no puede cambiar de la noche a la mañana.
+		Aunque el anciano sigue siendo desconfiado, pero te saluda.
+	</phase>
+	<a id="salut">¿Todo estará mejor?</a>
+	<phase id="salut">
+		[Sí. Nunca te agradeceremos lo suficiente por todo lo que has hecho por nosotros.
+		Las cicatrices se cerrarán en algún tiempo, pero recuperaremos las fuerzas para reconstruir nuestro pueblo.]
+	</phase>
+</d>
+
+<d place="cacrop" name="Cruji Chocota" gfx="agathe" frame="normal" cond="scenario(caush,43+)">
+	<phase id="begin" fast="1">
+		La niña ha recuperado la sonrisa.
+		Y hasta comienza a jugar con otros niños de la acrópolis.
+		El peligro parece tan lejano cuando se ven estas escenas.
+	</phase>
+</d>
+

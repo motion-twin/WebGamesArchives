@@ -1,0 +1,22 @@
+<d place="" name="Rappel Chouettex quetes" gfx="guchx" auto="1" cond="fx(nbrq)">
+
+<phase id="begin" frame="start" next="lis">
+Vous avez un message spécial d'Altus ! | Je vous le lis : 
+</phase>
+
+<phase id="lis" next="how">
+[Oui c'est Altus. Dis donc, tu sembles un peu perdu avec cette quête. | Tu as commencé il y a moment.]
+</phase>
+
+<phase id="how" next="clic">
+[Si tu ne sais plus ce que tu dois faire, tu as ton] {parchemin de quête} [ à gauche, sous ton personnage.]
+</phase>
+
+<phase id="clic" next="map">
+[Clique sur le parchemin pour voir le récapitulatif de ta quête, il y a tous les détails.]
+</phase>
+
+<phase id="map" noeffect="nbrq" url="/act">
+[N'oublie pas que tu peux aussi changer de lieu avec le bouton] {Se déplacer} [. |Bonne chance, et reviens me voir dès que tu as finis ! ]
+</phase>
+</d>

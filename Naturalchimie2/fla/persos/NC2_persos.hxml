@@ -1,0 +1,33 @@
+# 
+-swf ./swf/display.swf
+Display
+-cp ./src
+-D swf-mark
+-cmd copy swf\persos_lib.swf ..\..\..\website\www\swf\persos_lib.swf
+
+--next
+# 
+-swf ./swf/editor_code.swf
+-main Editor
+-cp ./src
+-cmd %SWFMAKE% -f src\make_editor_Hk_.xml
+-cmd copy swf\editor.swf ..\..\..\website\www\swf\editor.swf
+
+--next
+# 
+-swf ./swf/viewer.swf
+-main Viewer
+-cp ../lib/
+-cp ./src
+-D swf-mark
+-cmd %SWFMAKE% -f src\make_viewer_Hk_.xml
+-cmd copy swf\viewer.swf ..\..\..\website\www\swf\viewer.swf
+
+--next
+# 
+-swf ./swf/viewerthumb.swf
+-main ViewerThumb
+-cp ./src
+-D swf-mark
+-cmd %SWFMAKE% -f src\make_viewerthumb_Hk_.xml
+-cmd copy swf\viewerthumb.swf ..\..\..\website\www\swf\viewerthumb.swf

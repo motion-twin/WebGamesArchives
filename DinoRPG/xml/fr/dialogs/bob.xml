@@ -1,0 +1,99 @@
+﻿<d place="baobob" name="M. Bao Bob" gfx="baobob">
+	<phase id="begin" next="question:nothing">
+		Bonjour, bonjour, bonjour, que me veux-tu, Maître Eleveur ?
+	</phase>
+
+	<a id="question">J'ai une question à vous poser...</a>
+	<a id="nothing">Rien du tout</a>
+
+	<phase id="question" next="mission:quest2:quest3:quest4:no">
+		Une question ? Mmmmmm.... Que dirais-tu plutôt d'une petite Mission pour ton Dinoz ? Avec des amis, on
+		organise des rallyes tout autour de Dinoland !
+	</phase>
+
+	<a id="mission">Oui je veux bien</a>
+	<a id="no" target="nothing">Non merci</a>
+	<a id="quest2" cond="active(steppes)+!fx(palmes)">Et ma question ?</a>
+	<a id="quest3" cond="active(steppes)+fx(palmes)+!fx(sylkey)">Et ma question ?</a>
+	<a id="quest4" cond="scenario(magnet,8)">Et ma question ?</a>
+
+	<phase id="nothing">
+		Ah bon ? Alors parfait... Bon voyage !
+	</phase>
+
+	<phase id="mission" missions="bob"></phase>
+
+	<phase id="quest2">
+		Reviens me voir quand tu auras obtenu les palmes des Korgons de la Forêt de Grumhel.
+		Je pourrais alors répondre à ton voeu le plus cher.
+	</phase>
+
+	<a id="bye" target="nothing">Je dois partir</a>
+
+	<phase id="quest3" next="where:bye">
+		Une question ? Mmmmm... Je vois que tu as obtenu les palmes des Korgons.
+		Cela veut-dire que tu devrais être capable de survivre... là-bas... peut-être...
+	</phase>
+
+	<a id="where">Là-bas ?</a>
+
+	<phase id="where" next="where2:how:danger:bye">
+		Mmmm.... Pour y aller, tu devras rassembler sept Dinoz. Pas forcément les tiens non, ils peuvent aussi
+		être des Dinoz des membres de ton Clan. Et aprés je vous y enverrai... là-bas...
+	</phase>
+
+	<a id="where2">Mais où exactement ?</a>
+	<a id="how">Comment dois-je faire ?</a>
+	<a id="danger">Et c'est dangereux ?</a>
+
+	<phase id="where2" next="how:danger:bye">
+		Mmm.... Il s'agit d'un lieu... Je ne peux pas t'en dire plus. Mais sâche que tu y trouvera une clé, oui,
+		LA clé. Pour la porte de Sylvenoire. Elle te permettra de la continuer, ton aventure. Enfin, si tu survis
+		bien entendu.
+	</phase>
+
+	<phase id="how" next="where2:danger:concen:bye">
+		Comment ? Mmm... Ecoute moi. Tu dois rassembler sept Dinoz ici. Les tiens ou ceux de membres de ton Clan.
+		Chaque Dinoz doit se concentrer. Quand vous serez sept, alors, à ce moment, vous pourrez aller là-bas.
+	</phase>
+
+	<phase id="danger" next="where2:how:bye">
+		Dangereux ? Mmm... pour faire simple, je dirais que tu n'as surement que peu de chance de survivre là-bas...
+		Mais qui ne tente rien n'a rien, n'est-ce pas ?
+	</phase>
+
+	<a id="concen">Je veux faire concentrer mon Dinoz !</a>
+
+	<phase id="concen" next="ok:bye">
+		Mmm... Bien... je vais hypnotiser ton Dinoz. Il pourra mieux se concentrer de cette façon...
+		Ne t'inquiete pas, tu pourras à tout moment arrêter cela, si tu le désires.
+	</phase>
+
+	<a id="ok">D'accord</a>
+
+	<phase id="ok" url="/dino/::did::/act/concentrate"></phase>
+
+	<phase id="quest4" next="noingr:ingr:bye">
+		Une question ? Mmmmm... Il va te falloir des ingrédients pour que je t'aide.
+		Enfin, si je devine bien quelle question tu voulais me poser...
+	</phase>
+
+	<a id="ingr" cond="fx(gshop)+fx(ice)+fx(corail)">Voilà les ingrédients !</a>
+	<a id="noingr" cond="!(fx(gshop)+fx(ice)+fx(corail))">Voilà les ingrédients !</a>
+
+	<phase id="noingr">
+		Tsss tsss tsss.... Le Corail qui jamais ne se brise, la Glace qui jamais ne fond, et la Branche qui jamais ne fane.
+		Il me semble qu'il te manque quelquechose, mon cher.
+	</phase>
+
+	<phase id="ingr" noeffect="gshop:ice:corail" effect="potion" scenario="magnet:9" next="potion">
+		Poum poum palalam poum poum pam poum poum palalam pam ! Et voila, une magnifique Potion Anti Sedh pour toi...
+	</phase>
+
+	<a id="potion">Vous êtes donc un Singe Antique !!!</a>
+
+	<phase id="potion">
+		Mmmm... au revoir mon ami, reviens me voir à l'occasion !
+	</phase>
+
+</d>

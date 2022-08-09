@@ -1,0 +1,30 @@
+<d place="gubafa" name="Demander un magnétophone" gfx="gubafaa" auto="0">
+
+<phase id="begin" next="moi">
+* Suivant ! 
+</phase>
+
+<a id="moi">C'est à moi ! </a>
+
+<phase id="moi" next="app">
+Bonjour ! Que désires- tu ? 
+</phase>
+
+<a id="app">je viens récupérer un magnétophone. Tenez, voilà le formulaire rempli.</a>
+
+<phase id="app" next="comb" frame="happy">
+Meeerrcciiiiiii... Alors... | |Oui tout est en règle. Il ne manque que la caution. 
+</phase>
+
+<a id="comb">Ah. Et c'est combien, cette fois ? </a>
+
+<phase id="comb" next="cher">
+Pour un magnétophone, exceptionnellement [1 Mercurule] seulement. La caution est basse car ça reste du matériel has-been, plus trop utilisé.
+</phase>
+
+<phase id="cher" qtake="QuestObj(vertForm)" url="/act">
+Je garde le formulaire. Reviens me voir dès que tu disposes de la Mercurule.
+</phase>
+
+
+</d>

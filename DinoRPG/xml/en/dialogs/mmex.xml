@@ -1,0 +1,85 @@
+﻿<d place="frcbrt" name="Madam X" gfx="mmex" cond="active(mmex)+(admin()|(mission(fish)+mission(dog)))">
+
+	<phase id="begin" fast="1" next="talk">
+		While passing through BrutForce, you come across a woman. She waves and calls you over.
+	</phase>
+
+	<a id="talk">Talk To Her</a>
+
+	<phase id="talk" next="talk2">
+		Why there you are young Dinoz Master! I've been hearing so much about you.
+		Grandpa Joe has been talking about you, he's been saying that you're handling his missions quite well.
+	</phase>
+
+	<a id="talk2">...</a>
+
+	<phase id="talk2" next="missions:question">
+		As you seem to be so reliable, I'd also like to entrust you with a few missions of my own. Naturally you're free to accept or refuse them as you wish!
+	</phase>
+
+	<a id="missions">List of Missions</a>
+	<a id="question">But who are you?</a>
+
+	<phase id="question" next="question2">
+		Who am I? I'm so sorry my young friend, where are my manners? I should have introduced myself.
+	</phase>
+
+	<a id="question2">So who are you?</a>
+
+	<phase id="question2" next="double">
+		Well, I can't really say. I'm really sorry, but if the wrong people find out that you know who I am,
+		it could get you into trouble! But I want to assure you that you can trust me, therefore I'll let you into a little secret.
+	</phase>
+
+	<a id="double">Oh?</a>
+
+	<phase id="double" next="double2">
+		Let's see .... I suppose that you've learnt that each skill corresponds to a unique element,
+		out of the 5 possible elements. For example, Wrath corresponds to the Fire element and Perception to the Water element.
+	</phase>
+
+	<a id="double2">Yes!</a>
+
+	<phase id="double2" next="double3">
+		But .... that's not all! Some skills are linked to two elements rather than one!
+		They're called double-skills. A double-skill can be earned by studying from either of the two elements
+		concerned, but it requires knowledge of specific skills from each element.
+	</phase>
+
+	<a id="double3">!!!!</a>
+
+	<phase id="double3" next="learn:already">
+		I can understand why you're so surprised, it's a well-guarded secret. However, to be able to learn these skills
+		you must first master the Double-Skill. It's a secret skill that only the Drag.... what am I saying, I've already said too much!
+	</phase>
+
+	<a id="learn" cond="!skill(multi)">How do I learn it?</a>
+	<a id="already" cond="skill(multi)">How do I learn it?</a>
+
+	<phase id="learn" next="learn1:learn2:learn3:learn4:learn5:no">
+		It's easy, you only need to do "this" and....
+	</phase>
+
+	<a id="learn1" target="dolearn" cond="(skill(waikk)+skill(cocon))|(skill(combus)+skill(zero))">And?</a>
+	<a id="learn2" target="dolearn" cond="(skill(kamikz)+skill(kaos))|(skill(venge)+skill(talona))">Ah??</a>
+	<a id="learn3" target="dolearn" cond="(skill(resmag)+skill(clone))|(skill(etatpr)+skill(gaia))">Huh???</a>
+	<a id="learn4" target="dolearn" cond="(skill(instin)+skill(paumej))|(skill(marecg)+skill(foudre))">Oh!</a>
+	<a id="learn5" target="dolearn" cond="(skill(sappe)+skill(formev))|(skill(adrena)+skill(elasti))">What...</a>
+	<a id="no">(ouch)</a>
+
+	<phase id="dolearn" skill="multi">
+		Yes! It worked! You see, wasn't that easy? Your Dinoz is now master of the Double-Skill, Congratulations!
+	</phase>
+
+	<phase id="no">
+		No .... it's not working .... if it peaks when I'm doing "that" or if your Dinoz hasn't learned the required skills
+		in order for your Dinoz to master the Double-Skill, it won't work. Come back later to try again!
+	</phase>
+
+	<phase id="already">
+		It seems that you have already mastered it! Aha!
+	</phase>
+
+	<phase id="missions" missions="mmex"></phase>
+
+</d>

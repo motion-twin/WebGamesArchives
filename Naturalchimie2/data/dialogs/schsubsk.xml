@@ -1,0 +1,19 @@
+<d place="skmedi" name="Rejoindre Shang-Kah" cond="sch(gu)" gfx="skprofa" auto="0">
+
+<phase id="begin" next="ouiok:ouino:exit">
+Tiens, un nouveau. Tu viens rejoindre l'école Shang-Kah ?
+</phase>
+
+<a id="ouiok" cond="reput(sk,0)">Oui, je veux devenir un alchimiste Shang-Kah.</a>
+<a id="ouino" cond="!reput(sk,0)">Oui, je veux devenir un alchimiste Shang-Kah.</a>
+<a id="exit">Non merci. Je me suis trompé. </a>
+
+<phase id="ouiok" frame="happy" url="/user/subSchool?s=sk">
+Bien, je t'inscris. | Bienvenue chez Shang-Kah ! 
+</phase>
+
+<phase id="ouino" frame="angry">
+Mmmh... Ca va pas être possible là. Désolé. Il te faut au moins une réputation {Neutre} envers l'école pour t'inscrire.
+</phase>
+
+</d>

@@ -1,0 +1,65 @@
+﻿<missions>
+
+	<!-- ***************************************************************************** -->
+	<!-- DIAN KORGSEY, aider les korgons ! ----->
+
+	<m group="dian" id="kswim" name="Como un korgón en el agua" limit="15">
+		<begin>La Jungla de Grumhel es un lugar fascinante. Por ejempo, fíjate en los korgones. Se han adaptado de maravilla a su entorno. ¿Sabías que fabrican sus propias palmas para poder atravesar sin problemas el río Jumin? ¿No? Mira, te doy un par si me das algunos objetos de primera necesidad...</begin>
+		<action v="Examinar la lista de objetos">La lista de Dian Korgsey enumera unas herramientas que se encuentran en las Fraguas del Gran Señor Todo-Quema.</action>
+		<goto v="forges"/>
+		<action v="Coger herramientas">Recuperas una caja de herramientas. El siguiente objeto de la lista indica "Ramas del bosque del volcán"...</action>
+		<goto v="rashpk" hide="1"/>
+		<action v="Cortar madera">Has cogido algunas ramas calcinadas. La lista de objetos finaliza con un "amuleto"...</action>
+		<goto v="fosslv" hide="1"/>
+		<action v="Pedir un amuleto">El Chamán te muestra una amplia sonrisa y te ofrece un amuleto de buena suerte. ¡Gracias!</action>
+		<end>Ya tengo todo lo que necesito. Es perfecto. Aquí tienes las Aletas de Korgones, ¡como prometí!</end>
+		<fx v="palmes"/>
+		<xp v="20"/>
+	</m>
+
+	<m group="dian" id="rivals" name="Korgones del norte, korgones del sur" limit="15" cond="mission(kswim)">
+		<begin>Mientras que los korgones de esta parte de la Jungla de Grumhel son casi sociables, los del sur al borde del Camino Tenebroso son un poquito menos simpáticos. Creo que si me trajeras una prueba de haber vencido a los del sur, ¡los korgones de aquí nos apreciarían mucho más!</begin>
+		<goto v="chemin"/>
+		<kill v="korgon" n="10" name="Korgones del sur"/>
+		<action v="Encontrar un trofeo">Te llevas algunas Garras de Korgón para usarlas como trofeo de victoria para los korgones del norte...</action>
+		<end>Ah, ¡qué buena idea lo de las garras! Parece que los korgones de aquí lo aprecian... mucho... Toma esto.</end>
+		<gold v="2000"/>
+		<xp v="40"/>
+	</m>
+
+	<m group="dian" id="kfood" name="Filete de madera" limit="15" cond="mission(kswim)">
+		<begin>En algún lugar de Grumhel hay una especie rara de árboles adorada por los korgones: ¡el Fikoïa Cenizo! Ignoro dónde se puede encontrar uno, ¡pero te pagaré bien si me traes uno!</begin>
+		<goto v="garde" hide="1"/>
+		<action v="Árbol extraño">Te llama la atención un árbol de hojas grises que huele a tabaco frío... ¡Seguramente se trata de un Fikoïa Cenizo! Cuando intentas coger varias ramas, oyes unos ruidos provenientes de la maleza...</action>
+		<kill n="6"/>
+		<action v="Coger algunas ramas">Más vale no quedarse mucho tiempo por aquí: coges la madera y te alejas lo más rápido que puedes...</action>
+		<end>Van a disfrutar mucho, ¡gracias!</end>
+		<gold v="2000"/>
+		<xp v="40"/>
+	</m>
+
+	<m group="dian" id="poison" name="Rivalidades korgón" cond="mission(kfood)+mission(rivals)" limit="20">
+		<begin>Vamos a disuadir a los korgones del sur haciendo alguna travesura sobre su Fikoïa Cenizo...  ¡se va a volver un árbol muy estratégico! ¡Ji, ji! ¡Ve, rápido! Destroza el sabor de algunas de sus ramas... Evidentemente nosotros sabremos qué ramas no tocar...</begin>
+		<goto v="collin"/>
+		<action v="Coger savia">Coges la Suintante Mordicus, una savia de árbol de sabor inmundo. La trampa ideal para este trabajo.</action>
+		<goto v="garde"/>
+		<action v="Sabotear el Fikoïa">¡Vaya! ¡El Fikoïa ha desaparecido! Los korgones del sur han pasado probablemente antes que nosotros...</action>
+		<goto v="jungle" hide="1"/>
+		<action v="Emboscada">A medida que avanzas en la Jungla Salvaje, ¡un grupo de korgones aparece repentinamente y te rodea! Habrá que deshacerse de ellos para continuar...</action>
+		<kill v="korgon" n="3" name="Korgones"/>
+		<goto v="fleuve" hide="1"/>
+		<action v="Rastro en el suelo">Unas marcas fuertes en el suelo indican claramente que han arrastrado algo muy pesado desde el Río Jumin... El rastro se dirige hacia el sur.</action>
+		<goto v="chemin" hide="1"/>
+		<action v="Rastro en el suelo">La pista se para aquí... Pero a juzgar por los gruñidos en los arbustos, ¡te esperaban con impaciencia!</action>
+		<kill v="korgon:ronciv" n="8" name="Korgones o aliados"/>
+		<action v="Fikoïa Cenizo">El Fikoïa está disimulado bajo una pila de hojas de platanero. Tendrás que arrastrarlo hasta el campamento...</action>
+		<goto v="fleuve"/>
+		<talk v="Dian Korgsey">Ah, ¡aquí estás! Qué pena que hayan cortado el Fikoïa Cenizo... Es un trabajo de korgón sureño, sin duda. Bueno, es imposible subir el río con eso. Escóndelo aquí. Nos encontramos en el Campamento.</talk>
+		<action v="Esconder el Fikoïa">Disimulas como puedes el árbol bajo varias hojas de platanero.</action>
+		<end>¡Qué pena por este ejemplar de Fikoïa! ¡Hay tan pocos! Gracias por tu ayuda, no te olvidaremos...</end>
+		<gold v="3500"/>
+		<item v="hotpan"/>
+		<xp v="100"/>
+	</m>
+
+</missions>

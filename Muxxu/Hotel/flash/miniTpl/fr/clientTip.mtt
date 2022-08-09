@@ -1,0 +1,51 @@
+::if _client::
+
+	<div class="monsterName">
+		::if _vipJob::<img src="/img/icons/vip.png" alt="VIP"/>::end::
+		::_client._name:: 
+		::if _vipJob::<img src="/img/icons/vip.png" alt="VIP"/>::end::
+		::if _item::(<img src="/img/icons/item_::_item::.png" alt="::_item::"/>)::end::
+		::if _vipJob::<div class="vipJob">::_vipJob::</div>::end::
+	</div>
+	::if _vipJob::
+	<div class="vip">Ce client est une célébrité&nbsp;! Hébergez-le correctement pour gagner du Prestige.</div>
+	::end::
+	
+	::if !_spectator::
+		::if _death::
+			<p class="danger">
+				ATTENTION : ce client est devenu instable ! Il explosera vers ::_death:: si rien n'est fait pour le calmer !
+			</p>
+		::end::
+		::if _workEnd::
+			<p class="locked">Votre employé aura terminé vers ::_workEnd::.</p>
+		::end::
+		
+		::if _hasService::
+			<p class="time">Une demande de service est en cours&nbsp;! Répondez-y sans trop attendre pour faire plaisir à ::_client._name::...</p>
+		::end::
+	::end::
+	
+	<p class="likes">::_likes::</p>
+	<p class="spread">::_spreads::</p>
+	
+	::if _inQueue::
+		::if !_spectator::
+			<p class="time">
+				Ce client a prévu un séjour de <strong>::_stayDays::&nbsp;nuit(s)</strong>.
+				Il quittera la file d'attente à minuit s'il n'est pas placé.
+			</p>
+			<p class="rule">::_mrule::</p>
+			<p>Satisfaction : ::_happyness::</p>
+		::end::
+	::else::
+		::foreach _happyLog::
+			<p class="happyLine">::__current__::</p>
+		::end::
+		::if _sad::
+			<p class="happyTotal negative">::_happyness::</p>
+		::else::
+			<p class="happyTotal positive">::_happyness::</p>
+		::end::
+	::end::
+::end::

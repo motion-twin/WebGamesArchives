@@ -1,0 +1,155 @@
+﻿<!-- Gulom, survivant du monde sombre -->
+
+<!---on rencontre un échappé du monde sombre, qui est tombé dans les chutes il y a bien longtemps,
+il était l'assistant du gardien disparu qui était parti combattre la source des ténèbres.
+Il est resté trop longtemps dans le monde sombre, sa peau et ses yeux ne peuvent plus supporter le soleil,
+il est condamné à vivre dans le monde sombre.
+
+Il demande au joueur de lui rapporter des ingrédients pour pouvoir survivre.
+Une fois les objets donnés, il propose aux joueurs de retourner dans le monde sombre grâce à un fragment de l'orbe sombre
+qu'il a obtenu de la part du gardien qu'il assistait, celui-ci avait trouvé ces fragment par hasard un jour ou il fouillait
+les poubelles en quête de nourriture.
+
+Le joueur bat une version amélioré du gardien de la tour et obtient le droit d'y retourner quand il veut.
+-->
+
+
+<d place="chutes" gfx="survivor" name="Gulom" cond="active(gulom)+(admin()|fx(bouee))">
+	<phase id="begin" fast="1" frame="ombrestop" background="2" next="rescape:soin">
+		Un hombre extraño mira temoroso a su alrededor. Se esconde tras un arbusto, después tras otro, como si huyera de los rayos del sol. Aunque tiene los ojos abiertos,
+		parece que no te ve muy bien.
+	</phase>
+
+	<a id="rescape" cond="!tag(soin)">¿Hola? Te diri... no, ¡a tu izquierda!</a>
+	<a id="soin" cond="tag(soin)" target="vavient">¿Te dirijes al Mundo Sombra?</a>
+
+	<phase id="rescape" next="soleil" frame="ombre" background="2">
+		Eeh...
+		Buenas... Lo siento, no me siento muy bien, todo este sol, es insoportable para mí...
+	</phase>
+	<a id="soleil">¡Siempre hace sol por aquí...!</a>
+	<phase id="soleil" next="aide" frame="ombre" background="2">
+		Ah, verás, yo no soy de aquí, y al vivir todo el tiempo en la oscuridad,
+		uno pierde el sentido de la orientación.
+	</phase>
+	<a id="aide">¿De dónde vienes?</a>
+	<phase id="aide" next="clef:noclef" frame="ombre" background="2">
+		Tú, que vives en la superficie, no tienes este problema, y sin duda es mejor que sea así.
+	</phase>
+
+	<a id="clef" cond="fx(sylkey)">¿Quieres hablar del Mundo Sombra?</a>
+	<a id="noclef">¿Puedo ayudarte?</a>
+
+	<phase id="noclef" next="out:clef" frame="ombre" background="2">
+		Te lo agradezco pero no quiero ocupar a otras personas con mis problemas.
+		La situación podría escapársenos de las manos, el equilibrio es tan frágil...
+	</phase>
+	<a id="out">Bueno..., hasta luego.</a>
+	<phase id="out" fast="1" frame="ombrestop" background="2">
+		Te marchas preguntándote, ¿a qué puede estar esperando bajo este sol sofocante?
+	</phase>
+
+	<phase id="clef" next="quefaire" frame="ombre" background="2">
+		[¿Conoces el terrible Mundo Sombra? Tal vez seas tú la persona que necesito...]
+		[He perdido el rastro de la persona a la que acompañaba. Hace muchos años, partí con mi maestro a las profundidades
+		del Mundo Sombra para terminar para siempre con ese mundo maléfico.]
+		[No imaginábamos que era tan inmenso, nos perdimos, y no lo vi más durante 10 largos años...]
+		[Cuando al fin logré salir de ese laberinto,
+		me di cuenta que ya no podía vivir en la superficie, mis ojos se volvieron muy frágiles de tanto andar perdido en las tinieblas.]
+	</phase>
+	<a id="quefaire">¡No se te ve nada bien!</a>
+	<phase id="quefaire" next="soigne:nomed" frame="ombre" background="2">
+		[Tienes razón, creo que no podré quedarme aquí mucho tiempo, tendré que volver al Mundo Sombra.]
+		[¿Podrías darme un elixir de Nimbao?, es el único remedio para quienes pasan tanto tiempo allí.]
+	</phase>
+
+	<a id="soigne" cond="hasobject(remed2)">¡Puedes usar este elixir!</a>
+	<a id="nomed" cond="!hasobject(remed2)">Lo siento, no tengo uno ahora.</a>
+
+	<phase id="nomed" fast="1" frame="ombrestop" background="2">
+		Gulom comienza a voltear los ojos hacia arribla, parece muy agotado, ¡una insolación, vamos a la sombra!
+	</phase>
+
+	<phase id="soigne" next="vavient" use="remed2" tag="soin" nocheck="1" frame="ombre" background="2">
+		[Gracias, ¡ya estoy mejor!]
+		[Ahora puedo volver al Mundo Sombra.
+		Debo continuar la misión que me confió mi maestro, debo encontrarlo y ayudarle a liberar a Dinoland de esa amenaza.]
+	</phase>
+
+	<a id="vavient">¿Cómo haces para ir y venir del Mundo Sombra?</a>
+
+	<phase id="vavient" next="super" frame="ombre" background="2">
+		[Poseo un fragmento del Orbe Sombra que mi maestro me dió, es un poderoso artefacto que te abre un camino hacia el otro mundo.]
+		[Solo existen 3 fragmentos del orbe en el mundo, lejos de todas las miradas...]
+		[Mi maestro tuvo la suerte de encontrar esos fragmentos, tras un largo periodo de meditación para liberar su alma.]
+		[Me siento muy honrado de ser el discípulo de tan sabio ermitaño, capaz de lograr tal nivel de desprendimiento y pureza...]
+	</phase>
+
+	<a id="super">¿Podrás continuar solo?</a>
+	<phase id="super" next="warpzone" frame="ombre" background="2">
+		Ya has estado en el Mundo Sombra, puedes venir conmigo si lo deseas.
+	</phase>
+
+	<a id="warpzone">¡Voy contigo!</a>
+
+	<phase id="warpzone" fast="1" moveAll="dkchut" frame="ombrestop" background="2">
+		Gulom saca el fragmento y abre un camino hacia las profundidades, es estrecho, imposible de atravesar para el más común de los mortales.
+		Te mira, y sonriendo saca otro fragmento, este reacciona con el simple contacto con la otra parte.
+		El camino se abre un poco más, ¡ahora puedes saltar!
+	</phase>
+</d>
+
+<d place="dkchut" gfx="survivor" name="Gulom" cond="active(gulom)+!mission(lumi)+fx(sylkey)">
+	<phase id="begin" next="missions:natal" frame="blabla" background="1">
+		[Supongo que ya conoces este lugar, sobre todo no te pierdas,
+		¡un pie fuera del camino y las consecuencias serán fatales!]
+	</phase>
+
+	<a id="missions">Consultar la lista de misiones</a>
+	<a id="natal">Pareces más tranquilo</a>
+
+	<phase id="missions" missions="gullom"></phase>
+	<phase id="natal" next="but" frame="blabla" background="1">
+		[Me duele en las entrañas aceptarlo, pero ahora, siento que este lugar se ha vuelto mi hogar.
+		Veo perfectamente en la oscuridad...]
+		_(¡Deja de hurgarte la nariz!)_
+	</phase>
+	<a id="but">Argh...</a>
+	<phase id="but" fast="1" frame="stop">
+		Gulom empieza a armar su carpa, los monstruosos ruidos alrededor parecen no molestarle.
+	</phase>
+</d>
+
+<d place="dkchut" gfx="survivor" name="Gulom" cond="active(gulom)+mission(lumi)+fx(sylkey)">
+	<phase id="begin" fast="1" next="missions:mieux" frame="stop" background="1">
+		Las flamas colocadas en diversos lugares brillan tímidamente en la oscuridad total del Mundo Sombra, las tinieblas tienen un poder aplastante.
+	</phase>
+
+	<a id="missions">Consultar la lista de misiones</a>
+	<a id="mieux">¡Ahora veo mejor!</a>
+
+	<phase id="missions" missions="gullom"></phase>
+
+	<phase id="mieux" next="sortie" frame="blabla" background="1">
+		[¡El Mundo Sombra nos quiere mostrar su lado desconocido! La bruma retrocede, pero no desaparece, peor que eso, se hace más densa, más profunda.]
+		[No se si sea una una señal...]
+	</phase>
+	<a id="sortie">¿Qué podemos hacer?</a>
+	<phase id="sortie" next="finish:fragment" frame="blabla" background="1">
+		[Podré ir en búsqueda de mi maestro.]
+		[Aunque fue uno de los elegidos para recibir el título de guardián, decidió arriesgar su vida para acabar con la maldad que proviene de aquí.]
+		[Como buen ermitaño es más terco que una mula, pero a veces olvida cosas simples como comer o dormir... Espero encontarlo a tiempo,
+		¡la última vez que le dejé solo acabó más flaco que una aguja!]
+	</phase>
+
+	<a id="finish">¡Podré volver a la superficie!</a>
+	<a id="fragment" cond="!fx(morsso)">¿Cómo puedo venir a ayudarte?</a>
+
+	<phase id="fragment" next="sortie" effect="morsso" frame="blabla" background="1">
+		[Ya no necesitaré este fragmento, te lo regalo, ahora tu Dino podrá ingresar en el Mundo Sombra cuando lo desee.]
+		[Sé prudente cuando vengas, ¡quizás no ande por aquí para socorrerte!]
+	</phase>
+	<phase id="finish" fast="1" frame="stop" background="1">
+		Es hora de volver a la superficie, el Mundo Sombra parece pacífico por ahora, pero llegará el día en que tendrás que explorar sus profundidades.
+	</phase>
+</d>

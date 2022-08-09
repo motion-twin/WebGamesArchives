@@ -1,0 +1,198 @@
+﻿<d place="fountj" name="Ser raro" gfx="alien" cond="scenario(star,0)+(admin()|time(30))+active(starquest)">
+
+	<phase id="begin" next="yes:no">
+		. . . . . yo . . . perdido . . . . . sin potencia . . estrella . . . . nunca . . . . poder volver a casa . . . . ayuda
+	</phase>
+
+	<a id="yes">Mmmm... vale, te ayudaré.</a>
+	<a id="no">Ni lo sueñes</a>
+
+	<phase id="no" fast="1">
+		Es verdad, ¡más vale evitarse problemas con gente rara!
+	</phase>
+
+	<phase id="yes" next="nothing">
+		. . . . . Gracias . . . . very . . . Bziiiiiiiiiiiiiiiiiiit! ¡Ah! ¡Estupendo! ¡Mi traductor simultáneo ha sido reparado!
+		Menos mal que había traido pilas de recambio. Gracias amigo querido, gracias por ofrecerme tu ayuda...
+	</phase>
+
+	<a id="nothing">De nada...</a>
+
+	<phase id="nothing" next="dom">
+		¡Faltaría menos sal! Como quería decirte antes, tengo un problema tecnicológico.
+		Mi (SiAvUaEs) se ha roto como una taza de porcelana. ¡No puedo volver a mi casa en (PuOsEniLa)!
+	</phase>
+
+	<a id="dom">Eso veo, ¡qué mala suerte!</a>
+
+	<phase id="dom" next="star">
+		Necesitaría tu ayuda para poder encontrar cristales de (TcEtCiNo)...
+		Veamos... en tu idioma, la traducción más próxima debería ser 'estrellas brillantes'.
+	</phase>
+
+	<a id="star">¿Estrellas?</a>
+
+	<phase id="star" next="how">
+		Sí, ¡así es! Si me traes exactamente siete ejemplares de la Estrella, podré retomar mi camino ¡y quizás te recompense con un (CiLoJuAeDa) de mi propia casa!
+	</phase>
+
+	<a id="how">¿Sabes cómo puedo encontrar esas estrellas?</a>
+
+	<phase id="how" next="ah">
+		Es relativamente sencillo. Tienes que resolver un cierto número de adivinanzas espectaculares inscritas en la Guía del Turista Ecléctiko.
+		Cada vez te leeré el pasaje, y luego te las tienes que desarreglar por ti mismo, ¡ah!
+	</phase>
+
+	<a id="ah">¿"Ah"?</a>
+
+	<phase id="ah" scenario="star:1">
+		Si, eso, ¡ya te digo! Voy a buscar la Guía del Turista, no te vayas ahora vuelvo...
+	</phase>
+
+</d>
+
+<d place="fountj" name="Ser raro" gfx="alien" cond="scenario(star,1)">
+
+	<phase id="begin" next="et">
+		La Guía dice: "¡Un megalobo te espera en la capital!"
+	</phase>
+
+	<a id="et">¿Y qué?</a>
+
+	<phase id="et">
+		¿Y qué? ¡Eso es todo! Habrá que desarreglárselas uno mismo por el momento, ¡siento ser tan ecléctico!
+	</phase>
+
+</d>
+
+<d place="fountj" name="Ser raro" gfx="alien" cond="scenario(star,2+)+!scenario(star,8+)">
+
+	<phase id="begin" next="star2:star3:star4:star5:star6:star7">
+		¡Ah! Veo que avanzas en tus investigaciones. Veamos qué nos dice la Guía del Turista...
+	</phase>
+
+	<a id="star2" cond="scenario(star,2)">Escuchar</a>
+	<a id="star3" cond="scenario(star,3)">Escuchar</a>
+	<a id="star4" cond="scenario(star,4)">Escuchar</a>
+	<a id="star5" cond="scenario(star,5)">Escuchar</a>
+	<a id="star6" cond="scenario(star,6)">Escuchar</a>
+	<a id="star7" cond="scenario(star,7)">Escuchar</a>
+
+	<phase id="star2" next="end">
+		Leo en la Guía: "el tipo grasiento apreciará una nube transportada"... ¿te dice algo?
+	</phase>
+
+	<phase id="star3" next="end">
+		Guía del Turista, página 879 apartado b: "cuando tenemos lodo hasta el cuello, nada mejor que un buen pastel". Está claro, ¿no?
+	</phase>
+
+	<phase id="star4" next="end">
+		Cito: "Hacer un agujero en el agujero no es cosa de tonto" ... ¿¿tienes alguna idea??
+	</phase>
+
+	<phase id="star5" next="end">
+		Está escrito en letras muy pequeñas: "Los viejos huesos aprecian la vista de un... capsicum", sí... debe de ser eso... (digo yo...)
+	</phase>
+
+	<phase id="star6" next="end">
+		Uhm... Anexo B de la Guía del Turista: "Visita el hombre-dios cuando sea mediodía en Pekín". Todo un programa...
+	</phase>
+
+	<phase id="star7" next="end">
+		¡Falta la última estrella! La guía dice "en el país de Saru volverás de los muertos sin artificios". ¡Buena suerte!
+	</phase>
+
+	<a id="end">...</a>
+
+	<phase id="end">
+		Tu lenguaje local es bien raro... ¡la verdad es que no te entiendo nada!
+	</phase>
+
+</d>
+
+<d place="fountj" name="Ser raro" gfx="alien" cond="scenario(star,8)">
+
+	<phase id="begin" next="ok">
+		.... ¡¡¡Síii!!! ¡Gracias! ¡gracias! ¡gracias! ¡Gracias a ti voy a poder volver a (PuOsEniLa)!
+		Me queda poco tiempo antes de que los astros dejen de estar alineados en Rochechouart...
+	</phase>
+
+	<a id="ok">...</a>
+
+	<phase id="ok" next="give">
+		¿Podrías darme las estrellas? Te daré como te prometí un (CiLoJuAeDa) a cambio. ¡También te ofrezco
+		una babiola que encontré en tu mundo!
+	</phase>
+
+	<a id="give">Dar las 7 Estrellas</a>
+
+	<phase id="give" use="star:7" collection="plume" give="cgold:1" fast="1" scenario="star:9">
+		El Ser Raro corre hacia una pequeña casa, y en un pequeño destello, ésta desaparece. No quedan más que rastros quemados
+		en el suelo y una columna de humo que se eleva muy alto en el cielo... te ha dejado un "Napodino de Oro" así como un
+		extraño objeto de colección...
+	</phase>
+
+</d>
+
+<d place="rashpk" name="Vendedor de Salchichas (aventura)" gfx="merguez" cond="scenario(star,2)+equip(burger)">
+
+	<phase id="begin" next="ok">
+		Ooh, ¡veo que tu Dino transporta una nube-hamburguesa! ¿Sabías que es muy malo para la salud? A menos que no quieras
+		que tu Dino se ponga tan gordo como un luchador de Sumo...
+	</phase>
+
+	<a id="ok">...</a>
+
+	<phase id="ok" next="star">
+		Quítame esta nube-hamburguesa de la vista y cómete una de mis salchichas... toma, te doy este objeto que me encontré en el suelo como regalo de fidelidad.
+	</phase>
+
+	<a id="star">¿Mmm?</a>
+
+	<phase id="star" fast="1" give="star" scenario="star:3">
+		¡Genial! ¡El vendedor de salchichas te ha dado una de sus estrellas mágicas!
+	</phase>
+
+</d>
+
+<d place="skull" name="Calaveri (aventura)" gfx="skully" cond="scenario(star,5)+equip(ppoiv)">
+
+	<phase id="begin" next="ok">
+		¡¡Oh oh oh oh oh oh oh oh oh oh oh oh oh oh!! ¡¡¡¿Pero qué ven mis ojos?!!! ¡Es un magnífico ejemplar
+		de "Capsicum avuum"! Qué color, qué olor, ¡es magnífico!
+	</phase>
+
+	<a id="ok">Si quieres te lo doy.</a>
+
+	<phase id="ok" next="star">
+		¡Te lo agradezco enormemente! ¡oh oh oh! A cambio de haberme ofrecido esta visión espléndida, voy a darte
+		algo que me encontré buscando un hueso que había perdido. ¡Toma!
+	</phase>
+
+	<a id="star">¿Mmm?</a>
+
+	<phase id="star" fast="1" give="star" scenario="star:6">
+		¡Enhorabuena! Gracias a Calaveri, has recuperado la 5ª estrella mágica. Ya no quedan más que dos.
+	</phase>
+
+</d>
+
+<d place="baobob" name="Don Bao Bob (aventura)" gfx="baobob" cond="scenario(star,6)+(admin()|hour(5)|hour(6)|hour(7))">
+
+	<phase id="begin" next="ok">
+		¿Qué vienes a hacer a esta hora tan matinal?
+	</phase>
+
+	<a id="ok">Busco...</a>
+
+	<phase id="ok" next="star">
+		¡Ah! Sí... se me han pegado las sábanas. Ten, lo había guardado para ti. Espero que no te dé demasiados problemas...
+	</phase>
+
+	<a id="star">???</a>
+
+	<phase id="star" fast="1" give="star" scenario="star:7">
+		¡Con estas extrañas palabras, Bao Bob te confía la 6ª estrella mágica! ¡¡¡Ya no queda más que una!!!
+	</phase>
+
+</d>

@@ -1,0 +1,2352 @@
+<!-- ** MISSIONS ** ----------------------------------------------------------------------------------->
+
+missionDetails
+	%briefing%
+	%briefing%
+	%needYou% %briefing%
+	%briefing% %missionEnd%
+	%briefing% %missionEnd%
+
+briefing
+	::briefing::
+
+MCopy
+	Copier le fichier "::file::" appartenant à ::owner::.
+
+MCopy_details
+	%client% souhaite %get% %criticaldata% actuellement en possession de ::corp::. Pensez à vérifier les imprimantes du réseau si le fichier n'est plus sur son poste. %freestyleRand%
+
+MSteal
+	Copier puis effacer le fichier "::file::" appartenant à ::owner::.
+
+MSteal_details
+	%company% a récemment obtenu %criticaldata% que nous souhaitons nous approprier. Trouvez-les, faites-en une copie et effacez-les de leur système. %freestyleRand%
+
+MDelete
+	%delete% le fichier "::file::" appartenant à ::owner::.
+
+MDelete_details
+	%targetPlace% : %client% vous demande de %delete% %compromisingData%.
+	%youWill% %delete% un fichier contenant %compromisingData% : "::file::".
+	Le fichier que %client% vise contient %compromisingData% : effacez-le.
+
+MModerate
+	%delete% toutes les musiques et vidéos du serveur central.
+
+MModerate_details
+	Un employé dont nous ignorons l'identité possède sur son espace mutualisé, dans le serveur central, de nombreux fichiers illégaux. Supprimez-les tous.
+	Nos récents contrôles de productivité ont révélé que l'employé ::owner:: possédait sur sur son espace mutualisé, dans le serveur central, de nombreux fichiers illégaux. Supprimez-les tous.
+	Un organisme gouvernemental contre la fraude informatique a prévu de contrôler nos systèmes %day% %nday%. Vérifiez le serveur central et supprimez tout fichier illégal (musique ou vidéo).
+
+MDeleteAll
+	%delete% tous les fichiers "::ext::" appartenant à ::owner::.
+	Faites le ménage dans les fichiers ::ext:: de ::owner::.
+
+MDeleteAll_details
+	%client% souhaite %badAction%. Localisez le %terminal% de ::owner:: puis supprimez TOUS les fichiers portant l'extension "::ext::".
+
+MCrashPrinter
+	Détruisez l'imprimante "::target::".
+
+MCrashPrinter_details
+	Notre %boss% refuse de subventionner le renouvellement de notre parc informatique. %youWill% %destroy% l'imprimante "::target::" pour leur "forcer" un peu la main.
+
+MCrashTerminal
+	Plantez le %terminal% de ::owner::.
+
+MCrashTerminal_details
+	%youWill% %destroy% le %terminal% de ::owner:: afin de %badAction% pour le compte de %client%. %freestyle%
+	Nous voulons %badAction%; %youWill% %destroy% le %terminal% de ::owner::. %freestyle%
+	%client% vous demande de %destroy% le %terminal% de ::owner:: pour %badAction%.
+
+MCrashDB
+	Plantez le serveur de base de données "::target::".
+
+MCrashDB_details
+	Pour %badAction%, %client% vous demande de %destroy% le serveur de base de données "::target::" hébergé chez ::corp::. %freestyle%
+
+MCleanTerminal
+	Supprimer tous les anti-virus du poste de ::owner::.
+
+MCleanTerminal_details
+	::owner::, un employé exaspéré de %company%, vous demande de %destroy% tous les anti-virus présents sur son poste. Ne touchez à rien d'autre !
+
+MCopyMail
+	Copier le mail envoyé par ::sender:: à ::owner::.
+
+MCopyMail_details
+	%client% soupçonne ::owner:: de vouloir %sabote% nos %rechItems% en %rechTopic%. Fouillez ses fichiers et retrouvez un mail entre cet employé et son complice, ::sender::.
+
+MFindMails
+	Trouver des indices compromettants contre ::owner::.
+
+MFindMails_details
+	%recentInvest% aurait révélé plusieurs transactions suspectes toutes liées à l'employé ::owner::. %client% vous demande de vous introduire sur son %terminal% pour y récupérer TOUS les éléments compromettants qui pourraient étayer ces suspicions.
+
+MPasswords
+	Récupérer le fichier central des mots de passe sur "::target::"
+
+MPasswords_details
+	%client% a besoin d'accéder à l'ensemble des mots de passe d'un système de ::corp::. Localisez et copiez le fichier central des mots de passe sur le serveur de base de données "::target::".
+
+MCleanSecurity
+	Plantez tous les systèmes de sécurité (caméras, digicodes, ...)
+
+MCleanSecurity_details
+	%client% souhaite introduire un agent dans %office% %company% : vous interviendrez ici en amont en sabotant l'ensemble des dispositifs de sécurité du bâtiment.
+
+MCamRec
+	Copier l'enregistrement de caméra "::file::".
+
+MCamRec_details
+	%client% souhaite %get% un enregistrement de l'une des caméras de sécurité de %company%. Localisez et copiez le fichier "::file::". %freestyleRand%
+	%client% vous demande de %get% un enregistrement de camera. La vidéo en question a été prise dans %company% et aurait été sauvegardée sous le nom "::file::" selon nos sources. Trouvez-la et ramenez-la nous. %freestyleRand%
+
+MCleanCriminal
+	Supprimer le casier judiciaire de ::name::.
+
+MCleanCriminal_details
+	%client% souhaite donner une seconde chance à ::name:: en effaçant toutes traces d'activités criminelles de son casier.
+	::name:: a commis quelques "erreurs" par le passé, mais %client% souhaite y remédier. Un nouveau départ en somme.
+
+MSpy
+	Installez un virus espion sur le poste de ::name::.
+
+MSpy_details
+	%client% soupçonne l'employé ::name:: de vouloir %sabote% une partie de nos %rechItems%. Il doit être placé sous surveillance immédiatement. %youWill% infecter tous les fichiers COEUR de son %terminal% grâce au virus Espion qui vous sera fourni.
+
+MCompromiseMail
+	Placez un fichier compromettant dans le dossier MAIL du %terminal% de ::name::
+
+MCompromiseMail_details
+	Les %rechItems% de ::name:: sont un risque pour %client%. Grâce au virus UPLOAD fourni, placez un e-mail compromettant dans son dossier MAIL personnel, nous ferons le reste.
+
+MFalsifyCam
+	Falsifiez tous les enregistrements vidéo concernant la zone ::sector::.
+
+MFalsifyCam_details
+	%client% souhaite couvrir un de ses agents infiltré chez ::corp::. Localisez les enregistrements vidéo de la zone ::sector::, puis falsifiez-les tous grâce au virus FINAL-CUT fourni.
+
+MSpyCam
+	Installez des mouchards sur toutes les caméras du réseau.
+
+MSpyCam_details
+	%client% vous demande d'infiltrer le central de sécurité de %company%. %youWill% infecter tous les fichiers COEUR de leurs caméras avec un virus Espion. Nous prendrons ensuite le relai. %freestyleRand%
+	En prévision de %badMission%, %client% vous demande de prendre le contrôle de toutes les caméras de %company%. %youWill% installer un mouchard sur tous les fichiers COEUR de leurs caméras.
+
+MArrest
+	Faites condamner ::name::.
+
+MArrest_details
+	%client% souhaite voir ::name:: tomber. %youWill% vous introduire dans le fichier central de la police pour ajouter quelques éléments compromettants à son dossier. Ne laissez pas traîner d'éventuel fichier LOG sur le serveur ! %freestyleRand%
+	%client% vous demande de forcer la main à la justice en ajoutant quelques pièces compromettantes au casier de ::name::. Pensez à %delete% les éventuels fichiers LOG du serveur ! %freestyleRand%
+
+MCorruptDisplay
+	%displayAction% affichages publics de %placeMission%.
+
+MCorruptDisplay_details
+	%client% vous demande de mettre en place une diversion dans %placeMission% pour couvrir %badMission%. %youWill% infiltrer leur réseau pour envoyer %badMessage% sur tous les écrans publics. Effacez le contenu du dossier PLAYLIST sur le serveur central d'affichage, puis placez-y notre propre contenu...
+
+MDeliverFile
+	%deliver% %deliveredFile% à ::name::.
+
+MDeliverFile_details
+	%client% vous demande d'effectuer une livraison électronique urgente auprès de ::name::. Servez-vous du virus UPLOAD fourni pour placer le fichier à livrer dans le dossier "::folder::" de son %terminal%.
+
+MOverwriteFiles
+	%overwrite% tous les fichiers ::ext:: de ::name::.
+
+MOverwriteFiles_details
+	%client% vous demande de %overwrite% de tous les fichiers ::ext:: de ::name::. Pour être certain de ne laisser passer aucun fichier, pensez à faire de même dans les imprimantes de leur réseau. Un virus spécialement conçu pour cette mission vous sera fourni.
+
+MGameHack
+	%boost% le personnage ::char:: sur le jeu ::game::.
+
+MGameHack_details
+	Un riche client vous demande de pirater le serveur ::server:: du jeu ::game:: pour y modifier son personnage et lui accorder des avantages substanciels.
+
+MInfectNet
+	Infecter tous les terminaux d'un réseau avec ::vname::.
+
+MInfectNet_details
+	Installez un %virus% ::vname:: (fourni) sur tous les terminaux d'un réseau ::corp:: pour le %destroy%. Pour fonctionner, ce virus doit être lancé sur tous les fichiers CONTROL des terminaux utilisateurs.
+	%client% veut %destroy% les installations d'un réseau ::corp::. Déployez un %virus% ::vname:: (fourni) sur tous leurs terminaux en ciblant les fichiers CONTROL de ces ordinateurs.
+
+MGetVirus
+	Récupérez le code source du %virus% ::vname::.
+
+MGetVirus_details
+	%client% souhaite %get% un %virus% du nom de ::vname::. Selon nos sources, ::vname:: aurait infecté un %terminal% d'un réseau ::corp::. Localisez la machine en question et utilisez le virus VEXTRACT que nous vous fournirons sur un maximum de fichiers ::ext:: infectés. Rapportez-nous le virus ainsi reconstitué.
+
+MTutorial
+	Faites planter le terminal d'entraînement.
+
+MTutorial_details
+	Connectez-vous sur le terminal d'entraînement de ce réseau et détruisez-le.
+
+MTutorialDelete
+	Supprimez ::n:: fichiers ::ext::.
+
+MTutorialDelete_details
+	Nous allons maintenant vérifier vos compétences en situation RÉELLE. Votre objectif ici est très simple : connectez-vous sur n'importe quel terminal de ce réseau et supprimez ::n:: fichiers ::ext::. A vous de jouer !
+
+MTutorialBypass
+	Copiez le fichier "::file::" qui se trouve sur le terminal d'entraînement.
+
+MTutorialBypass_details
+	Vous devez passer au travers du Firewall installé sur ce réseau. Vous pourrez ensuite atteindre et copier un fichier présent dans le terminal d'entraînement ("::file::").
+
+MTV
+	Saboter les programmes télévisés de la chaîne ::tvTo::.
+	Discréditer la chaîne de télévision ::tvTo::.
+
+MTV_details
+	%client% %wantsYouTo% %badTvAction% la chaîne ::tvTo::. Connectez-vous aux serveurs centraux de la télévision et copiez une émission de la chaîne ::tvFrom::. %findNasty% Remplacez ensuite tous les programmes de ::tvTo:: par cette copie.
+
+MTVTheft
+	Voler une émission télévisée avant sa diffusion.
+
+MTVTheft_details
+	%client% %wantsYouTo% obtenir une copie de l'émission "::program::" avant sa diffusion officielle sur ::tv::. L'exemplaire que nous recherchons est certainement crypté : décodez-le et ramenez-le nous.
+
+MTVCrash
+	%destroy% le serveur de la chaîne ::tv::.
+
+MTVCrash_details
+	%client% n'a pas vraiment apprécié les dernières programmations de la chaîne "::tv::". Faites-le leur savoir en détruisant leur serveur central des programmes. Attention : ne touchez à aucun autre serveur de télévision !
+
+findNasty
+	Trouvez quelque chose de vraiment graveleux...
+	Cherchez quelque chose de particulièrement compromettant.
+	Il nous faut du politiquement très incorrect.
+	Il nous faut quelque chose de vraiment adapté.
+	Choisissez quelque chose de bien évocateur.
+	Prenez ce qui vous semblera le "mieux".
+	%client% veut du trash.
+
+badTvAction
+	nuir aux intérêts de
+	porter atteinte aux "intérêts" de
+	détruire la réputation de
+	discréditer totalement
+	saboter les programmes de
+	mettre un terme aux activités de
+	ridiculiser
+
+wantsYouTo
+	vous demande de
+	souhaite faire appel à vous pour
+
+delete
+	effacer
+	supprimer
+	détruire
+
+get
+	obtenir
+	se procurer
+	intercepter
+	récupérer
+	mettre la main sur
+
+virus
+	virus
+	worm
+	ver
+	trojan
+
+boost
+	Améliorer
+	Modifier
+	Booster
+
+deliver
+	livrer
+	transmettre
+	faire parvenir
+	fournir
+
+deliveredFile
+	un fichier
+	un document important
+	des données critiques
+	des résultats d'analyse
+	un fichier important
+
+recentInvest
+	une enquête récente
+	un rapport d'enquête
+	une inspection de routine
+	une perquisition récente
+	un rapport administratif
+	une analyse de routine
+	un récent rapport d'analyse comportementale
+	un rapport d'analyse réseau
+	une récente analyse du traffic réseau
+
+displayAction
+	Prendre le contrôle des
+	Perturber les
+	Détourner les
+
+placeMission
+	::place::
+
+youWill
+	votre objectif :
+	votre rôle sera de
+	vous devrez
+	il vous faudra
+	ce que nous attendons de vous est simple :
+	tout ce que vous aurez à faire sera de
+	votre but sera de
+
+client
+	notre client
+	notre organisation
+	notre groupe
+	notre compagnie
+	notre conseil de direction
+	notre commanditaire
+
+criticaldata
+	des données critiques
+	des informations clés
+	diverses données confidentielles
+	des chiffres et résultats majeurs
+	des données capitales
+	des informations top-secrètes
+	des résultats de recherche
+
+compromisingData
+	des données critiques très compromettantes
+	des informations gênantes
+	diverses données compromettantes
+	des chiffres et données majeures compromettantes
+	des informations compromettantes
+	des résultats %dataDomain% gênants
+
+dataDomain
+	%domain%
+	d'étude
+	de recherche
+	d'analyse %domain%
+
+terminal
+	poste
+	terminal
+	ordinateur
+	poste de travail
+
+targetPlace
+	Votre cible sera %company%
+	Le système ciblé est installé dans %office% %company%
+	Nous visons %office% %company%
+	Nous voulons que vous infiltriez %company%
+	Vous devrez vous introduire dans %office% %company%
+
+company
+	une société %purpose%
+	un centre %purpose%
+	un laboratoire %purpose%
+	une succursale de ::corp::
+	une filiale de ::corp::
+
+office
+	les locaux de
+	les bureaux de
+	l'agence de
+	l'administration de
+
+purpose
+	d'analyse marketing
+	d'étude en %rechTopic%
+	de recherche en %rechTopic%
+	de %rechTopic%
+	de déploiement %rechTopic%
+	de ressource %rechTopic%
+
+badAction
+	%sabote% les %rechItems% en %rechTopic% de %company%
+	%sabote% les %rechItems% de %company%
+	limiter l'avancée de %company% en matière de %rechTopic%
+	%sabote% les %rechItems% de %company%
+	%sabote% les dernières avancées de %company% en matière de %rechTopic%
+	%sabote% les derniers mois de recherche de %company%
+	prendre le dessus sur les %rechItems% en %rechTopic%
+	compromettre la position d'un employé de ::corp::
+	%sabote% le travail d'un employé de ::corp::
+	semer le désordre au sein de %company%
+
+badMission
+	un sabotage de %rechItems%
+	une mission de sabotage
+	une mission sur le terrain
+	une mission future
+	l'intervention d'un agent sur le terrain
+	une intervention sur place
+
+badMessage
+	des images à caractère pornographique
+	des messages subversifs
+	des textes subversifs
+	divers messages
+	diverses images
+	de quoi semer la confusion
+	des images qui feront diversion
+	quelques images subversives
+	du contenu illégal
+
+sabote
+	saboter
+	saboter
+	discréditer
+	mettre à mal
+	réduire à néant
+	mettre à mal
+	ralentir
+	annihiler
+	détruire
+	saccager
+	dévaster
+
+overwrite
+	saboter
+	écraser
+	effacer le contenu de
+
+destroy
+	saboter
+	planter
+	crasher
+	mettre en pièces
+	détruire
+	mettre hors-service
+	mettre à genoux
+
+rechTopic
+	statistique %domain%
+	service %domain%
+	commerce %domain%
+	informatique %domain%
+	sécurité
+	solution %domain%
+	intéraction %domain%
+	technologie %domain%
+	business %domain%
+	développement %domain%
+	application %domain%
+
+domain
+	online
+	media
+	web
+	stratégique
+	marketing
+	middle-ware
+	front-media
+	advertising
+
+rechItems
+	recherches
+	travaux
+	études
+
+use
+	employer
+	utiliser
+	faire usage de
+	recourir à
+	user de
+
+goodHacker
+	un hacker compétent
+	un hacker doué
+	quelqu'un de compétent
+	un professionnel
+	un pirate informatique expert
+	un hacker de haut niveau
+	un indépendant
+	un agent indépendant
+
+needyou
+	nous avons besoin de vos talents pour une tâche un peu particulière.
+	nous recherchons %goodHacker% pour une mission spéciale.
+	nous ignorons si vous ferez l'affaire, mais nous recherchons %goodHacker% tel que vous.
+	nous avons un job à vous proposer :
+	nous avons du travail pour vous :
+	nous recherchons %goodHacker%.
+
+freestyleRand
+	€
+	€
+	%freestyle%
+
+freestyle
+	%client% a laissé entendre que vous pouviez %use% tous les moyens que vous jugeriez nécessaire pour parvenir à vos fins.
+	faites comme bon vous semblera, %client% vous donne carte blanche.
+	vous pouvez %use% toutes les méthodes qui vous sembleront utiles.
+
+missionEnd
+	Ne nous décevez pas.
+	Nous vous recontacterons bientôt.
+	Vous savez ce qu'il vous reste à faire.
+	Ne vous faites pas repérer !
+	Agissez rapidement.
+	L'échec n'est pas une option.
+	Vous n'avez pas le droit à l'échec.
+	Nous attendons de vos nouvelles.
+	Ne nous décevez pas.
+	Nous n'accepterons aucun échec.
+	Agissez vite car le temps vous est compté.
+	Notez que vous n'agirez pas officiellement en notre nom.
+	Nous nierons avoir eu connaissance de vos agissements en cas d'échec.
+	Agissez efficacement et rapidement.
+	%client% espère que vous serez à la hauteur.
+	%client% paiera ce qu'il faut.
+
+
+
+<!-- ** MISC ** ----------------------------------------------------------------------------------->
+
+welcome
+	%helloUser%__%corpoSpam%
+
+helloUser
+	Bienvenue employé ::user::.
+	Bonjour employé ::user::.
+	Reprenez votre travail, employé ::user::.
+	Vous êtes maintenant connecté(e), employé ::user::
+
+corpWelcome
+	Réseau ::corp::.
+	Bienvenue chez ::corp::.
+	::corp:: vous accueille.
+	Bonjour, employé.
+
+shortCorpoSpam
+	::corp:: vous protège.
+	Signalez tout comportement suspect.
+	Travaillez plus.
+	Soyez dévoué(e) à ::corp::.
+	Restez productif.
+	Attentifs, ensemble.
+	%yourBoss% vous observe.
+	Améliorez votre rendement.
+	Vous devez %objective%.
+	Concentration et assiduité.
+	Hadopi veille sur vous.
+	::corp::, partenaire de votre vie.
+	%corpStat%
+	%corpStat%
+	%corpStat%
+	%corpStat%
+	%corpStat%
+
+corpStat
+	%statLabel% : +%pct%
+	%statLabel% : +%pct%
+	%statLabel% : +%pct%
+	%statLabel% : +%pct%
+	Pôle %rechTopic% : +%pct%
+	%badStatLabel% : -%pct%
+
+pct
+	0.0#[PCT]
+	0.##[PCT]
+	0.##[PCT]
+	0.##[PCT]
+	1.0#[PCT]
+	1.##[PCT]
+
+statLabel
+	Progression %domain%
+	Productivité %domain%
+	Bénéfice %domain%
+	Performance %domain%
+	Inflation %domain%
+	Rendement %domain%
+	Croissance %domain%
+	Développement %domain%
+	Expansion %domain%
+	Secteur %domain%
+	Satisfaction
+	Bien-être des salariés
+	Consommation
+	Qualité de vie
+
+badStatLabel
+	Concurrence %domain%
+	Coûts %domain%
+	Dette secteur %domain%
+	Déficit %domain%
+
+corpIntro
+	::corp:: vous offre une nouvelle journée productive et créative.
+	::corp:: vous veut du bien.
+	::corp:: vous protège.
+	::corp:: oeuvre pour un monde meilleur.
+
+corpoSpam
+	%corpIntro%
+	%corpIntro%
+	%lifeStuff% permet de %raise% votre %perfStuff% de #.##[PCT].
+	%lifeStuff% peut %raise% votre %perfStuff%.
+	Votre %perfStuff% peut encore être accrue de 0.##[PCT].
+	Votre %perfStuff% contribue à améliorer votre quotidien.
+	Augmentez votre %perfStuff% de +#[PCT] pour %raise% votre prime de fin d'année.
+	Votre objectif du jour : %objective%.
+	Un travail soigné est garant de votre avenir dans notre entreprise, employé.
+	Soyez productif et efficace. %yourBoss% compte sur vous.
+	%yourBoss% vous souhaite une journée productive.
+	Signalez tout comportement contre-productif.
+	L'efficacité et le rendement prévalent.
+	Votre %perfStuff% prévaut.
+	Maximisez votre capital %perfStuff%.
+	N'hésitez pas à consulter %advisor%.
+	Pensez à maximiser votre capital de %pointType%.
+	Nous vous observons.
+	Soyez toujours au meilleur niveau de performance.
+	Maintenez une productivité élevée.
+	TRAVAILLEZ.
+	%shortCorpoSpam%
+	%shortCorpoSpam%
+
+lifeStuff
+	une vie saine
+	une alimentation équilibrée
+	une concentration élevée
+	manger des OGM
+	boire des sodas
+	consommer
+	obéir
+	respecter la hiérarchie
+	être réceptif à la publicité
+	# minutes de publicité par jour
+
+perfStuff
+	performance
+	efficience
+	productivité
+	rendement
+
+advisor
+	%advisorName% %perfStuff%
+
+advisorName
+	votre Conseiller
+	votre Conseillère
+	la Cellule
+
+yourBoss
+	le %boss%
+	votre %boss%
+
+boss
+	conseil de direction
+	chef de projet
+	haut-conseil de direction
+	responsable de service
+	responsable de division
+	administration
+
+
+objective
+	améliorer %objectiveStuff%
+	multiplier %objectiveStuff%
+	augmenter %objectiveStuff%
+	stimuler %objectiveStuff%
+	doubler %objectiveStuff%
+	travailler encore plus pour gagner plus
+	produire plus
+
+objectiveStuff
+	votre rendement
+	votre productivité
+	votre efficacité
+	votre rentabilité
+
+hackerSpam
+	%gotcha%
+	Libérez-vous de %enemy% !
+	A mort %enemy% !
+	Combattez %enemy% !
+	%enemy% ne doit plus diriger votre vie.
+	Prenez le contrôle de votre vie.
+	Décidez par vous-même !
+	Pensez par vous-même !
+	Ne laissez plus %enemy% dicter votre vie.
+
+gotcha
+	Vous avez été hacké %smile%
+	Vous avez été piraté %smile%
+	Epic Fail ! LOL ! %smile%
+	FAIL ! %smile%
+	Paf.
+	Dommage ! Vous avez été hacké ! %smile%
+	LOL LOL LOL LOL LOL LOL LOL LOL
+	Système piraté %smile%
+	%smile%
+	"All your base... are belong to us !" %smile%
+	Hadopi power... LOL %smile%
+
+smile
+	:-)
+	:-P
+	^_^
+	;-)
+	=)
+
+enemy
+	::corp::
+	la société de consommation
+	le capitalisme
+	cette corporation véreuse
+	la publicité
+
+day
+	lundi
+	mardi
+	mercredi
+	jeudi
+	vendredi
+	samedi
+
+nextDay
+	%day%
+	%day%
+	demain
+	après-demain
+	le %day% %nday%
+
+
+nday
+	#
+	1#
+	2#
+
+nmonth
+	0#
+	0#
+	0#
+	10
+	11
+	12
+
+date
+	%nday%/%nmonth%
+
+time
+	%hour%:%min%
+
+hour
+	0#
+	1#
+	21
+	23
+min
+	0#
+	1#
+	2#
+	3#
+	4#
+	5#
+
+prevDate
+	cette année
+	l'année dernière
+	le mois dernier
+	200#
+	%day%
+
+roman
+	II
+	III
+	IV
+	VI
+	VII
+	IX
+	X
+	XI
+	XII
+
+mail
+	%mailHeader% %gossip% %byTheWay% %phrasePerso% %mailEndPerso%
+	%mailHeader% %phrasePerso% %byTheWay% %gossip%
+	%mailHeader% %gossip%
+	%mailHeader% %gossip%
+	%mailHeader% %gossip%
+	%mailHeader% %gossip%
+	%mailHeader% %phrasePerso% %mailEndPerso%
+	%mailHeader% %phrasePerso% %mailEndPerso%
+	%mailHeader% %phrasePerso% %mailEndPerso%
+	%mailHeader% %phraseCorpo%
+	%mailHeader% %phraseCorpo%
+	%mailHeader% %hi% %phrase% %mailEnd%
+
+forcedMail
+	<div class="mailHeader">De : ::from::|Sujet : %re% %importantSubject%</div>| ::mcontent::
+
+forcedMailNoSubject
+	<div class="mailHeader">De : ::from::|Sujet : ID ######-µ</div>| ::mcontent::
+
+importantSubject
+	urgent
+	important
+	demande
+	mail
+	question
+
+passwordMail
+	au fait, ton %pw% a été changé, c'est ::pass:: maintenant. Ne l'oublie pas !
+	votre nouveau %pw% est ::pass::
+	nous avons ré-initialié votre %pw% en ::pass::
+	votre %pw% a été compromis. Nous l'avons ré-initialisé en ::pass::.
+	Les directives de sécurité ont été appliquées. Votre %pw% a été modifié en conséquence : ::pass::.
+
+dangerousMail
+	%dmIntro% %dmContent% %dmFooter%
+	%dmIntro% %dmContent% %dmFooter%
+	%dmIntro% %dmContent% |%paiement%. %dmFooter%
+	%dmIntro% %paiement%. %dmContent% %dmFooter%
+	%dmIntro% %paiement% : %dmContent% %dmFooter%
+
+dmContent
+	nous avons bien reçu les %stolenStuffs%.
+	ces %stolenStuffs% nous seront très utiles.
+	%client% a bien reçu l'ensemble des %stolenStuffs%.
+	c'est un bon début, mais %client% aura besoin de bien plus que ces seuls %stolenStuffs%.
+	transmettez %stolenStuffs% à votre agent de liaison.
+	c'est une chance pour vous que la sécurité n'ait pas remarqué notre transaction.
+	nous vous demandons maintenant de vous procurer une copie de %stolenStuffs%.
+	nous attendons maintenant la seconde partie de ces %stolenStuffs%.
+	placez simplement les %stolenStuffs% à l'endroit convenu %day% soir.
+
+paiement
+	la première moitié des ##00 %currency% vous seront versés %nextDay%
+	Le paiement vous parviendra dès %nextDay%
+	les #000 %currency% ont été crédités sur votre compte
+	comme convenu, nous vous avons crédité les #000 %currency% en paiement de vos services
+	%client% sait récompenser ses alliés. Vos #000 %currency% vous serons versés dès %nextDay%
+
+stolenStuffs
+	documents volés
+	informations confidentielles
+	résultats confidentiels
+	données commerciales confidentielles
+	rapports secrets
+	éléments confidentiels
+	fichiers de code source
+	rapports commerciaux non-publiés
+
+dmIntro
+	€
+	€
+	€
+	Bien.
+	Parfait !
+	Donc, tout se déroule comme prévu.
+	C'est exactement ce que nous cherchions :
+	Très bien.
+	C'est parfait.
+	Mieux vaut tard que jamais :
+
+dmFooter
+	Continuez.
+	Continuez comme convenu.
+	Penser à supprimer cet e-mail dès que vous l'aurez lu !
+	Ne laissez évidemment pas traîner cet e-mail.
+	%missionEnd%
+	%missionEnd%
+
+sellerMail
+	Service client
+	Relations client
+
+creditCardDoc
+	%ccIntro%||<div class="fixed">%ccContent%</div>|%separator%|%ccFooter%|%separator%|%ccDocFooter%
+
+creditCardMail
+	%ccIntro%||<div class="fixed">%ccContent%</div>|%separator%|%ccFooter%
+
+ccIntro
+	*%sellerName%*|*Accusé réception de paiement*|%separator%
+	*%sellerName%*|*FACTURE #-###*|%separator%
+	*%sellerName%*|*COMMANDE ####-#*|%separator%
+
+ccContent
+	%sellerProduct%
+	%sellerProduct%|%sellerProduct%
+	%sellerProduct%|%sellerProduct%|%sellerProduct%
+	%sellerProduct%|%sellerProduct%|%sellerProduct%|%sellerProduct%
+
+ccFooter
+	Mode de paiement : %ccType%|Numéro : ::card::|%ccThanks%
+	Règlement : ::card:: (%ccType%)|%ccThanks%
+	Mode de règlement : %ccType% (n°::card::)|%ccThanks%
+
+ccDocFooter
+	Conservez ce document, il tient lieu de facture.
+	Gardez une copie de document.
+	En cas de réclamation, ce document tiendra lieu de facture.
+
+ccType
+	carte VIJA
+	UberCard
+	Baybal
+	e-VIJA
+	European Express
+	carte Diners
+
+ccThanks
+	Votre transaction a bien été enregistrée.|Vous recevrez un second e-mail de confirmation lorsque que votre ou vos produits seront expédiés.
+	Toute l'équipe vous remercie de votre confiance.
+	Merci de votre confiance.
+
+separator
+	*________________________*
+
+sellerProduct
+	%sellerProductName% (réf:###-##-µµ)
+
+sellerProductName
+	Produit multimédia
+	DVD %xml_names:hotProg%
+	Livre "%xml_names:hotProg%"
+	Musique
+	Logiciel
+	Goodies
+
+sellerName
+	%xml_names:hotTv% (18+ %sellerExtra%)
+	%xml_names:hotTv% (adult %sellerExtra%)
+	%xml_names:gameName% %sellerExtra%
+	%xml_names:corp% %sellerExtra%
+	µBay-%sellerExtra% %sellerCountry%
+	e-%sellerExtra% %sellerCountry%
+	Global %sellerExtra%
+
+sellerCountry
+	Europe
+	US
+	Thailand
+	China
+	Japan
+
+sellerExtra
+	shop
+	market
+	marketplace
+	store
+	mall
+	mart
+
+mailHeader
+	<div class="mailHeader">De : %from%|Sujet : %re% %mailSubject%</div>|
+
+mailSubject
+	(pas de sujet)
+	(pas de sujet)
+	%bizObj%
+	salut
+	hello
+	bonjour
+	au fait
+	demande
+	infos
+	rapport
+	%importantSubject%
+	%day% dernier
+
+from
+	%xml_names:firstname% - service %domain%
+	µµ##@::corp::
+	user_µ##@::corp::
+	%xml_names:nickname%@::corp::
+	employe_##µ@::corp::
+	%xml_names:firstname%@::corp::
+	%unknownSender%
+
+unknownSender
+	? (adresse inconnue)
+
+re
+	€
+	Re:
+	Re:
+	Re:
+	Re: Re:
+
+sysadmin
+	administrateur
+	admin
+	master
+	maitre
+	dieutp
+	el papa
+	maintenance
+	sys_admins
+	HAL-9000
+	root
+	mtwin
+
+hi
+	€
+	€
+	€
+	je ne suis pas d'accord :
+	contrairement à ce qui a été dit,
+	c'est vrai :
+	oui, enfin tu simplifies un peu...
+	non, je vois pas pourquoi tu dis ça ?
+	faut faire simple.
+	moi ce que j'en dis,
+	tu as tout faux.
+	dis pas n'importe quoi :
+	en réponse à ton mail,
+	j'ai bien reçu ton mail mais
+	j'ai du nouveau mais
+	aux dernières nouvelles,
+
+document
+	%docIntro% %phrase% %so% %phrase% %so% %phrase% [...]
+	%docIntro% %phrase% %so% %phrase% %so% %phrase% %so% %phrase% [...]
+	%docIntro% %phrase% %so% %phrase% %phrase% %so% %phrase% [...]
+
+docIntro
+	€
+	€
+	€
+	€
+	%techSujet% est complexe mais n'est pas %importance%.
+	%techSujet% est un sujet important :
+	%bizObj% est à l'ordre du jour,
+	<h2>De l'importance de %techSujet% dans %bizObj%</h2>|
+	<h2>Analyse de %anySubject%</h2>|
+	<h2>Recherches sur %anySubject%</h2>|
+	<h2>Réflexions sur %anySubject%</h2>|
+	<h2>%expand% %anySubject%</h2>|
+	<h2>Vers %techFailure%</h2>|
+	<h2>Comment %objective% ?</h2>|
+	<h2>%objective% : %bizObj%</h2>|
+
+phrase
+	%pintro% %bizPhrase%
+	%pintro% %techPhrase%
+
+bizPhrase
+	%bizSujet% doit fonctionner uniquement avec %bizObj%.
+	%bizSujet% doit se structurer avec %bizObj%, %bizObj% et %bizSujet% %techExtra%.
+	%bizObj% est unique sur le marché.
+	la situation de %bizSujet% sur %bizObj% et %bizObj% permet de prévoir %bizObj% efficacement.
+	%bizSujet% peut %raise% %bizObj%.
+	%bizObj% permet de %expand% %bizSujet% sur %bizObj%.
+	la négociation sur %bizObj% est %importance%.
+	l'emploi de %bizObj% devient immédiatement %useless%.
+	si on interverti %bizObj% et %bizObj%, %bizSujet% pourra %expand% %bizObj%.
+	%bizObj% du marché permettra %bizObj% de %bizSujet%.
+	%bizObj% doit assurer %bizObj% de %bizSujet%.
+	%bizSujet% doit %expand% %bizObj% et %bizObj%.
+
+techPhrase
+	toute la problématique de %techSujet% repose sur %tech% : il faut %expand% %techSujet%.
+	%tech%, et donc %tech%, peuvent être intégrés dans %techSujet%.
+	en détériorant %tech%, on pourrait générer %techFailure%, ce qui constituerait %tech%.
+	%techSujet% implique %techFailure% ou %techFailure%.
+	%tech% peut entraîner %techFailure%, donc %techSujet% ne pourra être appliqué.
+	un downgrade de %tech% pourrait occasionner %techFailure%.
+	%techFailure% provoquera probablement %techFailure%.
+	%techSujet% nous amène directement vers %techSujet%.
+	notre position sur %techSujet% se doit d'être claire : %expand% %tech% est %importance%.
+	la rupture de %tech% ne doit pas entraîner %techFailure%.
+	l'utilisation de %tech% dans %techSujet% peut être optimisée par %techSujet%.
+	si on déploie %tech% sur %tech%, %techSujet% devient %useless%.
+	en rebootant %tech%, %tech% multiplierait son swap %techExtra%.
+	l'analyse en profondeur de %techSujet% est %importance%.
+	le déploiement de %tech% provoque généralement %techFailure% ou %techFailure%.
+	%tech% perd une partie de son sens si on accepte ce point de vue pour %techSujet%.
+	%techFailure% peut avoir des conséquences désastreuses pour %bizObj%.
+	%tech% sera %importance% si on évite %techFailure%.
+	%techFailure% n'est jamais %importance% si on intègre les risques liés à %techSujet%.
+
+importance
+	inutile
+	sans intérêt
+	sans fondement
+	négligeable
+	sans importance
+	nécessaire
+	indispensable
+	critique
+	de la plus haute importance
+	sans équivoque
+	inestimable
+	remarquable
+
+so
+	€
+	€
+	€
+	€
+	€
+	donc
+	alors,
+	dès lors,
+	ce qui implique que
+	par ailleurs,
+	au delà de ça,
+	en plus,
+	or,
+	in extenso,
+	partant de là,
+	si on envisage cette possibilité,
+	partant de cet état,
+
+useless
+	caduque
+	obsolète
+	inutile
+	useless
+	une perte de temps
+
+bizSujet
+	l'entreprise
+	notre groupe
+	le profiling %techExtra%
+	l'e-merchandising
+	notre solution %techExtra%
+	l'innovation
+	notre équipe commerciale
+
+bizObj
+	le mailing %bizExtra%
+	l'analyse de résultats %bizExtra%
+	le post-engeenering %bizExtra%
+	le brain-storming %bizExtra%
+	le data-mining %bizExtra%
+	l'e-business %bizExtra%
+	l'information %bizExtra%
+	l'import %bizExtra%
+	l'étude %bizExtra%
+
+bizExtra
+	qualité
+	d'expansion
+	buzz
+	d'anticipation
+	des affaires
+	web 3.0
+	%bizPrefix%marketing
+	%bizPrefix%communication
+	%bizPrefix%media
+	%techExtra%
+
+bizPrefix
+	€
+	€
+	€
+	€
+	front-
+	post-
+	off-
+
+raise
+	accroître
+	améliorer
+	stimuler
+	augmenter
+	multiplier
+	booster
+
+expand
+	accentuer
+	accélérer
+	amplifier
+	augmenter
+	accroître
+	déployer
+	développer
+	multiplier
+	révéler
+	investir dans
+	stimuler
+
+sujet
+	la réunion de %day%
+	le brain-storming de %day%
+	ce rapport
+	l'e-learning
+	la question %sujetExtra%
+
+techSujet
+	la sécurité %sujetExtra%
+	la protection %sujetExtra%
+	la prévention %sujetExtra%
+	le transfert %sujetExtra%
+	le data-sharing
+	la maintenance %sujetExtra%
+
+anySubject
+	%techSujet%
+	%sujet%
+
+sujetExtra
+	des informations
+	du hacking
+	des données
+	réseau
+	informatique
+	de la structure
+	du groupe
+
+tech
+	le gateway %techExtra%
+	le firewall %techExtra%
+	le filtre %techExtra%
+	notre portail %techExtra%
+	le serveur %techExtra%
+	le process %techExtra%
+	la base de données %techExtra%
+	le linkage %techExtra%
+	le backdoor %techExtra%
+	le back-office %techExtra%
+	la mise à jour %techExtra%
+	l'update %techExtra%
+
+techExtra
+	€
+	€
+	€
+	€
+	€
+	proxy
+	d'interface
+	de recherche
+	user-safe
+	systémique
+	unsafe
+	d'intrusion
+	high-pass
+	de tri one-way
+	d'upload
+	version %version%
+	%version%
+
+version
+	#.%subVer%
+	#.%subVer%
+
+subVer
+	0
+	0
+	0
+	1
+	2
+	5
+
+techFailure
+	une panne de %tech%
+	une corruption dans %tech%
+	une erreur dans %tech%
+	un crash de %tech%
+	un important swap de %tech%
+	un reboot de %tech%
+	des erreurs sur %tech%
+	un crash complet de %tech%
+	une faille de %techSujet%
+
+pintro
+	€
+	€
+	€
+	€
+	€
+	€
+	€
+	€
+	depuis %prevDate%,
+	tout d'abord, il faut relever que
+	nous devons prendre en compte que
+	dans un scénario classique,
+	ce que le rapport révèle c'est que
+	pour atteindre notre objectif,
+	il devient évident que
+	on peut certifier que
+	toutes les études montrent que
+
+phrasePerso
+	tu viens %day% pour %event% ?
+	pour %event%, je te confirme ça %day%.
+	tu as reçu le document sur %bizObj% ?
+	on fait comme on a dit %day%.
+	%yesNo% j'attends toujours %docStuff%...
+	%yesNo% j'ai dû annuler %event%.
+	%yesNo% on laisse tomber %event%.
+	tu as regardé pour %event% ?
+	ils ont reporté %event%, tu viens quand même ?
+	%yesNo% faudra que je te parle de %event%.
+	t'es au courant pour %event% ?
+	on organise %event%, il faut que vraiment tu viennes.
+	%tech% a encore planté %day%, tu t'en charges ?
+	quelqu'un a encore changé %tech% sur %tech%...
+	%yesNo% j'attends le rapport sur %tech%.
+	tu as du temps pour %bizObj% ?
+	elle a proposé de faire un point sur l'installation de %tech%.
+	%yesNo% le rendez-vous %meetingDetail%.
+	%yesNo% il me manque %docStuff%.
+	%tech% nous a encore lâché, tu peux faire quelque chose ?
+	tu peux m'envoyer %docStuff% ?
+	%yesNo% j'ai envoyé %docStuff% hier.
+	on a enfin reçu %docStuff% ! Tu vas être surprise...
+	%yesNo% mais le problème reste %docStuff%...
+	je t'envoie ça %day%
+	sois à l'heure à %event%.
+	le debriefing %meetingDetail%
+	merci au fait pour %event% !
+	c'est bien noté pour %event%.
+	il nous faut au moins %bizObj%.
+	%bizObj% serait vraiment utile...
+
+gossip
+	%yesNo% %gossipIntro% %gossipPeople% l'aurait dit pendant %event%.
+	%yesNo% %gossipIntro% %gossipEvent% l'a vraiment affecté%e%...
+	%gossipIntro% depuis %gossipEvent%, rien ne va plus.
+	tu n'as rien à voir avec %gossipEvent%...
+	%gossipEvent%, et tout, %badEventEnd% !
+	%yesNo% %badEventEnd%, c'est ce que je lui ai dis !
+	%tellMe% tu vois encore %gossipPeople% %excl%
+	%gossipIntro% tu t'envoies en l'air avec %gossipPeople% ? %smile%
+	tiens, j'ai revu %gossipPeople%...
+	%gossipPeople% était à %event% %day%.
+	%gossipPeople% m'a invité à %event% %day%. %smile%
+	%gossipIntro% c'est %gossipPeople% qui est responsable de %gossipEvent%.
+	%tellMe% tu es au courant pour %gossipEvent% ?
+	%gossipIntro% %gossipPeople% serait encore dans le coin ? %smile%
+	%tellMe% tu as des news de %gossipPeople% ?
+	%gossipIntro% %gossipPeople% fait tout pour récupérer %bizObj%...
+	%gossipIntro% %tech% sera changé d'ici %day% %excl%
+	%gossipIntro% c'est %gossipPeople% qui gère %bizObj% maintenant %excl%
+	%gossipIntro% %gossipPeople% n'a pas été foutu s'occuper de %tech%... %smile%
+	%gossipIntro% c'est %gossipPeople% qui aurait planté %tech% ?
+	%gossipIntro% %gossipPeople% voudrait nous racheter %tech%.
+	%gossipIntro% tu as récupéré %contact% de %gossipPeople% %excl%
+	si %bizObj% foire, faudra dire merci à %gossipPeople%.
+	%gossipIntro% %gossipPeople% voudrait ma place %excl% %smile%
+	%gossipIntro% ils veulent te virer %excl%
+	%gossipIntro% %event%, c'était chiant à mourir ?
+	plutôt crever que d'aller à %event% avec %gossipPeople%.
+	%tellMe% c'était comment avec %gossipPeople% à %event% ?
+	j'ai récupéré %contact% de %gossipPeople%... %smile%
+	si %gossipPeople% s'y met, %badEventEnd%. %smile%|
+	%tellMe% c'était comment au lit avec %gossipPeople% ? %smile% __adult__
+	%gossipPeople% était là : résultat le rendez-vous %meetingDetail%
+	%badEventEnd%, %tech% %sucks%.
+	ça a encore planté, %tech% %sucks%. %badEventEnd% !
+	%gossipIntro% le %boss% voudrait encore changer %tech% et c'est %gossipPeople% qui s'en chargerait ! %smile%
+	%gossipIntro% %gossipPeople% %sucks% %smile%
+	%gossipIntro% %gossipPeople% n'aurait pas été capable de faire marcher %tech% %smile%
+	%gossipIntro% %gossipPeople% passerait son temps sur %webservice% %smile%
+	regarde moi ça : "%hackerSpam%". Connerie de hacker...
+	%gossipIntro% tu as aussi reçu ce message ce matin : "%hackerSpam%" ? C'est qui à ton avis ? %hackers% ?
+	%gossipIntro% %tech% aurait été hacké, y avait écrit partout : "%hackerSpam%"...
+	%gossipIntro% tu aurais perdu tous tes travaux ? %hackers% ?
+	%gossipIntro% %gossipPeople% serait en contact avec %hackers%...
+	ne parle pas de %gossipEvent% par mail, je tiens à mes %pointType%.
+	%gossipIntro% %tech% a été planté par %hackers%. %badEventEnd%.
+	%gossipIntro% %gossipPeople% aurait couché avec %gossipPeople% %excl% __adult__
+	%gossipIntro% %gossipPeople% ferait vraiment tout pour %sabote% nos %rechItems%. %badEventEnd% !
+	%gossipIntro% %gossipPeople% t'avait rappelé ?
+	tu as reparlé à %gossipPeople% finalement ?
+	avec %gossipPeople%, %badEventEnd%...
+	%yesNo% %gossipPeople% l'a envoyé%e% chier.
+	%yesNo% %gossipPeople% a finalement répondu %smile%
+	%gossipIntro% %boss% voudrait bloquer l'accès à %webservice% !
+	ça marche, %tech%, chez toi ?
+	t'arrives à te connecter sur %webservice%, toi ?
+	%gossipIntro% tu as un compte sur %webservice% ? %smile%
+
+gossipIntro
+	€
+	il paraît que
+	on raconte que
+	alors comme ça,
+	j'ai entendu dire que
+	tout le monde dit que
+	à ce qu'on dit,
+	des gens disent que
+	on m'a dit que
+	on m'a raconté que
+
+badEventEnd
+	on est pas sortis
+	ça va mal tourner
+	ça finira mal
+	on en a pour des lustres
+	ça va être compliqué
+	ça promet
+	on est pas rendus
+	on y est pas encore
+	on peut tout arrêter maintenant
+
+sucks
+	était une calamité
+	était une horreur
+	était catastrophique
+	gonfle tout le monde
+	nous a fait perdre un temps fou
+	emmerde tout le monde
+	était inefficace au possible
+	brille par son inefficacité
+	pose des tonnes de problèmes
+
+tellMe
+	€
+	alors raconte,
+	allez,
+	alors,
+	dis donc,
+	dis moi tout %smile%
+	rassure-moi,
+	bon alors,
+	dis,
+
+contact
+	le mail
+	le numéro
+	l'adresse
+	le NSM
+
+gossipPeople
+	l'autre tache
+	ce looser
+	ton collègue
+	%xml_names:firstname%
+	%xml_names:firstname% %gossipPeopleExtra%
+	%xml_names:firstname%, de %eventCorpo%,
+	le commercial %gossipPeopleExtra%
+	le type %gossipPeopleExtra%
+	le gars %gossipPeopleExtra%
+	la fille %gossipPeopleExtra%
+	la nana %gossipPeopleExtra%
+	le top-model %gossipPeopleExtra%
+	le boulet %gossipPeopleExtra%
+	l'emmerdeur %gossipPeopleExtra%
+
+gossipPeopleExtra
+	€
+	€
+	de l'autre soir
+	de l'autre fois
+	de %day% soir
+	de %day% dernier
+	avec qui tu as parlé %day%
+	avec qui on a parlé %day%
+	de %eventCorpo%
+
+hackers
+	un groupe de hackers
+	un hacker
+	un pirate informatique
+	des pirates
+	des hackers
+
+webservice
+	Facebook
+	Youtube
+	Dailymotion
+	Meetic
+
+gossipExtra
+	€
+	€
+	€
+	€
+	%byTheWay% %phrasePerso%
+
+byTheWay
+	au fait, %byTheWayExtra%
+	|Au fait, %byTheWayExtra%
+	|Sinon, %byTheWayExtra%
+	|Et sinon, %byTheWayExtra%
+	|Sinon, %byTheWayExtra%
+
+byTheWayExtra
+	€
+	€
+	€
+	tant que j'y pense,
+	rien à voir,
+	à part ça,
+	pour parler d'autre chose,
+	autre sujet,
+
+gossipEvent
+	sa rupture
+	son licenciement
+	son échec
+	l'annulation de son projet
+	son départ
+	son accident
+	cette histoire
+	ce bordel
+	ce bazar
+	ce changement
+	cette décision
+	cet évènement
+
+excl
+	!
+	?!
+	?
+	??
+
+e
+	€
+	e
+
+yesNo
+	€
+	€
+	%yesNoValue%
+
+yesNoValue
+	oui
+	oui,
+	non
+	non,
+	exact,
+	exactement,
+	c'est vrai,
+
+meetingDetail
+	s'est plutôt bien déroulé.
+	s'est vraiment mal passé !
+	de %day% était un fiasco !
+	est repoussé à %day% prochain...
+	est maintenu pour %day%.
+	est confirmé, il faudra penser à apporter %docStuff%.
+
+docStuff
+	des éléments complémentaires
+	les documents
+	ton rapport
+	le rapport
+	l'ensemble du dossier
+	les résultats
+	le rapport du service %domain%
+
+mailEnd
+	€
+	€
+	€
+	€
+	€
+	€
+	€
+	perso, je sais pas trop quoi faire...
+	tu en penses quoi ?
+	je pense qu'on peut être d'accord là-dessus.
+	dès lors, tout semble beaucoup plus clair.
+	une idée sur la question ?
+	je crois qu'on tient un bon truc là.
+	je te laisse creuser le sujet.
+	on pourra faire un point là-dessus tout à l'heure.
+	on en discutera %day%.
+	faudra qu'on en parle.
+	j'espère que c'est bien clair ?
+	quel est ton avis là-dessus ?
+	tu me suis ?
+
+mailEndPerso
+	€
+	€
+	€
+	€
+	%smile%
+	|merci.
+	|A+
+	thx
+	|++
+	|--|%ad%
+	|--|%ad%
+	|--|%ad%
+	|--|%ad%
+	|--|%ad%
+
+
+ad
+	<div class="ad">%adLink%</div>
+
+adLink
+	<a target="_blank" href="http://www.skywar.net">www.skywar.net</a> - baston de moustachus&nbsp;!
+	<a target="_blank" href="http://www.kadokado.com">www.kadokado.com</a> - des jeux et des cadeaux&nbsp;!
+	<a target="_blank" href="http://www.dinorpg.com">www.dinorpg.com</a> - un grand jeu d'aventure&nbsp;!
+	<a target="_blank" href="http://www.alphabounce.com">www.alphabounce.com</a> - prisonnier dans l'espace...
+	<a target="_blank" href="http://www.hordes.fr">www.hordes.fr</a> - survivez aux zombies...
+	<a target="_blank" href="http://www.croquemonster.com">www.croquemonster.com</a> - votre agence de monstres&nbsp;!
+	<a target="_blank" href="http://www.popotamo.fr">www.popotamo.fr</a> - jeu de mots relax&nbsp;!
+	<a target="_blank" href="http://www.labrute.fr">www.labrute.fr</a> - combattez vos amis&nbsp;!
+
+phraseCorpo
+	%corpoSpam%
+	%corpoSpam%
+	%yourBoss% vous convoque %day% %nday%.
+	%advisor% souhaite vous rencontrer. Contactez-les au plus vite.
+	Voici les résultats de l'évaluation hebdomadaire de votre travail sur %bizObj% par %advisor%. Vous avez obtenu #/10.
+	Votre efficience pour %anySubject% a été évaluée à %lowrank100%/100. Vous avez perdu ## %pointType%, le système a informé %advisor% automatiquement.
+	Vous avez perdu ## %pointType%, %advisor% vous contactera très prochainement.
+	Votre dénonciation a bien été enregistrée, merci de votre collaboration, employé.
+	Votre compte "%pointType%" s'élève à ## points à la date du %day% %nday%.
+	Votre %goodAction% vous a permis d'obtenir ## %pointType%.
+	Nous n'avons enregistré que # mail(s) de dénonciation de votre part depuis ## jours. %advisor% vous recommande plus d'attention et d'assiduité pour gagner des %pointType%.
+	Vous avez fait l'objet d'un signalement : vous perdez 1# %pointType%. Contactez %advisor%.
+	Votre présence à %eventCorpo% n'est plus souhaitée. %endCorpo%
+	Vous avez été sélectionné(e) pour participer à %eventCorpo%.
+	AGENDA (%day% %nmonth%, %hour%:00) : %eventCorpo% |Toute absence doit être signalée 6 mois à l'avance. Une absence injustifiée entraînera votre licenciement automatiquement.
+	Votre progression [%perfStuff%] est insuffisante (+%pct%). Vous disposez de 15 jours pour redresser la situation. Au delà de ce délai, %youWillBeFired%
+
+youWillBeFired
+	vous recevrez un SMS de licenciement.
+	votre licenciement sera automatiquement programmé par le serveur central.
+	le serveur central vous licenciera automatiquement.
+	vous serez licencié pour une durée indéterminée.
+	toutes vos primes seront annulées rétroactivement.
+	votre salaire sera réduit de ## [pct].
+
+endCorpo
+	€
+	€
+	€
+	€
+	Continuez votre travail.
+	Vous pouvez maintenant reprendre votre activité normale.
+
+goodAction
+	mail de dénonciation
+	rapport sur l'employé ###
+	signalement sur l'employé ###
+	mail de signalement
+	comportement exemplaire
+	loyauté envers ::corp::
+	dévouement envers %yourBoss%
+	assiduité
+	zèle
+
+pointType
+	points Confiance
+	points Motivation
+	points Incentiv'
+	points %perfStuff%
+	points Fidelys-::corp::
+	points Devotys-::corp::
+	points Avantage
+	points Stimulation
+	points Bien-être et %perfStuff%
+	Rentabili-points ::corp::
+
+lowrank100
+	1#
+	2#
+	3#
+	4#
+
+eventCorpo
+	la réunion %bizObj%
+	le meeting %bizExtra%
+	le séminaire %bizExtra%
+	le colloque %bizExtra%
+	la formation sur %bizObj%
+	le debriefing sur %bizObj%
+
+event
+	la réunion sur %bizObj%
+	le meeting %bizExtra%
+	la virée au bar
+	la sortie du CE
+	la soirée
+	le ciné
+	le rendez-vous
+	la rencontre
+	le séminaire %bizExtra%
+	le colloque %bizExtra%
+	la formation sur %bizObj%
+	le debriefing sur %bizObj%
+	le stage %bizExtra%
+
+
+passwordDoc
+	<em>// Registre changements %pw%</em>|%storeInSafety%%passHisto%
+	<em>// Historique %pw% :</em>|%storeInSafety%%passHisto%
+	<em>// Fichier %pw% :</em>|%storeInSafety%%passHisto%
+
+storeInSafety
+	€
+	<em>// ATTENTION : ce fichier ne doit pas être laissé en libre accès. Placez-le dans un dossier protégé !</em>|
+	<em>// Ne pas laisser ce fichier en libre accès !</em>|
+	<em>// Ne modifiez JAMAIS ce fichier manuellement.</em>|
+	<em>// Le contenu de ce fichier doit être crypté. Contactez votre administrateur réseau pour connaître la procédure à suivre.</em>|
+
+passHisto
+	%oldPass% %oldPass% %oldPass% %oldPass% %oldPass% %oldPass% %newPass% %oldPass%
+	%oldPass% %oldPass% %oldPass% %newPass% %oldPass% %oldPass%
+	%oldPass% %newPass% %oldPass% %oldPass% %oldPass%
+	%oldPass% %newPass% %oldPass% %oldPass% %oldPass% %oldPass% %oldPass% %oldPass%
+	%oldPass% %oldPass% %newPass% %oldPass% %oldPass% %oldPass% %oldPass% %oldPass% %oldPass%
+	%oldPass% %oldPass% %oldPass% %oldPass% %oldPass% %newPass% %oldPass% %oldPass%
+	%oldPass% %oldPass% %oldPass% %oldPass% %newPass% %oldPass% %oldPass% %oldPass%
+	%oldPass% %newPass%
+
+oldPass
+	€
+	::user:: : %password% (révoqué)|
+	::user:: : %password% (modifié)|
+	::user:: : %password% (modifié)|
+	::user:: : %password% (périmé)|
+
+newPass
+	::user:: : ::pass::|
+	::user:: : ::pass:: (actif)|
+
+pw
+	password
+	mot de passe
+	code d'accès
+	code secret
+
+password
+	%p1%%p2%#
+	%p1%%p2%#
+	%p1%%p3%#
+	%p3%%p2%##
+	%p3%%p2%#
+	%p3%%p2%#
+	%p3%µ##
+	%p1%####
+	%xml_names:firstname%##
+
+p1
+	sub
+	sort
+	rand
+	pass
+	secr
+	prio
+	tell
+	bran
+	fund
+	porg
+	kram
+	priv
+	ar
+
+p2
+	oste
+	alam
+	etam
+	ilap
+	agen
+	tin
+	ker
+	bon
+	den
+	par
+	got
+	rus
+	ore
+	anem
+	for
+	tune
+
+p3
+	sat
+	zol
+	ter
+	ran
+	kir
+	pit
+	mop
+	var
+	mel
+	typ
+	tol
+	huv
+	nov
+	ser
+	zul
+	tus
+	tas
+
+fileSettings
+	%configTitle%|%var%|%var%|%var%|%var%|%mainVar%|%var%|%var%|
+	%configTitle%|%var%|%var%|%mainVar%|%var%|%configTitle%|%var%|%var%|%var%|
+	%configTitle%|%var%|%mainVar%|%var%|%var%|%var%|%var%|%var%|%var%|%var%|
+
+configTitle
+	<span class="configTitle">%configTitleValue%</span>
+
+configTitleValue
+	[config%cfgExtra%]
+	[parametres%cfgExtra%]
+	[reglages%cfgExtra%]
+
+cfgExtra
+	€
+	32
+	64
+	_init
+	_start
+
+var
+	global## = %value%
+	data## = %value%
+	cfg### = %value%
+	saved### = %value%
+
+mainVar
+	init = "::content::"
+	control = "::content::"
+	main = "::content::"
+
+value
+	0
+	#
+	##
+	#####
+	0x%hex%%hex%%hex%:%hex%
+	0x%hex%%hex%%hex%%hex%
+	"µµµµµµµµ"
+	"µµµµµ"
+	"::corp::"
+	"::user::"
+
+hex
+	%hexLetter%
+	#
+
+hexLetter
+	A
+	B
+	C
+	D
+	E
+	F
+
+globalPassHeader
+	<em>// %pw% DB %version%</em>|%storeInSafety%
+	<em>// Stockage global %pw% (db%version%)</em>|%storeInSafety%
+	<em>// Maître %pw% %version%</em>|%storeInSafety%
+
+globalPassFooter
+	€
+	<em>// EOF</em>
+	<em>// Rev ####</em>
+	<em>// Fin du fichier</em>
+	<em>// --END--</em>
+	<em>// Révision ####, générée à %time%</em>
+
+
+currency
+	NeoYen
+
+birth
+	%nday%/%nmonth%/196#
+	%nday%/%nmonth%/196#
+	%nday%/%nmonth%/197#
+	%nday%/%nmonth%/198#
+
+crimeLog
+	¤ NOM : ::owner::|NAISSANCE : %birth%|HISTORIQUE :|%crimeEntry%|%crimeRand%%crimeRand%%crimeRand%%crimeRand%%crimeRand%%crimeRand%
+
+crimeRand
+	€
+	€
+	%crimeEntry%|
+
+crimeEntry
+	. %ref% %crime%
+	. %ref% %crime%
+	. %ref% %crime% (cat. #)
+	. %ref% tentative de %crime%
+
+ref
+	[###-µ]
+	[###-#]
+
+crime
+	fraude %crimeDomain%
+	vol
+	vol à main armée
+	violences
+	extorsion
+	recel %crimeItem%
+	dégradation %crimeItem%
+	destruction %crimeItem%
+	piratage
+	détournement de fonds
+	abus de biens sociaux
+	falsification de %legalDoc%
+
+legalDoc
+	passeport
+	pièce d'identité
+	visa
+
+crimeItem
+	de systèmes informatiques
+	de logiciels anti-virus
+	de biens
+	de biens sociaux
+	de biens immobiliers
+
+crimeDomain
+	informatique
+	fiscale
+
+
+bootLine
+	Auto-detecting %device%...
+	%card%...
+	%device%...
+	%device% :
+	%card% :
+	%device% init :
+	Initializing %device%...
+	Testing %device%...
+	Detecting [%card%] :
+	Booting %device%...
+	%device% : %card%
+	%device% #		:
+	%device% #		:
+
+bootResult
+	[ OK ]
+
+device
+	device #
+	%acron% channel #
+	%acron% master
+	%acron% slave
+	%acron% controller
+
+acron
+	IDE
+	ASAPI
+	DUAL
+	CLX
+	URAM
+	UFB
+	SAKA
+	PC##00
+	PnH
+
+card
+	%constructor% PCI ###µ
+	%constructor%-DATA-## ###-#µ
+	%constructor% %device% v#.0#
+
+constructor
+	%const1%%const2% %constExtra%
+
+const1
+	Ma
+	Asu
+	So
+	N
+	Wes
+	Del
+	Fuji
+	D
+
+const2
+	trox
+	tor
+	vidio
+	tern
+	tso
+	link
+	tium
+
+constExtra
+	€
+	€
+	€
+	Digital
+	Inc
+	Corp
+	Tech
+
+spamLine
+	Process %number% received data.
+	Process %number% stopped.
+	Transfer started : %number%.
+	Received packet %number%
+	%bootLine%
+
+number
+	56419
+	76107
+	89098
+	45710
+	86797
+	90674
+	85723
+	11060
+	00564
+	88756
+	53109
+	83213
+	56796
+	10309
+	98704
+	35271
+
+route
+	<em>// Liste des éléments réseau suivants</em>|<em>// Ne modifiez pas manuellement ce fichier !</em>|::route::
+
+noRoute
+	<em>// Liste des éléments réseau suivants</em>|<em>// Ne modifiez pas manuellement ce fichier !</em>|--VIDE--
+
+routeEntry
+	::ip:: : ::sysName::
+
+baseIp
+	%byte%.%byte%.%byte%.
+
+byte
+	#
+	##
+	##
+	1##
+	1##
+	1##
+	1##
+	2%byte5%%byte5%
+	2%byte5%%byte5%
+
+byte5
+	0
+	1
+	2
+	3
+	4
+	5
+
+
+
+error
+	Erreur : ::file::
+	Erreur : %device%
+
+connecting
+	Init ::file::... OK
+
+encoded
+	<div class="bin encoded">%encodedHeader%%binaryContent%%encodedFooter%</div>
+
+binaryContent
+	%encodedLine% %encodedLine% %encodedLine% %encodedLine%
+	%encodedLine% %encodedLine% %encodedLine% %encodedLine% %encodedLine%
+	%encodedLine% %encodedLine% %encodedLine% %encodedLine% %encodedLine% %encodedLine%
+	%encodedLine% %encodedLine% %encodedLine% %encodedLine% %encodedLine% %encodedLine% %encodedLine%
+	%encodedLine% %encodedLine% %encodedLine% %encodedLine% %encodedLine% %encodedLine% %encodedLine% %encodedLine%
+	%encodedLine% %encodedLine% %encodedLine% %encodedLine% %encodedLine% %encodedLine% %encodedLine% %encodedLine% %encodedLine%
+
+
+encodedHeader
+	--BEGIN ENCODE %encFormat% --|
+
+encFormat
+	SSE-#.#(rev#)
+	CRYP#-µ
+	SECU-µ#
+	SSA-#.##
+
+encodedFooter
+	|--EOF--
+
+encodedLine
+	83 E7 5F B2 F3 B7 B7 DF 71 77 26 47 5B 19 64 F8
+	E8 23 A2 6E 36 07 5B E3 35 5D 51 F4 B9 27 C4 66
+	ED 19 86 B8 3F A3 98 27 AC B2 8D F2 79 52 01 EB
+	F3 52 6E 9B 01 08 87 DD AC 2D 43 E6 51 81 03 AF
+	1C 7F 3B CB 00 18 AA 50 A1 23 D4 CC 7D 59 A5 04
+
+indexEntry
+	<em>::path::</em>::name::
+
+log
+	<div class="old">|%logContent%|%logTime% %logConnect%|%logFooter%</div>
+
+logContent
+	%logLine%|%logLine%|%logLine%|%logLine%|%logLine%|%logLine%|%logLine%|
+	%logLine%|%logLine%|%logLine%|%logLine%|%logLine%|%logLine%|%logLine%|%logLine%|%logLine%|
+	%logLine%|%logLine%|%logLine%|%logLine%|%logLine%|%logLine%|%logLine%|%logLine%|%logLine%|%logLine%
+	%logLine%|%logLine%|%logLine%|%logLine%|%logLine%|%logLine%|%logLine%|%logLine%|%logLine%|%logLine%|%logLine%|%logLine%
+
+logFooter
+	<em>// Fin fichier (généré par %logVer%)</em>
+	<em>// Fin fichier - %logVer%</em>
+	<em>// Fin registre %logVer%</em>
+
+logLine
+	%logTime% %logLineValue%
+
+logTime
+	<span class="time">[%time%]</span>
+
+forcedLog
+	<span class="time">[::time::]</span> ::event::
+
+logLineValue
+	%logConnect%
+	Accès %fname%
+	Accès %fname%
+	Accès %fname%
+	Accès %fname%
+	Accès %fname%
+	Saisie password [::pass::]
+	Lancement EXEC-µ##-##
+	Lancement EXEC-µ##-##
+	Lancement EXEC-µ##-##
+	Ouverture DOSS-##µ
+	Ouverture DOSS-##µ
+	Modification %fname%
+	Création %fname%
+	Suppression %fname%
+
+logConnect
+	Connexion USER-###-##µ
+
+fname
+	FICH-µ##-##
+
+logVer
+	SPY-%roman%
+	GO-1984
+	BigBrother#-µ
+	Agent-%roman%
+	Smith##
+
+place
+	un centre commercial
+	une galerie commerciale
+	un grand magasin
+	un restaurant de luxe
+	une boutique de luxe
+	une discothèque
+	un immeuble de bureaux
+	un centre financier
+	un hôpital privé
+	une clinique privée
+	une école
+	un centre de formation
+	une université
+	un aéroport
+	un poste de police
+	un grand hôtel
+	un centre de loisirs
+	une gare ferroviaire
+	la gare centrale
+
+inventory
+	%item%|%item%|%item%|%item%|%item%
+	%item%|%item%|%item%|%item%|%item%|%item%
+	%item%|%item%|%item%|%item%|%item%|%bigItem%
+	%item%|%bigItem%|%item%|%item%|%item%|%item%|%item%
+	%item%|%item%|%item%|%item%|%bigItem%|%item%|%item%
+	%item%|%item%|%item%|%item%|%item%|%item%|%item%|%item%|%item%
+
+bigInventory
+	%bigItem%|%bigItem%|%bigItem%|%bigItem%|%bigItem%
+	%bigItem%|%bigItem%|%bigItem%|%bigItem%|%bigItem%|%bigItem%|%bigItem%
+	%bigItem%|%bigItem%|%bigItem%|%bigItem%|%bigItem%|%bigItem%|%bigItem%|%bigItem%|%bigItem%|
+
+item
+	%baseItemName% %badItemAdj% (lvl #)
+
+bigItem
+	%bigItemName% %goodItemAdj% (lvl 1##)
+
+baseItemName
+	Canif
+	Couteau
+	Ceinture
+	Sandales
+	Épée
+	Hachette
+	Dague
+	Lance
+	Bouclier
+	Gants
+	Bottes
+	Casque
+	Masque
+	Ceinture
+	Sandales
+	Armure
+	Plastron
+
+bigItemName
+	%baseItemName%
+	%baseItemName%
+	Hache
+	Hache à deux mains
+	Tranchoir
+	Broyeuse
+	Écraseur
+	Saccageur
+	Exterminateur
+	Découpeur
+	Hallebarde
+	Bouclier
+	Epaulières
+	Pantoufles
+	Casserole
+	Machette
+
+goodItemAdj
+	des Enfers
+	de la Nuit %epicAdjFem%
+	d'Agilité %epicAdjFem%
+	de Force
+	de la Chouette %epicAdjFem%
+	de %xml_names:gs1%%xml_names:gs2%
+	de la Mort %epicAdjFem%
+	de la Décadence %epicAdjFem%
+	de la Puanteur %epicAdjFem%
+	du Cadavre
+	de Sadisme
+	du Sanguinaire
+	de la Bataille %epicAdjFem%
+	de la Guerre %epicAdjFem%
+	des Dieux
+	du Fanatique
+	du Psychopathe
+	de l'Apocalypse %epicAdjFem%
+	du Néant
+
+badItemAdj
+	€
+	d'entraînement
+	du Novice
+	des Apprentis
+	de l'initié
+	du Petit Canard
+	du Noob
+	du Manant
+	en Carton
+	en Bois
+	du Poussin
+	de Mauvaise Qualité
+	de Péon
+
+epicAdjFem
+	€
+	Obscure
+	Noire
+	Horrible
+	Supérieure
+	Ultime
+	Finale
+	Pestiférée
+	Sadique
+	Psychotique
+	Psychique
+	Éthérée
+
+gold
+	### gold
+
+lotsGold
+	#00##0 gold
+
+stats
+	NIVEAU %smallLvl%|Force [#]|Agilité [#]|Endurance [#]|Intelligence [#]|Sagesse[#]|Vie [###]|Mana [##]
+smallLvl
+	#
+	1#
+
+bigStats
+	NIVEAU %bigLvl%|Force [%bigStat%]|Agilité [%bigStat%]|Endurance [%bigStat%]|Intelligence [%bigStat%]|Sagesse[%bigStat%]|Vie [#####]|Mana [####]
+bigStat
+	1#
+	2#
+bigLvl
+	6#
+	7#
+	8#
+	9#
+	10#
+
+cfLineOwner
+	::owner:: (ADMIN)
+
+cfLine
+	%xml_names:login% (%cfLevel%)
+
+cfLevel
+	niveau #
+	niveau #
+	niveau #
+	niveau #
+	niveau #
+	--
+	invité
+	ADMIN
+
+cfLineHacker
+	::hacker:: (ADMIN)
+
+controlFile
+	<em>// Autorisations d'accès</em>|%storeInSafety%%cfContent%
+
+cfContent
+	%cfLineOwner%|%cfLine%|%cfLine%|%cfLine%
+	%cfLineOwner%|%cfLine%|%cfLine%|%cfLine%|%cfLine%
+	%cfLineOwner%|%cfLine%|%cfLine%|%cfLine%|%cfLine%|%cfLine%
+	%cfLineOwner%|%cfLine%|%cfLine%|%cfLine%|%cfLine%|%cfLine%|%cfLine%
+
+loading
+	<strong><img src="img/loading.gif" alt="[loading]"/> CHARGEMENT EN COURS...</strong>
+
+videoFile
+	Fichier vidéo (%videoFormat%)|%loading%
+
+imageFile
+	Fichier image (TODO)|%loading%
+
+videoFormat
+	µVID#
+	Mpek-%roman%
+	MPK-#
+	µCODEC-%roman%
+	VIDEO#
+	µ-ENC #
+
+shortcut
+	*Raccourci clavier :*
+tips
+	Laissez votre curseur de souris sur un anti-virus pour connaître son fonctionnement.
+	Avec un virus de dégâts suffisamment puissant, il n'est pas toujours nécessaire d'effacer les fichiers GARDIEN d'un système.
+	Les fichiers MAIL contiennent parfois des informations utiles. Cliquez sur l'un d'eux pour le lire.
+	Vous pouvez lire le contenu de certains fichiers (mails, documents, vidéos...) en cliquant simplement dessus.
+	Surveillez toujours *le registre en bas à gauche* de votre écran : il vous fournira des informations cruciales.
+	Vous pouvez en savoir plus sur un *effet* qui affecte un fichier en plaçant votre curseur de souris dessus.
+	Utilisez *la molette de votre souris* pour vous déplacer au sein d'un dossier.
+	Connaissez-vous le *mode Uber-Eleet* ? Il vous permet de jouer à Intrusion au clavier et en *ligne de commande* !
+	%shortcut% la touche ECHAP interrompt l'exécution d'un virus.
+	%shortcut% la touche ESPACE permet de revenir au dossier "parent".
+	%shortcut% les touches *PAGE PRÉCÉDENTE* et *PAGE SUIVANTE* du clavier vous permettent de vous déplacer rapidement dans un dossier.
+	%shortcut% les touches 1 à 9 en haut de votre clavier activent le virus correspondant dans votre deck.
+	Vous pouvez ajuster certaines options du jeu en ouvrant *l'historique du registre* puis en cliquant sur *Options du jeu*
+
+rarFile
+	<div class="bin">-- Archive %compCodec% --|%binaryContent%</div>
+
+compCodec
+	µ-rar #
+	zPack %roman%
+	µ-arc
+	gnu-µµµ#
+	ARJ-%roman%
+	JAR-%roman%

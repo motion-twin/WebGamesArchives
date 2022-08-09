@@ -1,0 +1,116 @@
+﻿<d place="fosslv" name="Elemental Master" gfx="elmaster" cond="active(elmaster)+((mission(pigeon)+mission(ritual)+mission(shipmt))|admin())">
+
+	<phase id="begin" fast="1" next="talk:talk2:talk3">
+		You've heard about the Elemental Master during your Dinoz Master studies.
+		He's a very well-respected Master, an expert in the comprehension and manipulation of the elements.
+		Young Dinoz Masters can only wish to be taught by him, but he is known for being rude and unapproachable....
+	</phase>
+
+	<a id="talk" cond="!mission(elma)">Talk to the Elemental Master</a>
+	<a id="talk2" cond="mission(elma)+!mission(elma5)">Talk to the Elemental Master</a>
+	<a id="talk3" cond="mission(elma5)">Talk to the Elemental Master</a>
+
+	<phase id="talk" next="ask">
+		Huh? Who's this? Another nuisance no doubt.
+		I'm starting to get sick of these situations .... go on then boy, SPEAK! .... WHAT DO YOU WANT?
+	</phase>
+
+	<a id="ask">I want to improve!</a>
+
+	<phase id="ask" next="ask2">
+		Of course you want to improve, everyone wants to improve, but no one is willing to put in the effort required. Everyone wants to suddenly improve, but without lifting a finger. If you want my advice, put some effort in!!
+	</phase>
+
+	<a id="ask2">And that's all?</a>
+
+	<phase id="ask2" next="miss">
+		Mmmm .... insistent aren't you? Let's see .... if you really want to improve you must be willing to work. Only then will I decide if you're worthy of my advice?
+	</phase>
+
+	<a id="miss">List of Missions</a>
+
+	<phase id="miss" missions="elmaster">
+	</phase>
+
+	<phase id="talk2" next="miss:maudit">
+		How is your training coming along? I'm afraid we can't do anything with that.
+	</phase>
+
+	<phase id="talk3" next="maudit:sphere">
+		Your training is complete .... I'm not one to give out compliments, but most Dinoz can't complete it, so you're not doing that badly.
+	</phase>
+
+	<a id="maudit" cond="fx(maudit)">Curse?</a>
+	<a id="sphere">Reward...</a>
+
+	<phase id="maudit" next="maudit2">
+		What? A curse? Don't tell me that you played with my Cursed Wooden Wand? I told you not to touch it!
+	</phase>
+
+	<a id="maudit2">....</a>
+
+	<phase id="maudit2" next="maudit3">
+		Typical, now that you've made this stupid mistake, you want my help! As if that's the only thing I have to do! In any case .... what's done is done .... to remove the curse, you must use Devil Ointment. There is a small problem though, the shop that was selling it has gone bankrupt....
+	</phase>
+
+	<a id="maudit3">....</a>
+
+	<phase id="maudit3" next="maudit4">
+		However, I've heard tales that a hidden shop exists. This hidden shop is said to sell very rare objects. The prices are very high due to the rarity of the items, but in this instance it seems you don't really have a choice.
+	</phase>
+
+	<a id="maudit4">....</a>
+
+	<phase id="maudit4">
+		According to rumours, only the cursed who venture to the Ashpouk Ruins are able to see the shop....
+	</phase>
+
+	<phase id="sphere" next="sphere2">
+		You want a reward!? ..... yes it's true you have shown perseverance in your training in each of the five elements ... perseverance in stupidity! But ok, I give in, why not....
+	</phase>
+
+	<a id="sphere2">...</a>
+
+	<phase id="sphere2" next="sphere3">
+		As a teacher, I hope that you have learned something, and that from now on you will be thankful towards those who take their time to teach you new skills,paticularly towards me!
+	</phase>
+
+	<a id="sphere3">Thanks</a>
+
+	<phase id="sphere3" next="sphere4">
+		Ah! At least, you're being polite towards me! People are less and less polite these days, it truly is a rare quality ... you know what? I'm going to reward you for your efforts. Do you know what an Elemental Sphere is?
+	</phase>
+
+	<a id="sphere4">A what?</a>
+
+	<phase id="sphere4" next="sphere5">
+		.... as I expected ... why is it that I always have to explain myself to you! An Elemental Sphere is a magical item which has been charged with the power of an element.
+	</phase>
+
+	<a id="sphere5">...</a>
+
+	<phase id="sphere5" next="sphere6">
+		There are five varieties of sphere, one for each of the elements. When a Dinoz absorbs one, he will learn a new skill which is directly linked to this element .... it's fair to say that a Sphere is a powerful item.
+	</phase>
+
+	<a id="sphere6">...</a>
+
+	<phase id="sphere6" next="again:sphere7:already">
+		Wait! that's not all! By accumulating many spheres of the same element, your Dinoz can learn more powerful skills! This means that there are 3 Sphere Levels for each element, making 15 Sphere Skills in total .... do you understand? I can't tell.
+	</phase>
+
+	<a id="again" target="sphere4">Can you explain everything again?</a>
+	<a id="sphere7" cond="fx(sphere)">I understand</a>
+	<a id="already" cond="!fx(sphere)" target="end">I understand</a>
+
+	<phase id="sphere7" next="end" rnditem="spher1:spher2:spher3:spher4:spher5" noeffect="sphere">
+		Well done! If you understand, I'll give you one of my Spheres! But, as my Sphere Chest is not very tidy, I'm not sure which one I'll end up giving you.
+	</phase>
+
+	<a id="end">Great!</a>
+
+	<phase id="end">
+		Your Sphere is very precious, you must be absolutely certain before you use it. There are many Dinoz Masters throughout Dino Land who would pay for your Sphere, you can sometimes find them on sale at the Market Place!
+	</phase>
+
+</d>

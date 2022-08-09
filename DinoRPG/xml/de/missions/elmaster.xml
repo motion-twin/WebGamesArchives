@@ -1,0 +1,235 @@
+﻿<missions>
+
+	<m group="elmaster" id="elma" name="Die Einkaufsliste des Meisters">
+		<begin>Er kann ja schon einmal anfangen, ein paar Einkäufe für mich zu machen. Da kann er gleich mal was lernen... Ich brauche Wasser, Kohlenglut, Fisch, Brot und ein paar frische Champignons!</begin>
+		<goto v="fountj"/>
+		<action v="Wasser schöpfen">Du hast etwas Wasser für den Meister der Elemente erhalten.</action>
+		<goto v="fosslv"/>
+		<action v="Die Warmen Kohlen aufsammeln">Du hast ein paar warme Kohlen für den Meister der Elemente erhalten.</action>
+		<goto v="port"/>
+		<action v="Einen Fisch kaufen">Du hast einen frischen Fisch für den Meister der Elemente gekauft. Jetzt fehlen nur noch das Brot und die Pilze...</action>
+		<goto v="dnv"/>
+		<action v="Brot kaufen">Du hast gutes warmes Brot für den Meister der Elemente gekauft.</action>
+		<kill v="goupi:goupi2:goupi3" n="6" name="Gupignons"/>
+		<action v="Gupignonreste aufsammeln">Du hast die Gupignonreste aufgesammelt, die nach dem Kampf übrig geblieben sind. Mmmh, lecker! Die Einkaufsliste für den Meister der Elemente ist endlich fertig...</action>
+		<end>Er hat alles gebracht, na wenigstens das...</end>
+		<xp v="20"/>
+		<gold v="500"/>
+	</m>
+
+	<m group="elmaster" id="elma1" name="Lektion 1 - Der Blitz" cond="mission(elma)">
+		<begin>Da er so tapfer durchhält, werden wir ihm jetzt, eine Einweisung in das Element geben, das am einfachsten einzufangen ist: Der Blitz. Angesichts seines Levels, muss er zunächst jedoch zurück an die Universität, um die Grundlagen zu lernen...</begin>
+		<goto v="univ"/>
+		<action v="Den Blitz studieren">
+			Der Blitz ist das am einfachsten einzufangende Element. Allerdings ist er etwas schwer aufzubewahren. Allein die Dinoz, die die Fähigkeit "Blitzableiter" besitzen, können das bewerkstelligen...
+		</action>
+		<action v="Den Blitz studieren">
+			Die meisten Bücher zu diesem Thema wurden vom Meister der Elemente geschrieben! Um den Blitz zu verstehen, rät der Meister, an einem gewittrigen Tag, auf die Spitze der Großen Dauerhitze zu steigen und dort direkt zu experimentieren... Dabei sollte man jedoch auch überleben...
+		</action>
+		<goto v="fosslv"/>
+		<actfight act="Mit dem Blitz experimentieren" monsters="elhelp">
+			<win>Du hast den Blitz überlebt. Laut dem Buch vom Meister der Elemente, verstehst du jetzt etwas besser, wie das funktioniert...</win>
+		</actfight>
+		<talk v="Meister der Elemente" gfx="elmaster">
+			Teil 2: Er muss 3 Aalos aus dem Sumpf töten, um die Art und Weise zu erforschen, wie ihre Haut Elektrizität erzeugt!
+		</talk>
+		<goto v="marais"/>
+		<kill v="anguil" n="3"/>
+		<action v="Die Aaloshaut untersuchen">
+			Der Meister hatte recht! Als du dir die Aaloshäute etwas genauer anschaust, entdeckst du darauf Hunderte von "Minilec": Diese kleinen Insekten erzeugen auf natürliche Art und Weise Strom! Deine Kenntnisse dieses Elements sind inzwischen besser geworden...
+		</action>
+		<end>Da ist er ja wieder! Na gut, es ist zwar keine saubere Arbeit, aber vielleicht können wir noch etwas aus ihm machen...</end>
+		<xp v="30"/>
+		<gold v="1000"/>
+	</m>
+
+	<m group="elmaster" id="elma2" name="Lektion 2 - Das Feuer" cond="mission(elma1)">
+		<begin>Feuer - das Element, das die Menschen seit jeher fasziniert! Letztendlich ist es doch ziemlich einfach und nicht sehr schwer zu verstehen...</begin>
+		<goto v="fosslv"/>
+		<talk v="Meister der Elemente" gfx="elmaster">
+			Wir sind an der richtigen Stelle, um mehr über das Feuer zu lernen. Fangen wir also schon mal an. Du musst den Ehrwürdigen töten, danach werden wir über das Element reden...
+		</talk>
+		<goto v="vener"/>
+		<action v="Den Ehrwürdigen töten">
+			Während du gerade im Begriff bist anzugreifen - wohlwissend, dass dein Dinoz dabei draufgehen wird - erreicht dich eine Nachricht, in der dich der Meister dazu auffordert, wieder zurückzukommen.
+		</action>
+		<goto v="fosslv"/>
+		<talk v="Meister der Elemente" gfx="elmaster">
+			Angenommen man würde ihn dazu auffordern, von einem Felsen zu springen, würde er es dann tun? Was für ein Narr! Hoffentlich hat er wenigstens gelernt, nicht mit dem Feuer zu spielen! Wenn wir schon dabei sind... Ich denke, dass es eine gute Übung sein könnte, ein Flammenkompott zuzubereiten...
+		</talk>
+		<nogoto/>
+		<kill v="flam" n="20" zone="1"/>
+		<goto v="fosslv"/>
+		<talk v="Meister der Elemente" gfx="elmaster">
+			Die Flammen sind das Feuer in Person. Paradoxerweise ernähren sie sich von Luft und haben die Fähigkeit, sich in mehrere unabhängige Flammen zu teilen. Wenn man nicht weiß, wie man damit umgehen soll, kann das Feuer im Kampf großen Schaden anrichten. Aber wenn man weiß, wie es zu handhaben ist, ist es ungefährlich. Genau so ist es mit den Flammen...
+		</talk>
+		<talk v="Meister der Elemente" gfx="elmaster">
+			Na gut, er darf sich da nicht täuschen: Die Flammen waren nur ein kleines Heißlaufen. Jetzt kommen die richtigen Übungen... Ich glaube nicht mal, dass er imstande ist, auch nur ein paar Funken zu erzeugen. Nur gut, dass er vor nichts Angst zu haben scheint...
+		</talk>
+		<talk v="Meister der Elemente" gfx="elmaster">
+			Als nächstes wird er die Pignuit-Brüder in den Aschpuckruinen aufsuchen müssen. Vor einigen Jahren haben sie sich meine Superpaprika der Unbesiegbarkeit ausgeliehen und seitdem wollen sie sie mir nicht zurückgeben... Er soll sie vernichten und mir schnellstmöglich meine Superpaprika bringen!
+		</talk>
+		<goto v="rashpk"/>
+		<actfight act="Die Pignuit-Brüder bekämpfen" monsters="pign1:pign2">
+			<begin>Bei den Pignuit-Brüdern handelt es sich um Pigmou-Zwillingsbrüder, die sehr begabt im Umgang mit Feuer sind...</begin>
+			<win>Du hast die Pignuit Brüder besiegt. Ihre Höhle steht sperrangelweit offen...</win>
+		</actfight>
+		<action v="Die Höhle durchsuchen">
+			Nach einigem Suchen entdeckst du eine seltsame Paprikaschote, wie du noch keine zuvor gesehen hast... Sie glitzert im Dunkeln und scheint eine seltsame, magische Kraft zu besitzen...
+		</action>
+		<end>
+			Ah! Er hat mir meine teure Superpaprika der Unbesiegbarkeit wieder gebracht! Jetzt kann ich endlich mein Super-Ratatouille kochen!
+		</end>
+		<xp v="40"/>
+	</m>
+
+	<m group="elmaster" id="elma3" name="Lektion 3 - Das Holz" cond="mission(elma2)+level(10)">
+		<begin>Das Holzelement. Sicherlich eines der meistunterschätzten Elemente. Und das bei der Stärke...</begin>
+		<goto v="fosslv"/>
+		<talk v="Meister der Elemente" gfx="elmaster">
+			Ach! Das Holz erinnert mich an etwas... Vor schon langer Zeit bin ich zur geheimen Monsterinsel gereist. Es wimmelt dort von komischen Kreaturen, die sich Vegetox nennen. Sie sind halb Tier, halb Gemüse und beherrschen das Holz außerordentlich gut! Vielleicht wird er eines Tages selbst in der Lage sein, dorthin zu gehen... Aber ich habe meine Anweisungen ganz vergessen!
+		</talk>
+		<talk v="Meister der Elemente" gfx="elmaster">
+			Also! Um etwas über das Holz zu lernen, muss er in den Grumhel-Wald gehen, doch der ist etwas weit entfernt. Deswegen werden wir mit dem auskommen müssen, was uns zur Verfügung steht...
+		</talk>
+		<talk v="Meister der Elemente" gfx="elmaster">
+			Mir ist neulich zu Ohren gekommen, dass es eine geheimnisvolle Gruppe, die sich die "Korgonenrächer" nennt, geschafft hat, zur Großen Dauerhitze vorzustoßen, indem sie den Tunnel unter dem Ast benützt haben. Er sollte da mal hinschauen und mich auf dem Laufenden halten, denn ich habe wirklich keine Lust, da selbst vorbeizusehen...
+		</talk>
+		<goto v="tunel"/>
+		<action v="Sich erkundigen">
+			Eine Gruppe von fünf Korgonenrächern wurde dabei beobachtet, wie sie den Tunnel verließen. Sie sind in Richtung Lavaloch aufgebrochen.
+		</action>
+		<goto v="fosslv"/>
+		<talk v="Meister der Elemente" gfx="elmaster">
+			Was sagt er da?? Selbstverständlich weiß ich, dass sie hier vorbeigekommen sind! Diese kleinen dreckigen Korgonen haben mir meinen Stab aus verfluchtem Holz geklaut. Ich weiß nicht was sie damit vorhaben, aber ich muss mir den Stab um jeden Preis so schnell wie möglich wiederholen! Er soll sich darum kümmern, sie sind in Richtung Süden geflohen!
+		</talk>
+		<goto v="dnv" hide="1"/>
+		<actfight act="Korgonenrächer bekämpfen" monsters="korven:korven:korven">
+			<begin>Als du dich den fünf Korgonen näherst, teilen sie sich in zwei Gruppen: Zwei ergreifen die Flucht. Drei bleiben an Ort und Stelle, um sich dem Kampf zu stellen...</begin>
+			<win>Wohin mag wohl der Rest der Gruppe geflüchtet sein...</win>
+		</actfight>
+		<goto v="ilewkk" hide="1"/>
+		<action v="Korgonenrächer">
+			Ein Inselbewohner beteuert, die zwei übrig gebliebenen Korgonenrächer gesehen zu haben. Sie schienen in einem Affentempo gen Westen zu flüchten und trugen einen seltsamen Holzstab bei sich...
+		</action>
+		<goto v="marais" hide="1"/>
+		<actfight act="Korgonenrächer bekämpfen" monsters="korven:kvenbs">
+			<begin>Dir ist es endlich gelungen, den Anführer der Korgonenrächer einzuholen. Es ist der maskierte Korgone!</begin>
+			<win>Du hast die Korgonenrächer besiegt!!!</win>
+		</actfight>
+		<action v="Zauberstab aufheben">
+			Diesem seltsamen Stab scheinen Kräfte innezuwohnen, die die jedes Normalsterblichen weit übertreffen... Es wäre besser, ihn so schnell wie möglich seinem Besitzer zurückzubringen, bevor er noch mehr Schaden anrichtet.
+		</action>
+		<end>
+			Ah! Mein Zauberstab! Das hat er gut gemacht! Dreckige Korgonen! Wenn er ein paar Nebenwirkungen spüren sollte, dann möge er mich später wieder besuchen...
+		</end>
+		<gold v="2000"/>
+	</m>
+
+	<m group="elmaster" id="elma4" name="Lektion 4 - Die Luft" cond="mission(elma3)">
+		<begin>Sobald etwas verschwindet, nimmt die Luft seinen Platz ein. Bei diesem Element ist alles eine Frage der Dichte!</begin>
+		<goto v="fosslv"/>
+		<talk v="Meister der Elemente" gfx="elmaster">
+			Das Luftelement ist ein eher unbekanntes Element in Dinoville. Die Nähe der Großen Dauerhitze und der Atlantinischen Inseln begünstigt das Studium der Elemente Feuer und Wasser. Um meine Studien beenden zu können, musste ich deshalb bis zum Caushemesh gehen. Dort haben sie den Umgang mit dem Luftelement perfektioniert...
+		</talk>
+		<talk v="Meister der Elemente" gfx="elmaster">
+			Anstatt ihn jedoch zu bitten so weit zu reisen, wozu er sicherlich ohnehin nicht in der Lage wäre, ziehe ich es vor, ihn um einen Gefallen zu bitten... Er möge mir doch bitte diese Pergamentrollen bringen, die vor kurzem bei Bauarbeiten in Dinoplaza gefunden wurden. Ich würde sie gerne etwas eingehender studieren...
+		</talk>
+		<goto v="dplaza"/>
+		<action v="Pergamentrollen besorgen">
+			Man erklärt dir, dass diese Pergamentrollen vor kurzem bei Ausgrabungen gefunden wurden. Nur ein Meister sei in der Lage sie zu entziffern...
+		</action>
+		<goto v="fosslv"/>
+		<actfight act="Pergamentrollen übergeben" monsters="megoup">
+			<begin>Als du dich gerade auf dem Weg befindest, um dem Meister der Elemente die Pergamentrollen zu übergeben, tappst du in einen Hinterhalt!</begin>
+			<win>Es sieht so aus, als ob jemand im Durcheinander des Kampfes die Gelegenheit genutzt hätte, die wertvollen Pergamentrollen zu stehlen!</win>
+		</actfight>
+		<talk v="Meister der Elemente" gfx="elmaster">
+			Wie bitte?!? Er hat sich das, was ich ihn beauftragt hatte zu holen, stehlen lassen?!? Wie inkompetent!! Er weiß nicht einmal wie wertvoll diese Pergamentrollen sind! Er soll sie mir so schnell wie möglich wiederbringen! Die Diebe können nicht weit sein...
+		</talk>
+		<goto v="tunel" hide="1"/>
+		<actfight act="Pergamentrollendiebe" monsters="megoup">
+			<begin>Du stößt auf einen der Pergamentrollendiebe...</begin>
+			<win>Du hast eine Seite der Pergamentrollen wiederbekommen... Wo können wohl die anderen sein?!?</win>
+		</actfight>
+		<goto v="colesc" hide="1"/>
+		<actfight act="Pergamentrollendiebe" monsters="darkg2">
+			<begin>Du stößt auf den Kopf der Pergamentrollendiebe...</begin>
+			<win>Dieser Dieb besaß zwei Seiten der Pergamentrollen. Jetzt hast du drei von vier Seiten. Die letzte Seite ist verschwunden. Vielleicht reicht das dem Meister?</win>
+		</actfight>
+		<goto v="fosslv"/>
+		<talk v="Meister der Elemente" gfx="elmaster">
+			Er möge mir ein paar Augenblicke gewähren, um diese Pergamente hier näher zu untersuchen...
+		</talk>
+		<talk v="Meister der Elemente" gfx="elmaster">
+			........gut, ich bin fertig. Das ist eine unglaubliche Entdeckung: Diese Dokumente sprechen von einer Dracheninsel. Den Legenden mehrerer Länder zufolge, handelt es sich um eine Insel mit riesigen Flügeln, die imstande sei, sich fliegend fortzubewegen!
+		</talk>
+		<talk v="Meister der Elemente" gfx="elmaster">
+			Wenn diese Pergamente echt sind, dann würde das bedeuten, dass die Dracheninsel wirklich existiert... Eins ist jedoch seltsam... Die Erklärungen, die Aufschluss darüber geben, wie man diese Insel erreichen kann, brechen schlagartig ab, ganz so, als ob eine Seite fehlen würde...
+		</talk>
+		<talk v="Meister der Elemente" gfx="elmaster">
+			Wir werden bestimmt nicht mehr darüber herausfinden, solange wir keine neuen Beweise haben... Das ist wirklich schade. Ich hätte nur allzu gerne diese neue Insel erkundet!
+		</talk>
+		<talk v="Meister der Elemente" gfx="elmaster">
+			Doch zurück zu unserer Lektion über das Luftelement... Wir verlieren Zeit mit diesen ganzen Geschichten! Er soll mir so schnell wie möglich 2 Luftenergien bringen!
+		</talk>
+		<useingr v="enair" n="2"/>
+		<talk v="Meister der Elemente" gfx="elmaster">
+			Was? Das ist alles? Ich hatte ihm doch gesagt, dass er mir 5 Luftenergien bringen möge! Jetzt aber dalli, noch 3 weitere!!
+		</talk>
+		<useingr v="enair" n="3"/>
+		<end>Fein, fein, er schafft es schon, wenn er Lust hat. Es ist nur schade, dass man ständig alles wiederholen muss!</end>
+		<gold v="10000"/>
+	</m>
+
+	<m group="elmaster" id="elma5" name="Lektion 5 - Das Wasser" cond="mission(elma4)">
+		<begin>Unsere letzte Lektion dreht sich um das Wasserelement...</begin>
+		<goto v="fosslv"/>
+		<talk v="Meister der Elemente" gfx="elmaster">
+			Ich hebe mir das Wasserelement immer bis zum Schluss auf... Ich mag es nämlich überhaupt nicht: Es ist kalt und nass! Aus diesem Grund bin ich übrigens auch zur Großen Dauerhitze gezogen...
+		</talk>
+		<talk v="Meister der Elemente" gfx="elmaster">
+			Obwohl ich das Wasserelement ausgezeichnet beherrsche, habe ich gar keine Lust, es ihm beizubringen. Er möge doch in meinem Auftrag Bao aufsuchen, um bei ihm in die Lehre zu gehen!
+		</talk>
+		<goto v="baobob"/>
+		<talk v="Hr. Bao Bob" gfx="baobob">
+			Mhhmm... Hier ist also der Schüler, von dem der Meister der Elemente gesprochen hatte. Du kommst gerade richtig. Ich hatte neulich ein paar Probleme mit einem leckenden Tor, das ich bewache. Monster, die nicht in diese Welt gehören, sind durchgesickert und habe sich auf den Inseln verteilt... Könntest du da mal ein bisschen aufräumen?
+		</talk>
+		<goto v="chutes"/>
+		<kill v="pirao2" n="1"/>
+		<goto v="marais"/>
+		<kill v="pirao2" n="1"/>
+		<goto v="corail"/>
+		<kill v="pirao2" n="1"/>
+		<goto v="ilewkk"/>
+		<kill v="pirao2" n="1"/>
+		<goto v="baobob"/>
+		<kill v="pirao2" n="1"/>
+		<talk v="Hr. Bao Bob" gfx="baobob">
+			Danke für dein Hilfe. Ich kann mich nur schlecht fortbewegen, wenn das Tor schwach bewacht ist. Es ist glaube ich besser, dass ich hier bleibe, falls eine weitaus stärkere Kreatur versuchen sollte, in diese Welt zu dringen...
+		</talk>
+		<talk v="Hr. Bao Bob" gfx="baobob">
+			Aber ich habe vielleicht schon zuviel verraten... Und wenn wir stattdessen vom Wasserelement sprechen würden?
+		</talk>
+		<talk v="Hr. Bao Bob" gfx="baobob">
+			Das Wasser kommt bei den Atlantinischen Insel sehr häufig vor. Es ist ein sehr mächtiges Element, um sich gegen den Blitz zu wappnen. Wusstest du übrigens, dass sich jenseits des Grumhel-Waldes die Magnetischen Steppen ausdehnen, in denen wiederum der Blitz das Hauptelement ist?
+		</talk>
+		<talk v="Hr. Bao Bob" gfx="baobob">
+			Mhmm... Das Wasser besitzt zahlreiche Kräfte. Eine der gefragtesten ist die Fähigkeit, sich eines Kämpfers zu bemächtigen und ihn gegen seine Gruppe vorgehen zu lassen. Diese Fähigkeit kann man nicht auf gewöhnliche Art erlernen. Aber wer weiß, vielleicht wird einer deiner Dinoz eines Tages imstande sein, sie zu beherrschen?
+		</talk>
+		<talk v="Hr. Bao Bob" gfx="baobob">
+			Mhhmm... Das ist so ziemlich alles, was ich dir zum Wasser sagen konnte. Ich werde dem Meister der Elemente sagen, dass du deine Lehre erfolgreich abgeschlossen hast...
+		</talk>
+		<goto v="fosslv"/>
+		<talk v="Meister der Elemente" gfx="elmaster">
+			Na, wie geht es dem alten Bao? Ich hatte nicht allzu viele Gelegenheiten ihn zu sehen, seitdem er die Bewachung des Mandragore-Tores übernommen hat... Nun gut, sieht so aus, als ob deine Ausbildung zu Ende sei...
+		</talk>
+		<end>
+			Die letzte Lektion ist zu Ende. Er soll mich doch bitte aufsuchen und ansprechen. Ich möchte ihm noch etwas auf den Weg mitgeben...
+
+		</end>
+		<xp v="20"/>
+		<fx v="sphere"/>
+	</m>
+
+</missions>

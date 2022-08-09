@@ -1,0 +1,52 @@
+<div class="roomSign level_::_roomLevel::">::_roomName::</div>
+
+::if _isBedroom::
+
+	::if _client::
+		::_clientTpl::
+	::else::
+		::if _workEnd::
+			<p class="locked">
+				::if _repairing::
+					Your employee will have repaired 1 damage point by ::_workEnd::.
+				::else::
+					Your employee will be available again at ::_workEnd::.
+				::end::
+			</p>
+		::end::
+		::if _constEnd::
+			<p class="locked">Work will be finished at around ::_constEnd::.</p>
+		::end::
+		<p class="misc">This bedroom is empty.</p>
+		::if _isDamaged::
+			<p>Think about sending an <strong>employee</strong> up here to sort it out...</p>
+		::end::
+		::if _itemToTake::
+			<p>The previous guest has left an object behind: <strong>::_itemToTake._name::</strong> !</p>
+		::end::
+	::end::
+	
+::else::
+
+	::if _constEnd::
+		<p class="locked">Work will be finished at around ::_constEnd::.</p>
+	::end::
+	::if _client::
+		<p class="time">::_client._name:: is currently making the most of your facilities and with a little luck they'll spend some <img src='/img/icons/money.png' alt=''/>!</p>
+	::end::
+	::if _research::
+		<p class="research">Research advances: ::_research::%.</p>
+	::end::
+	::if _isLobby::
+		<p class="time"><strong>Waiting time for a guest: ::_clientDelay::.</strong></p>
+	::end::
+	::if _lockEnd::
+		<p class="locked">This equipment will be available again at around ::_lockEnd::.</p>
+	::end::
+	::if _workEnd::
+		<p class="locked">Your employee will be available again at around ::_workEnd::.</p>
+	::end::
+	<p class="rule">::_roomTexts._rule::</p>
+	<p class="misc">::_roomTexts._ambiant::</p>
+	
+::end::

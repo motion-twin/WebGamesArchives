@@ -1,0 +1,326 @@
+﻿package ;
+import mt.bumdum9.Lib;
+import flash.Lib;
+import Manager;
+import Bubble;
+enum GameStep {
+	GAME;
+	NEWLEVEL;
+}
+enum Size {
+	LITTLE;
+	MEDIUM;
+	BIG;
+}
+
+typedef MC = flash.display.MovieClip
+
+typedef Player = {
+	mc 				: flash.display.MovieClip,
+	dx				: Float,
+	dy				: Float,
+	coteX			: Int,
+	coteY			: Int,
+}
+
+typedef Pieuvre = {
+	mc		: MC,
+	cote	: Float,
+	dx		: Float,
+	dy		: Float,
+}
+
+class Game {
+
+	public static var mcw =300;
+	public static var mch = 300;
+	
+	public static var GRAVITY = 0.1;
+	public static var FROTTEMENT = 0.96;
+	public static var SPEED = 0.15;
+	
+	public var step		:GameStep;
+	
+	public static var me:Game;
+	public var dm		:mt.DepthManager;
+	public var root		:flash.display.MovieClip;
+	var bg				: flash.display.MovieClip;
+	
+	var player 			: Player;
+	var pieuvres		: Array<Pieuvre>;
+	var bub  			: Array<Bubble>;
+	var scroller 		: Float;
+	public var level 	: Int;
+	var bgMax 			: Int;
+	
+	var lastDx			: Float;
+	var lastDy			: Float;
+	var cdPop			: Float;
+	
+	
+	public function new(mc:flash.display.MovieClip) {
+		cdPop = 0;
+		lastDx = 0;
+		lastDy = 0;
+		scroller = 0;
+		bgMax = 0;
+		pieuvres = new Array();
+		bub = new Array();
+		mt.flash.Key.init();
+		me = this;
+		root = mc;
+		root.graphics.beginFill(0xFFF8DC);
+		root.graphics.drawRect(0, 0, 300, 300);
+		
+		dm = new mt.DepthManager(root);
+		var mc = dm.empty(0);
+		dm.add(mc,10);
+
+		player = {
+			mc 		: mc,
+			dx 		: 0.0,
+			dy 		: 0.0,
+			coteX	: 10,
+			coteY	: 20,
+		}
+		player.mc.x = (mcw / 2);
+		player.mc.y = 0;
+		var g = player.mc.graphics;
+		g.beginFill(0xFF6600);
+		g.drawRect(-5, -10, 10, 20);
+		g.endFill();
+		bg = getBg();
+		dm.add(bg, 0);
+		
+		initGame();
+		// KKApi.addScore(  KKApi.const( 20 ) );
+	}
+	
+	// A TOUTES LES FRAMES
+	public function update() {
+		switch(step) {
+			case GAME 		: updateGame();
+			case NEWLEVEL 	: updateLevel();
+		}
+	}
+	
+	// GAME
+	public function initGame() {
+		step = GAME;
+	}
+	
+	public function updateGame() {
+		move();
+		popBubble();
+		popPieuvre();
+		player.dy -= GRAVITY;
+		moveIA();		
+		testCollapse();
+		//move();
+	}
+	
+	//LEVEL
+	public function updateLevel() {
+		bg.y -= 1;
+		scroller += 1;
+		if (scroller >= 50.0)
+		{
+			player.mc.x = mcw / 2;
+			player.mc.y = player.coteY / 2;
+			scroller = 0;
+			cleanBub();
+			level ++;
+			player.dy = 0;
+			player.dx = 0;
+			step = GAME;
+			 KKApi.addScore(  KKApi.const( 2000 ) );
+		}
+	}
+	
+	//MOUVEMENT DU PLAYER
+	private inline function move() {
+		//cleanMoves();
+		player.dx *= FROTTEMENT;
+		player.dy *= FROTTEMENT;
+		player.mc.x += player.dx;
+		player.mc.y += player.dy;
+		
+		lastDx = player.dx;
+		lastDy = player.dy;
+		
+		if (mt.flash.Key.isDown(40)) 
+			player.dy += SPEED;
+		if (mt.flash.Key.isDown(39)) 
+			player.dx += SPEED;
+		if (mt.flash.Key.isDown(37)) 
+			player.dx -= SPEED*0.5;
+		if (mt.flash.Key.isDown(38)) 
+			player.dy -= SPEED;
+			
+		if (player.mc.x >= mcw - player.coteX / 2) {
+			if (lastDx != 0)
+				player.dx = 0;
+			player.mc.x =  mcw - (player.coteX/2);
+		}
+		if (player.mc.x <= player.coteX / 2) {
+				if (lastDx != 0)
+					player.dx = 0;
+			player.mc.x = (player.coteX/2);
+		}
+		if (player.mc.y <= player.coteY / 2) {
+			if (lastDy <= -0.2)
+				player.dy = 0;
+			player.mc.y = (player.coteY/ 2);
+		}
+		
+		if (player.mc.y > 260)
+			step = NEWLEVEL;
+	}
+	
+	//MOUVEMENT DES BULLES - PIEUVRES
+	private inline function moveIA() {
+		var a = bub.copy();
+		for ( b in a ) {
+			b.incre();
+			b.mc.x = b.x + Math.sin(b.d) * b.range;
+			b.mc.y += b.dy;		
+			if (b.mc.y < -20){
+				b.mc.parent.removeChild(b.mc);
+				bub.remove(b);
+			}
+		}
+		
+		var p = pieuvres.copy();
+		for ( b in p ) {
+			b.dx += Std.random(50)/100;
+			b.mc.x += Math.sin(b.dx);
+			b.mc.y += b.dy;
+			if (b.mc.y < -20){
+				b.mc.parent.removeChild(b.mc);
+				pieuvres.remove(b);
+			}
+		}
+	}
+	
+	//GENERATEUR DE BULLES
+	private inline function popBubble() {
+		var hard = level+1 * 2.5;
+		var fix = 50;
+		var rand = Std.random(fix)-hard;
+		if (rand <= 0) {
+			makeBubble();
+		}
+	}
+	
+	//GENERATEUR DE PIEUVRES
+	private inline function popPieuvre() {
+		var hard = level;
+		var rand = Std.random(100) + hard;
+		if(rand == 102 ) {
+			makePieuvre();
+		}
+	}
+	
+	private function makePieuvre() {
+		var mc = dm.empty(1);
+		dm.add(mc,10);
+		var p : Pieuvre = {
+			mc 		: mc,
+			cote 	: 15.0,
+			dx		: 1.0,
+			dy		: -(Math.random()*level/2),
+		}
+		p.mc.graphics.beginFill(0x008000);
+		p.mc.graphics.drawRect(-15,-15,30,30);
+		p.mc.graphics.endFill();
+		p.mc.x = Std.random(mcw-10);
+		p.mc.y = mch-50;
+		pieuvres.push(p);
+	}
+	
+	private function makeBubble() {
+		cdPop ++;
+		var mc = dm.empty(0);
+		dm.add(mc, 5);
+		var t = [LITTLE, LITTLE, LITTLE, LITTLE, LITTLE,
+				MEDIUM, MEDIUM,
+				BIG];
+		var b = new Bubble(mc, t[Std.random(t.length)]);
+		b.setSpeed(level);
+		b.mc.graphics.beginFill(0xFF6600);
+		b.mc.graphics.drawCircle(0,0,b.diam/2);
+		b.mc.graphics.endFill();
+		//b.mc.x = 150;
+		//b.mc.y = 150;
+		if (cdPop == 4) {
+			var r = Std.random(16) - 30;
+			b.mc.x = player.mc.x + r;
+			b.x = b.mc.x;
+			cdPop = 0;
+		}
+		else{
+			b.mc.x = Std.random(mcw - 10);
+			b.x = b.mc.x;
+		}
+		b.mc.y = mch+10;
+		bub.push(b);
+	}
+	
+	//NETOYAGE DES ARRAYS
+	private function cleanBub() {
+		for (i in 0...bub.length) {
+			bub[i].mc.parent.removeChild(bub[i].mc);
+			bub[i] = null;
+		}
+		bub = new Array();
+		
+		for (i in 0...pieuvres.length) {
+			pieuvres[i].mc.parent.removeChild(pieuvres[i].mc);
+			pieuvres[i] = null;
+		}
+		pieuvres = new Array();
+	}
+	
+	//MOTEUR DE COLLISIONS
+	private inline function testCollapse() {
+		var a = bub.copy();
+		for (b in a) {
+			var lx 	= Math.pow((b.mc.x - player.mc.x),2);
+			var ly	= Math.pow((b.mc.y - player.mc.y), 2);
+			var d 	= Math.pow(player.coteX / 2 + b.diam / 2, 2);
+			if ( lx + ly <= d) {
+				if (Math.sqrt(lx) + Math.sqrt(ly) <= Math.sqrt(d)) {
+					var angle = Math.atan2(player.mc.y - b.mc.y, player.mc.x - b.mc.x);
+					player.dy = -(Math.abs(Math.sin(angle) * b.rebond)) ;
+					player.dx = Math.cos(angle) * b.rebond ;
+					
+					b.mc.parent.removeChild(b.mc);
+					bub.remove(b);
+				}
+			}
+		}
+		var c = pieuvres.copy();
+		for (b in c) {
+			var lx 	= Math.pow((b.mc.x - player.mc.x),2);
+			var ly	= Math.pow((b.mc.y - player.mc.y),2);
+			var d 	= Math.pow(player.coteX/2   + b.cote, 2);
+			if ( lx + ly <= d) {
+				if (Math.sqrt(lx) + Math.sqrt(ly) <= Math.sqrt(d)) {
+					var angle = Math.atan2(player.mc.y - b.mc.y, player.mc.x - b.mc.x);
+					KKApi.gameOver({});
+				}
+			}
+		}	
+	}
+
+	//BG
+	public function getBg() {
+		var mc = new McBg();
+		return mc;		
+	}
+	
+	//KKApi.gameOver({});
+	
+	// NE PAS TOUCHER
+	static function main() {}	
+}

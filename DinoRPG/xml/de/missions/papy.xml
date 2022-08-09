@@ -1,0 +1,113 @@
+﻿<missions>
+
+	<!-- ***************************************************************************** -->
+	<!-- PAPY JOE, petits jobs ----->
+
+	<m group="papy" id="fish" name="Frischer Fisch" limit="10">
+		<begin>Madame Seyche, eine Einwohnerin von Dinoville, braucht frischen Fisch, weil sie mit ihren Freunden ein Abendessen machen will. Kannst du für sie etwas Fisch beim Händler vom Predigerhafen im Süden holen? Er wurde schon benachrichtigt und wartet schon auf dich.</begin>
+		<goto v="port"/>
+		<talk v="Fischhändler">Hallo mein Kleiner, du bist gekommen, um Fisch zu holen, stimmt's? Hier, bring ihn so schnell wie möglich nach Dinoville.</talk>
+		<goto v="dnv"/>
+		<talk v="Madame Seyche">Ooooohhhh, danke mein Kleiner! Dank dir wird das ein sehr gelungenes Abendessen! Kehre schnell zu Papy Joe zurück, um dir deine Belohnung abzuholen...</talk>
+		<end>Madame Seyche ist dir sehr dankbar. Hier ist deine Belohnung!</end>
+		<xp v="20"/>
+	</m>
+
+	<m group="papy" id="dog" name="Der verlorene Hund" limit="20">
+		<begin>Die Alte Ducraft hat ihren Pudel verloren als sie ihren Sohn in den Steilen Hügeln besuchte. Kannst du ihn wiederfinden?</begin>
+		<goto v="colesc"/>
+		<talk v="Jacqueline Ducraft">Guten Tag junger Mann! Foufou, mein kleines Pudelherz ist verschwunden! Ich hatte ihn bestraft, denn er hatte eine Dummheit begangen...oohh, wie seeehr ich das bereue! Schnell, suche ihn bitte für mich. Ich bin mir sicher, dass er mit seinen kleinen Pfötchen nicht auf diese Berge gestiegen ist. Er wird wahrscheinlich in den Süden gegangen sein.</talk>
+		<goto v="port" hide="1"/>
+		<action v="Foufou">Du hast Foufou wiedergefunden! Bring ihn schnell seiner Besitzerin wieder zurück!</action>
+		<goto v="colesc"/>
+		<talk v="Jacqueline Ducraft">Mein geliebter Foufou!!! Verzeih mir, die Mama war sehr böse mit dem lieben Hündlein! Danke junger Mann. Kehre so schnell es geht zu diesem alten Knacker zurück, um dir deine Belohung abzuholen!</talk>
+		<end>Hhmm...Der alten Schachtel werde ich es schon noch heimzahlen! Hier nun also deine Belohung.</end>
+		<xp v="15"/>
+		<item v="angel"/>
+	</m>
+
+	<m group="papy" id="kilgou" name="Gupignons in den Hügeln" limit="20" cond="mission(fish)">
+		<begin>Zahlreiche Wölfe und Gupignons machen die Steilen Hügel im Norden von Dinoville unsicher. Der Dorfvorsteher eines benachbarten Dorfs sucht jemanden, der ein paar von ihnen umbringt und ihnen so etwas Angst einjagt, damit sie sich beruhigen. Bist du stark genug, um dich zu beweisen?</begin>
+		<goto v="colesc"/>
+		<kill v="goupi:goupi2:goupi3:wolf" n="6" name="Wölfe und Gupignons"/>
+		<end>Bravo! Dank dir ist in den Hügeln wieder etwas Ruhe eingekehrt. Herzlichen Glückwunsch!</end>
+		<xp v="30"/>
+		<gold v="500"/>
+	</m>
+
+	<m group="papy" id="kilwlf" name="Die Wolfsjagd" limit="15" cond="mission(kilgou)">
+		<begin>Die Bauern haben seit kurzem viele Probleme mit einer Gruppe von Wölfen, die ihre Ziegen angreifen. Könntest du mal hier, mal dort vorbeischauen, eine Runde drehen und ein paar umbringen? Es geht nur darum sie zu verscheuchen.</begin>
+		<goto v="frcbrt"/>
+		<kill v="wolf" n="2"/>
+		<goto v="fountj"/>
+		<kill v="wolf" n="2"/>
+		<goto v="dnv"/>
+		<kill v="wolf" n="2"/>
+		<goto v="univ"/>
+		<kill v="wolf" n="2"/>
+		<end>Bravo, gut gemacht! Jetzt dürften sie sich einige Zeit lang nicht mehr den Ziegen nähern.</end>
+		<xp v="30"/>
+		<gold v="2000"/>
+	</m>
+
+	<m group="papy" id="fflow" name="Rosenstock in Gefahr" limit="15" cond="mission(fish)">
+		<begin>Der Lieblingsrosenstock von Madame Seyche ist aufgrund der brütenden Hitze in einem sehr schlechten Zustand. Könntest du für sie etwas Reines Wasser am Brunnen holen und es ihr bringen?</begin>
+		<goto v="fountj"/>
+		<action v="Reines Wasser">Du erhälst Reines Wasser, das insbesondere zum Blumengießen empfohlen wird...</action>
+		<goto v="dnv"/>
+		<talk v="Madame Seyche">Ooohhh, danke mein Kleiner! Dank dir wird mein Rosenstock wieder in den prächtigsten Farben aufblühen! Kehre schnell zu Papy Joe zurück, er wird dir deine Belohnung geben...</talk><end>Diese bezaubernde Madame Seyche hat mich für deine Arbeit gelobt. Du hast dir deine Belohnung wahrlich verdient!</end>
+		<xp v="20"/>
+	</m>
+
+	<m group="papy" id="kbook" name="Das Rezeptbuch" limit="15" cond="mission(fflow)">
+		<begin>Ich habe wieder einen Auftrag von der verzückenden Madame Seyche erhalten. Sie würde gerne ein Rezeptbuch lesen, das sich in der Universität befindet. Kannst du ihr es holen?</begin>
+		<goto v="univ"/>
+		<action v="Rezeptbuch">Du erhälst "100 Arten einen Korgonen zu kochen", Text und Bilder von Gorak, dem Einäugigen.</action>
+		<goto v="dnv"/>
+		<talk v="Madame Seyche">Ooooh, danke mein Kleiner! Jetzt kann ich verschiedene Korgonenrezepte ausprobieren! Du bist herzlich eingeladen vorbeizukommen, um etwas zu probieren!</talk><end>Bravo! Madame Seyche hat mir deinetwegen recht herzlich gedankt und mir ein gegrilltes Korgonenstück zukommen lassen. Das ist eine wahre Delikatesse!</end>
+		<xp v="20"/>
+	</m>
+
+	<m group="papy" id="msg" name="Die Briefmarken" limit="30" cond="mission(kbook)">
+		<begin>Ich habe große Lust einer gewissen Person zu schreiben, die mir am Herzen liegt. Leider wurden die Briefmarken von ein paar diebischen Gupignon gestohlen, die sich für gewöhlich am Brunnen aufhalten. Wenn du sie umbringst, erlaube ich dir meine Briefmarken zu benutzen, sagt dir das zu?</begin>
+		<goto v="fountj"/>
+		<kill v="goupi:goupi2:goupi3" n="15" name="Diebische Gupignons"/>
+		<action v="Die Briefmarken aufsammeln">Bravo, du hast die Briefmarken erhalten! Bring sie so schnell es geht zu Papy Joe!</action>
+		<end>Danke, das ist fantastisch. Jetzt kann ich endlich meinen Brief schreiben! Hier, du hast deine Briefmarken zurecht verdient...</end>
+		<collec v="msg"/>
+		<xp v="20"/>
+	</m>
+
+	<m group="papy" id="lettre" name="Der vertrauliche Brief" limit="2" cond="mission(msg)">
+		<begin>Hhmm...Dieses Mal wirst du für mich, Papy Joe, arbeiten...Ich bräuchte dich, damit du für mich diesen Brief DRINGEND einer Person in Dinoville bringst. Du musst dich vor allem beeilen!</begin>
+		<goto v="dnv"/>
+		<talk v="Madame Seyche">Oohhhh mein Kleiner, was bringst du mir denn dieses Mal? Ein Brief von Papy?.... .... Bring ihm schnell diese Antwort!</talk>
+		<end>Hmm! Ähm...Eine Antwort?! Jetzt schon?!? Das ist GENIAL! Sie hat meine Einladung zum Abendessen angenommen. Das wäre gebongt: Trotz meines hohen Alters wird das eine heiße Nacht werden!</end>
+		<xp v="20"/>
+	</m>
+
+	<m group="papy" id="kilglu" name="Ein seltsames Monster" limit="10" cond="mission(kilwlf)+canfight(gluon)">
+		<begin>Ein seltsames Monster ist in letzter Zeit im Königreich von Dinoville aufgetaucht. Es ist ziemlich zäh und kann je nach Lage in einem Kampf großen Schaden anrichten. Könntest du eines umbringen und es mir dann bringen, damit ich ihn etwas näher untersuchen kann?</begin>
+		<kill v="gluon" n="1"/>
+		<end>Danke, das ist ein schönes Exemplar. Hier ist deine Belohnung!</end>
+		<xp v="30"/>
+		<gold v="500"/>
+	</m>
+
+	<m group="papy" id="kilgnt" name="Die Riesen" limit="10" cond="mission(kilglu)+canfight(gvert)">
+		<begin>Ich weiß nicht, ob du es bemerkt hast, aber das Königreich von Dinoville ist von enormen Grünen Riesen bevölkert, die sich nicht von Gemüse zu ernähren scheinen! Könntest du so schnell wie möglich ein gutes Dutzend umbringen? Es handelt sich um einen Befehl des König, deshalb musst du dich beeilen!</begin>
+		<kill v="gvert" n="12" zone="0"/>
+		<end>Uff! Das war knapp! Danke, du hast mir sehr geholfen. Ich werde dem König morgen von deiner Heldentat erzählen, wenn wir wieder Golf spielen.</end>
+		<xp v="100"/>
+		<gold v="5000"/>
+	</m>
+
+	<m group="papy" id="kilcoq" name="Heldentat des Monats" limit="20" cond="mission(kilgnt)+canfight(coq)">
+		<begin>Hhmm...Ich habe noch eine Golfpartie mit dem König für nächsten Monat eingeplant und stell dir vor, er möchte, dass man ihm weiterhin von deinen Heldentaten erzählt...Was hältst du davon auf die Schnelle ein paar Hartschalen zu töten? Du wirst gut belohnt werden!</begin>
+		<kill v="coq" n="20" zone="0"/>
+		<end>Ah! Super! Ich werde jetzt mal etwas überlegen müssen und dem Ganzen etwas episches hinzufügen! Der König dürfte begeistert sein!</end>
+		<xp v="200"/>
+		<gold v="8000"/>
+	</m>
+
+</missions>

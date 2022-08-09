@@ -1,0 +1,1280 @@
+<!-- ***************************************************************************** -->
+<!-- Caushemesh (Condition d'accès : Avoir terminé le scénario des steppes) --->
+	
+<!-- Partie 0 La brume d'éher -->
+
+<d place="sking" name="Rockies King" gfx="rocking" cond="scenario(magnet,13)+scenario(caush,0)+scenario(intro,6)+(admin()|active(caush))">
+	<phase id="begin" next="quest:noquest">
+		[Dear friend! Hmmm...]
+		[Have you noticed that thick fog coming from the Steppes?]
+		[I'm really worried about it. There has never been so much of it before.]
+		[Could you go and investigate the area as soon as possible?]
+	</phase>
+	<a id="quest">I'll go there right now.</a>
+	<a id="noquest">I'm too busy at the moment.</a>
+	
+	<phase id="noquest" fast="1">
+		Unfortunately you simply don't have the time to worry about what is happening at the Steppes, after all, the fog may not even be dangerous.
+	</phase>
+	<phase id="quest" fast="1" scenario="caush:1">
+		You set out in the direction of the deepest confines of the Steppes, we absolutely must know what is going on over there...
+	</phase>
+</d>
+
+<d place="scaush" name="..." gfx="rodeur3" background="6" frame="gone" cond="scenario(caush,1)">
+	<phase id="begin" next="zarbe">
+		You are faced with an opaque fog.
+		It wasn't there the last time you passed through these parts...
+		What could be going on...
+	</phase>
+	<a id="zarbe">Continue investigating.</a>
+	<phase id="zarbe" fast="1" scenario="caush:2">
+		This fog is worrying, the best idea is to gather as much information as possible on the subject.
+		Maybe you'll get more information by asking the people who live around here.
+	</phase>
+</d>
+
+<d place="scampw" name="Captain" gfx="wteamc" cond="scenario(caush,2)">
+	<phase id="begin" next="info" fast="1">
+		The captain of W-Team silently observes the fog from a distance.
+		Looking worried, he is shuffling around, mumbling.
+	</phase>
+	<a id="info">Does this fog really worry you that much?</a>
+	<phase id="info" next="plus">
+		[Hello Dinoz Master.]
+		[It doesn't just worry me, but it also heralds the imminent arrival of difficult times.]
+	</phase>
+	<a id="plus">What do you know about the fog?</a>
+	<phase id="plus" next="retour">
+		[It has always been present at the border to the Steppes, it covered Caushemesh to hide it from the citizens of Dinoland.]
+		[Lately its density has been increasing, and little by lttle it is starting to cover the Steppes.]
+		[Soon a thick cloud will cover the desert, we'll no longer see the light of day, and that will be the end of the Steppes.]
+	</phase>
+	<a id="retour">That would be the end of Dinoland!</a>
+	<phase id="retour" scenario="caush:3">
+		[Exactly! After the Steppes, the forest would be affected, then the islands, and finally Dinotown...]
+		[We must react to avoid this cataclysm, we cannot allow our world to be destroyed by such a violent disaster.]
+		[Go back to the King, and tell him that all of Dinoland's residents must mobilize to stop this!]
+	</phase>
+</d>
+
+<d place="sking" name="Rockies King" gfx="rocking" cond="scenario(caush,3)">
+	<phase id="begin" next="joke" fast="1">
+		You recount the fruits of your investigation to the King.
+		His face hardens...
+	</phase>
+	<a id="joke">It's difficult to make things harder for a Rocky!</a>
+	<phase id="joke" next="action">
+		[What did you say Dinoz master?]
+		[That you have found a way to save our world?]
+	</phase>
+	<a id="action">Haha, erm no, not yet.</a>
+	<phase id="action" next="broc">
+		[I am sad to say that I am overwhelmed by these events.
+		Nothing in the ancient writings prepared us for this menace.]
+		[We'll no doubt have to turn to the younger generation for a solution, we should make the most of the new ideas and perspectives that are available to us.]
+	</phase>
+	<a id="broc">Who could come and help us?</a>
+	<phase id="broc" fast="1" scenario="caush:4">
+		Who could have a solution for this serious problem...
+		You leave the citadel perplexed.
+	</phase>
+</d>
+
+<d place="baobob" name="Bao Bob" gfx="baobob" cond="scenario(caush,4)">
+	<inject id="bob:begin" next="rien" />
+	<a id="rien">Bao! The situation is serious!</a>
+	<phase id="rien" next="qui">
+		[Unfortunately I can't help you.]
+		[I can't fight all the menaces in Dinoland, I've already enough to do in the Dark World.]
+		[Fortunately I know a Dinoz Master who knows no fear, and who has already demonstrated their courage and determination throughout their adventures.]
+	</phase>
+	<a id="qui">Really? Who's that?</a>
+	<phase id="qui">
+		[...]
+		[It's you, young master.]
+		[I'm sure that you'll find the solution for yourself.]
+	</phase>
+</d>
+
+<d place="papy" name="Papy Joe" gfx="papy" cond="scenario(caush,4)">
+	<inject id="papy:begin" next="rien" />
+	<a id="rien">Papy Joe! The situation is serious!</a>
+	<phase id="rien">
+		[I felt it.]
+		[My rheumatism is making a martyr of me.]
+		[Unfortunately I can't help you.]
+		[Maybe you'd have more luck getting involved with this new magic everyone is talking about...]
+		[This technology just might save us all!]
+	</phase>
+</d>
+
+<d place="chbroc" name="Klutz" gfx="broc" background="5" cond="scenario(caush,4)+hourrand(24,4+)">
+	<inject id="broc__2:begin" next="id" />
+	<inject id="broc__11:begin" next="id" />
+	
+	<a id="id">Klutz! The situation is serious!</a>
+	<phase id="id" next="mais">
+		[Erm, Hi. What's going on?]
+		[Fog is covering the steps you say?]
+		[That's funny, I've just invented a machine to make clouds and make them rain on my vegetable patch.
+		Do you want me to tell you how it wo...]
+	</phase>
+	<a id="mais">There's no time for that!</a>
+	<phase id="mais" next="doute">
+		[That's a shame, look, you press this button here and FROMPPP! A cloud comes out.]
+		[...]
+		[what are you looking at me like that for?]
+	</phase>
+	<a id="doute">Are you sure it's not your fault?</a>
+	<phase id="doute" next="engin">
+		[...]
+		[What? No! Of course not!]
+		[Although..., erm..., although, I guess if the machine jammed...]
+		[You reckon that the fog could cover all of Dinoland?
+		That's serious! Fortunately I can reverse the machine, which would turn it into a fog pump!
+		However, I'll need to install it over there!]
+		[Then we'll need some help, we'll need some serious backup if we want to suck up all that fog!]
+	</phase>
+	<a id="engin">Let's get to it!</a>
+	<phase id="engin" next="fin">
+		[I'm right behind you!]
+		(...If I had known, I wouldn't have left it running overnight...)
+	</phase>
+	<a id="fin">Did you say something?</a>
+	<phase id="fin" fast="1" scenario="caush:5" frame="stop">
+		Klutz has set off in front, carrying the machine. All he needs to do is to go back to the Steppes and switch it on. Job done. 
+	</phase>
+</d>
+
+<d place="scaush" name="Klutz" gfx="broc" background="8" cond="scenario(caush,5)+!clanact(pompe)">
+	<phase id="begin">
+		[Here we are.]
+		[Give me a minute to get the machine set up,
+		during that time, you can ask your friends or clan members to lend a hand.
+		We're going to need more strong arms to help with the pumping!]
+	</phase>
+</d>
+
+<d place="scaush" name="Klutz" gfx="broc" background="8" cond="scenario(caush,5)+clanact(pompe)">
+	<phase id="begin" next="ombre">
+		[Congratulations!]
+		[You can breathe again, the fog has been lifted.]
+		[You can now go beyond the Steppes if you ever feel the need...]
+	</phase>
+	<a id="ombre">Awesome!</a>
+	<phase id="ombre" fast="1" scenario="caush:6" frame="stop">
+		While you're busy congratulating yourself, you notice a shadow moving in the dunes.
+		The silhouette looks all too familiar...
+	</phase>
+</d>
+
+<d place="sking" name="Rockies King" gfx="rocking" cond="scenario(caush,6)+scenario(caush,7)+scenario(caush,8)">
+	<phase id="begin">
+		[Thank you my friend.]
+		[Thanks to you, the Steppes have been saved, the danger has subsided.
+		You must however go to the source to put an end to this menace.
+		In any case, Dinoland thanks you for your courage and willingness to help!]
+	</phase>
+</d>
+
+<!-- Partie 1 Les portes de Caushemesh -->
+
+<d place="sporte" name="Strange Prowler" gfx="rodeur3" frame="wrap" cond="scenario(caush,6)">
+	<phase id="begin" fast="1" next="rod:ouch">
+		The Strange Prowler is facing an imposing edifice, a door which is clearly centuries old.
+		He gesticulates wildly and shouts loudly, causing the sand around him to rise into the air...
+		Despite his cries, only the wind and the sand are moving, the door remains closed.
+	</phase>
+	<a id="rod" cond="!tag(baston)">(Watch the prowler...)</a>
+	<phase id="rod" next="infos">
+		[This fog emanating from Caushemesh is the signal I've been waiting for to return, I'm sure of it!]
+		[I couldn't cross it for the longest time, and now I can finally get back here, I'm stuck. Typical!]
+	</phase>
+	<a id="infos">(Continue to watch...)</a>
+	<phase id="infos" next="but">
+		[Grrr...]
+		[But what idiot closed the doors, it is imperative that I report back to my masters!]
+		[...]
+		[It's been 50 years since I left, they must be asking questions... I really hope they don't punish me after all the time and effort I've gone to to collect all this information on Dinoland!]
+	</phase>
+	<a id="but">Humm...Excuse me...?</a>
+	<phase id="but" next="eclat:noeclat">
+		[I want to go home, I have holes in my shoes... and my cape smells funky...]
+		[sniff...]
+		[If only I'd been able to get my hands on some lodestone, I could have opened these wretched doors...]
+	</phase>
+	<a id="eclat">Show him a lodestone shard</a>
+	<a id="noeclat">Leave him alone</a>
+	
+	<phase id="noeclat">
+		It's best to leave him alone, who knows what heinous plan he has in mind...
+	</phase>
+	<phase id="eclat" next="close">
+		[Who's there?]
+		[You again? You followed me all the way to the gates to Caushemesh, are you not going to let me hand in my report?]
+		[In any case, it's impossible to open the doors.]
+		[...What's that in your hand?]
+	</phase>
+	<a id="close">A lodestone shard.</a>
+	<phase id="close" next="baston">
+		[That's exactly what I'm looking for...]
+		[If I had known that the Rockies King was going to give it to the first person to come along, I would have probably been nicer to him rather that trying to con him...]
+		[...Long story short... Give me it now!]
+	</phase>
+	<a id="baston">Not even in your wildest dreams!</a>
+	<phase id="baston" next="ouch" fightgroup="rodeur:darki1:darki4" tag="baston">
+		[Ouch... Aah...]
+		[Grrr...You, you're a tough one... You've improved since the last time we met...]
+		[Fine, I give up, I know I've got no chance against you...]
+	</phase>
+	<a id="ouch" cond="tag(baston)">I'm invincible.</a>
+
+	<phase id="ouch" scenario="caush:7">
+		[We'll test that theory when you find yourself facing the powerful masters of Caushemesh...]
+		[You'll laugh less then, hahahahaha...]
+	</phase>
+</d>
+	
+<d place="sporte" name="Strange Prowler" gfx="rodeur3" frame="wrap" cond="scenario(caush,7)">
+	<phase id="begin" next="open:nopen">
+		[Hmmm, you wouldn't, by any chance, wish to use your lodestone shard to open the doors - would you?]
+	</phase>
+	<a id="open">If I do, what will happen?</a>
+	<a id="nopen">No way!</a>
+	
+	<phase id="open" next="hum">
+		[Nothing special, you will just set all of the power of Caushemesh free to access the defenceless kingdom of Dinoland.]
+		[But don't worry, I'll close them behind me. The invasion won't begin until I've given my report.]
+		[Yes, I'm kind of a big deal around here!]
+	</phase>
+	
+	<phase id="nopen" next="mefie">
+		[I can tell that you don't want to listen...]
+		[In which case, I have no other choice...]
+	</phase>
+	
+	<a id="mefie" target="tik">What scheme are you going to come up with this time?</a>
+	<a id="hum" target="tik">Well, the long and the short of it is that opening the doors would be a spectacular lapse of judgement on my part...</a>
+	
+	<phase id="tik" next="creuse">
+		[OK, you leave me no choice...]
+		[...Oh no! I've mislaid a Tik Bracelet in the sand. If you find it you can keep it!]
+	</phase>
+	<a id="creuse">A bracelet? Where? Where is it?</a>
+	
+	<phase id="creuse" next="vol:novol">
+		[You'll have to dig around over there, I can't remember exactly where I lost it...]
+	</phase>
+	
+	<a id="vol">Look for the bracelet</a>
+	<a id="novol">Don't look for the bracelet</a>
+	
+	<phase id="novol">
+		[As if you were going to fall for that... a SECOND Tik Bracelet, who would believe that?]
+		[...and if it was true?]
+	</phase>
+	
+	<phase id="vol" fast="1" scenario="caush:8" rmcollection="magnet">
+		You start digging in the sand like a maniac, a second Tik Bracelet - what an unexpected stroke of good fortune!
+		You're going to need a good hour to search the area!
+	</phase>
+</d>
+
+<d place="sporte" name="..." frame="gone" gfx="rodeur3" cond="scenario(caush,8)+(swait(caush,1)|admin())">
+	<phase id="begin" fast="1" next="pigeon">
+		You have searched the length and breadth of the area, but found nothing, no Tik Bracelet, in fact, no treasure at all...
+		How frustrating... The prowler only helped for about a paltry quarter of an hour!
+	</phase>
+	<a id="pigeon">Speaking of which, where's he gone?</a>
+	<phase id="pigeon" next="note">
+		[There's nobody there...]
+		[But... your lodestone shard!]
+		[It's gone!]
+	</phase>
+	<a id="note">My lodestone!</a>
+	<phase id="note" fast="1" scenario="caush:9">
+		The heavy doors of Caushemesh are ajar, a violent wind coming from the peaks of the Caushemesh mountains whips your face.
+		You make out the prowler in the distance. It's not possible to catch up with him though, the doors are already closing!
+	</phase>
+</d>
+
+<d place="sporte" name="..." frame="gone" gfx="rodeur3" cond="scenario(caush,9)">
+	<phase id="begin" fast="1" next="eclat">
+		You get there a fraction too late...
+		The doors slammed shut with a deafening bang.
+		You are stuck outside, the prowler is clearly on his way home...
+	</phase>
+	<a id="eclat">Damn! I knew I couldn't trust him...</a>
+	<phase id="eclat" next="note" collection="magnet">
+		_(You see a note lying on the ground :)_
+		[Thank you kindly Dinoz master, I assure you though, with your naivety, you wouldn't have lasted long in my world.]
+		[In fact, joking aside, I'll even give you back your lodestone shard - I have no more use for it. Then again, neither do you, I've used up all its energy!]
+		[Hahaha!]
+	</phase>
+	<a id="note">The glow has disappeared from the lodestone!</a>
+	<phase id="note" fast="1" scenario="caush:10">
+		The lodestone shard can no longer open the doors, is there some way to recharge it?
+		There's only one person who will definitely be able to help...
+	</phase>
+</d>
+
+<d place="sking" name="Rockies King" gfx="rocking" cond="scenario(caush,10)">
+	<phase id="begin" next="recharge">
+		[Dear friend! How are you?]
+		[You look crestfallen to say the least...]
+	</phase>
+	<a id="recharge">The lodestone shard shines no more...</a>
+	<phase id="recharge" next="else">
+		[Is that all?]
+		[Don't worry about it, just wait a hundred years or so and it'll be as good as new!]
+	</phase>
+	<a id="else">100 years?</a>
+	<phase id="else" next="ben">
+		[You Dinoz masters are all so impatient nowadays...]
+		[Life is a long and winding trail, which through the years leads to the treacherous path of learning, up and over the clifftop walk of experience, back down through the avenue of disappointment onto the highway of self-discovery. From there you take a left onto the corridor of uncertainty, over the bridge of indifference, along the highway of empathy, changing onto the avenue of elation at junction 42 and before you know it young dinoz master, you're on the road to wisdom and enlightenment.]
+	</phase>
+	<a id="ben">100 years though? Really?</a>
+	<phase id="ben" next="action">
+		[You're beating yourself up over nothing though, the shard is not completely discharged.]
+		[The proof is there to see. If the shard hadn't protected you, you would have ended up underwater!]
+	</phase>
+	<a id="action">So is there anything I can do to recharge it?</a>
+	<phase id="action" next="baston">
+		[There is a way, but why are you so determined to go to Caushemesh?]
+		[Are you sure you have the necessary level to go to this cruel faraway land?]
+	</phase>
+	<a id="baston">I'll give my all to get there!</a>
+	<phase id="baston" next="go:nogo">
+		[In that case, allow me to test your readiness.]
+		[We captured a Rocky from the Dark World and we are trying to save it from its terrible curse.
+		If you manage to defeat it, we'll find a way to recharge your lodestone shard for you.]
+	</phase>
+	<a id="go">Bring it on!</a>
+	<a id="nogo">I'm not ready yet</a>
+	
+	<phase id="nogo">
+		The King leaves you to prepare for battle.
+		The prowler's butt-kicking will have to wait for now...
+	</phase>
+	<phase id="go" next="ouep" fightgroup="darkia" scenario="caush:11">
+		[Well done, you have managed to defeat your adversary in spite of its level.]
+		[Don't forget that this Rocky is but an infini'tesimally small taste of what awaits you when you arrive in that land, which for many, many generations has been cut-off from Dinoland.]
+	</phase>
+	<a id="ouep">I'm not afraid.</a>
+	<phase id="ouep">
+		[I don't doubt it...
+		OK, let's get serious!]
+	</phase>
+</d>
+
+<d place="sking" name="Rockies King" gfx="rocking" cond="scenario(caush,11)">
+	<phase id="begin" next="how">
+		[You need to find a way to recharge the lodestone shard.]
+		[It's going to be very dificult to do. Even if you manage to charge it a little, given the state of the gate to Caushemesh, it's probably going to require some brute force afterwards.
+		That part you're going to need help for.]
+	</phase>
+	<a id="how">What should I do first?</a>
+	<phase id="how" next="pylone">
+		[First of all you should go to the lodestone pylons, and leave the lodestone shard there for at least a day, to give it time to recharge a little.]
+		[Then you should go to the gates of Caushemesh, use what little energy is contained within to force the doors to open a little. You'll need help from all your clan members in order to 
+		force the doors sufficiently to allow you and your dinoz to enter the mysterious world.]
+	</phase>
+	<a id="pylone">So it's like Mission: Tricky...</a>
+	<phase id="pylone" scenario="caush:12">
+		[Yes. I guess. Now, be on your way.]
+		[Fortune favours the brave, Dinoz master.]
+	</phase>
+</d>
+
+<d place="spylon" name="..." gfx="rodeur3" frame="gone" background="2" cond="scenario(caush,12)">
+	<phase id="begin" next="syph" fast="1">
+		You place the shard on a pillar which is constantly being struck by lightning.
+		All that remains now is to wait...
+	</phase>
+	<a id="syph">Without the shard, maybe I should avoid the syphon...</a>
+	<phase id="syph" rmcollection="magnet" scenario="caush:13">
+		It's wiser to wait patiently for a full day while the shard recharges.
+	</phase>
+</d>
+
+<d place="spylon" name="..." gfx="rodeur3" frame="gone" background="2" cond="scenario(caush,13)+(swait(caush,24)|admin())">
+	<phase id="begin" fast="1" next="porte">
+		You have retrieved your lodestone shard.
+		Despite it being struck by lightning many times, the glow emanating from the stone doesn't have the same intensity as before.
+	</phase>
+	<a id="porte">Let's head for the gates.</a>
+	<phase id="porte" collection="magnet" scenario="caush:14">
+		Well, we're on our way to the gates now, let's just hope the shard is sufficiently charged!
+	</phase>
+</d>
+
+<d place="sporte" name="..." gfx="rodeur3" frame="gone" cond="scenario(caush,14)">
+	<phase id="begin" next="ouvre:nouvre" fast="1">
+		You find yourself facing a gigantic gate.
+		Nothing has changed since your last visit, the gates are still seized, the sand being carried in the wind claws at your face and those of your Dinoz.
+		What's going to happen when you use the lodestone...
+	</phase>
+	<a id="ouvre">Use the lodestone shard.</a>
+	<a id="nouvre">Don't use the shard yet.</a>
+	
+	<phase id="nouvre" fast="1">Maybe it's best to wait a while and not do anything stupid...</phase>
+	<phase id="ouvre" next="clan" fast="1">
+		You grab the shard, and you begin to feel the power.
+		Grating noise from a huge mechanism echoes through the desert, the whole facade of the structure begins tio shake.
+		Les portes s'enfoncent lourdement de quelques centimètres...
+	</phase>
+	<a id="clan">A little bit more and I...shall...pass!</a>
+	<phase id="clan" next="force" fast="1">
+		Everything suddenly halts, the noise dies away, and the gates seize...
+		The power of the lodestone has been exhausted.
+	</phase>
+	<a id="force">What do we do now?</a>
+	<phase id="force" fast="1" scenario="caush:15">
+		The lodestone will be of no more use to you now.
+		Even if you were to recharge it again, it's unlikely that it would store enough energy to move a structure of this magnitude.
+	</phase>
+</d>
+
+<d place="sking" name="Rockies King" gfx="rocking" cond="scenario(caush,15)">
+	<phase id="begin" next="soluce">
+		[Good day, dear friend!]
+		[So, the lodestone has lost its spark once more...]
+	</phase>
+	<a id="soluce">What can I do to finish opening the door?</a>
+	<phase id="soluce" next="brute">
+		[Aside from waiting for a century?]
+		[I only see one option...  brute force and ignorance!]
+		[if several dinoz masters work together, they'll be able to force the door...]
+	</phase>
+	<a id="brute">Nothing beats a bit of brute force!</a>
+	<phase id="brute" scenario="caush:16">
+		[Gather 14 dinoz here.]
+		[With their combined strength, you'll be able to open the gates.]
+	</phase>
+</d>
+
+<d place="sporte" name="..." gfx="rodeur3" frame="gone" cond="scenario(caush,16)">
+	<phase id="begin" next="ok:ko">
+		It is time to get to work.
+		We need to get 14 dinoz here to be able to force the door.
+	</phase>
+	<a id="ko">It doesn't feel like the right time</a>
+	<a id="ok">Oh it is on like donkey kong - strength through union!</a>
+	
+	<phase id="ko" fast="1">
+		To complete this task you will need to call upon all your friends and clan members!
+	</phase>
+	<phase id="ok" url="/dino/::did::/act/union"></phase>
+</d>
+
+<d place="sporte" name="..." gfx="rodeur3" frame="gone" cond="scenario(caush,17+)">
+	<phase id="begin" fast="1">
+		The gate is finally open, well, destroyed might be more accurate. It won't be getting closed again any time soon. The mechanism which controls the gates finally gave up after constant assault from the dinoz.
+		What unforeseen consequences could this bring about in the future though?
+	</phase>
+</d>
+
+<!-- Partie 2 La visite de Caushemesh et l'arrivée au palais -->
+
+<d place="cacrop" name="Ivan Tocry" gfx="lechton" cond="scenario(caush,16)">
+	<inject id="caushville:begin" next="ville"/>
+	
+	<a id="ville">Excuse me, what's going on here?</a>
+	<phase id="ville" next="titan">
+		[...Shhh...Make less noise!]
+		[You know you're a lunatic, right? You're going to attract the Colossi if you keep shouting like that.]
+	</phase>
+	<a id="titan">The Colossi?</a>
+	<phase id="titan" next="peur">
+		[Yes, the Colossi, what world did you fall off when you didn't know that the Colossi make the laws on Caushemesh!]
+		[I know you're not from here, because I've never seen you stocking up at the underground store beneath the Acropolis.]
+		[Since the catastrophe at the extraction plant, nobody dares leave their home.]
+		[We're forced to live imprisoned in out own homes, without hope of ever seeing life as it was before in our beautiful Acropolis...]
+	</phase>
+	<a id="peur">What catastrophe?</a>
+	<phase id="peur" next="heros">
+		[All Caushemesh people have heard this story!]
+		[A long, long time ago, an explosion transformed Caushemesh into a gigantic sea of ether,
+		I don't know what manner of experiments our Masters were attempting, but something went wrong...]
+		[Since then, gigantic monsters have reigned over us, and everyone lives in hiding in permanent terror.]
+	</phase>
+	<a id="heros">And nobody has restored order?</a>
+	<phase id="heros" next="door">
+		[It's complete chaos, we haven't had any word from the palace in several years.]
+		[In any case, life on Caushemesh has never been simple. Beforehand we were rules by our masters, and now they're no longer here, the monsters have taken over...]
+		[We can't even flee, the gates of Caushemesh have been closed for such a long time, we can't even remember what exists on the other side...]
+	</phase>
+	<a id="door"> Euh... The gates are open now.</a>
+	<phase id="door" next="tache:notache">
+		[The gates are open? That's incredible! Did you come from another world?]
+		[Maybe you are the one who will rid us of these monsters!]
+		[If that's the case, maybe I could ask you for some help?]
+	</phase>
+	<a id="tache">Of course</a>
+	<a id="notache">Sorry, I'm too busy right now.</a>
+	
+	<phase id="notache">
+		[Sorry to have delayed you with my storytelling, I wish you all the best, and good luck should you happen to come across a Colossus.]
+	</phase>
+	<phase id="tache" next="count">
+		[Thank you.]
+		[I can't find my daughter, she went to find some medicine for me at the Acropolis, but she hasn't been home in days.
+		I beg you, could you bring her home? I'm ever so worried about her.]
+	</phase>
+	<a id="count">You can count on me!</a>
+	<phase id="count" fast="1" scenario="caush:17">
+		This is a great opportunity to have a look round this fasinating world while it's in the grip of chaos.
+		Where could that little girl be hiding...
+	</phase>
+</d>
+
+<d place="cporte" name="..." gfx="agathe" frame="hide" background="4" cond="scenario(caush,17)">
+	<phase id="begin" fast="1" next="plus">
+		There was nobody there the last time you checked...
+	</phase>
+	<a id="plus">Search every nook and cranny.</a>
+	<phase id="plus" fast="1">
+		Still not seeing anything.
+		It'd be wise to not spend forever here, we could do without bumping into a Colossus at this stage.
+	</phase>
+</d>
+
+<d place="ctecno" name="..." gfx="agathe" frame="hide" background="5" cond="scenario(caush,17)">
+	<phase id="begin" fast="1" next="plus">
+		There's not a living soul round here...
+	</phase>
+	<a id="plus">Look everywhere.</a>
+	<phase id="plus" fast="1">
+		Nothing. Less, even.
+		Something weird has been going on here though...
+	</phase>
+</d>
+
+<d place="ccrane" name="..." gfx="agathe" frame="hide" background="3" cond="scenario(caush,17)">
+	<phase id="begin" fast="1" next="plus">
+		Not the slightest hint of life around here...
+	</phase>
+	<a id="plus">Continue to search.</a>
+	<phase id="plus" fast="1">
+		Caushemesh is much bigger than I'd ever imagined
+		Have you seen this skull?
+		A demon of this size actually existed?
+	</phase>
+</d>
+
+<d place="cpuits" name="..." gfx="agathe" frame="hide" background="2" cond="scenario(caush,17)">
+	<phase id="begin" fast="1" next="plus">
+		[Nothing around here either...]
+		[...]
+	</phase>
+	<a id="plus">Search harder.</a>
+	<phase id="plus" fast="1" scenario="caush:18">
+		This island is much bigger than the others, searching it will take longer.
+		Let's hope that no monsters choose now to make an appearance.
+	</phase>
+</d>
+
+<d place="cpuits" name="..." gfx="agathe" frame="hide" background="2" cond="scenario(caush,18)">
+	<phase id="begin" fast="1" next="voila">
+		You don't give up hope.
+		You sense a presence in the area.
+		maybe if you make some noise?
+	</phase>
+	<a id="voila">HEY, IS SOMEBODY THERE?</a>
+	<phase id="voila" next="gaaah">
+		While awaiting a response, a sharp whistle freezes the atmosphere with a single blast!
+		A menacing shadow is heading towards you. It seems that perhaps making all that noise wasn't the best idea you've ever had...
+	</phase>
+	<a id="gaaah">HAAAAAA!</a>
+	<phase id="gaaah" fightgroup="serpe2" fast="1" next="alors" scenario="caush:19">
+		After a tiring battle, you succeeded in repelling the monstruous assault, but you know you're going to meet again.
+	</phase>
+	<a id="alors">So, THAT is a Colossus...</a>
+	<phase id="alors" next="fille" frame="peur" name="Crousti Chocotte">
+		[Euh...]
+		[Excuse me, but I saw you fight. You are strong.]
+		[I'm so far from the Acropolis, perhaps you could accompany me?]
+	</phase>
+	<a id="fille">That's what i'm here for!</a>
+	<phase id="fille" fast="1" frame="peur" scenario="caush:19">
+		The little girl is thrilled by your agreement.
+		She will follow you back to her house.
+	</phase>
+</d>
+
+<d place="cacrop" name="Ivan Tocry" gfx="lechton" cond="scenario(caush,19)">
+	<inject id="caushville:begin" next="merci"/>
+	
+	<a id="merci">Mission accomplished!</a>
+	<phase id="merci" next="chut">
+		[Dammit!...]
+		[One fight with a Colossus isn't enough for you?]
+		[In any case, thank you for bringing my daughter home safely. But please, don't go making a habit of it.]
+	</phase>
+	<a id="chut">Sorry.</a>
+	<phase id="chut" scenario="caush:20" fast="1">
+		Well that's another good job done.
+		Maybe you can continue your tour of Caushemesh now?
+	</phase>
+</d>
+	
+<!-- Dialogue avec les amazones scenario(caush:20,21&22) -->
+<!-- Dialogue avec Sofia scenario(caush:23&24) -->
+<!-- Missions des amazones -->
+
+<!-- Partie 3 Les Monstres suprêmes -->
+
+<d place="cpyra2" name="Sofia" gfx="sofia" cond="scenario(caush,25)+mission(gifta)">
+	<inject id="sofia:begin" next="mdone"/>
+	<a id="mdone">M'lady!</a>
+	<phase id="mdone" next="story" frame="fixe">
+		[Haha it's you... You've already helped me out with a few tasks...
+		By way of thanks, I'll speak with you briefly.]
+		[Ask your questions quickly though, so we can get this over with, and that I can get back to my siesta!]
+	</phase>
+	<a id="story">I'll be quick!</a>
+	<phase id="story" next="cata:colosse:sofia:brume:maitre:fin" frame="fixe">
+		[Sofia, the emotionally unhinged guardian, is willing to answer some of your questions, make the most of this opportunity to shed some light on the mystery surrounding the lands of Caushemesh.]
+	</phase>
+	<a id="cata">What happened here?</a>
+	<a id="colosse">Where do the over-powered monsters come from?</a>
+	<a id="sofia">How did you get here?</a>
+	<a id="brume">Where does that fog come from?</a>
+	<a id="maitre">Who are the Masters of Caushemesh?</a>
+	<a id="fin" cond="tag(qte5)">Thank you for all your help.</a>
+	
+	<phase id="cata" next="ether" frame="fixe">
+		[Hmmm, I'd love to tell you. Don't look at me like that - it's not my fault!]
+		[For many years the Masters of Caushemesh were at war with the celestial island of Nimbao.]
+		[They built a secret laboratory which transformed their people into extremely powerful monsters to battle the Dorogons.]
+		[They disappeared following the catastrophe which opened the doors to the dark world.]
+	</phase>
+	<a id="ether">The dark world?</a>
+	<phase id="ether" next="cata:colosse:sofia:brume:maitre:fin" frame="fixe">
+		[The fools wanted to exploit the infinite resources of the dark world by creating a portal between the two worlds...]
+		[Clearly, their ambition was to be their downfall, as they couldn't master the dark forces...]
+		[An unprecedented explosion which destroyed the laboratory, widened the breach to the dark world discharged the lake of ether onto Caushemesh.]
+		[Since then, the earth has been swallowed up leving only a few islands, suspended in the void, with the ether modifying the structure of the rock.]
+	</phase>
+	
+	<phase id="colosse" next="cata:colosse:sofia:brume:maitre:fin" frame="fixe">
+		[The monsters, high on ether, destroyed the installations which extracted the ether flowing from the breach and escaped.]
+		[They now roam the wild, I see them from time to time, but they've learned to avoid me. I don't like to be disturbed when I'm doing my shopping.]
+		[Since you opened the gates, it wouldn't surprise me if they've left Caushemesh.]
+		[Ironically, in their madness, the Masters of Caushemesh as least remembered to close the gates to save Dinoland from being wiped off the map!]
+	</phase>
+	
+	<phase id="sofia" next="palais" frame="fixe">
+		[After the great explosion, various gorges and crevices opened up throughout Dinoland.]
+		[A decrepit council arbitrarily designated the most powerful people in Dinoland and handed them the unenviable task of guarding the breaches.]
+		[Oh, hang on, that reminds me - they gave me that job...
+		Not to worry, I've not been doing any of that for a while...]
+	</phase>
+	<a id="palais">And this palace?</a>
+	<phase id="palais" next="cata:colosse:sofia:brume:maitre:fin" frame="fixe">
+		[OK then, given that I was supposed to spend a while on Caushemesh and the palace was empty. I made it my home.]
+		[These are not the pseudo masters of Caushemesh, they've completely disappeared...]
+	</phase>
+	
+	<phase id="brume" next="cata:colosse:sofia:brume:maitre:fin" frame="fixe">
+		[The fog which spread to the Steppes came from the Technodome, which is strange, because there wasn't a soul living there the last time I had enough free time to take a trip over there.]
+		[What deranged mind still hides within the ruins... Clearly, Caushemesh is full of lunatics and incompetents.]
+	</phase>
+	
+	<phase id="maitre" tag="qte5" next="cata:colosse:sofia:brume:maitre:fin" frame="fixe">
+		[Since the fall of Jazz Island, the ancient Caushemeshiens believe that the rest of the world hates them.]
+		[A crazy bunch of paranoid loons if you ask me...]
+		[Anyway, I'd be surprised if there are any still alive, as over time, they would have come to reclaim their throne.
+		If you want to know more, you should keep going to the monster factory.
+		You'll soon see for yourself that it's no holiday resort...]
+	</phase>
+	<phase id="fin" next="avant" frame="nocare">
+		[I've nothing more to tell you.]
+		[Leave me now, this conversation has exhausted me.]
+	</phase>
+	<a id="avant">Great!</a>
+	<phase id="avant" fast="1" scenario="caush:26" frame="nocare">
+		If you want to know more, you'll have to find one of the masters of Caushemesh.
+		To the Extraction Facility...
+	</phase>
+</d>
+
+<d place="cextra" name="Considerate elder" gfx="master" cond="scenario(caush,26)">
+	<phase id="begin" next="brume" fast="1">
+		A strange person with spiky hair is facing you.
+		He seems blissfully vacant, no emotion showing on his face.
+		His transparent gaze gives you goosebumps. Who could this old man be...
+	</phase>
+	<a id="brume">Sir?</a>
+	<phase id="brume" next="bah">
+		[Bahhhh, buh.... bee bo boo.]
+	</phase>
+	<a id="bah">Sorry, what?</a>
+	<phase id="bah" next="rodeur">
+		[BAAAhhhhh!]
+		[HAHAHAHA, paf, CRASH!]
+	</phase>
+	<a id="rodeur">But he's completely insane!</a>
+	<phase id="rodeur" name="Strange Prowler" gfx="rodeur3" frame="fixe" background="4" next="arf">
+		[Master! Master!]
+		[I've finally found you!]
+		[Are you alone? Where are the other Eminencies?]
+	</phase>
+	<a id="arf">...</a>
+	<phase id="arf" next="fou">
+		[AAAAAHHHHH!]
+	</phase>
+	<a id="fou">...So yeah...</a>
+	<phase id="fou" next="ether" name="Strange Prowler" gfx="rodeur3" background="4" frame="susp">
+		[Wandering eyes, loss of speech, mumbling gobbledygook...]
+		[Don't tell me you've been exposed to pure ether!]
+	</phase>
+	<a id="ether">During the explosion maybe?</a>
+	<phase id="ether" next="ben">
+		[BRAAAAAK!]
+	</phase>
+	<a id="ben">We're not out the woods yet...</a>
+	<phase id="ben" next="war" name="Strange Prowler" gfx="rodeur3" frame="stun" background="4">
+		[Ingested might be more appropriate...]
+		[What are you doing now?]
+		[...You're using the extraction machine to vaporize the ether and spread it to Dinoland as a fog?]
+		[Wow, even as a lunatic, you still have that mischievous side...]
+		[That said, I'm not sure that many people will be happy with your work over there...]
+	</phase>
+	<a id="war">We must stop it!</a>
+	<phase id="war" next="fight" name="Strange Prowler" gfx="rodeur3" frame="stun" background="4">
+		[OK, what am I supposed to do now? I imagine you're the only survivor?
+		To whom should I submit my report...]
+		[But... One minute... If there is nobody to submit my report too... that must mean that I'm free!]
+		[My mission is over, and I'll never have my masters on my back again!]
+		[Awesome, I'm going back to Dinotown, find me a little place by the sea, it's going to be perfect!]
+		[Youhouuu!]
+	</phase>
+	<a id="fight">At least someone's happy...</a>
+	<phase id="fight" fast="1" scenario="caush:27">
+		The Caushemesh master returns to the machine and increases the output of ether clouds!
+		He must be stopped!
+	</phase>
+</d>
+
+<d place="cextra" name="Master " gfx="master" cond="scenario(caush,27)">
+	<phase id="begin" next="stop">
+		[GNAGNAGNAGNA!]
+		[Huhu, Big Brak!]
+		[BIIIIG BRAAAAK!]
+	</phase>
+	<a id="stop">What is a brak? euh... HAAAAAA!</a>
+	<phase id="stop" fast="1" fightgroup="behem2" scenario="caush:28" frame="dead">
+		You have managed to survive the monster's attack.
+		Unfortunately, the master wasn't so lucky. He was crushed in one blow, along with his machine.
+		It's sad, but at least he won't do any harm to anyone else...
+	</phase>
+</d>
+
+<d place="cpyra2" name="Sofia" gfx="sofia" cond="scenario(caush,28+)+scenario(caush,31-)" frame="fixe">
+	<inject id="sofia:begin" next="master:colosse"/>
+	
+	<a id="master">The last master was crushed in the end...</a>
+	<phase id="master" next="tout" frame="fixe">
+		[Haha, good riddance...]
+		[However, I'm not going to congratulate you, as you made another Colossus flee Caushemesh...]
+		[You probably want to make amends for your stupidity!]
+	</phase>
+	<a id="tout">But I already do everything around here!</a>
+	<phase id="tout" tag="jump" next="colosse" frame="silence">
+		[SILENCE!]
+		[I command you to track down the 3 colossi who have escaped to Dinoland.]
+		[Now! Do it!]
+	</phase>
+	<a id="colosse" cond="tag(jump)">Where are the colossi?</a>
+	<phase id="colosse" next="autaf" frame="fixe">
+		[Clearly you can't do anything on your own!]
+		[The Serpether feeds on the ether, which you could probably have guessed on your own, which means it must remain on Caushemesh.]
+		[The Behemonk was just seen fleeing in the direction of the Steppes, you'll probably find it there.]
+		[Las but not least, the Archlion must have gone back to its roots, if you know the world in which you live well, you'll know what i'm talking about...]
+		[Now go! Finish your mission!]
+		[And leave me in peace...]
+	</phase>
+	<a id="autaf">As you wish, madame!</a>
+	<phase id="autaf" fast="1" frame="fixe">
+		You set out in the search for the colossi, you'll need a lot of patience to defeat them.
+		They're hard to find and they never stay in the same place for long...
+	</phase>
+</d>
+
+<!-- Combat contre les 3 colosses scenario="caush,29,30&31) -->
+
+<d place="sking" name="Rockies King" gfx="rocking" cond="scenario(caush,31+)+!race(rocky)">
+	<phase id="begin" next="gg:caushdone" fast="1">
+		You are in the King of the Rockies' throne room, he seems very busy with the task at hand:
+		piling small cubes on top of one another...
+	</phase>
+	<a id="gg" cond="scenario(caush,42-)">Tell him the whole story</a>
+	<a id="caushdone" cond="scenario(caush,43+)">Caushemesh is saved!</a>
+	
+	<phase id="gg" next="paix">
+		[Congratulations my dear friend!]
+		[Thanks to you, peace has been restored to Dinoland.]
+		[But after what you've just told me, the Caushemeshiens still nees your help.]
+		[They, too, have the right to peace.
+		I ask you to go to their aid!]
+	</phase>
+	<a id="paix">I'll do my best.</a>
+	<phase id="paix" fast="1">
+		We have to take care of the poor Caushemeshiens, what can we do to help them...
+		maybe ask the guardian to do his job?
+		Unfortunately she doesn't want to hear it...
+	</phase>
+	
+	<phase id="caushdone">
+		[Congratulations my friend.]
+		[You clearly just solve any and all problems around you!]
+		[You definitely deserve the title of dinoz master!]
+		[I wish you a long and happy adventure!]
+	</phase>
+</d>
+
+<d place="cpyra2" name="Sofia" gfx="sofia" cond="scenario(caush,31)" frame="fixe">
+	<inject id="sofia:begin" next="done"/>
+	
+	<a id="done">The Colossi are no more!</a>
+	<phase id="done" next="chien" frame="fixe">
+		[You surprise me, young dinoz master]
+		[I didn't think you were that capable. You'd make a good servant...]
+		[I like to have competent people working for me.]
+	</phase>
+	<a id="chien">Ermm no thanks...</a>
+	<phase id="chien" next="job:end" frame="fixe">
+		[Now the threat from the Colossi has passed, what would you say to bringing me back some bits and pieces from Dinotown?]
+		[I have no perfume left and the food here is bland.]
+	</phase>
+	<a id="job" cond="collec(quetzu)">If you wish, but... what about your guardian job?</a>
+	<a id="end">Sneak out discretely...</a>
+	
+	<phase id="end" fast="1">
+		Plucking up your courage, you get out of the castle as quickly as you can!
+		The Colossi and the ether fog no longer threaten Dinoland.
+		Would it however be fair to say that everything is well in Caushemesh...
+	</phase>
+	<phase id="job" next="mandra" frame="fixe">
+		[You're bored then...]
+		[I don't want to do this job, I never wanted to do it - it has never interested me.]
+		[Fighting monsters all day long is really tiring, and I'm not as young as I used to be.]
+		[All I want to do is to find my husband...]
+	</phase>
+	<a id="mandra">You're married?</a>
+	<phase id="mandra" next="choc" frame="fixe">
+		[... Dammit, I've said too much...]
+		[Yes, ok then, I'm married but the wretched individual abandoned me on our wedding day to go adventuring!]
+		[When I catch up with him he's going to have a rough time of it!]
+	</phase>
+	<a id="choc">Who is the lucky devil? (haha)</a>
+	<phase id="choc" next="obvious" frame="fixe">
+		[You won't know him, he's never in the same place twice, he's been hiding from me for a long time.]
+		[I'm so unhappy without him. I have to spend all my money to make up for the lack of affection!]
+	</phase>
+	<a id="obvious">So I see...</a>
+	<phase id="obvious" next="ouch" frame="fixe">
+		[If you manage to find him and bring his butt back here, I'd maybe consider carrying out my duties as guardian.]
+		[I wish you good luck with finding him, he's called Mandragore.]
+	</phase>
+	<a id="ouch">!...</a>
+	<phase id="ouch" fast="1" scenario="caush:32" frame="fixe">
+		of all the people it could have been, he'll be the toughest to convince...
+		It could be said that they're right for each other, they're both tough characters...
+	</phase>
+</d>
+
+<!-- Partie 4 Mandragore et la gardienne de Caushemesh Sofia -->
+	
+<d place="villa" gfx="mandragore" name="Mandragore" cond="scenario(caush,32)|scenario(caush,33)">
+	<inject id="mandragore:begin" next="caush:fond"/>
+		
+	<a id="caush" cond="scenario(caush,32)">I just got back from Caushemesh.</a>
+	<phase id="caush" next="gloup">
+		[Ah so you finally got there, that's impressive! Congratulations.
+		You can't be any geek off the street...]
+		[Did you see some beautiful scenery over there?]
+	</phase>
+	<a id="gloup">I met the guardian...</a>
+	<phase id="gloup" next="letsgo">
+		_(Splosh, Mandragore knocks over his glass.)_
+		[You met Sofia?...]
+		[...Glug... And... How is she doing?]
+		[Did she mention me?]
+	</phase>
+	<a id="letsgo">She has given me the task of taking you back there.</a>
+	<phase id="letsgo" next="bienvu">
+		[Well that's not happening!]
+		[I can't be tied down, I need freedom, I need to travel the world...]
+		[Although, I've already been around the world... Now I need peace and quiet, and I'm sure she's still got a rotten temper.]
+	</phase>
+	<a id="bienvu">You're not wrong...</a>
+	<phase id="bienvu" next="fight">
+		[No, I know. I'm not going.]
+		[And if I must go, it'll be over my dead body!]
+	</phase>
+	<a id="fight">Well if that's how it has to be!</a>
+	<phase id="fight" fightgroup="mandr3" scenario="caush:33" next="fond">
+		[Ok, ok, I give up, you win.]
+	</phase>
+	<a id="fond" cond="scenario(caush,33)">You didn't give it your all!</a>
+	<phase id="fond" next="go">
+		[HAHAHA, you have flair though...]
+		[You touched a nerve, you brought up old memories and made me all nostalgic...]
+		[Our fight reminded me of the fights I used to have with Sofia, when we fought the ground would quake around us...]
+		[It sounds worse than it was though...]
+		[Ok, I'll go with you.]
+	</phase>
+	<a id="go">let's go!</a>
+	<phase id="go" fast="1">
+		Mandragore leaves with you on the road to Caushemesh!
+	</phase>
+</d>
+
+<d place="sporte" name="Mandragore" gfx="mandragore" background="11" frame="glou" cond="scenario(caush,33)">
+	<phase id="begin" next="paf">
+		[Well you don't do things by halves, do you!]
+		[How do you plan on fixing that?]
+	</phase>
+	<a id="paf">It has to be repaired?</a>
+	<phase id="paf" scenario="caush:34">
+		[We'll see. If the reunion doesn't go to plan, you're going to want to shut the gate to Caushemesh for ever...]
+		[The little guy's tough...]
+	</phase>
+</d>
+
+<d place="cpyra1" name="Mandragore" gfx="mandragore" background="10" frame="serieuxbla" cond="scenario(caush,34)">
+	<phase id="begin" next="cadeau">
+		[Wait, wait a minute!]
+		[I don't feel it...]
+		[I've not seen her in 50 years...]
+		[I'm not convinced that she'll welcome me with open arms!]
+		[...]
+		[I need a gift! There's the solution!]
+	</phase>
+	<a id="cadeau">What kind of gift?</a>
+	<phase id="cadeau" frame="serieuxbla" next="idee">
+		[Pffft, maybe if I give her a flmower from Nimbao?]
+		[Could you go and find one for me?]
+		[...You don't want to? Ok, I'm going back to my villa...]
+	</phase>
+	<a id="idee">OK then, I'll go and find one!</a>
+	<phase id="idee" fast="1" scenario="caush:35" frame="glou">
+		You set off to search for a flower from Nimbao...
+		Who would have thought thet the future of Caushemesh would depend upon the reunification of an old couple...
+	</phase>
+</d>
+
+<d place="cpyra1" name="Mandragore" gfx="mandragore" background="10" frame="rire" cond="scenario(caush,35)">
+	<phase id="begin" next="nofound:found" fast="1">
+		You find Mandragore in the middle of a conversation with the two amazons, one of whom giggles infuriatingly and the other seems annoyed...
+	</phase>
+	<a id="found" cond="hasingr(fruit4)">I found one!</a>
+	<a id="nofound" cond="!hasingr(fruit4)">I'm still looking.</a>
+	
+	<phase id="nofound" next="moue" frame="bla">
+		[Come on then, I'm counting on you, don't let me down!]
+		_(Mandragore turns back to one of the amazons)_
+		[Haha, that little guy... I taught him everything, without me he'd still be looking for his first dinoz...]
+	</phase>
+	<a id="moue">That's not true at all!</a>
+	<phase id="moue" next="resigne" frame="bla">
+		[Yes, look, he's teasing the dinoz master]
+		_(Mandragore mumbles)_
+		[(Do you want me to call Lucette ?)]
+	</phase>
+	<a id="resigne">Glug, eh... It's all true...</a>
+	<phase id="resigne" next="snif" frame="bla">
+		[HAHAHA, what di I tell you!]
+		[Go now, bring your master what he asked for!]
+	</phase>
+	<a id="snif">yes...</a>
+	<phase id="snif" next="tss" frame="bla">
+		[Yes WHAT?]
+	</phase>
+	<a id="tss">Yes, master... Snif...</a>
+	<phase id="tss" fast="1" frame="glou">
+		Mandragore abuses his position, but how can you hold it against him, he's gotten you out of trouble too often...
+	</phase>
+	
+	<phase id="found" next="motiv" frame="serieuxbla" useingr="fruit4" scenario="caush:36">
+		[Well done little guy!]
+		[All that remains is to go...]
+	</phase>
+	<a id="motiv">It's been emotional!</a>
+	<phase id="motiv" fast="1"  frame="glou">
+		Mandragore enters the palace, flower in hand, a smile etched on his face.
+		His steps get ever slower, there's a chill in the air...
+	</phase>
+</d>
+
+<d place="cpyra2" name="Sofia" gfx="sofia" frame="fixe" cond="scenario(caush,36)">
+	<phase id="begin" next="pouf">
+		[What do you want from me dinoz master?]
+		[I hope you have a good reason for waking me up!]
+		[You'll pay if you've come here for no reason!]
+	</phase>
+	<a id="pouf">I found Mandragore!</a>
+	<phase id="pouf" next="joke" name="..." gfx="mandragore" background="9" frame="parti">
+		[......]
+		[...]
+		[..]
+	</phase>
+	<a id="joke">Well, where is he?</a>
+	<phase id="joke" next="la">
+		[I don't appreciate your humour.]
+		[Do you want to be punished?]
+	</phase>
+	<a id="la">(Get Mandragore out of his hiding place)</a>
+	<phase id="la" next="poupougne" name="Mandragore" gfx="mandragore" background="9" frame="serieuxbla">
+		[Pumpkinette?]
+		[It's me...]
+	</phase>
+	<a id="poupougne">(Pumpkinette? Pfffft...)</a>
+	<phase id="poupougne" next="raison" frame="happy">
+		[Mandrakins?]
+		[Is it really you?]
+	</phase>
+	<a id="raison">(Isn't love grand... Mandrakins haha)</a>
+	<phase id="raison" frame="fixe" next="heure">
+		[...]
+	</phase>
+	<a id="heure">(Glug! This is going to hurt...)</a>
+	<phase id="heure" next="dsl" frame="silence">
+		[What kept you?]
+		[Did you get lost en route maybe!]
+		[How many more years were you planning on making me wait?]
+		[Unworthy husband, absent spouse, third-rate man!]
+		_(Cocktail glasses make good munitions, better take cover!)_
+	</phase>
+	<a id="dsl">Yowch...</a>
+	<phase id="dsl" next="menteur" name="Mandragore" gfx="mandragore" background="9" frame="serieuxbla">
+		[But... Pumpkinette, you know that I'm responsible for the Atlanteid breach.
+		That's a lot of work, you know!]
+	</phase>
+	<a id="menteur">Pfft. Liar. He handed off that job to Bao!</a>
+	<phase id="menteur" next="voyage">
+		[I know very well that you've not been guarding the breach for some time!]
+		[You left me to go adventuring!]
+		[And to think you believe a pathetic worthless flower will make up for it!]
+	</phase>
+	<a id="voyage">Hey, I had a hard time getting this!</a>
+	<phase id="voyage" next="bon" name="Mandragore" gfx="mandragore" background="9" frame="serieuxbla">
+		[OK, listen, that's enough!]
+		[I'm here, that's the most important thing - so stop whining!]
+	</phase>
+	<a id="bon">(Let's see what happens...)</a>
+	<phase id="bon" frame="happy" next="good">
+		[...]
+		[Go away you lunatic, I like it when you're angry...]
+		[Come here immediately! I wouldn't recommend leaving me again, I've got my eye on you!]
+	</phase>
+	<a id="good">Ooft, we're getting there...</a>
+	<phase id="good" fast="1" scenario="caush:37">
+		You leave them together, they surely have a lot to talk about and much to do...
+		And you definitely don't want to see that...
+		It'd be better to come back tomorrow...
+	</phase>
+</d>
+
+<!-- Partie 5 La réconciliation -->
+
+<d place="cpyra1" name="Cassandra" gfx="cassandre" cond="(scenario(caush,37)|scenario(caush,38))+(swait(caush,24)|admin())">
+	<inject id="amazones__2:begin" next="super"/>
+	
+	<a id="super">How did it go?</a>
+	<phase id="super" scenario="caush:38">
+		[Haha. We didn't get so much as a wink of sleep.]
+		[They made a hell of a racket...]
+		[Now we have to tidy everything up...]
+		[If this type of thing continues I could end up breaking a nail!]
+	</phase>
+</d>
+
+<d place="cpyra1" name="Chrysanth" gfx="chrysanthe" cond="(scenario(caush,37)|scenario(caush,38))+(swait(caush,24)|admin())">
+	<inject id="amazones:begin" next="super"/>
+	
+	<a id="super">How did it go?</a>
+	<phase id="super" scenario="caush:38">
+		[My ears almost started to bleed with the noise they were making.]
+		[I think I might have to look for a new position.]
+	</phase>
+</d>
+
+<d place="cpyra2" name="Mandragore" gfx="mandragore" frame="glou" background="9" cond="scenario(caush,38)">
+	<phase id="begin" next="love" fast="1">
+		You find the two lovers sitting side by side, glass in hand...
+		Mandragore seems to have a couple of bumps on his head, and Sofia's hair is a riot... Both have bags under their eyes... It must have been an eventful night...
+	</phase>
+	<a id="love">Hey!</a>
+	<phase id="love" next="oeil">
+		[Hi little guy!]
+		[I'm not even going to tell you about that crazy night!]
+		[We didn't sleep at all, and I've exhausted my cocktail supply...]
+		[We had fun though!]
+	</phase>
+	<a id="oeil">I can see that...</a>
+	<phase id="oeil" next="hep">
+		[Well, seeing as I have nothing left to drink, I may as well go home...!]
+	</phase>
+	<a id="hep">Are you sure?</a>
+	<phase id="hep" next="collier" name="Sofia" gfx="sofia" background="1" frame="fixe">
+		[You! Don't move!]
+		[As if i didn't see you... you're going nowhere.]
+		[Otherwise you'll wear this collar.]
+		_(Sofia takes out a collar from Nimbao)_
+	</phase>
+	<a id="collier">Harsh!</a>
+	<phase id="collier" next="chien">
+		[HA, no - not that collar!]
+		[Help!]
+	</phase>
+	<a id="chien">...</a>
+	<phase id="chien" fast="1" scenario="caush:39">
+		Mandragore is henceforth at the mercy of his wife, did he really manage to help you out?
+	</phase>
+</d>
+
+<d place="cpyra2" name="Sofia" gfx="sofia" cond="scenario(caush,39)">
+	<inject id="sofia:begin" next="love"/>
+	<a id="love">So, how was Cloud 9?</a>
+	<phase id="love" next="but"  frame="fixe">
+		[Darling, do you want to teach this kid a lesson?]
+		[I can't be bothered.]
+		[When you're done, bring me a glass of Manzagora!]
+	</phase>
+	<a id="but">...Maybe I can do something for you mistress?</a>
+	<phase id="but" next="faille"  frame="fixe">
+		[Hmm... you catch up quickly...]
+		[And you're in luck!]
+		[I feel negative energies... YES, even more negative than my own...
+		coming from the breach at Caushemesh.]
+		[Go and find out what's going on and report back here!]
+	</phase>
+	<a id="faille">I'm all over it.</a>
+	<phase id="faille" next="courage" name="Mandragore" gfx="mandragore" frame="serieuxbla" background="9" >
+		[Pay attention, because this energy is coming from an extremely powerful being.]
+		[Are you sure you don't want me to go with the little guy? He might need my help!]
+	</phase>
+	<a id="courage">I wouldn't say no.</a>
+	<phase id="courage" next="demerde"  frame="fixe">
+		[You're going nowhere!]
+		[He's big enough to deal with it, and I don't really want to go that far.]
+	</phase>
+	<a id="demerde">OK then, I'm off!</a>
+	<phase id="demerde" fast="1" scenario="caush:40" name="Mandragore" gfx="mandragore" background="9" frame="glou">
+		Mandragore watches you go with a tear in his eye, he wanted to have some fun too.
+		Let's go - to the ether extraction facility...
+	</phase>
+</d>
+
+<d place="cextra" name="..." gfx="belius" frame="blabla" cond="scenario(caush,40)">
+	<phase id="begin" next="monstre" frame="stop" fast="1">
+		A gigantic monster, resembling an infernal Santaz emerges from the breach, an evil aura emanating from its dark body.
+	</phase>
+	<a id="monstre">What a powerful aura...</a>
+	<phase id="monstre" next="moi">
+		[Finally, fresh air from the surface...]
+		[Gofofofo....]
+		[Taurus was right, now is the time to invade this world.
+		I'm through with the dark world...]
+		[The gate to Caushemesh is well and truly open, the route to Dinoland lies wide open.]
+		[Gofofofo....]
+		[Who is there? What manner of insect dares oppose me?]
+	</phase>
+	<a id="moi">I am here to stop you!</a>
+	<phase id="moi" next="baston">
+		[What can you do against Belius, the infernal Santaz?]
+		[Gofofofo....]
+		[You will regret your arrogance!]
+	</phase>
+	<a id="baston">I won't allow it!</a>
+	<phase id="baston" next="surprise" fightgroup="belius" scenario="caush:41">
+		[Cough...]
+		[How can a simple surface-dweller be so powerful...]
+	</phase>
+	<a id="surprise">Go back to the hole you crawled out from!</a>
+	<phase id="surprise" gfx="taurus" name="???" frame="gone" next="aide">
+		[Gufufufu...]
+		[Do you need help Belius?]
+	</phase>
+	<a id="aide">That voice!</a>
+	<phase id="aide" gfx="taurus" name="Taurus" frame="stop" fast="1">
+		A second infernal monster makes its entrance...
+		How are you going to get rid of these infernal monsters...
+	</phase>
+</d>
+
+<d place="cextra" name="Belius" gfx="belius" frame="blabla" cond="scenario(caush,41)|scenario(caush,42)">
+	<phase id="begin" next="combat" frame="stop" fast="1">
+		You are faced with two infernal monsters.
+		Their noisy laughter covers the noise from the extraction facility.
+	</phase>
+	<a id="combat">This isn't going to be covered by my travel insurance...</a>
+	<phase id="combat" next="mandra" name="Taurus" gfx="taurus" frame="blabla">
+		[Gufufufu...]
+		[I remember you, you were at the falls the last time I came to the surface...]
+		[I see you are alone this time... Without your guardian angel, you'll be easy pickings...]
+		[Gufufufu...]
+	</phase>
+	<a id="mandra">Grrr... I cannot flee...</a>
+	<phase id="mandra" name="Mandragore" gfx="mandragore" frame="serieuxbla" background="12" next="help">
+		[So little guy, filled your pants yet?]
+		[panic ye not - we'll take this from here!]
+	</phase>
+	<a id="help">Mandragore!</a>
+	<phase id="help" name="Sofia" gfx="sofia" frame="fixe" background="3" next="petage" >
+		[Pfff, trembling facing two darkish dinoz!]
+		[I'm wondering what I bothered getting up...]
+		[Surely because these negative energy waves were stirring my beverage.]
+	</phase>
+	<a id="petage">Sofia?</a>
+	<phase id="petage" name="Mandragore" gfx="mandragore" frame="bla" background="12" fightgroup="tauru2:beliu2|mandra:sofia" scenario="caush:42" next="villa">
+		[There you go.]
+		[What if we go back to Dinoplaza?]
+		[My stock of cocktails is there...]
+	</phase>
+	<a id="villa">Is it over?</a>
+	<phase id="villa" name="Sofia" gfx="sofia" frame="fixe" background="3" next="heben">
+		[Not a bad idea... I'm fed up with this hole anyway.]
+		[We'll pop past the palace then get over there.]
+		[Call your dinoz - I don't want to walk.]
+	</phase>
+	<a id="heben">Impressive...</a>
+	<phase id="heben" next="gone">
+		[Erk, don't celebrate just yet...]
+		[The invasion of your world has only just begun.]
+		[Lots of us rule the dark world.]
+		[You will not escape...]
+		[Gufufufu...]
+		[...]
+		[Erk....]
+		_(Belius and Taurus fall into the depths of the breach leading to the dark world. Are we really rid of them?)_
+	</phase>
+	<a id="gone">Well that's terrific!</a>
+	<phase id="gone" fast="1" name="Mandragore" gfx="mandragore" frame="parti" background="12" collection="belius" scenario="caush:43">
+		In any case, the two guardians left some time ago...
+		Is there any chance of listening to me a occasionally?
+		Well in any case, the threat from the dark world has been thwarted for the time being.
+		We should make the most of this peace and calm to set off on adventures!
+	</phase>
+</d>
+	
+<!-- Fin de la quête -->
+
+<d place="cpyra2" name="..." gfx="sofia" frame="gone" cond="scenario(caush,44+)">
+	<phase id="begin" next="recomp">
+		Silence reigns in the throne room...
+		It is easy to judge the character of the last tenant by taking a quick look around...
+	</phase>
+	<a id="recomp" cond="!collec(caush)">Let's see this reward...</a>
+	<phase id="recomp" collection="caush">
+		You find a bunch of uninteresting baubles left by Sofia by means of reward.
+		Now you know what she meant by "she had found the real one"...
+		[Aside from taking your frustrations out on the object, it seems pretty useless...]
+	</phase>
+</d>
+
+

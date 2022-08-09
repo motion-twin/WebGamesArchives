@@ -1,0 +1,25 @@
+<d place="gmsch" name="Confirmer son rang en transmutation" gfx="gmchoc" auto="0">
+
+<a id="exit">D'accord.</a>
+
+<phase id="begin" frame="normal" next="oui:noui:non" >
+Oh oh oh... Alors ? | Tu es {pas très doué} en transmutations d'inutilité publique ? 
+</phase>
+
+<a id="oui" cond="rank(stupid,1)">Oui, c'est bon.</a>
+<a id="noui" cond="!rank(stupid,1)">Oui, c'est bon.</a>
+<a id="non">Non.</a>
+
+<phase id="oui" frame="happy">
+Parfait, parfait. Tu es un vrai alchimiste de Gemini !
+</phase>
+
+<phase id="noui" frame="angry" next="exit">
+Etrange, on ne dirait pas... | Allons !  Il suffit de faire des [recettes d'inutilité publique] au chaudron jusqu'à ce que la fiole correspondante soit remplie sur ta page personnelle !
+</phase>
+
+<phase id="non" frame="normal" next="exit">
+Oh oh... Qu'est-ce que tu attends ? Il faut se dépêcher un peu ! 
+</phase>
+
+</d>

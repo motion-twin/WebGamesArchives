@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<project>
+	<meta title="RockFaller Mobile" package="com.motiontwin.RFM" version="1.0.0" company="Motion-Twin" />
+	
+	<!-- output -->
+	<!--<app main="Main" file="rockFallerMobile" path="bin" />-->
+	<app main="WebMain" file="rockFallerMobile" path="bin" preloader="PreloaderOFL"/>
+	
+	<!--<window background="#C0C0C0" fps="60" />-->
+	<window background="#C0C0C0" fps="30" />
+	
+	<!--Mandatory (important of the dead) for the GPU to function properly-->
+	<!--<window width="432" height="768" unless="mobile" />-->
+	<window width="640" height="768" unless="mobile" />
+	<window orientation="portrait" />
+	
+	<set name="standalone"/>
+	<haxedef name="standalone"/>
+	<haxedef name="advanced-telemetry" if="standalone" />
+	<!--<haxedef name="profileGpu" if="standalone" />-->
+	<haxeflag name="-swf-lib" value="assetsWeb/loading.swf"/>
+	
+	<source path="../../src/mobile" />
+	
+	<section unless="debug"> 
+		<haxedef name="prod"/> 
+		<haxedef name="no-traces"/>
+		<haxedef name="parseGetText"/>
+	</section>
+	
+	<include path="." />
+	
+	<postBuild if="flash" unless="display" command="obfu9 -fake bin/flash/bin/rockFallerMobile.swf -o ../../www/swf/rockFallerMobile.local.swf"/>
+	<postBuild if="flash" unless="display" command="obfu9 -keyfile ../../src/com/obfu.key bin/flash/bin/rockFallerMobile.swf -o ../../www/swf/rockFallerMobile.swf"/>
+</project>

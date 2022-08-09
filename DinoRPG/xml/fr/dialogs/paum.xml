@@ -1,0 +1,74 @@
+﻿<!-- ***************************************************************************** -->
+<!-- Paum, Dorogon, habitant de la cité Dorogon ----->
+
+<d place="ville1" name="Paum" gfx="paum" cond="scenario(nimba2,50-)">
+	<phase id="begin" fast="1" frame="stop" next="salut">
+		Un dorogon vous fait face.
+		Bien que plus grand qu'un homme ou un Arboris ordinaire, il semble plus petit que ces congénères.
+		Il semble vouloir vous parler.
+	</phase>
+	<a id="salut" >Bonjour, maître Dorogon.</a>
+	
+	<phase id="salut" next="derien:service" frame="bla">
+		[Bonjour, jeune apprenti éleveur.]
+		[Il y a fort longtemps que nous n'avions pas vu un de tes semblables à Nimbao.]
+		[Je vois que Monseigneur Pistache aime s'entourer des créatures les plus étonnantes.]
+	</phase>
+	
+	<a id="derien">(Qui est étonnant ?)</a>
+	
+	<phase id="derien" frame="stop" fast="1">
+		Vous vous éloignez de Paum, il ne semble plus faire attention à vous.
+		Chaque habitant mene sa vie tranquillement dans les alentours de la cité supérieure.
+	</phase>
+	
+	<a id="service" cond="scenario(nimba2,30)">Je peux vous rendre un service ?</a>
+	
+	<phase id="service" next="nodon:don:fdon">
+		[Tu veux me rendre un service ?]
+		[Ton servant est bien intriguant Pistache, j'accepte avec plaisir cette proposition.
+		Je te donnerai un point de sagesse si tu me fais parvenir un bouquet de fleurs avec des espèces de la surface. Je suis sûr d'être original avec un bouquet comme ça.]
+	</phase>
+	
+	<a id="fdon" cond="(hasingr(fruit1,1+)|hasingr(fruit3,1+))+!(hasingr(fruit1,3+)+hasingr(fruit3,3+))">Voici de quoi faire un beau bouquet !</a>
+	<a id="don" cond="hasingr(fruit1,3+)+hasingr(fruit3,3+)">Voici de quoi faire un beau bouquet !</a>
+	<a id="nodon" cond="!(hasingr(fruit1,3+)+hasingr(fruit3,3+))">Je reviendrai avec des fleurs de la surface !</a>
+	
+	<phase id="fdon">
+		[Sadiquaes, Orchidées, quelle bonne idée !]
+		[Mais il n'est pas assez complet pour le moment, il m'en faut plus pour épater la galerie.]
+		[J'attend le reste avec impatience !]
+	</phase>
+	
+	<phase id="don" next="trente" useingr="fruit1:3,fruit3:3" give="ptsage" scenario="nimba2:31">
+		[Des Sadiquaes, et des Orchidées quelle bonne idée, ce bouquet sera merveilleux.]
+		[Je suis sûr de conquérir son coeur avec ce bouquet s'il était composé plus de Flauréoles, une trentaine irait bien j'en suis sûr !]
+		[J'attend que tu me donnes ça avec impatience !]
+	</phase>
+	
+	<a id="trente">(30 Flauréoles....?)</a>
+	
+	<phase id="trente" next="job">
+		[Hahaha, ne t'inquiète pas j'ai déjà toutes les Flauréoles dont j'ai besoin.
+		Tu as bien mérité ton point de sagesse !]
+		[Je n'ai plus qu'à prendre mon courage à deux mains et aller la voir !]
+	</phase>
+	
+	<phase id="nodon" frame="stop" fast="1">
+		Il vous faut une fleur spéciale pour gagner la confiance du Dorogon.
+	</phase>
+	
+	<a id="job">Merci beaucoup !</a>
+	
+	<phase id="job" frame="stop" fast="1">
+		Votre deuxième point de sagesse est dans la poche !
+		Plus que trois !
+	</phase>
+</d>
+
+<d place="ville1" name="Paum" gfx="paum" cond="scenario(nimba2,51+)">
+	<phase id="begin" fast="1" frame="stop" >
+		Quelle joie, depuis la libération des Arboris et de nos frontières, l'exportation des richesses de nos terres rencontre un franc succès.
+		Qu'est-ce qui t'amène par ici Maître Dinoz ?
+	</phase>
+</d>

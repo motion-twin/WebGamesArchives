@@ -1,0 +1,63 @@
+﻿<missions>
+
+	<!-- ***************************************************************************** -->
+	<!-- Anna Tomie, l'infirmière de Caushemesh ----->
+
+	<m group="infirmiere" id="ingr1" name="First Prescription">
+		<begin>The clinic is running on empty. I need you to bring me 10 Pelinae leaves. We need them to treat our patients...</begin>
+		<goto v="clinik"/>
+		<useingr v="fruitc" n="10"/>
+		<end>Thanks sweetheart, I knew I could count on you!</end>
+		<xp v="10"/>
+	</m>
+	<m group="infirmiere" id="ingr2" name="Mushroom Medicine">
+		<begin>The clinic is running low on supplies and some of our patients are still ill. I need you to bring me 5 White Phalisk Boletus so we can cure them...</begin>
+		<goto v="clinik"/>
+		<useingr v="fruitu" n="5"/>
+		<end>Thanks honey, I can always count on you!</end>
+		<xp v="20"/>
+	</m>
+	<m group="infirmiere" id="ingr3" name="Bizarre Biotherapy">
+		<begin>The clinic's stocks are nearly empty and our patients need further treatment. I really need you to bring me a Whimsical Orchid...</begin>
+		<goto v="clinik"/>
+		<useingr v="fruit1" n="1"/>
+		<end>Thanks sweetie, thanks to you the clinic can now treat any illness!</end>
+		<xp v="30"/>
+		<gold v="500"/>
+	</m>
+	<m group="infirmiere" id="kill1" name="Nasty Neighbours" cond="mission(ingr1)+mission(ingr2)+mission(ingr3)+canfight(gropi)">
+		<begin>The noise made while building the clinic upset all the monsters in the neighbourhood, now they keep attacking us all the time. Do you think you could get rid of them for us?</begin>
+		<kill v="gropi" monsters="gropi:gropi:gropi" n="10" zone="6"/>
+		<end>Well, at least there are fewer monsters in the neighbourhood, it already feels a lot safer!</end>
+		<xp v="10"/>
+		<gold v="500"/>
+	</m>
+	<m group="infirmiere" id="kill2" name="Monster Invasion" cond="mission(kill1)+canfight(coq)">
+		<begin>Some monsters have reappeared, you've got to get rid of them or we'll never be able to take care of our patients!</begin>
+		<kill v="coq" monsters="coq:coq" n="10" zone="6"/>
+		<end>Well done! You're a hero! Our patients are extremely grateful for your help.</end>
+		<xp v="10"/>
+		<gold v="600"/>
+	</m>
+	<m group="infirmiere" id="bless1" name="First Aid" cond="mission(kill2)">
+		<begin>
+			The clinic is very busy, but we still need more patients. Apparently there's a place in DinoLand where Dinoz go to fight each other, I'm sure you'll find an injured Dinoz there you can bring to the clinic.</begin>
+		<goto v="dome" hide="1"/>
+		<talk v="Player"> So little Dinoz, it seems your Master has left you here to rest and regain your stength. Don't worry, we'll leave him a note and I'll take you to the clinic.</talk>		
+		<goto v="clinik"/>
+		<end>Well done, you're a real saint! This Dinoz looks like he really needs our help.</end>
+		<xp v="20"/>
+		<gold v="500"/>
+	</m>
+	<m group="infirmiere" id="bless2" name="Curiosity Killed The Cat" cond="mission(bless1)">
+		<begin>The Dinoz are cute, but we're not a veterinary clinic! Apparently there are often tourists near the Big All-Hot who are in bad shape... it would be very good business for our clinic if you were to bring them here. I'm sure they'd be very generous as they'll love our clinic...</begin>
+		<goto v="vener"/>
+		<talk v="Grilled Tourist" gfx="tourist_grill" background="1">COUGH COUGH, hello young Dinoz master! Can I take a photo of your Dinoz? ........... What? You think I need help? COUGH COUGH, well, I wouldn't say no to a little pick me up, that's for sure! The Venerable didn't appreciate me taking a photo of him. Well, my camera still works, at least that's something!</talk>	
+		<goto v="clinik"/>
+		<talk v="Grilled Tourist" gfx="tourist_grill" background="2">Thanks for coming with me. Look! There's a clinic! I think I'm going to be ok....</talk>	
+		<end>Congratulations young Dinoz master! Thanks to you the clinic is finally successful......I don't have any missions for you at the moment, you can return to your adventures...
+			Anna hugs your dinoz... only your dinoz...</end>
+		<xp v="20"/>
+		<gold v="500"/>
+	</m>
+</missions>

@@ -1,0 +1,48 @@
+﻿<!-- Quete du charme d'eau -->
+
+<d place="baobob" name="Fan de Bao" gfx="baofan">
+
+	<phase id="begin" next="ok">
+		Bonjour monsieur ! Vous avez parlé à Monsieur Bao ? Il est vraiment génniaaaaaalll non ???
+	</phase>
+
+	<a id="ok">Euh... oui</a>
+
+	<phase id="ok" next="wah">
+		Hein, que c'est vrai !! Il est trop cool ! J'ai même traversé la Forêt de Grumhel exprès pour qu'il me raconte plein d'histoires super ! Vous savez quoi, il a déja assommé un gorilloz démon, un jour ! Si si ! Et puis il était entouré de plein d'animaux méchants ! Et tu sais quoi ? et ben il les a tous battus !
+	</phase>
+
+	<a id="wah">Waaahh !!</a>
+
+	<phase id="wah" next="yes:nothing:no">
+		Oui ! Et M. Bao a bien voulu m'apprendre quelques trucs ! Il a dit que je suis très doué pour mon âge ! C'est bien, hein ? Attends regarde... je vais envoûter un truc, tu veux que je te montre ?
+	</phase>
+
+	<a id="yes" cond="!fx(wcharm)">Ok !</a>
+	<a id="nothing" cond="fx(wcharm)">Ok !</a>
+	<a id="no">Non Merci</a>
+
+	<phase id="yes" effect="wcharm" next="spirit">
+		.............. Voilà, j'ai fini ! Tu le veux ? Tiens... C'est un Charme Bao ! Alors prends-en soin, hein ! Ca devrait aider ton Dinoz pendant quelques combats. Quand tout le fluide spitruel sera épuisé, tu pourras revenir me voir pour que je le recharge !
+	</phase>
+
+	<a id="spirit">"Spirituel" tu veux dire ?</a>
+	<phase id="spirit" next="thanks">
+	Heu... oui c'est ça ! Spitri... péritel... spriti... ! Ho ils sont trop compliqués vos mots technologiques !
+	</phase>
+
+	<a id="thanks">Bon, je dois partir... merci beaucoup pour le Charme Bao !.</a>
+	<phase id="thanks">
+	Hooo tu t'en vas déja... Tu reviendras, hein ? A bientôt alors !
+	</phase>
+
+	<phase id="nothing">
+		Ah... mais ton Dinoz a déjà un Charme Bao ! Regarde, y'a encore de l'energie... tu vois ? Quand il ne marchera plus, je pourrai te le recharger.
+	</phase>
+
+	<phase id="no">
+		Ah bon ? Bon, ben tant pis pour toi alors... *boude*.
+	</phase>
+
+</d>
+

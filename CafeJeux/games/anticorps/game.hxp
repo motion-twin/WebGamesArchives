@@ -1,0 +1,37 @@
+﻿<haxe selected="0">
+  <output name="Game" mode="swf" out="swf/game.swf" class="Game" lib="" cmd="game.html" main="False" debug="False">-cp src
+-cp ../api
+-swf-header 1:1:20:0
+-exclude ../api/exclude.txt
+--flash-strict
+
+# obfu
+-D swf-mark
+-cmd swfmake</output>
+  <files path="/">
+    <dir path="mod">
+      <dir path="ac">
+        <file path="src\mod\ac\Brawl.hx" />
+        <file path="src\mod\ac\Missile.hx" />
+        <file path="src\mod\ac\Move.hx" />
+      </dir>
+      <file path="src\mod\Action.hx" />
+      <file path="src\mod\Place.hx" />
+      <file path="src\mod\Start.hx" />
+      <file path="src\mod\Watch.hx" />
+    </dir>
+    <dir path="pix">
+      <file path="src\pix\Cosmo.hx" />
+      <file path="src\pix\Missile.hx" />
+      <file path="src\pix\Part.hx" />
+      <file path="src\pix\Phys.hx" />
+    </dir>
+    <file path="src\Common.hx" />
+    <file path="src\Game.hx" />
+    <file path="..\api\MMApi.hx" />
+    <file path="..\api\MMGame.hx" />
+    <file path="src\Mode.hx" />
+    <file path="src\Pix.hx" />
+    <file path="src\Strike.hx" />
+  </files>
+</haxe>

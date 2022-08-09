@@ -1,0 +1,25 @@
+<d place="" name="Rappel Coupe des écoles" gfx="guchx" auto="1" cond="grade(,4)+!fx(ncupmp)+!fx(cupmp)+!fx(cupdon)+weekday(4)">
+
+<phase id="begin" frame="start" next="lis">
+Vous avez un message spécial de la guilde des alchimistes !
+</phase>
+
+<phase id="lis" next="msg">
+Rouh ! Je vous le lis : | Hum... brum brum. 
+</phase>
+
+<phase id="msg" next="msgb">
+[Cher alchimiste, vous n'apparaissez pas sur nos listings de la coupe de écoles alors que la semaine est déjà bien avancée ! ]
+</phase>
+
+<phase id="msgb" next="msgc">
+[N'oubliez pas de participer à la Coupe pour la gloire de votre école (et pour gagner des bonus). Pour cela, il suffit de vous rendre sur le lieu de la Coupe, il est indiqué sur votre carte et dans le Guildian Express. Bonne chance à vous ! ]
+</phase>
+
+<phase id="msgc" effect="cupmp">
+Rouh ! | Voilà. Bonne journée.
+</phase>
+
+
+	
+</d>

@@ -1,0 +1,1491 @@
+<!-- ***************************************************************************** -->
+<!-- Nimbao l'île volante, 2ème partie----->
+	
+<!-- 7-Ouvrir le dictionnaire Arboris -->
+	
+<!--
+-Le seul moyen d'ouvrir le dictionnaire est de faire appel à Don fuego, mais d'après madame X, depuis l'affaire du trafic de poterie, il se terre dans les basfonds de Dinoville.
+  Il faudra battre les gardes du corps qui le protégeront pour le rencontrer.
+-->
+
+<d place="frcbrt" name="Madame X" gfx="mmex" cond="scenario(nimbao,42)+scenario(nimba2,0)+mission(mmex5)+(admin()|active(nimba2))">
+	<inject id="mmex:begin" next="fueg" />
+
+	<a id="fueg">Hallo!</a>
+	<phase id="fueg" next="don1:don2:don3:don4:don5:don6:don7:don8:don9">
+		[Erinnerst du dich an die Aschpuck Verschwörung?]
+		[Hinter dem Handel mit gefälschten Reliquien der Aschpuck-Zivilisation stand ein hoher Angestellter des Gerichts...]
+	</phase>
+	
+	<a id="don1" target="exit">Ah, du willst mit mir über Don Fuega reden?</a>
+	<a id="don2" target="exit">Ah, du willst mit mir über Dan Fuego reden?</a>
+	<a id="don3" target="exit">Ah, du willst mit mir über Dun Fuegu reden?</a>
+	<a id="don4" target="exit">Ah, du willst mit mir über Dou Fuegi reden?</a>
+	<a id="don5" target="exit">Ah, du willst mit mir über Don Fuoge reden?</a>
+	<a id="don6" target="exit">Ah, du willst mit mir über Dun Fuigo reden?</a>
+	<a id="don7" target="exit">Ah, du willst mit mir über Don Fuago reden?</a>
+	<a id="don8" target="exit">Ah, du willst mit mir über Doi Fuego reden?</a>
+	<a id="don9" target="next">Ah, du willst mit mir über Don Fuego reden?</a>
+	
+	<phase id="exit" next="don1:don2:don3:don4:don5:don6:don7:don8:don9">
+		Was soll ich dir dazu sagen, wenn du mir nicht einmal seinen Namen nennen kannst?!
+		Ich hatte dich für gewissenhafter gehalten, junger Dinozmeister...
+		Du wärst ein jämmerlicher Agent.
+	</phase>
+	
+	<phase id="next" next="ok:ko">
+		[In der Tat, Don Fuego de la casa. Seitdem du seinen Handel aufgedeckt hast, hält er sich versteckt, um so einem Gerichtsverfahren zu entgehen.]
+		[Wir sind ihn zwar losgeworden. Ich weiß aber aus verlässlicher Quelle, dass er insgeheim irgendetwas ausheckt.]
+		[Könntest du für mich mehr darüber herausfinden?]
+	</phase>
+	
+	<a id="ok">Natürlich, alles was du willst.</a>
+	<a id="ko">Leider habe ich gerade wichtigere Dinge zu tun.</a>
+	
+	<phase id="ko" fast="1">
+		Du ziehst deiner Wege und überlässt Madame X alleine ihren Angelegenheiten. Bist du ihren Bitten gegenüber immer so gleichgültig?
+	</phase>
+	
+	<phase id="ok" fast="1" scenario="nimba2:1">
+		Wenn du herausfinden willst, was vor sich geht, musst du dich in die zwielichtigeren Bereiche des Marktes in Dinoland begeben...
+	</phase>
+</d>
+
+<d place="marche" name="Zwielichtiger Mann" gfx="filou" cond="scenario(nimba2,1)">
+	<inject id="filou:begin" next="ecoute"/>
+	
+	<a id="ecoute">Langsam näherkommen.</a>
+
+	<phase id="ecoute" next="yes:adios">
+		[Hey, hey, hey... Willst du vielleicht einen Zahn vom Ehrwürdigen kaufen?]
+		[Mein Lager ist voll von solchen Jagdtrophäen. Und weil ich dein Aussehen mag, kriegst du sie zum halben Preis! Und wenn du mehr kaufst, mach ich dir 'nen Freundschaftspreis!]
+		[Na, interessiert?]
+	</phase>
+	
+	<a id="adios">
+		Nein danke, solche Sachen interessieren mich nicht.</a>
+	
+	<phase id="adios" fast="1">
+		Du hast ganz recht. Um solche Typen macht man besser einen großen Bogen...
+	</phase>
+
+	<a id="yes">Hm... Kann ich mir deine Waren kurz ansehen?</a>
+	
+	<phase id="yes" next="fo:achat">
+		[Hör zu. Ich hänge hier nicht die ganze Zeit rum. Aber ich lass dich mal kurz schauen... Da, sieh nur die Qualität!]
+		[Tu nicht so, als wärst du nicht beeindruckt! Und das alles verkauf ich dir für nur 5000 Goldstücke!]
+	</phase>
+	
+	<a id="fo">Aber... Das ist ja eine Fälschung!</a>
+	<a id="achat">Ok, ich kaufe es dir ab!</a>
+	
+	<phase id="fo">
+		Wofür hältst du mich denn? Einen Betrüger?
+		Los, geh mir aus den Augen!
+	</phase>
+	
+	<phase id="achat" usegold="5000" next="pardon" scenario="nimba2:2">
+		Vielen Dank, du wirst es nicht bereuen... mwa ha ha ha...
+	</phase>
+	
+	<a id="pardon">Äh... Ich bin nicht vollkommen überzeugt, dass das ein echter Zahn ist...</a>
+	
+	<phase id="pardon" fast="1" frame="parti">
+		Der Mann ist schon wieder weg. Wie vom Erdboben verschluckt, als wäre er nie hier gewesen.
+		Misstrauisch wirfst du einen weiteren Blick auf deine Neuerwerbung. Auf der Rückseite des Zahns steht "made in Lavaloch" geschrieben. Ein originaler, falscher Zahn - du bist auf eine Fälschung hereingefallen!
+	</phase>
+</d>
+
+<d place="frcbrt" name="Madame X" gfx="mmex" cond="scenario(nimba2,2)">
+	<inject id="mmex:begin" next="fo" />
+	
+	<a id="fo">Ich habe den Auftrag ausgeführt!</a>
+	
+	<phase id="fo" next="great">
+		Exzellent!
+	</phase>
+	
+	<a id="great">Was genau meinst du mit "exzellent"?</a>
+	
+	<phase id="great" next="plan">
+		[Entschuldige meine Aufregung. Aber bis zum heutigen Tag konnte ich noch keinen Falschhändler schnappen!]
+		[Doch nun wissen wir mit Sicherheit, dass es einen Handel mit Jagdtrophäen auf dem Markt von Dinoland gibt.
+		Die Chancen stehen gut, dass unser Mann darin verstrickt ist.]
+		[Würde es dir etwas ausmachen, dich noch einmal über's Ohr hauen zu lassen, damit wir seine Quelle finden können?]
+	</phase>
+	
+	<a id="plan">Äh... So langsam wird dein kleines Projekt immer teurer für mich...</a>
+	
+	<phase id="plan" next="bon">
+		[Wir müssen ihn bei einem großen Deal schnappen. Sag ihm, du willst diesmal eine große Menge seiner Waren kaufen. Besteh aber darauf, dass du den Handel nur direkt mit seinem Chef machst!]
+		[In dem Moment werden die Wachen von Dinoville zuschnappen! Du hast nichts zu befürchten!]
+	</phase>
+	
+	<a id="bon">Gut, wenn du es sagst.</a>
+	
+	<phase id="bon" fast="1" scenario="nimba2:3">
+		Sieht so aus, als würden wir ein weiteres Mal übers Ohr gehauen werden...
+		Es ist heutzutage wirklich nicht einfach, ein respektierter Dinozmeister zu sein!
+	</phase>
+	
+</d>
+
+<d place="marche" name="Zwielichtiger Mann" gfx="filou" cond="scenario(nimba2,3)">
+	<inject id="filou:begin" next="encore"/>
+	
+	<a id="encore">Wieder langsam nähern!</a>
+	
+	<phase id="encore" next="oue">
+		[Ah, mein Lieblingskunde!]
+		[Wie geht es dir? Du hast wirklich unverschämtes Glück gehabt. Einen Moment später und ich hätte diesen Zahn an jemand anderen verkauft!
+		Jeder auf dem Markt versucht, so einen Zahn zu ergattern!]
+	</phase>
+	
+	<a id="oue">Ich... Daran zweifle ich keine Sekunde!</a>
+	
+	<phase id="oue" next="fou:pj">
+		[Also, was führt dich zu mir? Bist du vielleicht an einem Ausbau unserer Geschäftsbeziehungen interessiert?]
+		[Ich habe noch viele seltene Trophäen auf Lager. Doch Zeit ist Geld. An deiner Stelle würde ich mich sputen... !]
+	</phase>
+	
+	<a id="fou">Was kannst du mir für 1.000.000 Goldstücke bieten?!</a>
+	<a id="pj">Ich suche etwas für 1.000 Goldstücke!</a>
+
+	<phase id="pj" usegold="1000" next="pig">
+		Kein Problem. Sieh her, diese famose Monsterzunge!
+	</phase>
+	
+	<a id="pig">Wirklich famos, ich nehm sie!</a>
+	
+	<phase id="pig" fast="1" frame="parti">
+		Und wieder bist du über's Ohr gehauen worden. Hast du etwa gedacht, dass es diesmal anders laufen würde?
+	</phase>
+	
+	<phase id="fou" next="arf:arg">
+		[1 Million Goldstücke? Bist du verr...]
+		[Ich meine... selbstverständlich! Das ist eine hervorragende Geldanlage! Du bist wahrlich ein Experte!
+		Ich kann mir vorstellen, dass du eine Weile brauchen wirst, soviel Geld zusammenzukriegen?]
+	</phase>
+	
+	<a id="arg">Eigentlich habe ich es gerade bei mir!</a>
+	
+	<phase id="arg" fast="1" next="arf">
+		Ein Papierflieger trifft dich mitten ins Ohr! Autsch!
+		Du entknüllst den Flieger und liest: "Bist du komplett übergeschnappt? Grüße, Madame X"
+	</phase>
+	
+	<a id="arf">Ich trage nie soviel Geld mit mir herum.</a>
+	
+	<phase id="arf" next="lieu">
+		Verstehe... Dann vereinbaren wir doch ein Treffen, um unseren Handel zu beschließen. Was hältst du von heute Abend, selber Ort?
+	</phase>
+	
+	<a id="lieu">In Ordnung. Doch diesmal möchte ich direkt mit deinem Boss verhandeln.</a>
+	
+	<phase id="lieu" next="deal">
+		[Ich verstehe... Natürlich. Bei einem Handel dieser Größenordnung brauchst du eine Art Garantie...]
+		[Triff mich am Abend in Dinoville. Dann werde ich dich dem Mann vorstellen.]
+	</phase>
+	
+	<a id="deal">Perfekt! Ich freue mich darauf, unser Geschäft zu besiegeln.</a>
+	
+	<phase id="deal" fast="1" scenario="nimba2:4">
+		Alles läuft wie am Schnürchen. Die Falle ist ausgelegt. Du musst jetzt nur noch den Mann treffen, der hinter all dem steckt, und dieser Falschhandel wird ein für alle Mal aufhören!
+	</phase>
+</d>
+
+<d place="frcbrt" name="Madame X" gfx="mmex" cond="scenario(nimba2,4)">
+	<inject id="mmex:begin" next="fo" />
+	
+	<a id="fo">Die Falle ist ausgelegt!</a>
+	
+	<phase id="fo">
+		[Perfekt. Gut gemacht, Dinozmeister!]
+		[Du musst nur noch am Abend in Dinoville auf den Mann warten, der hinter diesem Falschhandel steckt.]
+		[Viel Glück. Undercover zu arbeiten ist nicht einfach. Sei aber unbesorgt, die Wachen von Dinoland werden dich die ganze Zeit über beschützen!]
+	</phase>
+</d>
+	
+<d place="dnv" name="Zwielichtiger Mann" background="2" gfx="filou" cond="(scenario(nimba2,4))+(admin()|(hour(17+)|hour(10-)))">
+	<phase id="begin" next="oue">
+		Ah, da bist du ja endlich! Ich warte schon über eine Stunde auf dich!
+	</phase>
+	
+	<a id="oue">Du hast dich wirklich gut versteckt!</a>
+	
+	<phase id="oue" next="move">
+		Heute Nacht wimmelt's hier nur so vor Wachen. Ganz so, als würden sie irgendwen festnehmen wollen...
+	</phase>
+	
+	<a id="move">Fürchtest du dich vor den Wachen?</a>
+	
+	<phase id="move" next="on">
+		[Ha, ha! Nicht im geringsten! Ich bin doch ein ehrlicher Einwohner von Dinoville, was denkst denn du...]
+		[Schluss jetzt mit dem Gequatsche! Geh schnurstracks in diese einsame Gasse, dann rechts, dann links, an der Kreuzung drehen, dann links und weiter geradeaus, 
+		dann rechts halten und nach gut 100 Metern rechts abbiegen. Und schon siehst du ein Haus. Geh zur Tür und klopf dreimal schnell und zweimal langsam.]
+	</phase>
+	
+	<a id="on">Ist das alles?</a>
+		
+	<phase id="on" next="ouf">
+		[Jetzt hast du mich unterbrochen... Wo war ich stehengeblieben?]
+		[Ah ja, sobald du im Haus bist, klettere aus dem Fenster, überquere den Hof, dann weiter bis zum Ende der Straße bis du einen Eingang zu einer Kellerbar siehst. 
+		Nenn dem Türsteher dieses Passwort:] _(Das heisere Heulen des Winterwindes belebt meine Seele mit vitaler Energie.)_ 
+		[Dann wirst du den Mann treffen können, den sie *El señor del fuego de la casa para degustar las tapas* nennen!]
+	</phase>
+	
+	<a id="ouf">Ich nehme an, das ist nur der Vorname?</a>
+	
+	<phase id="ouf" next="go">
+		Mit dieser Wegbeschreibung findest du dich ja nun bestens alleine zurecht. Viel Glück mit ihm, er ist ziemlich ausgekocht!
+	</phase>
+	
+	<a id="go">Danke für deine Hilfe!</a>
+	
+	<phase id="go" fast="1" scenario="nimba2:5" frame="parti">
+		Das Treffen steht kurz bevor. Hoffentlich sind die Wachen von Dinoville auf ihrem Posten!
+	</phase>
+</d>
+
+<d place="dnv" name="Einsame Gasse" gfx="bodygard" frame="out" cond="(scenario(nimba2,5))+(admin()|(hour(17+)|hour(10-)))">
+	
+	<phase id="begin" next="toc1:toc2:toc3:toc4:yes:toc6" fast="1">
+		Du hast die Anweisungen deines Informanten auf den Buchstaben genau befolgt.
+		Ok, nächster Schritt - das Haus...
+	</phase>
+	
+	<a id="toc1" target="fail">2 mal schnell klopfen, dann 1 langsam klopfen.</a>
+	<a id="toc2" target="fail">3 mal schnell klopfen, dann 3 langsam klopfen.</a>
+	<a id="toc3" target="fail">4 mal schnell klopfen, dann 2 langsam klopfen.</a>
+	<a id="toc4" target="fail">1 mal schnell klopfen, dann 2 langsam klopfen.</a>
+	<a id="yes">3 mal schnell klopfen, dann 2 langsam klopfen.</a>
+	<a id="toc6" target="fail">3 mal schnell klopfen, dann 1 langsam klopfen.</a>
+	
+	<phase id="fail" next="toc1:toc2:toc3:toc4:yes:toc6" >
+		Nichts rührt sich. Das war wohl der falsche Code.
+	</phase>
+	
+	<phase id="yes" scenario="nimba2:6">
+		Die Tür öffnet sich, aber niemand ist im Inneren... Du durchquerst das Haus, springst aus dem Fenster und findest dich in einer Gasse wieder...
+	</phase>
+</d>
+
+<d place="dnv" gfx="bodygard" name="Buddy Gard" cond="scenario(nimba2,6)+(admin()|(hour(17+)|hour(10-)))">
+	<phase id="begin" next="right">
+		Nachdem du mehrmals im Kreis gelaufen bist, bemerkst du, dass du am selben Ort stehst, an dem du losgegangen bist!
+		Du drehst deinen Kopf ein wenig zur Seite und siehst den Eingang zur Kellerbar...
+	</phase>
+	
+	<a id="right">Ich bin hier, um don Fuego zu sehen.</a>
+
+	<phase id="right" next="code1:code2:code3:yes">
+		Das Passwort...
+	</phase>
+	<a id="code1" target="wrong">Wo ich hingehe, gehen auch meine Dinoz hin. Also mach den Weg frei, du Cretin!</a>
+	<a id="code2"target="wrong">Die lange Schluchzen der Herbstgeigen zermartert mein Gehirn mit dirilierendem Dröhnen?</a>
+	<a id="code3"target="wrong">Das müde Wehgeschrei der Sommergitarren reibt gegen meine wunderschönen Beine?</a>
+	<a id="yes">Das heisere Heulen des Winterwindes belebt meine Seele mit vitaler Energie?</a>
+	
+	<phase id="wrong" fast="1" next="code1:code2:code3:yes">
+		Der Türsteher schaut dich nicht einmal an. Der massive Körper dieses Hünen versperrt dir komplett die Sicht.
+		Vielleicht hast du ihm ja "aus Versehen" das falsche Passwort genannt?
+	</phase>
+	
+	<phase id="yes" scenario="nimba2:7">
+		Du kannst passieren, El señor Don Fuego erwartet dich bereits.
+	</phase>
+</d>
+
+<!---Pour ouvrir le livre, il demandera à être sûr que ce n'est pas une copie grossière, qu'il provient bien de Nimbao, pour cela, il demandera un nouvel ingrédient d'une des grilles de récolte.-->
+
+<d place="dnv" gfx="serrurier" name="Don Fuego" cond="scenario(nimba2,7)">
+	<phase id="begin" next="don" fast="1" frame="stop">
+		Endlich stehst du Don Fuego von Angesicht zu Angesicht gegenüber...
+		Das also ist das brillante Gehirn, das hinter diesem Falschhandel steckt. Du musst ihn jetzt nur noch zum Sprechen bringen und dann die Wachen von Dinoville rufen...
+		Trotzdem lässt dich ein Gedanke nicht in Ruhe...
+		Wie genau willst du ihn eigentlch dazu bringen?
+		Du willst doch nicht wirklich eine Million Goldstücke für einen Phiole Einhorntränen ausgeben!
+		HAAAAAAAAAAAAA....!
+	</phase>
+	
+	<a id="don">HAAAAAAAAA!</a>
+	
+	<phase id="don" next="affaire:haa">
+		Warum macht es dich so nervös, mich persönlich zu treffen?
+		Du willst mir ein Angebot machen? Schön, ich höre... Und hoffe um deinetwillen, dass du nicht meine Zeit verschwendest...
+	</phase>
+	
+	<a id="haa">HAAAAAAA!</a>
+	<a id="affaire">Warst du schon mal in Lavaloch?</a>
+	
+	<phase id="haa" next="affaire">
+		Ist das alles was du zu sagen hast?
+		Ich hoffe doch, du ziehst dein Angebot nicht einfach zurück.
+	</phase>
+	
+	<phase id="affaire" next="haha:yes">
+		[Haha. Um den König auszutricksen, hielt ich mich so nah wie möglich in seiner Nähe auf. Dinoville ist der letzte Ort in seinem Königreich, an dem er suchen würde.]
+		[Der Worte sind genug gewechselt, lass mich endlich deinen Teil der Abmachung sehen. Hast du die 1.000.0000 Goldstücke?]
+	</phase>
+	
+	<a id="haha">Haha, natürlich nicht!</a>
+	<a id="yes" target="haha">Haha, aber natürlich!</a>
+	
+	<phase id="haha" next="ouch">
+		[Du kommst mit leeren Händen?! Mir war vom ersten Moment an klar, dass ich es mit einem Schwachkopf zu tun habe!]
+		[Los, schafft mir diesen Eindringling aus den Augen, er muss für Madame X arbeiten!]
+		[Falls ich dein Gold jemals wirklich haben möchte... Denke dran, ich habe das Auge und das Talent, jedes Schloss zu öffnen...]
+	</phase>
+	
+	<a id="ouch">!!!... Tatsächlich? Wärst du vielleicht so freundlich, einen Blick auf mein Buch zu werfen?</a>
+	
+	<phase id="ouch" next="battle" fightgroup="gang1:gang2:gang3">
+		Ah, in dir scheint mehr zu stecken, als ich gedacht habe.
+	</phase>
+	
+	<a id="battle">Erzähl ihm von dem Buch.</a>
+	
+	<phase id="battle" next="ok">
+		[Was du da hast, ist ein Buch von der legendären Insel im Himmel. Es ist jedoch verschlossen!]
+		[Du bist wirklich mitleiderregend, das sag ich dir...]
+		[Ich würde es gerne für dich öffnen. Nur kann ich mir nicht vorstellen, dass ein Wicht wie du jemals auf der Insel im Himmel war.
+		Komm später nochmal wieder und bring mir eine Zutat von der Insel. Vielleicht bin ich dann eher gewillt, dir zu glauben.]
+	</phase>
+	
+	<a id="ok">OK.</a>
+	
+	<phase id="ok" fast="1" scenario="nimba2:8" frame="stop">
+		Du begibst dich auf die Suche nach Zutaten, die nur auf Nimbao existieren...
+		Zurück zu Toll Patsch? Bitte nicht schon wieder...
+	</phase>
+</d>
+
+<d place="dnv" gfx="bodygard" name="Buddy Gard" cond="scenario(nimba2,8)+(admin()|(hour(18+)|hour(10-)))">
+	<phase id="begin" next="don1:don2:don3:rien">
+		Der Gegenstand?
+	</phase>
+	
+	<a id="don1" cond="hasingr(artr3)">Gib ihm einen mechanischen Arm.</a>
+	<a id="don2" cond="hasingr(chas4)">Gib ihm einen Drachenzahn.</a>
+	<a id="don3" cond="hasingr(fruit4)">Gib ihm eine Kranzblume.</a>
+	<a id="rien">Ich habe nichts.</a>
+	
+	<phase id="don1" next="bien" useingr="artr3:1" scenario="nimba2:9">Gut.</phase>
+	<phase id="don2" next="bien" useingr="chas4:1" scenario="nimba2:9">Gut.</phase>
+	<phase id="don3" next="bien" useingr="fruit4:1" scenario="nimba2:9">Gut.</phase>
+	<phase id="rien" fast="1">
+		Der Türsteher schaut dich nicht einmal an. Wenn du einen Gefallen von Don Fuego willst, brauchst du etwas von Nimbao...
+	</phase>
+	
+	<a id="bien">
+		Alles in Ordnung? Hat das Hündchen nun seinen Knochen?
+	</a>
+	
+	<phase id="bien">
+		...du kannst passieren. El señor Don Fuego erwartet dich bereits.
+	</phase>
+</d>
+
+<d place="dnv" gfx="serrurier" name="Don Fuego" cond="scenario(nimba2,9)+(admin()|(hour(18+)|hour(10-)))">
+	<phase id="begin" next="serv">
+		[Ich weiß aus sicherer Quelle, dass man nicht einfach so über diese Zutaten stolpert. Ich bin also geneigt, dir zu glauben...]
+		[Anderseits hast du sie vielleicht auch nur auf dem Markt gefunden... Heutezutage kann man niemanden mehr trauen.]
+		[Darum möchte ich, dass du vorher noch einige Dinge für mich erledigst, ehe ich dieses Buch öffne.]
+	</phase>
+	<a id="serv">Einige Dinge?</a>
+	<phase id="serv" next="pelle:why">
+		[Sagen wir mal so, ich brauche noch eine helfende Hand. Oder besser gesagt, einen 'helfenden Spaten'...]
+		[Bringe mir etwas Sand vom Predigerhafen, etwas Matsch von den Mutierende Sturzfluten, Lavasalz von Lavaloch und Eis aus den Tiefen Schluchten...]
+	</phase>
+	<a id="pelle">Du hast dir deinen Ruf redlich verdient...</a>
+	<a id="why">Wozu brauchst du das alles?</a>
+	
+	<phase id="pelle" next="why:parti">
+		[Immer zu wissen, wie man das Beste aus den sich bietenden Gelegenheiten macht.]
+		[Das ist das Geheimnis meines Erfolges...]
+	</phase>
+	
+	<phase id="why" next="pelle:parti">
+		Was glaubst du? Um damit weitere Fälschungen herzustellen natürlich. Außerdem ziehe ich es vor, solche niederen Aufgaben Anderen zu überlassen...
+	</phase>
+	<a id="parti">Ah ja, schließlich musst du dich ja versteckt halten...</a>
+	<phase id="parti" fast="1" scenario="nimba2:10" frame="stop">
+		Don Fuego hört dir schon gar nicht mehr zu. Er wartet auf die bestellten Gegenstände...
+	</phase>
+</d>
+
+<d place="dnv" gfx="serrurier" name="Don Fuego" cond="scenario(nimba2,10)">
+	<phase id="begin" next="serv">
+		[Bringe mir etwas Sand vom Predigerhafen, etwas Matsch von den Mutierende Sturzfluten, Lavasalz von Lavaloch und Eis aus den Tiefen Schluchten...]	
+		[Du musst sie in genau der Reihenfolge suchen und sie mir alle auf einmal bringen. Ansonsten wird meine Fälschung nicht perfekt werden.
+		In der Zwischenzeit werde ich dein Buch öffnen...]
+	</phase>
+	
+	<a id="serv">Ich habe wohl keine andere Wahl, wenn ich dieses Buch geöffnet haben will...</a>
+	
+	<phase id="serv" fast="1" frame="stop">
+		Don Fuego hört dir schon gar nicht mehr zu. Er wartet auf die bestellten Gegenstände...
+	</phase>
+</d>
+
+<d place="dnv" gfx="serrurier" name="Don Fuego" cond="scenario(nimba2,11)">
+	<phase id="begin" next="serv">
+		[Bringe mir etwas Matsch von den Mutierende Sturzfluten.]
+	</phase>
+	
+	<a id="serv">Ich habe wohl keine andere Wahl, wenn ich dieses Buch geöffnet haben will...</a>
+	
+	<phase id="serv" fast="1" frame="stop">
+		Don Fuego hört dir schon gar nicht mehr zu. Er wartet auf die bestellten Gegenstände...
+	</phase>
+</d>
+
+<d place="dnv" gfx="serrurier" name="Don Fuego" cond="scenario(nimba2,12)">
+	<phase id="begin" next="serv">
+		[Bringe mir Lavasalz von Lavaloch.]
+	</phase>
+	
+	<a id="serv">Ich habe wohl keine andere Wahl, wenn ich dieses Buch geöffnet haben will...</a>
+	
+	<phase id="serv" fast="1" frame="stop">
+		Don Fuego hört dir schon gar nicht mehr zu. Er wartet auf die bestellten Gegenstände...
+	</phase>
+</d>
+
+<d place="dnv" gfx="serrurier" name="Don Fuego" cond="scenario(nimba2,13)">
+	<phase id="begin" next="serv">
+		[Jetzt brauchst du mir nur noch Eis aus den Tiefen Schluchten zu bringen...]
+	</phase>
+	
+	<a id="serv">Ich habe wohl keine andere Wahl, wenn ich dieses Buch geöffnet haben will...</a>
+	
+	<phase id="serv" fast="1" frame="stop">
+		Don Fuego hört dir schon gar nicht mehr zu. Er wartet auf die bestellten Gegenstände...
+	</phase>
+</d>
+
+<!-- le joueur creuse aux 4 endroits demandés et revient voir don fuego -->
+		
+<d place="dnv" gfx="serrurier" name="Don Fuego" cond="scenario(nimba2,14)">
+	<phase id="begin" next="enfin">
+		[Großartig. Du hast mir alles gebracht, worum ich dich gebeten habe...]
+		[Dank dir wird mein Laden nun eine ganze Weile weiterbrummen, hahaha. Ich habe mich gefragt...]
+		[Wie fühlt sich das eigentlich an, wegen einem einfachen Buch mit einem illegalen Falschhändlerring gemeinsame Sache zu machen?]
+		[Wenn ich so drüber nachdenke, sind wir beide gar nicht so verschieden... Hahahaha!]
+	</phase>
+
+	<a id="enfin">Wie du meinst. Kannst du das Buch nun öffnen oder nicht?</a>
+	
+	<phase id="enfin" next="wait">
+		Haha, ich enthülle meine Geheimnisse doch nicht vor den Augen des erstbesten Taugenichts!
+		Sei nicht so übermütig. Komm in einigen Stunden wieder, dann wird das Buch geöffnet sein.
+	</phase>
+	
+	<a id="wait">Diese Warterei wird langsam unerträglich!</a>
+	
+	<phase id="wait" scenario="nimba2:15" rmcollection="dico1" frame="stop">
+		Du hast Don Fuego deine einzige Ausgabe des Wörterbuchs gegeben.
+		Du musst dich jetzt wohl oder übel damit abfinden...
+	</phase>
+</d>
+
+<d place="dnv" gfx="serrurier" frame="out" name="..." cond="scenario(nimba2,15)+swait(nimba2,5)">
+	<phase id="begin" next="argh">
+		Die Kellerbar sieht seltsam ruhig aus. Keine einzige Seele scheint sich dort aufzuhalten...
+	</phase>
+	<a id="argh">Don fuuuuueggooooo?</a>
+	<phase id="argh" next="nan">
+		Keine Antwort. Kann es sein, dass sich Don Fuego mit deinem Buch aus dem Staub gemacht hat?
+	</phase>
+	<a id="nan">Aber... Ich wurde wie ein Schuljunge hereingelegt!</a>
+	<phase id="nan" scenario="nimba2:16">
+		Ich kann dir nicht widersprechen. :)
+	</phase>
+</d>
+
+<d place="frcbrt" name="Madame X" gfx="mmex" cond="scenario(nimba2,16)">
+	<inject id="mmex:begin" next="rah"/>
+	<a id="rah">schnief...</a>
+	
+	<phase id="rah" next="what:whut">
+		Wie lief es mit Don Fuego? Steckte er hinter dem Fälscherring?
+	</phase>
+	
+	<a id="what">Sein Falschhandel ist mir egal. Ich will mein Buch zurück!</a>
+	<a id="whut">Ja, zu meinem großen Bedauern habe ich ihn getroffen...</a>
+	
+	<phase id="what" next="whut">
+		Was sagst du da? Hast du ihn nun getroffen oder nicht?
+	</phase>
+	
+	<phase id="whut" next="ou">
+		Und? Was hast du dabei herausgefunden?
+	</phase>
+	
+	<a id="ou">Erzähl ihr von den Zutaten.</a>
+	
+	<phase id="ou" next="ici">
+		[Du hast viel rausgefunden. Wie in aller Welt konntest du erfahren, woraus die Fälschungen hergestellt werden?]
+		[Egal, das ist jetzt nich so wichtig. Wenn wir ihn jemals hinter Gitter bringen wollen, müssen wir ihn wiederfinden!]
+		[Ich weiß nicht, wohin er geflohen ist. Ich kann mir aber vorstellen, dass er irgendwo in der Nähe der Großen Dauerhitze ist. Er kennt die Gegend wie seine Westentasche.]
+		[Er wird dort problemlos untertauchen, wenn wir das nicht sofort verhindern!]
+	</phase>
+	
+	<a id="ici">...Aber was ist mit meinem Buch?...</a>
+	
+	<phase id="ici" fast="1" scenario="nimba2:17">
+		Du brichst sofort zur Suche nach dieser diebischen Elster Don Fuego auf, die dir deine wertvolle Trophäe geklaut hat!
+	</phase>
+</d>
+
+<d place="gorges" name="..." gfx="serrurier" background="2" frame="out" cond="scenario(nimba2,17)">
+	<phase id="begin" next="hm">
+		Trotz der Laterne ist es in diesem Tunnen stockdunkel...
+	</phase>
+	<a id="hm">Fuegiiiii?</a>
+	<phase id="hm" fast="1" scenario="nimba2:18">Keine Antwort..</phase>
+</d>
+
+<d place="gorges" name="..." gfx="serrurier" background="2" frame="out" cond="scenario(nimba2,18)">
+	<phase id="begin" next="hm">
+		Wenn du Don Fuego wärst, würdest du dich auch verstecken!
+	</phase>
+	<a id="hm">Fuegouuuuuuu?</a>
+	<phase id="hm" fast="1" scenario="nimba2:19">Immer noch keine Antwort...</phase>
+</d>
+
+<d place="gorges" name="..." gfx="serrurier" background="2" frame="out" cond="scenario(nimba2,19)">
+	<phase id="begin" next="hm">
+		......
+	</phase>
+	<a id="hm">.....</a>
+	<phase id="hm" fast="1" scenario="nimba2:20">......</phase>
+</d>
+
+<d place="gorges" name="Don fuego" gfx="serrurier" background="2" cond="scenario(nimba2,20)">
+	<phase id="begin" next="hm" fast="1" frame="stop">
+		Don Fuego flitzt plötzlich aus dem Tunnel. Du holst ihn gerade noch ein und schnappst zu!
+	</phase>
+	<a id="hm">Ha! Hab ich dich!</a>
+	<phase id="hm" fightgroup="gang4" next="livre">
+		Ihr glaubt, ihr habt mich? Wo denkt ihr hin...
+	</phase>
+	
+	<a id="livre">Gib mir mein Buch wieder!</a>
+	
+	<phase id="livre" next="first">Das ist das einzige was dich interessiert? Ich dachte, du würdest mich den Wachen übergeben?</phase>
+	
+	<a id="first">Mein Buch... !</a>
+	
+	<phase id="first" next="cool">
+		Schon gut, schon gut. Hier hast du es. Sogar geöffnet!
+		Warum bist du nicht ein bisschen großzügig und lässt mich laufen... ?
+	</phase>
+	
+	<a id="cool">Ha, mein Buch. Endlich!</a>
+	
+	<phase id="cool" fast="1" frame="out" scenario="nimba2:21" uvar="dicarb:1" collection="dicarb">
+		Während du dein Buch genauer unter die Lupe nimmst, gelingt es Don Fuego, sich davonzuschleichen.
+		Diesmal lässt du ihn noch laufen. Doch der Tag wird kommen...
+	</phase>
+</d>
+
+<d place="frcbrt" name="Madame X" gfx="mmex" cond="scenario(nimba2,21)">
+	<inject id="mmex:begin" next="rah"/>
+	<a id="rah">Don Fuego ist schon wieder entkommen!</a>
+	<phase id="rah" next="tadoum">
+		[Nun denn. Wir werden ihn schon irgendwann schnappen.]
+		[Die Tage seines Falschhandels sind zumindest vorbei. Wir können wieder frei atmen.]
+		[Du scheinst überraschend gut gelaunt. Hast du irgendetwas Interessantes bei ihm gefunden?]
+	</phase>
+	<a id="tadoum">Nicht wirklich. Aber ich habe mein Buch zurück!</a>
+	<phase id="tadoum" next="nimb">
+		Letztlich hast du gekriegt was du wolltest...
+	</phase>
+	<a id="nimb">Viel Glück bei der Jagd auf Don Fuego!</a>
+	<phase id="nimb" fast="1">
+		Es wird Zeit, dass du dein frisch erworbenes Wörterbuch auszuprobierst. Vor allem, wenn du vorhast, dir die andere Seite der Insel im Himmel anzusehen.
+		Vielleicht kannst du nun mehr über ihre Geschichte und Einwohner erfahren... ?
+	</phase>
+</d>
+
+<!--
+-Le joueur trouve enfin le moyen de déchiffrer le langage des arboris, on apprend que :
+-Saul a perdu son frère, par la faute des soldats de Grizorg, elle cherchera un moyen de le faire s'évader de la prison de la ville
+(il faudra une fois sorti de la prison, pouvoir parler à Saul qui demandera au joueur d'intervenir, il faudra aller au fond du donjon et ramener le prisonnier)
+-Boulo est un garde un peu sot, il ne fera pas de mal au joueur et le renseignera sur l'activité de l'île.
+-Etre est un ancien gladiateur, se battant pour le plaisir des dorogons.
+-Palmier est un jeune arboris, il déteste tout le monde et ne rêve que de pouvoir s'enfuir de l'île.
+-Ne pas oublier de parler des colliers.
+-->
+
+<!-- 8-Emprisonnement à Priranèse -->
+	
+<!--
+-Arrivé à la cité Arboris, le joueur se fait repérer pas les gardes de Grizorg, le joueur se retrouve en prison pour avoir troublé l'ordre publique,
+-On croise le frère de saul, mais il est impossible de le sauver pour l'instant.
+-->
+
+<d place="icite" gfx="boulo" name="Soldat von Grizorg" background="3" cond="scenario(nimba2,21)+swait(nimba2,1)">
+	<phase id="begin" next="hein" fast="1" frame="stop">
+		Die Wachen haben dich entdeckt und kommen langsam näher.
+	</phase>
+	<a id="hein">Hallo Jungs? Was kann ich für euch tun?</a>
+	<phase id="hein" next="move">
+		Du bist verhaftet wegen Störung des öffentlichen Friedes durch Herausforderung seiner Exzellenz Morg.
+		Du wirst direkt in das Gefängnis von Piranese gebracht, wo du den Rest deines Lebens verbringen wirst.
+	</phase>
+	<a id="move">Aber ich bin unschuldig! (naja, nicht ganz, aber DAS GEHT DOCH NICHT...)</a>
+	<phase id="move" fast="1" scenario="nimba2:22" moveAll="prison">
+		Du wirst in Ketten gelegt und in die tiefsten Tiefen dieses schrecklichen Kerkers gesteckt.
+		Ob du wohl jemals wieder Tageslicht sehen wirst?
+	</phase>
+</d>
+
+<d place="prison" gfx="pin" frame="out" name="..." cond="scenario(nimba2,22)+swait(nimba2,1)">
+	<phase id="begin" next="fiou">
+		Seit einem Tag schon verrottest du in dieser dunklen, stinkenden Zelle...
+	</phase>
+	<a id="fiou">Nicht dass mir langweilig wäre, aber es könnte ruhig mal irgendwas passieren...</a>
+	<phase id="fiou" next="fantom:pasglop" frame="blabla">
+		Hier passiert nichts...
+	</phase>
+	<a id="pasglop">Bist du schon lange hier?</a>
+	<a id="fantom">HAAAA, ein... ein Gespenst!</a>
+	<phase id="pasglop" next="fantom:hope" frame="blabla">
+		Ich wurde vor Monaten hier eingesperrt. Und, haha, wie ich immer sage, man kann von hier aus nicht mal den Mond sehen...
+	</phase>
+	<phase id="fantom" next="pasglop:hope" frame="blabla">
+		Ich bin kein Geist. Ich bin nur einer von vielen Arborianern, die sich gegen den Willen von Grizorg gestellt haben...
+	</phase>
+	<a id="hope">Dann muss sich etwas ändern!</a>
+	<phase id="hope" next="fin" frame="blabla">
+		[Wenn uns nur jemand befreien könnte...]
+		[Ich habe keinen Zweifel, dass das Volk der Dorogons weise ist. Und in den Tagen meiner Vorfahren, haben wir friedlich zusammen gelebt. Zumindest sagen das die Alten, die diese Zeit noch erlebt haben.
+		Wir haben nichts dagegen, unter dem Schutz des Erzdorogon zu stehen. Aber Grizorg ist kein Beschützer, er missbraucht seine Macht und lässt uns in Angst leben.]
+		[Ich habe ausgesprochen was ich gedacht habe, und sieh nur wohin es mich gebracht hat...]
+	</phase>
+	<a id="fin">Ich werde das alles ändern!</a>
+	<phase id="fin" fast="1" scenario="nimba2:23" frame="stop">
+		Der Arborianer taucht wieder zurück in die Dunkelnheit. Er scheint keine Hoffnung zu haben und deine Aufmunterung überhaupt nicht zu hören...
+		Wenn du ihn doch nur irgendwie überzeugen könntest.
+		Erst einmal musst es aber auf die andere Seite der Zellentür schaffen...
+	</phase>
+</d>
+
+<d place="prison" gfx="mandragore" background="5" frame="parti" name="..." cond="scenario(nimba2,23)+swait(nimba2,5)">
+	<phase id="begin" next="qui">
+		Hallo Kleiner! Ist ja schon eine ganze Weile her!
+		Verrätst du mir, was du hier treibst?
+	</phase>
+	<a id="qui">Wer spricht da?</a>
+	<phase id="qui" name="Mandragore" next="tour" frame="rire">
+		[Haha, ich bin es. Mandragore!
+		Ich habe einen Bummel durch das Gefängnis gemacht. Und über wen stolpere ich da?]
+		[Über meinen kleinen Dinozmeister, der sich offensichtlich nicht besonders schlau angestellt hat. Hahaha!]
+	</phase>
+	<a id="tour">Wie bist du hier reingekomemn?</a>
+	<phase id="tour" next="evasion" name="Mandragore" frame="blabla">
+		[Ich wollte nach einem alten Freund sehen, der sich hier irgendwo aufhalten muss.
+		Also dachte ich mir, ich schau mal vorbei und besuche ihn...]
+		[Sag mal, hast du vor, länger hier zu bleiben?
+		Ich wusste ja nicht, dass du auf schwedische Gardinen stehst...]
+	</phase>
+	<a id="evasion">Ich hätte nichts dagegen, von hier zu verschwinden!</a>
+	<phase id="evasion" name="Mandragore" frame="blabla" next="raison">
+		Dann komme ich ja genau richtig! _(RUMMMMS!)_ So, die Zelle steht offen.
+		Verrätst du mir was du nun vorhast?
+	</phase>
+	<a id="raison">Ich werde zu Grizorg gehen!</a>
+	<phase id="raison" next="et" name="Mandragore" frame="rire">
+		[HAHAHA, du kennst wirklich keine Angst!]
+		[Ich muss jetzt weiter. Wenn du es alleine hier raus schaffst, werde ich dich jemanden vorstellen.]
+	</phase>
+	<a id="et">Un die anderen arborianischen Gefangenen?</a>
+	<phase id="et" next="wego" name="Mandragore" frame="blabla">
+		[So leid es mir tut, aber es wäre sinnlos, ihnen jetzt beim Ausbruch zu helfen. Man würde sie sofort wieder eingefangen. Im Moment kann ich mich nicht um sie kümmern.]
+		[Aber die Zeit wird kommen, wo sie ihre Freiheit wiedererlangen.]
+	</phase>
+	<a id="wego">Ich komme wieder!</a>
+	<phase id="wego" fast="1" frame="parti" scenario="nimba2:24">
+		Mandragore hat nicht auf dich gewartet. Flink hat er sich seinen Weg an den Wachen vorbei gebahnt und ist verschwunden.
+		Das Gefängnis ist in Aufruhr. Du musst irgendwie einen Weg hier raus finden. Das wird kein Spaziergang!
+	</phase>
+</d>
+
+<!-- 9-Evasion de Priranèse, infiltration scenario="nimba2:25" -->
+	
+<d place="prison" gfx="mandragore" background="5" frame="glou" name="Mandragore" cond="scenario(nimba2,25)">
+	<phase id="begin" fast="1" next="temps">
+		Nachdem du das ganze Gefängnis von oben bis unten durchstreift hast, stehst du schließlich vor dem Ausgang.
+		Mandragore wartet draußen bereits auf dich. Bequem auf einem Berg bewusstloser Wachen sitzend und einen Cocktail schlürfend...
+	</phase>
+	<a id="temps">Entschuldige, dass du warten musstest...</a>
+	<phase id="temps" next="viens" frame="blabla">
+		[Haha, keine Sorge. Ich habe den Ausblick von hier genossen.]
+		[Du warst aber ganz schön lange unterwegs. Ich dachte schon, sie hätten dich wieder in deine Zelle gesteckt!]
+		[Nun, du hast den Test bestanden. Triff mich an der Pforte zur oberen Ebene. Ich werde dich dort einem Freund von mir vorstellen.]
+	</phase>
+	<a id="viens">Keine Sorge.</a>
+	<phase id="viens" fast="1" frame="parti" scenario="nimba2:26">
+		Mandragore ist schon wieder aufgebrochen. Nichts und niemand kann ihn bremsen... Nächster Halt: die Pforte zur oberen Ebene.
+	</phase>
+</d>
+
+<!-- 9-Accéder au second niveau de l'île -->
+	
+<!--
+-Une fois libéré, Mandragore donne aux joueurs le moyen d'aller au second niveau de l'île, une clé qui permet d'ouvrir la porte du niveau supérieur.
+-Pour pouvoir se déplacer au niveau supérieur, le joueur doit devenir le servant d'un dorogon, Mandragore lui présente donc Pistache, un jeune dorogon.
+-->
+
+<d place="iporte" gfx="mandragore" background="6" frame="glou" name="Mandragore" cond="scenario(nimba2,26)">
+	<phase id="begin" fast="1" next="pistache">
+		Du findest Mandragore, an seiner Seite steht ein kleiner Dorogon.
+		Sieht so aus, als wären sie in ein lebhaftes Gespräch vertieft. Als du näherkommst, hörst du sie mehrfach laut auflachen.
+	</phase>
+	<a id="pistache">Äh... hallo?</a>
+	<phase id="pistache" next="meet" frame="blabla">
+		[Ah, da bist du ja...]
+		[Ich würde dich gerne Pistazie vorstellen. Ein junger Dorogon und ein guter Freund!
+		Beurteile ihn nicht nach seiner Größe, er ist schon über 50 Jahre alt.
+		Er wird dir dabei helfen, in die Stadt der Dorogons auf der oberen Ebene zu kommen.]
+	</phase>
+	<a id="meet">Äh, nett dich kennenzulernen, Pistazie.</a>
+	<phase id="meet" gfx="pistache" name="Pistazie" background="4" next="oufyou">
+		[Hallo, du kommst also von der Oberfläche. Unglaublich!]
+		Ich würde so gerne die Oberfläche sehen, aber mein Vater hat es mir verboten. Und falls es doch jemals möglich wäre, wüsste ich wahrscheinlich eh nicht, was ich dort tun sollte.
+		Egal, wenn ich erst älter bin, kann ich für mich selbst entscheiden. Von hier oben hat man einen herrlichen Überblick. Und ich kenne die Insel in und auswendig. Aber das ist eine andere Geschichte.
+	</phase>
+	<a id="oufyou">....</a>
+	<phase id="oufyou" next="ouf" gfx="pistache" name="Pistazie" background="4">
+		So, du willst also die Stadt der Dorogons betreten. Du weißt es sicher noch nicht, aber die einzige Möglichkeit für jemanden wie dich, in die Stadt zu kommen, ist als Diener eines Dorogon.
+		Von dem Moment an, wo wir in der Stadt sind, musst du also wie Kaugummi an mir kleben, hörst du? Ansonsten wirst du wieder zurückgeschickt und ich kann nichts mehr für dich tun.
+		Du wirst sicher auch auf einige Wachen treffen, die dich gefangennehmen wollen. Sei aber unbesorgt, dank mir wirst du sie auschhalten können, ohne die Aufmerksamkeit der Behörden vor Ort zu erregen.
+		Bleib also einfach in meiner Nähe und sprich mit den Einwohnern. Die Dorogons beherrschen jede Sprache auf der Welt, wusstest du das?
+		Ich bin schon ganz aufgeregt, was dich angeht. Denn wenn Mandragore von jemandem spricht, und er spricht oft von dir, dann muss ganz schön was in dir stecken!
+	</phase>
+	<a id="ouf">......(Ich hab Kopfschmerzen!)</a>
+	<phase id="ouf" next="enavant" gfx="mandragore" frame="blabla" name="Mandragore">
+		[Ach ja, das vergaß ich zu erwähnen... Er redet viel.]
+		[Pass gut auf meinen Freund auf. Schließlich ist er der Sohn von Grizorg. Es wäre eine Schande, wenn ihm etwas zustoßen würde... HAHAHAHA...]
+		[Ok, ich verschwinde dann mal wieder. Ich habe noch wichtige Sachen zu erledigen. Wir sehen uns wieder, wenn du es schaffst, Grizorg zu treffen. "Falls" du es schaffst...]
+	</phase>
+	<a id="enavant">Gut, lass uns aufbrechen!</a>
+	<phase id="enavant" fast="1" gfx="pistache" name="Pistazie" background="4" frame="stop" scenario="nimba2:27">
+		Sieht so aus, als wären du und der kleine Dorogon nun ein Team. Plappermaul hin oder her, ihr werdet eine Weile zusammenbleiben müssen.
+		Ich schätze, du sirst dich schon an ihn gewöhnen...
+	</phase>
+</d>
+
+<!--
+-Le joueur est accompagné par Pistache tout le temps qu'il est au second niveau de l'île.
+-Le joueur devra explorer l'île au fur et à mesure des demandes de Pistache. C'est à ce moment qu'on apprend l'aversion des dorogons pour caushemesh.
+-Il faut gagner 5 points de sagesse pour pouvoir avoir une audience avec l'Archidorogon Grizorg, mais personne n'en a obtenu depuis longtemps, visiblement Grizorg vit retranché avec sa suite au 3ème niveau de l'île.
+ -->
+
+<d place="ville1" gfx="pistache" background="1" name="Pistazie" cond="scenario(nimba2,27)">
+	<phase id="begin" next="regles" fast="1" frame="stop">
+		Schließlich erreichst du die die Stadt der Dorogoons. In all ihrer Pracht breitet sie sich vor dir aus.
+		Der Anblick ihrer wundervollen Architektur verschlägt dir die Sprache. Die Einwohner schauen dich amüsiert an, sie scheinen aber freundlich gesinnt zu sein...
+	</phase>
+	<a id="regles">Wow, wirklich eindrucksvoll!</a>
+	<phase id="regles" frame="blabla" next="point">
+		Und dabei hast du bisher nur einen Bruchteil gesehen! Hehe.
+		Also gut. Es ist an der Zeit, dass ich die erkläre, wie das Spiel funktioniert.
+	</phase>
+	<a id="point">Das Spiel?</a>
+	<phase id="point" next="boulot">
+		[Genau. Denn um den Erzdorogon zu treffen, musst du dir *Weisheitspunkte* verdienen.]
+		[Verstehst du, es wird natürlich nicht jedem erlaubt, so mir nichts dir nichts den Palast zu betreten. Die Zeit des Erzdorogon ist schließlich kostbar.
+		Sogar ich sehe meinen Vater nicht sehr oft. Und seit Onkel Mandra wieder auf der Insel weilt, ist er besonders nervös...]
+		[Ich verstehe das alles nicht. Einst waren sie Freunde.]
+		[Egal...]
+	</phase>
+	<a id="boulot">Weisheitspunkte?</a>
+	<phase id="boulot" next="service">
+		[Genau. Du musst dir Weisheitspunkte verdienen, indem du für die Bewohner der Stadt Aufträge erledigst.
+		Mit jedem Punkt kommst du dem Palast ein Stückchen näher.]
+		[Also los. Sprich mit den Bewohnern und finde heraus, was du für sie tun kannst.]
+	</phase>
+	<a id="service">Auf geht's!</a>
+	<phase id="service" fast="1" frame="stop" scenario="nimba2:28">
+		Du bist gespannt, was für seltsame Aufgaben du wohl erledigen musst...
+	</phase>
+</d>
+
+<d place="ville2" gfx="pistache" background="2" name="Pistazie" cond="scenario(nimba2,28)">
+	<phase id="begin" next="alors">
+		[Hast du schon einige Einwohner getroffen?]
+		[Du wirst schon sehen. Sie haben alle ihre kleinen Geheimnisse und Wünsche.
+		Wenn du es schaffst sie glücklich zu machen, erhältst du 4 Weisheitspunkte.]
+	</phase>
+	<a id="alors">Wie viele Punkte brauche ich?</a>
+	<phase id="alors" next="fioup">
+		Vor 4 Monaten reichten noch 4 Punkte. Aber mittlerweile brauchst du 5, wenn du in den Palast kommen willst!
+		Hehehehe...
+	</phase>
+	<a id="fioup">Super...</a>
+	<phase id="fioup" fast="1" frame="stop" scenario="nimba2:29">
+		Du bereitest dich darauf vor, die Herzen der Dorogons zu gewinnen!
+	</phase>
+</d>
+
+
+<!--
+-Pour gagner des points de sagesse, il faut rendre service à plusieurs Dorogons au second niveau de l'île, ramener des ingrédients rares, donner une barre de chocolat, tester la force d'un dorogon (capitaine)...etc.
+1er point de sagesse : scenario="nimba2:30"
+2ème point de sagesse : scenario="nimba2:31"
+3ème point de sagesse : scenario="nimba2:32"
+4ème point de sagesse : scenario="nimba2:33"
+-->
+
+<!--
+-Le dernier point de sagesse est très dur à obtenir, c'est Pistache lui-même qui doit vous le remettre... il faudra l'amener voir le vénérable.
+-Après avoir discuté avec le vénérable, on en apprend plus sur Pistache. Visiblement, il n'aime pas son père.
+-->
+
+<d place="ville2" gfx="pistache" background="2" name="Pistazie" cond="scenario(nimba2,33)">
+	<phase id="begin" next="amoi">
+		Gratuliere, du hast dir schon 4 Weisheitspunkte verdient. Der letzte wird aber eine richtig harte Nuss!
+	</phase>
+	<a id="amoi">Warum?</a>
+	<phase id="amoi" next="mer">
+		Den letzten, noch fehlenden Weisheitspunkt... Den habe ich!
+		Du musst mir jeden meiner Wünsche erfüllen. Und wie es der Zufall will, wollte ich schon immer die ganze Welt bereisen!
+		Und an deiner Seite habe ich keine Angst zu reisen. Denn egal wie lange und weit, ob über Berg oder Tal, du wirst mich die ganze Zeit über beschützen. Zuerst möchte ich das Königreich Dinoland sehen. Es soll dort eine Universität geben.
+		Verglichen mit der, die wir hier haben, wird sie natürlich eine Enttäuschung sein. Aber egal. Irgendwann musst du mit dir auch mal die abgelegenen Teile der Insel ansehen. Es ist wirklich eine Schande, dass Vater die Insel für Besucher gesperrt hat.
+		Als ich sagte, ich kenne die Insel wie meine Westentasche, habe ich das ernst gemeint. Aber ich will die weiten Ebenen von Dinoland mit meinen eigenen Augen sehen! Auch wenn es dir nicht so vorkommt, aber wir haben erst einen kleinen Teil der Insel gesehen.
+	</phase>
+	<a id="mer">(Hört der auch irgendwann mal wieder auf...)</a>
+	<phase id="mer" next="tg">
+		So. Nach dem Königreich Dinoland, werden wir zu den Atlantinischen Inseln reisen. Der Untergang der Jazz-Insel hat wirklich alles verändert. Die alten Bücher enthalten zumindest nichts von den Veränderungen, die dort stattgefunden haben.
+		Dann gibt es da noch den Grumhel-Wald. Ich möchte dort am Grab meines Vorfahren meditieren! Und dann möchte ich auch noch die Steppen sehen. Aber bis dahin ist es noch eine Weile hin, darum brauchen wir da noch nicht ins Detail gehen.
+		Die ganzen Geschichten über Caushemesh machen mir schon ein wenig Angst. Sogar mein Vater fürchtet sich davor. Aber ich halte es so: Sehen heißt glauben. Also möchte ich es sehen.
+		Und du, was hältst du davon?
+	</phase>
+	<a id="tg">Mein Kopf explodiert gleich...</a>
+	<phase id="tg" next="tantpis">
+		Das wäre nicht gut. Trinke einen Kranzblumentee und es geht dir gleich besser.
+		Wo war ich stehengeblieben? Ach ja, der Gefallen, den du mir erweisen musst. Dann werden wir noch den Ehrwürdigen besuchen. Ich habe ihn schon seit Ewigkeiten nicht mehr gesehen. Und dabei ist es doch wichtig, mit seiner Familie in Kontakt zu bleiben.
+		Man weiß schließlich nie, was passieren wird. Ein unbedachter Fehltritt und man fällt von der Insel. Ich glaube ja, dass ihm genau das passiert ist. Obwohl das irgendwie seltsam wäre, er hätte ja wieder zurückkommen können.
+		Es muss also noch etwas anderes dahinterstecken. Aber ich glaube nicht, dass es etwas mit mir zu tun hat.
+	</phase>
+	<a id="tantpis">Wie wärs, wenn ich dich jetzt sofort zum Ehrwürdigen brächte?</a>
+	<phase id="tantpis" next="sigh">
+		COOL, ich habe mich nicht getraut, zu fragen. Aber da du es erwähnst... Eigentlich wollte ich dir ja gerade meinen Weisheitspunkt geben. ...als Geschenk, weil du mich begleitet und mir geholfen hast. Aber ich würde liebend gerne zur Oberfläche reisen!
+		Nochmals vielen Dank. Du bist ein großartiger Freund!
+	</phase>
+	<a id="sigh">(Hätte ich doch nur meine Klappe gehalten.)</a>
+	<phase id="sigh" fast="1" frame="stop" scenario="nimba2:34">
+		Du brichst zur Oberfläche auf, um den kleinen Pistazie glücklich zu machen. Du kannst dich eh nicht dagegen wehren.
+	</phase>
+</d>
+
+<d place="vener" gfx="dorogon" name="Der Ehrwürdige" cond="scenario(nimba2,34)">
+	<inject id="venerable:begin" next="tiens"/>
+	<a id="tiens">Na wenn das nicht Pistazie ist!</a>
+	<phase id="tiens" next="ouep">
+		Wie ist es dir in all der Zeit ergangen?
+		Du bist ja keinen Zentimeter gewachsen.
+	</phase>
+	<a id="ouep">...</a>
+	<phase id="ouep" next="pfff" gfx="pistache" name="Pistazie" background="3">
+		Wow, du hingegen... du bist riesig! Du hättest mich fast zu Tode erschreckt.
+		Das ist ja eigentlich nicht die Art, wie wir Leute unseren Freunden vorstellen, das sage ich dir. Aber nochmal zum Thema: Warum bist du so unglaublich groß?
+		Egal, zum Glück habe ich dich gerade noch rechtzeitig wiedererkannt. Du bist sicher der einzige Dorogon in dieser Gegend. Ich will nicht sentimental werden, aber ich freue mich riesig, dich wiederzusehen!		
+	</phase>
+	<a id="pfff">(Schluchz...)</a>
+	<phase id="pfff" next="grizou" gfx="dorogon" name="Der Ehrwürdige" frame="hurt">
+		Argh, meine Wunden... Sie sind wieder aufgebrochen, schnell - gebt mir einen Lebenstrank...
+	</phase>
+	<a id="grizou">Alles in Ordnung?</a>
+	<phase id="grizou" next="away" gfx="dorogon" name="Der Ehrwürdige">
+		Hahaha, nur ein Scherz...
+		Tja, ich bin wirklich riesig. Ich werde wohl niemals nur normal groß sein. So ist es nun mal...
+		Grmpf, aber ernsthaft, was ist aus dem Erzdorogon geworden... ?
+	</phase>
+	<a id="away">(still zuhören)</a>
+	<phase id="away" gfx="pistache" next="autre" name="Pistazie" background="3">
+		Um ehrlich zu sein, habe ich ihn nicht mehr gesehen, seit Großvater gestorben ist. Er hat sich komplett verändert.
+		Er empfängt niemanden mehr und misstraut jedem, der auch nur ein Wort an ihn richtet. Und das gilt auch für mich.
+	</phase>
+	<a id="autre">(weiter zuhören)</a>
+	<phase id="autre" next="haoue" gfx="dorogon" name="Der Ehrwürdige">
+		[Ich habe ihn seit Langem nicht mehr gesehen. Seine neuen Aufgaben müssen ihn ganz schön auf Trab halten.]
+		[Außerdem frage ich mich, wie es kam, dass er zum Erzdorogon wurde. Wäre nicht Mandragore an der Reihe gewesen?
+		Wenn deine Zeit gekommen ist, wirst du Erzdorogon werden! Wir werden die tradionellen Spiele veranstalten, einen Schokoladenbrunnen am Inselkopf errichten und es Schokolade regnen lassen! 
+		Das ist allemal amüsanter, als Leute davon abzuhalten, in Kontakt mit der Oberfläche zu treten.........]
+		[....Hmpf...., GrouuuuuAAAARGGGG, hast du mir überhaupt zugehört, Dinozmeister?]
+	</phase>
+	<a id="haoue">Natürlich!</a>
+	<phase id="haoue" next="salut" gfx="pistache" name="Pistachio" background="3">
+		[Ich? Erzdorogon? Aber ich bin doch nicht mehr als ein Schatten meines Großvaters.]
+		[Und was Mandragore betrifft... Ich weiß nicht, was zwischen ihm und Grizorg vorgefallen ist und warum er Nimbao verlassen hat.]
+	</phase>
+	<a id="salut">(...)</a>
+	<phase id="salut" gfx="pistache" name="Pistazie" background="3" next="bientot">
+		[Also, warum bist du fortgegangen? Man erzählt sich, du hättest beim Beobachten der Oberfläche nicht aufgepasst und wärst von der Insel gefallen. Und hättest es nicht mehr geschafft, zurückzukommen!]
+		[Ich verstehe ja, das solche Sachen mir passieren können. Aber dir?]
+	</phase>
+	<a id="bientot">(haha)</a>
+	<phase id="bientot" next="fin" gfx="dorogon" name="Der Ehrwürdige">
+		[Natürlich nicht. Aber dein Vater hatte nicht gerade mein Wohlwollen im Sinn. Er hat Soldaten geschickt, die mich ein für alle Mal zum Schweigen bringen sollten.]
+		[Ich lebe hier im Exil mit 2 Arborianern, die mich damals begleitet haben und muss mich vor den Blicken der Inselbewohner verstecken.]
+	</phase>
+	<a id="fin">Du musst zu Grizorg gehen!</a>
+	<phase id="fin" next="finish" gfx="pistache" name="Pistazie" background="3" give="ptsage" scenario="nimba2:35">
+		[Unbedingt. Ich werde sofort zu meinem Vater gehen. Ich will mehr wissen.]
+		[Hier hast du den letzten Weisheitspunkt. Damit wirst du eine Audienz bei ihm erhaten!]
+	</phase>
+	<a id="finish">Vielen Dank!</a>
+	<phase id="finish" fast="1" gfx="dorogon" name="The Venerable">
+		Du beschließt, sofort zum Palast des Erzdorogon aufzubrechen. Es ist Zeit, diese Geschichte ein für alle Male zu klären.
+	</phase>
+</d>
+
+<!-- 10-Rencontre avec Grizorg  scenario(nimba2,36) annulé pour alléger la quête -->
+
+<d place="sommet" gfx="pistache" background="5" name="Pistazie" cond="scenario(nimba2,35)">
+	<phase id="begin" next="palais">
+		[Perfekt, wir sind hier auf der Straße zum Palast.]
+		[Gehe einfach gerade weiteraus und du wirst in den Palast gelangen. Ich habe die Wachen informiert und ihnen deine Weisheitspuntke gezeigt.
+		Mein Vater sollte dich erwarten. Du brauchst nur in den Thronsaal zu gehen.]
+		[Versuche, ihm so schnell wie möglich all deine Fragen zu stellen. 
+		Du wirst ihn nämlich so bald nicht wiedersehen können, selbst mit weiteren Weisheitspunkten nicht. Er gewährt niemandem eine zweite Audienz.]
+	</phase>
+	<a id="palais">Sehr gut!</a>
+	<phase id="palais" fast="1" use="ptsage:5" scenario="nimba2:37" frame="stop">
+		Du brichst auf zum Palast und zur Audienz beim Erzdorogon. Hast du die Liste mit all den Fragen gemacht, die du ihm stellen willst?
+		Sobald du angekommen bist, musst du den Wachen deine 5 Weisheitspunkte geben. Du erhältst dann Eintritt.
+	</phase>
+</d>
+
+<!--
+-Le joueur obtient enfin une convocation pour aller voir Grizorg, il monte donc au sommet de l'île et s'apprête à voir Grizorg.
+
+-Devant lui, le joueur est paralysé devant la puissance et la majesté du dorogon, celui-ci demande la raison de la venue du joueur.
+-Au seul nom de Mandragore, Grizorg prend mouche, Mandragore est humain et de ce fait il n'a plus le droit d'être sur l'île, il botte le cul du joueur,
+et l'exile définitivement de l'île. Il demande à ce que la garde soit doublé pour éviter de revoir ce jeune présomptueux.
+-->
+
+<d place="palais" gfx="grizorg" name="Erzdorogon Grizorg" cond="scenario(nimba2,37)|scenario(nimba2,38)">
+	<phase id="begin" fast="1" next="yo1:yo2" frame="stop">
+		Endlich stehst du Grizorg von Angesicht zu Angesicht gegenüber. Du bist wie versteinert durch die Kraft und Königlichkeit des Dorogon.
+		Du musst jetzt deinen ganzen Mut zusammennehmen und diese Geschichte zu Ende bringen.
+	</phase>
+	<a id="yo1">Äh, hallo!</a>
+	<a id="yo2">Eure Majestät, Erzdorogon!</a>
+	
+	<phase id="yo1" fast="1" next="yo2" frame="stop">
+		Kein Blick, nicht einmal ein Wort.
+		Der Erzdorogon scheint komplett uninteressiert.
+	</phase>
+	
+	<phase id="yo2" next="pistache">
+		[Ah, das ist also dieser junge Meister, der soviel Unruhe auf meine Insel gebracht hat...]
+		[Du warst es also, der meinen besten Wächter besiegt hat...]
+		[Er hat nie gewusst, wann es genug ist. Ich schätze er hat sein Schicksal verdient...]
+		[Also was kann ich für dich tun?]
+	</phase>
+	<a id="pistache">Nun...</a>
+	
+	<phase id="pistache" gfx="pistache" background="6" name="Pistazie		Pistachio" next="stop">
+		[Vater!]
+		[Wir sind gekommen, weil wir eine Erklärung wollen. Warum sind der Ehrwürdige und Mandragore im Exil?]
+	</phase>
+	<a id="stop">Nun ja... eigentlich habe ich andere Fragen...</a>
+	<phase id="stop" gfx="grizorg" name="Erzdorgon Grizorg" next="non">
+		[Wie kannst du es wagen, ohne Erlaubnis zu sprechen!]
+		[Ich habe dir zu Mandragore nichts zu sagen! Dieser Verräter ist Vergangenheit! Ich will seinen Namen nicht mehr hören!]
+	</phase>
+	<a id="non">Aber...</a>
+	<phase id="non" next="fight">
+		[Außerdem sind Menschen auf dieser Insel verboten. Ich kann mich nur um die Arborianer kümmern. Ich weigere mich, dass meine Insel eine Art Dinopark wird!]
+		[Es gibt zu viele, die diesen gesegneten Ort zerstören würden. Und ich werde das jetzt ein für alle Mal verhindern!]
+	</phase>
+	<a id="fight">Ja genau... Äh... Haaa, nein, ich meine...</a>
+	<phase id="fight" next="ouille:ouille2" fightgroup="grizou" frame="rire" scenario="nimba2:38">
+		_(FLASH)_ Du merkst gleich, dass du nicht mehr auf der Insel willkommen bist.
+	</phase>
+	
+	<a id="ouille" cond="clanact(hopita)">Neiiiiiii...Haaaaaa...</a>
+	<a id="ouille2" cond="!clanact(hopita)">Neiiiiiii...Haaaaaa...</a>
+	
+	<phase id="ouille" moveAll="clinik" frame="rire" >
+		Du wirst hinaus in die weite Leere geschleudert. Die Insel Nimbao entfernt sich immer weiter, die Oberfläche hingegen kommt immer näher! _(VRAMMM)_
+		Dann wird alles schwarz.....................
+	</phase>
+	
+	<phase id="ouille2" moveAll="dnv" frame="rire" >
+		Du wirst hinaus in die weite Leere geschleudert. Die Insel Nimbao entfernt sich immer weiter, die Oberfläche hingegen kommt immer näher! _(VRAMMM)_
+		Dann wird alles schwarz.....................
+	</phase>
+	
+</d>
+
+<!-- 11-Exil de l'île -->
+
+<!--
+-Le joueur se retrouve à la clinique, sans nouvelle de Mandragore, Pistache est avec lui.
+-Il faut trouver un moyen de retourner sur l'île... des gardes de Grizorg ont détruit l'atelier de Broc, il n'est donc plus possible d'utiliser ce moyen.
+-On peut aller voir Bao à ce moment là, lui a des nouvelles de Mandragore, celui-ci est toujours sur l'île, il se renseigne auprès des vieux dorogons qui ont été isolé du second niveau...
+-->
+	
+
+<!-- version SANS clinique -->
+<d place="clinik" gfx="pistache" name="Pistazie" background="7" cond="scenario(nimba2,38)+clanact(hopita)">
+	<phase id="begin">
+		[Oh, endlich bist du wieder wach!]
+		[Einen Augenblick hatte ich schon Angst, dass wir nie wieder miteinander sprechen würden.]
+		[Rede mit der Krankenschwester. Sie kümmert sich schon um dich, seit ich dich gefunden habe.]
+	</phase>
+</d>
+	
+	
+<d place="clinik" gfx="infirmiere" name="Anna Tomie" cond="scenario(nimba2,38)+clanact(hopita)">
+	<inject id="infirmiere__10:begin" next="ouch"/>
+	<a id="ouch">Habe ich nicht eben noch Grizorg gegenübergestanden?</a>
+	<phase id="ouch" next="blabla">
+		[Letzte Woche vielleicht. Aber dieser charmante, kleine Dorogon hat dich am Strand gefunden und vor 3 Tagen zu mir gebracht.]
+		[Du wurdest bei den Waïkiki-Inseln aus dem Wasser gefischt. Offenbar wurdest du aus großer Höhe und mit außerordentlicher Kraft dorthin geschleudert...]
+		[Du bist nur knapp einem schlimmen Ende entgangen...]
+	</phase>
+	<a id="blabla">Mist, ich erinnere mich an gar nichts mehr...</a>
+	<phase id="blabla" gfx="pistache" background="7" name="Pistazie		Pistachio" next="quoi">
+		[Du hast mir Angst gemacht!]
+		[Nach eurem Kampf hat mein Vater eine furchtbare Kraft beschworen und dich von der Insel geworfen!]
+		[Glücklicherweise konnte ich ich dich gerade noch rechtzeitig heilen. Du hättest den Sturz sonst nicht überlebt.]
+		[Ich verachte, was er getan hat. Als ich ihn in dem Moment sah, war er nicht mehr mein Vater. Er war völlig verwandelt!
+		Wir müssen zurück zur Insel!]
+	</phase>
+	<a id="quoi">Einverstanden.</a>
+	<phase id="quoi" fast="1" scenario="nimba2:39" heal="-1" frame="stop">
+		Ok, genug ausgeruht. Es ist wieder Zeit für Abenteuer!
+		Dank der Behandlungen von Anna Tomie kannst du wieder auf deinen Füßen stehen!
+	</phase>
+</d>
+<!-- version AVEC clinique -->
+	
+<d place="dnv" gfx="pistache" name="Pistazie" background="10" cond="scenario(nimba2,38)+!clanact(hopita)">
+	<phase id="begin">
+		[Oh, endlich bist du wieder wach!]
+		[Einen Augenblick hatte ich schon Angst, dass wir nie wieder miteinander sprechen würden.]
+		[Rede mit der Krankenschwester. Sie kümmert sich schon um dich, seit ich dich gefunden habe.]
+	</phase>
+</d>
+
+<d place="dnv" gfx="infirmiere" name="Anna Tomie" cond="scenario(nimba2,38)+!clanact(hopita)">
+	<phase id="begin" fast="1" next="ouch" frame="stop">
+		Endlich öffnest du wieder die Augen und findest dich in Dinoville wieder...
+		Anna Tomie und Pistazie stehen neben dir...
+	</phase>
+	<a id="ouch">Habe ich nicht eben noch Grizorg gegenübergestanden?</a>
+	<phase id="ouch" next="blabla">
+		[Letzte Woche vielleicht. Aber dieser charmante, kleine Dorogon hat dich am Strand gefunden und vor 3 Tagen zu mir gebracht.]
+		[Du wurdest bei den Waïkiki-Inseln aus dem Wasser gefischt. Offenbar wurdest du aus großer Höhe und mit außerordentlicher Kraft dorthin geschleudert...]
+		[Du bist nur knapp einem schlimmen Ende entgangen...]
+	</phase>
+	<a id="blabla">Mist, ich erinnere mich an gar nichts mehr...</a>
+	<phase id="blabla" gfx="pistache" background="10" name="Pistache" next="quoi">
+		[Du hast mir Angst gemacht!]
+		[Nach eurem Kampf hat mein Vater eine furchtbare Kraft beschworen und dich von der Insel geworfen!]
+		[Glücklicherweise konnte ich ich dich gerade noch rechtzeitig heilen. Du hättest den Sturz sonst nicht überlebt.]
+		[Ich verachte, was er getan hat. Als ich ihn in dem Moment sah, war er nicht mehr mein Vater. Er war völlig verwandelt!
+		Wir müssen zurück zur Insel!]
+	</phase>
+	<a id="quoi">Einverstanden.</a>
+	<phase id="quoi" fast="1" scenario="nimba2:39" heal="-1" frame="stop">
+		Ok, genug ausgeruht. Es ist wieder Zeit für Abenteuer!
+		Dank der Behandlungen von Anna Tomie kannst du wieder auf deinen Füßen stehen!
+	</phase>
+</d>
+
+<d place="chbro2" name="Toll Patsch" gfx="broc" background="7" cond="scenario(nimba2,39)">
+	<phase id="begin" next="flying" fast="1" frame="stop">
+		Die Werkstatt von Toll Patsch ist komplett zerstört.
+		Die Brieftaube ist nur noch ein Wrack.
+	</phase>
+	<a id="flying">Was ist hier passiert?</a>
+	<phase id="flying" next="qui">
+		[Ich weiß es wirklich nicht. Als es passierte, ging ich gerade wichtigen Geschäften in der Taverne am Hafen nach...]
+		[Ich werde Tag und Nacht arbeiten, um alles wieder aufzubauen. Aber die Brieftaube ist völlig zerstört.]
+	</phase>
+	<a id="qui">Aber wer könnte das getan haben?</a>
+	<phase id="qui" next="griz">
+		Ich bin jedenfalls froh, dass ich nicht hier war als es passierte. Ich bezweifle, dass wir sonst diese Unterhaltung jetzt führen könnten...
+	</phase>
+	<a id="griz">Du bist ein wahrer Optimist, nicht wahr?</a>
+	<phase id="griz" next="cho">
+		[Natürlich. Das Leben ist zu kurz, um sich an materielle Besitztümer zu klammern.]
+		[Ich werde wieder von vorne beginnen. Und diesmal wird es noch besser werden. Du wirst schon sehen. Meine Brieftaube 6 wird in die Geschichte eingehen!]
+		[Bis dahin werden ich dir allerdings nicht dabei helfen können, zur Insel zu kommen. Tut mir leid.]
+	</phase>
+	<a id="cho">Grizorg steckt dahinter...</a>
+	<phase id="cho" fast="1" scenario="nimba2:40" frame="stop">
+		Du musst einen anderen Weg zur Insel finden.
+		Wer könnte dir nur helfen? Mandragore? Unauffindbar. Wer sonst könnte nützliche Informationen haben...
+	</phase>
+</d>
+
+<d place="baobob" name="Bao Bob" gfx="baobob" cond="scenario(nimba2,40)">
+	<inject id="bob:begin" next="mandra" />
+	<a id="mandra">Ich muss Mandragore finden!</a>
+	<phase id="mandra" next="tour">
+		[Irgendwas muss seit unserem letzten Treffen passiert sein. Du siehst noch entschlossener aus als sonst!]
+		[Ich habe etwas von meinem Meister gehört. Er hat mir von deiner Flucht aus dem Gefängnis und deinem Treffen mit Pistazie erzählt.]
+		[Er hat mir noch erzählt, dass er zur Insel zurückkehren wolle, um mit einigen weisen Dorogons zu sprechen.]
+		[Du findest ihn auf der anderen Seite von Nimbao, im großen Observatorium...]
+		[Wenn du bereit bist, solltest du ihn dort besuchen!]
+	</phase>
+	<a id="tour">Wie soll ich das machen?</a>
+	<phase id="tour" next="oui">
+		[Mir ist zu Ohren gekommen, dass du kürzlich dein Transportmittel verloren hast.]
+		[Die Insel befindet sich im Moment direkt über der großen Dauerhitze. Und sie bewegt sich nicht mehr.
+		Wenn du einen Weg findest, so weit hinauf in die Wolken wie möglich zu klettern, dann wirst du nach Nimbao gelangen können.]
+	</phase>
+	<a id="oui">Aha, ein gigantischer Turm! Das würde funktionieren!</a>
+	<phase id="oui" next="impo">
+		[Ja, ein Turm. Gute Idee, das wäre eine Möglichkeit. Du musst einen Turm am Lavaloch bauen!]
+		[Ein Turm, so hoch, dass er dich direkt hinauf nach Nimbau führt!]
+		[Ich wusste, dass du ganz allein eine Lösung finden würdest!]
+	</phase>
+	<a id="impo">Das war nur ein Witz! Wie um Himmels Willen soll ich das bewerkstelligen!</a>
+	<phase id="impo" next="go">
+		[Frag doch deine Klan-Mitglieder. Ich bin sicher, dass ihr mit vereinten Kräften einen Turm bauen könnt, der bis in die Wolken reicht!]
+		[Toll Patsch ist ein hervorrangender Architekt! Geh zu ihm. Ich bin sicher, dass er mit Freude euren Turmbau leiten würde!]
+		[Viel Glück, Dinozmeister!]
+	</phase>
+	<a id="go">Also gut. Auf geht's!</a>
+	<phase id="go" fast="1" scenario="nimba2:41">
+		Du musst Toll Patsch überzeugen, der Architekt deines Turms nach Nimbao zu werden!
+	</phase>
+</d>
+
+<!-- 12-Construction de la tour -->
+	
+
+<d place="chbro2" name="Toll Patsch" gfx="broc" background="7" cond="scenario(nimba2,41)">
+	<phase id="begin" next="tour" fast="1" frame="stop">
+		Toll Patsch ist bereits damit beschäftigt, die Reste seiner alten Brieftaube zusammenzusuchen.
+	</phase>
+	<a id="tour">Willst du mir dabei helfen, einen Turm zu bauen?</a>
+	<phase id="tour" scenario="nimba2:42">
+		[Einen Turm?]
+		[Du willst meine Brieftaube durch einen Turm ersetzen?]
+		[Tolle Idee!]
+		[Du willst ihn sicherlich auf der großen Dauerhitze erichten, nicht wahr?]
+		[Sehr gut. Dann treff ich dich beim Ehrwürdigen, dort ist genügend Platz.]
+		[Ich mache mich schon mal daran, die Pläne zu zeichnen und mich für die Aufgabe vorzubereiten!
+		Hol all deine Freunde zusammen, es gibt viel zu tun!]
+	</phase>
+</d>
+
+<!--
+-Bao propose au joueur de faire une action collective pour retourner sur l'île.
+ il faut construire une tour à partir de Fosselave, il faut pour cela effectuer 1 000 actions de clans.
+la construction devient permanente et une tour figurera désormais au sommet du Grand tout chaud et conduira directement au chemin vers l'observatoire.
+-->
+
+<d place="tourbt" name="Toll Patsch" gfx="broc" background="6" cond="!clanact(tour)+scenario(nimba2,42)">
+	<phase id="begin" next="tour">
+		[Hier werden wir die Baustelle errichten! Der Karinbao-Turm wird genau hier stehen!]
+		[Er wird bis über die Wolken reichen und uns so direkt nach Nimbao führen. 
+		Nicht wie meine arme Brieftaube, die - zugegeben - nicht gerade das zuverlässigste Fluggerät war.]
+	</phase>
+	<a id="tour">Er wird uns noch von großem Nutzen sein!</a>
+	<phase id="tour" next="pist">
+		Also los! Krempelt alle die Ärmel hoch und lasst uns diesen Turm bauen!
+	</phase>
+	<a id="pist">An die Arbeit!</a>
+	<phase id="pist" next="here" gfx="pistache" background="8" name="Pistazie">
+		[Ich lasse dich dann den Turm bauen! Ich werde Mandragore am Observatorium treffen.]
+		[Ich werde ihm alles erzählen und auf deine Rückkehr warten. ]
+	</phase>
+	<a id="here">Wir sehen uns oben!</a>
+	<phase id="here" fast="1" frame="stop">
+		Der Turm muss so hoch sein, dass er bis nach Nimbao, der Insel im Himmel, reicht. 
+		Ihn zu bauen, ist eine unglaubliche Aufgabe. Doch dank der Hilfe der anderen Dinozmeister von Dinoland, sollte es in kürzester Zeit möglich sein.
+		Viel Glück euch allen!
+	</phase>
+</d>
+
+<d place="tourbt" name="Toll Patsch" gfx="broc" background="6" cond="clanact(tour)+scenario(nimba2,42)">
+	<phase id="begin" next="bravo">
+		Gut gemacht! Hut ab vor dir und den Dinozmeistern, die dir geholfen haben.
+		Du hast es geschafft, diesen eindrucksvollen Turm zu bauen, der dich hinauf zur Insel im Hiummel bringen wird!
+	</phase>
+	<a id="bravo">Gute Arbeit!</a>
+	<phase id="bravo" next="merci">
+		[Ich überlasse dich nun den schwindelerregenden Höhen von Dinoland. Ich werde zurück in meine Werkstatt gehen und eine weitere fantastische Brieftaube konstruieren!]
+		[Ich verspreche dir, das wird ein Meisterwerk!]
+		[Bis bald!]
+	</phase>
+	<a id="merci">Danke für alles!</a>
+	<phase id="merci" fast="1" scenario="nimba2:43" frame="stop">
+		Es ist an der Zeit, Mandragore auf der Insel zu treffen.
+		Der Turm wurde so konstruiert, dass du auf der anderen Seite der Insel herauskommst. Dort wo das Observatorium steht und Mandragore dich erwartet.
+	</phase>
+</d>
+
+<!-- 13-Retour sur l'île -->
+	
+<!--
+-Mandragore est dans une partie isolé de l'île, un temple/observatoire où les plus vieux dorogons mettent en pages l'histoire de Dinoland.
+-Il apprend de la bouche d'un des vieux dorogon que Mandragore aurait dû être celui qui succèderai au titre d'Archidorogon.
+-Mandragore décide donc qu'il faut retourner voir Grizorg pour tirer les choses au clair.
+-->
+
+<d place="observ" name="Mandragore" gfx="mandragore" background="7" cond="scenario(nimba2,43)">
+	<phase id="begin" next="pista" fast="1" frame="serieux">
+		Du erreichst schließlich das antike Observatorium der Dorogons.
+		Du bemerkst Mandragore, der in ein Gespräch mit einem alten Dorogon vertieft ist. Pistazie nutzt diese Gelegenheit, um zu dir zu kommen und mit dir zu reden...
+	</phase>
+	<a id="pista">Ich habe es geschafft!</a>
+	<phase id="pista" next="mand"  gfx="pistache" background="9" name="Pistazie">
+		Ha! Da bist du ja endlich! Wir haben schon auf dich gewartet!
+		Ihr Gespräch ist etwas einschläfernd. Zum Glück bist du jetzt da und wir können etwas Spaß haben!
+	</phase>
+	<a id="mand">Das ist nicht die Zeit für Späße!</a>
+	<phase id="mand" next="sage" name="Mandragore" gfx="mandragore" frame="serieuxbla" background="7">
+		[Ganz recht. Die Zeit ist nicht auf unserer Seite.]
+		[Ich möchte, dass du Menthos kennen lernst, einen der ältesten und weisesten Dorogons. Ich habe ihn aus dem Gefängnis Piranese befreit, als wir uns das letzte Mal getroffen haben.]
+		[Er wird dir alles erzählen, was du noch nicht weißt. Dann reden wir darüber was wir als nächstes tun.]	
+	</phase>
+	<a id="sage">repektvoll verbeugen</a>
+	<phase id="sage" gfx="sage_mentos" name="Weiser Menthos" background="1" next="ques1:ques2:ques3:ques4:ques5:plan">
+		Einen guten Tag wünsche ich, junger Dinozmeister.
+		Hab Dank, dass du diesen weiten Weg auf dich genommen hast, um uns zu helfen.
+		Stell mir deine Fragen.
+	</phase>
+	
+	<a id="ques1">Warum wurdest du ins Gefängnis gesteckt?</a>
+	<a id="ques2">Hätte Mandragore Erzdorogon werden sollen?</a>
+	<a id="ques3">Es gibt viele Bücher hier!</a>
+	<a id="ques4">Kannst du mir die Geschichte von Dinoland erzählen?</a>
+	<a id="ques5">Was geschah als der Erzdorogon starb?</a>
+	<a id="plan" cond="tag(ques5)">Was machen wir nun?</a>
+	
+	<phase id="ques1" next="ques1:ques2:ques3:ques4:ques5:plan" gfx="sage_mentos" name="Weiser Menthos" background="1">
+		[Als der Erzdorogon starb, äußerte ich Vermutungen und stellte unbequeme Fragen, was ich wohl lieber nicht getan hätte. Grizorg hatte irgendwann vermutlich genug davon und ließ mich in die tiefste, dunkelste Zelle von Piranese werfen.
+		Grizorg ließ dieses furchtbare Gefängnis noch am selben Tag bauen, an dem er Erzdorogon wurde.]
+		[Aber eines Tages wird dieser Betrüger dafür bezahlen... Da bin ich mir sicher.]
+	</phase>
+	
+	<phase id="ques2" next="manda" gfx="sage_mentos" name="Weiser Menthos" background="1">
+		[Mandragore war der Schüler des Erzdorogon, genau wie Grizorg.]
+		[Bei der Entscheidung über seinen Nachfolger, war dem Erzdorogon bewusst, dass das Herz dabei wichtiger ist als die Rasse.]
+	</phase>
+	<a id="manda">Wie denkt Mandragore darüber?</a>
+	<phase id="manda" next="ques1:ques2:ques3:ques4:ques5:plan" name="Mandragore" gfx="mandragore" frame="serieuxbla" background="7">
+		[Meiner Meinung nach ist das ein vergiftetes Geschenk.]
+		[Ich habe den Titel nie gewollt. Ich habe mich sogar davor gescheut, die Rolle des Wächters zu übernehmen...]
+		[Zum Glück bin ich nun frei, haha. Und auch Bao Bob war glücklich, als ich ihm diese Verantwortung eines Tages übertragen habe...]
+	</phase>
+	
+	<phase id="ques3" next="ques1:ques2:ques3:ques4:ques5:plan"  gfx="sage_mentos" name="Weiser Menthos" background="1">
+		[Das Observatorium dient uns Dorogons als Bibliothek. Seit dem Anbeginn der Zeit haben wir alles aufgeschrieben, was sich auf der Oberfläche ereignet. Und seit der Abspaltung, alles was sich auf der Insel im Himmel und auf der Oberfläche ereignete.]
+		[Wusstest du zum Beispiel, dass Nimbao nichts anderes ist als der Gipfel der Großen Dauerhitze? Er wurde vor vielen tausend Jahren in den Himmel geschleudert. Lange vor dem Untergang der Jazz-Insel.]
+		[Die Insel schwebt wegen der Beschaffenheit des Gesteins, das den Boden von Nimbao bildet. Wir haben seitdem einen fantastischen Blick auf das Geschehen auf der Oberfläche gehabt, das sich ohne unsere Hilfe recht chaotisch entwickelt hat.]
+	</phase>
+	
+	<phase id="ques4" next="ques1:ques2:ques3:ques4:ques5:plan"  gfx="sage_mentos" name="Weiser Menthos" background="1">
+		[Mit der Zeit haben wir den Menschen viele grundlegende Dinge wie das Feuer und eine Reihe anderer nützlicher Tricks beigebracht. Wir lehrten sie, wilde Dinoz zu trainieren und sie zu studieren. Seitdem leben diese Kreaturen mit euch in Harmonie.]
+		[Die ganze Geschichte steht in den Büchern hier im Observatorium. Unglücklicherweise sind sie in der alten Sprache der Dorogon verfasst, die nur noch die ältesten Dorogons beherrschen.]
+		[Ich übersetze sie Seite für Seite weiter, sodass künftige Generationen die Geschichte von Dinoland kennenlernen können.]
+	</phase>
+	
+	<phase id="ques5" next="ques1:ques2:ques3:ques4:ques5:plan"  gfx="sage_mentos" name="Weiser Menthos" background="1" tag="ques5">
+		[Viele Dorogons verschwanden, ehe sie diese Frage beantworten konnten.]
+		[In der Nacht, als er von uns ging, war der frühere Erzdorogon damit beschäftigt, seinen Nachfolger zu bestimmen. Einige sagen, er erlag einer Krankheit, andere geben seinem hohen Alter die Schuld...]
+		[Grizorg steckte mich jedenfalls ins Gefängnis, weil ich dachte, dass er mehr über diese Nacht wusste als er zugab. Grizorg war auch die letzte Person, die seine Majestät lebend sah.
+		Wenn meine Befürchtungen wahr sind, dann hält dieser Betrug schon viel zu lange an.]
+	</phase>
+	
+	<phase id="plan"  name="Mandragore" gfx="mandragore" frame="serieuxbla" background="7" next="motive">
+		[Die Zeit ist reif. Wir müssen gemeinsam zum Palast von Grizorg gehen und ihn zur Vernunft bringen.]
+		[Ich werde nicht zulassen, dass er seine Macht dazu missbraucht, uns aus dieser Geschichte zu tilgen.]
+	</phase>
+	
+	<a id="motive">Wie kommen wir in den Palast?</a>
+	
+	<phase id="motive" next="assaut"  gfx="pistache" background="9" name="Pistazie">
+		Ich kenne einen Weg. Wir müssen einfach die Kanalisation der Stadt der Dorogons betreten. Auf dem Weg können wir von Grizorgs Truppen unbemerkt den Palast betreten.
+	</phase>
+	
+	<a id="assaut">Also wie bei einem Geheimgang?</a>
+	
+	<phase id="assaut"  name="Mandragore" gfx="mandragore" frame="serieuxbla" background="7" next="go">
+		[Großartige Idee! Sie werden mit Sicherheit nicht erwarten, dass wir durch dieses Labyrinth kommen.]
+		[Triff uns so schnell wir möglich am Palast von Grizorg!]
+	</phase>
+	
+	<a id="go">Danke für alles, weiser Menthos!</a>
+	
+	<phase id="go" next="ouf" gfx="sage_mentos" name="Weiser Menthos" background="1" >
+		Ich werde hierbleiben und zu den alten Dorgons beten, auf dass eure Mission ein Erfolg wird.
+		Viel Glück!
+	</phase>
+	
+	<a id="ouf">Los geht's, Pistazie!</a>
+	
+	<phase id="ouf" fast="1" gfx="pistache" background="9" name="Pistazie" scenario="nimba2:44" frame="stop">
+		Pistazie wartet auf dich, damit ihr zur Stadt der Dorgons aufbrecht. Wirst du nun endlich diesem tragischen Verlauf der Geschichte von Nimbao ein Ende machen können?
+	</phase>
+</d>
+
+<!-- 14-Grizorg VS Mandragore (et le joueur) -->
+
+<d place="ville1" gfx="pistache" background="1" name="Pistazie" cond="scenario(nimba2,44)">
+	<phase id="begin" next="egout">
+		[Da sind wir also. Nur noch ein Stück weiter und wir sollten zum Hauptversorgungstunnel zum Palast kommen.]
+		[Ich weiß, wie man diesen Durchgang öffnet und hineinkommt.]
+		[Folge mir!]
+	</phase>
+	<a id="egout">Ich bin direkt hinter dir!</a>
+	<phase id="egout" fast="1" scenario="nimba2:45" frame="stop" move="egout">
+		Ihr folgt dem Tunnel und unterquert die gesamten Stadt.
+		Pistazio hat die Wahrheit gesagt, eine Klappe ist offen und führt scheinbar ins Innere der höheren Bereiche.
+		Ihr seht in die Richtung, in die die Klappe geöffnet ist. Mandragore scheint hier schon langgekommen zu sein...
+		Ihr tretet ein........
+	</phase>
+</d>
+	
+<!--
+-Pistache montre un passage secret pour accéder au palais (faire apparaître les égouts au pied du pilier) .
+-Il faut traverser ce labyrinthe avant de pouvoir atteindre le palais, on retrouve Morg à la fin du sneak égout, mais cette fois, il se transforme en vrai dragon.
+
+Infiltration egout : scenario="nimba2:46"
+
+-->
+
+<d place="sommet" gfx="morg" name="..." background="3" cond="scenario(nimba2,46)">
+	<phase id="begin" next="last" frame="parti">
+		Hahahahaha...!
+		Ich wusste, dass ihr diesen Weg nehmen würdet. Ich habe euch erwartet.
+	</phase>
+	<a id="last">Diese Stimme!</a>
+	<phase id="last" next="garde">
+		Grmpf, ich habe unser letztes Treffen nicht vergessen...
+		Doch dies wird unser letztes Duell werden. Bis zum Tod!
+		ZU DEN WAFFEN!
+	</phase>
+	<a id="garde">Ich bin bereit!</a>
+	<phase id="garde" name="Morg" fightgroup="morg2" frame="hurt" next="adieu" scenario="nimba2:47">
+		Keuch... keuch... Warum lässt du mich am Leben?
+		Ich bin zu nichts mehr gut. Ich war auch damals nicht in der Lage, seine Majestät zu retten...
+		Lebe wohl, Dinozmeister.
+	</phase>
+	<a id="adieu">Warte!</a>
+	<phase id="adieu" frame="parti" fast="1">
+		Morg lässt sich in die Leere fallen. Sofort wird er von den Wolken verschluckt und du verlierst ihn aus den Augen...
+		Du wirst ihn mit Sicherheit nie wiedersehen...
+		Es ist Zeit, Grizorg gegenüberzutreten!
+	</phase>
+</d>
+
+<!--
+Une fois arrivé au palais, le joueur doit traverser le level du palais où l'attend Grizorg.
+Infiltration palais2 : scenario="nimba2:48"
+-->
+
+<d place="palais" gfx="grizorg" name="Grizorg" cond="scenario(nimba2,48)">
+	<phase id="begin" next="mandra">
+		[So, trotz meiner Befehle hast du also einen Weg zurück gefunden... Ich dachte, ich hätte mich klar ausgedrückt. Mein Wille ist Gesetz!]
+		[Weder Mensch noch Dinoz auf Nimbao!]
+		[Wir werden das jetzt und hier klären!]
+	</phase>
+	<a id="mandra">Aber... Wo ist Mandragore?</a>
+	<phase id="mandra" gfx="pistache" background="6" name="Pistazie		Pistachio"  next="battle">
+		Er ist noch nicht hier. Wir müssen ihn so lange aufhalten, bis er hier eintrifft!
+	</phase>
+	<a id="battle">Ich werde mein Bestes geben!</a>
+	<phase id="battle" gfx="grizorg" name="Grizorg" fightgroup="grizor" next="duel2">
+		Du fängst an, mir auf die Nerven zu gehen. Jetzt wirst du die wahre Macht eines Erzdorogon zu spüren bekommen.
+		Du wirst noch bereuen, dass du dich mit mir angelegt hast!
+	</phase>
+	<a id="duel2">Was ist mit ihm passiert?</a>
+	<phase id="duel2" gfx="mandragore" name="Mandragore"  frame="serieuxbla" friend="mandra" background="8" next="duel3">
+		Habt Mut!
+		Ich bin hier falls ihr mich braucht!
+		Zu zweit haben wir eine bessere Chance, ihn aufzuhalten!		
+	</phase>
+	<a id="duel3">Mandragore! Endlich!</a>
+	<phase id="duel3" gfx="grizorg" name="Grizorg" fightgroup="grizo2" frame="hurt" friend="" scenario="nimba2:49">
+		Grumph...Grrr...
+		Du bist eine Plage...
+		Eurk...
+	</phase>
+</d>
+
+<d place="palais" gfx="grizorg" name="Grizorg" frame="hurt" cond="scenario(nimba2,49)">
+	<phase id="begin" next="lucet">
+		[Keuch, hmpf....]
+		[Glaub ja nicht, dass ihr mich zum letzten Mal gesehen habt!]
+		[Ihr werdet die Ersten und Letzten sein, die meine wahre Macht zu spüren bekommen!]
+		ROOOAAAAR!
+	</phase>
+	<a id="lucet">Oh nein, nicht noch eine Verwandlung.....</a>
+	<phase id="lucet" gfx="mandragore" name="Mandragore" frame="serieuxbla" background="8" next="battu">
+		[Ich hätte nie gedacht, dass er so mächtig ist!]
+		[Wir brauchen Verstärkung!]
+		[_(Flüstern)_Lucette, zu mir. Ich brauche deine Hilfe!]
+	</phase>
+	<a id="battu">Angriff!</a>
+	<phase id="battu" gfx="grizorg" name="Grizorg" fightgroup="grizo3" frame="hurt" scenario="nimba2:50">
+		Haaa...Haaa....keuch...Hmpf...
+		Haltet ein... Ihr habt mich besiegt...	Ich kann nicht mehr...
+	</phase>
+</d>
+
+<!-- 15-Epilogue de la quête / introduction de Caushemesh -->
+
+<!--
+-Grizorg explique qu'il se méfiait des Caushemeshiens, ceux qui était responsable (d'après lui) du grand cataclysme.
+-Contre toute attente c'est Pistache qui est nommé par Mandragore pour devenir le nouveau Archidorogon, vu que Mandragore lui même a refusé de prendre ce rôle.
+-Les habitants de l'île sont libérés des doctrines de Grizorg.
+_La frontière entre le premier et le second niveau n'existe plus, tout le monde est heureux c'est cool.
+-->
+
+<d place="palais" gfx="mandragore" name="Mandragore" frame="serieuxbla" background="8"  cond="scenario(nimba2,50)">
+	<phase id="begin" next="clair">
+		Grizorg!
+		[Tut mir leid, aber wir müssen diesem Wahnsinn ein Ende machen.]
+		[Ich bedaure zutiefst, dass du dich selber in diesem Irrsinn verloren hast.]
+	</phase>
+	<a id="clair">...</a>
+	<phase id="clair" gfx="grizorg" name="Grizorg" frame="hurt" next="sayo">
+		[Keuch, argh... Hör auf mit dem sentimentalen Gelaber! Ich weiß, dass ich zu weit gegangen bin...]
+		[Ich werde dir nicht danken, keuch..., aber ich bin froh, dass du es warst, der dem ein Ende gesetzt hat...]
+		[An all dieser Angst ist nur Caushemesh schuld...]
+		[Es tut mir leid, dass ich deinen rechtmäßigen Platz als Erzdorogon eingenommen habe...]
+		[Was für ein Narr ich war... Keuch... Spuck...]
+	</phase>
+	<a id="sayo">...</a>
+	<phase id="sayo" next="sad" gfx="pistache" name="Pistazie" frame="sad" background="6">
+		Vater...
+	</phase>
+	<a id="sad">...</a>
+	<phase id="sad" next="end" gfx="mandragore" name="Mandragore" frame="serieuxbla" background="8">
+		Machs gut, alter Freund...
+		Mögest du in Frieden ruhen...
+	</phase>
+	<a id="end">...</a>
+	<phase id="end" next="pis" gfx="grizorg" name="Grizorg" frame="dead">
+		...........
+	</phase>
+	<a id="pis">Es ist vorbei...</a>
+	<phase id="pis" fast="1" frame="serieux" scenario="nimba2:51">
+		Die Herrschaft von Grizorg hat heute geendet.
+		Der Erzdorogon hat seinen letzten Atemzug getan.
+	</phase>
+</d>
+	
+
+<!-- Fin de la quête -->
+	
+<!-- Dialogue de Mandragore, Broc, et les Arboris -->
+
+	
+	
+	

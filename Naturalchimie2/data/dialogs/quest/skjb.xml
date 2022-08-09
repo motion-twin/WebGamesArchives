@@ -1,0 +1,128 @@
+<d place="skmedi" name="" gfx="skprofa" auto="1">
+
+<phase id="begin" frame="angry" next="rec">
+Tu as tes potions. Donne ton idée, maintenant.
+</phase>
+
+<phase id="rec" frame="gurabbit:happy" next="vente">
+Oua, trop cool. Des potions violettes, j'suis riche ! | %normal% Alors euh mon idée c'est euh... | Gn'est quoi déjà mon idée ?
+</phase>
+
+<phase id="vente" frame="gurabbit:crazy1" next="ex">
+Ah ah ouais je sais. Mon idée c'est que quand on a perdu un gamin, il faut aller à... | à la caisse centrale du magasin. | Ils font une annonce et y'a euh... y'a toujours un petit vieux pour ramener le môme.
+</phase>
+
+<phase id="ex" frame="skprofa:angry" next="louch">
+* Mais ! | | ... C'est du délire ! C'est n'importe quoi ! !
+</phase>
+
+<a id="louch">Oui, mais d'un autre côté c'est vrai que ça marche à chaque fois. </a>
+
+<phase id="louch" frame="gurabbit:sad" next="dev">
+Moi euh... Ma mère elle m'a paumé plein de fois, elle a toujours fait comme ça. Tout de suite y'a un vieux qui me chopait et qui me euh... qui me ramenait à la caisse.
+</phase>
+
+<phase id="dev" frame="skprofa:angry" next="tient">
+C'est ridicule... | On va être ridicule. | | | Mais bon, | %normal% ça coûte rien d'essayer, on va aller à la caisse de la Super Supérette, c'est à côté.
+</phase>
+
+<phase id="tient" frame="sksellmedi:normal" next="cher">
+Qu'est-ce que je peux faire pour vous ? 
+</phase>
+
+<phase id="cher" frame="skprofa:angry" next="call">
+Vas-y dis lui. | Moi je peux pas. | Je peux plus...
+</phase>
+
+<a id="call">Oui euh bonjour. On a perdu le petit Kevin Sonnette dans le magasin. Vous pourriez faire un appel de la caisse centrale ? </a>
+
+<phase id="call" frame="sksellmedi:happy" next="violet">
+Oui oui, c'est possible. Il est habillé comment ? 
+</phase>
+
+<phase id="violet" frame="skprofa:normal" next="appel">
+Il était de Jeezara. Il doit être en violet.
+</phase>
+
+<phase id="appel" off="1" next="done">
+[Allo allo. Le petit... Kevin Sonnette s'est perdu. | Ses parents l'attendent à la caisse centrale de la Super Supérette. Il porte un pull violet. | Si vous le voyez, merci de le ramener à la caisse centrale du magasin.]
+</phase>
+
+<phase id="done" frame="sksellmedi:happy"  next="att">
+Voilà.
+</phase>
+
+<a id="att">Merci ! On va attendre.</a>
+
+<phase id="att" frame="gurabbit:happy"  next="altus">
+Hé regardez. Voilà quelqu'un. Ah ouais ouais.
+</phase>
+
+<a id="altus">Mais je le connais !</a>
+
+<phase id="altus" frame="gualtus:normal"  next="ben">
+Allez mon petit, on y est. Tu vois, tes parents t'attendent .| Tu es sauvé. 
+</phase>
+
+<phase id="ben" frame="jzmonster:happy" next="lache">
+Ahr ahr... * Beuargggllll....
+</phase>
+
+<phase id="lache" frame="gualtus:angry"  next="fouette">
+Lâche ma main maintenant Kevin, tes parents sont là. | Dites donc, entre nous vous devriez lui faire prendre un bain plus souvent à votre gamin, il fouette un peu ! 
+</phase>
+
+<phase id="fouette" frame="skprofa:happy" next="la">
+Altus ? | Mais qu'est-ce que vous faites là ? 
+</phase>
+
+<phase id="la" frame="gualtus:normal"  next="marche">
+Ben j'ai entendu l'appel de la caisse centrale. Alors j'ai ramené Kevin.
+</phase>
+
+<phase id="marche" frame="gurabbit:sad" next="vieux">
+J'l'avais dit ! Ca marche à chaque fois, y'a toujours un petit vieux qui... euh... | qui vient ramener le gamin.
+</phase>
+
+<phase id="vieux" frame="gualtus:angry"  next="stop">
+Un petit vieux  ? | | Comment ça un petit vieux ? 
+</phase>
+
+<phase id="stop" frame="skprofa:angry" next="lui">
+Oui bon. | * Stop ! | | Alors ce serait lui ? | Kevin Sonnette ? | Le monstre gardien de l'école Jeezara ? !
+</phase>
+
+<phase id="lui" frame="jzmonster:angry" next="kev">
+Grrrm... Arggll...
+</phase>
+
+<phase id="kev" frame="gualtus:happy" next="tras">
+Ben oui, c'est le petit Sonnette. Je le connais depuis qu'il est tout petit.
+</phase>
+
+<a id="tras">Jeezara l'aurait puni en le transformant en monstre ? C'est horrible ! </a>
+
+<phase id="tras" frame="skprofa:normal" next="mal">
+Oui... Mais finalement il n'avait pas disparu. | Il n'avait même jamais quitté Jeezara ! 
+</phase>
+
+<a id="mal">Mais on peut pas laisser ça impuni, c'est affreux ! C'est très mal !</a>
+
+<phase id="mal" frame="skprofa:angry" next="pasbeau">
+Jeezara dira qu'il s'est fait ça tout seul, ou que c'est une expérience qui a raté. Que c'était pas fait exprès. | Il y a plein d'étudiants avec des sales têtes, chez Jeezara...
+</phase>
+
+<phase id="pasbeau" frame="gualtus:normal" next="resolu">
+Et puis franchement, déjà tout petit il n'était pas très beau le petit Kevin.
+</phase>
+
+<phase id="resolu" frame="skprofa:angry" next="recipe">
+Bon ben le mystère est résolu mais on ne peut rien faire. Kevin Sonnette va continuer son boulot de gardien et c'est tout. | C'est un échec total... | Allez on rentre.
+</phase>
+
+<phase id="recipe" frame="gurabbit:crazy1">
+Eh oh ! Eh ! | Ma solution elle a marché, hein. | J'veux ma recette secrète ! | Oh.
+</phase>
+
+</d>
+

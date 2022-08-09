@@ -1,0 +1,831 @@
+﻿<!-- Scénario INVOCATION -->
+
+<d place="frcbrt" name="Master Zen" background="2" gfx="zenit" cond="scenario(invoc,0)+(admin()|active(invoc))">
+	<inject id="zenit:begin" next="suite" />
+	<a id="suite">I'm feeling somewhat uninspired...</a>
+	<phase id="suite" next="suite2">
+		We are what we think. All that we are is a result of what we believe. With our thoughts, we build our world.
+	</phase>
+	<a id="suite2">Euh... Are you saying there's something wrong with my thoughts?</a>
+	<phase id="suite2" next="suite3">
+		Time is a great master, unfortunately, it slays its own pupils
+	</phase>
+	<a id="suite3">How can I achieve my goals more quickly?</a>
+	<phase id="suite3" next="suite4">
+		Realization is born of action.
+	</phase>
+	<a id="suite4">Action? Realization? What? I've already tried everything!</a>
+	<phase id="suite4" next="suite5" scenario="invoc:1">
+		[One day my master taught me the following: "Question everything, and above all that which I tell you."]
+		[Learning is complicated, and easy is the road to mediocrity. The search for the truth in itself will guide you. Remember this "He who learns to master himself is greater than the master of the world."]
+		[_(Breathe deeply and calmly)_]
+		[You must be capable of questioning yourself at the most fundamental level, your knowledge. Nature and history always have surprises in store, try to draw on these resources.]
+		[Our friends, the Dinoz, have secrets to reveal to their masters which will allow them to better guide their companions. Try to take them back to their roots, this could help to *"awaken"* them.]
+	</phase>
+	<a id="suite5">Thank you</a>
+	<phase id="suite5" fast="1">
+		You bow to Master Zen, and get back on the road.
+		What was he trying to tell you?  Explore history? Get back to nature... It's very nice and all, but what's the point!
+		"Awakening" .... What could all that be about...  You decide to begin your quest for information with the town sages. At the very least they should be able to explain things clearly!
+	</phase>
+</d>
+
+<!-- GOLEM / ROCKY / ROI DES ROCKY-->
+
+<d place="sking" name="Rockies King" gfx="rocking" cond="race(rocky)+scenario(magnet,12+)+scenario(invoc,1)+(admin()|active(invoc))">
+	<phase id="begin" next="il" fast="1">
+		Once again you find yourself in the throne room opf the King of the Rockies, he seems very involved in his work:
+		piling tiny kubes one on top of another...
+	</phase>
+	
+	<a id="il" cond="!skill(invoc)">Your majesty!</a>
+	
+	<phase id="il" next="est">
+		[Our dear dinoz master returns... We hope the master's journey was a pleasant one, and that we will be graced with the master's presence for a time!]
+		[Look here, a magnificent Rocky, brilliantly raised if we're not mistaken, a worthy representative of our race!]
+	</phase>
+	<a id="est">Thank you!</a>
+	<phase id="est" next="bo">
+		[Did you know that the finest specimens of our race are capable of calling on the ancient masters from the Steppes so that they might assist in combat.] 
+		[Unfortunately, only the chosen few can use their advanced technology.]
+		[A sacred ritual was performed to make a pact with the spirits of these great and powerful ancestors.]
+	</phase>
+	<a id="bo">Incredible! What did this ritual involve?</a>
+	<phase id="bo" next="mon" skill="invoc">
+		[Alas, my dear dinoz master, that knowledge was lost several decades ago.]
+		[I believe I can remember part of the ritual though... Let us see...]
+		_(The Rockies King approaches your dinoz and BANG! Knocks your dinoz out with a fierce head-butt! Once your dinoz comes around, a faint glow instantly appears in its eyes.)_
+		[Ah, as I feared, that's not the entire ritual...]
+		[You must learn the skills to create the pact yourself I'm afraid!
+	</phase>
+	<a id="mon">I promise I will complete the ritual!</a>
+	<phase id="mon" next="rocky">
+		[Take care of your Rocky, a well-trained Rocky is a great ally in any situation.]
+	</phase>
+	<a id="rocky">Thank you your majesty!</a>
+	<phase id="rocky" fast="1" frame="stop">
+		A you set off alongside your Rocky, a mysterious force seems to emanate from within your companion... Your Rocky seems ready to call forth help from the heavens!
+	</phase>
+</d>
+
+<!-- LOUP-GAROU / CASTIVORE / ISABELLA -->
+
+<d place="marche" name="Isabella" gfx="isabella" cond="race(casti)+scenario(invoc,1)+(admin()|active(invoc))">
+	<inject id="recrut:begin" next="il" />
+	
+	<a id="il" cond="!skill(invoc)">I need one to raise my Castivore properly!</a>
+	
+	<phase id="il" next="est">
+		You have a Castivore? They are so cute, big balls of fluff that they are,
+		I love hugging mine and giving him lots of kisses!
+	</phase>
+	<a id="est">Euh... really?</a>
+	<phase id="est" next="bo">
+		[Did you know that before they made awesome companions, Castivores were extremely aggressive?]
+		[It is said that they were protected from on high by some kind of beast god!]
+		[I often wonder if they couldn't restore this protection by making some kind of pact with that god?]
+	</phase>
+	<a id="bo">That would be awesome!</a>
+	<phase id="bo" next="mon" skill="invoc">
+		[I reckon that maybe if I give it a big enough kiss that could do it...]
+		[One way to find out............]
+		_(Isabella kisses the Castivore, a faint glow instantly appears in its eyes.)_
+		[Ah, it doesn't look like that was enough. Maybe your Dinoz has to learn some skills beforehand...]
+	</phase>
+	<a id="mon">I think that's made a difference already, there can't be much left to do!</a>
+	<phase id="mon" next="casti">
+		Well good luck! Remember to always treat your Castivore well, and you'll see that one day it will be a truly impressive dinoz!
+	</phase>
+	<a id="casti">Onward!</a>
+	<phase id="casti" fast="1" frame="stop">
+		As you set off alongside your Castivore, a mysterious force seems to emanate from within your companion... Your Castivore seems ready to call forth help from the heavens!
+	</phase>
+</d>
+
+<!-- ONDINE / SIRAIN / INFIRMIERE -->
+
+<d place="clinik" name="Anna Tomie" gfx="infirmiere" background="3" cond="race(sirain)+scenario(clinik,8+)+scenario(invoc,1)+(admin()|active(invoc))">
+	<inject id="infirmiere__9:begin" next="il"/>
+	<inject id="infirmiere__10:begin" next="il"/>
+	
+	<a id="il" cond="!skill(invoc)">Could you take a look at my Sirain?</a>
+	
+	<phase id="il" next="est">
+		[Your Sirain seems to be evolving well, it will become big and strong.]
+		[I see these cute little critters still love playing in the water!
+		I wonder if they've ever had the chance to meet the water goddess?]
+	</phase>
+	<a id="est">The water goddess?</a>
+	<phase id="est" next="bo">
+		[A divinity who watches over the waters of Dinoland.]
+		[They say she takes the form of a siren, and that she turns the currents
+		against the enemies of aquatic creatures!]
+	</phase>
+	<a id="bo">In that case, my Sirain would really like to meet her!</a>
+	<phase id="bo" next="mon" skill="invoc">
+		[I'm sure that one day she'll appear in front of your dinoz.]
+		[If your Sirain can just learn one or two key skills, they'll be able to see it!]
+		__(Anna strokes your Sirain, a faint glow instantly appears in the eyes of your companion.)__
+		[Your Sirain is too cute.]
+	</phase>
+	<a id="mon">I think that's made a difference already - what could be going on inside its head?</a>
+	<phase id="mon" next="sirain">
+		[Be careful on your travels, and always take care of your precious Sirain, it hasn't revealed its true potential yet!]
+	</phase>
+	<a id="sirain">Let's go!</a>
+	<phase id="sirain" fast="1" frame="stop">
+		As you set off alongside your Sirain, a mysterious force seems to emanate from within your companion... Your Sirain seems ready to call forth help from the heavens!
+	</phase>
+</d>
+
+<!-- SALAMANDRE / FEROSS / BAO -->
+
+<d place="baobob" name="Bao Bob" gfx="baobob" cond="race(feross)+scenario(invoc,1)+(admin()|active(invoc))">
+	<inject id="bob:begin" next="il"/>
+	
+	<a id="il" cond="!skill(invoc)">I noticed a magnificent Feross in your enclosure!</a>
+	
+	<phase id="il" next="est">
+		[Ah my dear Feross, I've been raising it for some time now and its gotten really big!
+		I really focus on levelling when I have a few hours to myself. It's not easy with visitors arriving at my door all the time...]
+		[Not to worry, a quick invocation and then I can head over to the tavern at Frish Port to unwind.]
+	</phase>
+	<a id="est">An invocation?</a>
+	<phase id="est" next="bo">
+		[My dinoz is one of the privileged few that is capable of using a special power learned from a fire god.]
+		[I had to endure several tests before the god would carry out the ritual to form our pact. My master didn't want to help me.
+		He said that it is through these tests that we evolve, that through them we become true adventurers!]
+		[That's why I'm not going to share the details... no, don't thank me, it's nothing!]
+	</phase>
+	<a id="bo">Ah, ok then, never mind...</a>
+	<phase id="bo" next="mon" fast="1" skill="invoc">
+		Somewhat disappointed, you turn to leave...
+		But looking over towards Bao's enclosure, you see your Feross and Bao's Feross doing some sort of parade...
+		They flip into their shells and spin repeatedly in circles...
+		You notice a faint glow instantly appearing in the eyes of your companion...
+	</phase>
+	<a id="mon">Is that normal, their little dance thing?</a>
+	<phase id="mon" next="feross">
+		[What? A dance...]
+		[OK then, I guess it'd be fair to say that you don't need to look any further for the ritual.]
+		[However, you still need to find the skills which will allow your Feross to make a pact with the goddess so that she will come to help when needed!]
+	</phase>
+	<a id="feross">I will make the pact!</a>
+	<phase id="feross" fast="1" frame="stop">
+		As you set off alongside your Feross, a mysterious force seems to emanate from within your companion... Your Feross seems ready to call forth help from the heavens!
+	</phase>
+</d>
+
+<!-- VULCAIN / MOUEFFE / VENERABLE -->
+
+<d place="vener" name="The Venerable" gfx="dorogon" cond="race(mouef)+!(scenario(nimbao,14+)+scenario(nimbao,41-))+scenario(invoc,1)+(admin()|active(invoc))">
+	<inject id="venerable:begin" next="il" />
+	
+	<a id="il" cond="!skill(invoc)">I have no fear, my Moueffe will protect me!</a>
+	
+	<phase id="il" next="est">
+		HAHAHA, GRAAAROUURARGHHH,
+		Your Moueffe is but a shadow of the great dorogons of years gone by.
+		Fortunately for you, your Moueffe has retained its strength and energy, but that's where the similarities end.
+	</phase>
+	<a id="est">My Moueffe is the best!</a>
+	<phase id="est" next="bo">
+		HAHAHAHAHA, perhaps if it knew the skills which allowed it to make a pact with
+		the Vulcan god of fire, in that case, and only in that case, would I acknowledge the strength of your dinoz.
+	</phase>
+	<a id="bo">How do I make the pact?</a>
+	<phase id="bo" next="mon" skill="invoc">
+		[I think perhaps you think that I'm going to help you become stronger, and risk maybe losing to your Moueffe one day?]
+		[You're not thinking straight, I'd prefer to grill it with my powerful breath and get it over with.]
+		_(Without hesitation, the Venerable blasts a huge brazier at your dinoz. Without flinching, your dinoz catches it full in the face,
+		but instead of getting burnt, you notice a faint glow appearing instantly in the eyes of your companion!)_
+	</phase>
+	<a id="mon">What happened?</a>
+	<phase id="mon" next="moueffe">
+		[Now get out of my sight, nobody disturbs the Venerable during his siesta...]
+		[Don't forget to teach it a few extra skills which will be essential if one day you wish to defeat me.]
+	</phase>
+	<a id="moueffe">I'll be back.</a>
+	<phase id="moueffe" fast="1" frame="stop">
+		As you set off alongside your Moueffe, a mysterious force seems to emanate from within your companion... Your Moueffe seems ready to call forth help from the heavens!
+	</phase>
+</d>
+
+<!-- TOTEM / KABUKI / YAKUZI -->
+
+<d place="itotem" name="Yakuzi" gfx="yakuzi" cond="race(kabuki)+scenario(kabuki,22+)+scenario(invoc,1)+(admin()|active(invoc))">
+	<inject id="yakuzi__7:begin" next="il:elle"/>
+	<inject id="yakuzi__8:begin" next="il:elle"/>
+	
+	<a id="il" cond="!skill(invoc)">My Kabuki is uber-powerful!</a>
+	<a id="elle" cond="skill(invoc)">This is one of my favourite dinoz!</a>
+	
+	<phase id="elle">
+		Take good care of it, it will always be loyal and will prove its worth to you in time!
+		See you soon!
+	</phase>
+	
+	<phase id="il" next="est">
+		[Kabukis are extremely powerful in fact, but they would be even more so
+		if they could count on help from their ancestors. Right here on totem island, they created
+		a way to repel all their enemies. That's all I know though, unfortunately.]
+	</phase>
+	<a id="est">Really?</a>
+	<phase id="est" next="bo" fast="1">
+		Your Kabuki wanders off without you noticing.
+		It is headed for the totem erected at the tip of the island.
+	</phase>
+	<a id="bo">What are you doing?</a>
+	<phase id="bo" next="mon" skill="invoc">
+		_(in front of the totem, your dinoz seems to be whispering, when an immense light envelops it then instantly 
+		disappears. You notice a faint glow instantly appearing in the eyes of your companion.)_
+	</phase>
+	<a id="mon">Is everything ok?</a>
+	<phase id="mon" next="kabuki">
+		[You are lucky indeed, your dinoz has clearly been able to contact its ancestors, it is one of the elite few who can call upon their
+		knowledge in times of need.]
+		[But maybe your Kabuki is not quite ready...
+		Your dinoz will have to master a skill or two before they can reach their potential.]
+	</phase>
+	<a id="kabuki">I'll look into it.</a>
+	<phase id="kabuki" fast="1" frame="stop">
+		As you set off alongside your Kabuki, a mysterious force seems to emanate from within your companion... Your Kabuki seems ready to call forth help from the heavens!
+	</phase>
+</d>
+
+<!-- FUJIN / NUAGOZ / MADAMEX -->
+
+<d place="frcbrt" name="Madame X" gfx="mmex" cond="race(nuagoz)+scenario(invoc,1)+(admin()|active(invoc))">
+	<inject id="mmex:begin" next="il"/>
+	
+	<a id="il" cond="!skill(invoc)">Gesture her over.</a>
+	
+	<phase id="il" next="est">
+		[Your Cloudoz is funny, it floats around you...]
+		[Sorry, I can't get involved in chit-chat, I have to watch over the citizens of Dinotown,
+		as is my mission!]
+	</phase>
+	<a id="est">Do you wan to play with it?</a>
+	<phase id="est" next="bo">
+		[Don't tempt me, I never could resist temptation!]
+		[Did you know that Cloudoz are masters of the air?]
+		[However, they must obey the goddess of the skies, because without her,
+		they would be unable to fly freely in the skies!]
+	</phase>
+	<a id="bo">The goddess of the skies?</a>
+	<phase id="bo" next="mon" >
+		[Yes, she regulates the air currents crossing our world,
+		she can provoke storms and squalls so violent that she is 
+		feared by even the most powerful Cloudoz in Dinoland.]
+	</phase>
+	<a id="mon">Could my Cloudoz call on her for help when needed?</a>
+	<phase id="mon" next="jolie" skill="invoc">
+		[Who knows, these creatures are so mysterious,
+		as impenetrable as a cloud!]
+		[Look, there is mine, all exited, it appears that our conversation has had an impact on him!]
+		_(Your Cloudoz starts to spin more and more quickly, and takes off with impressive speed!
+		Somewhere in the sky a flash appears, and your dinoz returns shortly thereafter. You notice a 
+		faint glow in the eyes of your companion which wasn't there before...)_
+	</phase>
+	<a id="jolie">What happened there?</a>
+	<phase id="jolie" next="nuagoz">
+		[In my opinion, your dinoz is about to surprise you!]
+		[It clearly knew how to communicate with the goddess, so from now on it should be able to call upon her help,
+		if your Cloudoz learns one or two skills that please her, she'll almost certainly help out.]
+	</phase>
+	<a id="nuagoz">We shall see.</a>
+	<phase id="nuagoz" frame="stop" fast="1">
+		You set off alongside your Cloudoz, a mysterious force seems to emanate from within your companion... Your Cloudoz seems ready to call forth help from the heavens!
+	</phase>
+</d>
+
+<!-- YGGDRASIL / WANWAN / ARBRE SACRE -->
+
+<d place="garde" name="Forest Guardian" gfx="arbre" cond="race(wanwan)+scenario(invoc,1)+(admin()|active(invoc))">
+	<inject id="arbre:begin" next="il" />
+	
+	<a id="il" cond="!skill(invoc)">Speak to the Sacred Tree.</a>
+	
+	<phase id="il" next="est">
+		[A huge nut wrapped in parchment falls on your head, upon which is written:]
+		["Tell your Wanwan not to do its business on my roots."]
+	</phase>
+	<a id="est">Oops, Sorry!</a>
+	<phase id="est" next="bo">
+		[Another nut falls on your head:]
+		["If it wouldn't mind not sharpening its claws on my bark..."]
+	</phase>
+	<a id="bo">I'm ever so sorry!</a>
+	<phase id="bo" next="mon" skill="invoc">
+		_(This time, the nut fell on your Wanwan's head, stopping it in its tracks.
+		Somewhat stunned, it stumbles briefly, but at the moment of impact, you noticed a certain glow in its eyes)_
+	</phase>
+	<a id="mon">What happened there?</a>
+	<phase id="mon" next="wanwan">
+		[A nut falls on your head (that happens a lot round here) :]
+		["I had no choice, nothing could stop it, but you should know that every Wanwan that is given a nut by the sacred tree can
+		call upon the powerful forest spirit, it's a bit strange, but that's how it is... The Wanwan will, of course, have to prove itself first by learning at least two specific skills!"]
+	</phase>
+	<a id="wanwan">Ah, ok then.</a>
+	<phase id="wanwan" fast="1" frame="stop">
+		As you set off alongside your Wanwan, a mysterious force seems to emanate from within your companion... Your Wanwan seems ready to call forth help from the heavens!
+	</phase>
+</d>
+
+<!-- IFRIT / PIGMOU / SHAMAN MOU -->
+
+<d place="fosslv" name="Soft Shaman" gfx="shaman" cond="race(pigmou)+scenario(invoc,1)+(admin()|active(invoc))">
+	<inject id="shaman:begin" next="il" />
+	<a id="il" cond="!skill(invoc)">Would you take a look at my Softpig?</a>
+	<phase id="il" next="next">
+		[Hey that beast is solid! Just looking at him is making me tired though...]
+		[I can't imagine your Softpig would ever have ended up like that if he'd met our Shaman God... crazy that guy was... didn't take a siesta or anything!  Just incredible...]
+	</phase>
+	
+	<a id="next">The Shaman God?</a>
+	<phase id="next" next="suite">
+		[Do you not know about him? After all the time you've spent round here, you haven't even taken the time to check out my basalt sculptures.]
+		[That is our fire Champion, the man who could set fire to anything, maybe even the Venerable himself would have been turned into well-done merguez if he'd been around at the time.]
+		[His spirit can be transferred from Shaman to Shaman, we all have his spirit somewhere within us, which is why I set fire to things every day - to be close to my ancestors.]
+	</phase>
+	
+	<a id="suite">Do you think you could transfer his spirit to my Softpig?</a>
+	<phase id="suite" next="fin" skill="invoc">
+		[Don't move, I'll call upon the fire Shamans... Traditionally handed down from father to son... I know you're not my son little Softpig, but I feel that you have the beginnings of a Champion within you, the piercing gaze - I like that.]
+		[_Takes a huge draw on his hookah pipe_ .... ZZZZzzzzzz...]
+		[... OK, go for it, you're solid as a rock now.]
+	</phase>
+	
+	<a id="fin">Hey but what about my Softpig... he's totally out of it!!??</a>
+	<phase id="fin" next="pigmou">
+		Don't worry about it, I just passed the breath of the Shamans on to him... that always happens, but he'll be fine after a siesta.
+		[Don't forget to learn at least two new specific skills to seal the pact!]
+	</phase>
+	<a id="pigmou">OK, well thank you.</a>
+	<phase id="pigmou" fast="1">
+		As you head off a strange force emanates from your companion. This Softpig now seems ready to call forth help from the heavens!!
+	</phase>	
+</d>
+
+<!-- RAIJIN / PLANAILLE / MAITRE ELEMENTAIRE -->
+
+<d place="fosslv" name="Elemental Master" gfx="elmaster" cond="race(plan)+scenario(invoc,1)+(admin()|active(invoc))">
+	<inject id="elmaster:begin" next="il" />
+	<a id="il" cond="!skill(invoc)">Master, how are you so cool? What is your secret?</a>
+	<phase id="il" next="quoi">
+		[There's a whole lot of boot-licking going on... Look here - the master's Glidwings who seems in pretty good shape, I do appreciate it when lightning lovers are well looked after...]
+		[I play the tambourine with the Soft Shaman, but a being such as this cannot understand why I would undertake such an activity. I'd wager he's never even heard of the God of Thunder... how disappointing.]
+	</phase>
+	<a id="quoi">The God of Thunder?</a>
+	<phase id="quoi" next="plus">
+		Here's what I can see... Sad childhood, no respect for their history, raising magnificent Dinoz without caring about their roots or the most important people in their history...
+	</phase>
+	<a id="plus">I want to know more!</a>
+	<phase id="plus" next="suite2">
+		[They seem willing though... maybe I could share at least part of the story.]
+		[There was a time when our ancestors were truly linked to the earth and the elements that make it up. They had a connection with nature and really tried tirelessly to become at one with it, hoping to learn the secrets of the forms surrounding them.]
+		[One day, a sage managed to master thunder by perfecting the *12 tambourine* technique... I don't know why I'm telling this story when I'm faced with a cretin who knows nothing about that which i speak...]
+	</phase>
+	<a id="suite2">No, no, I understand. He found a rhythm which resonated with that of the thunder!</a>
+	<phase id="suite2" next="suite3">
+		[But does it really understand what I'm talking about? That's unbelievable judging from the look of that Glidwing... Well in any case it's good to share information even if the dullard won't remember it.]
+		[Yes, using the waves created by the tambourines, he managed to become one with the elements of the storm which raged around him, and by mastering the rhythm, he managed to take complete control of the thunder and lightning.]
+		[Anyone wishing to be worthy of the name of warrior should be in search of the same thing... Some say that those who succedd sometimes manage to contact the divinity... But that is reserved for the elite, very few can hope to achieve it, as very specific skills are required.]
+	</phase>
+	<a id="suite3">Could you help my Glidwings to contact the divinity?</a>
+	<phase id="suite3" skill="invoc" next="fin">
+		[Initiate your Dinoz... Your Glidwings isn't up to it... an initiation comes with certain risks, and if your Glidwings knows that, it risks panicking and short-circuiting its 2 neurons...]
+		[On the other hand, I've got nothing to lose and I haven't practised in a while... Go on then, send your dinoz over here.]
+		[_The Elemental Master starts to play several tambourines at once, making a quite unappealing rhythm, but finally achieving Tambourinial Symbiosis and a constant rhythm, and then.... _]
+		[*BBZZZZZIIITTTTT*]
+		[_A lightning bolt leaps from the ground and flashes around your Glidwings._]
+		[That's a worth initiation... What skill! It could be said that this youngster was lucky to meet me. Now it can hope to become powerful enough to one day summon the God of Thunder, although I'll admit that I'll be surprised if he manages...]
+	</phase>
+	<a id="fin">Thank you Master...!</a>
+	<phase id="fin" fast="1">
+		As you head off, a strange force emanates from your companion. This Glidwings now seems ready to call forth help from the heavens!!
+	</phase>
+</d>
+
+<!-- BALAINE SACREE / WINKS / ATLANTE -->
+
+<d place="chutes" name="Atlantean Guard" gfx="apostoph" cond="race(winks)+scenario(invoc,1)+(admin()|active(invoc))">
+	<inject id="dome:begin" next="il" />
+	<a id="il" cond="!skill(invoc)">Are Dinoz allowed to swim here?</a>
+	<phase id="il" next="suite">
+		I have nothing to do with supervising swimmers.
+		However, your Winks does seem sufficiently tough to give it a go... 
+		Your winks is brave too, the legend of the "Sacred Whale" has scared bigger dinoz than this little guy!
+	</phase>
+	<a id="suite">The Sacred Whale?</a>
+	<phase id="suite" next="suite2">
+		[Affirmative. The legend hears tell of a marine mammal they called "The Sacred Whale", she was linked to the terrible tsunami which followed the fall of Jazz Island.]
+		[Some say that the Goddess of the Seas also has a protective side...]
+	</phase>
+	<a id="suite2">And how does one compel her to protect you?</a>
+	<phase id="suite2" next="suite3">
+		[I don't know. I often hear Master Hydargol speaking about a purification ritual which involves diving to the depth to which light penetrates.]
+		[According to him, only those who achieve this feat and who possess at least two additional skills can rely on her help.]
+	</phase>
+	<a id="suite3">Alright then, into the water little guy!</a>
+	<phase id="suite3" next="suite4" skill="invoc">
+		[_(PLOUF! You cheerfully push your winks into the freezing, choppy water...  and wait....)_]
+		[_(Wait....)_]
+		[_(Wait....)_]
+		[_(Wait....)_]
+		[_(Ah?  Ah no....)_]
+		[_(Wait....)_]
+		[_(This is getting annoying now, what is my super-mega champion winks up to....)_]
+		[_(OK, this is pretty worrying now....)_]
+		[_(....)_]
+		[_(Finally you see your Winks break the surface, shell shining, but visibly exhausted... Mission accomplished?)_]
+		[_(In any case, it seems different, but how to know for sure...)_]
+	</phase>
+	<a id="suite4">(Thanks the guard)</a>
+	<phase id="suite4" fast="1">
+		After thanking the guard, he watches you leave, with a playful wink... Is he making fun of you?
+		As you head off, a strange force emanates from your companion. This Winks now seems ready to call forth help from the heavens!!		
+	</phase>
+</d>
+
+<!-- BENEDICTION DES FEES / GORILLOZ / GUIDE MICHEL -->
+
+<d place="dnv" name="Michael the Guide" gfx="michel" cond="race(gorill)+scenario(invoc,1)+(admin()|active(invoc))">
+	<inject id="guide:begin" next="il" />
+	<a id="il" cond="!skill(invoc)">My Dinoz sometimes dreams about fairies. Do you know why?</a>
+	<phase id="il" next="suite">
+		It's perfectly logical! All mature Gorilloz dream of fairies... It has been thus since the dawn of time, the fairy represents the feminine spirit of the forest.
+	</phase>
+	<a id="suite">Hum ok, but can I help with that?</a>
+	<phase id="suite" next="suite2">
+		There are several solutions, one being realizing your Gorilloz fascination, and with fairies being a purely mystical entity, you will have to dress yourself as a fairy...
+	</phase>
+	<a id="suite2">Hum right... and option B?</a>
+	<phase id="suite2" next="suite3">
+		The other solution is to get your Gorilloz blessed by the fairies. If you chose this option, you must read an ancient book to your dinoz, which you can find in the library and your dinoz must possess at least two specific skills to make the pact.
+	</phase>
+	<a id="suite3">Yeah, that sounds like the better plan. You couldn't bring me the book, could you?</a>
+	<phase id="suite3" next="suite4" skill="invoc">
+		[_(Michael the Guide accepts, and disappears for a good quarter of an hour.  When he returns, you notice he is carrying a small, tattered book. Could this be the book in question?)_]
+		[*There you are!*]
+		[_(Michael the Guide carefully reads the tale of the fairy sisters aloud. A pretty unextraordinary tale, truth be told, but the pictures seem to echo the New Found Glo-residing in your Gorilloz' eyes.)_]
+		[_(A few minutes more of reading....)_]
+		[_(Michael closes the book and *BOOOMMM* thumps your Gorilloz on the head with it)_]
+		[_(Your Dinoz is seeing fairies floating around its head - something just happened to him!)_]
+	</phase>
+	<a id="suite4">Wow, THAT is what I call a knockout story!</a>
+	<phase id="suite4" fast="1">
+		You leave Michael the Guide to go and return the book to the library, looking quite pleased with himself.
+		As concerns your dinoz, your Gorilloz is struggling to hide its emotions, leaping at every mount of earth, drooling slightly at the corner of his mouth... What could be happening?
+		As you set off, with your Gorilloz at your side a strange force emanates from your companion. This Gorilloz now seems ready to call forth help from the heavens!!		
+	</phase>
+</d>
+
+<!--  BOUDDHA / HIPPOCLAMP /  HYDRAGOL -->
+
+<d place="chutes" name="Master Hydargol" gfx="hydargol" cond="race(hippo)+scenario(invoc,1)+(admin()|active(invoc))">
+
+	<inject id="moine:begin" next="il" />
+	<a id="il" cond="!skill(invoc)">Do you never leave this place?</a>
+	<phase id="il" next="suite">
+		.... Yes .... My body .... is here... but .... my spirit .... travelling ...
+	</phase>
+	<a id="suite">That is too cool. Could you teach my Hippoclamp to do that?</a>
+	<phase id="suite" next="suite2">
+		[...Possible... I did pass my awakening exam... I'm level 3 now... But....]
+		[_....rrrhhoooonnn...pffftttt....rhooooonnnn.....pffffttttttt...._]
+		[Huh??.... ah yes... very well... but I don't know what your dinoz will find when exploring within...]
+		[... I'll accompany you dinoz on the journey... there may be demons to face... your dinoz...rediscover ..... its... roots.....]
+	</phase>
+	<a id="suite2">I'll give it a try. This dinoz is brave, I'm confident it could work!</a>
+	<phase id="suite2" next="suite3">
+		[OK, take... this... lily... pad...]
+		[Good... get comfortable... close your eyes... relax... and drink this potion made from hydrofired algae... a recipe from my ancestors]
+		[_(Your Hippoclamp gets onto the lilypad, the water is calm, but the lilypad is starting to move, your Hippoclamp drinks the potion greedily...)_]
+		[Hummmmmm... Breath slowly... Imagine yourself as light as air... Visit your past.... go to the deepest point in your consciousness... Relax...]
+	</phase>
+	<a id="suite3">But... euh... he's turning pale green?!!</a>
+	<phase id="suite3" next="suite4" skill="invoc">
+		[_(When your dinoz tries to follow the instructions of Master Hydargol, its colour pales, giving the impression of a sudden illness.)_]
+		[Continue to the very depths of your consciousness .... until you find... the .... zzzzzhhhh.... sleep... aaahh rest... inner peace...]
+		[_(As your Hippoclamp starts to sway even more, and with a final lurch ... PLOUFF... falls into the water)_]
+		[_(You rush to your dinoz' aid before the current sweeps it away!)_]
+	</phase>
+	<a id="suite4">It was less of a...</a>
+	<phase id="suite4" fast="1" next="go">
+		You hear the master talking... He speaks of finding the way, of training hard to follow the path... of learning three specific skills... What could he be talking about.
+		Whether it was the seaweed drinks, seasickness or the internal journey, you can't say for sure what has upset your Hippoclamp so much, but you decide to avoid the place for a few days.
+	</phase>
+	<a id="go">Enjoy the rest of your sleep.. euh whatever it is, Master, see you soon.</a>
+	<phase id="go" fast="1">
+		You set off, with your Hippoclamp at your side. A strange force emanates from your companion. This Hippoclamp now seems ready to call forth help from the heavens!!
+	</phase>
+</d> 
+
+<!--  DJINN / PTEROZ /  PROFESSEUR EUGENE -->
+
+<d place="univ" name="Professeur Eugene" gfx="eugene" cond="race(pteroz)+scenario(invoc,1)+(admin()|active(invoc))">
+	<inject id="prof:talk" next="il" />
+	<a id="il" cond="!skill(invoc)">Professor, my Pteroz thinks he sees things that don't exist...</a>
+	<phase id="il" next="suite">
+		Really? OK then, that's strange, but maybe it's less strange that this could be happening to a Pteroz.
+	</phase>
+	<a id="suite">Really? How's that?</a>
+	<phase id="suite" next="suite2">
+		[It is written in our history. There are many legends and tales of a being, created by the God of Fire.]
+		[They all talk of the most powerful opponent the Fire Master ever faced. Despite having won, the spirit of his adversary survived, trapped in the smoke particles dispersed in the air.]
+		[They say that his spirit was scattered but nonetheless survived, and that fighters who are at one with the air element, and who have certain special skills can see him.]
+	</phase>
+	<a id="suite2">Incredible! And what is he up to these days?</a>
+	<phase id="suite2" next="suite3">
+		[We have no idea. Some report having seen strange things during battles. They talk of *summoning the Air Master*.]
+		[He is obliged to come to the aid of any in need on the condition that they know how to see him and that they have learned at least two specific skills.]
+	</phase>
+	<a id="suite3">And how does this invocation work?</a>
+	<phase id="suite3" next="suite4">
+		[You have to increase sensitivity to the AIR element. I would say that from a purely theoretical standpoint that the dinoz should get as close to AIR as possible.]
+		[Show respect to and trust in the Air Master.]
+		[_(Your Pteroz, ready to prove its worth, flies off at top speed, and gains height rapidly, without thinking to conserve energy.)_]
+	</phase>
+	<a id="suite4">Hey come back!!</a>
+	<phase id="suite4" next="suite5" fast="1" skill="invoc">
+		The Pteroz continues it's upward motion and seems to be feeling the effects and slows down... slower...
+		... NO!!! ... the Pteroz is in freefall and has begun a long and terrifying descent.
+		CRASH!
+		Your Pteroz didn't manage to regain consciousness in time and crashed violently into the ground.
+	</phase>
+	<a id="suite5">Hel..lo?</a>
+	<phase id="suite5" next="go">
+		_(A cloud of dust begins to dissipate as you approach.)_
+		[Incredible...]
+		_(Your Pteroz is alive. It gets up with difficulty, and unsurprisingly it seems to have little or no idea where it is)_
+		_(You gather your companion in your arms and set off, under the ever watchful eye of the Professor who didn't seem to grasp the significance of your cohort's impulsive act.)_
+		_(You, at least, know your dinoz well. You know why it did it... Let's just hope now that it recovers and that all this wasn't for nothing .)_
+	</phase>
+	<a id="go">Thanks for your advice professor!</a>
+	<phase id="go" fast="1">
+		As you set off with your Pteroz at your side, a strange force emanates from your companion. This Pteroz now seems ready to call forth help from the heavens!!
+	</phase>
+</d>
+
+<!--  HADES / SANTAZ /  BROC -->
+<d place="chbroc" name="Klutz" gfx="broc" background="5" cond="race(santaz)+scenario(invoc,1)+(admin()|active(invoc))">
+	<inject id="broc:begin" next="il" />
+	<inject id="broc__2:begin" next="il" />
+	<inject id="broc__11:begin" next="il" />
+	
+	<a id="il" cond="!skill(invoc)">I don't know what to do today, you don't happen to have a new machine to test, do you?</a>
+	<phase id="il" next="suite">
+		[Hello and good day to you too.]
+		[Nothing much actually, but during the last month I completed a project which I really loved, but I've been having difficulties finding anyone willing to test it.]
+		[Even late at night in the bar, I couldn't get anyone. The worst of it is, that this could have a genuine impact on our vision of the world!]
+	</phase>
+	<a id="suite">What is this machine then?</a>
+	<phase id="suite" next="suite2">
+		It's a cerebral stimuli amplifier. It amplifies the perception of external stimuli, and with it I hope to discover new information circulating through unknown channels such as hyper-frequencies and light spectrums currently undetectable with today's technology...
+	</phase>
+	<a id="suite2">Is that all....</a>
+	<phase id="suite2" next="suite3">
+		[If my estimations are correct, we could even be able to communicate with those in parallel dimensions.]
+		[Going with the theory that death is in fact a transition to a dimension where time passes infinitely more slowly, hte ability to detect this universe would give us the ability to talk.... with the dead!]
+	</phase>
+	<a id="suite3">Hmmm... And for what foolish reason would nobody volunteer to help test it?</a>
+	<phase id="suite3" next="suite4">
+		[Eh well, it's that... I have something of a past... I don't make mistakes like those of my youth, but people are less inclined to join in once they know about my gaffes through the ages.]
+		[What I need is someone who has no reason to doubt me or my work. Someone like.... your Santaz for example.]
+	</phase>
+	<a id="suite4">Huh? My Santaz? But that's not cool!</a>
+	<phase id="suite4" next="suite5"fast="1" frame="stop">
+		[You look at your companion... This creature that follows you everywhere, and that every day you train to become a great warrior]
+		[But upon reflection, maybe this would allow your companion to push back the inherent limitations of its race, to reach a new dimension and to find what is needed to pout adversaries on their backs...]
+		[That thought makes you smile... but you can't risk your Santaz getting hurt.... can you? ... well... after all.. there's not much risk, is there?]
+	</phase>
+	<a id="suite5">It's agreed then!</a>
+	<phase id="suite5" next="suite6" skill="invoc">
+		[*Woohoo, finally someone trusts me!*]
+		[Klutz puts the helmet on your Santaz' head, connected to a rake of wires, then after a marked pause, looks at you and throws the switch...]
+		[*SCHPAF!*]
+		[A strange noise assails you, and a strong-smelling smoke is coming from the partially melted halmet perched on your companion's head. What just happened to him??]
+		[Your Santaz didn't seem to notice at all, but has a distand look in its eyes, as if trying to understand something.]
+		[One thing is sure, it was lucky you didn't stick your own head in the wretched contraption. You decide to get out of this place asap.]
+		[Come back! I'm sure it worked, or maybe your dinoz has to learn at least three specific skills?]		
+	</phase>
+	<a id="suite6">Ahem... it was.. most interesting, but my Santaz is late for a manicure... see you soon!</a>
+	<phase id="suite6" fast="1" frame="stop">
+		You head off at speed from the workshop, and its owner, the damn fool really could have injured your Santaz this time...
+	</phase>
+</d>
+
+<!-- LEVIATHAN / MAHAMUTI / PAPY JOE -->
+<d place="papy" name="Grandpa Joe" gfx="papy" cond="race(mahamu)+scenario(invoc,1)+(admin()|active(invoc))">
+	<inject id="papy:begin" next="il" />
+	<a id="il" cond="!skill(invoc)">Have you seen? Have you? Isn't my Mahamuti beautiful!</a>
+	<phase id="il" next="suite">
+		[Ah, it seems the little boy I knew has become a Master trainer!]
+		[But did you know that this Dinoz is still hiding some secrets?] 
+		[For example... maybe you've heard tell of its summoning power?]
+	</phase>
+	<a id="suite">My Mahamuti has a summoning power?</a>
+	<phase id="suite" next="suite2">
+		[Yes, certain Mahamutis are able to contact an incredible divinity, whose incredible powers led to the Fall of Jazz Island (allegedly).]
+		[It is of course, a legend, but according to my research, this divine spirit still exists today. Only the Mahamuti possesses this skill.]
+		[Still, it has to be capable of carrying out the invocation...]
+	</phase>
+	<a id="suite2">How is that done?</a>
+	<phase id="suite2" next="suite3">
+		[Dammit, I don't know unfortunately. ]
+		[Yeah... tell me though, you don't come to visit me so often these days. What would you say to staying a while and telling me all about your latest adventures]
+	</phase>
+	<a id="suite3">You mean to say... uh sure, why not!</a>
+	<phase id="suite3" next="suite4">
+		[Such a nice guy. Ok, look, I'm going to let you taste a true adventurers' drink: dragon liqueur, passed from father to son.]
+		[Grandpa Joe takes a curved bottle out of the kitchen unit, it is almost completely opaque but in such a way that the light can only pass partially through it, giving it an orange-ish glow]
+		[You see it's not as though I get the chance to share this with an adventurer every day. I know you'll appreciate it though!]
+		[You try in vain to explain to Joe that it is a little early to get involved with a homemade liqueur tasting session and that there are monsters waiting for you outside, but in the end, he'll really enjoy it, so you give in.]
+		[*Cheers! Here's to you youngster!*]
+		[GLUG-GLUG! Woah!! The alcohol feels like it's dissolving my tongue ....  You need some air!!! .... pffffff]
+		[There goes another real adventurer!]
+	</phase>
+	<a id="suite4">(HELP!)</a>
+	<phase id="suite4" next="suite5" skill="invoc">
+		[Joe seems to be getting into the spirit of things... he serves you another glass and refills his own.]
+		[You are seeking a solution...]
+		[GLUG!*If the future is unclear, stick to the beer!*  _Joe now seems somewhat distracted, so you seize the opportunity to pass the glass off to your Mahamuti]
+		[Done! Not in one or two, your glass ends up in your Dinoz' mouth. Suddenly awakened, your Mahamuti seems to really enjoy the Dragon liqueur. The glow in your companion's eyes worries you a little, but it seems to be enjoying itself...]
+	</phase>
+	<a id="suite5">Thanks again Grandpa Joe, I'll come back to see you soon!</a>
+	<phase id="suite5" fast="1">
+		_(You thank Grandpa Joe and leave the house. Your Mahamuti really seemed to enjoy the Dragon liqueur, it seems invigorated and ready to return to training....)_
+		*Go for it!!*
+	</phase>
+</d>
+
+<!-- GOKU / TOUFUFU / ZENIT -->
+<d place="frcbrt" name="Master Zen" background="2" gfx="zenit" cond="race(toufu)+scenario(invoc,1)+(admin()|active(invoc))">
+	<inject id="zenit:begin" next="il" />
+	<a id="il" cond="!skill(invoc)">Mon Tofufu has become a fierce warrior!</a>
+	<phase id="il" next="suite">
+		[The road is long, with many a winding turn... and your companion will continue to evolve to become one of the finest fighters in existence.]
+		[Are you aware of the legend that exists which speaks of the Grand High Babooner, King of the Wistitis, which were the revered ancestors of the Tofufus?
+		They say that he was so fast that his enemies couldn't lay a finger on him.]
+	</phase>
+	<a id="suite">Unbelievable!</a>
+	<phase id="suite" next="suite2">
+		[Combat for him was like a game, each battle yet another opportunity to further ridicule his opponent.]
+		[His reign endured until one day he disappeared without trace.]
+		[To this day, his spirit lives on in the souls of his descendants...]
+	</phase>
+	<a id="suite2">Could my Tofufu become that powerful?</a>
+	<phase id="suite2" next="suite3">
+		[Alas, these little creatures can't become quite that strong.]
+		[However, they say that the Grand High Babooner still watches over his children, and if your tofufu meditates suficiently, it could be able, on day, to call for help from his powerful spirit!]
+	</phase>
+	<a id="suite3">Meditation?</a>
+	<phase id="suite3" next="suite4">
+		[It must meditate for 50 years without so much as moving a toe, in order to be able to speak with the King...]
+	</phase>
+	<a id="suite4">50 years? That's a long time!</a>
+	<phase id="suite4" next="suite5" skill="invoc">
+		[Fortunately for you, I like your Tofufu. I will therefore carry out the divine awakening ritual using the tiger palm technique which is passed from generation to generation amongst martial arts grand-masters.]
+		_(Master Zen begins a hypnotic kata in front of your Tofufu, who is immediately intrigued by the act, and approaches Zen.
+		BAMM! In a flash, Master Zen strikes the tofufu's head with his palm, all the surrounding vegetation sways with the pressure of the blow, and your companion lies motionless on the ground.)_
+		[I have opened the gates to its soul, and now communication with the King should be possible, once it has learned one or two key skills which please the King. Then your Tofufu should be able to call on the King for help...]
+	</phase>
+	<a id="suite5">Thank you Master!</a>
+	<phase id="suite5" fast="1" frame="stop">
+		You set off, with your Tofufu at your side. A strange force emanates from your companion. This Tofufu now seems ready to call forth help from the heavens!!
+	</phase>
+</d>
+
+<!-- REINE DE LA RUCHE / SOUFFLET / SAGE MENTHOS -->
+
+<d place="observ" gfx="sage_mentos" name="Sage Menthos" cond="race(soufle)+scenario(nimba2,51+)+scenario(invoc,1)+(admin()|active(invoc))">
+	<inject id="menthos:begin" next="il"/>
+	
+	<a id="il" cond="!skill(invoc)">I have hatched an Etherwasp Egg!</a>
+	
+	<phase id="il" next="est">
+		[Amazing! I've not seen an Etherwasp in over a century!]
+		[There are very few of them in existence, so I urge you to take great care of it!]
+	</phase>
+	<a id="est">Of course!</a>
+	<phase id="est" next="bo">
+		[I seem to recall that certain Etherwasps could call upon the power of insects during combat.]
+		[These spirits allowed them to take control of the situation by breaking their opponents' will.]
+		[I must have a book on the subject somewhere, I think it mentioned a ritual...]
+	</phase>
+	<a id="bo">Awesome - what did the ritual consist of?</a>
+	<phase id="bo" next="mon" skill="invoc">
+		[Wait a minute...]
+		[..........]
+		[Here you go, you just have to pull it here, scratch it there, tickle it there, and there you go - it's ready!]
+		[Your Etherwasp just has to learn two special skills now and it'll be able to summon the spirit of the insects to assist it in battle!]
+	</phase>
+	<a id="mon">I'll make it happen!</a>
+	<phase id="mon" next="soufle">
+		[take care of your Etherwasp, it's a great ally to have in any situation.]
+	</phase>
+	<a id="soufle">Thank you!</a>
+	<phase id="soufle" fast="1" frame="stop">
+		You set off, with your Etherwasp at your side. A strange force emanates from your companion. This Etherwasp now seems ready to call forth help from the heavens!!
+	</phase>
+</d>
+
+
+<d place="iroche" name="Old Robot" gfx="oldbot" cond="race(smog)+scenario(invoc,1)+(admin()|active(invoc))">
+	<inject id="oldbot:begin" next="il"/>
+	<a id="il" cond="!skill(invoc)">...</a>
+	<phase id="il" next="smog">
+		[......]
+		[..Bzzzz...]
+		[Would you mind asking your dinoz to stop peeing on me....?]
+		[My printed circuits don't react well to humidity...]
+		[Kzzzzzzzz....]
+	</phase>
+	<a id="smog">Oops! Sorry! he's not been very well trained yet!</a>
+	<phase id="smog" next="oups">
+		[Kzzzz...]
+		[Cute dinoz though...]
+		[It's been a while since I saw a Smog in these parts.]
+	</phase>
+	<a id="oups">A WHILE? But I thought this race had disappeared centuries ago!</a>
+	<phase id="oups" next="grant">
+		[Kzzz...]
+		[Yes, it must be several years anyway... back in the days when my peers still functioned, there were often Smogs playing in the snow...]
+		[They never seemed to be affected by the cold...]
+		[Us robots, however, never really got on well with the cold...]
+	</phase>
+	<a id="grant">Incredible - you're really resilient for an antique!</a>
+	<phase id="grant" next="antique">
+		[....Kzzz, I'll take that as a compliment...]
+		[I see your dinoz can't use its invocation... I've lost count of the number of times these dinoz have destroyed our operating equipment...]
+	</phase>
+	<a id="antique">That's right, I'm actually looking for a way to make this one stronger, it's no good if all the other dinoz have evolved and this one is trapped in a bygone era.</a>
+	<phase id="antique" next="skill" skill="invoc">
+		[It's really simple, let's have a look....]
+		[BZZZZZ....KTTTZZZZZZHHH....]
+		_(A trapdoor opens in the old robot, and a little mechanical arm shoots out and grabs your Smog by the scruff of its neck.)_
+		_(Your dinoz reacts quickly, by biting the old robot.)_
+		[Standard reaction...]
+	</phase>
+	<a id="skill">Look out, it looks like it's about to kick off!</a>
+	<phase id="skill" next="go">
+		[In order to be able to master the invocation, two particular skills are required.]
+		[Your dinoz must be able to alter its thermochemical stasis, and by doing so, its potential will be awakened.]
+		[The dinoz must also be careful of auto-erosion, the pores in their skin must release a toxin which easily melts delicate materials, like my precious printed circuits.]
+	</phase>
+	<a id="go">Thanks!</a>
+	<phase id="go" fast="1" frame="stop">
+		You set off, your Smog at your side. A strange force emanates from your companion. This Smog now seems ready to call forth help from the heavens!!
+	</phase>
+</d>
+
+<d place="gorges" name="Popotholeler" gfx="spelele"  cond="race(trice)+scenario(invoc,1)+(admin()|active(invoc))">
+	<inject id="spelele:begin" next="yo"/>
+	<a id="yo" cond="!skill(invoc)">Have you seen my Triceragnon?</a>
+	<phase id="yo" next="quoi">
+		[......]
+		[Now this right here is worth seeing.  I've never seen one quite so small.]
+	</phase>
+	<a id="quoi">What? So small?</a>
+	<phase id="quoi" next="oh">
+		[Actually, to be frank it's the first time I've seen one outside of the books on Popotholelogy at the Uninveristy of Dinoville, way back when I was taking a course on "Magic and Popotholelogy".]
+		[Proud as you might be of your Dinoz, he's still only a modest decendant of a majestic rafe of extinct Dinoz...]
+	</phase>
+	<a id="oh">What's that got to do with magic?</a>
+	<phase id="oh" next="ance">
+		[We popotholelers were inquisitive enough to find, preserved in the ice, some exceptional and particularly interestig objects....]
+		[I just so happen to have one of those objects here with me. We left it preserved in the Relative Zero Cave.]
+		[The discovery of these objects led us to imagine that these dinoz were able to communicate with their ancestors.]
+	</phase>
+	<a id="ance">Incredible...</a>
+	<phase id="ance" next="magie">
+		[Yes. From what we understand today after extensive cladistic studies, this ability developed from an awakening of certain zones of the brain, linked to the application of a particularly strong stimulus to the cerebelum.]
+	</phase>
+	<a id="magie">A stimulus?</a>
+	<phase id="magie" next="aie">
+		[Their horns form a peculiar characteristic on which we can place this triangular object. It is so cold that it stimulates the horns and causes the development of a new type of neuron which increases the capacity of the sensory tissue.]
+		_(Using a long pair of pincers, he pulls a strange object out of the crevice that is emitting all of the ghastly cold)_
+		[You see, all you have to do is puth this just here... Like this...]
+	</phase>
+	<a id="aie">...Horrible groaning from your Trcerithumps...</a>
+	<phase id="aie" next="skill" skill="invoc">
+		[*Ther you go!*]
+		_Your Tricerithumps doesn't seem as overjoyed as the proffessor, in fact it seems like he'd like to transofrm him in to proffessor paste...
+		However, the pupils of your dino dilate, breath of fresh air escapes from his entire body_
+		[An interesting reaction! I would like to conduct a test to verify the level of white matter in his peripherl nervous system, it's rare to have the chance to study a specimen so well preserved!]
+	</phase>
+	<a id="skill">hop hop hop hop!  What a terrible idea!</a>
+	<phase id="skill" next="go">
+		[But it's absolutely essential... How else will I be able to understand his ability to contact his ancestors?]
+	
+		_(Your Tricerithump starts to scape at the ground with his front left leg... Ready to charge.)_
+		
+		[Oh well... I guess is can wait, as we say at the university "Patience passes science"]
+		[In order to fully master his abilities, the books say that he must posses two specific skills, but I can't remember which, the professor who taught that was attacked by a Rapacarapace in the middle of the school year... ]
+	</phase>
+	<a id="go">Ok thank you!!</a>
+	<phase id="go" fast="1" frame="stop">
+		You move yourself away fro the side of your Tricerithumps, a strange force emanates from him, as if he were ready to invoke the power of his majestic ancestors!
+	</phase>
+</d>

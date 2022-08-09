@@ -1,0 +1,21 @@
+﻿<!-- Gardien de la forêt -->
+	
+<d place="garde" name="Waldwächter" gfx="arbre">
+	
+  <phase id="begin" next="missions:shake" fast="1"> Du stehst einem riesigem Baum gegenüber... Er ist ganz offensichtlich sehr alt und ihm scheint ein große Weisheit innezuwohnen. Seine Blätter senken sich ganz langsam und bedächtig in deine Richtung und rascheln sanft.</phase>
+  
+  <a id="missions" cond="fx(grdmis)">Auf der Missionsliste nachsehen.</a>
+  <a id="shake" cond="!fx(grdmis)">Den Baum ein wenig schütteln.</a>
+
+  <phase id="shake" next="item" fast="1">Beim Schütteln (insofern man einen so
+  großen Baum schütteln kann), hörst du ein seltsames, langes Brummen, das aus dem Inneren der Rinde zu kommen scheint! Ganz unerwartet fällt
+  dir etwas aus dem Baumwerk auf den Kopf: Tok!</phase>
+
+  <a id="item">Autsch! Was is das?</a>
+
+  <phase id="item" next="missions" fast="1" effect="grdmis">Es ist eine Art
+  große Haselnuss, die in einem Pergament eingewickelt ist. Und zu deinem
+  größten Erstaunen stellst du fest, dass dieses Pergament beschrieben ist! </phase>
+
+  <phase id="missions" missions="arbre"></phase>
+</d>

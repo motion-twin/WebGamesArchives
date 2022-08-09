@@ -1,0 +1,151 @@
+﻿<d place="fosslv" name="Maestro Elemental" gfx="elmaster" cond="active(elmaster)+((mission(pigeon)+mission(ritual)+mission(shipmt))|admin())">
+
+	<phase id="begin" fast="1" next="talk:talk2:talk3">
+		Has oído hablar del Maestro Elemental durante tus estudios de Maestro Dino. Se trata de un Maestro muy respetado, experto en la comprensión y la manipulación de los elementos. Numerosos jóvenes Maestros Dinos buscan sus consejos para progresar, pero se sabe también que es un tipo frío que no disfruta de la compañía...
+	</phase>
+
+	<a id="talk" cond="!mission(elma)">Hablar con el Maestro Elemental</a>
+	<a id="talk2" cond="mission(elma)+!mission(elma5)">Hablar con el Maestro Elemental</a>
+	<a id="talk3" cond="mission(elma5)">Hablar con el Maestro Elemental</a>
+
+	<phase id="talk" next="ask">
+		¿Mmm? Anda mira, otro pesad.. maestro que viene a fastid... preguntarme por mis consejos. Ya empiezo a estar hart... encantado de todo esto, ji, ji. Veamos, ¿qué desea este Maestro?
+	</phase>
+
+	<a id="ask">¡Quiero progresar!</a>
+
+	<phase id="ask" next="ask2">
+		Pues, entonces... quiere progresar el Maestro, pero eso sí, con la ley del mínimo esfuerzo. También quiere el joven Maestro hacer milagros, pero sin levantar un dedo. Si él quiere mi consejo, que escuche bien: ¡¡¡mueve el cul... cuerpo!!!
+	</phase>
+
+	<a id="ask2">¿Eso es todo?</a>
+
+	<phase id="ask2" next="miss">
+		.... y encima insiste... vamos a ver... si de verdad él quiere aprender algo, tendrá que hacerme algunos favores. ¡Y después ya veré si es digno de mis consejos!
+	</phase>
+
+	<a id="miss">Lista de Misiones</a>
+
+	<phase id="miss" missions="elmaster">
+	</phase>
+
+	<phase id="talk2" next="miss:maudit">
+		¿Avanza bien el aprendizaje de la vida? Mucho me temo que yo no puedo hacer nada por él...
+	</phase>
+
+	<phase id="talk3" next="maudit:sphere">
+		La formación ha finalizado... No soy de esos que dan cumplidos, pero hay que decir que la mayoría de los Dinos no lo consiguen. No está mal.
+	</phase>
+
+	<a id="maudit" cond="fx(maudit)">¡Mi Dino está maldito! ¿Me puede ayudar?</a>
+	<a id="sphere">Recompensa...</a>
+
+	<phase id="maudit" next="maudit2">
+		¿Qué? ¿Maldito? ¿Le ha frotado mi Varita de Madera-Maldita a su Dino? ¡Y mira que le avisé!
+	</phase>
+
+	<a id="maudit2">Creo que me despisté.</a>
+
+	<phase id="maudit2" next="maudit3">
+		Y ahora claro, como ha hecho una tontería, ¡soy yo quien tiene que ayudarle! ¡Como si no tuviera nada mejor que hacer! Bueno, lo que está hecho, está hecho. Sobre la maldición, tienes que usar el Ungüento del Demonio. El único problema es que la última tienda que lo vendía se declaró en suspensión de pagos...
+	</phase>
+
+	<a id="maudit3">¿Y ahora qué hago?</a>
+
+	<phase id="maudit3" next="maudit4">
+		No te preocupes. Creo que hay una tienda escondida en la que se pueden encontrar objetos muy raros. El precio ya es otra historia, pero dadas las circunstancias, no tendrás otro remedio.
+	</phase>
+
+	<a id="maudit4">Le escucho.</a>
+
+	<phase id="maudit4">
+		Los últimos rumores decían que la tienda se sitúa en las Ruinas Ashpuk. Sin embargo, solo aparece para aquéllos que estén malditos...
+	</phase>
+
+	<phase id="sphere" next="sphere2">
+		Ajá, ¿y ahora quiere él su recompensa? Es verdad que hace bien falta mostrar cierta perseverancia en la formación de los cinco elementos... una perseverancia próxima de la estupidez. En fin, por qué no.
+	</phase>
+
+	<a id="sphere2">¿Entonces?</a>
+
+	<phase id="sphere2" next="sphere3">
+		Como profesor que soy, espero que él haya aprendido algo durante este tiempo, y que tenga cierto reconocimiento hacia aquéllos a quienes ha hecho perder el tiempo con sus tonterías. Y con esto, hablo especialmente de un reconocimiento hacia mi persona.
+	</phase>
+
+	<a id="sphere3">Gracias</a>
+
+	<phase id="sphere3" next="sphere4">
+		¡Ah! Al menos él es educado. Es una calidad que se está perdiendo cada vez más. Voy a ofrecerle a él una bella recompensa... ¡porque me da pena! ¿Al menos sabría él decir qué es una Esfera Elemental?
+	</phase>
+
+	<a id="sphere4">¿Una qué?</a>
+
+	<phase id="sphere4" next="sphere5">
+		.... Desafortunadamente es lo que pensaba... Me pregunto a veces por qué tengo yo que explicar todo el tiempo lo mismo... Una Esfera Elemental es un objeto mágico cargado con la potencia de un elemento.
+	</phase>
+
+	<a id="sphere5">Ajá...</a>
+
+	<phase id="sphere5" next="sphere6">
+		Hay cinco tipos de esferas, una por cada elemento. Cuando un Dino absorbe una, aprende directamente una nueva competencia vinculada a este elemento. Se trata de un objeto muy poderoso...
+	</phase>
+
+	<a id="sphere6">¡Interesante!</a>
+
+	<phase id="sphere6" next="again:sphere7:already">
+		¡Pero eso no es todo! Si acumulas varias esferas del mismo elemento, el Dino puede aprender competencias aún más poderosas. Hay tres niveles esféricos por elemento. En total son 15 competencias esféricas... ¿Ha comprendido él todo lo que acabo de explicar?
+	</phase>
+
+	<a id="again" target="sphere4">Por favor, repítalo.</a>
+	<a id="sphere7" cond="fx(sphere)">Sí, lo he entendido todo.</a>
+	<a id="already" cond="!fx(sphere)" target="end">Sí, todo comprendido.</a>
+
+	<phase id="sphere7" next="end" rnditem="spher1:spher2:spher3:spher4:spher5" noeffect="sphere">
+		¡Bien! Si él considera que lo ha comprendido todo, ¡le confío una de mis Esferas! Atención: mi cofre de esferas está un poco desordenado. Nunca sé cuál caerá en mis manos...
+	</phase>
+
+	<a id="end">¡No hay problema!</a>
+
+	<phase id="end">
+		¡Que se lo piense muy bien antes de usar su Esfera! Es un objeto muy preciado. Hay muchos Maestros de Dinos capaces de ceder una pequeña fortuna por obtener una. Es por ello que a veces se encuentran en la Plaza del Mercado.
+	</phase>
+
+<!--
+	<a id="unlock" cond="mission(eldbl)">Las Competencias-Dobles</a>
+
+	<phase id="unlock" next="double">
+		Entonces, ¿estás interesado por las Competencias Dobles? Supongo que él nunca imaginó que nada así pudiera existir. Qué divertido es ver la evolución de tu aprendizaje, je, je, je. Pues te voy a contar un poquito más...
+	</phase>
+
+	<a id="double">Escuchar al Maestro.</a>
+
+	<phase id="double" next="double2">
+		Espero que él escuche correctamente... Hay un cierto número de competencias que no están liadas a un elemento único, sino a dos. Esto quiere decir que se pueden aprender a partir de dos elementos sin distinción. A esto se le llama "Competencia-doble"
+	</phase>
+
+	<a id="double2">Seguir escuchando.</a>
+
+	<phase id="double2" next="double3">
+		Normalmente, para desbloquear una Competencia-Doble, hay que conocer otras dos competencias, cada una en cada uno de los dos elementos. Hay diez Competencias-Doble en total: una por cada combinación de los elementos... Si él no comprende, no pienso repetirlo.
+	</phase>
+
+	<a id="double3">Permanecer a la escucha.</a>
+
+	<phase id="double3" next="learn:already">
+		De todos modos, si él quiere acceder a estas Competencias-Dobles, tiene que aprender el Multi-Elementos...
+		Esto suele llevar varios años de meditación, pero como él ha sido un buen alumno, voy a enseñarle esta competencia. Después, ¡en su mano estará que pueda arreglárselas para desbloquear las Competencias-Dobles!
+	</phase>
+
+	<a id="learn" cond="!skill(multi)">Aprender la competencia Multi-Elementos</a>
+	<a id="already" cond="skill(multi)">Aprender la competencia Multi-Elementos</a>
+
+	<phase id="learn" skill="multi" fast="1">
+	Durante las horas siguientes el Maestro Elemental te explica con su habitual paciencia las bases para controlar las Competencias-Dobles. ¡Tu Dino aprende la competencia Multi-Elementos al final de este entrenamiento!
+	</phase>
+
+	<phase id="already">
+	¿Qué es lo que viene a molestarme los Roncivores si ya conoce la competencia! ¡Vamos! ¡Como si no hubiera otra cosa que hacer! ¡Largo de aquí!
+	</phase>
+-->
+
+</d>

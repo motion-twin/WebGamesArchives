@@ -1,0 +1,42 @@
+<d place="gmprai" name="Le plan machiavélique" gfx="gmexterm" auto="1">
+
+<phase id="begin" next="oui">
+Je vais t'expliquer mon plan. Pour l'instant, on a un charcleur à retardement, et mon appareil photo pour immortaliser l'explosion.
+Ce qu'il nous faut, c'est une solution pour que BHV appuie sur le charcleur pendant l'interview, tu es d'accord ? 
+</phase>
+
+<a id="oui">Jusque là, oui.</a>
+
+<phase id="oui" next="sac:sacb">
+%happy%Eh bien cette solution, je l'ai ! j'ai vu chez Chouettex des [sac à dos Skat en peluche] ! On pourrait mettre le charcleur dedans et se débrouiller pour qu'elle le prenne dans ses bras ! 
+C'est pas génial, ça ? 
+</phase>
+
+<a id="sac" cond="!quest(bhvd)">Un sac à dos Skat ? En peluche...? </a>
+<a id="sacb" cond="quest(bhvd)">Ah oui je connais ce sac à dos...</a>
+
+<phase id="sac" next="bref">
+Oui oui ça semble ridicule dit comme ça, mais les voies du marketing sont impénétrables... 
+Et puis il est sympa ce sac à dos. Si tu peux en récupérer deux j'en prendrais bien un pour aller travailler, moi.
+</phase>
+
+<phase id="sacb" next="bref">
+%happy%Ils sont beaux, hein ? 
+</phase>
+
+<phase id="bref" next="tout">
+Bref. il faut que tu ailles chez Chouettex pour ramener un sac à dos Skat. 
+</phase>
+
+<a id="tout">On aura tout, après ? </a>
+
+<phase id="tout" next="toutout">
+%happy%Oui, mais il faudra réussir à prendre la place du journaliste... Récapitulons :
+</phase>
+
+<phase id="toutout">
+1 : On met le charcleur dans le Skat en peluche... 2 : On commence l'interview... 3 : On tend le Skat à BHV pour prendre une photo... 4 : elle le serre dans ses bras... 5 : * [BOUM ! ] | |
+%angry%C'est infaillible ! Ca ne peut pas rater !
+</phase>
+
+</d>

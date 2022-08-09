@@ -1,0 +1,21 @@
+-cp src
+-cp ../com
+-cp ../lang/fr/tpl
+-cp ../../twinBase/base
+-swf ../www/swf/client.swf
+-swf-header 680:420:30:FFFFFF
+-swf-lib obj/classroom.clientResources.swf
+-resource ../lang/fr/tpl/clientTexts.xml@texts_fr
+-resource ../lang/fr/tpl/clientRandomTexts.xml@random_fr
+--flash-strict
+-swf-version 11.2
+-main Main
+-swf-lib swf/_gfx.swf
+-lib format
+-D spriteParticles
+#-D debug
+
+#-cmd "cp swf/client.swf ../www/swf/client.swf" 
+-cmd "obfu9 -key CukTaijEt7 ../www/swf/client.swf -fake"
+
+

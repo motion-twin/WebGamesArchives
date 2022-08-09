@@ -1,0 +1,816 @@
+﻿<texts>
+
+	<!-- ### LANGAGE ### -->
+	<t id="date_fmt">%A %d %B à %H:%M</t>
+	<t id="locale1">fr_FR.UTF-8</t>
+	<t id="locale2">FR</t>
+	
+	
+	<!-- ### GAMEMODE ### -->
+	<t id="gamemode_Tutorial">Tutoriel</t>
+	<t id="gamemode_Default">Normal</t>
+	<t id="gamemode_IceAttack">Ice Attack</t>
+	<t id="gamemode_Dig">Tais-toi et creuse</t>
+	<t id="gamemode_Mission">Mission</t>
+	<t id="gamemode_Wind">Vents stellaires</t>
+
+
+	<!-- ### WALL TWINOID ### -->
+	<t id="wall_best_score">a battu son record sur le lieu <strong>::ZONE::</strong> avec <strong>::SCORE::</strong> points</t> 
+	<t id="wall_quest">a terminé la quête <strong>::QUEST::</strong></t>
+	<t id="wall_xp">a atteint le niveau <strong>::XP::</strong></t>
+	<t id="wall_reput">a atteint la réputation <strong>::REPUT::</strong> auprès de : <strong>::SCHOOL::</strong> </t>
+	<t id="wall_school">a rejoint l'école<strong>::SCHOOL::</strong></t>
+
+	<t id="wall_week_score_zone">a réalisé le meilleur score de la semaine sur le lieu <strong>::ZONE::</strong>, avec <strong>::SCORE::</strong> points</t>
+	<t id="wall_week_score">a réalisé le meilleur score de la semaine avec <strong>::SCORE::</strong> points</t>
+	<t id="wall_cup_winner">a réalisé le meilleur score de la Coupe des écoles avec <strong>::SCORE::</strong> points</t>
+	<t id="wall_race_winner">a remporté la Lutte des classes avec <strong>::SCT::</strong></t>
+	
+
+
+	
+	<!-- ### SHOP  ###-->
+	<t id="product_unavailable">Cet article n'est pas disponible.</t> 
+	<t id="product_not_enough">Vous n'avez pas assez pour acheter cet article.</t>
+	<t id="product_already_have_it">Vous possédez déjà cet article. Vous ne pouvez pas en acheter plus.</t>
+	<t id="product_bought">Vous obtenez ::QTY:: article::S:: "::NAME::"::PQTY::. Merci beaucoup.</t>
+	<t id="recipe_bought">Vous avez acheté la recette "::NAME::". Elle est disponible dans votre grimoire.</t>
+	<t id="random_recipe_bought">Vous obtenez la recette "::NAME::". Félicitations ! </t>
+	<t id="no_more_random_recipe">Vous possédez déjà toutes les recettes distribuées par la guilde. Tenez, voilà votre pyram. </t>
+	<t id="slot_rank_bought">Vous obtenez un nouvel emplacement disponible dans votre ceinture d'objets magiques. Félicitations !</t>
+	<t id="pa_rank_bought">Vous avez acheté des Mega-chaussettes anti ampoules ! A vous les joies des randonnées  éternelles ! </t>
+	
+	<t id="no_sell_product">Vous n'avez pas cet article dans votre inventaire.</t>
+	<t id="not_enough_sell_product">Vous n'avez pas la quantité nécessaire de cet article dans votre inventaire.</t>
+	<t id="product_sold">Vous avez vendu ::QTY:: article::S:: "::NAME::"::PQTY::.</t>
+	<t id="recipe_sold">Vous avez vendu la recette "::NAME::". Elle n'est plus disponible dans votre grimoire.</t>
+	
+	
+	<!-- ### SPECIAL ITEMS ### -->
+	<t id="item_name_RandomRecipe">Nouvelle Recette</t>
+	<t id="item_name_RandomElem">Nouvelle Recette Elementaire</t>
+	<t id="item_name_RandomCloth">Nouvelle Recette Vestimentaire</t>
+	<t id="item_name_RandomMorph">Nouvelle Recette Cosmétique</t>
+	<t id="item_name_RandomStupid">Nouvelle Recette d'Inutilité Publique</t>
+	<t id="item_name_RandomObject">Nouvelle Recette de Combat</t>
+	<t id="item_name_NewsPaper">Guildian Express</t>
+	<t id="item_name_Slot">Poche de ceinture</t>
+	
+	<t id="item_desc_RandomRecipe">Une nouvelle recette choisie au hasard. Ce produit est proposé en partenariat avec la guilde des alchimistes.</t>
+	<t id="item_desc_RandomElem">Une nouvelle recette choisie au hasard. Recette <strong>élémentaire</strong> garantie ! </t>
+	<t id="item_desc_RandomCloth">Une nouvelle recette choisie au hasard. Recette <strong>vestimentaire</strong> garantie ! </t>
+	<t id="item_desc_RandomMorph">Une nouvelle recette choisie au hasard. Recette <strong>cosmétique</strong> garantie ! </t>
+	<t id="item_desc_RandomStupid">Une nouvelle recette choisie au hasard. Recette <strong>d'inutilité publique</strong> garantie ! </t>
+	<t id="item_desc_RandomObject">Une nouvelle recette choisie au hasard. Recette <strong>de combat alchimique</strong> garantie ! </t>
+	<t id="item_desc_NewsPaper">Plus d'infos ! Plus de ragots ! Les dernières infos du royaume. Dernière édition en kiosque !</t>
+	<t id="item_desc_Slot">Poche pour votre ceinture d'alchimiste. Permet d'avoir un emplacement supplémentaire pour stocker ses objets magiques lors d'une alchimie.</t>
+	
+	<!-- ### SCHOOLTEAM ### -->
+	<t id="sct_cant_race_recruit">Action impossible, vous ne pouvez pas recruter quand une lutte des classes est en cours.</t>
+	<t id="sct_need_school">Action impossible, vous devez appartenir à une école d'alchimie pour cela.</t>
+	<t id="sct_need_team">Action impossible, vous devez appartenir à une classe pour cela.</t>
+	<t id="sct_already_have_one">Action impossible, vous êtes déjà dans une classe.</t>
+	<t id="sct_no_wheel_choice">Vous n'avez utilisé aucun rouage disponible. Action annulée.</t>
+	<t id="sct_not_enough_wheel">Action impossible, vous n'avez pas suffisamment de rouages pour cela.</t>
+	<t id="sct_not_enough_gold">Action impossible, vous n'avez pas suffisamment de kubors pour cela.</t>
+	<t id="sct_not_enough_reput">Action impossible, vous n'avez pas suffisamment de réputation pour cela.</t>
+	<t id="sct_object_not_found">Action impossible, ingrédient non trouvé.</t>
+	<t id="sct_no_negative_reput">Action impossible. Il vous faut une réputation positive pour pouvoir en donner.</t>
+	<t id="sct_err_object_done">Action impossible, cet ingrédient est déjà entièrement validé.</t>
+	<t id="sct_err_gugive_error">Action impossible, la quantité est trop faible.</t>
+	<t id="sct_no_joker">Action impossible. Vous n'avez pas de joker disponible.</t>
+	<t id="sct_cant_use_joker">Action impossible. Il reste plus d'une sorte d'ingrédients incomplète dans votre objectif en cours.</t>
+	<t id="sct_no_teleport">Action impossible, votre classe n'a plus de téléporteur disponible pour aujourd'hui.</t>
+	<t id="sct_teleport_useless">Téléporteur non dépensé, vous êtes déjà sur le lieu du puits hermétique.</t>
+	<t id="sct_not_a_valid_object">Action impossible, l'ingrédient choisi n'est pas un objet magique.</t>
+	<t id="sct_name_too_short">Le nom de votre classe est trop court. Il faut 5 caractères minimum.</t>
+	<t id="sct_name_too_long">Le nom de votre classe est trop long. Il faut 12 caractères maximum.</t>
+	<t id="sct_name_invalid">Le nom de votre classe contient des caractères invalides.</t>
+	<t id="sct_already_exists">Une classe du même nom existe déjà.</t>
+	<t id="sct_creation_done">Félicitations, vous avez créé votre classe. Vous pourrez participer à la compétition dès qu'elle contiendra 5 membres.</t>
+	<t id="sct_cant_apply">Impossible de postuler auprès de cette classe.</t>
+	<t id="sct_bad_level">Action impossible. Vous devez être au moins niveau ::LEVEL:: pour cela.</t>
+	<t id="sct_already_apply">Action impossible. Vous avez déjà une candidature en attente.</t>
+	<t id="sct_apply_done">Votre candidature a été envoyée aux responsables de cette classe. Vous pouvez à tout moment annuler votre demande à partir de cette page. </t>
+	<t id="sct_apply_canceled">Votre candidature a été annulée.</t>
+	<t id="sct_full">Action impossible. La classe a atteint le nombre maximum de membre. </t>
+	<t id="sct_need_manager">Action impossible. Une classe doit toujours avoir au moins un délégué. Nommez-en un autre avant de vous retirer vos droits.</t>
+	<t id="sct_unsub">Vous avez quitté votre classe.</t>
+	<t id="sct_no_grant">Vous n'avez les droits suffisants pour cette action.</t>
+	<t id="sct_dissolved">Votre classe a été supprimée.</t>
+	<t id="sct_forum_desc">Forum privé de votre classe. Réservé aux membres.</t>
+	<t id="sct_wheel">rouage</t>
+	<t id="sct_kpoint">point de savoir</t>
+	<t id="sct_cant_buy_joker">Vous ne pouvez pas acheter davantage de jokers. Si ce n'est pas fait, utilisez vos points de savoir pour augmenter votre limite maximum de jokers.</t>
+	<t id="sct_joker_bought">Nouveau joker disponible pour votre classe ! Il est disponible dès maintenant dans le <em>système de gestion des jokers</em>.</t>
+	<t id="sct_joker_used">Joker utilisé : votre objectif a été validé avec succès ! </t>
+	<t id="sct_act_done_exch">Echange effectué. La classe possède un point de savoir supplémentaire. </t>
+	<t id="sct_act_done_gugive">Action effectuée, le nombre d'ingrédients demandé a été divisé par deux.</t>
+	<t id="sct_act_done_scgive">Action effectuée, l'ingrédient demandé a été supprimé.</t>
+	<t id="sct_act_done_bours">Action effectuée, la classe dispose d'un rouage supplémentaire. </t>
+	<t id="sct_act_done_actpl">Action effectuée. Les objets créés sont dans le coffre de la classe et peuvent être utilisés par tous les membres à la fin de leurs alchimies.</t>
+	<t id="sct_act_done_actrec">Action effectuée. Les objets créés sont dans le coffre de la classe et peuvent être utilisés par tous les membres au chaudron.</t>
+	<t id="sct_act_done_cancel">Action effectuée, l'objet magique demandé a été supprimé de l'objectif en cours.</t>
+	<t id="sct_cant_inc_knowledge">Vous n'avez pas accès à ce savoir pour l'instant.</t>
+	<t id="sct_cant_add_knowledge">Vous n'avez pas les droits pour dépenser les points de savoirs de votre classe.</t>
+	<t id="sct_action_error">Action annulée, une erreur est survenue.</t>
+	<t id="sct_kaction_already_done">Cette action a déjà été utilisée pendant l'objectif en cours.</t>
+
+	<t id="sct_reward_given">Récompense attribuée avec succès.</t>
+	<t id="sct_no_user_selected">Action, annulée : vous n'avez pas sélectionné de joueur.</t>
+
+	<t id="sct_lock_rewards_1">Votre école doit être au moins <strong>troisième de la lutte des classes</strong> pour avoir accès à ces récompenses.</t>
+	<t id="sct_lock_rewards_2">Votre école doit être au moins <strong>deuxième de la lutte des classes</strong> pour avoir accès à ces récompenses.</t>
+	<t id="sct_lock_rewards_3">Votre école doit être  <strong>première de la lutte des classes</strong> pour avoir accès à ces récompenses.</t>
+
+	<t id="sct_no_school">
+		<p class="medium">Les classes sont ouvertes aux joueurs de niveau 2 qui appartiennent à une école d'alchimie.</p>
+		<p class="medium">Si vous êtes un nouvel alchimiste : continuez vos quêtes, vous devriez rejoindre une école très rapidement !</p>
+	</t>
+
+
+	<t id="sct_get_rewards">Vous avez reçu des récompenses de la lutte des classes. Rendez-vous sur l'historique de votre classe pour voir le détails des récompenses ! 
+	</t>
+	<t id="sct_rewards_done">Les récompenses choisies ont été distribuées. Le récapitulatif est visible dans l'historique de la classe.
+	</t>
+
+	
+	<t id="sct_apply_ok">
+		<p><strong>Candidature acceptée</strong></p>
+		<p>Félicitations, votre candidature auprès de la classe <a href="/sct/::ID::">::TEAM::</a> a été acceptée !</p>
+		<p>Vous êtes maintenant un membre à part entière.</p>
+	</t>
+	
+	<t id="sct_apply_no">
+		<p><strong>Candidature refusée</strong></p>
+		<p>Votre candidature auprès de la classe <a href="/sct/::ID::/info">::TEAM::</a> a été refusée.</p>
+		<p>Rendez-vous sur <a href="/sct">cette page</a> pour fermer cette candidature et récupérer vos kubors.</p>
+	</t>
+	
+	<t id="sct_fired_title"></t>
+	<t id="sct_fired">
+		<p><strong>Plus de classe</strong></p>
+		<p>Un responsable de la classe <a href="/sct/::ID::/info">::TEAM::</a> vous a désinscrit.</p>
+	</t>
+	<t id="sct_invalid_play">Partie invalide pour cette action.</t>
+	<t id="sct_too_much_actpl">Les résultats ont déjà été doublés pour cette partie, action impossible.</t>
+	<t id="sct_actpl_done">Vos gains ont été doublés</t>
+	<t id="sct_cant_take">Action impossible, l'objet requis est absent du coffre de la classe.</t>
+	<t id="sct_actrec_confirm">Doubler le résultat de la dernière recette ?</t>
+	<t id="sct_invalid_recipe">Recette invalide pour cette action.</t>
+	<t id="sct_public_page_done">Les modifications ont été enregistrées.</t>
+
+	
+	<!-- ### RACE ### -->
+	<t id="race_no_drop">Vous ne possédez pas tous les ingrédients jetés dans le puits.</t>
+	<t id="race_bad_level">Un autre alchimiste de la classe a déjà rempli l'objectif demandé ! Vous n'avez pas perdu vos éléments et pouvez voir dès maintenant les nouveaux ingrédients demandés.</t>
+	<t id="race_bad_from">Un autre alchimiste de la classe a donné des éléments identiques avant vous ! Votre don a été annulé et vous n'avez pas perdu vos éléments.</t>
+	<t id="race_need_done">Félicitations, vous avez rempli l'objectif d'ingrédients demandés ! Votre classe a gagné un <strong>::REWARD::</strong>.</t>
+	<t id="no_race">Action annulée. Il n'y a pas de lutte des classes en cours.</t>
+
+	
+	<!-- ### DIALOGS ### -->
+	<t id="default_end">Terminer la discussion.</t>
+	<t id="quest_end">Voir les quêtes disponibles.</t>
+	<t id="quest_reput_text">Monter votre réputation</t>
+	
+	<!-- ### UNIFORM COLORS ### -->
+	<!-- GU -->
+	<t id="col_0_0">blanc</t>
+	<t id="col_0_1">gris</t>
+	<t id="col_0_2">beige</t>
+	<t id="col_0_3">marron</t>
+	<!-- GM -->
+	<t id="col_1_0">orange</t>
+	<t id="col_1_1">vert clair</t>
+	<t id="col_1_2">vert</t>
+	<t id="col_1_3">vert foncé</t>
+	<!-- AP -->
+	<t id="col_2_0">or</t>
+	<t id="col_2_1">bleu ciel</t>
+	<t id="col_2_2">bleu</t>
+	<t id="col_2_3">noir</t>
+	<!-- SK -->
+	<t id="col_3_0">kaki</t>
+	<t id="col_3_1">blanc</t>
+	<t id="col_3_2">orange</t>
+	<t id="col_3_3">rouge</t>
+	<!-- JZ -->
+	<t id="col_4_0">orange</t>
+	<t id="col_4_1">anthracite</t>
+	<t id="col_4_2">violet</t>
+	<t id="col_4_3">gris</t>
+	
+	
+	<!-- ### NOWAY ### -->
+	<t id="default_noway">Vous n'avez pas accès à ce lieu pour l'instant.</t>
+	
+	
+	<!-- ### QUESTS ### -->
+	<t id="unknown_quest">Cette quête n'existe pas.</t>
+	<t id="already_in_quest">Vous avez déjà une quête en cours.</t>
+	<t id="unavailable_quest">Vous n'avez pas encore accès à cette quête.</t>
+	<t id="back_valid_quest">Retourner valider la quête à : ::NAME::</t>
+	<t id="quest_use_missing">Vous n'avez pas tous les objets demandés.</t>
+	<t id="no_curr_quest">Vous n'avez pas de quête en cours.</t>
+	<t id="no_stase_quest">Vous n'avez pas de quête en pause.</t>
+	<t id="err_on_accept">Une erreur est survenue pour accepter cette quête.</t>
+	<t id="pause_done">La quête <strong>::NAME::</strong> a été mise en pause.</t>
+	<t id="unpause_done">La quête <strong>::NAME::</strong> a été activée. Vous pouvez la continuer normalement.</t>
+	<t id="err_is_pause">Vous avez déjà cette quête en pause.</t>
+	<t id="pause_for_accept">
+		<p>Vous avez déjà une quête en cours. La mettre en pause pour accepter celle-ci ?<br/>
+		Vous pourrez reprendre votre quête en pause à tout moment.</p>
+		<center>
+		<a class="blockbutton" href="/act/quest/accept?q=::QUEST::&f=1">Oui, j'accepte cette nouvelle quête</a>
+		</center>
+	</t>
+	<t id="full_for_accept">
+		<p><strong>Vos emplacements de quêtes sont pleins</strong>, vous ne pouvez donc pas accepter de nouvelle quête pour l'instant. <br/>
+		Finissez ou abandonnez une de vos quêtes avant d'en commencer une autre.
+		</p>
+	</t>
+	
+	
+	
+	<!-- ### ECOLES ### -->
+	<t id="school_0">Guilde</t>
+	<t id="school_2">Audepint</t>
+	<t id="school_4">Jeezara</t>
+	<t id="school_1">Gemini</t>
+	<t id="school_3">Shang-Kah</t>
+	
+	
+	<!-- ### GRADES ### -->
+	<t id="grade_0">Profane</t>
+	<t id="grade_1">Aspirant</t>
+	<t id="grade_2">Brave aspirant</t>
+	<t id="grade_3">Aspirant confirmé</t>
+	<t id="grade_4">Petit apprenti</t>
+	<t id="grade_5">Apprenti</t>
+	<t id="grade_6">Grand apprenti</t>
+	<t id="grade_7">Presqualchimiste</t>
+	<t id="grade_8">Alchimiste certifié</t>
+	<t id="grade_9">Alchimiste certifié 2e niveau</t>
+	<t id="grade_10">Alchimiste certifié 3e niveau</t>
+	<t id="grade_11">Alchimiste certifié 4e niveau</t>
+	<t id="grade_12">Alchimiste certifié 5e niveau</t>
+	<t id="grade_13">Professeur</t>
+	<t id="grade_14">Professeur des écoles</t>
+	<t id="grade_15">Professeur 1er cycle</t> 
+	<t id="grade_16">Professeur 2e cycle</t>
+	<t id="grade_17">Professeur 3e cycle</t>
+	<t id="grade_18">Professeur supérieur</t>
+	<t id="grade_19">Alchimage</t>
+	
+	
+	<!-- ### RECIPE RANK ### -->
+	<t id="rank_0">Complètement novice</t>
+	<t id="rank_1">Pas très doué</t>
+	<t id="rank_2">On se débrouille</t>
+	<t id="rank_3">Plutôt fortiche</t>
+	<t id="rank_4">Super balèze</t>
+	<t id="rank_5">Les doigts dans le nez</t>
+	
+	<t id="rank_name_0">Elementaire</t>
+	<t id="rank_name_1">Cosmétique</t>
+	<t id="rank_name_2">Inutilité publique</t>
+	<t id="rank_name_3">Vestimentaire</t>
+	<t id="rank_name_4">Combat alchimique</t>
+	
+	<t id="caul_got_rank">::CAT:: : + 1 point !</t>
+	<t id="caul_new_level">Nouveau rang ::CAT:: : ::LEVEL:: !</t>
+	
+	
+	<!-- ### SCRIPT PRINT ### -->
+	<t id="script_need">Nécessite : </t>
+	<t id="script_print_CNothing"></t>
+	<t id="script_print_CFalse">non disponible</t>
+	<t id="script_print_CAnyGrade">Niveau ::G::.</t>
+	<t id="script_print_CGrade">Niveau ::G::, école ::SCH::.</t>
+	<t id="script_print_CReput">Réputation "::R::" avec ::SCH::</t>
+	<t id="script_print_CSchool">école ::SCH::.</t>
+	<t id="script_print_CFullSchool">Niveau ::G::, école ::SCH::. Réputation "::SR::"</t>
+	<t id="script_print_CQuest">terminer la quête "::Q::"</t>
+	<t id="script_print_COr">::A:: OU ::B::</t>
+	<t id="script_print_CAnd">::A:: ET ::B::</t>
+	<t id="script_print_CHasObject">posséder ::N:: x ::QTY::</t>
+	<t id="script_print_CHasCollection">posséder : ::C::</t>
+	<t id="script_print_CHasAvatar">Avoir la bonne apparence</t>
+	<t id="script_print_CHasRecipe">posséder la recette ::R::</t>
+	<t id="script_print_CHasGold">avoir au moins ::G:: kubor::S::</t>
+	<t id="script_print_CHasToken">avoir au moins ::G:: pyram::S::</t>
+	<t id="script_print_CRandom">avoir de la chance</t>
+	<t id="script_print_CAdmin">être un administrateur</t>
+	<t id="beta_lock">contenu indisponible pendant le beta test</t>
+	<t id="script_print_CRecipeRank">::C:: : rang ::R:: [::N::]</t>
+	
+	
+	<!-- ### REPUTATIONS ### -->
+	<t id="reput_0">Guilde</t>
+	<t id="reput_2">Audepint</t>
+	<t id="reput_4">Jeezara</t>
+	<t id="reput_1">Gemini</t>
+	<t id="reput_3">Shang-Kah</t> 
+	
+	
+	<!-- ### REPUT CAP ### -->
+	<t id="reput_cap_-3">Paria</t>
+	<t id="reput_cap_-2">Ignoré</t>
+	<t id="reput_cap_-1">Condescendant</t>
+	<t id="reput_cap_0">Neutre</t>
+	<t id="reput_cap_1">Bien disposé</t>
+	<t id="reput_cap_2">On se rappelle</t>
+	<t id="reput_cap_3">A bras ouverts</t>
+	<t id="reput_cap_4">Chouchou</t>
+	<t id="reput_cap_5">Pistonné</t>
+	
+	<t id="new_reput">Nouvelle réputation obtenue : <strong>::r::</strong> avec <strong>::name::</strong> !<br/>De nouveaux lieux et objets vous sont accessibles dans le royaume.</t>
+	
+	
+	<!-- ### SCHOOL CUP ### -->
+	<t id="cup_avg_infos">Score moyen des membres de l'école</t>
+	<t id="cup_best_infos">Somme des 5 meilleurs scores de l'école</t>
+	<t id="cup_all_infos">Total des scores de tous les membres de l'école</t>
+	
+	
+	<!-- ### PLAY ### -->
+	<t id="invalid_data_play">Données de jeu invalides. Merci de relancer le jeu.</t>
+	<t id="invalid_data_save">Données de jeu invalides. </t>
+	<t id="game_already_saved">Cette partie a déjà été enregistrée.</t>
+	<t id="not_enough_token">Vous n'avez pas le pyram nécessaire pour jouer. </t>
+	<t id="game_back">Si vous quittez une partie en cours, elle sera perdue. \nRetourner quand même sur la carte ?</t>
+	<t id="game_is_playing">Attention, on dirait que vous avez une partie en cours, peut-être dans un autre onglet de votre navigateur. Evitez de vous déplacer pendant une partie, car votre résultat ne pourrait pas être enregistré.</t>
+	
+	<!-- ### USER TITLES ### -->
+	<t id="new_title">Nouveau titre obtenu : <strong>::name:: ! </strong> (::desc:: x ::value::)</t>
+	
+	<!-- ### TRANSFORM ### -->
+	<t id="invalid_data_transform">{Aïe, une erreur est survenue ! } Vous n'avez pas perdu vos éléments, mais rechargez la page avant de faire un nouvel essai. </t>
+	
+	
+	<!-- ### GUILDIAN ### -->
+	<t id="object_guildian">Le saviez-vous ?</t>
+	<t id="recipe_guildian">Un jour, une recette</t>
+	<t id="big_guildian">Article de fond</t>
+	<t id="score_guildian">Meilleurs scores</t>
+	<t id="pub_guildian">Réclame</t>
+	<t id="ad_guildian">Petites annonces</t>
+	<t id="news_guildian">Nouveauté</t>
+	
+	<t id="art_type_0">Infos alchimiques</t>
+	<t id="art_type_1">Technique de jeu</t>
+	<t id="art_type_2">People et ragots</t>
+	<t id="art_type_3">Un peu d'histoire</t>
+	<t id="art_type_4">Article de fond</t>
+	<t id="art_type_5">Faits divers</t>
+	<t id="art_type_6">Le saviez-vous ?</t>
+	<t id="art_type_7">Sciences et vie</t>
+	
+	<t id="art_fail_0">Autre...</t>
+	<t id="art_fail_1">Orthographe / Grammaire</t>
+	<t id="art_fail_2">Mise en page illisible</t>
+	<t id="art_fail_3">Hors charte</t>
+	<t id="art_fail_4">Incompréhensible</t>
+	<t id="art_fail_5">Abus de smileys</t>
+	
+	
+	<t id="already_has_last_guildian">Vous avez déjà le dernier exemplaire en kiosque.</t>
+	<t id="buy_last_guildian">
+		<p>Cet exemplaire a l'air de dater un peu... Pour des nouvelles fraîches, rien ne vaut le <strong>Guildian Express</strong> du jour ! </p>
+		<a class="blockbutton" href="/newspaper/buyLast">Acheter le journal pour ::cost:: kubors </a>
+	</t>
+	<t id="abo_last_guildian">
+		<p>Félicitations ! Grâce à votre <strong>abonnement au Guildian Express</strong>, vous avez reçu le journal d'aujourd'hui. Bonne lecture !</p>
+	</t>
+	
+	<t id="not_your_sub">Vous ne pouvez pas accéder à cet article ou cette annonce.</t>
+	<t id="invalid_image">L'image choisie n'est pas valide.</t>
+	<t id="title_too_long">Le titre de votre article est trop long : ::MAX:: caractères au maximum.</t>
+	<t id="empty_title">Le titre ne peut pas être vide.</t>
+	<t id="text_too_long">Votre texte est trop long : ::MAX:: caractères au maximum.</t>
+	<t id="invalid_type">La catégorie de l'article n'est pas valide.</t>
+	<t id="delete_article_done">Votre article a été supprimé.</t>
+	<t id="delete_advert_done">Votre annonce a été supprimée. </t>
+	<t id="delete_advert_done_gold">Votre annonce a été supprimée et les kubors dépensés vous ont été rendus.</t>
+	<t id="no_ban_subart">Impossible de travailler sur des articles ou des petites annonces si vous n'êtes pas autorisé à parler sur les forums du jeu.</t>
+	<t id="artsave_done">
+		<p class="medium">Si votre article est terminé, vous pouvez le <strong>proposer au journal.</strong></p>
+		<p class="medium">Pensez à le relire attentivement pour corriger les coquilles et  les fautes d'orthographe, sinon votre article sera refusé. </p>
+		<a class="blockbutton" href="/newspaper/subArt?s=1&id=::ID::">Oui, je propose mon article pour qu'il soit publié</a>
+	</t>
+	<t id="artsave_nosubmit">
+		<p class="medium">Votre article a bien été enregistré, mais vous avez atteint le nombre maximum d'articles déjà proposés. </p>
+		<p class="medium">Attendez que vos articles déjà soumis soient traités par le comité de publication avant d'en proposer d'autres. </p>
+	</t>
+	<t id="artsub_done">
+		<p class="medium">Merci d'avoir proposé un article, il est maintenant <strong>en attente de validation.</strong> Vous recevrez un message privé quand votre article sera validé ou refusé. </p>
+		<p class="medium">Pour plus d'informations, consultez <a href="/artInfo">l'aide sur les articles</a></p>
+	</t>
+	
+	<t id="adsave_done">
+		<p class="medium">Si votre petite annonce est terminée, vous pouvez <strong>l'envoyer au journal.</strong></p>
+		<p class="medium">Pensez à la relire attentivement pour corriger les coquilles et  les fautes d'orthographe, cela facilitera sa validation. </p>
+
+		<p>Vous avez choisi <strong>::DAY:: jour::S:: de publication pour ::COST:: <img src="::DOMAIN::/img/icons/kubor.gif" alt="kubor(s)" /></strong></p>
+
+		<a class="blockbutton" href="::URL::?s=1&id=::ID::">Oui, j'envoie mon annonce pour qu'elle soit publiée</a>
+	</t>
+	<t id="adsave_nosubmit">
+		<p class="medium">Votre petite annonce a bien été enregistrée, mais vous avez atteint le nombre maximum d'annonces à valider. </p>
+		<p class="medium">Attendez que vos petites annonces déjà envoyées soient traitées par le journal avant d'en proposer d'autres. </p>
+	</t>
+	<t id="adsub_nogold">
+		<p class="medium">Votre petite annonce n'a pas été envoyée car vous n'avez assez de kubors pour cela. </p>
+	</t>
+	<t id="adsub_done">
+		<p class="medium">Merci d'avoir  envoyé une annonce, elle est maintenant <strong>en attente de validation.</strong> Vous recevrez un message privé quand votre petite annonce sera validée ou refusée. </p>
+		<p class="medium">Pour plus d'informations, consultez <a href="/artInfo">l'aide sur les petites annonces</a>.</p>
+	</t>
+	
+	<!-- mp articles -->
+	<t id="art_success">
+		<p><strong>Guildian Express : article accpeté</strong></p>
+		<p>Votre article <strong>::NAME::</strong> vient d'être validé par le comité de publication du Guildian Express. Félicitations !</p>
+		
+		<p>Il paraîtra prochainement en une du journal, le délai nécessaire dépendant de la quantité d'autres articles déjà en attente. 
+		Vous serez informé lors de la première publication de votre article par message privé.</p>
+	</t>
+
+	<t id="art_failed">
+		<p><strong>Guildian Express : article refusé</strong></p>
+		<p>Votre article <strong>::NAME::</strong> n'a pas été retenu par le comité de publication du Guildian Express pour la raison suivante : </p>
+		
+		<p><em>::REASON::</em></p>
+		
+		<p>Si vous le souhaitez, vous pouvez modifier ou corriger votre article pour tenir compte de cet avis.</p>
+	</t>
+
+	<t id="art_first_pub">
+		<p><strong>Guildian Express : article publié</strong></p>
+		Bonne nouvelle, votre article <strong>::NAME::</strong> fait aujourd'hui la une du Guildian Express !
+	</t>
+	
+	<t id="art_first_replace">
+		<p><strong>Guildian Express : votre article reviendra très vite ! </strong></p>
+		<p>Suite à une édition spéciale, votre article <strong>::NAME::</strong> a été remplacé par une nouvelle information urgente en Une du journal.</p>
+		<p>Mais ne vous inquiétez pas, votre article est de nouveau dans la liste des articles à publier et sera donc de retour dans les prochains jours. </p>
+	</t>
+	
+	<!-- mp articles -->
+	<t id="ad_success">
+		<p><strong>Guildian Express : annonce acceptée</strong></p>
+
+		<p>Votre petite annonce vient d'être validée par le comité de publication du Guildian Express. </p>
+		
+		<p>Texte de votre annonce : <em>::TEXT::</em></p>
+		
+		<p>Elle paraîtra prochainement en une du journal, le délai nécessaire dépendant de la quantité d'autres petites annonces déjà en attente. 
+		Vous serez informé de sa publication par message privé.</p>
+	</t>
+	<t id="ad_failed">
+		<p><strong>Guildian Express : annonce refusée</strong></p>
+		<p>Votre petite annonce n'a pas été retenue par le comité de publication du Guildian Express pour la raison suivante : </p>
+		
+		<p><em>::REASON::</em></p>
+		
+		<p>Rappel du texte de votre annonce : <em>::TEXT::</em></p>
+		
+		<p>Si vous le souhaitez, vous pouvez modifier ou corriger votre petite annonce pour tenir compte de cet avis. 
+		Les kubors dépensés pour la soumission de cette annonce vous ont été remboursés.</p>
+	</t>
+	<t id="ad_first_pub">
+		<p><strong>Guildian Express : annonce publiée</strong></p>
+		<p>Bonne nouvelle, une de vos petites annonces est parue aujourd'hui dans le Guildian Express !</p>
+	</t>
+	
+	
+	<!-- ### PA ### -->
+	<t id="no_refill_object">Tu n'as pas de potion de vigueur en stock ! Chouettex ! Vite !</t>
+	<t id="no_refill_needed">Tu es déjà en pleine forme, pas besoin de stimulant.</t>
+	<t id="cant_rest_here">Tu ne peux pas te  reposer ici.</t>
+	<t id="good_rest">Un peu de repos, ça fait du bien ! Tu récupères tous tes points de déplacement.</t>
+	<t id="good_choco">Excellent, ce chocolat. Tu récupères un point de déplacement et une petite lourdeur sur l'estomac.</t>
+
+
+	<!-- ### GENERAL ### -->
+	<t id="err_unknown_action">Action Inconnue</t>
+	<t id="err_already_logged">Vous êtes déjà enregistré sur le site</t>
+	<t id="err_must_login">Cette action nécessite que vous soyez enregistré sur le site</t>
+	<t id="err_user_deleted">Cet utilisateur a été bloqué par un administrateur, merci de consulter le Règlement du site</t>
+	<t id="err_upload">Une erreur s'est produite lors de l'envoi du fichier.</t>
+	<t id="err_collection_missing">Vous ne pouvez pas faire cette action car il vous manque un objet.</t>
+	<t id="err_newspaper_missing">Vous n'avez pas de journal à consulter.</t>
+	<t id="parrain_mail_sent">Les emails ont bien été envoyés.</t>
+	
+	
+	<!-- ### SUBSCRIBE ERRORS ### -->
+	<t id="error_mid_missing">Oups, une erreur s'est produite ! Merci de vider le cache de votre navigateur avant de réessayer.</t>
+	<t id="error_login_missing"> Vous devez choisir un nom pour votre compte.</t>
+	<t id="error_login_too_short">Le nom de votre compte est trop court. Il faut entre 4 et 12 caractères.</t>
+	<t id="error_login_too_long">Le nom de votre compte est trop long. Il faut 12 caractères maximum.</t>
+	<t id="error_login_exists"> Ce nom de compte est déjà utilisé par un autre joueur, merci d'en choisir un autre.</t>
+	<t id="error_login_malformed">Votre nom de compte n'est pas valide. Merci de n'utiliser que des lettres (a à z) et des chiffres (0 à 9).</t>	
+	<t id="error_password_missing">Votre code secret ne doit pas être vide.</t>
+	<t id="error_password_too_small">Votre code secret est trop court. Il faut entre 4 et 12 caractères.</t>
+	<t id="error_password_too_long">Votre code secret est trop long (12 caractères maximum) </t>
+	<t id="error_password_too_simple">Votre code secret est trop simple. Merci d'en choisir un différent de votre nom de compte.</t>
+	<t id="error_password_confirm">Votre code secret et sa confirmation sont différents. Merci de saisir les 2 à nouveau.</t>
+	<t id="error_email_malformed">L'email entré ne semble pas valide. Merci de le vérifier.</t>
+	<t id="error_referer_not_found">Aucun joueur nommé "::u::" n'a été trouvé. Merci de vérifier l'orthographe du compte de votre parrain.</t>
+	<t id="error_bpass">Ce code invitation n'est pas valide.</t>
+	<t id="error_bpass_full">Les inscriptions avec ce code sont complètes.</t>
+	<t id="error_ipass">Ce code invitation n'existe pas.</t>
+	<t id="error_ipass_full">Désolé, les inscriptions avec ce code sont complètes. Trouvez-en un autre ou attendez l'ouverture géénrale du site.</t>
+	<t id="error_accept_condition">Nous ne pouvons pas créer votre compte si vous refusez les Conditions générale d'utilisation de notre site.</t>
+
+
+	<!-- ### BANK ### -->
+	<t id="bank_sync_done">Synchronization des codes effectuée.</t>
+	<t id="bank_ecode_bad_chars">Le code '::code::' contient des caractères invalides. Merci de corriger et de valider à nouveau.</t>
+	<t id="bank_eservice">Le service est actuellement indisponible, merci de noter votre code '::code::' et de réessayer plus tard.</t>
+	<t id="bank_eprotocol">Une erreur de protocole s'est produite, merci de noter votre code '::code::' et de réessayer plus tard.</t>
+	<t id="bank_credit_done">Le code a été validé et votre compte a été crédité de ::money:: Pyrams. Merci pour votre achat.</t>
+	<t id="bank_etransaction">Le service de paiement par carte bancaire est actuellement indisponible, merci de réessayer ultérieurement.</t>
+	<t id="bank_done"><strong>::money:: Pyrams</strong> viennent d'être crédités sur votre compte. Merci pour votre achat.</t>
+	<t id="fidelity_a_done">Vos points fidélité vous font aussi gagner <strong>::PYRAMS:: Pyram::PS:: supplémentaire::PS::.</strong></t>
+	<t id="fidelity_b_done">Vos points fidélité vous font aussi gagner <strong>::PYRAMS:: Pyram::PS:: supplémentaire::PS::</strong> et <strong>::OWLS:: Chouette::CS:: d'or.</strong></t>
+	<t id="fidelity_new_rank"><strong>Bravo, vous atteignez un nouveau bonus fidélité ! </strong></t>
+	<t id="first_buy">Ce premier achat vous fait gagner ::PA:: potions de vigueur en bonus, et une interface de quête améliorée !</t>
+	
+	<t id="beta_call_done">Voilà vos ::token:: Pyrams supplémentaires pour aujourd'hui. Bonne continuation, alchimiste.</t>
+	<t id="beta_call_no">Hum... Vous avez déjà reçu vos pyrams aujourd'hui, non ? Ou alors il vous en reste encore ? Vous savez, on fait des supers statistiques quand vous cliquez sur ce bouton, c'est pas pour stocker le plus de parties possibles. Ah non non non. Ca ne marche pas comme ça.</t>
+
+
+	<!-- ### USER/ACCOUNT ### -->
+	<t id="err_account_pass">L'identifiant ou le mot de passe saisi est invalide</t>
+	<t id="err_account_email">L'adresse email que vous avez entrée n'est pas valide</t>
+	<t id="err_account_badpass">Le nouveau mot de passe n'est pas valide. Il doit comporter entre 4 et 12 caractères.</t>
+	<t id="err_account_confirm">La confirmation de l'action n'as pas été effectuée.</t>
+	<t id="err_account_reset_today">Une seule réinitialisation de votre compte est autorisée par jour, merci de réessayer dés demain.</t>
+	<t id="err_not_enough_gold">Vous n'avez pas assez de kubors.</t>
+	<t id="err_curr_quest">Impossible de quitter votre école si vous avez une quête en cours ou en pause. Terminez ou abandonnez-la avant de quitter votre école.</t>
+	<t id="err_curr_squest">Impossible de quitter votre école si vous avez une quête en pause. Terminez ou abandonnez-la avant de quitter votre école.</t>
+	<t id="err_in_team">Impossible de quitter votre école si vous faites partie d'une classe. Quittez votre classe pour pouvoir continuer. </t>
+	<t id="account_reseted">Votre compte a été réinitialisé</t>
+	<t id="email_changed">Votre email a été mis à jour</t>
+	<t id="pref_changed">Vos préférences ont été mises à jour.</t>
+	<t id="password_changed">Votre mot de passe a été changé</t>
+	<t id="err_user_not_found">Aucun utilisateur n'a été trouvé</t>
+	<t id="err_cant_send_email">L'utilisateur correspondant n'a pas rentré de mail ou a désactivé le rappel du mot de passe</t>
+	<t id="password_sent">Votre mot de passe a été envoyé à l'adresse email ::email::</t>
+	<t id="err_pass_sent_today">Le mot de passe a déjà été envoyé aujourd'hui. Si vous ne l'avez pas reçu, patientez ou vérifiez dans vos emails classés "spam".</t>
+	<t id="subscribe_done">Bravo, votre inscription est  terminée ! vous pouvez commencer à jouer en entrant vos identifiants.</t>
+	<t id="demo_subscribe_done">Votre inscription est maintenant terminée, vous pourrez utiliser vos identifiants pour revenir sur le site quand vous le souhaiterez.</t>
+	<t id="mail_disabled">Cette adresse email a été désactivée</t>
+	<t id="err_max_demo_reached">Vous avez déjà créé le nombre maximum de comptes démo. Il faut vous inscrire pour jouer. Mais heureusement c'est super rapide.</t>
+	<t id="school_reseted">Vous avez quitté votre école.</t>
+	
+	<!-- ### IN GAME  ### -->
+	<t id="invitation_msg">Bravo, vous avez obtenu un code invitation ! <br/>Vous pouvez donner ce code à un de vos amis pour qu'il puisse vous rejoindre sur Naturalchimie ! <br/><br/>Le code est : <strong>::key::</strong>. <br/><br/>Ce code invitation est à saisir pendant l'inscription sur Naturalchimie, il ne peut être utilisé qu'une seule fois. <br/>Bonne alchimie à vous !</t>
+	
+	<t id="fidelity_warning_title">Information fidélité</t>
+	<t id="fidelity_warning_msg">Attention, nous vous informons que sous ::DELAY:: jours à compter de la date de ce message, vous risquez de perdre un de vos bonus d'achat.<br/>En effet, l'expiration de vos plus vieux points fidélité va vous faire redescendre sous un palier bonus. <br/><br/> Pour en savoir plus, vous pouvez consulter le détail de vos points dans votre <a href="::DOM::/bank/points">historique fidélité.</a><br/><br/>Merci de votre attention et bonne alchimie à vous ! </t>
+	
+	<t id="wheel_desc">Approchez approchez ! N'ayez pas peur ! La plantureuse Katarina et sa Chouette Roue de la Chance vous attendent ! <br/>
+	Elles prodigueront leurs bienfaits à tous les alchimistes en échange d'une chouette d'or chouettex ! Succès, félicité et parties gratuites aux possesseurs de chouettes d'or ! <br/>
+	<em>Katarina et sa Chouette Roue de la Chance vous sont proposées par les entreprises Chouettex. </em>
+	</t>
+
+	<!-- ### GAME ERROR ### -->
+	<t id="err_no_guildian">Impossible de lire les nouvelles, vous n'avez pas de journal !</t>
+	<t id="err_no_book">Vous n'avez pas de grimoire !</t>
+	<t id="same_haircut">Vous avez déjà cette coupe de cheveux, il n'y a rien à couper. </t>
+	<t id="err_level_up">Une erreur s'est produite lors de votre passage de niveau. Si le problème persiste, nous vous conseillons de contacter le support technique du jeu.</t>
+	<t id="err_level_up_no_choice">Vous devez choisir une récompense pour continuer. </t>
+
+
+	<!-- ### FORUM ### -->
+	<t id="marked_as_readed">Tous les messages du forum ont été marqué comme lus</t>
+	<t id="err_forum_title_empty">Le titre ne doit pas être vide</t>
+	<t id="err_content_too_short">Votre message est trop court</t>
+	<t id="err_thread_locked">Ce sujet est fermé</t>
+	<t id="forum_move_confirm">Le sujet a été déplacé</t>
+	<t id="no_write_grant">Vous ne pouvez pas parler sur le forum d'une autre école.</t>
+	<t id="err_forum_flood">Votre message est apparenté à du flood et n'a donc pas été envoyé. Merci d'utiliser moins d'icônes et de lire les règles du Forum.</t>
+	<t id="err_forum_ban">Suite à un problème constaté sur le forum, votre compte ne peut plus y écrire de message. Merci de bien vouloir consulter le règlement concernant les règles à suivre sur le forum.</t>
+	<t id="forum_ban_mp"><p><strong>Information compte</strong></p><p>Suite à un problème constaté sur le forum, votre compte ne peut plus y écrire de message pour une durée ::LAPS::. Merci de bien vouloir consulter le règlement concernant les règles à suivre sur le forum.</p></t>
+	<t id="forum_avert_mp">Votre compte a reçu un avertissement pour un problème sur le forum. Merci de bien vouloir consulter le règlement concernant les règles à suivre sur le forum.</t>
+	<t id="ban_laps_0">avertissement</t>
+	<t id="ban_laps_1">d'un jour</t>
+	<t id="ban_laps_3">de 3 jours</t>
+	<t id="ban_laps_7">d'une semaine</t>
+	<t id="ban_laps_14">de 2 semaines</t>
+	<t id="ban_laps_30">d'un mois</t>
+	<t id="ban_laps_infinite">indéterminée</t>
+	<t id="ban_mp_title">Information compte</t>
+
+
+	<!-- ### MESSAGES ### -->
+	<t id="msg_all_archived">Tous les messages ont été archivés</t>
+	<t id="msg_all_readed">Tous les messages ont été marqués comme lus</t>
+	<t id="msg_err_invalid_user">Cet utilisateur n'existe pas</t>
+	<t id="msg_sent">Votre message a bien été envoyé</t>
+	<t id="msg_archived">Ce message a été placé dans les archives</t>
+	<t id="msg_err_empty">Vous ne pouvez pas envoyer un message vide ou un message avec un titre vide</t>
+	<t id="msg_contact_added">Cet utilisateur a été ajouté à vos contacts</t>
+	<t id="msg_contact_banned">Cet utilisateur a été ajouté à votre liste noire</t>
+	<t id="msg_contact_removed">Cet utilisateur a été supprimé de vos contacts</t>
+	<t id="msg_you_are_banned">Cet utilisateur vous a ajouté a sa liste noire, vous ne pourrez plus lui envoyer de message</t>
+	<t id="msg_is_spam">Votre message n'a pas été envoyé. L'envoi de plusieurs messages similaires dans un cours laps de temps n'est pas autorisé.</t>
+	<t id="msg_no_stamp">Impossible d'envoyer le message, vous n'avez pas de Chouette Timbre à coller dessus.</t>
+	<t id="msg_admin_sender">Message du jeu</t>
+
+	
+	<t id="tip_xp">Remplie à</t>
+	
+	
+	<!-- ### EVENT CHRISTMAS ### -->
+	<t id="xmas_snowman_done">Paf, en pleine poire ! Oula... Cette boule de neige a un effet très intéressant, on dirait.</t> 
+	
+	<t id="xmas_snowman"><p><strong>Plotch ! </strong></p><p>Le joueur <strong>::THROWER::</strong> vient de vous lancer une boule de neige en pleine poire ! </p>
+	<p>Vous voilà transformé en <strong>bonhomme de neige</strong> pour 24h.</p></t>
+	<t id="xmas_gift">
+	<p>Le Poum Noël vous donne votre photo souvenir et un <strong>Cadeau surprise.</strong> Rendez-vous dans votre inventaire pour l'ouvrir !</p>
+	<p>Et surveillez le Guildian Express dès demain, une photo souvenir est sélectionnée tous les jours pour faire gagner ::PYRAMS:: Pyrams !</p>
+	</t>
+	
+	<t id="xmas_lottery_title">La photo de Noël du jour ! </t>
+	<t id="xmas_lottery">
+		
+		<p>Aujourd'hui, c'est <strong><a href="/user/::UID::">::USER::</a></strong> qui voit sa photo sélectionnée et qui remporte <strong>::PYRAMS:: pyrams et ::SB:: boules de neige pour mitrailler ses amis ! </strong></p>
+		
+		<p>Vous rêvez d'avoir votre photo souvenir dans le journal et de gagner des pyrams ? C'est très simple : </p>
+		<p>Rendez-vous à <strong>Vostok</strong>, la <em>cabane du Poum Noël</em> vous y attend ! Chaque alchimiste du royaume peut recevoir un cadeau surprise et une photo souvenir avec le Poum Noël. </p>
+		<p><em><strong>Chaque jour jusqu'au 4 Janvier, le Guildian Express sélectionne une photo et vous fait gagner ::PYRAMS:: pyrams.</strong></em> Alors si ce n'est pas déjà fait, filez à Vostok et faites-nous votre plus beau sourire ! </p>
+	</t>
+	
+	<t id="xmas_win">
+		<p>Votre photo souvenir a été tirée au sort, <strong>vous remportez ::PYRAMS:: pyrams, ::SB:: boules de neige et votre photo fait la Une du journal !</strong></p>
+		<p>Le Guildian Express vous félicite de ce magnifique coup de pot.</p>
+	</t>
+	
+	<t id="xmas_zone_author">Marchand ambulant</t>
+	<t id="xmas_zone_advert">Aujourd'hui les boules de Noël sont cachées là : <strong>::ZONE:: !</strong></t>
+
+	<t id="sell_zone_author">Le Troc Trotteur</t>
+	<t id="sell_zone_advert">Le Troc trotteur vous attend pour échanger vos éléments !<br/> Aujourd'hui, sa boutique est ici : <strong>::ZONE::.</strong></t>
+
+	<t id="sell_zone_advert_halow">Le Troc trotteur vous attend pour échanger vos éléments !<br/> Aujourd'hui, sa boutique est ici : <strong>::ZONE::.</strong><br/> Offre spéciale aux maîtres des courges ! </t>
+
+	<t id="sell_no_elements">Action impossible, vous n'avez pas les éléments demandés.</t>
+
+
+	<!-- ### ADMIN ### -->
+	<t id="admin_cleanup_done">Les fichiers ont été mis à jour</t>
+	<t id="admins_list">warp:yota:skool:deepnight:bumdum:irvie:_hk_:mrhk:hiko:whitetigle:ayame:niouf:ani:aniii:phantom:dayan:yukit0</t>
+	<t id="admin_user_not_found">Utilisateur Inconnu</t>
+	<t id="multipart_maximum_size_reached">Multipart form data, maximum size reached</t>
+	
+	<!-- #### SCHOOL CUP NEWS ### -->
+	<t id="schoolcup_box_title">Coupe des Ecoles</t>
+	<t id="schoolcup_box"><strong>::ZONE::</strong></t>
+
+	<t id="schoolcup_news_0">**::SC_1::**, **::SC_2::** et **::SC_3::** se partagent les trophées de la Coupe des Ecoles cette semaine !
+Pour les résultats et le nouveau lieu tiré au sort : **[link=http://www.naturalchimie.com/newspaper?p=3;d=::D::]lisez le  Guildian Express[/link] !**</t>
+	
+	<t id="schoolcup_news_1">Cette semaine, **::SC_2::** remporte 2 coupes des écoles et **::SC_1::** empoche la troisième ! 
+Retrouvez dans le **[link=http://www.naturalchimie.com/newspaper?p=3;d=::D::]Guildian Express[/link] ** tous les résultats et le nouveau lieu tiré au sort !</t>
+
+	<t id="schoolcup_news_2">Cette semaine, **::SC_3:: remporte les 3 trophées de la Coupe des écoles !**
+Retrouvez dans le **[link=http://www.naturalchimie.com/newspaper?p=3;d=::D::]Guildian Express du jour[/link] ** tous les résultats et le nouveau lieu tiré au sort !</t>
+
+	<!-- #### SCHOOL CUP NEWS ### -->
+	<t id="race_news">La lutte des classes est terminée, **bravo à [link=http://www.naturalchimie.com/sct/::SC_ID::]::SC_NAME::[/link]** qui remporte la première place !
+Pensez à choisir vos récompenses et rendez-vous dans une semaine pour une nouvelle lutte.</t>
+	
+	
+	
+	<!-- #### GENERATED QUEST ### -->
+	<!--  template words :
+	::sch:: >
+	::opp:: >
+	::zone:: > 
+	::pos:: >
+	::recipe:: >
+	::x:: >
+	-->
+	
+	<t id="gen_quest_0_name_0">Interro surprise !</t>
+	<t id="gen_quest_0_begin_0">Aujourd'hui exercice de collecte d'éléments ! Hop au boulot !</t>
+	<t id="gen_quest_0_title_0">Se rendre à : ::zone:: et  récupérer les éléments (Chaque élément présent à la fin d'une partie sera collecté) :</t>
+	<t id="gen_quest_0_end_0">Bien. Excellent travail. </t>
+	
+	<t id="gen_quest_0_name_1">Des réactions suspectes</t>
+	<t id="gen_quest_0_begin_1">Un émissaire de la guilde nous a rapporté des altérations alchimiques localisées dans un lieu précis du royaume. Nous sommes chargés d'étudier le problème. Rends-toi au lieu indiqué pour récupérer des échantillons en quantité suffisante.</t>
+	<t id="gen_quest_0_title_1">Se rendre à : ::zone:: et  récupérer les éléments (Chaque élément présent à la fin d'une partie sera collecté) :</t>
+	<t id="gen_quest_0_end_1">Ah, on va pouvoir commencer les tests pour vérifier les altérations indiquées. Excellent travail.</t>
+	
+	<t id="gen_quest_0_name_2">Coup de main pour une recherche</t>
+	<t id="gen_quest_0_begin_2">J'ai besoin d'un élément mais il doit venir d'un lieu précis du royaume, c'est pour mes recherches. Je suis sûr qu'un brave étudiant comme toi se fera un plaisir d'aller chercher ça pour son professeur, non ? </t>
+	<t id="gen_quest_0_title_2">Se rendre à : ::zone:: et  récupérer les éléments (Chaque élément présent à la fin d'une partie sera collecté) :</t>
+	<t id="gen_quest_0_end_2">Merci beaucoup. Je vais pouvoir continuer mon travail. </t>
+	
+	<t id="gen_quest_0_name_3">L'alchimie pour les nuls</t>
+	<t id="gen_quest_0_begin_3">J'ai lu un article dans le guildian de ce matin qui parlait des meilleurs coins pour trouver des éléments top qualité. Mon esprit scientifique tient à vérifier de telles allégations séance tenante ! Ramène moi donc quelques spécimens dont parle le journal.</t>
+	<t id="gen_quest_0_title_3">Se rendre à : ::zone:: et  récupérer les éléments (Chaque élément présent à la fin d'une partie sera collecté) :</t>
+	<t id="gen_quest_0_end_3">Formidable ! C'est vrai qu'ils ont l'air drôlement mieux que d'habitude. Qu'est-ce qu'on ferait sans les bons conseils du Guildian....</t>
+	
+	<!--####-->
+	<t id="gen_quest_1_name_0">Des éléments par milliers</t>
+	<t id="gen_quest_1_begin_0">Le stock d'éléments de l'école commence à baisser. Nous avons besoin de tous les étudiants pour en récupérer le plus possible !</t>
+	<t id="gen_quest_1_title_0">Créer les éléments suivants (Chaque élément présent à la fin d'une partie sera collecté) :</t>
+	<t id="gen_quest_1_end_0">Merci bien, ça devrait regonfler un peu nos stocks. Voilà pour te remercier.</t>
+	
+	<t id="gen_quest_1_name_1">Argl ! ! ! Les impôts sont de retour !</t>
+	<t id="gen_quest_1_begin_1">L'école doit payer ses impôts auprès de la Guilde des alchimites... Tous les étudiants sont mis à contribution pour qu'on ne reste pas sur la paille ! </t>
+	<t id="gen_quest_1_title_1">Créer les éléments suivants et les donner à l'école (Chaque élément présent à la fin d'une partie sera collecté):</t>
+	<t id="gen_quest_1_end_1">Bien. Voilà qui devrait aider à payer cet escroq... euh cette grande cause du royaume.</t>
+	
+	<t id="gen_quest_1_name_2">Interro plus si surprise</t>
+	<t id="gen_quest_1_begin_2">J'ai besoin d'un bon tas d'éléments pour une interro de transmutation suprise demain ! Il faut que tu ailles me chercher tout ça vite fait ! </t>
+	<t id="gen_quest_1_title_2">Créer les éléments suivants pour l'interro de demain (Chaque élément présent à la fin d'une partie sera collecté):</t>
+	<t id="gen_quest_1_end_2">Ahah, je connais un paquet d'élèves qui ne s'attendent pas à une interro demain, gnyark gnyark... Mais au fait, tu n'es pas dans mon cours toi ? </t>
+	
+	<!--####-->
+	<t id="gen_quest_2_name_0">Du score à abattre</t>
+	<t id="gen_quest_2_begin_0">La leçon du jour porte sur le score alchimique. Suis les indications et reviens me voir quand tu auras réussi.</t>
+	<t id="gen_quest_2_title_0">Aller à : ::zone:: et battre le score indiqué.</t>
+	<t id="gen_quest_2_end_0">Un petit pas pour l'alchimie, un grand pas pour la réussite de tes études. Bravo.</t>
+	
+	<t id="gen_quest_2_name_1">Défi inter-école</t>
+	<t id="gen_quest_2_begin_1">Un professeur de l'école adverse nous a envoyé un défi par Chouettex ! Il affirme qu'aucun de nos étudiants n'est capable de battre ce score... N'importe quoi ! Allez hop, tu es désigné volontaire pour prouver le contraire ! Scrogneugneu...</t>
+	<t id="gen_quest_2_title_1">Aller à : ::zone:: et battre le score indiqué. </t>
+	<t id="gen_quest_2_end_1">Ahah, bravo ! L'honneur est sauf ! </t>
+	
+	<t id="gen_quest_2_name_2">Défi inter-école</t>
+	<t id="gen_quest_2_begin_2">Ca fait un moment qu'on a pas défié ::opp:: un bon coup. Ramène-moi un super score et on pourra l'envoyer pour faire enrager ces incapables !</t>
+	<t id="gen_quest_2_title_2">Aller à : ::zone:: et battre le score indiqué.</t>
+	<t id="gen_quest_2_end_2">Excellent, j'envoie ça à ::opp:: immédiatement.</t>
+	
+	<t id="gen_quest_2_name_3">L'entraînement c'est très important</t>
+	<t id="gen_quest_2_begin_3">Il faut se préparer pour la coupe des écoles ! Je connais le lieu de la prochaine coupe par une source aussi sûre qu'elle est secrète ! Va t'y entraîner en avance. La semaine prochaine, ::sch:: gagne la coupe !</t>
+	<t id="gen_quest_2_title_3">Aller à : ::zone:: et battre le score indiqué.</t>
+	<t id="gen_quest_2_end_3">Alors, prêt pour la coupe ?</t>
+	
+	<!--####-->
+	<t id="gen_quest_3_name_0">Un peu d'orientation et... DES GROS SCORES ! ! !</t>
+	<t id="gen_quest_3_begin_0">Nous allons tester aujourd'hui ta capacité à trouver le meilleur endroit pour battre un score d'alchimie... Tu dois atteindre le score indiqué où tu veux... à toi de trouver l'endroit où ce sera le plus facile. </t>
+	<t id="gen_quest_3_title_0">Atteindre le score suivant, n'importe où dans le royaume : </t>
+	<t id="gen_quest_3_end_0">Ah ! Je commençais à me demander où tu avais fini.</t>
+	
+	<t id="gen_quest_3_name_1">Exercice d'analyse du terrain</t>
+	<t id="gen_quest_3_begin_1">Aujourd'hui, exercice pratique ! Voilà un score. Ne reviens pas ici avant de l'avoir battu. Et que ça saute !</t>
+	<t id="gen_quest_3_title_1">Atteindre le score suivant, n'importe où dans le royaume : </t>
+	<t id="gen_quest_3_end_1">Eh ben c'est pas trop tôt.</t>
+	
+	<!--####-->
+	<t id="gen_quest_4_name_0">Un chaînon pas si manquant</t>
+	<t id="gen_quest_4_begin_0">Voilà tes devoirs : aller vérifier la chaîne alchimique à un endroit précis du royaume. Et si tu la connais déjà, je ne veux pas le savoir ! </t>
+	<t id="gen_quest_4_title_0">Se rendre à : ::zone:: et créer le ::pos:: élément de la chaine.</t>
+	<t id="gen_quest_4_end_0">Alors c'est comme d'habitude ? Oui ? Je le savais.... </t>
+	
+	<t id="gen_quest_4_name_1">Une querelle idiote</t>
+	<t id="gen_quest_4_begin_1">A la cantine hier soir, je me suis enguirlandé avec un collègue. On n'est pas d'accord sur les éléments d'une chaîne alchimique... Tu pourrais aller vérifier pour nous, qu'on sache qui mérite un coup de pied au derrière ? </t>
+	<t id="gen_quest_4_title_1">Se rendre à : ::zone:: et créer le ::pos:: élément de la chaine.</t>
+	<t id="gen_quest_4_end_1">Oups... c'est pour ma pomme le coup de pied au derrière, on dirait.</t>
+	
+	<!--####-->
+	<t id="gen_quest_5_name_0">Devoir de transmutation</t>
+	<t id="gen_quest_5_begin_0">Aujourd'hui, exercice de transmutation pour tout le monde. La recette est gracieusement fournie par l'école mais s'autodétruira dans 5... 4... 3... enfin bref tu connais le truc. N'oublie pas de prendre ta recette avant de partir à la salle des chaudrons.</t>
+	<t id="gen_quest_5_title_0">Réussir la recette ::recipe:: fournie.</t>
+	<t id="gen_quest_5_end_0">Parfait. Bravo. Ah je garde le résultat de la recette par contre. Meeerci.</t>
+	
+	<t id="gen_quest_5_name_1">Pas le temps ! </t>
+	<t id="gen_quest_5_begin_1">Je suis super en retard ! Tiens toi là, va me faire cette recette et ramène moi le résultat, sinon je m'en sortirai jamais ! Quoi ? Les ingrédients ? Oh hé j'ai pas le temps j'ai dit !</t>
+	<t id="gen_quest_5_title_1">Aller faire la recette ::recipe:: fournie et ramener le résultat.</t>
+	<t id="gen_quest_5_end_1">Ouf te voilà ! Bon ben en fait j'en ai plus besoin de ce truc, j'ai changé d'idée. Mais merci quand même. </t>
+	
+	<t id="gen_quest_5_name_2">La force psychique, c'est formidable</t>
+	<t id="gen_quest_5_begin_2">J'ai eu une super idée cette nuit ! je suis sûr que si je me concentre très très fort sur toi pendant que tu vas faire une recette ma force psychique phénoménale va me permettre de gagner des rangs de transmutation à ta place ! Allez hop hop hop  on va essayer tout de suite !</t>
+	<t id="gen_quest_5_title_2">Se rendre à la salle des chaudrons et exécuter la recette ::recipe:: fournie.</t>
+	<t id="gen_quest_5_end_2">Tu as fait la recette ? Sûr ? J'étais concentré à fond et j'ai rien ressenti, pourtant...</t>
+	
+	<!--####-->
+	<t id="gen_quest_6_name_0">Vivement les grandes vacances...</t>
+	<t id="gen_quest_6_begin_0">Bravo ! Tu es volontaire pour un exercice de transmutation particulièrement difficile ! Ne reviens pas ici avant d'avoir créé dans un chaudron tout ce qui est sur cette liste ! Et ramène-moi bien tout , hein !</t>
+	<t id="gen_quest_6_title_0">Transmuter les éléments et objets suivants :</t>
+	<t id="gen_quest_6_end_0">Maginifique travail. Digne des plus grands alchimistes ! </t>
+	
+	<t id="gen_quest_6_name_1">Les mains dans le bouillon</t>
+	<t id="gen_quest_6_begin_1">Tu as un bon grimoire ? Alors tu vas pouvoir me donner un coup de main : J'ai besoin de transmuter tout ça !</t>
+	<t id="gen_quest_6_title_1">Transmuter les éléments et objets suivants :</t>
+	<t id="gen_quest_6_end_1">Il y a tout ? Oui ? Et tu n'as pas tout fait péter ?</t>
+	
+	
+	<!--####-->
+	<t id="gen_quest_7_name_0">S'entraîner, c'est la santé</t>
+	<t id="gen_quest_7_begin_0">La leçon du jour, c'est que les alchimistes doivent répéter des années pour réussir parfaitement une recette. A toi d'en réussir une plusieurs fois si tu veux une bonne note !</t>
+	<t id="gen_quest_7_title_0">Se rendre à la salle des chaudrons et exécuter ::x:: fois la recette ::recipe::.</t>
+	<t id="gen_quest_7_end_0">Excellent ! Tu peux garder les résultats des recettes, ça a dû demander pas mal de boulot.</t>
+	
+	
+	
+
+</texts>

@@ -1,0 +1,58 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<project version="2">
+  <!-- Output SWF options -->
+  <output>
+    <movie outputType="Application" />
+    <movie input="" />
+    <movie path="swf\game.swf" />
+    <movie fps="30" />
+    <movie width="600" />
+    <movie height="460" />
+    <movie version="10" />
+    <movie minorVersion="1" />
+    <movie platform="Flash Player" />
+    <movie background="#000000" />
+    <movie preferredSDK="Haxe 2.1.1;2.1.1;" />
+  </output>
+  <!-- Other classes to be compiled into your SWF -->
+  <classpaths>
+    <class path="src" />
+  </classpaths>
+  <!-- Build options -->
+  <build>
+    <option directives="" />
+    <option flashStrict="True" />
+    <option noInlineOnDebug="False" />
+    <option mainClass="" />
+    <option enabledebug="False" />
+    <option additional="-swf-lib swf/gfx.swf&#xA;../loader/common.dev.hxml&#xA;-D spriteParticles&#xA;-resource texts.fr.xml@fr&#xA;-resource texts.en.xml@en&#xA;-resource texts.es.xml@es" />
+  </build>
+  <!-- haxelib libraries -->
+  <haxelib>
+    <!-- example: <library name="..." /> -->
+  </haxelib>
+  <!-- Class files to compile (other referenced classes will automatically be included) -->
+  <compileTargets>
+    <!-- example: <compile path="..." /> -->
+  </compileTargets>
+  <!-- Assets to embed into the output SWF -->
+  <library>
+    <asset path="fonts\babyblue.ttf" id="def" glyphs="ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz '-&quot;'%,?!$&amp;+:/^_\°*.éèêëàäâïîüç0123456789+=&gt;&lt;()[]/âàäéèêëîïôöùûüçáéíóúÁÉÍÓÚÑñ¡¿äÄÖÜß" />
+  </library>
+  <!-- Paths to exclude from the Project Explorer tree -->
+  <hiddenPaths>
+    <hidden path="obj" />
+  </hiddenPaths>
+  <!-- Executed before build -->
+  <preBuildCommand />
+  <!-- Executed after build -->
+  <postBuildCommand alwaysRun="False" />
+  <!-- Other project options -->
+  <options>
+    <option showHiddenPaths="False" />
+    <option testMovie="OpenDocument" />
+    <option testMovieCommand="index.html" />
+  </options>
+  <!-- Plugin storage -->
+  <storage />
+</project>

@@ -1,0 +1,111 @@
+﻿<d place="forges" name="Merodeador extraño" gfx="rodeur" cond="active(rodeur)+!mission(rodriz)+level(15)">
+
+	<phase id="begin" next="go:talk:talk2">
+		.........
+	</phase>
+
+	<a id="go">Este personaje parece peligroso... ¡irse de aquí!</a>
+	<a id="talk" cond="!curmission(rodriz)">Hablar con él</a>
+	<a id="talk2" cond="curmission(rodriz)">Hablar con él</a>
+
+	<phase id="go" fast="1">
+		¡Uf! Más vale prestar atención a estos encuentros con los extranjeros...
+	</phase>
+
+	<phase id="talk" next="go:yes">
+		¿Uh? ¿Qué? ¿Puedes verme? ..... Grrrrr....
+	</phase>
+
+	<a id="yes">Esto... pues sí.</a>
+
+	<phase id="yes" next="go:read">
+		Uhm... bien... ya veo... ¡me habían garantizado que esta capa te hace invisible! ¿Puedes mirarme la etiqueta en la espalda, a ver qué dice?
+	</phase>
+
+	<a id="read">Leer la etiqueta.</a>
+
+	<phase id="read" next="go:help">
+		¡¿Qué?! ¿"LAVAR CON AGUA DE ARROZ"? Uhm... el vendedor habló de recargar algo... voy a tener que usar... ¿arroz? ¿Pero dónde puedo yo encontrar eso?
+	</phase>
+
+	<a id="help">Ayudar al merodeador</a>
+
+	<phase id="help" missions="rodeur"></phase>
+
+	<phase id="talk2">
+		¡Rápido! ¡Necesito Arroz!
+	</phase>
+
+</d>
+
+<!-- PART 2 -->
+
+<d place="forges" name="Merodeador Extraño" gfx="rodeur"  cond="mission(rodriz)+!mission(rodlif)+level(20)">
+
+	<phase id="begin" next="qual:qual2">
+		Mi capa va de nuevo a estropearse... empiezo a estar un poco cansado...
+	</phase>
+
+	<a id="qual" cond="!curmission(rodlif)">Seguramente sea de mala calidad...</a>
+	<a id="qual2" cond="curmission(rodlif)">Seguramente sea de mala calidad...</a>
+
+	<phase id="qual2">
+		En vez de decir tonterías, podrías ir terminando tu misión...
+	</phase>
+
+	<phase id="qual" next="caush:ether">
+		¿QUÉ? ¿Cómo osas hablar así de la gran tecnología de Caushemesh? ¿Sabes cuántos años de búsqueda les ha hecho falta a nuestros científicos para controlar el Éter?
+	</phase>
+
+	<a id="caush">¿Caushemesh?</a>
+	<a id="ether">¿El éter?</a>
+
+	<phase id="caush" next="ether:next">
+		¡Sí! Por supuesto, la gran civilización de las Montañas de Caushemesh, más allá de las Estepas Magnéticas. Estamos más desarrollados que los bárbaros de Dinovilla...
+	</phase>
+
+	<phase id="ether" next="caush:next">
+		Tras centenas de años de búsqueda, los Caushemeshianos han conseguido controlar la potencia del Éter, una sabiduría que mezcla elementos del Aire y del Vacío. Esto nos da una potencia tecnológica fuera de lo normal. ¡Los ingenieros de Caushemesh son los mejores de todo Dinoland!
+	</phase>
+
+	<a id="next">Y...</a>
+
+	<phase id="next" next="more">
+		Tus Dinos son muy poquita cosa comparados con los de Caushemesh, no pesan lo suficiente. ¡Ja, ja, ja! Entrena bien a tus Dinos, joven maestro, ¡pues un día tendrás que afrontar peligros aún mayores!
+	</phase>
+
+	<a id="more">¿De veras?</a>
+
+	<phase id="more" next="mission">
+		Bueno, ya he contado demasiado... Para convencerte sobre la tecnología de Cauhsmes, ¿te apetece una pequeña misión?
+	</phase>
+
+	<a id="mission">Aceptar una nueva Misión</a>
+
+	<phase id="mission" missions="rodeur"></phase>
+
+</d>
+
+<!-- PHASE 3 -->
+
+<d place="forges" name="Merodeador extraño" gfx="rodeur" cond="mission(rodlif)+!hasobject(regen)">
+	<phase id="begin" next="next">
+		Para tu información, los Dinos Sombra que encontraste no eran más que principiantes que acabamos de entrenar en esta parte de Dinoland... La potencia de los Dinos de Caushemesh va más allá, ¡e incluso el Venerable no sería lo suficientemente poderoso contra nuestros mejores Dinos!
+	</phase>
+
+	<a id="next">(cara de asombro)</a>
+
+	<phase id="next" give="regen" nocheck="1">
+		Bueno, bueno, yo cumplo con mis promesas. Aquí tienes una recompensa para convencerte de la superioridad de la tecnología de Caushemesh. Solo tengo un ejemplar, así que haz buen uso de él... Se trata de un Brazalete de Tik que podrás equipar en tu Dino.
+	</phase>
+</d>
+
+<!-- PHASE 4  -->
+
+<d place="dplaza" name="Merodeador extraño" gfx="rodeur3" frame="fixe" background="5" cond="scenario(caush,44+)">
+	<phase id="begin" fast="1">
+		Habiendo terminado su misión de espía, el merodeador se instala en un lugar tranquilo no muy lejos de Dinoplaza.
+		Estirando los dedos de los pies, se recuesta a tomar sol...
+		Es mejor que se quede así, en vez de estar tramando fechorías...
+	</phase>
+</d>

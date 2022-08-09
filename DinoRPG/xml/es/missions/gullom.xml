@@ -1,0 +1,86 @@
+﻿<missions>
+
+	<!-- ***************************************************************************** -->
+	<!-- Gulom, aide à un survaïvor ----->
+<!--
+	<m group="gullom" id="remed" name="Soin d'urgence" limit="2">
+		<begin>Même s'il endure en silence, on voit bien que Gulom peut tomber dans les limbes d'une minute à l'autre. Il faut vite lui donner un remède pour guérir ses blessures.</begin>
+		<goto v="chutes"/>
+		<use v="remed2" n="1"/>
+		<end>Merci, je n'aurai pu aller beaucoup plus loin sans ton aide !</end>
+		<xp v="30"/>
+	</m>
+-->
+
+
+	<m group="gullom" id="truci1" name="Limpieza alrededor del campamento">
+		<begin>El Mundo sombra está invadido por monstruos de todo tipo, me quedaré un momento por aquí.
+		Para armar el campamento tranquilamente, ¿puedes deshacerte de algunos bichos que rondan por aquí?</begin>
+		<goto v="dkchut"/>
+		<kill n="10" v="piraos" zone="4" />
+		<goto v="dktow"/>
+		<kill n="10" v="piraos" zone="4" />
+		<goto v="dkbao"/>
+		<kill n="5" v="garouz" zone="4" />
+		<end>Gracias, ahora puedo descansar cómodamente.</end>
+		<xp v="40"/>
+	</m>
+	
+	<!-- Le maître est un ermite aveugle, il ne peut donc voir les ouvertures du portail-->
+	
+	<m group="gullom" id="ouestu" name="Maestro ¿dónde estás?" cond="mission(truci1)">
+		<begin>¿Podrías ayudarme a buscar a mi maestro?, seguramente me espera por aquí, con la luz que sale del portal, es muy probable que la haya visto.</begin>
+		<goto v="dkbao"/>
+		<talk v="gulom" gfx="survivor">Maestro, ¿estás ahi?</talk>
+		<goto v="dktow"/>
+		<talk v="gulom" gfx="survivor">Yujuuu, ¿Maestro, me ves?</talk>
+		<goto v="fake"/>
+		<talk v="gulom" gfx="survivor">¡Ya deje de jugar a las escondidas! Llevamos 10 años en esto, ¡ya no es divertido! ...Eh, ups, ¡disculpe! No dije nada, jeje.</talk>
+		<end>
+			Eh, lo siento, olvidé que estabas ahí, es que ¡mi maestro es ciego!
+			Por lo tanto no puede ver los fragmentos del Orbe Sombra... Volvamos al campamento, no sirve de nada buscarlo...
+		</end>
+		<gold v="1000"/>
+	</m>
+	
+	<m group="gullom" id="truci2" name="Lugar embrujado" cond="mission(ouestu)">
+		<begin>Aunque estoy acostumbrado a la oscuridad, fíjate que tengo miedo en la noche,
+		he visto figuras aterradoras en las penumbras la última vez que fui a una esquinita para hacer lo que tú ya sabes. ¿Podrías ver de qué se trata?</begin>
+		<goto v="fake"/>
+		<kill n="10" v="amanpe" zone="4" />
+		<end>Gracias, ¡ya no tendré que aguantarme en las noches!</end>
+		<xp v="40"/>
+		<gold v="500"/>
+	</m>
+	
+	<m group="gullom" id="monte" name="Torre Sombra" cond="mission(truci2)">
+		<begin>En la cima de la torre hay un guardián más poderoso que el último que enfrentaste. Él vigila en silencio el Mundo Sombra,
+		¡Quizás sepa algo sobre la desaparición de mi maestro! ¿Podrías ir a preguntarle amablemente?</begin>
+		<goto v="dktow2"/>
+		<goto v="dktow3"/>
+		<goto v="dktow4"/>
+		<actfight act="Pelear contra el Guardia de la Cima" monsters="upgrd"/>
+		<talk v="Guardia de la Cima">.....</talk>
+		<action v="Recoger el casco">Es imposible obtener una respuesta, solo queda el casco vacío...</action>
+		<goto v="dkchut"/>
+		<talk v="gulom" gfx="survivor">Entonces, ¿qué te dijo?... ¿Nada? ¿Es solo un casco?... Bueno, qué mala suerte, tendré que ver otra forma...</talk>
+		<end>Al menos, ya no me dará vergüenza ser mordido por los piranhos...</end>
+		<xp v="50"/>
+		<gold v="2000"/>
+	</m>
+	
+	<m group="gullom" id="lumi" name="La luuuuuz" cond="mission(monte)">
+		<begin>Me pregunto si no podría encender algunas flamas en algunos lugares estratégicos,
+		nos ayudaría en este lugar. ¡Si al menos para saber qué comer!</begin>
+		<goto v="dktow"/>
+		<useingr v="enfeu" n="1"/>
+		<goto v="dkbao"/>
+		<useingr v="enfeu" n="1"/>
+		<goto v="fake"/>
+		<useingr v="enfeu" n="1"/>
+		<end>Gracias, ¡ahora podemos ver más allá de nuestras narices! El problema es que lo que veo en mi plato, no me apetece mucho...</end>
+		<xp v="60"/>
+		<gold v="6000"/>
+	</m>
+	
+</missions>

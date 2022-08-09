@@ -1,0 +1,15 @@
+-cp src
+-cp ../com
+-cp ../lang/fr/tpl
+-cp ../../twinBase/base
+-swf9 bin/gameDev.swf
+-swf-header 800:600:30:FFFFFF
+--flash-strict
+-swf-version 10
+-main Main
+-swf-lib swf/_library.swf
+-swf-lib swf/_gfx.swf
+#-resource randomTexts.xml@fr.randomTexts.xml
+-lib format
+-D debug
+#-cmd "obfu9 ../www/swf/clientFork.swf -o ../www/swf/clientFork.swf -fake"

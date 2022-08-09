@@ -1,0 +1,87 @@
+﻿<!-- QUETE DU MINEUR : pelle utilisable une fois et réparable -->
+
+<d place="corail" name="Mineur Coralien" gfx="mineur" cond="fx(bouee)">
+
+	<phase id="begin" next="yes:nothing:repair:nothing2:repair2:give:no">
+		Pinc ! Pinc ! Pinc ! Pffff ce corail est plus dur que de la pierre tu savais ça toi ?
+	</phase>
+
+	<a id="yes" cond="!fx(pelle)+!fx(brkpel)+!fx(pelle2)+!fx(brkpe2)">Oui</a>
+	<a id="nothing" cond="fx(pelle)">Oui</a>
+	<a id="repair" cond="fx(brkpel)">Oui</a>
+	<a id="nothing2" cond="fx(pelle2)">Oui</a>
+	<a id="repair2" cond="fx(brkpe2)">Oui</a>
+	<a id="give" cond="scenario(magnet,8)+!fx(corail)">Génial !</a>
+	<a id="no">Non</a>
+
+	<phase id="yes" next="thanks" effect="pelle">
+		Ah bon tu étais au courant ? Tiens, je te prête une vielle pelle pour que toi aussi tu puisses creuser.
+		Elle est en très mauvais état donc à la première utilisation elle va se casser, mais c'est ma pelle porte-chance,
+		avec elle tu pourras trouver les plus grands trésors de Dinoland ! Alors, on dit quoi ?
+	</phase>
+
+	<phase id="nothing" next="thanks">
+		Alors elle te plaît ma pelle ? On dit quoi ?
+	</phase>
+
+	<phase id="repair" next="thanks" effect="pelle" noeffect="brkpel">
+		Ah c'est toi ? Alors comme ça tu as cassé ma pelle ? Bouge pas... voilà je te l'ai réparée !... Hep ! Tu n'oublies pas quelque chose ?
+	</phase>
+	
+	<phase id="nothing2" next="thanks">
+		Alors elle te plaît ma pelle avec le manche ergonomique ? On dit quoi ?
+	</phase>
+
+	<phase id="repair2" next="thanks" effect="pelle2" noeffect="brkpe2">
+		Ah c'est toi ? Alors comme ça tu as cassé ma pelle ? Bouge pas... voilà je te l'ai réparée !... Hep ! Tu n'oublies pas quelque chose ?
+	</phase>
+	
+	<a id="thanks">Merci !</a>
+
+	<phase id="thanks">
+		T'es sympa ! Reviens ici quand ta pelle sera cassée, je la réparerai.
+	</phase>
+
+	<phase id="no" next="next">
+		Pfff, oui c'est très très dur à creuser, c'est pour celà qu'il faut des gars costauds comme moi pour faire ce métier.
+	</phase>
+
+	<a id="next">Ah bon...</a>
+
+	<phase id="next" next="next2">
+		Oui, tout à fait ! Regarde-moi ces muscles ! Je suis nominé aux Corail Awards, catégorie "Mineur Gros-bras" cette année.
+	</phase>
+
+	<a id="next2">Vraiment...</a>
+
+	<phase id="next2" next="next3">
+		Oui, puisque j'te le dis ! Va falloir que je bosse encore beaucoup si je veux un jour ressembler à mon idole...
+	</phase>
+
+	<a id="next3">...</a>
+
+	<phase id="next3" next="qui">
+		Et alors ?!!? Tu me demandes même pô qui c'est mon idole ?
+	</phase>
+
+	<a id="qui">Euh... et qui est votre idole ?</a>
+
+	<phase id="qui" next="ok">
+		Mais voyons ! Sylverter Staline bien sûr ! Trois fois gagnant des Corail Awards, dans les catégories
+		"Muscles Ultimes" et "Replique qui tue". Il est vraiment trop coool, et il a toujours réussi a éliminer tous ses
+		opposants !
+	</phase>
+
+	<a id="ok">Il a l'air fort !</a>
+
+	<phase id="ok">
+		Oui c'est le plus fort ! Alàlà, le bon vieux temps, je pourrais en parler pendant des heures...
+		Mais bon je te laisse j'ai du boulot ! Pinc ! Pinc ! Pinc !
+	</phase>
+
+	<phase id="give" effect="corail">
+		Ah ! Je vois que toi aussi tu aime bien ce Corail dûr comme la pierre ! Tiens, j'te donne cet enchantillon,
+		je l'ai cassé tout à l'heure !
+	</phase>
+
+</d>

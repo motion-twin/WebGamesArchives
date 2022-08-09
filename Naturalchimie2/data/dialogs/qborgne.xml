@@ -1,0 +1,137 @@
+<d place="jzboy" name="Borgne d'information" gfx="jzborgne">
+
+<a id="exit">Fin.</a>
+
+<phase id="begin" next="noob:jee:nojee:cho:nocho:after:lib:col:autre:exit">
+Bonjour. Si vous êtes un étudiant de Jeezara, dites {"Jeezara"}. Si vous êtes un alchimiste d'une autre école, dites {"chochotte"}. Si vous êtes un colporteur, dites {"Je ne reviendrai plus jamais, promis"}. Pour toute autre demande, dites {"autre"}. Pour terminer, dites {"fin"}. | A vous.
+</phase>
+
+<a id="noob" cond="sch(jz)+!quest(borna)">Jeezara.</a>
+<a id="jee" cond="sch(jz)+quest(borna)">Jeezara.</a>
+<a id="nojee" cond="!sch(jz)">Jeezara.</a>
+<a id="cho" cond="!sch(jz)+reput(jz,1)">Chochotte.</a>
+<a id="nocho" cond="sch(jz)|!reput(jz,1)">Chochotte.</a>
+<a id="lib" cond="fx(revolt)+!quest(libore)">Vivent les borgnes libres ! </a>
+<a id="after" cond="quest(libore)">Il y a d'autres quêtes à faire ?</a>
+<a id="col">Je ne reviendrai plus jamais, promis.</a>
+<a id="autre">Autre.</a>
+
+
+<phase id="noob" quest="borgne" frame="normal2">
+Nouvel étudiant détecté. Procédure de bienvenue déclenchée...
+</phase>
+
+<phase id="jee" quest="borgne" frame="normal3">
+Connexion aux devoirs à faire... Merci de patienter...
+</phase>
+
+<phase id="nojee" frame="normal5">
+Analyse en cours... Ecole déclarée invalide. Fin de transmission.
+</phase>
+
+<!-- ###########" -->
+
+<phase id="after" frame="normal2" next="afterb">
+Recherche en cours... | | | Réponse affirmative. | Le [mentor Mortgage] peut avoir besoin d'étudiants de niveau 3.
+</phase>
+
+<phase id="afterb" frame="normal">
+D'autres personnes dans le royaume ont également des quêtes à proposer. Déplacez-vous et discutez avec les personnes que vous croisez pour en trouver. 
+</phase>
+
+
+<!-- ###########" -->
+
+<phase id="cho" quest="borgne" frame="normal2">
+Connexion aux tâches disponibles... Merci de patienter...
+</phase>
+
+<phase id="nocho" frame="normal4">
+Analyse en cours... Ecole invalide ou niveau insuffisant. Fin de transmission.
+</phase>
+
+<!-- ###########" -->
+
+<phase id="lib" quest="liborgne" frame="normal5">
+Sois le bienvenu, frère révolutionnaire.
+</phase>
+
+
+<!-- ###########" -->
+
+<phase id="col" frame="normal3">
+ Merci de reculer en dehors du périmètre de l'école. Activation du système de sécurité dans... 5... 4... 3...
+</phase>
+
+
+<!-- ###########" -->
+
+<phase id="autre" frame="normal2" next="quoi:prof:cap:sens:exit">
+ Merci de poser votre question. A vous.
+</phase>
+
+
+<a id="quoi">Mais vous êtes quoi ? C'est quoi cet oeil qui parle ? </a>
+<a id="prof">Vous... Vous êtes un prof de Jeezara ? </a>
+<a id="sens">Quel est le sens de la vie, d'après vous ? </a>
+<a id="cap">Vous pouvez me dire comment je retourne vers la Grande Place et la salle des chaudrons ?</a>
+
+<phase id="cap" frame="happy">
+Vous demandez un trajet à pied vers la capitale : | Prenez au nord par l'entrée du Boyau, puis direction Tirésias. | Prenez ensuite à gauche vers le BAFA, suivez la route jusqu'à arriver au Donjon K et la Grande Place.
+</phase>
+
+
+<!-- ###########" -->
+
+<phase id="quoi" next="rep">
+Je suis un borgne d'information Jeezara. Vous pouvez me poser toutes sortes de questions, j'essaierai d'y répondre au mieux de mes capacités. De nombreux borgnes d'information sont disponibles dans l'enceinte de l'école.
+</phase>
+
+<a id="rep">Ah... Mais vous êtes obligé d'être aussi répugnant ? </a>
+
+<phase id="rep" next="autre" frame="normal4">
+Le design des borgnes d'information a été aprouvé à l'unanimité par les mentors de Jeezara.
+</phase>
+
+<!-- ###########" -->
+
+<phase id="prof" next="boulot">
+Non. Je suis un des borgnes d'information de l'école. Je ne suis pas un "prof" de Jeezara, mais il est vrai que je remplace les mentors pour l'apprentissage des plus jeunes étudiants.
+</phase>
+
+<a id="boulot">Hein ? C'est vous qui aller me donner du boulot et m'apprendre l'alchimie ? Mais je veux un vrai prof moi...</a>
+
+<phase id="boulot" next="cree">
+Première leçon : On ne dit pas "professeur" mais {"mentor"} dans la doctrine alchimique jeezariste.
+</phase>
+
+<phase id="cree" frame="normal3" next="autre">
+Ensuite, les mentors ne souhaitent pas perdre de temps avec les questions des gens, les visites de journalistes et les cours des étudiants les moins intére... les plus jeunes. Il nous ont donc créés pour nous occuper de tout ça. 
+</phase>
+
+
+<!-- ###########" -->
+
+<phase id="sens" frame="normal2" next="quest">
+Question difficile quand on est coincé dans un bocal, condamné à répondre à des questions idiotes. 
+</phase>
+
+<a id="quest">Bon alors je reformule : Quel est la réponse à la grande question idiote sur la vie, l'univers et le reste ? </a>
+
+<phase id="quest" next="pat:tomb">
+Analyse en cours... Veuillez patienter...
+</phase>
+
+<a id="pat">Je patiente.</a>
+<a id="tomb">Pfff, c'est bon laissez tomber.</a>
+
+<phase id="pat" next="pat:tomb">
+Analyse en cours... Veuillez patienter... 
+</phase>
+
+<phase id="tomb" frame="normal5" next="begin">
+Processus d'analyse interrompu. | Réinitialisation...
+</phase>
+
+
+</d>

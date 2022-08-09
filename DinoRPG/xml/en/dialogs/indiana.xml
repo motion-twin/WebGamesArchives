@@ -1,0 +1,327 @@
+﻿<d place="mforst" name="Hindy Anne" img="indiana" cond="scenario(monisl,1-)">
+
+	<phase id="begin" next="who:what:where">
+		Hey! I'm so pleased to meet someone from Dinotown in the forest, I was starting to get fed up talking to the monsters!
+	</phase>
+
+	<a id="who">Who are you?</a>
+	<a id="what">What are you doing here?</a>
+	<a id="where">Where are we?</a>
+
+	<phase id="who" next="what:where">
+		I'm so sorry, how rude of me! I didn't even introduce myself. My name is Hindy Anne Jones, but everybody calls me Anne!
+	</phase>
+
+	<phase id="what" next="who:where">
+		I'm one of the few monstrologists left in Dinotown. Monsters are often considered dangerous animals that you can kill to gain experience. It's true to an extent, but some monsters are extremely intelligent. My job is to study them and their environment. I often work alone as there are very few people who are interested in this subject...
+	</phase>
+
+	<phase id="where" next="who:what:cuz">
+		This place is now called the Kaze Kami forest, but before the big cataclysm, here stood the capital of the Monster Empire: the great city of Cuzcous!
+	</phase>
+
+	<a id="cuz">Cuzcous?</a>
+
+	<phase id="cuz" next="treasure">
+		Yes, exactly! It's been centuries since the Frutox and the Vegetox, the two monster-peoples from the island, lived together and ruled what was known as the Cuzcous Kingdom. Cuzcous was built where this forest now stands. It stretched for hundreds of kilometres. It was a rich and well-developed civilisation, there must be a lot of treasure hidden in the ruins.
+	</phase>
+
+	<a id="treasure" cond="scenario(monisl,0)">Treasure?</a>
+
+	<phase id="treasure" next="assoc">
+		Yes, magnificient treasure! Also... how do I say this... a partner, yess... I'm looking for a... partner!
+	</phase>
+
+	<a id="assoc">A partner for what?</a>
+
+	<phase id="assoc" next="assoc2">
+		Well, let's just say that I've managed to get hold of some information that locates an ancient Cuzcoussien temple, which is said to contain loads of treasure... I have a map, but it's written in Monstrolang dating from the pre-cataclysmic era and I have no idea how to translate it.
+	</phase>
+
+	<a id="assoc2">And?</a>
+
+	<phase id="assoc2" next="yes:no">
+		Well as I must stay here as I'm here... incognito... I'd be really grateful if you could translate these engravings so we can find the treasure, what do you say?
+	</phase>
+
+	<a id="no">No way...</a>
+	<a id="yes">Sure, why not!</a>
+
+	<phase id="no">
+		That's a shame, but I understand, you don't want any trouble. Come back and see me again if you change your mind, I'll be here....
+	</phase>
+
+	<phase id="yes" scenario="monisl:1">
+		Great! Here, take these notes I made on the engravings. Take them with you to the university so they can be translated by an expert, don't worry about how much it costs. I'm sure we can easily cover the costs with the treasure we'll find... together!
+	</phase>
+
+</d>
+
+<d place="univ" name="Professor Mayinca" img="mayinca" cond="scenario(monisl,1)">
+
+	<phase id="begin" fast="1" next="talk">
+		Upon arrival at the university you enquire about translations and are immediately told to go to room 43-B in the south-west wing of section 1B, building Z48. Professor Mayinca is waiting for you, he is the director of "Pre-Cataclysmic Monstrolanguages", he also seems to be the only member......
+	</phase>
+
+	<a id="talk">Speak to the Professor</a>
+
+	<phase id="talk" next="talk2">
+		Xir poff e lano ? Pir plumff e figggzano nivolix ?
+	</phase>
+
+	<a id="talk2">....Excuse me?</a>
+
+	<phase id="talk2" next="talk3">
+		Oh! I simply asked if you could shut the door behind you, I was speaking in the wrong language. That's an example of a precataclysmic monstrolang phrase from the tertiary era of Emperor Cuzcous the IXth. What did you think of it?
+	</phase>
+
+	<a id="talk3">It was.....nice?</a>
+
+	<phase id="talk3" next="talk4">
+		Nice? I hope you're joking! It was magnificient! The sound, the alliteration, the phrasiology, the vocal harmonies....the language is quite simply....Youpilativoxiff!
+	</phase>
+
+	<a id="talk4">Errr....ok</a>
+
+	<phase id="talk4" next="traduc">
+		I'm exaggerating a little bit. What's the reason for your visit my young friend, are you here to sign up for my evening classes in monstrolang? (you'll be my first student!)
+	</phase>
+
+	<a id="traduc">... I need you to translate something for me</a>
+
+	<phase id="traduc" next="give">
+		A translation? Why didn't you say so earlier! It's written in monstrolanguage too, super! Show me what needs doing and I'll let you know how long it will take.
+	</phase>
+
+	<a id="give">Hand over the engraved tablet</a>
+
+	<phase id="give" scenario="monisl:2" next="end">
+		.... .... .... .... my dear friend...I don't know where you found this, but it seems very important...Give me a couple of hours to properly study it, I need to concentrate. Come back later.
+	</phase>
+
+	<a id="end">Leave</a>
+
+	<phase id="end" fast="1">
+		Professor Mayinca pushes you outside before quickly slamming the door behind you. You hear him shouting in a strange langauge, he already seems lost in his thoughts...
+	</phase>
+
+</d>
+
+<d place="univ" name="Professor Mayinca" img="mayinca" cond="scenario(monisl,2)+(admin()|swait(monisl,5))">
+
+	<phase id="begin" next="trad">
+		Ah, you're back? I've been waiting for you... I've finished your translation...
+	</phase>
+
+	<a id="trad">Great!</a>
+
+	<phase id="trad" next="cost">
+		This text is very interesting, look - it talks of astronomical data which can help to locate the Temple of Quetzako, a god which was highly respected and revered by the monsters around the time of the Cuzcous Empire. It also talks of a curse and the end of the world, but that's very common for writings of that era. Now...what about my fee?
+	</phase>
+
+	<a id="cost">Your fee?</a>
+
+	<phase id="cost" next="antiq">
+		Yes. Everything in life has its cost. I'll agree to give you the complete translation along with my notes on possible interpretations of the various astrological symbols. This information should help you find what you're looking for. You should no that I no longer accept gold coins...I only accept antiques now.
+		...
+	</phase>
+
+	<a id="antiq">Antiques?</a>
+
+	<phase id="antiq" next="pay1:pay2:pay3:pay4:pay5">
+		Yes absolutely! Please bring me a valuable antique. You can find them by digging around. You must have a Dinoz who knows how to dig and you'll also need a bit of luck. You could try to buy an antique at the market place, but beware of fraudsters!
+	</phase>
+
+	<a id="pay1" cond="hasingr(art)">Give the Professor a sharpened flint</a>
+	<a id="pay2" cond="hasingr(artu)">Give the Professor part of an ancient text</a>
+	<a id="pay3" cond="hasingr(art1)">Give the Professor a precious old ring</a>
+	<a id="pay4" cond="hasingr(art2)">Give the Professor an engraved chalice</a>
+	<a id="pay5" cond="hasingr(art3)">Give the Professor a diamond necklace</a>
+
+	<phase id="pay1" useingr="art" next="bad" nocheck="1" >
+		Thank you...
+	</phase>
+
+	<phase id="pay2" useingr="artu" next="bad" nocheck="1">
+		Thank you...
+	</phase>
+
+	<a id="bad">...</a>
+
+	<phase id="bad">
+		I'll keep this object as compensation for my patience, but unfortunately it's not a very valuable antique. Bring me another one once you find it!
+	</phase>
+
+	<phase id="pay3" useingr="art1" scenario="monisl:3" next="ok">
+		Thank you!
+	</phase>
+
+	<phase id="pay4" useingr="art2" scenario="monisl:3"  next="ok">
+		Thank you!
+	</phase>
+
+	<phase id="pay5" useingr="art3" scenario="monisl:3" next="ok">
+		Thank you!
+	</phase>
+
+	<a id="ok">...</a>
+
+	<phase id="ok" next="girl">
+		That's a very nice antique, thanks a lot! Here's your translation, along with the notes I made. Say hello to my daughter for me.
+	</phase>
+
+	<a id="girl">Your daughter?</a>
+
+	<phase id="girl" next="treasure">
+		Yes, Anne sent you to see me didn't she? Normally I translate things for free as I find it very stimulating, but as she forgot my birthday......I bet she's still searching for the treasure of the last Emperor of Cuzcous on Monster Island...
+	</phase>
+
+	<a id="treasure">Treasure?</a>
+
+	<phase id="treasure" next="treasure2">
+		Oh! I see she hasn't told you anything...I've been interested in monstrolanguages for many, many years but my daughter only gets excited by lost treasure. She has already found three treasure chests in Dinoland, but that's still not enough for her! Now she's searching for the legendary treasure of the Cuzcous emperor which has been hidden since the grand cataclysm.
+	</phase>
+
+	<a id="treasure2">...</a>
+
+	<phase id="treasure2" next="maudit">
+		Many of the texts I have studied seem to confirm the existence of this treasure and value it at 10,000,000 gold coins... but what on earth would someone do with that amount of money? If you do decide to go with Anne beware of the curse!
+	</phase>
+
+	<a id="maudit">The Curse?</a>
+
+	<phase id="maudit" next="thanks">
+		Yes, the texts which describe the treasure also talk of a guard and a curse. Did you really think that you're the first people to try and find the treasure? Many have gone in search of it, but none have come back alive. I've tried to change Anne's mind many times, but you know how difficult it is with young girls....
+	</phase>
+
+	<a id="thanks">....</a>
+
+	<phase id="thanks">
+		Anyway, thank her for the present and tell her to take care of herself. Good day my friend!
+	</phase>
+
+</d>
+
+<d place="mforst" name="Hindy Anne" img="indiana" cond="scenario(monisl,3)">
+
+	<phase id="begin" next="ok">
+		Ah, you've finally come back! I hope you didn't have too many problems with the old man!
+	</phase>
+
+	<a id="ok">...</a>
+
+	<phase id="ok" next="show">
+		What did he tell you? Hopefully the translated text will help us to locate the ruins which we'll then be able to explore together!
+	</phase>
+
+	<a id="show">Show her the translation and the notes</a>
+
+	<phase id="show" next="go">
+		Mmmmm... let's see, we should trace the bisector between the Dorogon constellation and the Kabuki star until they meet the Goblin nebulus. By triangulating these three points, whilst also taking into account the movement of the stars following the big cataclysm, yes, there you go! We're not far from the entrance to the temple!
+	</phase>
+
+	<a id="go">What are we waiting for, let's go!</a>
+
+	<phase id="go" next="go2">
+		Hold on! We need to make sure we're prepared, the Quetzako Temple is known for being extremely dangerous and... huge!
+	</phase>
+
+	<a id="go2">Follow Anne</a>
+
+	<phase id="go2" fast="1" scenario="monisl:4">
+		You follow Anne to what seems to be the entrance to a temple....
+	</phase>
+
+</d>
+
+<d place="mcuzco" name="Hindy Anne" img="indiana" cond="scenario(monisl,4)">
+
+	<phase id="begin" next="where">
+		Well done! Thanks to you we've finally found the Quetzako Temple. I must admit that you've been a big help. I'd never have been able to do it alone...
+	</phase>
+
+	<a id="where">Where are we?</a>
+
+	<phase id="where" next="now">
+		After taking the underground path, we should be standing at the south-east of the forest. Although the surrounding ruins seem to meet the description of the ancient Monster Capital: Cuzcous! Hold on! It seems I was wrong, we're already here!
+	</phase>
+
+	<a id="now">Now what?</a>
+
+	<phase id="now" next="go">
+		Now what? Why we'll go and explore the ruins of course! There must be mountains of treasure buried beneath these ruins. We'll be among the first people to explore this area. It's the discovery of the century!
+	</phase>
+
+	<a id="go">Let's go!</a>
+
+	<phase id="go" fast="1" scenario="monisl:5">
+		After searching for a while, you finally find the entrance to what seems to be a large network of rooms, partially buried beneath the plants which cover the ruins...
+	</phase>
+
+</d>
+
+<d place="mcuzco" name="Hindy Anne" img="indiana" cond="scenario(monisl,5)+dungeon(mcuzco)">
+
+	<phase id="begin" next="tres">
+		Fantastic! We did it! We finally found it! The treasure of the Cuzcous Ruins!
+	</phase>
+
+	<a id="tres">Huh? What? Where?</a>
+
+	<phase id="tres" next="money">
+		This treasure must date back centuries and look! It's engraved! Wow! This is proof that the Monster Empire used to be ruled by both the Frutox AND the Vegetox!
+	</phase>
+
+	<a id="money">How much is it worth?</a>
+
+	<phase id="money" next="money2">
+		How much is it worth? Don't you know what this means? The war between the Frutox and Vegetox has lasted for generations because each family believes that they were the true rulers of Cuzcous, but this effectively proves that BOTH families ruled the Empire!
+	</phase>
+
+	<a id="money2">OK, but how much is it worth?</a>
+
+	<phase id="money2" next="maudit">
+		Well, it will save millions of lives and as an archeological artifact it's practically priceless. It's besides the point to talk of its value. It belongs in a museum and nowhere else... You can knock yourself out with the gold coins from the ruins!
+	</phase>
+
+	<a id="maudit">What about the curse?</a>
+
+	<phase id="maudit" next="search">
+		The curse? Grrr...it would seem that one of your Dinoz is a bit...Frutox...maybe a fight would reveal more. Anyway, in the meantime, take advantage of the state of your Dinoz to go and meet Grotox. You should try and make him speak with Antraxov, the Vegetox king. The tablet should be enough to convince him.
+	</phase>
+
+	<a id="search">What about you?</a>
+
+	<phase id="search">
+		I'll wait here, we're close to the border, there must be a way for us to get into the Vegetox Kingdom from here...
+	</phase>
+
+</d>
+
+<d place="mcuzco" name="Hindy Anne" img="indiana" cond="scenario(monisl,9)|scenario(monisl,10)">
+
+	<phase id="begin" next="next">
+		Hey! You managed to find a way out and you're still alive! If you've damaged the tablet, I'll never forgive you!
+	</phase>
+
+	<a id="next">...</a>
+
+	<phase id="next" next="next2">
+		So Grotox wants you to meet Antraxov? That won't be easy, but don't worry, I found a secret passage whilst I was exploring which leads to the Vegetox Kingdom!
+	</phase>
+
+	<a id="next2">Great!</a>
+
+	<phase id="next2" scenario="monisl:10">
+		As the ancient proverb says "all roads lead to Cuzcous", but be careful on your journey, especially with that curse, the Vegetox guards won't be pleased to see you!
+	</phase>
+
+</d>
+
+<d place="mcuzco" name="Hindy Anne" img="indiana" cond="scenario(monisl,16+)">
+
+	<phase id="begin">
+		There's still a lot to discover in the ruins. With the help of this information, I think I'll finally be able to show the world that monsters truly were capable of building a magnificient civilisation. My father will be very proud of me!
+	</phase>
+
+</d>

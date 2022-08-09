@@ -1,0 +1,78 @@
+﻿<!--  QUETE DE l'appeau : permet l'accés au Dome Soulaflotte -->
+
+<d place="chutes" name="Atlantinischer Wächter" gfx="apostoph" cond="admin()|fx(bouee)">
+
+	<phase id="begin" next="rasca:thanks">
+		Der Zutritt zum Unterwasserdom ist nur mit Hilfe eines Rascaphanders möglich.
+	</phase>
+
+	<a id="rasca"cond="!fx(rasca)">Ein was?!?</a>
+	<a id="thanks" cond="fx(rasca)">Ok, danke!</a>
+	
+	<phase id="rasca" next="where:thanks">
+		Ein Rascaphander ist ein großer Fisch mit hohlen Gräten. Er ist imstande, große Mengen an Sauerstoff zu speichern und so seinen Meister in die Tiefen mitzunehmen, in denen sich der Unterwasserdom befindet. Durch die Sauerstoffversorgung muss sein Meister sich nicht fürchten zu ertrinken. 
+	</phase>
+
+	<a id="where">Weißt Du wo ich einen finden kann?</a>
+
+	<phase id="where" next="call:thanks">
+		Rascaphander kommen zahlreich in den umliegenden Gewässern vor. Du musst nur wissen, wie du sie anrufen musst. </phase>
+
+	<a id="call">Super!...Äh... Hast du vielleicht ihre Nummer?</a>
+
+	<phase id="call" next="appeau:thanks">
+		(seufz)...Eigentlich brauchst du dazu einen besonderen Gegenstand: Eine Rascaphander-Lockpfeife. Das ist eine kleine Flöte, die du ins Wasser tauchst, die die Wellenbewegungen des großen schwarzen unheilvollen Hais aus den pestartigen Tiefen nachmacht. Er ist das Lieblingsgericht des Rascaphanders. Sobald er das hört, stürzt er auf dich zu und du kannst dir einen schnappen, um zum Unterwassendom zu gelangen. 
+	</phase>
+
+	<a id="appeau">Eine Lockpfeife...</a>
+
+	<phase id="appeau" next="old:thanks">
+		Ja. Die Rascaphander-Lockpfeife wird aus alten Rascaphandergräten hergestellt. Aber je älter die Rascaphander sind, desto mürrischer werden sie. Sie können dann sehr gefährlich werden....
+	</phase>
+
+	<a id="old">Hmm...</a>
+
+	<phase id="old" next="thanks" effect="jvbz">
+		Ich habe im Predigerhafen einen Fischer zum Freund. Wenn du keine Angst vor der Gefahr hast, kann ich ihn fragen, dich auf die Jagd des riesigen alten Rascaphanders mitzunehmen...Besuch ihn und sag ihm, dass ich dich geschickt hätte. Er heißt "Jové Bozé".
+	</phase>
+
+	<phase id="thanks">
+		Ich wünsche dir noch einen angenehmen Aufenthalt auf den Atlantinischen Inseln.
+	</phase>
+
+</d>
+
+<d place="port" name="Jové Bozé" gfx="joveboze" cond="fx(jvbz)">
+
+	<phase id="begin" next="trad:sry">
+		Moin mien Jung! Hest dor även een Rasca verjackst?
+	</phase>
+
+	<a id="sry">...Wie bitte?!?</a>
+	<a id="trad">Einen Übersetzer suchen gehen.</a>
+
+	<phase id="trad" fast="1">
+		Niemand hier scheint zu verstehen, was Jové Bozé sagt. Nach allem, was du bisher in Erfahrung bringen konntest, handelt es sich um einen lokalen Dialekt der Prediger, wenn nicht sogar um einen eigenen Dialekt des Herrn Bozé...
+	</phase>
+
+	<phase id="sry" next="go:trad">
+		Wenn Du nich praat büst, denn kom nich. Sünsten stieg in dat Boot, klaar?
+	</phase>
+
+	<a id="go">Jové Bozé folgen.</a>
+
+	<phase id="go" next="attack:back" fast="1">
+		Jové Bozé nimmt dich mit aufs Meer, an eine Stelle, die von Schiffen scheinbar gemieden wird...Als du dich der Stelle näherst, erblickst du in etwa dreißig Meter Entfernung etwas, das wie ein riesiger Rascaphander aussieht. Wenn du weiterhin in diese Richtung steuerst und wenn der Atlantinische Wächter recht hatte, wirst du sicherlich gleich angegriffen werden...du musst dich beeilen!!!
+	</phase>
+
+	<a id="attack">Weiterfahren.</a>
+	<a id="back" target="attack">ABDREHEN!!!</a>
+
+	<phase id="attack" fight="rasca" bg="rasca" noeffect="jvbz" effect="rasca" fast="1">
+		Jové Bozé hat deine Anweisung natürlich nicht verstanden...Nach deinem mächtigem Kampf fährt er dich zum Predigerhafen zurück. Er hat seit der Attacke nicht ein Sterbenswörtchen gesagt, aber er beobachtet dich mit zufriedenem Gesichtsausdruck aus den Augenwinkeln. Just als ihr im Begriff seid euch zu trennen, drückt er dir herzlich die Hand, ganz als ob er dir viel Glück für deine weiteren Abenteuer wünschen wollte. Er überreicht dir schließlich eine Rascaphander-Lockpfeife, die er für dich geschnitzt hat...
+	</phase>
+
+</d>
+
+
+

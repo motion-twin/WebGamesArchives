@@ -1,0 +1,749 @@
+﻿<!-- ***************************************************************************** -->
+<!-- Al Zaïmeur, quête de la mémoire ----->
+<!-- 1 -->
+<d place="papy" name="Grandpa Joe" gfx="papy" cond="(fx(sylkey)+mission(kilcoq)+scenario(alzaim,0))+(admin()|active(alzaim))" >
+	
+	<inject id="papy:begin" next="hello" />
+	
+	<a id="hello">Hello!</a>
+	
+	<phase id="hello" next="accept:refuse">
+		Ah, great timing! I need someone strong and able to do a job for me.
+		Do you think you can help?
+	</phase>
+	
+	<a id="accept">
+		Of course, what is it?
+	</a>
+	<a id="refuse" target="quit">
+		No thanks, I don't feel very well at the moment...
+	</a>
+	
+	<phase id="accept" next="more1:refuse2">
+		Well, I've been having problems with my memory for a couple of years now.
+		I have a strange feeling which keeps coming back to me... it's as if I've lost something important... am I making any sense to you?
+	</phase>
+	
+	<a id="more1">
+		More or less, maybe I can help?
+	</a>
+	
+	<a id="refuse2" target="quit">
+		Oh, I forgot, I have an appointment at the hairdressers. Bye.........
+	</a>
+	
+	<phase id="more1" next="more2:refuse3">
+		I lost something at the Magnetic Steppes a long time ago, do you think you could go and find it for me?
+	</phase>
+	
+	<a id="more2">
+		Of course!
+	</a>
+	
+	<phase id="more2" scenario="alzaim:1">
+		Thanks my young friend. I knew I could count on you!
+		I'll wait here for you.
+	</phase>
+	
+	<a id="refuse3">
+		I'm not sure, it's quite far away...
+	</a>
+	<phase id="refuse3">
+		Ok, I understand... come back and see me if you ever feel like taking a trip there.
+	</phase>
+	
+	<phase id="quit" >
+		I understand, bye then....
+	</phase>
+</d>
+
+<!--
+GUIDE MICHEL
+-->
+<d place="dnv" name="Michael The Guide" gfx="michel" cond="scenario(alzaim,1)">
+	<inject id="guide:begin" next="p13" />
+	<a id="p13">
+		Ask how to find the lost object in the Magnetic Steppes.
+	</a>
+	<phase id="p13">
+		You're looking for something at the Magnetic Steppes that was lost over 10 years ago? Let's see ... as it's been such a long time, the sand will surely have buried it by now. You'll need to use something to try and dig it up...
+	</phase>
+</d>
+
+<!--
+	ACTION AUX PYLONES MAGNETIQUES
+	Creuser donne accès à une moitiée de photo sur laquelle est identifié PapyJoe jeune
+	Cette action fait passer le scénario alzaim en phase 2
+-->
+<!-- 2 -->
+<d place="papy" name="Grandpa Joe" gfx="papy" cond="(scenario(alzaim,2))">
+
+	<inject id="papy:begin" next="accept" />
+	
+	<a id="accept">
+		...... (Show him the torn photograph)
+	</a>
+
+	<phase id="accept" next="more1">
+		Mmmm, that's a nice photo.... is that your father?
+	</phase>
+	
+	<a id="more1">
+		What? No! That's you!
+	</a>
+	
+	<phase id="more1" next="more2">
+		By the beard of Merlin... you're right!
+		Ahhhhh, I was once young and handsome.
+		But that's not what troubles me. I've always had the habit of locking my memories away. There must be an explanation for it...
+	</phase>
+	
+	<a id="more2">
+		Maybe you should take a rest?
+	</a>
+	
+	<phase id="more2" scenario="alzaim:3">
+		Yes, thanks little one. I'll refresh my memory by taking a tour of the beaches on the Atlanteid Islands, but first I'm going to have a little nap.
+	</phase>
+</d>
+
+<!-- 3 -->
+<d place="marais" name="Tired Man" gfx="al_zaimeur2" cond="scenario(alzaim,3)">
+	<phase id="begin" next="breath">
+		......(puff)....(puff)...ex....excuse .... excuse me...I'm sorry.....to disturb ....your adventure... (puff)...(puff)...
+		..................
+	</phase>
+	<a id="breath">
+		You let him catch his breath.
+	</a>
+	<phase id="breath" next="help:not">
+		I've been going round in circles for years. I'm exhausted, I can't take another step,
+		I'd like to go back to Dinotown, but I'm too weak to continue travelling...
+		Could you give me a hand? I just need something to drink...
+	</phase>
+	<a id="help">
+		Of course, will some water do the trick?
+	</a>
+	<a id="not" target="quit">
+		Do it yourself, I don't have time to help you, I have my own things to do!
+	</a>
+	<phase id="help" next="end" scenario="alzaim:4">
+		That would be really kind of you. Although, if it wouldn't be too much trouble, a fine wine from Dinotown would be ideal to revive me, but I don't know where to find one...
+	</phase>
+	<a id="end">
+		Ok, if you can't do it, I can give it a go...
+	</a>
+	<phase id="end" fast="1">
+		You set off on this new mission, as requested by the Tired Man.
+	</phase>
+	<phase id="quit">
+		Waaaaaaaaaaaaa, I'm going to die all alone! Waaaaaaaaaaaaa, what have I done to deserve this?
+	</phase>
+</d>
+
+<!-- 4 -->
+<d place="dplaza" name="Wine Merchant" gfx="sommelier" cond="scenario(alzaim,4)">
+	<phase id="begin" next="vente">
+		Good day young Dinoz master!
+		Allow me to guide you through our finest vintages, the pompelope 142 is succulent, l'extremitédeau 144 is extremely rare.
+		You should buy some bottles before a wine collector
+		buys all my stock!
+	</phase>
+	<a id="vente">
+		I'm actually looking for a fine wine from Dinotown...
+	</a>
+	<phase id="vente" next="stock">
+		What? The Dinotown vintage?! I see that you're no amateur, not everyone manages to pick out all the subtle flavours of this frightful, erm... *ahem* fruitful wine...
+		You're in luck, I still have a couple of bottles left...
+	</phase>
+	<a id="stock">
+		Only a couple? I can see hundreds of bottles behind you!
+	</a>
+	<phase id="stock" next="merci">
+		You can see them? Arrrgghhh! Ok............the truth is that this wine tastes like vinegar. The vintners were working too close to the Big All-Hot and spoiled
+		all their grapes. However, it's delicious when served with a regional dish like some merguez!
+	</phase>
+	<a id="merci">
+		Really? It sounds perfect. How much do I owe you?
+	</a>
+	<phase id="merci" scenario="alzaim:5" next="quit">
+		Don't worry. Go ahead, take it. Giving you this bottle will help promote it to other customers. I might end up selling all my stock!
+	</phase>
+	
+	<a id="quit">
+		Ok... but you've still got a long way to go!
+	</a>
+	
+	<phase id="quit" popup="1">
+		You've been given a bottle of Dinotown wine.
+	</phase>
+</d>
+
+<!-- 4 -->
+<d place="chutes" name="Tired Man" gfx="al_zaimeur2" cond="scenario(alzaim,5)">
+	<phase id="begin" next="aide">
+		.....Glug glug glug, aaaaaahhhhhh.... thanks a lot. After tasting it for the first time, I can't drink anything else!
+		To be honest, I'm actually really hungry too, I haven't eaten in days...
+	</phase>
+	<!-- revoir dialogue? -->
+	<a id="aide">
+		You need my help again? If I help you out again it will be the last... I take it you have something special in mind?
+	</a>
+	<phase id="aide" next="where">
+		Thanks! You're right................Burnt Merguez! I've eaten them since I was a child, but now I don't know where to find them. I'll admit my memory is a bit blurry...
+	</phase>
+	<a id="where" >
+		Don't worry, I know where I can get some...
+	</a>
+	<phase id="where" next="end" >
+		That's why I'm called Al Zaimeur! When you call me, you can call me Al...
+	</phase>
+	<a id="end">
+		What a funny name...I'm off to find your merguez! See you later!
+	</a>
+	<phase id="end" fast="1"  scenario="alzaim:6">
+		You set off on your latest mission.
+	</phase>
+</d>
+
+<!-- suite scénario, dialogue du vendeur de merguez -->
+
+
+<!-- 5 -->
+<d place="rashpk" name="Merguez Seller" gfx="merguez" cond="scenario(alzaim,6)+(admin()|active(alzaim))">
+
+	<inject id="merguez:begin" next="crame" />
+	
+	<a id="crame" >
+		You don't happen to have any burnt merguez do you?
+	</a>
+	
+	<phase id="crame" next="quoi">
+		BURNT WHAT? Are you trying to say I don't know how to cook my merguez? Watch what you say or I'll boot your bumbling backside all the way to Nimbao!
+	</phase>
+	
+	<a id="quoi">
+		Sorry, but I like burnt merguez!
+	</a>
+	
+	<phase id="quoi" next="rate">
+		I ALWAYS COOK MY MERGUEZ TO PERFECTION!!!!!!
+	</phase>
+		
+	<a id="rate">
+		Ok, sorry, I'll go and get them from somewhere else...
+	</a>
+	
+	<phase id="rate" next="uh">
+		............Wait! Don't leave!
+	</phase>
+	
+	<a id="uh">
+		..................?
+	</a>
+	
+	<phase id="uh" next="recuperation">
+		(whispering) Here, take some, there are loads of burnt ones in the back..........
+	</phase>
+
+	<a id="recuperation">
+		Aha! So you admit you sometimes burn your merguez!
+	</a>
+	
+	<phase id="recuperation" next="end" scenario="alzaim:7">
+		Sssssshhhhhhhh, otherwise I'll burn you too!
+	</phase>
+	
+	<a id="end">
+		Ok, ok, I'll leave, thanks again!
+	</a>
+	
+	<phase id="end" popup="1" >
+		You set off carrying a burnt merguez ready to be "savoured"...
+	</phase>
+
+</d>
+
+<!-- 6 -->
+<d place="chutes" name="Al Zaimeur" gfx="al_zaimeur" cond="scenario(alzaim,7)">
+	<phase id="begin" next="ravie">
+		....crunch.... crack... mmmmm... That was fantastic, thanks a lot, you're my saviour...
+		I think I would have died if it wasn't for you!
+	</phase>
+	<a id="ravie">
+		Don't mention it...
+	</a>
+	<phase id="ravie" next="vie">
+		You're very kind, are you interested in hearing my life story?
+	</phase>
+	<a id="vie">
+		......uuhhhh sure....
+	</a>
+	<phase id="vie" next="pouf">
+		Don't worry, it's not very long as I can't remember much of it...
+		I've got AMNESIA! ...........do you believe me?
+	</phase>
+	<a id="pouf">
+		........of course!
+	</a>
+	<phase id="pouf" next="poiss">
+		I don't remember anything, I've spent years trying to find out who I am...
+	</phase>
+	<a id="poiss">
+		Maybe I can help?
+	</a>
+	<phase id="poiss" next="end" >
+		Well now you mention it, apparently the salzheimon can help cure memory loss. Accompagnied by a little lava salt, mmmmmmmmm.... it's tastes so good!
+	</phase>
+	<a id="end" >
+		Ok, wait here, I'll go and get it for you!
+	</a>
+	<phase id="end" fast="1" scenario="alzaim:8" >
+		Once again, you set off on a mission for Al......you're far too kind!
+	</phase>
+</d>
+
+<!-- 7 -->
+<d place="port" name="Joveboze" gfx="joveboze" cond="scenario(alzaim,8)">
+	<phase id="begin" next="poiss">
+		What a lovely fish, and it hasn't passed its sell by date!
+	</phase>
+	<a id="poiss">
+		Do you have any salzheimon?
+	</a>
+	<phase id="poiss" next="end" scenario="alzaim:9">
+		Salzheimon you say? Mmmmm, that's a very rare fish......................
+		It seems you're in luck! I have plenty in stock at the moment. They originate from the Mutant Falls. Apparently they live in the dark and only come out to eat!
+		Here, take this piece, but make sure it's hot before you eat it, otherwise you'll have an upset stomach! 
+	</phase>
+	<a id="end">
+		Thanks a lot!
+	</a>
+	<phase id="end" popup="1" >
+		You set off with a salzheimon in your bag. Remember what JoveBoze said! You'll need to cook it before it can be eaten...
+	</phase>
+</d>
+<!--
+Passage a  fosselave ou en creusant on trouve du sel de lave
+Ce sel permet de cuire le poisson comme voulu
+On passe a l'étape suivante du scénario Alzaimer
+-->
+
+<!-- 8 -->
+<d place="marais" name="Al Zaimeur" gfx="al_zaimeur" cond="scenario(alzaim,10)">
+	<phase id="begin" next="plat">
+		Munch, crunch, slurp, burp.... aaaahhhhh, that tastes so good, especially with the salt. It adds that little bit extra needed to tickle my tastebuds!
+	</phase>
+	<a id="plat">
+		Excuse me? I thought it was supposed to be a remedy? It's only your favourite meal?
+	</a>
+	<phase id="plat" next="end">
+		Err.......yes........ of course it's a remedy. I can already feel my brain warming up!
+		I think I remember an accident which may have caused my memory loss, maybe you could look into it for me......
+		Also, I'd like to know why a rapacarapace keeps following me around!
+	</phase>
+	<a id="end">
+		I'll see what I can do...
+	</a>
+	<!-- pauvre hère?? -->
+	<phase id="end"  fast="1" scenario="alzaim:11">
+		Once again your kindness has got the better of you, but this poor little wretch seems to be hiding a mysterious secret...
+	</phase>
+</d>
+
+<!-- 9 -->
+<d place="univ" name="Professeur Eugene" gfx="eugene" cond="scenario(alzaim,11)">
+	<inject id="prof:talk" next="demarch" />
+	
+	<a id="demarch">
+		Ask for access to the accident archives.
+	</a>
+	<phase id="demarch" next="arch">
+		The accident archives? Where do you expect us to store something like that?
+	</phase>
+	<a id="arch">
+		.......
+	</a>
+	<phase id="arch" next="stock">
+		With all the Dinoz masters and their Dinoz in the university, accidents aren't really what we need around here!
+		Besides, we don't even have enough space to keep an archive. Do you really think it's the university's responsibility to keep one?
+	</phase>
+	<a id="stock">
+		Ok! Do you know where I might be able to find them?
+	</a>
+	<phase id="stock" next="idee">
+		I have no idea... the elders of Dinotown might be able to help you more than I can...
+	</phase>
+	<a id="idee">
+		And what about the Rapacarapace?
+	</a>
+	<phase id="idee" next="champ">
+		Well there are two possible theories. Either he has a Gorgon steak tied to his leg, which is an old Dinoz training method....
+	</phase>
+	<a id="champ">
+		......or?
+	</a>
+	<phase id="champ" next="soit">
+		It may be that this monster is from the Magnetic Steppes which means his inner field has been damaged...
+	</phase>
+	<a id="soit">
+		How did that happen?
+	</a>
+	<phase id="soit" next="vite">
+		Monsters from the Magnetic Steppes use these fields to find their bearings. They also use them to find food and..................to breed!
+	</phase>
+	
+	<a id="vite">
+		Ah..... OK ....I better hurry then!
+	</a>
+	<phase id="vite" next="end">
+		Ok, I'll leave you to it, I have a Cuzcoussian equation to solve.
+		I have a bet with my colleagues! They think they can use the classical Bozz method to solve this equation, which I find frankly ridiculous. I'm sure that the Tria-Landerer approach would be better, because the co-efficien...........
+	</phase>
+	<a id="end">
+		Run away as fast as you can!
+	</a>
+	<phase id="end" fast="1" scenario="alzaim:12">
+		You set off, the professor's voice fading away into the background....
+	</phase>
+</d>
+
+<!-- 10 -->
+<d place="papy" name="Grandpa Joe" gfx="papy" cond="scenario(alzaim,12)">
+
+	<inject id="papy:begin" next="recher" />
+	
+	<a id="recher">
+		Ask where to find the archives.
+	</a>
+	
+	<phase id="recher" next="paper">
+		You're looking for old documents? Have you thought of looking in the Daily Dino archives? It's Dinotown's local newspaper.
+	</phase>
+	<a id="paper">
+		Errrrr, no...
+	</a>
+	<phase id="paper" next="joke">
+		Hold on, I think I have some old copies here. I started to collect them when I was very young so I could collect Nono the Dino's jokes, they were very popular at the time. I can even remember one of them off the top of my head............
+	</phase>
+	<a id="joke">
+		Hum hum.....
+	</a>
+	 <phase id="joke" next="end" scenario="alzaim:13">
+		Ok, you're right, we'll talk about them later. Come over here, help me sort through my old copies, let's see if we can find what you're after...
+	</phase>
+	<a id="end">
+		Ok, I'm coming!
+	</a>
+	<phase id="end" popup="1" >
+		You help Grandpa Joe look through his old copies of Daily Dino. Who knows how long this will take...
+	</phase>
+</d>
+
+<!-- 11 -->
+<d place="papy" name="Grandpa Joe" gfx="papy" cond="scenario(alzaim,13)+(admin()|swait(alzaim,2))">
+	<inject id="papy:begin" next="alors" />
+	
+	<a id="alors">
+		Did you manage to find anything?
+	</a>
+	
+	<phase id="alors" next="paper">
+		I'm sorry, but it seems there's nothing you're after...
+		The good news is that I've managed to find my old jokes, I can't wait to read them all again...
+	</phase>
+	<a id="paper" >
+		........................
+	</a>
+	<phase id="paper" fast="1" scenario="alzaim:14">
+		You leave Grandpa Joe's house, annoyed and grumbling........ who else knows about Dinotown?
+	</phase>
+</d>
+
+<!-- 12 -->
+<d place="skull" name="Skully" gfx="skully" cond="scenario(alzaim,14)+fx(skull)">
+	<inject id="skull__3:begin" next="accidents" />
+	<inject id="skull__2:begin" next="accidents" />
+	<a id="accidents">
+		Ask about the accident.
+	</a>
+	<phase id="accidents" next="triste">
+		Oooooohhhhh! An accident which would cause memory loss?
+		Yes! That sometimes happens during battles, but I also remember
+		a time when the equilibrium of the Magnetic Steppes was disturbed and there was a series of accidents.
+	</phase>
+	<a id="triste">
+		Oh yeah?
+	</a>
+	<phase id="triste" next="dispa">
+		Yes, I even remember hearing of a young boy who.........disappeared.
+		... how sad!
+	</phase>
+	<a id="dispa">
+		A young boy ... disappeared?
+	</a>
+	<phase id="dispa" next="end">
+		Yeah, it happened years ago.
+		(She scratches her head......sorry, her skull!)
+		Hold on, I think he might be your survivor! It would make perfect sense.
+	</phase>
+	<a id="end">
+		It would also make sense with what the Professor said. I'll go and tell Al, thanks!
+	</a>
+	<phase id="end" fast="1" scenario="alzaim:15">
+		Skully extends her bony hand to you, but you quickly turn to leave.
+	</phase>
+</d>
+
+<!-- 13 -->
+<d place="chutes" name="Al Zaimeur" gfx="al_zaimeur" cond="scenario(alzaim,15)">
+	<phase id="begin" next="blabla">
+		Did you find anything?
+	</phase>
+	<a id="blabla">
+		Tell him everything..........
+	</a>
+	<phase id="blabla" next="end" scenario="alzaim:16">
+		So the magnetic waves are responsible for my misfortune?
+		Thanks a lot, I'll solve the rest myself. Unfortunately I only have this photo to give you as a token of my thanks.
+	</phase>
+	<a id="end">
+		Thanks very much.
+	</a>
+	<phase id="end" popup="1" >
+		Al has given you part of a torn photograph, @/img/icons/fx_alztof.gif@. You immediately recognise the subject...
+	</phase>
+</d>
+
+<!-- 14 -->
+<d place="papy" name="Grandpa Joe" gfx="papy" cond="scenario(alzaim,16)">
+	<inject id="papy:begin" next="photo" />
+	
+	<a id="photo">
+		Hello!
+	</a>
+	<phase id="photo" next="paper">
+		Hello young Dinoz master......
+		Have you come to listen to my jokes?
+	</phase>
+	<a id="paper" >
+		.......Show him the photograph.
+	</a>
+	<phase id="paper" next="rien">
+		Ah! Nice photo, but you really must take better care of your things! Is that your mother?
+	</phase>
+	<a id="rien" target="autre">
+		....... It doesn't remind you of anyone?
+	</a>
+	<phase id="autre" next="suite">
+		Mmmmm.... actually, it does remind me of something...
+		Hold on!  That's! ...........
+		No! It can't be!
+	</phase>
+	<a id="suite" >
+		Look closely!!
+	</a>
+	<phase id="suite" next="suite2">
+		(He puts on his glasses)
+		It's the other half of the photo you gave me!
+	</phase>
+	<a id="suite2" >
+		....... (FINALLY!)......
+	</a>
+	<phase id="suite2" next="suite3" scenario="alzaim:17">
+		Oh! Now I remember... that's me and ... my ... my son!
+		Oh no! How could I forget him for all these years? 
+	</phase>
+	<a id="suite3">
+		Your son?
+	</a>
+	<phase id="suite3" next="suite4">
+		Yes, Al is my son. Years ago we had an accident while travelling to the Pylons in the Magnetic Steppes.
+		Ever since the accident, I've had problems trying to remember what my life was like before it happened. 
+		But having reread these old newspapers and rediscovered this family photo, it's all starting to come flooding back to me!
+		Did you say that you've found him? 
+	</phase>
+	<a id="suite4" >
+		As luck would have it, yes, I did. He's ok! I'll go and fetch him for you if you like!
+	</a>
+	<phase id="suite4">
+		Ah yes, thank you. I can't wait to see him again!
+		I hope he's not too angry with me, it's been nearly 10 years since I saw him last...
+	</phase>
+</d>
+
+<!-- Combat de boss -->
+<!-- 15 -->
+<d place="marais" name="Al Zaimeur" gfx="al_zaimeur" cond="scenario(alzaim,17)">
+	<phase id="begin" next="suite">
+		Help, there's the Rapacarapace! I went to the toilet and it generated a magnetic field which alerted the monster!
+		Please rid me once and for all from this wretched pest!
+	</phase>
+	<a id="suite">
+		You can count on me!
+	</a>
+	<phase id="suite" fast="1" next="fight">
+		The Rapacarapace rises from the bottom of the swamp, hidden by a water lily.
+		It seems a fight is inevitable!
+	</phase>
+	<a id="fight">
+		Fight!
+	</a>
+	<phase id="fight" fast="1" scenario="alzaim:18" fightgroup="rapaca">
+		You have defeated the Rapacarapace. All that is left to do is reunite father and son!
+	</phase>
+</d>
+<!-- 16 -->
+<!--
+	DONNER LES 6 TICKETS
+	METTRE POPUP POUR AVERTIR
+-->
+<d place="papy" name="Grandpa Joe" gfx="papy" cond="scenario(alzaim,18)">
+	<inject id="papy:begin" next="heureux" />
+	<a id="heureux">
+		How are you doing?
+	</a>
+	<phase id="heureux" next="fiston" >
+		Great! Thanks for bringing me my son back. I hope he's not too angry with me having forgotten him for all these years...
+		We have a lot to talk about, I think he'll be staying with me for a while.
+	</phase>
+	<a id="fiston">
+		(Continue)
+	</a>
+	<phase id="fiston" next="cadeau" gfx="al_zaimeur" name="Al Zaimeur" background="2" >
+		It's going to be difficult catching up on all the years lost trying to regain my memory, but we'll do our best. Thanks for all your help!
+		By the way, would you mind getting me some merguez?
+		Hey! I'm joking! You've done more than we could ever ask of you.... don't hesitate to come back and see me again!
+	</phase>
+	<a id="cadeau">
+		Of course I will!
+	</a>
+	<phase id="cadeau" next="joie"  give="tictac:6" scenario="alzaim:19" >
+		Please accept these 6 Tac tickets as a token of my thanks. You can use them to dig in my garden... it seems my grandfather has hidden loads of treasure in it.
+		Yeah I know, weird isn't it? Some people put their valuable items in a box or under their mattress, but he buries them in the garden!
+	</phase>
+	
+	<a id="joie" >
+		Cool, thanks for the tickets!
+	</a>
+	
+	<phase id="joie" popup="1" next="end">
+		Grandpa Joe has given you 6 Tac tickets @/img/icons/fx_tictac.gif@. You can use them to dig in his garden for hidden treasure.
+	</phase>
+	
+	<a id="end"></a>
+	
+	<phase id="end" next="end2">
+		Don't mention it, but don't get your hopes up. Two generations of my family spent thier lives searching in the garden like headless chickens and found nothing!
+	</phase>
+	<a id="end2">I hope I'll have more luck!</a>
+	<phase id="end2" fast="1" >
+		The two seem happy to be together again. You set off to start a new adventure.
+	</phase>
+</d>
+
+
+<!--texte générique d'introduction des missions d'Al-->
+
+<d place="papy" name="Al Zaimeur" gfx="al_zaimeur" background="2" cond="scenario(alzaim,19)+(active(malzaim)|admin())">
+	<phase id="begin" next="bu">
+		Hey! It's been a while... I've got some missions for you if you're interested?
+	</phase>
+	<a id="bu">
+		Check list of missions.
+	</a>
+	<phase id="bu" missions="alzaim">
+	</phase>
+</d>
+
+<!--dialogues missions d'Al-->
+
+<d place="papy" name="Al Zaimeur" gfx="al_zaimeur" background="2" cond="curmission(fiesta,0)">
+	<inject id="alzaimeur__19:begin" next="oui">
+	</inject>
+	<a id="oui">
+		Do you want to organise a party?
+	</a>
+	<phase id="oui" next="quoi">
+		Yeah, I'm celebrating my homecoming.
+	</phase>
+	<a id="quoi">
+		What? You're still celebrating?
+	</a>
+	<phase id="quoi" next="vie">
+		Why not? I missed the chance to live the student life, so now I'm trying to make up for it.
+		By the way, you missed one of my parties last night, all of Dinotown was there.
+	</phase>
+	<a id="vie">
+		What? This isn't your first party?
+	</a>
+	<phase id="vie" next="revoir">
+		Of course not. I'd like to have another one, but not an amateurish one like last time, I want a massive party, a real fiesta! 
+		It would be great if there were people my own age there, people who really know how to party!
+		Could you see if anyone you know wants to come?
+	</phase>
+	<a id="revoir">
+		Yeah, it'll be good to see some of my friends again!
+	</a>
+	<phase id="revoir" next="end">
+		Oh .... if you know some girls .... do you think you could ask them too, hehe! Entry is free for girls.......................
+		One more thing, do you know someone called Tanguy? No? Ok, don't worry. It's just that everyone keeps saying I look like him, but I don't know who he is!
+	</phase>
+	<a id="end">
+		................
+	</a>
+	<phase id="end" fast="1">
+		We need to send out the invitations to the Fiesta.
+	</phase>
+</d>
+
+<d  place="papy" name="Al Zaimeur" gfx="al_zaimeur" background="2" cond="curmission(mcrame,0)">
+	<inject id="alzaimeur__19:begin" next="hum">
+	</inject>
+	<a id="hum">
+		Have you got the merguez?
+	</a>
+	<phase id="hum" next="arf">
+		To be honest, I got up a bit late this morning and didn't have time. Could you get them for me? Grandpa Joe is tired after all the parties, someone needs to stay here and take care of him, is that OK?
+		Remember to get the burnt ones liek last time ok? I can't wait to eat some again, mmmmmm...
+	</phase>
+	<a id="arf">
+		Ok, I'll go and get them.
+	</a>
+	<phase id="arf" next="go">
+		You rock! It's going to be the best party of the year. Everyone will stay up until at least.... midnight! Haha, it's gonna be fun!
+	</phase>
+	<a id="go">
+		Sure...
+	</a>
+	<phase id="go" fast="1" frame="dodo">
+		You set off in search of the merguez. It seems that Al has fallen asleep while standing up!
+	</phase>
+</d>
+
+<d place="papy" name="Al Zaimeur" gfx="al_zaimeur" background="2" cond="curmission(alcool,0)">
+	<inject id="alzaimeur__19:begin" next="al">
+	</inject>
+	<a id="al">
+		What do you want to drink at the party?
+	</a>
+	<phase id="al" next="boire">
+		Ah, it's you? Sorry I didn't recognise you, I'm having trouble opening my eyes ... I'm really tired.
+		You're right, all we need to do now is get some drinks.
+	</phase>
+	<a id="boire">
+		What? You haven't got any?
+	</a>
+	<phase id="boire" next="rhon">
+		No, Grandpa Joe Joe wouldn't let me go and get them, he doesn't trust me. He says I'm not sensible enough.
+		He'd prefer it if everyone drank pure water from the Fountain of Youth ... but we're too young for that, we need something to really get the party started!
+		Apparently Lava syrup does the trick! Could you go and get some? We need something else to go with it though.
+		You look like you're up to the job!
+	</phase>
+	<a id="rhon">
+		Oh yeah? Why's that?
+	</a>
+	<phase id="rhon" frame="dodo">
+		RRHOONNNN .... PPPSHHHUITTTT .... RONRRRORONNROON..... PSHHHHUIHHHHHHUUIII ........(he's asleep).....
+	</phase>
+</d>

@@ -1,0 +1,44 @@
+<!-- ***************************************************************************** -->
+<!-- Etre, Nimbao l'île volante ----->
+	
+<d place="icite" name="Etre" gfx="etre" cond="!curmission(sos)+scenario(nimba2,50-)">
+	<phase id="begin" next="non:oui:mot" dialect="arbori">
+		Guten Tag, Reisender.
+		Was kann ich für dich tun?
+	</phase>
+	
+	<a id="non" cond="!uvar(dicarb)"> Ich verstehe nicht...</a>
+	<a id="oui" cond="uvar(dicarb)"> Du siehst müde aus.</a>
+	<a id="mot" cond="scenario(nimbao,34)"> vcbdr QpObmc?</a>
+	
+	<phase id="non" frame="stop" fast="1">
+		Du gehst wieder fort. Diese Sprache ist unmöglich zu verstehen...
+	</phase>
+	
+	<phase id="oui" dialect="arbori">
+		[Ich stehe in den Diensten unserer Meister. In ihrer unendlichen Gnade haben sie aus mir einen Gladiator gemacht.
+		Ich unterhalte sie, indem ich gegen meinesgleichen kämpfe.]
+		[Seit Kurzem bin ich allerdings im Ruhestand. Die alten Verletzungen... Es ging einfach nicht mehr...
+		Ich würde so gerne wieder nützlich sein, doch niemand will mich.]
+	</phase>
+	
+	<phase id="mot" fast="1" frame="stop" >
+		Er hat verstanden was du gesagt hast, aber er weiß nicht, was er antworten soll.
+		Offensichtlich hat dieses Wort keine Bedeutung für ihn.
+	</phase>
+</d>
+
+<d place="icite" name="Etre" gfx="etre" frame="happy" cond="!curmission(sos)+scenario(nimba2,51+)" >
+	<phase id="begin" next="oui2">
+		Guten Tag, Reisender.
+		Was kann ich für dich tun?
+	</phase>
+	
+	<a id="oui2"> Du siehst aus, als wärst du gut in Form.</a>
+	
+	<phase id="oui2">
+		[Vorher war es meine Aufgabe, Leute durch Kämpfen zu unterhalten. Aber nun habe ich eine neue Bestimmung: ich bilde junge Dorogons und Arborianer aus.
+		Ich lehre sie Kampfkunst und Poesie.]
+		[Ich meiner Stadt bin ich sogar eine richtige Berühmtheit geworden. Ich bin dem neuen Erzdorogon unendlich dankbar, dass er mir diese Möglichkeit gab.]
+	</phase>
+</d>

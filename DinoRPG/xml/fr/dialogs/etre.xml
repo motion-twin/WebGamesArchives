@@ -1,0 +1,44 @@
+<!-- ***************************************************************************** -->
+<!-- Etre, Nimbao l'île volante ----->
+	
+<d place="icite" name="Etre" gfx="etre" cond="!curmission(sos)+scenario(nimba2,50-)">
+	<phase id="begin" next="non:oui:mot" dialect="arbori">
+		Bonjour voyageur.
+		Que puis-je faire pour toi ?
+	</phase>
+	
+	<a id="non" cond="!uvar(dicarb)"> Je ne comprends pas...</a>
+	<a id="oui" cond="uvar(dicarb)"> Vous avez l'air fatigué.</a>
+	<a id="mot" cond="scenario(nimbao,34)"> vcbdr QpObmc ?</a>
+	
+	<phase id="non" frame="stop" fast="1">
+		Vous vous éloignez, ce langage est impossible à comprendre...
+	</phase>
+	
+	<phase id="oui" dialect="arbori">
+		[Je suis au service de nos maîtres, dans leur grandes mansuétudes, ils ont fait de moi un gladiateur.
+		J'étais chargé de les divertir en combattant mes congénères.]
+		[J'ai du prendre ma retraite depuis peu à cause de mes blessures, je ne suis plus capable de faire quoi que ce soit...
+		J'aimerais me rendre utile, mais personne ne veut de moi...]
+	</phase>
+	
+	<phase id="mot" fast="1" frame="stop" >
+		Il a compris ce que vous avez dit, mais ne sais quoi vous répondre...
+		Visiblement, ce mot n'éveille rien en lui.
+	</phase>
+</d>
+
+<d place="icite" name="Etre" gfx="etre" frame="happy" cond="!curmission(sos)+scenario(nimba2,51+)" >
+	<phase id="begin" next="oui2">
+		Bonjour voyageur.
+		Que puis-je faire pour toi ?
+	</phase>
+	
+	<a id="oui2"> Vous avez l'air en forme.</a>
+	
+	<phase id="oui2">
+		[Autrefois j'étais chargé de divertir en combattant, aujourd'hui on m'a assigné à l'éducation de nos jeunes arboris et dorogons.
+		Je leur enseigne l'art de la Guerre et la poésie.]
+		[Cela a fait de moi quelqu'un d'important dans notre ville, je suis très reconnaissant à notre nouvel ArchiDorogon de m'avoir donné cette opportunité.]
+	</phase>
+</d>

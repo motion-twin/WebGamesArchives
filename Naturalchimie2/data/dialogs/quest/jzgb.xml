@@ -1,0 +1,35 @@
+<d place="aparmy" name="Faire l'échange" gfx="apsnow" auto="0">
+
+<a id="begin">Ouhou ? Y'a quelqu'un ? </a>
+
+<phase id="begin" frame="hide" next="euh">
+C'est pour l'échange ?
+</phase>
+
+<a id="euh">Oui oui. Qui me parle ? </a>
+
+<phase id="euh" frame="normal" next="plus">
+Ici. Tu as la main du mentor ?
+</phase>
+
+<a id="plus">Oui, tenez. </a>
+
+
+<phase id="plus" next="gloups">
+Merci. Les bombes sont cachées là derrière. tu peux aller les chercher. 
+</phase>
+
+<a id="gloups">Dites donc, vous êtes pas le grand prof Audepint, là ? Celui avec le front tout plissé ? Vous avez un peu la même voix...</a>
+
+<phase id="gloups" next="go">
+Que ! * | Euh hum. | Brum. | Non non pas du tout. C'est pas moi. Du tout.
+</phase>
+
+<a id="go">Ah bon. C'est marrant parce qu'on dirait vraiment. C'est peut-être le costume de bonhomme de neige qui fait ça, remarquez.</a>
+
+<phase id="go" qtake="MentorHand:1" qgive="PolarBomb:200" url="/act">
+Voilà, c'est ça. Allez disparais maintenant, l'affaire est faite.
+</phase>
+
+
+</d>

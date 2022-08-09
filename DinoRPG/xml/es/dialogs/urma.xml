@@ -1,0 +1,94 @@
+<!-- ***************************************************************************** -->
+<!-- Urma, Vieille sorcière, soeur jumelle d'irma ----->
+
+<d place="dnv" name="Lula" gfx="irma" cond="active(urma)+uvar(paques,300+)+promo(easter)">
+
+	<phase id="begin" >
+		[Hola Maestro de Dinos.]
+		[Lo siento, ya no me quedan huevos para vender, ya has comprado todos los que tenía disponibles para ti.]
+		[Espero que hayas encontrado objetos útiles para tu aventura.]
+	</phase>
+
+</d>
+<d place="dnv" name="Lula" gfx="irma" cond="active(urma)+uvar(paques,299-)+promo(easter)">
+
+	<phase id="begin" next="suivant:irma:oui2:oui3:non">
+		[Hola Maestro de Dinos.]
+		[Seguramente conoces a mi hermana Lola, ¡pero por favor no me confundas con ella!
+Yo soy mucho más bella y poderosa  ¡y te lo voy a probar!]
+	</phase>
+
+
+	<a id="suivant" cond="!tag(urma)">
+		¿Qué vas a hacer, transformarme en Wanwan?
+	</a>
+	<a id="irma" cond="!tag(urma)">
+		¿Tú eres Lola, la que hace las pociones?
+	</a>
+	<a id="non" target="bof">
+		No, gracias.
+	</a>
+
+	<phase id="suivant" next="oeuf">
+		¡No me tientes! Primero tengo que vender todos estos huevos...
+
+	</phase>
+	<phase id="irma" next="popo">
+		[Pffff, lo sabía, esta loca me roba siempre el espectáculo...]
+		[Siempre quiere ser la estrella.
+		Ella ha creado una simple poción, ¡pero yo he creado un objeto mucho más interesante!]
+	</phase>
+
+	<a id="popo">
+		¿Puedes darme pociones?
+	</a>
+
+	<phase id="popo" next="bof:oeuf">
+	¡Que yo no soy LOLAAA!
+	De verdad, ¿no prefieres que te venda huevos?
+	</phase>
+
+	<a id="bof">No, gracias, yo prefiero las pociones.</a>
+	<a id="oeuf">¿Huevos?</a>
+
+	<phase id="oeuf" next="oui:bof">
+		[¡Sí, huevos muy especiales!]
+		[¡*Un huevo de Lula*, contiene una sorpresita!]
+		[Puedes encontrar un pan caliente, un monocromático, ¡o incluso un Dino!]
+		[*La suerte* será el único medio de obtener el objeto de tus sueños, sé razonable y  *piensa si tienes espacio en tu inventario, ¡si no perderás tu objeto*!]
+		[¡Este huevo te costará sólo *1000 monedas de oro*!]
+	</phase>
+
+	<a id="oui" confirm="1">¡Vale, me llevo uno por 1000 monedas de oro!</a>
+	<a id="oui2" cond="tag(urma)" confirm="1">¡Quisiera comprarle un huevo de Lula por 1000 monedas de oro!</a>
+	<a id="oui3" cond="tag(urma)+uvar(paques,290-)" confirm="1">¡Quisiera comprarle 10 huevos de Lula por 10000 monedas de oro!</a>
+
+
+	<phase id="oui" next="bye" usegold="1000" give="paques" nocheck="1" tag="urma" gvar="paques:1" uvar="paques:1">
+		Muchas gracias Maestro de Dinos, espero que encuentres lo que buscas en este huevo.
+		Vuelve a verme cuando quieras, estaré por aquí un tiempo más.
+	</phase>
+
+	<a id="bye">
+		¡Hasta la próxima!
+	</a>
+
+	<phase id="oui2" next="bye" usegold="1000" give="paques" nocheck="1" gvar="paques:1" uvar="paques:1">
+		Muchas gracias Maestro de Dinos, espero que encuentres lo que buscas en este huevo.
+		Vuelve a verme cuando quieras, estaré por aquí un tiempo más.
+	</phase>
+
+	<phase id="oui3" next="bye" usegold="10000" give="paques:10" nocheck="1" gvar="paques:10" uvar="paques:10">
+		Muchas gracias Maestro de Dinos, espero que encuentres lo que buscas en estos huevos.
+		Vuelve a verme cuando quieras, estaré por aquí un tiempo más.
+	</phase>
+
+	<phase id="bye" fast="1" frame="stop">
+		Te alejas, la vieja Lula se frota las manos, ¿tendrá éxito con su negocio?
+	</phase>
+
+	<phase id="bof" fast="1" frame="stop">
+		Te alejas, la vieja Lula parece decepcionada. ¿Quizás hubiera sido mejor vender pociones como su hermana?
+	</phase>
+
+</d>

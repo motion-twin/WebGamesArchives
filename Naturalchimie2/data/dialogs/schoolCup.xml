@@ -1,0 +1,94 @@
+<d place="" name="Coupe des écoles" gfx="gucup" auto="0" >
+
+<a id="end">Je vous laisse.</a>
+
+<phase id="begin" frame="normal2" next="what:part:nopart">
+Bienvenue sur le lieu de la {Coupe des écoles}. Je suis le commissaire de la Coupe.
+Que désires-tu ? 
+</phase>
+
+<a id="what">La quoi ? La Coupe des écoles ? C'est quoi ? </a>
+<a id="nopart" cond="!grade(,4)">Je veux participer ! </a>
+<a id="part" cond="grade(,4)">Je veux participer ! </a>
+
+<!-- ###################-->
+<phase id="what" frame="angry" next="quest">
+Tu ne connais pas la Coupe des écoles ! ? C'est la compétition alchimique la plus célèbre ! |
+Tout le monde achète le journal pour suivre les résultats. 
+</phase>
+
+<phase id="quest" frame="normal" next="ct:ou:qd:afro:sv:gg:nopart:part">
+Qu'est-ce que tu veux savoir ?
+</phase>
+
+<a id="ct">Comment on participe à la Coupe ?</a>
+<a id="ou">Ca se passe où ? </a>
+<a id="qd">La Coupe des écoles, c'est quand ? </a>
+<a id="afro">Vous faites flipper, mais en fait vous êtes plutôt sympa !</a>
+<a id="sv">Comment je peux suivre les résultats de mon école ? </a>
+<a id="gg">Et qu'est-ce qu 'on gagne, d'abord ? </a>
+
+<phase id="ct" frame="normal1" next="ctb">
+C'est simple, il suffit de jouer des alchimies ici, dans le lieu où se déroule la Coupe des écoles. 
+Tous les alchimistes de niveau 4 ou plus peuvent participer. Leurs scores sont enregistrés automatiquement pour la Coupe, si tu n'as pas de quête en cours ici. 
+</phase>
+
+<phase id="ctb" frame="happy" next="quest">
+Ah ! Un détail important : | les objets magiques sont toujours autorisés pendant la Coupe. Si tu veux être compétitif, je te conseille d'avoir quelques emplacements dans ta ceinture d'alchimiste. Et de penser à créer des objets magiques avant de jouer !
+</phase>
+
+<phase id="ou" frame="normal" next="quest">
+La Coupe change de lieu chaque semaine. Tu peux voir où elle se déroule sur ta carte. Sinon, c'est indiqué dans le Guildian Express. | Actuellement, c'est ici ! 
+</phase>
+
+<phase id="qd" frame="normal2" next="quest">
+La Coupe dure toujours [une semaine], du lundi au dimanche. Un nouveau lieu est désigné chaque lundi par la Guilde. 
+</phase>
+
+<phase id="sv" frame="angry" next="quest">
+Il y a toujours une pleine page sur la Coupe des écoles dans le Guildian Express. Tu n'as qu'à acheter le journal pour avoir toutes les infos. 
+</phase>
+
+<phase id="gg" frame="normal" next="gg2">
+Tous les dimanches à minuit, les coupes sont remises aux meilleures écoles ! Il existe 3 coupes différentes, et à chacune d'elle correspond un avantage pour les membres de l'école, qui dure toute la semaine à venir. 
+</phase>
+
+<phase id="gg2" frame="normal2" next="gg3">
+Il y a la {Coupe des écoles} qui fait gagner 1 point de déplacement supplémentaire. | La {Coupe des supers balèzes} qui donne un bonus de réputation pour chaque partie jouée, | et enfin la {Coupe des gros tas de points} qui donne une réduction dans toutes les boutiques du royaume !
+</phase>
+
+<phase id="gg3" frame="normal3" next="quest">
+En plus, les meilleurs alchimistes de chaque école gagnent pas mal de réputation chaque semaine.
+</phase>
+
+
+
+
+<!-- ###################-->
+<phase id="part" frame="happy" >
+Il te suffit de jouer tes alchimies ici. Ton meilleur score de la semaine sera comptabilisé pour les résultats de ton école. 
+</phase>
+
+
+<phase id="nopart" frame="angry" >
+Malheureusement, tu sembles un peu jeune pour l'instant. La Coupe des écoles est ouverte à tous les alchimistes de [niveau 4] ou supérieur. 
+</phase>
+
+
+<!-- ###################-->
+<phase id="afro" frame="angry" next="win">
+Mais bien sûr je suis sympa ! C'est cet uniforme de la guilde qui me donne un air méchant ! | J'y peux rien moi ! 
+</phase>
+
+<phase id="win" frame="happy" next="boite">
+Quand j'ai été embauché, tous les uniformes sympas avaient déjà été pris... Il ne restait que celui-là. | Je t'assure que depuis, c'est pas facile de draguer en boîte !
+</phase>
+
+<a id="boite">Ah ben j'imagine. Danser un slow avec une sorte de squelette démoniaque à cornes. Brrr...</a>
+
+<phase id="boite" frame="angry" next="quest">
+Exactement ! | Le bide total ! | D'ailleurs, je compte lancer une pétition pour des uniformes plus faciles à assumer au quotidien. | Je suis sûr que j'aurai beaucoup de signatures ! 
+</phase>
+
+	
+</d>

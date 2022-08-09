@@ -1,0 +1,244 @@
+<d place="gucaul" name="Obtenir une recette" gfx="">
+
+
+<phase id="begin" frame="happy" next="rok:nook:notok:help">
+Tu souhaites acheter une recette au hasard ? Bien sûr, ça coûte [un pyram].
+</phase>
+
+<a id="end">Non merci.</a>
+
+<a id="nook" cond="!hascollection(book)" >J'achète ! </a>
+
+<phase id="nook" frame="angry" >
+Désolé mais tu n'as pas encore ton grimoire, il me semble. 
+{Altus} devrait pouvoir te dire comment le récupérer. Reviens me voir ensuite pour acheter des recettes.
+</phase>
+
+
+<a id="rok" cond="hascollection(book)+hastoken(1)" urlauto="/cauldron/buy">J'achète ! </a>
+
+<a id="notok" cond="hascollection(book)+!hastoken(1)" >J'achète ! </a>
+
+
+<phase id="notok" frame="angry" >
+Une recette ? Mmmh, désolé mais tu ne sembles pas avoir assez de pyrams pour en acheter une. 
+Reviens me voir quand tu auras {un pyram}.
+</phase>
+
+
+<a id="help">Non, j'aurais juste besoin d'aide.</a>
+
+<phase id="help" frame="happy"  next="first:caul:rec:ing:vous:rank:boum:forb:exit">
+Soit. Que désires-tu savoir, exactement ? 
+</phase>
+
+
+
+<a id="first" cond="curquest(grim)">C'est la première fois que je viens. Il faut que je teste mon grimoire.</a>
+<a id="caul">Comment j'utilise le chaudron ? </a>
+<a id="rec">Une recette ? C'est quoi une recette ? </a>
+<a id="ing">Il me manque des ingrédients. Je les trouve où ?</a>
+<a id="vous">Qu'est-ce que vous faites là, à me regarder ? </a>
+<a id="rank">Comment ça marche les rangs de transmutation ?</a>
+<a id="boum">J'ai suivi la recette mais tout a explosé ! C'est ça un bug ?</a>
+<a id="forb">J'ai entendu parler de [recettes interdites]. C'est quoi ? </a>
+<a id="exit">J'ai plus de question. Merci.</a>
+
+<!-- ### CAULDRON GRIM QUEST : FIRST USE ### -->
+<phase id="first" next="ok">
+Ah, C'est simple. Regarde ta recette. Il y a des ingrédients nécessaires et un résultat. 
+Mets les ingrédients demandés dans le chaudron et tire ensuite sur la corde qui est apparue.
+Et * paf ! Tu as le résultat. 
+</phase>
+
+<a id="ok">Ah ouais, trop fastoche.</a>
+
+<phase id="ok" frame="happy" >
+Sans aucun doute...
+Et j'y pense : si tu n'as pas tous les ingrédients nécessaires, il te suffit d'essayer de les récupérer en quelques parties d'alchimie.
+Tu peux le faire n'importe où. Même ici.
+</phase>
+
+
+
+<!-- ### CAULDRON HELP ### -->
+<phase id="caul" frame="angry" next="caul2">
+C'est très simple ! Autour de ton chaudron, il y a tous les ingrédients que tu possèdes : éléments, objets... enfin bref, tout. 
+Si tu en as beaucoup, tu peux utiliser les flèches {gauche} et {droite} pour les faire défiler.
+</phase>
+
+<phase id="caul2" next="err:lost">
+Il suffit de cliquer sur un ingrédient pour le jeter dans le chaudron. 
+Si tu mets les ingrédients demandés par une de tes recettes et que tu [tires la corde], tu obtiendras le résultat de la recette. C'est pas compliqué.
+</phase>	
+
+<a id="err">Ok, mais si je me trompe dans mes ingrédients ? </a>
+<a id="lost">Et les ingrédients que j'ai utilisé, ils deviennent quoi ? </a>
+
+<phase id="err" frame="angry" next="begin">
+Très simple : ça pète. Et tu perds tes ingrédients dans l'explosion. 
+</phase>
+
+<phase id="lost" next="begin">
+Les ingrédients utilisés disparaissent : ils ont été transformés. C'est pas de la magie hein, faut pas croire.
+</phase>
+
+<!-- ### RECIPE HELP ### -->
+<phase id="rec" next="recou:norec">
+C'est la base de l'alchimie ! Les recettes t'indiquent les ingrédients à mettre dans le chaudron pour gagner quelque chose. 
+Les recettes que tu connais sont toutes dans ton {grimoire}. Si tu l'as, tu peux la réussir.
+</phase>
+
+<a id="recou">On les trouve où, les recettes ? </a>
+<a id="norec">Ok, mais si une recette n'est pas dans mon grimoire et que quelqu'un m'a donné la liste des ingrédients, qu'est-ce qui se passe ? </a>
+
+<phase id="recou" frame="happy" next="recou2">
+Le plus simple est de me les acheter directement. Pour {un pyram}, tu reçois une recette au hasard, validée par la guilde. 
+Il suffit de cliquer sur le bouton [acheter une recette] à droite.
+</phase>
+
+<phase id="recou2" next="begin">
+Tu peux aussi en acheter auprès des marchands que tu croises, mais ça risque d'être plus cher. Nous avons aussi un partenariat  très pratique avec {Chouettex} : tu peux leur acheter une recette partout dans le monde, comme si tu étais devant moi. Et sans supplément. 
+</phase>
+
+<phase id="norec" frame="angry" next="begin">
+C'est très déconseillé ! Pour une recette simple, tu as à peu près une chance sur deux que ça n'explose pas. Pour des recettes plus compliquées par contre... %f_surprised%moi je ne tenterais pas le coup.
+</phase>
+
+
+<!-- ### FIND NEEDS HELP ### -->
+<phase id="ing" next="nochain:slow">
+A toi de les récupérer en faisant des alchimies ! Chaque partie te permet d'en récupérer un certain nombre. 
+</phase>
+
+<a id="nochain">Mais il me faut un élément que je ne trouve pas dans mes parties !</a>
+<a id="slow">C'est pas très rapide, j'en gagne pas beaucoup à chaque fois.</a>
+
+<phase id="nochain" frame="happy" next="begin">
+L'élément qui te manque existe forcément quelque part. Déplace-toi dans le monde jusqu'à trouver le bon endroit. 
+Si tu cherches un élément du feu, ça vaut peut-être le coup d'aller dans le désert, par exemple.
+Sinon, il y a peut-être une recette pour récupérer cet élément !
+</phase>
+
+<phase id="slow" next="begin">
+Tu es jeune, c'est pour ça. Monte en niveau dans ton école : chaque niveau te permet de gagner plus d'éléments.
+Fais des alchimies, aide les personnes de ton école... ça te fera progresser plus vite !
+</phase>
+
+
+<!-- ### CAULDRON HELP ### -->
+<phase id="rank" next="ranksert:rankrecipe:rankou">
+Ah ! Vaste question ! Les rangs de transmutation montrent ton expérience dans chaque catégorie de recettes. 
+Plus tu pratiques les recettes d'une catégorie, plus ton rang correspondant augmente !
+</phase>
+
+<a id="ranksert">Ok, mais ça sert à quoi ? </a>
+<a id="rankrecipe">Alors il suffit de faire plein de fois une recette facile ? </a>
+<a id="rankou">Comment je vois mes rangs de transmutation ? </a>
+
+<phase id="ranksert" frame="happy" next="ranksert2">
+Ca sert à plein de choses ! Il existe des lieux auxquels on ne peut pas accéder sans un rang de transmutation minimum. Il y a même certains alchimistes qui refusent de parler à des personnes pas assez douées en transmutation. 
+</phase>
+
+<phase id="ranksert2" next="begin">
+Travailler tes rangs de transmutation te permet aussi de pouvoir acheter des récompenses spéciales au palais de Stime Pounk, réservées aux alchimistes les plus doués. 
+</phase>
+
+<phase id="rankrecipe" frame="angry" next="rankrecipe2">
+Non, |ce serait trop simple. Plus tu pratiques une recette, moins elle a de chances de faire monter ton rang de transmutation. Il faut connaître plein de recettes différentes pour être un grand alchimiste !
+</phase>
+
+<phase id="rankrecipe2" next="begin">
+Si une recette te fait gagner un point de transmutation, le chaudron te l'indique. Et tu peux voir dans ton grimoire si une recette peut facilement te faire gagner des points ou pas. 
+Tu vois, tout est prévu.
+</phase>
+
+<phase id="rankou" frame="happy" next="begin">
+Ils sont indiqués sur ta fiche d'alchimiste personnelle. Les cinq fioles montrent ton évolution. Quand tu remplis une fiole, tu passes au rang suivant de la catégorie correspondante. 
+</phase>
+
+
+<!-- ### WHO ARE YOU HELP ### -->
+<phase id="vous" next="why">
+Je suis un des gardiens de la guilde. Pour chaque chaudron de cette salle, il y a un gardien qui veille.
+</phase>
+
+<a id="why">Mais pourquoi ? Vous servez à quoi ? </a>
+
+<phase id="why" frame="happy" next="euh">
+L'alchimie est une science complexe. La guilde contrôle toutes les transmutations pour s'assurer que tout se passe bien. C'est pour ça que tu dois venir ici pour faire tes recettes. Tous les chaudrons du royaume sont regroupés ici. 
+</phase>
+
+<a id="euh">C'est un peu dictatorial, non ? </a>
+
+<phase id="euh" next="euh2">
+Pas du tout. C'est pour la sécurité du royaume et la tienne. Et puis un gardien par chaudron, ça crée de l'emploi. 
+</phase>
+
+<a id="euh2">Mais tous les chaudrons sont vraiment ici ? Il m'a semblé en voir un ailleurs, il n'y a pas longtemps... </a>
+
+<phase id="euh2" frame="angry" next="euh3">
+QUOI ? UN CHAUDRON NON SURVEILLE ? Non... non, ça n'existe pas voyons. Je vais demander une enquête officielle mais ça m'étonnerait. Tu l'as vu où, déjà ? 
+</phase>
+
+<a id="euh3">Euh je sais plus... laissez tomber, j'ai dû me tromper, hein. Voilà voilà.</a>
+
+<phase id="euh3" next="begin">
+Mhhh. Probablement, probablement.
+</phase>
+
+<!-- ### WAS IST DAS 'BOUM' HELP ### -->
+<phase id="boum" frame="happy" next="mais">
+Ahah non, c'est juste que tu as des progrès à faire. Si le chaudron a explosé, c'est que tu t'es trompé dans les ingrédients de la recette. Ou que tu essaies de faire une recette qui n'est pas dans ton grimoire.
+</phase>
+
+<a id="mais">Mouais. Je suis pourtant sûr que ça devait marcher.</a>
+
+<phase id="mais" next="begin">
+Comme dit notre très sage directeur de la guilde : {"9 erreurs de transmutation sur 10 proviennent de celui qui touille le chaudron"}.
+</phase>
+
+<!-- ### FORBIDDEN HELP ### -->
+<phase id="forb" frame="angry" next="forb0:forb1">
+Oula ! Les recettes interdites ! 
+Un bon conseil : ne t'intéresse pas à ça.  C'est EXTREMEMENT dangereux.
+</phase>
+
+<a id="forb0">Ah. Bon. Merci.</a>
+<a id="forb1">Oui mais alors quand même, c'est quoi les recettes interdites ?</a>
+
+<phase id="forb0" next="begin">
+Je t'en prie. Quand on peut être utile.
+</phase>
+
+
+<phase id="forb1" next="forb2">
+Tu es tenace toi. On ne te la fait pas, hein, comme on dit.
+Eh bien c'est très simple, puisque tu sembles être prêt à entendre de telles révélations... Les [recettes interdites], ce sont des recettes qui sont... 
+</phase>
+
+<phase id="forb2" frame="angry" next="forb3">
+interdites ! 
+</phase>
+
+<a id="forb3">D'accord. Mais encore ?</a>
+
+<phase id="forb3" frame="angry" next="forb4">
+Raah... | %normal% Bon. Les recettes interdites ne sont pas autorisées par la Guilde. Elles sont beaucoup trop dangereuses ! 
+Nous, les gardiens, devons surveiller que personne n'en fasse. Si c'est le cas, l'alerte est donnée et nous confisquons le résultat. 
+Alors pas de blagues, hein.
+</phase>"
+
+<a id="forb4">Ok. Mais pourquoi elles sont dangereuses ? Et pourquoi elles existent ? </a>
+
+<phase id="forb4" frame="angry" next="forb5">
+Ah mais quel curieux ! Elles sont dangereuses pour plein de raisons ! [Eléments démoniaques ! | *Résultats incertains ! | *Rentabilité trop élevée ! | *Apocalypse ! ]
+</phase>
+
+<phase id="forb5" next="begin">
+Et si ces recettes interdites existent, c'est que des alchimistes ont fait l'erreur de les inventer. 
+Heureusement, elles sont très rares. La guilde détruit toutes celles qu'elle trouve. 
+</phase>
+
+
+</d>

@@ -1,0 +1,134 @@
+﻿<d place="scaush" name="Jérôme K." gfx="trader" cond="!hasobject(bamboo)+!uvar(tradok)">
+
+	<phase id="begin" next="ask">
+		Laisse moi.... je veux mourir.....
+	</phase>
+
+	<a id="ask">Ca n'a pas l'air d'aller fort...</a>
+
+	<phase id="ask" next="ask2">
+		Ca tu peux le dire... j'avais tout ! Tout ! Tout : la richesse, les femmes, la célébrité... Le monde entier était à moi...
+	</phase>
+
+	<a id="ask2">Et que s'est-il passé ?</a>
+
+	<phase id="ask2" next="ask3">
+		Pfff... je préfère ne plus y penser... mais je vais te répondre.. J'ai tout perdu... à Warp Street...
+	</phase>
+
+	<a id="ask3">Warp Street ???</a>
+
+	<phase id="ask3" next="deriv">
+		Oui... Tu ne connais peut-être pas, mais Warp Street est une petite rue de Dinoville... C'est un marché réservé aux élites, on y achète et vend des Produits Déguisés !
+	</phase>
+
+	<a id="deriv">Des... quoi ?</a>
+
+	<phase id="deriv" next="deriv2">
+		Des produits déguisés ! Tu vois, quand le cours du Santaz augmente, le produit déguisé qui est lié au Santaz baisse. Sauf si bien entendu le Féross augmente lui aussi, auquel cas ça dépend alors des cours du Riz Amnésique du mois précédent... Enfin bref, avec les produits déguisés, tu peux te faire un max de thune très rapidement !
+	</phase>
+
+	<a id="deriv2">Comme vous ?</a>
+
+	<phase id="deriv2" next="ask4">
+		Oui, exactement ! Enfin, jusqu'à quelques jours...
+	</phase>
+
+	<a id="ask4">Que s'est-il passé ?</a>
+
+	<phase id="ask4" next="ask5">
+		C'est simple... je n'ai pas vu venir la crise mobilière...
+	</phase>
+
+	<a id="ask5">Vous voulez dire immobilière, non ?</a>
+
+	<phase id="ask5" next="ask6">
+		Non ! Rien à voir ! L'immobilier, c'est les bâtiments... Ca marche très fort en ce moment, avec tous ces châteaux à construire pour la Guerre des Clans ! Yen a qui amassent des fortunes en quelques jours seulement !
+	</phase>
+
+	<a id="ask6">La crise mobilière donc...</a>
+
+	<phase id="ask6" next="ask7">
+		Oui. Le mobilier avant c'était l'avenir ! Tout le monde voulait son bureau en Bois de Grumhel ! Mais voilà, le réchauffement climatique et tout ça, la guérilla Gorilloz qui attaquent ceux qui coupent les arbres... enfin bref, l'effondrement du marché, et ma ruine....
+	</phase>
+
+	<a id="ask7">Vous avez perdu combien ?</a>
+
+	<phase id="ask7" next="ask8">
+		Combien ? Euh.... dans les 4 milliards de pièces d'or...
+	</phase>
+
+	<a id="ask8">COMBIEN ???</a>
+
+	<phase id="ask8" next="ask9">
+		Comme je te dis, quatre milliards... Oui, je sais, ça à l'air énorme pour quelqu'un qui ne fait pas partie de l'élite comme moi, mais crois moi, aujourd'hui, avec quatre milliards t'as plus rien...
+	</phase>
+
+	<a id="ask9">Oui mais quand même...</a>
+
+	<phase id="ask9" next="ask10">
+		Mais bon... le coup dur est passé, je vais me refaire, c'est cent pour cent certain ! J'ai trouvé ZE affaire, le truc de ouf qui va faire péter les thunes ! Mais pour cela j'ai besoin d'un partenaire... ça te tente ?
+	</phase>
+
+	<a id="ask10">Euh... moi ?</a>
+
+	<phase id="ask10" next="ask11">
+		Oui, toi ! Tu as l'air d'être plutôt un bon Maître Dinoz, assez puissant. Alors voilà, je te propose une affaire : tu t'occupes de la logistique et je m'occupe de la vente. Ensemble, on va réussir et gagner des millions... et qui ne veut pas gagner des millions hein ?
+	</phase>
+
+	<a id="ask11">Que faut-il faire ?</a>
+
+	<phase id="ask11" next="yes:no">
+		C'est très simple, voilà le plan : tu me rapportes 100 Graînes de la Dévoreuse, tu en trouveras dans les Steppes. Il m'en faut 100 au minimum. Ensuite, te me les confie... en échange, je te laisse un truc super rare que j'ai trouvé. Ensuite, tu me donnes quelques jours pour tout revendre à Warp Street et on partage les bénéfices, t'en dis quoi ?
+	</phase>
+
+	<a id="yes">Ok !</a>
+	<a id="no">Pas question</a>
+
+	<phase id="no">
+		Ok, comme tu veux, tant pis pour toi !
+	</phase>
+
+	<phase id="yes" next="ok">
+		Super ! Alors, voilà ce qu'on va faire, tu réunis les 100 Graînes puis tu reviens me voir ! Je t'attends, ok ?
+	</phase>
+
+	<a id="ok">Ok !</a>
+
+	<phase id="ok" useingr="dgrain:100" effect="trader" give="bamboo" nocheck="1">
+		Génial !! T'es super ! Tiens, je te laisse mon objet rare, on se retrouve plus tard à Dinoville, le temps que je vende tout le stock !
+	</phase>
+
+</d>
+
+<d place="dnv" name="Jérome K." gfx="trader2" cond="fx(trader)+!uvar(tradok)">
+
+	<phase id="begin" next="ask">
+		Laisse moi.... je veux mourir.....
+	</phase>
+
+	<a id="ask">Encore ?? Que s'est-il passé ???</a>
+
+	<phase id="ask" next="ask2">
+		Tout allait bien... au début... les Graînes partaient à des prix énormes, on gagnait beaucoup d'argent, tout le monde en voulait !
+	</phase>
+
+	<a id="ask2">Et ensuite ???</a>
+
+	<phase id="ask2" next="ask3">
+		Ensuite, ça a été l'horreur... Des concurrents ont fait courrir le bruit que nos graînes contenaient du xylophone, un produit dangereux qui fait des bruits bizarres dans l'estomac de celui qui l'avale... Ca a été la panique sur le marché, j'ai du tout vendre en catastrophe pour limiter les pertes...
+	</phase>
+
+	<a id="ask3">Et mes pièces ?</a>
+
+	<phase id="ask3" next="ask4">
+		Tiens... c'est ta part.. c'est tout ce que j'ai pu sauvé lors du krach... 800 bons du trésor...
+	</phase>
+
+	<a id="ask4">C'est tout ?</a>
+	
+	<phase id="ask4" give="tix:800" noeffect="trader" uvar="tradok:1" nocheck="1">
+		Oui... tu peux garder l'objet rare que je t'ai confié... Mais ne t'inquietes pas pour moi ! Je vais trouver un nouveau truc, et la prochaine fois ca va marcher d'enfer !!!
+	</phase>
+
+</d>

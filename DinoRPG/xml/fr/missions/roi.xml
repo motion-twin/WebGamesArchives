@@ -1,0 +1,180 @@
+﻿<!-- ***************************************************************************** -->
+<!-- Garde pour le Roi de Dinoville ----->
+<!--
+-Il y a une fuite dans les cuves de mana du château, il faut aller chercher broc pour réparer.
+Broc a besoin d’ingrédient (main mécanique) + 2 Silex Taillé pour réparer la fuite.
+-cueillir des ingrédients dans le monde sombre (retrouver gulom aux gouffres des âmes en peines qui vient de trouver un endroit où creuser) pour ramener des morceaux au roi
+-récolter du mana (?)
+-détruire du lichen
+-retrouver les coffres qui se sont fait la malle.
+-affronter des monstres sombres pour préparer la visite du roi
+-purifier un endroit du monde sombre pour la venue du roi (aller à la fontaine de jouvence avec un flacon vide donné par ?)
+-escorter le roi à la tour du monde sombre puis ressortir du monde sombre (le roi dit à la fin qu’il ira peut-être seul un jour)
+-->
+
+<missions>
+
+	<m group="roi" id="roia" name="Les malles se font la malle">
+		<begin>Le mana provoque des effets inattendus parfois, du mana s'est infiltré dans les murs du château jusqu'à la salle des trésors lors d'une fuite malencontreuse.
+		Maintenant, les coffres sont animés et belliqueux, ils se sont éparpillés partout, mais ceux qui trainent près de dinoville pourraient blesser des habitants.
+		Peux-tu supprimer les coffres et les ramener au château ?</begin>
+		<goto v="dnv"/>
+		<kill n="2" v="mimic"/>
+		<goto v="papy"/>
+		<kill n="4" v="mimic"/>
+		<goto v="port"/>
+		<kill n="6" v="mimic"/>
+		<end>Tu as pu récupérer une partie des trésors du château, grâce à toi, la contribution mensuelle dinovillienne n'augmentera pas cette année.
+		Tu mérites une récompense.</end>
+		<xp v="50"/>
+	</m>
+	
+	<m group="roi" id="roib" name="Fuite de mana" cond="mission(roia)">
+		<begin>Une fuite dans les cuves de mana du château a été repérée, il faudrait faire appel au mécanicien des îles atlantéinées pour réparer ça.
+		C'est lui qui a conçu le système de stockage du mana. Encore un incapable...</begin>
+		<goto v="chbroc"/>
+		<talk v="broc" gfx="broc" background="5">les cuves du château sont encore cassées ? A chaque fois c'est la même chose, je veux bien réparer ça, mais à trop stocker de mana, voilà ce qui arrive !
+		Pourrais-tu me ramener des ingrédients pour que je puisse réparer ces cuves ?
+		</talk>
+		<useingr v="fish" n="4"/>
+		<talk v="broc" gfx="broc" background="5">Comment ? Un poisson pour réparer une cuve de mana ?
+		En fait, je me sers du mucus produit par le poisson pour colmater la brêche ... Et je mange le reste !
+		</talk>
+		<useingr v="enfdr" n="2"/>
+		<talk v="broc" gfx="broc" background="5">Et ça c'est pour durcir le mucus ! Ca me paraissait pourtant évident...
+		</talk>
+		<goto v="chato"/>
+		<end>Le mécanicien est venu réparer la fuite, j'ai entendu dire que tu lui avais fourni le matériel dont il avait besoin. Voilà une juste récompense.</end>
+		<xp v="80"/>
+	</m>
+	
+	<m group="roi" id="roic" name="Lichen mana-ctif" cond="mission(roib)">
+		<begin>Le lichen mana-ctif a de nouveau encerclé le château, il est apparu dans d'autres lieux de dinoville aussi.
+		Il faut de nouveau que tu ailles voir le shaman-mou et que tu éradiques la source de chaque pousse, nous avons réussi à maintenir un chemin hors du plateau de Dinoplaza, tu pourras aller
+		au grand tout chaud sans difficulté.</begin>
+		<goto v="fosslv"/>
+		<talk v="shaman" gfx="shaman">
+			Encore cette histoire de lichen qui pousse autour du château ?
+			Bon ben, je m'en doutais un peu, j'ai prévu le stock, enfin, faut quand même que t'ailles voir le vénérable pour bien la frapper.
+			Allez, bon courage !
+		</talk>
+		<action v="Prendre une potion de flamme bleue">
+			Vous obtenez une potion contenant une flamme bleu @/img/icons/fx_potio1.gif@, il faut bien la frapper paraît-il !
+		</action>
+		<goto v="vener"/>
+		<actfight act="Combattre le Vénérable" monsters="vener4">
+			<begin m="vener4">
+				Tu viens encore me déranger pour une histoire de potion...
+				Je vais bien la rôtir cette fois-ci, et toi avec, tu arrêteras de venir troubler ma sieste.
+			</begin>
+			<win>
+				Groumph... Ca y est, tu es content, tu as ta potion ? Ne viens plus me déranger maintenant.
+			</win>
+		</actfight>
+		<action v="Ramasser la potion de flamme rouge">
+			Vous obtenez la potion contenant une flamme rouge @/img/icons/fx_potio2.gif@, idéale pour brûler des plantes mana-ctives !
+		</action>
+		<goto v="poste"/>
+		<talk v="Lichen" gfx="garde_dnv" background="2" frame="pouf">
+			Vous venez d'utiliser une partie de la potion rouge, le lichen vient de disparaitre à cet endroit.
+		</talk>
+		<talk v="Capitaine" gfx="garde_dnv" background="2" frame="talk">
+			Parfait, la situation est stabilisé par ici pour le moment. Deux nouveaux cas de lichen sont apparu aux alentours, il faut maintenant aller à Dinoville et à Forcebrut pour lutter contre cette
+			menace envahissante.
+		</talk>
+		<goto v="dnv"/>
+		<talk v="Lichen" gfx="garde_dnv" background="3" frame="pouf">
+			Vous venez d'utiliser une partie de la potion rouge, le lichen vient de disparaitre à cet endroit.
+		</talk>
+		<goto v="frcbrt"/>
+		<talk v="Lichen" gfx="garde_dnv" background="4" frame="pouf">
+			Vous venez d'utiliser le reste de la potion rouge, le lichen vient de disparaitre à cet endroit.
+		</talk>
+		<end>Bien, la menace du lichen mana-ctif est contenu pour le moment, voilà ta récompense.</end>
+		<xp v="100"/>
+	</m>
+	
+	<m group="roi" id="roid" name="Histoire du monde sombre" cond="mission(roic)">
+		<begin>Le roi voudrait entendre parler de tes aventures dans le monde sombre, mais il n'a pas le temps de t'écouter la journée.
+		Peux-tu écrire un parchemin relatant tes aventures en l'accompagnant d'un ingrédient directement issu du monde sombre ?</begin>
+		<goto v="dkchut"/>
+		<talk v="gulom" gfx="survivor" background="1">
+			Tiens, comment vas-tu, je ne t'ai pas vu depuis quelque temps par ici...
+			Tu cherches un endroit où récolter des ingrédients ?
+			Il me semble avoir vu des pousses étranges sur le morceaux de terre au nord d'ici...
+		</talk>
+		<goto v="fake2"/>
+		<talk v="gulom" gfx="survivor" background="1">
+			C'est bien ici, il te faut trouver un ingrédient par ici, je le sécherai pour toi pour que tu puisses le conserver avec ton récit.
+		</talk>
+		<useingr v="fruita" n="1"/>
+		<talk v="gulom" gfx="survivor" background="1">
+			Et voilà, la pousse sombre est suffisamment bien séchée pour resister aux rayons du soleil, tu pourras la montrer au Roi sans craindre une évaporation spontanée.
+		</talk>
+		<end>Félicitations, je vois que tu as assez de nerf pour aller dans le monde sombre, tu n'es peut-être pas aussi irrécupérable que je ne le pensais...Voilà ta récompense.</end>
+		<xp v="100"/>
+	</m>
+
+	<m group="roi" id="roie" name="Histoire du monde sombre 2" cond="mission(roid)">
+		<begin>Sa majesté aimerait visiter le monde sombre, mais sa sécurité est une priorité absolue.
+		Il a entendu parler d'un feu-follet que des maîtres dinoz auraient apercu là-bas, il ne veut plus s'occuper des affaires du royaume avant d'en avoir vu.
+		Peux-tu sécuriser temporairement le monde sombre pour préparer sa visite ?</begin>
+		<goto v="fake2"/>
+		<kill n="4" v="feufol"/>
+		<goto v="fake"/>
+		<kill n="2" v="feufol"/>
+		<goto v="dktow"/>
+		<kill n="4" v="feufol"/>
+		<goto v="dkbao"/>
+		<kill n="6" v="feufol"/>
+		<end>Bien, le monde sombre devrait être plus sûr pendant quelques temps. Voilà ta récompense.</end>
+		<xp v="80"/>
+	</m>
+	
+	<!-- rajouter condition sur le futur scénario monde sombre pour cette mission -->
+	<m group="roi" id="roif" name="Visite du monde sombre" cond="mission(roie)">
+		<begin>Le roi veut absolument visiter le monde sombre pour évaluer la menace qui pèse sur les habitants de Dinoville.
+		Peux-tu l'escorter et le ramener ensuite ? Je resterai bien entendu avec vous tout le temps.</begin>
+		<goto v="dkchut"/>
+		<talk v="Roi de Dinoville" gfx="roi" background="3" frame="blabla">
+			Oh, Oh, Oh, il fait bien sombre par ici, voyons voir de plus près...
+		</talk>
+		<kill n="2" v="garouz"/>
+		<goto v="dkbao"/>
+		<talk v="Roi de Dinoville" gfx="roi" background="3" frame="blabla">
+			Oh, Oh, Oh, on se croirait presque chez Bao la nuit...
+		</talk>
+		<kill n="10" v="piraos"/>
+		<goto v="fake"/>
+		<talk v="Roi de Dinoville" gfx="roi" background="3" frame="blabla">
+			Oh, Oh, Oh, brrr, ces âmes en peine sont effroyables, n'y a t'il pas un moyen de les sauver...
+		</talk>
+		<kill n="5" v="amanpe"/>
+		<goto v="fake2"/>
+		<talk v="Roi de Dinoville" gfx="roi" background="3" frame="blabla">
+			Oh, Oh, Oh, voilà donc enfin ces feu-follets dont on m'a longuement parlé...
+		</talk>
+		<kill n="3" v="feufol"/>
+		<talk v="Roi de Dinoville" gfx="roi" background="3" frame="blabla">
+			Quelle est donc cette tour sombre qui se dresse à la place du marais collant ?
+		</talk>
+		<goto v="dktow"/>
+		<talk v="Roi de Dinoville" gfx="roi" background="3" frame="blabla">
+			Intéressant... On monte ?
+		</talk>
+		<goto v="dktow3"/>
+		<kill n="1" v="towgrd"/>
+		<goto v="dktow4"/>
+		<kill n="1" v="upgrd"/>
+		<goto v="dktowa"/>
+		<talk v="Roi de Dinoville" gfx="roi" background="4" frame="blabla">
+			Tu n'es jamais monté aussi haut ?
+			Cette tour grandit de plus en plus en absorbant les ténèbres autour d'elle...
+			Attention, je vois quelque chose de pas net !
+		</talk>
+		<kill n="1" v="updwn"/>
+		<end>Enfin de retour au château, j'étais très inquiète, mais je dois reconnaître que tu es digne de confiance. Voilà ta récompense.</end>
+		<xp v="200"/>
+	</m>
+	
+</missions>

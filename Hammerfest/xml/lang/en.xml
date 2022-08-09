@@ -1,0 +1,1072 @@
+﻿<lang id="en" debug="0">
+	<statics>
+		<!-- STATICS -->
+		<t id="1"	v="Level"/>
+		<t id="2"	v="Learning"/>
+		<t id="3"	v="next level"/>
+		<t id="4"	v="QUICK!"/>
+		<t id="5"	v="Instructions"/>
+		<t id="6"	v="Click here to continue..."/>
+		<t id="7"	v="Move"/>
+		<t id="8"	v="Place a bomb"/>
+		<t id="9"	v="Pause"/>
+		<t id="10"	v="SPACE"/>
+		<t id="11"	v="PERFECT!"/>
+		<t id="12"	v="DANGER, BOSS!"/>
+		<t id="13"	v="New land"/> <!-- à enlever -->
+		<t id="14"	v="Land:"/> <!-- à enlever -->
+		<t id="15"	v="Hammerfest requires version 8 or higher of the Flash player. Click the following link to install it now:"/>
+		<t id="16"	v="Hammerfest Forest"/>
+		<t id="17"	v="Trainee's Caverns"/>
+		<t id="18"	v="MINUTE"/>
+		<t id="19"	v="MINUTES"/>
+		<t id="20"	v="TIMEATTACK!"/>
+		<t id="21"	v="Get ready..."/>
+		<t id="22"	v="SCORE!"/>
+		<t id="23"	v="OWN GOAL!"/>
+		<t id="24"	v="Start!"/>
+		<t id="25"	v="End of match"/>
+		<t id="26"	v="VICTORY: IGOR!"/>
+		<t id="27"	v="VICTORY: ¡SANDY!"/>
+		<t id="28"	v="DRAW!"/>
+		<t id="29"	v="Move"/>
+		<t id="30"	v="Kick"/>
+		<t id="31"	v="Vertical kick"/>
+		<t id="32"	v="Kick the ball into your opponent's goal. Everything's allowed! This mode is for 2 players at the same computer."/>
+		<t id="33"	v="Press P key for help"/>
+		<t id="34"	v="Beaming up is at present impossible"/>
+		<t id="35"	v="Bonus life:"/>
+		<t id="36"	v="Tuberace"/>
+		<t id="37"	v="Your time:"/>
+		<t id="38"	v="Average time for level:"/>
+		<t id="39"	v="Time:"/>
+		<t id="40"	v="Required key:"/>
+		<t id="41"	v="Igor has used:"/>
+		<t id="42"	v="Bomba"/>
+		<t id="43"	v="est eliminé !"/>
+		<t id="44"	v="Cible interdite !"/>
+		<t id="45"	v="Cible éliminée."/>
+
+		<!-- LOADER -->
+		<t id="50"	v="Travelling to Hammerfest..."/>
+		<t id="51"	v="yd"/>
+		<t id="52"	v="You've just arrived!"/>
+		<t id="53"	v="Click here to start..."/>
+		<t id="54"	v="Starting game..."/>
+		<t id="55"	v="Saving game..."/>
+		<t id="56"	v="Please, wait a moment..."/>
+		<t id="57"	v="You'll have a game less."/>
+		<t id="58"	v="This mode is free and unlimited!"/>
+		<t id="59"	v="----[ MODE DEV LOCAL ]----"/>
+		<t id="60"	v="Error sending data, try attempt: "/>
+		<t id="61"	v="Loading music..."/>
+		<t id="62"	v="Everything's ready!"/>
+		<t id="63"	v="Reading music tracks..."/>
+		<t id="64"	v="Error downloading data."/>
+		<t id="65"	v="Please install the latest Flash version"/>
+		<t id="66"	v="Couldn't find file server."/>
+		<t id="67"	v="Download error"/>
+		<t id="68"	v="Error at the beginning of the download"/>
+		<t id="69"	v="Music download error!"/>
+		<t id="70"	v="Game download error! Check the Technical Support to Clear your browser's cache memory."/>
+		<t id="71"	v="Saving game..."/>
+		<t id="72"	v="Impossible to finish saving the game."/>
+		<t id="73"	v="Game successfully saved :)"/>
+		<t id="74"	v="Nearly..."/>
+
+		<!-- ADVENTURE SCRIPT --> 
+		<t id="100"	v="Jump *into the well* to start the adventure!"/>
+		<t id="101"	v="A secret passageway!"/>
+		<t id="102" v="At the very bottom of the well, a frightening laugh resounds..."/>
+		<t id="103" v="You have discovered a *secret passageway*!"/>
+		<t id="104" v="You have just freed the latest fruits!"/>
+		<t id="105" v="You hear a clicking sound coming from a pack of *Bombinos*..."/>
+		<t id="106" v="The Bombinos have been destroyed! Igor can continue his adventure."/>
+		<t id="107" v="A strange noise is coming from the lower levels..."/>
+		<t id="108" v="You have just entered the *Baddybombs Pears' Lair*..."/>
+		<t id="109" v="Igor has beaten the Baddybombs Pears!"/>
+		<t id="110" v="It seems that temperature has suddenly dropped... Igor has arrived at the *Sorbex* Dive!"/>
+		<t id="111" v="The terrible Sortex lemons have been destroyed! Igor can continue his exploration..."/>
+		<t id="112" v="Igor has just arrived at a Tagada-Strawberry-Ball match. You'll need to beat the team of *Tagada-Strawberries* !"/>
+		<t id="113" v="The *Strawberry* team has been beaten 4-0 by Igor the champion!"/>
+		<t id="114" v="Igor has entered the cavern of the mischievous *Kiwi Sappers*!"/>
+		<t id="115" v="You have beaten the *Kiwi Sappers*!"/>
+		<t id="116" v="The *Destiny Test*"/>
+		<t id="117" v="You have entered a secret and forgotten place... The *Test Temple*!"/>
+		<t id="118" v="The *Dexterity* Test"/>
+		<t id="119" v="You have *failed* to pass this Test"/>
+		<t id="120" v="You have *won* this horrible Test!"/>
+		<t id="121" v="The *Courage* Test"/>
+		<t id="122" v="You have opened a *shortcut*!"/>
+		<t id="123" v="The whistling sound of bodies moving through the air... no doubt! You are in the territory of the *Leapers*!"/>
+		<t id="124" v="Silence comes again whilst the last Leaper falls down..."/>
+		<t id="125" v="BETA-TEST: cette porte mène au niveau 51."/>
+		<t id="126" v="*Darkness* invades the caverns while you go down..."/>
+		<t id="127" v="The ground is shaking... Prepare yourself to face the *Armaggedon-Pineapple*!"/>
+		<t id="128" v="Calm returns whilst the latest Armaggedon-Pineapple falls down..."/>
+		<t id="129" v="Choose the court for this match. You can *press the P key* to obtain help at any moment."/>
+		<t id="130" v="This *special court* is dedicated to VolleyFest!"/>
+		<t id="131" v="You have found the *Ankhel Jewel*! Rick would be proud of you..."/>
+		<t id="132" v="The *Ankhel Jewel* has been sealed for eternity. All that effort for nothing!"/>
+		<t id="133" v="Protect the *red button*!"/>
+		<t id="134" v="Pick up the maximum number of crystals you can!"/>
+		<t id="135" v="The door has just opened!"/>
+		<t id="136" v="A suspicious mouldy smell is coming from the lower levels..."/>
+		<t id="137" v="Something horrible seems to have germinated from the Bobble Cane... You are in the Fallen Bobbles Den!"/>
+		<t id="138" v="The Fallen Bobbles have been beaten... Considering the size of the Cane, it's possible that there are more sticks all over the caverns."/>
+
+		<t id="139" v="*SPFiredrake* : Welcome to the Carrotian Council, Igor. We've been waiting for you."/>
+		<t id="140" v="*Joekickass* : We are reflections of yourself. We each come from a parallel dimension where we have succeeded in defeating Tuberculoz."/>
+		<t id="141" v="*Lucied* : A superior entity sent us here to help you in your quest and show you the way."/>
+		<t id="142" v="*DigDog* : Who's next? Is it my turn?"/>
+		<t id="143" v="*goronhead* : Here is the Gordon Key. It will allow you to open the entrance to our cavern."/>
+		<t id="144" v="*arr8* : We have hidden, at the bottom of this cavern, the great Bobble Cane -an object of legend and of great value."/>
+		<t id="145" v="*goronhead* : But we did that a very long time ago... before The Great Update."/>
+		<t id="146" v="*Everyone* : Oooooooooh... The Great Update!"/>
+		<t id="147" v="*SPFiredrake* : SILENCE!"/>
+		<t id="148" v="*SPFiredrake* : As First Pantheonian, I entrust to you the important task of retrieving the Bobble Cane. Now, go."/>
+
+		<t id="149" v="*SPFiredrake* : The Bobble Cane has been **corrupted**!"/>
+		<t id="150" v="*Everyone* : ooooooooh...."/>
+		<t id="151" v="*DigDog* : Corrupted! Your turn..."/>
+		<t id="152" v="*goronhead* : I bet you comrades that this corruption will be the source of huge changes!"/>
+		<t id="153" v="*Lucied* : You must return to explore the caverns, Igor. Without a doubt, other *secret places* just like this one exist..."/>
+		<t id="154" v="*SPFiredrake* : Yes, it's true! You must be attentive, Igor. Search every corner of this world..."/>
+		<t id="155" v="*SPFiredrake* : We had never mentioned it... but numerous secrets still hide in The Caverns of Hammerfest!!"/>
+		<t id="156" v="*arr8* : ... Like the one where you blow of a bomb in the Well?"/>
+		<t id="157" v="*Everyone* : ooooooooooooooooh...."/>
+
+		<!-- TUTORIAL SCRIPT -->
+		<t id="200" v="Use the *arrow keys* to move Igor from right to left."/>
+		<t id="201" v="Press the *Up arrow key* to jump up this wall!"/>
+		<t id="202" v="Throw yourself into the void to go to the next level."/>
+
+		<t id="203" v="Use the *space bar* on the keyboard to place a bomb next to Igor. These bombs *freeze the enemy*, but they don't have *any effect on you*."/>
+		<t id="204" v="A defeated enemy gives you an *item*. Don't be long in recovering it because it won't last eternally!"/>
+
+		<t id="205" v="Sometimes you must freeze the enemy *a few times* by pushing it into the void. Place another bomb beside the frozen monster to push it more."/>
+		<t id="206" v="Don't forget to collect the item before leaving the level."/>
+
+		<t id="207" v="You can *push the bombs*! Press the Space bar key again beside a bomb."/>
+		<t id="208" v="Put a bomb here and *press the Space bar key again*!"/>
+		<t id="209" v="Good! Do the same for the next one!"/>
+		<t id="210" v="This technique is very important! Learn well how to use it."/>
+
+		<t id="211" v="There are different types of bombs. Pass through the *energy field* to change the type of bomb."/>
+		<t id="212" v="*Green bombs* explode when they come in contact with an enemy, like *mines*!"/>
+		<t id="213" v="Place a *green mine* here!"/>
+		<t id="214" v="Pay attention: if you kick a green mine, it explodes *when it touches the ground*!"/>
+
+		<t id="215" v="You can change the type of bomb again when you pass through other energy fields."/>
+		<t id="216" v="You'll see that *Igor's scarf changes its color* depending on the bomb type"/>
+
+		<t id="217" v="*Blue bombs* knock out an enemy and they make it *fall from a platform*."/>
+		<t id="218" v="Pay attention because blue bombs explode more quickly."/>
+
+		<t id="219" v="Some items have surprising effects that will help you on your adventure!"/>
+		<t id="220" v="Some of them will have positive effects, others won't. It's up to you to discover them!"/>
+
+		<t id="221" v="Accumulate the letters from the word *CRISTAL* that will appear throughout your adventure."/>
+		<t id="222" v="All the enemies will be destroyed and you'll be able to go directly to the next level!"/>
+
+		<t id="223" v="Use *red* bombs to propel yourself onto the highest platforms. *Place a red bomb here and don't move*!"/>
+		<t id="224" v="Oh well, what are you doing here?"/>
+		<t id="225" v="No! Don't go that way!!"/>
+		<t id="226" v="Well that's enough..."/>
+
+		<t id="227" v="You can jump higher *dropping bombs during the jump*. If you do this at the precise moment, this will give you a little push."/>
+		<t id="228" v="Well done!"/>
+
+		<t id="229" v="You can *jump farther* thanks to this techique. Drop a bomb during the jump."/>
+		<t id="230" v="Drop the bomb right at the moment *when you start to go down* during the jump."/>
+		<t id="231" v="Good!"/>
+
+		<t id="232" v="Let's see if you reach the exit at this level!"/>
+		<t id="233" v="The Learning mode has finished! Let's start in earnest..."/>
+		<t id="234" v="*Secret*: there's a secret door in the *first level* of this Learning level. Place *a bomb just on the right, in the first level*!"/>
+
+		<t id="235" v="You can jump through the ceiling *to go up a platform*."/>
+		<t id="236" v="To jump over this hole, press the *up arrow key* and then *leave the left arrow key* pressed."/>
+		<t id="237" v="Nearly! *Go back to the right* and try again."/>
+
+		<t id="238" v="There's an *enemy* here!"/>
+		<t id="239" v="You can only leave a level if all the enemies have been defeated."/>
+
+		<t id="240" v="Don't worry if you die. Unlike the other game modes in Hammerfest, in the Learning mode you have *unlimited lives*!"/>
+
+		<t id="241" v="Good! Go down again *on the right*..."/>
+		<t id="242" v="If you can't do it, you can continue through the passage on the left. *Jump at the right moment when the red bomb explodes*!"/>
+		<t id="243" v="No, not here :) In the *first level of this Learning*! For the moment you can simply continue."/>
+
+		<t id="244" v="This door is a Learning shortcut. To continue, follow the arrow!"/>
+
+		<t id="245" v="Don't go any farther! It's the end of the world!"/>
+		<t id="246" v="This bucket won't fall."/>
+		<t id="247" v="You won't be able to go further!"/>
+
+		<t id="248"	v="*Red bombs* can also help an ennemy to escape from a blocked place."/>
+
+		<!-- SHAREWARE SCRIPT -->
+		<t id="400" v="Here you have a sample of what you'll find in the Caverns of Hammerfest... *Jump into the void to continue!*"/>
+		<t id="401" v="This is it! You're ready to start the great adventure!"/>
+		<t id="402" v="If you haven't done it yet, you only have to *create an account* and guide Igor to the very far end of the caverns..."/>
+		<t id="403" v="Hammerfest: more than *100 levels* to explore, more than *150 items* to collect and *15 different types of enemies*."/>
+		<t id="404" v="At the bottom of the game screen you see the *number of lives left*, the *number of the level* and *your score*."/>
+		<t id="405" v="Once you have created an account, you'll be able to win extra lives during the game or thanks to the *quests*"/>
+		<t id="406" v="A quest consists of collecting a certain number of items spread all over the game."/>
+		<t id="407" v="Each time you play a game your score is registered and you enter into the *general ranking*!"/>
+		<t id="408" v="Go on, don't be shy and join the other players!"/>
+
+		<!-- FJV SPECIFIC -->
+		<t id="500" v="Utilisez la *barre espace* pour poser une bombe près du fruit. Ces bombes *gèlent les ennemis*, mais n'ont *aucun effet sur vous*."/>
+		<t id="501" v="Faites attention aux *pièges* !!"/>
+		<t id="502" v="Bravo ! Vous avez réussi à terminer cette série de niveaux ! Hammerfest vous attend, avec ses *centaines de niveaux uniques* et ses *milliers de surprises* !"/>
+		<t id="503" v="Essayez donc d'attraper ce *joyau*... Attention, les *scies ne peuvent pas être détruites* !"/>
+
+		<!-- TIP OF THE DAY (PAUSE SCREEN) -->
+		<!-- MAXLENGHT |xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx|      -->
+		
+		<t id="300" v="Tip:"/>
+		<t id="301" v="You can drop a bomb while you are falling to take advantage of a slight extra impulse."/>
+		<t id="302" v="Press the M key to stop the game music."/>
+		<t id="303" v="A frozen monster can kill others if it strikes them at high speed!"/>
+		<t id="304" v="If you kill several monsters with one single bomb, you will receive better rewards."/>
+		<t id="305" v="If you reach 100.000 points, you will gain an additional life."/>
+		<t id="306" v="Some letters of the word CRYSTAL are more rare than others (' L ' or ' S ' for example)"/>
+		<t id="307" v="In every level you will receive a point item, an effect item and some letters for the word CRYSTAL."/>
+		<t id="308" v="The giant crystal at the end of some levels does not fall incidentally..."/>
+		<t id="309" v="Forming the word CRYSTAL is useful, but it's possible to make it even better..."/>
+		<t id="310" v="After dropping a bomb, press SPACE again to kick it!"/>
+		<t id="311" v="Press CONTROL + SHIFT + K to end the game (your progress will be saved)."/>
+		<t id="312" v="Press the F key to show the speed of the game (shown in frames per second, the ideal value is 30 or higher)."/>
+		<t id="313" v="Press C to show the map of the caverns!"/>
+
+	</statics>
+
+
+	<!-- ITEM FAMILIES -->
+	<families>
+			<!-- SPECIAL ITEMS -->
+		<family id="0" name="Basic items"/>
+		<family id="1" name="First aid kit"/>
+		<family id="2" name="Massive destruction"/>
+		<family id="3" name="Mushrooms"/>
+		<family id="4" name="Deck of cards"/>
+		<family id="5" name="Zodiac signs"/>
+		<family id="6" name="Zodiac potions"/>
+		<family id="7" name="Heart 1"/>
+		<family id="8" name="Heart 2"/>
+		<family id="9" name="Heart 3"/>
+		<family id="10" name="Pirate treasure"/>
+		<family id="11" name="Motion-Twin Gadgets"/>
+		<family id="12" name="Norwegian experimental armament"/>
+		<family id="13" name="Ancient light"/>
+		<family id="14" name="Igor-Newton"/>
+		<family id="15" name="Snowflake 1"/>
+		<family id="16" name="Snowflake 2"/>
+		<family id="17" name="Snowflake 3"/>
+		<family id="18" name="Car Kit"/>
+		<family id="19" name="Mario Party"/>
+
+		<!-- SCORE ITEMS -->
+		<family id="1000" name="Little treats"/>
+		<family id="1001" name="Classic food"/>
+		<family id="1002" name="Bobble Cane"/>
+		<family id="1003" name="Precious stones"/>
+		<family id="1004" name="Junk food"/>
+		<family id="1005" name="Exotic!"/>
+		<family id="1006" name="Aperitives"/>
+		<family id="1007" name="Kapital Risk"/>
+
+		<family id="1008" name="Great Predator Trophies"/>
+		<family id="1009" name="Good-looking Harry's delights"/>
+		<family id="1010" name="Chocolates"/>
+		<family id="1011" name="Cheese"/>
+		<family id="1012" name="Canned food"/>
+		<family id="1013" name="Vegetables"/>
+		<family id="1014" name="MotionTwin Delights"/>
+		<family id="1015" name="MotionTwin survival kit"/>
+		<family id="1016" name="Time for tea"/>
+		<family id="1017" name="The cake Boy"/>
+		<family id="1018" name="Laws of Robotics"/>
+		<family id="1019" name="Fighter's trophies"/>
+
+		<family id="1020" name="Ice-cream Keys"/>
+		<family id="1021" name="Wine Key"/>
+		<family id="1022" name="Paperwork"/>
+		<family id="1023" name="Lost Keys"/>
+		<family id="1024" name="Glad sticks"/>
+		<family id="1025" name="Funny drinks"/>
+		<family id="1026" name="Daddy's administratrive material"/>
+		<family id="1027" name="Mythical artifacts"/>
+		<family id="1028" name="Sandy kit"/>
+		<family id="1029" name="Ninjutsu awards"/>
+		<family id="1030" name="Ninjutsu artefact"/>
+	</families>
+
+
+
+	<!-- ITEM NAMES -->
+	
+	<items>
+		<!-- SPECIAL ITEMS -->
+		<item id="0"	name="Cristal Alphabet" />
+		<item id="1"	name="Golden Shield" />
+		<item id="2"	name="Silver Shield" />
+		<item id="3"	name="Beach Ball" />
+		<item id="4"	name="Magic Lamp" />
+		<item id="5"	name="Black Magic Lam" />
+		<item id="6"	name="Inner Peace" />
+		<item id="7"	name="Running Shoes" />
+		<item id="8"	name="Gold Star" />
+		<item id="9"	name="Bad eye" />
+		<item id="10"	name="Telephone" />
+		<item id="11"	name="Red Umbrella" />
+		<item id="12"	name="Blue Umbrella" />
+		<item id="13"	name="Biker Helmet" />
+		<item id="14"	name="Blue Hallucinogenic Mushroom" />
+		<item id="15"	name="Red Delight Mushroom" />
+		<item id="16"	name="Green Beer Mushroom" />
+		<item id="17"	name="Golded Mushroom" />
+		<item id="18"	name="Tropical Dandelion" />
+		<item id="19"	name="Explosive Sunflower" />
+		<item id="20"	name="Treasure Chest" />
+		<item id="21"	name="Jukebox Igor" />
+		<item id="22"	name="Heavy Weight Boots" />
+		<item id="23"	name="Orb of Ice" />
+		<item id="24"	name="Iceberg Shower" />
+		<item id="25"	name="Snow Flame" />
+		<item id="26"	name="Light Bulb" />
+		<item id="27"	name="Special Lilypad" />
+		<item id="28"	name="Silver Trophy" />
+		<item id="29"	name="Ring of Fire" />
+		<item id="30"	name="Blue Shades" />
+		<item id="31"	name="Red Shades" />
+		<item id="32"	name="Ace of Spades" />
+		<item id="33"	name="Ace of Clubs" />
+		<item id="34"	name="Ace of Diamonds" />
+		<item id="35"	name="Ace of Hearts" />
+		<item id="36"	name="Golden Igor" />
+		<item id="37"	name="Necklace of Frost" />
+		<item id="38"	name="Dino Totem Pole" />
+		<item id="39"	name="Granite Easter Island" />
+		<item id="40"	name="Sagittarius" />
+		<item id="41"	name="Capricorn" />
+		<item id="42"	name="Leo" />
+		<item id="43"	name="Taurus" />
+		<item id="44"	name="Libra" />
+		<item id="45"	name="Aries" />
+		<item id="46"	name="Scorpio" />
+		<item id="47"	name="Cancer" />
+		<item id="48"	name="Aquarius" />
+		<item id="49"	name="Gemini" />
+		<item id="50"	name="Pisces" />
+		<item id="51"	name="Virgo" />
+		<item id="52"	name="Potion of Sagitarius" />
+		<item id="53"	name="Potion of Capricorn" />
+		<item id="54"	name="Potion of Leo" />
+		<item id="55"	name="Potion of Taurus" />
+		<item id="56"	name="Potion of Libra" />
+		<item id="57"	name="Potion of Aries" />
+		<item id="58"	name="Potion of Scorpio" />
+		<item id="59"	name="Potion of Cancer" />
+		<item id="60"	name="Potion of Aquarius" />
+		<item id="61"	name="Potion of Gemini" />
+		<item id="62"	name="Potion of Pisces" />
+		<item id="63"	name="Potion of Virgo" />
+		<item id="64"	name="Honey Rainbow" />
+		<item id="65"	name="Rubber Ducky" />
+		<item id="66"	name="Magical Cactus" />
+		<item id="67"	name="Ring of William Tell" />
+		<item id="68"	name="Candle of Light" />
+		<item id="69"	name="Turtle Islands" />
+		<item id="70"	name="Four-Leaf Clover" />
+		<item id="71"	name="Dragon's Breath" />
+		<item id="72"	name="Magician's Hat" />
+		<item id="73"	name="Leaf" />
+		<item id="74"	name="Spirit of Orange" />
+		<item id="75"	name="Spirit of Rain" />
+		<item id="76" 	name="Spirit of Trees" />
+		<item id="77" 	name="Blue Crested Fish" />
+		<item id="78" 	name="Flame Fish" />
+		<item id="79" 	name="Fish Emperor" />
+		<item id="80" 	name="Snail Speed" />
+		<item id="81" 	name="Murloc's Pearl" />
+		<item id="82" 	name="Eye of Providence" />
+		<item id="83" 	name="Final Judgment" />
+		<item id="84" 	name="Scorpion Talisman" />
+		<item id="85" 	name="Hammer Time 3000" />
+		<item id="86" 	name="Ghost Candy" />
+		<item id="87" 	name="King Larvae" />
+		<item id="88" 	name="Hare Nochi Guuuuu!" />
+		<item id="89" 	name="Dragon Egg" />
+		<item id="90" 	name="Slippery Bananas" />
+		<item id="91" 	name="Luffy's Hat" />
+		<item id="92" 	name="Chopper's Hat" />
+		<item id="93" 	name="Mail Box" />
+		<item id="94" 	name="Antok Ring" />
+		<item id="95" 	name="Tuber's Bag" />
+		<item id="96" 	name="Flameberg Pearl" />
+		<item id="97" 	name="Green-Moss Pearl " />
+		<item id="98" 	name="Super-Purple Pearl " />
+		<item id="99" 	name="Chourou's Hair" />
+		<item id="100" 	name="Pocket-Guu" />
+		<item id="101" 	name="Surprise Package" />
+		<item id="102" 	name="Igor's Carrot" />
+		<item id="103" 	name="Wonderful Life!" />
+		<item id="104" 	name="Heart of an Adventurer" />
+		<item id="105" 	name="Final Destiny" />
+		<item id="106" 	name="Book of Mushrooms" />
+		<item id="107" 	name="Book of Stars" />
+		<item id="108" 	name="Green Umbrella" />
+		<item id="109" 	name="Snowflake" />
+		<item id="110" 	name="Glacier" />
+		<item id="111" 	name="Gon Ga Jora" />
+		<item id="112" 	name="Carnivorous PiouPiou" />
+		<item id="113" 	name="The Robe of Tuber" />
+		<item id="114" 	name="Mario Mode!" />
+		<item id="115" 	name="The Helmet of Volleyfest" />
+		<item id="116" 	name="The Ankhel Jewel" />
+		<item id="117" 	name="Gordon's Key" />
+
+		<!-- SCORE ITEMS -->
+		<item id="1000" name="Hammerfest Crystal" />
+		<item id="1001" name="Hamburger" />
+		<item id="1002" name="Candy Cane" />
+		<item id="1003" name="Seed Candy" />
+		<item id="1004" name="Raindrop Candy" />
+		<item id="1005" name="Cherry Candy" />
+		<item id="1006" name="Blue Raspberry Lollipop" />
+		<item id="1007" name="Green Apple Lollipop" />
+		<item id="1008" name="Difaïned Diamond" />
+		<item id="1009" name="Eye of the Tiger" />
+		<item id="1010" name="12kg Jade" />
+		<item id="1011" name="Moon Glade" />
+		<item id="1012" name="Surprise Cake" />
+		<item id="1013" name="Muffin" />
+		<item id="1014" name="Cake" />
+		<item id="1015" name="Wedding Cake" />
+		<item id="1016" name="Piece of Cake" />
+		<item id="1017" name="Magical Stones" />
+		<item id="1018" name="Strawberry Ice Cream" />
+		<item id="1019" name="Ice Cream Cup" />
+		<item id="1020" name="Noodles" />
+		<item id="1021" name="Frozen Chicken" />
+		<item id="1022" name="Bizarre Liquid" />
+		<item id="1023" name="Taffy" />
+		<item id="1024" name="Strange Liquid" />
+		<item id="1025" name="Raw Egg" />
+		<item id="1026" name="Potato" />
+		<item id="1027" name="Red Licorice" />
+		<item id="1028" name="Plain Egg" />
+		<item id="1029" name="Sausage on a Stick" />
+		<item id="1030" name="Cherry on a Stick" />
+		<item id="1031" name="Cheese on a Stick" />
+		<item id="1032" name="Green Olive on a Stick" />
+		<item id="1033" name="Black Olive on a Stick" />
+		<item id="1034" name="Eyeball on a Stick" />
+		<item id="1035" name="Jello on a Stick" />
+		<item id="1036" name="Gouda on a Stick" />
+		<item id="1037" name="Fish on a Stick" />
+		<item id="1038" name="Stuffed Olive on a Stick" />
+		<item id="1039" name="Mr. Radish" />
+		<item id="1040" name="Fish Sushi" />
+		<item id="1041" name="Lollipop" />
+		<item id="1042" name="Chocolate Mousse" />
+		<item id="1043" name="Plastic Sorbet" />
+		<item id="1044" name="Manda" />
+		<item id="1045" name="Cashew" />
+		<item id="1046" name="Gump" />
+		<item id="1047" name="Sapphire Mushroom" />
+		<item id="1048" name="Ruby Mushroom" />
+		<item id="1049" name="Emerald Mushroom" />
+		<item id="1050" name="Sliver Mushroom" />
+		<item id="1051" name="Secret Coin" />
+		<item id="1052" name="Silver Coin" />
+		<item id="1053" name="Gold Coin" />
+		<item id="1054" name="Big Unemployment" />
+		<item id="1055" name="Soda" />
+		<item id="1056" name="French Fries" />
+		<item id="1057" name="Slice of Pizza" />
+		<item id="1058" name="Hazelnut Chocolate" />
+		<item id="1059" name="Chocolate Eclair" />
+		<item id="1060" name="Red Plant" />
+		<item id="1061" name="Parrot Head" />
+		<item id="1062" name="Alien Blob" />
+		
+		<item id="1063" name="Tagada-Strawberry" />
+		<item id="1064" name="Car-En-Sac" />
+		<item id="1065" name="Dragibus" />
+		<item id="1066" name="Crocodile" />
+		<item id="1067" name="Half Cocobats" />
+		<item id="1068" name="Happy Cola" />
+		<item id="1069" name="Peanut" />
+		<item id="1070" name="Small Ghost" />
+		<item id="1071" name="Hard Cookie" />
+		<item id="1072" name="Christmas Log" />
+		<item id="1073" name="Hot Pepper" />
+		<item id="1074" name="Bread" />
+		<item id="1075" name="Bouquet" />
+		<item id="1076" name="Daruma Watermelon" />
+		<item id="1077" name="Grain" />
+		<item id="1078" name="Croissant" />
+		<item id="1079" name="Beans" />
+		<item id="1080" name="Chocolate Bunny" />
+		<item id="1081" name="Beer" />
+		<item id="1082" name="Jelly with Corn" />
+		<item id="1083" name="Chocolate with Almond" />
+		<item id="1084" name="Dark Chocolate" />
+		<item id="1085" name="Belgium Chocolate" />
+		<item id="1086" name="White Chocolate with Coffee Bean" />
+		<item id="1087" name="Vodka Chocolate" />
+		<item id="1088" name="Snail Chocolate" />
+		<item id="1089" name="Marble Chocolate" />
+		<item id="1090" name="Cerisot Marinated in Beer" />
+		<item id="1091" name="Raw Ham" />
+		<item id="1092" name="Sliced Sausage" />
+		<item id="1093" name="Red Remains" />
+		<item id="1094" name="Maple Syrup Roll" />
+		<item id="1095" name="Blood Sausage" />
+		<item id="1096" name="Kangaroo Liver" />
+		<item id="1097" name="Sausage of St.Morgelet" />
+		<item id="1098" name="Head Cheese" />
+		<item id="1099" name="Squished Sausage" />
+		<item id="1100" name="Lemon Canned-Fish" />
+		<item id="1101" name="Canned Sliced Sausages" />
+		<item id="1102" name="White Beans" />
+		<item id="1103" name="Canned Lychees" />
+		<item id="1104" name="Zion's Cheese" />
+		<item id="1105" name="Pâté" />
+		<item id="1106" name="Mozzarella Cheese" />
+		<item id="1107" name="Emmental Cheese" />
+		<item id="1108" name="Edam Cheese" />
+		<item id="1109" name="Blue Cheese" />
+		<item id="1110" name="Swiss Cheese" />
+		<item id="1111" name="Cheesecake" />
+		
+		<item id="1112" name="Lettuce" />
+		<item id="1113" name="Leek" />
+		<item id="1114" name="Eggplant" />
+		<item id="1115" name="Walnut" />
+		<item id="1116" name="Hazelnut" />
+		<item id="1117" name="Cucumber" />
+		<item id="1118" name="Tomato" />
+		<item id="1119" name="Radish" />
+		<item id="1120" name="Green Beans" />
+		<item id="1121" name="Onion" />
+		<item id="1122" name="Garlic" />
+		<item id="1123" name="Shallots" />
+		<item id="1124" name="River Salt" />
+		<item id="1125" name="Green Pepper" />
+		<item id="1126" name="Yellow Pepper" />
+		<item id="1127" name="Red Pepper" />
+		<item id="1128" name="Digested Broccoli" />
+		<item id="1129" name="Bitten Radish" />
+		<item id="1130" name="Snow Peas" />
+		<item id="1131" name="White Beans" />
+		<item id="1132" name="Blended Pears" />
+		<item id="1133" name="Artichoke" />
+		<item id="1134" name="Cauliflower" />
+		<item id="1135" name="Purple Cabbage" />
+		<item id="1136" name="Corn" />
+		
+		<item id="1137" name="Dutch Cake" />
+		<item id="1138" name="Chocolate Fudge Cake" />
+		<item id="1139" name="Sparkling Soda" />
+		<item id="1140" name="Baked Cracker" />
+		<item id="1141" name="Golden Pastry" />
+		<item id="1142" name="Project Finisher" />
+		
+		<item id="1143" name="Almond Laxative" />
+		<item id="1144" name="Ghost Toast" />
+		<item id="1145" name="Flat Bread" />
+		<item id="1146" name="Cracked Nut" />
+		<item id="1147" name="Crunchy Almond" />
+		<item id="1148" name="Chestnut" />
+		<item id="1149" name="Ramen Noodles" />
+		<item id="1150" name="Steamed Brioche" />
+		<item id="1151" name="Slice of Chocolate Hazelnut Bread" />
+		<item id="1152" name="Slice of Raspberry Hazelnut Bread" />
+		<item id="1153" name="Slice of Sticky Orange Bread" />
+		<item id="1154" name="Slice of Hard Honey Bread" />
+		<item id="1155" name="Earthworm" />
+		<item id="1156" name="Cream Grenade" />
+		<item id="1157" name="Chocolate-Dipped Cream Puffs" />
+		<item id="1158" name="Chocolate Delight" />
+		<item id="1159" name="Shiny Mushroom" />
+		<item id="1160" name="Peppermint Candy" />
+		<item id="1161" name="Breaded Anchovies" />
+		<item id="1162" name="Grapefruit Sushi" />
+		<item id="1163" name="Octopus in Ink" />
+		<item id="1164" name="Curly" />
+		<item id="1165" name="Strawberry Tart" />
+		<item id="1166" name="Pear Egg" />
+		<item id="1167" name="Tasteless Sticky Truffle" />
+		<item id="1168" name="Sardines" />
+		<item id="1169" name="Starfish" />
+		<item id="1170" name="Sugar Transformer" />
+		<item id="1171" name="Evil Robot" />
+		<item id="1172" name="RoboCop" />
+		<item id="1173" name="R2D2" />
+		<item id="1174" name="Dalek ! Exterminate !" />
+		<item id="1175" name="Robo-Malin" />
+		<item id="1176" name="Johnny 6" />
+		<item id="1177" name="Biscuit Transformer" />
+		
+		<item id="1178" name="Statue: Sorbex Lemon" />
+		<item id="1179" name="Statue: Bombino" />
+		<item id="1180" name="Statue: Baddybomb Pear" />
+		<item id="1181" name="Statue: Tagada-Strawberry" />
+		<item id="1182" name="Statue: Kiwi Sapper" />
+		<item id="1183" name="Statue: Leaper" />
+		<item id="1184" name="Statue: Armaggedon-Pineapple" />
+		
+		<item id="1185" name="Bristling Ring" />
+		
+		<item id="1190" name="Wooden Master Key" />
+		<item id="1191" name="Rigor Dangerous Key" />
+		<item id="1192" name="Méluzzine Key" />
+		<item id="1193" name="Wine Key" />
+		<item id="1194" name="Frozen Key" />
+		<item id="1195" name="Old Rusty Key" />
+		<item id="1196" name="Authorization of Bois-Joli" />
+		<item id="1197" name="Key of Difficult Worlds " />
+		<item id="1198" name="Pungent Key" />
+		<item id="1199" name="Tuber's Key" />
+		<item id="1200" name="Nightmare Key" />
+		
+		<item id="1201" name="Sony Controller" />
+		<item id="1202" name="Nintendo 64 Controller" />
+		<item id="1203" name="Game-Cube Controller" />
+		<item id="1204" name="Genesis Controller" />
+		<item id="1205" name="SNES Controller" />
+		<item id="1206" name="NES Controller" />
+		<item id="1207" name="Master System Controller" />
+		<item id="1208" name="Joystick" />
+		
+		<item id="1209" name="Can Beer" />
+		<item id="1210" name="Sealed Beer" />
+		<item id="1211" name="Draft Beer" />
+		<item id="1212" name="Wonderful Wine" />
+		<item id="1213" name="Evil Liquor" />
+		
+		<item id="1214" name="MT Stamp" />
+		<item id="1215" name="Free Bill" />
+		<item id="1216" name="Sticky Notes" />
+		<item id="1217" name="Pencil Container" />
+		<item id="1218" name="Chaos Stapler" />
+		
+		<item id="1219" name="Mirror of Bancal" />
+		<item id="1220" name="Star of the Devil" />
+		
+		<item id="1221" name="Shovel" />
+		<item id="1222" name="Bucket of Sand" />
+		<item id="1223" name="Sand Castle" />
+		<item id="1224" name="Winkel O'Riely" />
+		<item id="1225" name="Mirror of Sables" />
+		<item id="1226" name="Star of the Devil's Twins" />
+		<item id="1227" name="Mixed Heart" />
+		
+		<item id="1228" name="Symbol of the Ninjas" />
+		<item id="1229" name="Magic Katana" />
+		<item id="1230" name="Fūma Shuriken" />
+		<item id="1231" name="Shuriken" />
+		<item id="1232" name="Kunai" />
+		<item id="1233" name="Blowgun of Precision" />
+		<item id="1234" name="Singing Ocarina" />
+		<item id="1235" name="Armor of the Night" />
+		
+		<item id="1236" name="Award of Merit" />
+		<item id="1237" name="Snow Bomb" />
+		<item id="1238" name="Pyramid Pass" />
+		
+	</items>
+
+
+	<quests>
+		<quest id="0" title="Constellations">
+			From now on and forever, Igor can place 2 bombs!
+		</quest>
+		<quest id="1" title="Zodiac mixture">
+			Igor knows how to place his bombs vertically now and he can place them
+			on the upper platform! Press DOWN arrow key beside a placed bomb.
+		</quest>
+		<quest id="2" title="First steps">
+			From now on Igor will always start the game with an extra life.
+		</quest>
+		<quest id="3" title="The adventure begins">
+			Igor will start from now on the game with another extra life.
+		</quest>
+		<quest id="4" title="An epic fate">
+			Igor will start the game with another life!
+		</quest>
+		<quest id="5" title="Perseverance">
+			Igor will start the game with an extra life.
+		</quest>
+		<quest id="6" title="Delicacies">
+			New food, healthier and nicer, will appear now in the game.
+		</quest>
+		<quest id="7" title="Some sugar!">
+			Igor wants more sweet things! From now on sweets will appear in the game.
+		</quest>
+		<quest id="8" title="Malnutrition">
+			Igor's taste for badly-balanced food will lead him to find even more food of questionable quality.
+		</quest>
+		<quest id="9" title="Good taste">
+			Igor's weird diet brings exotic new food to the game!
+		</quest>
+		<quest id="10" title="Technological advance">
+			A lot of items of weird effects appear now in the game to help you in
+			the adventure!
+		</quest>
+		<quest id="11" title="Small guide to mushrooms">
+			Igor has discovered a rare text. It's a kind of cookbook about hallucinogenic
+			mushrooms. Igor will be able to find them now.
+		</quest>
+		<quest id="12" title="Find the secret golden coins!">
+			Great new richness will appear now in the game!
+		</quest>
+		<quest id="13" title="The book of Magic Stars">
+			This mysterious in-depth book talks about the 12 Zodiac Constellations.
+			They are now available in the game!
+		</quest>
+		<quest id="14" title="Armageddon">
+			Items with devastating powers will appear now in the game!
+		</quest>
+		<quest id="15" title="MotionTwin Diet">
+			After eating every kind of food, no matter what, Igor has become a Master of
+			the games! Now he will be able to collect rare items and exceptional food
+			during his adventure!
+		</quest>
+		<quest id="16" title="Creator of games">
+			Igor appreciates basic food. He could be offered a nice career in videogames!
+			Adapted food will be available in the game, and also a deck of cards!
+		</quest>
+		<quest id="17" title="Life is like a box of chocolates...">
+			Delicious chocolates will be now available in Hammerfest!
+		</quest>
+		<quest id="18" title="Difaïned treasure">
+			After collecting so many diamonds of mysterious origin, Igor adquires the
+			ability of finding precious stones! He'll be able now to find them throughout
+			his quests.
+		</quest>
+		<quest id="19" title="Super size me!">
+			Keeping far from good food, Igor discovers now that he can also eat
+			canned food!
+		</quest>
+		<quest id="20" title="Master jeweller">
+			Igor has become an expert in precious stones. Now his knowledge permits him to
+			discover precious stones which are even more powerful!
+		</quest>
+		<quest id="21" title="Great Predator">
+			Igor is fed up hunting sweets! As he has turned into an unconditional predator,
+			now he will be able to devour any sort of delicacy.
+		</quest>
+		<quest id="22" title="Expert in salads and stews">
+			They say that Igor is the reencarnation of Saladou, the world famous master
+			of salads for virtual rabbits. With this new talent, he will be able to collect
+			a great variety of vegetables!
+		</quest>
+		<quest id="23" title="Hammerfest Feast">
+			After a complete lunch, Igor will now have access to really delicious cakes.
+		</quest>
+		<quest id="24" title="Birthday party">
+			Igor has found all the required elements for his next birthday party!
+			From now on he will get even more until that time comes.
+		</quest>
+		<quest id="25" title="Bon vivant">
+			We can't imagin a good lunch without a nice aperitive.
+			Igor knows now what he needs.
+		</quest>
+		<quest id="26" title="Norwegian fondue">
+			The smells that come from Igor's lair don't leave a doubt about it: he has become
+			a great lover of cheese. New dairy products will appear now in the caverns.
+		</quest>
+		<quest id="27" title="Guu's mistery">
+			This quest hasn't any practical use. It's only to suggest to you the great
+			anime "Jungle wa itsumo Hare nochi Guu". Banyaaaaaïï ^__^
+		</quest>
+		<quest id="28" title="Divine sweets">
+			Sweets are no longer a secret to Igor. Now he will be able to collect
+			any of Good-looking Harry's legendary sweets that he finds in Hammerfest!
+		</quest>
+		<quest id="29" title="Igor and Cortex">
+			Igor has started to make mysterious gadgets... get ready to collect strange
+			machines in the game!
+		</quest>
+		<quest id="30" title="Facing the darkness">
+			Igor has learnt to light himself up! Thanks to this torch he won't
+			get lost any more in the darkness of the advanced levels!
+		</quest>
+		<quest id="31" title="And light appeared!">
+			Ready for every danger, Igor won't ever be afraid of the darkness of
+			the advanced levels!
+		</quest>
+		<quest id="32" title="Christmas in Hammerfest!">
+			You won 5 extra lives!!
+		</quest>
+		<quest id="33" title="Happy birthday Igor">
+			You won 10 free games!!
+		</quest>
+		<quest id="34" title="Celestial present">
+			You won 20 free games!!
+		</quest>
+		<quest id="35" title="Game purchase enhanced">
+			From now on, each time you buy games with our payment service, you'll
+			obtain more games for the same price!
+		</quest>
+		<quest id="36" title="Sorbex exterminator">
+			You squeezed the Sorbex lemons without mercy!
+		</quest>
+		<quest id="37" title="Bombino disposal expert">
+			You survived the Bombinos explosions!
+		</quest>
+		<quest id="38" title="Pear killer">
+			You killed a new monster: the Baddybombs Pears!
+		</quest>
+		<quest id="39" title="Tagadas mixer">
+			You have only had a Tagada-Strawberry mouthful!
+		</quest>
+		<quest id="40" title="Kiwi itches! ouch, it scratches!">
+			You knew how to avoid all the traps from the Kiwi Sappers!
+		</quest>
+		<quest id="41" title="Leaping Hunter">
+			Great, you haven't been impressed by the herd of Leapers!
+		</quest>
+		<quest id="42" title="Armaggedon-Pineapple Killer">
+			You have gloriously come to the end of the fight against the
+			Armageddon-Pineapples!
+		</quest>
+		<quest id="43" title="Hammerfest King">
+			You finished the game! Your perseverance and tenacity permitted you to
+			defeat the evil Tuber and to recover Igor's nose. From now on you'll
+			have an extra life and you'll play with the carrot!
+		</quest>
+		<quest id="44" title="Mad hatter">
+			Igor has discovered a mad passion for hats. From now on, disguise Igor by pressing
+			"D" key.
+		</quest>
+		<quest id="45" title="Eco-terrorist pony">
+			Igor has accumulated enough wealth to finance his terrorist activities
+			in Hammerfest. From now on, he will be able to disguise himself by pressing "D"
+			key during the game! By the way, have you already played www.dinoparc.com?
+		</quest>
+		<quest id="46" title="The Pioupiou is in you">
+			We should have expected that: after collecting no matter what kind of item,
+			Igor has finished by devouring a Pioupiou! Press "D" key during the game to change
+			fancy dress.
+		</quest>
+		<quest id="47" title="Mushrooms hunter">
+			Like his Italian counterpart (plumber in a red hat), Igor feels a
+			great passion for mushrooms! You'll be able from now on to change Igor's
+			dress during the game by pressing "D" key.
+		</quest>
+		<quest id="48" title="Tuber's successor">
+			It seems like Igor has... changed. His look has become cool. He hides
+			behind a great cloak and his face is dark. He's maybe changing little by
+			little into the monster who was once his enemy.
+			Disguise Igor as Tuber by pressing "D" key during the game!
+		</quest>
+		<quest id="49" title="The first Key!">
+			Igor has found a Master Key. Undoubtedly, it will open a door somewhere in the
+			caverns...
+		</quest>
+		<quest id="50" title="Rigor Dangerous">
+			You have discovered an old Rusty Key in your adventure!
+			It has a small inscription: "Rick". Obviously, this was its previous owner.
+		</quest>
+		<quest id="51" title="The lost Meluzin">
+			They say that the Meluzin, the legendary key of the ancient Hammerfest
+			tales, opens the door to the greatest wealth. But where is the door?
+		</quest>
+		<quest id="52" title="At last, the drunk man!">
+			This strange little key smells of wine: it's the Wine Key!
+		</quest>
+		<quest id="53" title="Frozen">
+			Like any other snowman, Igor can't keep a key like this one in his hand.
+			The door that it opens gives access to the most hidden places of Hammerfest.
+		</quest>
+		<quest id="54" title="A rusty key">
+			This amorphous metallic thing does not seem to be worth a lot. Although,
+			we should not trust appearances! Who knows what adventures hide beyond
+			the door it opens?
+		</quest>
+		<quest id="55" title="Let it go!">
+			All your administrative power will be backed up by the LovelyWood BJ22a
+			Authorization Form.
+		</quest>
+		<quest id="56" title="The Arduous Worlds">
+			You achieved level 50 in the Nightmare mode! You win the Arduous
+			Worlds Key!
+		</quest>
+		<quest id="57" title="Quickly!">
+			You don't really know why, but the Itchy Key you've found, makes you
+			run and roll everywhere!
+		</quest>
+		<quest id="58" title="Empty Tuber's pocket">
+			Tuber, the evil sorcerer, used to have a key...
+		</quest>
+		<quest id="59" title="Tuber, Master of Hell">
+			All your great power and skill in combat techniques gave you the
+			chance to defeat Tuber in the Nightmare mode! You're now the privileged
+			owner of the Unique Key.
+		</quest>
+		<quest id="60" title="Metallic water">
+			Alcohol abuse is bad for your health, according to the health
+			authorities.
+			However, in Hammerfest it has enabled you to unblock the Wine
+			Key! From now on, you have a lot of chances of finding it in
+			the caverns.
+		</quest>
+		<quest id="61" title="Paperwork">
+			Igor is an expert in filling in administrative forms. You'll soon
+			find the LovelyWood BJ22a Authorization Form in the caverns.
+		</quest>
+		<quest id="62" title="Best Player">
+			The best videogame player is you, there's no doubt about it! Your
+			control pads collection is enviable! From now on, Igor has a speed bonus
+			at the beginning of each game.
+		</quest>
+		<quest id="63" title="Mirror, my beautiful mirror">
+			The Bancal Mirror you have found in the game shows you things from
+			another point of view. The extra option "Mirror" has been unblocked!
+		</quest>
+		<quest id="64" title="Nightmare mode">
+			You're talented. Very talented... but, are you able to help Igor
+			in the Nightmare mode? This new option has been unblocked!
+		</quest>
+		<quest id="65" title="The adventure continues!">
+			The Carrotian Council has chosen you to explore the
+			Caverns of Hammerfest in-depth. The Gordon's Key is only the first step of
+			a new great mission...
+		</quest>
+		<quest id="66" title="Ankhel Jewel">
+			You have shown your great ability and dexterity in finding the Ankhel Jewel.
+			The Advanced Ball Control option has been unblocked in the Soccerfest mode game!
+		</quest>
+		        <quest id="67" title="Sandy's adventure begins!">
+            You’ve got all the necessary elements to bring Sandy the Sandman to life!
+            This new character can join you in the Adventure Mode (Two players mode
+            on the same computer).           
+        </quest>
+        <quest id="68" title="Mirror, OUR beautiful mirror">
+            You can now see things from a different angle with your friend. The game option "Mirror"
+            has been added to the Two Players game mode.
+        </quest>
+        <quest id="69" title="Double-nightmare option">
+            It is evident that you are able to do great things together with a friend! The game option "Nightmare"
+            has been added to the Two Players game mode.
+        </quest>
+        <quest id="70" title="A great Friendship">
+            Better late than never! Igor and Sandy have finally understood the importance of staying together
+            in order to survive in the Caverns. The game option "Lives sharing" has been unblocked for
+            the Two Players mode! With this option enabled, if a player loses his latest life, he will
+            take a life from the second player and then he will be able to continue playing!
+        </quest>
+        <quest id="71" title="Learning how to launch Shurikens">
+            Jumping and jumping around has improved Igor's agility and now he's turning into a ninja!
+            In order to prove his courage, he must collect all the ninja items hidden in Hammerfest!
+        </quest>
+        <quest id="72" title="Shinobi do!">
+            Igor has completed his starting quest and now he's a grand master of Ninjutsu weapons!
+            Nevertheless, his Code of Honour prevents him from using them. Although now he will be able
+            to test his skills in the "Ninjutsu" game mode he has unblocked!
+        </quest>
+        <quest id="73" title="As quick as the lightning!">
+            Igor is unbeatable when he needs to move fast. He now has to prove it to the others!
+            The TIME ATTACK mode and its ranking have been unblocked. Be the fastest snowman in all Hammerfest!
+        </quest>
+        <quest id="74" title="Bomb Master">
+            You are a well-known expert in explosive material. To demonstrate this to everybody, you can
+            now enable the "Unstable explosives" option in the Adventure mode. Pay attention to everything
+            that explodes in the game! You can also push the bombs farther and move while you hit them.
+        </quest>
+        <quest id="75" title="Tuber's tomb">
+            You have discovered a bizarre pocket-size pyramid in Tuber's tomb.
+        </quest>
+	</quests>
+
+	
+	<dimensions>	
+			
+			<dimension id="0">
+			
+			<level id="0" name="The Village of Hammerfest" />
+			<level id="2" name="The First Caverns" />
+			<level id="10" name="The Slippery Tunnel" />
+			<level id="16" name="The Forgotten Depths" />
+			<level id="20" name="Caverns of Green" />
+			<level id="31" name="The Cold Caverns" />
+			<level id="41" name="The Stairs of Morgenfell" />
+			<level id="51" name="Territory of the Rolling Mangoes" />
+			<level id="61" name="Cavern of the Plum" />
+			<level id="71" name="Underground Jungle" />
+			<level id="81" name="The Colorful Caves" />			
+			</dimension>
+			
+			<dimension id="1">
+			<level id="0" name="The Temple Before Tuber" />
+			<level id="12" name="Plumbers Hideout" />
+			<level id="14" name="BubbleFest" />
+			<level id="24" name="Caves of Loop" />
+			<level id="33" name="Small Bonus" />
+			<level id="35" name="Diffiland" />
+			<level id="41" name="Pretty Forest of Tournefleur" />
+			<level id="55" name="Tuber's Secret Base" />
+			<level id="60" name="Cavavin" />
+			<level id="66" name="Cavavin: Secret Room" />
+			<level id="68" name="Secret Tubzian Prototype" />
+			<level id="70" name="Inferior Frimas" />
+			<level id="76" name="Crystal Trap" />
+			<level id="78" name="Secret forest of Hammerfest" />
+			<level id="80" name="Den of Géluloz" />
+			<level id="86" name="Room of the Guardian" />
+			<level id="90" name="The Second Well" />
+			<level id="108" name="Haste Bonus" />
+			<level id="110" name="The Troglogrotto" />
+			<level id="119" name="The World of Mirrors" />
+			<level id="125" name="Cavern of Nausea" />
+			<level id="127" name="The Carrotian Council " />
+			<level id="134" name="The Dojo" />
+			<level id="141" name="Hell" />
+			<level id="148" name="Sachas Mixer" />
+			<level id="149" name="Well of Zâmes" />
+			<level id="154" name="The Lair of the Raspberries" />
+			<level id="157" name="Howling Metal" />
+			<level id="168" name="Raspberry Crypt" />
+			<level id="188" name="The Tomb of Tuber" />
+			<level id="206" name="The Entrance to the Tomb" />
+			<level id="211" name="The Real Tomb of Tuber" />
+			<level id="217" name="The Counselors Hideout" />			
+			</dimension>
+
+			<dimension id="2">
+			</dimension>
+			
+			<dimension id="3"> <!--
+				<level id="0" name="Mechayame"/>
+				<level id="6" name="Irish Coffee"/>
+				<level id="12" name="Les Chat-vernes"/>
+				<level id="42" name="Ayamedium"/>-->
+			</dimension>
+	</dimensions>
+
+	
+	<keys>
+		<key id="0" name="Wooden Master Key"/>
+		<key id="1" name="Rigor Dangerous Key"/>
+		<key id="2" name="Méluzzine Key"/>
+		<key id="3" name="Wine Key"/>
+		<key id="4" name="Frozen Key"/>
+		<key id="5" name="Old Rusty Key"/>
+		<key id="6" name="Authorization of Bois-Joli"/>
+		<key id="7" name="Key of Difficult Worlds"/>
+		<key id="8" name="Pungent Key"/>
+		<key id="9" name="Skeleton Key"/>
+		<key id="10" name="Nightmare Key"/>
+		<key id="11" name="Key of inversion"/>
+		<key id="12" name="Gordon's Key"/>
+		<key id="13" name="Key of the apprentice"/>
+		<key id="14" name="Pyramid Pass"/>
+	</keys>
+</lang>

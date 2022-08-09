@@ -1,0 +1,126 @@
+﻿<!-- ***************************************************************************** -->
+<!--
+set de mission de l’ermite, uniquement dispo si le dinoz a atteint le niveau 60 :
+-apporter de la mousse de la forêt pour soulager le dos de l’ermite
+-un ingrédient commun de chaque zone
+-attendre 2h sans fermer la fenêtre web (pour les gros naifs)
+-combattre un monstre de niveau 60
+-?
+-->
+
+<missions>
+
+	<m group="rhubar" id="rhub1" name="ET Foam home?" cond="level(30)">
+		<begin>My bones ache, they creak, altogether quite unpleasant really. Could you go and get some moss from the hills in the Grumhel Forest.
+		If you could also pick me up some ice from the Deep Gorges that'd be great... I don't mean to inconvenience you!</begin>
+		<goto v="collin"/>
+		<action v="collect some moss">
+			You've collected some moss from the dark trees.
+		</action>
+		<goto v="gorges"/>
+		<action v="extract some ice">You find a pick on the fground and start hacking away at the ice.</action>
+		<actfight act="fight the adult dwarf Archlion" monsters="arcadu">
+			<begin m="arcadu">
+				The noise spreads everywhere, amplified by the caverns in the grotto. The echo attracts the attention of an old acquaintance.
+			</begin>
+			<win>
+				The Archlion has learned its lesson, you can continue to extract the ice in peace.
+			</win>
+		</actfight>
+		<end>
+			Aaaah, I feel so much better now, it's a shame the moss dries out and becomes useless so quickly.
+			Thankyou, finally my joints get some rest...
+			You may go and choose your reward from the treasure room behind me.
+		</end>
+		<item v="tix" n="20"/>
+		<ingr v="art1" n="1"/>
+		<ingr v="art2"n="1"/>
+	</m>
+	
+	<m group="rhubar" id="rhub2" name="A little drop of ether?" cond="mission(rhub1)+level(40)">
+		<begin>My ectoplasmiic energy is weakening by the century now, I can't convey any wisdom any more...
+		As you have travelled beyond the Steppes, could you bring me back some ether, that substance lets me recharge my batteries.</begin>
+		<goto v="cextra"/>
+		<action v="Utiliser l'extracteur">You begin extracting some ether.</action>
+		<actfight act="fight the Serpether" monsters="serpe">
+			<begin m="serpe">
+				The extraction has awakened an old friend... however, you absolutely must get rid of him if you ever want to get back to the extraction.
+			</begin>
+			<win>
+				The extraction process is complete, all that remains is to return to Rhubabao'riley...
+			</win>
+		</actfight>
+		<end>That should allow me to keep going for a while longer. Thank you kindly. You may select your reward from the treasure room.</end>
+		<item v="tix" n="30"/>
+		<ingr v="art3" n="1"/>
+	</m>
+	
+	<m group="rhubar" id="rhub3" name="Lodestone Shard" cond="mission(rhub2)+collec(magnet)+level(50)">
+		<begin>The ether you brought me runs out so quickly, I'll need a lodestone shard to fossilize it.
+		I have the feeling that you have one, but it won't be charged enough to do the job. Could you recharge it and bring it here?</begin>
+		<goto v="spylon"/>
+		<action v="place the lodestone shard">
+			You have placed the shard on an plinth which is constantly struck by lightning.
+			All we have to do now is wait...
+		</action>
+		<actfight act="fight the Behemotin" monsters="behemu">
+			<begin m="behemu">
+				You thought as much, it never rains but it pours! It was written that you'd have to face the 3rd Colossus again...
+			</begin>
+			<win>
+				Hopefully it'll leave you alone from now on.
+			</win>
+		</actfight>
+		<goto v="temple"/>
+		<action v="Fossilize the ether">Upon approaching the ether shard, it retracts and hardens. Mission accomplished!</action>
+		<end>
+			Thank you. The ether should no longer evaporate thanks to you. I can now concentrate on your initiation.
+			You can go and find your reward in the treasure room.
+		</end>
+		<ingr v="artr1" n="1"/>
+		<ingr v="artr2" n="1"/>
+	</m>
+	
+	<m group="rhubar" id="rhub4" name="Out here in the fields..." cond="mission(rhub3)+level(50)">
+		<begin>Now my comfort has been assured... it is time for you to prove to me that you have indeed explored Dinoland in its entirety.
+		bring me an object from each world you have visited, I'll use them to learn more about what has happend in the last centuries.</begin>
+		<use v="irma" n="1"></use>
+		<use v="tartev" n="1"></use>
+		<use v="ration" n="1"></use>
+		<use v="mergz" n="1"></use>
+		<use v="hlmsos" n="1"></use>
+		<use v="monoch" n="1"></use>
+		<use v="danger" n="1"></use>
+		<use v="odemon" n="1"></use>
+		<use v="cendre" n="1"></use>
+		<use v="riz" n="1"></use>
+		<end>You have provided me with many objects. I am now able to reward you with an object which I have guarded closely for many centuries.</end>
+		<ingr v="dgrain" n="1"/>
+	</m>
+	
+	<m group="rhubar" id="rhub5" name="Meditation" cond="mission(rhub4)+level(50)">
+		<begin>it is time to prepare for the ritual. You must now stand still for 10 hours...
+		You must not close your web browser, nor must you close it, otherwise you muste start again.</begin>
+		<goto v="temple"/>
+		<action wait="10" v="begin meditating">You begin your meditation... STOP MOVING!</action>
+		<end>Well done, you have achieved inner peace... Did you really not close your browser? You really didn't have to! Hahahaha!</end>
+		<xp v="80"/>
+	</m>
+	
+	<m group="rhubar" id="rhuba" name="Spiritual Combat" cond="mission(rhub5)+level(50)">
+		<begin>Now you have had the time to meditate, you will soon have completed your preparation.
+		The ultimate test is all that remains, I will use my power to create a projection of my body from years past.</begin>
+		<goto v="temple"/>
+		<actfight act="fight the Spirit of Rhubabao'riley" monsters="rhubar">
+			<begin m="rhubar">
+				Prepare yourself for my assaults. Do you have the strength?
+			</begin>
+			<win>
+				Well done. You have defeated me. You are worthy of receiving my ultimate reward.
+			</win>
+		</actfight>
+		<end>Congratulations, your initiation is complete.</end>
+		<item v="tix" n="50"/>
+	</m>
+	
+</missions>

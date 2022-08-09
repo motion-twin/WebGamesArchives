@@ -1,0 +1,96 @@
+﻿<missions>
+
+	<!-- ***************************************************************************** -->
+	<!-- Amazones, Garde du palais de Caushemesh ----->
+	
+	<m group="amazon" id="gift1" name="Premier geste">
+		<begin>Le puit d'éther attire beaucoup de monstres. Le palais est en grande partie alimenté en énergie par ce puits. Pourrais tu supprimer les quelques monstres qui se balladent autour ?
+		Tu en profiteras pour réactionner la pompe qui permet d'extraire l'éther et de la convertir en énergie.</begin>
+		<goto v="cpuits"/>
+		<kill v="groule:roking:groule" n="3" zone="9"/>
+		<action v="Réactionner la pompe" wait="1">Il vous faut un certain temps pour réenclencher le mécanisme. Espérons que cette action n'attire pas de monstres trop puissants...</action>
+		<kill v="groule:roking:groule" n="9" zone="9"/>
+		<end>Bien, le jacuzzi va pouvoir fonctionner encore quelques jours. Merci !</end>
+		<xp v="50"/>
+		<gold v="3000"/>
+	</m>
+	
+	<m group="amazon" id="gift2" name="Second geste" cond="mission(gift1)">
+		<begin>Les dinoz sombres provenant du technodôme continue de venir troubler notre quotidien. Il est impossible de stopper l'invasion de ces dinoz, mais heureusement, ils ne peuvent arriver en masse.
+		Si tu en supprimes quelques uns, nous aurions suffisamment de temps pour aller faire du shopping à l'acropole.</begin>
+		<goto v="ctecno"/>
+		<kill v="darki4:darki5" n="2" zone="9"/>
+		<kill v="darkia:darkib" n="3" zone="9"/>
+		<kill v="darki3" n="1" zone="9"/>
+		<end>Parfait, nous n'avons pas eu de visite de monstres aujourd'hui !</end>
+		<xp v="30"/>
+		<gold v="5000"/>
+	</m>
+	
+	<m group="amazon" id="gift3" name="Troisième geste" cond="mission(gift2)">
+		<begin>Nous avons un peu de temps, mais nous préférons aller dans le jacuzzi.
+		Peux tu aller faire des courses pour nous ? Tiens d'ailleurs vu que tu viens de loin, peux tu nous rapporter des objets du Grand Tout Chaud ? Et un peu de vin de Dinoville. Je te fais une liste.
+		Et dépêche toi s'il te plaît !</begin>
+		<goto v="cacrop"/>
+		<talk v="Marchand de l'acropole">Bonjour, vous venez prendre la commande quotidienne du palais ? Ca fera 2000 pièces d'or !</talk>
+		<use v="gold" n="2000"/>
+		<action v="Trier les objets" wait="1">Vous prenez votre mal en patience, les objets vont du simple peigne au pagne de luxe... Qui a vraiment besoin de toutes ces affaires ?</action>
+		<goto v="fosslv"/>
+		<talk v="Marchand de Fosselave">Bonjour, montrez moi cette liste... He bien, il y aura pour 4000 pièces d'or !</talk>
+		<use v="gold" n="4000"/>
+		<goto v="dplaza"/>
+		<talk v="Marchand de Vin" gfx="sommelier">Bonjour, vous voulez du bon vin ? Voyons voir, oh un choix remarquable, vous avez un goût exquis... Il y en aura pour 5000 pièces d'or !</talk>
+		<use v="gold" n="5000"/>
+		<end>Tu as tout ramené, je te félicite. D'ailleurs, j'ai oublié de te donner l'argent pour payer toutes ces marchandises !... Voilà pour toi, tu peux garder la monnaie. </end>
+		<xp v="60"/>
+		<gold v="18000"/>
+	</m>
+	
+	<m group="amazon" id="gift4" name="Quatrième geste" cond="mission(gift3)">
+		<begin>Nous avons un gros problème urgentissime à traiter. La pile qui permettait de faire chauffer l'eau de la piscine est tombée à plat !
+		Il faut absolument faire quelque chose ! Nous comptons sur toi pour aller la chercher, et trouver un endroit pour la recharger en énergie électrique.</begin>
+		<goto v="cpyra2"/>
+		<action v="Extraire la pile">Vous prélevez la pile de la piscine, vous avez bien entendu soigneusement évité de vous faire remarquer par la gardienne.</action>
+		<goto v="spylon" hide="1"/>
+		<action v="Laisser la pile se charger" wait="2">De la même manière que la magnétite, rien ne vaut un petit orage électromagnétique pour recharger une pile en fin de vie !</action>
+		<actfight act="Protéger la pile" monsters="baraba:baratr">
+			<begin m="baraba">Donne nous cet objet brillant, et plus vite que ça !</begin>
+			<win>Ces brigands ne risqueront plus de vous embêter dans les jours prochains.</win>
+			<lose>Bah, c'est une babiole sans importance. Laissons ce loser et allons chercher un autre travail !</lose>
+		</actfight>
+		<action v="Laisser la pile se charger à nouveau" wait="3">De la même manière que la magnétite, rien ne vaut un petit orage électromagnétique pour recharger une pile en fin de vie !</action>
+		<goto v="cpyra2"/>
+		<action v="Remettre la pile">Vous remettez la pile de la piscine dans le générateur d'eau chaude.</action>
+		<end>Merci, tu as rechargé la piscine, maintenant il ne reste plus qu'à aller y faire un tour !</end>
+		<xp v="50"/>
+		<gold v="3000"/>
+	</m>
+	
+	<m group="amazon" id="gift5" name="Cinquième geste" cond="mission(gift4)">
+		<begin>Nous n'avons absolument pas le temps d'aller piquer une tête dans la piscine, peux tu rester à notre place pendant quelques heures, histoire qu'on ait le temps de se prelasser ?</begin>
+		<goto v="cpyra1"/>
+		<action v="Monter la garde" wait="9">Vous voilà en train de faire le boulot d'un autre. Décidemment, ça devient une habitude...</action>
+		<actfight act="Faire le boulot de garde..." monsters="darki5:darkia" zone="9"></actfight>
+		<action v="Remonter la garde" wait="1">Vous voilà de nouveau en train de faire le boulot d'un autre. Heureusement la relève est bientôt là ! Du moins, vous l'espérez...</action>
+		<end>Ha, ce bain a été raffraîchissant, tu pourrais nous remplacer plus souvent ?</end>
+		<xp v="20"/>
+		<gold v="1000"/>
+	</m>
+
+	<m group="amazon" id="gifta" name="Sixième geste" cond="mission(gift5)">
+		<begin>Nous avons besoin de quelques ingrédients pour confectionner un elixir indispensable à notre survie !
+		Parmi ces ingrédients, il te faudra chercher dans notre monde. Il n'y a qu'à Caushemesh que l'on trouve des spores éthérals et des roches radio-actives.</begin>
+		<goto v="cpyra1"/>
+		<useingr v="fruit1" n="1"/>
+		<goto v="cpyra1"/>
+		<useingr v="enair" n="1"/>
+		<goto v="cpyra1"/>
+		<useingr v="chas5" n="2"/>
+		<goto v="cpyra1"/>
+		<useingr v="fruit5" n="5"/>
+		<end>Ha parfait, grâce à toi, nous avons retrouver de quoi faire le parfum spécial de Caushemesh. Impossible d'imaginer se lever le matin sans cette petite coquetterie !</end>
+		<xp v="40"/>
+		<gold v="6000"/>
+	</m>
+	
+</missions>

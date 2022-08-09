@@ -1,0 +1,148 @@
+<!--
+<d place="frcbrt" name="Maître Zenit" background="2" gfx="zenit" cond="(active(dojo)|admin())">
+
+	<phase id="begin" fast="1" next="talk:talk2:aide" frame="stop">
+		Un vieil homme immobile médite dans un coin.
+		Il vous regarde avec attention en trifouillant sa fine barbichette...
+		Vous regarder tourner en rond semble beaucoup l'amuser...
+	</phase>
+-->
+<missions>
+	
+	<m group="zenit" id="zenit1" name="Infusion à fusion" cond="(admin()|(active(lvlup3)+level(69)))">
+		<begin>
+			Il est important de méditer. Avant le lever de soleil pour profiter de la puissance des premiers rayons, s’imprégner de lumière pour atteindre le … … ... .  .  .  .
+			|« Rooonnnnn  Pffffiou….. Roonn…. pfiououuu  » 
+			|Ah hum, ah erm !! Désolé. Je suis un peu fatigué en ce moment je ne sais pas trop pourquoi.
+			|Il me faudrait pouvoir me préparer une infusion spécial méditation profonde. Serais-tu d’accord pour m’apporter quelques ingrédients?
+			
+			Il me faudrait: 
+			|« Du gingembre givré cultivé là où l’air est pur, associé à des feuilles de forêt vierge primaire, et des glaçons d’eau millénaire » 
+			| Je t’attends… et n’oublies pas de faire infuser 5 minutes à 350 degrés !
+		</begin>
+		
+		<goto v="imont" hide="1"/>
+		<action v="Racine gelée">
+			Vous ramassez une racine de Gingembre givré.
+		</action>
+		
+		<goto v="jungle" hide="1"/>
+		<action v="Feuillage Primaire">
+			Vous ramassez quelques feuilles d'un feuillage primaire.
+		</action>
+		
+		<goto v="gorges" hide="1"/>
+		<action v="Découper des glaçons">
+			Vous placez les glaçons de cette glace millénaire dans la gourde.
+		</action>
+		
+		<label v="bouill"/>
+		<goto v="fosslv" hide="1"/>
+		<action v="Faire bouillir">
+			Vous faites bouillir le mélange et le laissez infuser. Sans nul doute cela sera écoeurant.
+		</action>
+		
+		<end>
+			Voilà qui me semble parfait pour ma méditation du matin. Merci pour cette balade jeune maître.
+			
+			Cette mission t’a coûté cher ?
+			Jeune Maitre… apprend donc que L’homme de bien acquiert de la considération en usant généreusement de ses richesses ; l’homme de peu augmente ses richesses aux dépens de la considération. 
+		</end>
+		<gold v="2000"/>
+	</m>
+	
+	<m group="zenit" id="zenit2" name="Le Cha" cond="mission(zenit1)">
+		<begin>
+			Tu as su entraîner ta force, et atteindre un niveau d’excellence, mais sache que ce n’est qu’une première étape avant l’éveil total. 
+			| Il faut non pas se contenter de sentir l’énergie du corps, *son Cha*, comme tu as appris avec le Maitre élémentaire, mais ensuite de son environnement. Bien plus puissant !
+			| Sentir les éléments, leur vibration, est ce qu’il te faut pour exploiter correctement ton *Cha*.
+		</begin>
+		
+		<goto v="fosslv" />
+		<label v="fire_ko"/>
+		<action v="Ressentir le Feu" wait="10">Vous vous installez votre Dino à même le sol, et l'invitez à se détendre au maximum.  Une longue journée de méditation vous attend. Mais est-ce que cela va suffire?</action>
+		<branch v="fire_ok" cond="hourrand(2,1+)"/>
+		<branch v="fire_ko" cond="!hourrand(2,1+)"/>
+		
+		<label v="fire_ok"/>
+		<label v="water_ko"/>
+		<goto v="chutes" />
+		<action v="Ressentir l'Eau" wait="10">Vous vous installez votre Dino à même le sol, et l'invitez à se détendre au maximum.  Une longue journée de méditation vous attend. Mais est-ce que cela va suffire?</action>
+		<branch v="water_ok" cond="hourrand(2,1+)"/>
+		<branch v="water_ko" cond="!hourrand(2,1+)"/>
+		
+		<label v="water_ok"/>
+		<label v="earth_ko"/>
+		<goto v="collin" />
+		<action v="Ressentir la Terre" wait="10">Vous vous installez votre Dino à même le sol, et l'invitez à se détendre au maximum.  Une longue journée de méditation vous attend. Mais est-ce que cela va suffire?</action>
+		<branch v="earth_ok" cond="hourrand(2,1+)"/>
+		<branch v="earth_ko" cond="!hourrand(2,1+)"/>
+		
+		<label v="earth_ok"/>
+		<label v="thunder_ko"/>
+		<goto v="scaush" />
+		<action v="Ressentir la Foudre" wait="10">Vous vous installez votre Dino à même le sol, et l'invitez à se détendre au maximum.  Une longue journée de méditation vous attend. Mais est-ce que cela va suffire?</action>
+		<branch v="thunder_ok" cond="hourrand(2,1+)"/>
+		<branch v="thunder_ko" cond="!hourrand(2,1+)"/>
+		
+		<label v="thunder_ok"/>
+		<label v="air_ko"/>
+		<goto v="iplain" />
+		<action v="Ressentir l'Air" wait="10">Vous vous installez votre Dino à même le sol, et l'invitez à se détendre au maximum.  Une longue journée de méditation vous attend. Mais est-ce que cela va suffire?</action>
+		<branch v="air_ok" cond="hourrand(2,1+)"/>
+		<branch v="air_ko" cond="!hourrand(2,1+)"/>
+		
+		<label v="air_ok"/>
+		<end>
+			Bravo jeune maître.  
+			| As-tu senti la puissance des éléments et de fourmillement de l’énergie de ton corps.
+			| C’est au cours d’un long trajet que s'éprouve la force d'un coursier, et avec le temps qu'on connaît le coeur d'un homme. 
+		</end>
+		<gold v="2000"/>
+	</m>
+	
+	<m group="zenit" id="zenit3" name="L'affrontement" cond="mission(zenit2)">
+		<begin>
+			Après avoir ressentir, il faut savoir appliquer quotidiennement, s'entraîner sans relâche.
+			| Comme disait mon maître : « Vous ne pouvez pas empêcher les oiseaux de l’indolence de voler au-dessus de vos têtes, mais vous pouvez les empêcher de faire leurs nids dans vos cheveux. »
+		</begin>
+		
+		<actfight act="Combattre les éléments" monsters="ewater:efire:eearth:earth2">
+			<begin>
+				Témoignes moi de ton travail et fais moi sentir ton Cha.
+			</begin>
+			<win>
+				Voilà qui est prometteur. On peut passer à l'étape suivante.
+			</win>
+		</actfight>
+		
+		<actfight act="Combattre les éléments" monsters="ewater:efire:eearth:earth2">
+			<begin>
+				Témoignes moi de ton travail et fais moi sentir ton Cha.
+			</begin>
+			<win>
+				Voilà qui est prometteur. On peut passer à l'étape suivante.
+			</win>
+		</actfight>
+		
+		<actfight act="Affronter un expert du Cha" monsters="mcha">
+			<begin>
+				Affrontes mon discine formé à l'art du Cha externe !
+			</begin>
+			<win>
+				Impressionnant.
+			</win>
+		</actfight>
+		
+		<end>
+			Incroyable, il ne fait maintenant aucuns doutes que ton Dino est en mesure de connaître le dernier niveau de conscience martiale et énergétique. Tu es prêt à atteindre le niveau 80 !
+			
+			D'ailleurs, va parler à Mandragore, je pense qu'il a quelque chose d'intéressant à t'apprendre pour quand tu seras au niveau.
+			
+			Bonne journée Maître.
+		</end>
+		
+		<fx v="lvlup3"/>
+	</m>
+	
+</missions>

@@ -1,0 +1,147 @@
+<quests>
+
+<q from="poum" id="pouma" name="Livraison poids lourd" cond="grade(,4)">
+<begin>J'ai plusieurs livraisons à effectuer, si tu as envie de te balader c'est le moment. </begin>
+<talk did="poumaa" />
+<collect o="CountBlock(1):100" zone="agoraa" title="Un mur s'est écroulé sur le responsable du POUM ! Vite ! Il faut détruire 100 blocs de gravats à la Grande place pour le sauver !">
+		<playMod replace="1" artft="Elts(2,null):1000;Elts(2,CountBlock(3)):1300;Elts(2,CountBlock(4)):900;Dynamit(0):45;Dynamit(1):30;Alchimoth:10" />
+</collect>
+<talk did="poumab" title="Ranimer le responsable du POUM" />
+<use o="Pa:10" zone="agoraa" title="Faire boire 10 potions de vigueur au responsable du POUM pour qu'il retrouve ses forces." text="Gloub... Ah ! Ca va tout de suite mieux ! Merci beaucoup ! " action="Donner les 10 potions." />
+<end>Bon, alors je disais qu'il y avait 30 caisses à livrer et... Eh ! Mes guides alchimichelins ! Ils sont complètement écrabouillés ! </end>
+<xp v="8" />
+<gold v="75" />
+<reput s="gu" v="5" />
+</q>
+
+
+<q from="poum" id="poumb" name="N'oubliez pas le guide" cond="quest(pouma)">
+<begin>Pour la prochaine édition du guide Alchimichelin, on a besoin de vérifier les chaînes alchimiques de quelques lieux. Des erreurs seraient impardonnables ! Si tu t'en occupes, le POUM te le rendra au centuple.</begin>
+<chain index="11" zone="jzzig" title="Révéler les 12 éléments de la chaîne alchimique à la Ziggourat d'or." step="1" />
+<chain index="11" zone="gmkrom" title="Révéler les 12 éléments de la chaîne alchimique au Kromlech du Penkrack." step="1" />
+<chain index="11" zone="aparmy" title="Révéler les 12 éléments de la chaîne alchimique sur la plaine de l'armée." step="1" />
+<chain index="11" zone="skguic" title="Révéler les 12 éléments au guichet de la bibliothèque d'Al et Xandra." />
+<end>Nickel, avec ça la nouvelle édition du guide est presque prête ! </end>
+<xp v="14" />
+<gold v="30" />
+<randomrecipe v="300:240" />
+<reput s="gu" v="10" />
+</q>
+
+
+<q from="poum" id="poumc" name="On est pas des chochottes" cond="!sch(jz)+quest(poumb)" hideCond="!sch(jz)" >
+<begin>Dans notre grand combat pour plus de respect mutuel, il y a un truc qui marche très bien : impressionner l'adversaire. Si tu peux réussir un beau score en plein milieu du Boyau central, les élèves de Jeezara auront plus de mal à considérer les moralistes comme des chochottes.</begin>
+<score ratio="1.4" zone="jzboy" title="Se rendre au Boyau central pour montrer que les moralistes c'est pas des chochottes en battant le score demandé : " />
+<end>Excellent travail, mais bizarrement je n'ai eu aucun écho de ton exploit. C'est étrange.</end>
+<xp v="9" />
+<gold v="60" />
+<reput s="jz" v="1" />
+</q>
+
+
+<q from="poum" id="poumd" name="... ni des petits rigolos" cond="!sch(jz)+quest(poumc)" hideCond="!sch(jz)" >
+<begin>Pas de chance ! Pendant que tu impressionnais tout le monde au Boyau central, tout Jeezara était à la cantine... Il faut tout recommencer ! Rends-toi à la salle du Sakapata, là-bas il y a toujours du monde.</begin>
+<score ratio="1.6" zone="jzsaka" title="Se rendre au Sakapata pour montrer que les moralistes c'est vraiment pas des chochottes en battant le score demandé : " />
+<end>Splendide ! J'ai vu leurs têtes, ils en étaient comme deux ronds de flanc ! </end>
+<xp v="10" />
+<gold v="25" />
+<reput s="jz" v="5" />
+<reput s="gu" v="10" />
+</q>
+
+
+<q from="poum" id="poume" name="Les moralistes sont mes amis" cond="sch(jz)+quest(poumb)" hideCond="sch(jz)" >
+<begin>Les moralistes, il faut les aimer aussi ! Je te propose d'améliorer ton karma de jeezariste par une action amicale et désintéressée envers les moralistes ! Ce serait une excellente POUM attitude.</begin>
+<use o="Elt(12):8" zone="apfbg" action="Donner les éléments" text="Hein ? Tu me donnes ça ? C'est le monde à l'envers ! " title="Donner les éléments suivants au Faubourg Audepint, en gage d'amitié avec les moralistes." />
+<use o="Elt(16):8" zone="gmoree" action="Donner les éléments" text="C'est pour moi...? Mmmmh, il y a un charcleur planqué dedans ou quoi ? " title="Donner les éléments suivants à l'orée du bois, en gage d'amitié avec les moralistes."  />
+<use o="Elt(13):4;Elt(17):4" zone="skmedi" action="Donner les éléments" text="Regardez, un gentil jeezariste ! C'est rare, on peut prendre une photo souvenir ? Un autographe ? " title="Donner les éléments suivants à la Médina Shaka Shaka, en gage d'amitié avec les moralistes." />
+<end>Alors, ces marques d'amitiés et de gratitude ? Ca fait quelque chose, hein ? </end>
+<xp v="10" />
+<gold v="50" />
+<reput s="jz" v="-2" />
+<reput s="gm" v="4" />
+<reput s="ap" v="4" />
+<reput s="sk" v="4" />
+</q>
+
+
+<q from="poum" id="poumf" name="Des lots pour le bingo" cond="quest(poumd)|quest(poume)">
+<begin>J'ai besoin de quelqu'un pour démarcher les commerçants du royaume. Tous les mois, on va les harceler pour récupérer des lots pour notre super bingo. Tu peux commencer par le Comté de Penkrack </begin>
+<talk did="poumfa" title="Se rendre à la boutique du bois pour demander un lot." step="1" />
+<cauldron r="qfeub" qty="3" add="1" drop="1" collect="1" title="Faire 3 fois la recette Ferreroxx Petula." />
+<talk did="poumfb" title="Apporter les Pyropâtes créées à l'orée du bois." step="1" />
+<talk did="poumfc" title="Aller voir la boutique de l'école Gémini pour demander un lot." step="1" />
+<talk did="poumfd" title="Obtenir le rang 'On se débrouille' en transmutation élémentaire pour avoir un lot." />
+<end>Deux pour le Penkrack. Pas mal, tous les membres n'en ramènent pas autant.</end>
+<xp v="12" />
+<gold v="40" />
+<item v="PearGrain(0):1" />
+<reput s="gu" v="4" />
+</q>
+
+<q from="poum" id="poumg" name="Des lots made in Yoruba" cond="quest(poumf)">
+<begin>Les boutiques de la province de Yoruba te tendent les bras. Je sens d'ici les bons lots très intéressants ! </begin>
+<talk did="poumga" title="Se rendre à la boutique de souvenirs de la Ziggourat d'or pour demander un lot." step="1" />
+<chain index="10" zone="aparmy" title="Atteindre le 11e élément sur la plaine de l'armée à Kringdam." />
+<chain index="10" zone="aphall" title="Atteindre le 11e élément au Grand Hall du manoir  Audepint." />
+<use zone="jzzig" action="Récupérer le lot" text="Ahah ! je savais bien que c'était des éléments métalliques standards ! je vais pouvoir lui rabattre son caquet ! Ah oui au fait, voilà ton lot." qgive="QuestObj(michelin)" title="Retourner à la ziggourat pour confirmer les tests alchimiques." />
+<talk did="poumgb" title="Aller voir un responsable Jeezara pour demander un lot." step="1" />
+<score ratio="2.1" zone="jzboy" title="Réussir un super score en ayant droit à 2 RazKrölls dans la partie." >
+	<playMod fuo="RazKroll;RazKroll"  />
+</score>
+<use zone="jzboy" action="Récupérer le lot" text="Mmmmh. Intéressant... Intéressant. Surprenant, même. Bon, je file au bingo. Ton lot est sur la table." qgive="QuestObj(lot)" title="Demander le lot au mentor jeezariste." />
+<end>Encore deux lots ! Eh mais... c'est un guide alchimichelin ça, on en a déjà plein ! Qui est le commerçant qui t'a donné un lot  aussi nul ? ! Et l'autre, c'est quoi ? Aaaah, mais c'est dégueulasse ! C'est quoi ce truc ? ! </end>
+<xp v="11" />
+<gold v="25" />
+<item v="RazKroll:1" />
+<reput s="gu" v="4" />
+</q>
+
+<q from="poum" id="poumh" name="Des lots de Sharrukin ou rien" cond="quest(poumf)">
+<begin>Récupérer des lots à Sharukin, ça va être chaud. Ahah ! Tu as compris ?... Sharrukin ? Chaud ?... Non ? C'est nul ? </begin>
+<talk did="poumha" title="Se rendre à la superette de la Médina Shaka Shaka pour demander un lot." step="1" />
+<create o="Elt(21):8" zone="gmkrom" title="Créer 8 Géoles au Kromlech du Penkrack. Chaque élément présent à la fin d'une partie sera collecté. " />
+<use zone="skmedi" action="Donner les géoles" qo="Elt(21):8" text="Merci, je vais pouvoir faire un super terreau ce week-end. C'est bien pratique les obsédés de la serviabilité comme toi." qgive="QuestObj(lot)" title="Apporter les Géoles à la Supérette de la Médina pour récupérer un lot." />
+<talk did="poumhb" title="Aller voir la boutique communale de l'école Shari" step="1" />
+<use action="Oh, un lot ! " zone="aparmy" hidezone="1" text="Il y a lot par terre. Avec un peu de sable collé dessus, on dirait que ça  vient de Sharrukin. " qgive="QuestObj(lot)" title="Trouver le lot de Shang-Kah quelque part à Kringdam." />
+<end>Tu as mis le temps ! Je commençais à m'inquiéter. Et puis c'est quoi ce teint tout bleu et frigorifié ? Tu arrives à avoir froid à Sharrukin, toi ? </end>
+<xp v="10" />
+<gold v="40" />
+<item v="Dynamit(2):1" />
+<reput s="gu" v="4" />
+</q>
+
+
+<q from="poum" id="poumi" name="Kringdam, le POUM compte sur toi" cond="quest(poumf)">
+<begin>Ah, Kringdam. Si tu arrives à mettre la main sur une ou deux pépites d'or, ce serait la classe pour notre bingo.</begin>
+<talk did="poumia" title="Se rendre à la Pépite dorée à Vostok pour demander un lot." step="1" />
+<use o="Elt(6):60" zone="apvos" action="Donner les Cranos " text="Merci, je vais les mettre tout de suite dans la vitrine ! Tiens, voilà ton super lot." qgive="QuestObj(lot)" title="Apporter 60 Cranos à la Pépite dorée pour avoir un super lot." />
+<talk did="poumib" title="Se rendre à boutique du manoir pour demander un lot." step="1" />
+<collect o="CountBlock(1):130" zone="apfbg" title="Nettoyer le Faubourg Audepint de 130 blocs de pyrite pour obtenir un lot.">
+		<playMod replace="1" artft="Elts(2,null):1000;Elts(2,CountBlock(3)):1300;Elts(2,CountBlock(4)):900;Dynamit(0):45;Dynamit(1):30;Alchimoth:10" />
+</collect>
+<use zone="apfbg" action="Récupérer le lot" text="Voilà ton lot. Et si j'étais toi, j'éviterais de revenir réclamer le mois prochain. C'est plus prudent." title="Récupérer le lot auprès du major Domou, au Faubourg" qgive="QuestObj(lot)" /> 
+<end>Tu reviens de Kringdam ! Et vivant en plus ! C'est proprement incroyable.</end>
+<xp v="10" />
+<gold v="40" />
+<item v="Elt(26):1" />
+<reput s="gu" v="4" />
+</q>
+
+
+<q from="poum" id="poumj" name="Les plus beaux lots de la capitale" cond="quest(poumg)+quest(poumh)+quest(poumi)">
+<begin>Le bingo se rapproche ! Plus qu' à taper quelques commerçants de la capitale et on sera prêt.</begin>
+<talk did="poumja" title="Aller demander un lot à la Potion Joyeuse." step="1" />
+<create o="Elt(11):1" zone="agoraa" title="Créer 1 Pépite d'or devant le vendeur de la Potion Joyeuse." />
+<use qo="Elt(11):1" zone="agoraa" action="Récupérer le lot" text="Oua, très impressionnant. Tiens, tu peux garder la pépite, si tu veux. Et voilà ton lot." qgive="QuestObj(lot)" title="Récupérer le lot de la Potion joyeuse." />
+<talk did="poumjb" title="Aller voir le gardien du chaudron pour demander un lot" step="1" />
+<talk did="poumjc" title="Ramener un pin's collector Chouettex au gardien du chaudron pour récupérer le dernier lot." />
+<end>Les 2 derniers lots ! C'est bon, on est prêt. Tu sais, c'est la première fois que je vois un membre aussi assidu. Le POUM peut être fier de toi ! </end>
+<xp v="14" />
+<gold v="90" />
+<randomrecipe v="160:40" />
+<item v="Elt(11):1" />
+<reput s="gu" v="8" />
+</q>
+
+</quests>

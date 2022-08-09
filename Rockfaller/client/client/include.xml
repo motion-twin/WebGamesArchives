@@ -1,0 +1,47 @@
+<extension>
+	<assets path="assetsWeb" rename="" if="standalone" exclude="*.eot|*.svg|*.woff" />
+
+
+	<section unless="standalone">
+		<assets path="assets" rename="" exclude="*.eot|*.svg|*.woff|worlds" />
+		<assets path="assets/worlds" rename="worlds" include="*.meta.json"/>
+
+		<assets path="assets/worlds" rename="worlds" include="*.pvrtc1.pvr.z" if="ios"/>
+		<assets path="assets/worlds" rename="worlds" include="*.etc1.pvr.z" if="android"/>
+		<assets path="assets/worlds" rename="worlds" include="*.8888.pvr.z" unless="mobile"/>
+	</section>
+	
+	<assets path="sfx_low" include="*.mp3" rename="" unless="cpp" />
+	<assets path="sfxOgg" include="*.ogg" rename="" if="cpp" />
+
+	<source path="." />
+	<source path="src" />
+	<source path=".." />
+	<source path="lang" />
+	<source path="../../src/com" />
+	<source path="../../data" />
+	
+	<source path="assetsWeb" if="standalone" />
+	<source path="assets" unless="standalone" />
+	
+	<haxelib name="castle" />
+	<haxelib name="openfl" />
+	<haxelib name="h3d" />
+	<!--<haxedef name="advanced-telemetry"/>-->
+	<haxedef name="NoTextureGC"/>
+	<haxedef name="sound"/>
+	<haxedef name="version2_1"/>
+	
+	<assets path="../../data" rename="data" exclude="goals.*"/>
+	
+	<assets path="assets/BenchNine-Regular.ttf"/>
+	<assets path="assets/Mouse_Deco.ttf"/>
+	
+	<haxeflag name="-resource data.cdb@data" />
+	<haxeflag name="-resource lang/client.fr.mo@fr" />
+	<haxeflag name="-resource lang/client.es.mo@es" />
+	<haxeflag name="-resource lang/client.en.mo@en" />
+	<haxeflag name="-resource lang/client.pt.mo@pt" />
+	<haxeflag name="-resource lang/client.it.mo@it" />
+	<haxeflag name="-resource lang/client.de.mo@de" />
+</extension>

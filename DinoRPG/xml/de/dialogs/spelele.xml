@@ -1,0 +1,96 @@
+﻿<d place="gorges" name="Höhöhlenforscher" gfx="spelele" cond="!fx(fspele)">
+
+	<phase id="begin" next="talk" fast="1">
+		Ein kürzlich stattgefundenes Erdbeben scheint einen Riss in der Bergwand verursacht zu haben. Ein eisiger Wind entweicht von dort und du bemerkst einen komischen Mann, der die Gegend inspiziert.
+	</phase>
+
+	<a id="talk">Mit ihm reden.</a>
+
+	<phase id="talk" next="gla:bye">
+		Puuuuuhh!! Hast du diesen Riss gesehen? Ein Spalt hat sich über einer riesigen Höhle aufgetan, in der es eiskalt ist! Pass auf! Wenn dein Dinoz da hineingeht, wird er komplett vereisen!
+	</phase>
+
+	<a id="gla">Klapper, klapper, klapper!</a>
+	<a id="bye">"Auf Wiedersehen" sagen.</a>
+
+	<phase id="gla" next="ok:bye">
+		Siehst Du! Ganz schön kalt da unten, was... Meinen thermodynamischen Forschungen zufolge absorbieren die heißen Magmaströme der Großen Dauerhitze die Wärme der supraleitenden Steine und erzeugen durch Konvektion eine Erkaltung des Untergrunds. Es handelt sich um einen echten, natürlichen Kühlschrank!
+	</phase>
+
+	<a id="ok">Das ist... beeindruckend</a>
+
+	<phase id="ok" next="ok2:bye">
+		Nicht wahr?! Ich bin ein großer Forscher, der Grotten und andere seltsame Untergründe untersucht. Das ist mein Beruf, ich bin Höhöhlenforscher! Ich habe mein Diplom in Höhöhlenforschung an der Universität in Dinoville gemacht. Mein Schwerpunkt war die Naturalgorithmie!
+	</phase>
+
+	<a id="ok2">Das ist... großartig.</a>
+
+	<phase id="ok2" next="ok3:bye">
+		Nicht wahr?! Ich bin bis hierher gelaufen, als ich von dem Erdbeben gehört habe, und deshalb bin ich der Erste gewesen, der diese Grotte entdeckt hat! Ich habe ihr bereits einen Namen gegeben: Die Grotte der Relativen Null! Wie findest Du den Namen?
+	</phase>
+
+	<a id="ok3">Der ist... wunderbar.</a>
+
+	<phase id="ok3" next="congel:bye">
+		Nicht wahr?! Gut, du bist mir symphatisch und deshalb werde ich dir einen TIPP geben! Wenn du deinen Dinoz in die Grotte der Relativen Null stellst, dann vereist er...
+	</phase>
+
+	<a id="congel">Vereisen?</a>
+
+	<phase id="congel" next="congel2:bye">
+		Ja! Ver-ei-sen! Aber die Temperatur ist so niedrig, dass er nicht sterben wird! Du wirst deinen Dinoz nicht mehr gebrauchen können, aber dafür wird er nicht mehr zur GESAMTMENGE deiner Dinoz gezählt, was dir erlauben wird, MEHR Dinoz halten zu können!  Allerdings musst du auf die Nebenwirkungen aufpassen...</phase>
+
+	<a id="congel2">Nebenwirkungen???</a>
+
+	<phase id="congel2" next="again:thanks">
+		Ja, sobald dein Dinoz vereist ist, wird er nicht mehr zur GESAMTMENGE deiner Dinoz gezählt. Du kannst ihn aber erst wieder auftauen, sobald du wieder unterhalb der OBERGRENZE bist. Das heißt, dass du einen anderen Dinoz vereisen musst, um ihn zu ersetzen. Und dann wird dein Dinoz noch einen weiteren ganzen Tag zum Auftauen brauchen...Du musst also etwas Geduld haben...Hast du das verstanden?	</phase>
+
+	<a id="again" target="congel">Nein, rein gar nichts!</a>
+	<a id="thanks">Ja, vielen Dank!</a>
+
+	<phase id="thanks" effect="fspele">
+		Gern geschehen! Du kannst dich jederzeit an mich wenden, wenn du einmal meine Hilfe für die Erkundung eines anderen geheimnisvollen Untergrunds brauchst!
+	</phase>
+
+	<phase id="bye">
+		Tschao! Und pass ja auf, nicht zu nah an diesen Spalt zu kommen!
+	</phase>
+
+</d>
+
+<d place="gorges" name="Höhöhlenforscher" gfx="spelele" cond="scenario(magnet,8)+fx(fspele)+!fx(ice)">
+
+	<phase id="begin" next="talk">
+		Ah, na sieh mal einer an! Hallo! Es ist kühl hier draußen, findest du nicht?
+	</phase>
+
+	<a id="talk">Klapperklapperklapper...</a>
+
+	<phase id="talk" next="next">
+		Ich habe einige Zeit damit verbracht die Grotte der Relativen Null zu erforschen... Wusstest du, dass das Eis, aus dem sie besteht, ganz außergewöhnlich ist??? Es besteht aus 3% Solidem Atemstoff. Das ist ein extrem seltenes Element, das eine stabile Temperatur beibehält...
+	</phase>
+
+	<a id="next">Atemstoff?</a>
+
+	<phase id="next" next="prof">
+		Es verhindert, dass das Eis schmilzt und dies sogar im Sommer, wenn die Magmaströme den Erkaltungszyklus der Grotte verlangsamen. Selbstverständlich widerspricht der Solide Atemstoff damit allen bekannten Gesetzen der Thermodynamik. Nichtsdestotrotz existiert er weiter... Der Stoff ist für die Universitätsprofessoren übrigens eine richtige Kopfnuss.
+	</phase>
+
+	<a id="prof">In der Tat...</a>
+
+	<phase id="prof" next="theo">
+		Ja! Einige, unter ihnen der berühmte Professor Eugen, haben sogar eine Theorie aufgestellt, die die Existenz des Soliden Atemstoffs erklären kann. Sie ist etwas kompliziert und verlangt die Annahme, dass das Universum aus 4,24 Dimensionen besteht: Drei Dimensionen für die normale Welt und 1,24 Dimensionen, die nur aufgrund des Soliden Atemstoff existieren.
+	</phase>
+
+	<a id="theo">Au weh...</a>
+
+	<phase id="theo" next="ok">
+		Ja, aber diese Theorie ermöglicht ein paar sehr interessante Anwendungen und Berechnungen. Es lässt sich damit zum Beispiel die Siedetemperatur eines Archelöwen bestimmen. Ihre Hauptschwäche besteht darin, dass in ihr auch eine Dunkle Welt vorkommt, die parallel zum Dinoland existiert. Die Forschergemeinschaft geht davon aus, dass Professor Eugen sich irrt, denn einen solchen Ort kann es nicht geben... Jedenfalls nicht nach der Theorie von Professor Zweistein.</phase>
+
+	<a id="ok">...in der Tat....</a>
+
+	<phase id="ok" effect="ice">
+		Nun gut, all dies, um dir zu sagen, dass dieses Eis genial ist. Hier, nimm ein kleines Stück und heb es gut auf. Du kannst dich damit erfrischen, wenn dir heiß ist!
+	</phase>
+
+</d>

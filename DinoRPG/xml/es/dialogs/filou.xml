@@ -1,0 +1,41 @@
+﻿<d place="marche" name="Hombre Raro" gfx="filou" cond="active(market)|!scenario(nimba2,2)">
+
+	<phase id="begin" next="listen:bye">
+		¡¡Pssss.... pssss!!
+	</phase>
+
+	<a id="listen">Acercarse</a>
+	<a id="bye">Irse</a>
+
+	<phase id="bye" fast="1">
+		Llevas razón, más vale no acercarse a este tipo de gente...
+	</phase>
+
+	<phase id="listen" next="yes:bye:convert:convert2">
+		Dime, dime, dime... ¿buscas bonos? ¿bonos del tesoro?
+	</phase>
+
+	<a id="yes">Sí, me podría interesar.</a>
+	<a id="convert" cond="uvar(elites,1+)+uvar(conver,1+)+active(abo)">Quisiera convertir mi oro en bonos.</a>
+	<a id="convert2" cond="!uvar(elites,1+)+active(abo)">Quisiera convertir mi oro en bonos.</a>
+
+	<phase id="yes" next="view:bye">
+		Je, je (genial, un cliente)... ¡tengo algunos! Mira, parecen verdaderos, ¿a que sí? Te los vendo por un
+		precio muy bueno. Con los impuestos incluidos por supuesto... tengo que alimentar a mis 7 hijos, ¿sabes?
+	</phase>
+	
+	<phase id="convert" next="view">
+		No hay problema, veo que tienes una autorización del Rey para este tipo de negocios.
+		Pero, ehhh, solo puedo intercambiar algunos bonos, sino, tu sabes, no tendré suficiente para todos...
+	</phase>
+	
+	<phase id="convert2">
+		Lo siento muchacho, pero estos bonos son para los Maestros con ciertos privilegios.... Porque, ...,  estoy muy solicitado últimamente...
+	</phase>
+
+	<a id="view">Mirar</a>
+
+	<phase id="view" url="/dino/::did::/act/filou">
+	</phase>
+
+</d>

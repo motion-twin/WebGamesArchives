@@ -1,0 +1,20 @@
+-cp src
+-cp ../../src/common
+-cp ../../src/as
+-cp ../../lang/fr/tpl
+-cp ../../../twinBase/base
+-cp ../../bin
+-swf bin/iso_dbg.swf
+-swf-header 800:600:30:000000
+-swf-lib obj\isoResources.swf
+--flash-strict
+-swf-version 10.1
+-main Main
+-lib format
+-D iso
+-D editor
+-D old_codec
+-cmd "obfu9 bin\iso_dbg.swf -o bin\iso_dbg.swf -fake"
+-resource xml/tiles.xml@tiles
+-resource xml/upgrades.xml@up_xml
+-D data_lite

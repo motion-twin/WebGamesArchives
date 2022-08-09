@@ -1,0 +1,28 @@
+﻿<!-- Gardien de la forêt -->
+
+<d place="garde" name="Gardien de la Forêt" gfx="arbre">
+
+	<phase id="begin" next="missions:shake" fast="1">
+		Un immense arbre vous fait face... De toute évidence, il est particulièrement agé et semble empreint d'une grande
+		sagesse. Lentement, très lentement, ses feuilles s'abaissent dans votre direction et bruissent doucement.
+	</phase>
+
+	<a id="missions" cond="fx(grdmis)">Consulter la liste des Missions</a>
+	<a id="shake" cond="!fx(grdmis)">Secouer un peu cet arbre</a>
+
+	<phase id="shake" next="item" fast="1">
+		Tandis que vous le secouez (si tant est qu'on puisse secouer un arbre si grand), vous percevez un étrange
+		et long grognement venant de l'intérieur même de l'écorce ! Quelque chose tombe brusquement du feuillage
+		sur votre tête : poc !
+	</phase>
+
+	<a id="item">Aie ! Qu'est-ce que c'est ?</a>
+
+	<phase id="item" next="missions" fast="1" effect="grdmis">
+		C'est une sorte de grosse noisette enveloppée dans un parchemin. Et à plus grande votre surprise, vous
+		constatez qu'il y a quelque chose d'écrit sur ce parchemin !
+	</phase>
+
+	<phase id="missions" missions="arbre"></phase>
+
+</d>

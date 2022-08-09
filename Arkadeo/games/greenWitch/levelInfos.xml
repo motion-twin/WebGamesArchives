@@ -1,0 +1,113 @@
+<assets>
+	<a c="4F8D10" collision="2,2" sourcePos="0,220" sourceSize="59,61" sourceOffset="-15,-10" frames="4"/> <!--Arbres-->
+	<a c="00deff" collision="0,0" sourcePos="0,332" sourceSize="26,37" sourceOffset="0,0" frames="4"/> <!--herbes lumineuses-->
+	<a c="ff8a00" collision="1,1" sourcePos="0,416" sourceSize="52,43" sourceOffset="-20,-6" frames="1"/> <!--pumkin-->
+	<a c="875333" collision="1,2" sourcePos="0,369" sourceSize="70,47" sourceOffset="-17,0" frames="1"/> <!--puit-->
+	<a c="ab5612" collision="1,1" sourcePos="0,459" sourceSize="52,39" sourceOffset="-17,-10" frames="1"/> <!--barel-->
+	<a c="69f73c" collision="0,0" sourcePos="0,498" sourceSize="27,59" sourceOffset="-3,-44" frames="1"/> <!--torche verte-->
+	<a c="ffe400" collision="0,0" sourcePos="0,557" sourceSize="27,59" sourceOffset="-3,-44" frames="1"/> <!--torche orange-->
+	<a c="ff7200" collision="0,0" sourcePos="0,617" sourceSize="44,44" sourceOffset="-7,-10" frames="4"/> <!--bougie petite-->
+	<a c="055e64" collision="0,0" sourcePos="0,717" sourceSize="30,30" sourceOffset="0,-6" frames="5"/> <!--greencaillasse-->
+	<a c="618a8f" collision="0,0" sourcePos="0,747" sourceSize="32,32" sourceOffset="0,0" frames="3"/> <!--dallesgreen-->
+	<a c="ff9dfc" collision="0,0" sourcePos="0,779" sourceSize="32,32" sourceOffset="0,0" frames="5"/> <!--champi glow-->
+	<a c="0DC2FF" collision="0,0" sourcePos="0,927" sourceSize="42,46" sourceOffset="0,0" frames="1"/> <!--Tapis-->
+	<a c="B97639" collision="2,-3" sourcePos="0,871" sourceSize="43,56" sourceOffset="0,-36" sourceRandom="2" frames="1"/> <!--bibli-->
+	<a c="8D6F65" collision="3,2" sourcePos="0,973" sourceSize="50,35" sourceOffset="6,6" frames="1" allowSight="1"/> <!--table-->
+	<a c="C422D0" collision="2,1" sourcePos="0,1008" sourceSize="50,61" sourceOffset="0,-35" frames="1"/> <!--throne-->
+	<a c="B5A33E" collision="2,1" sourcePos="0,1069" sourceSize="37,50" sourceOffset="5,-35" frames="1"/> <!--ironmaiden-->
+	
+	<a c="b5153a" prop="shrine" weight="12"/> <!--enchantdesk movable-->
+	<a c="8d3b3b" prop="barrel" weight="2"/> <!-- prop: barrel -->
+</assets>
+
+<!--
+RENDERS : crypt1/2, orange1/2, forest1/2/3, bordeaux
+ARMES : bas(ic), lig(htning), gre(nade), laz(er)
+TOURELLES : gat(ling), slo(w), bur(ning), shi(eld)
+MOBS : bat, big, bom(ber), can(non), gho(st), hor(de), kam(ikaze), key, rab(bit),rab(bit)
+-->
+
+<levels>
+	<l id="1" size="32,32">
+		<floor render="forest1" heal="10"/>
+		<floor render="forest1" mobs="hor(30),rab(15),bat(10)" dispenser="bas(3), gat(5), laz(2), gre(5"/>
+		
+	</l>
+	
+	<l id="2" size="32,32">
+		<floor render="forest1" mobs="hor(20),bat(40)" dispenser="bas(3), gat(5), laz(2)" />
+		<floor render="forest2 " mobs="hor(30),bat(40),big(1)" dispenser="gre(5), gat(2), lig(5)"/>
+	</l>
+	<l id="3" size="32,32">
+		<floor render="bordeaux" mobs="hor(20), big(2)" dispenser="lig(8), gat(5), gre(5)" />
+		<floor render="bordeaux " mobs="hor(30), big(4)" dispenser=" slo(5), lig(5),laz(5)" />
+	</l>
+	<l id="4" size="32,32">
+		<floor render="forest1" mobs="hor(10), big(2)" dispenser="slo(3), lig(6)" />
+		<floor render="bordeaux" mobs="hor(12), big(3), bat(12), key(7)" dispenser=" shi(5), lig(3)" />
+	</l>
+	<l id="5" size="32,32">
+		<floor render="orange1" mobs="bat(30),kam(6), key(7)" dispenser="gre(5), slo(5), shi(5)" />
+		<floor render="crypt1" mobs="gho(8), bat(12)" dispenser="shi(5), lig(5) slo(5)" />
+	</l>
+	<l id="6" size="32,32">
+		<floor render="orange2" mobs="bom(5), hor(5) " dispenser="lig(3), slo(5), shi(4), gat(4)" />
+		<floor render="orange2" mobs="bom(6), bat(12), hor(4)" dispenser=" shi(5), gre(5), lig(5), slo(5)" />
+	</l>
+	<l id="7" size="32,32">
+		<floor render="crypt1" mobs="can(5) " dispenser="shi(3),gre(3), lig(5)" />
+		<floor render="crypt1" mobs="can(8), bat(22)  hor(10)" dispenser=" shi(5), lig(5), slo(5)" />
+	</l>
+	<l id="8" size="32,32">
+		<floor render="crypt2" mobs="can(3), bat(12), bom(3)" dispenser="shi(5), lig(5)" />
+		<floor render="bordeaux" mobs="can(4), bat(12), bom(5), big(1)" dispenser=" shi(5), lig(5), slo(5), gre(4)" />
+	</l>
+	<l id="9" size="32,32">
+		<floor render="forest1" mobs="hor(35), bat(12), bom(3), big(3), rab(15)" dispenser=" bur(5), shi(3),gre(3), lig(5)" />
+		<floor render="forest1" mobs=" bat(12), bom(7), big(3),hor(15)" dispenser=" shi(5), lig(5), slo(5), gre(3)" />
+	</l>
+	<l id="10" size="32,32">
+		<floor render="bordeaux" mobs="gho(5), bom(4), big(2) " dispenser="shi(3),laz(2), lig(5), slo(4)" />
+		<floor render="bordeaux" mobs=" bat(20), gho(7), bom(5), big(3)" dispenser="shi(3), lig(4), laz(2), bur(6), gre(2)" />
+	</l>
+	<l id="11" size="32,32">
+		<floor render="bordeaux" mobs="gho(4), can(3), kam(2) " dispenser="shi(3),gre(3), lig(5), bur(5)" />
+		<floor render="crypt2" mobs=" gho(5), can(8), kam(5)" dispenser=" shi(5), lig(5), slo(5), laz(3), bur(5)" />
+	</l>
+	<l id="12" size="32,32">
+		<floor render="orange2" mobs="gho(10), big(8) " dispenser="shi(3),laz(3), lig(5), bur(5)" />
+		<floor render="orange2" mobs=" gho(5), can(4), kam(5), big(8)" dispenser=" shi(4), lig(5), slo(3),gat(3), gre(3), bur(3)" />
+	</l>
+	<l id="13" size="64,64">
+		<floor render="bordeaux" mobs=" big(10), bat(30), kam(10),bom(5),can(6), hor(25)" dispenser=" shi(5), lig(7), slo(10), gre(7), bur(5), laz(5),gat(5)" />
+	</l>
+	<l id="14" size="20,20">
+		<floor render="crypt1" heal="1" mobs="hor(60)" dispenser="gre(3), bur(5), laz(3)" />
+		<floor render="crypt2"  heal="1" mobs="hor(150),big(3)" dispenser="gre(3), bur(5),laz(3)" />
+		<floor render="crypt2" heal="1" mobs="hor(175), bom(1), big(2)" dispenser="shi(3),gre(3), bur(6), laz(3)" />
+	</l>
+	<l id="15" size="32,32">
+		<floor render="house" mobs="hor(10), can(5), kam(3), big(3)" dispenser="gre(3), bur(3), lig(3), laz(2)" />
+		<floor render="house" mobs="hor(30), gho(4), bom(2), bat(25), big(3)" dispenser="laz(2), gre(2), bur(3)" />
+	</l>
+	<l id="16" size="32,32">
+		<floor render="orange1" mobs="hor(20), can(5), kam(3), big(3), key(8)" dispenser="gre(3), bur(5), lig(5), laz(5),shi(1)" />
+		<floor render="orange2" mobs="hor(30), gho(2), bom(2), bat(25), big(4),key(8)" dispenser="gre(3), bur(5), shi(1),lig(1)" />
+	</l>
+	<l id="17" size="32,32">
+		<floor render="forest4" mobs="hor(30), can(3), kam(3), big(5),key(8)" dispenser="gre(2), laz(2), bur(4), lig(4), slo(4),shi(1)" />
+		<floor render="cryptMetal" mobs="hor(30), gho(3), bom(2), bat(25), big(7),key(8)" dispenser="gre(3), laz(3), bur(5), shi(3), slo(1), lig(1)" />
+	</l>
+	<l id="18" size="20,20">
+		<floor render="cryptMetal" heal="2"mobs="gho(7)" dispenser="shi(1), bur(4), lig(4), laz(2)" />
+		<floor render="crypt2" heal="1" mobs="gho(9)" dispenser="shi(3), bur(5), lig(5), gat(3)" />
+		<floor render="cryptMetal" heal="3" mobs="gho(10),bom(1)" dispenser="shi(3), bur(4), lig(4), gat(3)" />
+	</l>
+	<l id="19" size="32,32">
+		<floor render="house" mobs="gho(5),big(25)" dispenser="shi(3), slo(5), lig(5), laz(2)" />
+		<floor render="cryptMetal" mobs="gho(5), big(25), key(5), kam(5)" dispenser="shi(3), bur(5), lig(5),slo(5), gat(3)" />
+	</l>
+	<l id="20" size="64,64">
+		<floor render="cryptMetal" mobs="gho(10),big(20),key(12),kam(8), bat(45), hor(50), can(10), bom(15), hor(100)" dispenser="shi(8), bur(5), laz(5), bas(5), gat(5), lig(5), gre(5), slo(5)" />
+	</l>
+</levels>

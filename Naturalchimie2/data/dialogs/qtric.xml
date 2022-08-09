@@ -1,0 +1,97 @@
+<d place="apvos" name="Eliot23" gfx="apeliot" cond="grade(,1)+quest(trib)+!quest(tric)">
+
+<phase id="begin" frame="normal2" next="quest:info">
+Hum. Salut ! 
+</phase>
+
+<a id="quest" cond="fx(diatri)">Qu'est-ce que je peux faire pour t'aider ? </a>
+<a id="info">Euh...Salut. | Qu'est-ce que tu veux ? </a>
+<a id="end">Il faut que j'y aille.</a>
+
+<phase id="quest" frame="happy2" quest="trifbg">
+Tout . Tout ce qu'il faudra pour que je devienne trimilliardaire.
+</phase>
+
+<phase id="info" frame="normal2" next="calm:tri:eliot">
+Je parie que je suis un meilleur alchimiste que toi.  je suis Eliot23 le trimilliardaire, alors prends garde.
+</phase>
+
+<a id="calm">Oula... C'est quoi ces manières ? </a>
+<a id="tri">Le trimilliardaire ? comment ça le trimilliardaire ? </a>
+<a id="eliot">C'est un peu bizarre comme nom, Eliot23. </a>
+
+<phase id="calm" frame="normal2" next="tri:eliot">
+Quelles manières ? J'ai les manières d'un alchimiste super fort, c'est tout. Je suis le trimilliardaire, d'abord.
+</phase>
+
+<phase id="tri" frame="happy2" next="tric">
+Le trimilliardaire, voyons ! |Je fais plus de 3 milliards à mes alchimies, je suis le super trimilliardaire. | L'alchimiste le plus fort du royaume !
+</phase>
+
+<a id="tric">Mouais.... t'as pas trop l'air d'un grand alchimiste, quand même. </a>
+
+<phase id="tric" frame="angry2" next="hum">
+Ah ! Disparais, puisque c'est ça ! Par les pouvoirs du trimilliardaire :  | | *  [SHAZAM * ! ! ! ]
+</phase>
+
+<a id="hum">Hum.... | Je me sens pas trop disparu, là.</a>
+
+<phase id="hum" frame="angry2" next="real">
+Encore raté... Mais j'y arriverai... |  Enfin. Pour l'instant j'ai besoin de toi !
+</phase>
+
+<phase id="real" frame="normal2" next="prq:planb:planbb">
+En fait je suis pas encore trimilliardaire. Je m'entraîne à fond mais j'y arrive pas. | Alors j'ai pensé à un plan B ! 
+</phase>
+
+
+<a id="prq">Mais pourquoi trimilliardaire ? C'est sûrement impossible de faire plus de 3 milliards à une alchimie.</a>
+<a id="planb" cond="!(grade(,2)+quest(balag))">Un plan B ? Un plan B style {"J'ai justement besoin de ton aide"} ? </a>
+<a id="planbb" cond="grade(,2)+quest(balag)">Un plan B ? Un plan B style {"J'ai justement besoin de ton aide"} ? </a>
+
+<phase id="prq" frame="happy2" next="real">
+J'y arriverai, c'est tout. Trimilliardaire ça sonne super bien, en plus. Si tu m'aides je te laisserai entrer au pathé... au panhé... pantéh | euh... | être super connu avec moi.
+</phase>
+
+<phase id="planb" frame="happy2" >
+C'est exactement ça.  Mais il me faut un super alchimiste pour m'aider ! Et euh... toi tu n'as pas l'air doué, encore.
+</phase>
+
+<phase id="planbb" frame="normal2" next="oui:non">
+Exactement. | Puisque tu as l'air si malin il faut que tu m'aides,  je suis sûr que je peux devenir trimilliardaire ! 
+</phase>
+
+
+<a id="oui">Ok, je t'aide. Ca marche.</a>
+<a id="non">Non, pas pour l'instant.</a>
+
+
+<phase id="oui" frame="happy2" effect="diatri">
+Parfait, je vais enfin être trimilliardaire.
+</phase>
+
+<phase id="non" frame="angry2" next="info">
+Je m'en doutais... Ca se voit que tu n'es pas vraiment un super alchimiste...
+</phase>
+
+
+<!--#######" -->
+<phase id="eliot" frame="happy2" next="couta:coutb">
+C'est mes parents qui m'ont appelé comme ça. 23, c'est le numéro du canton d'où je viens. | | 
+[Eliot23 !] *  Le meilleur Eliot du canton 23 ! 
+</phase>
+
+<a id="couta" cond="numname()">Mais c'est une coutume locale de rajouter ce numéro ?</a>
+<a id="coutb" cond="!numname()">Mais c'est une coutume locale de rajouter ce numéro ?</a>
+
+<phase id="couta" frame="normal2" next="info">
+Tu t'appelles comment ? | {::user::} ? 
+Bon alors, pourquoi ça te surprend ? 
+</phase>
+
+<phase id="coutb" frame="normal2" next="info">
+C'est la mode c'est tout. Tu as déjà dû en croiser des alchimistes avec des noms comme ça. | Moi je suis Eliot23, le super trimilliardaire à la mode ! 
+</phase>
+
+
+</d>

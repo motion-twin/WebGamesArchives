@@ -1,0 +1,19 @@
+<quests>
+
+<q from="biactol" id="biaca" name="Coup de main express" repeat="1">
+<begin>Si tu me donnes un coup de main pour boucler la prochaine édition du journal, je devrais pouvoir te faire profiter d'une promo. Ca t'intéresse ? </begin>
+<talk did="biacaa" />
+<collect o="QuestObj(ink):10" zone="guexpr" title="Récupérer 10 encriers au Guildian Express pendant vos alchimies . Quand un encrier apparaît, une transmutation à côté suffit pour le récupérer.">
+	<playMod artft="QuestObj(ink):260" />
+</collect>
+<use qo="QuestObj(ink):10" zone="guexpr" action="Donner les 10 encriers" text="Merci. Je m'occuperai d'amener ça aux rotatives tout à l'heure." title="Donner les 10 encriers à Emile, au Guildian Express" />
+<talk did="biacab" step="1" />
+<cauldron r="qloose" qty="1" collect="1" drop="1" add="1" title="Faire la recette Mega Mouise à la salle des chaudrons en suivant la recette ajoutée au grimoire." />
+<end>Bon boulot ! Je m'occupe d'apporter ce compte-rendu à nos journalistes pour qu'ils le recop... euh, débutent leur enquête d'investigation. Voilà pour toi : trois potions de vigueur généreusement ponctionnées sur le budget du Guildian Express ! </end>
+<xp v="2" />
+<gold v="20" />
+<item v="Pa:3" />
+<reput s="gu" v="2" />
+</q>
+
+</quests>

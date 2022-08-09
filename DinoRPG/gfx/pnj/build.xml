@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"  ?>
+
+	
+<project name="Batch SWF" default="compile" basedir=".">
+	<property name="flash" value="C:/Program Files (x86)/Adobe/Adobe Flash CS5/Flash.exe" />
+	
+	<!-- we start from this model and do a build...jsfl-->
+	<property name="model_compile_jsfl_path" value="${basedir}\jsfl\model_simpleBatchCompile.jsfl" />
+	<property name="model_profile_jsfl_path" value="${basedir}\jsfl\model_updateProfiles.jsfl" />
+	
+	<property name="paths" value="C:/Projects/dinorpg/gfx/pnj/"/>
+	<property name="deployFolder" value="C:/Projects/dinorpg/stable/img/pnj/" />
+	<property name="exportPath" value="../../stable/img/pnj/" />
+	 <!-- param given to jsfl -->
+	<property name="forceBuild" value="false"/>
+	
+	<loadfile property="model_compile_jsfl" srcfile="${model_compile_jsfl_path}">
+	    <filterchain> 
+		<expandproperties/>
+	    </filterchain>
+	</loadfile>
+	
+	<property name="jsfl_compile_file" value="${basedir}\jsfl\build_simpleBatchCompile.jsfl" />
+	<echo file="${jsfl_compile_file}"></echo>
+	<echo file="${jsfl_compile_file}" append="true">${model_compile_jsfl}</echo>
+
+	<loadfile property="model_profile_jsfl" srcfile="${model_profile_jsfl_path}">
+	    <filterchain> 
+		<expandproperties/>
+	    </filterchain>
+	</loadfile>
+	
+	<property name="jsfl_profile_file" value="${basedir}\jsfl\build_updateProfiles.jsfl" />
+	<echo file="${jsfl_profile_file}"></echo>
+	<echo file="${jsfl_profile_file}" append="true">${model_profile_jsfl}</echo>
+	
+	<!-- This task launches the compileSWF.jsfl script to compile swf using the Flash IDE -->
+	<target name="compile" description="Compile the  PNJSWF with the Flash IDE">
+	    <echo>using model ='${model_compile_jsfl_path}'</echo>
+	    <echo>using jsfl command ='${jsfl_compile_file}'</echo>
+	    <echo>build.xml completed</echo>
+	    <exec executable="${flash}" failonerror="true">
+		<arg line="${jsfl_compile_file}" /> 
+	    </exec>
+	</target> 
+	
+	<!-- This task launches the compileSWF.jsfl script to compile Assets.swf using the Flash IDE -->
+	<target name="profile" description="profile the  PNJ FLA">
+	    <echo>using model ='${model_profile_jsfl_path}'</echo>
+	    <echo>using jsfl command ='${jsfl_profile_file}'</echo>
+	    <echo>build.xml completed</echo>
+	    <exec executable="${flash}" failonerror="true">
+		<arg line="${jsfl_profile_file}" /> 
+	    </exec>
+	</target> 
+
+</project>

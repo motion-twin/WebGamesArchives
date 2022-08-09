@@ -1,0 +1,893 @@
+<!--Quête du médaillon à 3 yeux :
+Condition d’accès : avoir fini caushemesh et avoir accès au château de Dinoville
+
+Pistache, le nouvel archidorogon de nimbao, nous parle d’un médaillon qui donnerait accès à une zone sur nimbao,
+où vivrait un vieil ermite dorogon qui connaîtrait le secret du déblocage de la 2ème limite des dinoz.
+Il faut reconstituer le médaillon en le cherchant partout dans Dinoland et ouvrir la porte du ciel à un endroit précis.
+Une fois arrivé sur la petite île volante, l’ermite propose de nouvelles missions qui permettront aux dinoz les ayant fini de passer au niveau 70.
+
+-->
+
+
+<d place="palais" gfx="pistache" name="Pistache el Archidorogón" background="6" cond="scenario(nimba2,51+)">
+	<phase id="begin" next="bored:wtf">
+		[¡Soy el Archidorogón!]
+		[¿Que puedo hacer hoy?...]
+		[Ah, mi piscina de chocolate, ¿por dónde empiezo?]
+	</phase>
+	<a id="bored" cond="scenario(caush,44+)+scenario(fmedal,0)+(active(fmedal)|admin())">¿Cómo va el nuevo Archidorogón?</a>
+	<phase id="bored" next="caush">
+		[Algo aburrido, Menthos no me deja tranquilo...]
+		[Pff, soy joven, ¡tengo apenas cuarenta y cuatro años! Necesito aventura, acción, ¡libertad!]
+	</phase>
+	<a id="caush">Te puedo hablar de Caushemesh...</a>
+	<phase id="caush" next="dos">
+		[Sé que has viajado mucho últimamente, desde lo alto de la isla celeste puedo ver todo lo que sucede en Dinoland.]
+		[¡Vi que te divertiste sin mí! En cambio yo... yo no puedo moverme de este trono... Snif...]
+	</phase>
+	<a id="dos">¡Bendita espalda!</a>
+	<phase id="dos" next="biblio">
+		[Este trono me está matando la espalda, me recomendaron ponerle un cojín de látex de la Jungla de Grumhel, pero no he podido conseguir uno.]
+		[¿Tienes alguna idea para hacerme olvidar este dolor?]
+	</phase>
+	<a id="biblio">Debe haber historias interesantes en a la biblioteca de Dinovilla.</a>
+	<phase id="biblio" scenario="fmedal:1">
+		[Perfecto, ve a buscarme un relato apasionante y vuelve lo antes posible...]
+		[¡Es la única manera de vivir aventuras sin moverme de aquí!]
+	</phase>
+	<a id="wtf" cond="scenario(fmedal,1)">
+		¡No debe ser muy agradable quedarse sentado todo el día!
+	</a>
+	<phase id="wtf">
+		[No lo es, te lo suplico, ¡vé a la biblioteca de Dinovilla!]
+	</phase>
+</d>
+
+<d place="univ" name="Profesor Eugenio" gfx="eugene" cond="scenario(fmedal,1)">
+	<inject id="prof:talk" next="legend" />
+	<a id="legend">¡Busco un libro con los cuentos y leyendas de Dinoland!</a>
+	<phase id="legend" next="book">
+		[Bah, los libros de ciencias abundan aquí, pero ese tipo de historias fantásticas... Mmmm... no me queda ninguno.]
+		[Pero de que existe, existe, muchacho. Tal vez lo encuentres en otro lugar, tú eres muy bueno para esas cosas.]
+	</phase>
+	<a id="book">¡Me extraña que no tengas ni una sola leyenda!</a>
+	<phase id="book" next="old">
+		[Eres muy perspicaz, Maestro de Dinos. Veamos... Te puedo dar "Me comió un Tiburón Rojo". Una secuencia de historias incompletas, pues todos se hicieron devorar. Demasiado dramático.]
+		[...]
+		[¡Espera, no te vayas! Tengo otro.
+		Mira, "Las Peregrinaciones de un Viejo Dorogón".]
+	</phase>
+	<a id="old">... ¡No parece muy divertida esa historia!</a>
+	<phase id="old" next="doro">
+		[¡Pues esta pertenece a la primera generación, algo rarísimo!]
+		[De lo poco que pude traducir, habla de un hecho magnífico. Habría que consultar con un experto en el idioma dorogón para saber de qué trata.]
+	</phase>
+	<a id="doro">¡Yo conozco a la persona indicada!</a>
+	<phase id="doro" scenario="fmedal:2)">
+		[Bueno, puedes llevarte prestado el libro, pero su pudieras devolverlo con la traducción, te lo agradecería muchísimo. Eso me permitiría justificar su ausencia ante el Consejo de Dinovilla.]
+		[Son bastante recelosos, mejor no buscarse problemas.]
+	</phase>
+</d>
+
+<d place="palais" gfx="sage_mentos" name="Sabio Menthos" cond="scenario(fmedal,2)">
+	<inject id="menthos__2:begin" next="biblio" />
+	<a id="biblio">¡Necesito tu ayuda y tus conocimientos!</a>
+	<phase id="biblio">
+		[Aquí no tengo el material para ayudarte, pero si vienes al laboratorio podría intentarlo.]
+	</phase>
+</d>
+
+<d place="observ" gfx="sage_mentos" name="Sabio Menthos" cond="scenario(fmedal,2)">
+	<inject id="menthos:begin" next="ques5"/>
+	<a id="ques5">¡Este libro está escrito en un dorogón muy antiguo!</a>
+	<phase id="ques5" next="alors">
+		[Muéstrame ese libro...]
+		[Brbrbrbrr.... Brrbrbrbrrr...]
+		[¡Vaya, parece que este libro ya estuvo antes en manos de Mandrágora!]
+	</phase>
+	<a id="alors">¿Es realmente interesante?</a>
+	<phase id="alors" next="ermite">
+		[Es la segunda parte de las memorias del Primer Sabio Dorogón, el honorable Rhubarbapapa.]
+		[Se dice que pasó su vida recorriendo el mundo entero repertoriando todas las formas de vida primitivas.]
+	</phase>
+	<a id="ermite">¡Es increíble!</a>
+	<phase id="ermite" next="livre">
+		[Lo es, ¿verdad?]
+		[Consiguió reunir una cantidad fenomenal de conocimiento, y como verás, yo sigo sus pasos.]
+		[Si estuviese aquí, ¿te imaginas todo lo que podríamos aprender?]
+	</phase>
+	<a id="livre">¿Y qué dice el libro?</a>
+	<phase id="livre" scenario="fmedal:3)">
+		[Veamos...]
+		[El primer tomo hablaba de su viaje y de su juventud, el segundo trata de sus fantásticos hallazgos.]
+		[Si me lo dejas unas horas, podría descifrar el texto y saber qué fue de él.]
+	</phase>
+</d>
+
+<d place="observ" gfx="sage_mentos" name="Sabio Menthos" cond="scenario(fmedal,3)+(swait(fmedal,1)|admin())">
+	<inject id="menthos:begin" next="missing"/>
+	<a id="missing">¿Crees que Rhubarbapapa esté aún vivo?</a>
+	<phase id="missing" next="omg">
+		[Acabo de traducir una parte del libro, no me vas a creer lo que pude comprender.]
+		[Descubrí que él fue uno de los que limitaron el desarrollo de los Dinos para evitar una sobrepoblación de criaturas salvajes que resulte peligrosa para el equilibrio de la naturaleza.]
+		[Muy interesante.]
+	</phase>
+	<a id="omg">Limitar el desarrollo de los Dinos... ¡Debe ser muy poderoso!</a>
+	<phase id="omg" next="roche">
+		[Un párrafo dice que habría encontrado una forma de inmortalidad usando una neurroca, una piedra capaz de conservar el espíritu de una persona antes de partir al más allá.]
+		[¿Te imaginas si pudiésemos hallar el lugar exacto donde guardó su espíritu?]
+		[Este es un gran descubrimiento. Nunca estuve tan entusiasmado.]
+	</phase>
+	<a id="roche">¿El libro da algún indicio?</a>
+	<phase id="roche" scenario="fmedal:4)">
+		[El último capítulo solo habla de un portal que lleva a un templo secreto. Tal vez se encuentre allí, pero no figura en ningún mapa.]
+		[Falta una página, alguien debió arrancarla para guardar el secreto.]
+		[Estábamos tan cerca...]
+		[Mientas tanto te doy la traducción, así podrás llevarla a la Universidad de Dinovilla.]
+	</phase>
+</d>
+
+<d place="univ" name="Profesor Eugenio" gfx="eugene" cond="scenario(fmedal,4)">
+	<inject id="prof:talk" next="page" />
+	<a id="page">Aquí está la traducción del libro.</a>
+	<phase id="page" next="part">
+		[Ahora entiendo por qué el sabio dorogón quiere conservar el original.]
+	</phase>
+	<a id="part">¡Descubrimos que le falta una página!</a>
+	<phase id="part" next="bao">
+		[Puedes preguntarle a la persona que llevó prestado el libro de aquí...]
+		[Veamos la lista... Esa persona es Don Bao Bob.]
+	</phase>
+	<a id="bao">Bao Bob, Mandrágora... ¡Este libro guarda más de un misterio!</a>
+	<phase id="bao" scenario="fmedal:5" fast="1">
+		Es hora de saber qué pasó con esa página faltante.
+	</phase>
+</d>
+
+<d place="villa" gfx="mandragore" name="Mandrágora" frame="glou" cond="scenario(fmedal,5)">
+	<inject id="mandragore:begin" next="missing" />
+	<a id="missing">Busco la página faltante.</a>
+	<phase id="missing">
+		[....]
+		[...........]
+		[No sé de que hablas.]
+		[Vamos, ¡fuera de aquí!]
+	</phase>
+</d>
+
+<d place="baobob" name="Don Bao Bob" gfx="baobob" cond="scenario(fmedal,5)">
+	<inject id="bob:begin" next="envol"/>
+	<a id="envol">Busco la página faltante del antiguo libro dorogón.</a>
+	<phase id="envol" next="tous">
+		[....]
+		[...........]
+		[¡Jaja, todos buscamos algo en la vida!]
+	</phase>
+	<a id="tous">No tienes opción, ¡el sabio Menthos la necesita!</a>
+	<phase id="tous" next="why">
+		¿Le llevaste el libro al Sabio Menthos?
+		Tú estás loco, ¡Mandrágora va a estar furioso!
+	</phase>
+	<a id="why">¿Y qué tiene que ver Mandrágora?</a>
+	<phase id="why" next="hasard">
+		Es él quien perdió la página...
+	</phase>
+	<a id="hasard">Para variar...</a>
+	<phase id="hasard" next="isee">
+		[Imagino que buscas esa página para saber dónde está el templo celeste.]
+		[Debes saber que hace más de 20 años, antes de retomar el trabajo de guardián, yo mismo intenté resolver el misterio de ese libro.]
+		[No pude leerlo, pero mi maestro aceptó confesarme que había oído hablar de ello en su aprendizaje de Archidorogón.]
+	</phase>
+	<a id="isee">¿Entonces yo tampoco podré descifrarlo?</a>
+	<phase id="isee" next="hopenot">
+		[Tienes fama de saber resolver misterios, podrás seguramente encontrar la información sobre ese portal sagrado.]
+	</phase>
+	<a id="hopenot">¡Encontraré ese portal!</a>
+	<phase id="hopenot" scenario="fmedal:6" fast="1" frame="stop">
+		¡Te deseo buena suerte!
+	</phase>
+</d>
+
+<d place="villa" gfx="mandragore" name="Mandrágora" frame="glou" cond="scenario(fmedal,6)">
+	<inject id="mandragore:begin" next="missing" />
+	<a id="missing">¡El sabio y yo conocemos el libro!</a>
+	<phase id="missing" next="rep1:rep2:rep3:rep4" frame="bla">
+		[....]
+		[...........]
+		[No sé de qué estás hablando...]
+	</phase>
+	<a id="rep1">Falta una página. ¿Qué hiciste con ella?</a>
+	<a id="rep2">El sabio ha prometido hacer la vista gorda si nos dices lo que contiene esa página.</a>
+	<a id="rep3">Ese cóctel parece rico. ¿De qué es?</a>
+	<a id="rep4">La multa por dañar el libro asciende a 1 millón de monedas de oro en el observatorio.</a>
+
+	<phase id="rep1" next="rep1:rep2:rep3:rep4">
+		[Yo qué sé. Tal vez escribí mi lista de compras detrás...]
+		[Llevo años usando papeles por aquí y por allá, ¿tú qué crees?]
+	</phase>
+
+	<phase id="rep2" next="next2" frame="rire">
+		[¡JA-JA-JA! Qué gracioso eres Maestro de Dinos.]
+		[La vista gorda...]
+		[Tal vez no lo sabes, ¡pero el sabio es ciego desde hace varios años!]
+	</phase>
+
+	<a id="next2">Es imposible, ¿cómo hizo entonces para traducir libros?</a>
+
+	<phase id="next2" next="rep1:rep2:rep3:rep4">
+		[¡Subestimas a los dorogones joven maestro!]
+		[A su edad, los ojos son inútiles, él puede adivinar el texto y transcribirlo directamente en un idioma común.]
+		[¡No en vano es un Sabio Dorogón!]
+	</phase>
+
+	<phase id="rep3" next="next3">
+		[Muchas cosas si quieres saberlo: 1 trozo de jengibre en polvo, 1/4 de tequila y 3/4 de ron añejo, ¡y un pimiento para decorar!]
+		[Recuerdo haberle hecho probar esto a Bao... jajaja, Bao...
+		¡Hubieras visto cómo quedó el tapiz!]
+	</phase>
+
+	<a id="next3">Es algo así como un levantamuertos diría yo...</a>
+	<phase id="next3" next="ouch:nouch">
+		[¿Quieres un poco?]
+		[Cuidado, no es para debiluchos, ¡ya muchos han ido a parar a la clínica de Dinoland!]
+		[No me haré responsable de lo que suceda.]
+	</phase>
+	<a id="ouch" cond="clanact(hopita)">Por qué no...</a>
+	<a id="nouch">No gracias.</a>
+
+	<phase id="nouch" frame="rire" next="rep1:rep2:rep3:rep4">
+		[JAJAJA, lo sabía...]
+		[No sabes beber, como Bao... juju.]
+	</phase>
+
+	<phase id="ouch" frame="bla" next="sur:pasur">
+		[Ya veo, ¡o eres valiente o suicida!]
+		[¿Estás seguro?]
+	</phase>
+
+	<a id="sur">¡Siempre estoy seguro de mí mismo!</a>
+	<a id="pasur" target="nouch">Eh... Pensándolo bien...</a>
+
+	<phase id="sur" scenario="fmedal:7" moveAll="clinik" frame="rire" fast="1">
+		Te lo bebes de un tiro el cóctel que Mandrágora te sirvió.
+		De pronto, todo se oscurece y te desvaneces.
+	</phase>
+
+	<phase id="rep4" next="next4" frame="serieuxbla">
+		Es una multa demasiado alta, quizás si tú la pagas en mi lugar, podría revelarte todo lo que sé...
+	</phase>
+	<a id="next4">Eh... pues... Un millón de monedas de oro...</a>
+	<phase id="next4" next="rep1:rep2:rep3:rep4" frame="rire">
+		[¡JAJAJA!]
+		[Pobre Maestro de Dinos, ¿caes en tu propio juego?]
+		[No te preocupes, a los dorogones no les interesa el oro, por lo tanto es imposible que yo les deba dinero.]
+	</phase>
+</d>
+
+<d place="clinik" gfx="infirmiere" name="Ana Tomía" cond="scenario(fmedal,7)">
+	<inject id="infirmiere__10:begin" next="cuite"/>
+	<a id="cuite">¿On-toy?</a>
+	<phase id="cuite" next="back">
+		[Te encontré esta mañana en el arroyo cerca de la clínica, uno de tus Dinos te arrastró hasta allí.]
+		[Voy a ponerte en observación durante un tiempo, estás tan pálido, unos lavados gástricos ayudarán...]
+	</phase>
+	<a id="back">Ah, eh... gracias.</a>
+	<phase id="back" next="go">
+		[Debes tener cuidado la próxima vez.]
+	</phase>
+	<a id="go">Era por una buena causa... Eso espero.</a>
+	<phase id="go" fast="1" frame="stop">
+		¡Debo ver de nuevo a Mandrágora!
+		No se va a librar tan fácilmente de mi.
+	</phase>
+</d>
+
+<d place="villa" gfx="mandragore" name="Mandrágora" frame="glou" cond="scenario(fmedal,7)">
+	<inject id="mandragore:begin" next="dur" />
+	<a id="dur">¡He sobrevivido a tu licor!</a>
+	<phase id="dur" next="medal" frame="bla">
+		[Eso veo...]
+		[Muy bien, parece que tienes agallas, al menos las suficientes para estar frente a él.]
+	</phase>
+	<a id="medal">¿Frente a quién?</a>
+	<phase id="medal" next="info" frame="bla">
+		[Oye bien lo que te voy a decir...]
+		[No muy lejos de aquí, existe un portal.]
+		[Cuando logres abrir ese portal, serás teleportado muy lejos de Nimbao, a una pequeña isla flotante.]
+		[Si llegas allí, encontrarás un templo celeste, no te diré más.]
+	</phase>
+	<a id="info">¿Pero dónde?</a>
+	<phase id="info" next="courage" frame="bla">
+		[Es imposible saber dónde está, el lugar exacto del portal varía según la distancia de Nimbao.]
+		[En esa época, estaba en medio del cráter del Gran Todo Quema, y ni te cuento lo difícil que es llegar hasta allá.]
+		[Deberás encontrar el nuevo lugar... Y por supuesto, ¡necesitarás una llave!]
+	</phase>
+	<a id="courage">¿Una llave?</a>
+	<phase id="courage" next="arf" frame="bla">
+		[Ciertamente. Para evitar que curiosos y torpes personajes, como tú... comprenderás, interrumpan el descanso del espíritu que allí habita .]
+		[El problema es que esa llave, el medallón de 3 ojos, ha sido fragmentada en 7 partes. Debido a mi paso por el portal, debo admitirlo.]
+	</phase>
+	<a id="arf">¡En 7 partes!</a>
+	<phase id="arf" next="tapluska" frame="bla">
+		[Esas partes del medallón han sido diseminadas por todo Dinoland, tienes que escarbar sin descanso y tal vez las encuentres.]
+		[Cuando las hayas reunido todas, te aconsejo llevarlas a la herrería del Gran Todo Quema. Entonces solo te quedará probar la llave.]
+		[Ahora que te he dicho todo, puedes dejarme tranquilo, tengo cosas que hacer.]
+		</phase>
+	<a id="tapluska">¡En marcha!</a>
+	<phase id="tapluska" fast="1" gfx="sofia" name="Sofía" frame="plage" background="2" scenario="fmedal:8">
+		Es hora de ir en busca de esos fragmentos, Mandrágora ha sido claro, no quiere ser molestado, no te queda otra que ajustarte los pantalones y empezar a caminar.
+	</phase>
+</d>
+
+<d place="villa" gfx="mandragore" name="Mandrágora" frame="glou" cond="scenario(fmedal,8)">
+	<inject id="mandragore:begin" next="dur" />
+	<a id="dur">¿Qué hago con esos fragmentos?</a>
+	<phase id="dur" frame="bla">
+		[Cuando tengas todas las partes, te aconsejo llevarlas a la herrería de del Gran Todo Quema para unirlas. Después intenta abrir el portal con el medallón.]
+	</phase>
+</d>
+
+<!--
+Pour chercher les fragments de médaillon, il faut creuser dans différentes zones de dinoland :
+-la tombe de l’ancien archidorogon (parler au sage dorogon)
+-chez bao (parler à bao)
+-le trône de sofia (parler à sofia)
+-mine de corail (parler au gobelin)
+-demander au roi de fouiller dans le trésor de dinoville
+-près du lac céleste de nimbao (parler à un arbori)
+-au pied de la tour du monde sombre (parler à gulom)
+-->
+
+<d place="observ" gfx="sage_mentos" name="Sabio Menthos" cond="scenario(fmedal,8)">
+	<inject id="menthos:begin" next="fragment"/>
+	<a id="fragment">Hablarle del medallón.</a>
+	<phase id="fragment" next="ou">
+		[¿Pudiste averiguar algo sobre la página faltante?...]
+		[Un portal hacia el templo celeste que una llave en forma de medallón abriría...]
+		[Interesante...]
+	</phase>
+	<a id="ou">¿No sabes dónde podría comenzar a escarbar?</a>
+	<phase id="ou" next="goforit">
+		[No, no tengo ni idea...]
+		[En general, en esos casos, suelo meditar en la tumba del Archidorogón.]
+		[Buena suerte en esta misión. Que te vaya bien.]
+	</phase>
+	<a id="goforit">Gracias por todo.</a>
+	<phase id="goforit" fast="1" frame="stop">
+		Ojalá esos consejos sean útiles, mientras tanto hay que reunir los 7 fragmentos del medallón.
+	</phase>
+</d>
+
+<d place="baobob" name="Don Bao Bob" gfx="baobob" cond="scenario(fmedal,8)">
+	<inject id="bob:begin" next="picole"/>
+	<a id="picole">Hablarle del medallón.</a>
+	<phase id="picole" next="creuse">
+		[¿Entonces, tú también probaste ese cóctel?]
+		[Jajaja, ¡qué recuerdos!]
+		[Y buscas la llave del portal...]
+		[Creo que había encontrado una parte hace mucho tiempo, pero la volví a perder.]
+		[Temo que no podré ayudarte.]
+	</phase>
+	<a id="creuse">Gracias de todos modos.</a>
+	<phase id="creuse" fast="1" frame="stop">
+		Ojalá esos consejos sean útiles, mientras tanto hay que reunir los 7 fragmentos del medallón.
+	</phase>
+</d>
+
+<d place="villa" gfx="sofia" name="Sofía" frame="plage" background="2" cond="scenario(fmedal,8)">
+	<inject id="sofia__2:begin" next="stuff"/>
+	<a id="stuff">Disculpa, ando buscando una parte del medallón...</a>
+	<phase id="stuff" next="dsl">
+		[......]
+		[.............]
+		[...Escúchame pequeño, yo también ando buscando algo, la paz, ¿entiendes lo que quiero decir?]
+		[Si quieres, puedes ir a hurgar todo lo que quieras en la pirámide, pero deja de hincharme los oídos si no quieres acabar en el fondo del océano.]
+	</phase>
+	<a id="dsl">Lo siento, señora...</a>
+	<phase id="dsl" fast="1">
+		Es mejor marcharse discretamente, estar en el fondo del mar no te ayudará a encontrar esos 7 fragmentos...
+	</phase>
+</d>
+
+<d place="corail" name="Minero Coraliano" gfx="mineur" cond="scenario(fmedal,8)">
+	<inject id="mine:begin" next="medal" />
+	<a id="medal">¿Por casualidad tendrás algo brillante?</a>
+	<phase id="medal">
+		[Bah muchacho, ¡yo solo tengo cosas brillantes!]
+		[Si escarbas por aquí, ¡seguro que encontrarás algo!]
+	</phase>
+</d>
+
+<d place="chato" gfx="roi" background="1" name="Rey de Dinovilla" cond="scenario(fmedal,8)+scenario(king,6)">
+	<inject id="roi__8:begin" next="roi"/>
+	<a id="roi">¡Su majestad, necesito su ayuda!</a>
+	<phase id="roi" next="tresor">
+		[¿Cómo? ¿Buscas un fragmento de medallón para abrir un portal que lleva a un templo perdido?]
+		[Jo-jo-jo. ¡Esa historia es fantástica!]
+		[Puedes hurgar en la sala de los cofres, ¡tal vez encuentres lo que buscas!]
+	</phase>
+	<a id="tresor">¡Gracias su majestad!</a>
+	<phase id="tresor" fast="1">
+		Veamos lo que encontramos en esta sala...
+	</phase>
+</d>
+
+<d place="ilac" name="Saúl" gfx="saul" frame="blabla2" cond="scenario(fmedal,8)">
+	<inject id="saul__2:begin" next="medal" />
+	<a id="medal">Busco un objeto brillante.</a>
+	<phase id="medal">
+		[No puedo ayudarte, pero si buscas algo brillante, tal vez encuentres el origen de aquel reflejo luminoso en el fondo del lago.]
+		[Ahora déjame solo, estoy cansado.]
+	</phase>
+</d>
+
+<d place="dkchut" gfx="survivor" name="Gulom" cond="scenario(fmedal,8)+fx(sylkey)">
+	<inject id="gullom__2:begin" next="medal"/>
+	<a id="medal">Busco un objeto brillante.</a>
+	<phase id="medal">
+		[¿Que si tengo un objeto brillante por aquí?]
+		[¡Si lo tuviese no te lo daría!]
+		[No pierdes nada buscando en la torre. En general, todo lo que anda en el suelo tarde o temprano cae por ahí.]
+	</phase>
+</d>
+
+<!--
+Une fois réuni, il faut le reforger à la forge de fosselave. 3h d’attente.
+Il faut ensuite utiliser le médaillon près du château de dinoplaza pour accéder à une nouvelle zone de nimbao.
+-->
+
+<d place="forges" name="Carolina Herrera" gfx="damas" cond="scenario(fmedal,8)|scenario(fmedal,9)">
+	<inject id="forgeron:begin" next="medal:sou:nosou"/>
+	<a id="medal" cond="scenario(fmedal,8)">Buenos días, ¡deseo unir un objeto!</a>
+	<phase id="medal" next="frag:nofrag" frame="blabla">
+		[Hola muchachito, ¿quieres soldar algo? Aquí somos los mejores.]
+		[Con algunas monedas de oro aquí soldamos lo que quieras.]
+		[¿Tienes las piezas que quieres unir?]
+	</phase>
+	<a id="frag" cond="hasobject(fmedaa)+hasobject(fmedab)+hasobject(fmedac)+hasobject(fmedad)+hasobject(fmedae)+hasobject(fmedaf)+hasobject(fmedag)+scenario(fmedal,8)">¡Claro que sí!</a>
+	<a id="nofrag" target="nosou">Aún no las he encontrado.</a>
+
+	<phase id="frag" use="fmedaa:1,fmedab:1,fmedac:1,fmedad:1,fmedae:1,fmedaf:1,fmedag:1" scenario="fmedal:9" next="sou:nosou" frame="blabla">
+		[¡Perfecto!]
+		[Solo falta que pases por caja, por este objeto son 10 mil monedas de oro... ¿Qué te parece?]
+	</phase>
+
+	<a id="sou" cond="scenario(fmedal,9)">Tengo 10 mil monedas de oro para soldar el medallón.</a>
+	<a id="nosou" cond="scenario(fmedal,9)">Volveré más tarde.</a>
+	<phase id="nosou" frame="blabla">
+		La próxima vez, ven con los bolsillos llenos, ¡nosotros no fiamos!
+	</phase>
+
+	<phase id="sou" usegold="10000" frame="blabla" scenario="fmedal:10">
+		[Muy bien.]
+		[¡Vuelve en unas horas para recoger tu medallón!]
+	</phase>
+</d>
+
+<d place="forges" name="Carolina Herrera" frame="blabla" gfx="damas" cond="scenario(fmedal,10)+(swait(fmedal,3)|admin())">
+	<inject id="forgeron:begin" next="medal"/>
+	<a id="medal">¿Y mi medallón?</a>
+	<phase id="medal" collection="fmedal" frame="blabla" scenario="fmedal:11" next="tcho">
+		[Aquí lo tienes, lo he trabajado con esmero, ¡mira, hasta tiene un halo especial!]
+		[No sé dónde encontrase eso, pero ten cuidado que no te explote en la cara, muchacho.]
+		[Yo vuelvo a mis labores...]
+	</phase>
+	<a id="tcho">¡Muchas gracias!</a>
+	<phase id="tcho" fast="1" frame="vide">
+		Ahora queda encontrar el lugar y la manera de utilizar este objeto...
+	</phase>
+</d>
+
+<!-- il faut verser soit du sang soit du vin sur le médaillon pour l'activer -->
+
+<d place="baobob" name="Don Bao Bob" gfx="baobob" cond="scenario(fmedal,11)">
+	<inject id="bob:begin" next="sang"/>
+	<a id="sang">¡Encontré la llave!</a>
+	<phase id="sang" next="how">
+		[Bien Maestro de Dinos, has sabido llegar más lejos que yo.]
+		[¿Ya sabes cómo utilizarla?]
+	</phase>
+	<a id="how">En realidad no...</a>
+	<phase id="how" next="yes:no">
+		[En las leyendas de antaño, había que hacer un sacrificio y derramar la sangre de un Dino sobre el medallón para activar su poder.]
+		[¿Estarías dispuesto a sacrificar a uno de tus criaturas para llegar a ese templo celeste?]
+		[¡El alma del Dino debe ser fuerte! Solo funcionaría con un Dino valiente que hayas criado con dedicación.]
+	</phase>
+	<a id="yes">Estoy decidido a todo.</a>
+	<a id="no">No, yo no puedo hacer eso.</a>
+
+	<phase id="yes" next="ready:noready">
+		[Veo que estás dispuesto a todo, pero recuerda que no volverás a ver a tu Dino nunca más...]
+		[...]
+		[Muy bien, entonces voy a elegir a tu Dino más valeroso y lo sacrificaré para que puedas abrir ese camino.]
+		[Tendrás que intentar en varios lugares para abrir el portal, si te equivocas más de 5 veces, otro sacrificio será necesario.]
+		[¿Estás realmente seguro?]
+	</phase>
+	<a id="ready">... Yo... acepto.</a>
+	<a id="noready" target="no">No estoy listo para hacer ese sacrificio.</a>
+
+	<phase id="no">Vuelve cuando estés listo a ir hasta el final.</phase>
+
+	<phase id="ready" next="noo">
+		[Muy bien, veo que nada puede detenerte. Que así sea, no habrá marcha atrás...]
+		[...............]
+		[...........]
+		[.....]
+		[...]
+		[..]
+	</phase>
+	<a id="noo">¡Mi Dino nooooo!</a>
+	<phase id="noo" next="vin">
+		[Demasiado tarde, tu Dino ha mu.......]
+		[.............]
+		[....]
+		[JAJAJAJA, ¡si vieras tu cara!]
+		[Es una broma, jaja, como si yo fuese capaz de eso, ¡ya no estamos en esos tiempos!]
+		[¿Crees que soy un monstruo o qué?]
+	</phase>
+	<a id="vin">... ¿Ah?</a>
+	<phase id="vin" next="find">
+		[Jaja, no te preocupes, vamos a encontrar una solución menos sangrienta.]
+		[Las leyendas hablan de un líquido rojo, pero no es sangre necesariamente, intenta encontrar un líquido semejante y seguramente funcionará.]
+		[¡Palabra de Bao!]
+	</phase>
+	<a id="find">Un líquido rojo...</a>
+	<phase id="find" fast="1" scenario="fmedal:12" frame="stop">
+		Te marchas, aliviado de no haber tenido que sacrificar a uno de tus dinitos. Ahora falta encontrar con qué engañar al medallón...
+	</phase>
+</d>
+
+<d place="dplaza" name="Vendedor de vino" gfx="sommelier" cond="scenario(fmedal,12)">
+	<phase id="begin" next="vin">
+		[¡Bouennnn diá a usted amanté del vinó!]
+		[¿Qué puedó hacej poj usted hoy?]
+	</phase>
+	<a id="vin">Necesito un tinto intenso y que tiña muy fuerte.</a>
+	<phase id="vin" next="rouge">
+		[Ya veó, ya veó, le señoj no importajlé la calidad de las cepas ni del saboj... (Mal cliente)
+		En ese casó, puedó dajlé una botellá de Añejó de Dinovillá que me debe quedaj en la jesejva.]
+	</phase>
+	<a id="rouge">Muy bien.</a>
+	<phase id="rouge" next="out">
+		[Pejó, pajá cuidaj mi jeputación, soló le puedó vendej una botellá a la vez.]
+	</phase>
+	<a id="out">No hay pjoblemá, digo, problema, volveré si necesito otra.</a>
+	<phase id="out" fast="1" effect="wine">
+		Te marchas con una botella de vino de Dinovilla, ahora debes buscar dónde hacer el ritual.
+	</phase>
+</d>
+
+<!-- il faut trouver le bon lieu -->
+
+<d place="poste" gfx="garde_dnv" frame="vide" background="2" name="Usar el vino" cond="scenario(fmedal,12)+fx(wine)">
+	<phase id="begin" next="search:nosearch" fast="1">
+		Un vasto terreno se percibe desde el puesto fronterizo, puede ser el lugar ideal para activar el medallón y abrir el portal.
+	</phase>
+	<a id="search">Verter el vino sobre el medallón.</a>
+	<a id="nosearch">No verter el vino sobre el medallón.</a>
+
+	<phase id="nosearch" fast="1">
+		Te vas del lugar, no parece ser el adecuado.
+	</phase>
+
+	<phase id="search" fast="1" next="so">
+		Viertes el contenido de la botella sobre el medallón de 3 ojos...
+	</phase>
+	<a id="so">....</a>
+	<phase id="so" fast="1" scenario="fmedal:13" noeffect="wine">
+		De pronto una maravillosa energía emana del medallón.
+		Varios haces luminosos se entrecruzan hasta formar una potente columna de luz.
+		Una estrella de 5 puntas se dibuja en el suelo. Lejos en el cielo ves a Nimbao...
+		Las nubes se disipan. Una nueva zona se abre ante tus ojos.
+		Por desgracia, la columna luminosa no es tan poderosa para transportar a alguien de tu peso hasta los cielos.
+	</phase>
+</d>
+
+<!--Mauvais lieux, il suffit de changer le lieu, les dialogues ne changent pas.-->
+
+<d place="skull" gfx="garde_dnv" frame="vide" background="5" name="Utilizar el vino" cond="scenario(fmedal,12)+fx(wine)">
+	<phase id="begin" next="search:nosearch" fast="1">
+		Este lugar parece propicio para la apertura del portal...
+	</phase>
+	<a id="search">Verter el vino sobre el medallón.</a>
+	<a id="nosearch">No verter el vino sobre el medallón.</a>
+
+	<phase id="nosearch" fast="1">
+		Te vas del lugar, no parece ser el adecuado.
+	</phase>
+
+	<phase id="search" fast="1" next="so">
+		Viertes el contenido de la botella sobre el medallón de 3 ojos...
+	</phase>
+	<a id="so">....</a>
+	<phase id="so" fast="1" noeffect="wine">
+		Pero no pasa nada. Tendrás que volver por otra botella al puesto del comerciante de vinos e intentar en otro lugar.
+	</phase>
+</d>
+
+<d place="colesc" gfx="garde_dnv" frame="vide" background="6" name="Utilizar el vino" cond="scenario(fmedal,12)+fx(wine)">
+	<phase id="begin" next="search:nosearch" fast="1">
+		Este lugar parece propicio para la apertura del portal...
+	</phase>
+	<a id="search">Verter el vino sobre el medallón.</a>
+	<a id="nosearch">No verter el vino sobre el medallón.</a>
+
+	<phase id="nosearch" fast="1">
+		Te vas del lugar, no parece ser el adecuado.
+	</phase>
+
+	<phase id="search" fast="1" next="so">
+		Viertes el contenido de la botella sobre el medallón de 3 ojos...
+	</phase>
+	<a id="so">....</a>
+	<phase id="so" fast="1" noeffect="wine">
+		Pero no pasa nada. Tendrás que volver por otra botella al puesto del comerciante de vinos e intentar en otro lugar.
+	</phase>
+</d>
+
+<d place="rashpk" gfx="garde_dnv" frame="vide" background="7" name="Utilizar el vino" cond="scenario(fmedal,12)+fx(wine)">
+	<phase id="begin" next="search:nosearch" fast="1">
+		Este lugar parece propicio para la apertura del portal...
+	</phase>
+	<a id="search">Verter el vino sobre el medallón.</a>
+	<a id="nosearch">No verter el vino sobre el medallón.</a>
+
+	<phase id="nosearch" fast="1">
+		Vous partez de ce lieu, ce n'est sûrement pas le bon endroit.
+	</phase>
+
+	<phase id="search" fast="1" next="so">
+		Te vas del lugar, no parece ser el adecuado.
+	</phase>
+	<a id="so">....</a>
+	<phase id="so" fast="1" noeffect="wine">
+		Pero no pasa nada. Tendrás que volver por otra botella al puesto del comerciante de vinos e intentar en otro lugar.
+	</phase>
+</d>
+
+<d place="gorges" gfx="garde_dnv" frame="vide" background="8" name="Utilizar el vino" cond="scenario(fmedal,12)+fx(wine)">
+	<phase id="begin" next="search:nosearch" fast="1">
+		Este lugar parece propicio para la apertura del portal...
+	</phase>
+	<a id="search">Verter el vino sobre el medallón.</a>
+	<a id="nosearch">No verter el vino sobre el medallón.</a>
+
+	<phase id="nosearch" fast="1">
+		Te vas del lugar, no parece ser el adecuado.
+	</phase>
+
+	<phase id="search" fast="1" next="so">
+		Viertes el contenido de la botella sobre el medallón de 3 ojos...
+	</phase>
+	<a id="so">....</a>
+	<phase id="so" fast="1" noeffect="wine">
+		Pero no pasa nada. Tendrás que volver por otra botella al puesto del comerciante de vinos e intentar en otro lugar.
+	</phase>
+</d>
+
+<d place="chutes" gfx="garde_dnv" frame="vide" background="9" name="Utilizar el vino" cond="scenario(fmedal,12)+fx(wine)">
+	<phase id="begin" next="search:nosearch" fast="1">
+		Este lugar parece propicio para la apertura del portal...
+	</phase>
+	<a id="search">Verter el vino sobre el medallón.</a>
+	<a id="nosearch">No verter el vino sobre el medallón.</a>
+
+	<phase id="nosearch" fast="1">
+		Te vas del lugar, no parece ser el adecuado.
+	</phase>
+
+	<phase id="search" fast="1" next="so">
+		Viertes el contenido de la botella sobre el medallón de 3 ojos...
+	</phase>
+	<a id="so">....</a>
+	<phase id="so" fast="1" noeffect="wine">
+		Pero no pasa nada. Tendrás que volver por otra botella al puesto del comerciante de vinos e intentar en otro lugar.
+	</phase>
+</d>
+
+<d place="chemin" gfx="garde_dnv" frame="vide" background="10" name="Utilizar el vino" cond="scenario(fmedal,12)+fx(wine)">
+	<phase id="begin" next="search:nosearch" fast="1">
+		Este lugar parece propicio para la apertura del portal...
+	</phase>
+	<a id="search">Verter el vino sobre el medallón.</a>
+	<a id="nosearch">No verter el vino sobre el medallón.</a>
+
+	<phase id="nosearch" fast="1">
+		Te vas del lugar, no parece ser el adecuado.
+	</phase>
+
+	<phase id="search" fast="1" next="so">
+		Viertes el contenido de la botella sobre el medallón de 3 ojos...
+	</phase>
+	<a id="so">....</a>
+	<phase id="so" fast="1" noeffect="wine">
+		Pero no pasa nada. Tendrás que volver por otra botella al puesto del comerciante de vinos e intentar en otro lugar.
+	</phase>
+</d>
+
+<d place="scross" gfx="garde_dnv" frame="vide" background="11" name="Utilizar el vino" cond="scenario(fmedal,12)+fx(wine)">
+	<phase id="begin" next="search:nosearch" fast="1">
+		Este lugar parece propicio para la apertura del portal...
+	</phase>
+	<a id="search">Verter el vino sobre el medallón.</a>
+	<a id="nosearch">No verter el vino sobre el medallón.</a>
+
+	<phase id="nosearch" fast="1">
+		Te vas del lugar, no parece ser el adecuado.
+	</phase>
+
+	<phase id="search" fast="1" next="so">
+		Viertes el contenido de la botella sobre el medallón de 3 ojos...
+	</phase>
+	<a id="so">....</a>
+	<phase id="so" fast="1" noeffect="wine">
+		Pero no pasa nada. Tendrás que volver por otra botella al puesto del comerciante de vinos e intentar en otro lugar.
+	</phase>
+</d>
+
+<d place="spylon" gfx="garde_dnv" frame="vide" background="12" name="Utilizar el vino" cond="scenario(fmedal,12)+fx(wine)">
+	<phase id="begin" next="search:nosearch" fast="1">
+		Este lugar parece propicio para la apertura del portal...
+	</phase>
+	<a id="search">Verter el vino sobre el medallón.</a>
+	<a id="nosearch">No verter el vino sobre el medallón.</a>
+
+	<phase id="nosearch" fast="1">
+		Te vas del lugar, no parece ser el adecuado.
+	</phase>
+
+	<phase id="search" fast="1" next="so">
+		Viertes el contenido de la botella sobre el medallón de 3 ojos...
+	</phase>
+	<a id="so">....</a>
+	<phase id="so" fast="1" noeffect="wine">
+		Pero no pasa nada. Tendrás que volver por otra botella al puesto del comerciante de vinos e intentar en otro lugar.
+	</phase>
+</d>
+
+<d place="scaush" gfx="garde_dnv" frame="vide" background="13" name="Utilizar el vino" cond="scenario(fmedal,12)+fx(wine)">
+	<phase id="begin" next="search:nosearch" fast="1">
+		Este lugar parece propicio para la apertura del portal...
+	</phase>
+	<a id="search">Verter el vino sobre el medallón.</a>
+	<a id="nosearch">No verter el vino sobre el medallón.</a>
+
+	<phase id="nosearch" fast="1">
+		Te vas del lugar, no parece ser el adecuado.
+	</phase>
+
+	<phase id="search" fast="1" next="so">
+		Viertes el contenido de la botella sobre el medallón de 3 ojos...
+	</phase>
+	<a id="so">....</a>
+	<phase id="so" fast="1" noeffect="wine">
+		Pero no pasa nada. Tendrás que volver por otra botella al puesto del comerciante de vinos e intentar en otro lugar.
+	</phase>
+</d>
+
+<d place="villa" gfx="garde_dnv" frame="vide" background="14" name="Utilizar el vino" cond="scenario(fmedal,12)+fx(wine)">
+	<phase id="begin" next="search:nosearch" fast="1">
+		Este lugar parece propicio para la apertura del portal...
+	</phase>
+	<a id="search">Verter el vino sobre el medallón.</a>
+	<a id="nosearch">No verter el vino sobre el medallón.</a>
+
+	<phase id="nosearch" fast="1">
+		Te vas del lugar, no parece ser el adecuado.
+	</phase>
+
+	<phase id="search" fast="1" next="so">
+		Viertes el contenido de la botella sobre el medallón de 3 ojos...
+	</phase>
+	<a id="so">....</a>
+	<phase id="so" fast="1" noeffect="wine">
+		Pero no pasa nada. Tendrás que volver por otra botella al puesto del comerciante de vinos e intentar en otro lugar.
+	</phase></d>
+
+<d place="cporte" gfx="garde_dnv" frame="vide" background="15" name="Utilizar el vino" cond="scenario(fmedal,12)+fx(wine)">
+	<phase id="begin" next="search:nosearch" fast="1">
+		Este lugar parece propicio para la apertura del portal...
+	</phase>
+	<a id="search">Verter el vino sobre el medallón.</a>
+	<a id="nosearch">No verter el vino sobre el medallón.</a>
+
+	<phase id="nosearch" fast="1">
+		Te vas del lugar, no parece ser el adecuado.
+	</phase>
+
+	<phase id="search" fast="1" next="so">
+		Viertes el contenido de la botella sobre el medallón de 3 ojos...
+	</phase>
+	<a id="so">....</a>
+	<phase id="so" fast="1" noeffect="wine">
+		Pero no pasa nada. Tendrás que volver por otra botella al puesto del comerciante de vinos e intentar en otro lugar.
+	</phase>
+</d>
+
+<d place="cpuits" gfx="garde_dnv" frame="vide" background="16" name="Utilizar el vino" cond="scenario(fmedal,12)+fx(wine)">
+	<phase id="begin" next="search:nosearch" fast="1">
+		Este lugar parece propicio para la apertura del portal...
+	</phase>
+	<a id="search">Verter el vino sobre el medallón.</a>
+	<a id="nosearch">No verter el vino sobre el medallón.</a>
+
+	<phase id="nosearch" fast="1">
+		Te vas del lugar, no parece ser el adecuado.
+	</phase>
+
+	<phase id="search" fast="1" next="so">
+		Viertes el contenido de la botella sobre el medallón de 3 ojos...
+	</phase>
+	<a id="so">....</a>
+	<phase id="so" fast="1" noeffect="wine">
+		Pero no pasa nada. Tendrás que volver por otra botella al puesto del comerciante de vinos e intentar en otro lugar.
+	</phase>
+</d>
+
+<!-- Partie sur Nimbao -->
+
+<d place="chbroc" name="Broc" gfx="broc" background="5" cond="scenario(fmedal,13+)">
+	<inject id="broc:begin" next="travel" />
+	<inject id="broc__2:begin" next="travel" />
+	<inject id="broc__11:begin" next="travel" />
+	<a id="travel">¡Hay algo nuevo en Nimbao, Broc!</a>
+	<phase id="travel" next="yahoo:payahoo">
+		[¿Nuevos confines por explorar?]
+		[¡No hay problema, mi Flying Brocky 5 ha demostrado más de una vez que es LA máquina ideal!]
+		[Y en parte gracias a ti. ¡Entonces ajustate bien el cinturón que allá vamos!]
+	</phase>
+	<a id="payahoo">Espera un poco, voy a prepararme.</a>
+	<phase id="payahoo">
+		[Tu verás. ]
+		[Estaré por aquí si me necesitas.]
+	</phase>
+	<a id="yahoo">¡Allá vamos!</a>
+	<phase id="yahoo" fast="1" moveAll="temple">
+		¡El Flying Brocky 5 despega como un rayo rumbo al cielo azul de Nimbao!
+	</phase>
+</d>
+
+<d place="temple" name="Broc" gfx="broc" background="4" cond="scenario(fmedal,13)">
+	<phase id="begin" next="tchao">
+		[¡Y llegas a una nueva zona de la isla!]
+		[Parece bonito, pero me da escalofríos, vuelvo al taller.]
+		[¿Me dices como es, eh?]
+		[¡Hasta la próxima!]
+	</phase>
+	<a id="tchao">¡Gracias Broc!</a>
+	<phase id="tchao" fast="1" frame="stop" scenario="fmedal:14">
+		Broc vuelve a casa y te deja en esa isla desolada.
+	</phase>
+</d>
+
+<!-- Discussion avec Rhubarbe, voir rhubarbe.xml -->
+
+<d place="villa" gfx="mandragore" name="Mandrágora" frame="glou" cond="fx(lvlup2)">
+	<inject id="mandragore:begin" next="lvlup" />
+	<a id="lvlup">Vi al sabio del templo celeste.</a>
+	<phase id="lvlup">
+		[Veo que tu Dino ha evolucionado...]
+		[Llegará el día en el que podré considerarte como mi semejante...]
+		[... Mientras tanto, ¡ve a buscarme una cerveza!]
+	</phase>
+</d>
+
+<d place="baobob" name="Don Bao Bob" gfx="baobob" cond="fx(lvlup2)">
+	<inject id="bob:begin" next="lvlup" />
+	<a id="lvlup">Vi al sabio del templo celeste.</a>
+	<phase id="lvlup" next="run">
+		[Llegaste al final de la misión.]
+		[Estamos orgullosos de ti, cada vez eres más poderoso.]
+		[Debería entrenarme un poco yo también...]
+		[Quién como tú. ¿No te gustaría tomar mi puesto de guardián?...]
+		[Tampoco es tan complicado, solo hay que ir de un lado a otro mirando si todo anda bien... Snif...]
+	</phase>
+	<a id="run">Eh... ¡No gracias!</a>
+	<phase id="run" fast="1">
+		Te marchas despidiéndote de Bao.
+		Mejor dejar todo como está, por ahora.
+	</phase>
+</d>
+
+<!-- fin de la quête -->
+

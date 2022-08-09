@@ -1,0 +1,57 @@
+﻿<d place="camp" name="Dian Korgsey" gfx="dian">
+	<phase id="begin" next="korgons:nothing:missions">
+		Salut, éleveur... Ne fais pas un bruit, il ne faut surtout pas déranger les Korgons !
+	</phase>
+
+	<a id="korgons">Les Korgons ?</a>
+	<a id="nothing">Oh pardon, je m'en vais...</a>
+
+	<phase id="korgons" next="why:wood:tame:interest:missions">
+		Oui, ce sont les petites créatures qui se sont installées ici. De vraies petites teignes si
+		on n'y prête pas gare ! Déjà, ne les regarde surtout pas dans les yeux... Et si l'un d'eux
+		s'approche trop, tu peux toujours essayer de lui donner un bout de bois à grignoter
+	</phase>
+
+	<a id="why">Il ne faut pas les regarder ?</a>
+	<a id="wood">Ils mangent du bois ?</a>
+	<a id="tame">Personne n'en a jamais dressé ?</a>
+	<a id="interest" cond="fx(qwhy)+fx(qwood)+fx(qtame)+!fx(dian)">Tout ça est vraiment passionnant  !</a>
+
+	<phase id="why" next="wood:tame:interest:missions" effect="qwood">
+		Ils pourraient prendre ça pour un défi ! Et là, je vous laisse imaginer ce qui se passerait si tous les Korgons
+		du campement se mettaient dans la tête que vous étiez un ennemi... Les derniers à avoir
+		essayé ont été servis en souper le soir même.
+	</phase>
+
+	<phase id="wood" next="why:tame:interest:missions" effect="qwhy">
+		Ils adorent ça ! C'est d'ailleurs la raison pour laquelle ils se sont installés dans
+		la Jungle de Grumhel. Fascinant n'est-ce pas ? Mais malheureusement pour nous, ils sont capables de manger tout et
+		n'importe quoi, y compris les voyageurs imprudents.
+	</phase>
+
+	<phase id="tame" next="wood:why:interest:missions" effect="qtame">
+		Il y a bien longtemps, je pense que les Korgons étaient domestiqués. Probablement bien avant
+		la chute de l'île de Jazz... Mais aujourd'hui, ils sont revenus totalement à l'état sauvage !
+		Pas moyen de les approcher sans risquer d'y perdre un bras. Quelques éleveurs s'y sont aussi
+		frottés, mais personne n'a obtenu mieux de leur part qu'un grand coup de dents.
+	</phase>
+
+	<phase id="interest" next="service">
+		N'est-ce pas ! Je suis heureuse de voir que ces adorables Korgons vous plaisent autant ! Si cela
+		vous intéresse, vous pourriez me rendre quelques petits services au Camp ?
+	</phase>
+
+	<a id="service">Oui, avec plaisir !</a>
+
+	<phase id="service" next="missions" effect="dian">
+		Parfait ! Voilà ce dont j'ai besoin...
+	</phase>
+
+	<phase id="nothing">
+		D'accord, bon voyage !
+	</phase>
+
+	<a id="missions" cond="fx(dian)">Consulter la liste des Missions</a>
+	<phase id="missions" missions="dian"></phase>
+
+</d>

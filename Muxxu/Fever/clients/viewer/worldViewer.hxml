@@ -1,0 +1,24 @@
+-cp src
+-cp ../games
+-cp ../com
+-cp ../gfx
+-cp ../../docs
+-cp ../run/src
+-cp ../../../../../bumdum/lib
+-cp ../../../base/com
+-swf9 swf/game.swf
+-swf-header 1600:900:40:FFFFFF
+-swf-lib obj\worldViewerResources.swf
+--flash-strict
+-main WorldViewerMain
+-lib format
+-lib physaxe
+-resource data.ods
+-D dev
+-D dm_obfu
+-swf-lib ../gfx/bumdum.swf
+-swf-lib ../gfx/bumdum2.swf
+-swf-lib ../gfx/white.swf
+-swf-lib ../gfx/hiko.swf
+-swf-lib ../gfx/com.swf
+-cmd "obfu9 swf\game.swf -o swf\game.swf -fake -config obfu.txt"

@@ -1,0 +1,42 @@
+<d place="jzzig" name="Acheter une ziggourat souvenir" gfx="jzpoumb" auto="0">
+
+<phase id="begin" next="search">
+Souvenirs, bibelots, médailles commémoratives ! Tout est artisanal ! Les bénéfices sont reversés au POUM, association d'intérêt indéfini à but non lucratif ! 
+</phase>
+
+<a id="search">Euh bonjour. Je cherche une ziggourat d'or. </a>
+
+<phase id="search" next="bib">
+Ah ben ça c'est facile, elle est derrière moi. Tu peux pas la louper.
+Par contre on organise des visites que le week-end et les jours fériés, de 14h à 18h. 
+</phase>
+
+<a id="bib">Non mais j'ai besoin d'une ziggourat souvenir en plastique. Comme vous avez, là. </a>
+
+<phase id="bib" next="oka:okb:non">
+Oh oh, un amateur de belles choses ! Elles sont splendides hein ! Directement importées du fin fond du désert de Sharrukin. Ils ont les meilleurs artisans de souvenirs du royaume, là-bas. 
+Je te la fais à {1200 Kubors}, prix spécial touriste sympathique. 
+</phase>
+
+
+<a id="oka" cond="hasgold(1200)">Ok, voilà 1200 kubors.</a>
+<a id="okb" cond="!hasgold(1200)">Ok, voilà 1200 kubors.</a>
+<a id="non">1200 ? ! C'est du vol ! </a>
+
+<phase id="oka" gold="-1200">
+Parfait. Voilà ta ziggourat. 
+bonne journée, moraliste !  
+</phase>
+
+<phase id="okb" next="exit">
+Hum... on dirait que tu n'as pas la somme... désolé, mais je ne peux pas te donner la ziggourat.  
+</phase>
+
+<phase id="non" next="exit">
+Pas du tout ! C'est un tarif finement étudié en fonction de l'offre et de la demande. 
+</phase>
+
+<a id="exit">Je reviendrai plus tard.</a>
+
+
+</d>

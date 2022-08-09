@@ -1,0 +1,25 @@
+<d place="" name="Appel Guilde rang 4" gfx="guchx" auto="1" cond="grade(,5)+!fx(lpcall)">
+
+<phase id="begin" frame="start" next="lis">
+Vous avez un message spécial du Chambelland Lapin ! 
+</phase>
+
+<phase id="lis" next="msg">
+Rouh ! Je vous le lis : | Hum... brum brum. 
+</phase>
+
+<phase id="msg" next="msgb">
+[Bonjour ::user::, j'espère que tes alchimies se passent bien depuis ta dernière visite. |J'ai reçu un prospectus étrange et un peu inquiétant, j'aurais besoin d'un alchimiste de confiance pour tirer ça au clair.]
+</phase>
+
+<phase id="msgb" next="msgc">
+[Evidemment, j'ai très vite pensé à toi ! | Viens me voir dès que possible au palais de Stime Pounk, je t'expliquerai tout.  Signé : Le Chambelland Lapin.]
+</phase>
+
+<phase id="msgc" effect="lpcall">
+Rouh ! | Voilà. Bonne journée.
+</phase>
+
+
+	
+</d>

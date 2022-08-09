@@ -1,0 +1,126 @@
+<d place="enfagu" name="Chez Surtouffe" gfx="guhair" auto="0" >
+
+
+<phase id="begin" frame="normal" next="what:comb:pcomb">
+Bonjour-bonjour ! | Une petite coupe ? 
+</phase>
+
+<a id="what">Vous êtes coiffeur ?</a>
+<a id="comb" cond="fx(hairpr)">C'est combien pour une nouvelle coupe ? </a>
+<a id="pcomb" cond="!fx(hairpr)">C'est combien pour une nouvelle coupe ? </a>
+
+
+<phase id="what" frame="normal2" next="cla:pcla">
+[Oscar Surtouffe], meilleur coiffeur du royaume pour te servir ! 
+</phase>
+
+<a id="cla" cond="fx(hairpr)">Vous êtes le meilleur ? C'est la classe !</a>
+<a id="pcla" cond="!fx(hairpr)">Vous êtes le meilleur ? C'est la classe !</a>
+
+<phase id="cla" frame="happy" next="bref">
+Hum... Je suis le seul, aussi. | Les recettes alchimiques de coiffure ont fait beaucoup de mal à la profession...
+</phase>
+
+<phase id="pcla" frame="happy" next="pbref">
+Hum... Je suis le seul, aussi. | Les recettes alchimiques de coiffure ont fait beaucoup de mal à la profession...
+</phase>
+
+<phase id="bref" frame="normal" next="comb:pcomb:non">
+Enfin bref ! | Alors, une petite coupe ? Ca fait toujours plaisir ! 
+</phase>
+
+<phase id="pbref" frame="normal" next="comb:pcomb:non">
+Enfin bref ! | Alors, une petite coupe ? En tant que nouveau client, tu as droit à un [tarif super promo ] !
+</phase>
+
+<phase id="comb" frame="normal2" next="oka:noka:okb:nokb:non">
+Une coupe standard coûte {1500 kubors} et une coupe à la mode "Surtouffe spéciale" {5000 kubors}. 
+</phase>
+
+<phase id="pcomb" frame="normal2" next="oka:noka:okc:nokc:non">
+Une coupe standard coûte {1500 kubors} et une coupe à la mode "Surtouffe spéciale" {5000 kubors}. | Mais en tant que nouveau client, je te fais la coupe à la mode au prix de la standard !
+</phase>
+
+<a id="oka" cond="hasgold(1500)">Je veux une coupe standard.</a>
+<a id="okb" cond="hasgold(5000)">Je veux une "Surtouffe spéciale".</a>
+<a id="okc" cond="hasgold(1500)">Je veux une "Surtouffe spéciale" au tarif promo ! </a>
+<a id="noka" cond="!hasgold(1500)">Je veux une coupe standard.</a>
+<a id="nokb" cond="!hasgold(5000)">Je veux une "Surtouffe spéciale".</a>
+<a id="nokc" cond="!hasgold(1500)">Je veux une "Surtouffe spéciale" au tarif promo ! </a>
+<a id="non">Non merci. </a>
+
+<phase id="non" frame="angry">
+Comme tu veux. | Pense à revenir me voir si tu te sens un peu has-been. 
+</phase>
+
+<!-- ############# -->
+
+<phase id="noka" frame="angry">
+Hum... J'ai peur que tu manques de {kubors}. | Reviens me voir quand tu auras la somme requise. 
+</phase>
+
+<phase id="oka" frame="normal" next="stda:stdb:stdc:back">
+Parfait, installe-toi ! Qu'est-ce que je te fais ? 
+</phase>
+
+<a id="stda">Pas trop court.</a>
+<a id="stdb">Pas trop long.</a>
+<a id="stdc">Bien dégagé derrière les oreilles.</a>
+<a id="back">J'ai changé d'avis.</a>
+
+<phase id="back" frame="happy" next="comb:pcomb">
+Ce sera quoi, alors ? 
+</phase>
+<phase id="stda" frame="angry" urlauto="/act/do?a=hair&c=0">
+C'est partiiiii ! 
+</phase>
+<phase id="stdb" frame="angry" urlauto="/act/do?a=hair&c=1">
+C'est partiiiii ! 
+</phase>
+<phase id="stdc" frame="angry" urlauto="/act/do?a=hair&c=2">
+C'est partiiiii ! 
+</phase>
+
+<!-- ##################" -->
+<phase id="nokb" frame="angry">
+Hum... J'ai peur que tu manques de {kubors}. | Reviens me voir quand tu auras la somme requise. 
+</phase>
+
+<phase id="okb" frame="normal" next="spa:spb:spc:spd:back">
+Parfait, installe-toi ! Qu'est-ce que je te fais ? 
+</phase>
+
+<a id="spa">La nuque bien dégagée.</a>
+<a id="spb">Un effet naturel, facile à coiffer.</a>
+<a id="spc">Comme la star qu'on voit partout mais je sais plus son nom, là.</a>
+<a id="spd">Comme vous, c'est trop classe.</a>
+
+<phase id="spa" frame="angry" urlauto="/act/do?a=hair&c=3">
+C'est partiiiii ! 
+</phase>
+<phase id="spb" frame="angry" urlauto="/act/do?a=hair&c=4">
+C'est partiiiii ! 
+</phase>
+<phase id="spc" frame="angry" urlauto="/act/do?a=hair&c=5">
+C'est partiiiii ! 
+</phase>
+<phase id="spd" frame="angry" urlauto="/act/do?a=hair&c=6">
+C'est partiiiii ! 
+</phase>
+
+<!-- ##################" -->
+<phase id="nokc" frame="angry">
+Hum... J'ai peur que tu manques de {kubors}. | Reviens me voir quand tu auras la somme requise. 
+</phase>
+
+<phase id="okc" frame="normal" next="spa:spb:spc:spd:back">
+Parfait, installe-toi ! Qu'est-ce que je te fais ? 
+</phase>
+
+
+
+
+
+
+
+</d>

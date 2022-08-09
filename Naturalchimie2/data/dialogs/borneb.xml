@@ -1,0 +1,38 @@
+<d place="jzlabo" name="" gfx="jzpouma" auto="1"  cond="curquest(borne,1)">
+
+<phase id="begin" next="todo">
+Ici, vous pouvez admirer un magnifique projet ultrasecret. Attention on dirait que ça mord... | Ah Bonjour ! Un retardaire, peut-être ? Tu veux te joindre à la visite ? 
+</phase>
+
+<a id="todo">Mais qu'est-ce que vous faites là ? C'est vous qui avez amené tous ces touristes ? </a>
+
+<phase id="todo" next="todob" frame="happy">
+Oui oui, je suis en train de faire une visite guidée du POUM. Tout un groupe de touristes de Perfidalbion s'est inscrit ce matin. Ils ont l'air de trouver la visite très intéressante. 
+</phase>
+
+<phase id="todob" next="com" >
+ Le thème, c'est {"L'alchimie souterraine et secrète, une spécialité jeezariste. Découvrez en avant-première des recettes avant-gardistes ! "}. %angry% Ca passionne les gens, j'ai encore un groupe complet demain matin ! 
+</phase>
+
+<a id="com">Ah... Mais vous êtes entrés comment, au fait ? </a>
+
+<phase id="com" next="time">
+Ben comme d'habitude, j'ai montré ma carte du POUM et le monstre gardien a laissé entrer tout le monde. Je suis moi-même un alchimiste de Jeezara, après tout. %happy% Avec juste beaucoup plus de qualités ! 
+</phase>
+
+<a id="time">Ok ok... Bon, je vous laisse continuer. Vous restez au Labolodun encore longtemps ? </a>
+
+
+<phase id="time" next="ih">
+Oh oui, c'est la salle la plus intéressante de l'école ! On est là pour une bonne heure. 
+</phase>
+
+<phase id="ih" frame="hide" next="wom">
+* IIIIIIIIIIIIIIHHHHHHHHHH ! ! ! Mister POUM ! There'z a ztrange creature zere ! 
+</phase>
+
+<phase id="wom" effect="borne" url="/act/quest/info">
+Oh oh, vous inquiétez pas ma p'tite dame, c'est juste un wombat. %happy% Juzt a Wombat. No dangerz, no dangerz... Thiz way pleaze. 
+</phase>
+
+</d>

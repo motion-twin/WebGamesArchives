@@ -1,0 +1,177 @@
+<d place="agoraa" name="Portes ouvertes" cond="curquest(schoo)" gfx="guoporg" auto="0">
+
+<phase id="begin" next="vu:ecole:subs" frame="happy">
+Bienvenue, apprenti ! 
+%normal%Euh... Tu es bien un apprenti alchimiste ? 
+</phase>
+
+<a id="vu">Ca se voit tant que ça ? </a>
+<a id="ecole">Je viens pour me renseigner sur les différentes écoles.</a>
+<a id="subs">Ok j'ai choisi ! Je sais quelle école je veux intégrer ! </a>
+
+<phase id="subs" next="cap:cjz:cgm:csk:back">
+Très bonne nouvelle ! Quelle école as-tu choisi ?
+</phase>
+
+<a id="cap">Je veux rejoindre l'école Audepint.</a>
+<a id="cjz">Jeezara, c'est ce qu'il me faut.</a>
+<a id="cgm">L'école Gemini est faite pour moi.</a>
+<a id="csk">Je serai un alchimiste Shang-Kah ou rien.</a>
+<a id="back">Euh non en fait, j'en sais rien.</a>
+
+<phase id="back" next="ecole:subs">
+%happy%Ah c'est un choix difficile. N'hésite pas à te renseigner à fond, les portes ouvertes sont faites pour ça. 
+</phase>
+
+<phase id="cap" next="capb">
+Audepint. Très bien, je le note. 
+</phase>
+
+<phase id="capb" next="suap:suback">
+Tout ce qu'il te reste à faire, c'est prendre le téléporteur derrière moi. Il va t'emmener au faubourg Audepint. 
+Il y aura quelqu'un pour s'occuper des nouveaux étudiants. Adresse-toi à lui pour valider ton inscription et intégrer l'école.
+</phase>
+
+<a id="suap" urlauto="/act/gosub?to=ap">
+Prendre le téléporteur pour s'inscrire à Audepint.
+</a>
+
+<phase id="cjz" next="cjzb">
+Jeezara. Très bien, je le note. 
+</phase>
+
+<phase id="cjzb" next="sujz:suback">
+Tout ce qu'il te reste à faire, c'est prendre le téléporteur derrière moi. Il va t'emmener à l'entrée du boyau Jeezara. 
+Il y aura quelqu'un pour s'occuper des nouveaux étudiants. Adresse-toi à lui pour valider ton inscription et intégrer l'école.
+</phase>
+
+<a id="sujz" urlauto="/act/gosub?to=jz">
+Prendre le téléporteur pour s'inscrire à Jeezara.
+</a>
+
+<phase id="cgm" next="cgmb">
+Gemini. C'est noté.
+</phase>
+
+<phase id="cgmb" next="sugm:suback">
+Tout ce qu'il te reste à faire, c'est prendre le téléporteur derrière moi. Il va t'emmener à l'entrée de la forêt Gemini. 
+Il y aura quelqu'un pour s'occuper des nouveaux étudiants. Adresse-toi à lui pour valider ton inscription et intégrer l'école.
+</phase>
+
+<a id="sugm" urlauto="/act/gosub?to=gm">
+Prendre le téléporteur pour s'inscrire à Gemini.
+</a>
+
+<phase id="csk" next="avant:apres">
+D'accord, je le note : Shang-K | | | Euh... | le {h}, il est avant ou après le {a} ? 
+</phase>
+
+<a id="avant">Avant.</a>
+<a id="apres">Après.</a>
+
+<phase id="avant" next="cskb">
+Shang-Kha alors. D'accord... 
+</phase>
+
+<phase id="apres" next="cskb">
+Shang-Kah. C'est bon.
+</phase>
+
+<phase id="cskb" next="susk:suback">
+Tout ce qu'il te reste à faire, c'est prendre le téléporteur derrière moi. Il va t'emmener directement chez Shang-Kah. 
+Il y aura quelqu'un pour s'occuper des nouveaux étudiants. | Adresse-toi à lui pour valider ton inscription et intégrer l'école.
+</phase>
+
+<a id="susk" urlauto="/act/gosub?to=sk">
+Prendre le téléporteur pour s'inscrire à Shang-Kah.
+</a>
+
+<a id="suback">
+Je préfère réfléchir davantage, en fait.
+</a>
+
+<phase id="suback" next="ecole:subs">
+Comme tu veux. 
+</phase>
+
+
+<!-- 
+<a id="pied">On peut utiliser vos téléporteurs ? </a>
+
+<phase id="pied" next="ecole:subs">
+Ah non ! Il y a une coutume à respecter, quand même. Quand on s'inscrit à son école, on y va à pied. 
+Les alchimistes qui sont plus vieux que l'invention des téléporteurs y tiennent beaucoup....
+</phase>
+-->
+
+<!-- ############### -->
+
+<phase id="vu" next="col:ecole">
+%happy%Les alchimistes ont une tenue aux couleurs de leur école, donc avec tes vêtements standards oui, ça se voit de loin. 
+</phase>
+
+<a id="col">Oooh ? Des nouvelles fringues ? Avec plus de couleurs ? Il faut choisir son école en fonction de sa couleur préférée ? Génial !</a>
+
+<phase id="col" next="col2">
+%angry%Hum. Disons qu'il y a plus important que ça, mais tu choisis comme tu veux... 
+</phase>
+
+<a id="col2">Super ! Bon. C'est quoi les couleurs des écoles ? ! </a>
+
+<phase id="col2" next="ecole">
+%happy%Gemini a plusieurs tons de vert. Shang-Kah est plus osé avec du rouge mordoré. Jeezara a... 
+%angry%Raaah mais qu'est-ce que je raconte moi ! Va voir directement au lieu de me faire perdre mon temps ! 
+</phase>
+
+<phase id="ecole" next="ap:jz:gm:sk:back">
+Tu peux te rendre directement dans chacune des écoles en utilisant les téléporteurs derrière moi. 
+Quelle école t'intéresse ? | Je te rappelle que tu pourras changer d'école plus tard, en te rendant au [Donjon K].
+</phase>
+
+<a id="ap">Audepint. Ils doivent être supers forts.</a>
+<a id="jz">Jeezara. Ca doit être rigolo. </a>
+<a id="gm">Gemini. Ca a l'air tranquille.</a>
+<a id="sk">Shang-Kah. Ils ont l'air cools.</a>
+<!--<a id="bet" cond="beta()">Euh... Il manque des écoles là, non ? </a>
+
+<phase id="bet" next="ecole">
+%angry%Hum. Oui. Le royaume est en [beta-test]. Gemini, Shang-Kah et Jeezara sont en plein travaux. Je crains que seule l'école Audepint soit accessible pour l'intant.
+</phase>-->
+
+<!-- ################ -->
+<phase id="ap" next="goap:ecole">
+%happy%Ah. Audepint. Une école riche et puissante. 
+Mais j'espère que tu aimes les climats un peu rudes... 
+Le téléporteur est juste là.
+</phase>
+
+<a id="goap" urlauto="/act/discover?to=ap">Se téléporter au manoir Audepint.</a>
+
+<!-- ################ -->
+<phase id="jz" next="gojz:ecole">
+Jeezara ? moui moui moui... 
+Je me disais bien que tu avais un air un peu bizarre.
+</phase>
+
+<a id="gojz" urlauto="/act/discover?to=jz">Se téléporter au boyau Jeezara.</a>
+
+<!-- ################ -->
+<phase id="gm" next="gogm:ecole">
+Une école de costauds ça, Gemini. Si tu aimes les sports virils et la salade, ce sera parfait pour toi.
+</phase>
+
+<a id="gogm" urlauto="/act/discover?to=gm">Se téléporter à l'école Gemini.</a>
+
+<!-- ################ -->
+<phase id="sk" next="gosk:ecole">
+%happy%Ah oui. Une école très sympathique, Shang-Kah.
+Mais avec leurs coutumes bizarres on a un peu de mal à les suivre, parfois.
+</phase>
+
+<a id="gosk" urlauto="/act/discover?to=sk">Se téléporter chez Shang-Kah.</a>
+
+
+
+
+	
+</d>

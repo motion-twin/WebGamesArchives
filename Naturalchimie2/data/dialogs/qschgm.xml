@@ -1,0 +1,49 @@
+<d place="gmsch" name="Professeur Lecoussin" gfx="gmprof">
+
+<a id="exit">Au revoir.</a>
+
+<phase id="begin" next="after:quest:noob:cap:dude:exit">
+Quoi de neuf, dude ? 
+</phase>
+
+<a id="after" cond="quest(gmj)">Il y a d'autres quêtes à faire ? </a>
+<a id="noob" cond="sch(gm)+!quest(gma)">Ben euh... Vous venez de m'inscrire. Je fais quoi maintenant ? </a>
+<a id="quest" cond="quest(gma)|(!sch(gm)+reput(gm,1))">Je viens bosser mon alchimie.</a>
+<a id="dude">Mais pourquoi vous m'appelez dude ?</a>
+
+<phase id="after" frame="angry" next="afterb">
+Bien sûr, dude. Tu n'as pas fait le tour du royaume ! | Déjà, il y a le [Chef Haggis] qui s'occupe des étudiants de niveau 3. 
+</phase>
+
+<phase id="afterb" frame="normal">
+Ensuite, je suis sûr qu'il y a plein de gens dans le royaume qui rêvent de te refiler leur boulot... | N'hésite pas à taper la causette avec tout le monde.
+</phase>
+
+
+
+<phase id="noob" quest="schgm" frame="angry">
+Ah oui c'est vrai. | Bon, voyons par quoi tu pourrais commencer. 
+</phase>
+
+<phase id="quest" quest="schgm" frame="happy">
+Très bien, ça. Très bonne idée !
+</phase>
+
+<phase id="dude" next="okdude:exit" frame="happy">
+Hein ? Ah ben je sais pas trop, j'aime bien dire "dude", ça fait la classe. {"Hey dude ! Ca farte ! ? "} Tu vois. Des trucs comme ça, pour rester jeune et proche des étudiants. 
+</phase>
+
+<a id="okdude">Ah ouais, je me sens super proche, là.</a>
+
+<phase id="okdude" next="begin">
+Tu vois, dude. Ca marche ! 
+</phase>
+
+
+<a id="cap">Vous pouvez me dire comment je retourne vers la Grande Place et la salle des chaudrons ?</a>
+
+<phase id="cap" frame="happy">
+Facile, dude ! Tu pars à pied vers le sud : par l'orée du bois et la prairie infinie. | La Grande Place est au bout de la route. 
+</phase>
+
+</d>

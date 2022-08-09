@@ -1,0 +1,220 @@
+﻿<d place="skull" name="Skully" gfx="skully" cond="life(10-)+!fx(skull)">
+
+	<phase id="begin" next="arg:bye:shortcut">
+		Oh oh oh oh oh oh oh ! Ton Dinoz m'a l'air très mal en point !!
+	</phase>
+
+	<a id="arg">Ahhhh ! Un fanntôoommme !!!</a>
+	<a id="bye">S'enfuir en courant</a>
+	<a id="shortcut" target="missions" cond="admin()">(admin)</a>
+
+	<phase id="arg" next="bye:arg2">
+		Un FANTOMEE ?!!??? Aaaahh !! Où ça !! où ça ??
+	</phase>
+
+	<a id="arg2">Ici !!! Vous !!!</a>
+
+	<phase id="arg2" next="diff:bye">
+		QUOI ?? Moi ??? Mais mais mais mais mais... Un peu de respect voyons ! Sinon vous ne ferez pas de vieux os ici, croyez-moi !
+
+		Je suis une S.Q.U.E.L.E.T.T.E ! Une squelette oui ! Peut-être un peu décoiffée, mais pas un fantôme !!!
+	</phase>
+
+	<a id="diff">Et quelle différence ça fait ?</a>
+
+	<phase id="diff" next="free:bye">
+		Tout d'abord, un fantôme est mort, et moi je suis juste... un peu fatiguée, je dois avoir des cernes, voilà tout...
+		Et un fantôme, ça hante toujours quelque chose ou quelqu'un, alors que moi, je suis libre !!!
+		... enfin presque.
+	</phase>
+
+	<a id="free">Presque libre ? C'est-à-dire ?</a>
+
+	<phase id="free" next="haunt:bye">
+		C'est un peu... uhmmm... compliqué... Disons que j'ai deux petits pépins techniques à régler.
+		D'une part, seuls les Dinoz au bord de la mort et leurs maîtres peuvent me voir, d'autre part
+		je ne peux pas quitter cet endroit lugubre...
+	</phase>
+
+	<a id="haunt">Vous hantez cet endroit alors !</a>
+
+	<phase id="haunt" next="do:bye">
+		Hanter cet endroit ?!? Non mais vous RIGOLEZ ?!? Oh oh oh oh oh oh oh ! Rien que d'y penser
+		j'en ai la chair de poule ! J'ai bien mieux à faire MOI oh oh !
+	</phase>
+
+	<a id="do">Ah ? Et quoi donc par exemple !</a>
+
+	<phase id="do" next="uhm:bye">
+		Uhm... C'est... INDISCRET ! Oh oh oh oh ! ..... Mais je vais quand même te raconter,
+		(une fois de plus si ça se trouve) ! oh oh..... J'ai, vois-tu... un AMOUREUX ! On ne dirait pas
+		comme ça, mais quand j'étais plus jeune j'avais de superbes tibias !
+	</phase>
+
+	<a id="uhm">Uhm....</a>
+
+	<phase id="uhm" next="bonne:bye">
+		Je te raconte tout ça ! oh oh oh ! Mais ca n'a aucune importance, car de toute façon j'ai
+		une bonnédiction qui te fera rapidement tout oublier de moi !
+	</phase>
+
+	<a id="bonne">Une... bonnédiction ?!?</a>
+
+	<phase id="bonne" next="reset:next:bye">
+		Oui, oh ! oh oh oh ! C'est comme une malédiction mais en mieux ! je suis protégée par une bonnédiction pour éviter que les gens fassent des cauchemars et pour éloigner les scientifiques. Ils seraient
+		trop ravis d'examiner la façon dont je me nourris,  oh oh oh ! Je ne fais même plus attention
+		à mon cholestérol. Bref, peu aprés m'avoir vu, les gens m'oublient aussitôt !
+	</phase>
+
+	<a id="reset" target="forgot">Je ne vous crois pas...</a>
+	<a id="next">C'est peu pratique...</a>
+
+	<phase id="next" next="help:nohelp:bye">
+		N'est-ce pas !!! Du coup, comme je ne peux pas m'éloigner d'ici, comment veux-tu que je le
+		retrouve ! Mon Mouldeur CHERI !!!
+	</phase>
+
+	<a id="nohelp">Qui est Mouldeur ?</a>
+	<a id="help">Je pourrais vous aider...</a>
+
+	<phase id="nohelp" next="forgot">
+		Tu ne peux m'aider de toute façon... oh oh oh ! Laisse moi seule maintenant, je vais penser
+		à lui, et n'oublie pas de m'oublier...
+	</phase>
+
+	<a id="forgot">...</a>
+
+	<phase id="forgot" fast="1">
+		Il vous a semblé un instant que vous parliez avec quelqu'un, mais vous n'arrivez pas à vous en rappeller les détails...
+	</phase>
+
+	<phase id="help" next="question:accept:maybe">
+		VRAIIMMMEENTTT ?? OH OH OH OH OH !! Tu ferais ça pour moooaa ?!! Mais ca va être difficile pour toi, et à chacune de nos
+		rencontres tu ne te souviendras de rien ou presque ! Es-tu vraiment certain de vouloir m'aider ???
+	</phase>
+
+	<a id="question" target="forgot">Je ne vais rien oublier !</a>
+	<a id="accept">Oui ! Sans aucun doute !</a>
+	<a id="maybe" target="forgot">Il faut que j'y réflechisse...</a>
+
+	<phase id="accept" next="missions">
+		OH OH OH OH OH !! Alors, s'il te plait Monsieur le Maître Dinoz ! Aide-moi à retrouver Moulder
+		et je te récompenserai comme il se doit !!
+	</phase>
+
+	<a id="missions">Que dois-je faire maintenant ?</a>
+
+	<phase id="missions" missions="skull">
+	</phase>
+
+	<phase id="bye" fast="1">
+		L'effrayante squelette vous regarde partir l'air déçue. Si vous vous retourniez vous pourriez
+		presque la voir pleurer, mais vous continuez à courir le plus loin possible, et vous avez
+		sûrement raison.
+	</phase>
+
+</d>
+
+<d place="skull" name="Skully" gfx="skully" cond="fx(skull)+!mission(skuend)">
+
+	<phase id="begin" next="missions">
+		oh oh Oh Oh OH !! La bonnédiction est levée ! Tu vas maintenant pouvoir m'aider à trouver Mouldeur !
+	</phase>
+
+	<a id="missions">Que dois-je faire maintenant ?</a>
+
+	<phase id="missions" missions="skull">
+	</phase>
+
+</d>
+
+<d place="skull" name="Skully" gfx="skully" cond="mission(skuend)">
+
+	<phase id="begin" next="pda:dinoz">
+		Merci pour ce que tu as fait pour nous ! Mouldeur et moi vivons désormais notre amour dans ce magnifique cadre avec
+		vue sur la mer ! Quel bonheur de le savoir à mes côtés chaque jour !
+	</phase>
+
+	<a id="dinoz" cond="!collec(pda)+!dinoz(15)">Ce n'était vraiment rien</a>
+	<a id="pda" cond="!collec(pda)+dinoz(1)">Ce n'était vraiment rien</a>
+
+	<phase id="dinoz">
+		Oh mais si ! Tu as fait beaucoup ! Reviens me voir quand tu auras plus de Dinoz, et je te donnerai un cadeau qui
+		t'aidera dans ta quête !
+	</phase>
+
+	<phase id="pda" collection="pda">
+		Oh mais si ! Tu as fait beaucoup ! Tiens voilà pour toi... je t'offre ce magnifique Planificateur qui t'aidera dans
+		ta quête à gérer tes différents Dinoz. Il sera rajouté à tes objets de collection, alors prends-en bien soin !
+	</phase>
+
+</d>
+
+
+<d place="rashpk" name="Mouldeur" gfx="mouldeur" cond="curmission(skuend,2)">
+
+	<phase id="begin" next="you">
+		Uhmm.... Quelle délicieuse odeur ces Crevettes au Napalm ! Elle me rappellent la cuisine de ma pauvre femme !
+	</phase>
+
+	<a id="you">Vous êtes Mouldeur ?</a>
+
+	<phase id="you" next="explain">
+		C'est exact, enchanté ! Saviez-vous que dans ces ruines on peut trouver d'étranges cercles brulés ? J'étudie ces phénomènes
+		depuis longtemps, et je suis arrivé à la conclusion qu'il existe deux explications quand à ces étranges
+		marques...
+	</phase>
+
+	<a id="explain">Ah... Et ?</a>
+
+	<phase id="explain" next="other">
+		Tout laisse à penser qu'il pourrait s'agir de créatures étranges venues de l'espace et qui, en venant étudier
+		les humains, se posent dans des endroits discrets... Comme elles crachent le feu, elles laisseraient ces étranges
+		cercles de brulé en repartant vers leur planète natale ! Et bien entendu, le Roi cache ces informations car
+		il conspire avec elles ! Extraordinaire non ?
+	</phase>
+
+	<a id="other">Et l'autre explication ?</a>
+
+	<phase id="other" next="ok">
+		Ah ? ... uhm... L'autre explication me semble beaucoup moins plausible, mais d'après le vendeur de merguez, il
+		s'agirait des traces de feu de camp laissées par les touristes visitant les ruines...
+	</phase>
+
+	<a id="ok">...</a>
+
+	<phase id="ok" next="ok2">
+		Uhm ! Succulentes ces Crevettes au Napalm ! Et dire que je ne reverrai jamais ma charmante femme ! Oh combien
+		nous nous aimions... les petits cris qu'elle poussait quand je revenais d'un apéro bien arrosé avec mes collègues
+		me manquent... Et dire qu'elle est certainement morte...
+	</phase>
+
+	<a id="ok2">Mais... vous aussi !</a>
+
+	<phase id="ok2" next="skully">
+		Quoi ? Nous mais vous rigolez j'espère. Je suis encore dans ma prime jeunesse ! Regardez comme mes os sont lisses :
+		pas une ride ! Ah ah ah ah ah !
+	</phase>
+
+	<a id="skully">Skully vous cherche aussi...</a>
+
+	<phase id="skully" next="exp">
+		Quoi ? Vous connaissez Skully ?!?
+	</phase>
+
+	<a id="exp">(Expliquer toute l'histoire)</a>
+
+	<phase id="exp" next="end">
+		............. Merci ! Cela veut dire que mon intuition ne me trompais pas et que j'ai bien fait de ne
+		jamais chercher une autre femme pour la remplacer ! Oooohh ! Merci ! Mille fois merci de nous avoir aidé !
+	</phase>
+
+	<a id="end">Ce n'est vraiment rien...</a>
+
+	<phase id="end" unlock="skuend">
+		Si ! C'est un véritable exploit !!! Accompagnez moi jusqu'à ma femme je vous en prie, il me tarde tellement
+		de pouvoir la comtempler yeux-dans-les-yeux !!
+	</phase>
+
+</d>
+

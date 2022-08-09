@@ -1,0 +1,33 @@
+﻿<missions>
+
+	<!-- ***************************************************************************** -->
+	<!-- Guide Michel Tutorial ----->
+
+	<m group="michel" id="move" name="Découvert bucolique" limit="10">
+		<begin>Bienvenue à Dinoland, je vais t'apprendre à parcourir les vertes contrées de notre monde, tiens-toi prêt... Essaie d'aller à l'université et parle moi là-bas !</begin>
+		<goto v="univ"/>
+		<talk v="Leguide Michel" gfx="michel">Bravo, tu as réussi à venir jusqu'ici, il ne te reste plus qu'à valider la mission en revenant me voir à Dinoville</talk>
+		<goto v="dnv"/>
+		<talk v="Madame Seyche">Bien joué ! On peut passer à la suite.</talk>
+		<end>LeGuide Michel semble satisfait, il te donne une potion d'irma en cadeau, tu pourras te déplacer une fois de plus !</end>
+		<item v="irma" />
+	</m>
+
+	<m group="michel" id="atk" name="Bataille dangeureuse" limit="20" cond="mission(move)">
+		<begin>Tu as du combattre précédemment pour atteindre l'Université, maintenant, tu vas déclencher un combat ici-même !</begin>
+		<kill v="goupi" n="2" name="Monstres sauvages"/>
+		<end>Bravo, tu as battu des monstres à toi seul ! Tu feras de nombreuses rencontres lors de tes aventures, plus tu combattras, plus tu deviendras fort !</end>
+		<item v="tartev"/>
+		<gold v="2000"/>
+	</m>
+
+	<m group="michel" id="boutik" name="Prenons de l'altitude" limit="20" cond="mission(atk)">
+		<begin>Tu vas maintenant acheter une potion d'ange à la boutique volante, elle sert à ressuciter ton dinoz s'il vient à succomber aux blessures infligés par les monstres ! 
+		Pour ce faire, il faut que tu cliques sur le bouton "Boutique" en haut à gauche de l'interface, tu pourras ensuite me donner l'objet que tu auras acheté !</begin>
+		<use v="angel" n="1" />
+		<end>Félicitations ! Tu as su te servir correctement de la boutique, elle est accessible à n'importe quel endroit du jeu, n'hésite pas à l'utiliser en cas de besoin !</end>
+		<gold v="1000"/>
+		<item v="angel"/>
+	</m>
+	
+</missions>

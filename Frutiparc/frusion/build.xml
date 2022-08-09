@@ -1,0 +1,53 @@
+<project name="frusion" basedir="." default="deploy">
+
+
+    <!-- ===================================================================== -->
+    <!-- DEPLOYSERVER                                                          -->
+    <!-- ===================================================================== -->     
+	<target description="copies frusion_server.swf to hq.motion-twin.com"
+			name="deployserver">
+			
+			<delete file="\\192.168.1.1\mtwin\www\games\frusion_server.swf" />
+			<copyfile 
+				src="frusion_server.swf" 
+				dest="\\192.168.1.1\mtwin\www\games\frusion_server.swf" />
+			
+	</target>
+
+    <!-- ===================================================================== -->
+    <!-- DEPLOYCLIENT                                                          -->
+    <!-- ===================================================================== -->     
+	<target description="copies frusion_client.swf to beta.frutiparc.com"
+			name="deployclient">
+			
+			<delete file="\\192.168.1.1\frutiparc-swf\frusion_client.swf" />
+			<copyfile 
+				src="frusion_client.swf" 
+				dest="\\192.168.1.1\frutiparc-swf\frusion_client.swf" />
+			
+	</target>
+	
+
+    <!-- ===================================================================== -->
+    <!-- DEPLOYJAMA                                                          -->
+    <!-- ===================================================================== -->     
+	<target description="copies jama.swf to beta.frutiparc.com"
+			name="deployjama">
+			
+			<delete file="\\192.168.1.1\frutiparc-swf\2895ef241c15d67db05ee2961085f3d9" />
+			<copyfile 
+				src="..\jama\jama.swf" 
+				dest="\\192.168.1.1\frutiparc-swf\2895ef241c15d67db05ee2961085f3d9" />
+			
+	</target>
+
+	
+	<!-- ===================================================================== -->
+    <!-- DEPLOY                                                                -->
+    <!-- ===================================================================== -->     
+	<target description="copies frusion_client.swf to beta.frutiparc.com"
+		depends="deployserver,deployclient,deployjama" 
+		name="deploy"/>
+	
+	
+</project>

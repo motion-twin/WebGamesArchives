@@ -1,0 +1,59 @@
+﻿<d place="marche" name="Isabella" gfx="isabella">
+	
+	<phase id="begin" next="intro:no:twin">
+		Grüß dich! Na wie geht's? Mir geht's gut!
+		Ich habe eine Methode gefunden, mit der ich ganz viele Goldmünzen verdienen
+		kann! Hast du daran Interesse?
+	</phase>
+
+	<a id="intro" cond="!active(twinoid)" >Goldstücke? Na klar interessiert mich das!</a>
+	<a id="no">Na ja, nicht wirklich, ich habe eh schon zu viele davon...</a>
+	<a id="twin" cond="active(twinoid)" >Ich möchte Freunde werben!</a>
+  
+	<phase id="no" fast="1" frame="stop">
+		Das Mädchen geht in eine andere Richtung auf und davon. Offensichtlich mag sie lieber gut gelaunte Menschen...
+	</phase>
+	
+	<phase id="twin">
+		[Hast du Lust, einen weiteren Dinoz-Meister anzuwerben?]
+		[Das ist super. ...aber leider kannst Du das im Moment nicht machen. Freundschaftswerbung ist nämlich vorübergehend nicht möglich. 
+		Keine Sorge, es geht schon bald weiter. Mit einer schönen Überraschung für alle Dinozmeister!]
+ 	</phase>
+	
+	<phase id="intro" next="start:no">
+		Kennst du die *Freundschaftswerbung*? 
+		Das ist ein sehr einfaches Mittel, um Goldstückmillionär zu werden, so wie ich!
+	</phase>
+
+  <a id="start">Aha, und was muss ich dafür tun?</a>
+
+  <phase id="start" next="tix:win:how:no">Das Prinzip ist ganz einfach: Du
+  forderst deine Freunde dazu auf, sich bei DinoRPG anzumelden. Für jeden
+  einzelnen deiner Freunde, der sich anmeldet und anschließend spielt,
+  gewinnst du ein *Werbungsticket*. Das Ticket taucht dann direkt
+  in deinem Inventar auf! Mit diesen Tickets kannst du zahlreiche Schätze
+  gewinnen!</phase>
+
+  <a id="tix">Werbungstickets?</a>
+  <a id="win">Und was kann man gewinnen?!?</a>
+  <a id="how">Wie kann ich jemanden werben?</a>
+
+  <phase id="tix" next="win:how:no">Ja. Sobald du ein
+  Werbungsticket erhalten hast, kannst du zum Markplatz gehen, um
+  es einzulösen. Du kannst für jedes Ticket ein Feld ausgraben und so
+  vielleicht einen großen *Schatz* finden!</phase>
+
+  <phase id="win" next="tix:how:no">Mit der Mehrzahl der Tickets wirst du ein
+  paar Goldmünzen erhalten, aber man erzählt sich,  dass es auch die Möglichkeit gibt, ein extrem seltenes und vor allem sehr mächtiges *Dinoz-Ei* zu finden. Dieses Ei ist auf jeden Fall von allen Dinomeistern heiß begehrt...
+</phase>
+
+  <phase id="how" next="out:tix:win:no">Um jemanden richtig zu werben, brauchst
+  du nur das *Handbuch der Freundschaftswerbung* zu lesen, das ich
+  geschrieben habe. Darin findest du alle praktischen Informationen!</phase>
+
+  <a id="out">Danke, ich werde gleich mal einen Blick darauf werfen!</a>
+
+  <phase id="out" url="/user/parrain">
+	</phase>
+	
+</d>

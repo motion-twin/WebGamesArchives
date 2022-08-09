@@ -1,0 +1,103 @@
+﻿<!-- ***************************************************************************** -->
+<!-- Freze, femme Dorogon, habitante de la cité Dorogon ----->
+
+<d place="ville1" name="Freze" gfx="freze" cond="scenario(nimba2,50-)">
+	<phase id="begin" fast="1" next="mlle:mlle2" frame="stop">
+		Ein weiblicher Dorogon schaut dich an. Sie ist sehr elegant gekleidet, wirkt aber auch überaus schlau.
+		Es wird schwer sein, sich ihr auf eine ungezwungene Art zu nähern.
+	</phase>
+	<a id="mlle" cond="scenario(nimba2,30-)">Ich freue mich sie zu treffen, werte Dame.</a>
+	<a id="mlle2" cond="scenario(nimba2,32+)">Guten Tag.</a>
+	
+	<phase id="mlle" frame="blabla" next="ouech:gift">
+		[Erfreut euch zu treffen, junger Trainer domestizierter Geschöpfe.]
+		[Fremde in unserer schönen Stadt zu begrüßen, ist heutzutage ein seltenes Vergnügen... Ah, wie ich sehe, werdet ihr von Meister Pistazie begleitet.]
+		[Dieser Umstand erfreut mich. Andernfalls hätte ich die unangenehmen Aufgabe gehabt, euch der Stadtwache zu melden.]
+	</phase>
+	<phase id="mlle2" frame="blabla" next="ouech:gift2">
+		[Erfreut euch zu treffen, junger Trainer domestizierter Geschöpfe.]
+		[Fremde in unserer schönen Stadt zu begrüßen, ist heutzutage ein seltenes Vergnügen... Ah, wie ich sehe, werdet ihr von Meister Pistazie begleitet.]
+		[Genießt euren Aufenthalt in unserer wundervollen Stadt und lasst euch berauschen von der reinsten Luft, die hier durch unsere Straßen strömt.]
+		[Ich wünsche euch einen vollkommen angenehmen Tag.]
+	</phase>
+	
+	<a id="ouech">Danke vielmals. Ich freue mich schon auf ein Wiederzusehen.</a>
+	<a id="gift" cond="scenario(nimba2,29)">Gibt es etwas Bestimmtes, das ihr mögt?</a>
+	<a id="gift2" cond="scenario(nimba2,32)">Kann ich euch irgendwie helfen?</a>
+	
+	<phase id="gift" next="nogot:got">
+		[Ein Geschenk?]
+		[Was für eine hervorragende Idee. Ich habe schon seit einer Ewigkeit kein Geschenk mehr bekommen.
+		Wenn ich mir ein kleine Aufmerksamkeit wünschen könnte, würde ich mich über ein Schokoladenhorn freuen!
+		Ich mag allerdings nur feinste Schokolade. Und die Originalität der Präsentation ist mir ebenfalls äußerst wichtig.]
+	</phase>
+	
+	<phase id="gift2" next="parfum">
+		Nun, es gibt da diesen Dorogon, der mir nicht die geringste Beachtung schenkt...
+		Wenn ich doch nur seinen Blick erhaschen könnte. Aber ich habe keinen Schimmer, wie ich das anstellen soll...
+	</phase>
+	
+	<a id="nogot" cond="!hasingr(chas1)">Ich werde es euch sofort bringen!</a>
+	
+	<phase id="nogot" fast="1" frame="stop">
+		Beim Gedanken an diese Köstlichkeit, strahlen ihre Augen mit dem Feuer von 1000 Fackeln.
+		Was immer du auch tust, du solltest sie besser nicht enttäuschen. Du könntest es bereuen.
+	</phase>
+	
+	<a id="got" cond="hasingr(chas1)">Ich habe die Schokolade!</a>
+	
+	<phase id="got" next="tx" useingr="chas1" scenario="nimba2:30" give="ptsage">
+		[Habt vielen Dank, mein junger Freund. Es ist sehr lange her, dass ich etwas so Köstliches gegessen habe.]
+		[Ihr könnt euch glücklich schätzen, dass ihr auf der Oberfläche lebst. Ihr habt dort fast alles, was Mutter Natur zu bieten hat.
+		Manchmal beneide ich euch sogar ob eurer Freiheit.]
+		[Als Dankeschön gebe ich euch einen Weisheitspunkt!]
+	</phase>
+
+	<phase id="ouech" fast="1" frame="stop">
+		Du verlässt Freze. Ein falsches Wort hätte dich dein Leben kosten können. Vergiss nicht, immerhin ist sie ein Dorogon...!
+	</phase>
+	
+	<a id="tx">Habt Dank, freundliche Dame!</a>
+	
+	<phase id="tx" frame="stop" fast="1">
+		Du hast deinen ersten Weisheitspunkt verdient!
+		Noch vier weitere und du kannst den Erzdorogon treffen.
+	</phase>
+	
+	<a id="parfum">	Was halten sie von einem Parfüm, um ihn zu betören?</a>
+	
+	<phase id="parfum" next="noget2:get2">
+		Ausgezeichnete Idee! Wenn ich all die herrlichen Gerüche, die ich bereits habe, mit einer Wasserenergie vermische, sollte ich in der Lage sein, 
+		ein Parfüm zu kreieren, mit dem ich jeden Dorogon berauschen kann!
+	</phase>
+	
+	<a id="noget2" cond="!hasingr(eneau)">Ich werde losziehen und ein gleich eine Wasserenergie besorgen!</a>
+	<a id="get2" cond="hasingr(eneau)">Ich habe eine Wasserenergie!</a>
+	
+	<phase id="noget2" fast="1" frame="stop">
+		Freze wartet ungeduldig auf ihre Wasserenergie.
+		Ist es wirklich so einfach, ihre Aufmerksamkeit zu gewinnen?
+		Das ist ja überhaupt kein Problem.
+	</phase>
+	
+	<phase id="get2" next="tx2" useingr="eneau" scenario="nimba2:33" give="ptsage">
+		[Ich danke euch ein weiteres Mal, mein junger Freund. Dank euch sollte ich ohne Probleme seine Aufmerksamkeit erregen können. 
+		Offen gesagt, er redet ja über nichts anderes als Caushemesh. Aber ich werde ihn schon auf andere Gedanken bringen.]
+		[Als Dankeschön gebe ich euch einen weiteren Weisheitspunkt!]
+	</phase>
+	
+	<a id="tx2">Danke! (Armer Nox, da kommt ein ebenbürtiger Gegner auf ihn zu.)</a>
+	
+	<phase id="tx2" frame="stop" fast="1">
+		Du hast einen weiteren Weisheitspunkt erworben.
+		Wer kann dir nur helfen, den fehlenden fünften Weisheitspunkt zu erhalten?
+	</phase>
+</d>
+
+
+<d place="ville1" name="Freze" gfx="freze" cond="scenario(nimba2,51+)">
+	<phase id="begin" fast="1" frame="stop">
+		Seid gegrüßt, Abenteurer! Wie geht es euch?
+		Ist das Leben auf unserer schönen Insel nicht zauberhaft?
+	</phase>
+</d>

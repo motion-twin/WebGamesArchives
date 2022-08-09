@@ -1,0 +1,9 @@
+interface Part extend MovieClip {//}
+
+
+	
+	
+	
+	
+//{
+}

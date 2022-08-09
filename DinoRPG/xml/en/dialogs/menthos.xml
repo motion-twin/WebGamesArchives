@@ -1,0 +1,48 @@
+<!-- dialogue menthos fin de nimbao 2 -->
+
+	
+<d place="observ" gfx="sage_mentos" name="Menthos the Sage" cond="scenario(nimba2,51+)">
+	<phase id="begin" next="sage">
+		My time is split between my role as counsellor and my work here. Fortunately I know a way to get from the palace to here really quickly.
+		Now the frontiers have come down, moving around Nimbao is really easy...
+	</phase>
+
+	<a id="sage">Bow respectfully</a>
+	
+	<phase id="sage" gfx="sage_mentos" name="Menthos the Sage" background="1" next="ques3:ques4">
+		Good day to you young dinoz master.
+		I am an Non-playable character from DinoRPG. Ask me anything.
+	</phase>
+
+	<a id="ques3">There are so many books here!</a>
+	<a id="ques4">Can you tell me about the history of Dinoland?</a>
+	
+	<phase id="ques3" next="ques3:ques4:merc"  gfx="sage_mentos" name="Menthos the Sage" background="1">
+		[This observatory also serves as a library for us Dorogons. We've recorded everything that has happened on the surface since the dawn of time, including everything that has happened since the separation of the celestial island and the surface.]
+		[For example, did you know that Nimbao is nothing other than the cap of Big All Hot? It was shot into the air several thousand years ago, long before the fall of Jazz Island.]
+		[Nimbao floats because it is made up of a highly unusual type of rock. Since then, it has been a perfect spot from where to observe the surface which has advanced extremely slowly in spite of our help.]
+	</phase>
+	
+	<phase id="ques4" next="ques3:ques4:merc"  gfx="sage_mentos" name="Menthos the Sage" background="1">
+		[At the dawn of time, we taught the humans the basics for survival such as fire. We also told them how to raise wild dinoz, and to familiarize themselves with these creatures who will cohabit the lands with them.]
+		[All of history is documented in the Observatory. Unfortunately for you, they are all written in the ancient Dorogon language, and only the wisest can consult the archives.]
+		[I'm translating these volumes little by little so that future generations may learn of the history of Dinoland.]
+	</phase>
+	
+	<a id="merc">Thank you for all the information.</a>
+	
+	<phase id="merc" fast="1" frame="stop">
+		The sage gets back to his work. A task he seems to really hold dear.
+	</phase>
+</d>
+
+<d place="palais" gfx="sage_mentos" name="Menthos the Sage" background="2" cond="scenario(nimba2,51+)">
+	<phase id="begin">
+		[Mandragore turned down the Archdorogon position. he's at home if you're looking for him. He said something about a reward...]
+		[I'm going to stay here with Master Pistachio, now that the Counsel of Dorogons have made him Archdorogon, he'll need all of our wisdom
+		to accomplish his missions. I have faith in him, everything will be good!]
+	</phase>
+</d>
+
+
+

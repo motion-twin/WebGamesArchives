@@ -1,0 +1,36 @@
+<d place="grenie" name="Donner les mains du mentor." gfx="gumite" auto="0">
+
+<a id="begin">Voilà vos [mains du mentor]. Vous êtes sûre que vous avez besoin de tout ça ? </a>
+
+<phase id="begin" qtake="MentorHand:20" next="fini">
+Bien sûr, grnx. | C'est pour mon garde-manger. Ca change des éléments, de temps en temps ça fait plaisir. 
+</phase>
+
+<a id="fini">Sinon, vous avez plus de recette à faire ? C'est bon ? </a>
+
+<phase id="fini" frame="angry" next="finib">
+Grnx. | Oui, c'est bon. Tu as fait du bon travail. | Je vais te dire ce que j'ai vu lors  de cette réunion secrète :
+</phase>
+
+<phase id="finib" frame="angry" next="plus">
+Il y avait une espèce d'agent immobilier avec un grand chapeau et 4 profs : [Fili, Enguerrand, Lecoussin et le vieux Mortgage]. ils ont discuté et se sont engagés pour la construction de je sais pas trop quoi... Une histoire de grosse résidence. 
+</phase>
+
+<a id="plus">Oui ça je sais. Vous savez ce qu'il y a dans l'accord ? </a>
+
+<phase id="plus" frame="happy" next="det">
+Evidemment ! Chaque école fournit une partie de la résidence : Audepint apporte {la pierre}, Shang-Kah {le chauffage et le sauna}...
+</phase>
+
+<phase id="det" frame="normal" next="pmal">
+Jeezara fournit {l'isolation} et Gemini s'occupe du {terrain de croquet}. | Le type au chapeau a parlé d'une 5e étape mais j'ai pas tout compris, aussi. 
+</phase>
+
+<a id="pmal">C'est déjà pas mal, ça devrait nous aider. Merci.</a>
+
+<phase id="pmal" frame="happy">
+De rien. Grnx. je t'ai tout écrit sur ce post-it, y compris ce que j'ai entendu pour la 5e étape pas claire. 
+</phase>
+
+
+</d>

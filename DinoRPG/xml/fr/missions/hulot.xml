@@ -1,0 +1,96 @@
+﻿<missions>
+
+	<!-- ***************************************************************************** -->
+	<!-- NICOLAS MULOT ----->
+
+	<m group="hulot" id="seqact" name="La route du grand péril" limit="10" cond="!mission(toxic)|mission(hucure)">
+		<begin>Pour pénétrer dans la jungle, il faut d'abord franchir un endroit qu'on appelle le Chemin Glauque... C'est une route dangereuse qui part au nord ! Pourriez-vous y faire un peu de ménage pour moi ?</begin>
+		<goto v="chemin"/>
+		<kill n="6"/>
+		<end>On n'entend plus rien grogner par là-bas... C'est bon signe non ?</end>
+		<gold v="1500"/>
+		<xp v="40"/>
+	</m>
+
+	<m group="hulot" id="toxic" name="Allergies" limit="15">
+		<begin>Je suis victime d'allergies à certaines plantes de la Jungle... Mais j'ignore pour le moment lesquelles ! Pourriez-vous me trouver quelques plantes à l'air suspect, afin que je fasse quelques tests ?</begin>
+		<goto v="chemin"/>
+		<action v="Figonicia Furonclée">Vous cueillez une fleur boursouflée et toute poisseuse...</action>
+		<goto v="collin"/>
+		<action v="Purulente Noire">La Purulente dégage un petit nuage pollen malodorant vraiment suspect.</action>
+		<goto v="fleuve"/>
+		<action v="Visqueuse des Boues">Vous trouvez une sorte de gros nénuphar verdâtre étalé dans une large flaque d'eau croupie.</action>
+		<goto v="auree"/>
+		<end>Ca m'a l'air d'aller... Je vais essayer de trouver laquelle de ces plantes provoque une allergie chez moi... Voilà pour le service.</end>
+		<gold v="1500"/>
+		<xp v="20"/>
+	</m>
+
+	<m group="hulot" id="map" name="Cartographie" limit="20" cond="!mission(toxic)|mission(hucure)">
+		<begin>Une bonne carte, ça aide toujours, il paraît. Seulement voilà, il n'en existe aucune pour la Jungle de Grumhel ! Pourriez-vous partir vers le nord et prendre quelques notes pour moi ? Il y a des collines à l'Est, ça pourrait être un bon endroit pour avoir une vue d'ensemble !</begin>
+		<goto v="collin" title="Trouver un point élevé"/>
+		<action v="Tracer une carte">Vous vous installez en haut d'une vieille souche pour tracer la carte des environs... Soudain, une Fauve-Souris hideuse jailli de nulle part et s'empare de votre bloc-notes d'un coup de dents ! D'un battement d'aile, elle s'éloigne et se pose sur une branche haute...</action>
+		<action v="Attraper la Fauve-Souris">Vous êtes presque certain de l'entendre ricaner du haut de son perchoir... Vous attrapez une branche que vous secouez pour tenter de la faire tomber, mais celle-ci s'envole et s'éloigne dans la jungle !</action>
+		<goto v="chemin" title="Retrouver la Fauve-Souris"/>
+		<action v="Fauve-Souris">La vilaine bestiole s'est perchée au sommet d'un énorme arbre ! Elle vous fixe impassiblement.</action>
+		<action v="Lancer une pierre">Vous faites mouche ! La Fauve-Souris pousse un cri et laisse tomber votre bloc-notes au pied de son arbre. Agacée, elle se pose alors juste à côté et vous adresse un regard de défi...</action>
+		<kill v="bat" n="1" name="Fauve-Souris espiègle"/>
+		<action v="Ramasser le carnet">Vous récupérez finalement votre bloc-notes !</action>
+		<goto v="collin" title="Retourner aux Collines Hantées"/>
+		<action v="Tracer la carte">Vous finissez de tracer votre carte, en restant sur vos gardes cette fois-ci...</action>
+		<end>Ca m'a l'air pas mal du tout ! Je vais étudier un peu tout cela pour bien préparer mon expédition de l'extrême.</end>
+		<gold v="2500"/>
+		<xp v="60"/>
+	</m>
+
+	<m group="hulot" id="hucure" name="Remède" limit="25" cond="mission(toxic)">
+		<begin>F'est bien aimable de votre part... Ve pense que les Boines de l'île des Futes mutantes pourraient m'aider... Prenez les blantes que vous m'avez amenées et allez les voir de ma bart... Snirf...</begin>
+		<goto v="auree"/>
+		<action v="Prendre les plantes">Vous récupérez les plantes toxiques de Nicolas Mulot. On dirait bien qu'il a essayé de s'en faire une infusion....</action>
+		<goto v="chutes"/>
+		<talk v="Moine médecin">Vous lui avez donné des Figonicia Furonclées ? De la Purulente Noire ?! Une Visqueuse des Boues !! Ouh la la... Il vaut mieux ne pas tarder ! Apportez moi un peu de poudre de corail pour commencer.</talk>
+		<goto v="corail"/>
+		<action v="Morceau de corail">Vous ramassez un bout de corail brisé : ça devrait bien faire l'affaire !</action>
+		<goto v="chutes" title="Ramener le corail au moine"/>
+		<talk v="Moine médecin">Ramenez moi quelques crocs de Korgons du Chemin Glauque et quelques paires d'ailes de Fauve-Souris du nord.</talk>
+		<goto v="chemin"/>
+		<kill v="korgon" n="4"/>
+		<action v="Ramasser des crocs">Vous récupérez quelques crocs de Korgons.</action>
+		<goto v="fleuve"/>
+		<kill v="bat" n="5"/>
+		<action v="Récupérer des ailes">Vous récupérez une belle collection d'ailes de Fauve-Souris...</action>
+		<goto v="chutes" title="Ramener les ingrédients aux Chutes"/>
+		<talk v="Moine médecin">Parfait ! Je vais pouvoir me préparer un délicieux pot-au-feu avec tout ça... Pardon ? Ah vous veniez pour le remède ? Oui c'est vrai. J'en avais déjà une pleine caisse à vrai dire, servez-vous. Je vous garde un peu de pot-au-feu ?</talk>
+		<action v="Caisse de remèdes">Vous emportez trois ou quatre flacons d'antidote pour Nicolas Mulot, sait-on jamais...</action>
+		<end>Glou glou ! Merfi bien... Efpérons que fa fasse effet... Fa devenait limite là... Tenez prenez fette pofion en gave de gratitude.</end>
+		<item v="angel"/>
+		<xp v="60"/>
+	</m>
+
+	<m group="hulot" id="bckpck" name="Kit de l'aventurier" limit="20" cond="mission(hucure)+mission(map)">
+		<begin>Avant d'envisager mon voyage incroyable en terre inconnue, il me manque une chose primordiale ! Un bon sac à dos. J'ai perdu le mien en contournant les Chutes Mutantes... Pourriez-vous me le retrouver ?</begin>
+		<goto v="chutes"/>
+		<talk v="Pêcheur de l'extrême">Un sac d'os qu'vous dites ? Nan j'crois pas avoir pêché ça ! Faudrait p'têt voir s'il aurait pas été emporté plutôt vers le marais avec les courants ? C'est qu'ça coule dans un sens pas banal ici...</talk>
+		<goto v="marais"/>
+		<talk v="Ramasseur d'algues">Ah si j'm'en rappelle !! Un bin beau sac à dos qu'c'était celui-là, tout collé dans le bourbier d'une fougasse des marais qu'il était ! J'l'ai refilé à mon cousin de la mine, pour porter ses caillasses qu'c'est bin pratique ! Diou !</talk>
+		<goto v="corail"/>
+		<action v="Interroger les mineurs">Vous questionnez quelques mineurs, on vous indique l'un d'eux du doigt...</action>
+		<talk v="Mineur qui prend sa pause">Ouais. J'vois bien de quoi tu parles. Mais l'sac, je l'ai plus. [Il crache par terre] Ouais. Il a pas tenu deux jours le machin. Je l'ai envoyé à mon cousin du Port de Prêche. Ouais. Ca pouvait faire un bon filet, je me suis dis. [Il crache à nouveau]</talk>
+		<goto v="port"/>
+		<talk v="Pêcheur affairé">Le sac ? Oui je l'ai toujours ! Mais il est en piteux état ! Tenez, si ça peut vous rendre service, je peux vous le réparer et vous le laisser, il ne me sert pas à grand chose ici... Mais pour ça il me faut une bobine de fil et des aiguilles. On en vend à Dinoville je pense.</talk>
+		<goto v="dnv"/>
+		<action v="Trouver une bobine">Vous faites rapidement le tour des étalages du marché pour trouver du Matériel de Couture. Vous finissez par trouver la boutique d'une couturière...</action>
+		<talk v="Couturière">Bien le bonjour Maître des Dinoz, bienvenue dans mon échope ! Du fil et des aiguilles ? Oui j'en vends mais ça n'est pas donné... Mais je veux bien vous en laisser gratuitement si vous me rendez un petit service ! Ma maison se trouve près de la fontaine et il ne se passe pas un soir sans qu'on y soit attaqué par ces monstrueux CoqDurs ! Aidez-moi et le matériel est à vous.</talk>
+		<goto v="fountj"/>
+		<kill v="coq" n="2" name="CoqDurs acharnés"/>
+		<goto v="dnv" title="Faire votre rapport à Dinoville" />
+		<talk v="Couturière">Merci mille fois pour votre intervention ! Voici le matériel comme promis...</talk>
+		<goto v="port"/>
+		<talk v="Pêcheur affairé">Ah c'est tout ce qu'il me faut pour rafistoler votre sac. [Il s'en occupe pendant une petite heure...] Voila ! Il devrait tenir pendant un petit moment encore.</talk>
+		<end>Euh vous allez rire... Figurez-vous que j'ai reçu justement un Sac à dos de rechange ! Je l'avais commandé en prévision de mon expédition... Bon écoutez, voilà ce qu'on va faire : je récupère mon vieux sac et je vous donne le nouveau ! Ca marche ?</end>
+		<fx v="bckpck"/>
+		<xp v="40"/>
+	</m>
+
+
+</missions>

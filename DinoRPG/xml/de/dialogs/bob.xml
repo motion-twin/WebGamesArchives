@@ -1,0 +1,95 @@
+﻿<d place="baobob" name="Hr. Bao Bob" gfx="baobob">
+  <phase id="begin" next="question:nothing"> Hallo, hallo, hallo, was
+  möchtest du von mir, Zuchtmeister?</phase>
+
+  <a id="question">Ich habe eine Frage...</a>
+
+  <a id="nothing">Gar nichts.</a>
+
+  <phase id="question" next="mission:quest2:quest3:quest4:no">Eine Frage?
+  Mmmhhmm....Was hältst du stattdessen von einer kleinen Mission für deinen
+  Dinoz? Wir organisieren mit Freunden eine Rally rings um das
+  Dinoland!</phase>
+
+  <a id="mission">Ja, sehr gerne.</a>
+  <a id="no" target="nothing">Nein danke.</a>
+  <a id="quest2" cond="active(steppes)+!fx(palmes)">Und was ist mit meiner Frage?</a>
+  <a id="quest3" cond="active(steppes)+fx(palmes)+!fx(sylkey)">Und was ist mit meiner
+  Frage?</a>
+  <a id="quest4" cond="scenario(magnet,8)">Und was ist mit meiner Frage?
+  Wirklich? Dann ist ja alles perfekt... Gute Reise!</a>
+
+  <phase id="nothing">
+		Wirklich? Dann ist ja alles perfekt... Gute Reise!
+	</phase>
+
+  <phase id="mission" missions="bob"></phase>
+
+  <phase id="quest2">Such mich wieder auf, sobald Du die korgonesischen
+  Flossen aus dem Grumhel-Wald erhalten hast. Ich könnte dann deinen
+  Lieblingswunsch erfüllen.</phase>
+
+  <a id="bye" target="nothing">Ich muss gehen.</a>
+
+  <phase id="quest3" next="where:bye">Eine Frage? Mmhhhmmm....Ich sehe, dass
+  Du die korgonesischen Flossen erhalten hast. Das bedeutet, dass Du nun in
+  der Lage sein solltest zu überleben....dort....na ja, vielleicht...</phase>
+
+  <a id="where">Dort?</a>
+
+  <phase id="where" next="where2:how:danger:bye">Mhmm...Um dort hingehen zu
+  können, wirst Du sieben Dinoz versammeln müssen. Das müssen nicht zwingend
+  deine sein. Es können auch Dinoz deiner Klanmitglieder sein. Anschließend
+  werde ich euch dort hinschicken...dorthin.</phase>
+
+  <a id="where2">Ja, aber wohin genau?</a>
+  <a id="how">Wie soll ich das machen?</a>
+  <a id="danger">Und ist das gefährlich?</a>
+
+  <phase id="where2" next="how:danger:bye">Mmmhmmm....Es handelt sich um einen
+  Ort...Ich kann Dir nicht mehr sagen. Aber du sollst wissen, dass Du dort
+  einen Schlüssel finden wirst, ja, DEN Schlüssel. Es ist der Schlüssel für
+  die Pforte zum Schwarzwald. Er wird dir erlauben, dein Abenteuer fortzuführen.
+  Na ja, natürlich nur wenn Du überlebst. </phase>
+
+  <phase id="how" next="where2:danger:concen:bye">Wie? Hmm... Hör zu. Du musst
+  sieben Dinoz hier versammeln. Das können deine oder die deiner
+  Klanmitglieder sein. Jeder Dinoz muss sich dann gedanklich konzentrieren.
+  Wenn ihr dann sieben seid, ab diesem Moment, werdet ihr dorthin gehen können.
+  </phase>
+
+  <phase id="danger" next="where2:how:bye">Gefährlich? Mhmmm...einfach
+  ausgedrückt würde ich sagen, dass Du dort sicherlich nur eine sehr geringe
+  Chance hast zu überleben... Aber wer nichts wagt, der nichts gewinnt,
+  richtig?</phase>
+
+  <a id="concen">Ich möchte meinen Dinoz meditieren lassen!</a>
+
+  <phase id="concen" next="ok:bye">Mhhmm...Gut...Ich werde deinen Dinoz
+  hypnotisieren. Auf diese Weise wird er sich besser konzentrieren
+  können...Keine Sorge, Du wirst das jederzeit abbrechen können, wenn du es
+  wünscht. </phase>
+
+  <a id="ok">Einverstanden.</a>
+
+  <phase id="ok" url="/dino/::did::/act/concentrate"></phase>
+
+  <phase id="quest4" next="noingr:ingr:bye">Eine Frage? Mhhmm...Du wirst ein
+  paar Zutaten brauchen, damit ich Dir helfen kann. Kurzum, insofern ich
+  errate, welche Frage du mir stellen wolltest... </phase>
+
+  <a id="ingr" cond="fx(gshop)+fx(ice)+fx(corail)">Hier sind die Zutaten!</a>
+  <a id="noingr" cond="!(fx(gshop)+fx(ice)+fx(corail))">Hier sind die
+  Zutaten!</a>
+
+  <phase id="noingr">Tss tss tss... Die Koralle, die niemals bricht, das Eis,
+  das niemals schmilzt und der Zweig, der niemals welkt. Mir scheint, dass Dir
+  etwas fehlt, mein Lieber.</phase>
+
+  <phase id="ingr" noeffect="gshop:ice:corail" effect="potion" scenario="magnet:9" next="potion">Pum pum palalam pum pum pum pam pum pum palalam pam! Voila, ein wunderbarer Anti Sed Trank für Dich...</phase>
+
+  <a id="potion">Dann sind Sie also ein Antiker Affe!!!</a>
+
+  <phase id="potion">Mhmm...auf Wiedersehen mein Freund. Such mich bei
+  Gelegenheit wieder auf!</phase>
+</d>

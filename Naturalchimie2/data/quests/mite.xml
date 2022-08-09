@@ -1,0 +1,63 @@
+<quests>
+
+<q from="mite" id="gplace" name="Reprendre l'enquête" cond="grade(,4)">
+	<begin>Notre dernier contact nous a confirmé que des mites orange ont été aperçues sur la Grande Place. Rends-toi là-bas et fais une alchimie, ça devrait en attirer quelques unes. Quand tu en auras 3 on pourra recouper leurs témoignages.</begin>
+	<collect o="QuestObj(omite):3" zone="agoraa" title="Mettre la main sur 3 mites orange à la Grande Place, pendant une alchimie. Une transmutation à côté d'une mite suffit pour l'attraper.">
+		<playMod artft="QuestObj(omite):35" />
+	</collect>
+	<end>Grnx ! Super, on va pouvoir les interroger pour comprendre ce qui se passe. Bon boulot.</end>
+	<reput s="gu" v="3" />
+	<gold v="80" />
+	<xp v="7" />
+</q>
+
+
+<q from="mite" id="mitea" name="La grande évasion" cond="quest(gplace)">
+	<begin >Georgette m'a tout raconté ! C'est terrible ! </begin>
+	<talk did="miteaa" />
+	<cauldron r="gremit" drop="1" qty="1" collect="1" add="1" title="Utiliser la recette donnée par l'alchimite pour créer 4 charcleurs." />
+	<use qo="Grenade(0):4" zone="agoraa" title="Faire exploser 4 lampadaires de la Grande Place avec les charcleurs." text="Les Charcleurs fonctionnent parfaitement : les vitres de 4 lampadaires se brisent et libèrent toutes les mites orange. Elles s'envolent et ont l'air de se diriger vers le grenier d'Altus. " action="Utiliser les 4 charcleurs"/>	
+	<end>Elles sont rentrées saines et sauves. On va pouvoir s'organiser en commandos pour libérer les autres. Bravo, soldat euh... alchimiste.</end>
+	<xp v="12" />
+	<reput s="gu" v="5" />
+	<gold v="95" />
+</q>
+
+<q from="mite" id="miteb" name="Un repas équilibré" cond="quest(mitea)">
+	<begin>J'ai besoin de toi pour nous procurer des éléments sains et équilibrés. En les mangeant en cachette, il devrait y avoir de moins en moins d'alchimites orange.... au grand désespoir de la Guilde ! Grnx, grnx grnx.</begin>	
+	<use o="Elt(9):4;Elt(13):4;Elt(17):4;Elt(21):4;Elt(25):4" zone="grenie" title="Rapporter les éléments suivants à l'alchimite du grenier. De quoi faire un repas équilibré et diversifié." text="Ah, merci ! On va faire un super festin, avec ça ! " action="Donner les éléments"/>	
+	<end>Grnx ! Quel bonheur ces éléments de premier choix ! Non seulement il y a moins d'alchimites orange parmi nous, mais en plus ça faisait longtemps qu'on avait pas eu droit à un tel festin.</end>
+	<xp v="14" />
+	<reput s="gu" v="6" />
+	<gold v="130" />
+</q>
+
+<q from="mite" id="mitec" name="Un dernier pour la route" cond="quest(miteb)">
+	<begin>Nous avons un plan pour régler le problème une fois pour toute ! Pas question qu'une seule alchimite retourne dans un de ces affreux lampadaires ! </begin>	
+	<talk did="miteca" />
+	<talk did="mitecb" step="1" title="Se rendre à Vostok pour chercher une bouteille de jus de coeur de Vortex." />
+	<talk did="mitecc" title="Donner 8 Mercurules contre du jus de coeur de vortex à Vostok." />
+	<cauldron r="adaltf" drop="1" qty="1" collect="1" add="1" title="Utiliser la recette 'Parflaum Flash' donnée par l'alchimite pour créer une dose d'Au paradis du daltonisme." />
+	<talk did="mitecd" title="Faire boire le cocktail 'Au paradis du daltonisme' au gardien du donjon K." />
+	<end>Ca a marché ! La dernière livraison était pleine de potions vertes et violettes ! On est tranquille pour un bout de temps. Finis les lampadaires de l'enfer ! </end>
+	<xp v="17" />
+	<reput s="gu" v="5" />
+	<gold v="260" />
+</q>
+
+
+<q from="mite" id="mited" name="Alchimite, pour vous servir" repeat="1" cond="quest(mitec)">
+	<begin>En tant que héros des alchimites dans le complot des lampadaires, nous te faisons une faveur : ramène-nous quelques éléments de qualité pour le repas de ce soir. En échange, l'une de nous viendra avec toi pour t'aider dans tes alchimies.</begin>
+	<use o="Elt(10):1;Elt(13):2;Elt(17):2;Elt(21):2;Elt(25):2" zone="grenie" title="Rapporter les éléments suivants à l'alchimite du grenier." text="Ouh, ça a l'air super bon tout ça !" action="Donner les éléments"/>	
+	<end>Grnx, merci beaucoup ! Choisis l'alchimite que tu préfères (sauf moi). N'hésite pas à l'utiliser en jeu, surtout si elle n'a rien mangé depuis un moment.</end>
+	<xp v="6" />
+	<item v="Alchimoth:1" />
+</q>
+
+
+
+
+
+
+
+</quests>

@@ -1,0 +1,82 @@
+﻿<missions>
+
+	<!-- ***************************************************************************** -->
+	<!-- Gulom, help a survivor ----->
+<!--
+	<m group="gullom" id="remed" name="First Aid" limit="2">
+		<begin>Even though he suffers in silence, you can see that Gulom could slip into Limbo at any moment. He needs a remedy to heal his wounds, and he needs it quickly.</begin>
+		<goto v="chutes"/>
+		<use v="remed2" n="1"/>
+		<end>Thank you, I couldn't have gone on without your help!</end>
+		<xp v="30"/>
+	</m>
+-->
+	<m group="gullom" id="truci1" name="Clear the campsite">
+		<begin>The Dark World is infested with all kinds of monsters, I'll be over here if you're looking for me.
+		Can you do me a favour and get rid of some of these ferocious beasts, so that we can set up camp in peace?</begin>
+		<goto v="dkchut"/>
+		<kill n="10" v="piraos" zone="4" />
+		<goto v="dktow"/>
+		<kill n="10" v="piraos" zone="4" />
+		<goto v="dkbao"/>
+		<kill n="5" v="garouz" zone="4" />
+		<end>Great! Thanks to you I can rest in safety.</end>
+		<xp v="40"/>
+	</m>
+	
+	<!-- Le maître est un ermite aveugle, il ne peut donc voir les ouvertures du portail-->
+	
+	<m group="gullom" id="ouestu" name="Master, where are you?" cond="mission(truci1)">
+		<begin>Could you help me to find my master, he must be waiting for me around here somewhere. Given the light that is emitted when the portal opens, it's unlikely that he hasn't seen it.</begin>
+		<goto v="dkbao"/>
+		<talk v="gulom" gfx="survivor">Master, are you there?</talk>
+		<goto v="dktow"/>
+		<talk v="gulom" gfx="survivor">Yoo hoo, Master, can you see me?</talk>
+		<goto v="fake"/>
+		<talk v="gulom" gfx="survivor">Stop playing hide-and-seek! Once you hit ten years old, it's not funny any more! ...Euh, oops, I didn't say anything!</talk>
+		<end>
+			Erm, I'm sorry to have wasted your time, I totally forgot that my master is blind! 
+			So, he actually can't see the rays of light given off by the fragments of the Dark Orb... Let's go back to the campsite, there's no point looking for him...
+		</end>
+		<gold v="1000"/>
+	</m>
+	
+	<m group="gullom" id="truci2" name="Haunted place" cond="mission(ouestu)">
+		<begin>I never got used to the darkness, for some reason I've always been afraid of the dark,
+		I spotted some menacing shadows the last time I went over there. Could you take a look?</begin>
+		<goto v="fake"/>
+		<kill n="10" v="amanpe" zone="4" />
+		<end>Thanks, now I just have to make ti through the night!</end>
+		<xp v="40"/>
+		<gold v="500"/>
+	</m>
+	
+	<m group="gullom" id="monte" name="The Dark Tower" cond="mission(truci2)">
+		<begin>At the top of the Dark Tower resides a guardian even more powerful than the one you faced before. In silence he observes the Dark World. Perhaps he knows something about the disappearance of my master! Could you go and ask hime nicely?</begin>
+		<goto v="dktow2"/>
+		<goto v="dktow3"/>
+		<goto v="dktow4"/>
+		<actfight act="Fight the tower guardian" monsters="upgrd"/>
+		<talk v="Summit guardian">.....</talk>
+		<action v="Pick up the helmet">It's impossible to interrogate anyone, all that remains is this empty helmet...</action>
+		<goto v="dkchut"/>
+		<talk v="gulom" gfx="survivor">So, did he tell you anything?... Nothing? There's just a helmet?... Oh, ok then, I'll need to think of something else...</talk>
+		<end>At least he'll stop watching me get my legs bitten by the Pirhanoz...</end>
+		<xp v="50"/>
+		<gold v="2000"/>
+	</m>	
+	
+	<m group="gullom" id="lumi" name="Candela" cond="mission(monte)">
+		<begin>I was wondering if we couldn't light some fires in strategic places so that we can see a little better in this wretched hole. In any case, I'd be grateful if I could finally see what I'm eating!</begin>
+		<goto v="dktow"/>
+		<useingr v="enfeu" n="1"/>
+		<goto v="dkbao"/>
+		<useingr v="enfeu" n="1"/>
+		<goto v="fake"/>
+		<useingr v="enfeu" n="1"/>
+		<end>Excellent, thanks to you we can see a little better! The problem now is that I see what's in my plate, and it doesn't look good...</end>
+		<xp v="60"/>
+		<gold v="6000"/>	
+	</m>
+	
+</missions>

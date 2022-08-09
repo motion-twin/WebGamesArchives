@@ -1,0 +1,225 @@
+<!-- ANIMATION DE ST.PATRICK SERVEUR EN-->
+
+<d place="cpuits" name="Shaun DeLear" gfx="leprechaun" cond="active(leprechaun)+gvar(xavent,0)+event(xstpatrick)+!uvar(xmasev)">
+	<phase id="begin" background="3" next="gift">
+		[¡Hola Maestro de Dinos!]
+		[Llegas a tiempo para la fiesta de San Patricio.]
+		[Nuestros amigos del servidor inglés se lo pasan muy bien estos días y comparten con nosotros su alegría.]
+		[¡Toma esto y diviértete este fin de semana, te serán útiles!]
+	</phase>
+	<a id="gift">Excelente, ¡3 Pociones de la Bruja Lola, GRACIAS!</a>
+	<phase id="gift" give="irma:3" nocheck="1" next="cool" uvar="xmasev:1" background="1">
+		[Ahora debo ocuparme de todos los demás Maestros que vayan llegando.]
+		[¡Hasta luego!]
+	</phase>
+	<a id="cool">¡Gracias por las pociones Sr. Shaun!</a>
+	<phase id="cool" fast="1" frame="atchoz" background="1">
+		¡Finalmente esos duendes no son como los pintan!
+		¿Qué de bueno podría hacer con estas pociones?
+	</phase>
+</d>
+
+<d place="port" name="Al O'Moaney" gfx="leprechaun" cond="(active(leprechaun)|admin())+gvar(xavent,1)+event(xstpatrick)+!uvar(xmasev)">
+	<phase id="begin" background="1" next="gift">
+		[Hai diddle dee dee, ah... ¡Houla! Maestrou de Dinous! ¿Todou bien?]
+		[Al O'Moaney, para servirtei.]
+		[Yo oír que tienes reputeishon de ser un valiente guerrerouh, ¿ciertou?]
+		[¡Hey! ¿podrías hacerme un favour?]
+	</phase>
+	<a id="gift">Claro Al, ¿de qué se trata?</a>
+	<phase id="gift" give="tictac:1" nocheck="1" next="cool" uvar="xmasev:1" background="2">
+		[Ya viste que todous andan haciendo alborotou por el Campeonato de Clanes. Avísa a todous que la fiesta está por empezar.]
+		[Toma un ticketcitou. No puedou creer que los Maestros sean tardones. ]
+		[See you later, aligator!]
+	</phase>
+	<a id="cool">Gracias por el ticket Al, ¡me alegra haberte encontrado!</a>
+	<phase id="cool" fast="1"  frame="simploz" background="2">
+		Se dice que los duendes son tacaños... ¡pero este tío resultó muy bueno!
+	</phase>
+</d>
+
+<d place="fosslv" name="Pat MacGroyne" gfx="leprechaun" cond="(active(leprechaun)|admin())+gvar(xavent,2)+event(xstpatrick)+!uvar(xmasev)">
+	<phase id="begin" background="2" next="affts">
+		[You ride the finest horse I've ever seen...]
+		[... ... I could never go with you no matter how I wanted to...]
+	</phase>
+	<a id="affts">¡Donde vas amigou! La fiesta de San Patricio es hoy.</a>
+	<phase id="affts" next="gift">
+		[Ah no, te equivocas. ¡Estoy aquí para la fiesta de San Patricio!]
+	</phase>
+	<a id="gift">¡Ah sí, te oí cantar!</a>
+	<phase id="gift" giveingr="fish3:2" nocheck="1" next="cool" uvar="xmasev:1" background="3">
+		[¿Te apetecen unos fish and chips?]
+		[¿Que nou? ¿que acabas de comer? Pues te doy estous pescaditous, igual te pueden servir ;) ]
+		[No tardes en usarlos porque después apestan...]
+	</phase>
+	<a id="cool">Oh, gracias, ¡que te vaya bien!</a>
+	<phase id="cool" fast="1" frame="joyoz" background="3">
+		¿Cómo decía la canción? You ride the finest horse I've ever seen... Standing sixteen, one or two, eyes wild and green!
+
+	</phase>
+</d>
+
+
+
+
+<!-- Texte base à préparer
+<d place="port" name="Shaun DeLear" gfx="leprechaun" cond="active(leprechaun)+gvar(xavent,0)+event(xstpatrick)+!uvar(xmasev)">
+	<phase id="begin" background="1" next="gift">
+		[Bonjour Maître Dinoz!]
+		[Qu'est-ce qu'il fait beau... ça s'annonce bien pour les fêtes du weekend!]
+		[Tu connais pas la fête de St. Patrick?]
+		[Mais t'es sérieux? Aaah tu rigoles! Tiens, voici un cadeau! Ce sont pas des Guinness, mais le meilleur second choix!]
+	</phase>
+	<a id="gift">Wow, 2 Potions d'Irma! Merci!!</a>
+	<phase id="gift" give="irma:2" nocheck="1" next="cool" uvar="xmasev:1" background="1">
+		[Bon, Je m'en vais... faut que je me prépare pour danser et trinquer tout le weekend, si tu fais la fête aussi, viens me voir!]
+		[A plus!]
+	</phase>
+	<a id="cool">Merci pour les potions Shaun!</a>
+	<phase id="cool" fast="1" frame="atchoz" background="1">
+		Tu t'éloignes, curieux de voir ce qui se passe pendant cette fête !
+		Pourquoi je pensais que les petits lutins verts étaient tous méchants? Trop de films d'horreur à petit budget sans doute!
+	</phase>
+</d>
+
+<d place="fosslv" name="Al O'Moaney" gfx="leprechaun" cond="(active(leprechaun)|admin())+gvar(xavent,1)+event(xstpatrick)+!uvar(xmasev)">
+	<phase id="begin" background="2" next="gift">
+		[Hi diddle dee dee, a... Ah la la! Salut Maître Dinoz! Ca va?]
+		[On m'a dit que tu as rencontré mon frère Shaun hier... On m'appelle Al O'Moaney, c'est pas mon vrai nom mais je me suis marié 4 fois déjà!]
+		[Regarde le ciel mon pote, tout gris, nuageux, prêt à pleuvoir des cordes ça va être une fête de St. Patrick comme celle à Dublin! Tiens!]
+	</phase>
+	<a id="gift">Merci Al, mais c'est quoi?</a>
+	<phase id="gift" give="tictac:1" nocheck="1" next="cool" uvar="xmasev:1" background="2">
+		[C'est un *Ticket Taque* - va voir papy Joe - passe-lui le bonjour!]
+		[Et si t'aimes les cadeaux, essaie de trouver mon cousin Ronan demain!]
+		[Good luck!]
+	</phase>
+	<a id="cool">Merci pour le ticket Al, c'est trop sympa!</a>
+	<phase id="cool" fast="1"  frame="simploz" background="2">
+		Tu commences à immaginer des trésors enfouis chez Papy Joe!
+		On dit que les lutins verts sont des radins... peut-être ce n'est qu'un stéreotype malheureux!
+	</phase>
+</d>
+
+<d place="corail" name="Pat MacGroyne" gfx="leprechaun" cond="(active(leprechaun)|admin())+gvar(xavent,2)+event(xstpatrick)+!uvar(xmasev)">
+	<phase id="begin" background="3" next="affts">
+		[Oh Danny Boy, the pipes the pipes are calling... from glen to glen and down the mountainside...]
+		[... ... I ask you friends, what's a fella to do, when her hair was black and her eyes were blue...]
+	</phase>
+	<a id="affts">Excuse-moi, tu es peut-être perdu? Le serveur anglais se trouve là bas, à droite.</a>
+	<phase id="affts" next="gift">
+		[Ah mais non mon poto francophone, c'est là que tu te trompes! On est tous ensemble pour la fête St. Patrick!]
+	</phase>
+	<a id="gift">J'espère que tes talents ne sont pas limités à ta voix!</a>
+	<phase id="gift" giveingr="fish3:2" nocheck="1" next="cool" uvar="xmasev:1" background="3">
+		[Pas du tout! Tiens! Des poissons pour mon maître préféré!]
+		[Utiles à de nombreux endoits... surtout le marché ;) ]
+		[Je peux plus les garder... ma gueule de bois ne les supporte plus, et le gros là voulait nager dans ma Guinness...]
+	</phase>
+	<a id="cool">Euh merci, c'est gentil!</a>
+	<phase id="cool" fast="1" frame="joyoz" background="3">
+		You head off, over the moon, with the fish in your bag!
+		C'est vraiment dommage que Pat ne restera pas plus longtemps, faire la fête avec lui serait génial!
+	</phase>
+</d>
+
+<d place="svillg" name="Ronan O'Haha" gfx="leprechaun" cond="(active(leprechaun)|admin())+gvar(xavent,3)+event(xstpatrick)+!uvar(xmasev)">
+	<phase id="begin" background="3" next="gift">
+		[Ah te voilà! je te cherchais!]
+		[On a commencé la fête hier, et aujourd'hui c'est comme si Michael Flatley et sa troupe dansent avec entrain dans ma caboche!]
+		[Tiens! J'ai trouvé ces potions dans une poche ce matin - des petits cadeaux pour le maître dinoz. Vas-y, prends-en, c'était même pas ma poche...]
+	</phase>
+	<a id="gift">Euh, d'accord, merci, les Potions d'Irma sont toujours utiles</a>
+	<phase id="gift" give="irma:3" nocheck="1" next="cool" uvar="xmasev:1" background="3">
+		[Les Irmas te font bouger quand c'est normalement pas possible!]
+		[En tout cas, moi j'en aurai pas besoin... je vais me bourrer la gueule encore une fois ce soir d'abord au Hairy Lemon, ensuite à Flannery's et enfin Coppers. Enorme!]
+		[Bon courage mon bon, mon frère sera dans les parages demain!]
+	</phase>
+	<a id="cool">Merci pour tous Ronan, surtout les potions - elles sont trop utiles!</a>
+	<phase id="cool" fast="1" frame="neigeoz" background="3">
+		Une fête ce soir et des Irmas gratos dans les poches! La vie est belle.
+		Peut-être ce qu'ils disent par rapport aux lutins verts, les leprechauns,  n'est pas vrai - ceux qu'on a rencontré cette semaine a été un vrai gentleman!
+	</phase>
+</d>
+-->
+<!-- 2013
+<d place="cpuits" name="Shaun DeLear" gfx="leprechaun" cond="active(leprechaun)+gvar(xavent,0)+event(xstpatrick)+!uvar(xmasev)">
+	<phase id="begin" background="3" next="gift">
+		[¡Hola Maestro de Dinos!]
+		[Qué bien me siento hoy... ¡es perfecto para las fiestas de este fin de semana!]
+		[¿No conoces la fiesta de San Patricio?]
+		[¿En serio? Pues mira, te doy esto para que te hagas una idea. ¡Toda fiesta es para alegrarnos la vida!]
+	</phase>
+	<a id="gift">Excelente, ¡2 Pociones de la Bruja Lola, GRACIAS!</a>
+	<phase id="gift" give="irma:2" nocheck="1" next="cool" uvar="xmasev:1" background="1">
+		[Bueno, me voy... debo prepararme para el baile y atender a los invitados, ¡que disfrutes de este fin de semana!]
+		[¡Hasta luego!]
+	</phase>
+	<a id="cool">¡Gracias por las pociones Sr. Shaun!</a>
+	<phase id="cool" fast="1" frame="atchoz" background="1">
+		¡Te marchas intrigado por ver lo que hay en esa fiesta!
+		¿Por qué siempre pensé que los duendes eran malos? ¡Debo estar viendo muchas películas de horror!
+	</phase>
+</d>
+
+<d place="port" name="Al O'Moaney" gfx="leprechaun" cond="(active(leprechaun)|admin())+gvar(xavent,1)+event(xstpatrick)+!uvar(xmasev)">
+	<phase id="begin" background="1" next="gift">
+		[Hai diddle dee dee, ah... ¡Houla! Maestrou de Dinous! ¿Todou bien?]
+		[Me dijerohn quei has vistou a mi hermanou Shaun ayer... Me llamou Al O'Moaney, ¡comou verás soy irlandeis!]
+		[Mira el cielou amigou mío, todou grisss, nubladou, parece que va a llover, ¡igual que en mi Dublín natal!]
+		[¡Hey! ¿podrías hacerme un favour?]
+	</phase>
+	<a id="gift">Claro Al, ¿de qué se trata?</a>
+	<phase id="gift" give="tictac:1" nocheck="1" next="cool" uvar="xmasev:1" background="2">
+		[Toma este *Ticket Taque* - y anda a saludar a Papy Jose - de mi parte, ¡tremendas fiestas que nos dimous cuando vino a visitarme!]
+		[A propósitou, ¡mañana podrías encontrar a mi primou Ronan, él es bastante generosou!]
+		[Good luck!]
+	</phase>
+	<a id="cool">Gracias por el ticket Al, ¡me alegra haberte encontrado!</a>
+	<phase id="cool" fast="1"  frame="simploz" background="2">
+		Se dice que los duendes son tacaños... ¡pero parece un falso estereotipo!
+	</phase>
+</d>
+
+<d place="fosslv" name="Pat MacGroyne" gfx="leprechaun" cond="(active(leprechaun)|admin())+gvar(xavent,2)+event(xstpatrick)+!uvar(xmasev)">
+	<phase id="begin" background="2" next="affts">
+		[Oh Danny Boy, the pipes the pipes are calling... from glen to glen and down the mountainside...]
+		[... ... I ask you friends, what's a fella to do, when her hair was black and her eyes were blue...]
+	</phase>
+	<a id="affts">Disculpa, ¿estás perdido? El servidor inglés está hacia la derecha.</a>
+	<phase id="affts" next="gift">
+		[Ah no, te equivocas. ¡Estoy aquí para la fiesta de San Patricio!]
+	</phase>
+	<a id="gift">¡Debes ser cantante o algo asi!</a>
+	<phase id="gift" giveingr="fish3:2" nocheck="1" next="cool" uvar="xmasev:1" background="3">
+		[¡Para nada! Soy mago, ¡mira, tienes unos peces detrás de tu oreja!]
+		[Te servirán en tu aventura... sobre todo en el mercado ;) ]
+		[No tardes en usarlos porque después apestan...]
+	</phase>
+	<a id="cool">Oh, gracias, ¡impresionante!</a>
+	<phase id="cool" fast="1" frame="joyoz" background="3">
+		You head off, over the moon, with the fish in your bag!
+		¡Así somos los duendes irlandeses cuando estamos de fiesta!
+	</phase>
+</d>
+
+<d place="corail" name="Ronan O'Haha" gfx="leprechaun" cond="(active(leprechaun)|admin())+gvar(xavent,3)+event(xstpatrick)+!uvar(xmasev)">
+	<phase id="begin" background="3" next="gift">
+		[¡Hola Maestro!]
+		[La fiesta estuvo muy buena anoche ¡y hoy es como si Michael Flatley y su grupo estubiesen danzando en mi cabeza!]
+		[¡Pero qué suerte tienes! Alguien dejó olvidadas estas pociones, te las puedes quedar Maestro de Dinos, veo que tienes muchas ganas de seguir descubrir lugares...]
+	</phase>
+	<a id="gift">Pues muchas gracias, es cierto que sueño con recorrer todo Dinoland.</a>
+	<phase id="gift" give="irma:3" nocheck="1" next="cool" uvar="xmasev:1" background="3">
+		[¡Las pociones te ayudarán a desplazarte cuando ya no puedas andar!]
+		[¡En todo caso, yo no pienso moverme de aquí!]
+		[¡Que te vaya bien y mucha suerte en tu camino!]
+	</phase>
+	<a id="cool">¡Ya tuve suerte al encontrarte!</a>
+	<phase id="cool" fast="1" frame="neigeoz" background="3">
+		No lo esperabas pero este fin de semana te llevaste unos buenos regalillos gracias a los duendes irlandeses.
+		Entonces tal vez no todo sea lo que parece. ¡Ahora a seguir andando!
+	</phase>
+</d>
+-->

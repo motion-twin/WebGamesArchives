@@ -1,0 +1,91 @@
+<d place="scroad" name="Link le balayeur" gfx="aplink" cond="!quest(balag)">
+
+<a id="exit">Je vous laisse, j'ai à faire.</a>
+
+<phase id="begin" frame="happy" next="quest:balai:exit">
+Saperlipopette ! Un alchimiste ! Mon sauveur ! 
+</phase>
+
+<a id="quest" cond="!quest(balag)+fx(dialk)">Je veux bien vous aider à créer votre nouveau balai.</a>
+<a id="balai" cond="!quest(balag)">Votre sauveur ? Vous avez un problème ? </a>
+
+<phase id="quest" quest="link">
+Crénom, qu'est-ce que j'ai fait du mode d'emploi ? Ah le voilà...
+</phase>
+
+
+<phase id="balai" frame="angry" next="balaib">
+Parbleu que j'ai un problème ! Je suis fini, je vais perdre mon poste ! Mon instrument de travail à rendu l'âme, fichtre de flagornuche !
+</phase>
+
+<phase id="balaib" next="route:balayer:help">
+Je suis Link, le balayeur officiel de la route scintillante, et j'ai cassé mon fidèle balai ! Je ne peux plus assurer ma fonction...
+</phase>
+
+<a id="route">La route scintillante ? Pourquoi la route scintillante ? </a>
+<a id="balayer">Vous balayez la route ? C'est un job un peu bizarre, non ?</a>
+<a id="help">Qu'est-ce qu'un alchimiste peut faire pour vous aider ?</a>
+
+
+<phase id="route" next="scint">
+C'est celle où nous sommes ! C'est l'unique route d'accès à Kringdam. Elle est fichtrement importante pour le commerce.
+Sans la route, c'est toute la région qui serait isolée du royaume, crénom de nom !
+</phase>
+
+<a id="scint">Oui mais pourquoi scintillante ? </a>
+
+<phase id="scint" frame="happy" next="balaib">
+Cornegulde ! Parce que je travaille bien évidemment ! 
+</phase>
+
+<phase id="balayer" next="balayerb">
+Palsembleu, ne le répète pas mais la famille Audepint est un peu maniaque sur les bords. {"Une route bien brossée permet une circulation sans risque des richesses"} me répétait le grand-père Audepint. 
+</phase>
+
+<phase id="balayerb" frame="happy" next="balaib">
+Mais avec toute la crénom de neige qui tombe dans la région, c'est indispensable de balayer si on ne veut pas que la route soit coupée. Je suis donc indispensable à l'économie du royaume !
+</phase>
+
+<phase id="help" next="trag">
+En fait mon père était déjà balayeur avant moi, mais il est mort de manière tragique, fichtrouille de sapristi...
+</phase>
+
+<a id="trag">Tragique ? </a>
+
+<phase id="trag" frame="angry" next="tragb">
+Lors de la grande tempête de neige de 1551 ! Une nuit terrible ! des bourrasques de tous les diables ! Des flocons de 20 kilos ! 
+Il est parti balayer malgré le danger... Je l'ai retrouvé le lendemain presque complètement congelé.
+</phase>
+
+<phase id="tragb" next="tragc">
+Avant de mourir, il m'a confié son balai et un mode d'emploi sur un parchemin très ancien. Il m'a dit en claquant des dents : {"Tiens Link, il est temps que tu pr-pr-prennes le relais, mes vieux os sont f-f-f-inis."}
+</phase>
+
+<phase id="tragc" next="et">
+{"Prends mon b-b-b-balai et va sauver la pr-princesse} (il divaguait un peu, hein){. Et en cas de coup d-d-dur, utilise ce mode d'empl-pl-ploi magique, il est dans la famille depuis d-d-d-des générations.}
+</phase>
+
+<a id="et">Bon sang, c'est super tragique ! </a>
+
+<phase id="et" next="alch">
+Parbleu oui ! Surtout que le coup dur, le voilà ! J'ai cassé le balai familial ! Il faut que j'utilise mon mode d'emploi magique mais j'ai besoin d'un alchimiste pour m'aider !
+</phase>
+
+<a id="alch">Pourquoi ? C'est une recette alchimique ? </a>
+
+<phase id="alch" frame="happy" next="alchb">
+A peu près. C'est le mode d'emploi pour le [balai magique niveau 2] ! je ne pouvais pas rêver mieux, sacrebleu ! 
+Il y a tous les ingrédients nécessaires à trouver et une recette. 
+</phase>
+
+<phase id="alchb" effect="dialk">
+J'ai besoin de toi pour m'aider. Même sans balai, je ne peux pas quitter mon poste pour aller chercher tout ça !
+Reviens me voir si tu te sens prêt à me donner un coup de main. | Mais sans aide je suis un balayeur fini, sapristuche de flûte !
+</phase>
+
+
+
+
+
+
+</d>
