@@ -1,0 +1,1596 @@
+﻿
+
+
+<!--
+
+Nouveautés de la MAJ de septembre 2013 :
+
+- Préfixes/Suffixes des Valeurs du Passé
+- Objets à confisquer
+- Nouvelles familles de collections
+
+-->
+
+
+
+<goals id="teacher">
+
+	<icons>
+        <i tag=":ts_gold:" img="/img/icons/gold.gif"/>
+        <i tag=":ts_life:" img="/img/icons/life.png"/>
+        <i tag=":ts_life2:" img="/img/icons/life2.png"/>
+        <i tag=":ts_bor:" img="/img/icons/boredom.png"/>
+        <i tag=":ts_xp:" img="/img/icons/small_xp.gif"/>
+    </icons>
+
+	
+	<goal id="colec" name="Professionneur" desc="Possède les 101 premiers objets confiscables. Depuis, il y en a d'autres, argll...">
+		<title k="1" name="Professionneur" points="10" />
+		<icon k="1" points="0" file="/img/icons/coffre.png" name="Professionneur" />
+	</goal>
+
+
+	<goal id="allcolec" name="Kleptoman" desc="Cette fois ça y est, vous avez tous les objets du jeu ! Pourvu qu'il n'y ait plus de mise à jour ! ">
+		<title k="1" name="Kleptoman" points="10" />
+	</goal>
+
+
+	<goal id="betats" name="Beta-testeur appliqué" desc="a participé au Beta-test du jeu">
+		<title k="1" name="Arrivé avant la sonnerie" points="0" />
+	</goal>
+
+	<goal id="bobj" name="Objectifs bonus réussis" desc="Nombre d'élèves envoyés par vos amis que vous avez vaincu">
+		<image k="1" points="1" name="+1" file="/img/loc/fr/notes/Plus1.png" />
+		<image k="10" points="2" name="Zéro pointé" file="/img/loc/fr/notes/Zero.png" />
+		<image k="200" points="3" name="Non" file="/img/loc/fr/notes/Non.png" />
+		<image k="1000" points="3"  name="Du grand art !" file="/img/loc/fr/notes/GrandArt.png" />
+	</goal>
+
+
+	<goal id="oneshot" name="One-shots !" desc="Nombre d'élèves battus en un coup">
+		<image k="1" points="1" name="Smiley old school" file="/img/loc/fr/notes/OldSmiley.png" />
+		<image k="50" points="2" name="Peut mieux faire" file="/img/loc/fr/notes/PeutMieux.png" />
+		<image k="500" points="3" name="20 sur 20" file="/img/loc/fr/notes/20.png" />
+		<image k="5000" points="3" name="Très bien" file="/img/loc/fr/notes/Tb.png" />
+	</goal>
+
+
+<!-- Valeurs du Passé-->
+
+	<goal id="val1" name="Autorité" rare="1" desc="Représentée par le shérif John Norray - Né en 1864, disparu à cheval le 21 décembre 1901 à Groom Lake.">
+		<title name="Adjoint du shérif Norray" points="50" k="1" />
+		<!-- Ajouts MAJ septembre 2013 -->
+			<!-- Préfixes -->
+		<title name="Shérif" k="1" points="0" prefix="1"/>
+		<title name="Pied-tendre" k="1" points="0" prefix="1"/>
+		<title name="Coyote" k="1" points="0" prefix="1"/>
+		<title name="Squaw" k="1" points="0" prefix="1"/>
+		<title name="Peau-Rouge" k="1" points="0" prefix="1"/>
+		<title name="Apache" k="1" points="0" prefix="1"/>
+			<!-- Suffixes -->
+		<title name="l'Ouest" k="1" points="0" suffix="1"/>
+		<title name="Santa Fe" k="1" points="0" suffix="1"/>
+		<title name="El Paso" k="1" points="0" suffix="1"/>
+		<title name="désert" k="1" points="0" suffix="1"/>
+		<title name="saloon" k="1" points="0" suffix="1"/>
+		<title name="Far West" k="1" points="0" suffix="1"/>
+		<title name="Mexique" k="1" points="0" suffix="1"/>
+		<title name="Hautes Plaines" k="1" points="0" suffix="1"/>
+		<title name="Grand Canyon" k="1" points="0" suffix="1"/>
+		<image name="Chapeau de cow-boy" k="1" points="0" file="/img/icons/hat1.png" />
+
+	</goal>
+	
+	<goal id="val2" name="Découverte" rare="1" desc="Représentée par le capitaine Jack Mc Norroy - Né en 1702, disparu en mer le 21 décembre 1740 au nord-ouest de Porto Rico.">
+		<title name="Moussaillon du capitaine Mc Norroy" points="50" k="1" />
+		<!-- Ajouts MAJ septembre 2013 -->
+			<!-- Préfixes -->
+		<title name="Moussaillon" k="1" points="0" prefix="1"/>
+		<title name="Pirate" k="1" points="0" prefix="1"/>
+		<title name="Corsaire" k="1" points="0" prefix="1"/>
+		<title name="Capitaine" k="1" points="0" prefix="1"/>
+		<title name="Amiral" k="1" points="0" prefix="1"/>
+		<title name="Sirène" k="1" points="0" prefix="1"/>
+			<!-- Suffixes -->
+		<title name="Sept Mers" k="1" points="0" suffix="1"/>
+		<title name="Caraïbes" k="1" points="0" suffix="1"/>
+		<title name="Bermudes" k="1" points="0" suffix="1"/>
+		<title name="Archipels" k="1" points="0" suffix="1"/>
+		<title name="Pacifique" k="1" points="0" suffix="1"/>
+		<title name="Atlantique" k="1" points="0" suffix="1"/>
+		<image name="Tricorne de capitaine" k="1" points="0" file="/img/icons/hat2.png" />
+	
+	</goal>
+	
+	<goal id="val3" name="Devoir" rare="1" desc="Représenté par le templier Jean de Nauret - Né en 1410, disparu mystérieusement le 21 décembre 1482 au pic de Bugarach.">
+		<title name="Disciple de Jean de Nauret" points="50" k="1"/>
+		<!-- Ajouts MAJ septembre 2013 -->
+			<!-- Préfixes -->
+		<title name="Chevalier" k="1" points="0" prefix="1"/>
+		<title name="Inquisiteur" k="1" points="0" prefix="1"/>
+		<title name="Comte" k="1" points="0" prefix="1"/>
+		<title name="Comtesse" k="1" points="0" prefix="1"/>
+		<title name="Princesse" k="1" points="0" prefix="1"/>
+		<title name="Templier" k="1" points="0" prefix="1"/>
+		<title name="Sorcière" k="1" points="0" prefix="1"/>
+		<title name="Sorcier" k="1" points="0" prefix="1"/>
+		<title name="Magicien" k="1" points="0" prefix="1"/>
+		<title name="Magicienne" k="1" points="0" prefix="1"/>
+			<!-- Suffixes -->
+		<title name="Montmirail" k="1" points="0" suffix="1"/>
+		<title name="Bugarach" k="1" points="0" suffix="1"/>
+		<title name="Versailles" k="1" points="0" suffix="1"/>
+		<title name="Vatican" k="1" points="0" suffix="1"/>
+		<title name="Fontenoy" k="1" points="0" suffix="1"/>
+		<title name="Connaissance" k="1" points="0" suffix="1"/>
+		<image name="Heaume de chevalier" k="1" points="0" file="/img/icons/hat3.png" />
+		
+	</goal>
+	
+	<goal id="val4" name="Respect" rare="1" desc="Représenté par le général Julius Caius Norius - Né en -52 av JC, disparu la nuit du 21 décembre en 0 pendant JC dans l'archipel de Santorin.">
+		<title name="Centurion du général Norius" points="50" k="1" />
+		<!-- Ajouts MAJ septembre 2013 -->
+			<!-- Préfixes -->
+		<title name="Légionnaire" k="1" points="0" prefix="1"/>
+		<title name="Gladiateur" k="1" points="0" prefix="1"/>
+		<title name="Sénateur" k="1" points="0" prefix="1"/>
+		<title name="Général" k="1" points="0" prefix="1"/>
+		<title name="Centurion" k="1" points="0" prefix="1"/>
+		<title name="Vestale" k="1" points="0" prefix="1"/>
+		<title name="Empereur" k="1" points="0" prefix="1"/>
+			<!-- Suffixes -->
+		<title name="Rome" k="1" points="0" suffix="1"/>
+		<title name="Collisée" k="1" points="0" suffix="1"/>
+		<title name="Germanie" k="1" points="0" suffix="1"/>
+		<title name="Gaule" k="1" points="0" suffix="1"/>
+		<title name="Empire" k="1" points="0" suffix="1"/>
+		<title name="Senat" k="1" points="0" suffix="1"/>
+		<image name="Casque romain" k="1" points="0" file="/img/icons/hat4.png" />
+	</goal>
+	
+	
+	<goal id="val5" name="Savoir" rare="1" desc="Représenté par l'architecte Noris - Né aux environs de -7000 av JC, disparu mystérieusement un 21 décembre sur le plateau de Gizeh.">
+		<title name="Assistant de l'architecte Noris" points="50" k="1" />
+		<!-- Ajouts MAJ septembre 2013 -->
+			<!-- Préfixes -->
+		<title name="Pharaon" k="1" points="0" prefix="1"/>
+		<title name="Scribe" k="1" points="0" prefix="1"/>
+		<title name="Architecte" k="1" points="0" prefix="1"/>
+		<title name="Reine" k="1" points="0" prefix="1"/>
+			<!-- Suffixes -->
+		<title name="Grande Pyramide" k="1" points="0" suffix="1"/>
+		<title name="pyramides" k="1" points="0" suffix="1"/>
+		<title name="Nil" k="1" points="0" suffix="1"/>
+		<title name="Crocodiles" k="1" points="0" suffix="1"/>
+		<title name="Gizeh" k="1" points="0" suffix="1"/>
+		<image name="Coiffe égyptienne" k="1" points="0" file="/img/icons/hat5.png" />
+	</goal>
+	
+	<goal id="val6" name="Loyauté" rare="1" desc="Représentée par le grand prêtre Naruhatl - Né aux environs de -12000 av JC, disparu mystérieusement un 21 décembre à Puma Punku.">
+		<title name="Fidèle du grand prêtre Naruhatl" points="50" k="1" />
+		<!-- Ajouts MAJ septembre 2013 -->
+			<!-- Préfixes -->
+		<title name="Prêtre" k="1" points="0" prefix="1"/>
+		<title name="Prêtresse" k="1" points="0" prefix="1"/>
+		<title name="Dieu" k="1" points="0" prefix="1"/>
+		<title name="Déesse" k="1" points="0" prefix="1"/>
+		<title name="Anunnaki" k="1" points="0" prefix="1"/>
+		<title name="Gardien" k="1" points="0" prefix="1"/>
+		<title name="Esprit" k="1" points="0" prefix="1"/>
+			<!-- Suffixes -->
+		<title name="Temple Sacré" k="1" points="0" suffix="1"/>
+		<title name="Puma Punku" k="1" points="0" suffix="1"/>
+		<title name="Cité d'Or" k="1" points="0" suffix="1"/>
+		<title name="cité disparue" k="1" points="0" suffix="1"/>
+		<title name="lac Titicaca" k="1" points="0" suffix="1"/>
+		<title name="Porte des Etoiles" k="1" points="0" suffix="1"/>
+		<title name="Soleil" k="1" points="0" suffix="1"/>
+		<image name="Bonnet péruvien" k="1" points="0" file="/img/icons/hat6.png" />
+	</goal>
+	
+	<goal id="val7" name="Partage" rare="1" desc="Représenté par le chasseur Noru'k - Apparu mystérieusement au Crétacé il y a 65 millions d'années dans le Yucatan.">
+		<title name="Traqueur du chasseur Noru'k" points="50" k="1" />
+		<!-- Ajouts MAJ septembre 2013 -->
+			<!-- Préfixes -->
+		<title name="Visiteur" k="1" points="0" prefix="1"/>
+		<title name="Etranger" k="1" points="0" prefix="1"/>
+		<title name="Entité" k="1" points="0" prefix="1"/>
+		<title name="Messager" k="1" points="0" prefix="1"/>
+			<!-- Suffixes -->
+		<title name="étoiles" k="1" points="0" suffix="1"/>
+		<title name="Sirius" k="1" points="0" suffix="1"/>
+		<title name="Orion" k="1" points="0" suffix="1"/>
+		<title name="Vide" k="1" points="0" suffix="1"/>
+		<title name="Ciel" k="1" points="0" suffix="1"/>
+		<title name="Infini" k="1" points="0" suffix="1"/>
+		<title name="Univers" k="1" points="0" suffix="1"/>
+		<title name="Au Dela" k="1" points="0" suffix="1"/>
+		<image name="Crâne de dinosaure" k="1" points="0" file="/img/icons/hat7.png" />
+		
+	</goal>
+	
+	<goal id="val8" name="Patience" rare="1" desc="La Valeur du Présent. Représentée par le professeur James Norray.">
+		<title name="Je suis une Légende" points="10" k="1" />
+		<title name="Je suis un Norray" points="0" k="1" />
+		<title name="Man of Style" points="10" k="1" />
+		<title name="Man of Steelo" points="0" k="1" />
+		<title name="Nerfs de titane" points="10" k="1" />
+		<title name="Grand frère de Chuck" points="10" k="1" />
+		<title name="Mercenaire de l'éducation" points="10" k="1" />
+		<title name="Tizoc le Redoutable" points="10" k="1" />
+		<title name="Le Redoutable" points="10" k="1" />
+		<title name="Monsieur Norray" points="0" k="1" />
+		<title name="On dit 'Monsieur'" points="0" k="1" />
+		<title name="La Légende" points="0" k="1" />
+		<title name="THE Legend" points="0" k="1" />
+		<title name="Le Magnifique" points="0" k="1" />
+		<title name="The Punisher" points="0" k="1" />
+		<title name="School Warrior" points="0" k="1" />
+		<title name="Pas de souffrance, pas de récompense" points="0" k="1" />
+		<title name="La loi, c'est moi" points="0" k="1" />
+		<title name="Prêt pour le ring !" points="0" k="1" />
+		<title name="James le Survivant" points="0" k="1" />
+		<title name="Le Survivant" points="0" k="1" />
+		<title name="Survivant" points="0" prefix="1" k="1" />
+		<title name="Légende" k="1" points="0" prefix="1"/>
+		
+		<image k="1" points="0" file="/img/icons/facep2.png" />
+		<icon k="1" points="0" file="/img/icons/legend.png" name="Je suis une Légende" />
+		<icon k="1" points="0" file="/img/icons/legend2.png" name="Je suis une Légende" />
+		<image name="Masque de catch" k="1" points="0" file="/img/icons/hat8.png" />
+	</goal>
+
+
+	<!-- Titres -->
+	
+<!--
+	<goal id="toilet" name="Gardien des Toilettes">
+		<icon k="1" points="0" file="toilet.png" name="Gardien des Toilettes">
+			
+			Vous avez interdit à 100 élèves d'aller aux WC.
+        </icon>
+		<title k="1" points="5" name="Gardien des Toilettes"/>
+	</goal>
+	-->
+	
+
+<!-- FAMILLES DONE -->
+	<!-- Nécessite : phone, piou, puceR, rototo, totoR, trolR, trolM, toup1, smolR, licorn, ChupF -->
+	<goal id="rabsolu" name="Gardienne du Rose Absolu" desc="Vous êtes en possession de tous les objets roses confiscables du jeu. Vous êtes maintenant une gardienne du Rose Absolu. Félicitations !">
+	
+		<icon k="1" points="0" file="/img/icons/rabsolu.png" name="Gardienne du Rose Absolu">
+			
+        </icon>
+		<title k="1" points="5" name="Gardienne du Rose Absolu"/>
+	</goal>
+	
+	<!-- Nécessite : pony1, pony2, pony3, pony4 -->
+	<goal id="ponyland" name="For Ponyland !" desc="Vous avez sauvé tous les petits poney du jeu. Vous faites maintenant partie d'une célèbre société secrète. Félicitations...">
+	
+		<icon k="1" points="0" file="/img/icons/PonyLogo.png" name="For Ponyland !">
+			
+        </icon>
+		<title k="1" points="5" name="For Ponyland !"/>
+	</goal>
+	
+	
+	
+	
+	<!-- Nécessite : epee1, epee2, epee3, epee4, epee5, epee6 -->
+	<goal id="vision" name="La vision par delà la vision" desc="Cosmo... Cosmo... Cosmo...">
+	
+		<icon k="1" points="0" file="/img/icons/Epee.png" name="La vision par delà la vision">
+			
+        </icon>
+		<title k="1" points="10" name="La vision par delà la vision"/>
+	</goal>
+	
+	
+	<!-- Nécessite : trolV, trolB, trolR, trolJ, trolO, trolM -->
+	<goal id="trolls" name="Eleveur de trolls" desc="Vous avez acquis l'ensemble de la collection de trolls, les petites figurines avec des cheveux que vous avez confisqué.">
+
+		<icon k="1" points="0" file="/img/icons/Trolls.png" name="Eleveur de trolls">
+			
+        </icon>
+		<title k="1" points="10" name="Eleveur de trolls"/>
+	</goal>
+	
+	
+	<!-- Nécessite : gren1, gren2, gren3z, gren4 -->
+	<goal id="frogs" name="Maitre des grenouilles" desc="Vous les avez enfin attrapées ces satanées bestioles en papier ! Elles sont maintenant à vous, elles vous obéïssent au doigt et à l'oeil.">
+		<icon k="1" points="0" file="/img/icons/Frogs.png" name="Maître des grenouilles">
+			
+        </icon>
+		<title k="1" points="10" name="Maître des grenouilles"/>
+	</goal>
+	
+	
+	<!-- Nécessite : puceV, puceR, puceN -->
+	<goal id="puces" name="Dompteur de puces" desc="Vous avez attrapé les diférentes puces existantes. Ca gratte...">
+		<icon k="1" points="0" file="/img/icons/Puces.png" name="Dompteur de puces">
+			
+        </icon>
+		<title k="1" points="10" name="Dompteur de puces"/>
+	</goal>
+	
+	
+	
+	<!-- Nécessite : totoJ, totoV, totoR, totoB, totoN -->
+	<goal id="totoc" name="Totocheur légendaire" desc="Vous avez enfin toute la collection de totoches, même la noire !">
+		<icon k="1" points="0" file="/img/icons/Totoc.png" name="Totocheur légendaire">
+			
+        </icon>
+		<title k="1" points="10" name="Totocheur légendaire"/>
+	</goal>
+	
+	
+		<!-- Nécessite : puceN, totoN, toup2, capN -->
+	<goal id="dark" name="Professeur sombre des Enfers" desc="Une puce noire, une totoche noire, une toupie noire et un capuchon noir. Avec ça, vous êtes le professeur le plus dark de l'école !">
+		<icon k="1" points="0" file="/img/icons/Dark.png" name="Professeur sombre des Enfers">
+			
+        </icon>
+		<title k="1" points="10" name="Professeur sombre des Enfers"/>
+	</goal>
+	
+	
+	<goal id="franc" name="Franc-Maçon" desc="Vous avez recomposé l'insigne d'un de vos ancêtres avec les objets qu'il vous a transmis à travers les siècles par l'histoire de cette école. Il savait que vous les retrouveriez.">
+		<icon k="1" points="0" file="/img/icons/FrancIcon.png" name="Franc-Maçon" />
+		<image k="1" points="0" file="/img/items/Freemasson.png" />
+		
+		<title k="1" points="10" name="Franc-Maçon"/>
+	</goal>
+	
+		<!-- Nécessite : laseR, laseV, laseB -->
+
+	<goal id="jedi" name="Jedi de l'Education" desc="Vous possédez les quatre pointeurs lasers colorés. Avec de la poussière de craie, on voit clairement le faisceau. VVVvvvv... VVVvvvv...">
+		<icon k="1" points="0" file="/img/icons/Jedi.png" name="Jedi de l'Education" />
+		<title k="1" points="10" name="Jedi de l'Education"/>
+	</goal>
+		
+		<!-- Nécessite : diamJ, diamV, diamM, diamR, diamB -->
+	
+	<goal id="bijou" name="Expert bijoutier" desc="Vous avez confisqué les cinq fausses pierres précieuses. Mais vous savez qu'il y en a une authentique !">
+		<icon k="1" points="0" file="/img/icons/Bijou.png" name="Expert bijoutier" />
+		<title k="1" points="10" name="Expert bijoutier"/>
+	</goal>
+	
+	
+	<!-- Nécessite : chupP, chupC, chupF, chupCo, chupO -->
+	<goal id="sugar" name="Maître du sucre" desc="Vous avez récupéré tous les parfum des sucettes Chupi Chupa. Dans le monde du collège, le maître du sucre est roi !">
+		<icon k="1" points="0" file="/img/icons/SucreIco.png" name="Maître du sucre" />
+		<image k="1" points="0" file="/img/items/Sucre.png" />
+		<title k="1" points="10" name="Maître du sucre"/>
+	</goal>
+	
+	
+	<!-- Nécessite : packP, psyco, ectog, pka, trap -->
+	<goal id="ghost" name="Wordbusters" desc="Vous avez retrouvé l'arsenal anti-fantômes de Charlotte : pac a poltron, piaige a feNthome, gigot mette, pécto lunnettes, et pécaheu.">
+		<icon k="1" points="0" file="/img/icons/ghost.png" name="Wordbusters" />
+		<title k="1" points="10" name="Wordbusters"/>
+	</goal>
+	
+	
+	
+	
+	
+	
+	
+	<!-- Nouvelle familles maj septembre 2013 -->
+	
+	<!-- Nécessite : gomo, mouta, igor, cerbere, sheep, piou, lapin, rototo -->
+	<goal id="plush" name="Eleveur de peluches" desc="Vous avez adopté toutes les peluches des élèves !">
+		<icon k="1" points="0" file="/img/icons/plush.png" name="Eleveur de peluches" />
+		<title k="1" points="5" name="Eleveur de peluches"/>
+		<title k="1" points="5" name="Eleveuse de peluches"/>
+		<title k="1" points="0" name="Cromignon"/>
+		<title k="1" points="0" name="Cromignone"/>
+	</goal>
+	
+	<!-- Nécessite : kissmB, kissmJ, kissmN, kissmR -->
+	<goal id="kissmAll" name="Sacré comique !" desc="Le roi des blagues Kissmar, c'est vous.">
+		<icon k="1" points="0" file="/img/icons/kissmAll.png" name="Sacré comique !" />
+		<title k="1" points="5" name="Sacré comique !"/>
+		<title k="1" points="5" name="Sacrée comique !"/>
+		<title k="1" points="0" name="LOL"/>
+	</goal>
+	
+	<!-- Nécessite : lukeL, pablo, dollar, superW, griffon -->
+	<goal id="allStar" name="Champion de la WWE" desc="Vous possédez la collection complète des superstars du catch.">
+		<icon k="1" points="0" file="/img/icons/allStar.png" name="Champion de la WWE" />
+		<title k="1" points="5" name="Champion de la WWE"/>
+		<title k="1" points="5" name="Championne de la WWE"/>
+		<title k="1" points="0" name="Bwaaaaarrrh !!!"/>
+	</goal>
+
+	<!-- Nécessite : smolV, smolJ, smolB, smolO, smolR, schC, schP, schR, schV -->
+	<goal id="allschmoll" name="T'as pas une gueule de porte-bonheur..." desc="Vous avez chassé tous les Schmolls de l'école. Une belle collection de trophées !">
+		<icon k="1" points="0" file="/img/icons/allschmoll.png" name="T'as pas une gueule de porte-bonheur..." /> <!-- reférence à Predator-->
+		<title k="1" points="5" name="Prédateur"/>
+		<title k="1" points="5" name="Prédatrice"/>
+	</goal>
+	
+	<!-- Nécessite : schF1, schF2, schF3, schF4, schF5, schF6, schF7, schF8, schF9 -->
+	<goal id="allfschmoll" name="les zonzons de l'espace" desc="Vous avez récupéré toutes les versions phosphorescentes des Schmolls de l'école.">
+		<icon k="1" points="0" file="/img/icons/allfschmoll.png" name="les zonzons de l'espace" />
+		<title k="1" points="10" name="Zonzon de l'espace"/>
+	</goal>
+	
+	<!-- Nécessite : uhu, uhuM, pdc, tdc -->
+	<goal id="allColle" name="Pot de colle" desc="Vous avez confisqué tous les trucs qui collent de l'école.">
+		<icon k="1" points="0" file="/img/icons/allColle.png" name="Pot de colle" />
+		<title k="1" points="10" name="Pot de colle"/>
+	</goal>
+	
+	<!-- Nécessite : euler, gyro, mkbaL, cris, pend -->
+	<goal id="science" name="Apprenti sorcier" desc="Voilà de quoi faire quelques expériences intéressantes au delà de la physique et l'esprit.">
+		<icon k="1" points="0" file="/img/icons/science.png" name="Apprenti sorcier" />
+		<title k="1" points="5" name="Apprenti sorcier"/>
+		<title k="1" points="5" name="Apprentie sorcière"/>
+	</goal>
+	
+	<!-- Nécessite : billAb, billAv,billAo, billO1, billO2, billO3, billT, billOr, billAl, billM, billP -->
+	<goal id="allbilles" name="Maître des billes" desc="Vous avez confisqué tous les types de billes existants pour le moment.">
+		<icon k="1" points="0" file="/img/icons/allbilles.png" name="Maître des billes" />
+		<title k="1" points="5" name="Maître des billes"/>
+		<title k="1" points="5" name="Maîtresse des billes"/>
+	</goal>
+
+	<goal id="allapn" name="Paparazzi" desc="Le flash et l'objectif ont été montés sur le boitier. Ce n'est pas du matos de pro, mais la qualité semble correcte.">
+		<icon k="1" points="0" file="/img/icons/allapn.png" name="Paparazzi" />
+		<title k="1" points="10" name="Paparazzi"/>
+		<image k="1" points="0" file="/img/items/FullAPN.png" title="Appareil photo équipé." />
+	</goal>
+	
+	<goal id="allyoyo" name="Ça s'en va et ça revient" desc="C'est fait de tout petits riens."> <!-- reférence aux paroles d'une chanson de Claude François -->
+		<icon k="1" points="0" file="/img/icons/allyoyo.png" name="Ça s'en va et ça revient." />
+		<title k="1" points="10" name="Ça s'en va et ça revient"/>
+	</goal>
+
+	<goal id="alldolly" name="Pick Pocket" desc="Vous avez confisqué tous les jouets des petites filles... Leur vengeance sera terrible !">
+		<icon k="1" points="0" file="/img/icons/alldolly.png" name="Pick Pocket" />
+		<title k="1" points="5" name="Pick Pocket"/>
+		<title k="1" points="5" name="Pick Pockette"/>
+	</goal>
+
+
+	<goal id="allbrutes" name="Légende brutale en latex" desc="Vous avez récupéré toutes les brutes, et même le titre 'Légende Brutale' de Labrute !">
+		<icon k="1" points="0" file="/img/icons/allbrutes.png" name="Légende brutale en latex" />
+		<title k="1" points="5" name="Légende brutale en latex"/>
+		<title k="1" points="5" name="Légende Brutale"/>
+	</goal>
+
+	<goal id="allgort" name="Cybernéticien" desc="Vous avez récupéré le prototype de Gort, le robot humanoïde imaginé par Charlotte et conçu par Kevin Norray.">
+		<icon k="1" points="0" file="/img/icons/allgort.png" name="Cybernéticien" />
+		<title k="1" points="5" name="Cybernéticien"/>
+		<title k="1" points="5" name="Cybernéticienne"/>
+	</goal>
+	
+	
+	
+	
+	<!-- Familles Noël 2013 -->
+	
+	<!-- Nécessite : BluePrint, GortBD, BortBG, GortCorps, GortJD, GortJG, GortTete, GortBG2, GortTete2, GortCorps2 -->
+	<goal id="gortv2" name="Cybernéticien V2" desc="Vous avez assemblé la version Mark II de Gort.">
+		<icon k="1" points="0" file="/img/icons/gort2.png" name="Cybernéticien V2" />
+		<title k="1" points="10" name="Cybernéticien V2"/>
+	</goal>
+	
+	<!-- Nécessite : Tum, Moonp, Turbo, Stunts, Raider, Mototr, Pad, Totalin-->
+	<goal id="gametrot" name="Game Trotter - niveau 1" desc="Vos connaissances en jeux vidéo sont suffisantes pour prétendre au premier niveau du titre Game Trotter.">
+		<icon k="1" points="0" file="/img/icons/gametrot.png" name="Game Trotter - niveau 1" />
+		<title k="1" points="10" name="Game Trotter - niveau 1"/>
+	</goal>
+	
+	<!-- Nécessite : Badgeso, Badgewa, Badgeev, Badgeno, Badgeha, Badgepi, Badgero-->
+	<goal id="smileyb" name="Smilectionneur" desc="Vous avez récupéré la première saison de la collection des badges Smileys.">
+		<icon k="1" points="0" file="/img/icons/smileyb.png" name="Smilectionneur" />
+		<title k="1" points="10" name="Smilectionneur"/>
+	</goal>
+	
+	<!-- Nécessite : Gluve, Gluro, Glubl, Gluja-->
+	<goal id="pattes" name="Bas les pattes !" desc="Vous avez récupéré la collection des sales paluches collantes. Elles sont toutes recouvertes de poussière et de miettes diverses... Beurk !">
+		<icon k="1" points="0" file="/img/icons/pattes.png" name="Bas les pattes !" />
+		<title k="1" points="10" name="Bas les pattes !"/>
+	</goal>
+	
+	<!-- Nécessite : SnowBall, XmasBall, Treemas, Starmas, Gift, Choco, Jesus, Moise-->
+	<goal id="noeltroll" name="Mon beau sapin" desc="Alors... Boule de neige, boule de noël, branche de sapin, cadeau pourri, boite de chocolats, peluche Jésus, et peluche Moïse... Le compte y est, vous avez confisqué tous les trucs de Noël des élèves. bravo !">
+		<icon k="1" points="0" file="/img/icons/noel2013.png" name="Mon beau sapin" />
+		<title k="1" points="10" name="Mon beau sapin"/>
+	</goal>
+	
+	
+	
+	
+	
+	
+	
+
+	<!-- Objets confisqués -->
+	<goal id="phone" name="Téléphone portable" desc="C'est un téléphone portable rose avec un petit troll accroché dessus.">
+		<image k="1" points="1" file="/img/items/PinkPhone.png" />
+	</goal>
+	
+	<goal id="talky" name="Talkie walkie des Forces Spéciales" desc="Un vrai talkie walkie militaire. Il est lourd !">
+		<image k="1" points="1" file="/img/items/Talkie.png" />
+	</goal>
+	
+	<goal id="telec" name="Télécran" desc="C'est un écran rempli de sable. On peut dessiner des trucs en tournant les molettes !">
+		<image k="1" points="1" file="/img/items/Telecran.png" />
+	</goal>
+	
+	<goal id="ball1" name="Balle de ping pong blanche" desc="Une balle de ping pong blanche trois étoiles.">
+		<image k="1" points="1" file="/img/items/WhitePong.png" />
+	</goal>
+	
+	<goal id="ball2" name="Balle de ping pong orange" desc="Une balle de ping pong orange trois étoiles.">
+		<image k="1" points="1" file="/img/items/OrangePong.png" />
+	</goal>
+	
+	<goal id="totoJ" name="Totoche jaune" desc="Une totoche jaune. C'est la mode en ce moment, les totoches.">
+		<image k="1" points="1" file="/img/items/TotocheJ.png" />
+	</goal>
+	
+	<goal id="totoV" name="Totoche verte" desc="Une totoche verte. C'est joli le vert. Ca rappelle Frutiparc.">
+		<image k="1" points="1" file="/img/items/TotocheV.png" />
+	</goal>
+	
+	<goal id="totoR" name="Totoche rose" desc="Tiens, une totoche rose. Vous ne l'aviez pas celle-là...">
+		<image k="1" points="1" file="/img/items/TotocheR.png" />
+	</goal>
+	
+	<goal id="totoB" name="Totoche bleue" desc="Une totoche bleue.">
+		<image k="1" points="1" file="/img/items/TotocheB.png" />
+	</goal>
+	
+	<goal id="totoN" name="Totoche noire des Enfers" rare="1" desc="Une totoche noire des Enfers super rare ! Quelle chance !">
+		<image k="1" points="10" file="/img/items/TotocheN.png" />
+	</goal>
+	
+	<goal id="capN" name="Capuchon noir" desc="C'est un capuchon de stylo noir.">
+		<image k="1" points="1" file="/img/items/CapuchonN.png" />
+	</goal>
+	
+	<goal id="capB" name="Capuchon bleu" desc="Beurk, un capuchon tout mordillé... Celui-ci est bleu.">
+		<image k="1" points="1" file="/img/items/CapuchonB.png" />
+	</goal>
+	
+	<goal id="capR" name="Capuchon rouge" desc="Un capuchon tout mordillé... Celui-ci est rouge, et... Ho ! Il reste même un peu de salive dedans !">
+		<image k="1" points="1" file="/img/items/CapuchonR.png" />
+	</goal>
+	
+	<goal id="capV" name="Capuchon vert" desc="C'est un capuchon de stylo vert.">
+		<image k="1" points="1" file="/img/items/CapuchonV.png" />
+	</goal>
+	
+	<goal id="compa" name="Compas" rare="1" desc="Un compas doré. Certains n'ont pas de problème de budget on dirait...">
+		<image k="1" points="5" file="/img/items/Compas.png" />
+	</goal>
+	
+	<goal id="equer" name="Equerre" rare="1" desc="Une équerre en or massif.">
+		<image k="1" points="5" file="/img/items/Equerre.png" />
+	</goal>
+	
+	<goal id="elast" name="Elastique" desc="Un élastique. Il a fait mal celui-là... Ça pique encore.">
+		<image k="1" points="1" file="/img/items/Elastique.png" />
+	</goal>
+	
+	<goal id="bReb" name="Balle rebondissante" desc="Une balle rebondissante. Elle n'était pas facile à attraper !">
+		<image k="1" points="1" file="/img/items/ReBall.png" />
+	</goal>
+	
+	<goal id="bReb2" name="Balle rebondissante géante" desc="Une grosse balle rebondissante. C'est très tentant de la balancer très fort contre le mur.">
+		<image k="1" points="1" file="/img/items/BigReBall.png" />
+	</goal>
+	
+	<goal id="tennis" name="Balle de tennis" desc="Une balle de tennis. Ça vous rappelle que vous avez un match ce week-end à Roland Garros.">
+		<image k="1" points="1" file="/img/items/TennisBall.png" />
+	</goal>
+	
+	<goal id="puceV" name="Puce verte" desc="Une de ces satanées puces... Au moins, celle-ci ne vous embêtera plus.">
+		<image k="1" points="1" file="/img/items/PuceV.png" />
+	</goal>
+	
+	<goal id="puceR" name="Puce rose" desc="Une puce rose... Heureusement, celle-ci est hors d'état de nuire.">
+		<image k="1" points="1" file="/img/items/PuceR.png" />
+	</goal>
+	
+	<goal id="puceN" name="Puce noire démoniaque" rare="1" desc="La puce noire démoniaque ! Ce n'est pas trop tôt. Depuis le temps que vous rêviez de mettre la main dessus...">
+		<image k="1" points="10" file="/img/items/PuceN.png" />
+	</goal>
+	
+	<goal id="dents" name="Dents de vampire" desc="Un dentier de vampire. Un grain de riz y est coincé, sûrement de la cantine.">
+		<image k="1" points="1" file="/img/items/Dentier.png" />
+	</goal>
+	
+	<goal id="pomme" name="Pomme" desc="Une pomme. Mordez une fois dedans pour la 'norriser', elle aura bien plus de valeur !">
+		<image k="1" points="1" file="/img/items/Apple.png" />
+	</goal>
+	
+	<goal id="gort" name="Plan de Gort" desc="On dirait le plan d'un robot humanoïde... Il est signé chariottte. Pas de doute, c'est bien à elle.">
+		<image k="1" points="1" file="/img/items/Gort.png" />
+	</goal>
+
+
+	<goal id="bball" name="Balle de Baseball" desc="Une balle de Baseball. Ça... ça peut faire mal. Vraiment mal.">
+		<image k="1" points="1" file="/img/items/BaseBall.png" />
+	</goal>
+
+	
+	<goal id="toupB" name="Toupie de combat bleue" desc="Une toupie de combat bleue. Ça ne plaisante plus à la récré !">
+		<image k="1" points="1" file="/img/items/ToupieB.png" />
+	</goal>
+	
+	<goal id="toupV" name="Toupie de combat verte" desc="Une toupie de combat. Celle-ci est verte.">
+		<image k="1" points="1" file="/img/items/ToupieV.png" />
+	</goal>
+	
+	<goal id="toupR" name="Toupie de combat Titan" desc="Une grosse toupie de combat. Elle doit faire mal celle-là.">
+		<image k="1" points="10" file="/img/items/ToupieR.png" />
+	</goal>
+	
+	<goal id="toup1" name="Toupie lumineuse" desc="Une toupie de combat. Elle est petite, mais elle génère de la lumière quand elle tourne.">
+		<image k="1" points="5" file="/img/items/ToupieL1.png" />
+	</goal>
+	
+	<goal id="toup2" name="Toupie Nébuleuse" rare="1" desc="La légendaire toupie Nébuleuse. La puissance de l'Univers entre vos mains !">
+		<image k="1" points="10" file="/img/items/ToupieL2.png" />
+	</goal>
+	
+	<goal id="ring" name="Anneau de la table du milieu" rare="1" desc="Un anneau en plastique doré. Il vient probablement de la table du milieu...">
+		<image k="1" points="1" file="/img/items/Ring.png" />
+	</goal>
+	
+	<goal id="mars" name="Barre chocolatée Janvier" desc="Un Janvier, et ça repart !">
+		<image k="1" points="1" file="/img/items/Mars.png" />
+	</goal>
+	
+	<goal id="dgun" name="Double pistolets à eau" desc="Deux pistolets à eau pour le prix d'un ! Ca sera utile dans quelques années, quand Hordes sera sorti.">
+		<image k="1" points="1" file="/img/items/DoubleWgun.png" />
+	</goal>
+	
+	<goal id="wgun" name="Pistolet à eau" desc="Un pistolet à eau. Comme tous les pistolets à eau, il fuit... Evidemment...">
+		<image k="1" points="1" file="/img/items/WaterGun.png" />
+	</goal>
+	
+	<goal id="kalas" name="Mitraillette en papier" rare="1" desc="Une mitraillette à l'échelle 1/1, faite entièrement en papier... Il y a presque de quoi être fier.">
+		<image k="1" points="1" file="/img/items/Kalash.png" />
+	</goal>
+	
+	<goal id="lancP" name="Lance-pierres" desc="Un lance-pierres qui lance des pierres.">
+		<image k="1" points="1" file="/img/items/LancePierre.png" />
+	</goal>
+	
+	<goal id="trolV" name="Troll aux cheveux verts" desc="Un petit troll en plastique avec des cheveux verts.">
+		<image k="1" points="1" file="/img/items/TrollV.png" />
+	</goal>
+	
+	<goal id="trolB" name="Troll aux cheveux bleus" desc="Un petit troll en plastique avec des cheveux bleus.">
+		<image k="1" points="1" file="/img/items/TrollB.png" />
+	</goal>
+	
+	<goal id="trolR" name="Troll aux cheveux roses" desc="Un petit troll en plastique avec des cheveux roses. Il a une sale tête celui-là...">
+		<image k="1" points="1" file="/img/items/TrollR.png" />
+	</goal>
+	
+	<goal id="trolJ" name="Troll aux cheveux jaunes" desc="Un petit troll en plastique avec des cheveux jaunes.">
+		<image k="1" points="1" file="/img/items/TrollJ.png" />
+	</goal>
+	
+	<goal id="trolO" name="Troll aux cheveux orange" desc="Un petit troll en plastique avec des cheveux orange.">
+		<image k="1" points="1" file="/img/items/TrollO.png" />
+	</goal>
+	
+	<goal id="trolM" name="Troll aux cheveux mauves" desc="Un petit troll en plastique avec des cheveux mauves.">
+		<image k="1" points="1" file="/img/items/TrollM.png" />
+	</goal>
+	
+	<goal id="piou" name="Peluche Pioupiou" desc="Une peluche Pioupiou, fabriquée en France. C'est bon pour l'économie ça !">
+		<image k="1" points="1" file="/img/items/Piou.png" />
+	</goal>
+	
+	<goal id="lapin" name="Peluche lapin bleu" desc="Un lapin bleu. Vous aviez le même autrefois.">
+		<image k="1" points="1" file="/img/items/Rabbit.png" />
+	</goal>
+	
+	<goal id="arbal" name="Arbalête en papier" desc="Une arbalète en papier... Le pire, c'est qu'elle fonctionne très bien.">
+		<image k="1" points="1" file="/img/items/Arbalete.png" />
+	</goal>
+	
+	<goal id="laseR" name="Laser pointeur rouge" desc="Un laser pointeur rouge. On peut changer l'embout. Celui-ci projette 'SOS'.">
+		<image k="1" points="1" file="/img/items/LaserR.png" />
+	</goal>
+	
+	<goal id="laseV" name="Laser pointeur vert" desc="Un laser pointeur vert. Avec un peu de poussière de craie, on voit très bien le faisceau.">
+		<image k="1" points="1" file="/img/items/LaserV.png" />
+	</goal>
+	
+	<goal id="laseB" name="Laser pointeur bleu" desc="Un laser pointeur bleu. On dirait presque un sabre laser, la classe.">
+		<image k="1" points="1" file="/img/items/LaserB.png" />
+	</goal>
+	
+	<goal id="laseO" name="Laser pointeur orange" desc="Un laser pointeur orange. C'est une longueur d'onde plutôt rare pour un laser.">
+		<image k="1" points="1" file="/img/items/LaserO.png" />
+	</goal>
+		
+	<goal id="fourc" name="Fourchette" desc="Une fourchette en inox... N'importe quoi.">
+		<image k="1" points="1" file="/img/items/Fourchette.png" />
+	</goal>
+
+	<goal id="knife" name="Bowie" rare="1" desc="Un couteau australien... Il y a de quoi se débarasser d'un crocodile marin.">
+		<image k="1" points="1" file="/img/items/Knife.png" />
+	</goal>
+
+	<goal id="pogs" name="Pozg" desc="Des Pozg authentiques à l'effigie de Frutiparc... Kaluga, Swapou... Il y a même les logos de Burning Kiwi !">
+		<image k="1" points="1" file="/img/items/Pogs.png" />
+	</goal>
+	
+	<goal id="epee1" name="Poignée d'épée" rare="1" desc="Un morceau d'épée. C'est la poignée, il faut récupérer les autres bouts.">
+		<image k="1" points="1" file="/img/items/EpeeManche.png" />
+	</goal>
+	
+	<goal id="epee2" name="Garde d'épée" rare="1" desc="Une garde d'épée. Il y a un oeil de saumon collé qui a été peint en rouge... Pouah, ça pue !">
+		<image k="1" points="1" file="/img/items/EpeeGarde.png" />
+	</goal>
+	
+	<goal id="epee3" name="Morceau de lame" desc="On dirait une lame en plastique. Il est écrit 'La lame s'allume en'. La suite doit être sur un autre morceau. C'est étrange, on dirait qu'elle sent le poisson...">
+		<image k="1" points="1" file="/img/items/EpeeLame1.png" />
+	</goal>
+	
+	<goal id="epee4" name="Morceau de lame" desc="Un morceau de lame en plastique. Il est écrit 'vert quand un'. Le reste doit être sur d'autres morceaux.">
+		<image k="1" points="1" file="/img/items/EpeeLame2.png" />
+	</goal>
+	
+	<goal id="epee5" name="Morceau de lame" desc="Un morceau de lame en plastique. Il est écrit 'prof est proche.'. Le début doit être sur un autre morceau.">
+		<image k="1" points="1" file="/img/items/EpeeLame3.png" />
+	</goal>
+	
+	<goal id="epee6" name="Pointe de lame" desc="Une pointe de lame en plastique. Heureusement, elle est complètement inoffensive. Il doit y avoir le reste quelque part.">
+		<image k="1" points="1" file="/img/items/EpeePointe.png" />
+	</goal>
+	
+	<goal id="gren1" name="Grenouille en papier" desc="Une petite grenouille en papier. Elle saute pour de vrai quand on appuie à l'arrière et qu'on relâche.">
+		<image k="1" points="1" file="/img/items/Grenouille1.png" />
+	</goal>
+	
+	<goal id="gren2" name="Grenouille en papier quadrillé" desc="Une petite grenouille en papier. Celle-ci est faite avec du papier quadrillé, probablement d'un bloc-notes.">
+		<image k="1" points="1" file="/img/items/Grenouille2.png" />
+	</goal>
+	
+	<goal id="gren3" name="Grenouille en papier millimétré" desc="Une petite grenouille en papier. Celle-ci est faite avec du papier millimétré... Bah, c'est de la géométrie en 3D, après tout.">
+		<image k="1" points="1" file="/img/items/Grenouille3.png" />
+	</goal>
+	
+	<goal id="gren4" name="Grenouille turbo" rare="1" desc="Une petite grenouille faite avec du transparent de rétro-projecteur. Cette matière plastifiée très rigide lui permet de faire des bonds de plusieurs mètres. Impressionnant !">
+		<image k="1" points="10" file="/img/items/Grenouille4.png" />
+	</goal>
+
+	<goal id="marto" name="Marteau" desc="Un marteau. N'importe quoi... Au moins, celui-ci ne me cassera plus la tête.">
+		<image k="1" points="1" file="/img/items/Marteau.png" />
+	</goal>
+	
+	<goal id="scoub" name="Scoubidou" desc="Un scoubidou rouge et jaune. Un classique de forme carrée avec deux fils.">
+		<image k="1" points="1" file="/img/items/Scoubidou.png" />
+	</goal>
+	
+	<goal id="nba" name="Cartes de basket" desc="La collection complète des logos des clubs de basket américains ! Quelle chance !">
+		<image k="1" points="1" file="/img/items/Nba.png" />
+	</goal>
+	
+	
+	<goal id="macht" name="Machette anti-zombies" desc="Un anti-zombies sous forme de machette pour application locale.">
+		<image k="1" points="1" file="/img/items/Machette.png" />
+	</goal>
+	
+	
+	<goal id="tamag" name="Tamagochi" desc="C'est un vrai Tamagochi. Il sonne !... Il faut aller le promener. C'est le truc qu'il ne fallait surtout pas confisquer...">
+		<image k="1" points="1" file="/img/items/Tamagochi.png" />
+	</goal>
+	
+	<goal id="rototo" name="Peluche Rototo" desc="Une peluche représentant une étrange créature. Mon voisin avait la même.">
+		<image k="1" points="1" file="/img/items/Rototo.png" />
+	</goal>
+	
+	<goal id="gameb" name="Gameboite" desc="C'est une Gameboite, la toute nouvelle console portable. Elle n'a plus de pile...">
+		<image k="1" points="1" file="/img/items/Gameboite.png" />
+	</goal>
+	
+	<goal id="assas" name="Insigne Assassin's Craie" rare="1" desc="C'est un arrache-agrafes... Ils s'en servent pour briser les craies. On dirait l'insigne d'une célèbre société secrète.">
+		<image k="1" points="1" file="/img/items/Assassin.png" />
+	</goal>
+	
+	<goal id="licorn" name="Licorne gonflable" desc="C'est un ballon de plage gonflable en forme de licorne.">
+		<image k="1" points="1" file="/img/items/Licorne.png" />
+	</goal>
+	
+	<goal id="pony1" name="Petit poney licorne" desc="Un petit poney bleu. Celui-ci possède une corne frontale, probablement pour éventrer ses ennemis. Quelle violence...">
+		<image k="1" points="1" file="/img/items/Poney1.png" />
+	</goal>
+	
+	<goal id="pony2" name="Maman poney" desc="Un poney rose avec une crinière mauve.">
+		<image k="1" points="1" file="/img/items/Poney2.png" />
+	</goal>
+	
+	<goal id="pony3" name="Poney pégase" rare="1" desc="Un petit poney jaune. Il possède des ailes, ça doit lui permettre de voler... Voyons ça.">
+		<image k="1" points="1" file="/img/items/Poney3.png" />
+	</goal>
+	
+	<goal id="pony4" name="Petit poney" desc="C'est un petit poney rose pâle avec une crinière verte bleutée.">
+		<image k="1" points="1" file="/img/items/Poney4.png" />
+	</goal>
+	
+	<goal id="smolV" name="Schmoll vert" desc="Un petit truc vert qui tire la langue.">
+		<image k="1" points="1" file="/img/items/SchmollV.png" />
+	</goal>
+	
+	<goal id="smolJ" name="Schmoll jaune" desc="Quel beau sourire...">
+		<image k="1" points="1" file="/img/items/SchmollJ.png" />
+	</goal>
+	
+	<goal id="smolB" name="Schmoll bleu" desc="C'est un Schmoll bleu malpoli qui tire la langue...">
+		<image k="1" points="1" file="/img/items/SchmollB.png" />
+	</goal>
+	
+	<goal id="smolO" name="Schmoll orange" desc="Un Schmoll orange. Il a l'air complètement débile.">
+		<image k="1" points="1" file="/img/items/SchmollO.png" />
+	</goal>
+	
+	<goal id="smolR" name="Schmoll rose" desc="C'est un truc rose sans cheveux avec un ruban dans les cheveux.">
+		<image k="1" points="1" file="/img/items/SchmollR.png" />
+	</goal>
+	
+	<goal id="chuP" name="Chupi Chupa à la pomme" desc="Une sucette à la pomme. C'est bon la pomme. Mais pourquoi est-elle gelée ?">
+		<image k="1" points="1" file="/img/items/ChupP.png" />
+	</goal>
+	
+	<goal id="chuC" name="Chupi Chupa au chocolat" desc="Une sucette au chocolat. Plutôt étrange comme parfum pour une sucette.">
+		<image k="1" points="1" file="/img/items/ChupC.png" />
+	</goal>
+	
+	<goal id="chuF" name="Chupi Chupa à la fraise" desc="Une sucette à la fraise.">
+		<image k="1" points="1" file="/img/items/ChupF.png" />
+	</goal>
+	
+	<goal id="chuCo" name="Chupi Chupa au coca" rare="1" desc="Une sucette au coca, c'est toujours celle-là qu'on veut. Celle-ci est glacée. Etrange...">
+		<image k="1" points="1" file="/img/items/ChupCo.png" />
+	</goal>
+	
+	<goal id="chuO" name="Chupi Chupa à l'orange" desc="Une sucette à l'orange. Un classique.">
+		<image k="1" points="1" file="/img/items/ChupO.png" />
+	</goal>
+	
+	<goal id="barby" name="Tête de Barbibi" desc="C'est une tête de poupée. Elle sourit encore.">
+		<image k="1" points="1" file="/img/items/Barby.png" />
+	</goal>
+	
+	<goal id="ken" name="Tête de Kon" desc="La tête d'une poupée appelée Kon, le copain de la célèbre Barbibi.">
+		<image k="1" points="1" file="/img/items/Ken.png" />
+	</goal>
+	
+	<goal id="gamji" name="Gamjir" rare="1" desc="C'est une console portable, la célèbre Gamjir ! Elle est noire, mais la couleur est à l'intérieur.">
+		<image k="1" points="1" file="/img/items/Gamjir.png" />
+	</goal>
+	
+	<goal id="diamV" name="Pierre précieuse verte" desc="C'est une grossière imitation d'émeraude en plastique... C'est gravé 'Made in Taiwan'.">
+		<image k="1" points="1" file="/img/items/DiamV.png" />
+	</goal>
+	
+	<goal id="diamM" name="Pierre précieuse violette" desc="Une fausse améthyste en acrylique... Ca n'a aucune valeur.">
+		<image k="1" points="1" file="/img/items/DiamM.png" />
+	</goal>
+	
+	<goal id="diamR" name="Pierre précieuse rouge" desc="C'est un faux rubis en plastique. Son reflet à la lumière du soleil ne correspond pas, ça crève les yeux.">
+		<image k="1" points="1" file="/img/items/DiamR.png" />
+	</goal>
+	
+	<goal id="diamB" name="Pierre précieuse" desc="C'est un faux diamant en plastique. Vu son indice de réfraction de 1.491, c'est de l'acrylique sans aucun doute.">
+		<image k="1" points="1" file="/img/items/DiamB.png" />
+	</goal>
+	
+	<goal id="diamJ" name="Pierre précieuse jaune" rare="1" desc="Une topaze impériale ! Sa double réfraction et ses index réfringents confirment son authenticité.">
+		<image k="1" points="1" file="/img/items/DiamJ.png" />
+	</goal>
+	
+	
+	
+	<goal id="packP" name="Pack a poltron" desc="Des bouteilles de lait, un tuyau d'arrosage, et un vinyle scotchés ensemble. Il est écrit dessus 'pac a poltron'. Ca doit sûrement être un 'pack à protons'.">
+		<image k="1" points="1" file="/img/items/PackP.png" />
+	</goal>
+	
+	
+	<goal id="psyco" name="gigot mette" desc="Si mes souvenirs sont exacts, ceci est censé représenter un gigomètre, un appareil d'analyse spectrale. Celui-ci a été construit avec une moitié de valise de secours, des boites d'allumettes, et des puces.">
+		<image k="1" points="1" file="/img/items/Psyco.png" />
+	</goal>
+	
+	
+	<goal id="ectog" name="pécto lunnettes" desc="'Ecto lunettes' sans doute... Des rouleaux de papier WC scotchés sur des lunettes noires en plastique.">
+		<image k="1" points="1" file="/img/items/Ectog.png" />
+	</goal>
+	
+	
+	<goal id="pke" name="pécaheu" desc="Si mes souvenirs sont exacts, ceci est censé représenter un PKE. Un appareil d'analyse spectrale.">
+		<image k="1" points="1" file="/img/items/Pke.png" />
+	</goal>
+	
+	<goal id="trap" name="piaige a feNthome" desc="Une poignée de casserole fixée sur une boite de chaussures. Mmm... Vu l'orthographe et l'ingéniosité, je crois savoir qui a fabriqué ça.">
+		<image k="1" points="1" file="/img/items/Trap.png" />
+	</goal>
+	
+	<goal id="jamb" name="Jambe de Bonaparte" rare="1" desc="Voilà la jambe du squelette de la salle d'histoire-géo.">
+		<image k="1" points="1" file="/img/items/Jamb.png" />
+	</goal>
+	
+	
+	<!-- Nouveaux objets à confisquer pour septembre 2013 -->
+	
+	<goal id="dent2" name="Dentier du Doyen" desc="Mais comment ont-ils réussi à avoir ça ?... Il y a encore un grain de riz collé dessus.">
+		<image k="1" points="1" file="/img/items/Dent2.png" />
+	</goal>
+	
+	<goal id="enjo" name="Enjoliveur" rare="1" desc="Un enjoliveur de voiture. Probablement trouvé sur le bord du troittoir.">
+		<image k="1" points="1" file="/img/items/Enjo.png" />
+	</goal>
+	
+	<goal id="yoyoB" name="Yoyo bleu" desc="Un yoyo bleu. Il fonctionne bien, et ne s'emmêle pas.">
+		<image k="1" points="1" file="/img/items/YoyoB.png" />
+	</goal>
+	
+	<goal id="yoyoR" name="Yoyo sonore" desc="Un yoyo rouge et jaune. Il fait un son bizarre quand il remonte.">
+		<image k="1" points="1" file="/img/items/YoyoR.png" />
+	</goal>
+
+	<!-- Blagues Kissmar -->
+	
+	<goal id="kissmB" name="Blague Kissmar" desc="Petite devinette : Tu connais l'histoire de la feuille de papier ? - Non. - Elle déchire !">
+		<image k="1" points="1" file="/img/items/KissmB.png" />
+	</goal>
+	
+	<goal id="kissmJ" name="Blague Kissmar" desc="Attention, blague jaune : Où les super héros vont-ils faire leurs courses ? Au Super Marché !">
+		<image k="1" points="1" file="/img/items/KissmJ.png" />
+	</goal>
+	
+	<goal id="kissmN" name="Blague Kissmar" desc="Julien a une bonne idée pour sécher l'école : - Allô, c'est la maîtresse? Je vous téléphone pour vous dire que Julien est malade. - Et qui est à l'appareil ? - C'est mon papa !... On me l'a fait 7 fois cette semaine, celle-là... Et c'était pas sensé être des blagues.">
+		<image k="1" points="1" file="/img/items/KissmN.png" />
+	</goal>
+	
+	<goal id="kissmR" name="Blague Kissmar" desc="Houla, blague rouge... Attention, c'est du lourd : Comment s'appelle la femelle du hamster. Hamsterdame (Amsterdam),">
+		<image k="1" points="1" file="/img/items/KissmR.png" />
+	</goal>
+	
+	<!-- Catcheurs -->
+	
+	<goal id="lukeL" name="Luke Logan" rare="1" desc="C'est une figurine articulée de Luke Logan, une superstar du catch. ">
+		<image k="1" points="1" file="/img/items/LukeL.png" />
+	</goal>
+	
+	<goal id="pablo" name="Mysterious Pablo" rare="1" desc="Un jouet représentant Mysterious Pablo, une superstar du catch. Il a été champion en 1986. Mystérieusement, bien sûr.">
+		<image k="1" points="1" file="/img/items/Pablo.png" />
+	</goal>
+	
+	<goal id="dollar" name="One Dollar Man" rare="1" desc="Une figurine articulée d'une superstar du catch. Lui, c'est One Dollar Man. Un sacré frimeur celui-là.">
+		<image k="1" points="1" file="/img/items/Dollar.png" />
+	</goal>
+	
+	<goal id="superW" name="Super Warrior" rare="1" desc="La figurine de Super Warrior, une star du catch extrêmement célèbre.">
+		<image k="1" points="1" file="/img/items/SuperW.png" />
+	</goal>
+	
+	<goal id="griffon" name="The Griffon" rare="1" desc="The Griffon, mon catcheur préféré ! Il était formidable dans son match contre Super Warrior pour le titre mondial en 1988,">
+		<image k="1" points="1" file="/img/items/Griffon.png" />
+	</goal>
+	
+	<!-- Nouveaux Schmolls -->
+	
+	<goal id="schC" name="Schmoll cyan" desc="Un nouveau Schmoll, il doit faire partie d'une nouvelle collection. Il est vraiment très cyan celui là.">
+		<image k="1" points="1" file="/img/items/SchmollC.png" />
+	</goal>
+	
+	<goal id="schP" name="Schmoll pourpre" desc="Ce Schmoll me fait penser à quelque chose, mais je n'arrive pas à mettre le doigt dessus...">
+		<image k="1" points="1" file="/img/items/SchmollP.png" />
+	</goal>
+	
+	<goal id="schR" name="Schmoll rouge" desc="On dirait une espèce de bernard l'hermite débile. Un schmollusque quoi.">
+		<image k="1" points="1" file="/img/items/SchmollRg.png" />
+	</goal>
+	
+	<goal id="schV" name="Schmoll vert" desc="Encore un Schmoll. Il a l'air d'avoir un sérieux problème mental celui-là.">
+		<image k="1" points="1" file="/img/items/SchmollVr.png" />
+	</goal>
+	
+	<goal id="schF1" name="Schmoll phosphorescent" rare="1" desc="EC'est le Schmoll vert version fluorescente.">
+		<image k="1" points="1" file="/img/items/SchmollF1.png" />
+	</goal>
+	
+	<goal id="schF2" name="Schmoll phosphorescent" rare="1" desc="Le Schmoll jaune version qui brille dans le noir.">
+		<image k="1" points="1" file="/img/items/SchmollF2.png" />
+	</goal>
+	
+	<goal id="schF3" name="Schmoll phosphorescent" rare="1" desc="Le Schmoll phosphorescent, il brille dans le noir. Ils m'en ont fait voir de toutes les couleurs ces trucs là...">
+		<image k="1" points="1" file="/img/items/SchmollF3.png" />
+	</goal>
+	
+	<goal id="schF4" name="Schmoll phosphorescent" rare="1" desc="C'est le Schmoll orange débile, on le reconnait bien.">
+		<image k="1" points="1" file="/img/items/SchmollF4.png" />
+	</goal>
+	
+	<goal id="schF5" name="Schmoll phosphorescent" rare="1" desc="C'est le Schmoll rose. Sauf qu'il n'est pas rose et qu'il brille dans le noir.">
+		<image k="1" points="1" file="/img/items/SchmollF5.png" />
+	</goal>
+	
+	<goal id="schF6" name="Schmoll phosphorescent" rare="1" desc="Un Schmoll lumineux... Beurk, on dirait qu'il a un truc sur la tête...">
+		<image k="1" points="1" file="/img/items/SchmollF6.png" />
+	</goal>
+	
+	<goal id="schF7" name="Schmoll phosphorescent" rare="1" desc="C'est la version fluo du Schmoll pourpre mystérieux qui ressemble à une tentacule. Mais où est-ce que je l'ai déjà vu, ce truc ?">
+		<image k="1" points="1" file="/img/items/SchmollF7.png" />
+	</goal>
+	
+	<goal id="schF8" name="Schmoll phosphorescent" rare="1" desc="Il a une vraie tête d'illuminé celui-là.">
+		<image k="1" points="1" file="/img/items/SchmollF8.png" />
+	</goal>
+	
+	<goal id="schF9" name="Schmoll phosphorescent" rare="1" desc="Ce Schmoll est beaucoup moins cyan que son homologue coloré.">
+		<image k="1" points="1" file="/img/items/SchmollF9.png" />
+	</goal>
+	
+	<!-- Colles -->
+	
+	<goal id="uhu" name="Baton de colle OUHOU" desc="De la colle. Tout le monde en a de la comme ça.">
+		<image k="1" points="1" file="/img/items/Uhu.png" />
+	</goal>
+	
+	<goal id="uhuM" name="Baton de colle OUHOU Magik" desc="La version 'Magik' du célèbre baton de colle. Il y a un colorant pour voir où on applique la colle. On dirait du rouge à lèvres... Ca pourrait être un bon piège pour les bavardes. Il suffirait juste de changer l'étiquette.">
+		<image k="1" points="1" file="/img/items/UhuM.png" />
+	</goal>
+	
+	<goal id="pdc" name="Pot de colle" desc="Le fameux pot de colle qu'il faut étaler avec la palette. Ils sont tous dingues de l'odeur... snif... C'est vrai que ça sent bon... snnnnnnnif !!!">
+		<image k="1" points="1" file="/img/items/Pdc.png" />
+	</goal>
+	
+	<goal id="tdc" name="Tube de colle" desc="La colle liquide des travaux de bricolage. Ils s'en mettent sur les doigts pour ensuite la décoller comme de la peau... N'importe quoi.">
+		<image k="1" points="1" file="/img/items/Tdc.png" />
+	</goal>
+	
+	<!-- Peluches -->
+	
+	<goal id="sheep" name="Mouton en peluche" rare="1" desc="Une peluche de mouton. On dirait qu'elle vient de Majority. Il y a un nom écrit au feutre sur l'étiquette : 'Silvertiger'.">
+		<image k="1" points="1" file="/img/items/Sheep.png" />
+	</goal>
+	
+	<goal id="gomo" name="Peluche Gomola" rare="1" desc="Une grosse mouche bleue en peluche. Pardon, pas une mouche, une tzongre.">
+		<image k="1" points="1" file="/img/items/Gomo.png" />
+	</goal>
+	
+	<goal id="igor" name="peluche Igor" rare="1" desc="La peluche du plus célèbre bonhomme de neige.">
+		<image k="1" points="1" file="/img/items/Igor.png" />
+	</goal>
+
+	<goal id="mouta" name="Peluche Chevalier Moutarde" rare="1" desc="C'est le Chevalier Moutarde de Swapou 2 en peluche.">
+		<image k="1" points="1" file="/img/items/Mouta.png" />
+	</goal>
+	
+	<goal id="cerbere" name="Peluche de Cerbère le poney" rare="1" desc="La peluche de Cerbère le Poney. C'était risqué de confisquer ça à une gamine...">
+		<image k="1" points="1" file="/img/items/Cerbere.png" />
+	</goal>
+	
+	<!-- Science décalée -->
+
+	
+	<goal id="euler" name="Disque d'Euler" rare="1" desc="La composition de ce disque lui permet de tourner comme une pièce pendant trois minutes. Il s'arrêtee à cause du frottement sur le socle.">
+		<image k="1" points="1" file="/img/items/Euler.png" />
+	</goal>
+	
+	<goal id="gyro" name="Gyroscope" rare="1" desc="Si on le lance, il tournera pendant des heures sans tenir compte de la gravité ou de la rotation de la planète.">
+		<image k="1" points="1" file="/img/items/Gyro.png" />
+	</goal>
+	
+	<goal id="mkbaL" name="Merkaba Pierre de Lune" rare="1" desc="C'est une Merkaba en Pierre de Lune. Une roche spirituelle taillée en forme de deux tétraèdres imbriqués l'un dans l'autre. Mais où ont-ils trouvé ça ?">
+		<image k="1" points="1" file="/img/items/MkbaL.png" />
+	</goal>
+	
+	<goal id="crist" name="Boule de Cristal" rare="1" desc="Une boule de cristal... en plastique. Probablement pour essayer de deviner la note de leur prochain devoir.">
+		<image k="1" points="1" file="/img/items/Cristal.png" />
+	</goal>
+	
+	<goal id="pend" name="Pendule" rare="1" desc="Un pendule artisanal fabriqué avec un bout de verre, une ficelle, et un boulon. Ca leur serait utile pour retrouver leurs objets perdus. Dommage qu'ils l'aient perdu aussi.">
+		<image k="1" points="1" file="/img/items/pend.png" />
+	</goal>
+
+
+	<!-- Billes -->
+	
+	<goal id="billAb" name="Bille araignée bleue" desc="C'est une bille araignée bleue.">
+		<image k="1" points="1" file="/img/items/BillAb.png" />
+	</goal>
+	
+	<goal id="billAv" name="Bille araignée verte" desc="C'est une bille araignée verte.">
+		<image k="1" points="1" file="/img/items/BillAv.png" />
+	</goal>
+	
+	<goal id="billAo" name="Bille araignée orange" desc="C'est une bille araignée orange.">
+		<image k="1" points="1" file="/img/items/BillAo.png" />
+	</goal>
+	
+	<goal id="billO1" name="Oeil de chat bleu" desc="C'est une bille oeil de chat bleu.">
+		<image k="1" points="1" file="/img/items/BillO1.png" />
+	</goal>
+	
+	<goal id="billO2" name="Oeil de chat jaune" desc="C'est une bille oeil de chat jaune.">
+		<image k="1" points="1" file="/img/items/BillO2.png" />
+	</goal>
+	
+	<goal id="billO3" name="Oeil de chat blanc" desc="C'est une bille oeil de chat blanc.">
+		<image k="1" points="1" file="/img/items/BillO3.png" />
+	</goal>
+	
+	<goal id="BillT" name="Bille tortue" desc="C'est une bille tortue.">
+		<image k="1" points="1" file="/img/items/BillT.png" />
+	</goal>
+	
+	<goal id="billOr" name="Bille orque" desc="C'est une bille orque.">
+		<image k="1" points="1" file="/img/items/BillOr.png" />
+	</goal>
+	
+	<goal id="billAl" name="Bille abeille" desc="C'est une bille abeille.">
+		<image k="1" points="1" file="/img/items/BillAl.png" />
+	</goal>
+	
+	<goal id="billM" name="Bille météorite" desc="C'est une bille météorite du plus bel effet !">
+		<image k="1" points="1" file="/img/items/BillM.png" />
+	</goal>
+	
+	<goal id="billP" name="Bille pétrole" desc="C'est une bille pétrole.">
+		<image k="1" points="1" file="/img/items/BillP.png" />
+	</goal>
+	
+	
+	<!-- Appareil photo -->
+	
+	<goal id="Flash" name="Flash" rare="1" desc="C'est un flash pour appareil photo P-Skool.">
+		<image k="1" points="1" file="/img/items/Flash.png" />
+	</goal>
+	
+	<goal id="boitier" name="Appareil photo" desc="C'est un appareil photo P-Skool pour enfant.">
+		<image k="1" points="1" file="/img/items/Boitier.png" />
+	</goal>
+	
+	<goal id="objec" name="Objectif" desc="Un objectif renforcé de caoutchouc pour pouvoir être manipulé en toute sécurité.">
+		<image k="1" points="1" file="/img/items/Objectif.png" />
+	</goal>
+	
+	<goal id="jetabl" name="Appareil photo jetable" desc="C'est un appareil photo jetable pour enfant.">
+		<image k="1" points="1" file="/img/items/Jetable.png" />
+	</goal>
+	
+	<!--<goal id="appTof" name="Appareil photo équipé" desc="Le flash et l'objectif ont été montés sur le boitier. Ce n'est pas du matos de pro, mais la qualité semble correcte.">
+		<image k="1" points="1" file="/img/items/FullAPN.png" />
+	</goal>-->
+	
+	<!-- Dolly Pocket -->
+	
+	<goal id="dollP1" name="Dolly Pocket Salon de Coiffure" desc="C'est comme une boîte avec un petit monde à l'intérieur. Il y a aussi de minuscules figurines. Ca a l'air fragile.">
+		<image k="1" points="1" file="/img/items/DollyP1.png" />
+	</goal>
+	
+	<goal id="dollPM" name="Dolly Pocket Pop Star" desc="Un jouet pour fille. On dirait la scène d'une émission télévisée de nouvelles stars, en tout petit.">
+		<image k="1" points="1" file="/img/items/DollyPM.png" />
+	</goal>
+	
+	<goal id="dollPVT" name="Dolly Pocket Forêt Enchantée" desc="Quand on ouvre cette boite, les arbres se déplient. Attention de ne pas faire tomber les minuscules personnages à l'intérieur.">
+		<image k="1" points="1" file="/img/items/DollyPVT.png" />
+	</goal>
+	
+	<!-- Figurines Labrute -->
+	
+	<goal id="fifi" name="Fifi Brin de Titane" desc="Une figurine Labrute en latex. Elle en a pris des gnons, celle-là.">
+		<image k="1" points="1" file="/img/items/FifiT.png" />
+	</goal>
+	
+	<goal id="brutor" name="Brutor Le Cruel" desc="C'est une figurine Labrute en latex. Celle-ci représente Brutor Le Cruel.">
+		<image k="1" points="1" file="/img/items/Brutor.png" />
+	</goal>
+	
+	<goal id="tanka" name="Tanka le Barbare" desc="Encore une figurine Labrute en latex. C'est Tanka le barbare, la mascotte du jeu.">
+		<image k="1" points="1" file="/img/items/Tanka.png" />
+	</goal>
+	
+	<goal id="catG" name="Catgirl" desc="Une autre figurine Labrute officielle. Elle ne tient pas debout... En fait c'est pire : elle tient debout, mais seulement quelques secondes. C'est énervant !">
+		<image k="1" points="1" file="/img/items/CatGirl.png" />
+	</goal>
+	
+	<goal id="dundee" name="Alligator Dundee" desc="Alligator Dundee, une figurine en latex du jeu de récré Labrute.">
+		<image k="1" points="1" file="/img/items/Dundee.png" />
+	</goal>
+	
+	<goal id="kazou" name="Kazou Boy" desc="Une figurine Labrute en latex. Le personnage est sensé taper avec un kazou géant.">
+		<image k="1" points="1" file="/img/items/Kazou.png" />
+	</goal>
+	
+	<goal id="prehista" name="Prehista" desc="Une figurine Labrute en latex. On dirait une fille préhistorique avec des cheveux roses, des tongues en bois, et un os... Ils font vraiment n'importe quoi les designers...">
+		<image k="1" points="1" file="/img/items/Prehista.png" />
+	</goal>
+	
+	<goal id="maxi" name="Maximan" rare="1" desc="Un petit gladiateur en latex du jeu Labrute.">
+		<image k="1" points="1" file="/img/items/Maxi.png" />
+	</goal>
+	
+	<goal id="grobra" name="Grobra" rare="1" desc="Venu du nulle part c'est Grooobra ! Plus vif que le serpent c'est Grooobra ! Personne ne l'aperçoit c'est Grooobra ! Mais il est toujours là, c'est Grobra...">
+		<image k="1" points="1" file="/img/items/Grobra.png" />
+	</goal>
+	
+	<goal id="mister" name="Mister V" rare="1" desc="La figurine de Mister V, un combattant de Labrute très puissant en fin de partie. C'est vraiment... la dernière chance, au dernier moment !">
+		<image k="1" points="1" file="/img/items/Mister.png" />
+	</goal>
+	
+	<goal id="chuck" name="Chuck Maurice" rare="1" desc="C'est la figurine de Chuck Maurice du jeu Labrute. Presque aussi puissant que le vrai.">
+		<image k="1" points="1" file="/img/items/Maurice.png" />
+	</goal>
+	
+	<goal id="arbi" name="L'Arbitre" desc="L'Arbitre du jeu Labrute en figurine de latex. Il ne s'est jamais battu, mais c'est lui qui a du se prendre le plus de coups.">
+		<image k="1" points="1" file="/img/items/Arbitre.png" />
+	</goal>
+	
+	<!-- Pièces de Gort -->
+	
+	<goal id="blueP" name="Blueprint de Gort" desc="On dirait le plan industriel d'un robot humanoïde nommé Gort. Il est signé 'Kevin Norray', et 'ideée de chariotte' a été rajouté au crayon.">
+		<image k="1" points="1" file="/img/items/BluePrint.png" />
+	</goal>
+	
+	<goal id="gortBD" name="Bras droit de Gort" rare="1" desc="Le bras droit d'un robot. On dirait qu'il peut s'enclencher dans une autre partie.">
+		<image k="1" points="1" file="/img/items/GortBD.png" />
+	</goal>
+	
+	<goal id="gortBG" name="Bras gauche de Gort" rare="1" desc="C'est le bras gauche d'un robot.">
+		<image k="1" points="1" file="/img/items/GortBG.png" />
+	</goal>
+	
+	<goal id="gortC" name="Corps de Gort" rare="1" desc="On dirait le tronc d'un robot. Il manque les bras, les jambes, et la tête.">
+		<image k="1" points="1" file="/img/items/GortCorps.png" />
+	</goal>
+	
+	<goal id="gortJD" name="Jambe droite de Gort" rare="1" desc="C'est une jambe de robot. La droite.">
+		<image k="1" points="1" file="/img/items/GortJD.png" />
+	</goal>
+	
+	<goal id="gortJG" name="Jambe gauche de Gort" rare="1" desc="C'est la jambe gauche d'un robot.">
+		<image k="1" points="1" file="/img/items/GortJG.png" />
+	</goal>
+	
+	<goal id="gortT" name="Tête de Gort" rare="1" desc="C'est la tête d'un robot. Il faudrait trouver le reste.">
+		<image k="1" points="1" file="/img/items/GortTete.png" />
+	</goal>
+	
+	
+	
+	
+	
+	
+	<!-- Objets maj Noël 2013 -->
+	
+	<goal id="snowBall" name="Boule de neige" desc="Une boule de neige. Ça va pas être facile de la restituer à la fin de l'année scolaire...">
+		<image k="1" points="1" file="/img/items/SnowBall.png" />
+	</goal>
+	
+	<goal id="gortBG2" name="Bras gauche Mark II" desc="Le bouclier de Capitaine Etats-Unis a été fixé sur l'avant bras. Ce n'est qu'une boucle de ceinture, mais l'effet est réussi.">
+		<image k="1" points="1" file="/img/items/GortBG2.png" />
+	</goal>
+	
+	<goal id="gortTete2" name="Tête Mark II" desc="Quelqu'un a ajouté un bandeau en tissu avec un coeur dessiné... Ca ne va pas du tout avec le reste !">
+		<image k="1" points="1" file="/img/items/GortTete2.png" />
+	</goal>
+	
+	<goal id="gortCorps2" name="Corps Mark II" desc="L'écusson des Transformateurs a été fixé sur le plastron du robot. Il représente l'alliance entre les entités robotiques autonomes et les humains dans leur combat pour la Justice et la Liberté.">
+		<image k="1" points="1" file="/img/items/GortCorps2.png" />
+	</goal>
+	
+	<goal id="tum" name="The Unbelievable Machine" desc="C'est la disquette d'un jeu vidéo, une sorte de puzzle. On doit déclencher un mécanisme en plaçant différents objets aux effets divers pour qu'une réaction en chaine se produise jusqu'à l'objectif.">
+		<image k="1" points="1" file="/img/items/Tum.png" />
+	</goal>
+	
+	<goal id="moonp" name="Moon Patrouille" desc="La disquette 5 pouces 1/4 d'un super jeu vidéo ! On controle un véhicule sur un terrain accidenté en tirant des projectiles devant pour detruire les obstacles, et en haut pour tuer les ennemis.">
+		<image k="1" points="1" file="/img/items/Moonp.png" />
+	</goal>
+	
+	<goal id="turbo" name="Motus Turbo Challenge 2" desc="Un jeu de course qui ressemble beaucoup à Outfun. La musique est composée par le célèbre Barry Leitch. Do not copy this game !">
+		<image k="1" points="1" file="/img/items/Turbo.png" />
+	</goal>
+	
+	<goal id="stunts" name="Stunts 5D" desc="La disquette HD (haute densité) d'un jeu de course en 5 dimensions ! C'est incroyable ! En plus, on peut créer ses propres circuits avec des tremplins, des loopings, des virages levés... Par contre, la musique saoule rapidement... Surtout en PC Speaker.">
+		<image k="1" points="1" file="/img/items/Stunts.png" />
+	</goal>
+	
+	<goal id="raider" name="Catacomb Raider 2" desc="La suite des aventures de la célèbre Lara Drift. Cette fois, l'histoire commence à Venise et se termine en Chine, en passant par les fonds marins. Le jeu tient sur une belle paire de CD.">
+		<image k="1" points="1" file="/img/items/Raider.png" />
+	</goal>
+	
+	<goal id="mototr" name="Moto Tracer" desc="Un des meilleurs jeu de moto avec Hang Off et Motocross Sadness.">
+		<image k="1" points="1" file="/img/items/Mototr.png" />
+	</goal>
+	
+	<goal id="pad" name="P.A.D." desc="Planet After Death, un jeu de course futuriste sur une planète du futur détruite par un virus du futur.">
+		<image k="1" points="1" file="/img/items/Pad.png" />
+	</goal>
+	
+	<goal id="totalin" name="Total Inhalation" desc="C'est un formidable jeu de stratégie, à couper le souffle.">
+		<image k="1" points="1" file="/img/items/Totalin.png" />
+	</goal>
+	
+	<goal id="badgeso" name="Badge Smiley Original" desc="C'est la mode, les smileys. Ce sont des badges, mais un jour ils changeront de support et révolutionneront le monde de la communication.">
+		<image k="1" points="1" file="/img/items/Badgeso.png" />
+	</goal>
+	
+	<goal id="badgewa" name="Badge Watcher" desc="Un badge smiley avec une petite éclaboussure de sang. Fausse, bien sûr !">
+		<image k="1" points="1" file="/img/items/Badgewa.png" />
+	</goal>
+	
+	<goal id="badgeev" name="Badge Evolution" desc="Un badge smiley avec trois yeux.">
+		<image k="1" points="1" file="/img/items/Badgeev.png" />
+	</goal>
+	
+	<goal id="badgeno" name="Badge de la Nuit" desc="Un badge sombre on dirait que les yeux et la bouche brillent dans le noir.">
+		<image k="1" points="1" file="/img/items/Badgeno.png" />
+	</goal>
+	
+	<goal id="badgeha" name="Badge Happy" desc="Un badge smiley particulièrement heureux.">
+		<image k="1" points="1" file="/img/items/Badgeha.png" />
+	</goal>
+	
+	<goal id="badgero" name="Badge rose" desc="Un badge rose.">
+		<image k="1" points="1" file="/img/items/Badgero.png" />
+	</goal>
+	
+	<goal id="badgepi" name="Badge pirate" desc="Un badge smiley pirate borgne.">
+		<image k="1" points="1" file="/img/items/Badgepi.png" />
+	</goal>
+	
+	<goal id="kurli" name="Paquet de Kurli" desc="Un paquet de Kurli coupable de beaucoup de bruit. Il est vide... dommage...">
+		<image k="1" points="1" file="/img/items/Kurli.png" />
+	</goal>
+	
+	<goal id="scoubi2" name="Scoubidou bleu" desc="Un scoubidou bleu et blanc.">
+		<image k="1" points="1" file="/img/items/Scoubi2.png" />
+	</goal>
+	
+	<goal id="taille" name="Taille crayon chat" desc="C'est un taille crayon en forme de chat.">
+		<image k="1" points="1" file="/img/items/Taille.png" />
+	</goal>
+	
+	<goal id="gluve" name="Main collante verte" desc="Une main collante verte qu'on claque contre le mur. Ou contre ses voisins...">
+		<image k="1" points="1" file="/img/items/Gluve.png" />
+	</goal>
+	
+	<goal id="gluro" name="Main collante rose" desc="Une main collante rose. Enfin, rose-gris-jaune-poussière plutôt.">
+		<image k="1" points="1" file="/img/items/Gluro.png" />
+	</goal>
+	
+	<goal id="glubl" name="Main collante bleue" desc="Une main gluante bleue. Il y a des miettes collées dessus, c'est vaiment dégueu...">
+		<image k="1" points="1" file="/img/items/Glubl.png" />
+	</goal>
+	
+	<goal id="gluja" name="Main collante jaune" desc="Une main collante jaune toute crasseuse... mais qui a envie de confisquer ça ?">
+		<image k="1" points="1" file="/img/items/Gluja.png" />
+	</goal>
+	
+	
+	
+	
+	<goal id="xmasBall" name="Boule de Noël" desc="Une boule de Noël. Elle a l'air fragile, c'est étonnant qu'elle en soit arrivée là en vie.">
+		<image k="1" points="1" file="/img/items/XmasBall.png" />
+	</goal>
+	
+	<goal id="treemas" name="Branche de sapin" desc="Une arme redoutable ! Une fois plantées, les épines se détachent de la branche, comme le dard d'une abeille.">
+		<image k="1" points="1" file="/img/items/Treemas.png" />
+	</goal>
+	
+	<goal id="starmas" name="Etoile de Noël" desc="Une étoile de sapin de Noël qu'on place en haut du sapin. C'est une réprsentation de l'étoile Sirius que les rois mages ont suivi. Eux, ils représentent les trois étoiles de la ceinture d'Orion.">
+		<image k="1" points="1" file="/img/items/Starmas.png" />
+	</goal>
+	
+	<goal id="gift" name="Cadeau" desc="Un cadeau. Pas de bruit, pas de tic-tac suspect... Mais alors, pourquoi est-il arrivé jusque ici sans avoir été ouvert ? Il faut noter qu'il est très laid avec son ruban adhésif marron pour cartons...">
+		<image k="1" points="1" file="/img/items/Gift.png" />
+	</goal>
+	
+	<goal id="choco" name="Boite de chocolat" desc="Une boite de Boule Praliné.">
+		<image k="1" points="1" file="/img/items/Choco.png" />
+	</goal>
+	
+	<goal id="jesus" name="Peluche de Jésus" desc="Une peluche du petit Jésus. Quand on appuie dessus, il crie.">
+		<image k="1" points="1" file="/img/items/Jesus.png" />
+	</goal>
+	
+	<goal id="moise" name="Peluche de Moïse" desc="La peluche de Moïse, un des premiers X-Man de l'humanité.">
+		<image k="1" points="1" file="/img/items/Moise.png" />
+	</goal>
+	
+	
+	
+	
+	
+	
+<!--
+		<goal id="enjo" name="Enjoliver" desc="Un enjoliveur de roue de voiture. Une poignée en scotch a été rajoutée derrière, sûrement pour en faire un bouclier... Il tombe à pic !">
+		<image k="1" points="1" file="Enjoliver.png"></image>
+	</goal>
+
+-->
+	
+
+
+	<!-- PET ACTIONS - DONE -->
+
+	<goal id="Pet_IronWill" name="Volonté de Fer" desc="Nombre d'utilisation de l'action 'Volonté de Fer'">
+		<title k="3" name="Professeur inébranlable" points="1" />
+		<image k="300" file="/img/actions/Pet_IronWill.png" points="1" />
+	</goal>
+
+	<goal id="Pet_ElbowHit" name="Coup de coude" desc="Nombre d'utilisation de l'action 'Coup de coude'">
+		<title k="3" name="Maître des coups de coude" points="1" />
+		<image k="300" file="/img/actions/Pet_ElbowHit.png" points="1" />
+	</goal>
+
+	<goal id="Pet_Meditate" name="Méditation" desc="Nombre d'utilisation de l'action 'Méditation'">
+		<title k="3" name="Professeur zen" points="1" />
+		<image k="300" file="/img/actions/Pet_Meditate.png" points="1" />
+	</goal>
+
+	<goal id="Pet_Explication" name="Explications" desc="Nombre d'utilisation de l'action 'Explications'">
+		<title k="3" name="Maître en explications" points="1" />
+		<image k="300" file="/img/actions/Pet_Explication.png" points="1" />
+	</goal>
+
+	<goal id="Pet_Valium" name="Valium" desc="Nombre d'utilisation de l'action 'Valium'">
+		<title k="3" name="Professeur pharmacien" points="1" />
+		<image k="300" file="/img/actions/Pet_Valium.png" points="1" />
+	</goal>
+
+	<goal id="Pet_Sleep" name="Fusil hypodermique" desc="Nombre d'utilisation de l'action 'Fusil hypodermique'">
+		<title k="3" name="Professeur soporifique" points="1" />
+		<image k="300" file="/img/actions/Pet_Sleep.png" points="1" />
+	</goal>
+
+	<goal id="Pet_Alzheimer" name="Alzheimer" desc="Nombre d'utilisation de l'action 'Alzheimer'">
+		<title k="3" name="Professeur sénile" points="1" />
+		<image k="300" file="/img/actions/Pet_Alzheimer.png" points="1" />
+	</goal>
+
+	<goal id="Pet_Club" name="Gourdin" desc="Nombre d'utilisation de l'action 'Gourdin'">
+		<title k="3" name="Professeuuuuuuur Caveeerrrrnnnneeee !" points="1" />
+		<image k="300" file="/img/actions/Pet_Club.png" points="1" />
+	</goal>
+
+	<goal id="Pet_Dring" name="Sonnerie" desc="Nombre d'utilisation de l'action 'Sonnerie'">
+		<title k="3" name="Maître des réveils" points="1" />
+		<image k="300" file="/img/actions/Pet_Dring.png" points="1" />
+	</goal>
+
+	<goal id="Pet_Stock" name="Gros cerveau" desc="Nombre d'utilisation de l'action 'cerveau'">
+		<title k="3" name="Faiseur de gros cerveaux" points="1" />
+		<image k="300" file="/img/actions/Pet_Stock.png" points="1" />
+	</goal>
+
+
+	<goal id="Pet_Shock" name="Electrochoc" desc="Nombre d'utilisation de l'action 'Electrochoc'">
+		<title k="3" name="Réanimateur certifié" points="1" />
+		<image k="300" file="/img/actions/Pet_Shock.png" points="1" />
+	</goal>
+
+	<goal id="Pet_ComeOn" name="Meneur" desc="Nombre d'utilisation de l'action 'Meneur'">
+		<title k="3" name="Meneur de revue" points="1" />
+		<image k="300" file="/img/actions/Pet_ComeOn.png" points="1" />
+	</goal>
+
+
+	<goal id="Pet_Cheater" name="Antisèche" desc="Nombre d'utilisation de l'action 'Antisèche'">
+		<title k="3" name="Professeur conciliant" points="1" />
+		<image k="300" file="/img/actions/Pet_Cheater.png" points="1" />
+	</goal>
+
+
+	<goal id="Pet_BonusXp" name="Synergie" desc="Nombre d'utilisation de l'action 'Synergie'">
+		<title k="3" name="Professeur expérimenté" points="1" />
+		<image k="300" file="/img/actions/Pet_BonusXp.png" points="1" />
+	</goal>
+
+	<goal id="Pet_Tickle" name="Chatouilles" desc="Nombre d'utilisation de l'action 'Chatouilles'">
+		<title k="3" name="Professeur rigolo" points="1" />
+		<image k="300" file="/img/actions/Pet_Tickle.png" points="1" />
+	</goal>
+
+	<goal id="Pet_Muscled" name="Déménageur" desc="Nombre d'utilisation de l'action 'Déménageur'">
+		<title k="3" name="Professeur baraqué" points="1" />
+		<image k="300" file="/img/actions/Pet_Muscled.png" points="1" />
+	</goal>
+
+	<goal id="Pet_Hot" name="Réconfort" desc="Nombre d'utilisation de l'action 'Réconfort'">
+		<title k="3" name="Professeur amical" points="1" />
+		<image k="300" file="/img/actions/Pet_Hot.png" points="1" />
+	</goal>
+
+	<goal id="Pet_Exclude" name="Exclusion" desc="Nombre d'utilisation de l'action 'Exclusion'">
+		<title k="3" name="Professeur monstrueux" points="1" />
+		<image k="300" file="/img/actions/Pet_Exclude.png" points="1" />
+	</goal>
+
+	<goal id="Pet_BoringTransfer" name="Transfert" desc="Nombre d'utilisation de l'action 'Transfert'">
+		<title k="3" name="Manipulateur de l'ennui" points="1" />
+		<image k="300" file="/img/actions/Pet_BoringTransfer.png" points="1" />
+	</goal>
+
+	<goal id="Pet_NoLaugh" name="Même pas drôle" desc="Nombre d'utilisation de l'action 'Même pas drôle'">
+		<title k="3" name="Professeur sérieux" points="1" />
+		<image k="300" file="/img/actions/Pet_NoLaugh.png" points="1" />
+	</goal>
+
+	<goal id="Pet_Chut" name="Chut !" desc="Nombre d'utilisation de l'action 'Chut !'">
+		<title k="3" name="Maître du silence" points="1" />
+		<image k="300" file="/img/actions/Pet_Chut.png" points="1" />
+	</goal>
+
+
+	<goal id="Pet_ToTheCorner" name="Au coin !" desc="Nombre d'utilisation de l'action 'Au coin !'">
+		<title k="3" name="Maître des punitions" points="1" />
+		<image k="300" file="/img/actions/Pet_ToTheCorner.png" points="1" />
+	</goal>
+
+
+
+	<!-- Assistants -->	
+	<goal id="heddy" name="Eddy Throttle" desc="Eddy Throttle est disponible">
+		<image k="1" file="/img/icons/assist_eddy.png" points="1"/>
+	</goal>
+
+	<goal id="hpeggy" name="Peggy Douz" desc="Peggy Douz est disponible">
+		<image k="1" file="/img/icons/assist_peggy.png" points="1" />
+	</goal>
+
+	<goal id="htizoc" name="Tizoc" desc="Tizoc le pigeon est disponible">
+		<image k="1" file="/img/icons/assist_tizoc.png" points="1" />
+	</goal>
+
+
+	<goal id="hmuzot" name="Mme Muzot" desc="Mme Muzot est disponible">
+		<image k="1" file="/img/icons/assist_muzot.png" points="5" />
+		<image k="1" points="0"  name="Pompes" file="/img/loc/fr/notes/Pompe.png" />
+	</goal>
+
+	<goal id="hdwayne" name="Monsieur Dwayne" desc="Monsieur Dwayne le surveillant est disponible">
+		<image k="1" file="/img/icons/assist_dwayne.png" points="5" />
+		<image k="1" points="0"  name="Incroyable" file="/img/loc/fr/notes/Incroyable.png" />
+	</goal>
+
+
+	<goal id="htippex" name="Tippex" desc="Tippex le chien est disponible">
+		<image k="1" file="/img/icons/assist_tippex.png" points="5" />
+		<image k="1" points="0"  name="Essaye encore" file="/img/loc/fr/notes/Essaye-encore.png" />
+	</goal>
+
+	<goal id="hnuke" name="Monsieur Nuke" desc="Monsieur Nuke est disponible">
+		<image k="1" file="/img/icons/assist_nuke.png" points="5" />
+		<image k="1" points="0"  name="What ? ! " file="/img/loc/fr/notes/What.png" />
+	</goal>
+
+	<goal id="hsherlock" name="L'Inspecteur" desc="L'inspecteur d'académie est disponible">
+		<image k="1" file="/img/icons/assist_sherlock.png" points="5" />
+		<image k="1" points="0"  name="Omg ! " file="/img/loc/fr/notes/Omg.png" />
+	</goal>
+
+
+	
+	
+
+	<goal id="hat9" name="Bonnet de Noël" rare="1" desc="Félicitations ! Vous avez trouvé un bonnet de Noël.">
+		
+		<image name="Bonnet de Noël" k="1" points="1" file="/img/icons/hat9.png" />
+	</goal>
+	<goal id="hat10" name="Bois de rennes" rare="1" desc="Félicitations ! Vous avez trouvé des bois de rennes.">
+		
+		<image name="Bois de rennes" k="1" points="1" file="/img/icons/hat10.png" />
+	</goal>
+	<goal id="hat11" name="Chapeau de neige" rare="1" desc="Félicitations ! Vous avez trouvé un chapeau en forme de tête de bonhomme de neige.">
+		
+		<image name="Chapeau de neige" k="1" points="1" file="/img/icons/hat11.png" />
+	</goal>
+
+
+</goals>

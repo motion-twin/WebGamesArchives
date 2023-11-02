@@ -1,0 +1,811 @@
+<goals id="kk">
+		
+	<!-- Goals divers-->
+	<goal id="unlockedGames"	name="Jeux débloqués" 				icon="ach_unlockedGames.gif"></goal>
+    <goal id="wonGift" 			name="Gagnant de cheque(s) Kado" 	icon="ach_wonGift.gif"></goal>
+	<goal id="missionSteps" 	name="Etapes de mission" 			icon="ach_missionSteps.gif"></goal>
+	<goal id="joinedClan" 		name="Membre d'un clan" 			icon="ach_joinedClan.gif"></goal>
+	<goal id="createdClan" 		name="Fondateur de clan" 			icon="ach_createdClan.gif"></goal>
+	<goal id="wing" 			name="Aile de piouz" 				icon="ach_wing.gif" rare="1"></goal> <!-- + mode gloire -->
+	<goal id="clanDefense" 		name="Défenses de clan" 			icon="ach_clanDefense.gif"></goal>
+	<goal id="clanAttack" 		name="Attaques de clan" 			icon="ach_clanAttack.gif"></goal>
+	
+	
+	<!-- titres : position dans les Niveaus de chaque jeu -->
+	<goal id="game1" name="Niveau Safari" >
+		<title k="1" points="1" name="Safari : Niveau Confirmé" /> 	<!-- level 7 -->
+		<title k="2" points="2" name="Safari : Niveau Vert" />		<!-- level 6 -->
+		<title k="3" points="3" name="Safari : Niveau Orange" />	<!-- level 5 -->
+		<title k="4" points="4" name="Safari : Niveau Rouge" />		<!-- level 4 -->
+		<title k="5" points="5" name="Safari : Niveau Bronze" />	<!-- level 3 -->
+		<title k="6" points="6" name="Safari : Niveau Argent" />	<!-- level 2 -->
+		<title k="7" points="7" name="Safari : Niveau Or" />		<!-- level 1 -->
+		<title k="8" points="8" name="Safari : Niveau Paradis" />	<!-- level 0 -->
+	</goal>
+	<goal id="game2" name="Niveau ABC Revolution" >
+		 <title k="1" points="1" name="ABC Revolution : Niveau Confirmé" />
+		 <title k="2" points="2" name="ABC Revolution : Niveau Vert" />
+		 <title k="3" points="3" name="ABC Revolution : Niveau Orange" />
+		 <title k="4" points="4" name="ABC Revolution : Niveau Rouge" />
+		 <title k="5" points="5" name="ABC Revolution : Niveau Bronze" />
+		 <title k="6" points="6" name="ABC Revolution : Niveau Argent" />
+		 <title k="7" points="7" name="ABC Revolution : Niveau Or" />
+		 <title k="8" points="8" name="ABC Revolution : Niveau Paradis" />
+	</goal>
+	<goal id="game3" name="Niveau F1 Champion" >
+		 <title k="1" points="1" name="F1 Champion : Niveau Confirmé" />
+		 <title k="2" points="2" name="F1 Champion : Niveau Vert" />
+		 <title k="3" points="3" name="F1 Champion : Niveau Orange" />
+		 <title k="4" points="4" name="F1 Champion : Niveau Rouge" />
+		 <title k="5" points="5" name="F1 Champion : Niveau Bronze" />
+		 <title k="6" points="6" name="F1 Champion : Niveau Argent" />
+		 <title k="7" points="7" name="F1 Champion : Niveau Or" />
+		 <title k="8" points="8" name="F1 Champion : Niveau Paradis" />
+	</goal>
+	<goal id="game4"		name="Niveau Memo-Psy" >
+		 <title k="1" points="1" name="Memo-Psy : Niveau Confirmé" />
+		 <title k="2" points="2" name="Memo-Psy : Niveau Vert" />
+		 <title k="3" points="3" name="Memo-Psy : Niveau Orange" />
+		 <title k="4" points="4" name="Memo-Psy : Niveau Rouge" />
+		 <title k="5" points="5" name="Memo-Psy : Niveau Bronze" />
+		 <title k="6" points="6" name="Memo-Psy : Niveau Argent" />
+		 <title k="7" points="7" name="Memo-Psy : Niveau Or" />
+		 <title k="8" points="8" name="Memo-Psy : Niveau Paradis" />
+	</goal>
+	<goal id="game5"		name="Niveau Xian-Xiang" >
+		 <title k="1" points="1" name="Xian-Xiang : Niveau Confirmé" />
+		 <title k="2" points="2" name="Xian-Xiang : Niveau Vert" />
+		 <title k="3" points="3" name="Xian-Xiang : Niveau Orange" />
+		 <title k="4" points="4" name="Xian-Xiang : Niveau Rouge" />
+		 <title k="5" points="5" name="Xian-Xiang : Niveau Bronze" />
+		 <title k="6" points="6" name="Xian-Xiang : Niveau Argent" />
+		 <title k="7" points="7" name="Xian-Xiang : Niveau Or" />
+		 <title k="8" points="8" name="Xian-Xiang : Niveau Paradis" />
+	</goal>
+	<goal id="game6"		name="Niveau Manda" >
+		 <title k="1" points="1" name="Manda : Niveau Confirmé" />
+		 <title k="2" points="2" name="Manda : Niveau Vert" />
+		 <title k="3" points="3" name="Manda : Niveau Orange" />
+		 <title k="4" points="4" name="Manda : Niveau Rouge" />
+		 <title k="5" points="5" name="Manda : Niveau Bronze" />
+		 <title k="6" points="6" name="Manda : Niveau Argent" />
+		 <title k="7" points="7" name="Manda : Niveau Or" />
+		 <title k="8" points="8" name="Manda : Niveau Paradis" />
+	</goal>
+	<goal id="game7"		name="Niveau Piou-Piou" >
+		 <title k="1" points="1" name="Piou-Piou : Niveau Confirmé" />
+		 <title k="2" points="2" name="Piou-Piou : Niveau Vert" />
+		 <title k="3" points="3" name="Piou-Piou : Niveau Orange" />
+		 <title k="4" points="4" name="Piou-Piou : Niveau Rouge" />
+		 <title k="5" points="5" name="Piou-Piou : Niveau Bronze" />
+		 <title k="6" points="6" name="Piou-Piou : Niveau Argent" />
+		 <title k="7" points="7" name="Piou-Piou : Niveau Or" />
+		 <title k="8" points="8" name="Piou-Piou : Niveau Paradis" />
+	</goal>
+	<goal id="game8"		name="Niveau Flushee" >
+		 <title k="1" points="1" name="Flushee : Niveau Confirmé" />
+		 <title k="2" points="2" name="Flushee : Niveau Vert" />
+		 <title k="3" points="3" name="Flushee : Niveau Orange" />
+		 <title k="4" points="4" name="Flushee : Niveau Rouge" />
+		 <title k="5" points="5" name="Flushee : Niveau Bronze" />
+		 <title k="6" points="6" name="Flushee : Niveau Argent" />
+		 <title k="7" points="7" name="Flushee : Niveau Or" />
+		 <title k="8" points="8" name="Flushee : Niveau Paradis" />
+	</goal>
+	<goal id="game9"		name="Niveau QuadriKolor" >
+		 <title k="1" points="1" name="QuadriKolor : Niveau Confirmé" />
+		 <title k="2" points="2" name="QuadriKolor : Niveau Vert" />
+		 <title k="3" points="3" name="QuadriKolor : Niveau Orange" />
+		 <title k="4" points="4" name="QuadriKolor : Niveau Rouge" />
+		 <title k="5" points="5" name="QuadriKolor : Niveau Bronze" />
+		 <title k="6" points="6" name="QuadriKolor : Niveau Argent" />
+		 <title k="7" points="7" name="QuadriKolor : Niveau Or" />
+		 <title k="8" points="8" name="QuadriKolor : Niveau Paradis" />
+	</goal>
+	<goal id="game10"		name="Niveau Toy Maniak" >
+		 <title k="1" points="1" name="Toy Maniak : Niveau Confirmé" />
+		 <title k="2" points="2" name="Toy Maniak : Niveau Vert" />
+		 <title k="3" points="3" name="Toy Maniak : Niveau Orange" />
+		 <title k="4" points="4" name="Toy Maniak : Niveau Rouge" />
+		 <title k="5" points="5" name="Toy Maniak : Niveau Bronze" />
+		 <title k="6" points="6" name="Toy Maniak : Niveau Argent" />
+		 <title k="7" points="7" name="Toy Maniak : Niveau Or" />
+		 <title k="8" points="8" name="Toy Maniak : Niveau Paradis" />
+	</goal>
+	<goal id="game11"		name="Niveau Kanji" >
+		 <title k="1" points="1" name="Kanji : Niveau Confirmé" />
+		 <title k="2" points="2" name="Kanji : Niveau Vert" />
+		 <title k="3" points="3" name="Kanji : Niveau Orange" />
+		 <title k="4" points="4" name="Kanji : Niveau Rouge" />
+		 <title k="5" points="5" name="Kanji : Niveau Bronze" />
+		 <title k="6" points="6" name="Kanji : Niveau Argent" />
+		 <title k="7" points="7" name="Kanji : Niveau Or" />
+		 <title k="8" points="8" name="Kanji : Niveau Paradis" />
+	</goal>
+	<goal id="game12"		name="Niveau Kill Bulle" >
+		 <title k="1" points="1" name="Kill Bulle : Niveau Confirmé" />
+		 <title k="2" points="2" name="Kill Bulle : Niveau Vert" />
+		 <title k="3" points="3" name="Kill Bulle : Niveau Orange" />
+		 <title k="4" points="4" name="Kill Bulle : Niveau Rouge" />
+		 <title k="5" points="5" name="Kill Bulle : Niveau Bronze" />
+		 <title k="6" points="6" name="Kill Bulle : Niveau Argent" />
+		 <title k="7" points="7" name="Kill Bulle : Niveau Or" />
+		 <title k="8" points="8" name="Kill Bulle : Niveau Paradis" />
+	</goal>
+	<goal id="game13"		name="Niveau Kavern" >
+		 <title k="1" points="1" name="Kavern : Niveau Confirmé" />
+		 <title k="2" points="2" name="Kavern : Niveau Vert" />
+		 <title k="3" points="3" name="Kavern : Niveau Orange" />
+		 <title k="4" points="4" name="Kavern : Niveau Rouge" />
+		 <title k="5" points="5" name="Kavern : Niveau Bronze" />
+		 <title k="6" points="6" name="Kavern : Niveau Argent" />
+		 <title k="7" points="7" name="Kavern : Niveau Or" />
+		 <title k="8" points="8" name="Kavern : Niveau Paradis" />
+	</goal>
+	<goal id="game14"		name="Niveau Bactery" >
+		 <title k="1" points="1" name="Bactery : Niveau Confirmé" />
+		 <title k="2" points="2" name="Bactery : Niveau Vert" />
+		 <title k="3" points="3" name="Bactery : Niveau Orange" />
+		 <title k="4" points="4" name="Bactery : Niveau Rouge" />
+		 <title k="5" points="5" name="Bactery : Niveau Bronze" />
+		 <title k="6" points="6" name="Bactery : Niveau Argent" />
+		 <title k="7" points="7" name="Bactery : Niveau Or" />
+		 <title k="8" points="8" name="Bactery : Niveau Paradis" />
+	</goal>
+	<goal id="game15"		name="Niveau Julianus" >
+		 <title k="1" points="1" name="Julianus : Niveau Confirmé" />
+		 <title k="2" points="2" name="Julianus : Niveau Vert" />
+		 <title k="3" points="3" name="Julianus : Niveau Orange" />
+		 <title k="4" points="4" name="Julianus : Niveau Rouge" />
+		 <title k="5" points="5" name="Julianus : Niveau Bronze" />
+		 <title k="6" points="6" name="Julianus : Niveau Argent" />
+		 <title k="7" points="7" name="Julianus : Niveau Or" />
+		 <title k="8" points="8" name="Julianus : Niveau Paradis" />
+	</goal>
+	<goal id="game16"		name="Niveau Magmax" >
+		 <title k="1" points="1" name="Magmax : Niveau Confirmé" />
+		 <title k="2" points="2" name="Magmax : Niveau Vert" />
+		 <title k="3" points="3" name="Magmax : Niveau Orange" />
+		 <title k="4" points="4" name="Magmax : Niveau Rouge" />
+		 <title k="5" points="5" name="Magmax : Niveau Bronze" />
+		 <title k="6" points="6" name="Magmax : Niveau Argent" />
+		 <title k="7" points="7" name="Magmax : Niveau Or" />
+		 <title k="8" points="8" name="Magmax : Niveau Paradis" />
+	</goal>
+	<goal id="game17"		name="Niveau ZipZap" >
+		 <title k="1" points="1" name="ZipZap : Niveau Confirmé" />
+		 <title k="2" points="2" name="ZipZap : Niveau Vert" />
+		 <title k="3" points="3" name="ZipZap : Niveau Orange" />
+		 <title k="4" points="4" name="ZipZap : Niveau Rouge" />
+		 <title k="5" points="5" name="ZipZap : Niveau Bronze" />
+		 <title k="6" points="6" name="ZipZap : Niveau Argent" />
+		 <title k="7" points="7" name="ZipZap : Niveau Or" />
+		 <title k="8" points="8" name="ZipZap : Niveau Paradis" />
+	</goal>
+	<goal id="game18"		name="Niveau Cereal Punk" >
+		 <title k="1" points="1" name="Cereal Punk : Niveau Confirmé" />
+		 <title k="2" points="2" name="Cereal Punk : Niveau Vert" />
+		 <title k="3" points="3" name="Cereal Punk : Niveau Orange" />
+		 <title k="4" points="4" name="Cereal Punk : Niveau Rouge" />
+		 <title k="5" points="5" name="Cereal Punk : Niveau Bronze" />
+		 <title k="6" points="6" name="Cereal Punk : Niveau Argent" />
+		 <title k="7" points="7" name="Cereal Punk : Niveau Or" />
+		 <title k="8" points="8" name="Cereal Punk : Niveau Paradis" />
+	</goal>
+	<goal id="game19"		name="Niveau Hypercube" >
+		 <title k="1" points="1" name="Hypercube : Niveau Confirmé" />
+		 <title k="2" points="2" name="Hypercube : Niveau Vert" />
+		 <title k="3" points="3" name="Hypercube : Niveau Orange" />
+		 <title k="4" points="4" name="Hypercube : Niveau Rouge" />
+		 <title k="5" points="5" name="Hypercube : Niveau Bronze" />
+		 <title k="6" points="6" name="Hypercube : Niveau Argent" />
+		 <title k="7" points="7" name="Hypercube : Niveau Or" />
+		 <title k="8" points="8" name="Hypercube : Niveau Paradis" />
+	</goal>
+	<goal id="game20"		name="Niveau K-Slash !" >
+		 <title k="1" points="1" name="K-Slash ! : Niveau Confirmé" />
+		 <title k="2" points="2" name="K-Slash ! : Niveau Vert" />
+		 <title k="3" points="3" name="K-Slash ! : Niveau Orange" />
+		 <title k="4" points="4" name="K-Slash ! : Niveau Rouge" />
+		 <title k="5" points="5" name="K-Slash ! : Niveau Bronze" />
+		 <title k="6" points="6" name="K-Slash ! : Niveau Argent" />
+		 <title k="7" points="7" name="K-Slash ! : Niveau Or" />
+		 <title k="8" points="8" name="K-Slash ! : Niveau Paradis" />
+	</goal>
+	<goal id="game21"		name="Niveau Ellon In The Dark" >
+		 <title k="1" points="1" name="Ellon In The Dark : Niveau Confirmé" />
+		 <title k="2" points="2" name="Ellon In The Dark : Niveau Vert" />
+		 <title k="3" points="3" name="Ellon In The Dark : Niveau Orange" />
+		 <title k="4" points="4" name="Ellon In The Dark : Niveau Rouge" />
+		 <title k="5" points="5" name="Ellon In The Dark : Niveau Bronze" />
+		 <title k="6" points="6" name="Ellon In The Dark : Niveau Argent" />
+		 <title k="7" points="7" name="Ellon In The Dark : Niveau Or" />
+		 <title k="8" points="8" name="Ellon In The Dark : Niveau Paradis" />
+	</goal>
+	<goal id="game22"		name="Niveau Kaskade 2" >
+		 <title k="1" points="1" name="Kaskade 2 : Niveau Confirmé" />
+		 <title k="2" points="2" name="Kaskade 2 : Niveau Vert" />
+		 <title k="3" points="3" name="Kaskade 2 : Niveau Orange" />
+		 <title k="4" points="4" name="Kaskade 2 : Niveau Rouge" />
+		 <title k="5" points="5" name="Kaskade 2 : Niveau Bronze" />
+		 <title k="6" points="6" name="Kaskade 2 : Niveau Argent" />
+		 <title k="7" points="7" name="Kaskade 2 : Niveau Or" />
+		 <title k="8" points="8" name="Kaskade 2 : Niveau Paradis" />
+	</goal>
+	<goal id="game23"		name="Niveau Paradice" >
+		 <title k="1" points="1" name="Paradice : Niveau Confirmé" />
+		 <title k="2" points="2" name="Paradice : Niveau Vert" />
+		 <title k="3" points="3" name="Paradice : Niveau Orange" />
+		 <title k="4" points="4" name="Paradice : Niveau Rouge" />
+		 <title k="5" points="5" name="Paradice : Niveau Bronze" />
+		 <title k="6" points="6" name="Paradice : Niveau Argent" />
+		 <title k="7" points="7" name="Paradice : Niveau Or" />
+		 <title k="8" points="8" name="Paradice : Niveau Paradis" />
+	</goal>
+	<goal id="game24"		name="Niveau Starfang" >
+		 <title k="1" points="1" name="Starfang : Niveau Confirmé" />
+		 <title k="2" points="2" name="Starfang : Niveau Vert" />
+		 <title k="3" points="3" name="Starfang : Niveau Orange" />
+		 <title k="4" points="4" name="Starfang : Niveau Rouge" />
+		 <title k="5" points="5" name="Starfang : Niveau Bronze" />
+		 <title k="6" points="6" name="Starfang : Niveau Argent" />
+		 <title k="7" points="7" name="Starfang : Niveau Or" />
+		 <title k="8" points="8" name="Starfang : Niveau Paradis" />
+	</goal>
+	<goal id="game25"		name="Niveau Drakhan" >
+		 <title k="1" points="1" name="Drakhan : Niveau Confirmé" />
+		 <title k="2" points="2" name="Drakhan : Niveau Vert" />
+		 <title k="3" points="3" name="Drakhan : Niveau Orange" />
+		 <title k="4" points="4" name="Drakhan : Niveau Rouge" />
+		 <title k="5" points="5" name="Drakhan : Niveau Bronze" />
+		 <title k="6" points="6" name="Drakhan : Niveau Argent" />
+		 <title k="7" points="7" name="Drakhan : Niveau Or" />
+		 <title k="8" points="8" name="Drakhan : Niveau Paradis" />
+	</goal>
+	<goal id="game26"		name="Niveau Red Raid" >
+		 <title k="1" points="1" name="Red Raid : Niveau Confirmé" />
+		 <title k="2" points="2" name="Red Raid : Niveau Vert" />
+		 <title k="3" points="3" name="Red Raid : Niveau Orange" />
+		 <title k="4" points="4" name="Red Raid : Niveau Rouge" />
+		 <title k="5" points="5" name="Red Raid : Niveau Bronze" />
+		 <title k="6" points="6" name="Red Raid : Niveau Argent" />
+		 <title k="7" points="7" name="Red Raid : Niveau Or" />
+		 <title k="8" points="8" name="Red Raid : Niveau Paradis" />
+	</goal>
+	<goal id="game27"		name="Niveau Opalus" >
+		 <title k="1" points="1" name="Opalus : Niveau Confirmé" />
+		 <title k="2" points="2" name="Opalus : Niveau Vert" />
+		 <title k="3" points="3" name="Opalus : Niveau Orange" />
+		 <title k="4" points="4" name="Opalus : Niveau Rouge" />
+		 <title k="5" points="5" name="Opalus : Niveau Bronze" />
+		 <title k="6" points="6" name="Opalus : Niveau Argent" />
+		 <title k="7" points="7" name="Opalus : Niveau Or" />
+		 <title k="8" points="8" name="Opalus : Niveau Paradis" />
+	</goal>
+	<goal id="game28"		name="Niveau Interwheel" >
+		 <title k="1" points="1" name="Interwheel : Niveau Confirmé" />
+		 <title k="2" points="2" name="Interwheel : Niveau Vert" />
+		 <title k="3" points="3" name="Interwheel : Niveau Orange" />
+		 <title k="4" points="4" name="Interwheel : Niveau Rouge" />
+		 <title k="5" points="5" name="Interwheel : Niveau Bronze" />
+		 <title k="6" points="6" name="Interwheel : Niveau Argent" />
+		 <title k="7" points="7" name="Interwheel : Niveau Or" />
+		 <title k="8" points="8" name="Interwheel : Niveau Paradis" />
+	</goal>
+	<goal id="game29"		name="Niveau Cyclopean" >
+		 <title k="1" points="1" name="Cyclopean : Niveau Confirmé" />
+		 <title k="2" points="2" name="Cyclopean : Niveau Vert" />
+		 <title k="3" points="3" name="Cyclopean : Niveau Orange" />
+		 <title k="4" points="4" name="Cyclopean : Niveau Rouge" />
+		 <title k="5" points="5" name="Cyclopean : Niveau Bronze" />
+		 <title k="6" points="6" name="Cyclopean : Niveau Argent" />
+		 <title k="7" points="7" name="Cyclopean : Niveau Or" />
+		 <title k="8" points="8" name="Cyclopean : Niveau Paradis" />
+	</goal>
+	<goal id="game30"		name="Niveau Popcorn" >
+		 <title k="1" points="1" name="Popcorn : Niveau Confirmé" />
+		 <title k="2" points="2" name="Popcorn : Niveau Vert" />
+		 <title k="3" points="3" name="Popcorn : Niveau Orange" />
+		 <title k="4" points="4" name="Popcorn : Niveau Rouge" />
+		 <title k="5" points="5" name="Popcorn : Niveau Bronze" />
+		 <title k="6" points="6" name="Popcorn : Niveau Argent" />
+		 <title k="7" points="7" name="Popcorn : Niveau Or" />
+		 <title k="8" points="8" name="Popcorn : Niveau Paradis" />
+	</goal>
+	<goal id="game31"		name="Niveau Invasion" >
+		 <title k="1" points="1" name="Invasion : Niveau Confirmé" />
+		 <title k="2" points="2" name="Invasion : Niveau Vert" />
+		 <title k="3" points="3" name="Invasion : Niveau Orange" />
+		 <title k="4" points="4" name="Invasion : Niveau Rouge" />
+		 <title k="5" points="5" name="Invasion : Niveau Bronze" />
+		 <title k="6" points="6" name="Invasion : Niveau Argent" />
+		 <title k="7" points="7" name="Invasion : Niveau Or" />
+		 <title k="8" points="8" name="Invasion : Niveau Paradis" />
+	</goal>
+	<goal id="game32"		name="Niveau Pioutch" >
+		 <title k="1" points="1" name="Pioutch : Niveau Confirmé" />
+		 <title k="2" points="2" name="Pioutch : Niveau Vert" />
+		 <title k="3" points="3" name="Pioutch : Niveau Orange" />
+		 <title k="4" points="4" name="Pioutch : Niveau Rouge" />
+		 <title k="5" points="5" name="Pioutch : Niveau Bronze" />
+		 <title k="6" points="6" name="Pioutch : Niveau Argent" />
+		 <title k="7" points="7" name="Pioutch : Niveau Or" />
+		 <title k="8" points="8" name="Pioutch : Niveau Paradis" />
+	</goal>
+	<goal id="game33"		name="Niveau Iron Chouquette" >
+		 <title k="1" points="1" name="Iron Chouquette : Niveau Confirmé" />
+		 <title k="2" points="2" name="Iron Chouquette : Niveau Vert" />
+		 <title k="3" points="3" name="Iron Chouquette : Niveau Orange" />
+		 <title k="4" points="4" name="Iron Chouquette : Niveau Rouge" />
+		 <title k="5" points="5" name="Iron Chouquette : Niveau Bronze" />
+		 <title k="6" points="6" name="Iron Chouquette : Niveau Argent" />
+		 <title k="7" points="7" name="Iron Chouquette : Niveau Or" />
+		 <title k="8" points="8" name="Iron Chouquette : Niveau Paradis" />
+	</goal>
+	<goal id="game34"		name="Niveau Oursouinvader" >
+		 <title k="1" points="1" name="Oursouinvader : Niveau Confirmé" />
+		 <title k="2" points="2" name="Oursouinvader : Niveau Vert" />
+		 <title k="3" points="3" name="Oursouinvader : Niveau Orange" />
+		 <title k="4" points="4" name="Oursouinvader : Niveau Rouge" />
+		 <title k="5" points="5" name="Oursouinvader : Niveau Bronze" />
+		 <title k="6" points="6" name="Oursouinvader : Niveau Argent" />
+		 <title k="7" points="7" name="Oursouinvader : Niveau Or" />
+		 <title k="8" points="8" name="Oursouinvader : Niveau Paradis" />
+	</goal>
+	<goal id="game35"		name="Niveau Puzzle-Manda" >
+		 <title k="1" points="1" name="Puzzle-Manda : Niveau Confirmé" />
+		 <title k="2" points="2" name="Puzzle-Manda : Niveau Vert" />
+		 <title k="3" points="3" name="Puzzle-Manda : Niveau Orange" />
+		 <title k="4" points="4" name="Puzzle-Manda : Niveau Rouge" />
+		 <title k="5" points="5" name="Puzzle-Manda : Niveau Bronze" />
+		 <title k="6" points="6" name="Puzzle-Manda : Niveau Argent" />
+		 <title k="7" points="7" name="Puzzle-Manda : Niveau Or" />
+		 <title k="8" points="8" name="Puzzle-Manda : Niveau Paradis" />
+	</goal>
+	<goal id="game36"		name="Niveau Kanji's Nightmare" >
+		 <title k="1" points="1" name="Kanji's Nightmare : Niveau Confirmé" />
+		 <title k="2" points="2" name="Kanji's Nightmare : Niveau Vert" />
+		 <title k="3" points="3" name="Kanji's Nightmare : Niveau Orange" />
+		 <title k="4" points="4" name="Kanji's Nightmare : Niveau Rouge" />
+		 <title k="5" points="5" name="Kanji's Nightmare : Niveau Bronze" />
+		 <title k="6" points="6" name="Kanji's Nightmare : Niveau Argent" />
+		 <title k="7" points="7" name="Kanji's Nightmare : Niveau Or" />
+		 <title k="8" points="8" name="Kanji's Nightmare : Niveau Paradis" />
+	</goal>
+	<goal id="game37"		name="Niveau Autrement" >
+		 <title k="1" points="1" name="Autrement : Niveau Confirmé" />
+		 <title k="2" points="2" name="Autrement : Niveau Vert" />
+		 <title k="3" points="3" name="Autrement : Niveau Orange" />
+		 <title k="4" points="4" name="Autrement : Niveau Rouge" />
+		 <title k="5" points="5" name="Autrement : Niveau Bronze" />
+		 <title k="6" points="6" name="Autrement : Niveau Argent" />
+		 <title k="7" points="7" name="Autrement : Niveau Or" />
+		 <title k="8" points="8" name="Autrement : Niveau Paradis" />
+	</goal>
+	<goal id="game38"		name="Niveau Atlanteine" >
+		 <title k="1" points="1" name="Atlanteine : Niveau Confirmé" />
+		 <title k="2" points="2" name="Atlanteine : Niveau Vert" />
+		 <title k="3" points="3" name="Atlanteine : Niveau Orange" />
+		 <title k="4" points="4" name="Atlanteine : Niveau Rouge" />
+		 <title k="5" points="5" name="Atlanteine : Niveau Bronze" />
+		 <title k="6" points="6" name="Atlanteine : Niveau Argent" />
+		 <title k="7" points="7" name="Atlanteine : Niveau Or" />
+		 <title k="8" points="8" name="Atlanteine : Niveau Paradis" />
+	</goal>
+	<goal id="game39"		name="Niveau Klinker Surprise" >
+		 <title k="1" points="1" name="Klinker Surprise : Niveau Confirmé" />
+		 <title k="2" points="2" name="Klinker Surprise : Niveau Vert" />
+		 <title k="3" points="3" name="Klinker Surprise : Niveau Orange" />
+		 <title k="4" points="4" name="Klinker Surprise : Niveau Rouge" />
+		 <title k="5" points="5" name="Klinker Surprise : Niveau Bronze" />
+		 <title k="6" points="6" name="Klinker Surprise : Niveau Argent" />
+		 <title k="7" points="7" name="Klinker Surprise : Niveau Or" />
+		 <title k="8" points="8" name="Klinker Surprise : Niveau Paradis" />
+	</goal>
+	<goal id="game40"		name="Niveau Alphabounce" >
+		 <title k="1" points="1" name="Alphabounce : Niveau Confirmé" />
+		 <title k="2" points="2" name="Alphabounce : Niveau Vert" />
+		 <title k="3" points="3" name="Alphabounce : Niveau Orange" />
+		 <title k="4" points="4" name="Alphabounce : Niveau Rouge" />
+		 <title k="5" points="5" name="Alphabounce : Niveau Bronze" />
+		 <title k="6" points="6" name="Alphabounce : Niveau Argent" />
+		 <title k="7" points="7" name="Alphabounce : Niveau Or" />
+		 <title k="8" points="8" name="Alphabounce : Niveau Paradis" />
+	</goal>
+	<goal id="game41"		name="Niveau Mini-Race" >
+		 <title k="1" points="1" name="Mini-Race : Niveau Confirmé" />
+		 <title k="2" points="2" name="Mini-Race : Niveau Vert" />
+		 <title k="3" points="3" name="Mini-Race : Niveau Orange" />
+		 <title k="4" points="4" name="Mini-Race : Niveau Rouge" />
+		 <title k="5" points="5" name="Mini-Race : Niveau Bronze" />
+		 <title k="6" points="6" name="Mini-Race : Niveau Argent" />
+		 <title k="7" points="7" name="Mini-Race : Niveau Or" />
+		 <title k="8" points="8" name="Mini-Race : Niveau Paradis" />
+	</goal>
+	<goal id="game42"		name="Niveau Travoltax" >
+		 <title k="1" points="1" name="Travoltax : Niveau Confirmé" />
+		 <title k="2" points="2" name="Travoltax : Niveau Vert" />
+		 <title k="3" points="3" name="Travoltax : Niveau Orange" />
+		 <title k="4" points="4" name="Travoltax : Niveau Rouge" />
+		 <title k="5" points="5" name="Travoltax : Niveau Bronze" />
+		 <title k="6" points="6" name="Travoltax : Niveau Argent" />
+		 <title k="7" points="7" name="Travoltax : Niveau Or" />
+		 <title k="8" points="8" name="Travoltax : Niveau Paradis" />
+	</goal>
+	<goal id="game43"		name="Niveau Schizo Fuzz" >
+		 <title k="1" points="1" name="Schizo Fuzz : Niveau Confirmé" />
+		 <title k="2" points="2" name="Schizo Fuzz : Niveau Vert" />
+		 <title k="3" points="3" name="Schizo Fuzz : Niveau Orange" />
+		 <title k="4" points="4" name="Schizo Fuzz : Niveau Rouge" />
+		 <title k="5" points="5" name="Schizo Fuzz : Niveau Bronze" />
+		 <title k="6" points="6" name="Schizo Fuzz : Niveau Argent" />
+		 <title k="7" points="7" name="Schizo Fuzz : Niveau Or" />
+		 <title k="8" points="8" name="Schizo Fuzz : Niveau Paradis" />
+	</goal>
+	<goal id="game44"		name="Niveau Punch-In !" >
+		 <title k="1" points="1" name="Punch-In ! : Niveau Confirmé" />
+		 <title k="2" points="2" name="Punch-In ! : Niveau Vert" />
+		 <title k="3" points="3" name="Punch-In ! : Niveau Orange" />
+		 <title k="4" points="4" name="Punch-In ! : Niveau Rouge" />
+		 <title k="5" points="5" name="Punch-In ! : Niveau Bronze" />
+		 <title k="6" points="6" name="Punch-In ! : Niveau Argent" />
+		 <title k="7" points="7" name="Punch-In ! : Niveau Or" />
+		 <title k="8" points="8" name="Punch-In ! : Niveau Paradis" />
+	</goal>
+	<goal id="game45"		name="Niveau Tubulo" >
+		 <title k="1" points="1" name="Tubulo : Niveau Confirmé" />
+		 <title k="2" points="2" name="Tubulo : Niveau Vert" />
+		 <title k="3" points="3" name="Tubulo : Niveau Orange" />
+		 <title k="4" points="4" name="Tubulo : Niveau Rouge" />
+		 <title k="5" points="5" name="Tubulo : Niveau Bronze" />
+		 <title k="6" points="6" name="Tubulo : Niveau Argent" />
+		 <title k="7" points="7" name="Tubulo : Niveau Or" />
+		 <title k="8" points="8" name="Tubulo : Niveau Paradis" />
+	</goal>
+	<goal id="game46"		name="Niveau Logic'O" >
+		 <title k="1" points="1" name="Logic'O : Niveau Confirmé" />
+		 <title k="2" points="2" name="Logic'O : Niveau Vert" />
+		 <title k="3" points="3" name="Logic'O : Niveau Orange" />
+		 <title k="4" points="4" name="Logic'O : Niveau Rouge" />
+		 <title k="5" points="5" name="Logic'O : Niveau Bronze" />
+		 <title k="6" points="6" name="Logic'O : Niveau Argent" />
+		 <title k="7" points="7" name="Logic'O : Niveau Or" />
+		 <title k="8" points="8" name="Logic'O : Niveau Paradis" />
+	</goal>
+	<goal id="game47"		name="Niveau Crepuscud" >
+		 <title k="1" points="1" name="Crepuscud : Niveau Confirmé" />
+		 <title k="2" points="2" name="Crepuscud : Niveau Vert" />
+		 <title k="3" points="3" name="Crepuscud : Niveau Orange" />
+		 <title k="4" points="4" name="Crepuscud : Niveau Rouge" />
+		 <title k="5" points="5" name="Crepuscud : Niveau Bronze" />
+		 <title k="6" points="6" name="Crepuscud : Niveau Argent" />
+		 <title k="7" points="7" name="Crepuscud : Niveau Or" />
+		 <title k="8" points="8" name="Crepuscud : Niveau Paradis" />
+	</goal>
+	<goal id="game48"		name="Niveau Electrolink" >
+		 <title k="1" points="1" name="Electrolink : Niveau Confirmé" />
+		 <title k="2" points="2" name="Electrolink : Niveau Vert" />
+		 <title k="3" points="3" name="Electrolink : Niveau Orange" />
+		 <title k="4" points="4" name="Electrolink : Niveau Rouge" />
+		 <title k="5" points="5" name="Electrolink : Niveau Bronze" />
+		 <title k="6" points="6" name="Electrolink : Niveau Argent" />
+		 <title k="7" points="7" name="Electrolink : Niveau Or" />
+		 <title k="8" points="8" name="Electrolink : Niveau Paradis" />
+	</goal>
+	<goal id="game49"		name="Niveau Cooking Lili" >
+		 <title k="1" points="1" name="Cooking Lili : Niveau Confirmé" />
+		 <title k="2" points="2" name="Cooking Lili : Niveau Vert" />
+		 <title k="3" points="3" name="Cooking Lili : Niveau Orange" />
+		 <title k="4" points="4" name="Cooking Lili : Niveau Rouge" />
+		 <title k="5" points="5" name="Cooking Lili : Niveau Bronze" />
+		 <title k="6" points="6" name="Cooking Lili : Niveau Argent" />
+		 <title k="7" points="7" name="Cooking Lili : Niveau Or" />
+		 <title k="8" points="8" name="Cooking Lili : Niveau Paradis" />
+	</goal>
+	<goal id="game53"		name="Niveau Choco-Mouche" >
+		 <title k="1" points="1" name="Choco-Mouche : Niveau Confirmé" />
+		 <title k="2" points="2" name="Choco-Mouche : Niveau Vert" />
+		 <title k="3" points="3" name="Choco-Mouche : Niveau Orange" />
+		 <title k="4" points="4" name="Choco-Mouche : Niveau Rouge" />
+		 <title k="5" points="5" name="Choco-Mouche : Niveau Bronze" />
+		 <title k="6" points="6" name="Choco-Mouche : Niveau Argent" />
+		 <title k="7" points="7" name="Choco-Mouche : Niveau Or" />
+		 <title k="8" points="8" name="Choco-Mouche : Niveau Paradis" />
+	</goal>
+	<goal id="game55"		name="Niveau Aqua Splash" >
+		 <title k="1" points="1" name="Aqua Splash : Niveau Confirmé" />
+		 <title k="2" points="2" name="Aqua Splash : Niveau Vert" />
+		 <title k="3" points="3" name="Aqua Splash : Niveau Orange" />
+		 <title k="4" points="4" name="Aqua Splash : Niveau Rouge" />
+		 <title k="5" points="5" name="Aqua Splash : Niveau Bronze" />
+		 <title k="6" points="6" name="Aqua Splash : Niveau Argent" />
+		 <title k="7" points="7" name="Aqua Splash : Niveau Or" />
+		 <title k="8" points="8" name="Aqua Splash : Niveau Paradis" />
+	</goal>
+	<goal id="game56"		name="Niveau Tout-Caen" >
+		 <title k="1" points="1" name="Tout-Caen : Niveau Confirmé" />
+		 <title k="2" points="2" name="Tout-Caen : Niveau Vert" />
+		 <title k="3" points="3" name="Tout-Caen : Niveau Orange" />
+		 <title k="4" points="4" name="Tout-Caen : Niveau Rouge" />
+		 <title k="5" points="5" name="Tout-Caen : Niveau Bronze" />
+		 <title k="6" points="6" name="Tout-Caen : Niveau Argent" />
+		 <title k="7" points="7" name="Tout-Caen : Niveau Or" />
+		 <title k="8" points="8" name="Tout-Caen : Niveau Paradis" />
+	</goal>
+	<goal id="game57"		name="Niveau Hexile" >
+		 <title k="1" points="1" name="Hexile : Niveau Confirmé" />
+		 <title k="2" points="2" name="Hexile : Niveau Vert" />
+		 <title k="3" points="3" name="Hexile : Niveau Orange" />
+		 <title k="4" points="4" name="Hexile : Niveau Rouge" />
+		 <title k="5" points="5" name="Hexile : Niveau Bronze" />
+		 <title k="6" points="6" name="Hexile : Niveau Argent" />
+		 <title k="7" points="7" name="Hexile : Niveau Or" />
+		 <title k="8" points="8" name="Hexile : Niveau Paradis" />
+	</goal>
+	<goal id="game58"		name="Niveau Twin Spirit" >
+		 <title k="1" points="1" name="Twin Spirit : Niveau Confirmé" />
+		 <title k="2" points="2" name="Twin Spirit : Niveau Vert" />
+		 <title k="3" points="3" name="Twin Spirit : Niveau Orange" />
+		 <title k="4" points="4" name="Twin Spirit : Niveau Rouge" />
+		 <title k="5" points="5" name="Twin Spirit : Niveau Bronze" />
+		 <title k="6" points="6" name="Twin Spirit : Niveau Argent" />
+		 <title k="7" points="7" name="Twin Spirit : Niveau Or" />
+		 <title k="8" points="8" name="Twin Spirit : Niveau Paradis" />
+	</goal>
+	<goal id="game59"		name="Niveau Binary" >
+		 <title k="1" points="1" name="Binary : Niveau Confirmé" />
+		 <title k="2" points="2" name="Binary : Niveau Vert" />
+		 <title k="3" points="3" name="Binary : Niveau Orange" />
+		 <title k="4" points="4" name="Binary : Niveau Rouge" />
+		 <title k="5" points="5" name="Binary : Niveau Bronze" />
+		 <title k="6" points="6" name="Binary : Niveau Argent" />
+		 <title k="7" points="7" name="Binary : Niveau Or" />
+		 <title k="8" points="8" name="Binary : Niveau Paradis" />
+	</goal>
+	<goal id="game60"		name="Niveau Synapses" >
+		 <title k="1" points="1" name="Synapses : Niveau Confirmé" />
+		 <title k="2" points="2" name="Synapses : Niveau Vert" />
+		 <title k="3" points="3" name="Synapses : Niveau Orange" />
+		 <title k="4" points="4" name="Synapses : Niveau Rouge" />
+		 <title k="5" points="5" name="Synapses : Niveau Bronze" />
+		 <title k="6" points="6" name="Synapses : Niveau Argent" />
+		 <title k="7" points="7" name="Synapses : Niveau Or" />
+		 <title k="8" points="8" name="Synapses : Niveau Paradis" />
+	</goal>
+	<goal id="game61"		name="Niveau Digestomax" >
+		 <title k="1" points="1" name="Digestomax : Niveau Confirmé" />
+		 <title k="2" points="2" name="Digestomax : Niveau Vert" />
+		 <title k="3" points="3" name="Digestomax : Niveau Orange" />
+		 <title k="4" points="4" name="Digestomax : Niveau Rouge" />
+		 <title k="5" points="5" name="Digestomax : Niveau Bronze" />
+		 <title k="6" points="6" name="Digestomax : Niveau Argent" />
+		 <title k="7" points="7" name="Digestomax : Niveau Or" />
+		 <title k="8" points="8" name="Digestomax : Niveau Paradis" />
+	</goal>
+	<goal id="game62"		name="Niveau Kanji's Adventure" >
+		 <title k="1" points="1" name="Kanji's Adventure : Niveau Confirmé" />
+		 <title k="2" points="2" name="Kanji's Adventure : Niveau Vert" />
+		 <title k="3" points="3" name="Kanji's Adventure : Niveau Orange" />
+		 <title k="4" points="4" name="Kanji's Adventure : Niveau Rouge" />
+		 <title k="5" points="5" name="Kanji's Adventure : Niveau Bronze" />
+		 <title k="6" points="6" name="Kanji's Adventure : Niveau Argent" />
+		 <title k="7" points="7" name="Kanji's Adventure : Niveau Or" />
+		 <title k="8" points="8" name="Kanji's Adventure : Niveau Paradis" />
+	</goal>
+	<goal id="game63"		name="Niveau Cosmo Crash" >
+		 <title k="1" points="1" name="Cosmo Crash : Niveau Confirmé" />
+		 <title k="2" points="2" name="Cosmo Crash : Niveau Vert" />
+		 <title k="3" points="3" name="Cosmo Crash : Niveau Orange" />
+		 <title k="4" points="4" name="Cosmo Crash : Niveau Rouge" />
+		 <title k="5" points="5" name="Cosmo Crash : Niveau Bronze" />
+		 <title k="6" points="6" name="Cosmo Crash : Niveau Argent" />
+		 <title k="7" points="7" name="Cosmo Crash : Niveau Or" />
+		 <title k="8" points="8" name="Cosmo Crash : Niveau Paradis" />
+	</goal>
+	<goal id="game64"		name="Niveau Kanji Gaiden" >
+		 <title k="1" points="1" name="Kanji Gaiden : Niveau Confirmé" />
+		 <title k="2" points="2" name="Kanji Gaiden : Niveau Vert" />
+		 <title k="3" points="3" name="Kanji Gaiden : Niveau Orange" />
+		 <title k="4" points="4" name="Kanji Gaiden : Niveau Rouge" />
+		 <title k="5" points="5" name="Kanji Gaiden : Niveau Bronze" />
+		 <title k="6" points="6" name="Kanji Gaiden : Niveau Argent" />
+		 <title k="7" points="7" name="Kanji Gaiden : Niveau Or" />
+		 <title k="8" points="8" name="Kanji Gaiden : Niveau Paradis" />
+	</goal>
+	<goal id="game65"		name="Niveau Spiroule" >
+		 <title k="1" points="1" name="Spiroule : Niveau Confirmé" />
+		 <title k="2" points="2" name="Spiroule : Niveau Vert" />
+		 <title k="3" points="3" name="Spiroule : Niveau Orange" />
+		 <title k="4" points="4" name="Spiroule : Niveau Rouge" />
+		 <title k="5" points="5" name="Spiroule : Niveau Bronze" />
+		 <title k="6" points="6" name="Spiroule : Niveau Argent" />
+		 <title k="7" points="7" name="Spiroule : Niveau Or" />
+		 <title k="8" points="8" name="Spiroule : Niveau Paradis" />
+	</goal>
+	<goal id="game66"		name="Niveau Razor" >
+		 <title k="1" points="1" name="Razor : Niveau Confirmé" />
+		 <title k="2" points="2" name="Razor : Niveau Vert" />
+		 <title k="3" points="3" name="Razor : Niveau Orange" />
+		 <title k="4" points="4" name="Razor : Niveau Rouge" />
+		 <title k="5" points="5" name="Razor : Niveau Bronze" />
+		 <title k="6" points="6" name="Razor : Niveau Argent" />
+		 <title k="7" points="7" name="Razor : Niveau Or" />
+		 <title k="8" points="8" name="Razor : Niveau Paradis" />
+	</goal>
+	<goal id="game67"		name="Niveau Judo Commando" >
+		 <title k="1" points="1" name="Judo Commando : Niveau Confirmé" />
+		 <title k="2" points="2" name="Judo Commando : Niveau Vert" />
+		 <title k="3" points="3" name="Judo Commando : Niveau Orange" />
+		 <title k="4" points="4" name="Judo Commando : Niveau Rouge" />
+		 <title k="5" points="5" name="Judo Commando : Niveau Bronze" />
+		 <title k="6" points="6" name="Judo Commando : Niveau Argent" />
+		 <title k="7" points="7" name="Judo Commando : Niveau Or" />
+		 <title k="8" points="8" name="Judo Commando : Niveau Paradis" />
+	</goal>
+	<goal id="game68"		name="Niveau Chakré Bouddha" >
+		 <title k="1" points="1" name="Chakré Bouddha : Niveau Confirmé" />
+		 <title k="2" points="2" name="Chakré Bouddha : Niveau Vert" />
+		 <title k="3" points="3" name="Chakré Bouddha : Niveau Orange" />
+		 <title k="4" points="4" name="Chakré Bouddha : Niveau Rouge" />
+		 <title k="5" points="5" name="Chakré Bouddha : Niveau Bronze" />
+		 <title k="6" points="6" name="Chakré Bouddha : Niveau Argent" />
+		 <title k="7" points="7" name="Chakré Bouddha : Niveau Or" />
+		 <title k="8" points="8" name="Chakré Bouddha : Niveau Paradis" />
+	</goal>
+	<goal id="game69"		name="Niveau K-Train" >
+		 <title k="1" points="1" name="K-Train : Niveau Confirmé" />
+		 <title k="2" points="2" name="K-Train : Niveau Vert" />
+		 <title k="3" points="3" name="K-Train : Niveau Orange" />
+		 <title k="4" points="4" name="K-Train : Niveau Rouge" />
+		 <title k="5" points="5" name="K-Train : Niveau Bronze" />
+		 <title k="6" points="6" name="K-Train : Niveau Argent" />
+		 <title k="7" points="7" name="K-Train : Niveau Or" />
+		 <title k="8" points="8" name="K-Train : Niveau Paradis" />
+	</goal>
+	<goal id="game70"		name="Niveau PacifiK" >
+		 <title k="1" points="1" name="PacifiK : Niveau Confirmé" />
+		 <title k="2" points="2" name="PacifiK : Niveau Vert" />
+		 <title k="3" points="3" name="PacifiK : Niveau Orange" />
+		 <title k="4" points="4" name="PacifiK : Niveau Rouge" />
+		 <title k="5" points="5" name="PacifiK : Niveau Bronze" />
+		 <title k="6" points="6" name="PacifiK : Niveau Argent" />
+		 <title k="7" points="7" name="PacifiK : Niveau Or" />
+		 <title k="8" points="8" name="PacifiK : Niveau Paradis" />
+	</goal>
+	<goal id="game71"		name="Niveau Tianan Man" >
+		 <title k="1" points="1" name="Tianan Man : Niveau Confirmé" />
+		 <title k="2" points="2" name="Tianan Man : Niveau Vert" />
+		 <title k="3" points="3" name="Tianan Man : Niveau Orange" />
+		 <title k="4" points="4" name="Tianan Man : Niveau Rouge" />
+		 <title k="5" points="5" name="Tianan Man : Niveau Bronze" />
+		 <title k="6" points="6" name="Tianan Man : Niveau Argent" />
+		 <title k="7" points="7" name="Tianan Man : Niveau Or" />
+		 <title k="8" points="8" name="Tianan Man : Niveau Paradis" />
+	</goal>
+	<goal id="game72"		name="Niveau Opalus Factory" >
+		 <title k="1" points="1" name="Opalus Factory : Niveau Confirmé" />
+		 <title k="2" points="2" name="Opalus Factory : Niveau Vert" />
+		 <title k="3" points="3" name="Opalus Factory : Niveau Orange" />
+		 <title k="4" points="4" name="Opalus Factory : Niveau Rouge" />
+		 <title k="5" points="5" name="Opalus Factory : Niveau Bronze" />
+		 <title k="6" points="6" name="Opalus Factory : Niveau Argent" />
+		 <title k="7" points="7" name="Opalus Factory : Niveau Or" />
+		 <title k="8" points="8" name="Opalus Factory : Niveau Paradis" />
+	</goal>
+	<goal id="game73"		name="Niveau Linea" >
+		 <title k="1" points="1" name="Linea : Niveau Confirmé" />
+		 <title k="2" points="2" name="Linea : Niveau Vert" />
+		 <title k="3" points="3" name="Linea : Niveau Orange" />
+		 <title k="4" points="4" name="Linea : Niveau Rouge" />
+		 <title k="5" points="5" name="Linea : Niveau Bronze" />
+		 <title k="6" points="6" name="Linea : Niveau Argent" />
+		 <title k="7" points="7" name="Linea : Niveau Or" />
+		 <title k="8" points="8" name="Linea : Niveau Paradis" />
+	</goal>
+	<goal id="game74"		name="Niveau Happy Pti Tank" >
+		 <title k="1" points="1" name="Happy Pti Tank : Niveau Confirmé" />
+		 <title k="2" points="2" name="Happy Pti Tank : Niveau Vert" />
+		 <title k="3" points="3" name="Happy Pti Tank : Niveau Orange" />
+		 <title k="4" points="4" name="Happy Pti Tank : Niveau Rouge" />
+		 <title k="5" points="5" name="Happy Pti Tank : Niveau Bronze" />
+		 <title k="6" points="6" name="Happy Pti Tank : Niveau Argent" />
+		 <title k="7" points="7" name="Happy Pti Tank : Niveau Or" />
+		 <title k="8" points="8" name="Happy Pti Tank : Niveau Paradis" />
+	</goal>
+	<goal id="game75"		name="Niveau Phagocytoz" >
+		 <title k="1" points="1" name="Phagocytoz : Niveau Confirmé" />
+		 <title k="2" points="2" name="Phagocytoz : Niveau Vert" />
+		 <title k="3" points="3" name="Phagocytoz : Niveau Orange" />
+		 <title k="4" points="4" name="Phagocytoz : Niveau Rouge" />
+		 <title k="5" points="5" name="Phagocytoz : Niveau Bronze" />
+		 <title k="6" points="6" name="Phagocytoz : Niveau Argent" />
+		 <title k="7" points="7" name="Phagocytoz : Niveau Or" />
+		 <title k="8" points="8" name="Phagocytoz : Niveau Paradis" />
+	</goal>
+	<goal id="game76"		name="Niveau Alchimie" >
+		 <title k="1" points="1" name="Alchimie : Niveau Confirmé" />
+		 <title k="2" points="2" name="Alchimie : Niveau Vert" />
+		 <title k="3" points="3" name="Alchimie : Niveau Orange" />
+		 <title k="4" points="4" name="Alchimie : Niveau Rouge" />
+		 <title k="5" points="5" name="Alchimie : Niveau Bronze" />
+		 <title k="6" points="6" name="Alchimie : Niveau Argent" />
+		 <title k="7" points="7" name="Alchimie : Niveau Or" />
+		 <title k="8" points="8" name="Alchimie : Niveau Paradis" />
+	</goal>
+	<goal id="game77"		name="Niveau El Tortuga nemesis" >
+		 <title k="1" points="1" name="El Tortuga nemesis : Niveau Confirmé" />
+		 <title k="2" points="2" name="El Tortuga nemesis : Niveau Vert" />
+		 <title k="3" points="3" name="El Tortuga nemesis : Niveau Orange" />
+		 <title k="4" points="4" name="El Tortuga nemesis : Niveau Rouge" />
+		 <title k="5" points="5" name="El Tortuga nemesis : Niveau Bronze" />
+		 <title k="6" points="6" name="El Tortuga nemesis : Niveau Argent" />
+		 <title k="7" points="7" name="El Tortuga nemesis : Niveau Or" />
+		 <title k="8" points="8" name="El Tortuga nemesis : Niveau Paradis" />
+	</goal>
+	
+	
+					
+	<!-- IcôneS CONSOMMABLES : les ID sont celles qui étaient utilisées dans l'ancienne table Icon -->
+	<goal id="1" 	name="Icône Aqua Splash" 		useIcon="aqua.gif" 			icon="aqua.gif"			></goal>
+	<goal id="2" 	name="Icône Atlanteine" 		useIcon="atl.gif"  			icon="atl.gif"			></goal>
+	<goal id="3" 	name="Icône Bactery" 			useIcon="bact.gif"			icon="bact.gif"			></goal>
+	<goal id="4" 	name="Icône Piou builder" 	 	useIcon="builder.gif"		icon="builder.gif"		></goal>
+	<goal id="5" 	name="Icône Cooking Lili" 	 	useIcon="cook.gif"			icon="cook.gif"			></goal>
+	<goal id="6" 	name="Icône Interwheel" 		useIcon="inter.gif"			icon="inter.gif"		></goal>
+	<goal id="7" 	name="Icône Iron Chouquette" 	useIcon="iron.gif"			icon="iron.gif"			></goal>
+	<goal id="8" 	name="Icône Kanji" 			 	useIcon="kanj.gif"			icon="kanj.gif"			></goal>
+	<goal id="9" 	name="Icône Kanji 2" 			useIcon="kanji2.gif"			icon="kanji2.gif"		></goal>
+	<goal id="10" 	name="Icône Lili" 			 	useIcon="lili2.gif"			icon="lili2.gif"		></goal>
+	<goal id="11" 	name="Icône Piou cute" 		 	useIcon="pioucute.gif"		icon="pioucute.gif"		></goal>
+	<goal id="12" 	name="Icône Piou sad" 		 	useIcon="piousad.gif"		icon="piousad.gif"		></goal>
+	<goal id="13" 	name="Icône Piou shy" 		 	useIcon="shy.gif"			icon="shy.gif"			></goal>
+	<goal id="14" 	name="Icône Piou smile" 		useIcon="smile_1.gif"		icon="smile_1.gif"		></goal>
+	<goal id="15" 	name="Icône Zipzap" 			useIcon="zap.gif"			icon="zap.gif"			></goal>
+	<goal id="16" 	name="Icône Bière" 			 	useIcon="beer.gif"			icon="beer.gif"			></goal>
+	<goal id="17" 	name="Icône Café" 			 	useIcon="cafe.gif"			icon="cafe.gif"			></goal>
+	<goal id="18" 	name="Icône Cola" 				useIcon="cola.gif"			icon="cola.gif"			></goal>
+	<goal id="19" 	name="Icône Ice tea" 			useIcon="icet.gif"			icon="icet.gif"			></goal>
+	<goal id="20" 	name="Icône Orange" 			useIcon="orange.gif"			icon="orange.gif"		></goal>
+	<goal id="21" 	name="Icône Redcow" 			useIcon="redcow.gif"			icon="redcow.gif"		></goal>
+	<goal id="22" 	name="Icône Snow cool" 		 	useIcon="snow_cool.gif"		icon="snow_cool.gif"	></goal>
+	<goal id="23" 	name="Icône Snow hu" 			useIcon="snow_hu.gif"		icon="snow_hu.gif"		></goal>
+	<goal id="24" 	name="Icône Snow yeah" 		 	useIcon="snow_yeah.gif"		icon="snow_yeah.gif"	></goal>
+	<goal id="25" 	name="Icône cadeau" 			useIcon="item_present.png" 	icon="item_present.png"	></goal>
+	<goal id="26" 	name="Icône Amour en or" 		useIcon="small_fav.gif"		icon="small_fav.gif"	></goal>
+	<goal id="27" 	name="Icône Chrono" 			useIcon="small_chrono.gif"	icon="small_chrono.gif"	></goal>
+	
+	
+	
+	<!-- IcôneS FORUM -->
+	<icons>
+		<i tag=":kk:" img="/favicon.ico"/>
+		<i tag=":kk_piou:" img="/gfx/smileys/user_u.gif" />
+		<i tag=":kk_kanji:" img="/gfx/smileys/user_m.gif" />
+		<i tag=":kk_lili:" img="/gfx/smileys/user_f.gif" />
+		<i tag=":kk_gemme_verte:" img="/gfx/smileys/ggem.gif" />
+		<i tag=":kk_gemme_orange:" img="/gfx/smileys/rgem.gif" />
+		<i tag=":kk_classement_down:" img="/gfx/smileys/sRankDown.gif" />
+		<i tag=":kk_classement_up:" img="/gfx/smileys/sRankUp.gif" />
+		<i tag=":kk_points_kado:" img="/gfx/smileys/skpoint.gif" />
+		<i tag=":kk_no_star:" img="/gfx/smileys/noStar.gif" />
+		<i tag=":kk_etoile_verte:" img="/gfx/smileys/greenStar.gif" />
+		<i tag=":kk_etoile_orange:" img="/gfx/smileys/orangeStar.gif" />
+		<i tag=":kk_etoile_rouge:" img="/gfx/smileys/redStar.gif" />
+		<i tag=":kk_like:" img="/gfx/smileys/bookmarked.gif" />
+		<i tag=":kk_dislike:" img="/gfx/smileys/unbookmarked.gif" />
+		<i tag=":kk_atk:" img="/gfx/smileys/atksmall.gif" />
+		<i tag=":kk_def:" img="/gfx/smileys/defsmall.gif" />
+		<i tag=":kk_score:" img="/gfx/smileys/scoresmall.gif"/>
+		<i tag=":kk_level8:" img="/gfx/smileys/small_level_8.gif" />
+		<i tag=":kk_level7:" img="/gfx/smileys/small_level_7.gif" />
+		<i tag=":kk_level6:" img="/gfx/smileys/small_level_6.gif" />
+		<i tag=":kk_level5:" img="/gfx/smileys/small_level_5.gif" />
+		<i tag=":kk_level4:" img="/gfx/smileys/small_level_4.gif" />
+		<i tag=":kk_level3:" img="/gfx/smileys/small_level_3.gif" />
+		<i tag=":kk_level2:" img="/gfx/smileys/small_level_2.gif" />
+		<i tag=":kk_level1:" img="/gfx/smileys/small_level_1.gif" />
+		<i tag=":kk_level0:" img="/gfx/smileys/small_level_0.gif" />
+		<i tag=":kk_game:" img="/gfx/smileys/sgame.gif" />
+		<i tag=":kk_there:" img="/gfx/smileys/there.gif" />
+	</icons>
+</goals>

@@ -1,0 +1,1150 @@
+﻿<goals id="mush">
+
+	<!-- never modify an id -->
+	<!-- never delete an id -->
+	<!-- good idea is to add custom attributes that specifies that this goal wont unlock more -->
+	
+	<!-- regular scale is 1 20 50 200 1000 -->
+	
+	<!-- regular icons -->
+	<icons>
+		<i tag=":mush_cat:" img="/img/icons/ui/cat.png" />
+		<i tag=":mush_talk:" img="/img/icons/ui/talk.gif" />
+		<i tag=":mush_mush:" img="/img/icons/ui/mush.png" />
+		<i tag=":mush_o2:" img="/img/icons/ui/o2.png" />
+		<i tag=":mush_eng:" img="/img/icons/ui/pa_eng.png" />
+		<i tag=":mush_talky:" img="/img/icons/ui/talkie.png" />
+		<i tag=":mush_eat:" img="/img/icons/ui/sat.png" />
+		<i tag=":mush_time:" img="/img/icons/ui/casio.png" />
+		<i tag=":mush_chut:" img="/img/icons/ui/discrete.png" />
+		<i tag=":mush_hunter:" img="/img/icons/ui/hunter.png"/>
+		<i tag=":mush_triumph:" img="/img/icons/ui/triumph.png" />
+		<i tag=":mush_dead:" img="/img/icons/ui/dead.png"/>
+		<i tag=":mush_pills:" img="/img/icons/ui/demoralized2.png" />
+		<i tag=":mush_more:" img="/img/icons/ui/more.png" />
+		<i tag=":mush_less:" img="/img/icons/ui/less.png"  />
+		<i tag=":mush_fire:" img="/img/icons/ui/fire.png"  />
+		<i tag=":mush_tip:" img="/img/icons/ui/tip.png"  />
+		<i tag=":mush_apple:" img="/img/icons/ui/status/hungry.png" />
+		<i tag=":mush_laid:" img="/img/icons/ui/status/laid.png" />
+		<i tag=":mush_mastered:" img="/img/icons/ui/status/mastered.png" />
+		<i tag=":mush_stink:" img="/img/icons/ui/status/stinky.png" />
+		<i tag=":mush_moral:" img="/img/icons/ui/moral.png" />
+		<i tag=":mush_pmo:" img='/img/icons/ui/moral.png' />
+		<i tag=":mush_hp:" img='/img/icons/ui/lp.png' />
+		<i tag=":mush_fuel:" img="/img/icons/ui/fuel.png" />
+		<i tag=":mush_pa_core:" img='/img/icons/ui/pa_core.png'/>
+		<i tag=":mush_pa_comp:" img='/img/icons/ui/pa_comp.png'/>
+		<i tag=":mush_pa_shoot:" img='/img/icons/ui/pa_shoot.png' />
+		<i tag=":mush_pa_pilgred:" img='/img/icons/ui/pa_pilgred.png' />
+		<i tag=":mush_pa_cook:" img='/img/icons/ui/pa_cook.png' />
+		<i tag=":mush_pa_garden:" img='/img/icons/ui/pa_garden.png' />
+		<i tag=":mush_pa_eng:" img='/img/icons/ui/pa_eng.png'/>
+		<i tag=":mush_triumph2:" img='/img/icons/ui/mush_triumph.png'/>
+		<i tag=":mush_ticket:" img='/img/icons/ui/freeticket.png'/>
+	</icons>
+	
+	<!-- done -->
+	<goal id="signal_fire" name="Signalements d'Incendies" icon="ui/fire.png"
+	>
+	</goal>
+	
+	<!-- done -->
+	
+	<goal id="win_nova" name="Aventurier légendaire">
+		<icon k="1" points="0" file="ui/win_nova.png" name="Aventurier légendaire">
+			Vous avez été le plus grand aventurier de l'univers durant un épisode de Mush.
+        </icon>
+		<title k="1" points="0" name="Super Nova"/>
+	</goal>
+	
+	<goal id="win_triumph" name="Héros légendaire">
+		<icon k="1" points="0" file="ui/win_triumph.png" name="Héros légendaire">
+			Vous avez été le plus grand héros de tous les temps... durant un épisode de Mush.
+        </icon>
+		<title k="1" points="0" name="Super Héros"/>
+	</goal>
+	
+	<goal id="other_nova" name="Aventurier de l'espace">
+		<icon k="1" points="0" file="ui/other_nova.png" name="Aventurier de l'espace">
+			Vous avez été un grand aventurier de l'univers durant un épisode de Mush.
+        </icon>
+		<title k="1" points="0" name="Nova-boy"/>
+	</goal>
+	
+	<goal id="other_triumph" name="Héros de l'espace">
+		<icon k="1" points="0" file="ui/other_triumph.png" name="Héros de l'espace">
+			Vous avez été un grand héros de l'univers... durant un épisode de Mush.
+        </icon>
+		<title k="1" points="0" name="Héros de l'espace"/>
+	</goal>
+	
+	<goal id="extinguish_fire" name="Extinction d'Incendies" icon="ui/extinguisher.png">
+	</goal>
+	
+	<goal id="signal_equip" name="Signalement de pannes" >
+		<icon k="1" points="0" file="ui/reported.png" name="Signalement de pannes">
+			Nombre d'équipements endommagés que vous avez signalés.
+        </icon>
+		<title k="1" points="0" name="Agent de surface" 				 />
+		<title k="20" points="0" name="Agent de maintenance" 			 />
+		<title k="50" points="0" name="Préposé aux équipements" 			 />
+		<title k="200" points="0" name="Equipementier" 					 />
+		<title k="1000" points="0" name="inspecteur des travaux finis" 	 />
+	</goal>
+	
+	<goal id="gagged" name="Bailloné"
+	>
+		<icon k="1" points="0" file="ui/status/gagged.png" name="Bailloné">
+			Nombre de fois où vous avez été baillonés.
+        </icon>
+	</goal>
+	
+	<goal id="game_without_sleep" name="Jours sans s'endormir">
+		<icon k="1" points="0" file="ui/awake.png" name="Jours sans s'endormir">
+			Nombre de voyages que vous avez effectués sans jamais vous endormir.
+			Ce trophée n'est accordé que si vous survivez au delà du jour 6.
+        </icon>
+		
+		<title k="1" points="5" name="Eveillé" 			  />
+		<title k="20" points="5" name="Insomniaque" 	  />
+		<title k="100" points="5" name="Extralucide" 	  />
+	</goal>
+	
+	<goal id="explorer" name="Explorateur" >
+		<icon k="1" points="0" file="ui/survival.png" name="Explorateur">
+			Nombre de fois où vous avez exploré une planète et en êtes revenu vivant.
+        </icon>
+		
+		<title k="1" points="1" name="Explorateur" 					  />
+		<title k="50" points="5" name="Grand explorateur" 			  />
+		<title k="200" points="10" name="Repousseur de frontière" 	  />
+		<title k="1000" points="5" name="Christophe Colomb" 		  />
+	</goal>
+	
+	<goal id="triumph" name="Triomphe" hidden="1">
+		<icon k="1" points="0" file="ui/triumph.png" name="Triomphe" lose="1">
+			Triomphe total.
+        </icon>
+		
+		<title k="1" points="1" name="Connaissance" 			  />
+		<title k="50" points="5" name="Célébrité"	 			  />
+		<title k="200" points="10" name="Personnage Historique"   />
+		<title k="500" points="20" name="Légende" 				  />
+		<title k="1000" points="0" name="Mythe" 				  />
+		<title k="2000" points="0" name="Messie" 				  />
+		<title k="3000" points="0" name="Demiurge" 				  />
+	</goal>
+	
+	<goal id="door_repaired" name="Portes réparées"
+	>
+		<icon k="1" points="0" file="ui/door.png" name="Portes réparées">
+			Portes que vous avez amoureusement réparées.
+        </icon>
+		
+		<title k="1" points="1" name="Serrurier"   />
+	</goal>
+	
+	<goal id="planet_scanned" name="Planètes Détectées"
+	>
+		<icon k="1" points="0" file="ui/planet.png" name="Planètes Détectées">
+			Planètes détectées.
+        </icon>
+		<title k="1" points="1" name="Navigateur"   />
+	</goal>
+	
+	<goal id="mushed" name="Infecté" mush_on_ship_death="1"
+	>
+		<icon k="1" points="0" file="ui/mush.png" name="Infecté" >
+			Nombre de fois où vous avez été contaminé jusqu'à l'infection totale.
+        </icon>
+		<title k="1" points="1" name="Infecté"  />
+	</goal>
+	
+	<goal
+		id="has_mushed"
+		name="Infecteur"
+		desc="Nombre de fois où vous avez contaminé un membre de l'équipage jusqu'à l'infection totale."
+		mush_on_ship_death="1"
+		icon="ui/infecter.png"
+		>
+		<title k="1" points="1" name="Agent infectieux"   />
+	</goal>
+	
+	<goal id="sleeper" name="Siestes" hidden="1"
+	>
+		<icon k="1" points="0" file="ui/sleepy.png" name="Ronfleur" >
+			Nombre de fois où vous vous êtes endormi...
+        </icon>
+		<title k="1" points="1" name="Ronfleur"   />
+	</goal>
+	
+	<goal id="tutorial" name="Apprentissage Achevé"
+	>
+		<icon k="1" points="0" file="ui/book.png" name="Apprentissage Achevé" >
+			Nombre de fois où vous avez accompli le mode Apprentissage.
+        </icon>
+		<title 	k="1" points="5" name="Equipier"  />
+	</goal>
+
+	<goal id="explo_feed" name="Approvisionneur" mush_on_explo_done="1">
+		<icon k="1" points="0" file="ui/stock.png" name="Approvisionneur" >
+			Nourriture Rapportée D'Expédition.
+			Vous devez avoir survécu...
+        </icon>
+		
+		<title k="1" points="1" name="Cueilleur De Baie"   />
+		<title k="50" points="5" name="Chasseur"  />
+		<title k="200" points="10" name="Meneur De Safari"   />
+		<title k="500" points="20" name="Génocideur de Monde"   />
+		<title k="1000" points="40" name="Grand Destructeur De Système Solaire"   />
+	</goal>
+	
+	<goal id="new_plants"
+		name="Plantations"
+		desc="Plantes que vous avez fait naître"
+		icon="ui/plant_youngling.png">
+		
+		<title 	k="1" points="1" name="Puceron"  />
+	</goal>
+	
+	<goal id="give_mission"
+		desc="Missions que vous avez données et qui ont été acceptées"
+		name="Missions"
+		icon="ui/notebook.png"
+		lose="1">
+		
+		<title 	k="1" points="1" name="Troufion" 		 />
+		<title 	k="10" points="1" name="Chef"			 />
+		<title 	k="50" points="1" name="Capitaine" 		 />
+		<title 	k="100" points="1" name="Commandant" 	 />
+		<title 	k="500" points="1" name="Général" 		 />
+		
+	</goal>
+	
+	<goal id="daily_order"
+		name="Annonce Générale"
+		desc="Annonces générales passées"
+		icon="ui/notebook.png">
+		
+		<title 	k="1" points="1" name="Annonceur" 		 />
+		<title 	k="10" points="1" name="Haut-Parleur" 	 />
+		<title 	k="20" points="1" name="Herault" 		 />
+	</goal>
+	
+	<goal id="hunter_down"
+		name="Hunters Abattus"
+		desc="Hunters abattus par vos soins"
+		icon="ui/hunter.png"
+		lose="1">
+		<title 	k="1" points="1" name="Cancrelat" 	 		prefix="1"	/>
+		<title 	k="20" points="1" name="Pilote" 			prefix="1"	 />
+		<title 	k="50" points="1" name="Chasseur" 	 		prefix="1"	/>
+		<title 	k="100" points="1" name="Pilote D'Elite"  	prefix="1"	/>
+		<title 	k="500" points="1" name="Fléau Fongique"   	prefix="1"	/>
+	</goal>
+	
+	<goal id="day_5_reached"
+		name="Jour 5 Atteint"
+		rare="3"
+		icon="ui/day5.png">
+		<title 	k="1" points="1" name="Survivant"  prefix="1"	 />
+	</goal>
+	
+	<goal id="day_10_reached"
+		name="Jour 10 Atteint"
+		icon="ui/day10.png"
+		rare="4"
+		>
+		<title 	k="1" points="1" name="Héros"  prefix="1"	 />
+	</goal>
+	
+	<goal id="day_15_reached"
+		name="Jour 15 Atteint"
+		icon="ui/day15.png"
+		rare="5"
+		>
+		<title 	k="1" points="1" name="Ancien"   prefix="1"	/>
+	</goal>
+	
+	<goal id="day_20_reached"
+		name="Jour 20 Atteint"
+		icon="ui/day20.png"
+		rare="6"
+		>
+		<title 	k="1" points="1" name="Divinité"   prefix="1"	/>
+	</goal>
+	
+	<goal id="day_30_reached"
+		name="Jour 30 Atteint"
+		icon="ui/day30.png"
+		rare="7"
+		>
+	</goal>
+	
+	<goal id="ration_cooked"
+		name="Plats cuisinés"
+		icon="ui/pa_cook.png"
+		>
+		<title 	k="1" points="1" name="Commis"   prefix="1"	/>
+	</goal>
+	
+	<goal id="plasma_shield"
+		name="Bouclier Plasma"
+		desc="Nombre de fois où le Bouclier Plasma a été mis en service par votre équipage durant un voyage"
+		icon="ui/plasma.png"
+		>
+		<title 	k="1" points="1" name="Protecteur"   prefix="1"	/>
+	</goal>
+	
+	<goal id="surgeon"
+		name="Chirurgien"
+		desc="Actes de chirurgie réussies"
+		icon="ui/escal.png"
+		>
+		<title 	k="1" points="1" name="Chirurgien"   prefix="1"	/>
+	</goal>
+	
+	<goal id="butcher"
+		name="Boucher"
+		desc="Actes de chirurgie ratés"
+		icon="ui/butcher.png"
+		>
+		<title 	k="1" points="1" name="Boucher"   prefix="1"	/>
+	</goal>
+	
+	<goal id="shrinker"
+		name="Psychanalyse Totale"
+		desc="Maladies Psychologiques guéries"
+		icon="ui/shrink_done.png"
+		>
+		<title 	k="1" points="1" name="Psychanaliste"   prefix="1"	/>
+		<title 	k="10" points="1" name="Psychiatre"   prefix="1"	/>
+		<title 	k="50" points="1" name="Gourou"   prefix="1"	/>
+	</goal>
+	
+	<goal id="physicist"
+		name="Personnel Soignant"
+		desc="Maladies Physiques guéries"
+		icon="ui/pa_heal.png"
+		>
+		<title 	k="1" points="1" name="Infirmier"   prefix="1"	/>
+		<title 	k="10" points="1" name="Interne"  	prefix="1"	/>
+		<title 	k="50" points="1" name="Docteur"   	prefix="1"	/>
+	</goal>
+	
+	<goal id="politician"
+		name="Homme Politique"
+		desc="Discours prononcé avec plus de 8 Spectateurs."
+		rare="4"
+		icon="ui/politician.png"
+		>
+		<title 	k="1" points="1" name="Conseiller Municipal"  	prefix="1"  />
+		<title 	k="10" points="1" name="Maire"   				prefix="1" 	/>
+		<title 	k="50" points="1" name="Escroc"   				prefix="1" 	/>
+	</goal>
+	
+	<goal id="artefact_coll"
+		name="Artefacts collectés"
+		desc="Artefacts collectés en expédition tout au long de votre carrière."
+		icon="ui/artefact.png"
+		lose="1"
+		>
+		<title 	k="1" points="1" 	name="Archéologue Inconnu" 	prefix="1"	/>
+		<title 	k="10" points="10" 	name="Allan Grant"   		prefix="1"	/>
+		<title 	k="15" points="50" 	name="Indiana Jones"   		prefix="1"	/>
+	</goal>
+	
+	<goal id="artefact_specialist"
+		name="Spécialiste en artefacts"
+		desc="Nombre maximal d'artefacts différents collectés en expédition par votre équipage au cours d'une seule partie."
+		icon="ui/collection.png"
+		>
+		<title 	k="1" points="1" 	name="Balayeur"   		prefix="1"	/>
+		<title 	k="2" points="5" 	name="Fouineur"   		prefix="1"	/>
+		<title 	k="3" points="10" 	name="Chercheur"   		prefix="1"	/>
+		<title 	k="4" points="20" 	name="Explorateur"  	prefix="1"	/>
+		
+		<title 	k="5" points="1" 	name="Gardien"   		prefix="1"	/>
+		<title 	k="6" points="1" 	name="Shaman"   		prefix="1"	/>
+		<title 	k="7" points="1" 	name="Magicien"  		prefix="1"	/>
+		<title 	k="8" points="1" 	name="Prophète"   		prefix="1"	/>
+	</goal>
+	
+	<goal id="tags_complete"
+		name="Balayages Complets"
+		desc="Nombre de planètes dont toutes les sections ont été révélées par votre équipage durant une partie."
+		icon="ui/planet_complete.png"
+		>
+		<title 	k="1" points="1" 	name="Scanneur Fou"  	prefix="1"/>
+	</goal>
+	
+	<goal id="research_team"
+		name="Equipe De Chercheurs"
+		desc="Nombre maximal de Recherches jamais atteint par un de vos équipages."
+		icon="ui/microsc.png"
+		>
+		<title 	k="1"	points="1" 		name="Rat De Laboratoire"  prefix="1" />
+		<title 	k="2"	points="2" 		name="Doctorant"  	prefix="1" />
+		<title 	k="4" 	points="5" 		name="Chercheur"  	prefix="1"/>
+		<title 	k="8" 	points="10" 	name="Professeur" 	prefix="1" />
+		<title 	k="16"	points="5" 		name="Omniscient" 	prefix="1" />
+	</goal>
+	
+	<goal id="project_team"
+		name="Equipe Technique"
+		desc="Nombre maximal de Projets jamais développés par un de vos équipages."
+		icon="ui/conceptor.png"
+		>
+		<title 	k="1"	points="1" 		name="Agent de Maintenance"   prefix="1"/>
+		<title 	k="2"	points="2" 		name="Technicien"  prefix="1"/>
+		<title 	k="4" 	points="5" 		name="Mécanicien"  prefix="1" />
+		<title 	k="8" 	points="10" 	name="Ingénieur"   prefix="1"/>
+		<title 	k="16"	points="5" 		name="Omnipotent"  prefix="1" />
+	</goal>
+	
+	<goal id="team_all_rebels"
+		name="Revolution !"
+		desc="Votre équipe a décodé tous les signaux rebelles durant un voyage."
+		icon="ui/revolution.png">
+		<title 	k="1"	points="1" 		name="Commune"   	prefix="1"/>
+		<title 	k="5"	points="1" 		name="Révolution"   prefix="1"/>
+		<title 	k="10"	points="1" 		name="Libération"   prefix="1"/>
+	</goal>
+	
+	<goal id="team_rebels"
+		name="Rébellion !"
+		desc="Nombre maximal de signaux rebelles décodés par votre équipage durant un voyage."
+		icon="ui/rebellion.png">
+		<title 	k="1"	points="1" 		name="Dissident"  	prefix="1" />
+		<title 	k="3"	points="1" 		name="Rebelle"  	prefix="1" />
+		<title 	k="6"	points="1" 		name="Terroriste" 	prefix="1" />
+	</goal>
+	
+	<goal id="rebels"
+		name="5ème Colonne"
+		desc="Bases rebelles contactées par vos soins."
+		icon="ui/5pillar.png">
+		<title 	k="1"	points="1" 		name="Radio Pirate"  suffix="1" />
+	</goal>
+	
+	<goal id="kivanc_contacted"
+		name="Kivanç Terzi contacté"
+		desc="L'équipage du vaisseau a contacté Kivanç Terzi."
+		icon="ui/kivanc.png">
+		<title 	k="1"	points="1" 		name="Chef Rebelle"   />
+	</goal>
+	
+	<goal id="nils_contacted"
+		name="Nils contacté"
+		desc="L'équipage du vaisseau a contacté Nils Carlsson."
+		icon="ui/nils.png">
+		<title 	k="1"	points="1" 		name="Autorité Scientifique"   />
+	</goal>
+	
+	<goal id="mage_books_learned"
+		name="Apprentrons"
+		desc="Apprentrons consultés"
+		icon="ui/learned.png">
+		<title 	k="1"	points="1" 		name="Savant"   	suffix="1"/>
+	</goal>
+	
+	<goal id="back_to_root"
+		name="Sol"
+		desc="Nombre de trajets de retour vers Sol effectués. Content du voyage ?"
+		icon="ui/sol.png"
+		rare="6"
+	>
+		<title 	k="1"	points="1" 		name="Citoyen de Sol"   />
+	</goal>
+	
+	<goal id="pilgred_back_online"
+		name="PILGRED EST DE RETOUR !"
+		desc="Nombre de voyages où votre équipage a réussi à remettre PILGRED en ligne."
+		icon="ui/pa_pilgred.png"
+		rare="8"
+	>
+		<title 	k="1"	points="1" 		name="Propulsion De Prochaine Génération"   />
+	</goal>
+	
+	<goal id="drugs_taken"
+		name="Laissez manger les petits cachets !"
+		desc="Gourmandises avalées"
+		icon="ui/drugs.png"
+	>
+		<title 	k="1"	points="1" 		name="Cacheton"   	suffix="1"/>
+	</goal>
+	
+	<goal id="coffee_taken"
+		name="Un café pour la 16 !"
+		desc="Cafés avalés"
+		icon="ui/coffee.png"
+	>
+		<title 	k="1"	points="1" 		name="CAFE !"   	suffix="1"/>
+		<title 	k="500"	points="10" 	name="Cafféinomae"   />
+	</goal>
+	
+	<goal id="cooked_taken"
+		name="Rations cuisinées avalées"
+		icon="ui/rationcooked.png"
+	>
+		<title 	k="1"	points="1" 		name="Morfal"   	prefix="1"/>
+	</goal>
+	
+	<goal id="ration_taken"
+		name="Rations avalées"
+		icon="ui/ration.png"
+	>
+		<title 	k="1"	points="1" 		name="Goinfre"  	prefix="1" />
+	</goal>
+	
+	<goal id="frozen_taken"
+		name="Aliments Congelés avalés"
+		icon="ui/food_frozen.png"
+	>
+		<title 	k="1"	points="1" 		name="Yéti" 		prefix="1" />
+	</goal>
+	
+	<goal id="grenadier"
+	name="Grenadier"
+	desc="Nombre de grenades utilisées en expédition par votre équipe."
+	icon="ui/grenade.png">
+		<title 	k="1"	points="1" 		name="Grenadier" 	prefix="1" />
+	</goal>
+	
+	<goal id="natamist"
+		name="Natamiste"
+		desc="Représentant Mush détruit au Fusil Natamy"
+		icon="ui/natamist.png"
+	>
+		<title 	k="1"	points="0" 		name="Lepiocidaire"   />
+	</goal>
+	
+	<goal id="mush_killed"
+		name="Bourreau Des Mush"
+		desc="Mush que vous avez tués de vos propres mains !"
+		icon="ui/mush_kill.png"
+	>
+		<title 	k="1"	points="0" 		name="Sporophobe"   />
+	</goal>
+	
+	
+	<goal id="team_mush_killed"
+		name="Soldat de l'Humanité"
+		desc="Envahisseurs Mush décimés par les équipages avec lesquels vous avez voyagé."
+		
+		icon="ui/soldier.png"
+	>
+		<title 	k="1"		points="5" 		name="Mangeur D'Agaric"   />
+		<title 	k="50"		points="8" 		name="Exploseur De Vesse De Loup"   />
+		<title 	k="100"		points="10" 	name="Ecraseur de Bolet"   />
+		<title 	k="200"		points="20" 	name="Ravageur Du Père Magotte"   />
+		<title 	k="500"		points="30" 	name="Cauchemard Des Prés"   />
+		<title 	k="750"		points="40" 	name="Grand Fléau Myconien"   />
+		<title 	k="1000"	points="50"  	name="Chef De Caste Des Dévoreurs D'Amanite Phalloïde" />
+		<title 	k="2000"	points="30" 	name="Archi Déchireur Des Rhizomes Temporels"   />
+		<title 	k="4000"	points="30" 	name="Purificateur Des Trompes De La Mort Des Grandes Anciennes"   />
+	</goal>
+	
+	<goal id="camera_installed"
+		name="Télégénie"
+		desc="Caméras installées"
+		icon="ui/camera.png"
+	>
+		<title 	k="1"	points="0" 			name="Télégénique"  suffix="1" />
+	</goal>
+	
+	<goal id="cat_cuddled"
+		name="Chats câlinés"
+		desc="Nombre de fois où vous avez attrapé Schrödinger."
+		icon="ui/cat.png"
+	>
+		<title 	k="1"		points="1" 		name="Felinophile"  suffix="1"  />
+	</goal>
+	
+	<goal id="disease_contracted"
+		name="Maladies contractées"
+		desc="Vomissement, Toux, Grippe, et autres désagréments..."
+		icon="ui/status/disease.png"
+	>
+		<title 	k="1"		points="1" 		name="Hypocondriaque"   suffix="1"  />
+		<title 	k="10"		points="0" 		name="Chétif"  			suffix="1"  />
+		<title 	k="20"		points="0" 		name="Malade Chronique" prefix="1"  />
+		<title 	k="50"		points="0" 		name="Grand Soufreteux" prefix="1" />
+	</goal>
+	
+	<goal id="venerian_disease"
+		name="Maladies vénériennes contractées"
+		desc="..."
+		icon="ui/venerian.png"
+	>
+		<title 	k="1"		points="0" 		name="Hédoniste"  		prefix="1" />
+	</goal>
+	
+	<goal id="mankarog_down"
+		name="Mankarogs Abattus"
+		desc="Mankarogs tués par votre équipe en expédition"
+		icon="ui/mankarog.png"
+	>
+		<title 	k="1"		points="0" 		name="Davy Crockett De L'Infini "   />
+	</goal>
+	
+	<goal id="succeeded_inspection"
+		name="Inspections Réussies"
+		desc="Qui cherche trouve !"
+		icon="ui/search.png"
+	>
+		<title k="1"		points="0"		name="Elijah Baley" />
+	</goal>
+	
+	<goal id="kind_person"
+		name="Soutiens Psychologiques"
+		desc="A ce moment là, vous avez su trouvez les mots justes..."
+		icon="ui/shrink.png"
+	>
+		<title k="1"		points="0"		name="Psychologue Des Eons" />
+	</goal>
+	
+	<goal id="coffee_man"
+		name="Squatteur De Cafetière"
+		desc="Nombre de cafés retirés en machine."
+		icon="ui/coffeeplus.png"
+	>
+		<title k="1"		points="0"		name="Pilier De Comptoir" />
+	</goal>
+	
+	<goal id="commander_should_go_last"
+		name="Dernier Commandant"
+		desc="Le Commandant doit être le dernier à quitter le vaisseau."
+		rare="1"
+		icon="ui/title_01.png"
+	>
+		<title k="1"		points="20"		name="Dernier Commandant" />
+		<title k="2"		points="20"		name="Dernier Commandant Des Abymes" />
+		<title k="5"		points="5"		name="Dernier Commandant Des Eons" />
+		<title k="10"		points="0"		name="Dernier Commandant De La Galaxie" />
+		<title k="50"		points="0"		name="Dernier Commandant Des Cordes" />
+		<title k="100"		points="0"		name="Dernier Commandant De L'Univers" />
+	</goal>
+	
+	
+	<goal id="last_member"
+		name="Dernier survivant"
+		desc="Vous avez tenu bon jusqu'à la fin. Vous faites partie de l'Histoire !"
+		rare="1"
+		icon="ui/fav.png"
+	>
+		<title k="1"		points="10"		name="Héros De Sol" />
+		<title k="2"		points="10"		name="Champion De La Lutte" />
+		<title k="5"		points="20"		name="Martyr Ultime" />
+		<title k="10"		points="5"		name="Dernier Espoir" />
+		<title k="50"		points="1"		name="Combattant De L'Infini" />
+		<title k="100"		points="1"		name="Immortel" prefix="1" />
+	</goal>
+	
+	<goal id="communicator"
+	name="Responsable Des Communications"
+	desc="Durant un de vos voyages, votre équipage a réussi à effectuer une quantité de tâches légendaire dans le module de Communication"
+	
+	icon="ui/title_03.png"
+	>
+		<title k="1"		point="30"		name="Responsable Des Communications" />
+		<title k="5"		point="30"		name="Chef Des Communications" />
+	</goal>
+	
+	<goal id="mush_genome"
+		name="Décrypteur de l'Enigme"
+		desc="Durant un de vos voyages, votre équipage a résolu l'énigme du Gênome Mush."
+		icon="ui/mush_genome.png"
+	>
+		<title k="1"		points="0"		name="Expert En Mush" />
+	</goal>
+	
+	
+	<goal id="research_digged"
+		name="Chercheur"
+		desc="Nombre de recherches achevées"
+		icon="ui/research_done.png"
+		>
+		<title 	k="1"	points="1" 		name="Technicien De Laboratoire"   />
+	</goal>
+	
+	<goal id="project_digged"
+		name="Concepteur"
+		desc="Nombre de Projets achevés"
+		icon="ui/projects_done.png"
+		>
+		<title 	k="1"	points="1" 		name="Concepteur" prefix="1"  />
+	</goal>
+	
+	<goal id="day_max"
+		name="Voyage Le Plus Long"
+		desc="Durée en jours de votre plus long voyage à bord du Daedalus."
+		icon="ui/calendar.png"
+		
+		>
+	
+		<title 	k="3"	points="1" 		name="Day Of The Locusts"   />
+		<title 	k="4"	points="1" 		name="Hero Of The Day"   />
+		<title 	k="5"	points="1" 		name="If Today Was Your Last Day"   />
+		<title 	k="6"	points="1" 		name="One More Rainy Day"   />
+		<title 	k="7"	points="1" 		name="Day Sleeper"   />
+		<title 	k="8"	points="1" 		name="Eight Days A Week"   />
+		<title 	k="9"	points="1" 		name="Rainy Day Dream Away"   />
+		<title 	k="10"	points="1" 		name="A Hard Day's Night"   />
+		<title 	k="11"	points="5" 		name="Perfect Day"   />
+		<title 	k="12"	points="0" 		name="Glory Days"   />
+		<title 	k="13"	points="0" 		name="Oh Happy Days"   />
+		
+	</goal>
+	
+	<goal id="quasar_first"
+		name="Super Nova d'Or"
+		desc="Vous avez été premier au classement de Triomphe"
+		icon="ui/nova_first.png"
+		hidden="1"
+	>
+	</goal>
+	
+	<goal id="quasar_second"
+		name="Super Nova d'Excellence"
+		desc="Vous avez été second au classement de Triomphe"
+		icon="ui/nova_second.png"
+		hidden="1"
+	>
+	</goal>
+	
+	<goal id="quasar_third"
+		name="Super Nova d'Honneur"
+		desc="Vous avez été troisième au classement de Triomphe"
+		icon="ui/nova_third.png"
+		hidden="1"
+	>
+	</goal>
+	
+	<goal id="quasar_fourth"
+		name="Super Nova Révélée"
+		desc="Vous avez été quatrième au classement de Triomphe"
+		icon="ui/nova_fourth.png"
+		hidden="1"
+	>
+	</goal>
+	
+	<goal id="quasar_special"
+		name="Nova Spécial"
+		desc="Vous avez fait partie des 7 premiers au classement de Triomphe"
+		icon="ui/nova_fifth.png"
+		hidden="1"
+	>
+	</goal>
+	
+	<goal id="quasar_figurant"
+		name="Nova"
+		desc="Nombre de fois où vous avez fait partie des 9 derniers"
+		icon="ui/nova_sixth.png"
+		hidden="1"
+	>
+	</goal>
+	
+	<goal id="mush_tease_EW" 	hidden="1" name="Mini Portrait Mush de Eleesha" 		useIcon="portraits/mini/eleesha_williams.png"></goal>
+	<goal id="mush_tease_FK" 	hidden="1" name="Mini Portrait Mush de Finola" 			useIcon="portraits/mini/finola_keegan.png"></goal>
+	<goal id="mush_tease_FB" 	hidden="1" name="Mini Portrait Mush de Frieda" 			useIcon="portraits/mini/frieda_bergmann.png"></goal>
+	<goal id="mush_tease_GR" 	hidden="1" name="Mini Portrait Mush de Gioele" 			useIcon="portraits/mini/gioele_rinaldo.png"></goal>
+	<goal id="mush_tease_IS" 	hidden="1" name="Mini Portrait Mush de Ian" 			useIcon="portraits/mini/ian_soulton.png"></goal>
+	<goal id="mush_tease_JK" 	hidden="1" name="Mini Portrait Mush de Janice"			useIcon="portraits/mini/janice_kent.png"></goal>
+	<goal id="mush_tease_JH" 	hidden="1" name="Mini Portrait Mush de Hua" 			useIcon="portraits/mini/jiang_hua.png"></goal>
+	<goal id="mush_tease_KJS" 	hidden="1" name="Mini Portrait Mush de Jin Su" 			useIcon="portraits/mini/kim_jin_su.png"></goal>
+	<goal id="mush_tease_LKT" 	hidden="1" name="Mini Portrait Mush de Kuan Ti" 		useIcon="portraits/mini/lai_kuan_ti.png"></goal>
+	<goal id="mush_tease_PR" 	hidden="1" name="Mini Portrait Mush de Paola" 			useIcon="portraits/mini/paola_rinaldo.png"></goal>
+	<goal id="mush_tease_RT" 	hidden="1" name="Mini Portrait Mush de Raluca"			useIcon="portraits/mini/raluca_tomescu.png"></goal>
+	<goal id="mush_tease_RZ"	hidden="1" name="Mini Portrait Mush de Roland" 			useIcon="portraits/mini/roland_zuccali.png"></goal>
+	<goal id="mush_tease_SS" 	hidden="1" name="Mini Portrait Mush de Stephen" 		useIcon="portraits/mini/stephen_seagull.png"></goal>
+	<goal id="mush_tease_TA" 	hidden="1" name="Mini Portrait Mush de Terrence"		useIcon="portraits/mini/terrence_archer.png"></goal>
+	<goal id="mush_tease_WC" 	hidden="1" name="Mini Portrait Mush de Chao" 			useIcon="portraits/mini/wang_chao.png"></goal>
+	<goal id="mush_tease_ZC" 	hidden="1" name="Mini Portrait Mush de Chun" 			useIcon="portraits/mini/zhong_chun.png"></goal>
+	<goal id="mush_tease_SCH" 	hidden="1" name="Mini Portrait Mush de Schrödinger" 	useIcon="ui/cat.png"></goal>
+
+	<!--
+	<goal id="juge" name="Jugement" >
+		<icon k="1" points="0" file="ui/marteau.png" name="Nombre de coups de marteau martelés.">
+        </icon>
+	</goal>
+	-->
+	
+	
+	<!-- goals évolution personnages -->
+
+	<goal id="jin_su" name="Nombre de cycles passés à jouer au chef"  mush_on_ship_death="1" mush_casting_enable="1">
+		<icon k="50" points="0" file="ui/jinsu.png" name="Nombre de cycles gagnés à jouer au chef">
+			Vous avez été dans la peau du commandant du Daedalus, alors... comment on se sent, tout puissant ?
+        </icon>
+		<title k="50" points="5" name="Fayot de la FDS"/>
+		<title k="200" points="10" name="Ohé, ohé, capitaine abandonné"/>
+		<title k="500" points="5" name="Amirâl'eur"/>
+		<title k="2000" points="0" name="The boss"/>
+		<title k="10000" points="0" name="Commandant suprême en chef"/>
+	</goal>
+	
+	<goal id="frieda" name="Nombre de cycles passés à lire des cartes"  mush_on_ship_death="1" mush_casting_enable="1">
+		<icon k="50" points="0" file="ui/frieda.png" name="Nombre de cycles gagnés à lire des cartes">
+			Vous avez été dans la peau de la navigatrice du Daedalus, alors... comment on se sent, désorienté ?
+        </icon>
+		<title k="50" points="5" name="Navi-gâteux"/>
+		<title k="200" points="10" name="Après la nebuleuse, tournez à droite"/>
+		<title k="500" points="5" name="Compas dans l'oeil"/>
+		<title k="2000" points="0" name="Astro-Physico-Navigato"/>
+		<title k="10000" points="0" name="Encyclopedia Universalis"/>
+	</goal>
+	
+	<goal id="kuan_ti" name="Nombre de cycles à contempler son oeuvre"  mush_on_ship_death="1" mush_casting_enable="1">
+		<icon k="50" points="0" file="ui/kuanti.png" name="Nombre de cycles gagnés à contempler son oeuvre">
+			Vous avez été dans la peau du concepteur du Daedalus, alors... comment on se sent, fier ?
+        </icon>
+		<title k="50" points="5" name="Lego system"/>
+		<title k="200" points="10" name="Blindé d'argent et d'acier"/>
+		<title k="500" points="5" name="A l'épreuve des icebergs spatiaux"/>
+		<title k="2000" points="0" name="Architecte retro-compatible"/>
+		<title k="10000" points="0" name="La grande classe universelle"/>
+	</goal>
+	
+	<goal id="janice" name="Nombre de cycles passés à allu...écouter les autres"  mush_on_ship_death="1" mush_casting_enable="1">
+		<icon k="50" points="0" file="ui/janice.png" name="Nombre de cycles gagnés à allu...écouter les autres">
+			Vous avez été dans la peau de la psychologue du Daedalus, alors... comment on se sent, folle ?
+        </icon>
+		<title k="50" points="5" name="zZz....zZzz..."/>
+		<title k="200" points="10" name="Gnan Gnan Style"/>
+		<title k="500" points="5" name="Dans les yeux, j'ai dit dans les yeux !"/>
+		<title k="2000" points="0" name="Psycho-Bimbo"/>
+		<title k="10000" points="0" name="Janice S. Freud"/>
+	</goal>
+	
+	<goal id="roland" name="Nombre de cycles à tourner en rond"  mush_on_ship_death="1" mush_casting_enable="1">
+		<icon k="50" points="0" file="ui/roland.png" name="Nombre de cycles gagnés à tourner en rond">
+			Vous avez été dans la peau d'un des plus redoutable chasseur du Daedalus... Bon, vous n'êtes pas très nombreux non plus...
+        </icon>
+		<title k="50" points="5" name="Tchou tchou !"/>
+		<title k="200" points="10" name="Full speed !"/>
+		<title k="500" points="5" name="Toujours plus vite, toujours plus loin !"/>
+		<title k="2000" points="0" name="Interlooper spatio-temporel"/>
+		<title k="10000" points="0" name="As des As de l'esp-As"/>
+	</goal>
+	
+	<goal id="hua" name="Nombre de cycles passés à fréquenter des 3èmes types"  mush_on_ship_death="1" mush_casting_enable="1">
+		<icon k="50" points="0" file="ui/hua.png" name="Nombre de cycles passés à fréquenter des 3èmes types">
+			Vous avez été dans la peau d'une exploratrice légendaire, alors... déçu de ne pas avoir 3 yeux ?
+        </icon>
+		<title k="50" points="5" name="Un mars et ça repart"/>
+		<title k="200" points="10" name="Hé mec, Il est où mon vaisseau ?"/>
+		<title k="500" points="5" name="Toi, t'as pas une gueule de porte-bonheur !"/>
+		<title k="2000" points="0" name="Tout le monde est perdu sauf moi ?! "/>
+		<title k="10000" points="0" name="Les voyages de Jiang Hua"/>
+	</goal>
+	
+	<goal id="paola" name="Nombre de cycles passés à surfer sur les basses fréquences"  mush_on_ship_death="1" mush_casting_enable="1">
+		<icon k="50" points="0" file="ui/paola.png" name="Nombre de cycles passés à surfer sur les basses fréquences">
+			Vous avez été dans la peau d'une intrépide rebelle au système, rien ni personne ne peut vous détourner de la vérité !
+        </icon>
+		<title k="50" points="5" name="bzzzz...Bzzzitt !"/>
+		<title k="200" points="10" name="Purple touffe émettrice"/>
+		<title k="500" points="5" name="Radiohead"/>
+		<title k="2000" points="0" name="Video killed, radio star"/>
+		<title k="10000" points="0" name="2,21 GigaHertz !"/>
+	</goal>
+	
+	<!--tarantino-->
+	<goal id="chao" name="Nombre de cycles passés à dégommer des trucs"  mush_on_ship_death="1" mush_casting_enable="1">
+		<icon k="50" points="0" file="ui/chao.png" name="Nombre de cycles passés à dégommer des trucs">
+			Vous avez été dans la peau d'un franc-tireur de l'espace, vous avez encore la gachette facile ?
+        </icon>
+		<title k="50" points="5" name="Boom! héhéhé..."/>
+		<title k="200" points="10" name="Garde tes amis près de toi, et tes ennemis encore plus près."/>
+		<title k="500" points="5" name="Si vous posez une question, monsieur calibre donne la réponse."/>
+		<title k="2000" points="0" name="Le premier qui bouge, je lui fais frire la cervelle !"/>
+		<title k="10000" points="0" name="Last action barjo"/>
+	</goal>
+	
+	<goal id="finola" name="Nombre de cycles passés à scruter l'infiniment petit"  mush_on_ship_death="1" mush_casting_enable="1">
+		<icon k="50" points="0" file="ui/finola.png" name="Nombre de cycles passés à scruter l'infiniment petit">
+			Vous avez été dans la peau d'une scientifique de renom, vous ne diriez pas non pour un petit prélévement de plus ?
+        </icon>
+		<title k="50" points="5" name="Mais qu'est ce que je fais là ?"/>
+		<title k="200" points="10" name="Neutrino crochu"/>
+		<title k="500" points="5" name="L'univers en 10²²"/>
+		<title k="2000" points="0" name="Plancké dans le mur"/>
+		<title k="10000" points="0" name="Master of the universe"/>
+	</goal>
+	
+	<goal id="stephen" name="Nombre de cycles passés à cuisiner des plats suspects"  mush_on_ship_death="1" mush_casting_enable="1">
+		<icon k="50" points="0" file="ui/stephen.png" name="Nombre de cycles passés à cuisiner des plats suspects">
+			Leçon 1, Acte 1 : Where is Stephen ? Stephen is ... in the kitchen !
+        </icon>
+		<title k="50" points="5" name="A table !"/>
+		<title k="200" points="10" name="Non, je fais aussi la cuisine."/>
+		<title k="500" points="5" name="Maître du hokuto de cuisine"/>
+		<title k="2000" points="0" name="Descendant de Casey Ryback"/>
+		<title k="10000" points="0" name="Master chef"/>
+	</goal>
+	
+	<goal id="ian" name="Nombre de cycles passés à cultiver des plantes hallucinogènes"  mush_on_ship_death="1" mush_casting_enable="1">
+		<icon k="50" points="0" file="ui/ian.png" name="Nombre de cycles passéss à cultiver des plantes hallucinogènes">
+			Vous avez été dans la peau d'un amoureux de la nature, à la fin de votre existence vous ferez sûrement du bon engrais.
+        </icon>
+		<title k="50" points="5" name="Elle m'aime un peu, beaucoup..."/>
+		<title k="200" points="10" name="L'ami des monstroplantes"/>
+		<title k="500" points="5" name="Fruti-magicien"/>
+		<title k="2000" points="0" name="J'ai la banane !"/>
+		<title k="10000" points="0" name="Flower master"/>
+	</goal>
+	
+	<goal id="chun" name="Nombre de cycles passés à se faire préléver des échantillons sanguins"  mush_on_ship_death="1" mush_casting_enable="1">
+		<icon k="50" points="0" file="ui/chun.png" name="Nombre de cycles passés à se faire préléver des échantillons sanguins">
+			Vous avez vécu dans la peau du cobaye humain le plus prisé ces derniers temps, pas le genre de célébrité dont vous réviez !
+        </icon>
+		<title k="50" points="5" name="At... atmush !"/>
+		<title k="200" points="10" name="Vous ne me contaminerez pas !"/>
+		<title k="500" points="5" name="Rempart biologique"/>
+		<title k="2000" points="0" name="ADN++ v2"/>
+		<title k="10000" points="0" name="Dernier espoir de l'humanité"/>
+	</goal>
+	
+	<goal id="raluca" name="Nombre de cycles passés à passer son temps à caresser son chat"  mush_on_ship_death="1" mush_casting_enable="1">
+		<icon k="50" points="0" file="ui/raluca.png" name="Nombre de cycles passés à passer son temps à caresser son chat">
+			Oui, personne ne comprend un traître mot de ce que vous dîtes, peut-être serait'il bon de revenir parmi le commun des mortels.
+        </icon>
+		<title k="50" points="5" name="Miou miou"/>
+		<title k="200" points="10" name="Convecteur combusto-réversiblo-spatio-temporel en marche"/>
+		<title k="500" points="5" name="Couché Néron ! Toi aussi Schrödinger !"/>
+		<title k="2000" points="0" name="Pilgred in love"/>
+		<title k="10000" points="0" name="In Pilgred we trust"/>
+	</goal>
+	
+	<goal id="gioele" name="Nombre de cycles passés à compter ses billets"  mush_on_ship_death="1" mush_casting_enable="1">
+		<icon k="50" points="0" file="ui/gioele.png" name="Nombre de cycles passés à compter ses billets">
+			Etre milliardaire, c'est le rêve de tout homme sur terre... Mais dans l'espace, et avec un Mush à bord...
+        </icon>
+		<title k="50" points="5" name="Moi d'abord !"/>
+		<title k="200" points="10" name="Cash toi de là !"/>
+		<title k="500" points="5" name="C'est à moi que tu parles ?"/>
+		<title k="2000" points="0" name="Y'a du fric à se faire, je le sens !"/>
+		<title k="10000" points="0" name="L'homme qui valait 3 milliards et des brouettes"/>
+	</goal>
+	
+	<goal id="eleesha" name="Nombre de cycles passés à coiffer sa touffe."  mush_on_ship_death="1" mush_casting_enable="1">
+		<icon k="50" points="0" file="ui/eleesha.png" name="Nombre de cycles passés à coiffer sa touffe.">
+			Vous avez arpenté les couloirs du Daedalus sur le rythme du disco-pop, dommage que ce costume manque de paillette...
+        </icon>
+		<title k="50" points="5" name="Tardiflette"/>
+		<title k="200" points="10" name="Daddy cool"/>
+		<title k="500" points="5" name="La tigresse du Daedalus"/>
+		<title k="2000" points="0" name="En direct sur Eleesha TV"/>
+		<title k="10000" points="0" name="Au coeur de l'info"/>
+	</goal>
+	
+	<goal id="terrence" name="Nombre de cycles passés à bouder dans son coin."  mush_on_ship_death="1" mush_casting_enable="1">
+		<icon k="50" points="0" file="ui/terrence.png" name="Nombre de cycles passés à bouder dans son coin.">
+			Vous avez vécu dans la peau d'un brillant ingénieur, ceux qui vous ont sous-estimé le regrette encore amèrement !
+        </icon>
+		<title k="50" points="5" name="Attendez que je passe la seconde !"/>
+		<title k="200" points="10" name="Roule ma poule !"/>
+		<title k="500" points="5" name="La terreur des couloirs"/>
+		<title k="2000" points="0" name="T-4000 conceptor"/>
+		<title k="10000" points="0" name="Maîtres des bots"/>
+	</goal>
+	
+	<goal id="derek" name="Nombre de cycles passés à draguer à tout va."  mush_on_ship_death="1" mush_casting_enable="1">
+		<icon k="50" points="0" file="ui/derek.png" name="Nombre de cycles passés à draguer à tout va.">
+			Vous avez vécu dans la peau d'un super héros intergalactique auto-proclamé, ceux qui se moque de vous s'en souviendront un jour !
+        </icon>
+		<title k="50" points="5" name="Puceau de l'espace"/>
+		<title k="200" points="10" name="Quelqu'un me demande ?"/>
+		<title k="500" points="5" name="Tire sur tout ce qui bouge !"/>
+		<title k="2000" points="0" name="Les yeux revolvers"/>
+		<title k="10000" points="0" name="Casanova intergalactique"/>
+	</goal>
+	
+	<goal id="andie" name="Nombre de cycles passés à vénérer la fédération."  mush_on_ship_death="1" mush_casting_enable="1">
+		<icon k="50" points="0" file="ui/andie.png" name="Nombre de cycles passés à vénérer la fédération.">
+			Vous avez vécu dans la peau d'un pion de la fédération, il serait temps de changer de bord !
+        </icon>
+		<title k="50" points="5" name="Dans la fédération je crois !"/>
+		<title k="200" points="10" name="Y'a quelque chose de louche !"/>
+		<title k="500" points="5" name="On m'aurait menti(e) ?"/>
+		<title k="2000" points="0" name="L'idole des jeunes"/>
+		<title k="10000" points="0" name="Promis à un brillant avenir !"/>
+	</goal>
+	
+	<goal id="mushxp" name="Nombre de cycles passés à phongiférer dans son coin"  mush_on_ship_death="1" mush_casting_enable="1">
+		<icon k="50" points="0" file="ui/mushxp.png" name="Nombre de cycles passés à phongiférer dans son coin">
+			Gnouarf, shnarf... beuarf... Reproduction... Mushhhh !
+        </icon>
+		<title k="50" points="5" name="Mushi mushi ?"/>
+		<title k="200" points="10" name="L'oeil vif, le pelage rugeux !"/>
+		<title k="500" points="5" name="Le 16ème passager"/>
+		<title k="2000" points="0" name="Day of the tentacle"/>
+		<title k="10000" points="0" name="Total Mushisation"/>
+	</goal>
+	
+	<goal id="beta" name="Pionnier de Xyloph">
+		<icon k="1" points="0" file="ui/beta.png" name="Pionnier de Xyloph">
+			Titre uniquement décerné aux beta-testeurs de Mush.
+        </icon>
+		<title k="1" points="0" name="Pionnier de Xyloph"/>
+	</goal>
+	
+	<goal id="avt_prems" name="Initié">
+		<icon k="1" points="0" file="ui/medal.png" name="Initié">
+			Titre uniquement décerné aux joueurs de l'avant-première de Mush.
+        </icon>
+		<title k="1" points="0" name="Initié"/>
+	</goal>
+	
+	<goal id="neron_flu" name="Grippe de NERON">
+		<icon k="1" points="0" file="ui/neron_fluw.png" name="Grippe de NERON">
+			Titre réservé aux survivants de l'épisode grippal de NERON.
+        </icon>
+		<title k="1" points="0" name="Grippé"/>
+	</goal>
+	
+	<goal id="eden" name="Eden, terre promise" rare="2">
+		<icon k="1" points="0" file="ui/eden1.png" name="Eden, terre promise">
+			Titre réservé aux survivants du Daedalus ayant atteint Eden, la terre promise.
+        </icon>
+		<title k="1" points="5" name="Te''e à t'ibo'd !"/>
+		<title k="5" points="5" name="Il où dédé'n ?"/>
+		<title k="10" points="5" name="Pionnier d'Eden"/>
+		<title k="20" points="5" name="Edenien"/>
+		<title k="50" points="5" name="Fondateur de l'ordre d'Eden"/>
+	</goal>
+	
+	<goal id="eden_contaminated" name="Eden, terre contaminée" rare="2">
+		<icon k="1" points="0" file="ui/eden2.png" name="Eden, terre contaminée">
+			Titre réservé aux Mush ayant infesté Eden, la terre contaminée !
+        </icon>
+		<title k="1" points="10" name="Dévoreur des mondes"/>
+	</goal>
+	
+	<goal id="likemush" name="Tout le monde vous aime !" useIcon="ui/likemush.gif" >
+		Titre réservé aux survivants ayant su conquérir le coeur de leurs compatriotes.
+	</goal>
+
+	<goal id="no_mush" name="Petit joueur" mush_casting_enable="1">
+		<icon k="1" points="0" file="ui/no_mush.png" name="Petit joueur">
+			Titre réservé à ceux qui n'aime pas qu'on les embêtent pendant qu'ils cultivent leurs radis.
+        </icon>
+		<title k="1" points="0" name="Petit joueur"/>
+	</goal>
+	
+	<goal id="three_mush" name="Triple Victoire" mush_casting_enable="1">
+		<icon k="1" points="0" file="ui/three_mush.png" name="Triple Victoire">
+			Un de plus, un de moins, j'en fais mon affaire !
+        </icon>
+		<title k="1" points="0" name="Pinuts"/>
+	</goal>
+	
+	<goal id="fungal_battle" name="Survivant Fongique" mush_casting_enable="1">
+		<icon k="1" points="0" file="ui/fungal_battle.png" name="Survivant Fongique">
+			Vous avez triomphé lors d'une bataille fongique.
+        </icon>
+		<title k="1" points="0" name="Amanite"/>
+	</goal>
+	
+	<goal id="fast_cycle" name="Champignon précoce" mush_casting_enable="1">
+		<icon k="1" points="0" file="ui/fast_cycle.png" name="Champignon précoce">
+			Vite fait, bien fait, emballé c'est pesé.
+        </icon>
+		<title k="1" points="0" name="Oronge mécanique"/>
+	</goal>
+	
+	<goal id="blitz_cycle" name="Champignon acidulé" mush_casting_enable="1">
+		<icon k="1" points="0" file="ui/blitz_cycle.png" name="Champignon acidulé">
+			Je suis rapide. 1 gagnant, 16 perdants. Rapide
+        </icon>
+		<title k="1" points="0" name="Turboronge"/>
+	</goal>
+	
+	<goal id="slow_cycle"  name="Champignon mûre" mush_casting_enable="1">
+		<icon k="1" points="0" file="ui/slow_cycle.png" name="Champignon mûre">
+			Vous les préférez bien longues vos parties. Super !
+        </icon>
+		<title k="1" points="0" name="Sequoia"/>
+	</goal>
+	
+	<goal id="no_mush_bar" name="Champignon caché" mush_casting_enable="1">
+		<icon k="1" points="0" file="ui/no_mush_bar.png" name="Champignon caché">
+			Vous l'avez pas vu venir celui là...
+		</icon>
+		
+		<title k="1" points="0" name="Nocturnum"/>
+	</goal>
+	
+	<goal id="mush_progressive" name="Peti champi deviendra grand" mush_casting_enable="1">
+		<icon k="1" points="0" file="ui/mush_progressive.png" name="Peti champi deviendra grand">
+			Tu quoque mi fungi !
+        </icon>
+		<title k="1" points="0" name="Agaric"/>
+	</goal>
+	
+	<goal id="chun_battle" name="Rempart de l'humanité" mush_casting_enable="1">
+		<icon k="1" points="0" file="ui/chun_battle.png" name="Chun Ripley">
+			Vous avez survécu à une bataille fongique en étant Chun !
+        </icon>
+		<title k="1" points="0" name="Rempart de l'humanité"/>
+	</goal>
+	
+	<goal id="ep1" name="Embarquement sur le Daedalus" >
+		<icon k="1" points="0" file="ui/ep1.png" name="Mush Episode 1">
+			Vous avez arpenté le Daedalus durant le premier épisode de Mush.
+        </icon>
+		<title k="1" points="0" name="Episode 1 : Embarquement sur le Daedalus"/>
+	</goal>
+	
+	<goal id="ep2" name="Cristallites aigus" >
+		<icon k="1" points="0" file="ui/ep2.png" name="Mush Episode 2">
+			Vous avez arpenté le Daedalus durant le deuxième épisode de Mush.
+        </icon>
+		<title k="1" points="0" name="Episode 2 : Cristallites aigus"/>
+	</goal>
+	
+	<goal id="ep3" name="Sus aux parasites !" >
+		<icon k="1" points="0" file="ui/ep3.png" name="Mush Episode 3">
+			Vous avez arpenté le Daedalus durant le troisième épisode de Mush.
+        </icon>
+		<title k="1" points="0" name="Episode 3 : Neron vous regarde"/>
+	</goal>
+	
+	<goal id="ep4" name="Nouvelles générations" >
+		<icon k="1" points="0" file="ui/ep4.png" name="Mush Episode 4">
+			Vous avez arpenté le Daedalus durant le quatrième épisode de Mush.
+        </icon>
+		<title k="1" points="0" name="Episode 4 : Nouvelles générations"/>
+	</goal>
+	
+	<goal id="ep5" name="Vieilles connaissances" >
+		<icon k="1" points="0" file="ui/ep5.png" name="Mush Episode 5">
+			Vous avez erré sur le Daedalus durant le cinquième épisode de Mush.
+        </icon>
+		<title k="1" points="0" name="Episode 5 : Vieilles connaissances"/>
+	</goal>
+	
+	<goal id="ep6" name="Sommeil fongique" >
+		<icon k="1" points="0" file="ui/ep6.png" name="Mush Episode 6">
+			Vous avez erré sur le Daedalus durant le sixième épisode de Mush.
+        </icon>
+		<title k="1" points="0" name="Episode 6 : Sommeil fongique"/>
+	</goal>
+	
+	<goal id="ticket" name="Supporter" rare="1">
+		<icon k="1" points="0" file="ui/ticket.png" name="Ticket OR">
+			Vous avez soutenu Mush et grâce à vous on l'a fait avancer, merci !
+        </icon>
+		<title k="1" points="0" name="Supporter"/>
+	</goal>
+	
+	<goal id="altruisme" name="Altruiste" rare="1">
+		<icon k="1" points="0" file="ui/gold.png" name="Altruiste">
+			Vous avez déjà soutenu votre communauté en envoyant un cadeau à un joueur, bravo !
+        </icon>
+		<title k="1" points="0" name="Altruiste"/>
+	</goal>
+	
+</goals>

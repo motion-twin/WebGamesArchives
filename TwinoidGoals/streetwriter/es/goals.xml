@@ -1,0 +1,203 @@
+﻿<goals id="streetwriter">
+
+	<!-- never modify an id -->
+	<!-- never delete an id -->
+	<!-- good idea is to add custom attributes that specifies that this goal wont unlock more -->
+
+<!--
+	* connexion mobile : 1 icône
+	* nombres de parties gagnées => plusieurs paliers dont 1 icône ?
+	* mots posés : que des des titres ?
+	* quêtes => plusieurs paliers dont 1 icônes ?
+	* nombre d'utilisation de chaque option => icone de chaque option possible
+-->
+
+	<icons>
+		<i tag=":sw:" img="/favicon.ico"/>
+        <i tag=":sw_gold:" img="/img/icons/icon_gold.png"/> 	<!-- DONE -->
+        <i tag=":sw_pts:" img="/img/icons/icon_points.png"/> 					<!-- ### TODO ### -->
+        <i tag=":sw_star:" img="/img/icons/icon_star.png"/> 					<!-- ### TODO ### -->
+    </icons>
+
+	<goal id="wapp" name="Partida en móvil" rare="1"> <!-- X -->
+		<icon k="1" points="1" file="/img/icons/icon_mobile.png" ></icon> 		<!-- ### TODO ### -->
+	</goal>
+
+	<goal id="wgames" name="Partidas jugadas"> <!-- X -->
+		<default k="10" points="2" />
+		<default k="100" points="3" />
+		<default k="1000" points="10" />
+	</goal>
+
+	<goal id="wquests" name="Misiones cumplidas"> <!-- X -->
+		<icon k="10" points="2" file="/img/icons/icon_quest.png" ></icon> 		<!-- ### TODO ### -->
+		<title k="100" name="Maestro de las misiones" points="5" />
+		<title k="1000" name="Dicho y hecho" points="10" />
+	</goal>
+
+	<goal id="wwords" name="Palabras colocadas"> <!-- X -->
+		<title k="50" name="Don Armando Palabras" points="1" />
+		<title k="500" name="Palabrero" points="3" />
+		<title k="1000" name="Palabra de líder" points="5" />
+		<title k="10000" name="Encyclopedia Universalis" points="10" />
+	</goal>
+
+	<goal id="wvictories" name="Partidas ganadas">  <!-- X -->
+		<title k="1" name="La victoria es mía" points="2" />
+		<title k="100" name="Voz fuerte" points="5" />
+		<title k="1000" name="Palabras que matan" points="10" /> <!-- word champion-->
+	</goal>
+
+
+	<!-- utilisation des options -->
+	<goal id="w_Recycle" name="Reciclajes utilizados">
+		<image k="100" points="2" name="Option Recyclage" file="/img/icons/icon_recycle.png" /> 	<!-- ### TODO ### -->
+	</goal>
+
+	<goal id="w_Joker" name="Comodines utilizados">
+		<image k="100" points="2" name="Option Joker" file="/img/icons/icon_joker.png" /> 		<!-- ### TODO ### -->
+	</goal>
+
+	<goal id="w_DragonPunch" name="Vórtices utilizados">
+		<image k="100" points="2" name="Poder vórtice" file="/img/icons/icon_dragonpunch.png" />  		<!-- ### TODO ### -->
+	</goal>
+
+	<goal id="w_Bomb" name="Bombas utilizadas">
+		<image k="100" points="2" name="Poder bomba" file="/img/icons/icon_bomb.png" /> 		<!-- ### TODO ### -->
+	</goal>
+
+	<goal id="w_Double" name="x2 utilizados">
+		<image k="100" points="2" name="Poder x2" file="/img/icons/icon_double.png" /> 			<!-- ### TODO ### -->
+	</goal>
+
+	<goal id="w_LootView" name="Visiones utilizadas">
+		<image k="100" points="2" name="Poder Visión" file="/img/icons/icon_lootview.png" /> 		<!-- ### TODO ### -->
+	</goal>
+
+	<goal id="w_Thief" name="Cambiazos utilizados">
+		<image k="100" points="2" name="Poder cambiazo" file="/img/icons/icon_thief.png" /> 		<!-- ### TODO ### -->
+	</goal>
+
+	<goal id="w_Tornado" name="Vientos sagrados utilizados">
+		<image k="100" points="2" name="Uso del viento sagrado" file="/img/icons/icon_tornado.png" />  		<!-- ### TODO ### -->
+	</goal>
+
+	<goal id="w_Mine" name="Minas utilizadas">
+		<image k="100" points="2" name="Poder mina" file="/img/icons/icon_mine.png" />  		<!-- ### TODO ### -->
+	</goal>
+
+	<goal id="w_TrapBonusPoints" name="Combos utilizados">
+		<image k="100" points="2" name="Poder Combo" file="/img/icons/icon_trapbonuspoints.png" />  		<!-- ### TODO ### -->
+	</goal>
+
+
+	<!-- utilisation des lettres -->
+	<goal id="w_letter_a" name="A utilizados">
+		<image k="100" points="2" name="A" file="/img/icons/icon_a.png" />
+	</goal>
+
+	<goal id="w_letter_b" name="B utilizados">
+		<image k="100" points="2" name="B" file="/img/icons/icon_b.png" />
+	</goal>
+
+	<goal id="w_letter_c" name="C utilizados">
+		<image k="100" points="2" name="C" file="/img/icons/icon_c.png" />
+	</goal>
+
+	<goal id="w_letter_d" name="D utilizados">
+		<image k="100" points="2" name="D" file="/img/icons/icon_d.png" />
+	</goal>
+
+	<goal id="w_letter_e" name="E utilizados">
+		<image k="100" points="2" name="E" file="/img/icons/icon_e.png" />
+	</goal>
+
+	<goal id="w_letter_f" name="F utilizados">
+		<image k="100" points="2" name="F" file="/img/icons/icon_f.png" />
+	</goal>
+
+	<goal id="w_letter_g" name="G utilizados">
+		<image k="100" points="2" name="G" file="/img/icons/icon_g.png" />
+	</goal>
+
+	<goal id="w_letter_h" name="H utilizados">
+		<image k="100" points="2" name="H" file="/img/icons/icon_h.png" />
+	</goal>
+
+	<goal id="w_letter_i" name="I utilizados">
+		<image k="100" points="2" name="I" file="/img/icons/icon_i.png" />
+	</goal>
+
+	<goal id="w_letter_j" name="J utilizados">
+		<image k="100" points="2" name="J" file="/img/icons/icon_j.png" />
+	</goal>
+
+	<goal id="w_letter_k" name="K utilizados">
+		<image k="100" points="2" name="K" file="/img/icons/icon_k.png" />
+	</goal>
+
+	<goal id="w_letter_l" name="L utilizados">
+		<image k="100" points="2" name="L" file="/img/icons/icon_l.png" />
+	</goal>
+
+	<goal id="w_letter_m" name="M utilizados">
+		<image k="100" points="2" name="M" file="/img/icons/icon_m.png" />
+	</goal>
+
+	<goal id="w_letter_n" name="N utilizados">
+		<image k="100" points="2" name="N" file="/img/icons/icon_n.png" />
+	</goal>
+
+	<goal id="w_letter_o" name="O utilizados">
+		<image k="100" points="2" name="O" file="/img/icons/icon_o.png" />
+	</goal>
+
+	<goal id="w_letter_p" name="P utilizados">
+		<image k="100" points="2" name="P" file="/img/icons/icon_p.png" />
+	</goal>
+
+	<goal id="w_letter_q" name="Q utilizados">
+		<image k="100" points="2" name="Q" file="/img/icons/icon_q.png" />
+	</goal>
+
+	<goal id="w_letter_r" name="R utilizados">
+		<image k="100" points="2" name="R" file="/img/icons/icon_r.png" />
+	</goal>
+
+	<goal id="w_letter_s" name="S utilizados">
+		<image k="100" points="2" name="S" file="/img/icons/icon_s.png" />
+	</goal>
+
+	<goal id="w_letter_t" name="T utilizados">
+		<image k="100" points="2" name="T" file="/img/icons/icon_t.png" />
+	</goal>
+
+	<goal id="w_letter_u" name="U utilizados">
+		<image k="100" points="2" name="U" file="/img/icons/icon_u.png" />
+	</goal>
+
+	<goal id="w_letter_v" name="V utilizados">
+		<image k="100" points="2" name="V" file="/img/icons/icon_v.png" />
+	</goal>
+
+	<goal id="w_letter_w" name="W utilizados">
+		<image k="100" points="2" name="W" file="/img/icons/icon_w.png" />
+	</goal>
+
+	<goal id="w_letter_x" name="X utilizados">
+		<image k="100" points="2" name="X" file="/img/icons/icon_x.png" />
+	</goal>
+
+	<goal id="w_letter_y" name="Y utilizados">
+		<image k="100" points="2" name="Y" file="/img/icons/icon_y.png" />
+	</goal>
+
+	<goal id="w_letter_z" name="Z utilizados">
+		<image k="100" points="2" name="Z" file="/img/icons/icon_z.png" />
+	</goal>
+
+	<goal id="w_letter_ñ" name="Ñ utilizados">
+		<image k="100" points="2" name="Ñ" file="/img/icons/icon_ene.png" />
+	</goal>
+
+</goals>
